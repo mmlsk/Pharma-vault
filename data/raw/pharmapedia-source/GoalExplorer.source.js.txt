@@ -1,0 +1,1192 @@
+import { html, React } from "../html.js";
+import { api } from "../api.js";
+import { PATHWAY_INFO, COMPOUND_INFO } from "./FilterPanel.js";
+
+const { useState, useMemo, useRef, useLayoutEffect } = React;
+
+const TIER_LABEL = {
+  human_rct: "Human RCT",
+  human_observational: "Human obs.",
+  animal: "Animal",
+  in_vitro: "In vitro",
+  mechanistic_inference: "Inferred",
+};
+
+// How many derived compounds a goal shows before collapsing the tail. Every
+// goal resolves to 40+ of the 46 compounds, but the ranking is steep -- past
+// roughly a dozen you're into single incidental edges, so that's the cut.
+const GOAL_COMPOUND_PREVIEW = 12;
+
+const CHAIN_DEPTH = 3;
+const CHAIN_BOX_W = 176;
+const CHAIN_BOX_W_MIN = 128;
+const CHAIN_BOX_H = 74;
+const CHAIN_ROW_GAP = 66;
+const CHAIN_COL_GAP = 18;
+const CHAIN_PAD = 20;
+const CHAIN_MAX_PER_ROW = 8;
+
+// Bipartite full-overview layout constants -- two fixed columns (compounds
+// left, pathways right), every card's position computed analytically from
+// category grouping order so no DOM measurement/refs are needed for the SVG
+// connector lines to land exactly on each card.
+const OV_COL_W = 260;
+const OV_MID_GAP = 150;
+const OV_CARD_H = 28;
+const OV_CARD_GAP = 4;
+const OV_HEAD_H = 26;
+const OV_SECTION_GAP = 16;
+
+function shortLabel(fullLabel) {
+  return fullLabel.split(" (")[0].split("(")[0].trim();
+}
+
+// A real dose isn't in our data anywhere and we're not going to invent one for a
+// real compound on a gated research product — but the curated description text
+// already says "oral" / "injectable" / etc for nearly every entry, so the route
+// badge shown in the detail panel is read straight out of that existing, verified
+// copy instead.
+function routeBadge(desc) {
+  const d = desc.toLowerCase();
+  const routes = [];
+  if (/\boral\b/.test(d)) routes.push("Oral");
+  if (/inject/.test(d)) routes.push("Injectable");
+  if (/topical/.test(d)) routes.push("Topical");
+  if (/(patch|transdermal)/.test(d)) routes.push("Transdermal");
+  if (/nasal/.test(d)) routes.push("Nasal");
+  if (/sublingual/.test(d)) routes.push("Sublingual");
+  return routes.length ? routes.join(" / ") : "Administered";
+}
+
+// Flat hsl only — no gradients — same "solid fill + solid border" recipe the
+// site already uses for role badges. Every pathway and every compound has one
+// curated category out of 7 biological systems (pathway-categories.json).
+// That's the one color axis for the whole board.
+// Exported so other tabs sharing this same category/hue graph (Stack) render
+// the identical palette and respect the same Settings -> monochrome toggle,
+// rather than each screen having its own slightly-different color logic.
+export function categoryColor(hue) {
+  return `hsl(${hue}, 68%, 58%)`;
+}
+
+// Monochrome mode (Settings -> Map colors). Rather than collapsing all seven
+// categories to one flat grey -- which would leave the category legend, the
+// rail dots and the overview column headers as seven identical swatches --
+// the hue is remapped onto a lightness ramp on a single near-neutral slate.
+// Same grouping signal, no chroma. Every consumer of these values feeds them
+// through color-mix() against --surface (styles.css), so a mid-range L reads
+// correctly against both the light and dark backgrounds.
+export function monoColor(hue) {
+  return `hsl(228, 6%, ${(38 + (hue / 360) * 38).toFixed(1)}%)`;
+}
+
+// activates/inhibits/crosstalk is a semantic axis, not decoration, so mono
+// keeps the three distinguishable by lightness instead of dropping the
+// distinction outright. `neutral` is the caller's own crosstalk/fallback
+// color -- the chain diagram and the overview picked different ones.
+function edgeColor(type, mono, neutral) {
+  // A goal edge's drives/limits is the same positive/negative axis as a
+  // mechanism edge's activates/inhibits, just at the outcome level, so it
+  // reads on the same two colors rather than introducing a third pair.
+  const t = type === "drives" ? "activates" : type === "limits" ? "inhibits" : type;
+  if (mono) return t === "activates" ? "#9aa2b4" : t === "inhibits" ? "#5d6373" : "#7c8394";
+  return t === "activates" ? "#3fb97a" : t === "inhibits" ? "#e0645c" : neutral;
+}
+
+// Goal edges are always authored pathway -> goal, so `forward` reads as
+// "drives"/"limits" from the pathway's side and flips to the passive
+// "driven by"/"limited by" when you're standing on the goal looking back.
+function pathwayEdgeVerb(id, e) {
+  const forward = e.source === id;
+  if (e.type === "crosstalk") return "crosstalk with";
+  if (e.type === "activates") return forward ? "activates" : "activated by";
+  if (e.type === "inhibits") return forward ? "inhibits" : "inhibited by";
+  if (e.type === "drives") return forward ? "drives" : "driven by";
+  if (e.type === "limits") return forward ? "limits" : "limited by";
+  return e.type;
+}
+
+// Citation strip shown under a connected-node's mechanism note -- only
+// mechanism edges (compound -> pathway, from interactions.json) carry these
+// fields; pathway <-> pathway crosstalk (pathway-interactions.json) is
+// textbook biology without a per-edge citation, so this renders nothing for
+// those. A pmid gets a real outbound link to PubMed; a tier with no pmid
+// (e.g. mechanistic_inference) still shows the tier so the reliability signal
+// is visible even without a specific source.
+//
+// `potency` is a separate, optional field -- a real published IC50/Ki/EC50
+// from an in-vitro enzyme/receptor assay, only present on the handful of
+// edges (aromatase inhibitors, finasteride) where a designed-inhibitor's
+// biochemical potency has actually been characterized and cited. It's a
+// concentration in a test tube, not a dose -- shown as one more real data
+// point next to the note, not something this app does any math with (no
+// dose input, no combining two compounds' potencies into a predicted
+// effect -- that would need real human pharmacokinetic data this dataset
+// doesn't have).
+function citationRow(edge) {
+  if (!edge.evidenceTier && !edge.pmid && !edge.potency) return null;
+  return html`
+    <span class="map__detail-link-cite">
+      ${edge.potency &&
+      html`<span class="map__detail-cite-potency" title=${edge.potency.target || ""}
+        >${edge.potency.metric} ${edge.potency.value}</span
+      >`}
+      ${edge.evidenceTier && html`<span class="map__detail-cite-tier">${TIER_LABEL[edge.evidenceTier] || edge.evidenceTier}</span>`}
+      ${edge.confidence && html`<span class="map__detail-cite-confidence">${edge.confidence} confidence</span>`}
+      ${edge.pmid &&
+      html`<a
+        class="map__detail-cite-link"
+        href=${`https://pubmed.ncbi.nlm.nih.gov/${edge.pmid}/`}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick=${(ev) => ev.stopPropagation()}
+        >PMID ${edge.pmid}${edge.year ? ` (${edge.year})` : ""}</a
+      >`}
+      ${edge.potency &&
+      edge.potency.pmid &&
+      edge.potency.pmid !== edge.pmid &&
+      html`<a
+        class="map__detail-cite-link"
+        href=${`https://pubmed.ncbi.nlm.nih.gov/${edge.potency.pmid}/`}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick=${(ev) => ev.stopPropagation()}
+        >potency: PMID ${edge.potency.pmid}${edge.potency.year ? ` (${edge.potency.year})` : ""}</a
+      >`}
+    </span>
+  `;
+}
+
+// Standard competitive-inhibition occupancy: %inhibition = [drug]/([drug]+IC50).
+// `model` scales a real reported steady-state concentration linearly from its
+// reference dose (only valid within the dose range the label states is
+// linear -- callers are expected to only invoke this within that range).
+// Free (unbound) concentration is used when a real protein-binding
+// percentage is known; otherwise this falls back to total concentration,
+// which the entry's own modelCaveat text discloses.
+export function occupancyPercent(doseMg, model) {
+  const scaledNgPerMl = model.concentrationNgPerMl * (doseMg / model.referenceDoseMg);
+  const totalNM = (scaledNgPerMl * 1000) / model.molecularWeightGPerMol;
+  const activeNM = model.proteinBoundPercent != null ? totalNM * (1 - model.proteinBoundPercent / 100) : totalNM;
+  return { activeNM, occupancy: (activeNM / (activeNM + model.targetIC50NM)) * 100 };
+}
+
+// One compound's dose-response data for one pathway. `measured` is always
+// real -- straight from FDA prescribing information, no math. `model`, when
+// present, is this app's own computed estimate from a dose the user types
+// in -- kept in its own visually distinct block so the two are never
+// mistaken for each other.
+export function DoseResponseEntry({ entry }) {
+  const dr = entry.doseResponse;
+  const model = dr.model;
+  const [dose, setDose] = useState(model ? model.referenceDoseMg : 0);
+  const inRange = !model || !model.linearRangeMg || (dose >= model.linearRangeMg[0] && dose <= model.linearRangeMg[1]);
+  const result = model && dose > 0 ? occupancyPercent(dose, model) : null;
+
+  return html`
+    <div class="map__dose-entry">
+      <div class="map__dose-entry-pathway">${shortLabel(PATHWAY_INFO[entry.otherId][0])}</div>
+
+      <div class="map__dose-measured-list">
+        ${dr.measured.map(
+          (m, i) => html`
+            <div key=${i} class="map__dose-measured-row">
+              <span class="map__dose-measured-badge">measured</span>
+              <span class="map__dose-measured-text">
+                <strong>${m.doseMg} mg/day</strong> &rarr; <strong>${m.suppressionPercent}%</strong> suppression.
+                ${m.note}
+              </span>
+            </div>
+          `
+        )}
+      </div>
+
+      ${model &&
+      html`
+        <div class="map__dose-model">
+          <div class="map__dose-model-row">
+            <label class="map__dose-model-label">Modeled dose (mg/day)</label>
+            <input
+              class="map__dose-model-input"
+              type="number"
+              min="0"
+              step="0.1"
+              value=${dose}
+              onInput=${(e) => setDose(parseFloat(e.target.value) || 0)}
+            />
+          </div>
+          ${result &&
+          html`
+            <div class=${`map__dose-model-result ${inRange ? "" : "map__dose-model-result--outofrange"}`}>
+              Estimated single-target occupancy: <strong>${result.occupancy.toFixed(1)}%</strong>
+              ${!inRange && html`<span class="map__dose-model-warn"> -- outside the dose range this app has linear PK data for; treat as unreliable.</span>`}
+            </div>
+          `}
+          <p class="map__dose-model-caveat">${model.modelCaveat}</p>
+        </div>
+      `}
+    </div>
+  `;
+}
+
+function DoseResponsePanel({ entries }) {
+  return html`
+    <div class="map__dose-section">
+      <div class="map__detail-section-label">Dose response</div>
+      <p class="map__detail-goal-hint">
+        Real numbers from FDA prescribing information, not study estimates. Where a real steady-state
+        concentration and a real IC50/Ki both exist for the same target, a dose input also shows a
+        MODELED single-target occupancy estimate -- this app's own calculation, kept visually separate
+        from the measured numbers since it isn't something directly measured. It's one compound against
+        one target in isolation and does not account for combining this with anything else in a stack.
+      </p>
+      ${entries.map((entry) => html`<${DoseResponseEntry} key=${entry.otherId} entry=${entry} />`)}
+    </div>
+  `;
+}
+
+// Breadth-first traversal from one node out through the same adjacency the
+// rest of the map uses -- row 0 is the thing you picked, row 1 is everything
+// it directly touches, row 2 is what THOSE touch next. Each row is capped at
+// CHAIN_MAX_PER_ROW (the rest collapse into a "+N more" tile on the last box)
+// so a 30-edge compound still renders as a readable block diagram instead of
+// an unbounded wall of boxes.
+function buildChain(rootId, adjacency, maxDepth) {
+  const visited = new Set([rootId]);
+  const parentOf = new Map();
+  const levels = [[rootId]];
+  let frontier = [rootId];
+
+  for (let d = 1; d < maxDepth && frontier.length; d++) {
+    const next = [];
+    frontier.forEach((id) => {
+      (adjacency.get(id) || []).forEach((e) => {
+        const otherId = e.source === id ? e.target : e.source;
+        if (visited.has(otherId)) return;
+        visited.add(otherId);
+        parentOf.set(otherId, { parentId: id, edge: e });
+        next.push(otherId);
+      });
+    });
+    if (!next.length) break;
+    levels.push(next);
+    frontier = next;
+  }
+
+  const truncatedCount = [];
+  const capped = levels.map((row, i) => {
+    if (i === 0 || row.length <= CHAIN_MAX_PER_ROW) {
+      truncatedCount.push(0);
+      return row;
+    }
+    truncatedCount.push(row.length - CHAIN_MAX_PER_ROW);
+    return row.slice(0, CHAIN_MAX_PER_ROW);
+  });
+
+  for (let L = 1; L < capped.length; L++) {
+    const prevIndex = new Map(capped[L - 1].map((id, i) => [id, i]));
+    capped[L].sort((a, b) => (prevIndex.get(parentOf.get(a).parentId) || 0) - (prevIndex.get(parentOf.get(b).parentId) || 0));
+  }
+
+  return { levels: capped, parentOf, visited, truncatedCount };
+}
+
+// containerWidth (measured from the actual scroll box, see ChainDiagram) lets
+// the box width shrink to whatever fits without scrolling -- down to a
+// legible floor (CHAIN_BOX_W_MIN). Only once even the floor doesn't fit does
+// the row exceed the container and hand off to the wrap's horizontal scroll.
+function chainLayout(levels, containerWidth) {
+  const maxRowCount = Math.max(...levels.map((row) => row.length));
+  let boxW = CHAIN_BOX_W;
+  if (containerWidth > 0) {
+    const available = containerWidth - CHAIN_PAD * 2 - (maxRowCount - 1) * CHAIN_COL_GAP;
+    boxW = Math.min(CHAIN_BOX_W, Math.max(CHAIN_BOX_W_MIN, Math.floor(available / maxRowCount)));
+  }
+  const width = CHAIN_PAD * 2 + maxRowCount * boxW + (maxRowCount - 1) * CHAIN_COL_GAP;
+  const height = CHAIN_PAD * 2 + levels.length * CHAIN_BOX_H + (levels.length - 1) * CHAIN_ROW_GAP;
+  const pos = {};
+  levels.forEach((row, L) => {
+    const rowWidth = row.length * boxW + (row.length - 1) * CHAIN_COL_GAP;
+    const startX = (width - rowWidth) / 2;
+    const y = CHAIN_PAD + L * (CHAIN_BOX_H + CHAIN_ROW_GAP);
+    row.forEach((id, i) => {
+      pos[id] = { x: startX + i * (boxW + CHAIN_COL_GAP), y };
+    });
+  });
+  return { pos, width, height, boxW };
+}
+
+// Real order-of-interaction flow chart: root at top, everything it touches
+// below it, what THOSE touch below that. Straight blocks connected by
+// labeled arrows -- the thing that already worked before an all-at-once
+// radial hub turned into an unreadable tangle for anything with more than a
+// handful of connections.
+function ChainDiagram({ rootId, adjacency, hueOf, labelOf, nodesById, onPick, catColor, mono }) {
+  const wrapRef = useRef(null);
+  const [wrapWidth, setWrapWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver((entries) => setWrapWidth(entries[0].contentRect.width));
+    ro.observe(el);
+    setWrapWidth(el.clientWidth);
+    return () => ro.disconnect();
+  }, []);
+
+  const chain = useMemo(() => buildChain(rootId, adjacency, CHAIN_DEPTH), [rootId, adjacency]);
+  const dims = useMemo(() => chainLayout(chain.levels, wrapWidth), [chain, wrapWidth]);
+  const boxW = dims.boxW;
+  const needsScroll = wrapWidth > 0 && dims.width > wrapWidth + 1;
+
+  return html`
+    <div class=${`map__chain-wrap ${needsScroll ? "map__chain-wrap--scrollable" : ""}`} ref=${wrapRef}>
+      <div class="chain" style=${{ width: `${dims.width}px`, height: `${dims.height}px` }}>
+        <svg width=${dims.width} height=${dims.height} class="chain__lines">
+          ${chain.levels
+            .flat()
+            .filter((id) => id !== rootId)
+            .map((id) => {
+              const { parentId, edge } = chain.parentOf.get(id);
+              const pp = dims.pos[parentId];
+              const cp = dims.pos[id];
+              if (!pp || !cp) return null;
+              const x1 = pp.x + boxW / 2;
+              const y1 = pp.y + CHAIN_BOX_H;
+              const x2 = cp.x + boxW / 2;
+              const y2 = cp.y;
+              const midY = (y1 + y2) / 2;
+              const color = edgeColor(edge.type, mono, "#b98be0");
+              return html`
+                <g key=${id}>
+                  <path d=${`M${x1},${y1} C${x1},${midY} ${x2},${midY} ${x2},${y2}`} fill="none" stroke=${color} stroke-width="1.6" />
+                  <polygon points=${`${x2 - 5},${y2 - 9} ${x2 + 5},${y2 - 9} ${x2},${y2}`} fill=${color} />
+                  <text
+                    x=${x2}
+                    y=${midY + 4}
+                    text-anchor="middle"
+                    class="chain__edge-label"
+                    fill=${color}
+                    stroke="#151517"
+                    stroke-width="4"
+                    paint-order="stroke"
+                  >
+                    ${pathwayEdgeVerb(parentId, edge)}
+                  </text>
+                </g>
+              `;
+            })}
+        </svg>
+        ${chain.levels
+          .flatMap((row, L) => row.map((id) => ({ id, L, isLastInRow: row[row.length - 1] === id })))
+          .map(({ id, L, isLastInRow }) => {
+            const p = dims.pos[id];
+            const isRoot = id === rootId;
+            const kind = nodesById.get(id).kind;
+            const extra = isLastInRow ? chain.truncatedCount[L] : 0;
+            return html`
+              <div
+                key=${id}
+                class=${`chain__box ${isRoot ? "chain__box--root" : ""}`}
+                style=${{ left: `${p.x}px`, top: `${p.y}px`, width: `${boxW}px`, height: `${CHAIN_BOX_H}px`, "--box-color": catColor(hueOf(id)) }}
+                onClick=${() => !isRoot && onPick(kind, id)}
+              >
+                <div class="chain__box-eyebrow">
+                  ${kind}
+                  ${isRoot && html`<span class="map__root-tag">start</span>`}
+                </div>
+                <div class="chain__box-title">${shortLabel(labelOf(id))}</div>
+                ${extra > 0 && html`<div class="chain__box-extra">+${extra} more (see list below)</div>`}
+              </div>
+            `;
+          })}
+      </div>
+    </div>
+  `;
+}
+
+// One column's worth of the full-overview bipartite diagram: every id,
+// grouped by category (in the same category order as the rest of the map),
+// with a Y position computed purely from row counts -- no DOM measurement,
+// so the SVG connector lines below can be laid out in the same pass as the
+// cards instead of waiting a frame for refs to settle.
+function buildOverviewColumn(categories, ids, categoryOfNode) {
+  const idsByCategory = new Map();
+  ids.forEach((id) => {
+    const key = categoryOfNode.get(id);
+    if (!idsByCategory.has(key)) idsByCategory.set(key, []);
+    idsByCategory.get(key).push(id);
+  });
+  const rows = [];
+  const y = {};
+  let cursor = 0;
+  categories.forEach((c) => {
+    const catIds = idsByCategory.get(c.key);
+    if (!catIds || !catIds.length) return;
+    rows.push({ type: "head", key: c.key, label: c.label, hue: c.hue, y: cursor });
+    cursor += OV_HEAD_H;
+    catIds.forEach((id) => {
+      rows.push({ type: "item", id, y: cursor });
+      y[id] = cursor + OV_CARD_H / 2;
+      cursor += OV_CARD_H + OV_CARD_GAP;
+    });
+    cursor += OV_SECTION_GAP;
+  });
+  return { rows, y, height: Math.max(cursor, 40) };
+}
+
+// The full master overview: every compound (left) and every pathway (right)
+// as cards, connected by every real citation-backed mechanism edge -- the
+// whole graph in one screen, not a per-node drill-down. Fixed two-column
+// layout (not radial/force-directed) so it stays a readable diagram instead
+// of a spiderweb even with hundreds of edges; edges are faint by default and
+// light up on hover so any one compound or pathway's reach is easy to trace.
+function NetworkOverview({ categories, compoundIds, pathwayIds, categoryOfNode, mechanismEdges, hueOf, labelOf, onPick, catColor, mono }) {
+  const [hoverId, setHoverId] = useState(null);
+
+  const compoundCol = useMemo(() => buildOverviewColumn(categories, compoundIds, categoryOfNode), [categories, compoundIds, categoryOfNode]);
+  const pathwayCol = useMemo(() => buildOverviewColumn(categories, pathwayIds, categoryOfNode), [categories, pathwayIds, categoryOfNode]);
+  const totalHeight = Math.max(compoundCol.height, pathwayCol.height);
+  const totalWidth = OV_COL_W * 2 + OV_MID_GAP;
+
+  const connectedToHover = useMemo(() => {
+    if (!hoverId) return null;
+    const set = new Set([hoverId]);
+    mechanismEdges.forEach((e) => {
+      if (e.source === hoverId) set.add(e.target);
+      if (e.target === hoverId) set.add(e.source);
+    });
+    return set;
+  }, [hoverId, mechanismEdges]);
+
+  return html`
+    <div class="map__overview">
+      <div class="map__overview-inner" style=${{ width: `${totalWidth}px`, height: `${totalHeight}px` }}>
+        <svg width=${totalWidth} height=${totalHeight} class="map__overview-svg">
+          ${mechanismEdges.map((e) => {
+            const y1 = compoundCol.y[e.source];
+            const y2 = pathwayCol.y[e.target];
+            if (y1 == null || y2 == null) return null;
+            const x1 = OV_COL_W;
+            const x2 = OV_COL_W + OV_MID_GAP;
+            const midX = (x1 + x2) / 2;
+            const isHot = connectedToHover && (e.source === hoverId || e.target === hoverId);
+            const isDim = connectedToHover && !isHot;
+            const color = edgeColor(e.type, mono, "#8a8fa3");
+            return html`
+              <path
+                key=${`${e.source}|${e.target}|${e.type}`}
+                d=${`M${x1},${y1} C${midX},${y1} ${midX},${y2} ${x2},${y2}`}
+                fill="none"
+                stroke=${color}
+                stroke-width=${isHot ? 2 : 1}
+                opacity=${isDim ? 0.04 : isHot ? 0.85 : 0.13}
+              />
+            `;
+          })}
+        </svg>
+
+        ${compoundCol.rows.map((r) =>
+          r.type === "head"
+            ? html`
+                <div key=${`ch-${r.key}`} class="map__overview-head" style=${{ left: "0px", top: `${r.y}px`, width: `${OV_COL_W}px` }}>
+                  <span class="map__pw-swatch" style=${{ background: catColor(r.hue) }}></span>${r.label}
+                </div>
+              `
+            : (() => {
+                const dim = connectedToHover && !connectedToHover.has(r.id);
+                const hot = connectedToHover && connectedToHover.has(r.id);
+                return html`
+                  <button
+                    key=${`c-${r.id}`}
+                    class=${`map__overview-card map__overview-card--compound ${dim ? "map__overview-card--dim" : ""} ${hot ? "map__overview-card--hot" : ""}`}
+                    style=${{ left: "0px", top: `${r.y}px`, width: `${OV_COL_W}px`, height: `${OV_CARD_H}px`, "--card-color": catColor(hueOf(r.id)) }}
+                    onMouseEnter=${() => setHoverId(r.id)}
+                    onMouseLeave=${() => setHoverId(null)}
+                    onClick=${() => onPick("compound", r.id)}
+                  >
+                    ${shortLabel(labelOf(r.id))}
+                  </button>
+                `;
+              })()
+        )}
+
+        ${pathwayCol.rows.map((r) =>
+          r.type === "head"
+            ? html`
+                <div
+                  key=${`ph-${r.key}`}
+                  class="map__overview-head"
+                  style=${{ left: `${OV_COL_W + OV_MID_GAP}px`, top: `${r.y}px`, width: `${OV_COL_W}px` }}
+                >
+                  <span class="map__pw-swatch" style=${{ background: catColor(r.hue) }}></span>${r.label}
+                </div>
+              `
+            : (() => {
+                const dim = connectedToHover && !connectedToHover.has(r.id);
+                const hot = connectedToHover && connectedToHover.has(r.id);
+                return html`
+                  <button
+                    key=${`p-${r.id}`}
+                    class=${`map__overview-card map__overview-card--pathway ${dim ? "map__overview-card--dim" : ""} ${hot ? "map__overview-card--hot" : ""}`}
+                    style=${{
+                      left: `${OV_COL_W + OV_MID_GAP}px`,
+                      top: `${r.y}px`,
+                      width: `${OV_COL_W}px`,
+                      height: `${OV_CARD_H}px`,
+                      "--card-color": catColor(hueOf(r.id)),
+                    }}
+                    onMouseEnter=${() => setHoverId(r.id)}
+                    onMouseLeave=${() => setHoverId(null)}
+                    onClick=${() => onPick("pathway", r.id)}
+                  >
+                    ${shortLabel(labelOf(r.id))}
+                  </button>
+                `;
+              })()
+        )}
+      </div>
+    </div>
+  `;
+}
+
+// The "overseer" rail: every compound/pathway listed by name, always
+// visible, next to whatever's being viewed -- pick a goal without hunting
+// for its tile in the grid or chain first.
+function RailPanel({ railTab, setRailTab, compoundIds, pathwayIds, goalIds, selectedId, onPick, categoryColor: catColor, hueOf, labelOf, hint }) {
+  // Goals first: it's the layer above compounds and pathways, and it's the
+  // one a reader can name before they know any of the biology.
+  const tabs = [
+    ["goals", "Goals", goalIds],
+    ["compounds", "Compounds", compoundIds],
+    ["pathways", "Pathways", pathwayIds],
+  ];
+  const activeIds = (tabs.find((t) => t[0] === railTab) || tabs[0])[2];
+  return html`
+    <aside class="map__rail">
+      <div class="map__rail-tabs map__rail-tabs--three">
+        ${tabs.map(
+          ([key, label, ids]) => html`
+            <button
+              key=${key}
+              class=${`map__rail-tab ${railTab === key ? "map__rail-tab--active" : ""}`}
+              onClick=${() => setRailTab(key)}
+            >
+              ${label} (${ids.length})
+            </button>
+          `
+        )}
+      </div>
+      <p class="map__rail-hint">${hint}</p>
+      <div class="map__rail-list">
+        ${activeIds.map((id) => {
+          const isSelected = selectedId === id;
+          return html`
+            <button key=${id} class=${`map__rail-item ${isSelected ? "map__rail-item--active" : ""}`} onClick=${() => onPick(id)}>
+              <span class="map__rail-dot" style=${{ background: catColor(hueOf(id)) }}></span>
+              ${shortLabel(labelOf(id))}
+            </button>
+          `;
+        })}
+      </div>
+    </aside>
+  `;
+}
+
+// The whole graph is compounds' real curated mechanism edges (interactions.json,
+// each grounded with a real pmid where the literature supports it) plus
+// pathway-to-pathway crosstalk (pathway-interactions.json, textbook
+// endocrinology/cell-biology: GH->IGF-1, AMPK-|mTOR, Wnt-|sclerostin, etc).
+// pathway-categories.json sorts every node into one of 7 biological systems
+// (Muscle, Bone, Skin, Hormones, GH/IGF-1, Metabolism, Repair).
+//
+// Two levels: Level 1 is a category-grouped grid of every compound and
+// pathway, no interaction needed. Level 2 is a top-down block chain rooted at
+// whatever you picked -- straight boxes and labeled arrows, no physics, no
+// radial spiderweb -- with a citation-backed list of the full connection set
+// below it (the chain caps each row at a handful of boxes; the list is the
+// complete picture). A rail on the left is always there to jump to any
+// compound or pathway by name.
+export function CompoundMap({ mono = false, free = false, onFreeOpen }) {
+  // One resolved palette function for the whole board, chosen once per render
+  // and handed down -- sub-components never reach for categoryColor/monoColor
+  // themselves, so there's no way for one panel to end up in a different mode
+  // than the rest.
+  const catColor = mono ? monoColor : categoryColor;
+  const [interactions, setInteractions] = useState(null);
+  const [pathwayLinks, setPathwayLinks] = useState(null);
+  const [categoryData, setCategoryData] = useState(null);
+  const [goalData, setGoalData] = useState(null);
+  const [error, setError] = useState("");
+  const [query, setQuery] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState(null);
+  const [selected, setSelected] = useState(null); // { kind: 'compound'|'pathway', id }
+  const [trail, setTrail] = useState([]);
+  const [railTab, setRailTab] = useState("goals");
+  const [showAllGoalCompounds, setShowAllGoalCompounds] = useState(false);
+  const openId = useRef(globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`);
+
+  React.useEffect(() => {
+    const authorize = free ? api.openFreeMap(openId.current) : Promise.resolve(null);
+    authorize.then((usage) => {
+      if (usage?.freeMapViewsUsed != null) onFreeOpen?.(usage.freeMapViewsUsed);
+      return Promise.all([
+      fetch("/src/data/interactions.json").then((res) => {
+        if (!res.ok) throw new Error(`Failed to load interactions.json (${res.status})`);
+        return res.json();
+      }),
+      fetch("/src/data/pathway-interactions.json").then((res) => {
+        if (!res.ok) throw new Error(`Failed to load pathway-interactions.json (${res.status})`);
+        return res.json();
+      }),
+      fetch("/src/data/pathway-categories.json").then((res) => {
+        if (!res.ok) throw new Error(`Failed to load pathway-categories.json (${res.status})`);
+        return res.json();
+      }),
+      fetch("/src/data/goals.json").then((res) => {
+        if (!res.ok) throw new Error(`Failed to load goals.json (${res.status})`);
+        return res.json();
+      }),
+      ]);
+    })
+      .then(([compoundData, pathwayData, catData, goals]) => {
+        setInteractions(compoundData);
+        setPathwayLinks(pathwayData);
+        setCategoryData(catData);
+        setGoalData(goals);
+      })
+      .catch((err) => setError(err.message));
+  }, [free]);
+
+  const graph = useMemo(() => {
+    if (!interactions || !pathwayLinks || !categoryData || !goalData) return null;
+
+    const compoundIds = Object.keys(interactions).sort((a, b) => COMPOUND_INFO[a][0].localeCompare(COMPOUND_INFO[b][0]));
+    const pathwaySet = new Set();
+    const edges = [];
+
+    compoundIds.forEach((cid) => {
+      (interactions[cid] || []).forEach((e) => {
+        pathwaySet.add(e.pathway);
+        edges.push({
+          source: cid,
+          target: e.pathway,
+          type: e.type,
+          note: e.note,
+          family: "mechanism",
+          pmid: e.pmid || null,
+          evidenceTier: e.evidenceTier || null,
+          confidence: e.confidence || null,
+          year: e.year || null,
+          potency: e.potency || null,
+          doseResponse: e.doseResponse || null,
+        });
+      });
+    });
+    pathwayLinks.forEach((e) => {
+      pathwaySet.add(e.a);
+      pathwaySet.add(e.b);
+      edges.push({ source: e.a, target: e.b, type: e.type, note: e.note, family: "crosstalk" });
+    });
+
+    const pathwayIds = [...pathwaySet].sort((a, b) => PATHWAY_INFO[a][0].localeCompare(PATHWAY_INFO[b][0]));
+
+    // Goals join the same graph as ordinary nodes rather than living in a
+    // parallel structure. That's what lets the chain diagram, breadcrumbs,
+    // search and the detail panel all work on them without a second code
+    // path -- a goal is just a node whose neighbours happen to be outcomes'
+    // worth of pathways. Edges are authored pathway -> goal so direction is
+    // consistent with how the notes are written.
+    const goalsById = new Map(goalData.goals.map((g) => [g.id, g]));
+    const goalIds = goalData.goals.map((g) => g.id);
+    goalData.goals.forEach((g) => {
+      g.pathways.forEach((p) => {
+        // Defensive: a goal pointing at a pathway no compound touches would
+        // otherwise inject a node the rest of the map has no record of.
+        if (!pathwaySet.has(p.pathway)) return;
+        edges.push({ source: p.pathway, target: g.id, type: p.effect, note: p.note, family: "goal" });
+      });
+    });
+
+    const nodesById = new Map([
+      ...compoundIds.map((id) => [id, { id, kind: "compound" }]),
+      ...pathwayIds.map((id) => [id, { id, kind: "pathway" }]),
+      ...goalIds.map((id) => [id, { id, kind: "goal" }]),
+    ]);
+
+    const adjacency = new Map();
+    function addAdjacency(id, edge) {
+      if (!adjacency.has(id)) adjacency.set(id, []);
+      adjacency.get(id).push(edge);
+    }
+    edges.forEach((e) => {
+      addAdjacency(e.source, e);
+      addAdjacency(e.target, e);
+    });
+
+    const categoryOfNode = new Map();
+    pathwayIds.forEach((id) => categoryOfNode.set(id, categoryData.pathways[id]));
+    compoundIds.forEach((id) => categoryOfNode.set(id, categoryData.compounds[id]));
+
+    return { compoundIds, pathwayIds, goalIds, goalsById, nodesById, adjacency, edges, categoryOfNode };
+  }, [interactions, pathwayLinks, categoryData, goalData]);
+
+  if (error) {
+    return html`<div class="load-error">Could not load interaction data: ${error}</div>`;
+  }
+  if (!graph) {
+    return html`<div class="load-state">Loading map...</div>`;
+  }
+
+  const { compoundIds, pathwayIds, goalIds, goalsById, nodesById, adjacency, categoryOfNode, edges } = graph;
+  const categoriesByKey = new Map(categoryData.categories.map((c) => [c.key, c]));
+  const mechanismEdges = edges.filter((e) => e.family === "mechanism");
+
+  function labelOf(id) {
+    const kind = nodesById.get(id).kind;
+    if (kind === "goal") return goalsById.get(id).label;
+    return kind === "compound" ? COMPOUND_INFO[id][0] : PATHWAY_INFO[id][0];
+  }
+  // Goals sit outside the 7 biological categories -- they're outcomes, not
+  // systems -- so each carries its own hue in goals.json instead of borrowing
+  // one. monoColor() flattens these the same as any other hue.
+  function hueOf(id) {
+    if (goalsById.has(id)) return goalsById.get(id).hue;
+    return categoriesByKey.get(categoryOfNode.get(id)).hue;
+  }
+
+  function pick(kind, id) {
+    setSelected((cur) => {
+      if (cur && cur.id !== id) setTrail((t) => [...t, cur]);
+      return { kind, id };
+    });
+    setQuery("");
+    // Expanding one goal's tail shouldn't leave the next goal you open
+    // already expanded.
+    setShowAllGoalCompounds(false);
+  }
+  function backToOverview() {
+    setSelected(null);
+    setTrail([]);
+  }
+  function jumpToTrail(index) {
+    const target = trail[index];
+    setTrail((t) => t.slice(0, index));
+    setSelected(target);
+  }
+
+  const q = query.trim().toLowerCase();
+  // Goals lead the search list: someone typing "height" wants the outcome,
+  // not whichever pathway happens to have the word in its description.
+  const searchMatches = q
+    ? [...goalIds, ...compoundIds, ...pathwayIds].filter((id) => labelOf(id).toLowerCase().includes(q)).slice(0, 8)
+    : [];
+
+  function edgesOf(id) {
+    return (adjacency.get(id) || []).map((e) => {
+      const forward = e.source === id;
+      const otherId = forward ? e.target : e.source;
+      return {
+        otherId,
+        otherKind: nodesById.get(otherId).kind,
+        verb: pathwayEdgeVerb(id, e),
+        note: e.note,
+        type: e.type,
+        pmid: e.pmid,
+        evidenceTier: e.evidenceTier,
+        confidence: e.confidence,
+        year: e.year,
+        potency: e.potency,
+        doseResponse: e.doseResponse,
+      };
+    });
+  }
+
+  // A goal has no compound edges of its own -- the whole point is that its
+  // compounds are *derived*, by walking goal -> pathway -> compound through
+  // the mechanism edges that already exist. So adding a compound to
+  // interactions.json automatically surfaces it under every goal it can
+  // reach, with no goal-side authoring. Each compound is reported with the
+  // pathways it routes through and whether the net effect on the goal is
+  // supportive: a compound that inhibits a pathway which limits the goal is
+  // working *for* it, so the two signs multiply out.
+  function compoundsReachingGoal(goalId) {
+    const byCompound = new Map();
+    (adjacency.get(goalId) || []).forEach((goalEdge) => {
+      const pathwayId = goalEdge.source === goalId ? goalEdge.target : goalEdge.source;
+      const goalSign = goalEdge.type === "drives" ? 1 : -1;
+      (adjacency.get(pathwayId) || []).forEach((mech) => {
+        if (mech.family !== "mechanism") return;
+        const compoundId = mech.source === pathwayId ? mech.target : mech.source;
+        if (nodesById.get(compoundId).kind !== "compound") return;
+        const mechSign = mech.type === "activates" ? 1 : mech.type === "inhibits" ? -1 : 0;
+        if (!byCompound.has(compoundId)) byCompound.set(compoundId, { otherId: compoundId, routes: [], net: 0 });
+        const entry = byCompound.get(compoundId);
+        entry.routes.push({
+          pathwayId,
+          verb: mech.type,
+          goalVerb: goalEdge.type,
+          supportive: goalSign * mechSign > 0,
+          note: mech.note,
+          pmid: mech.pmid,
+          evidenceTier: mech.evidenceTier,
+          confidence: mech.confidence,
+          year: mech.year,
+        });
+        entry.net += goalSign * mechSign;
+      });
+    });
+    // Sort by |net|, not by route count. Nearly every compound in the library
+    // touches at least one pathway under a broad goal -- 40+ of 46 for each of
+    // these -- so an unranked list is noise. Net magnitude is what separates
+    // them: it puts letrozole at the top of Height (five routes, all pointing
+    // the same way, via aromatase and epiphyseal fusion) and leaves a compound
+    // with one incidental edge at the bottom.
+    return [...byCompound.values()].sort(
+      (a, b) =>
+        Math.abs(b.net) - Math.abs(a.net) ||
+        b.routes.length - a.routes.length ||
+        labelOf(a.otherId).localeCompare(labelOf(b.otherId))
+    );
+  }
+
+  const detail = selected
+    ? (() => {
+        const isCompound = selected.kind === "compound";
+        const isGoal = selected.kind === "goal";
+        const goal = isGoal ? goalsById.get(selected.id) : null;
+        const all = edgesOf(selected.id).sort((a, b) => labelOf(a.otherId).localeCompare(labelOf(b.otherId)));
+        return {
+          id: selected.id,
+          kind: selected.kind,
+          label: isGoal ? goal.label : isCompound ? COMPOUND_INFO[selected.id][0] : PATHWAY_INFO[selected.id][0],
+          desc: isGoal ? goal.desc : isCompound ? COMPOUND_INFO[selected.id][1] : PATHWAY_INFO[selected.id][1],
+          route: isCompound ? routeBadge(COMPOUND_INFO[selected.id][1]) : null,
+          category: isGoal ? "outcome" : categoriesByKey.get(categoryOfNode.get(selected.id)).label,
+          compounds: all.filter((l) => l.otherKind === "compound"),
+          pathways: all.filter((l) => l.otherKind === "pathway"),
+          // Shown on a pathway so you can see which outcomes it feeds.
+          goals: all.filter((l) => l.otherKind === "goal"),
+          derivedCompounds: isGoal ? compoundsReachingGoal(selected.id) : [],
+          doseResponseEdges: isCompound ? all.filter((l) => l.otherKind === "pathway" && l.doseResponse) : [],
+        };
+      })()
+    : null;
+
+  const railHint = selected
+    ? `Pick a different ${railTab === "pathways" ? "pathway" : railTab === "goals" ? "goal" : "compound"} to re-root the chain there.`
+    : railTab === "pathways"
+    ? "Pick a pathway to see what reaches it."
+    : railTab === "goals"
+    ? "Start from an outcome to see the pathways behind it."
+    : "Pick a compound to see everything it hits.";
+
+  return html`
+    <div class=${`map ${selected ? "map--detail" : ""}`}>
+      <div class="map__toolbar">
+        <div class="map__search-wrap">
+          <input
+            class="map__search"
+            type="text"
+            placeholder="Search any compound or pathway…"
+            value=${query}
+            onInput=${(e) => setQuery(e.target.value)}
+          />
+          ${searchMatches.length > 0 &&
+          html`
+            <div class="map__search-results">
+              ${searchMatches.map(
+                (id) => html`
+                  <button key=${id} class="map__search-result" onClick=${() => pick(nodesById.get(id).kind, id)}>
+                    <span class="map__pw-swatch" style=${{ background: catColor(hueOf(id)) }}></span>
+                    ${shortLabel(labelOf(id))}
+                    <span class="map__search-result-kind">${nodesById.get(id).kind}</span>
+                  </button>
+                `
+              )}
+            </div>
+          `}
+        </div>
+        ${selected && html`<button class="map__back-btn" onClick=${backToOverview}>← Back to overview</button>`}
+        <span class="map__stats">${compoundIds.length} compounds · ${pathwayIds.length} pathways</span>
+      </div>
+
+      ${selected &&
+      html`
+        <nav class="map__breadcrumb">
+          <button class="map__breadcrumb-item" onClick=${backToOverview}>Overview</button>
+          ${trail.map(
+            (t, i) => html`
+              <span key=${i}>
+                <span class="map__breadcrumb-sep">›</span>
+                <button class="map__breadcrumb-item" onClick=${() => jumpToTrail(i)}>${shortLabel(labelOf(t.id))}</button>
+              </span>
+            `
+          )}
+          <span class="map__breadcrumb-sep">›</span>
+          <span class="map__breadcrumb-item map__breadcrumb-item--current">${shortLabel(detail.label)}</span>
+        </nav>
+      `}
+
+      ${!selected &&
+      html`
+        <div class="map__catbar">
+          ${categoryData.categories.map(
+            (c) => html`
+              <button
+                key=${c.key}
+                class=${`map__catchip ${categoryFilter === c.key ? "map__catchip--active" : ""}`}
+                style=${{ "--cat-color": catColor(c.hue) }}
+                onClick=${() => setCategoryFilter((cur) => (cur === c.key ? null : c.key))}
+              >
+                <span class="map__pw-swatch" style=${{ background: catColor(c.hue) }}></span>
+                ${c.label}
+              </button>
+            `
+          )}
+        </div>
+      `}
+
+      <div class="map__body">
+        <${RailPanel}
+          railTab=${railTab}
+          setRailTab=${setRailTab}
+          compoundIds=${compoundIds}
+          pathwayIds=${pathwayIds}
+          goalIds=${goalIds}
+          selectedId=${selected && selected.id}
+          onPick=${(id) => pick(nodesById.get(id).kind, id)}
+          categoryColor=${catColor}
+          hueOf=${hueOf}
+          labelOf=${labelOf}
+          hint=${railHint}
+        />
+
+        ${!selected
+          ? html`
+              <${NetworkOverview}
+                categories=${categoryData.categories}
+                compoundIds=${categoryFilter ? compoundIds.filter((id) => categoryOfNode.get(id) === categoryFilter) : compoundIds}
+                pathwayIds=${categoryFilter ? pathwayIds.filter((id) => categoryOfNode.get(id) === categoryFilter) : pathwayIds}
+                categoryOfNode=${categoryOfNode}
+                mechanismEdges=${mechanismEdges}
+                hueOf=${hueOf}
+                labelOf=${labelOf}
+                onPick=${pick}
+                catColor=${catColor}
+                mono=${mono}
+              />
+            `
+          : html`
+              <div class="map__level2">
+                <${ChainDiagram}
+                  rootId=${detail.id}
+                  adjacency=${adjacency}
+                  hueOf=${hueOf}
+                  labelOf=${labelOf}
+                  nodesById=${nodesById}
+                  onPick=${pick}
+                  catColor=${catColor}
+                  mono=${mono}
+                />
+
+                <div class="map__level2-info">
+                  <div class="map__detail-kind">
+                    <span class="map__pw-swatch" style=${{ background: catColor(hueOf(detail.id)) }}></span>
+                    ${detail.kind} · ${detail.category}${detail.route && html` · ${detail.route}`}
+                  </div>
+                  <div class="map__detail-title">${detail.label}</div>
+                  <p class="map__detail-desc">${detail.desc}</p>
+
+                  ${detail.doseResponseEdges.length > 0 && html`<${DoseResponsePanel} entries=${detail.doseResponseEdges} />`}
+
+                  ${detail.compounds.length > 0 &&
+                  detail.kind === "pathway" &&
+                  html`
+                    <p class="map__detail-goal-hint">Reverse lookup: every compound that hits this pathway, grouped by direction, with its source.</p>
+                    ${["activates", "inhibits"].map((t) => {
+                      const list = detail.compounds.filter((c) => c.type === t);
+                      if (!list.length) return null;
+                      return html`
+                        <div class="map__detail-section-label">${t === "activates" ? "Activates this" : "Inhibits this"} (${list.length})</div>
+                        <div class="map__detail-links">
+                          ${list.map(
+                            (c) => html`
+                              <button
+                                key=${c.otherId}
+                                class="map__detail-link"
+                                style=${{ "--card-color": catColor(hueOf(c.otherId)) }}
+                                onClick=${() => pick("compound", c.otherId)}
+                              >
+                                <span class="map__detail-link-kind">compound</span>
+                                <span class="map__detail-link-label">${shortLabel(labelOf(c.otherId))}</span>
+                                <span class="map__detail-link-note">${c.note}</span>
+                                ${citationRow(c)}
+                              </button>
+                            `
+                          )}
+                        </div>
+                      `;
+                    })}
+                  `}
+                  ${detail.compounds.length > 0 &&
+                  detail.kind !== "pathway" &&
+                  html`
+                    <div class="map__detail-section-label">Connected compounds</div>
+                    <div class="map__detail-links">
+                      ${detail.compounds.map(
+                        (c) => html`
+                          <button
+                            key=${c.otherId}
+                            class="map__detail-link"
+                            style=${{ "--card-color": catColor(hueOf(c.otherId)) }}
+                            onClick=${() => pick("compound", c.otherId)}
+                          >
+                            <span class=${`map__detail-type map__detail-type--${c.type}`}>${c.verb}</span>
+                            <span class="map__detail-link-label">${shortLabel(labelOf(c.otherId))}</span>
+                            <span class="map__detail-link-note">${c.note}</span>
+                            ${citationRow(c)}
+                          </button>
+                        `
+                      )}
+                    </div>
+                  `}
+                  ${detail.kind === "goal" &&
+                  html`
+                    <p class="map__detail-goal-hint">
+                      The curated pathways behind this outcome, split by direction. Everything below is
+                      outcome-level physiology rather than a single-study claim -- open a pathway for its
+                      compound-level evidence and citations.
+                    </p>
+                    ${[
+                      ["drives", "Drives this"],
+                      ["limits", "Limits this"],
+                    ].map(([t, heading]) => {
+                      const list = detail.pathways.filter((p) => p.type === t);
+                      if (!list.length) return null;
+                      return html`
+                        <div key=${t} class="map__detail-section-label">${heading} (${list.length})</div>
+                        <div class="map__detail-links">
+                          ${list.map(
+                            (p) => html`
+                              <button
+                                key=${p.otherId}
+                                class="map__detail-link"
+                                style=${{ "--card-color": catColor(hueOf(p.otherId)) }}
+                                onClick=${() => pick("pathway", p.otherId)}
+                              >
+                                <span class=${`map__detail-type map__detail-type--${t === "drives" ? "activates" : "inhibits"}`}>
+                                  ${t}
+                                </span>
+                                <span class="map__detail-link-label">${shortLabel(labelOf(p.otherId))}</span>
+                                <span class="map__detail-link-note">${p.note}</span>
+                              </button>
+                            `
+                          )}
+                        </div>
+                      `;
+                    })}
+
+                    ${detail.derivedCompounds.length > 0 &&
+                    html`
+                      <div class="map__detail-section-label">
+                        Compounds that reach this goal (${detail.derivedCompounds.length})
+                      </div>
+                      <p class="map__detail-goal-hint">
+                        Derived, not curated: every compound with a mechanism edge into one of the pathways above.
+                        "Supportive" means the signs multiply out in the goal's favour -- inhibiting a pathway that
+                        limits the goal counts as supportive. Direction is not a dose, a recommendation, or evidence
+                        of a net clinical effect.
+                      </p>
+                      <div class="map__detail-links">
+                        ${(showAllGoalCompounds ? detail.derivedCompounds : detail.derivedCompounds.slice(0, GOAL_COMPOUND_PREVIEW)).map(
+                          (c) => html`
+                            <button
+                              key=${c.otherId}
+                              class="map__detail-link"
+                              style=${{ "--card-color": catColor(hueOf(c.otherId)) }}
+                              onClick=${() => pick("compound", c.otherId)}
+                            >
+                              <span
+                                class=${`map__detail-type map__detail-type--${
+                                  c.net > 0 ? "activates" : c.net < 0 ? "inhibits" : "crosstalk"
+                                }`}
+                              >
+                                ${c.net > 0 ? "supportive" : c.net < 0 ? "opposing" : "mixed"}
+                              </span>
+                              <span class="map__detail-link-label">${shortLabel(labelOf(c.otherId))}</span>
+                              <span class="map__detail-link-note">
+                                via ${c.routes.map((r) => shortLabel(labelOf(r.pathwayId))).join(", ")}
+                              </span>
+                            </button>
+                          `
+                        )}
+                      </div>
+                      ${detail.derivedCompounds.length > GOAL_COMPOUND_PREVIEW &&
+                      html`
+                        <button class="map__detail-more" onClick=${() => setShowAllGoalCompounds((v) => !v)}>
+                          ${showAllGoalCompounds
+                            ? "Show top 12 only"
+                            : `Show all ${detail.derivedCompounds.length} (weaker single-pathway links)`}
+                        </button>
+                      `}
+                    `}
+                  `}
+
+                  ${detail.goals.length > 0 &&
+                  html`
+                    <div class="map__detail-section-label">Goals this feeds (${detail.goals.length})</div>
+                    <div class="map__detail-links">
+                      ${detail.goals.map(
+                        (g) => html`
+                          <button
+                            key=${g.otherId}
+                            class="map__detail-link"
+                            style=${{ "--card-color": catColor(hueOf(g.otherId)) }}
+                            onClick=${() => pick("goal", g.otherId)}
+                          >
+                            <span class=${`map__detail-type map__detail-type--${g.type === "drives" ? "activates" : "inhibits"}`}>
+                              ${g.verb}
+                            </span>
+                            <span class="map__detail-link-label">${shortLabel(labelOf(g.otherId))}</span>
+                            <span class="map__detail-link-note">${g.note}</span>
+                          </button>
+                        `
+                      )}
+                    </div>
+                  `}
+
+                  ${detail.pathways.length > 0 &&
+                  detail.kind !== "goal" &&
+                  html`
+                    <div class="map__detail-section-label">Connected pathways</div>
+                    <div class="map__detail-links">
+                      ${detail.pathways.map(
+                        (p) => html`
+                          <button
+                            key=${p.otherId}
+                            class="map__detail-link"
+                            style=${{ "--card-color": catColor(hueOf(p.otherId)) }}
+                            onClick=${() => pick("pathway", p.otherId)}
+                          >
+                            <span class="map__pw-swatch" style=${{ background: catColor(hueOf(p.otherId)) }}></span>
+                            <span class="map__detail-link-label">${p.verb} ${shortLabel(labelOf(p.otherId))}</span>
+                            <span class="map__detail-link-note">${p.note}</span>
+                            ${citationRow(p)}
+                          </button>
+                        `
+                      )}
+                    </div>
+                  `}
+                  ${detail.compounds.length === 0 &&
+                  detail.pathways.length === 0 &&
+                  detail.goals.length === 0 &&
+                  html`<p class="map__detail-empty">No curated connections yet.</p>`}
+                </div>
+              </div>
+            `}
+      </div>
+    </div>
+  `;
+}
+

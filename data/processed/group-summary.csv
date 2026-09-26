@@ -1,0 +1,19 @@
+group,group_label,cluster,substances
+steroids,Anabolic Steroids,Androgens SARMs and PCT,66
+sarms,SARMs,Androgens SARMs and PCT,20
+pct,"SERMs, AIs & Antiandrogens",Androgens SARMs and PCT,101
+gh,GH & Secretagogues,Growth Hormone and Peptide Agents,42
+peptides,Peptides,Growth Hormone and Peptide Agents,89
+glp1,GLP-1 & Body,Metabolic and Incretin Agents,63
+fgfr,FGFR3 & Growth Plate,Growth Hormone and Peptide Agents,12
+ancillary,Ancillaries & Support,Ancillary Supplements and Topicals,1223
+longevity,Longevity & Metabolic,Longevity and Experimental Compounds,254
+nootropic,Nootropics & Cognition,Nootropics,68
+antiinfective,Anti-infectives,General Pharmacology,133
+immunology,Immunology & Biologics,General Pharmacology,56
+cardio,Cardiovascular,Cardiovascular and Lipid Agents,28
+neuropsych,Neurology & Psychiatry,Nootropics,60
+analgesia,Analgesia & Anaesthesia,General Pharmacology,39
+gi,Gastrointestinal & Hepatic,General Pharmacology,20
+derm,Dermatology & Topicals,Ancillary Supplements and Topicals,23
+oncology,Oncology & Cytotoxics,General Pharmacology,54

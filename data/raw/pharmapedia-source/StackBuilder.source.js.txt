@@ -1,0 +1,1248 @@
+import { html, React } from "../html.js";
+import { COMPOUND_INFO } from "./FilterPanel.js";
+
+const { useEffect, useRef, useState } = React;
+
+const PRESET_COLLECTIONS = [
+  { id: "all", label: "All stacks" },
+  { id: "performance", label: "Performance" },
+  { id: "metabolic", label: "Metabolic" },
+  { id: "mind", label: "Focus & sleep" },
+  { id: "skin", label: "Skin & hair" },
+  { id: "height", label: "Height — Hypothetical" },
+  { id: "longevity", label: "Longevity & bone" },
+  { id: "wellness", label: "Everyday wellness" },
+];
+
+function presetCollection(preset) {
+  const text = `${preset.id} ${preset.label}`.toLowerCase();
+  if (/(height|growth-plate|fgfr|achondro|gh-axis|growth-hormone|secretagogue|somatropin)/.test(text)) return "height";
+  if (/(hair|skin|acne|pigment|barrier)/.test(text)) return "skin";
+  if (/(focus|wake|cholinergic|all-nighter|stimulant|racetam|adaptogen|sleep)/.test(text)) return "mind";
+  if (/(weight|diabetes|lipid|blood-pressure|glucose|glp1)/.test(text)) return "metabolic";
+  if (/(longevity|senolytic|nad-|growth-plate|fgfr|bone|pth-|antiresorptive)/.test(text)) return "longevity";
+  if (/(trt|cycle|bulk|contest|19-nor|oral-only|blast|sarm|gh-axis|pump|training|lean-mass|organ-support|cardio-repair)/.test(text)) return "performance";
+  return "wellness";
+}
+
+// Starting points for the Stack Builder.
+//
+// Why these exist: the builder opened on an empty dropzone and a 463-item
+// palette, which is the worst possible first screen for the question it
+// actually answers ("what happens when these are taken together"). You can't
+// see an overlap until you've already guessed which compounds overlap. Every
+// preset here is a combination that is genuinely common in the literature or
+// in practice, chosen so that loading it immediately shows something the
+// per-compound pages cannot: a shared pathway, a risk axis nothing in the
+// stack covers, or a mitigator the graph can actually suggest.
+//
+// These are reference combinations, NOT recommendations and not protocols --
+// there are no doses here on purpose. Several are included precisely because
+// they score badly (see `oral-only` and `blast`); a preset list that only held
+// sensible stacks would be a worse teaching tool than one that lets you load
+// the common mistake and watch the risk panel react.
+//
+// Every id must exist in interactions.json, or the compound will be silently
+// dropped at load time (see resolvePreset below) rather than reaching
+// COMPOUND_INFO lookups that assume presence. Order within `compounds` is the
+// order they land in the stack, so the primary compound goes first.
+export const STACK_PRESETS = [
+  {
+    id: "trt-baseline",
+    label: "TRT baseline",
+    blurb: "Replacement dose testosterone with hCG to keep testicular function and an AI for estrogen control.",
+    teaches: "The AI raises LH in a eugonadal man but cannot restore it under exogenous testosterone — the risk panel caps how far anything here offsets HPTA suppression.",
+    compounds: ["testosterone-compound", "hcg-compound", "anastrozole-compound"],
+  },
+  {
+    id: "first-cycle",
+    label: "First cycle + PCT",
+    blurb: "Testosterone alone, with the two SERMs used afterwards to restart the axis.",
+    teaches: "PCT is sequential, not concurrent — the SERMs are loaded here so you can see where they land on the same pathways, not because they are taken alongside.",
+    compounds: ["testosterone-compound", "tamoxifen-compound", "clomiphene-compound"],
+  },
+  {
+    id: "classic-bulk",
+    label: "Classic bulk",
+    blurb: "Testosterone with an oral kickstart, an AI, and the two liver ancillaries usually run with it.",
+    teaches: "Two hepatic pathways loaded at once, with TUDCA and NAC surfacing as real curated counter-levers rather than as an assumption.",
+    compounds: ["testosterone-compound", "methandienone-compound", "anastrozole-compound", "tudca-compound", "nac-compound"],
+  },
+  {
+    id: "contest-prep",
+    label: "Cutting / contest prep",
+    blurb: "The dry-physique combination: testosterone, masteron, anavar and a steroidal AI.",
+    teaches: "Three compounds pushing aromatase the same way plus an AI on top — over-suppression of estrogen has its own bone and lipid cost, and the panel shows which axis pays it.",
+    compounds: ["testosterone-compound", "drostanolone-compound", "oxandrolone-compound", "exemestane-compound"],
+  },
+  {
+    id: "nandrolone-joint",
+    label: "19-nor mass stack",
+    blurb: "Testosterone and deca, with cabergoline and an AI for the progestogenic side.",
+    teaches: "Prolactin is a tracked risk pathway, and this is the stack where it actually fires — cabergoline is in the graph as the compound that opposes it.",
+    compounds: ["testosterone-compound", "nandrolone-compound", "cabergoline-compound", "anastrozole-compound"],
+  },
+  {
+    id: "oral-only",
+    label: "Oral-only (the common mistake)",
+    blurb: "Two 17-alpha-alkylated orals with no testosterone base, plus the usual support stack.",
+    teaches: "Loaded deliberately: orals with no injectable base suppress the axis just as hard while concentrating the liver and HDL load. Watch how little of that the support column actually offsets.",
+    compounds: ["stanozolol-compound", "oxandrolone-compound", "tudca-compound", "nac-compound", "milk-thistle-compound", "omega-3-compound"],
+  },
+  {
+    id: "blast",
+    label: "Heavy blast",
+    blurb: "Testosterone, trenbolone and anadrol together — the top end of what gets run.",
+    teaches: "Every hepatic, lipid and cardiovascular axis loads at once — eight of them flagged together — and the mitigation cap is what stops the two ancillaries from reading as a fix.",
+    compounds: ["testosterone-compound", "trenbolone-compound", "oxymetholone-compound", "anastrozole-compound", "tudca-compound"],
+  },
+  {
+    id: "sarm-recomp",
+    label: "SARM recomp",
+    blurb: "Ostarine and ligandrol with cardarine, the standard three-compound research-chemical stack.",
+    teaches: "Cardarine is a PPAR-delta agonist, not a SARM — the graph separates them even though vendors do not, and the androgen-receptor edges show which two are actually doing the same thing.",
+    compounds: ["ostarine-compound", "ligandrol-compound", "cardarine-compound"],
+  },
+  {
+    id: "gh-peptides",
+    label: "GH axis",
+    blurb: "CJC-1295 with ipamorelin, plus oral MK-677 — a GHRH analogue and two ghrelin-receptor agonists.",
+    teaches: "Two of these three hit the same receptor. Shared-pathway overlap here means redundancy rather than additive effect, which is the opposite of how the combination is usually sold.",
+    compounds: ["cjc1295-compound", "ipamorelin-compound", "ibutamoren-compound"],
+  },
+  {
+    id: "glp1-fatloss",
+    label: "GLP-1 fat loss",
+    blurb: "Semaglutide with metformin and creatine to hold onto lean mass through the deficit.",
+    teaches: "Two compounds converging on insulin signalling from different directions, and the muscle-preservation question a GLP-1 alone does not answer.",
+    compounds: ["semaglutide-compound", "metformin-compound", "creatine-compound"],
+  },
+  {
+    id: "hairline",
+    label: "Hairline defense",
+    blurb: "Finasteride and minoxidil with the two scalp adjuncts that have real controlled trials behind them.",
+    teaches: "Four different mechanisms against one outcome — 5-alpha-reductase, follicular perfusion, scalp inflammation and microflora — rather than four versions of the same one.",
+    compounds: ["finasteride-compound", "minoxidil-compound", "ketoconazole-shampoo-compound", "rosemary-oil-compound"],
+  },
+  {
+    id: "skin-topical",
+    label: "Topical skin routine",
+    blurb: "Retinol, niacinamide, ceramides and astaxanthin — the evidence-backed core of a routine.",
+    teaches: "Collagen synthesis, barrier lipids, pigment transfer and photoprotection are four separate pathways; this is what a stack looks like when the compounds genuinely do not overlap.",
+    compounds: ["retinol-compound", "niacinamide-compound", "ceramide-compound", "astaxanthin-compound"],
+  },
+  {
+    id: "organ-support",
+    label: "Cycle support column",
+    blurb: "The ancillary stack on its own: liver, lipid, blood pressure and oxidative-stress cover.",
+    teaches: "Load this by itself to see what the support column actually covers, then add an oral on top and watch how much of the new load it does not reach.",
+    compounds: ["tudca-compound", "nac-compound", "milk-thistle-compound", "omega-3-compound", "citrus-bergamot-compound", "taurine-compound", "magnesium-compound"],
+  },
+  {
+    id: "cardio-repair",
+    label: "Cardiovascular cleanup",
+    blurb: "The prescription side of managing what a long run costs: blood pressure, lipids and endothelial function.",
+    teaches: "Blood pressure and endothelial nitric oxide are tracked as separate axes on purpose — nebivolol and telmisartan do not cover the same ground, and the panel shows where each lands.",
+    compounds: ["telmisartan-compound", "nebivolol-compound", "ezetimibe-compound", "citrus-bergamot-compound", "omega-3-compound"],
+  },
+  {
+    id: "growth-plate",
+    label: "Growth plate (open plates only)",
+    blurb: "Vosoritide with a long-acting growth hormone — the real clinical pairing in achondroplasia.",
+    teaches: "Nothing here does anything after epiphyseal fusion. Both are prescription rare-disease drugs, included because the height pathways in this graph are otherwise all theory.",
+    compounds: ["vosoritide-compound", "lonapegsomatropin-compound"],
+  },
+  {
+    id: "clinical-weight-loss",
+    label: "Metabolic weight-loss clinic",
+    blurb: "Tirzepatide, metformin and psyllium across appetite, glucose and fibre-mediated satiety pathways.",
+    teaches: "More glucose-lowering mechanisms are not automatically better. This comparison exposes overlapping gastrointestinal and glycaemic burdens; it is not a prescription combination.",
+    compounds: ["tirzepatide-compound", "metformin-compound", "psyllium-compound"],
+  },
+  {
+    id: "diabetes-cardiorenal",
+    label: "Diabetes + cardiorenal",
+    blurb: "Metformin, empagliflozin and telmisartan — metabolic, urinary-glucose and renin–angiotensin levers.",
+    teaches: "The graph separates their targets while surfacing dehydration, renal and blood-pressure considerations that isolated compound pages can hide.",
+    compounds: ["metformin-compound", "empagliflozin-compound", "telmisartan-compound"],
+  },
+  {
+    id: "lipid-clinic",
+    label: "Lipid-lowering clinic",
+    blurb: "Rosuvastatin, ezetimibe and omega-3 — synthesis, absorption and triglyceride pathways side by side.",
+    teaches: "LDL and triglycerides are not interchangeable outcomes. The clinical comparison shows the different part of the lipid panel each agent targets.",
+    compounds: ["rosuvastatin-compound", "ezetimibe-compound", "omega-3-compound"],
+  },
+  {
+    id: "blood-pressure-clinic",
+    label: "Blood-pressure clinic",
+    blurb: "Telmisartan, amlodipine and nebivolol — three prescription classes with different haemodynamic targets.",
+    teaches: "Included to compare mechanisms, not suggest self-treatment. The overlap makes the need for blood-pressure and heart-rate monitoring explicit.",
+    compounds: ["telmisartan-compound", "amlodipine-compound", "nebivolol-compound"],
+  },
+  {
+    id: "endothelial-performance",
+    label: "Endothelial / pump stack",
+    blurb: "Citrulline, creatine nitrate and tadalafil converging on nitric-oxide signalling.",
+    teaches: "Different routes can end at vasodilation. The shared pathway reveals redundancy and hypotension risk rather than presenting three isolated benefits.",
+    compounds: ["citrulline-compound", "creatine-nitrate-compound", "tadalafil-compound"],
+  },
+  {
+    id: "training-performance",
+    label: "Training performance basics",
+    blurb: "Creatine, beta-alanine and citrulline malate — strength, buffering and blood-flow mechanisms.",
+    teaches: "A relatively low-overlap example: each compound targets a different performance limitation, in contrast to receptor-redundant stacks.",
+    compounds: ["creatine-compound", "beta-alanine-compound", "citrulline-malate-compound"],
+  },
+  {
+    id: "lean-mass-preservation",
+    label: "Lean-mass preservation",
+    blurb: "Creatine, leucine and HMB focused on training capacity and muscle-protein turnover.",
+    teaches: "Leucine and its metabolite HMB overlap while creatine largely does not; mechanistic overlap should not be mistaken for proven additive benefit.",
+    compounds: ["creatine-compound", "leucine-compound", "hmb-compound"],
+  },
+  {
+    id: "focus-workday",
+    label: "Focus workday",
+    blurb: "The everyday nootropic stack: caffeine and theanine for arousal, a choline donor, plus tyrosine and creatine.",
+    teaches: "Three of these converge on the same attention pathway, so the stack is less additive than it looks. The interesting split is the other two: tyrosine and creatine both land on working memory, and both only have evidence under depletion \u2014 sleep loss, stress, cold. In a rested person their trials are null. Load it and read which claims are conditional.",
+    compounds: ["caffeine-compound", "theanine-compound", "citicoline-compound", "l-tyrosine-compound", "creatine-compound"],
+  },
+  {
+    id: "wakefulness-overlap",
+    label: "Wakefulness overload",
+    blurb: "Modafinil, caffeine and alpha-GPC loaded deliberately as a high-arousal caution example.",
+    teaches: "Not a recommendation: two of these suppress sleep continuity and raise vigilance through entirely separate receptors, so the arousal adds while the sleep debt compounds. Modafinil occupies roughly half of striatal dopamine transporter at normal doses \u2014 the finding that complicates its reputation for having no abuse liability.",
+    compounds: ["modafinil-compound", "caffeine-compound", "alpha-gpc-compound"],
+  },
+  {
+    id: "cholinergic-overshoot",
+    label: "Cholinergic overshoot",
+    blurb: "Three choline donors stacked with two acetylcholinesterase inhibitors \u2014 a deliberately bad combination.",
+    teaches: "The clearest push-from-both-ends case in the graph. Alpha-GPC, citicoline and huperzine all raise acetylcholine supply while huperzine and donepezil block the enzyme that clears it. Supply and degradation are opposite nodes, and loading both is where the classic cholinergic headache, nausea and muscle tension come from.",
+    compounds: ["alpha-gpc-compound", "citicoline-compound", "huperzine-a-compound", "donepezil-compound"],
+  },
+  {
+    id: "all-nighter",
+    label: "All-nighter",
+    blurb: "Modafinil, caffeine, tyrosine and creatine \u2014 the compounds with genuine sleep-deprivation evidence.",
+    teaches: "Unusual among these presets in that the evidence mostly holds: every compound here has randomised data in sleep-deprived or acutely stressed people. That is also the catch. Creatine improves cognition under sleep deprivation and does nothing in rested young adults; tyrosine works in cadets on a combat course and not at a desk. This stack buys back a deficit rather than raising a ceiling.",
+    compounds: ["modafinil-compound", "caffeine-compound", "l-tyrosine-compound", "creatine-compound"],
+  },
+  {
+    id: "stimulant-plus-caffeine",
+    label: "Prescription stimulant + coffee",
+    blurb: "Methylphenidate with the caffeine most people keep drinking on top of it.",
+    teaches: "The most common real-world stack in this section and the one least often examined. Both compounds land on attention, blood pressure and sleep continuity, so the cardiovascular and insomnia costs add while the attentional benefit largely does not \u2014 methylphenidate's own effect in healthy adults is only SMD 0.21.",
+    compounds: ["methylphenidate-compound", "caffeine-compound", "theanine-compound"],
+  },
+  {
+    id: "racetam-classic",
+    label: "Classic racetam stack",
+    blurb: "Piracetam, aniracetam and oxiracetam with a choline donor, the way the family is usually run.",
+    teaches: "The racetams do have a real molecular target: crystallography places piracetam and aniracetam at a specific AMPA receptor dimer interface. What they have never had is a controlled trial showing that occupying it improves cognition in a healthy person. The choline is conventionally added for the headache rather than for the benefit.",
+    compounds: ["piracetam-compound", "aniracetam-compound", "oxiracetam-compound", "alpha-gpc-compound"],
+  },
+  {
+    id: "herbal-adaptogen",
+    label: "Herbal adaptogen column",
+    blurb: "Bacopa, rhodiola, ashwagandha and theanine \u2014 the botanical half of the nootropic shelf.",
+    teaches: "All three adaptogens converge on the same two pathways, and neither is cognition: they land on perceived fatigue and on the cortisol axis. That is the honest shape of this evidence. The largest recent bacopa trial missed all three of its cognitive primary endpoints and found effects only on self-reported stress and fatigue.",
+    compounds: ["bacopa-monnieri-compound", "rhodiola-compound", "ashwagandha-compound", "theanine-compound"],
+  },
+  {
+    id: "sleep-foundation",
+    label: "Sleep foundation",
+    blurb: "Melatonin, magnesium and glycine across circadian, mineral and thermoregulatory pathways.",
+    teaches: "Commonly bundled aids do not have equal evidence or the same target. Circadian timing remains distinct from general sedation.",
+    compounds: ["melatonin-oral-compound", "magnesium-compound", "glycine-compound"],
+  },
+  {
+    id: "joint-support",
+    label: "Joint-support column",
+    blurb: "Glucosamine, chondroitin, MSM and boswellia — cartilage substrates and inflammatory signalling.",
+    teaches: "The stack distinguishes symptom-oriented effects from claims of structural cartilage repair, where evidence is more contested.",
+    compounds: ["glucosamine-compound", "chondroitin-compound", "msm-compound", "boswellia-compound"],
+  },
+  {
+    id: "inflammation-support",
+    label: "Inflammation support",
+    blurb: "Curcumin phytosome, boswellia and omega-3 spanning several inflammatory mediators.",
+    teaches: "Multiple anti-inflammatory signals can share bleeding and interaction concerns; pathway coverage does not guarantee clinical benefit.",
+    compounds: ["curcumin-phytosome-compound", "boswellia-compound", "omega-3-compound"],
+  },
+  {
+    id: "longevity-mtor",
+    label: "Longevity signalling (research)",
+    blurb: "Rapamycin, metformin and acarbose — the high-profile mTOR, AMPK and post-meal glucose trio.",
+    teaches: "A research comparison, not a protocol. Human longevity evidence is incomplete while immunologic, metabolic and gastrointestinal harms are real.",
+    compounds: ["rapamycin-compound", "metformin-compound", "acarbose-compound"],
+  },
+  {
+    id: "senolytic-hypothesis",
+    label: "Senolytic hypothesis",
+    blurb: "Fisetin and quercetin with spermidine, grouping biologically different longevity candidates.",
+    teaches: "Cell and animal mechanisms should not be displayed as demonstrated human rejuvenation; the evidence tiers make that gap visible.",
+    compounds: ["fisetin-compound", "quercetin-compound", "spermidine-compound"],
+  },
+  {
+    id: "nad-signalling",
+    label: "NAD / stress-response",
+    blurb: "Nicotinamide riboside, resveratrol and alpha-ketoglutarate across nutrient-sensing claims.",
+    teaches: "Biomarker movement is not the same as a meaningful health outcome. This compares mechanisms without upgrading preliminary evidence.",
+    compounds: ["nicotinamide-riboside-compound", "resveratrol-compound", "alpha-ketoglutarate-compound"],
+  },
+  {
+    id: "acne-topical",
+    label: "Acne topical routine",
+    blurb: "Adapalene, benzoyl peroxide, azelaic acid and niacinamide across comedones, bacteria, pigment and barrier support.",
+    teaches: "A multi-mechanism routine can fail through irritation. Adding every active at once is not the same as sequencing a tolerable regimen.",
+    compounds: ["adapalene-compound", "benzoyl-peroxide-compound", "azelaic-acid-compound", "niacinamide-compound"],
+  },
+  {
+    id: "pigmentation-topical",
+    label: "Pigmentation routine",
+    blurb: "Tretinoin, azelaic acid, tranexamic acid and arbutin targeting turnover and melanin pathways.",
+    teaches: "Different pigment mechanisms carry overlapping irritation potential. This maps evidence and risk, not instructions to start four actives together.",
+    compounds: ["tretinoin-compound", "azelaic-acid-compound", "tranexamic-acid-compound", "arbutin-compound"],
+  },
+  {
+    id: "barrier-repair",
+    label: "Barrier-repair routine",
+    blurb: "Ceramides, hyaluronic acid and niacinamide focused on water retention and barrier lipids.",
+    teaches: "A conservative topical example with complementary barrier mechanisms and no dependence on aggressive exfoliation.",
+    compounds: ["ceramide-compound", "hyaluronic-acid-compound", "niacinamide-compound"],
+  },
+  {
+    id: "skin-peptides",
+    label: "Skin peptide comparison",
+    blurb: "GHK-Cu, Matrixyl and vitamin C grouped around extracellular-matrix and collagen claims.",
+    teaches: "Peptide marketing often outruns trials. Evidence tiers separate plausible signalling from demonstrated changes in human skin.",
+    compounds: ["ghkcu-compound", "matrixyl-compound", "vitamin-c-compound"],
+  },
+  {
+    id: "hair-loss-escalation",
+    label: "Hair-loss escalation",
+    blurb: "Dutasteride, minoxidil and ketoconazole shampoo across androgen, growth and scalp pathways.",
+    teaches: "A stronger 5-alpha-reductase inhibitor is not simply more finasteride; systemic exposure and side-effect tradeoffs remain visible.",
+    compounds: ["dutasteride-compound", "minoxidil-compound", "ketoconazole-shampoo-compound"],
+  },
+  {
+    id: "hairline-adjuncts",
+    label: "Hairline adjuncts",
+    blurb: "Rosemary oil, pumpkin-seed oil, saw palmetto and ketoconazole shampoo — the non-prescription side.",
+    teaches: "The evidence comparison prevents weak adjunct data from being displayed as equivalent to established prescription treatments.",
+    compounds: ["rosemary-oil-compound", "pumpkin-seed-oil-compound", "saw-palmetto-compound", "ketoconazole-shampoo-compound"],
+  },
+  {
+    id: "antioxidant-network",
+    label: "Antioxidant network",
+    blurb: "NAC, alpha-lipoic acid and CoQ10 across glutathione, redox recycling and mitochondrial transport.",
+    teaches: "Antioxidant is not one mechanism, and more is not universally better. Surrogate endpoints remain clearly separated from outcomes.",
+    compounds: ["nac-compound", "alpha-lipoic-acid-compound", "coq10-compound"],
+  },
+  {
+    id: "glucose-nonprescription",
+    label: "Glucose support (non-Rx)",
+    blurb: "Berberine, psyllium and alpha-lipoic acid targeting absorption, satiety and insulin-related signalling.",
+    teaches: "Supplement does not mean interaction-free. Additive glucose lowering and gastrointestinal effects remain visible without presenting treatment advice.",
+    compounds: ["berberine-compound", "psyllium-compound", "alpha-lipoic-acid-compound"],
+  },
+  {
+    id: "fgfr3-growth-research",
+    label: "FGFR3 growth research map",
+    blurb: "Vosoritide, recifercept and infigratinib — downstream CNP signalling, ligand trapping and kinase inhibition.",
+    teaches: "Three distinct attempts to reduce overactive FGFR3 output in achondroplasia. Both vosoritide and infigratinib now have phase-3 growth-velocity evidence; this remains a mechanism comparison, not evidence for combining them.",
+    compounds: ["vosoritide-compound", "recifercept-compound", "infigratinib-compound"],
+  },
+  {
+    id: "hypothetical-height-gh-axis",
+    label: "Hypothetical height: GH axis",
+    blurb: "Somatropin, GHRP-2 and sermorelin compared across direct GH replacement, ghrelin-receptor signalling and GHRH signalling.",
+    teaches: "A hypothetical pathway overlay, not a regimen. GHRP-2 and sermorelin stimulate endogenous GH through different receptors, while somatropin bypasses both; stacking all three has no trial evidence for additional adult height and cannot work after epiphyseal fusion.",
+    compounds: ["somatropin-compound", "ghrp2-compound", "sermorelin-compound"],
+  },
+  {
+    id: "hypothetical-height-fgfr3-gh",
+    label: "Hypothetical height: FGFR3 + GH",
+    blurb: "Infigratinib and vosoritide beside somatropin — receptor inhibition, downstream CNP antagonism and systemic GH/IGF-1 signalling.",
+    teaches: "Research comparison only. Infigratinib's biochemical FGFR3 IC50 is about 1 nM: under a simple Hill model, free concentration equal to IC50 implies 50% inhibition and 10× IC50 implies about 91%. That is not a dose prediction; protein binding, tissue exposure, ATP concentration and the FGFR3 variant can shift cellular and in-vivo inhibition substantially.",
+    compounds: ["infigratinib-compound", "vosoritide-compound", "somatropin-compound"],
+  },
+  {
+    id: "height-long-acting-gh-comparison",
+    label: "Long-acting GH comparison",
+    blurb: "Somatropin, lonapegsomatropin and somatrogon compared as daily and long-acting growth-hormone approaches.",
+    teaches: "A formulation comparison, not a combination. These agents engage the same GH receptor, so loading them together visualizes therapeutic duplication rather than a plausible additive stack.",
+    compounds: ["somatropin-compound", "lonapegsomatropin-compound", "somatrogon-compound"],
+  },
+  {
+    id: "height-secretagogue-comparison",
+    label: "GH secretagogue comparison",
+    blurb: "GHRP-2, ipamorelin, sermorelin and CJC-1295 across ghrelin and GHRH receptor signalling.",
+    teaches: "Several inputs converge on endogenous GH release. The overlap view exposes redundancy and uncertainty; it does not imply that more secretagogues produce more linear growth.",
+    compounds: ["ghrp2-compound", "ipamorelin-compound", "sermorelin-compound", "cjc1295-compound"],
+  },
+  {
+    id: "height-secretagogue-overload",
+    label: "Secretagogue overload",
+    blurb: "CJC-1295, sermorelin, GHRP-2, ipamorelin and MK-677 loaded as a deliberately redundant GH-axis example.",
+    teaches: "This is the caution preset: two GHRH analogues and three ghrelin-receptor approaches repeatedly load the same endocrine axis without evidence of proportional height benefit.",
+    compounds: ["cjc1295-compound", "sermorelin-compound", "ghrp2-compound", "ipamorelin-compound", "ibutamoren-compound"],
+  },
+  {
+    id: "height-open-plate-pathways",
+    label: "Open-plate pathway atlas",
+    blurb: "Somatropin, vosoritide and recifercept placed across systemic GH signalling and two FGFR3-modulating strategies.",
+    teaches: "A mechanism map for open growth plates. It compares pathways studied in different diagnoses and does not establish that combining them is effective or safe.",
+    compounds: ["somatropin-compound", "vosoritide-compound", "recifercept-compound"],
+  },
+  {
+    id: "height-pubertal-ai-research",
+    label: "Pubertal AI research comparison",
+    blurb: "Somatropin beside letrozole and anastrozole to compare the GH axis with experimental attempts to slow estrogen-driven plate maturation.",
+    teaches: "A literature-oriented comparison, not a regimen. Predicted adult height is not achieved adult height, and aromatase inhibition carries bone, lipid and endocrine tradeoffs.",
+    compounds: ["somatropin-compound", "letrozole-compound", "anastrozole-compound"],
+  },
+  {
+    id: "height-fgfr3-direct-vs-indirect",
+    label: "FGFR3: direct vs indirect",
+    blurb: "Infigratinib and TYRA-300 beside vosoritide, contrasting kinase inhibition with downstream CNP/NPR2 signalling.",
+    teaches: "The direct inhibitors are oncology or investigational compounds, while vosoritide works downstream. Shared pathway direction is not evidence that these should be combined.",
+    compounds: ["infigratinib-compound", "tyra300-compound", "vosoritide-compound"],
+  },
+  {
+    id: "fgfr3-multihit",
+    label: "FGFR3 multi-hit pressure",
+    blurb: "Vosoritide with infigratinib, recifercept and a selective FGFR3 research inhibitor to load the same pathway repeatedly.",
+    teaches: "Loaded deliberately to demonstrate the new pressure meter: several negative FGFR3 hits compound visually. It is not evidence that combining them improves growth, and overlapping inhibition can increase toxicity.",
+    compounds: ["vosoritide-compound", "infigratinib-compound", "recifercept-compound", "tyra300-compound"],
+  },
+  {
+    id: "fgfr-oncology-comparison",
+    label: "Direct FGFR inhibitors (oncology)",
+    blurb: "Erdafitinib, futibatinib, pemigatinib and infigratinib compared as direct kinase inhibitors.",
+    teaches: "These are anticancer drugs, not height drugs. The card exists to contrast direct receptor inhibition with vosoritide's downstream CNP/NPR2 mechanism and to surface class toxicities.",
+    compounds: ["erdafitinib-compound", "futibatinib-compound", "pemigatinib-compound", "infigratinib-compound"],
+  },
+  {
+    id: "fgfr3-selective-pipeline",
+    label: "Selective FGFR3 pipeline",
+    blurb: "LOXO-435 and TYRA-300 beside infigratinib — selective research agents versus an older pan-FGFR approach.",
+    teaches: "Selectivity may change off-target burden but does not establish safety or efficacy for skeletal growth. Most evidence here is early-stage or oncology-focused.",
+    compounds: ["loxo435-compound", "tyra300-compound", "infigratinib-compound"],
+  },
+  {
+    id: "pth-analogue-comparison",
+    label: "PTH analogue comparison",
+    blurb: "Teriparatide and abaloparatide — intermittent PTH1-receptor agonism from two approved anabolic osteoporosis drugs.",
+    teaches: "Both push the PTH pathway positive, but they are alternatives rather than a routine combination. The pressure meter shows shared target engagement without claiming additive bone formation.",
+    compounds: ["teriparatide-compound", "abaloparatide-compound"],
+  },
+  {
+    id: "bone-build-preserve",
+    label: "Bone build → preserve",
+    blurb: "Teriparatide with denosumab and alendronate, mapping anabolic treatment against two antiresorptive mechanisms.",
+    teaches: "A sequencing and mechanism preset, not instructions to take all three together. Bone-building gains and post-anabolic antiresorptive preservation answer different clinical questions.",
+    compounds: ["teriparatide-compound", "denosumab-compound", "alendronate-compound"],
+  },
+  {
+    id: "pth-up-down",
+    label: "PTH pathway: up vs down",
+    blurb: "Teriparatide and abaloparatide opposed by calcifediol and paricalcitol on the PTH pathway.",
+    teaches: "The bipolar meter makes context visible: intermittent PTH-receptor agonism for osteoporosis is not the same objective as suppressing elevated PTH in vitamin-D deficiency or kidney disease.",
+    compounds: ["teriparatide-compound", "abaloparatide-compound", "calcifediol-compound", "paricalcitol-compound"],
+  },
+  {
+    id: "antiresorptive-comparison",
+    label: "Antiresorptive comparison",
+    blurb: "Denosumab, alendronate, raloxifene and salmon calcitonin converging on bone-resorption control.",
+    teaches: "Shared RANKL/OPG direction does not make these interchangeable. Potency, discontinuation effects, administration and indication differ substantially.",
+    compounds: ["denosumab-compound", "alendronate-compound", "raloxifene-compound", "calcitonin-salmon-compound"],
+  },
+  {
+    id: "bone-nutrition-basics",
+    label: "Bone nutrition basics",
+    blurb: "Vitamin D, vitamin K2 and magnesium compared across mineral absorption, osteocalcin and skeletal support.",
+    teaches: "Three familiar nutrients reach bone through different mechanisms. The graph also makes clear that correcting a deficiency is not the same claim as improving already-adequate status.",
+    compounds: ["vitamin-d-compound", "vitamin-k2-compound", "magnesium-compound"],
+  },
+  {
+    id: "connective-tissue-basics",
+    label: "Connective-tissue basics",
+    blurb: "Collagen peptides, glycine, vitamin C and copper across substrate supply and collagen cross-linking.",
+    teaches: "Ingredients marketed for the same outcome are not interchangeable: some supply building blocks while others are enzyme cofactors, and evidence strength differs by tissue and endpoint.",
+    compounds: ["collagen-compound", "glycine-compound", "vitamin-c-compound", "copper-compound"],
+  },
+  {
+    id: "recovery-foundation",
+    label: "Recovery foundation",
+    blurb: "Creatine, magnesium, glycine and omega-3 spanning training capacity, sleep and inflammatory signalling.",
+    teaches: "A broad everyday stack with relatively little target redundancy. It is useful for seeing how several modest, distinct mechanisms differ from repeatedly loading one pathway.",
+    compounds: ["creatine-compound", "magnesium-compound", "glycine-compound", "omega-3-compound"],
+  },
+  {
+    id: "cardiovascular-nutrition",
+    label: "Cardiovascular nutrition",
+    blurb: "Potassium, taurine, omega-3 and CoQ10 compared across pressure, lipids and mitochondrial support.",
+    teaches: "Cardiovascular support is not one axis. This separates blood-pressure, triglyceride and energy-metabolism claims while keeping kidney and medication interactions visible.",
+    compounds: ["potassium-compound", "taurine-compound", "omega-3-compound", "coq10-compound"],
+  },
+  // Added 2026-09-03 alongside the mechanism-graph expansion. Each was run
+  // through a shared-pathway check first (CLAUDE.md: "a preset is only as good
+  // as the edges under it"), and the teaches line describes what the map
+  // actually surfaces, not what the combination is supposed to do.
+  {
+    id: "alpha2-axis",
+    label: "Alpha-2 axis, both directions",
+    blurb: "Three alpha-2 agonists and one antagonist loaded together, spanning sedation, blood pressure and prefrontal attention.",
+    teaches: "The clearest single-receptor demonstration on the map: clonidine, guanfacine and dexmedetomidine all activate alpha-2 while yohimbine inhibits it, so the same node carries arrows in both directions and the downstream pressure and lipolysis edges flip with them.",
+    compounds: ["clonidine-compound", "guanfacine-compound", "dexmedetomidine-compound", "yohimbine-compound"],
+  },
+  {
+    id: "cyp3a4-pileup",
+    label: "CYP3A4 pile-up",
+    blurb: "Two azoles, a protease-inhibitor booster and the statin most sensitive to them — every one of them acting on the same clearance enzyme.",
+    teaches: "A deliberately bad combination. Three compounds converge on CYP3A4 and two more on P-glycoprotein, so the map shows an interaction stack rather than a therapeutic one; simvastatin is the substrate that pays for it.",
+    compounds: ["ketoconazole-compound", "posaconazole-compound", "ritonavir-compound", "simvastatin-compound"],
+  },
+  {
+    id: "qt-stack",
+    label: "QT pile-up",
+    blurb: "An SSRI, an antiemetic, an azole and an antipsychotic — four routine drugs that each prolong repolarisation.",
+    teaches: "Three of these land directly on the cardiac potassium channel and none of them is individually alarming. This is what additive hERG risk looks like when every prescriber sees only their own drug.",
+    compounds: ["escitalopram-compound", "ondansetron-compound", "posaconazole-compound", "ziprasidone-compound"],
+  },
+  {
+    id: "serotonin-syndrome",
+    label: "Serotonergic pile-up",
+    blurb: "An SSRI, a serotonergic opioid, a triptan and an MAO-inhibiting antibiotic.",
+    teaches: "Another combination assembled from four separate, individually reasonable prescriptions. The shared serotonin-transporter node is the visible part; linezolid's MAO inhibition is the one that is usually missed.",
+    compounds: ["sertraline-compound", "tramadol-compound", "sumatriptan-compound", "linezolid-compound"],
+  },
+  {
+    id: "parkinsons-core",
+    label: "Parkinson's: levodopa and its three adjuncts",
+    blurb: "Levodopa with a decarboxylase inhibitor, a COMT inhibitor, a dopamine agonist and an MAO-B inhibitor.",
+    teaches: "Every adjunct here exists to protect one molecule. Carbidopa and entacapone sit on the same two nodes as levodopa but with opposite signs, which is what a peripheral-blockade strategy looks like on a map.",
+    compounds: ["levodopa-compound", "carbidopa-compound", "entacapone-compound", "ropinirole-compound", "safinamide-compound"],
+  },
+  {
+    id: "bone-antiresorptive",
+    label: "Bone: four ways to stop resorption",
+    blurb: "Two bisphosphonates, a RANKL antibody, a sclerostin antibody and vitamin D.",
+    teaches: "Four shared pathways, and the interesting one is where they diverge: the bisphosphonates share farnesyl pyrophosphate synthase, denosumab reaches RANKL directly, and only romosozumab is anabolic through Wnt rather than antiresorptive.",
+    compounds: ["alendronate-compound", "zoledronic-acid-compound", "denosumab-compound", "romosozumab-compound", "vitamin-d-compound"],
+  },
+  {
+    id: "t2dm-quad",
+    label: "Type 2 diabetes, four mechanisms",
+    blurb: "Metformin, an SGLT2 inhibitor, a GLP-1 agonist and a thiazolidinedione.",
+    teaches: "Modern combination therapy done deliberately: 25 pathways across four drugs with only three shared nodes. Compare it with the sulfonylurea preset to see the difference between complementary and redundant mechanisms.",
+    compounds: ["metformin-compound", "empagliflozin-compound", "semaglutide-compound", "pioglitazone-compound"],
+  },
+  {
+    id: "statin-fibrate",
+    label: "Residual risk lipid stack",
+    blurb: "A statin with ezetimibe, a fibrate and purified EPA — the combination used when LDL is at target and risk is not.",
+    teaches: "Three shared nodes split cleanly by lipid fraction: the statin and ezetimibe on LDL and synthesis, the fibrate and EPA on triglycerides. It shows why 'lipid lowering' is not one axis.",
+    compounds: ["atorvastatin-compound", "ezetimibe-compound", "fenofibrate-compound", "icosapent-ethyl-compound"],
+  },
+  {
+    id: "cf-modulator",
+    label: "CFTR triple therapy",
+    blurb: "Two correctors and a potentiator, the combination that reaches roughly 90% of people with cystic fibrosis.",
+    teaches: "Three compounds on a single pathway, which is normally a redundancy warning and here is the entire design: the correctors get the channel to the surface and the potentiator opens it, so neither works without the other.",
+    compounds: ["elexacaftor-compound", "tezacaftor-compound", "ivacaftor-compound"],
+  },
+  {
+    id: "attr-amyloid",
+    label: "ATTR: stabilise or silence",
+    blurb: "A transthyretin stabiliser against two RNAi agents aimed at the same protein.",
+    teaches: "Two opposite strategies meeting on one node. Tafamidis holds the tetramer together while patisiran and vutrisiran remove the precursor entirely, so the same pathway carries an activating and an inhibiting arrow for the same clinical goal.",
+    compounds: ["tafamidis-compound", "patisiran-compound", "vutrisiran-compound"],
+  },
+  {
+    id: "sickle-cell",
+    label: "Sickle cell: polymer, adhesion, metabolism",
+    blurb: "Hydroxyurea with an oxygen-affinity modulator, a P-selectin antibody and a pyruvate kinase activator.",
+    teaches: "Four drugs attacking one disease at three different steps. Two share the polymerisation node, crizanlizumab acts only on adhesion, and voxelotor is the cautionary case where a good surrogate did not survive post-marketing data.",
+    compounds: ["hydroxyurea-compound", "voxelotor-compound", "crizanlizumab-compound", "mitapivat-compound"],
+  },
+  {
+    id: "alzheimers-current",
+    label: "Alzheimer's, symptomatic and disease-modifying",
+    blurb: "A cholinesterase inhibitor, an NMDA antagonist and an anti-amyloid antibody.",
+    teaches: "Two symptomatic drugs sharing a cognition node and one antibody that does not touch it at all, landing on amyloid, tau and the blood-brain barrier instead. The separation is the point.",
+    compounds: ["donepezil-compound", "memantine-compound", "lecanemab-compound"],
+  },
+  {
+    id: "mito-support",
+    label: "Mitochondrial support",
+    blurb: "CoQ10, carnitine, a cardiolipin-targeting peptide and methylene blue.",
+    teaches: "Three of these converge on oxidative phosphorylation from genuinely different angles — electron carrier, membrane structure and alternative electron shuttle — while carnitine acts one step earlier at substrate entry.",
+    compounds: ["coq10-compound", "l-carnitine-compound", "ss-31-compound", "methylene-blue-compound"],
+  },
+  {
+    id: "nad-longevity",
+    label: "NAD boosters",
+    blurb: "Two NAD precursors, an NNMT inhibitor and resveratrol.",
+    teaches: "All four are sold on one story and only the sirtuin node is genuinely shared. 5-amino-1MQ reaches NAD from the opposite direction by blocking nicotinamide disposal, and its evidence is entirely rodent.",
+    compounds: ["nmn-compound", "nicotinamide-riboside-compound", "5-amino-1mq-compound", "resveratrol-compound"],
+  },
+  {
+    id: "endurance-banned",
+    label: "Banned endurance stack",
+    blurb: "A PPAR-delta agonist, a carnitine-shuttle inhibitor, an ESA and a beta-2 agonist.",
+    teaches: "Deliberately included as a bad stack. Fourteen pathways and almost no shared targets, so the map looks sparse while the risk panel does not — GW501516 was abandoned for multi-organ carcinogenicity and the ESA edges carry the thrombotic load.",
+    compounds: ["gw501516-compound", "meldonium-compound", "epoetin-alfa-compound", "clenbuterol-compound"],
+  },
+  {
+    id: "peptide-repair",
+    label: "Research-peptide repair stack",
+    blurb: "The three peptides most often sold together for tendon, gut and skin repair.",
+    teaches: "Every edge here is inference or in vitro, and the shared VEGF node is the only place two of them meet. Worth loading precisely to see what a stack looks like when nothing under it is a human trial.",
+    compounds: ["bpc-157-compound", "tb-500-compound", "ghk-cu-compound"],
+  },
+  {
+    id: "melanocortin-tanning",
+    label: "Melanocortin agonists",
+    blurb: "Melanotan II against the two licensed melanocortin drugs derived from the same peptide.",
+    teaches: "Selectivity as a design goal: melanotan II hits MC1R and MC4R together, which is why it tans and causes nausea and erections, while afamelanotide and bremelanotide each keep one half of that.",
+    compounds: ["melanotan-ii-compound", "afamelanotide-compound", "bremelanotide-compound"],
+  },
+  {
+    id: "nitrate-pde5",
+    label: "Nitrate plus PDE5 (contraindicated)",
+    blurb: "An organic nitrate with two PDE5 inhibitors — the classic absolute contraindication.",
+    teaches: "Three compounds converging on the nitric oxide node from both ends of the same second messenger: the nitrate supplies cGMP and the PDE5 inhibitors stop it being degraded. The map shows why this is additive rather than merely concurrent.",
+    compounds: ["isosorbide-mononitrate-compound", "sildenafil-compound", "tadalafil-compound"],
+  },
+  {
+    id: "thyroid-titration",
+    label: "T4, T3 and the conversion step",
+    blurb: "Levothyroxine, liothyronine and selenium, spanning prohormone, active hormone and the deiodinase cofactor.",
+    teaches: "The shared TSH node is why combination therapy is hard to titrate: both hormones suppress the marker used to dose them, and only levothyroxine depends on the deiodinase step selenium supports.",
+    compounds: ["levothyroxine-compound", "liothyronine-compound", "selenium-compound"],
+  },
+  {
+    id: "oncology-cardiotox",
+    label: "Anthracycline and its antidote",
+    blurb: "Doxorubicin and etoposide with dexrazoxane, the agent given to limit cardiac damage.",
+    teaches: "All three meet at topoisomerase II, and dexrazoxane's presence there is the argument: it may protect the heart by inhibiting the same enzyme the cytotoxics poison, not only by chelating iron.",
+    compounds: ["doxorubicin-compound", "etoposide-compound", "dexrazoxane-compound"],
+  },
+];
+
+// A preset only contributes compounds the loaded graph actually has edges for.
+// interactions.json is regenerated by hand-curated batches, so a preset can
+// outlive a compound id; dropping the unknown one keeps the rest of the stack
+// working instead of taking the tab down on a COMPOUND_INFO lookup.
+export function resolvePreset(preset, interactions) {
+  return preset.compounds.filter((id) => interactions[id] && COMPOUND_INFO[id]);
+}
+
+function sameStack(a, b) {
+  return a.length === b.length && a.every((id, i) => id === b[i]);
+}
+
+export function StackPresetBar({ stack, interactions, onLoad, hueOf, catColor }) {
+  const stripRef = useRef(null);
+  const [canGoBack, setCanGoBack] = useState(false);
+  const [canGoForward, setCanGoForward] = useState(false);
+  const [presetQuery, setPresetQuery] = useState("");
+  const [collection, setCollection] = useState("all");
+  const availablePresets = STACK_PRESETS.map((preset) => ({
+    preset,
+    ids: resolvePreset(preset, interactions),
+    collection: presetCollection(preset),
+  })).filter((entry) => entry.ids.length > 1);
+  const normalizedQuery = presetQuery.trim().toLowerCase();
+  const collectionPresets = collection === "all"
+    ? availablePresets
+    : availablePresets.filter((entry) => entry.collection === collection);
+  const presets = normalizedQuery
+    ? collectionPresets.filter(({ preset, ids, collection: presetCollectionId }) =>
+        [preset.label, preset.blurb, preset.teaches, ...ids.map((id) => COMPOUND_INFO[id][0])]
+          .join(" ")
+          .toLowerCase()
+          .includes(normalizedQuery) || PRESET_COLLECTIONS.find((item) => item.id === presetCollectionId)?.label.toLowerCase().includes(normalizedQuery)
+      )
+    : collectionPresets;
+  const presetPages = Array.from({ length: Math.ceil(presets.length / 4) }, (_, index) =>
+    presets.slice(index * 4, index * 4 + 4)
+  );
+
+  function updateNavigation() {
+    const strip = stripRef.current;
+    if (!strip) return;
+    setCanGoBack(strip.scrollLeft > 2);
+    setCanGoForward(strip.scrollLeft + strip.clientWidth < strip.scrollWidth - 2);
+  }
+
+  useEffect(() => {
+    const strip = stripRef.current;
+    if (!strip) return undefined;
+    updateNavigation();
+    strip.addEventListener("scroll", updateNavigation, { passive: true });
+    window.addEventListener("resize", updateNavigation);
+    return () => {
+      strip.removeEventListener("scroll", updateNavigation);
+      window.removeEventListener("resize", updateNavigation);
+    };
+  }, [presets.length]);
+
+  useEffect(() => {
+    const strip = stripRef.current;
+    if (!strip) return;
+    strip.scrollTo({ left: 0, behavior: "smooth" });
+    requestAnimationFrame(updateNavigation);
+  }, [normalizedQuery, collection]);
+
+  function move(direction) {
+    const strip = stripRef.current;
+    if (!strip) return;
+    strip.scrollBy({ left: direction * strip.clientWidth, behavior: "smooth" });
+  }
+
+  function handleStripKeyDown(event) {
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      move(event.key === "ArrowLeft" ? -1 : 1);
+    } else if (event.key === "Home" || event.key === "End") {
+      event.preventDefault();
+      stripRef.current?.scrollTo({
+        left: event.key === "Home" ? 0 : stripRef.current.scrollWidth,
+        behavior: "smooth",
+      });
+    }
+  }
+
+  if (availablePresets.length === 0) return null;
+
+  return html`
+    <div class="stack-presets">
+      <div class="stack-presets__head">
+        <div class="stack-presets__heading">
+          <span class="stack-presets__label">Start from a common stack</span>
+          <span class="stack-presets__note">
+            Reference combinations, not recommendations — no doses, and some are here because they score badly.
+          </span>
+        </div>
+        <div class="stack-presets__nav" aria-label="Navigate common stacks">
+          <label class="stack-presets__search">
+            <input
+              type="search"
+              value=${presetQuery}
+              onInput=${(event) => setPresetQuery(event.target.value)}
+              placeholder="Find a stack…"
+              aria-label="Search common stacks"
+            />
+          </label>
+          <span class="stack-presets__result-count" aria-live="polite">${presets.length}/${availablePresets.length}</span>
+          <button
+            type="button"
+            class="stack-presets__arrow"
+            aria-label="Previous stacks"
+            title="Previous stacks"
+            disabled=${!canGoBack}
+            onClick=${() => move(-1)}
+          >←</button>
+          <button
+            type="button"
+            class="stack-presets__arrow"
+            aria-label="Next stacks"
+            title="Next stacks"
+            disabled=${!canGoForward}
+            onClick=${() => move(1)}
+          >→</button>
+        </div>
+      </div>
+      <div class="stack-presets__collections" aria-label="Filter preset collections">
+        ${PRESET_COLLECTIONS.map((item) => {
+          const count = item.id === "all" ? availablePresets.length : availablePresets.filter((entry) => entry.collection === item.id).length;
+          return html`<button
+            key=${item.id}
+            type="button"
+            class=${collection === item.id ? "is-active" : ""}
+            aria-pressed=${collection === item.id}
+            onClick=${() => setCollection(item.id)}
+          ><span>${item.label}</span><small>${count}</small></button>`;
+        })}
+      </div>
+      <div
+        class=${`stack-presets__strip ${presets.length === 0 ? "stack-presets__strip--empty" : ""}`}
+        ref=${stripRef}
+        tabindex="0"
+        aria-label="Common stack presets. Use left and right arrow keys to navigate."
+        onKeyDown=${handleStripKeyDown}
+      >
+        ${presets.length === 0
+          ? html`<div class="stack-presets__no-results">
+              <b>No matching stacks</b>
+              <span>Try a compound name, goal, or mechanism.</span>
+              <button type="button" onClick=${() => setPresetQuery("")}>Clear search</button>
+            </div>`
+          : presetPages.map((page, pageIndex) => html`
+              <div class="stack-presets__page" key=${pageIndex}>
+                ${page.map(({ preset, ids, collection: presetCollectionId }) => {
+                  const active = sameStack(stack, ids);
+                  const collectionLabel = PRESET_COLLECTIONS.find((item) => item.id === presetCollectionId)?.label;
+                  return html`
+                    <button
+                      key=${preset.id}
+                      class=${`stack-preset ${active ? "stack-preset--active" : ""}`}
+                      onClick=${() => onLoad(ids)}
+                      title=${preset.teaches}
+                    >
+                      <span class="stack-preset__top">
+                        <span><small class=${`stack-preset__kind stack-preset__kind--${presetCollectionId}`}>${collectionLabel}</small><span class="stack-preset__label">${preset.label}</span></span>
+                        <span class="stack-preset__count">${ids.length}</span>
+                      </span>
+                      <span class="stack-preset__blurb">${preset.blurb}</span>
+                      <span class="stack-preset__compounds">
+                        ${ids.map((id) => COMPOUND_INFO[id][0].split(" (")[0]).join(" · ")}
+                      </span>
+                      <span class="stack-preset__lesson"><b>Shows:</b> ${preset.teaches}</span>
+                      <span class="stack-preset__dots">
+                        ${ids.map(
+                          (id) => html`<span
+                            key=${id}
+                            class="stack-preset__dot"
+                            style=${{ background: catColor(hueOf(id)) }}
+                            title=${COMPOUND_INFO[id][0]}
+                          ></span>`
+                        )}
+                      </span>
+                      <span class="stack-preset__load">${active ? "Loaded" : "Load stack"}<span aria-hidden="true">${active ? "✓" : "→"}</span></span>
+                    </button>
+                  `;
+                })}
+              </div>
+            `)}
+      </div>
+    </div>
+  `;
+}
+
+
+// Group E peptide, blend, and accessory catalog. A slash in the supplier list
+// is represented as an unavailable variant rather than silently inventing a price.
+const rows = [["SM5", "Semaglutide", "5 mg", 24, "Weight management"], ["SM10", "Semaglutide", "10 mg", 32, "Weight management"], ["SM15", "Semaglutide", "15 mg", 48, "Weight management"], ["SM20", "Semaglutide", "20 mg", 52, "Weight management"], ["SM30", "Semaglutide", "30 mg", 81, "Weight management"], ["SM40", "Semaglutide", "40 mg", 104, "Weight management"], ["SM50", "Semaglutide", "50 mg", 121, "Weight management"], ["TR2", "Tirzepatide", "2 mg", null, "Weight management"], ["TR5", "Tirzepatide", "5 mg", 25, "Weight management"], ["TR10", "Tirzepatide", "10 mg", 36, "Weight management"], ["TR15", "Tirzepatide", "15 mg", 48, "Weight management"], ["TR20", "Tirzepatide", "20 mg", 64, "Weight management"], ["TR30", "Tirzepatide", "30 mg", 87, "Weight management"], ["TR40", "Tirzepatide", "40 mg", 104, "Weight management"], ["TR50", "Tirzepatide", "50 mg", 133, "Weight management"], ["TR60", "Tirzepatide", "60 mg", 153, "Weight management"], ["TR80", "Tirzepatide", "80 mg", 193, "Weight management"], ["TR100", "Tirzepatide", "100 mg", 231, "Weight management"], ["TR120", "Tirzepatide", "120 mg", 274, "Weight management"], ["RT5", "Retatrutide", "5 mg", 31, "Weight management"], ["RT10", "Retatrutide", "10 mg", 52, "Weight management"], ["RT15", "Retatrutide", "15 mg", 75, "Weight management"], ["RT20", "Retatrutide", "20 mg", 88, "Weight management"], ["RT30", "Retatrutide", "30 mg", 119, "Weight management"], ["RT40", "Retatrutide", "40 mg", 150, "Weight management"], ["RT50", "Retatrutide", "50 mg", 190, "Weight management"], ["RT60", "Retatrutide", "60 mg", 219, "Weight management"], ["RT100", "Retatrutide", "100 mg", 294, "Weight management"], ["RT120", "Retatrutide", "120 mg", 349, "Weight management"], ["MZ5", "Mazdutide", "5 mg", 93, "Weight management"], ["MZ10", "Mazdutide", "10 mg", 167, "Weight management"], ["SUR10", "Survodutide", "10 mg", 225, "Weight management"], ["LIR5", "Liraglutide", "5 mg", 47, "Weight management"], ["LIR10", "Liraglutide", "10 mg", 81, "Weight management"], ["LIR30", "Liraglutide", "30 mg", 225, "Weight management"], ["DUL05", "Dulaglutide", "5 mg", 139, "Weight management"], ["DUL10", "Dulaglutide", "10 mg", 265, "Weight management"], ["CGL2", "Cagrilintide", "2 mg", null, "Weight management"], ["CGL5", "Cagrilintide", "5 mg", 95, "Weight management"], ["CGL10", "Cagrilintide", "10 mg", 175, "Weight management"], ["CS5", "Cagri + Semaglutide", "5 mg", 67, "Weight management"], ["CS10", "Cagri + Semaglutide", "10 mg", 121, "Weight management"], ["CS20", "Cagri + Semaglutide", "20 mg", 202, "Weight management"], ["TRC10", "Cagri + Tirzepatide", "10 mg", 95, "Weight management"], ["TRC20", "Cagri + Tirzepatide", "20 mg", 176, "Weight management"], ["2AD", "AOD9604", "2 mg", null, "Weight management"], ["5AD", "AOD9604", "5 mg", 71, "Weight management"], ["10AD", "AOD9604", "10 mg", 133, "Weight management"], ["FR1", "HGH Fragment 176-191", "1 mg", null, "Weight management"], ["FR2", "HGH Fragment 176-191", "2 mg", 26, "Weight management"], ["FR5", "HGH Fragment 176-191", "5 mg", 49, "Weight management"], ["FR10", "HGH Fragment 176-191", "10 mg", 83, "Weight management"], ["FR12", "HGH Fragment 176-191", "12 mg", 93, "Weight management"], ["FR15", "HGH Fragment 176-191", "15 mg", 139, "Weight management"], ["APT2", "Adipotide / FTTP", "2 mg", 47, "Weight management"], ["APT5", "Adipotide / FTTP", "5 mg", 100, "Weight management"], ["AP10", "Adipotide / FTTP", "10 mg", 196, "Weight management"], ["5AM", "5-Amino-1MQ", "5 mg", 24, "Weight management"], ["10AM", "5-Amino-1MQ", "10 mg", 44, "Weight management"], ["50AM", "5-Amino-1MQ", "50 mg", 98, "Weight management"], ["LB", "LB", "10 mL", 35, "Weight management"], ["LC400", "L-Carnitine", "400 mg", 52, "Weight management"], ["LC600", "L-Carnitine", "600 mg", 58, "Weight management"], ["LC1200", "L-Carnitine", "1200 mg", 78, "Weight management"], ["LB", "Lemon Bottle", "10 mL", 41, "Weight management"], ["LC120", "Lipo-C", "10 mL", 56, "Weight management"], ["MIC", "MIC (Lipo-C with B12)", "10 mL", 75, "Weight management"], ["LC526", "Lipo-C (Fat Blaster)", "10 mL", 44, "Weight management"], ["BC5", "BPC-157", "5 mg", 35, "Repair & recovery"], ["BC10", "BPC-157", "10 mg", 52, "Repair & recovery"], ["BC20", "BPC-157", "20 mg", 95, "Repair & recovery"], ["TB2", "TB-500", "2 mg", 32, "Repair & recovery"], ["TB5", "TB-500", "5 mg", 64, "Repair & recovery"], ["TB10", "TB-500", "10 mg", 119, "Repair & recovery"], ["TB20", "TB-500", "20 mg", 225, "Repair & recovery"], ["CU50", "GHK-Cu", "50 mg", 18, "Repair & recovery"], ["CU100", "GHK-Cu", "100 mg", 29, "Repair & recovery"], ["AU20", "AHK-Cu", "20 mg", 18, "Repair & recovery"], ["AU50", "AHK-Cu", "50 mg", 24, "Repair & recovery"], ["AU100", "AHK-Cu", "100 mg", 32, "Repair & recovery"], ["Cartalax", "Cartalax", "20 mg", 70, "Repair & recovery"], ["CBL-514", "CBL-514", "5 mg", 121, "Repair & recovery"], ["CBL-514", "CBL-514", "10 mg", 231, "Repair & recovery"], ["CBL-514", "CBL-514", "20 mg", 322, "Repair & recovery"], ["SMO5", "Sermorelin", "5 mg", 52, "Repair & recovery"], ["SMO10", "Sermorelin", "10 mg", 100, "Repair & recovery"], ["SMO20", "Sermorelin", "20 mg", 196, "Repair & recovery"], ["TSM5", "Tesamorelin", "5 mg", 81, "Repair & recovery"], ["TSM10", "Tesamorelin", "10 mg", 144, "Repair & recovery"], ["TSM20", "Tesamorelin", "20 mg", 245, "Repair & recovery"], ["IG01", "IGF-1 LR3", "100 mcg", 32, "Repair & recovery"], ["IG1", "IGF-1 LR3", "1 mg", 248, "Repair & recovery"], ["FM2", "MGF", "2 mg", 35, "Repair & recovery"], ["FMP2", "PEG-MGF", "2 mg", 70, "Repair & recovery"], ["FST", "FST-344", "1 mg", 245, "Repair & recovery"], ["GDF", "GDF-8", "1 mg", 104, "Repair & recovery"], ["TGF-DES", "TGF-DES", "2 mg", 64, "Repair & recovery"], ["ET10", "Epithalon", "10 mg", 29, "Beauty & anti-aging"], ["ET50", "Epithalon", "50 mg", 139, "Beauty & anti-aging"], ["F42", "FOXO4-DRI / FOX04", "2 mg", 55, "Beauty & anti-aging"], ["F410", "FOXO4-DRI / FOX04", "10 mg", 316, "Beauty & anti-aging"], ["Humanin", "Humanin", "10 mg", 188, "Beauty & anti-aging"], ["NP810", "Snap-8", "10 mg", 21, "Beauty & anti-aging"], ["NP8100", "Snap-8", "100 mg", 104, "Beauty & anti-aging"], ["MX10", "Matrixyl", "10 mg", 21, "Beauty & anti-aging"], ["2S5", "SS-31", "5 mg", 52, "Beauty & anti-aging"], ["2S10", "SS-31", "10 mg", 98, "Beauty & anti-aging"], ["2S50", "SS-31", "50 mg", 277, "Beauty & anti-aging"], ["GTT400", "Glutathione", "400 mg", 24, "Beauty & anti-aging"], ["GTT600", "Glutathione", "600 mg", 29, "Beauty & anti-aging"], ["GTT1500", "Glutathione", "1500 mg", 47, "Beauty & anti-aging"], ["NJ100", "NAD+", "100 mg", 24, "Beauty & anti-aging"], ["NJ500", "NAD+", "500 mg", 41, "Beauty & anti-aging"], ["NJ1000", "NAD+", "1000 mg", 64, "Beauty & anti-aging"], ["Glow70", "GLOW", "70 mg", 162, "Beauty & anti-aging"], ["Klow80", "Klow", "80 mg", 167, "Beauty & anti-aging"], ["DS2", "DSIP", "2 mg", 24, "Sleep aid"], ["DS5", "DSIP", "5 mg", 29, "Sleep aid"], ["DS10", "DSIP", "10 mg", 58, "Sleep aid"], ["SK5", "Selank", "5 mg", 26, "Sleep aid"], ["SK10", "Selank", "10 mg", 39, "Sleep aid"], ["XA5", "Semax", "5 mg", 26, "Sleep aid"], ["XA10", "Semax", "10 mg", 39, "Sleep aid"], ["DIH5", "Dihexa", "5 mg", 28, "Sleep aid"], ["DIH10", "Dihexa", "10 mg", 52, "Sleep aid"], ["PIN5", "Pinealon", "5 mg", 32, "Sleep aid"], ["PIN10", "Pinealon", "10 mg", 52, "Sleep aid"], ["PIN20", "Pinealon", "20 mg", 98, "Sleep aid"], ["OT/OXY", "Oxytocin", "2 mg", 15, "Sleep aid"], ["OT/OXY", "Oxytocin", "5 mg", 29, "Sleep aid"], ["OT/OXY", "Oxytocin", "10 mg", 52, "Sleep aid"], ["OA5", "Orexin A", "5 mg", 101, "Sleep aid"], ["OA10", "Orexin A", "10 mg", 182, "Sleep aid"], ["OB5", "Orexin B", "5 mg", 240, "Sleep aid"], ["OB10", "Orexin B", "10 mg", 121, "Sleep aid"], ["CBL60", "Cerebrolysin", "60 mg", 75, "Sleep aid"], ["H6", "HGH", "6 IU", 35, "Growth hormones"], ["H8", "HGH", "8 IU", 52, "Growth hormones"], ["H10", "HGH", "10 IU", 67, "Growth hormones"], ["H12", "HGH", "12 IU", 77, "Growth hormones"], ["H15", "HGH", "15 IU", 90, "Growth hormones"], ["H24", "HGH", "24 IU", 116, "Growth hormones"], ["H36", "HGH", "36 IU", 167, "Growth hormones"], ["H40", "HGH", "40 IU", 180, "Growth hormones"], ["G25", "GHRP-2 Acetate", "5 mg", 22, "Growth hormones"], ["G210", "GHRP-2 Acetate", "10 mg", 29, "Growth hormones"], ["G215", "GHRP-2 Acetate", "15 mg", 44, "Growth hormones"], ["G65", "GHRP-6 Acetate", "5 mg", 24, "Growth hormones"], ["G610", "GHRP-6 Acetate", "10 mg", 47, "Growth hormones"], ["G615", "GHRP-6 Acetate", "15 mg", 61, "Growth hormones"], ["HX2", "Hexarelin", "2 mg", 28, "Growth hormones"], ["HX5", "Hexarelin", "5 mg", 47, "Growth hormones"], ["IP2", "Ipamorelin", "2 mg", 24, "Growth hormones"], ["IP5", "Ipamorelin", "5 mg", 44, "Growth hormones"], ["IP10", "Ipamorelin", "10 mg", 61, "Growth hormones"], ["CD2", "CJC-1295 with DAC", "2 mg", 61, "Growth hormones"], ["CD5", "CJC-1295 with DAC", "5 mg", 107, "Growth hormones"], ["CD10", "CJC-1295 with DAC", "10 mg", 188, "Growth hormones"], ["CND2", "CJC-1295 no DAC", "2 mg", 26, "Growth hormones"], ["CND5", "CJC-1295 no DAC", "5 mg", 47, "Growth hormones"], ["CND10", "CJC-1295 no DAC", "10 mg", 93, "Growth hormones"], ["KS5", "Kisspeptin-10", "5 mg", 32, "Growth hormones"], ["KS10", "Kisspeptin-10", "10 mg", 58, "Growth hormones"], ["G1K", "HCG", "1000 IU", 32, "Growth hormones"], ["G2K", "HCG", "2000 IU", 44, "Growth hormones"], ["G5K", "HCG", "5000 IU", 84, "Growth hormones"], ["G10K", "HCG", "10000 IU", 136, "Growth hormones"], ["G75", "HMG", "75 IU", 44, "Growth hormones"], ["GND2", "Gonadorelin", "2 mg", 18, "Growth hormones"], ["GND5", "Gonadorelin", "5 mg", 29, "Growth hormones"], ["Triptorelin", "Triptorelin", "2 mg", 35, "Growth hormones"], ["MK677", "MK-677", "5 mg", 25, "Growth hormones"], ["TY10", "Thymalin / Thymulin", "10 mg", 49, "Immune support"], ["TA5", "Thymosin Alpha-1", "5 mg", 75, "Immune support"], ["TA10", "Thymosin Alpha-1", "10 mg", 124, "Immune support"], ["375", "LL-37", "5 mg", 58, "Immune support"], ["KP5", "KPV", "5 mg", 29, "Immune support"], ["KP10", "KPV", "10 mg", 47, "Immune support"], ["VP5", "VIP", "5 mg", 44, "Immune support"], ["VP10", "VIP", "10 mg", 77, "Immune support"], ["BRON20", "Bronchogen", "20 mg", 70, "Immune support"], ["CAR20/CORT20/CRY20", "Cardiogen / Cortagen / Crystagen", "20 mg", 60, "Immune support"], ["RA10", "ARA-290", "10 mg", 42, "Immune support"], ["RA16", "ARA-290", "16 mg", 60, "Immune support"], ["EPO", "EPO", "3000 IU", 36, "Immune support"], ["BB10", "BPC 5 mg + TB 5 mg", "10 mg", 87, "Composite blends"], ["BB20", "BPC 10 mg + TB 10 mg", "20 mg", 153, "Composite blends"], ["BB30", "BPC 15 mg + TB 15 mg", "30 mg", null, "Composite blends"], ["BB40", "BPC 20 mg + TB 20 mg", "40 mg", null, "Composite blends"], ["XS20", "Semax 10 mg + Selank 10 mg", "20 mg", 75, "Composite blends"], ["CP10", "CJC-1295 + Ipamorelin", "10 mg", 70, "Composite blends"], ["CP20", "CJC-1295 + Ipamorelin", "20 mg", 133, "Composite blends"], ["RET60", "Retatrutide + Tirzepatide", "60 mg", 159, "Composite blends"], ["TI", "Tesamorelin 10 mg + Ipamorelin 5 mg", "15 mg", 179, "Composite blends"], ["BA3", "BA3", "3 mL", 5, "Accessories"], ["BA10", "BA10", "10 mL", 7, "Accessories"], ["AA3", "AA3", "3 mL", 5, "Accessories"], ["AA10", "AA10", "10 mL", 7, "Accessories"], ["WA3", "WA3", "10 mL", 5, "Accessories"], ["WA10", "WA10", "10 mL", 7, "Accessories"], ["AX5", "Adamax", "5 mg", 38, "Other niche products"], ["AX10", "Adamax", "10 mg", 58, "Other niche products"], ["AC1", "ACE-031", "1 mg", 35, "Other niche products"], ["ACTH1", "ACTH 1-39", "5 mg", 35, "Other niche products"], ["B7-33", "B7-33", "2 mg", 52, "Other niche products"], ["B7-33", "B7-33", "10 mg", 176, "Other niche products"], ["AR50", "AICAR", "50 mg", 39, "Other niche products"], ["AR100", "AICAR", "100 mg", 61, "Other niche products"], ["DP2", "Dermorphin", "2 mg", 16, "Other niche products"], ["DP5", "Dermorphin", "2 mg", 31, "Other niche products"], ["DP10", "Dermorphin", "10 mg", 51, "Other niche products"], ["MT-1/MT-2", "Melanotan I / II", "10 mg", 31, "Other niche products"], ["MS10", "MOTS-c", "10 mg", 49, "Other niche products"], ["MS15", "MOTS-c", "15 mg", 64, "Other niche products"], ["MS20", "MOTS-c", "20 mg", 104, "Other niche products"], ["MS40", "MOTS-c", "40 mg", 180, "Other niche products"], ["p41", "PT-141", "10 mg", 81, "Other niche products"], ["PTD-DBM", "PTD-DBM", "1 mg", 32, "Other niche products"], ["PE5", "PE-22-28", "5 mg", 32, "Other niche products"], ["PE10", "PE-22-28", "10 mg", 58, "Other niche products"], ["PN5", "PNC-27", "5 mg", 52, "Other niche products"], ["PN10", "PNC-27", "10 mg", 75, "Other niche products"], ["TBF2", "TB Frag", "2 mg", 28, "Other niche products"], ["TBF2", "TB Frag", "5 mg", 52, "Other niche products"], ["TBF2", "TB Frag", "10 mg", 87, "Other niche products"], ["TBF2", "TB Frag", "20 mg", 167, "Other niche products"], ["XT100", "Botulinum Toxin", "100 IU", 47, "Other niche products"], ["PP332", "SLU-PP-332", "5 mg", 52, "Other niche products"], ["FRAG10", "Frag 17-23", "10 mg", 67, "Other niche products"], ["P21", "P021", "5 mg", 211, "Other niche products"], ];
+
+function slug(value) {
+    return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+const COMPOUND_IDS = Object.freeze({
+    "Semaglutide": "semaglutide-compound",
+    "Tirzepatide": "tirzepatide-compound",
+    "Retatrutide": "retatrutide-compound",
+    "Liraglutide": "liraglutide-compound",
+    "Cagrilintide": "cagrilintide-compound",
+    "AOD9604": "aod9604-compound",
+    "Adipotide / FTTP": "adipotide-compound",
+    "BPC-157": "bpc157-compound",
+    "TB-500": "tb500-compound",
+    "GHK-Cu": "ghkcu-compound",
+    "Sermorelin": "sermorelin-compound",
+    "Tesamorelin": "tesamorelin-compound",
+    "IGF-1 LR3": "bpc157-compound",
+    "Epithalon": "epithalon-compound",
+    "Selank": "selank-compound",
+    "Semax": "semax-compound",
+    "Dihexa": "dihexa-compound",
+    "Oxytocin": "oxytocin-compound",
+    "GHRP-2 Acetate": "ghrp2-compound",
+    "GHRP-6 Acetate": "ghrp6-compound",
+    "Hexarelin": "hexarelin-compound",
+    "Ipamorelin": "ipamorelin-compound",
+    "CJC-1295 with DAC": "cjc1295-compound",
+    "CJC-1295 no DAC": "cjc1295-compound",
+    "Kisspeptin-10": "kisspeptin10-compound",
+    "HCG": "ghrp2-compound",
+    "Gonadorelin": "ghrp2-compound",
+    "Thymalin / Thymulin": "thymalin-compound",
+    "Thymosin Alpha-1": "thymosin-alpha1-compound",
+    "KPV": "bpc157-compound",
+    "ARA-290": "bpc157-compound",
+    "AICAR": "aicar-compound",
+    "MOTS-c": "mots-c-compound",
+    "PT-141": "pt141-compound",
+    "SLU-PP-332": "slu-pp-332-compound",
+    "NAD+": "glutathione-compound",
+    "L-Carnitine": "l-carnitine-compound",
+    "Glutathione": "glutathione-compound",
+    "Mazdutide": "mazdutide-compound",
+    "Survodutide": "survodutide-compound",
+    "Cartalax": "cartalax-compound",
+    "Snap-8": "snap8-compound",
+    "Matrixyl": "matrixyl-compound",
+    "DSIP": "dsip-compound",
+    "LL-37": "ll37-compound",
+    "Melanotan I / II": "melanotan-compound",
+    "Somatropin (HGH)": "somatropin-compound",
+});
+
+const CATEGORY_DIAGRAMS = Object.freeze({
+    "Weight management": "semaglutide-compound",
+    "Repair & recovery": "bpc157-compound",
+    "Beauty & anti-aging": "glutathione-compound",
+    "Sleep aid": "selank-compound",
+    "Growth hormones": "ghrp2-compound",
+    "Immune support": "thymosin-alpha1-compound",
+    "Composite blends": "bpc157-compound",
+    "Accessories": "glutathione-compound",
+    "Other niche products": "aicar-compound",
+});
+
+const grouped = new Map();
+for (const [code,name,specification,price,subcategory] of rows) {
+    const displayName = name === "HGH" ? "Somatropin (HGH)" : name;
+    const key = `${subcategory}\0${displayName}`;
+    if (!grouped.has(key))
+        grouped.set(key, {
+            name: displayName,
+            subcategory,
+            variants: []
+        });
+    grouped.get(key).variants.push({
+        id: `${slug(code)}-${slug(specification)}`,
+        label: `${code} · ${specification} · 10 vials`,
+        price,
+        unavailable: price == null,
+    });
+}
+
+export const SHOP_GROUP_E_PEPTIDES = Object.freeze([...grouped.values()].map( (product, index) => ({
+    id: `group-e-peptide-${slug(product.name)}-${index}`,
+    compoundId: COMPOUND_IDS[product.name] || CATEGORY_DIAGRAMS[product.subcategory] || "glutathione-compound",
+    ...(product.name === "Somatropin (HGH)" ? {
+        image: "/src/data/structures/ghrp2-compound.png"
+    } : {}),
+    name: product.name,
+    category: "peptides",
+    subcategory: product.subcategory,
+    shippingGroup: "E",
+    variants: product.variants,
+})));
+
+
+
+
+// Shared by the Shop UI and the server checkout validator. Prices are totals
+// in USD; the browser never gets to choose or submit a trusted price.
+import { SHOP_GROUP_E_PRODUCTS } from "./shopGroupE.js";
+import { SHOP_GROUP_E_PEPTIDES } from "./shopGroupEPeptides.js";
+
+const STEROID_IMAGE_OVERRIDES = Object.freeze({
+  "testosterone-enanthate-compound": "/src/assets/shop/pharmacom-testosterone-enanthate.jpg",
+  "testosterone-undecanoate-compound": "/src/assets/shop/pharmacom-testosterone-undecanoate.jpg",
+  "testosterone-compound": "/src/assets/shop/pharmacom-testosterone-base.jpg",
+  "testosterone-cypionate-compound": "/src/assets/shop/pharmacom-testosterone-cypionate.jpg",
+  "testosterone-propionate-compound": "/src/assets/shop/pharmacom-testosterone-propionate.jpg",
+  "trenbolone-acetate-shop": "/src/assets/shop/pharmacom-tren-a.jpg",
+  "trenbolone-enanthate-shop": "/src/assets/shop/pharmacom-tren-e.jpg",
+  "methenolone-compound": "/src/assets/shop/pharmacom-primobolan.jpg",
+  "nandrolone-decanoate-compound": "/src/assets/shop/pharmacom-deca.jpg",
+  "nandrolone-phenylpropionate-compound": "/src/assets/shop/pharmacom-npp.jpg",
+  "stanozolol-compound": "/src/assets/shop/pharmacom-stanozolol-oil.jpg",
+  "boldenone-compound": "/src/assets/shop/pharmacom-boldenone.jpg",
+  "drostanolone-propionate-shop": "/src/assets/shop/pharmacom-masteron-p.jpg",
+  "drostanolone-enanthate-shop": "/src/assets/shop/pharmacom-masteron-e.jpg",
+  "oxymetholone-compound": "/src/assets/shop/pharmacom-anadrol-injectable.jpg",
+  "oxymetholone-tablets-shop": "/src/assets/shop/pharmacom-anadrol-tablets.jpg",
+  "methandrostenolone-tablets-shop": "/src/assets/shop/pharmacom-dianabol-tablets.jpg",
+  "turinabol-tablets-shop": "/src/assets/shop/pharmacom-turinabol-tablets.jpg",
+});
+
+export const SHOP_CARRIER_FEE_PERCENT = 10;
+export const SHOP_GROUP_A_SHIPPING_CENTS = 5_000;
+export const SHOP_GROUP_B_SHIPPING_CENTS = 5_000;
+export const SHOP_GROUP_C_SHIPPING_CENTS = 5_000;
+export const SHOP_GROUP_D_SHIPPING_CENTS = 4_000;
+export const SHOP_GROUP_E_SHIPPING_CENTS = 4_500;
+export const SHOP_GROUP_G_SHIPPING_CENTS = 6_000;
+
+export function calculateShopChargesCents(subtotalCents, shippingGroups = []) {
+  const groups = Array.isArray(shippingGroups)
+    ? shippingGroups
+    : String(shippingGroups || "").split("+");
+  const shippingCents = (groups.includes("A") ? SHOP_GROUP_A_SHIPPING_CENTS : 0)
+    + (groups.includes("B") ? SHOP_GROUP_B_SHIPPING_CENTS : 0)
+    + (groups.includes("C") ? SHOP_GROUP_C_SHIPPING_CENTS : 0)
+    + (groups.includes("D") ? SHOP_GROUP_D_SHIPPING_CENTS : 0)
+    + (groups.includes("E") ? SHOP_GROUP_E_SHIPPING_CENTS : 0)
+    + (groups.includes("G") ? SHOP_GROUP_G_SHIPPING_CENTS : 0);
+  const carrierFeeCents = Math.round((subtotalCents + shippingCents) * SHOP_CARRIER_FEE_PERCENT / 100);
+  return {
+    subtotalCents,
+    shippingCents,
+    carrierFeeCents,
+    totalCents: subtotalCents + shippingCents + carrierFeeCents,
+  };
+}
+
+const LEGACY_SHOP_PRODUCTS = Object.freeze([
+  { id: "bromantane-compound", name: "Bromantane", variants: [{ id: "500mg", label: "500 mg", grams: 0.5, price: 280 }] },
+  { id: "semax-compound", name: "Semax", variants: [{ id: "1g", label: "1 g", grams: 1, price: 185 }, { id: "10g", label: "10 g", grams: 10, price: 910 }] },
+  { id: "selank-compound", name: "Selank", variants: [{ id: "1g", label: "1 g", grams: 1, price: 185 }, { id: "10g", label: "10 g", grams: 10, price: 910 }] },
+  { id: "tak-653-compound", name: "TAK-653", variants: [{ id: "1g", label: "1 g", grams: 1, price: 215 }] },
+  { id: "9-me-bc-compound", name: "9-Me-BC", variants: [{ id: "1g", label: "1 g", grams: 1, price: 110 }, { id: "10g", label: "10 g", grams: 10, price: 190 }] },
+  { id: "nsi-189-compound", name: "NSI-189", variants: [{ id: "1g", label: "1 g", grams: 1, price: 107 }, { id: "5g", label: "5 g", grams: 5, price: 160 }] },
+  { id: "dihexa-compound", name: "Dihexa", variants: [{ id: "1g", label: "1 g", grams: 1, price: 135 }, { id: "10g", label: "10 g", grams: 10, price: 520 }] },
+  { id: "idra-21-compound", name: "IDRA-21", variants: [{ id: "1g", label: "1 g", grams: 1, price: 103 }, { id: "5g", label: "5 g", grams: 5, price: 135 }] },
+  { id: "prl-8-53-compound", name: "PRL-8-53", variants: [{ id: "10g", label: "10 g", grams: 10, price: 155 }, { id: "1kg", label: "1 kg", grams: 1000, price: 3300 }] },
+  { id: "coluracetam-compound", name: "Coluracetam", variants: [{ id: "10g", label: "10 g", grams: 10, price: 140 }] },
+  { id: "fasoracetam-compound", name: "Fasoracetam", variants: [{ id: "1g", label: "1 g", grams: 1, price: 95 }] },
+  { id: "aniracetam-compound", name: "Aniracetam", variants: [{ id: "100g", label: "100 g", grams: 100, price: 1200 }, { id: "1kg", label: "1 kg", grams: 1000, price: 230 }] },
+  { id: "tropisetron-compound", name: "Tropisetron", variants: [{ id: "5g", label: "5 g", grams: 5, price: 160 }, { id: "25g", label: "25 g", grams: 25, price: 325 }] },
+  { id: "nefiracetam-compound", name: "Nefiracetam", variants: [{ id: "10g", label: "10 g", grams: 10, price: 115 }, { id: "100g", label: "100 g", grams: 100, price: 150 }] },
+  { id: "testosterone-enanthate-compound", name: "Testosterone Enanthate", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/testosterone-enanthate-250.jpeg", variants: [{ id: "250mg-vial", label: "250 mg · 1 vial", price: 15 }, { id: "250mg-kit-10", label: "250 mg · kit of 10 vials", price: 145 }, { id: "300mg-vial", label: "300 mg · 1 vial", price: 17 }, { id: "300mg-kit-10", label: "300 mg · kit of 10 vials", price: 165 }] },
+  { id: "testosterone-undecanoate-compound", name: "Testosterone Undecanoate", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/testosterone-undecanoate.png", variants: [{ id: "300mg-vial", label: "300 mg · 1 vial", price: 15 }, { id: "300mg-kit-10", label: "300 mg · kit of 10 vials", price: 130 }] },
+  { id: "testosterone-compound", name: "Testosterone Base (No Ester)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/testosterone-base.jpg", variants: [{ id: "100mg-vial", label: "100 mg · 1 vial", price: 12 }, { id: "100mg-kit-10", label: "100 mg · kit of 10 vials", price: 110 }] },
+  { id: "testosterone-cypionate-compound", name: "Testosterone Cypionate", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/testosterone-cypionate.jpg", variants: [{ id: "250mg-vial", label: "250 mg · 1 vial", price: 15 }, { id: "250mg-kit-10", label: "250 mg · kit of 10 vials", price: 145 }] },
+  { id: "testosterone-propionate-compound", name: "Testosterone Propionate", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/testosterone-propionate.jpg", variants: [{ id: "100mg-vial", label: "100 mg · 1 vial", price: 10 }, { id: "100mg-kit-10", label: "100 mg · kit of 10 vials", price: 90 }, { id: "200mg-vial", label: "200 mg · 1 vial", price: 12 }, { id: "200mg-kit-10", label: "200 mg · kit of 10 vials", price: 110 }] },
+  { id: "trenbolone-acetate-shop", compoundId: "trenbolone-compound", name: "Trenbolone Acetate (Tren A)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/trenbolone.jpg", variants: [{ id: "100mg-vial", label: "100 mg · 1 vial", price: 20 }, { id: "100mg-kit-10", label: "100 mg · kit of 10 vials", price: 180 }] },
+  { id: "trenbolone-enanthate-shop", compoundId: "trenbolone-compound", name: "Trenbolone Enanthate (Tren E)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/trenbolone-enanthate-200.png", variants: [{ id: "100mg-vial", label: "100 mg · 1 vial", price: 20 }, { id: "100mg-kit-10", label: "100 mg · kit of 10 vials", price: 180 }, { id: "200mg-vial", label: "200 mg · 1 vial", price: 30 }, { id: "200mg-kit-10", label: "200 mg · kit of 10 vials", price: 280 }] },
+  { id: "methenolone-compound", name: "Primobolan E (Methenolone Enanthate)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/primobolan.jpg", variants: [{ id: "100mg-vial", label: "100 mg · 1 vial", price: 50 }, { id: "100mg-kit-10", label: "100 mg · kit of 10 vials", price: 470 }, { id: "200mg-vial", label: "200 mg · 1 vial", price: 90 }, { id: "200mg-kit-10", label: "200 mg · kit of 10 vials", price: 870 }] },
+  { id: "nandrolone-decanoate-compound", name: "Deca ND (Nandrolone Decanoate)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/deca.png", variants: [{ id: "200mg-vial", label: "200 mg · 1 vial", price: 16 }, { id: "200mg-kit-10", label: "200 mg · kit of 10 vials", price: 150 }, { id: "300mg-vial", label: "300 mg · 1 vial", price: 20 }, { id: "300mg-kit-10", label: "300 mg · kit of 10 vials", price: 190 }] },
+  { id: "nandrolone-phenylpropionate-compound", name: "NPP (Nandrolone Phenylpropionate)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/npp.jpg", variants: [{ id: "100mg-vial", label: "100 mg · 1 vial", price: 15 }, { id: "100mg-kit-10", label: "100 mg · kit of 10 vials", price: 130 }, { id: "200mg-vial", label: "200 mg · 1 vial", price: 18 }, { id: "200mg-kit-10", label: "200 mg · kit of 10 vials", price: 160 }] },
+  { id: "stanozolol-compound", name: "Stanozolol (Oil Injectable)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/stanozolol.webp", variants: [{ id: "50mg-vial", label: "50 mg · 1 vial", price: 15 }, { id: "50mg-kit-10", label: "50 mg · kit of 10 vials", price: 130 }] },
+  { id: "boldenone-compound", name: "Boldenone Undecylenate (Equipoise)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/boldenone.jpg", variants: [{ id: "200mg-vial", label: "200 mg · 1 vial", price: 15 }, { id: "200mg-kit-10", label: "200 mg · kit of 10 vials", price: 130 }, { id: "300mg-vial", label: "300 mg · 1 vial", price: 18 }, { id: "300mg-kit-10", label: "300 mg · kit of 10 vials", price: 150 }, { id: "600mg-vial", label: "600 mg · 1 vial", price: 30 }, { id: "600mg-kit-10", label: "600 mg · kit of 10 vials", price: 280 }] },
+  { id: "drostanolone-propionate-shop", compoundId: "drostanolone-compound", name: "Masteron Propionate (Drostanolone Propionate)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/masteron.jpg", variants: [{ id: "100mg-vial", label: "100 mg · 1 vial", price: 40 }, { id: "100mg-kit-10", label: "100 mg · kit of 10 vials", price: 380 }] },
+  { id: "drostanolone-enanthate-shop", compoundId: "drostanolone-compound", name: "Masteron Enanthate (Drostanolone Enanthate)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/masteron-enanthate-200.webp", variants: [{ id: "200mg-vial", label: "200 mg · 1 vial", price: 50 }, { id: "200mg-kit-10", label: "200 mg · kit of 10 vials", price: 480 }] },
+  { id: "methandrostenolone-compound", name: "Methandrostenolone (Injectable Dianabol)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/injectable-dianabol.jpg", variants: [{ id: "50mg-vial", label: "50 mg · 1 vial", price: 18 }, { id: "50mg-kit-10", label: "50 mg · kit of 10 vials", price: 175 }] },
+  { id: "oxymetholone-compound", name: "Oxymetholone (Injectable Anadrol)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/injectable-anadrol.jpg", variants: [{ id: "50mg-vial", label: "50 mg · 1 vial", price: 18 }, { id: "50mg-kit-10", label: "50 mg · kit of 10 vials", price: 160 }] },
+  { id: "trestolone-compound", name: "Trestolone Acetate (MENT Injectable)", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/ment-50.jpg", variants: [{ id: "50mg-vial", label: "50 mg · 1 vial", price: 40 }, { id: "50mg-kit-10", label: "50 mg · kit of 10 vials", price: 380 }] },
+  { id: "metribolone-shop", name: "Metribolone Injectable", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/injectable-vial.jpg", variants: [{ id: "5mg-vial", label: "5 mg · 1 vial", price: 15 }, { id: "5mg-kit-10", label: "5 mg · kit of 10 vials", price: 130 }] },
+  { id: "nad-plus-shop", name: "NAD+ Injectable", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/nad-plus.png", variants: [{ id: "100mg-vial", label: "100 mg · 1 vial", price: 15 }, { id: "100mg-kit-10", label: "100 mg · kit of 10 vials", price: 130 }] },
+  { id: "oxymetholone-tablets-shop", compoundId: "oxymetholone-compound", name: "Anadrol (Oxymetholone) Tablets", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/anadrol-tablets.jpg", variants: [{ id: "oxp50-100", label: "OXP50 · 50 mg · 100 tablets", price: 43 }] },
+  { id: "methandrostenolone-tablets-shop", compoundId: "methandrostenolone-compound", name: "Dianabol (Methandrostenolone) Tablets", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/dianabol-tablets.jpeg", variants: [{ id: "d10-100", label: "D10 · 10 mg · 100 tablets", price: 30 }, { id: "d20-100", label: "D20 · 20 mg · 100 tablets", price: 35 }, { id: "d50-100", label: "D50 · 50 mg · 100 tablets", price: 50 }] },
+  { id: "liothyronine-tablets-shop", compoundId: "liothyronine-compound", name: "T3 (Liothyronine) Tablets", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/t3-tablets.jpg", variants: [{ id: "325-25mcg-100", label: "325 · 25 mcg · 100 tablets", price: 20 }, { id: "340-40mcg-100", label: "340 · 40 mcg · 100 tablets", price: 20 }] },
+  { id: "levothyroxine-tablets-shop", compoundId: "levothyroxine-compound", name: "T4 (Levothyroxine) Tablets", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/t4-tablets.webp", variants: [{ id: "440-40mcg-100", label: "440 · 40 mcg · 100 tablets", price: 20 }] },
+  { id: "turinabol-tablets-shop", compoundId: "turinabol-compound", name: "Turinabol (Chlorodehydromethyltestosterone) Tablets", category: "steroids", shippingGroup: "C", image: "/src/assets/shop/turinabol-tablets.jpg", variants: [{ id: "ct10-100", label: "CT10 · 10 mg · 100 tablets", price: 33 }, { id: "ct25-100", label: "CT25 · 25 mg · 100 tablets", price: 43 }, { id: "ct50-100", label: "CT50 · 50 mg · 100 tablets", price: 63 }] },
+  { id: "telmisartan-compound", name: "TELKONOL (Telmisartan)", category: "ancillaries", shippingGroup: "B", image: "/src/assets/shop/telkonol-40.png", variants: [{ id: "40mg-50", label: "40 mg · 50 pills", price: 6 }, { id: "80mg-50", label: "80 mg · 50 pills", price: 7.5 }] },
+  { id: "nebivolol-compound", name: "NEBIMAX (Nebivolol)", category: "ancillaries", shippingGroup: "B", image: "/src/assets/shop/nebimax-5.webp", variants: [{ id: "2-5mg-50", label: "2.5 mg · 50 pills", price: 7.5 }, { id: "5mg-50", label: "5 mg · 50 pills", price: 7.5 }, { id: "10mg-50", label: "10 mg · 50 pills", price: 11.5 }] },
+  { id: "cabergoline-compound", name: "Cabergoline", category: "ancillaries", shippingGroup: "B", image: "/src/assets/shop/cabergoline-0-5.jpg", variants: [{ id: "0-25mg-50", label: "0.25 mg · 50 pills", price: 25.85 }, { id: "0-5mg-50", label: "0.5 mg · 50 pills", price: 37.5 }, { id: "1mg-50", label: "1 mg · 50 pills", price: 68 }] },
+  { id: "anastrozole-compound", name: "Arimidex (Anastrozole)", category: "ancillaries", shippingGroup: "B", image: "/src/assets/shop/anastrozole-1.jpg", variants: [{ id: "1mg-50", label: "1 mg · 50 pills", price: 7 }] },
+  { id: "exemestane-compound", name: "Aromasin (Exemestane)", category: "ancillaries", shippingGroup: "B", image: "/src/assets/shop/exemestane-25.jpg", variants: [{ id: "25mg-50", label: "25 mg · 50 pills", price: 34 }] },
+  { id: "tamoxifen-compound", name: "Tamoxifen", category: "ancillaries", shippingGroup: "B", image: "/src/assets/shop/tamoxifen-20.jpg", variants: [{ id: "10mg-50", label: "10 mg · 50 pills", price: 6 }, { id: "20mg-50", label: "20 mg · 50 pills", price: 6 }] },
+  { id: "minoxidil-oral-compound", name: "Oral Minoxidil", category: "ancillaries", shippingGroup: "B", image: "/src/assets/shop/minoxidil-oral-2-5.jpg", variants: [{ id: "2-5mg-50", label: "2.5 mg · 50 pills", price: 7.5 }, { id: "5mg-50", label: "5 mg · 50 pills", price: 7.5 }, { id: "10mg-50", label: "10 mg · 50 pills", price: 10 }] },
+  { id: "rosuvastatin-compound", name: "ROSU HDL (Rosuvastatin)", category: "ancillaries", shippingGroup: "B", image: "/src/assets/shop/rosu-hdl-20.jpg", variants: [{ id: "5mg-50", label: "5 mg · 50 pills", price: 6 }, { id: "10mg-50", label: "10 mg · 50 pills", price: 6 }, { id: "20mg-50", label: "20 mg · 50 pills", price: 6 }, { id: "40mg-50", label: "40 mg · 50 pills", price: 7.5 }] },
+  { id: "finasteride-compound", name: "Finasteride", category: "ancillaries", shippingGroup: "B", image: "/src/assets/shop/finaas-5.webp", variants: [{ id: "fin-ash-2-5mg-50", label: "FIN ASH · 2.5 mg · 50 pills", price: 7.5 }, { id: "finaas-5mg-50", label: "FINAAS · 5 mg · 50 pills", price: 7.5 }] },
+  { id: "eplerenone-compound", name: "EPLERENOL (Eplerenone)", category: "ancillaries", shippingGroup: "B", image: "/src/assets/shop/eplerenol-50.jpg", variants: [{ id: "25mg-50", label: "25 mg · 50 pills", price: 17.5 }, { id: "50mg-50", label: "50 mg · 50 pills", price: 25 }] },
+  { id: "tadalafil-compound", name: "Vidalista (Tadalafil)", category: "ancillaries", shippingGroup: "B", image: "/src/assets/shop/vidalista-20.jpg", variants: [{ id: "20mg-100", label: "20 mg · box of 100 pills", price: 12 }, { id: "40mg-100", label: "40 mg · box of 100 pills", price: 12 }] },
+  { id: "isotretinoin-compound", name: "Accufine (Isotretinoin)", category: "skincare", shippingGroup: "B", image: "/src/assets/shop/accufine-20.png", variants: [{ id: "20mg-100", label: "20 mg · box of 100 pills", price: 10 }] },
+  { id: "tazarotene-compound", name: "Tazarotene Cream", category: "skincare", shippingGroup: "B", image: "/src/assets/shop/tazarotene-cream.png", variants: [{ id: "01pct-20g", label: "0.1% · 20 g tube", price: 12 }] },
+  { id: "estriol-compound", name: "Estriol Cream BP", category: "skincare", shippingGroup: "B", image: "/src/assets/shop/estriol-cream.jpg", variants: [{ id: "15g", label: "15 g tube", price: 10 }] },
+  { id: "azelaic-acid-compound", name: "Azelaic Acid Cream", category: "skincare", shippingGroup: "B", image: "/src/assets/shop/azelaic-acid-cream.jpg", variants: [{ id: "20pct-20g", label: "20% · 20 g tube", price: 6 }] },
+].map((product) => STEROID_IMAGE_OVERRIDES[product.id]
+  ? { ...product, image: STEROID_IMAGE_OVERRIDES[product.id] }
+  : product));
+
+const SHOP_GROUP_G_PRODUCTS = Object.freeze([
+  {
+    id: "group-g-kx826-powder",
+    compoundId: "pyrilutamide-compound",
+    name: "KX-826 (Pyrilutamide)",
+    category: "inhibitors",
+    shippingGroup: "G",
+    shippingMethod: "USPS",
+    variants: [
+      { id: "5g", label: "5 g", grams: 5, price: 60 },
+      { id: "10g", label: "10 g", grams: 10, price: 110 },
+    ],
+  },
+  {
+    id: "group-g-erdafitinib-powder",
+    compoundId: "erdafitinib-compound",
+    name: "Erdafitinib",
+    category: "inhibitors",
+    shippingGroup: "G",
+    shippingMethod: "USPS",
+    variants: [{ id: "1g", label: "1 g", grams: 1, price: 105 }],
+  },
+  {
+    id: "group-g-ky19382-powder",
+    compoundId: "ky19382-compound",
+    name: "KY19382",
+    category: "inhibitors",
+    shippingGroup: "G",
+    shippingMethod: "USPS",
+    variants: [
+      { id: "0-5g", label: "0.5 g", grams: 0.5, price: 175 },
+      { id: "1g", label: "1 g", grams: 1, price: 305 },
+    ],
+  },
+]);
+
+// Group E replaces the old Group C supplier catalog. Legacy Groups A/B and
+// the specialist Group G research catalog remain separate suppliers.
+export const SHOP_PRODUCTS = Object.freeze([
+  ...LEGACY_SHOP_PRODUCTS.filter((product) => product.shippingGroup !== "C"),
+  ...SHOP_GROUP_E_PRODUCTS.map((product) => {
+    const image = STEROID_IMAGE_OVERRIDES[product.compoundId || product.id];
+    return image ? { ...product, image } : product;
+  }),
+  ...SHOP_GROUP_E_PEPTIDES,
+  ...SHOP_GROUP_G_PRODUCTS,
+]);
+
+export const SHOP_EQUIPMENT = Object.freeze([
+  {
+    id: "insulin-cooler",
+    name: "Portable insulin and medicine cooler",
+    shippingGroup: "A",
+    image: "/src/assets/shop/insulin-cooler.jpg",
+    variants: [
+      { id: "base", label: "Base model", price: 90 },
+      { id: "battery-1", label: "1-set battery model", price: 120 },
+      { id: "battery-2", label: "2-set battery model", price: 140 },
+    ],
+  },
+]);
+
+const SUPPLEMENT_COMPOUND_IDS = Object.freeze({
+  creatine: "creatine-compound",
+  whey: "whey-protein-compound",
+  casein: "casein-protein-compound",
+  "omega-3": "omega-3-compound",
+  "vitamin-d3": "vitamin-d3-compound",
+  magnesium: "magnesium-compound",
+  multivitamin: "multivitamin-compound",
+  electrolytes: "electrolyte-powder-compound",
+  collagen: "collagen-compound",
+  psyllium: "psyllium-compound",
+  probiotic: "probiotic-compound",
+  melatonin: "melatonin-oral-compound",
+  zinc: "zinc-compound",
+  "b-complex": "b-complex-compound",
+  coq10: "coq10-compound",
+  nac: "nac-compound",
+  tudca: "tudca-compound",
+  caffeine: "caffeine-compound",
+  ashwagandha: "ashwagandha-compound",
+  citrulline: "citrulline-compound",
+  "beta-alanine": "beta-alanine-compound",
+  "joint-support": "glucosamine-compound",
+  astaxanthin: "astaxanthin-compound",
+  "citrus-bergamot": "citrus-bergamot-compound",
+  "vitamin-c": "vitamin-c-compound",
+  "vitamin-k2": "vitamin-k2-compound",
+  copper: "copper-compound",
+  taurine: "taurine-compound",
+  glycine: "glycine-compound",
+  "l-arginine": "arginine-compound",
+  berberine: "berberine-compound",
+  curcumin: "curcumin-compound",
+  resveratrol: "resveratrol-compound",
+  quercetin: "quercetin-compound",
+  "milk-thistle": "milk-thistle-compound",
+  rhodiola: "rhodiola-compound",
+  "lions-mane": "lions-mane-compound",
+  "alpha-gpc": "alpha-gpc-compound",
+  citicoline: "citicoline-compound",
+  "l-theanine": "theanine-compound",
+  "l-tyrosine": "l-tyrosine-compound",
+  "alpha-lipoic-acid": "alpha-lipoic-acid-compound",
+  boswellia: "boswellia-compound",
+  msm: "msm-compound",
+});
+
+const SUPPLEMENT_CATEGORY_IDS = Object.freeze({
+  "Performance": new Set(["creatine", "whey", "casein", "electrolytes", "caffeine", "citrulline", "beta-alanine", "taurine", "glycine", "l-arginine", "l-glutamine", "bcaa", "eaa", "hmb", "beetroot", "l-carnitine"]),
+  "Vitamins & minerals": new Set(["vitamin-d3", "multivitamin", "zinc", "b-complex", "vitamin-c", "vitamin-k2", "vitamin-a", "vitamin-e", "calcium", "iron", "potassium", "selenium", "copper", "iodine", "magnesium"]),
+  "Liver support": new Set(["nac", "tudca", "milk-thistle"]),
+  "Sleep & stress": new Set(["melatonin", "ashwagandha", "rhodiola", "ginseng", "l-theanine", "5-htp", "gaba", "same"]),
+  "Nootropics": new Set(["lions-mane", "alpha-gpc", "citicoline", "l-tyrosine", "pqq"]),
+  "Gut health": new Set(["psyllium", "probiotic", "digestive-enzymes", "prebiotic", "ginger"]),
+  "Joint & skin": new Set(["collagen", "joint-support", "astaxanthin", "curcumin", "boswellia", "msm", "hyaluronic-acid"]),
+});
+
+function supplementCategory(id) {
+  return Object.entries(SUPPLEMENT_CATEGORY_IDS).find(([, ids]) => ids.has(id))?.[0] || "General health";
+}
+
+export const SHOP_SUPPLEMENTS = Object.freeze([
+  { id: "creatine", name: "Creatine Monohydrate", icon: "Cr", priceRange: "$18–$35", query: "creatine monohydrate powder" },
+  { id: "whey", name: "Whey Protein", icon: "Wp", priceRange: "$25–$65", query: "whey protein powder" },
+  { id: "casein", name: "Casein Protein", icon: "Cp", priceRange: "$30–$55", query: "casein protein powder" },
+  { id: "omega-3", name: "Omega-3 Fish Oil", icon: "Ω3", priceRange: "$12–$35", query: "omega 3 fish oil EPA DHA" },
+  { id: "vitamin-d3", name: "Vitamin D3", icon: "D3", priceRange: "$7–$20", query: "vitamin D3 supplement" },
+  { id: "magnesium", name: "Magnesium Glycinate", icon: "Mg", priceRange: "$10–$30", query: "magnesium glycinate supplement" },
+  { id: "multivitamin", name: "Daily Multivitamin", icon: "MV", priceRange: "$10–$40", query: "daily multivitamin adults" },
+  { id: "electrolytes", name: "Electrolyte Powder", icon: "El", priceRange: "$15–$40", query: "electrolyte powder" },
+  { id: "collagen", name: "Collagen Peptides", icon: "Cl", priceRange: "$18–$45", query: "collagen peptides powder" },
+  { id: "psyllium", name: "Psyllium Husk Fiber", icon: "Fi", priceRange: "$8–$25", query: "psyllium husk fiber supplement" },
+  { id: "probiotic", name: "Probiotic", icon: "Pb", priceRange: "$15–$45", query: "probiotic supplement adults" },
+  { id: "melatonin", name: "Melatonin", icon: "Zz", priceRange: "$5–$18", query: "melatonin supplement" },
+  { id: "zinc", name: "Zinc", icon: "Zn", priceRange: "$6–$20", query: "zinc supplement" },
+  { id: "b-complex", name: "B-Complex", icon: "B+", priceRange: "$8–$30", query: "vitamin B complex supplement" },
+  { id: "coq10", name: "CoQ10", icon: "Q10", priceRange: "$15–$40", query: "CoQ10 supplement" },
+  { id: "nac", name: "NAC", icon: "NAC", priceRange: "$10–$30", query: "NAC N acetyl cysteine supplement" },
+  { id: "tudca", name: "TUDCA", icon: "TU", priceRange: "$18–$40", query: "TUDCA supplement" },
+  { id: "caffeine", name: "Caffeine Tablets", icon: "Cf", priceRange: "$7–$18", query: "caffeine tablets 200mg" },
+  { id: "ashwagandha", name: "Ashwagandha", icon: "Ash", priceRange: "$10–$30", query: "ashwagandha supplement" },
+  { id: "citrulline", name: "L-Citrulline", icon: "Cit", priceRange: "$18–$35", query: "L citrulline powder" },
+  { id: "beta-alanine", name: "Beta-Alanine", icon: "βA", priceRange: "$15–$30", query: "beta alanine powder" },
+  { id: "joint-support", name: "Glucosamine + Chondroitin", icon: "Jt", priceRange: "$15–$40", query: "glucosamine chondroitin supplement" },
+  { id: "astaxanthin", name: "Astaxanthin", icon: "Ast", priceRange: "$10–$46", query: "astaxanthin supplement" },
+  { id: "citrus-bergamot", name: "Citrus Bergamot", icon: "CB", priceRange: "$15–$35", query: "citrus bergamot supplement capsules" },
+  { id: "vitamin-c", name: "Vitamin C", icon: "C", priceRange: "$6–$25", query: "vitamin C supplement" },
+  { id: "vitamin-k2", name: "Vitamin K2", icon: "K2", priceRange: "$9–$28", query: "vitamin K2 MK7 supplement" },
+  { id: "vitamin-a", name: "Vitamin A", icon: "A", priceRange: "$7–$20", query: "vitamin A supplement" },
+  { id: "vitamin-e", name: "Vitamin E", icon: "E", priceRange: "$8–$25", query: "vitamin E supplement" },
+  { id: "calcium", name: "Calcium", icon: "Ca", priceRange: "$8–$25", query: "calcium supplement" },
+  { id: "iron", name: "Iron", icon: "Fe", priceRange: "$7–$25", query: "iron supplement" },
+  { id: "potassium", name: "Potassium", icon: "K", priceRange: "$7–$22", query: "potassium supplement" },
+  { id: "selenium", name: "Selenium", icon: "Se", priceRange: "$6–$20", query: "selenium supplement" },
+  { id: "copper", name: "Copper", icon: "Cu", priceRange: "$7–$20", query: "copper supplement" },
+  { id: "iodine", name: "Iodine", icon: "I", priceRange: "$7–$22", query: "iodine supplement" },
+  { id: "taurine", name: "Taurine", icon: "Tau", priceRange: "$10–$28", query: "taurine supplement" },
+  { id: "glycine", name: "Glycine", icon: "Gly", priceRange: "$10–$28", query: "glycine powder supplement" },
+  { id: "l-arginine", name: "L-Arginine", icon: "Arg", priceRange: "$10–$30", query: "L arginine supplement" },
+  { id: "l-glutamine", name: "L-Glutamine", icon: "Gln", priceRange: "$15–$40", query: "L glutamine powder" },
+  { id: "bcaa", name: "BCAA", icon: "BCAA", priceRange: "$15–$35", query: "BCAA powder" },
+  { id: "eaa", name: "Essential Amino Acids", icon: "EAA", priceRange: "$20–$45", query: "essential amino acids EAA powder" },
+  { id: "hmb", name: "HMB", icon: "HMB", priceRange: "$15–$35", query: "HMB supplement" },
+  { id: "beetroot", name: "Beetroot / Nitrates", icon: "NO", priceRange: "$12–$35", query: "beetroot powder nitrate supplement" },
+  { id: "l-carnitine", name: "L-Carnitine", icon: "Car", priceRange: "$12–$35", query: "L carnitine supplement" },
+  { id: "inositol", name: "Inositol", icon: "Ins", priceRange: "$15–$40", query: "myo inositol supplement" },
+  { id: "berberine", name: "Berberine", icon: "Ber", priceRange: "$15–$35", query: "berberine supplement" },
+  { id: "curcumin", name: "Curcumin / Turmeric", icon: "Cur", priceRange: "$10–$35", query: "curcumin turmeric supplement" },
+  { id: "resveratrol", name: "Resveratrol", icon: "Res", priceRange: "$15–$45", query: "resveratrol supplement" },
+  { id: "quercetin", name: "Quercetin", icon: "Que", priceRange: "$12–$35", query: "quercetin supplement" },
+  { id: "green-tea", name: "Green Tea Extract", icon: "GT", priceRange: "$10–$30", query: "green tea extract EGCG supplement" },
+  { id: "milk-thistle", name: "Milk Thistle", icon: "MT", priceRange: "$9–$28", query: "milk thistle silymarin supplement" },
+  { id: "saw-palmetto", name: "Saw Palmetto", icon: "SP", priceRange: "$10–$30", query: "saw palmetto supplement" },
+  { id: "rhodiola", name: "Rhodiola Rosea", icon: "Rho", priceRange: "$12–$32", query: "rhodiola rosea supplement" },
+  { id: "ginseng", name: "Panax Ginseng", icon: "Gin", priceRange: "$12–$35", query: "Panax ginseng supplement" },
+  { id: "lions-mane", name: "Lion's Mane", icon: "LM", priceRange: "$15–$40", query: "lions mane supplement" },
+  { id: "alpha-gpc", name: "Alpha-GPC", icon: "αG", priceRange: "$18–$45", query: "alpha GPC supplement" },
+  { id: "citicoline", name: "Citicoline (CDP-Choline)", icon: "CDP", priceRange: "$18–$45", query: "citicoline CDP choline supplement" },
+  { id: "l-theanine", name: "L-Theanine", icon: "The", priceRange: "$8–$25", query: "L theanine supplement" },
+  { id: "l-tyrosine", name: "L-Tyrosine", icon: "Tyr", priceRange: "$10–$28", query: "L tyrosine supplement" },
+  { id: "5-htp", name: "5-HTP", icon: "5HTP", priceRange: "$9–$28", query: "5 HTP supplement" },
+  { id: "gaba", name: "GABA", icon: "GABA", priceRange: "$9–$25", query: "GABA supplement" },
+  { id: "same", name: "SAM-e", icon: "SAM", priceRange: "$18–$50", query: "SAM e supplement" },
+  { id: "alpha-lipoic-acid", name: "Alpha-Lipoic Acid", icon: "ALA", priceRange: "$10–$30", query: "alpha lipoic acid supplement" },
+  { id: "pqq", name: "PQQ", icon: "PQQ", priceRange: "$18–$45", query: "PQQ supplement" },
+  { id: "mct-oil", name: "MCT Oil", icon: "MCT", priceRange: "$12–$35", query: "MCT oil supplement" },
+  { id: "garlic", name: "Garlic Extract", icon: "Gar", priceRange: "$8–$25", query: "garlic extract supplement" },
+  { id: "black-seed-oil", name: "Black Seed Oil", icon: "BSO", priceRange: "$12–$30", query: "black seed oil supplement" },
+  { id: "spirulina", name: "Spirulina", icon: "Spi", priceRange: "$10–$30", query: "spirulina supplement" },
+  { id: "chlorella", name: "Chlorella", icon: "Chl", priceRange: "$12–$35", query: "chlorella supplement" },
+  { id: "boswellia", name: "Boswellia", icon: "Bos", priceRange: "$12–$32", query: "boswellia supplement" },
+  { id: "msm", name: "MSM", icon: "MSM", priceRange: "$10–$30", query: "MSM supplement" },
+  { id: "hyaluronic-acid", name: "Hyaluronic Acid", icon: "HA", priceRange: "$12–$35", query: "hyaluronic acid oral supplement" },
+  { id: "digestive-enzymes", name: "Digestive Enzymes", icon: "Enz", priceRange: "$12–$35", query: "digestive enzyme supplement" },
+  { id: "prebiotic", name: "Prebiotic Fiber", icon: "Pre", priceRange: "$10–$30", query: "prebiotic fiber supplement" },
+  { id: "ginger", name: "Ginger Extract", icon: "Gng", priceRange: "$8–$25", query: "ginger supplement" },
+].map((product) => ({
+  ...product,
+  compoundId: SUPPLEMENT_COMPOUND_IDS[product.id] || `supplement-${product.id}-compound`,
+  category: supplementCategory(product.id),
+  typicalServings: 30,
+  amazonUrl: `https://www.amazon.com/s?k=${encodeURIComponent(product.query)}`,
+})));

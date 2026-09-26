@@ -1,0 +1,15 @@
+names_encountered,recommended_representation,catalog_compound_ids
+Alpha-GPC / choline alfoscerate / L-alpha-GPC,One node with aliases,alpha-gpc-compound
+Citicoline / CDP-choline,One node with aliases,citicoline-compound
+Emoxypine succinate / Mexidol,Active molecule plus regional product-name alias,
+4F-phenibut / fluorophenibut,One node; record salt or formulation separately,
+Sunifiram / DM-235,One node,
+Unifiram / DM-232,One node,
+TAK-653 / osavampator,One node,tak-653-compound
+Rapastinel / GLYX-13,One node,
+Fasedienol / PH94B,One node,
+Retigabine / ezogabine,One node,retigabine-compound
+Zuranolone / SAGE-217,One node,zuranolone-compound
+Xanomeline–trospium / KarXT / Cobenfy,Combination-product node linked to both components,
+Brexanolone / allopregnanolone,Related but not identical nodes,brexanolone-compound
+9-Me-BC / 9-methyl-beta-carboline,One node,9-me-bc-compound

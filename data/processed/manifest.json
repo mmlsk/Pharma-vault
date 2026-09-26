@@ -1,0 +1,30 @@
+{
+  "input": "data/raw/pharmapedia-source/CompoundCatalog.source.js.txt",
+  "input_sha256": "f584b80d3f29bfbe7f13ec8243683864b3dbbabb400b12bdf6c844e6093a5147",
+  "substances": 2351,
+  "groups": 18,
+  "clusters": 8,
+  "with_explicit_aliases": 18,
+  "with_chembl_mechanism": 661,
+  "alias_collisions": 51,
+  "per_group": {
+    "analgesia": 39,
+    "ancillary": 1223,
+    "antiinfective": 133,
+    "cardio": 28,
+    "derm": 23,
+    "fgfr": 12,
+    "gh": 42,
+    "gi": 20,
+    "glp1": 63,
+    "immunology": 56,
+    "longevity": 254,
+    "neuropsych": 60,
+    "nootropic": 68,
+    "oncology": 54,
+    "pct": 101,
+    "peptides": 89,
+    "sarms": 20,
+    "steroids": 66
+  }
+}

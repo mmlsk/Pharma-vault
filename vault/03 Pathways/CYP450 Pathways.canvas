@@ -1,0 +1,205 @@
+{
+ "nodes": [
+  {
+   "id": "core",
+   "x": 0,
+   "y": 0,
+   "width": 320,
+   "height": 120,
+   "type": "file",
+   "file": "03 Pathways/CYP450 Metabolism.md",
+   "color": "5"
+  },
+  {
+   "id": "cyp3a4",
+   "x": -700,
+   "y": -320,
+   "width": 300,
+   "height": 100,
+   "type": "text",
+   "text": "CYP3A4/5\n~50% of drugs; gut + liver",
+   "color": "4"
+  },
+  {
+   "id": "cyp2d6",
+   "x": -360,
+   "y": -320,
+   "width": 300,
+   "height": 100,
+   "type": "text",
+   "text": "CYP2D6\npolymorphic; prodrug activation (codeine, tramadol)",
+   "color": "4"
+  },
+  {
+   "id": "cyp2c19",
+   "x": -20,
+   "y": -320,
+   "width": 300,
+   "height": 100,
+   "type": "text",
+   "text": "CYP2C19\npolymorphic; clopidogrel activation, PPIs",
+   "color": "4"
+  },
+  {
+   "id": "cyp2c9",
+   "x": 320,
+   "y": -320,
+   "width": 300,
+   "height": 100,
+   "type": "text",
+   "text": "CYP2C9\nwarfarin, NSAIDs",
+   "color": "4"
+  },
+  {
+   "id": "cyp1a2",
+   "x": 660,
+   "y": -320,
+   "width": 300,
+   "height": 100,
+   "type": "text",
+   "text": "CYP1A2\ncaffeine, induced by smoking",
+   "color": "4"
+  },
+  {
+   "id": "sub",
+   "x": -600,
+   "y": 320,
+   "width": 300,
+   "height": 110,
+   "type": "text",
+   "text": "## Substrates\nExposure \u2191 with inhibitors, \u2193 with inducers",
+   "color": "3"
+  },
+  {
+   "id": "inh",
+   "x": -200,
+   "y": 320,
+   "width": 320,
+   "height": 150,
+   "type": "text",
+   "text": "## Inhibitors\nclarithromycin, azoles, ritonavir, grapefruit (3A4); fluoxetine/paroxetine (2D6); fluvoxamine (1A2)",
+   "color": "1"
+  },
+  {
+   "id": "ind",
+   "x": 200,
+   "y": 320,
+   "width": 320,
+   "height": 150,
+   "type": "text",
+   "text": "## Inducers\nrifampicin, carbamazepine, phenytoin, St John's wort (3A4); smoking (1A2)",
+   "color": "2"
+  },
+  {
+   "id": "tr",
+   "x": 600,
+   "y": 320,
+   "width": 260,
+   "height": 100,
+   "type": "text",
+   "text": "## Transporters\nP-gp, OATP1B1, BCRP"
+  },
+  {
+   "id": "pk",
+   "x": -300,
+   "y": 600,
+   "width": 320,
+   "height": 100,
+   "type": "file",
+   "file": "03 Pathways/Pharmacokinetics Summary.md"
+  },
+  {
+   "id": "dash",
+   "x": 100,
+   "y": 600,
+   "width": 320,
+   "height": 100,
+   "type": "file",
+   "file": "90 Templates/Clearance Dashboard.md"
+  },
+  {
+   "id": "hub",
+   "x": 500,
+   "y": 600,
+   "width": 320,
+   "height": 100,
+   "type": "file",
+   "file": "06 Safety Hubs/Stacking and Interaction Risks.md",
+   "color": "1"
+  }
+ ],
+ "edges": [
+  {
+   "id": "core-cyp3a4",
+   "fromNode": "core",
+   "toNode": "cyp3a4",
+   "label": "enzyme"
+  },
+  {
+   "id": "core-cyp2d6",
+   "fromNode": "core",
+   "toNode": "cyp2d6",
+   "label": "enzyme"
+  },
+  {
+   "id": "core-cyp2c19",
+   "fromNode": "core",
+   "toNode": "cyp2c19",
+   "label": "enzyme"
+  },
+  {
+   "id": "core-cyp2c9",
+   "fromNode": "core",
+   "toNode": "cyp2c9",
+   "label": "enzyme"
+  },
+  {
+   "id": "core-cyp1a2",
+   "fromNode": "core",
+   "toNode": "cyp1a2",
+   "label": "enzyme"
+  },
+  {
+   "id": "core-sub",
+   "fromNode": "core",
+   "toNode": "sub",
+   "label": "role"
+  },
+  {
+   "id": "core-inh",
+   "fromNode": "core",
+   "toNode": "inh",
+   "label": "role"
+  },
+  {
+   "id": "core-ind",
+   "fromNode": "core",
+   "toNode": "ind",
+   "label": "role"
+  },
+  {
+   "id": "core-tr",
+   "fromNode": "core",
+   "toNode": "tr",
+   "label": "co-regulated"
+  },
+  {
+   "id": "core-pk",
+   "fromNode": "core",
+   "toNode": "pk",
+   "label": "fields"
+  },
+  {
+   "id": "core-dash",
+   "fromNode": "core",
+   "toNode": "dash",
+   "label": "queries"
+  },
+  {
+   "id": "core-hub",
+   "fromNode": "core",
+   "toNode": "hub",
+   "label": "risk"
+  }
+ ]
+}

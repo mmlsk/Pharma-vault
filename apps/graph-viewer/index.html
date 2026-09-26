@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pharmacology Knowledge Graph</title>
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=boska@400,500,700&display=swap" rel="stylesheet" />
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-surface-2: #fbfbf9;
+      --color-surface-offset: #f3f0ec; --color-border: #d4d1ca; --color-divider: #dcd9d5;
+      --color-text: #28251d; --color-text-muted: #6e6a63; --color-text-faint: #9e9b95;
+      --color-primary: #01696f; --color-primary-hover: #0c4e54; --color-primary-highlight: #cedcd8;
+      --color-warning: #964219; --color-error: #a12c7b; --color-success: #437a22;
+      --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.75rem; --radius-xl: 1rem;
+      --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06);
+      --shadow-md: 0 4px 12px oklch(0.2 0.01 80 / 0.08);
+      --font-display: 'Boska', Georgia, serif;
+      --font-body: 'General Sans', Inter, sans-serif;
+    }
+    [data-theme="dark"] {
+      --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #201f1d;
+      --color-surface-offset: #1d1c1a; --color-border: #393836; --color-divider: #262523;
+      --color-text: #cdccca; --color-text-muted: #9c9892; --color-text-faint: #6f6b66;
+      --color-primary: #4f98a3; --color-primary-hover: #227f8b; --color-primary-highlight: #313b3b;
+      --color-warning: #bb653b; --color-error: #d163a7; --color-success: #6daa45;
+      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
+      --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { color-scheme: dark light; scroll-behavior: smooth; }
+    body {
+      min-height: 100dvh; font-family: var(--font-body); font-size: var(--text-base); line-height: 1.55;
+      color: var(--color-text); background:
+        radial-gradient(circle at top left, color-mix(in oklab, var(--color-primary) 18%, transparent), transparent 35%),
+        radial-gradient(circle at right 10% top 10%, color-mix(in oklab, var(--color-warning) 12%, transparent), transparent 28%),
+        var(--color-bg);
+    }
+    button, input, select { font: inherit; color: inherit; }
+    .app { display: grid; grid-template-columns: 320px 1fr; min-height: 100dvh; }
+    .sidebar {
+      position: sticky; top: 0; align-self: start; height: 100dvh; overflow: auto;
+      padding: var(--space-6); border-right: 1px solid color-mix(in oklab, var(--color-text) 14%, transparent);
+      background: color-mix(in oklab, var(--color-surface) 90%, transparent);
+      backdrop-filter: blur(10px);
+    }
+    .brand { display:flex; align-items:center; gap: var(--space-3); margin-bottom: var(--space-6); }
+    .logo { width: 42px; height: 42px; border-radius: 50%; display:grid; place-items:center; color: var(--color-primary); background: color-mix(in oklab, var(--color-primary) 14%, var(--color-surface)); box-shadow: var(--shadow-sm); }
+    .brand h1 { font-family: var(--font-display); font-size: var(--text-xl); line-height: 1; }
+    .brand p { color: var(--color-text-muted); font-size: var(--text-sm); }
+    .controls { display:grid; gap: var(--space-4); margin-bottom: var(--space-6); }
+    .panel { background: color-mix(in oklab, var(--color-surface) 88%, transparent); border: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent); border-radius: var(--radius-xl); padding: var(--space-4); box-shadow: var(--shadow-sm); }
+    .panel h2 { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); margin-bottom: var(--space-3); }
+    .search { width: 100%; padding: 0.9rem 1rem; border-radius: var(--radius-lg); border: 1px solid color-mix(in oklab, var(--color-text) 14%, transparent); background: var(--color-surface-2); }
+    .chips { display:flex; flex-wrap:wrap; gap: var(--space-2); }
+    .chip {
+      border: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent); background: transparent;
+      border-radius: 999px; padding: 0.45rem 0.8rem; font-size: var(--text-sm); cursor:pointer;
+    }
+    .chip.active { background: color-mix(in oklab, var(--color-primary) 16%, var(--color-surface)); color: var(--color-text); border-color: color-mix(in oklab, var(--color-primary) 38%, transparent); }
+    .legend { display:grid; gap: var(--space-2); }
+    .legend-item { display:flex; align-items:center; justify-content:space-between; gap: var(--space-3); font-size: var(--text-sm); color: var(--color-text-muted); }
+    .swatch { width: 12px; height: 12px; border-radius: 50%; display:inline-block; margin-right: var(--space-2); }
+    .main { display:grid; grid-template-rows: auto 1fr; min-width: 0; }
+    .topbar {
+      display:flex; align-items:flex-start; justify-content:space-between; gap: var(--space-4);
+      padding: var(--space-6) var(--space-6) var(--space-4);
+    }
+    .intro h2 { font-family: var(--font-display); font-size: var(--text-2xl); line-height: 0.95; margin-bottom: var(--space-3); }
+    .intro p { max-width: 70ch; color: var(--color-text-muted); }
+    .actions { display:flex; gap: var(--space-3); align-items:center; }
+    .btn {
+      padding: 0.8rem 1rem; border-radius: var(--radius-lg); border: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent);
+      background: var(--color-surface); cursor: pointer; box-shadow: var(--shadow-sm);
+    }
+    .btn.primary { background: var(--color-primary); color: white; border-color: transparent; }
+    .workspace { display:grid; grid-template-columns: minmax(0, 1fr) 360px; gap: var(--space-4); padding: 0 var(--space-6) var(--space-6); min-height: 0; }
+    .canvas-wrap {
+      min-height: 72vh; border-radius: 24px; overflow: hidden; position: relative;
+      border: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent);
+      background:
+        linear-gradient(color-mix(in oklab, var(--color-text) 5%, transparent) 1px, transparent 1px),
+        linear-gradient(90deg, color-mix(in oklab, var(--color-text) 5%, transparent) 1px, transparent 1px),
+        linear-gradient(180deg, color-mix(in oklab, var(--color-surface) 92%, transparent), color-mix(in oklab, var(--color-surface-offset) 88%, transparent));
+      background-size: 40px 40px, 40px 40px, auto;
+      box-shadow: var(--shadow-md);
+    }
+    canvas { width: 100%; height: 100%; display:block; cursor: grab; }
+    canvas.grabbing { cursor: grabbing; }
+    .hint {
+      position:absolute; left: var(--space-4); bottom: var(--space-4); z-index: 2;
+      background: color-mix(in oklab, var(--color-surface) 82%, transparent); backdrop-filter: blur(8px);
+      border: 1px solid color-mix(in oklab, var(--color-text) 10%, transparent); border-radius: var(--radius-lg);
+      padding: 0.7rem 0.9rem; font-size: var(--text-sm); color: var(--color-text-muted);
+    }
+    .detail { display:grid; gap: var(--space-4); align-content:start; }
+    .metric-grid { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--space-3); }
+    .metric { padding: var(--space-3); border-radius: var(--radius-lg); background: color-mix(in oklab, var(--color-surface-2) 86%, transparent); border: 1px solid color-mix(in oklab, var(--color-text) 10%, transparent); }
+    .metric span { display:block; color: var(--color-text-muted); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; }
+    .metric strong { font-size: var(--text-lg); }
+    .node-title { font-family: var(--font-display); font-size: var(--text-xl); line-height: 1; margin-bottom: var(--space-2); }
+    .eyebrow { color: var(--color-text-muted); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-2); }
+    .node-desc { color: var(--color-text-muted); margin-bottom: var(--space-4); }
+    .list { display:grid; gap: var(--space-2); max-height: 220px; overflow:auto; }
+    .list-item {
+      padding: 0.8rem 0.9rem; border-radius: var(--radius-lg); background: color-mix(in oklab, var(--color-surface-2) 86%, transparent);
+      border: 1px solid color-mix(in oklab, var(--color-text) 10%, transparent); font-size: var(--text-sm);
+    }
+    .list-item small { display:block; color: var(--color-text-muted); margin-top: 0.25rem; }
+    .footnote { color: var(--color-text-faint); font-size: var(--text-sm); }
+    @media (max-width: 1080px) {
+      .app { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; border-right: 0; border-bottom: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent); }
+      .workspace { grid-template-columns: 1fr; }
+      .canvas-wrap { min-height: 58vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo" aria-label="Knowledge graph logo">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+            <circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="8" cy="9" r="2.1" fill="currentColor"/>
+            <circle cx="17.7" cy="8" r="2.1" fill="currentColor" opacity="0.85"/>
+            <circle cx="15.5" cy="17.5" r="2.1" fill="currentColor" opacity="0.7"/>
+            <path d="M9.7 10.3l6 6M10 9l5.9-.7M16.7 10l-1 5.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Pharmagraph</h1>
+          <p>Canvas knowledge map from extracted source</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <section class="panel">
+          <h2>Search</h2>
+          <input id="search" class="search" type="text" placeholder="Try caffeine, GLP-1, peptide, risk..." />
+        </section>
+
+        <section class="panel">
+          <h2>Groups</h2>
+          <div class="chips" id="groupChips"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Legend</h2>
+          <div class="legend">
+            <div class="legend-item"><span><i class="swatch" style="background:#4f98a3"></i>Nootropic</span><span>mind / vigilance</span></div>
+            <div class="legend-item"><span><i class="swatch" style="background:#6daa45"></i>Metabolic</span><span>GLP-1 / glucose</span></div>
+            <div class="legend-item"><span><i class="swatch" style="background:#bb653b"></i>Peptide / GH</span><span>endocrine axis</span></div>
+            <div class="legend-item"><span><i class="swatch" style="background:#d163a7"></i>Risk / caution</span><span>stacking hazards</span></div>
+            <div class="legend-item"><span><i class="swatch" style="background:#d19900"></i>Longevity</span><span>hypothesis / research</span></div>
+          </div>
+        </section>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="intro">
+          <h2>Pharmacology, nootropics, and biohacking as a connected system</h2>
+          <p>This graph turns the extracted source into a curated mechanism map. It focuses on evidence tiers, stack overlap, metabolic and endocrine hubs, nootropic use-cases, and recurring risk patterns rather than copying the site’s product catalog structure.</p>
+        </div>
+        <div class="actions">
+          <button class="btn" id="themeToggle" aria-label="Toggle theme">Theme</button>
+          <button class="btn primary" id="resetView">Reset view</button>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <div class="canvas-wrap">
+          <canvas id="graph"></canvas>
+          <div class="hint">Drag to pan, scroll to zoom, click a node to inspect its meaning and links.</div>
+        </div>
+
+        <aside class="detail">
+          <section class="panel">
+            <div class="eyebrow">Overview</div>
+            <div class="metric-grid">
+              <div class="metric"><span>Nodes</span><strong id="nodeCount">0</strong></div>
+              <div class="metric"><span>Edges</span><strong id="edgeCount">0</strong></div>
+              <div class="metric"><span>Visible</span><strong id="visibleCount">0</strong></div>
+              <div class="metric"><span>Focus</span><strong id="focusCount">All</strong></div>
+            </div>
+          </section>
+
+          <section class="panel" id="detailCard">
+            <div class="eyebrow">Selected node</div>
+            <div class="node-title">Choose a node</div>
+            <p class="node-desc">The right-hand panel will show a short interpretation, category, and connected ideas such as overlap, evidence limits, or stack risk.</p>
+            <div class="footnote">The graph is interpretive: it compresses the extracted source into a usable visual summary rather than reproducing the original site structure one-to-one.</div>
+          </section>
+
+          <section class="panel">
+            <div class="eyebrow">Reading guide</div>
+            <div class="list">
+              <div class="list-item">Mechanism hubs show where compounds converge on the same pathway.<small>Useful for spotting redundancy, not just benefits.</small></div>
+              <div class="list-item">Risk nodes collect additive harms like insomnia, cholinergic overload, endocrine suppression, hypotension, and CYP interactions.<small>These are often more practically important than the “benefit” nodes.</small></div>
+              <div class="list-item">Longevity and peptide clusters are visually separated because the source repeatedly treats them as mechanistically interesting but clinically incomplete.<small>That distinction is part of the message.</small></div>
+            </div>
+          </section>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const graphData = {
+      nodes: [
+        {id:'caffeine', label:'Caffeine', group:'nootropic', desc:'Arousal agent that blocks adenosine signalling. Best understood as masking sleep pressure rather than repaying it.', size:26},
+        {id:'creatine', label:'Creatine', group:'nootropic', desc:'Brain and muscle energy buffer. Cognitive effects are most plausible under sleep loss or metabolic stress.', size:24},
+        {id:'tyrosine', label:'L-Tyrosine', group:'nootropic', desc:'Conditional nootropic with better support in stress, cold, fatigue, or sleep deprivation than in rested baseline conditions.', size:22},
+        {id:'modafinil', label:'Modafinil', group:'nootropic', desc:'Wake-promoting medicine. In the source it functions as a cautionary example for arousal stacking and sleep debt.', size:24},
+        {id:'citicoline', label:'Citicoline / Alpha-GPC', group:'nootropic', desc:'Choline donor family associated with acetylcholine support, often stacked too aggressively.', size:22},
+        {id:'bacopa', label:'Bacopa', group:'nootropic', desc:'Herbal nootropic with mixed evidence; more credible for modest, slow-burn effects than instant “focus.”', size:20},
+        {id:'rhodiola', label:'Rhodiola', group:'nootropic', desc:'Better supported for perceived fatigue reduction than clear cognitive enhancement.', size:20},
+        {id:'huperzine', label:'Huperzine / Donepezil', group:'risk', desc:'Represents acetylcholinesterase inhibition. Important because it can combine badly with multiple choline donors.', size:22},
+
+        {id:'semaglutide', label:'Semaglutide', group:'metabolic', desc:'GLP-1 pathway medicine with real clinical footing for obesity and metabolic disease.', size:24},
+        {id:'tirzepatide', label:'Tirzepatide', group:'metabolic', desc:'Incretin-based metabolic agent used in the source as part of clinic-style weight-loss comparison stacks.', size:24},
+        {id:'metformin', label:'Metformin', group:'metabolic', desc:'AMPK-linked metabolic medicine appearing in glucose and longevity clusters.', size:22},
+        {id:'empagliflozin', label:'Empagliflozin', group:'metabolic', desc:'SGLT2 inhibitor with cardiorenal relevance; included as a serious, evidence-based metabolic node.', size:20},
+        {id:'berberine', label:'Berberine', group:'metabolic', desc:'Supplemental metabolic node positioned between plausible benefit and “nature’s Ozempic” hype.', size:20},
+        {id:'psyllium', label:'Psyllium', group:'metabolic', desc:'Simple but evidence-grounded fiber node representing satiety and lipid/glucose support.', size:18},
+
+        {id:'ghsecret', label:'GH Secretagogues', group:'peptide', desc:'Abstraction for CJC-1295, ipamorelin, sermorelin, GHRP-2, and MK-677. The source stresses redundancy on the same axis.', size:26},
+        {id:'somatropin', label:'Somatropin / GH', group:'peptide', desc:'Direct growth hormone replacement. Distinct from secretagogues because it bypasses endogenous signalling.', size:22},
+        {id:'igf1', label:'IGF-1 / Mecasermin', group:'peptide', desc:'Downstream node in the GH-IGF axis used to explain pathway logic.', size:20},
+        {id:'bpc', label:'BPC-157 / TB-500', group:'peptide', desc:'Research-repair peptide cluster; mechanistically intriguing but weakly grounded clinically.', size:22},
+        {id:'semax', label:'Semax / Selank', group:'peptide', desc:'Nootropic peptide cluster associated with BDNF-style claims and limited mainstream evidence.', size:20},
+        {id:'motsc', label:'MOTS-c / Humanin', group:'longevity', desc:'Mitochondrial peptide cluster associated with aging and metabolic resilience narratives.', size:20},
+
+        {id:'rapamycin', label:'Rapamycin', group:'longevity', desc:'High-profile longevity node linked to mTOR and major uncertainty in healthy-user anti-aging use.', size:22},
+        {id:'nr', label:'NR / NMN', group:'longevity', desc:'NAD precursor cluster. Biomarker movement is separated from outcome certainty in the source.', size:20},
+        {id:'resveratrol', label:'Resveratrol / AKG', group:'longevity', desc:'Stress-response and longevity signalling cluster with more theory than settled outcome evidence.', size:20},
+        {id:'fisetin', label:'Fisetin / Quercetin', group:'longevity', desc:'Senolytic hypothesis cluster explicitly framed as not equivalent to proven rejuvenation.', size:20},
+
+        {id:'steroid', label:'Steroid / SARM stacks', group:'risk', desc:'Represents androgenic, designer-steroid, and SARM enhancement stacks that dominate the source’s caution examples.', size:28},
+        {id:'clen', label:'Clenbuterol / Ephedrine', group:'risk', desc:'Adrenergic fat-loss cluster emphasizing cardiac and stimulant burden.', size:22},
+        {id:'thyroid', label:'Thyroid hormone misuse', group:'risk', desc:'Liothyronine-like fat-loss misuse node; speed comes with metabolic and cardiac cost.', size:20},
+        {id:'nitrate', label:'Nitrate + PDE5', group:'risk', desc:'Classic contraindication node for additive nitric-oxide / cGMP effects.', size:20},
+        {id:'cyp', label:'CYP3A4 pile-up', group:'risk', desc:'Interaction-risk hub used in the source to show clearance stacking as a graph problem.', size:22},
+        {id:'serotonin', label:'Serotonin pile-up', group:'risk', desc:'Represents multi-drug serotonergic accumulation and the importance of missed mechanisms.', size:20},
+
+        {id:'sleep', label:'Sleep debt', group:'concept', desc:'Central concept: wakefulness compounds often buy performance back only under deficit.', size:28},
+        {id:'attention', label:'Attention / vigilance', group:'concept', desc:'Desired cognitive endpoint for many nootropics and stimulants.', size:26},
+        {id:'choline', label:'Cholinergic load', group:'concept', desc:'Mechanism hub for acetylcholine supply and breakdown inhibition.', size:22},
+        {id:'glucose', label:'Glucose / insulin signalling', group:'concept', desc:'Metabolic hub connecting GLP-1 agents, metformin, berberine, SGLT2 logic, and satiety.', size:26},
+        {id:'ghaxis', label:'GH / IGF axis', group:'concept', desc:'Shared endocrine axis used to explain redundancy across growth-hormone enhancers.', size:26},
+        {id:'cardio', label:'Cardiovascular load', group:'concept', desc:'Risk hub spanning blood pressure, tachycardia, endothelial stress, and lipids.', size:26},
+        {id:'longevity', label:'Longevity hypothesis', group:'concept', desc:'Meta-node for compounds sold on lifespan, mitophagy, senolysis, and nutrient-sensing stories.', size:24},
+        {id:'evidence', label:'Evidence hierarchy', group:'concept', desc:'Key reading frame: human RCTs and outcomes outrank animal, in vitro, or mechanistic inference.', size:28},
+        {id:'redundancy', label:'Stack redundancy', group:'concept', desc:'Explains why adding more agents can duplicate mechanism instead of adding benefit.', size:24},
+        {id:'overlap', label:'Interaction overlap', group:'concept', desc:'Umbrella node for pathway convergence, polypharmacy burden, and combinational risk.', size:22}
+      ],
+      edges: [
+        ['caffeine','attention'],['caffeine','sleep'],['creatine','attention'],['creatine','sleep'],['tyrosine','attention'],['tyrosine','sleep'],['modafinil','attention'],['modafinil','sleep'],
+        ['citicoline','attention'],['citicoline','choline'],['huperzine','choline'],['bacopa','attention'],['rhodiola','attention'],['rhodiola','sleep'],
+        ['choline','overlap'],['huperzine','overlap'],['modafinil','overlap'],['caffeine','overlap'],['citicoline','redundancy'],['huperzine','redundancy'],
+
+        ['semaglutide','glucose'],['tirzepatide','glucose'],['metformin','glucose'],['empagliflozin','glucose'],['berberine','glucose'],['psyllium','glucose'],
+        ['semaglutide','cardio'],['empagliflozin','cardio'],['metformin','longevity'],['berberine','longevity'],
+
+        ['ghsecret','ghaxis'],['somatropin','ghaxis'],['igf1','ghaxis'],['ghsecret','redundancy'],['somatropin','redundancy'],['bpc','evidence'],['semax','evidence'],['motsc','longevity'],['motsc','evidence'],
+        ['ghsecret','overlap'],['somatropin','overlap'],['igf1','overlap'],['bpc','overlap'],['semax','attention'],['semax','evidence'],
+
+        ['rapamycin','longevity'],['nr','longevity'],['resveratrol','longevity'],['fisetin','longevity'],['rapamycin','evidence'],['nr','evidence'],['resveratrol','evidence'],['fisetin','evidence'],
+        ['longevity','evidence'],
+
+        ['steroid','cardio'],['steroid','overlap'],['steroid','redundancy'],['clen','cardio'],['clen','sleep'],['thyroid','cardio'],['thyroid','overlap'],['nitrate','cardio'],['nitrate','overlap'],['cyp','overlap'],['serotonin','overlap'],['serotonin','sleep'],
+        ['attention','evidence'],['sleep','evidence'],['glucose','evidence'],['ghaxis','evidence'],['cardio','evidence'],['overlap','evidence'],['redundancy','evidence']
+      ]
+    };
+
+    const palette = {
+      nootropic: '#4f98a3',
+      metabolic: '#6daa45',
+      peptide: '#bb653b',
+      longevity: '#d19900',
+      risk: '#d163a7',
+      concept: '#9aa2b4'
+    };
+
+    const detailNotes = {
+      attention: ['Many compounds target the same user-visible outcome through very different biology.', 'The source repeatedly warns that better alertness does not imply additive cognition in healthy rested users.'],
+      sleep: ['One of the most important themes in the extracted source is that many nootropics are conditional—helping under deficit, not baseline.', 'This node helps separate enhancement from deficit compensation.'],
+      choline: ['The graph treats cholinergic stacking as a real pharmacology problem, not just a “smart stack.”', 'Combining multiple donors with acetylcholinesterase inhibition is shown as a classic overshoot pattern.'],
+      glucose: ['This cluster contains some of the most clinically grounded material in the source.', 'It mixes prescription metabolic therapy with supplement-grade support, which is precisely why evidence ranking matters.'],
+      ghaxis: ['The source is unusually strong at showing that many GH-enhancing products are just alternate entries into the same axis.', 'That makes the graph good for spotting redundancy and wishful stacking.'],
+      cardio: ['Cardiovascular cost is the most common “hidden bill” of aggressive enhancement stacks in the extracted source.', 'Stimulants, steroids, thyroid misuse, and nitric-oxide interactions all converge here.'],
+      longevity: ['This is the most hypothesis-heavy region of the map.', 'The source consistently argues that mechanistic interest and biomarker movement should not be mistaken for proven human rejuvenation.'],
+      evidence: ['This node is the intellectual backbone of the graph.', 'Human outcome evidence is separated from animal, in vitro, or inferential biology throughout the source.'],
+      redundancy: ['A stack can look impressive while mostly reloading the same pathway several times.', 'That is a recurring theme across nootropics, GH secretagogues, and enhancement stacks.'],
+      overlap: ['Interaction burden includes more than direct receptor overlap: it also includes shared risk, shared metabolism, and shared physiology.', 'This node is useful when reading the graph as a safety tool.']
+    };
+
+    const canvas = document.getElementById('graph');
+    const ctx = canvas.getContext('2d');
+    const wrap = canvas.parentElement;
+    const detailCard = document.getElementById('detailCard');
+    const nodeCountEl = document.getElementById('nodeCount');
+    const edgeCountEl = document.getElementById('edgeCount');
+    const visibleCountEl = document.getElementById('visibleCount');
+    const focusCountEl = document.getElementById('focusCount');
+    const searchInput = document.getElementById('search');
+    const chipBox = document.getElementById('groupChips');
+    const themeToggle = document.getElementById('themeToggle');
+    const resetView = document.getElementById('resetView');
+
+    const state = {
+      scale: 1,
+      offsetX: 0,
+      offsetY: 0,
+      drag: false,
+      lastX: 0,
+      lastY: 0,
+      selected: null,
+      filter: 'all',
+      query: ''
+    };
+
+    const groups = ['all','nootropic','metabolic','peptide','longevity','risk','concept'];
+    groups.forEach(g => {
+      const b = document.createElement('button');
+      b.className = 'chip' + (g === 'all' ? ' active' : '');
+      b.textContent = g === 'all' ? 'All' : g[0].toUpperCase() + g.slice(1);
+      b.dataset.group = g;
+      b.addEventListener('click', () => {
+        state.filter = g;
+        [...chipBox.children].forEach(c => c.classList.toggle('active', c.dataset.group === g));
+        render();
+      });
+      chipBox.appendChild(b);
+    });
+
+    const nodes = graphData.nodes.map((n, i) => ({
+      ...n,
+      x: Math.cos(i / graphData.nodes.length * Math.PI * 2) * (220 + (i % 5) * 45),
+      y: Math.sin(i / graphData.nodes.length * Math.PI * 2) * (180 + (i % 6) * 40),
+      vx: 0,
+      vy: 0
+    }));
+    const nodeById = new Map(nodes.map(n => [n.id, n]));
+    const edges = graphData.edges.map(([a,b]) => ({ source: nodeById.get(a), target: nodeById.get(b) }));
+
+    nodeCountEl.textContent = nodes.length;
+    edgeCountEl.textContent = edges.length;
+
+    function resize() {
+      const rect = wrap.getBoundingClientRect();
+      canvas.width = Math.floor(rect.width * devicePixelRatio);
+      canvas.height = Math.floor(rect.height * devicePixelRatio);
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+      if (!state.offsetX && !state.offsetY) {
+        state.offsetX = rect.width / 2;
+        state.offsetY = rect.height / 2;
+      }
+      render();
+    }
+    new ResizeObserver(resize).observe(wrap);
+
+    function visibleNode(n) {
+      const matchGroup = state.filter === 'all' || n.group === state.filter;
+      const q = state.query.trim().toLowerCase();
+      const matchQuery = !q || n.label.toLowerCase().includes(q) || n.desc.toLowerCase().includes(q);
+      return matchGroup && matchQuery;
+    }
+
+    function getVisibleNodes() { return nodes.filter(visibleNode); }
+    function getVisibleSet() { return new Set(getVisibleNodes().map(n => n.id)); }
+
+    function simulate(iterations = 100) {
+      for (let iter = 0; iter < iterations; iter++) {
+        for (let i = 0; i < nodes.length; i++) {
+          const a = nodes[i];
+          for (let j = i + 1; j < nodes.length; j++) {
+            const b = nodes[j];
+            let dx = a.x - b.x; let dy = a.y - b.y;
+            let d2 = dx*dx + dy*dy + 0.01;
+            let force = 2800 / d2;
+            a.vx += dx * force * 0.0008; a.vy += dy * force * 0.0008;
+            b.vx -= dx * force * 0.0008; b.vy -= dy * force * 0.0008;
+          }
+        }
+        edges.forEach(e => {
+          const dx = e.target.x - e.source.x;
+          const dy = e.target.y - e.source.y;
+          const dist = Math.hypot(dx,dy) || 1;
+          const force = (dist - 130) * 0.0015;
+          const fx = dx / dist * force; const fy = dy / dist * force;
+          e.source.vx += fx; e.source.vy += fy;
+          e.target.vx -= fx; e.target.vy -= fy;
+        });
+        nodes.forEach(n => {
+          n.vx += -n.x * 0.00008; n.vy += -n.y * 0.00008;
+          n.vx *= 0.91; n.vy *= 0.91;
+          n.x += n.vx; n.y += n.vy;
+        });
+      }
+    }
+    simulate();
+
+    function worldToScreen(x, y) {
+      return { x: x * state.scale + state.offsetX, y: y * state.scale + state.offsetY };
+    }
+    function screenToWorld(x, y) {
+      return { x: (x - state.offsetX) / state.scale, y: (y - state.offsetY) / state.scale };
+    }
+
+    function drawNode(n, visibleSet) {
+      const p = worldToScreen(n.x, n.y);
+      const radius = (n.size || 20) * state.scale * 0.55;
+      if (p.x < -100 || p.y < -100 || p.x > canvas.clientWidth + 100 || p.y > canvas.clientHeight + 100) return;
+      const selected = state.selected && state.selected.id === n.id;
+      const alpha = visibleSet.has(n.id) ? 1 : 0.12;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.beginPath();
+      ctx.fillStyle = palette[n.group] || '#9aa2b4';
+      ctx.shadowColor = selected ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.18)';
+      ctx.shadowBlur = selected ? 24 : 14;
+      ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      ctx.lineWidth = selected ? 2.6 : 1.1;
+      ctx.strokeStyle = selected ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.25)';
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(255,255,255,0.95)';
+      const fontSize = Math.max(12, Math.min(16, 12 + radius / 8));
+      ctx.font = `600 ${fontSize}px var(--font-body)`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      wrapText(n.label, p.x, p.y, radius * 1.6, fontSize + 2);
+      ctx.restore();
+      n._screen = {x:p.x, y:p.y, radius};
+    }
+
+    function wrapText(text, x, y, maxWidth, lineHeight) {
+      const words = text.split(' ');
+      const lines = [];
+      let line = '';
+      for (const word of words) {
+        const test = line ? line + ' ' + word : word;
+        if (ctx.measureText(test).width > maxWidth && line) { lines.push(line); line = word; }
+        else line = test;
+      }
+      if (line) lines.push(line);
+      const total = (lines.length - 1) * lineHeight;
+      lines.forEach((l, idx) => ctx.fillText(l, x, y - total / 2 + idx * lineHeight));
+    }
+
+    function drawEdge(e, visibleSet) {
+      const a = worldToScreen(e.source.x, e.source.y);
+      const b = worldToScreen(e.target.x, e.target.y);
+      const vis = visibleSet.has(e.source.id) && visibleSet.has(e.target.id);
+      ctx.save();
+      ctx.globalAlpha = vis ? 0.38 : 0.08;
+      const grad = ctx.createLinearGradient(a.x,a.y,b.x,b.y);
+      grad.addColorStop(0, palette[e.source.group] || '#aaa');
+      grad.addColorStop(1, palette[e.target.group] || '#aaa');
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = vis ? 1.8 : 1;
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function renderDetail(node) {
+      if (!node) {
+        detailCard.innerHTML = `<div class="eyebrow">Selected node</div><div class="node-title">Choose a node</div><p class="node-desc">The right-hand panel will show a short interpretation, category, and connected ideas such as overlap, evidence limits, or stack risk.</p><div class="footnote">The graph is interpretive: it compresses the extracted source into a usable visual summary rather than reproducing the original site structure one-to-one.</div>`;
+        return;
+      }
+      const linked = edges.filter(e => e.source.id === node.id || e.target.id === node.id).map(e => e.source.id === node.id ? e.target : e.source);
+      const bullets = (detailNotes[node.id] || [node.desc]).slice(0,2).map(t => `<div class="list-item">${t}</div>`).join('');
+      const linkedHtml = linked.slice(0,8).map(n => `<div class="list-item"><strong>${n.label}</strong><small>${n.group}</small></div>`).join('');
+      detailCard.innerHTML = `
+        <div class="eyebrow">${node.group}</div>
+        <div class="node-title">${node.label}</div>
+        <p class="node-desc">${node.desc}</p>
+        <div class="list" style="margin-bottom:var(--space-4)">${bullets}</div>
+        <div class="eyebrow">Connected ideas</div>
+        <div class="list">${linkedHtml || '<div class="list-item">No linked nodes in current extract.</div>'}</div>
+      `;
+    }
+
+    function render() {
+      const rect = wrap.getBoundingClientRect();
+      ctx.clearRect(0,0,rect.width,rect.height);
+      const visibleNodes = getVisibleNodes();
+      const visibleSet = new Set(visibleNodes.map(n => n.id));
+      visibleCountEl.textContent = visibleNodes.length;
+      focusCountEl.textContent = state.filter === 'all' ? 'All' : state.filter;
+      edges.forEach(e => drawEdge(e, visibleSet));
+      nodes.forEach(n => drawNode(n, visibleSet));
+    }
+
+    canvas.addEventListener('mousedown', e => {
+      state.drag = true; state.lastX = e.clientX; state.lastY = e.clientY; canvas.classList.add('grabbing');
+    });
+    window.addEventListener('mouseup', () => { state.drag = false; canvas.classList.remove('grabbing'); });
+    window.addEventListener('mousemove', e => {
+      if (!state.drag) return;
+      state.offsetX += e.clientX - state.lastX;
+      state.offsetY += e.clientY - state.lastY;
+      state.lastX = e.clientX; state.lastY = e.clientY;
+      render();
+    });
+
+    canvas.addEventListener('wheel', e => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      const sx = e.clientX - rect.left;
+      const sy = e.clientY - rect.top;
+      const before = screenToWorld(sx, sy);
+      const factor = e.deltaY < 0 ? 1.08 : 0.92;
+      state.scale = Math.min(2.4, Math.max(0.38, state.scale * factor));
+      const after = worldToScreen(before.x, before.y);
+      state.offsetX += sx - after.x;
+      state.offsetY += sy - after.y;
+      render();
+    }, { passive: false });
+
+    canvas.addEventListener('click', e => {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left, y = e.clientY - rect.top;
+      const hit = [...nodes].reverse().find(n => {
+        if (!n._screen) return false;
+        const dx = x - n._screen.x, dy = y - n._screen.y;
+        return Math.hypot(dx,dy) <= n._screen.radius;
+      });
+      state.selected = hit || null;
+      renderDetail(hit || null);
+      render();
+    });
+
+    searchInput.addEventListener('input', e => { state.query = e.target.value; render(); });
+
+    resetView.addEventListener('click', () => {
+      state.scale = 1;
+      state.offsetX = wrap.clientWidth / 2;
+      state.offsetY = wrap.clientHeight / 2;
+      state.selected = null;
+      renderDetail(null);
+      render();
+    });
+
+    themeToggle.addEventListener('click', () => {
+      const root = document.documentElement;
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    });
+
+    renderDetail(null);
+    resize();
+  </script>
+</body>
+</html>

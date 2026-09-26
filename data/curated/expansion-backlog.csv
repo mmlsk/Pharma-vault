@@ -1,0 +1,265 @@
+domain,subdomain,candidate,already_in_catalog_as,review_status
+Emerging CNS agents,Orexin and wakefulness,"Danavorexton, also known as TAK-925",,candidate
+Emerging CNS agents,Orexin and wakefulness,"Oveporexton, also known as TAK-861",,candidate
+Emerging CNS agents,Orexin and wakefulness,TAK-994,,candidate
+Emerging CNS agents,Orexin and wakefulness,ORX750,,candidate
+Emerging CNS agents,Orexin and wakefulness,ALKS 2680,,candidate
+Emerging CNS agents,Orexin and wakefulness,JZP441,,candidate
+Emerging CNS agents,Orexin and wakefulness,Mazindol extended-release,,candidate
+Emerging CNS agents,Orexin and wakefulness,Samelisant,,candidate
+Emerging CNS agents,Orexin and wakefulness,Quilavonemad,,candidate
+Emerging CNS agents,AMPA and glutamate,"Unifiram, DM-232",,candidate
+Emerging CNS agents,AMPA and glutamate,IDRA-21,idra-21-compound,candidate
+Emerging CNS agents,AMPA and glutamate,"BIIB104, formerly PF-04958242",,candidate
+Emerging CNS agents,AMPA and glutamate,"Tulrampator, S-47445",,candidate
+Emerging CNS agents,AMPA and glutamate,CX-516,,candidate
+Emerging CNS agents,AMPA and glutamate,CX-717,,candidate
+Emerging CNS agents,AMPA and glutamate,CX-1739,,candidate
+Emerging CNS agents,AMPA and glutamate,CX-1942,,candidate
+Emerging CNS agents,AMPA and glutamate,Org 26576,,candidate
+Emerging CNS agents,AMPA and glutamate,"Zelquistinel, AV-101 or AGN-241751 depending on the specific development name",,candidate
+Emerging CNS agents,AMPA and glutamate,"Apimostinel, NRX-1074",,candidate
+Emerging CNS agents,AMPA and glutamate,"Esmethadone, REL-1017",,candidate
+Emerging CNS agents,AMPA and glutamate,"Iclepertin, BI 425809",,candidate
+Emerging CNS agents,AMPA and glutamate,"Luvadaxistat, TAK-831",,candidate
+Emerging CNS agents,AMPA and glutamate,Troriluzole,,candidate
+Emerging CNS agents,AMPA and glutamate,Sarcosine,sarcosine-compound,candidate
+Emerging CNS agents,AMPA and glutamate,Bitopertin,,candidate
+Emerging CNS agents,AMPA and glutamate,"Rapastinel metabolites or successor analogues, if represented separately",,candidate
+Emerging CNS agents,Muscarinic and TAAR1,Xanomeline,xanomeline-compound,candidate
+Emerging CNS agents,Muscarinic and TAAR1,Xanomeline–trospium,,candidate
+Emerging CNS agents,Muscarinic and TAAR1,Emraclidine,,candidate
+Emerging CNS agents,Muscarinic and TAAR1,NBI-1117568,,candidate
+Emerging CNS agents,Muscarinic and TAAR1,CVL-871,,candidate
+Emerging CNS agents,Muscarinic and TAAR1,"Ulotaront, SEP-363856",ulotaront-compound,candidate
+Emerging CNS agents,Muscarinic and TAAR1,"Ralmitaront, RO6889450",,candidate
+Emerging CNS agents,Muscarinic and TAAR1,Evenamide,,candidate
+Emerging CNS agents,Muscarinic and TAAR1,Roluperidone,,candidate
+Emerging CNS agents,Muscarinic and TAAR1,Brilaroxazine,,candidate
+Emerging CNS agents,Muscarinic and TAAR1,Trace-amine research agonists such as RO5256390 and RO5263397,,candidate
+Emerging CNS agents,Sigma-1 candidates,Pridopidine,pridopidine-compound,candidate
+Emerging CNS agents,Sigma-1 candidates,"Blarcamesine, ANAVEX2-73",blarcamesine-compound,candidate
+Emerging CNS agents,Sigma-1 candidates,"ANAVEX3-71, AF710B",,candidate
+Emerging CNS agents,Sigma-1 candidates,"Cutamesine, SA4503",cutamesine-compound,candidate
+Emerging CNS agents,Sigma-1 candidates,Edonerpic maleate,,candidate
+Emerging CNS agents,Sigma-1 candidates,PRE-084,,candidate
+Emerging CNS agents,Sigma-1 candidates,SKF-10047,,candidate
+Emerging CNS agents,Sigma-1 candidates,Igmesine,igmesine-compound,candidate
+Emerging CNS agents,Neurosteroids and GABA,Brexanolone,brexanolone-compound,candidate
+Emerging CNS agents,Neurosteroids and GABA,"Zuranolone, SAGE-217",zuranolone-compound,candidate
+Emerging CNS agents,Neurosteroids and GABA,Ganaxolone,ganaxolone-compound,candidate
+Emerging CNS agents,Neurosteroids and GABA,Darigabat,darigabat-compound,candidate
+Emerging CNS agents,Neurosteroids and GABA,ENX-102,,candidate
+Emerging CNS agents,Neurosteroids and GABA,ETX-155,,candidate
+Emerging CNS agents,Neurosteroids and GABA,SAGE-324,,candidate
+Emerging CNS agents,Neurosteroids and GABA,"Sepranolone, isoallopregnanolone",,candidate
+Emerging CNS agents,Neurosteroids and GABA,Pregnanolone,,candidate
+Emerging CNS agents,Neurosteroids and GABA,Tetrahydrodeoxycorticosterone,,candidate
+Emerging CNS agents,Ion-channel modulators,XEN1101,,candidate
+Emerging CNS agents,Ion-channel modulators,BHV-7000,,candidate
+Emerging CNS agents,Ion-channel modulators,"Retigabine, ezogabine",retigabine-compound,candidate
+Emerging CNS agents,Ion-channel modulators,Kv7.2/Kv7.3 research activators,,candidate
+Emerging CNS agents,Ion-channel modulators,Zonisamide,zonisamide-compound,candidate
+Emerging CNS agents,Ion-channel modulators,Riluzole,riluzole-compound,candidate
+Emerging CNS agents,Ion-channel modulators,Lamotrigine active metabolites,,candidate
+Emerging CNS agents,Ion-channel modulators,Cenobamate,cenobamate-compound,candidate
+Emerging CNS agents,Ion-channel modulators,Vixotrigine,,candidate
+Emerging CNS agents,Ion-channel modulators,Raxatrigine,,candidate
+Psychoplastogens,Development candidates,"Tabernanthalog, TBG",,candidate
+Psychoplastogens,Development candidates,AAZ-A-154,,candidate
+Psychoplastogens,Development candidates,DLX-001,,candidate
+Psychoplastogens,Development candidates,DLX-159,,candidate
+Psychoplastogens,Development candidates,BPL-003,,candidate
+Psychoplastogens,Development candidates,CYB003,,candidate
+Psychoplastogens,Development candidates,RE104,,candidate
+Psychoplastogens,Development candidates,R-MDMA,,candidate
+Psychoplastogens,Development candidates,18-MC,,candidate
+Psychoplastogens,Development candidates,Noribogaine,,candidate
+Psychoplastogens,Development candidates,"Ariadne, also known as 4C-D",,candidate
+Psychoplastogens,Development candidates,Lisuride,,candidate
+Psychoplastogens,Development candidates,2-bromo-LSD,,candidate
+Psychoplastogens,Development candidates,Tryptamine-derived psychoplastogens under coded development names,,candidate
+Psychoplastogens,Reference psychedelics,Psilocybin,psilocybin-compound,candidate
+Psychoplastogens,Reference psychedelics,Psilocin,,candidate
+Psychoplastogens,Reference psychedelics,LSD,,candidate
+Psychoplastogens,Reference psychedelics,DMT,,candidate
+Psychoplastogens,Reference psychedelics,5-MeO-DMT,,candidate
+Psychoplastogens,Reference psychedelics,Mescaline,,candidate
+Psychoplastogens,Reference psychedelics,Ibogaine,ibogaine-compound,candidate
+Psychoplastogens,Reference psychedelics,Noribogaine,,candidate
+Psychoplastogens,Reference psychedelics,Salvinorin A,salvinorin-a-compound,candidate
+Psychoplastogens,Reference psychedelics,DOI,,candidate
+Psychoplastogens,Reference psychedelics,DOM,,candidate
+Psychoplastogens,Reference psychedelics,2C-B,,candidate
+Psychoplastogens,Reference psychedelics,2C-I,,candidate
+Psychoplastogens,Reference psychedelics,2C-E,,candidate
+Psychoplastogens,Reference psychedelics,25I-NBOMe,,candidate
+Psychoplastogens,Reference psychedelics,25B-NBOMe,,candidate
+Psychoplastogens,Reference psychedelics,25C-NBOMe,,candidate
+Grey-market nootropics,,NSI-189,nsi-189-compound,candidate
+Grey-market nootropics,,Unifiram,,candidate
+Grey-market nootropics,,IDRA-21,idra-21-compound,candidate
+Grey-market nootropics,,J147,,candidate
+Grey-market nootropics,,CMS121,,candidate
+Grey-market nootropics,,ISRIB,,candidate
+Grey-market nootropics,,"Latrepirdine, dimebon",,candidate
+Grey-market nootropics,,P7C3,,candidate
+Grey-market nootropics,,P7C3-A20,,candidate
+Grey-market nootropics,,Neboglamine,,candidate
+Grey-market nootropics,,Nebracetam,,candidate
+Grey-market nootropics,,Talsaclidine,,candidate
+Grey-market nootropics,,Besipirdine,,candidate
+Grey-market nootropics,,Linopirdine,,candidate
+Grey-market nootropics,,Xanomeline,xanomeline-compound,candidate
+Grey-market nootropics,,Tropisetron,tropisetron-compound,candidate
+Grey-market nootropics,,PNU-282987,,candidate
+Grey-market nootropics,,"EVP-6124, encenicline",,candidate
+Grey-market nootropics,,ABT-089,,candidate
+Grey-market nootropics,,ABT-594,,candidate
+Grey-market nootropics,,Sabeluzole,,candidate
+Grey-market nootropics,,Omberacetam analogues,,candidate
+Grey-market nootropics,,Phenylpiracetam hydrazide,,candidate
+Grey-market nootropics,,N-acetyl-noopept,,candidate
+Grey-market nootropics,,Carphedon derivatives,,candidate
+Grey-market nootropics,,Nooglutil,,candidate
+Grey-market nootropics,,Ladasten analogues,,candidate
+Grey-market nootropics,,"Bemitil, bemetil",,candidate
+Grey-market nootropics,,Ethomersol,,candidate
+Grey-market nootropics,,Ademol,,candidate
+Grey-market nootropics,,Chlodantane,,candidate
+Neuroactive peptides,Candidate additions,Semax,semax-compound,candidate
+Neuroactive peptides,Candidate additions,N-acetyl Semax,,candidate
+Neuroactive peptides,Candidate additions,N-acetyl Semax amidate,n-acetyl-semax-compound,candidate
+Neuroactive peptides,Candidate additions,Selank,selank-compound,candidate
+Neuroactive peptides,Candidate additions,N-acetyl Selank,,candidate
+Neuroactive peptides,Candidate additions,N-acetyl Selank amidate,,candidate
+Neuroactive peptides,Candidate additions,"Davunetide, NAP",,candidate
+Neuroactive peptides,Candidate additions,P021,,candidate
+Neuroactive peptides,Candidate additions,P110,,candidate
+Neuroactive peptides,Candidate additions,Humanin,humanin-compound,candidate
+Neuroactive peptides,Candidate additions,MOTS-c,mots-c-compound,candidate
+Neuroactive peptides,Candidate additions,SHLP-2,,candidate
+Neuroactive peptides,Candidate additions,Elamipretide,elamipretide-compound,candidate
+Neuroactive peptides,Candidate additions,Cortexin,cortexin-compound,candidate
+Neuroactive peptides,Candidate additions,Pinealon,pinealon-compound,candidate
+Neuroactive peptides,Candidate additions,Epitalon,epitalon-compound,candidate
+Neuroactive peptides,Candidate additions,Vesugen,vesugen-compound,candidate
+Neuroactive peptides,Candidate additions,Vilon,vilon-compound,candidate
+Neuroactive peptides,Candidate additions,Thymalin,thymalin-compound,candidate
+Neuroactive peptides,Candidate additions,Delta sleep-inducing peptide,dsip-compound,candidate
+Neuroactive peptides,Candidate additions,"Cerebrolysin constituent peptides, where chemically characterized",,candidate
+Neuroactive peptides,Candidate additions,Colivelin,,candidate
+Neuroactive peptides,Candidate additions,Adamax,,candidate
+Neuroactive peptides,Candidate additions,Pineal peptide mixtures,,candidate
+Designer-drug families,Designer benzodiazepines,Bromazolam,,candidate
+Designer-drug families,Designer benzodiazepines,Clonazolam,,candidate
+Designer-drug families,Designer benzodiazepines,Flualprazolam,,candidate
+Designer-drug families,Designer benzodiazepines,Flubromazolam,,candidate
+Designer-drug families,Designer benzodiazepines,Deschloroetizolam,,candidate
+Designer-drug families,Designer benzodiazepines,Diclazepam,,candidate
+Designer-drug families,Designer benzodiazepines,Pyrazolam,,candidate
+Designer-drug families,Designer benzodiazepines,Norflurazepam,,candidate
+Designer-drug families,Designer benzodiazepines,Flubrotizolam,,candidate
+Designer-drug families,Designer benzodiazepines,Metizolam,,candidate
+Designer-drug families,Designer benzodiazepines,Nitrazolam,,candidate
+Designer-drug families,Designer benzodiazepines,Meclonazepam,,candidate
+Designer-drug families,Designer benzodiazepines,Phenazepam,,candidate
+Designer-drug families,Designer benzodiazepines,Rilmazafone,,candidate
+Designer-drug families,Designer benzodiazepines,Bentazepam,,candidate
+Designer-drug families,Dissociatives,"Methoxetamine, MXE",,candidate
+Designer-drug families,Dissociatives,2-FDCK,,candidate
+Designer-drug families,Dissociatives,"Deschloroketamine, DCK",,candidate
+Designer-drug families,Dissociatives,O-PCE,,candidate
+Designer-drug families,Dissociatives,3-MeO-PCP,,candidate
+Designer-drug families,Dissociatives,3-HO-PCP,,candidate
+Designer-drug families,Dissociatives,3-MeO-PCE,,candidate
+Designer-drug families,Dissociatives,3-HO-PCE,,candidate
+Designer-drug families,Dissociatives,DMXE,,candidate
+Designer-drug families,Dissociatives,FXE,,candidate
+Designer-drug families,Dissociatives,HXE,,candidate
+Designer-drug families,Dissociatives,MXPr,,candidate
+Designer-drug families,Dissociatives,MXiPr,,candidate
+Designer-drug families,Dissociatives,Diphenidine,,candidate
+Designer-drug families,Dissociatives,Methoxphenidine,,candidate
+Designer-drug families,Dissociatives,Ephenidine,,candidate
+Designer-drug families,Synthetic stimulants,2-FA,,candidate
+Designer-drug families,Synthetic stimulants,3-FA,,candidate
+Designer-drug families,Synthetic stimulants,4-FA,,candidate
+Designer-drug families,Synthetic stimulants,2-FMA,,candidate
+Designer-drug families,Synthetic stimulants,3-FMA,,candidate
+Designer-drug families,Synthetic stimulants,4-FMA,,candidate
+Designer-drug families,Synthetic stimulants,3-FPM,,candidate
+Designer-drug families,Synthetic stimulants,4F-MPH,,candidate
+Designer-drug families,Synthetic stimulants,Isopropylphenidate,,candidate
+Designer-drug families,Synthetic stimulants,Ethylphenidate,,candidate
+Designer-drug families,Synthetic stimulants,4-MMC,,candidate
+Designer-drug families,Synthetic stimulants,3-MMC,,candidate
+Designer-drug families,Synthetic stimulants,2-MMC,,candidate
+Designer-drug families,Synthetic stimulants,Methylone,,candidate
+Designer-drug families,Synthetic stimulants,Eutylone,,candidate
+Designer-drug families,Synthetic stimulants,N-ethylpentylone,,candidate
+Designer-drug families,Synthetic stimulants,Alpha-PVP,,candidate
+Designer-drug families,Synthetic stimulants,Alpha-PHP,,candidate
+Designer-drug families,Synthetic stimulants,Alpha-PHiP,,candidate
+Designer-drug families,Synthetic stimulants,MDPHP,,candidate
+Designer-drug families,Synthetic stimulants,NEP,,candidate
+Designer-drug families,Synthetic stimulants,Hexen,,candidate
+Designer-drug families,Synthetic cannabinoids,JWH-018,,candidate
+Designer-drug families,Synthetic cannabinoids,JWH-073,,candidate
+Designer-drug families,Synthetic cannabinoids,AM-2201,,candidate
+Designer-drug families,Synthetic cannabinoids,AB-FUBINACA,,candidate
+Designer-drug families,Synthetic cannabinoids,ADB-FUBINACA,,candidate
+Designer-drug families,Synthetic cannabinoids,5F-ADB,,candidate
+Designer-drug families,Synthetic cannabinoids,5F-MDMB-PICA,,candidate
+Designer-drug families,Synthetic cannabinoids,MDMB-4en-PINACA,,candidate
+Designer-drug families,Synthetic cannabinoids,ADB-BUTINACA,,candidate
+Designer-drug families,Synthetic cannabinoids,ADB-HEXINACA,,candidate
+Designer-drug families,Synthetic cannabinoids,Cumyl-PEGACLONE,,candidate
+Designer-drug families,Synthetic cannabinoids,HHC,,candidate
+Designer-drug families,Synthetic cannabinoids,HHC-O,,candidate
+Designer-drug families,Synthetic cannabinoids,THCP,,candidate
+Designer-drug families,Synthetic cannabinoids,THC-O acetate,,candidate
+Designer-drug families,Synthetic cannabinoids,Delta-8-THC,,candidate
+Designer-drug families,Synthetic cannabinoids,Delta-10-THC,,candidate
+Designer-drug families,Novel opioids,"O-desmethyltramadol, O-DSMT",,candidate
+Designer-drug families,Novel opioids,Brorphine,,candidate
+Designer-drug families,Novel opioids,Isotonitazene,,candidate
+Designer-drug families,Novel opioids,Metonitazene,,candidate
+Designer-drug families,Novel opioids,Protonitazene,,candidate
+Designer-drug families,Novel opioids,Etonitazepyne,,candidate
+Designer-drug families,Novel opioids,Metodesnitazene,,candidate
+Designer-drug families,Novel opioids,Flunitazene,,candidate
+Designer-drug families,Novel opioids,Butonitazene,,candidate
+Designer-drug families,Novel opioids,Mitragynine,,candidate
+Designer-drug families,Novel opioids,7-hydroxymitragynine,,candidate
+Designer-drug families,Novel opioids,Mitragynine pseudoindoxyl,,candidate
+Designer-drug families,Novel opioids,Tianeptine,tianeptine-compound,candidate
+Supplements and nutraceuticals,,Paraxanthine,,candidate
+Supplements and nutraceuticals,,Theacrine,theacrine-compound,candidate
+Supplements and nutraceuticals,,Methylliberine,,candidate
+Supplements and nutraceuticals,,Saffron extract,,candidate
+Supplements and nutraceuticals,,Crocin,,candidate
+Supplements and nutraceuticals,,Crocetin,,candidate
+Supplements and nutraceuticals,,Palmitoylethanolamide,,candidate
+Supplements and nutraceuticals,,Ergothioneine,ergothioneine-compound,candidate
+Supplements and nutraceuticals,,Urolithin A,urolithin-a-compound,candidate
+Supplements and nutraceuticals,,"Pyrroloquinoline quinone, PQQ",,candidate
+Supplements and nutraceuticals,,Magnesium acetyl taurate,,candidate
+Supplements and nutraceuticals,,Spermidine,spermidine-compound,candidate
+Supplements and nutraceuticals,,Alpha-ketoglutarate,alpha-ketoglutarate-compound,candidate
+Supplements and nutraceuticals,,Calcium alpha-ketoglutarate,alpha-ketoglutarate-compound,candidate
+Supplements and nutraceuticals,,L-alpha-glycerylphosphorylcholine under the alias choline alfoscerate,,candidate
+Supplements and nutraceuticals,,Lion’s mane standardized for erinacines,,candidate
+Supplements and nutraceuticals,,Hericenone-enriched extracts,,candidate
+Supplements and nutraceuticals,,Polygala tenuifolia extracts,,candidate
+Supplements and nutraceuticals,,Tenuifolin,,candidate
+Supplements and nutraceuticals,,Gastrodin,,candidate
+Supplements and nutraceuticals,,Salidroside,,candidate
+Supplements and nutraceuticals,,Baicalein,,candidate
+Supplements and nutraceuticals,,Baicalin,,candidate
+Supplements and nutraceuticals,,Apigenin,apigenin-compound,candidate
+Supplements and nutraceuticals,,Luteolin,luteolin-compound,candidate
+Supplements and nutraceuticals,,Fisetin,fisetin-compound,candidate
+Supplements and nutraceuticals,,Honokiol,,candidate
+Supplements and nutraceuticals,,Magnolol,,candidate
+Supplements and nutraceuticals,,Beta-caryophyllene,,candidate

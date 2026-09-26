@@ -1,0 +1,52 @@
+normalized_name,compound_ids,labels
+17alphaestradiol,17a-estradiol-compound; alfatradiol-compound,17-alpha-Estradiol; Alfatradiol (17α-Estradiol)
+5amino1mq,5-amino-1mq-compound; amino-1mq-compound,5-Amino-1MQ; 5-Amino-1MQ
+ace031,ace-031-compound; ace031-compound,ACE-031; ACE-031 (Ramatercept)
+ala,alpha-linolenic-acid-compound; alpha-lipoic-acid-compound,Alpha-Linolenic Acid (ALA); Alpha-Lipoic Acid (ALA)
+albuterol,albuterol-compound; salbutamol-compound,Albuterol; Salbutamol (Albuterol)
+alitretinoin,alitretinoin-compound; alitretinoin-oral-compound,"Alitretinoin; Alitretinoin (oral, Toctino)"
+ara290,ara290-compound; cibinetide-compound,ARA-290 (Cibinetide); Cibinetide (ARA-290)
+azilsartanmedoxomil,azilsartan-compound; azilsartan-medoxomil-compound,Azilsartan medoxomil (Edarbi); Azilsartan Medoxomil
+bimatoprost,bimatoprost-compound; bimatoprost-topical-compound,"Bimatoprost (Latisse); Bimatoprost (topical, Latisse)"
+bpc157,bpc-157-compound; bpc157-compound,BPC-157; BPC-157
+bremelanotide,bremelanotide-compound; pt141-compound,Bremelanotide; PT-141 (Bremelanotide)
+buspirone,buspirone-compound; buspirone-drug-compound,Buspirone (Buspar); Buspirone
+cardarine,cardarine-compound; gw501516-compound,Cardarine (GW501516); GW501516 (cardarine)
+certolizumabpegol,certolizumab-compound; certolizumab-pegol-compound,Certolizumab Pegol; Certolizumab Pegol
+cibinetide,ara290-compound; cibinetide-compound,ARA-290 (Cibinetide); Cibinetide (ARA-290)
+clindamycin,clindamycin-compound; clindamycin-topical-compound,"Clindamycin; Clindamycin (topical, 1% solution/gel)"
+copperpeptide,ghk-cu-compound; ghkcu-compound,GHK-Cu (copper peptide); GHK-Cu (Copper Peptide)
+dapsone,dapsone-compound; dapsone-topical-compound,"Dapsone; Dapsone (topical gel 5% / 7.5%, Aczone)"
+desoxymethyltestosterone,desoxymethyltestosterone-compound; madol-compound,Desoxymethyltestosterone (Madol); Madol (Desoxymethyltestosterone)
+finasteride,finasteride-compound; finasteride-topical-compound,Finasteride; Finasteride (topical spray solution)
+fishoil,fish-oil-compound; omega-3-compound,Fish Oil; Omega-3 Fatty Acids (Fish Oil)
+ghkcu,ghk-cu-compound; ghkcu-compound,GHK-Cu (copper peptide); GHK-Cu (Copper Peptide)
+ghkcucopperpeptide,ghk-cu-compound; ghkcu-compound,GHK-Cu (copper peptide); GHK-Cu (Copper Peptide)
+gw501516,cardarine-compound; gw501516-compound,Cardarine (GW501516); GW501516 (cardarine)
+halobetasolpropionate,halobetasol-compound; halobetasol-propionate-compound,Halobetasol Propionate; Halobetasol Propionate
+iv,adenosine-compound; norepinephrine-drug-compound; vasopressin-drug-compound,"Adenosine (IV); Noradrenaline (Norepinephrine, IV); Vasopressin (IV)"
+ivermectin,ivermectin-compound; ivermectin-topical-compound,"Ivermectin; Ivermectin (topical 1% cream, Soolantra)"
+kisspeptin10,kisspeptin-10-compound; kisspeptin10-compound,Kisspeptin-10; Kisspeptin-10
+larginine,arginine-compound; l-arginine-compound,L-Arginine; L-Arginine
+latanoprostenebunod,latanoprostene-bunod-compound; latanoprostene-compound,Latanoprostene Bunod; Latanoprostene Bunod
+latisse,bimatoprost-compound; bimatoprost-topical-compound,"Bimatoprost (Latisse); Bimatoprost (topical, Latisse)"
+lcitrulline,citrulline-compound; l-citrulline-compound,L-Citrulline; L-Citrulline
+loteprednoletabonate,loteprednol-compound; loteprednol-etabonate-compound,Loteprednol Etabonate; Loteprednol Etabonate
+madol,desoxymethyltestosterone-compound; madol-compound,Desoxymethyltestosterone (Madol); Madol (Desoxymethyltestosterone)
+melanotanii,melanotan-compound; melanotan-ii-compound,Melanotan II; Melanotan II
+menotropins,lh-menotropins-compound; menotropins-compound,"Lh (Menotropins); Menotropins (hMG, Menopur)"
+methyleneblue,methylene-blue-cation-compound; methylene-blue-compound,Methylene Blue; Methylene Blue
+minoxidil,minoxidil-compound; minoxidil-oral-compound,"Minoxidil; Minoxidil (oral, low dose)"
+niacin,niacin-compound; niacin-er-compound,Niacin (Nicotinic Acid); Niacin (extended-release)
+nicotinamide,nicotinamide-compound; nicotinamide-oral-compound,"Nicotinamide; Nicotinamide (oral 500 mg, vitamin B3)"
+rad140,rad140-compound; vosilasarm-compound,RAD-140 (Testolone); Vosilasarm (RAD140)
+rapamycin,rapamycin-compound; sirolimus-compound,Rapamycin (Sirolimus); Sirolimus (Rapamycin)
+roflumilast,roflumilast-compound; roflumilast-topical-compound,Roflumilast; Roflumilast (topical)
+ruxolitinib,ruxolitinib-compound; ruxolitinib-topical-compound,Ruxolitinib; Ruxolitinib (topical)
+selegiline,selegiline-compound; selegiline-oral-compound,Selegiline (L-Deprenyl); Selegiline (oral)
+sirolimus,rapamycin-compound; sirolimus-compound,Rapamycin (Sirolimus); Sirolimus (Rapamycin)
+slupp332,slu-pp-332-compound; slupp332-compound,SLU-PP-332; SLU-PP-332
+ss31,elamipretide-compound; ss-31-compound,Elamipretide (SS-31); SS-31 (elamipretide analogue)
+tb500,tb-500-compound; tb500-compound,TB-500 (thymosin beta-4 fragment); TB-500 (Thymosin Beta-4)
+tmg,betaine-anhydrous-compound; betaine-compound,Betaine Anhydrous (TMG); Betaine (TMG)
+zoledronicacid,zoledronate-compound; zoledronic-acid-compound,Zoledronic Acid; Zoledronic Acid (Reclast)

@@ -1,3 +1,11 @@
 *.pdf
+!data/raw/storefront-pdfs/*.pdf
 .DS_Store
 .obsidian/workspace*
+vault/.obsidian/workspace*
+vault/.obsidian/plugins/
+vault/.trash/
+data/processed/substances.xlsx
+__pycache__/
+.pytest_cache/
+.venv/
