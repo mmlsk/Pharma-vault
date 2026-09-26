@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL277062
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 12.0
+  value-max: 20.0
+  unit: h
+  notes: 12–20 hours (avg. 17 hours)
 protein-binding:
-  value: null
+  value: 70.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 70%
+bioavailability:
+  value: 84.0
+  value-max: null
+  notes: 84%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine 69%, as metabolites
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: 'Liver: P450'
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Bromazepam
+  url: https://en.wikipedia.org/w/index.php?title=Bromazepam&oldid=1368400047
+  revision: 1368400047
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Bromazepam
@@ -84,7 +98,17 @@ GABA receptor alpha-2 subunit positive allosteric modulator _(ChEMBL curated mec
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Bromazepam*](https://en.wikipedia.org/w/index.php?title=Bromazepam&oldid=1368400047) (revision 1368400047, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 12–20 h | 12–20 hours (avg. 17 hours) |
+| Protein binding | 70 % | 70% |
+| Bioavailability | 84 % | 84% |
+| Metabolism | hepatic | Liver: P450 |
+| Metabolites | - | 3-hydroxybromazepam |
+| Excretion | mainly urinary | Urine 69%, as metabolites |
 
 ## Safety routing
 

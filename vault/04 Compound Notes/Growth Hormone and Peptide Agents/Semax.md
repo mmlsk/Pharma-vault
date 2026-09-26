@@ -80,7 +80,7 @@ Synthetic ACTH(4-10) analogue studied as a nootropic that raises hippocampal BDN
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

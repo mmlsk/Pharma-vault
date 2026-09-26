@@ -18,42 +18,58 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.5
+  value-max: 1.6
+  unit: h
+  notes: 1.5–1.6 hours
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: '>99%'
+bioavailability:
+  value: 15.0
+  value-max: 76.0
+  notes: 15–76% (mean 42%), ; Tmax = 1–1.3 hours
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidneys
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP2D6, CYP3A4), kidney (FMO1)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2D6
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2D6, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Dapoxetine
+  url: https://en.wikipedia.org/w/index.php?title=Dapoxetine&oldid=1335212564
+  revision: 1335212564
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Dapoxetine
@@ -79,10 +95,22 @@ Inhibits serotonin reuptake through SERT; benefits, activation, sexual effects, 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Dapoxetine*](https://en.wikipedia.org/w/index.php?title=Dapoxetine&oldid=1335212564) (revision 1335212564, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.5–1.6 h | 1.5–1.6 hours |
+| Protein binding | 99 % | >99% |
+| Bioavailability | 15–76 % | 15–76% (mean 42%), ; Tmax = 1–1.3 hours |
+| Metabolism | hepatic | Liver (CYP2D6, CYP3A4), kidney (FMO1) |
+| CYP (metabolised by) | CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | Dapoxetine-N-oxide, desmethyldapoxetine, didesmethyldapoxetine |
+| Excretion | mainly urinary | Kidneys |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

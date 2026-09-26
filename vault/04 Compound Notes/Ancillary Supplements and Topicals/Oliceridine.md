@@ -79,7 +79,7 @@ G-protein-biased mu agonist intended to spare beta-arrestin signalling and reduc
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

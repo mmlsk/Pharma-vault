@@ -20,22 +20,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 10.0
+  value-max: 11.0
+  unit: h
+  notes: 10-11 hours
 protein-binding:
-  value: null
+  value: 96.7
+  value-max: null
   unit: percent
-  notes: null
+  notes: 96.7%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney and bile duct
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver glucuronidation
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Benazepril
+  url: https://en.wikipedia.org/w/index.php?title=Benazepril&oldid=1356286694
+  revision: 1356286694
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Benazepril (Lotensin)
@@ -82,7 +92,15 @@ Long-acting ACE inhibitor prodrug, best known as the backbone of the ACCOMPLISH 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Benazepril*](https://en.wikipedia.org/w/index.php?title=Benazepril&oldid=1356286694) (revision 1356286694, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 10–11 h | 10-11 hours |
+| Protein binding | 96.7 % | 96.7% |
+| Metabolism | hepatic | Liver glucuronidation |
+| Excretion | - | Kidney and bile duct |
 
 ## Safety routing
 

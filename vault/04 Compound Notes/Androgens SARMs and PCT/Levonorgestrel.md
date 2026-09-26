@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL1389
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 24.0
+  value-max: 32.0
+  unit: h
+  notes: 24–32 hours
 protein-binding:
-  value: null
+  value: 98.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 98% (50% to albumin, 48% to SHBG)
+bioavailability:
+  value: 95.0
+  value-max: null
+  notes: 95% (range 85–100%)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Urine: 20–67%; Feces: 21–34%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (reduction, hydroxylation, conjugation)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Levonorgestrel
+  url: https://en.wikipedia.org/w/index.php?title=Levonorgestrel&oldid=1352426285
+  revision: 1352426285
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Levonorgestrel
@@ -84,7 +98,17 @@ Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the sourc
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Levonorgestrel*](https://en.wikipedia.org/w/index.php?title=Levonorgestrel&oldid=1352426285) (revision 1352426285, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 24–32 h | 24–32 hours |
+| Protein binding | 98 % | 98% (50% to albumin, 48% to SHBG) |
+| Bioavailability | 95 % | 95% (range 85–100%) |
+| Metabolism | hepatic | Liver (reduction, hydroxylation, conjugation) |
+| Metabolites | - | • 5α-Dihydro-LNG |
+| Excretion | - | Urine: 20–67%; Feces: 21–34% |
 
 ## Safety routing
 

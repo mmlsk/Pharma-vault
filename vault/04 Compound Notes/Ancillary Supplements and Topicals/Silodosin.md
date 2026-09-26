@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 8.0
+  value-max: null
+  unit: h
+  notes: 13±8 hours
 protein-binding:
-  value: null
+  value: 96.6
+  value-max: null
   unit: percent
-  notes: null
+  notes: 96.6%
+bioavailability:
+  value: 32.0
+  value-max: null
+  notes: 32%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 33.5% Kidney, 54.9% fecal
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver glucuronidation (UGT2B7-mediated); also minor CYP3A4 involvement
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Silodosin
+  url: https://en.wikipedia.org/w/index.php?title=Silodosin&oldid=1370555904
+  revision: 1370555904
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Silodosin
@@ -79,10 +94,21 @@ Blocks alpha-1 adrenoceptors to relax vascular or prostatic smooth muscle; first
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Silodosin*](https://en.wikipedia.org/w/index.php?title=Silodosin&oldid=1370555904) (revision 1370555904, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 8 h | 13±8 hours |
+| Protein binding | 96.6 % | 96.6% |
+| Bioavailability | 32 % | 32% |
+| Metabolism | hepatic | Liver glucuronidation (UGT2B7-mediated); also minor CYP3A4 involvement |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary | 33.5% Kidney, 54.9% fecal |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

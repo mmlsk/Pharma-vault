@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL1000
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 8.3
+  value-max: null
+  unit: h
+  notes: 'Mean: 8.3 hours; Range: 6.5–10 hours'
 protein-binding:
-  value: null
+  value: 88.0
+  value-max: 96.0
   unit: percent
-  notes: null
+  notes: 88–96%
+bioavailability:
+  value: 70.0
+  value-max: null
+  notes: Well-absorbed (>70%)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Urine: 70–85%; Feces: 10–13%'
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Minimal (non-cytochrome P450-mediated)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Cetirizine
+  url: https://en.wikipedia.org/w/index.php?title=Cetirizine&oldid=1372254560
+  revision: 1372254560
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Cetirizine
@@ -84,7 +98,16 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Cetirizine*](https://en.wikipedia.org/w/index.php?title=Cetirizine&oldid=1372254560) (revision 1372254560, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 8.3 h | Mean: 8.3 hours; Range: 6.5–10 hours |
+| Protein binding | 88–96 % | 88–96% |
+| Bioavailability | 70 % | Well-absorbed (>70%) |
+| Metabolism | - | Minimal (non-cytochrome P450-mediated) |
+| Excretion | - | Urine: 70–85%; Feces: 10–13% |
 
 ## Safety routing
 

@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 7.0
+  value-max: 12.0
+  unit: h
+  notes: 7 to 12 hours
 protein-binding:
-  value: null
+  value: 16.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: low (16%)
+bioavailability:
+  value: null
+  value-max: null
+  notes: completely absorbed at around 5 hours, steady state is reached by 60th hour
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: mainly renal '(unchanged)', exposure is increased in renal impairment – on average by four-fold in subjects with severe renal impairment (CrCl <30 ml/min)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: minimal
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Trimetazidine
+  url: https://en.wikipedia.org/w/index.php?title=Trimetazidine&oldid=1370866766
+  revision: 1370866766
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Trimetazidine
@@ -79,7 +93,16 @@ Metabolic antianginal that shifts myocardial fuel use; prohibited in sport and a
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Trimetazidine*](https://en.wikipedia.org/w/index.php?title=Trimetazidine&oldid=1370866766) (revision 1370866766, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 7–12 h | 7 to 12 hours |
+| Protein binding | 16 % | low (16%) |
+| Bioavailability | - | completely absorbed at around 5 hours, steady state is reached by 60th hour |
+| Metabolism | - | minimal |
+| Excretion | - | mainly renal '(unchanged)', exposure is increased in renal impairment – on average by four-fold in subjects with severe renal impairment (CrCl <30 ml/min) |
 
 ## Safety routing
 

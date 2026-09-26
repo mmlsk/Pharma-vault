@@ -18,42 +18,59 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 11.0
+  value-max: null
+  unit: h
+  notes: 11 hours
 protein-binding:
-  value: null
+  value: 30.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: Low (30%)
+bioavailability:
+  value: 80.0
+  value-max: null
+  notes: 80%
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.45
+  notes: 45% excreted unchanged in urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: CYP2C19, CYP3A4, (CYP2D6 is not involved)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2C19
+  - CYP2D6
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2C19, CYP2D6, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Desvenlafaxine
+  url: https://en.wikipedia.org/w/index.php?title=Desvenlafaxine&oldid=1364182583
+  revision: 1364182583
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Desvenlafaxine
@@ -79,10 +96,21 @@ Inhibits norepinephrine reuptake, often alongside serotonin effects; blood press
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Desvenlafaxine*](https://en.wikipedia.org/w/index.php?title=Desvenlafaxine&oldid=1364182583) (revision 1364182583, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 11 h | 11 hours |
+| Protein binding | 30 % | Low (30%) |
+| Bioavailability | 80 % | 80% |
+| Metabolism | hepatic | CYP2C19, CYP3A4, (CYP2D6 is not involved) |
+| CYP (metabolised by) | CYP2C19, CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Excretion | - · fe 0.45 | 45% excreted unchanged in urine |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

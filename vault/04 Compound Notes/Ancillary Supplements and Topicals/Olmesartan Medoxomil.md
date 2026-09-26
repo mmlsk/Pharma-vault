@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: CHEMBL1200692
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 13.0
+  value-max: null
+  unit: h
+  notes: 13 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 26.0
+  value-max: null
+  notes: 26%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney 40%, bile duct 60%
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (cannot be removed by hemodialysis)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Olmesartan
+  url: https://en.wikipedia.org/w/index.php?title=Olmesartan&oldid=1358312989
+  revision: 1358312989
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Olmesartan Medoxomil
@@ -84,7 +97,15 @@ Type-1 angiotensin II receptor antagonist _(ChEMBL curated mechanism, as quoted 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Olmesartan*](https://en.wikipedia.org/w/index.php?title=Olmesartan&oldid=1358312989) (revision 1358312989, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 13 h | 13 hours |
+| Bioavailability | 26 % | 26% |
+| Metabolism | hepatic | Liver (cannot be removed by hemodialysis) |
+| Excretion | mainly non-renal | Kidney 40%, bile duct 60% |
 
 ## Safety routing
 

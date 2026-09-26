@@ -18,13 +18,18 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 70.0
+  value-max: 132.0
+  unit: h
+  notes: 70–132 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 58.0
+  value-max: 76.0
+  notes: 58–76% (SC)
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Etanercept
+  url: https://en.wikipedia.org/w/index.php?title=Etanercept&oldid=1368878362
+  revision: 1368878362
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Etanercept
@@ -79,7 +92,13 @@ Neutralizes TNF or its receptor signaling to suppress systemic inflammation, inc
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Etanercept*](https://en.wikipedia.org/w/index.php?title=Etanercept&oldid=1368878362) (revision 1368878362, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 70–132 h | 70–132 hours |
+| Bioavailability | 58–76 % | 58–76% (SC) |
 
 ## Safety routing
 

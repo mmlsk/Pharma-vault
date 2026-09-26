@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 10.0
+  value-max: 22.0
+  unit: h
+  notes: 10–22 hours
 protein-binding:
-  value: null
+  value: 80.0
+  value-max: 90.0
   unit: percent
-  notes: null
+  notes: 80–90%
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: ~100%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Mainly feces, 40% urine
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Negligible
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Doxycycline
+  url: https://en.wikipedia.org/w/index.php?title=Doxycycline&oldid=1374617285
+  revision: 1374617285
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Doxycycline
@@ -79,7 +93,16 @@ Tetracycline used for acne and sub-antimicrobial anti-inflammatory dosing in ros
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Doxycycline*](https://en.wikipedia.org/w/index.php?title=Doxycycline&oldid=1374617285) (revision 1374617285, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 10–22 h | 10–22 hours |
+| Protein binding | 80–90 % | 80–90% |
+| Bioavailability | 100 % | ~100% |
+| Metabolism | - | Negligible |
+| Excretion | - | Mainly feces, 40% urine |
 
 ## Safety routing
 

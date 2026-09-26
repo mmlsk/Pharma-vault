@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.5
+  value-max: 7.0
+  unit: h
+  notes: 2.5–7 hours
 protein-binding:
-  value: null
+  value: 30.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 30%
+bioavailability:
+  value: null
+  value-max: null
+  notes: Well-absorbed
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (70–80%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: 85% excreted in urine/faeces unchanged. 15% metabolised by deamination
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Baclofen
+  url: https://en.wikipedia.org/w/index.php?title=Baclofen&oldid=1374816189
+  revision: 1374816189
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Baclofen
@@ -79,7 +93,17 @@ GABA-B agonist for spasticity; abrupt withdrawal from intrathecal delivery is li
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Baclofen*](https://en.wikipedia.org/w/index.php?title=Baclofen&oldid=1374816189) (revision 1374816189, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2.5–7 h | 2.5–7 hours |
+| Protein binding | 30 % | 30% |
+| Bioavailability | - | Well-absorbed |
+| Metabolism | - | 85% excreted in urine/faeces unchanged. 15% metabolised by deamination |
+| Metabolites | - | β-(p-chlorophenyl)-4-hydroxybutyric acid (γ-hydroxybaclofen) |
+| Excretion | mainly urinary | Kidney (70–80%) |
 
 ## Safety routing
 

@@ -18,13 +18,19 @@ review-status: stub
 chembl-id: CHEMBL1201346
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 12.0
+  value-max: null
+  unit: h
+  notes: 12hr
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: ≥99%
+bioavailability:
+  value: 1.0
+  value-max: null
+  notes: <1%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Balsalazide
+  url: https://en.wikipedia.org/w/index.php?title=Balsalazide&oldid=1329243555
+  revision: 1329243555
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Balsalazide
@@ -84,7 +98,14 @@ Peroxisome proliferator-activated receptor gamma agonist _(ChEMBL curated mechan
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Balsalazide*](https://en.wikipedia.org/w/index.php?title=Balsalazide&oldid=1329243555) (revision 1329243555, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 12 h | 12hr |
+| Protein binding | 99 % | ≥99% |
+| Bioavailability | 1 % | <1% |
 
 ## Safety routing
 

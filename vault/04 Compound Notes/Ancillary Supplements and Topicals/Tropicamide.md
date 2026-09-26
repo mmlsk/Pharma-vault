@@ -22,9 +22,10 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 45.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 45%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/derm
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Tropicamide
+  url: https://en.wikipedia.org/w/index.php?title=Tropicamide&oldid=1363790199
+  revision: 1363790199
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Tropicamide
@@ -79,7 +88,12 @@ The shortest-acting antimuscarinic mydriatic, standard for fundus examination.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Tropicamide*](https://en.wikipedia.org/w/index.php?title=Tropicamide&oldid=1363790199) (revision 1363790199, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 45 % | 45% |
 
 ## Safety routing
 

@@ -21,9 +21,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.0
+  value-max: 9.0
+  unit: h
+  notes: 4-9 hours
 protein-binding:
   value: null
   unit: percent
@@ -34,9 +35,9 @@ renal-clearance:
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: 20-Hydroxyecdysone
+  url: https://en.wikipedia.org/w/index.php?title=20-Hydroxyecdysone&oldid=1365729173
+  revision: 1365729173
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ecdysterone (20-Hydroxyecdysone)
@@ -83,7 +92,13 @@ Phytoecdysteroid marketed for muscle gain; limited human training data exist, wh
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *20-Hydroxyecdysone*](https://en.wikipedia.org/w/index.php?title=20-Hydroxyecdysone&oldid=1365729173) (revision 1365729173, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4–9 h | 4-9 hours |
+| Metabolism | hepatic | Hepatic |
 
 ## Safety routing
 

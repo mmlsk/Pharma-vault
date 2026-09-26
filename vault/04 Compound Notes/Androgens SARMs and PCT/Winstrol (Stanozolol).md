@@ -20,22 +20,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 9.0
+  value-max: null
+  unit: h
+  notes: 'Oral: 9 hours; IM: 24 hours (aq. susp.)'
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: High
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Urine: 84%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +55,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Stanozolol
+  url: https://en.wikipedia.org/w/index.php?title=Stanozolol&oldid=1375988362
+  revision: 1375988362
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Winstrol (Stanozolol)
@@ -83,7 +96,15 @@ Oral/injectable DHT-derived anabolic steroid, popular for cutting cycles due to 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Stanozolol*](https://en.wikipedia.org/w/index.php?title=Stanozolol&oldid=1375988362) (revision 1375988362, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 9 h | Oral: 9 hours; IM: 24 hours (aq. susp.) |
+| Bioavailability | - | High |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Urine: 84% |
 
 ## Safety routing
 

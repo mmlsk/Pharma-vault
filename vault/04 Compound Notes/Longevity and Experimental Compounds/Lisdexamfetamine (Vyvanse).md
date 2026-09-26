@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: null
+  unit: h
+  notes: 'Lisdexamfetamine: <1 hour; Dextroamphetamine: 10–12 h'
 protein-binding:
-  value: null
+  value: 20.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 20% (as dextroamphetamine)
+bioavailability:
+  value: 96.4
+  value-max: null
+  notes: 'Oral: 96.4%'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Kidney: ~2% as Lisdexamfetamine and ~42% as Dextroamphetamine'
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Hydrolysis by enzymes in red blood cells initially, subsequent metabolism follows
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Lisdexamfetamine
+  url: https://en.wikipedia.org/w/index.php?title=Lisdexamfetamine&oldid=1376554958
+  revision: 1376554958
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Lisdexamfetamine (Vyvanse)
@@ -82,7 +96,17 @@ Dextroamphetamine prodrug for ADHD and binge-eating disorder; controlled stimula
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Lisdexamfetamine*](https://en.wikipedia.org/w/index.php?title=Lisdexamfetamine&oldid=1376554958) (revision 1376554958, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1 h | Lisdexamfetamine: <1 hour; Dextroamphetamine: 10–12 h |
+| Protein binding | 20 % | 20% (as dextroamphetamine) |
+| Bioavailability | 96.4 % | Oral: 96.4% |
+| Metabolism | - | Hydrolysis by enzymes in red blood cells initially, subsequent metabolism follows |
+| Metabolites | - | Dextroamphetamine (and its metabolites) and L-lysine |
+| Excretion | mainly urinary | Kidney: ~2% as Lisdexamfetamine and ~42% as Dextroamphetamine |
 
 ## Safety routing
 

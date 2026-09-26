@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 28.0
+  value-max: 62.0
+  unit: h
+  notes: 28 to 62 hours (mean)
 protein-binding:
-  value: null
+  value: 85.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 85%
+bioavailability:
+  value: 85.0
+  value-max: null
+  notes: 85%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney and fecal
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Rifabutin
+  url: https://en.wikipedia.org/w/index.php?title=Rifabutin&oldid=1369532616
+  revision: 1369532616
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Rifabutin
@@ -79,7 +93,16 @@ Rifamycin preferred over rifampicin in HIV coinfection because it induces CYP3A4
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Rifabutin*](https://en.wikipedia.org/w/index.php?title=Rifabutin&oldid=1369532616) (revision 1369532616, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 28–62 h | 28 to 62 hours (mean) |
+| Protein binding | 85 % | 85% |
+| Bioavailability | 85 % | 85% |
+| Metabolism | hepatic | Liver |
+| Excretion | - | Kidney and fecal |
 
 ## Safety routing
 

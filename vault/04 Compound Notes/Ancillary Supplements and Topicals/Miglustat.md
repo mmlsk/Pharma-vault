@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 6.0
+  value-max: 7.0
+  unit: h
+  notes: 6–7 hours
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: Nil
+bioavailability:
+  value: 97.0
+  value-max: null
+  notes: 97%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney, unchanged
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Nil
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Miglustat
+  url: https://en.wikipedia.org/w/index.php?title=Miglustat&oldid=1364995192
+  revision: 1364995192
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Miglustat
@@ -79,7 +93,16 @@ Iminosugar substrate reduction therapy for Gaucher and Niemann-Pick type C, smal
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Miglustat*](https://en.wikipedia.org/w/index.php?title=Miglustat&oldid=1364995192) (revision 1364995192, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 6–7 h | 6–7 hours |
+| Protein binding | - | Nil |
+| Bioavailability | 97 % | 97% |
+| Metabolism | - | Nil |
+| Excretion | mainly urinary | Kidney, unchanged |
 
 ## Safety routing
 

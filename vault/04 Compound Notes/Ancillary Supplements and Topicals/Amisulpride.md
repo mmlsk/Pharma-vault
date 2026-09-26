@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL243712
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 12.0
+  value-max: null
+  unit: h
+  notes: 12 hours
 protein-binding:
-  value: null
+  value: 16.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 16%
+bioavailability:
+  value: 48.0
+  value-max: null
+  notes: 48%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (23–46%), Faecal
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (minimal; most excreted unchanged)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Amisulpride
+  url: https://en.wikipedia.org/w/index.php?title=Amisulpride&oldid=1366501553
+  revision: 1366501553
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Amisulpride
@@ -84,7 +98,16 @@ Dopamine receptors; D2 & D3 antagonist _(ChEMBL curated mechanism, as quoted by 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Amisulpride*](https://en.wikipedia.org/w/index.php?title=Amisulpride&oldid=1366501553) (revision 1366501553, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 12 h | 12 hours |
+| Protein binding | 16 % | 16% |
+| Bioavailability | 48 % | 48% |
+| Metabolism | hepatic | Liver (minimal; most excreted unchanged) |
+| Excretion | - | Kidney (23–46%), Faecal |
 
 ## Safety routing
 

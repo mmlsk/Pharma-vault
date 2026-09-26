@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 10.0
+  value-max: 14.0
+  unit: h
+  notes: 10–14 hours
 protein-binding:
   value: null
   unit: percent
@@ -48,13 +49,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/nootropic
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Huperzine A
+  url: https://en.wikipedia.org/w/index.php?title=Huperzine_A&oldid=1373339309
+  revision: 1373339309
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Huperzine A
@@ -80,7 +89,12 @@ A potent, long-acting reversible acetylcholinesterase inhibitor from Huperzia se
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Huperzine A*](https://en.wikipedia.org/w/index.php?title=Huperzine_A&oldid=1373339309) (revision 1373339309, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 10–14 h | 10–14 hours |
 
 ## Safety routing
 

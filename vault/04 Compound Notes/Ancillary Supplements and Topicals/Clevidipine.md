@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: null
+  unit: min
+  notes: 1 minute
 protein-binding:
-  value: null
+  value: 99.5
+  value-max: null
   unit: percent
-  notes: null
+  notes: '>99.5%'
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100% (used only IV)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (63–74%), feces (7–22%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Blood and tissue esterases
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Clevidipine
+  url: https://en.wikipedia.org/w/index.php?title=Clevidipine&oldid=1370368883
+  revision: 1370368883
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Clevidipine
@@ -79,7 +93,16 @@ Ultra-short intravenous calcium-channel blocker for closely titrated acute hyper
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Clevidipine*](https://en.wikipedia.org/w/index.php?title=Clevidipine&oldid=1370368883) (revision 1370368883, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1 min | 1 minute |
+| Protein binding | 99.5 % | >99.5% |
+| Bioavailability | 100 % | 100% (used only IV) |
+| Metabolism | - | Blood and tissue esterases |
+| Excretion | mainly non-renal | Urine (63–74%), feces (7–22%) |
 
 ## Safety routing
 

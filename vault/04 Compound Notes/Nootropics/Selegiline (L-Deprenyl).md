@@ -20,29 +20,37 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.2
+  value-max: 3.5
+  unit: h
+  notes: '• S (single): 1.2–3.5h; • S (multi): 7.7–9.7h; • DMS (single): 2.2–3.8h; • DMS (multi): 9.5h; • L-MA: 14–21h; • L-A: 16–18h; ; • S (single): 1.3h; • S (multi): 10h; ; • S: 20h'
 protein-binding:
-  value: null
+  value: 85.0
+  value-max: 90.0
   unit: percent
-  notes: null
+  notes: 85–90%
+bioavailability:
+  value: 4.0
+  value-max: 10.0
+  notes: 'Oral: 4–10%; ODT: ~5–8× oral; Transdermal: 75%'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Urine (87%):; • L-MA: 20–63%; • L-A: 9–26%; • DMS: 1%; • S: 0.01–0.03%; Feces: 15%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver, other tissues (CYP2B6, CYP2C19, others)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2B6
+  - CYP2C19
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2B6, CYP2C19 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
@@ -50,13 +58,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/nootropic
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Selegiline
+  url: https://en.wikipedia.org/w/index.php?title=Selegiline&oldid=1369810254
+  revision: 1369810254
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Selegiline (L-Deprenyl)
@@ -83,7 +99,18 @@ Irreversible MAO-B inhibitor, selective at low doses and losing that selectivity
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Selegiline*](https://en.wikipedia.org/w/index.php?title=Selegiline&oldid=1369810254) (revision 1369810254, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.2–3.5 h | • S (single): 1.2–3.5h; • S (multi): 7.7–9.7h; • DMS (single): 2.2–3.8h; • DMS (multi): 9.5h; • L-MA: 14–21h; • L-A: 16–18h; ; • S (single): 1.3h; • S (multi): 10h; ; • S: 20h |
+| Protein binding | 85–90 % | 85–90% |
+| Bioavailability | 4–10 % | Oral: 4–10%; ODT: ~5–8× oral; Transdermal: 75% |
+| Metabolism | hepatic | Liver, other tissues (CYP2B6, CYP2C19, others) |
+| CYP (metabolised by) | CYP2B6, CYP2C19 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | • Desmethylselegiline (DMS); • Levomethamphetamine (L-MA); • Levoamphetamine (L-A) |
+| Excretion | mainly urinary | Urine (87%):; • L-MA: 20–63%; • L-A: 9–26%; • DMS: 1%; • S: 0.01–0.03%; Feces: 15% |
 
 ## Safety routing
 
@@ -91,3 +118,4 @@ Group-level triage (not compound-specific): `cns-activity`, `evidence-limited`
 
 - [[Stacking and Interaction Risks]]
 - [[Experimental and Evidence-Limited Compounds]]
+- [[CYP450 Metabolism]]

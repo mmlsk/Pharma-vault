@@ -18,18 +18,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 7.0
+  value-max: 11.0
+  unit: h
+  notes: 7–11 hours (up to 28 hours in renal impairment)
 protein-binding:
-  value: null
+  value: 90.0
+  value-max: 95.0
   unit: percent
-  notes: null
+  notes: 90–95%
+bioavailability:
+  value: null
+  value-max: null
+  notes: n/a
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (78%; primarily as unchanged drug); faeces (5.7%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Daptomycin
+  url: https://en.wikipedia.org/w/index.php?title=Daptomycin&oldid=1369612979
+  revision: 1369612979
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Daptomycin
@@ -79,7 +93,15 @@ Cyclic lipopeptide that is rapidly bactericidal against gram-positive organisms 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Daptomycin*](https://en.wikipedia.org/w/index.php?title=Daptomycin&oldid=1369612979) (revision 1369612979, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 7–11 h | 7–11 hours (up to 28 hours in renal impairment) |
+| Protein binding | 90–95 % | 90–95% |
+| Bioavailability | - | n/a |
+| Excretion | mainly urinary | Kidney (78%; primarily as unchanged drug); faeces (5.7%) |
 
 ## Safety routing
 

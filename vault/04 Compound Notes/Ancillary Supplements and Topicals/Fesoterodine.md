@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 7.0
+  value-max: 8.0
+  unit: h
+  notes: 7–8 hours (active metabolite)
 protein-binding:
-  value: null
+  value: 50.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 50% (active metabolite)
+bioavailability:
+  value: 52.0
+  value-max: null
+  notes: 52% (active metabolite)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (70%) and fecal (7%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP2D6- and 3A4-mediated)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2D6
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2D6 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Fesoterodine
+  url: https://en.wikipedia.org/w/index.php?title=Fesoterodine&oldid=1338088393
+  revision: 1338088393
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Fesoterodine
@@ -79,7 +94,17 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Fesoterodine*](https://en.wikipedia.org/w/index.php?title=Fesoterodine&oldid=1338088393) (revision 1338088393, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 7–8 h | 7–8 hours (active metabolite) |
+| Protein binding | 50 % | 50% (active metabolite) |
+| Bioavailability | 52 % | 52% (active metabolite) |
+| Metabolism | hepatic | Liver (CYP2D6- and 3A4-mediated) |
+| CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary | Kidney (70%) and fecal (7%) |
 
 ## Safety routing
 
@@ -87,3 +112,4 @@ Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
 - [[Cholinergic Load]]
+- [[CYP450 Metabolism]]

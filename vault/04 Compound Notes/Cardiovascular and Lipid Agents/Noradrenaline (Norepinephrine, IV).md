@@ -36,7 +36,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: MAO-A; COMT
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +50,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/cardio
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Norepinephrine
+  url: https://en.wikipedia.org/w/index.php?title=Norepinephrine&oldid=1370844288
+  revision: 1370844288
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Noradrenaline (Norepinephrine, IV)
@@ -83,7 +91,12 @@ The first-line vasopressor in septic shock, chosen over dopamine after trials sh
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Norepinephrine*](https://en.wikipedia.org/w/index.php?title=Norepinephrine&oldid=1370844288) (revision 1370844288, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Metabolism | - | MAO-A; COMT |
 
 ## Safety routing
 

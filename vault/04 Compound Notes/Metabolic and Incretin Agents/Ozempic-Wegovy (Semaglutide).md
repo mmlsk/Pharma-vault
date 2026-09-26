@@ -20,22 +20,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 7.0
+  value-max: null
+  unit: d
+  notes: 7 days
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 89.0
+  value-max: null
+  notes: 89% (Subcutaneous), 1–2% (Oral)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine and feces
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Proteolysis
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +55,21 @@ risk-domains: []
 group-risk-triage:
 - glucose-metabolism
 - gastrointestinal
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/glp1
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Semaglutide
+  url: https://en.wikipedia.org/w/index.php?title=Semaglutide&oldid=1373913203
+  revision: 1373913203
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ozempic/Wegovy (Semaglutide)
@@ -83,7 +96,15 @@ GLP-1 receptor agonist driving appetite suppression and substantial body fat los
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Semaglutide*](https://en.wikipedia.org/w/index.php?title=Semaglutide&oldid=1373913203) (revision 1373913203, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 7 d | 7 days |
+| Bioavailability | 89 % | 89% (Subcutaneous), 1–2% (Oral) |
+| Metabolism | - | Proteolysis |
+| Excretion | - | Urine and feces |
 
 ## Safety routing
 

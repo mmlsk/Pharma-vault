@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 29.0
+  value-max: 49.0
+  unit: h
+  notes: 29–49 hours
 protein-binding:
   value: null
   unit: percent
@@ -48,13 +49,21 @@ risk-domains: []
 group-risk-triage:
 - glucose-metabolism
 - gastrointestinal
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/glp1
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Orforglipron
+  url: https://en.wikipedia.org/w/index.php?title=Orforglipron&oldid=1371069211
+  revision: 1371069211
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Orforglipron
@@ -80,7 +89,12 @@ Oral non-peptide GLP-1 receptor agonist, notable for not requiring injection.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Orforglipron*](https://en.wikipedia.org/w/index.php?title=Orforglipron&oldid=1371069211) (revision 1371069211, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 29–49 h | 29–49 hours |
 
 ## Safety routing
 

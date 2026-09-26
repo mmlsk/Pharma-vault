@@ -18,22 +18,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 11.0
+  value-max: 17.0
+  unit: h
+  notes: 11–17 hours
 protein-binding:
-  value: null
+  value: 99.8
+  value-max: null
   unit: percent
-  notes: null
+  notes: 99.8%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 40% feces, <15% urine
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Via catechol-O-methyltransferase pathway
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Micafungin
+  url: https://en.wikipedia.org/w/index.php?title=Micafungin&oldid=1338331511
+  revision: 1338331511
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Micafungin
@@ -79,7 +89,15 @@ Echinocandin with no meaningful renal clearance and few drug interactions, widel
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Micafungin*](https://en.wikipedia.org/w/index.php?title=Micafungin&oldid=1338331511) (revision 1338331511, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 11–17 h | 11–17 hours |
+| Protein binding | 99.8 % | 99.8% |
+| Metabolism | - | Via catechol-O-methyltransferase pathway |
+| Excretion | - | 40% feces, <15% urine |
 
 ## Safety routing
 

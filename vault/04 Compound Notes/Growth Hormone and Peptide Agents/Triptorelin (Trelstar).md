@@ -20,18 +20,19 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 6.6
+  value-max: null
+  unit: h
+  notes: 'The elimination half-life for patients with hepatic impairment was similar to that of patients with renal impairment (geometric mean t(1/2, z): 6.6 h, 7.7 h and 7.6 h for Groups II, III and IV, respectively), but significantly longer than in healthy volunteers (2.8 h for Group I); Triptorelin is a gonadotropin-releasing hormone (GnRH) analogue with enhanced affinity for GnRH receptors and a prolonged half-life due to its resistance to enzymatic degradation.'
 protein-binding:
   value: null
   unit: percent
   notes: null
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -50,13 +51,21 @@ risk-domains: []
 group-risk-triage:
 - evidence-limited
 - identity-contamination
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/peptides
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Triptorelin
+  url: https://en.wikipedia.org/w/index.php?title=Triptorelin&oldid=1349528803
+  revision: 1349528803
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Triptorelin (Trelstar)
@@ -83,7 +92,13 @@ GnRH agonist; a flare then profound suppression, which is why it is used both wa
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Triptorelin*](https://en.wikipedia.org/w/index.php?title=Triptorelin&oldid=1349528803) (revision 1349528803, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 6.6 h | The elimination half-life for patients with hepatic impairment was similar to that of patients with renal impairment (geometric mean t(1/2, z): 6.6 h, 7.7 h and 7.6 h for Groups II, III and IV, respectively), but significantly longer than in healthy volunteers (2.8 h for Group I); Triptorelin is a gonadotropin-releasing hormone (GnRH) analogue with enhanced affinity for GnRH receptors and a prolonged half-life due to its resistance to enzymatic degradation. |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

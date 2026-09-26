@@ -25,6 +25,10 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 98.0
+  value-max: null
+  notes: 98%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -48,13 +52,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Methylstenbolone
+  url: https://en.wikipedia.org/w/index.php?title=Methylstenbolone&oldid=1329029636
+  revision: 1329029636
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Methylstenbolone
@@ -80,7 +92,12 @@ Potent designer oral anabolic steroid sold during the prohormone era.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Methylstenbolone*](https://en.wikipedia.org/w/index.php?title=Methylstenbolone&oldid=1329029636) (revision 1329029636, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | 98 % | 98% |
 
 ## Safety routing
 

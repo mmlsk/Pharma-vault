@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 20.0
+  value-max: 40.0
+  unit: min
+  notes: 20 to 40 minutes
 protein-binding:
-  value: null
+  value: 97.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 97%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Mupirocin
+  url: https://en.wikipedia.org/w/index.php?title=Mupirocin&oldid=1360195352
+  revision: 1360195352
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Mupirocin
@@ -79,7 +89,13 @@ Topical agent for staphylococcal impetigo and nasal MRSA decolonisation, with a 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Mupirocin*](https://en.wikipedia.org/w/index.php?title=Mupirocin&oldid=1360195352) (revision 1360195352, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 20–40 min | 20 to 40 minutes |
+| Protein binding | 97 % | 97% |
 
 ## Safety routing
 

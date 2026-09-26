@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 10.0
+  value-max: 40.0
+  unit: min
+  notes: 10–40 minutes
 protein-binding:
   value: null
   unit: percent
@@ -33,7 +34,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Hydrolysis
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +49,21 @@ risk-domains: []
 group-risk-triage:
 - evidence-limited
 - identity-contamination
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/peptides
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Gonadorelin
+  url: https://en.wikipedia.org/w/index.php?title=Gonadorelin&oldid=1329009440
+  revision: 1329009440
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Gonadorelin
@@ -80,7 +89,13 @@ Synthetic GnRH itself; pulsatile delivery stimulates the axis, continuous delive
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Gonadorelin*](https://en.wikipedia.org/w/index.php?title=Gonadorelin&oldid=1329009440) (revision 1329009440, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 10–40 min | 10–40 minutes |
+| Metabolism | - | Hydrolysis |
 
 ## Safety routing
 

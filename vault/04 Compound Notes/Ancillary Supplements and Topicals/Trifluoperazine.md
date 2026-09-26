@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: CHEMBL422
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 10.0
+  value-max: 20.0
+  unit: h
+  notes: 10–20 hours
 protein-binding:
   value: null
   unit: percent
@@ -31,9 +32,9 @@ renal-clearance:
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Trifluoperazine
+  url: https://en.wikipedia.org/w/index.php?title=Trifluoperazine&oldid=1325077324
+  revision: 1325077324
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Trifluoperazine
@@ -84,7 +93,13 @@ D2-like dopamine receptor antagonist _(ChEMBL curated mechanism, as quoted by th
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Trifluoperazine*](https://en.wikipedia.org/w/index.php?title=Trifluoperazine&oldid=1325077324) (revision 1325077324, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 10–20 h | 10–20 hours |
+| Metabolism | hepatic | Liver |
 
 ## Safety routing
 

@@ -20,18 +20,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 62.8
+  value-max: null
+  unit: h
+  notes: 62.8 hours / 3 mg single dose; 5 hours / 0.25 mg single dose; 20.6 hours / 0.25 mg multiple doses
 protein-binding:
-  value: null
+  value: 86.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 86%
+bioavailability:
+  value: 85.0
+  value-max: null
+  notes: 85%
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.1
+  notes: feces (5% to 10% as unchanged drug and metabolites); urine (2% to 4% as unchanged drug)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -50,13 +56,21 @@ risk-domains: []
 group-risk-triage:
 - evidence-limited
 - identity-contamination
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/peptides
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Cetrorelix
+  url: https://en.wikipedia.org/w/index.php?title=Cetrorelix&oldid=1329009186
+  revision: 1329009186
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Cetrorelix (Cetrotide)
@@ -83,7 +97,15 @@ GnRH antagonist used in IVF to stop a premature LH surge; immediate suppression,
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Cetrorelix*](https://en.wikipedia.org/w/index.php?title=Cetrorelix&oldid=1329009186) (revision 1329009186, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 62.8 h | 62.8 hours / 3 mg single dose; 5 hours / 0.25 mg single dose; 20.6 hours / 0.25 mg multiple doses |
+| Protein binding | 86 % | 86% |
+| Bioavailability | 85 % | 85% |
+| Excretion | - · fe 0.1 | feces (5% to 10% as unchanged drug and metabolites); urine (2% to 4% as unchanged drug) |
 
 ## Safety routing
 

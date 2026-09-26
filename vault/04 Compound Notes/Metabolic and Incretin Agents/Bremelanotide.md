@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL2070241
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.7
+  value-max: null
+  unit: h
+  notes: 2.7 hours
 protein-binding:
-  value: null
+  value: 21.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 21%
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 'SC: ~100%'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Urine: 64.8%; Feces: 22.8%'
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Hydrolysis of peptide bonds
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +54,21 @@ risk-domains: []
 group-risk-triage:
 - glucose-metabolism
 - gastrointestinal
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/glp1
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Bremelanotide
+  url: https://en.wikipedia.org/w/index.php?title=Bremelanotide&oldid=1376322571
+  revision: 1376322571
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Bremelanotide
@@ -85,7 +99,16 @@ Melanocortin receptor 4 agonist _(ChEMBL curated mechanism, as quoted by the sou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Bremelanotide*](https://en.wikipedia.org/w/index.php?title=Bremelanotide&oldid=1376322571) (revision 1376322571, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2.7 h | 2.7 hours |
+| Protein binding | 21 % | 21% |
+| Bioavailability | 100 % | SC: ~100% |
+| Metabolism | - | Hydrolysis of peptide bonds |
+| Excretion | mainly urinary | Urine: 64.8%; Feces: 22.8% |
 
 ## Safety routing
 

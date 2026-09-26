@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 9.4
+  value-max: 10.4
+  unit: h
+  notes: 'Adults: 9.4–10.4 hours; Elderly: 13.3 hours'
 protein-binding:
-  value: null
+  value: 94.0
+  value-max: 97.0
   unit: percent
-  notes: null
+  notes: 94–97%
+bioavailability:
+  value: 97.0
+  value-max: null
+  notes: 97%
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.28
+  notes: 'Urine: 28% (unchanged); Feces: 3%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Kidneys (primarily), liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +56,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Oxandrolone
+  url: https://en.wikipedia.org/w/index.php?title=Oxandrolone&oldid=1371442481
+  revision: 1371442481
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Anavar (Oxandrolone)
@@ -83,7 +97,16 @@ Mild oral anabolic steroid with a favorable anabolic-to-androgenic ratio, common
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Oxandrolone*](https://en.wikipedia.org/w/index.php?title=Oxandrolone&oldid=1371442481) (revision 1371442481, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 9.4–10.4 h | Adults: 9.4–10.4 hours; Elderly: 13.3 hours |
+| Protein binding | 94–97 % | 94–97% |
+| Bioavailability | 97 % | 97% |
+| Metabolism | hepatic | Kidneys (primarily), liver |
+| Excretion | - · fe 0.28 | Urine: 28% (unchanged); Feces: 3% |
 
 ## Safety routing
 

@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.6
+  value-max: null
+  unit: h
+  notes: 5.6 hours
 protein-binding:
-  value: null
+  value: 50.0
+  value-max: 83.0
   unit: percent
-  notes: null
+  notes: 50 to 83%
+bioavailability:
+  value: 6.0
+  value-max: 10.0
+  notes: 6–10% (Oral); nearly 100% (intravenous)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (30%), faecal (3%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Acetylcysteine
+  url: https://en.wikipedia.org/w/index.php?title=Acetylcysteine&oldid=1375254688
+  revision: 1375254688
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # NAC (N-Acetylcysteine)
@@ -82,7 +96,16 @@ Glutathione precursor and antioxidant, the clinical antidote for acetaminophen o
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Acetylcysteine*](https://en.wikipedia.org/w/index.php?title=Acetylcysteine&oldid=1375254688) (revision 1375254688, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5.6 h | 5.6 hours |
+| Protein binding | 50–83 % | 50 to 83% |
+| Bioavailability | 6–10 % | 6–10% (Oral); nearly 100% (intravenous) |
+| Metabolism | hepatic | Liver |
+| Excretion | - | Kidney (30%), faecal (3%) |
 
 ## Safety routing
 

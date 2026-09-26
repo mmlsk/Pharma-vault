@@ -79,7 +79,7 @@ Dual thromboxane TP and CRTH2 antagonist marketed in Japan for allergic rhinitis
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

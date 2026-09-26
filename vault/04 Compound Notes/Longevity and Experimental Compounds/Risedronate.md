@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.5
+  value-max: null
+  unit: h
+  notes: 1.5 h
 protein-binding:
-  value: null
+  value: 24.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: ~24%
+bioavailability:
+  value: 0.63
+  value-max: null
+  notes: 0.63%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney and fecal
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: None
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Risedronic acid
+  url: https://en.wikipedia.org/w/index.php?title=Risedronic_acid&oldid=1334621308
+  revision: 1334621308
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Risedronate
@@ -79,7 +93,16 @@ Bisphosphonate used to slow bone resorption and increase bone density.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Risedronic acid*](https://en.wikipedia.org/w/index.php?title=Risedronic_acid&oldid=1334621308) (revision 1334621308, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.5 h | 1.5 h |
+| Protein binding | 24 % | ~24% |
+| Bioavailability | 0.63 % | 0.63% |
+| Metabolism | - | None |
+| Excretion | - | Kidney and fecal |
 
 ## Safety routing
 

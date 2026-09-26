@@ -19,8 +19,9 @@ chembl-id: null
 chembl-max-phase: null
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: '7.9–30 minutes (rat, IV and IM) [not stored as a number: non-human or sub-minute data]'
 protein-binding:
   value: null
   unit: percent
@@ -48,13 +49,21 @@ risk-domains: []
 group-risk-triage:
 - evidence-limited
 - identity-contamination
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/peptides
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: BPC-157
+  url: https://en.wikipedia.org/w/index.php?title=BPC-157&oldid=1366359640
+  revision: 1366359640
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # BPC-157
@@ -80,7 +89,12 @@ Synthetic peptide fragment studied for tendon, ligament, and gut healing acceler
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *BPC-157*](https://en.wikipedia.org/w/index.php?title=BPC-157&oldid=1366359640) (revision 1366359640, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | 7.9–30 minutes (rat, IV and IM) [not stored as a number: non-human or sub-minute data] |
 
 ## Safety routing
 

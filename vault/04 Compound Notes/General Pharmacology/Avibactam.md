@@ -22,18 +22,23 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 5.7
+  value-max: 8.2
   unit: percent
-  notes: null
+  notes: 5.7–8.2%
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100% (intravenous)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (97%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Nil
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Avibactam
+  url: https://en.wikipedia.org/w/index.php?title=Avibactam&oldid=1363446635
+  revision: 1363446635
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Avibactam
@@ -79,7 +92,15 @@ Non-beta-lactam diazabicyclooctane inhibitor with a reversible covalent mechanis
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Avibactam*](https://en.wikipedia.org/w/index.php?title=Avibactam&oldid=1363446635) (revision 1363446635, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 5.7–8.2 % | 5.7–8.2% |
+| Bioavailability | 100 % | 100% (intravenous) |
+| Metabolism | - | Nil |
+| Excretion | mainly urinary | Kidney (97%) |
 
 ## Safety routing
 

@@ -48,13 +48,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/nootropic
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Pargyline
+  url: https://en.wikipedia.org/w/index.php?title=Pargyline&oldid=1373332120
+  revision: 1373332120
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Pargyline
@@ -80,7 +88,12 @@ Inhibits monoamine oxidase to raise synaptic monoamines; selectivity and reversi
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Pargyline*](https://en.wikipedia.org/w/index.php?title=Pargyline&oldid=1373332120) (revision 1373332120, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Metabolites | - | • N-Methylbenzylamine; • N-Propargylbenzylamine; • N-Methylpropargylamine; • Benzylamine; • Propiolaldehyde; • Propargylamine; • Benzaldehyde; • Pargyline-N-oxide |
 
 ## Safety routing
 

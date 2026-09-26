@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 38.0
+  value-max: 45.0
+  unit: min
+  notes: 38–45 minutes
 protein-binding:
-  value: null
+  value: 60.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: < 60%
+bioavailability:
+  value: null
+  value-max: null
+  notes: Extensive
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: kidney (95.5%), faecal (2.6%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: liver, to 5'-DFCR, 5'-DFUR (inactive); neoplastic tissue, 5'-DFUR to active fluorouracil
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cytotoxicity
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/oncology
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Capecitabine
+  url: https://en.wikipedia.org/w/index.php?title=Capecitabine&oldid=1360414026
+  revision: 1360414026
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Capecitabine (Xeloda)
@@ -82,7 +96,16 @@ An oral prodrug converted to 5-fluorouracil in three enzymatic steps, the last b
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Capecitabine*](https://en.wikipedia.org/w/index.php?title=Capecitabine&oldid=1360414026) (revision 1360414026, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 38–45 min | 38–45 minutes |
+| Protein binding | 60 % | < 60% |
+| Bioavailability | - | Extensive |
+| Metabolism | hepatic | liver, to 5'-DFCR, 5'-DFUR (inactive); neoplastic tissue, 5'-DFUR to active fluorouracil |
+| Excretion | mainly urinary | kidney (95.5%), faecal (2.6%) |
 
 ## Safety routing
 

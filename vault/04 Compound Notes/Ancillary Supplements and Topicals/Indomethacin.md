@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL6
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.6
+  value-max: 11.2
+  unit: h
+  notes: 2.6-11.2 hours (adults), 12-28 hours (infants)
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 99%
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: ~100% (oral), 80–90% (rectal)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (60%), fecal (33%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Indometacin
+  url: https://en.wikipedia.org/w/index.php?title=Indometacin&oldid=1373734407
+  revision: 1373734407
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Indomethacin
@@ -84,7 +98,16 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Indometacin*](https://en.wikipedia.org/w/index.php?title=Indometacin&oldid=1373734407) (revision 1373734407, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2.6–11.2 h | 2.6-11.2 hours (adults), 12-28 hours (infants) |
+| Protein binding | 99 % | 99% |
+| Bioavailability | 100 % | ~100% (oral), 80–90% (rectal) |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Kidney (60%), fecal (33%) |
 
 ## Safety routing
 

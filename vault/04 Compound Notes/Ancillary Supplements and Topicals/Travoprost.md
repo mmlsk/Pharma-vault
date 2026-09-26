@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.5
+  value-max: null
+  unit: h
+  notes: 1.5 hours (in aqueous fluid); 45 minutes (terminal)
 protein-binding:
   value: null
   unit: percent
@@ -29,11 +30,11 @@ active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Mainly via kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Activation by ester hydrolysis, deactivation by beta oxidation, OH-oxidation, double bond reduction
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Travoprost
+  url: https://en.wikipedia.org/w/index.php?title=Travoprost&oldid=1370544334
+  revision: 1370544334
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Travoprost
@@ -79,7 +88,14 @@ Prostaglandin F2alpha analogue for glaucoma; the class also lengthens and darken
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Travoprost*](https://en.wikipedia.org/w/index.php?title=Travoprost&oldid=1370544334) (revision 1370544334, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.5 h | 1.5 hours (in aqueous fluid); 45 minutes (terminal) |
+| Metabolism | hepatic | Activation by ester hydrolysis, deactivation by beta oxidation, OH-oxidation, double bond reduction |
+| Excretion | - | Mainly via kidney |
 
 ## Safety routing
 

@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 3.0
+  value-max: null
+  unit: h
+  notes: 3 hours (ocular), 12 hours (topical)
 protein-binding:
   value: null
   unit: percent
@@ -31,9 +32,9 @@ renal-clearance:
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Primarily liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/derm
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Brimonidine
+  url: https://en.wikipedia.org/w/index.php?title=Brimonidine&oldid=1356287072
+  revision: 1356287072
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Brimonidine
@@ -79,7 +88,13 @@ Alpha-2 agonist used as a glaucoma drop and as a topical gel for rosacea erythem
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Brimonidine*](https://en.wikipedia.org/w/index.php?title=Brimonidine&oldid=1356287072) (revision 1356287072, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 3 h | 3 hours (ocular), 12 hours (topical) |
+| Metabolism | hepatic | Primarily liver |
 
 ## Safety routing
 

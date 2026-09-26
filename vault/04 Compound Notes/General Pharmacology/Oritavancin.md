@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 16.0
+  value-max: null
+  unit: d
+  notes: 16 day
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Oritavancin
+  url: https://en.wikipedia.org/w/index.php?title=Oritavancin&oldid=1357733499
+  revision: 1357733499
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Oritavancin
@@ -79,7 +88,12 @@ Lipoglycopeptide with three mechanisms rather than one, given as a single infusi
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Oritavancin*](https://en.wikipedia.org/w/index.php?title=Oritavancin&oldid=1357733499) (revision 1357733499, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 16 d | 16 day |
 
 ## Safety routing
 

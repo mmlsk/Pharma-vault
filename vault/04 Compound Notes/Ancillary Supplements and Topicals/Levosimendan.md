@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: null
+  unit: h
+  notes: ~1 hour (levosimendan), 75–80 hours (metabolites)
 protein-binding:
-  value: null
+  value: 97.0
+  value-max: 98.0
   unit: percent
-  notes: null
+  notes: 97–98%
+bioavailability:
+  value: 85.0
+  value-max: null
+  notes: 85% (oral)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: urine (54%), feces (44%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Extensive hepatic
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Levosimendan
+  url: https://en.wikipedia.org/w/index.php?title=Levosimendan&oldid=1365937324
+  revision: 1365937324
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Levosimendan
@@ -79,7 +93,16 @@ Calcium-sensitizing inodilator used for acute heart failure in some countries; h
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Levosimendan*](https://en.wikipedia.org/w/index.php?title=Levosimendan&oldid=1365937324) (revision 1365937324, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1 h | ~1 hour (levosimendan), 75–80 hours (metabolites) |
+| Protein binding | 97–98 % | 97–98% |
+| Bioavailability | 85 % | 85% (oral) |
+| Metabolism | hepatic | Extensive hepatic |
+| Excretion | mainly urinary | urine (54%), feces (44%) |
 
 ## Safety routing
 

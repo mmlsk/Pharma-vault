@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 12.0
+  value-max: null
+  unit: h
+  notes: 12 hours (single dose); 4–5 days (repeated dosing)
 protein-binding:
-  value: null
+  value: 98.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 98%
+bioavailability:
+  value: 80.0
+  value-max: null
+  notes: '>80%'
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney and fecal
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ticlopidine
+  url: https://en.wikipedia.org/w/index.php?title=Ticlopidine&oldid=1353661243
+  revision: 1353661243
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ticlopidine
@@ -79,7 +93,16 @@ Inhibits platelet P2Y12 ADP signalling to reduce aggregation, at the cost of ble
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ticlopidine*](https://en.wikipedia.org/w/index.php?title=Ticlopidine&oldid=1353661243) (revision 1353661243, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 12 h | 12 hours (single dose); 4–5 days (repeated dosing) |
+| Protein binding | 98 % | 98% |
+| Bioavailability | 80 % | >80% |
+| Metabolism | hepatic | Liver |
+| Excretion | - | Kidney and fecal |
 
 ## Safety routing
 

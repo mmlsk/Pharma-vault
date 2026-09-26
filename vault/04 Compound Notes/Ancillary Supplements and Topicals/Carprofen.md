@@ -19,12 +19,14 @@ chembl-id: CHEMBL1316
 chembl-max-phase: 4
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: 'Approximately 8 h (range 4.5–9.8 h) in dogs [not stored as a number: non-human or sub-minute data]'
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: High (99%)
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Carprofen
+  url: https://en.wikipedia.org/w/index.php?title=Carprofen&oldid=1330318498
+  revision: 1330318498
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Carprofen
@@ -84,7 +94,13 @@ Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Carprofen*](https://en.wikipedia.org/w/index.php?title=Carprofen&oldid=1330318498) (revision 1330318498, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | Approximately 8 h (range 4.5–9.8 h) in dogs [not stored as a number: non-human or sub-minute data] |
+| Protein binding | 99 % | High (99%) |
 
 ## Safety routing
 

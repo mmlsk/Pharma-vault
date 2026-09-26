@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: CHEMBL1200853
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: 7.0
+  unit: h
+  notes: 'Parent: 5–7 hours; Metabolite: 14–17 hours'
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: '? (probably to albumin)'
+bioavailability:
+  value: 28.0
+  value-max: null
+  notes: 28%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: 'Hepatic: AKR1C1, AKR1C3, CYP3A4'
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Dydrogesterone
+  url: https://en.wikipedia.org/w/index.php?title=Dydrogesterone&oldid=1328989710
+  revision: 1328989710
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Dydrogesterone
@@ -84,7 +99,18 @@ Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the sourc
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Dydrogesterone*](https://en.wikipedia.org/w/index.php?title=Dydrogesterone&oldid=1328989710) (revision 1328989710, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5–7 h | Parent: 5–7 hours; Metabolite: 14–17 hours |
+| Protein binding | - | ? (probably to albumin) |
+| Bioavailability | 28 % | 28% |
+| Metabolism | hepatic | Hepatic: AKR1C1, AKR1C3, CYP3A4 |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | 20α-DHD (exclusively via AKR1C1 and AKRC13) |
+| Excretion | mainly urinary | Urine |
 
 ## Safety routing
 
@@ -92,4 +118,5 @@ Group-level triage (not compound-specific): `endocrine-feedback-disruption`
 
 - [[Stacking and Interaction Risks]]
 - [[Hormonal Axis Suppression]]
+- [[CYP450 Metabolism]]
 - [[HPG and GH-IGF-1 Axes]]

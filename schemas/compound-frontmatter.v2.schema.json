@@ -4,112 +4,441 @@
   "title": "Pharma-vault compound note frontmatter (schema-version 2)",
   "description": "Validation rules for YAML frontmatter of notes in vault/04 Compound Notes. Empty (null) values are allowed for every curatable field so that stubs validate; controlled vocabularies and numeric bounds apply as soon as a value is entered.",
   "type": "object",
-  "required": ["type", "schema-version", "compound-id", "name", "review-status", "tags"],
+  "required": [
+    "type",
+    "schema-version",
+    "compound-id",
+    "name",
+    "review-status",
+    "tags"
+  ],
   "additionalProperties": true,
   "properties": {
-    "type": { "const": "compound" },
-    "schema-version": { "const": 2 },
-    "compound-id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
-    "name": { "type": "string", "minLength": 1 },
-    "aliases": { "$ref": "#/$defs/stringList" },
-    "cluster": { "$ref": "#/$defs/optString" },
-    "group": { "$ref": "#/$defs/optString" },
-    "class": { "$ref": "#/$defs/optString" },
-    "subclass": { "$ref": "#/$defs/optString" },
-    "mechanism": { "$ref": "#/$defs/optString" },
-    "pathways": { "$ref": "#/$defs/stringList" },
-    "indications": { "$ref": "#/$defs/stringList" },
-    "off-label-contexts": { "$ref": "#/$defs/stringList" },
+    "type": {
+      "const": "compound"
+    },
+    "schema-version": {
+      "const": 2
+    },
+    "compound-id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "aliases": {
+      "$ref": "#/$defs/stringList"
+    },
+    "cluster": {
+      "$ref": "#/$defs/optString"
+    },
+    "group": {
+      "$ref": "#/$defs/optString"
+    },
+    "class": {
+      "$ref": "#/$defs/optString"
+    },
+    "subclass": {
+      "$ref": "#/$defs/optString"
+    },
+    "mechanism": {
+      "$ref": "#/$defs/optString"
+    },
+    "pathways": {
+      "$ref": "#/$defs/stringList"
+    },
+    "indications": {
+      "$ref": "#/$defs/stringList"
+    },
+    "off-label-contexts": {
+      "$ref": "#/$defs/stringList"
+    },
     "regulatory-status": {
-      "enum": [null, "approved", "prescription-only", "otc", "supplement", "investigational",
-               "research-chemical", "controlled", "banned", "withdrawn", "unknown"]
+      "enum": [
+        null,
+        "approved",
+        "prescription-only",
+        "otc",
+        "supplement",
+        "investigational",
+        "research-chemical",
+        "controlled",
+        "banned",
+        "withdrawn",
+        "unknown"
+      ]
     },
     "evidence-level": {
       "description": "Formal evidence tier. Vendor presence must never upgrade evidence.",
-      "enum": [null, "A-approved", "B-human-controlled", "C-early-human", "D-preclinical",
-               "E-forensic-NPS", "F-vendor-only", "X-identity-disputed"]
+      "enum": [
+        null,
+        "A-approved",
+        "B-human-controlled",
+        "C-early-human",
+        "D-preclinical",
+        "E-forensic-NPS",
+        "F-vendor-only",
+        "X-identity-disputed"
+      ]
     },
-    "review-status": { "enum": ["stub", "candidate", "expanded", "verified", "needs-update"] },
-    "status": { "$ref": "#/$defs/optString" },
-    "chembl-id": { "type": ["string", "null"], "pattern": "^CHEMBL[0-9]+$" },
-    "chembl-max-phase": { "type": ["integer", "null"], "minimum": 0, "maximum": 4 },
+    "review-status": {
+      "enum": [
+        "stub",
+        "candidate",
+        "expanded",
+        "verified",
+        "needs-update"
+      ]
+    },
+    "status": {
+      "$ref": "#/$defs/optString"
+    },
+    "chembl-id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^CHEMBL[0-9]+$"
+    },
+    "chembl-max-phase": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 4
+    },
     "half-life": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
-        "value": { "type": ["number", "null"], "minimum": 0 },
-        "unit": { "enum": [null, "min", "h", "d", "wk"] },
-        "notes": { "$ref": "#/$defs/optString" }
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "unit": {
+          "enum": [
+            null,
+            "min",
+            "h",
+            "d",
+            "wk"
+          ]
+        },
+        "notes": {
+          "$ref": "#/$defs/optString"
+        },
+        "value-max": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
       }
     },
     "protein-binding": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
-        "value": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
-        "unit": { "enum": [null, "percent"] },
-        "notes": { "$ref": "#/$defs/optString" }
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "unit": {
+          "enum": [
+            null,
+            "percent"
+          ]
+        },
+        "notes": {
+          "$ref": "#/$defs/optString"
+        },
+        "value-max": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        }
       }
     },
-    "active-metabolites": { "$ref": "#/$defs/stringList" },
+    "active-metabolites": {
+      "$ref": "#/$defs/stringList"
+    },
     "renal-clearance": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
-        "primary-route": { "type": ["boolean", "null"] },
-        "fraction-excreted-unchanged": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-        "notes": { "$ref": "#/$defs/optString" }
+        "primary-route": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "fraction-excreted-unchanged": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "$ref": "#/$defs/optString"
+        }
       }
     },
     "hepatic-clearance": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
-        "primary-route": { "type": ["boolean", "null"] },
-        "extraction-ratio": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
-        "notes": { "$ref": "#/$defs/optString" }
+        "primary-route": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "extraction-ratio": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "$ref": "#/$defs/optString"
+        }
       }
     },
     "dosage-ranges": {
       "description": "Reference ranges from authoritative labelling only. Educational use; not dosing advice.",
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
-        "oral": { "$ref": "#/$defs/routeDose" },
-        "injectable": { "$ref": "#/$defs/routeDose" },
-        "topical": { "$ref": "#/$defs/routeDose" }
+        "oral": {
+          "$ref": "#/$defs/routeDose"
+        },
+        "injectable": {
+          "$ref": "#/$defs/routeDose"
+        },
+        "topical": {
+          "$ref": "#/$defs/routeDose"
+        }
       },
-      "additionalProperties": { "$ref": "#/$defs/routeDose" }
-    },
-    "cyp-interactions": {
-      "type": ["object", "null"],
-      "properties": {
-        "substrates": { "$ref": "#/$defs/cypList" },
-        "inhibitors": { "$ref": "#/$defs/cypList" },
-        "inducers": { "$ref": "#/$defs/cypList" },
-        "transporters": { "$ref": "#/$defs/stringList" },
-        "notes": { "$ref": "#/$defs/optString" }
+      "additionalProperties": {
+        "$ref": "#/$defs/routeDose"
       }
     },
-    "contraindications": { "$ref": "#/$defs/stringList" },
-    "major-interactions": { "$ref": "#/$defs/stringList" },
-    "monitoring": { "$ref": "#/$defs/stringList" },
-    "risk-domains": { "$ref": "#/$defs/stringList" },
-    "group-risk-triage": { "$ref": "#/$defs/stringList" },
-    "source-status": { "enum": [null, "source-summary-only", "partially-verified", "verified"] },
-    "last-reviewed": { "type": ["string", "null"], "format": "date" },
-    "tags": { "type": "array", "items": { "type": "string" }, "contains": { "const": "compound" } }
+    "cyp-interactions": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "substrates": {
+          "$ref": "#/$defs/cypList"
+        },
+        "inhibitors": {
+          "$ref": "#/$defs/cypList"
+        },
+        "inducers": {
+          "$ref": "#/$defs/cypList"
+        },
+        "transporters": {
+          "$ref": "#/$defs/stringList"
+        },
+        "notes": {
+          "$ref": "#/$defs/optString"
+        }
+      }
+    },
+    "contraindications": {
+      "$ref": "#/$defs/stringList"
+    },
+    "major-interactions": {
+      "$ref": "#/$defs/stringList"
+    },
+    "monitoring": {
+      "$ref": "#/$defs/stringList"
+    },
+    "risk-domains": {
+      "$ref": "#/$defs/stringList"
+    },
+    "group-risk-triage": {
+      "$ref": "#/$defs/stringList"
+    },
+    "source-status": {
+      "enum": [
+        null,
+        "source-summary-only",
+        "auto-extracted",
+        "partially-verified",
+        "verified"
+      ]
+    },
+    "last-reviewed": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "contains": {
+        "const": "compound"
+      }
+    },
+    "bioavailability": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "value-max": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "notes": {
+          "$ref": "#/$defs/optString"
+        }
+      }
+    },
+    "pk-source": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Provenance of auto-extracted pharmacokinetic fields",
+      "properties": {
+        "type": {
+          "enum": [
+            "wikipedia-infobox",
+            "smpc",
+            "fda-label",
+            "primary-literature",
+            "other"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "revision": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "retrieved": {
+          "type": "string",
+          "format": "date"
+        },
+        "chembl-confirmed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "type",
+        "url"
+      ]
+    }
   },
   "$defs": {
-    "optString": { "type": ["string", "null"] },
-    "stringList": { "type": ["array", "null"], "items": { "type": "string" } },
+    "optString": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stringList": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
     "cypList": {
-      "type": ["array", "null"],
-      "items": { "type": "string", "pattern": "^CYP[0-9]{1,2}[A-Z][0-9]{1,2}$" }
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string",
+        "pattern": "^CYP[0-9]{1,2}[A-Z][0-9]{1,2}$"
+      }
     },
     "routeDose": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
-        "min": { "type": ["number", "null"], "minimum": 0 },
-        "max": { "type": ["number", "null"], "minimum": 0 },
-        "unit": { "$ref": "#/$defs/optString" },
-        "frequency": { "$ref": "#/$defs/optString" },
-        "notes": { "$ref": "#/$defs/optString" }
+        "min": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "max": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "unit": {
+          "$ref": "#/$defs/optString"
+        },
+        "frequency": {
+          "$ref": "#/$defs/optString"
+        },
+        "notes": {
+          "$ref": "#/$defs/optString"
+        }
       }
     }
   }

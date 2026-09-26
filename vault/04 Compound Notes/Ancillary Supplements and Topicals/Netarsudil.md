@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 16.0
+  value-max: 17.0
+  unit: h
+  notes: 16–17 hrs
 protein-binding:
   value: null
   unit: percent
@@ -33,7 +34,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Esterases in the cornea
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/derm
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Netarsudil
+  url: https://en.wikipedia.org/w/index.php?title=Netarsudil&oldid=1333051436
+  revision: 1333051436
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Netarsudil
@@ -79,7 +88,14 @@ Rho kinase inhibitor eye drop that lowers intraocular pressure by acting on the 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Netarsudil*](https://en.wikipedia.org/w/index.php?title=Netarsudil&oldid=1333051436) (revision 1333051436, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 16–17 h | 16–17 hrs |
+| Metabolism | - | Esterases in the cornea |
+| Metabolites | - | AR-13503 (active metabolite) |
 
 ## Safety routing
 

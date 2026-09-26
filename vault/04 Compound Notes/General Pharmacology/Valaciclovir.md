@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 30.0
+  value-max: null
+  unit: min
+  notes: <30 minutes (valaciclovir);; 2.5–3.6 hours (aciclovir)
 protein-binding:
-  value: null
+  value: 13.0
+  value-max: 18.0
   unit: percent
-  notes: null
+  notes: 13–18%
+bioavailability:
+  value: 55.0
+  value-max: null
+  notes: 55%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney 40–50% (aciclovir),; faecal 47% (aciclovir)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (to aciclovir)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Valaciclovir
+  url: https://en.wikipedia.org/w/index.php?title=Valaciclovir&oldid=1356290223
+  revision: 1356290223
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Valaciclovir
@@ -79,7 +93,16 @@ L-valyl ester prodrug of aciclovir with three to five times the oral bioavailabi
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Valaciclovir*](https://en.wikipedia.org/w/index.php?title=Valaciclovir&oldid=1356290223) (revision 1356290223, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 30 min | <30 minutes (valaciclovir);; 2.5–3.6 hours (aciclovir) |
+| Protein binding | 13–18 % | 13–18% |
+| Bioavailability | 55 % | 55% |
+| Metabolism | hepatic | Liver (to aciclovir) |
+| Excretion | - | Kidney 40–50% (aciclovir),; faecal 47% (aciclovir) |
 
 ## Safety routing
 

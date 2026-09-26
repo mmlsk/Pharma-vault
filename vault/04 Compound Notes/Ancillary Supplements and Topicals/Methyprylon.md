@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: CHEMBL1200790
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 6.0
+  value-max: 16.0
+  unit: h
+  notes: 6–16 hours
 protein-binding:
-  value: null
+  value: 60.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 60%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Methyprylon
+  url: https://en.wikipedia.org/w/index.php?title=Methyprylon&oldid=1365017206
+  revision: 1365017206
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Methyprylon
@@ -84,7 +94,13 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Methyprylon*](https://en.wikipedia.org/w/index.php?title=Methyprylon&oldid=1365017206) (revision 1365017206, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 6–16 h | 6–16 hours |
+| Protein binding | 60 % | 60% |
 
 ## Safety routing
 

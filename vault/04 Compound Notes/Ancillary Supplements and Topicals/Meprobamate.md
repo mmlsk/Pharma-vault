@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: CHEMBL979
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 10.0
+  value-max: null
+  unit: h
+  notes: 10 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: '?'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Meprobamate
+  url: https://en.wikipedia.org/w/index.php?title=Meprobamate&oldid=1371749968
+  revision: 1371749968
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Meprobamate
@@ -84,7 +97,15 @@ GABA-A receptor; anion channel agonist _(ChEMBL curated mechanism, as quoted by 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Meprobamate*](https://en.wikipedia.org/w/index.php?title=Meprobamate&oldid=1371749968) (revision 1371749968, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 10 h | 10 hours |
+| Bioavailability | - | ? |
+| Metabolism | hepatic | Hepatic |
+| Excretion | mainly urinary | Renal |
 
 ## Safety routing
 

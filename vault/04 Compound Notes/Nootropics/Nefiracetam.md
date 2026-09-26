@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 3.0
+  value-max: 5.0
+  unit: h
+  notes: 3-5 hours
 protein-binding:
   value: null
   unit: percent
@@ -48,13 +49,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/nootropic
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Nefiracetam
+  url: https://en.wikipedia.org/w/index.php?title=Nefiracetam&oldid=1328700226
+  revision: 1328700226
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Nefiracetam
@@ -80,7 +89,12 @@ Investigational racetam studied for cognitive impairment, with proposed choliner
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Nefiracetam*](https://en.wikipedia.org/w/index.php?title=Nefiracetam&oldid=1328700226) (revision 1328700226, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 3–5 h | 3-5 hours |
 
 ## Safety routing
 

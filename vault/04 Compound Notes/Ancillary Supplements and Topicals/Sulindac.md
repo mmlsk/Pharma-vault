@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: CHEMBL15770
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 7.8
+  value-max: null
+  unit: h
+  notes: 7.8 hours, metabolites up to 16.4 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 90.0
+  value-max: null
+  notes: Approximately 90% (Oral)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal (50%) and fecal (25%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: '?'
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Sulindac
+  url: https://en.wikipedia.org/w/index.php?title=Sulindac&oldid=1339456381
+  revision: 1339456381
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Sulindac
@@ -84,7 +97,15 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Sulindac*](https://en.wikipedia.org/w/index.php?title=Sulindac&oldid=1339456381) (revision 1339456381, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 7.8 h | 7.8 hours, metabolites up to 16.4 hours |
+| Bioavailability | 90 % | Approximately 90% (Oral) |
+| Metabolism | - | ? |
+| Excretion | mainly urinary | Renal (50%) and fecal (25%) |
 
 ## Safety routing
 

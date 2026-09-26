@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: CHEMBL855
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.0
+  value-max: 6.0
+  unit: h
+  notes: 4–6 hours
 protein-binding:
-  value: null
+  value: 90.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 90%
+bioavailability:
+  value: 4.0
+  value-max: null
+  notes: 'Oral: 4%'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic (CYP2D6)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2D6
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2D6 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Triprolidine
+  url: https://en.wikipedia.org/w/index.php?title=Triprolidine&oldid=1354892877
+  revision: 1354892877
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Triprolidine
@@ -84,10 +99,21 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Triprolidine*](https://en.wikipedia.org/w/index.php?title=Triprolidine&oldid=1354892877) (revision 1354892877, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4–6 h | 4–6 hours |
+| Protein binding | 90 % | 90% |
+| Bioavailability | 4 % | Oral: 4% |
+| Metabolism | hepatic | Hepatic (CYP2D6) |
+| CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary | Renal |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

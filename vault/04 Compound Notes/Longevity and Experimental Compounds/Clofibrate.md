@@ -18,22 +18,24 @@ review-status: stub
 chembl-id: CHEMBL565
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 18.0
+  value-max: 22.0
+  unit: h
+  notes: Highly variable; average 18–22 hours. Prolonged in renal failure
 protein-binding:
-  value: null
+  value: 92.0
+  value-max: 97.0
   unit: percent
-  notes: null
+  notes: Variable, 92–97% at therapeutic concentrations
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal, 95 to 99%
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hydrolyzed to clofibric acid; hepatic glucuronidation
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Clofibrate
+  url: https://en.wikipedia.org/w/index.php?title=Clofibrate&oldid=1365301139
+  revision: 1365301139
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Clofibrate
@@ -84,7 +94,15 @@ Peroxisome proliferator-activated receptor alpha agonist _(ChEMBL curated mechan
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Clofibrate*](https://en.wikipedia.org/w/index.php?title=Clofibrate&oldid=1365301139) (revision 1365301139, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 18–22 h | Highly variable; average 18–22 hours. Prolonged in renal failure |
+| Protein binding | 92–97 % | Variable, 92–97% at therapeutic concentrations |
+| Metabolism | hepatic | Hydrolyzed to clofibric acid; hepatic glucuronidation |
+| Excretion | mainly urinary | Renal, 95 to 99% |
 
 ## Safety routing
 

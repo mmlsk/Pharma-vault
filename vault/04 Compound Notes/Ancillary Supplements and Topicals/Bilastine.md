@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL1742423
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 14.5
+  value-max: null
+  unit: h
+  notes: 14.5 hours
 protein-binding:
-  value: null
+  value: 84.0
+  value-max: 90.0
   unit: percent
-  notes: null
+  notes: 84-90% binding to plasma proteins
+bioavailability:
+  value: 61.0
+  value-max: null
+  notes: 61%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 95% in urine and faeces
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Not significantly metabolised
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Bilastine
+  url: https://en.wikipedia.org/w/index.php?title=Bilastine&oldid=1309927359
+  revision: 1309927359
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Bilastine
@@ -84,7 +98,16 @@ Histamine H1 receptor inverse agonist _(ChEMBL curated mechanism, as quoted by t
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Bilastine*](https://en.wikipedia.org/w/index.php?title=Bilastine&oldid=1309927359) (revision 1309927359, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 14.5 h | 14.5 hours |
+| Protein binding | 84–90 % | 84-90% binding to plasma proteins |
+| Bioavailability | 61 % | 61% |
+| Metabolism | - | Not significantly metabolised |
+| Excretion | mainly urinary | 95% in urine and faeces |
 
 ## Safety routing
 

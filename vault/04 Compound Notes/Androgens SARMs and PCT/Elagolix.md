@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL1208155
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.0
+  value-max: 6.0
+  unit: h
+  notes: 'Typical: 4–6 hours; Single dose: 2.4–6.3 hrs; Continuous: 2.2–10.8 hours'
 protein-binding:
-  value: null
+  value: 80.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 80%
+bioavailability:
+  value: 5.8
+  value-max: null
+  notes: Low (5.8% in rats, 11% in monkeys; no human data)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Urine: <3%; Feces: 90%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP3A)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Elagolix
+  url: https://en.wikipedia.org/w/index.php?title=Elagolix&oldid=1370223569
+  revision: 1370223569
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Elagolix
@@ -84,7 +98,16 @@ Gonadotropin-releasing hormone receptor antagonist _(ChEMBL curated mechanism, a
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Elagolix*](https://en.wikipedia.org/w/index.php?title=Elagolix&oldid=1370223569) (revision 1370223569, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4–6 h | Typical: 4–6 hours; Single dose: 2.4–6.3 hrs; Continuous: 2.2–10.8 hours |
+| Protein binding | 80 % | 80% |
+| Bioavailability | 5.8 % | Low (5.8% in rats, 11% in monkeys; no human data) |
+| Metabolism | hepatic | Liver (CYP3A) |
+| Excretion | mainly non-renal | Urine: <3%; Feces: 90% |
 
 ## Safety routing
 

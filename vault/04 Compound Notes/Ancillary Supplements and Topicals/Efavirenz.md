@@ -18,42 +18,58 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 52.0
+  value-max: 76.0
+  unit: h
+  notes: 'Single-dose: 52–76h; Multi-dose: 40–55h'
 protein-binding:
-  value: null
+  value: 99.5
+  value-max: 99.75
   unit: percent
-  notes: null
+  notes: 99.5–99.75%
+bioavailability:
+  value: 40.0
+  value-max: 45.0
+  notes: 40–45% (under fasting conditions)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (14–34%) and feces (16–61%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP2A6 and CYP2B6-mediated)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2A6
+  - CYP2B6
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2A6, CYP2B6 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Efavirenz
+  url: https://en.wikipedia.org/w/index.php?title=Efavirenz&oldid=1373477952
+  revision: 1373477952
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Efavirenz
@@ -79,10 +95,21 @@ Inhibits HIV reverse transcriptase and is used only as part of a resistance-awar
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Efavirenz*](https://en.wikipedia.org/w/index.php?title=Efavirenz&oldid=1373477952) (revision 1373477952, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 52–76 h | Single-dose: 52–76h; Multi-dose: 40–55h |
+| Protein binding | 99.5–99.75 % | 99.5–99.75% |
+| Bioavailability | 40–45 % | 40–45% (under fasting conditions) |
+| Metabolism | hepatic | Liver (CYP2A6 and CYP2B6-mediated) |
+| CYP (metabolised by) | CYP2A6, CYP2B6 | roles as inhibitor/inducer not assessed |
+| Excretion | - | Kidney (14–34%) and feces (16–61%) |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

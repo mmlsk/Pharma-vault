@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 28.0
+  value-max: null
+  unit: h
+  notes: 'Single-dose: 28 hours; Multi-dose: 33 hours'
 protein-binding:
-  value: null
+  value: 95.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: '>95%'
+bioavailability:
+  value: 2.0
+  value-max: null
+  notes: 2%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Feces
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver, intestines (glucuro-; nidation); CYP450 system not involved
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Raloxifene
+  url: https://en.wikipedia.org/w/index.php?title=Raloxifene&oldid=1328958249
+  revision: 1328958249
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Raloxifene (Evista)
@@ -82,7 +96,16 @@ Selective estrogen receptor modulator (SERM) that mimics estrogen's bone-protect
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Raloxifene*](https://en.wikipedia.org/w/index.php?title=Raloxifene&oldid=1328958249) (revision 1328958249, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 28 h | Single-dose: 28 hours; Multi-dose: 33 hours |
+| Protein binding | 95 % | >95% |
+| Bioavailability | 2 % | 2% |
+| Metabolism | hepatic | Liver, intestines (glucuro-; nidation); CYP450 system not involved |
+| Excretion | mainly non-renal | Feces |
 
 ## Safety routing
 

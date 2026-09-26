@@ -33,7 +33,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: 'Major metabolite: Eseroline'
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +47,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Physostigmine
+  url: https://en.wikipedia.org/w/index.php?title=Physostigmine&oldid=1368633509
+  revision: 1368633509
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Physostigmine
@@ -84,7 +92,12 @@ Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the sour
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Physostigmine*](https://en.wikipedia.org/w/index.php?title=Physostigmine&oldid=1368633509) (revision 1368633509, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Metabolism | - | Major metabolite: Eseroline |
 
 ## Safety routing
 

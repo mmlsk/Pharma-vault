@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 6.0
+  value-max: 8.8
+  unit: h
+  notes: 6.0–8.8 hours
 protein-binding:
-  value: null
+  value: 24.0
+  value-max: 38.0
   unit: percent
-  notes: null
+  notes: 24–38%
+bioavailability:
+  value: 99.0
+  value-max: null
+  notes: 99%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  primary-route: true
+  fraction-excreted-unchanged: 0.87
+  notes: 'Urine: 87% unchanged, <5% metabolites; Feces: <4%'
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Minimal (<5%)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Levofloxacin
+  url: https://en.wikipedia.org/w/index.php?title=Levofloxacin&oldid=1361375143
+  revision: 1361375143
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Levofloxacin
@@ -79,7 +93,17 @@ Inhibits bacterial DNA gyrase or topoisomerase IV; tendon, neurologic, cardiac, 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Levofloxacin*](https://en.wikipedia.org/w/index.php?title=Levofloxacin&oldid=1361375143) (revision 1361375143, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 6–8.8 h | 6.0–8.8 hours |
+| Protein binding | 24–38 % | 24–38% |
+| Bioavailability | 99 % | 99% |
+| Metabolism | - | Minimal (<5%) |
+| Metabolites | - | • Desmethyllevofloxacin; • Levofloxacin-N-oxide |
+| Excretion | mainly urinary · fe 0.87 | Urine: 87% unchanged, <5% metabolites; Feces: <4% |
 
 ## Safety routing
 

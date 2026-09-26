@@ -18,18 +18,23 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 0.4
+  value-max: null
+  unit: h
+  notes: 0.4 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 60.0
+  value-max: 65.0
+  notes: 60 to 65%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: In feces
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Pimobendan
+  url: https://en.wikipedia.org/w/index.php?title=Pimobendan&oldid=1376565658
+  revision: 1376565658
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Pimobendan
@@ -79,7 +92,14 @@ PDE3 inhibitor that is also a calcium sensitiser, so it raises contractility at 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Pimobendan*](https://en.wikipedia.org/w/index.php?title=Pimobendan&oldid=1376565658) (revision 1376565658, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 0.4 h | 0.4 hours |
+| Bioavailability | 60–65 % | 60 to 65% |
+| Excretion | - | In feces |
 
 ## Safety routing
 

@@ -20,42 +20,59 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.5
+  value-max: 4.0
+  unit: h
+  notes: 2.5–4 hours, 7–11 hours (liver disease)
 protein-binding:
-  value: null
+  value: 65.0
+  value-max: 75.0
   unit: percent
-  notes: null
+  notes: 65–75%
+bioavailability:
+  value: 50.0
+  value-max: 60.0
+  notes: 50–60% (Oral), 80–90% (Oral, in cases of hepatic impairment)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: 'Liver: CYP2B6, CYP3A4, CYP2C19, Carboxylesterase 1'
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2B6
+  - CYP2C19
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2B6, CYP2C19, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/analgesia
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Pethidine
+  url: https://en.wikipedia.org/w/index.php?title=Pethidine&oldid=1373295642
+  revision: 1373295642
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Pethidine (Meperidine)
@@ -82,7 +99,18 @@ Old synthetic opioid largely abandoned because its normeperidine metabolite is a
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Pethidine*](https://en.wikipedia.org/w/index.php?title=Pethidine&oldid=1373295642) (revision 1373295642, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2.5–4 h | 2.5–4 hours, 7–11 hours (liver disease) |
+| Protein binding | 65–75 % | 65–75% |
+| Bioavailability | 50–60 % | 50–60% (Oral), 80–90% (Oral, in cases of hepatic impairment) |
+| Metabolism | hepatic | Liver: CYP2B6, CYP3A4, CYP2C19, Carboxylesterase 1 |
+| CYP (metabolised by) | CYP2B6, CYP2C19, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | Norpethidine; Pethidinic acid; others |
+| Excretion | mainly urinary | Renal |
 
 ## Safety routing
 
@@ -90,3 +118,4 @@ Group-level triage (not compound-specific): `sedation-respiratory-depression`
 
 - [[Stacking and Interaction Risks]]
 - [[Respiratory Depression and Fatal Overdose]]
+- [[CYP450 Metabolism]]

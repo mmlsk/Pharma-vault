@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 6.0
+  value-max: 7.0
+  unit: h
+  notes: 6–7 hours
 protein-binding:
   value: null
   unit: percent
@@ -48,13 +49,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - glucose-metabolism
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/gh
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Anamorelin
+  url: https://en.wikipedia.org/w/index.php?title=Anamorelin&oldid=1374413466
+  revision: 1374413466
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Anamorelin
@@ -80,7 +89,12 @@ Oral ghrelin agonist approved in Japan for cancer cachexia; rejected in Europe.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Anamorelin*](https://en.wikipedia.org/w/index.php?title=Anamorelin&oldid=1374413466) (revision 1374413466, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 6–7 h | 6–7 hours |
 
 ## Safety routing
 

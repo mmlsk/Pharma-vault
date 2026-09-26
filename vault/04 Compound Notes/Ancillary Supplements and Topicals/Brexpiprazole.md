@@ -18,42 +18,58 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 91.0
+  value-max: null
+  unit: h
+  notes: 91 hours (brexpiprazole), 86 hours (major metabolite)
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: '>99%'
+bioavailability:
+  value: 95.0
+  value-max: null
+  notes: 95% (Tmax = 4 hours)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Feces (46%), urine (25%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (mainly mediated by CYP3A4 and CYP2D6)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2D6
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2D6, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Brexpiprazole
+  url: https://en.wikipedia.org/w/index.php?title=Brexpiprazole&oldid=1368777849
+  revision: 1368777849
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Brexpiprazole
@@ -79,10 +95,21 @@ Antagonizes or partially agonizes dopamine D2 receptors; movement, metabolic, an
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Brexpiprazole*](https://en.wikipedia.org/w/index.php?title=Brexpiprazole&oldid=1368777849) (revision 1368777849, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 91 h | 91 hours (brexpiprazole), 86 hours (major metabolite) |
+| Protein binding | 99 % | >99% |
+| Bioavailability | 95 % | 95% (Tmax = 4 hours) |
+| Metabolism | hepatic | Liver (mainly mediated by CYP3A4 and CYP2D6) |
+| CYP (metabolised by) | CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Excretion | - | Feces (46%), urine (25%) |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

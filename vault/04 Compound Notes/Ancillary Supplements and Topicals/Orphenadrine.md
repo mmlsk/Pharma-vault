@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL900
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 13.0
+  value-max: 20.0
+  unit: h
+  notes: 13–20 hours
 protein-binding:
-  value: null
+  value: 95.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 95%
+bioavailability:
+  value: 90.0
+  value-max: null
+  notes: 90%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal and biliary
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic demethylation
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Orphenadrine
+  url: https://en.wikipedia.org/w/index.php?title=Orphenadrine&oldid=1363068383
+  revision: 1363068383
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Orphenadrine
@@ -84,7 +98,16 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Orphenadrine*](https://en.wikipedia.org/w/index.php?title=Orphenadrine&oldid=1363068383) (revision 1363068383, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 13–20 h | 13–20 hours |
+| Protein binding | 95 % | 95% |
+| Bioavailability | 90 % | 90% |
+| Metabolism | hepatic | Hepatic demethylation |
+| Excretion | - | Renal and biliary |
 
 ## Safety routing
 

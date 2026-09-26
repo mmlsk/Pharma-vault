@@ -82,7 +82,7 @@ Long-chain polyunsaturated fatty acid supplement shown in an RCT to augment the 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

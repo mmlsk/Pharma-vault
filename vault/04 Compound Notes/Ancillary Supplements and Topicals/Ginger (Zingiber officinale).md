@@ -82,7 +82,7 @@ Common spice studied for reducing inflammatory markers (CRP, TNF-alpha, IL-6) ac
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

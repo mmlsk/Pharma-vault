@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 0.5
+  value-max: null
+  unit: h
+  notes: 0.5 hours
 protein-binding:
   value: null
   unit: percent
@@ -48,13 +49,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/nootropic
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Aniracetam
+  url: https://en.wikipedia.org/w/index.php?title=Aniracetam&oldid=1283119473
+  revision: 1283119473
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Aniracetam
@@ -80,7 +89,12 @@ Fat-soluble racetam and a genuine positive allosteric modulator of the AMPA rece
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Aniracetam*](https://en.wikipedia.org/w/index.php?title=Aniracetam&oldid=1283119473) (revision 1283119473, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 0.5 h | 0.5 hours |
 
 ## Safety routing
 

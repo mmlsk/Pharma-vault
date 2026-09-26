@@ -18,13 +18,18 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 25.0
+  value-max: null
+  unit: min
+  notes: ~25 minutes in patients with normal renal function
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: N/A (IV application only)
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -33,7 +38,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Angiomax is cleared from plasma by a combination of renal mechanisms and proteolytic cleavage
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Bivalirudin
+  url: https://en.wikipedia.org/w/index.php?title=Bivalirudin&oldid=1329244447
+  revision: 1329244447
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Bivalirudin
@@ -79,7 +92,14 @@ Short-acting intravenous direct thrombin inhibitor used during coronary interven
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Bivalirudin*](https://en.wikipedia.org/w/index.php?title=Bivalirudin&oldid=1329244447) (revision 1329244447, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 25 min | ~25 minutes in patients with normal renal function |
+| Bioavailability | - | N/A (IV application only) |
+| Metabolism | - | Angiomax is cleared from plasma by a combination of renal mechanisms and proteolytic cleavage |
 
 ## Safety routing
 

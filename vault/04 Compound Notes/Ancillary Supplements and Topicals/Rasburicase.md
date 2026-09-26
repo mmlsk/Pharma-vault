@@ -18,13 +18,18 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 18.0
+  value-max: null
+  unit: h
+  notes: 18 hrs
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: N/A
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Rasburicase
+  url: https://en.wikipedia.org/w/index.php?title=Rasburicase&oldid=1337699059
+  revision: 1337699059
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Rasburicase
@@ -79,7 +92,13 @@ Recombinant urate oxidase that converts uric acid to soluble allantoin, used for
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Rasburicase*](https://en.wikipedia.org/w/index.php?title=Rasburicase&oldid=1337699059) (revision 1337699059, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 18 h | 18 hrs |
+| Bioavailability | - | N/A |
 
 ## Safety routing
 

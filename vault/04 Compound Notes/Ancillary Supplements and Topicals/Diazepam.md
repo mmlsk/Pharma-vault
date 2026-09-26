@@ -18,42 +18,58 @@ review-status: stub
 chembl-id: CHEMBL12
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 50.0
+  value-max: null
+  unit: h
+  notes: (50 hour); 20–100 hour (32–200 hour for main active metabolite desmethyldiazepam)
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 76.0
+  value-max: null
+  notes: 'Oral: 76% (64–97%); Rectal: 81% (62–98%)'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver – CYP2B6 (minor route) to desmethyldiazepam, CYP2C19 (major route) to inactive metabolites, CYP3A4 (major route) to temazepam
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2B6
+  - CYP2C19
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2B6, CYP2C19, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Diazepam
+  url: https://en.wikipedia.org/w/index.php?title=Diazepam&oldid=1376693592
+  revision: 1376693592
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Diazepam
@@ -84,10 +100,21 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Diazepam*](https://en.wikipedia.org/w/index.php?title=Diazepam&oldid=1376693592) (revision 1376693592, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 50 h | (50 hour); 20–100 hour (32–200 hour for main active metabolite desmethyldiazepam) |
+| Bioavailability | 76 % | Oral: 76% (64–97%); Rectal: 81% (62–98%) |
+| Metabolism | hepatic | Liver – CYP2B6 (minor route) to desmethyldiazepam, CYP2C19 (major route) to inactive metabolites, CYP3A4 (major route) to temazepam |
+| CYP (metabolised by) | CYP2B6, CYP2C19, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | Temazepam; Oxazepam; Nordiazepam |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

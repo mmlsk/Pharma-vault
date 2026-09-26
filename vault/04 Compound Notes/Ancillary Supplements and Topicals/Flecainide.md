@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 20.0
+  value-max: null
+  unit: h
+  notes: 20 hours (range 12–27 hours)
 protein-binding:
-  value: null
+  value: 40.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 40%
+bioavailability:
+  value: 95.0
+  value-max: null
+  notes: 95%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: CYP2D6 (limited)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2D6
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2D6 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Flecainide
+  url: https://en.wikipedia.org/w/index.php?title=Flecainide&oldid=1370307646
+  revision: 1370307646
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Flecainide
@@ -79,10 +94,21 @@ Modulates fast cardiac sodium channels to alter impulse conduction; proarrhythmi
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Flecainide*](https://en.wikipedia.org/w/index.php?title=Flecainide&oldid=1370307646) (revision 1370307646, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 20 h | 20 hours (range 12–27 hours) |
+| Protein binding | 40 % | 40% |
+| Bioavailability | 95 % | 95% |
+| Metabolism | hepatic | CYP2D6 (limited) |
+| CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

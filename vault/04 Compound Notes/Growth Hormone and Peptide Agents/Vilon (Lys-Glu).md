@@ -84,7 +84,7 @@ Synthetic Lys-Glu dipeptide studied mainly in thymocyte and cell-culture experim
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

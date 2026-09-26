@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 3.0
+  value-max: null
+  unit: h
+  notes: 3 hours
 protein-binding:
-  value: null
+  value: 30.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 30%
+bioavailability:
+  value: null
+  value-max: null
+  notes: Undetermined
 active-metabolites: []
 renal-clearance:
-  primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  primary-route: true
+  fraction-excreted-unchanged: 0.67
+  notes: Kidney (67% unchanged)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Undetermined
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/immunology
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Lenalidomide
+  url: https://en.wikipedia.org/w/index.php?title=Lenalidomide&oldid=1365170764
+  revision: 1365170764
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Lenalidomide
@@ -79,7 +93,16 @@ Second-generation IMiD central to myeloma therapy and uniquely effective in del(
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Lenalidomide*](https://en.wikipedia.org/w/index.php?title=Lenalidomide&oldid=1365170764) (revision 1365170764, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 3 h | 3 hours |
+| Protein binding | 30 % | 30% |
+| Bioavailability | - | Undetermined |
+| Metabolism | - | Undetermined |
+| Excretion | mainly urinary · fe 0.67 | Kidney (67% unchanged) |
 
 ## Safety routing
 

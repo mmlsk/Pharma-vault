@@ -29,13 +29,13 @@ protein-binding:
   notes: null
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +50,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: 1-Testosterone
+  url: https://en.wikipedia.org/w/index.php?title=1-Testosterone&oldid=1362933963
+  revision: 1362933963
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Dihydroboldenone (1-Testosterone)
@@ -83,7 +91,13 @@ Non-aromatizable injectable anabolic steroid popular in underground labs for lea
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *1-Testosterone*](https://en.wikipedia.org/w/index.php?title=1-Testosterone&oldid=1362933963) (revision 1362933963, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Urine |
 
 ## Safety routing
 

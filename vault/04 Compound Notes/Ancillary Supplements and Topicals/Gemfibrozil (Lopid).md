@@ -20,42 +20,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.5
+  value-max: null
+  unit: h
+  notes: 1.5 hours
 protein-binding:
-  value: null
+  value: 95.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 95%
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: Close to 100%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney 94% ; Feces 6%
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP3A4)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Gemfibrozil
+  url: https://en.wikipedia.org/w/index.php?title=Gemfibrozil&oldid=1359319524
+  revision: 1359319524
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Gemfibrozil (Lopid)
@@ -82,10 +97,21 @@ Older fibrate, now largely displaced -- its statin interaction is the reason.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Gemfibrozil*](https://en.wikipedia.org/w/index.php?title=Gemfibrozil&oldid=1359319524) (revision 1359319524, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.5 h | 1.5 hours |
+| Protein binding | 95 % | 95% |
+| Bioavailability | 100 % | Close to 100% |
+| Metabolism | hepatic | Liver (CYP3A4) |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary | Kidney 94% ; Feces 6% |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

@@ -25,15 +25,19 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: Poorly absorbed in the GI tract
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Fecal
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Not available
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Paromomycin
+  url: https://en.wikipedia.org/w/index.php?title=Paromomycin&oldid=1374394030
+  revision: 1374394030
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Paromomycin
@@ -79,7 +91,14 @@ Aminoglycoside given orally for luminal amoebiasis and by injection for visceral
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Paromomycin*](https://en.wikipedia.org/w/index.php?title=Paromomycin&oldid=1374394030) (revision 1374394030, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | - | Poorly absorbed in the GI tract |
+| Metabolism | - | Not available |
+| Excretion | mainly non-renal | Fecal |
 
 ## Safety routing
 

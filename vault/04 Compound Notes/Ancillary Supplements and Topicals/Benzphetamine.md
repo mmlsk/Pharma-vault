@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: CHEMBL3545985
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.0
+  value-max: 6.0
+  unit: h
+  notes: 4–6 hours
 protein-binding:
-  value: null
+  value: 75.0
+  value-max: 99.0
   unit: percent
-  notes: null
+  notes: 75–99%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Benzphetamine
+  url: https://en.wikipedia.org/w/index.php?title=Benzphetamine&oldid=1351586670
+  revision: 1351586670
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Benzphetamine
@@ -84,7 +94,14 @@ Norepinephrine transporter releasing agent _(ChEMBL curated mechanism, as quoted
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Benzphetamine*](https://en.wikipedia.org/w/index.php?title=Benzphetamine&oldid=1351586670) (revision 1351586670, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4–6 h | 4–6 hours |
+| Protein binding | 75–99 % | 75–99% |
+| Metabolites | - | • Dextromethamphetamine; • Dextroamphetamine |
 
 ## Safety routing
 

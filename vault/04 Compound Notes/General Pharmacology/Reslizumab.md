@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 24.0
+  value-max: null
+  unit: d
+  notes: ~24 days
 protein-binding:
   value: null
   unit: percent
@@ -33,7 +34,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Proteolysis
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/immunology
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Reslizumab
+  url: https://en.wikipedia.org/w/index.php?title=Reslizumab&oldid=1317754918
+  revision: 1317754918
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Reslizumab
@@ -79,7 +88,13 @@ Intravenous anti-IL-5 antibody dosed by weight, used in severe eosinophilic asth
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Reslizumab*](https://en.wikipedia.org/w/index.php?title=Reslizumab&oldid=1317754918) (revision 1317754918, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 24 d | ~24 days |
+| Metabolism | - | Proteolysis |
 
 ## Safety routing
 

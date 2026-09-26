@@ -16,3 +16,8 @@ Projekt ma trzy reprezentacje tej samej wiedzy: katalog substancji, vault Obsidi
 - ✅ Powtarzalny build, łatwy diff w PR, brak infrastruktury.
 - ⚠️ Treść kliniczna żyje w Markdown — przyszła migracja do bazy wymaga eksportu frontmatteru (prosty, bo zwalidowany schematem).
 - ⚠️ Graf `apps/graph-viewer` jest na razie statyczny; docelowo powinien czytać `substances.json`.
+
+## Aktualizacja 3.1.0 (2026-09-26)
+
+- `data/processed/pk.json` jest drugim generowanym artefaktem kanonicznym (źródło: commitowany cache `data/enrichment/wikipedia-infobox.jsonl`); scala się ze stubami wyłącznie, gdy `review-status: stub`.
+- Graf (`apps/graph-viewer/graph-data.js`) jest teraz widokiem generowanym z `substances.json` + `pk.json` — zrealizowano punkt „docelowo” z v3.

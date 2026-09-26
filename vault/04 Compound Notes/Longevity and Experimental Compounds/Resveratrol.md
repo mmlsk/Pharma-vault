@@ -79,7 +79,7 @@ Plant polyphenol studied as a sirtuin (SIRT1) activator and mitochondrial functi
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

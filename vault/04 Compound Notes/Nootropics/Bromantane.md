@@ -19,12 +19,17 @@ chembl-id: null
 chembl-max-phase: null
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: '11.21 hours (in humans),; 7 hours (in rats) [not stored as a number: non-human or sub-minute data]'
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 42.0
+  value-max: null
+  notes: 42%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -48,13 +53,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/nootropic
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Bromantane
+  url: https://en.wikipedia.org/w/index.php?title=Bromantane&oldid=1358908028
+  revision: 1358908028
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Bromantane
@@ -80,7 +93,13 @@ Russian actoprotector claimed to raise dopamine synthesis rather than release it
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Bromantane*](https://en.wikipedia.org/w/index.php?title=Bromantane&oldid=1358908028) (revision 1358908028, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | 11.21 hours (in humans),; 7 hours (in rats) [not stored as a number: non-human or sub-minute data] |
+| Bioavailability | 42 % | 42% |
 
 ## Safety routing
 

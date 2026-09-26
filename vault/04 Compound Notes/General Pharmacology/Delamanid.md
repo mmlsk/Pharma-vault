@@ -18,42 +18,53 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 30.0
+  value-max: 38.0
+  unit: h
+  notes: 30–38 hours
 protein-binding:
-  value: null
+  value: 99.5
+  value-max: null
   unit: percent
-  notes: null
+  notes: ≥99.5%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: not excreted in urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: in plasma by albumin, in liver; by CYP3A4 (to a lesser extent)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Delamanid
+  url: https://en.wikipedia.org/w/index.php?title=Delamanid&oldid=1343219893
+  revision: 1343219893
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Delamanid
@@ -79,7 +90,16 @@ Nitro-dihydro-imidazooxazole for multidrug-resistant tuberculosis, sharing preto
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Delamanid*](https://en.wikipedia.org/w/index.php?title=Delamanid&oldid=1343219893) (revision 1343219893, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 30–38 h | 30–38 hours |
+| Protein binding | 99.5 % | ≥99.5% |
+| Metabolism | hepatic | in plasma by albumin, in liver; by CYP3A4 (to a lesser extent) |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Excretion | - | not excreted in urine |
 
 ## Safety routing
 

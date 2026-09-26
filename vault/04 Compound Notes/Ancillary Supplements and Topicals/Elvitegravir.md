@@ -19,21 +19,23 @@ chembl-id: null
 chembl-max-phase: null
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: 12.9 (8.7–13.7) hours
 protein-binding:
-  value: null
+  value: 98.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 98%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: liver 93%, renal 7%
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: liver, via CYP3A
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Elvitegravir
+  url: https://en.wikipedia.org/w/index.php?title=Elvitegravir&oldid=1358931219
+  revision: 1358931219
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Elvitegravir
@@ -79,7 +89,15 @@ Inhibits HIV integrase strand transfer as a component of combination antiretrovi
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Elvitegravir*](https://en.wikipedia.org/w/index.php?title=Elvitegravir&oldid=1358931219) (revision 1358931219, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | 12.9 (8.7–13.7) hours |
+| Protein binding | 98 % | 98% |
+| Metabolism | hepatic | liver, via CYP3A |
+| Excretion | - | liver 93%, renal 7% |
 
 ## Safety routing
 

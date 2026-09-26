@@ -18,22 +18,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: null
+  unit: h
+  notes: 2 hours
 protein-binding:
-  value: null
+  value: 0.0
+  value-max: 9.0
   unit: percent
-  notes: null
+  notes: 0–9% in vitro
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ipratropium bromide
+  url: https://en.wikipedia.org/w/index.php?title=Ipratropium_bromide&oldid=1363887579
+  revision: 1363887579
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ipratropium
@@ -79,7 +89,14 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ipratropium bromide*](https://en.wikipedia.org/w/index.php?title=Ipratropium_bromide&oldid=1363887579) (revision 1363887579, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2 h | 2 hours |
+| Protein binding | 0–9 % | 0–9% in vitro |
+| Metabolism | hepatic | Liver |
 
 ## Safety routing
 

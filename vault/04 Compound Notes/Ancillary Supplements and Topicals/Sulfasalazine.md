@@ -18,18 +18,23 @@ review-status: stub
 chembl-id: CHEMBL421
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: 10.0
+  unit: h
+  notes: 5-10 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 15.0
+  value-max: null
+  notes: <15%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: drug metabolites are excreted in urine and feces
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Sulfasalazine
+  url: https://en.wikipedia.org/w/index.php?title=Sulfasalazine&oldid=1314714428
+  revision: 1314714428
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Sulfasalazine
@@ -84,7 +97,14 @@ Arachidonate 5-lipoxygenase inhibitor _(ChEMBL curated mechanism, as quoted by t
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Sulfasalazine*](https://en.wikipedia.org/w/index.php?title=Sulfasalazine&oldid=1314714428) (revision 1314714428, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5–10 h | 5-10 hours |
+| Bioavailability | 15 % | <15% |
+| Excretion | - | drug metabolites are excreted in urine and feces |
 
 ## Safety routing
 

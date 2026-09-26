@@ -82,7 +82,7 @@ Anti-IL-13 monoclonal antibody for moderate-to-severe atopic dermatitis; conjunc
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

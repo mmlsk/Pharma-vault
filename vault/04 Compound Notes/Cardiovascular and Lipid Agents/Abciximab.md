@@ -79,7 +79,7 @@ The first GPIIb/IIIa blocker, a chimeric antibody fragment with an extremely lon
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

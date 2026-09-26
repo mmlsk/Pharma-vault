@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: null
+  unit: h
+  notes: 8.4±2 hours (parent compound); 19.4±3.6 hours (norzimelidine)
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Zimelidine
+  url: https://en.wikipedia.org/w/index.php?title=Zimelidine&oldid=1373242152
+  revision: 1373242152
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Zimelidine
@@ -79,7 +88,12 @@ Inhibits serotonin reuptake through SERT; benefits, activation, sexual effects, 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Zimelidine*](https://en.wikipedia.org/w/index.php?title=Zimelidine&oldid=1373242152) (revision 1373242152, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2 h | 8.4±2 hours (parent compound); 19.4±3.6 hours (norzimelidine) |
 
 ## Safety routing
 

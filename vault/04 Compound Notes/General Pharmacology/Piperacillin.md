@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 36.0
+  value-max: 72.0
+  unit: min
+  notes: 36–72 minutes
 protein-binding:
-  value: null
+  value: 30.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 30%
+bioavailability:
+  value: 0.0
+  value-max: null
+  notes: 0% oral
 active-metabolites: []
 renal-clearance:
-  primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  primary-route: true
+  fraction-excreted-unchanged: 0.8
+  notes: 20% in bile, 80% unchanged in urine
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Largely not metabolized
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Piperacillin
+  url: https://en.wikipedia.org/w/index.php?title=Piperacillin&oldid=1289430734
+  revision: 1289430734
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Piperacillin
@@ -79,7 +93,16 @@ Ureidopenicillin with antipseudomonal activity, used almost exclusively combined
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Piperacillin*](https://en.wikipedia.org/w/index.php?title=Piperacillin&oldid=1289430734) (revision 1289430734, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 36–72 min | 36–72 minutes |
+| Protein binding | 30 % | 30% |
+| Bioavailability | 0 % | 0% oral |
+| Metabolism | - | Largely not metabolized |
+| Excretion | mainly urinary · fe 0.8 | 20% in bile, 80% unchanged in urine |
 
 ## Safety routing
 

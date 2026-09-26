@@ -83,7 +83,7 @@ Historic sleep-research peptide with unresolved receptor pharmacology, studied f
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

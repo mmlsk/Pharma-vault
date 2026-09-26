@@ -33,7 +33,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: 70%
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +47,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Methoxyflurane
+  url: https://en.wikipedia.org/w/index.php?title=Methoxyflurane&oldid=1368756976
+  revision: 1368756976
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Methoxyflurane
@@ -84,7 +92,12 @@ GABA-A receptor; anion channel positive modulator _(ChEMBL curated mechanism, as
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Methoxyflurane*](https://en.wikipedia.org/w/index.php?title=Methoxyflurane&oldid=1368756976) (revision 1368756976, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Metabolism | - | 70% |
 
 ## Safety routing
 

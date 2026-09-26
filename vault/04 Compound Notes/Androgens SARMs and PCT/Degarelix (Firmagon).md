@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 23.0
+  value-max: 61.0
+  unit: d
+  notes: 23–61 days
 protein-binding:
-  value: null
+  value: 90.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: ~90%
+bioavailability:
+  value: 30.0
+  value-max: 40.0
+  notes: 30–40%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Feces: 70–80%; Urine: 20–30%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Subject to common peptidic degradation during passage through the hepato-biliary system; not a substrate for the human CYP450 system
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Degarelix
+  url: https://en.wikipedia.org/w/index.php?title=Degarelix&oldid=1329009348
+  revision: 1329009348
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Degarelix (Firmagon)
@@ -82,7 +96,16 @@ GnRH antagonist that drops testosterone in days without the testosterone surge a
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Degarelix*](https://en.wikipedia.org/w/index.php?title=Degarelix&oldid=1329009348) (revision 1329009348, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 23–61 d | 23–61 days |
+| Protein binding | 90 % | ~90% |
+| Bioavailability | 30–40 % | 30–40% |
+| Metabolism | hepatic | Subject to common peptidic degradation during passage through the hepato-biliary system; not a substrate for the human CYP450 system |
+| Excretion | - | Feces: 70–80%; Urine: 20–30% |
 
 ## Safety routing
 

@@ -18,42 +18,53 @@ review-status: stub
 chembl-id: CHEMBL4105630
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 16.0
+  value-max: 23.0
+  unit: h
+  notes: 16–23 hours
 protein-binding:
-  value: null
+  value: 99.5
+  value-max: null
   unit: percent
-  notes: null
+  notes: 99.5%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: CYP3A4
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Zuranolone
+  url: https://en.wikipedia.org/w/index.php?title=Zuranolone&oldid=1364099628
+  revision: 1364099628
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Zuranolone
@@ -84,10 +95,19 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Zuranolone*](https://en.wikipedia.org/w/index.php?title=Zuranolone&oldid=1364099628) (revision 1364099628, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 16–23 h | 16–23 hours |
+| Protein binding | 99.5 % | 99.5% |
+| Metabolism | hepatic | CYP3A4 |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

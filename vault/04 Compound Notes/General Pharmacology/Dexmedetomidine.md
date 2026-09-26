@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.8
+  value-max: 3.7
+  unit: h
+  notes: 1.8–3.7hours
 protein-binding:
-  value: null
+  value: 94.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 94% (mostly albumin)
+bioavailability:
+  value: 16.0
+  value-max: null
+  notes: 'Oral: 16%; Sublingual: 72%; Buccal: 82%; Transdermal: 88%; Intramuscular: 73–104%'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (95%), feces (4%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Near-complete hepatic metabolism to inactive metabolites
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/analgesia
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Dexmedetomidine
+  url: https://en.wikipedia.org/w/index.php?title=Dexmedetomidine&oldid=1374736005
+  revision: 1374736005
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Dexmedetomidine
@@ -79,7 +93,17 @@ Highly selective alpha-2 agonist producing sedation that resembles natural sleep
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Dexmedetomidine*](https://en.wikipedia.org/w/index.php?title=Dexmedetomidine&oldid=1374736005) (revision 1374736005, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.8–3.7 h | 1.8–3.7hours |
+| Protein binding | 94 % | 94% (mostly albumin) |
+| Bioavailability | 16 % | Oral: 16%; Sublingual: 72%; Buccal: 82%; Transdermal: 88%; Intramuscular: 73–104% |
+| Metabolism | hepatic | Near-complete hepatic metabolism to inactive metabolites |
+| Metabolites | - | Various |
+| Excretion | mainly urinary | Urine (95%), feces (4%) |
 
 ## Safety routing
 

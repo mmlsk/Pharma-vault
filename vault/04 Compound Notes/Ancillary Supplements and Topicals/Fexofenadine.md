@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL914
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 14.4
+  value-max: null
+  unit: h
+  notes: 14.4 hours
 protein-binding:
-  value: null
+  value: 60.0
+  value-max: 70.0
   unit: percent
-  notes: null
+  notes: 60–70%
+bioavailability:
+  value: 30.0
+  value-max: 41.0
+  notes: 30–41%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  primary-route: false
+  fraction-excreted-unchanged: 0.1
+  notes: Feces (~80%) and urine (~10%) as unchanged drug
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic (≤5% of dose)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Fexofenadine
+  url: https://en.wikipedia.org/w/index.php?title=Fexofenadine&oldid=1370874050
+  revision: 1370874050
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Fexofenadine
@@ -84,7 +98,16 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Fexofenadine*](https://en.wikipedia.org/w/index.php?title=Fexofenadine&oldid=1370874050) (revision 1370874050, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 14.4 h | 14.4 hours |
+| Protein binding | 60–70 % | 60–70% |
+| Bioavailability | 30–41 % | 30–41% |
+| Metabolism | hepatic | Hepatic (≤5% of dose) |
+| Excretion | mainly non-renal · fe 0.1 | Feces (~80%) and urine (~10%) as unchanged drug |
 
 ## Safety routing
 

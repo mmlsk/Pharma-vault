@@ -79,7 +79,7 @@ Neutralizes IL-23 signaling to suppress pathogenic Th17 maintenance in immune-me
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

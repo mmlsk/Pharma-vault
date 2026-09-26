@@ -1,0 +1,1118 @@
+compound_id,source-title,half-life,half-life-max,half-life-unit,protein-binding,bioavailability,renal-primary,fe-unchanged,hepatic-primary,cyp-substrates,source-url
+abacavir-compound,Abacavir,0.63,,h,,83.0,,,True,,https://en.wikipedia.org/w/index.php?title=Abacavir&oldid=1351008588
+abarelix-compound,Abarelix,,,,96.0,,,,,,https://en.wikipedia.org/w/index.php?title=Abarelix&oldid=1362095780
+abatacept-compound,Abatacept,13.1,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Abatacept&oldid=1300825558
+abiraterone-compound,Abiraterone acetate,12.0,24.0,h,99.8,50.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Abiraterone_acetate&oldid=1354022007
+abrocitinib-compound,Abrocitinib,2.8,5.2,h,,,,0.044,,,https://en.wikipedia.org/w/index.php?title=Abrocitinib&oldid=1352069148
+acamprosate-compound,Acamprosate,20.0,33.0,h,,11.0,True,,,,https://en.wikipedia.org/w/index.php?title=Acamprosate&oldid=1371631806
+acarbose-compound,Acarbose,2.0,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Acarbose&oldid=1369016458
+acemetacin-compound,Acemetacin,,,,80.0,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Acemetacin&oldid=1341436393
+acenocoumarol-compound,Acenocoumarol,8.0,11.0,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Acenocoumarol&oldid=1330122837
+acetaminophen-compound,Paracetamol,1.9,2.5,h,10.0,63.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Paracetamol&oldid=1376620920
+acetazolamide-compound,Acetazolamide,2.0,4.0,h,70.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Acetazolamide&oldid=1368294821
+acetohexamide-compound,Acetohexamide,,,,90.0,,,,,,https://en.wikipedia.org/w/index.php?title=Acetohexamide&oldid=1357901449
+acipimox-compound,Acipimox,2.0,,h,,100.0,True,,,,https://en.wikipedia.org/w/index.php?title=Acipimox&oldid=1329963383
+acitretin-compound,Acitretin,49.0,,h,99.9,60.0,,,True,,https://en.wikipedia.org/w/index.php?title=Acitretin&oldid=1366318727
+acotiamide-compound,Acotiamide,10.9,21.7,h,84.21,,False,,True,,https://en.wikipedia.org/w/index.php?title=Acotiamide&oldid=1354487138
+acrivastine-compound,Acrivastine,1.5,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Acrivastine&oldid=1300999875
+acyclovir-compound,Aciclovir,2.0,4.0,h,9.0,15.0,True,0.9,True,,https://en.wikipedia.org/w/index.php?title=Aciclovir&oldid=1376498922
+adalimumab-compound,Adalimumab,10.0,20.0,d,,64.0,,,,,https://en.wikipedia.org/w/index.php?title=Adalimumab&oldid=1376394101
+adapalene-compound,Adapalene,51.0,,h,,,False,,True,,https://en.wikipedia.org/w/index.php?title=Adapalene&oldid=1368544655
+adefovir-compound,Adefovir,7.5,,h,4.0,59.0,True,,,,https://en.wikipedia.org/w/index.php?title=Adefovir&oldid=1329238271
+adenosine-compound,Adenosine,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Adenosine&oldid=1376143840
+aducanumab-compound,Aducanumab,24.8,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Aducanumab&oldid=1335569412
+afamelanotide-compound,Afamelanotide,30.0,,min,,,,,,,https://en.wikipedia.org/w/index.php?title=Afamelanotide&oldid=1373558678
+afatinib-compound,Afatinib,37.0,,h,95.0,,False,,True,,https://en.wikipedia.org/w/index.php?title=Afatinib&oldid=1335569830
+afoxolaner-compound,Afoxolaner,14.0,,d,,74.0,False,,,,https://en.wikipedia.org/w/index.php?title=Afoxolaner&oldid=1365001897
+agomelatine-compound,Agomelatine,1.0,2.0,h,95.0,1.0,True,,True,CYP1A2; CYP2C9,https://en.wikipedia.org/w/index.php?title=Agomelatine&oldid=1366468764
+albendazole-compound,Albendazole,8.0,12.0,h,70.0,5.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Albendazole&oldid=1335702995
+albiglutide-compound,Albiglutide,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Albiglutide&oldid=1371982231
+albuterol-compound,Salbutamol,3.8,6.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Salbutamol&oldid=1376825391
+alcaftadine-compound,Alcaftadine,2.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Alcaftadine&oldid=1329074214
+alclofenac-compound,Alclofenac,1.5,5.5,h,90.0,,,,,,https://en.wikipedia.org/w/index.php?title=Alclofenac&oldid=1367948665
+alemtuzumab-compound,Alemtuzumab,288.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Alemtuzumab&oldid=1375447530
+alendronate-compound,Alendronic acid,,,,,0.6,True,,,,https://en.wikipedia.org/w/index.php?title=Alendronic_acid&oldid=1356290699
+alfentanil-compound,Alfentanil,90.0,111.0,min,92.0,100.0,,,True,,https://en.wikipedia.org/w/index.php?title=Alfentanil&oldid=1360846894
+alfuzosin-compound,Alfuzosin,10.0,,h,82.0,49.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Alfuzosin&oldid=1358588137
+aliskiren-compound,Aliskiren,24.0,,h,,2.5,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Aliskiren&oldid=1328952892
+alitretinoin-compound,Alitretinoin,2.0,10.0,h,,,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Alitretinoin&oldid=1361245894
+alitretinoin-oral-compound,Alitretinoin,2.0,10.0,h,,,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Alitretinoin&oldid=1361245894
+allopurinol-compound,Allopurinol,2.0,,h,,20.0,,,True,,https://en.wikipedia.org/w/index.php?title=Allopurinol&oldid=1356288153
+almorexant-compound,Almorexant,13.0,19.0,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Almorexant&oldid=1372578453
+almotriptan-compound,Almotriptan,3.0,4.0,h,35.0,70.0,,,True,,https://en.wikipedia.org/w/index.php?title=Almotriptan&oldid=1358390018
+alogliptin-compound,Alogliptin,12.0,21.0,h,20.0,100.0,,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Alogliptin&oldid=1376668554
+alosetron-compound,Alosetron,1.5,1.7,h,82.0,50.0,True,,True,CYP1A2; CYP2C9; CYP3A4,https://en.wikipedia.org/w/index.php?title=Alosetron&oldid=1325952564
+alprazolam-compound,Alprazolam,,,,80.0,80.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Alprazolam&oldid=1369242307
+amantadine-compound,Amantadine,10.0,31.0,h,67.0,86.0,True,,,,https://en.wikipedia.org/w/index.php?title=Amantadine&oldid=1369113052
+ambenonium-compound,Ambenonium chloride,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Ambenonium_chloride&oldid=1354487190
+ambrisentan-compound,Ambrisentan,15.0,,h,99.0,,,,,,https://en.wikipedia.org/w/index.php?title=Ambrisentan&oldid=1329074832
+amcinonide-compound,Amcinonide,,,,,,,,True,,https://en.wikipedia.org/w/index.php?title=Amcinonide&oldid=1346125143
+amifampridine-compound,Amifampridine,2.5,,h,,93.0,True,,,,https://en.wikipedia.org/w/index.php?title=Amifampridine&oldid=1337381039
+amikacin-compound,Amikacin,2.0,3.0,h,0.0,90.0,True,,,,https://en.wikipedia.org/w/index.php?title=Amikacin&oldid=1335943276
+amiloride-compound,Amiloride,6.0,9.0,h,23.0,15.0,,,,,https://en.wikipedia.org/w/index.php?title=Amiloride&oldid=1368275614
+amineptine-compound,Amineptine,0.8,1.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Amineptine&oldid=1355513493
+aminocaproic-acid-compound,Aminocaproic acid,2.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Aminocaproic_acid&oldid=1332569940
+aminoglutethimide-compound,Aminoglutethimide,12.5,,h,,,True,0.54,True,,https://en.wikipedia.org/w/index.php?title=Aminoglutethimide&oldid=1367636433
+aminophylline-compound,Aminophylline,7.0,9.0,h,60.0,,,,,,https://en.wikipedia.org/w/index.php?title=Aminophylline&oldid=1329963873
+amiodarone-compound,Amiodarone,58.0,,d,96.0,20.0,,,True,,https://en.wikipedia.org/w/index.php?title=Amiodarone&oldid=1371931813
+amisulpride-compound,Amisulpride,12.0,,h,16.0,48.0,,,True,,https://en.wikipedia.org/w/index.php?title=Amisulpride&oldid=1366501553
+amitriptyline-compound,Amitriptyline,21.0,,h,96.0,45.0,,,True,CYP2C19; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Amitriptyline&oldid=1375865422
+amlodipine-compound,Amlodipine,30.0,50.0,h,93.0,64.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Amlodipine&oldid=1368611723
+amoxapine-compound,Amoxapine,8.0,10.0,h,90.0,60.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Amoxapine&oldid=1373846822
+amoxicillin-compound,Amoxicillin,61.3,,min,17.0,60.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Amoxicillin&oldid=1363961139
+amphetamine-compound,Amphetamine,9.0,11.0,h,16.0,90.0,,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Amphetamine&oldid=1376818496
+amphotericin-b-compound,Amphotericin B,24.0,,h,,100.0,,,,,https://en.wikipedia.org/w/index.php?title=Amphotericin_B&oldid=1358547003
+ampicillin-compound,Ampicillin,1.0,,h,15.0,62.0,True,,,,https://en.wikipedia.org/w/index.php?title=Ampicillin&oldid=1364413005
+ampreloxetine-compound,Ampreloxetine,30.0,40.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Ampreloxetine&oldid=1343211011
+anagrelide-compound,Anagrelide,1.3,,h,,,True,,True,CYP1A2,https://en.wikipedia.org/w/index.php?title=Anagrelide&oldid=1329964098
+anakinra-compound,Anakinra,4.0,6.0,h,,95.0,,,,,https://en.wikipedia.org/w/index.php?title=Anakinra&oldid=1368834184
+anamorelin-compound,Anamorelin,6.0,7.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Anamorelin&oldid=1374413466
+anastrozole-compound,Anastrozole,40.0,50.0,h,40.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Anastrozole&oldid=1356471610
+androstenedione-compound,Androstenedione,,,,,,,,True,,https://en.wikipedia.org/w/index.php?title=Androstenedione&oldid=1366136937
+anidulafungin-compound,Anidulafungin,27.0,,h,99.0,100.0,,,True,,https://en.wikipedia.org/w/index.php?title=Anidulafungin&oldid=1359987880
+aniracetam-compound,Aniracetam,0.5,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Aniracetam&oldid=1283119473
+apalutamide-compound,Apalutamide,3.0,4.0,d,96.0,100.0,True,,True,CYP2C8; CYP3A4,https://en.wikipedia.org/w/index.php?title=Apalutamide&oldid=1370134765
+apixaban-compound,Apixaban,9.0,14.0,h,87.0,50.0,False,,True,CYP1A2; CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Apixaban&oldid=1370302718
+apomorphine-compound,Apomorphine,40.0,,min,50.0,100.0,,,True,,https://en.wikipedia.org/w/index.php?title=Apomorphine&oldid=1373477552
+apremilast-compound,Apremilast,6.0,9.0,h,68.0,73.0,True,,True,CYP1A2; CYP2A6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Apremilast&oldid=1329075237
+aprepitant-compound,Aprepitant,9.0,13.0,h,95.0,60.0,True,,True,CYP1A2; CYP2C19; CYP3A4,https://en.wikipedia.org/w/index.php?title=Aprepitant&oldid=1373784554
+argatroban-compound,Argatroban,51.0,,min,54.0,100.0,,,True,,https://en.wikipedia.org/w/index.php?title=Argatroban&oldid=1329241737
+aripiprazole-compound,Aripiprazole,75.0,,h,99.0,87.0,False,0.01,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Aripiprazole&oldid=1375693144
+armodafinil-compound,Armodafinil,10.0,17.0,h,,40.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Armodafinil&oldid=1370773396
+articaine-compound,Articaine,30.0,,min,,,,,True,,https://en.wikipedia.org/w/index.php?title=Articaine&oldid=1349757673
+asenapine-compound,Asenapine,24.0,,h,95.0,35.0,True,0.16,True,CYP1A2,https://en.wikipedia.org/w/index.php?title=Asenapine&oldid=1375768934
+aspirin-compound,Aspirin,2.0,3.0,h,80.0,80.0,False,,True,CYP2C19,https://en.wikipedia.org/w/index.php?title=Aspirin&oldid=1376620634
+astemizole-compound,Astemizole,24.0,,h,96.0,,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Astemizole&oldid=1376237533
+atazanavir-compound,Atazanavir,6.5,,h,86.0,60.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Atazanavir&oldid=1351543005
+atenolol-compound,Atenolol,6.0,7.0,h,6.0,50.0,False,,,,https://en.wikipedia.org/w/index.php?title=Atenolol&oldid=1363154878
+atomoxetine-compound,Atomoxetine,4.5,5.3,h,98.7,94.0,True,,True,CYP2C19; CYP2D6,https://en.wikipedia.org/w/index.php?title=Atomoxetine&oldid=1375538637
+atorvastatin-compound,Atorvastatin,14.0,,h,,12.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Atorvastatin&oldid=1372019141
+atovaquone-compound,Atovaquone,2.2,3.2,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Atovaquone&oldid=1360133178
+atracurium-compound,Atracurium besilate,17.0,21.0,min,82.0,100.0,,,,,https://en.wikipedia.org/w/index.php?title=Atracurium_besilate&oldid=1348465791
+atropine-compound,Atropine,2.0,,h,,25.0,True,0.5,,,https://en.wikipedia.org/w/index.php?title=Atropine&oldid=1350610693
+avelumab-compound,Avelumab,6.1,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Avelumab&oldid=1292952219
+avibactam-compound,Avibactam,,,,5.7,100.0,True,,,,https://en.wikipedia.org/w/index.php?title=Avibactam&oldid=1363446635
+axitinib-compound,Axitinib,2.5,6.1,h,99.0,58.0,,0.12,True,CYP1A2; CYP2C19; CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Axitinib&oldid=1335549960
+azacitidine-compound,Azacitidine,4.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Azacitidine&oldid=1372676030
+azasetron-compound,Azasetron,,,,,90.0,,,,,https://en.wikipedia.org/w/index.php?title=Azasetron&oldid=1369401441
+azathioprine-compound,Azathioprine,26.0,80.0,min,20.0,31.0,True,,,,https://en.wikipedia.org/w/index.php?title=Azathioprine&oldid=1369727378
+azelastine-compound,Azelastine,22.0,,h,,40.0,,,,,https://en.wikipedia.org/w/index.php?title=Azelastine&oldid=1356471519
+azilsartan-compound,Azilsartan,11.0,,h,,60.0,,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Azilsartan&oldid=1355215444
+azithromycin-compound,Azithromycin,68.0,,h,,38.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Azithromycin&oldid=1367373742
+aztreonam-compound,Aztreonam,1.7,,h,56.0,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Aztreonam&oldid=1349491989
+baclofen-compound,Baclofen,2.5,7.0,h,30.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Baclofen&oldid=1374816189
+balsalazide-compound,Balsalazide,12.0,,h,99.0,1.0,,,,,https://en.wikipedia.org/w/index.php?title=Balsalazide&oldid=1329243555
+bambuterol-compound,Bambuterol,13.0,,h,,20.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Bambuterol&oldid=1329472471
+baricitinib-compound,Baricitinib,12.5,,h,50.0,79.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Baricitinib&oldid=1352068579
+basiliximab-compound,Basiliximab,7.2,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Basiliximab&oldid=1301002462
+bedaquiline-compound,Bedaquiline,,,,99.9,,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Bedaquiline&oldid=1369611134
+belinostat-compound,Belinostat,,,,92.9,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Belinostat&oldid=1329528223
+bempedoic-acid-compound,Bempedoic acid,11.0,,h,99.3,,,,True,,https://en.wikipedia.org/w/index.php?title=Bempedoic_acid&oldid=1364444411
+benazepril-compound,Benazepril,10.0,11.0,h,96.7,,,,True,,https://en.wikipedia.org/w/index.php?title=Benazepril&oldid=1356286694
+benperidol-compound,Benperidol,8.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Benperidol&oldid=1325885169
+benzbromarone-compound,Benzbromarone,3.0,,h,99.0,50.0,,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Benzbromarone&oldid=1371159730
+benznidazole-compound,Benznidazole,12.0,,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Benznidazole&oldid=1314473379
+benzphetamine-compound,Benzphetamine,4.0,6.0,h,75.0,,,,,,https://en.wikipedia.org/w/index.php?title=Benzphetamine&oldid=1351586670
+benzydamine-compound,Benzydamine,13.0,,h,20.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Benzydamine&oldid=1368671470
+bepotastine-compound,Bepotastine,,,,55.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Bepotastine&oldid=1329528471
+bepridil-compound,Bepridil,42.0,,h,99.0,,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Bepridil&oldid=1330663760
+beraprost-compound,Beraprost,35.0,40.0,min,,50.0,,,,,https://en.wikipedia.org/w/index.php?title=Beraprost&oldid=1330663823
+betahistine-compound,Betahistine,3.5,,h,5.0,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Betahistine&oldid=1367375469
+betamethasone-compound,Betamethasone,36.0,54.0,h,,,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Betamethasone&oldid=1357281212
+betaxolol-compound,Betaxolol,14.0,22.0,h,,89.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Betaxolol&oldid=1358901661
+betrixaban-compound,Betrixaban,19.0,27.0,h,60.0,,,,,,https://en.wikipedia.org/w/index.php?title=Betrixaban&oldid=1329244165
+bicalutamide-compound,Bicalutamide,5.8,,d,96.1,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Bicalutamide&oldid=1371710878
+bicifadine-compound,Bicifadine,1.6,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Bicifadine&oldid=1338426412
+bilastine-compound,Bilastine,14.5,,h,84.0,61.0,True,,,,https://en.wikipedia.org/w/index.php?title=Bilastine&oldid=1309927359
+bimatoprost-compound,Bimatoprost,45.0,,min,88.0,,,,,,https://en.wikipedia.org/w/index.php?title=Bimatoprost&oldid=1376475376
+bimatoprost-topical-compound,Bimatoprost,45.0,,min,88.0,,,,,,https://en.wikipedia.org/w/index.php?title=Bimatoprost&oldid=1376475376
+bisoprolol-compound,Bisoprolol,10.0,12.0,h,30.0,90.0,,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Bisoprolol&oldid=1356470142
+bivalirudin-compound,Bivalirudin,25.0,,min,,,,,,,https://en.wikipedia.org/w/index.php?title=Bivalirudin&oldid=1329244447
+blinatumomab-compound,Blinatumomab,2.11,,h,,100.0,True,,,,https://en.wikipedia.org/w/index.php?title=Blinatumomab&oldid=1349980293
+boldenone-compound,Boldenone,14.0,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Boldenone&oldid=1329018044
+bosentan-compound,Bosentan,5.0,,h,98.0,50.0,,,True,,https://en.wikipedia.org/w/index.php?title=Bosentan&oldid=1338158265
+bosutinib-compound,Bosutinib,1.7,,h,94.0,,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Bosutinib&oldid=1372313951
+bpc-157-compound,BPC-157,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=BPC-157&oldid=1366359640
+bpc157-compound,BPC-157,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=BPC-157&oldid=1366359640
+bremelanotide-compound,Bremelanotide,2.7,,h,21.0,100.0,True,,,,https://en.wikipedia.org/w/index.php?title=Bremelanotide&oldid=1376322571
+bretylium-compound,Bretylium,7.0,8.0,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Bretylium&oldid=1329966012
+brexanolone-compound,Allopregnanolone,9.0,,h,99.0,5.0,,,True,,https://en.wikipedia.org/w/index.php?title=Allopregnanolone&oldid=1366926472
+brexpiprazole-compound,Brexpiprazole,91.0,,h,99.0,95.0,,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Brexpiprazole&oldid=1368777849
+briakinumab-compound,Briakinumab,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Briakinumab&oldid=1329136961
+brimonidine-compound,Brimonidine,3.0,,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Brimonidine&oldid=1356287072
+brinzolamide-compound,Brinzolamide,111.0,,d,60.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Brinzolamide&oldid=1366235996
+brivaracetam-compound,Brivaracetam,9.0,,h,20.0,100.0,True,,True,CYP2C19,https://en.wikipedia.org/w/index.php?title=Brivaracetam&oldid=1370095828
+brofaromine-compound,Brofaromine,9.0,14.0,h,98.0,,,,,,https://en.wikipedia.org/w/index.php?title=Brofaromine&oldid=1341436203
+bromantane-compound,Bromantane,,,,,42.0,,,,,https://en.wikipedia.org/w/index.php?title=Bromantane&oldid=1358908028
+bromazepam-compound,Bromazepam,12.0,20.0,h,70.0,84.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Bromazepam&oldid=1368400047
+bromfenac-compound,Bromfenac,1.4,,h,99.8,,,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Bromfenac&oldid=1268659641
+bromocriptine-compound,Bromocriptine,12.0,14.0,h,,28.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Bromocriptine&oldid=1363856092
+bromodiphenhydramine-compound,Bromazine,1.0,4.0,h,96.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Bromazine&oldid=1280412916
+brompheniramine-compound,Brompheniramine,9.3,,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Brompheniramine&oldid=1312520050
+budesonide-compound,Budesonide,2.0,3.6,h,85.0,10.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Budesonide&oldid=1356473070
+bumetanide-compound,Bumetanide,0.8,,h,97.0,80.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Bumetanide&oldid=1341349960
+bupivacaine-compound,Bupivacaine,3.1,,h,95.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Bupivacaine&oldid=1366642920
+buprenorphine-compound,Buprenorphine,37.0,,h,96.0,30.0,False,,True,CYP2C8; CYP3A4,https://en.wikipedia.org/w/index.php?title=Buprenorphine&oldid=1375171241
+bupropion-compound,Bupropion,11.0,,h,,,,,True,CYP2B6,https://en.wikipedia.org/w/index.php?title=Bupropion&oldid=1375206575
+buspirone-compound,Buspirone,2.5,,h,86.0,3.9,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Buspirone&oldid=1365708327
+buspirone-drug-compound,Buspirone,2.5,,h,86.0,3.9,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Buspirone&oldid=1365708327
+butabarbital-compound,Butabarbital,100.0,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Butabarbital&oldid=1362051009
+butalbital-compound,Butalbital,35.0,,h,,20.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Butalbital&oldid=1355446330
+butenafine-compound,Butenafine,35.0,100.0,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Butenafine&oldid=1344636880
+butorphanol-compound,Butorphanol,4.0,7.0,h,,60.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Butorphanol&oldid=1373297983
+cabergoline-compound,Cabergoline,63.0,69.0,h,40.0,50.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Cabergoline&oldid=1374387906
+cabotegravir-compound,Cabotegravir,41.0,,h,99.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Cabotegravir&oldid=1370052941
+cabozantinib-compound,Cabozantinib,110.0,,h,99.7,,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Cabozantinib&oldid=1371079635
+caffeine-compound,Caffeine,3.0,7.0,h,10.0,99.0,True,,True,CYP1A2; CYP2C8; CYP2C9; CYP2E1; CYP3A4,https://en.wikipedia.org/w/index.php?title=Caffeine&oldid=1375462795
+calcipotriol-compound,Calcipotriol,,,,,5.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Calcipotriol&oldid=1376809289
+calcitriol-compound,Calcitriol,5.0,8.0,h,99.9,,False,,,,https://en.wikipedia.org/w/index.php?title=Calcitriol&oldid=1375810255
+canagliflozin-compound,Canagliflozin,,,,99.0,65.0,,,True,,https://en.wikipedia.org/w/index.php?title=Canagliflozin&oldid=1369651076
+cangrelor-compound,Cangrelor,3.0,6.0,min,97.0,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Cangrelor&oldid=1329245666
+cannabidiol-compound,Cannabidiol,18.0,32.0,h,,6.0,,,,,https://en.wikipedia.org/w/index.php?title=Cannabidiol&oldid=1376409525
+canrenone-compound,Canrenone,16.5,,h,95.0,,,,,,https://en.wikipedia.org/w/index.php?title=Canrenone&oldid=1351773744
+capecitabine-compound,Capecitabine,38.0,45.0,min,60.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Capecitabine&oldid=1360414026
+capromorelin-compound,Capromorelin,2.4,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Capromorelin&oldid=1369640765
+captopril-compound,Captopril,1.9,,h,,70.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Captopril&oldid=1342731597
+carbamazepine-compound,Carbamazepine,36.0,,h,70.0,100.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Carbamazepine&oldid=1369634918
+carbetocin-compound,Carbetocin,40.0,100.0,min,,80.0,,,,,https://en.wikipedia.org/w/index.php?title=Carbetocin&oldid=1365375725
+carbidopa-compound,Carbidopa,2.0,,h,76.0,,,,,,https://en.wikipedia.org/w/index.php?title=Carbidopa&oldid=1373023885
+carbinoxamine-compound,Carbinoxamine,10.0,20.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Carbinoxamine&oldid=1275691876
+carglumic-acid-compound,Carglumic acid,4.3,9.5,h,,30.0,False,0.09,,,https://en.wikipedia.org/w/index.php?title=Carglumic_acid&oldid=1329245867
+cariprazine-compound,Cariprazine,2.0,4.0,d,91.0,,,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Cariprazine&oldid=1375757853
+carprofen-compound,Carprofen,,,,99.0,,,,,,https://en.wikipedia.org/w/index.php?title=Carprofen&oldid=1330318498
+carvedilol-compound,Carvedilol,7.0,10.0,h,98.0,25.0,False,,True,CYP2C9; CYP2D6,https://en.wikipedia.org/w/index.php?title=Carvedilol&oldid=1365729504
+caspofungin-compound,Caspofungin,9.0,11.0,h,97.0,100.0,,,,,https://en.wikipedia.org/w/index.php?title=Caspofungin&oldid=1369632479
+cefazolin-compound,Cefazolin,1.8,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Cefazolin&oldid=1327396474
+cefepime-compound,Cefepime,2.0,,h,,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Cefepime&oldid=1373478954
+cefiderocol-compound,Cefiderocol,2.8,,h,56.0,,,0.7,,,https://en.wikipedia.org/w/index.php?title=Cefiderocol&oldid=1366709885
+ceftaroline-compound,Ceftaroline fosamil,2.5,,h,20.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Ceftaroline_fosamil&oldid=1366709727
+ceftazidime-compound,Ceftazidime,1.6,2.0,h,,91.0,True,,,,https://en.wikipedia.org/w/index.php?title=Ceftazidime&oldid=1338929532
+ceftriaxone-compound,Ceftriaxone,5.8,8.7,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Ceftriaxone&oldid=1360557064
+cefuroxime-compound,Cefuroxime,80.0,,min,,37.0,True,1.0,,,https://en.wikipedia.org/w/index.php?title=Cefuroxime&oldid=1352009481
+celecoxib-compound,Celecoxib,7.8,,h,97.0,,False,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Celecoxib&oldid=1366925464
+celiprolol-compound,Celiprolol,5.0,,h,,30.0,,,,,https://en.wikipedia.org/w/index.php?title=Celiprolol&oldid=1330777343
+cemiplimab-compound,Cemiplimab,19.0,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Cemiplimab&oldid=1347863609
+cenobamate-compound,Cenobamate,50.0,60.0,h,60.0,88.0,,,True,,https://en.wikipedia.org/w/index.php?title=Cenobamate&oldid=1369068966
+cephalexin-compound,Cefalexin,0.6,1.2,h,15.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Cefalexin&oldid=1374815637
+cerivastatin-compound,Cerivastatin,2.0,3.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Cerivastatin&oldid=1330601194
+cetirizine-compound,Cetirizine,8.3,,h,88.0,70.0,,,,,https://en.wikipedia.org/w/index.php?title=Cetirizine&oldid=1372254560
+cetrorelix-compound,Cetrorelix,62.8,,h,86.0,85.0,,0.1,,,https://en.wikipedia.org/w/index.php?title=Cetrorelix&oldid=1329009186
+chloramphenicol-compound,Chloramphenicol,1.6,3.3,h,60.0,75.0,,,True,,https://en.wikipedia.org/w/index.php?title=Chloramphenicol&oldid=1371208947
+chlordiazepoxide-compound,Chlordiazepoxide,5.0,30.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Chlordiazepoxide&oldid=1372839306
+chlormadinone-acetate-compound,Chlormadinone acetate,25.0,89.0,h,96.6,100.0,,,True,,https://en.wikipedia.org/w/index.php?title=Chlormadinone_acetate&oldid=1329002308
+chloroquine-compound,Chloroquine,,,,,,,,True,,https://en.wikipedia.org/w/index.php?title=Chloroquine&oldid=1368924934
+chlorotrianisene-compound,Chlorotrianisene,,,,,,,,True,,https://en.wikipedia.org/w/index.php?title=Chlorotrianisene&oldid=1367639948
+chlorpheniramine-compound,Chlorphenamine,13.9,43.4,h,72.0,25.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Chlorphenamine&oldid=1360097031
+chlorphenoxamine-compound,Chlorphenoxamine,,,,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Chlorphenoxamine&oldid=1330779877
+chlorphentermine-compound,Chlorphentermine,40.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Chlorphentermine&oldid=1351775821
+chlorpromazine-compound,Chlorpromazine,30.0,,h,90.0,10.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Chlorpromazine&oldid=1368875372
+chlorpropamide-compound,Chlorpropamide,36.0,,h,90.0,90.0,True,,,,https://en.wikipedia.org/w/index.php?title=Chlorpropamide&oldid=1375022169
+chlorthalidone-compound,Chlortalidone,40.0,,h,75.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Chlortalidone&oldid=1360846956
+cholestyramine-compound,Colestyramine,1.0,,h,,,False,,,,https://en.wikipedia.org/w/index.php?title=Colestyramine&oldid=1339777528
+cidofovir-compound,Cidofovir,2.6,,h,6.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Cidofovir&oldid=1330098376
+cilostazol-compound,Cilostazol,11.0,13.0,h,95.0,,True,,True,CYP2C19; CYP3A4,https://en.wikipedia.org/w/index.php?title=Cilostazol&oldid=1360305550
+cimetidine-compound,Cimetidine,123.0,,min,13.0,60.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Cimetidine&oldid=1371790419
+cinacalcet-compound,Cinacalcet,30.0,40.0,h,93.0,20.0,True,,True,CYP1A2; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Cinacalcet&oldid=1333584314
+cinnarizine-compound,Cinnarizine,3.0,4.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Cinnarizine&oldid=1375073475
+cipepofol-compound,Cipepofol,,,,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Cipepofol&oldid=1376612237
+ciprofloxacin-compound,Ciprofloxacin,3.5,,h,30.0,70.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Ciprofloxacin&oldid=1358476040
+cisapride-compound,Cisapride,10.0,,h,97.5,30.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Cisapride&oldid=1357376753
+cisatracurium-compound,Cisatracurium besilate,20.0,29.0,min,,100.0,,0.15,True,,https://en.wikipedia.org/w/index.php?title=Cisatracurium_besilate&oldid=1329246828
+citalopram-compound,Citalopram,35.0,,h,80.0,80.0,,,True,CYP2C19; CYP3A4,https://en.wikipedia.org/w/index.php?title=Citalopram&oldid=1374924002
+citicoline-compound,Citicoline,,,,,90.0,,,,,https://en.wikipedia.org/w/index.php?title=Citicoline&oldid=1359563001
+clarithromycin-compound,Clarithromycin,3.0,4.0,h,,50.0,,,True,,https://en.wikipedia.org/w/index.php?title=Clarithromycin&oldid=1375765210
+clemastine-compound,Clemastine,21.3,,h,,39.2,True,,True,,https://en.wikipedia.org/w/index.php?title=Clemastine&oldid=1352982170
+clenbuterol-compound,Clenbuterol,36.0,48.0,h,,89.0,,,True,,https://en.wikipedia.org/w/index.php?title=Clenbuterol&oldid=1375817608
+clevidipine-compound,Clevidipine,1.0,,min,99.5,100.0,False,,,,https://en.wikipedia.org/w/index.php?title=Clevidipine&oldid=1370368883
+clindamycin-compound,Clindamycin,2.0,3.0,h,95.0,90.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Clindamycin&oldid=1366744202
+clindamycin-topical-compound,Clindamycin,2.0,3.0,h,95.0,90.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Clindamycin&oldid=1366744202
+clobazam-compound,Clobazam,36.0,42.0,h,80.0,87.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Clobazam&oldid=1371526607
+clofazimine-compound,Clofazimine,70.0,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Clofazimine&oldid=1371686832
+clofibrate-compound,Clofibrate,18.0,22.0,h,92.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Clofibrate&oldid=1365301139
+clomethiazole-compound,Clomethiazole,3.6,5.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Clomethiazole&oldid=1353665186
+clomiphene-compound,Clomifene,4.0,7.0,d,,90.0,,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Clomifene&oldid=1368196377
+clomipramine-compound,Clomipramine,19.0,37.0,h,96.0,50.0,,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Clomipramine&oldid=1374798625
+clonazepam-compound,Clonazepam,19.0,60.0,h,85.0,90.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Clonazepam&oldid=1374181457
+clonidine-compound,Clonidine,12.0,16.0,h,20.0,70.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Clonidine&oldid=1370368953
+clopidogrel-compound,Clopidogrel,7.0,8.0,h,94.0,50.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Clopidogrel&oldid=1356288019
+clotiazepam-compound,Clotiazepam,4.0,,h,,90.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Clotiazepam&oldid=1362656940
+clozapine-compound,Clozapine,4.0,26.0,h,97.0,60.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Clozapine&oldid=1374837470
+codeine-compound,Codeine,2.5,3.0,h,,60.0,,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Codeine&oldid=1374248804
+colchicine-compound,Colchicine,26.6,31.2,h,35.0,45.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Colchicine&oldid=1374505164
+colesevelam-compound,Colesevelam,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Colesevelam&oldid=1329247337
+colestipol-compound,Colestipol,,,,,,False,,,,https://en.wikipedia.org/w/index.php?title=Colestipol&oldid=1330098771
+colistin-compound,Colistin,5.0,,h,,0.0,,,,,https://en.wikipedia.org/w/index.php?title=Colistin&oldid=1371803618
+conivaptan-compound,Conivaptan,5.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Conivaptan&oldid=1330099039
+cyclizine-compound,Cyclizine,20.0,,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Cyclizine&oldid=1373292557
+cyclofenil-compound,Cyclofenil,18.0,29.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Cyclofenil&oldid=1314441606
+cycloserine-compound,Cycloserine,10.0,,h,,70.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Cycloserine&oldid=1368797711
+cyclosporine-compound,Ciclosporin,24.0,,h,,,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Ciclosporin&oldid=1371223778
+cyproheptadine-compound,Cyproheptadine,8.6,,h,96.0,,,0.34,True,,https://en.wikipedia.org/w/index.php?title=Cyproheptadine&oldid=1373843205
+cyproterone-acetate-compound,Cyproterone acetate,1.6,4.3,d,93.0,68.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Cyproterone_acetate&oldid=1376024299
+dabigatran-compound,Dabigatran,12.0,17.0,h,35.0,3.0,,,,,https://en.wikipedia.org/w/index.php?title=Dabigatran&oldid=1355427429
+daclatasvir-compound,Daclatasvir,12.0,15.0,h,99.0,67.0,True,0.53,True,,https://en.wikipedia.org/w/index.php?title=Daclatasvir&oldid=1322611182
+dacomitinib-compound,Dacomitinib,70.0,,h,98.0,80.0,,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Dacomitinib&oldid=1364644463
+dalbavancin-compound,Dalbavancin,14.4,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Dalbavancin&oldid=1371790451
+dalteparin-compound,Dalteparin sodium,3.0,5.0,h,,81.0,True,,,,https://en.wikipedia.org/w/index.php?title=Dalteparin_sodium&oldid=1340417494
+danazol-compound,Danazol,3.0,10.0,h,,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Danazol&oldid=1354397142
+dantrolene-compound,Dantrolene,,,,,70.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Dantrolene&oldid=1337101387
+dapagliflozin-compound,Dapagliflozin,12.9,,h,91.0,78.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Dapagliflozin&oldid=1374813929
+dapoxetine-compound,Dapoxetine,1.5,1.6,h,99.0,15.0,True,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Dapoxetine&oldid=1335212564
+dapsone-compound,Dapsone,20.0,30.0,h,70.0,70.0,True,,True,CYP2E1,https://en.wikipedia.org/w/index.php?title=Dapsone&oldid=1365208985
+dapsone-topical-compound,Dapsone,20.0,30.0,h,70.0,70.0,True,,True,CYP2E1,https://en.wikipedia.org/w/index.php?title=Dapsone&oldid=1365208985
+daptomycin-compound,Daptomycin,7.0,11.0,h,90.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Daptomycin&oldid=1369612979
+daridorexant-compound,Daridorexant,8.0,,h,99.7,62.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Daridorexant&oldid=1368786208
+darifenacin-compound,Darifenacin,13.0,19.0,h,98.0,15.0,True,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Darifenacin&oldid=1357376762
+darigabat-compound,Darigabat,11.0,,h,,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Darigabat&oldid=1366501664
+darolutamide-compound,Darolutamide,16.0,20.0,h,92.0,30.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Darolutamide&oldid=1369637716
+darunavir-compound,Darunavir,15.0,,h,95.0,37.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Darunavir&oldid=1368876372
+darusentan-compound,Darusentan,12.5,,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Darusentan&oldid=1330795221
+decitabine-compound,Decitabine,30.0,,min,1.0,,,,,,https://en.wikipedia.org/w/index.php?title=Decitabine&oldid=1356899033
+deferasirox-compound,Deferasirox,8.0,16.0,h,99.0,70.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Deferasirox&oldid=1329248849
+deferiprone-compound,Deferiprone,2.0,3.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Deferiprone&oldid=1366617294
+deferoxamine-compound,Deferoxamine,6.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Deferoxamine&oldid=1340623774
+deflazacort-compound,Deflazacort,1.1,1.9,h,40.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Deflazacort&oldid=1336537703
+degarelix-compound,Degarelix,23.0,61.0,d,90.0,30.0,,,True,,https://en.wikipedia.org/w/index.php?title=Degarelix&oldid=1329009348
+delamanid-compound,Delamanid,30.0,38.0,h,99.5,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Delamanid&oldid=1343219893
+denosumab-compound,Denosumab,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Denosumab&oldid=1375208958
+desflurane-compound,Desflurane,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Desflurane&oldid=1368695042
+desipramine-compound,Desipramine,12.0,30.0,h,91.0,60.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Desipramine&oldid=1328703992
+desloratadine-compound,Desloratadine,27.0,,h,83.0,,,,True,CYP2C8,https://en.wikipedia.org/w/index.php?title=Desloratadine&oldid=1357378936
+desmopressin-compound,Desmopressin,1.5,2.5,h,50.0,0.08,True,,,,https://en.wikipedia.org/w/index.php?title=Desmopressin&oldid=1366087514
+desogestrel-compound,Desogestrel,1.5,,h,99.0,76.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Desogestrel&oldid=1335189660
+desvenlafaxine-compound,Desvenlafaxine,11.0,,h,30.0,80.0,,0.45,True,CYP2C19; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Desvenlafaxine&oldid=1364182583
+deucravacitinib-compound,Deucravacitinib,10.0,,h,82.0,99.0,,,True,CYP1A2,https://en.wikipedia.org/w/index.php?title=Deucravacitinib&oldid=1358949490
+dexamethasone-compound,Dexamethasone,36.0,54.0,h,77.0,80.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Dexamethasone&oldid=1368798121
+dexbrompheniramine-compound,Dexbrompheniramine,25.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Dexbrompheniramine&oldid=1346476817
+dexchlorpheniramine-compound,Dexchlorpheniramine,21.0,27.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Dexchlorpheniramine&oldid=1375994714
+dexlansoprazole-compound,Dexlansoprazole,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Dexlansoprazole&oldid=1371303275
+dexmedetomidine-compound,Dexmedetomidine,1.8,3.7,h,94.0,16.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Dexmedetomidine&oldid=1374736005
+dexmethylphenidate-compound,Dexmethylphenidate,4.0,,h,30.0,11.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Dexmethylphenidate&oldid=1373389587
+dextroamphetamine-compound,Dextroamphetamine,9.0,11.0,h,15.0,90.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Dextroamphetamine&oldid=1376553161
+dextromethorphan-compound,Dextromethorphan,2.0,4.0,h,,11.0,True,,True,CYP2D6; CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Dextromethorphan&oldid=1374989705
+dezocine-compound,Dezocine,2.2,,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Dezocine&oldid=1369637918
+diamorphine-compound,Heroin,2.0,3.0,min,0.0,35.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Heroin&oldid=1376264455
+diazepam-compound,Diazepam,50.0,,h,,76.0,True,,True,CYP2B6; CYP2C19; CYP3A4,https://en.wikipedia.org/w/index.php?title=Diazepam&oldid=1376693592
+diazoxide-compound,Diazoxide,24.0,36.0,h,90.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Diazoxide&oldid=1367332229
+dibenzepin-compound,Dibenzepin,5.0,,h,80.0,25.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Dibenzepin&oldid=1268909070
+dichlorphenamide-compound,Diclofenamide,,,,55.0,,,,,,https://en.wikipedia.org/w/index.php?title=Diclofenamide&oldid=1329249989
+diclofenac-compound,Diclofenac,1.2,2.0,h,99.0,,True,,True,CYP2C8; CYP2C9; CYP3A4,https://en.wikipedia.org/w/index.php?title=Diclofenac&oldid=1370369641
+dicoumarol-compound,Dicoumarol,,,,,,,,True,,https://en.wikipedia.org/w/index.php?title=Dicoumarol&oldid=1329250023
+diethylpropion-compound,Amfepramone,4.0,6.0,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Amfepramone&oldid=1340859989
+diethylstilbestrol-compound,Diethylstilbestrol,24.0,,h,95.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Diethylstilbestrol&oldid=1371162065
+difelikefalin-compound,Difelikefalin,2.0,,h,,100.0,,,,,https://en.wikipedia.org/w/index.php?title=Difelikefalin&oldid=1362480627
+diflunisal-compound,Diflunisal,8.0,12.0,h,99.0,80.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Diflunisal&oldid=1370053535
+digitoxin-compound,Digitoxin,7.0,8.0,d,90.0,98.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Digitoxin&oldid=1328962211
+digoxin-compound,Digoxin,36.0,48.0,h,25.0,60.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Digoxin&oldid=1371893917
+dihydroboldenone-compound,1-Testosterone,,,,,,True,,True,,https://en.wikipedia.org/w/index.php?title=1-Testosterone&oldid=1362933963
+dihydroergotamine-compound,Dihydroergotamine,9.0,,h,,32.0,False,,,,https://en.wikipedia.org/w/index.php?title=Dihydroergotamine&oldid=1370481992
+diltiazem-compound,Diltiazem,3.0,4.5,h,,40.0,,,True,,https://en.wikipedia.org/w/index.php?title=Diltiazem&oldid=1374684908
+dimenhydrinate-compound,Dimenhydrinate,5.5,,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Dimenhydrinate&oldid=1374681392
+diphenhydramine-compound,Diphenhydramine,2.4,13.5,h,78.0,40.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Diphenhydramine&oldid=1369453675
+diphenylpyraline-compound,Diphenylpyraline,24.0,40.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Diphenylpyraline&oldid=1329178123
+dipyridamole-compound,Dipyridamole,40.0,,min,99.0,37.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Dipyridamole&oldid=1330713177
+disopyramide-compound,Disopyramide,6.7,,h,50.0,,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Disopyramide&oldid=1340058687
+disulfiram-compound,Disulfiram,1.5,,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Disulfiram&oldid=1369701892
+dobutamine-compound,Dobutamine,2.0,,min,,,,,,,https://en.wikipedia.org/w/index.php?title=Dobutamine&oldid=1329250429
+dofetilide-compound,Dofetilide,10.0,,h,60.0,96.0,,,,,https://en.wikipedia.org/w/index.php?title=Dofetilide&oldid=1338403869
+dolasetron-compound,Dolasetron,8.1,,h,69.0,,,,,,https://en.wikipedia.org/w/index.php?title=Dolasetron&oldid=1339067846
+dolutegravir-compound,Dolutegravir,14.0,,h,98.9,,False,,True,,https://en.wikipedia.org/w/index.php?title=Dolutegravir&oldid=1371316074
+domperidone-compound,Domperidone,7.0,9.0,h,92.0,13.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Domperidone&oldid=1376277051
+donepezil-compound,Donepezil,70.0,,h,96.0,100.0,,0.17,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Donepezil&oldid=1356481650
+dopamine-drug-compound,Dopamine,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Dopamine&oldid=1376384476
+dorzolamide-compound,Dorzolamide,,,,33.0,,,,,,https://en.wikipedia.org/w/index.php?title=Dorzolamide&oldid=1366236200
+doxazosin-compound,Doxazosin,22.0,,h,98.0,65.0,,,True,,https://en.wikipedia.org/w/index.php?title=Doxazosin&oldid=1356471571
+doxepin-compound,Doxepin,8.0,24.0,h,76.0,13.0,True,,True,CYP2C19; CYP2D6,https://en.wikipedia.org/w/index.php?title=Doxepin&oldid=1357572789
+doxepin-low-dose-compound,Doxepin,8.0,24.0,h,76.0,13.0,True,,True,CYP2C19; CYP2D6,https://en.wikipedia.org/w/index.php?title=Doxepin&oldid=1357572789
+doxorubicin-compound,Doxorubicin,12.0,,min,75.0,5.0,,,True,,https://en.wikipedia.org/w/index.php?title=Doxorubicin&oldid=1369613446
+doxycycline-compound,Doxycycline,10.0,22.0,h,80.0,100.0,,,,,https://en.wikipedia.org/w/index.php?title=Doxycycline&oldid=1374617285
+doxycycline-mr-compound,Doxycycline,10.0,22.0,h,80.0,100.0,,,,,https://en.wikipedia.org/w/index.php?title=Doxycycline&oldid=1374617285
+doxylamine-compound,Doxylamine,10.0,12.0,h,,24.7,True,,True,CYP1A2; CYP2C9; CYP2D6,https://en.wikipedia.org/w/index.php?title=Doxylamine&oldid=1374112637
+droloxifene-compound,Droloxifene,19.0,37.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Droloxifene&oldid=1362185779
+dronabinol-compound,Dronabinol,25.0,36.0,h,,6.0,,,,,https://en.wikipedia.org/w/index.php?title=Dronabinol&oldid=1373296293
+dronedarone-compound,Dronedarone,13.0,19.0,h,98.0,15.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Dronedarone&oldid=1330075111
+droperidol-compound,Droperidol,2.3,,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Droperidol&oldid=1369168422
+drospirenone-compound,Drospirenone,25.0,33.0,h,95.0,66.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Drospirenone&oldid=1363293250
+drostanolone-compound,Drostanolone propionate,2.0,,d,,0.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Drostanolone_propionate&oldid=1375487495
+duloxetine-compound,Duloxetine,10.0,12.0,h,95.0,50.0,,,True,CYP1A2; CYP2D6,https://en.wikipedia.org/w/index.php?title=Duloxetine&oldid=1371441880
+dutasteride-compound,Dutasteride,4.0,5.0,wk,99.0,60.0,,0.05,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Dutasteride&oldid=1375820985
+dydrogesterone-compound,Dydrogesterone,5.0,7.0,h,,28.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Dydrogesterone&oldid=1328989710
+ebastine-compound,Ebastine,15.0,19.0,h,95.0,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Ebastine&oldid=1329564874
+ecdysterone-compound,20-Hydroxyecdysone,4.0,9.0,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=20-Hydroxyecdysone&oldid=1365729173
+eculizumab-compound,Eculizumab,8.0,15.0,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Eculizumab&oldid=1345105804
+edoxaban-compound,Edoxaban,10.0,14.0,h,55.0,62.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Edoxaban&oldid=1337833755
+efavirenz-compound,Efavirenz,52.0,76.0,h,99.5,40.0,,,True,CYP2A6; CYP2B6,https://en.wikipedia.org/w/index.php?title=Efavirenz&oldid=1373477952
+elacestrant-compound,Elacestrant,30.0,50.0,h,99.0,10.0,False,,True,CYP2A6; CYP2C9; CYP3A4,https://en.wikipedia.org/w/index.php?title=Elacestrant&oldid=1329034709
+elagolix-compound,Elagolix,4.0,6.0,h,80.0,5.8,False,,True,,https://en.wikipedia.org/w/index.php?title=Elagolix&oldid=1370223569
+elbasvir-compound,Elbasvir,24.0,,h,99.9,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Elbasvir&oldid=1342170146
+eletriptan-compound,Eletriptan,4.0,,h,,50.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Eletriptan&oldid=1338246348
+elinogrel-compound,Elinogrel,,,,,,,,True,,https://en.wikipedia.org/w/index.php?title=Elinogrel&oldid=1371485863
+elotuzumab-compound,Elotuzumab,,,,,100.0,,,,,https://en.wikipedia.org/w/index.php?title=Elotuzumab&oldid=1347865846
+eluxadoline-compound,Eluxadoline,3.7,6.0,h,81.0,1.0,,,,,https://en.wikipedia.org/w/index.php?title=Eluxadoline&oldid=1363340378
+elvitegravir-compound,Elvitegravir,,,,98.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Elvitegravir&oldid=1358931219
+emtricitabine-compound,Emtricitabine,10.0,,h,4.0,93.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Emtricitabine&oldid=1363895645
+enalapril-compound,Enalapril,11.0,,h,,60.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Enalapril&oldid=1359481165
+enclomiphene-compound,Enclomifene,10.0,,h,,,,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Enclomifene&oldid=1368957410
+enflurane-compound,Enflurane,,,,97.0,,,,,,https://en.wikipedia.org/w/index.php?title=Enflurane&oldid=1345827653
+enfuvirtide-compound,Enfuvirtide,3.8,,h,92.0,84.3,,,True,,https://en.wikipedia.org/w/index.php?title=Enfuvirtide&oldid=1352072970
+enoxaparin-compound,Enoxaparin sodium,4.5,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Enoxaparin_sodium&oldid=1317751792
+enoximone-compound,Enoximone,4.0,10.0,h,85.0,50.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Enoximone&oldid=1369030482
+ensitrelvir-compound,Ensitrelvir,42.0,48.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Ensitrelvir&oldid=1370836531
+entacapone-compound,Entacapone,0.4,0.7,h,98.0,35.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Entacapone&oldid=1368193947
+entecavir-compound,Entecavir,128.0,149.0,h,13.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Entecavir&oldid=1339067882
+entinostat-compound,Entinostat,33.0,150.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Entinostat&oldid=1368798893
+enzalutamide-compound,Enzalutamide,5.8,,d,97.0,89.7,True,,True,CYP2C8; CYP3A4,https://en.wikipedia.org/w/index.php?title=Enzalutamide&oldid=1370575250
+ephedrine-compound,Ephedrine,6.0,,h,24.0,88.0,True,0.6,,,https://en.wikipedia.org/w/index.php?title=Ephedrine&oldid=1368687200
+epinastine-compound,Epinastine,12.0,,h,64.0,,,,,,https://en.wikipedia.org/w/index.php?title=Epinastine&oldid=1329183374
+eplerenone-compound,Eplerenone,4.0,6.0,h,50.0,70.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Eplerenone&oldid=1375993454
+epoprostenol-compound,Prostacyclin,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Prostacyclin&oldid=1337290307
+eprosartan-compound,Eprosartan,5.0,9.0,h,,15.0,False,,,,https://en.wikipedia.org/w/index.php?title=Eprosartan&oldid=1330816283
+eptifibatide-compound,Eptifibatide,2.5,,h,25.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Eptifibatide&oldid=1328962495
+erenumab-compound,Erenumab,28.0,,d,,82.0,,,,,https://en.wikipedia.org/w/index.php?title=Erenumab&oldid=1324570904
+ergoloid-compound,Ergoloid,3.5,,h,98.0,25.0,,,,,https://en.wikipedia.org/w/index.php?title=Ergoloid&oldid=1337285213
+erlotinib-compound,Erlotinib,36.2,,h,95.0,59.0,,,True,CYP1A2; CYP3A4,https://en.wikipedia.org/w/index.php?title=Erlotinib&oldid=1364243315
+ertapenem-compound,Ertapenem,4.0,,h,85.0,90.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Ertapenem&oldid=1329079783
+ertugliflozin-compound,Ertugliflozin,17.0,,h,93.6,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Ertugliflozin&oldid=1369665388
+erythromycin-compound,Erythromycin,1.5,,h,90.0,30.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Erythromycin&oldid=1375637318
+escitalopram-compound,Escitalopram,27.0,32.0,h,55.0,80.0,,0.1,True,CYP2C19; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Escitalopram&oldid=1373241194
+esketamine-compound,Esketamine,5.0,,h,,30.0,,,,,https://en.wikipedia.org/w/index.php?title=Esketamine&oldid=1376072681
+esmolol-compound,Esmolol,9.0,,min,60.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Esmolol&oldid=1357212768
+esomeprazole-compound,Esomeprazole,1.0,1.5,h,,50.0,True,,True,CYP2C19; CYP3A4,https://en.wikipedia.org/w/index.php?title=Esomeprazole&oldid=1363159768
+estazolam-compound,Estazolam,10.0,24.0,h,,93.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Estazolam&oldid=1321176505
+estradiol-valerate-compound,Estradiol valerate,12.0,20.0,h,98.0,3.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Estradiol_valerate&oldid=1371910144
+estrogens-conjugated-compound,Conjugated estrogens,26.7,,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Conjugated_estrogens&oldid=1351672617
+eszopiclone-compound,Eszopiclone,6.0,,h,52.0,,True,,True,CYP2E1; CYP3A4,https://en.wikipedia.org/w/index.php?title=Eszopiclone&oldid=1346285069
+etanercept-compound,Etanercept,70.0,132.0,h,,58.0,,,,,https://en.wikipedia.org/w/index.php?title=Etanercept&oldid=1368878362
+etelcalcetide-compound,Etelcalcetide,3.0,5.0,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Etelcalcetide&oldid=1341010388
+ethchlorvynol-compound,Ethchlorvynol,,,,35.0,,,,,,https://en.wikipedia.org/w/index.php?title=Ethchlorvynol&oldid=1373297741
+ethinyl-estradiol-compound,Ethinylestradiol,7.0,36.0,h,97.0,38.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Ethinylestradiol&oldid=1375707907
+ethionamide-compound,Ethionamide,2.0,3.0,h,30.0,,,,,,https://en.wikipedia.org/w/index.php?title=Ethionamide&oldid=1372674176
+ethosuximide-compound,Ethosuximide,53.0,,h,,93.0,True,,True,CYP2E1; CYP3A4,https://en.wikipedia.org/w/index.php?title=Ethosuximide&oldid=1338566097
+ethoxzolamide-compound,Ethoxzolamide,2.5,5.5,h,89.0,,,,,,https://en.wikipedia.org/w/index.php?title=Ethoxzolamide&oldid=1330816894
+etidronate-compound,Etidronic acid,1.0,6.0,h,,3.0,,,,,https://en.wikipedia.org/w/index.php?title=Etidronic_acid&oldid=1367568684
+etifoxine-compound,Etifoxine,6.0,,h,88.0,90.0,,,True,,https://en.wikipedia.org/w/index.php?title=Etifoxine&oldid=1359023058
+etodolac-compound,Etodolac,4.0,,h,100.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Etodolac&oldid=1316039301
+etonogestrel-compound,Etonogestrel,21.0,38.0,h,98.0,100.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Etonogestrel&oldid=1372664488
+etoposide-compound,Etoposide,6.0,,h,97.0,25.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Etoposide&oldid=1366097537
+etoricoxib-compound,Etoricoxib,22.0,,h,92.0,100.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Etoricoxib&oldid=1353779161
+etravirine-compound,Etravirine,20.0,,h,99.9,,False,,True,CYP2C19; CYP2C9; CYP3A4,https://en.wikipedia.org/w/index.php?title=Etravirine&oldid=1352070686
+etretinate-compound,Etretinate,120.0,,d,99.0,,,,,,https://en.wikipedia.org/w/index.php?title=Etretinate&oldid=1341590172
+everolimus-compound,Everolimus,30.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Everolimus&oldid=1369115271
+exemestane-compound,Exemestane,24.0,,h,90.0,60.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Exemestane&oldid=1367093736
+exenatide-compound,Exenatide,2.4,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Exenatide&oldid=1332060752
+ezetimibe-compound,Ezetimibe,19.0,,h,90.0,35.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Ezetimibe&oldid=1363003390
+famotidine-compound,Famotidine,2.5,3.5,h,15.0,40.0,True,0.3,True,CYP1A2,https://en.wikipedia.org/w/index.php?title=Famotidine&oldid=1360627089
+fasoracetam-compound,Fasoracetam,4.0,6.5,h,,79.0,,,,,https://en.wikipedia.org/w/index.php?title=Fasoracetam&oldid=1368840898
+fasudil-compound,Fasudil,0.76,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Fasudil&oldid=1336138545
+febuxostat-compound,Febuxostat,5.0,8.0,h,99.2,84.0,,0.03,True,CYP1A1,https://en.wikipedia.org/w/index.php?title=Febuxostat&oldid=1360922496
+felbamate-compound,Felbamate,20.0,23.0,h,,90.0,,,True,,https://en.wikipedia.org/w/index.php?title=Felbamate&oldid=1360858248
+felodipine-compound,Felodipine,25.0,,h,,15.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Felodipine&oldid=1370369992
+femoxetine-compound,Femoxetine,7.0,27.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Femoxetine&oldid=1326557053
+fenfluramine-compound,Fenfluramine,13.0,30.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Fenfluramine&oldid=1365703472
+fenofibrate-compound,Fenofibrate,20.0,,h,99.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Fenofibrate&oldid=1371372929
+fenoprofen-compound,Fenoprofen,3.0,,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Fenoprofen&oldid=1316039569
+fenoterol-compound,Fenoterol,6.5,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Fenoterol&oldid=1358051342
+fentanyl-compound,Fentanyl,6.0,,min,80.0,90.0,,0.1,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Fentanyl&oldid=1376528965
+fesoterodine-compound,Fesoterodine,7.0,8.0,h,50.0,52.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Fesoterodine&oldid=1338088393
+fexofenadine-compound,Fexofenadine,14.4,,h,60.0,30.0,False,0.1,True,,https://en.wikipedia.org/w/index.php?title=Fexofenadine&oldid=1370874050
+fidaxomicin-compound,Fidaxomicin,4.8,,h,,,False,,,,https://en.wikipedia.org/w/index.php?title=Fidaxomicin&oldid=1369629710
+filgotinib-compound,Filgotinib,6.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Filgotinib&oldid=1368744471
+filorexant-compound,Filorexant,3.0,6.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Filorexant&oldid=1370552207
+finasteride-compound,Finasteride,5.0,6.0,h,90.0,65.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Finasteride&oldid=1374991546
+finasteride-topical-compound,Finasteride,5.0,6.0,h,90.0,65.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Finasteride&oldid=1374991546
+flecainide-compound,Flecainide,20.0,,h,40.0,95.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Flecainide&oldid=1370307646
+fluconazole-compound,Fluconazole,30.0,,h,11.0,90.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Fluconazole&oldid=1370054243
+flucytosine-compound,Flucytosine,2.4,4.8,h,2.9,75.0,True,,,,https://en.wikipedia.org/w/index.php?title=Flucytosine&oldid=1364374893
+fludrocortisone-compound,Fludrocortisone,3.5,,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Fludrocortisone&oldid=1338249319
+flumazenil-compound,Flumazenil,7.0,15.0,min,,,,,True,,https://en.wikipedia.org/w/index.php?title=Flumazenil&oldid=1366733453
+flunisolide-compound,Flunisolide,1.8,,h,40.0,,,,,,https://en.wikipedia.org/w/index.php?title=Flunisolide&oldid=1338068789
+flunitrazepam-compound,Flunitrazepam,18.0,26.0,h,,64.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Flunitrazepam&oldid=1366016711
+fluocinonide-compound,Fluocinonide,,,,,,,,True,,https://en.wikipedia.org/w/index.php?title=Fluocinonide&oldid=1330279326
+fluorouracil-compound,Fluorouracil,16.0,,min,8.0,28.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Fluorouracil&oldid=1351404942
+fluoxetine-compound,Fluoxetine,1.0,3.0,d,94.0,60.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Fluoxetine&oldid=1373682188
+fluoxymesterone-compound,Fluoxymesterone,9.2,,h,,80.0,,0.05,True,,https://en.wikipedia.org/w/index.php?title=Fluoxymesterone&oldid=1303035595
+flupentixol-compound,Flupentixol,35.0,,h,,40.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Flupentixol&oldid=1369614467
+fluphenazine-compound,Fluphenazine,15.0,,h,,2.7,,,,,https://en.wikipedia.org/w/index.php?title=Fluphenazine&oldid=1347484226
+flurazepam-compound,Flurazepam,2.3,,h,,83.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Flurazepam&oldid=1314506564
+flurbiprofen-compound,Flurbiprofen,4.7,5.7,h,99.0,,True,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Flurbiprofen&oldid=1373669934
+flutamide-compound,Flutamide,5.0,6.0,h,94.0,90.0,,,True,CYP1A2,https://en.wikipedia.org/w/index.php?title=Flutamide&oldid=1358397623
+fluvoxamine-compound,Fluvoxamine,12.0,13.0,h,77.0,53.0,,0.04,True,CYP1A2; CYP2C19; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Fluvoxamine&oldid=1368879073
+fondaparinux-compound,Fondaparinux,17.0,21.0,h,94.0,,,,,,https://en.wikipedia.org/w/index.php?title=Fondaparinux&oldid=1332349072
+fosamprenavir-compound,Fosamprenavir,7.7,,h,90.0,,False,,,,https://en.wikipedia.org/w/index.php?title=Fosamprenavir&oldid=1368554406
+fosaprepitant-compound,Fosaprepitant,9.0,13.0,h,95.0,,,,,,https://en.wikipedia.org/w/index.php?title=Fosaprepitant&oldid=1368521640
+foscarnet-compound,Foscarnet,3.3,6.8,h,14.0,,,,,,https://en.wikipedia.org/w/index.php?title=Foscarnet&oldid=1373275641
+fosfomycin-compound,Fosfomycin,5.7,,h,,30.0,True,,,,https://en.wikipedia.org/w/index.php?title=Fosfomycin&oldid=1358847915
+fosinopril-compound,Fosinopril,12.0,,h,87.0,36.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Fosinopril&oldid=1329255012
+fosphenytoin-compound,Fosphenytoin,15.0,,min,95.0,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Fosphenytoin&oldid=1329255061
+frovatriptan-compound,Frovatriptan,26.0,30.0,h,,20.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Frovatriptan&oldid=1324491611
+fulvestrant-compound,Fulvestrant,40.0,50.0,d,99.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Fulvestrant&oldid=1368397620
+furazabol-compound,Furazabol,4.0,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Furazabol&oldid=1329021124
+furosemide-compound,Furosemide,100.0,,min,91.0,43.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Furosemide&oldid=1372679847
+gabapentin-compound,Gabapentin,5.0,7.0,h,3.0,27.0,True,,,,https://en.wikipedia.org/w/index.php?title=Gabapentin&oldid=1375500408
+galantamine-compound,Galantamine,7.0,,h,18.0,80.0,True,0.32,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Galantamine&oldid=1354799288
+ganciclovir-compound,Ganciclovir,2.5,5.0,h,,5.0,True,,,,https://en.wikipedia.org/w/index.php?title=Ganciclovir&oldid=1363895918
+ganirelix-compound,Ganirelix,16.2,,h,81.9,91.1,False,,,,https://en.wikipedia.org/w/index.php?title=Ganirelix&oldid=1329009390
+gefitinib-compound,Gefitinib,6.0,49.0,h,90.0,59.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Gefitinib&oldid=1372172128
+gemfibrozil-compound,Gemfibrozil,1.5,,h,95.0,100.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Gemfibrozil&oldid=1359319524
+gemifloxacin-compound,Gemifloxacin,,,,60.0,71.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Gemifloxacin&oldid=1367885335
+gemigliptin-compound,Gemigliptin,,,,,94.0,,,,,https://en.wikipedia.org/w/index.php?title=Gemigliptin&oldid=1371811053
+gentamicin-compound,Gentamicin,2.0,,h,0.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Gentamicin&oldid=1375665253
+gestodene-compound,Gestodene,12.0,15.0,h,98.0,96.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Gestodene&oldid=1368678148
+ghrp6-compound,GHRP-6,2.5,,h,,1.0,,,,,https://en.wikipedia.org/w/index.php?title=GHRP-6&oldid=1329023121
+givinostat-compound,Givinostat,6.0,,h,96.0,,,0.03,True,,https://en.wikipedia.org/w/index.php?title=Givinostat&oldid=1370187447
+glecaprevir-compound,Glecaprevir,6.0,,h,97.5,,False,,True,,https://en.wikipedia.org/w/index.php?title=Glecaprevir&oldid=1370553172
+glibenclamide-compound,Glibenclamide,10.0,,h,,,,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Glibenclamide&oldid=1338578844
+gliclazide-compound,Gliclazide,10.4,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Gliclazide&oldid=1337490079
+glimepiride-compound,Glimepiride,5.0,8.0,h,99.5,100.0,True,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Glimepiride&oldid=1356289752
+glipizide-compound,Glipizide,2.0,5.0,h,98.0,100.0,,,True,,https://en.wikipedia.org/w/index.php?title=Glipizide&oldid=1356288077
+gliquidone-compound,Gliquidone,,,,,,False,,True,,https://en.wikipedia.org/w/index.php?title=Gliquidone&oldid=1329466247
+glutethimide-compound,Glutethimide,8.0,12.0,h,50.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Glutethimide&oldid=1373201068
+glyburide-compound,Glibenclamide,10.0,,h,,,,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Glibenclamide&oldid=1338578844
+glycopyrrolate-compound,Glycopyrronium bromide,0.6,1.2,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Glycopyrronium_bromide&oldid=1362581134
+gonadorelin-compound,Gonadorelin,10.0,40.0,min,,,,,,,https://en.wikipedia.org/w/index.php?title=Gonadorelin&oldid=1329009440
+goserelin-compound,Goserelin,4.0,5.0,h,27.3,,,,,,https://en.wikipedia.org/w/index.php?title=Goserelin&oldid=1347154992
+granisetron-compound,Granisetron,3.0,14.0,h,65.0,60.0,,,True,,https://en.wikipedia.org/w/index.php?title=Granisetron&oldid=1335737669
+grazoprevir-compound,Grazoprevir,31.0,,h,98.8,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Grazoprevir&oldid=1363943243
+griseofulvin-compound,Griseofulvin,9.0,21.0,h,,25.0,,,True,,https://en.wikipedia.org/w/index.php?title=Griseofulvin&oldid=1338049828
+guanethidine-compound,Guanethidine,1.5,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Guanethidine&oldid=1329256410
+guanfacine-compound,Guanfacine,10.0,17.0,h,70.0,80.0,True,0.75,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Guanfacine&oldid=1373933768
+halazepam-compound,Halazepam,14.0,,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Halazepam&oldid=1376455263
+haloperidol-compound,Haloperidol,14.0,26.0,h,90.0,60.0,,,True,,https://en.wikipedia.org/w/index.php?title=Haloperidol&oldid=1368777994
+halothane-compound,Halothane,,,,,,True,,True,CYP2E1,https://en.wikipedia.org/w/index.php?title=Halothane&oldid=1360742906
+histrelin-compound,Histrelin,4.0,,h,70.0,92.0,,,True,,https://en.wikipedia.org/w/index.php?title=Histrelin&oldid=1329009764
+huperzine-a-compound,Huperzine A,10.0,14.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Huperzine_A&oldid=1373339309
+hydralazine-compound,Hydralazine,2.0,8.0,h,85.0,26.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Hydralazine&oldid=1365125817
+hydrochlorothiazide-compound,Hydrochlorothiazide,5.6,14.8,h,,70.0,True,0.95,,,https://en.wikipedia.org/w/index.php?title=Hydrochlorothiazide&oldid=1376522473
+hydrocortamate-compound,Hydrocortamate,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Hydrocortamate&oldid=1330825153
+hydrocortisone-compound,Hydrocortisone,1.2,2.0,h,2.0,20.0,,0.01,,,https://en.wikipedia.org/w/index.php?title=Hydrocortisone&oldid=1369113401
+hydromorphone-compound,Hydromorphone,2.0,3.0,h,20.0,25.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Hydromorphone&oldid=1369914057
+hydroxocobalamin-compound,Hydroxocobalamin,6.0,,d,90.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Hydroxocobalamin&oldid=1372811243
+hydroxychloroquine-compound,Hydroxychloroquine,32.0,50.0,d,45.0,74.0,,0.25,True,,https://en.wikipedia.org/w/index.php?title=Hydroxychloroquine&oldid=1369104674
+hydroxyurea-compound,Hydroxycarbamide,2.0,4.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Hydroxycarbamide&oldid=1357232741
+hydroxyzine-compound,Hydroxyzine,20.0,,h,,,,,True,CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Hydroxyzine&oldid=1373263093
+ibandronate-compound,Ibandronic acid,10.0,60.0,h,90.9,0.6,True,,,,https://en.wikipedia.org/w/index.php?title=Ibandronic_acid&oldid=1347358015
+ibogaine-compound,Ibogaine,7.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Ibogaine&oldid=1374626185
+ibrutinib-compound,Ibrutinib,4.0,6.0,h,97.3,,False,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Ibrutinib&oldid=1337884205
+ibudilast-compound,Ibudilast,19.0,,h,,90.0,,,,,https://en.wikipedia.org/w/index.php?title=Ibudilast&oldid=1369655217
+ibuprofen-compound,Ibuprofen,2.0,4.0,h,98.0,80.0,True,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Ibuprofen&oldid=1376621174
+ibutamoren-compound,Ibutamoren,4.0,6.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Ibutamoren&oldid=1363882996
+ibutilide-compound,Ibutilide,6.0,,h,40.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Ibutilide&oldid=1331776655
+idebenone-compound,Idebenone,18.0,,h,99.0,1.0,True,,,,https://en.wikipedia.org/w/index.php?title=Idebenone&oldid=1329257754
+igf1lr3-compound,IGF-1 LR3,56.0,72.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=IGF-1_LR3&oldid=1160989525
+iloperidone-compound,Iloperidone,18.0,33.0,h,97.0,96.0,False,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Iloperidone&oldid=1324495639
+iloprost-compound,Iloprost,20.0,30.0,min,60.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Iloprost&oldid=1329257849
+imatinib-compound,Imatinib,18.0,,h,95.0,98.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Imatinib&oldid=1369854920
+imidapril-compound,Imidapril,2.0,,h,85.0,42.0,True,,,,https://en.wikipedia.org/w/index.php?title=Imidapril&oldid=1329257928
+imipenem-compound,Imipenem,38.0,,min,20.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Imipenem&oldid=1349475298
+imipramine-compound,Imipramine,20.0,,h,86.0,94.0,True,,True,CYP1A2; CYP2C19; CYP2D6,https://en.wikipedia.org/w/index.php?title=Imipramine&oldid=1371037707
+indacaterol-compound,Indacaterol,40.0,56.0,h,,43.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Indacaterol&oldid=1354766271
+indapamide-compound,Indapamide,14.0,18.0,h,71.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Indapamide&oldid=1335553440
+indinavir-compound,Indinavir,0.4,,h,60.0,65.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Indinavir&oldid=1351900307
+indiplon-compound,Indiplon,1.5,1.8,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Indiplon&oldid=1354198680
+indomethacin-compound,Indometacin,2.6,11.2,h,99.0,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Indometacin&oldid=1373734407
+indoprofen-compound,Indoprofen,2.3,,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Indoprofen&oldid=1268657758
+infliximab-abda-compound,Infliximab,9.5,,d,,92.0,,,,,https://en.wikipedia.org/w/index.php?title=Infliximab&oldid=1352862302
+infliximab-compound,Infliximab,9.5,,d,,92.0,,,,,https://en.wikipedia.org/w/index.php?title=Infliximab&oldid=1352862302
+insulin-detemir-compound,Insulin detemir,5.0,7.0,h,,60.0,,,,,https://en.wikipedia.org/w/index.php?title=Insulin_detemir&oldid=1361851093
+ipilimumab-compound,Ipilimumab,15.0,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Ipilimumab&oldid=1347861520
+ipragliflozin-compound,Ipragliflozin,4.58,,h,94.6,90.2,True,,True,,https://en.wikipedia.org/w/index.php?title=Ipragliflozin&oldid=1370302319
+ipratropium-compound,Ipratropium bromide,2.0,,h,0.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Ipratropium_bromide&oldid=1363887579
+irbesartan-compound,Irbesartan,11.0,,h,90.0,60.0,False,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Irbesartan&oldid=1365409692
+islatravir-compound,Islatravir,50.0,60.0,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Islatravir&oldid=1362098777
+isocarboxazid-compound,Isocarboxazid,1.5,4.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Isocarboxazid&oldid=1360629569
+isoflurane-compound,Isoflurane,10.0,,min,,,,,,,https://en.wikipedia.org/w/index.php?title=Isoflurane&oldid=1367456103
+isoniazid-compound,Isoniazid,0.5,1.6,h,0.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Isoniazid&oldid=1373328078
+isosorbide-mononitrate-compound,Isosorbide mononitrate,5.0,,h,5.0,95.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Isosorbide_mononitrate&oldid=1356471938
+isotretinoin-compound,Isotretinoin,10.0,20.0,h,99.9,,,,True,,https://en.wikipedia.org/w/index.php?title=Isotretinoin&oldid=1375086416
+istradefylline-compound,Istradefylline,64.0,69.0,h,98.0,,,,True,CYP1A1; CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Istradefylline&oldid=1370506490
+itopride-compound,Itopride,0.3,,h,96.0,60.0,,0.041,True,,https://en.wikipedia.org/w/index.php?title=Itopride&oldid=1370506520
+itraconazole-compound,Itraconazole,21.0,,h,99.8,55.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Itraconazole&oldid=1370370404
+ivabradine-compound,Ivabradine,6.0,,h,70.0,40.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Ivabradine&oldid=1372056493
+ivacaftor-compound,Ivacaftor,12.0,,h,99.0,,False,,True,,https://en.wikipedia.org/w/index.php?title=Ivacaftor&oldid=1353014600
+ivermectin-compound,Ivermectin,20.8,,h,93.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Ivermectin&oldid=1376285411
+ivermectin-topical-compound,Ivermectin,20.8,,h,93.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Ivermectin&oldid=1376285411
+ixekizumab-compound,Ixekizumab,13.0,,d,,60.0,,,,,https://en.wikipedia.org/w/index.php?title=Ixekizumab&oldid=1295916304
+ketamine-compound,Ketamine,2.5,3.0,h,23.0,100.0,True,,True,CYP2B6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Ketamine&oldid=1376271887
+ketoconazole-compound,Ketoconazole,,,,84.0,37.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Ketoconazole&oldid=1370370477
+ketoprofen-compound,Ketoprofen,2.0,2.5,h,99.0,,,,,,https://en.wikipedia.org/w/index.php?title=Ketoprofen&oldid=1326944919
+ketorolac-compound,Ketorolac,4.0,6.0,h,,80.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Ketorolac&oldid=1360663069
+ketotifen-compound,Ketotifen,3.0,22.0,h,75.0,50.0,,0.01,True,,https://en.wikipedia.org/w/index.php?title=Ketotifen&oldid=1374301102
+labetalol-compound,Labetalol,6.0,8.0,h,50.0,25.0,True,0.6,True,,https://en.wikipedia.org/w/index.php?title=Labetalol&oldid=1364189106
+lacosamide-compound,Lacosamide,13.0,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Lacosamide&oldid=1370264923
+lactulose-compound,Lactulose,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Lactulose&oldid=1370642130
+lamivudine-compound,Lamivudine,5.0,7.0,h,36.0,86.0,True,,,,https://en.wikipedia.org/w/index.php?title=Lamivudine&oldid=1363895172
+lamotrigine-compound,Lamotrigine,29.0,,h,55.0,98.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Lamotrigine&oldid=1370370914
+lanreotide-compound,Lanreotide,2.0,,h,78.0,80.0,,,,,https://en.wikipedia.org/w/index.php?title=Lanreotide&oldid=1330106317
+lansoprazole-compound,Lansoprazole,1.0,1.5,h,97.0,80.0,,,True,CYP2C19; CYP3A4,https://en.wikipedia.org/w/index.php?title=Lansoprazole&oldid=1370309730
+latanoprost-compound,Latanoprost,17.0,,min,,,,,True,,https://en.wikipedia.org/w/index.php?title=Latanoprost&oldid=1356289299
+ledipasvir-compound,Ledipasvir,47.0,,h,99.0,76.0,,,,,https://en.wikipedia.org/w/index.php?title=Ledipasvir&oldid=1369492597
+leflunomide-compound,Leflunomide,14.0,18.0,d,99.0,80.0,,,True,,https://en.wikipedia.org/w/index.php?title=Leflunomide&oldid=1363895358
+lemborexant-compound,Lemborexant,17.0,19.0,h,94.0,87.0,False,,True,CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Lemborexant&oldid=1372968166
+lenalidomide-compound,Lenalidomide,3.0,,h,30.0,,True,0.67,,,https://en.wikipedia.org/w/index.php?title=Lenalidomide&oldid=1365170764
+lenvatinib-compound,Lenvatinib,28.0,,h,98.0,85.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Lenvatinib&oldid=1329259391
+lepirudin-compound,Lepirudin,1.3,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Lepirudin&oldid=1329259409
+lercanidipine-compound,Lercanidipine,8.0,10.0,h,98.0,10.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Lercanidipine&oldid=1334409442
+lesinurad-compound,Lesinurad,5.0,,h,98.0,100.0,True,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Lesinurad&oldid=1360239693
+lestaurtinib-compound,Lestaurtinib,,,,,,,,True,,https://en.wikipedia.org/w/index.php?title=Lestaurtinib&oldid=1329683050
+letermovir-compound,Letermovir,12.0,,h,98.2,37.0,,,True,,https://en.wikipedia.org/w/index.php?title=Letermovir&oldid=1335510246
+letrozole-compound,Letrozole,2.0,,d,60.0,99.9,True,,,,https://en.wikipedia.org/w/index.php?title=Letrozole&oldid=1356902222
+leuprolide-compound,Leuprorelin,3.0,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Leuprorelin&oldid=1368648199
+levetiracetam-compound,Levetiracetam,6.0,8.0,h,10.0,100.0,True,,,,https://en.wikipedia.org/w/index.php?title=Levetiracetam&oldid=1370710285
+levobunolol-compound,Levobunolol,6.0,,h,,7.5,,,,,https://en.wikipedia.org/w/index.php?title=Levobunolol&oldid=1329259569
+levocetirizine-compound,Levocetirizine,8.0,9.0,h,91.0,,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Levocetirizine&oldid=1369571793
+levodopa-compound,Levodopa,0.75,1.5,h,,30.0,True,,,,https://en.wikipedia.org/w/index.php?title=Levodopa&oldid=1375811327
+levofloxacin-compound,Levofloxacin,6.0,8.8,h,24.0,99.0,True,0.87,,,https://en.wikipedia.org/w/index.php?title=Levofloxacin&oldid=1361375143
+levomepromazine-compound,Levomepromazine,20.0,,h,,50.0,,0.01,True,,https://en.wikipedia.org/w/index.php?title=Levomepromazine&oldid=1360365557
+levomilnacipran-compound,Levomilnacipran,12.0,,h,22.0,92.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Levomilnacipran&oldid=1373241809
+levonorgestrel-compound,Levonorgestrel,24.0,32.0,h,98.0,95.0,,,True,,https://en.wikipedia.org/w/index.php?title=Levonorgestrel&oldid=1352426285
+levorphanol-compound,Levorphanol,11.0,16.0,h,40.0,70.0,,,True,,https://en.wikipedia.org/w/index.php?title=Levorphanol&oldid=1367552325
+levosalbutamol-compound,Levosalbutamol,3.3,4.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Levosalbutamol&oldid=1328964207
+levosimendan-compound,Levosimendan,1.0,,h,97.0,85.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Levosimendan&oldid=1365937324
+levothyroxine-compound,Levothyroxine,7.0,,d,,40.0,,,True,,https://en.wikipedia.org/w/index.php?title=Levothyroxine&oldid=1368685201
+lidocaine-compound,Lidocaine,1.5,,h,,35.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Lidocaine&oldid=1375500391
+ligandrol-compound,LGD-4033,24.0,36.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=LGD-4033&oldid=1370576375
+linagliptin-compound,Linagliptin,24.0,,h,75.0,30.0,False,,,,https://en.wikipedia.org/w/index.php?title=Linagliptin&oldid=1329259847
+lindane-compound,Lindane,18.0,,h,91.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Lindane&oldid=1376459973
+linezolid-compound,Linezolid,3.0,7.0,h,31.0,100.0,,,True,,https://en.wikipedia.org/w/index.php?title=Linezolid&oldid=1350533375
+liothyronine-compound,Liothyronine,2.5,,d,99.7,,,,,,https://en.wikipedia.org/w/index.php?title=Liothyronine&oldid=1356471391
+lisdexamfetamine-compound,Lisdexamfetamine,1.0,,h,20.0,96.4,True,,,,https://en.wikipedia.org/w/index.php?title=Lisdexamfetamine&oldid=1376554958
+lisinopril-compound,Lisinopril,12.0,,h,,25.0,,,,,https://en.wikipedia.org/w/index.php?title=Lisinopril&oldid=1374815147
+lobeglitazone-compound,Lobeglitazone,7.8,9.8,h,99.0,,,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Lobeglitazone&oldid=1329160872
+lomefloxacin-compound,Lomefloxacin,8.0,,h,10.0,,,,,,https://en.wikipedia.org/w/index.php?title=Lomefloxacin&oldid=1329437748
+loperamide-compound,Loperamide,9.0,14.0,h,95.0,1.0,,,True,,https://en.wikipedia.org/w/index.php?title=Loperamide&oldid=1373298035
+lopinavir-compound,Lopinavir,5.0,6.0,h,98.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Lopinavir&oldid=1359319611
+loratadine-compound,Loratadine,8.0,,h,97.0,100.0,,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Loratadine&oldid=1356896189
+lorazepam-compound,Lorazepam,1020.0,,h,,85.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Lorazepam&oldid=1375153206
+lornoxicam-compound,Lornoxicam,3.0,4.0,h,99.0,90.0,,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Lornoxicam&oldid=1268655935
+losartan-compound,Losartan,1.5,2.0,h,99.7,25.0,,,True,CYP2C9; CYP3A4,https://en.wikipedia.org/w/index.php?title=Losartan&oldid=1361505549
+loteprednol-compound,Loteprednol,2.8,,h,95.0,,,,,,https://en.wikipedia.org/w/index.php?title=Loteprednol&oldid=1343785671
+loteprednol-etabonate-compound,Loteprednol,2.8,,h,95.0,,,,,,https://en.wikipedia.org/w/index.php?title=Loteprednol&oldid=1343785671
+lovastatin-compound,Lovastatin,2.0,5.0,h,98.0,5.0,False,,True,CYP2C8,https://en.wikipedia.org/w/index.php?title=Lovastatin&oldid=1373648032
+loxapine-compound,Loxapine,4.0,,h,96.8,,,,True,CYP1A2; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Loxapine&oldid=1368778041
+loxoprofen-compound,Loxoprofen,75.0,,min,97.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Loxoprofen&oldid=1331526208
+lubiprostone-compound,Lubiprostone,0.9,1.4,h,94.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Lubiprostone&oldid=1329260443
+lumateperone-compound,Lumateperone,,,,97.4,4.4,,0.01,True,,https://en.wikipedia.org/w/index.php?title=Lumateperone&oldid=1371377593
+lumefantrine-compound,Lumefantrine,3.0,6.0,d,99.7,,,,,,https://en.wikipedia.org/w/index.php?title=Lumefantrine&oldid=1343037699
+lumiracoxib-compound,Lumiracoxib,5.0,8.0,h,98.0,74.0,True,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Lumiracoxib&oldid=1353680253
+lurasidone-compound,Lurasidone,18.0,40.0,h,99.0,9.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Lurasidone&oldid=1372134771
+macimorelin-compound,Macimorelin,4.1,,h,,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Macimorelin&oldid=1328964534
+macitentan-compound,Macitentan,,,,,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Macitentan&oldid=1329260588
+maprotiline-compound,Maprotiline,27.0,58.0,h,88.0,66.0,,0.04,True,,https://en.wikipedia.org/w/index.php?title=Maprotiline&oldid=1374531921
+maraviroc-compound,Maraviroc,14.0,18.0,h,76.0,23.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Maraviroc&oldid=1329260707
+masoprocol-compound,Masoprocol,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Masoprocol&oldid=1360132863
+mazindol-compound,Mazindol,10.0,13.0,h,,93.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Mazindol&oldid=1376695515
+mdma-compound,MDMA,,,,,,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=MDMA&oldid=1372730107
+mebendazole-compound,Mebendazole,3.0,6.0,h,95.0,2.0,,,True,,https://en.wikipedia.org/w/index.php?title=Mebendazole&oldid=1372981267
+mecasermin-compound,Mecasermin,5.8,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Mecasermin&oldid=1298592287
+meclizine-compound,Meclizine,5.0,6.0,h,,22.0,,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Meclizine&oldid=1365249255
+medroxyprogesterone-acetate-compound,Medroxyprogesterone acetate,12.0,33.0,h,88.0,100.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Medroxyprogesterone_acetate&oldid=1373552256
+mefenamic-acid-compound,Mefenamic acid,2.0,,h,90.0,90.0,False,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Mefenamic_acid&oldid=1376170396
+mefloquine-compound,Mefloquine,2.0,4.0,wk,,,,0.09,True,,https://en.wikipedia.org/w/index.php?title=Mefloquine&oldid=1374571427
+melarsoprol-compound,Melarsoprol,35.0,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Melarsoprol&oldid=1373206205
+meloxicam-compound,Meloxicam,20.0,,h,99.4,89.0,,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Meloxicam&oldid=1370163287
+memantine-compound,Memantine,60.0,80.0,h,45.0,100.0,True,0.82,,,https://en.wikipedia.org/w/index.php?title=Memantine&oldid=1374800209
+meperidine-compound,Pethidine,2.5,4.0,h,65.0,50.0,True,,True,CYP2B6; CYP2C19; CYP3A4,https://en.wikipedia.org/w/index.php?title=Pethidine&oldid=1373295642
+mepolizumab-compound,Mepolizumab,,,,,80.0,,,,,https://en.wikipedia.org/w/index.php?title=Mepolizumab&oldid=1332048535
+meprobamate-compound,Meprobamate,10.0,,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Meprobamate&oldid=1371749968
+meropenem-compound,Meropenem,1.0,,h,2.0,100.0,True,,,,https://en.wikipedia.org/w/index.php?title=Meropenem&oldid=1368846109
+mesalamine-compound,Mesalazine,5.0,,h,,20.0,,,True,,https://en.wikipedia.org/w/index.php?title=Mesalazine&oldid=1369100049
+mesalazine-compound,Mesalazine,5.0,,h,,20.0,,,True,,https://en.wikipedia.org/w/index.php?title=Mesalazine&oldid=1369100049
+mesterolone-compound,Mesterolone,12.0,13.0,h,98.0,3.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Mesterolone&oldid=1376297928
+mestranol-compound,Mestranol,50.0,,min,,,,,,,https://en.wikipedia.org/w/index.php?title=Mestranol&oldid=1365260747
+metamizole-compound,Metamizole,14.0,,min,58.0,90.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Metamizole&oldid=1367392257
+metaproterenol-compound,Orciprenaline,6.0,,h,,3.0,,,True,,https://en.wikipedia.org/w/index.php?title=Orciprenaline&oldid=1329471850
+metformin-compound,Metformin,4.0,8.7,h,,50.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Metformin&oldid=1372113244
+methadone-compound,Methadone,15.0,55.0,h,85.0,76.0,,,True,CYP2B6; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Methadone&oldid=1376375440
+methandienone-compound,Metandienone,3.0,6.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Metandienone&oldid=1330387503
+methandrostenolone-compound,Metandienone,3.0,6.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Metandienone&oldid=1330387503
+methaqualone-compound,Methaqualone,20.0,60.0,h,70.0,,,,,,https://en.wikipedia.org/w/index.php?title=Methaqualone&oldid=1374322003
+methazolamide-compound,Methazolamide,14.0,,h,55.0,,,,,,https://en.wikipedia.org/w/index.php?title=Methazolamide&oldid=1329516399
+methimazole-compound,Thiamazole,5.0,6.0,h,,93.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Thiamazole&oldid=1366300968
+methohexital-compound,Methohexital,2.7,,min,,100.0,,,True,,https://en.wikipedia.org/w/index.php?title=Methohexital&oldid=1376184556
+methotrexate-compound,Methotrexate,3.0,10.0,h,35.0,60.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Methotrexate&oldid=1375176283
+methoxsalen-compound,Methoxsalen,2.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Methoxsalen&oldid=1353659867
+methoxyflurane-compound,Methoxyflurane,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Methoxyflurane&oldid=1368756976
+methyldopa-compound,Methyldopa,105.0,,min,,50.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Methyldopa&oldid=1360767011
+methylene-blue-cation-compound,Methylene blue,5.0,24.0,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Methylene_blue&oldid=1371817588
+methylene-blue-compound,Methylene blue,5.0,24.0,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Methylene_blue&oldid=1371817588
+methylnaltrexone-compound,Methylnaltrexone,8.0,,h,11.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Methylnaltrexone&oldid=1341889075
+methylphenidate-compound,Methylphenidate,2.0,3.0,h,15.0,30.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Methylphenidate&oldid=1376343432
+methylprednisolone-compound,Methylprednisolone,1.8,2.6,h,78.0,,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Methylprednisolone&oldid=1366837611
+methylstenbolone-compound,Methylstenbolone,,,,,98.0,,,,,https://en.wikipedia.org/w/index.php?title=Methylstenbolone&oldid=1329029636
+methyltestosterone-compound,Methyltestosterone,150.0,,min,98.0,70.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Methyltestosterone&oldid=1371351356
+methyprylon-compound,Methyprylon,6.0,16.0,h,60.0,,,,,,https://en.wikipedia.org/w/index.php?title=Methyprylon&oldid=1365017206
+metoclopramide-compound,Metoclopramide,5.0,6.0,h,,15.0,,,True,,https://en.wikipedia.org/w/index.php?title=Metoclopramide&oldid=1345658309
+metolazone-compound,Metolazone,14.0,,h,,65.0,,,,,https://en.wikipedia.org/w/index.php?title=Metolazone&oldid=1375530392
+metoprolol-compound,Metoprolol,3.0,7.0,h,12.0,50.0,True,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Metoprolol&oldid=1376129637
+metronidazole-compound,Metronidazole,8.0,,h,20.0,80.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Metronidazole&oldid=1374900844
+metyrapone-compound,Metyrapone,0.7,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Metyrapone&oldid=1356275720
+mexiletine-compound,Mexiletine,10.0,12.0,h,50.0,90.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Mexiletine&oldid=1359320312
+mibolerone-compound,Mibolerone,,,,,,,,True,,https://en.wikipedia.org/w/index.php?title=Mibolerone&oldid=1336144546
+micafungin-compound,Micafungin,11.0,17.0,h,99.8,,,,,,https://en.wikipedia.org/w/index.php?title=Micafungin&oldid=1338331511
+midazolam-compound,Midazolam,1.5,2.5,h,97.0,40.0,True,,True,CYP3A3; CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Midazolam&oldid=1368778567
+mifepristone-compound,Mifepristone,,,,98.0,69.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Mifepristone&oldid=1375990318
+migalastat-compound,Migalastat,3.0,5.0,h,,75.0,True,,,,https://en.wikipedia.org/w/index.php?title=Migalastat&oldid=1370389401
+miglitol-compound,Miglitol,2.0,,h,4.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Miglitol&oldid=1357728290
+miglustat-compound,Miglustat,6.0,7.0,h,,97.0,True,,,,https://en.wikipedia.org/w/index.php?title=Miglustat&oldid=1364995192
+milnacipran-compound,Milnacipran,6.0,8.0,h,13.0,85.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Milnacipran&oldid=1368194075
+milrinone-compound,Milrinone,2.3,,h,70.0,100.0,True,0.85,True,,https://en.wikipedia.org/w/index.php?title=Milrinone&oldid=1329359957
+miltefosine-compound,Miltefosine,6.0,8.0,d,98.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Miltefosine&oldid=1374210502
+minaprine-compound,Minaprine,2.0,2.5,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Minaprine&oldid=1369618294
+minocycline-compound,Minocycline,15.5,,h,70.0,90.0,,,True,,https://en.wikipedia.org/w/index.php?title=Minocycline&oldid=1363129899
+minoxidil-compound,Minoxidil,3.0,4.0,h,,90.0,True,0.15,True,,https://en.wikipedia.org/w/index.php?title=Minoxidil&oldid=1374824602
+minoxidil-oral-compound,Minoxidil,3.0,4.0,h,,90.0,True,0.15,True,,https://en.wikipedia.org/w/index.php?title=Minoxidil&oldid=1374824602
+mipomersen-compound,Mipomersen,,,,90.0,,,,,,https://en.wikipedia.org/w/index.php?title=Mipomersen&oldid=1358381744
+mirtazapine-compound,Mirtazapine,20.0,40.0,h,85.0,50.0,True,,True,CYP1A2; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Mirtazapine&oldid=1373834311
+misoprostol-compound,Misoprostol,20.0,40.0,min,80.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Misoprostol&oldid=1371674112
+mitotane-compound,Mitotane,18.0,159.0,d,6.0,40.0,,,,,https://en.wikipedia.org/w/index.php?title=Mitotane&oldid=1369886453
+moclobemide-compound,Moclobemide,1.0,2.0,h,50.0,55.0,,,True,,https://en.wikipedia.org/w/index.php?title=Moclobemide&oldid=1371051334
+modafinil-compound,Modafinil,12.0,15.0,h,60.0,40.0,True,,True,CYP1A2; CYP2B6; CYP2C19; CYP2C9; CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Modafinil&oldid=1375967552
+molindone-compound,Molindone,2.0,,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Molindone&oldid=1333663664
+molsidomine-compound,Molsidomine,1.0,2.0,h,3.0,44.0,True,,,,https://en.wikipedia.org/w/index.php?title=Molsidomine&oldid=1365345946
+montelukast-compound,Montelukast,2.7,5.5,h,99.0,63.0,False,,True,CYP2C8; CYP2C9; CYP3A4,https://en.wikipedia.org/w/index.php?title=Montelukast&oldid=1363159792
+morphine-compound,Morphine,23.0,,h,,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Morphine&oldid=1374517907
+moxifloxacin-compound,Moxifloxacin,12.1,,h,47.0,86.0,,,True,,https://en.wikipedia.org/w/index.php?title=Moxifloxacin&oldid=1366072182
+mupirocin-compound,Mupirocin,20.0,40.0,min,97.0,,,,,,https://en.wikipedia.org/w/index.php?title=Mupirocin&oldid=1360195352
+nabilone-compound,Nabilone,2.0,,h,97.0,20.0,,,,,https://en.wikipedia.org/w/index.php?title=Nabilone&oldid=1368778690
+nabumetone-compound,Nabumetone,23.0,,h,99.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Nabumetone&oldid=1316039460
+nac-compound,Acetylcysteine,5.6,,h,50.0,6.0,,,True,,https://en.wikipedia.org/w/index.php?title=Acetylcysteine&oldid=1375254688
+nadroparin-compound,Nadroparin calcium,3.7,,h,,89.0,,,,,https://en.wikipedia.org/w/index.php?title=Nadroparin_calcium&oldid=1338876904
+nafarelin-compound,Nafarelin,2.5,3.0,h,80.0,2.8,,,True,,https://en.wikipedia.org/w/index.php?title=Nafarelin&oldid=1328743505
+nafcillin-compound,Nafcillin,0.5,,h,90.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Nafcillin&oldid=1320208042
+naftidrofuryl-compound,Naftidrofuryl,1.2,2.0,h,80.0,20.0,,,True,,https://en.wikipedia.org/w/index.php?title=Naftidrofuryl&oldid=1362588562
+nalbuphine-compound,Nalbuphine,5.0,,h,50.0,11.0,,,True,,https://en.wikipedia.org/w/index.php?title=Nalbuphine&oldid=1362482151
+nalfurafine-compound,Nalfurafine,14.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Nalfurafine&oldid=1374489763
+nalmefene-compound,Nalmefene,5.2,,h,45.0,40.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Nalmefene&oldid=1368650312
+naloxegol-compound,Naloxegol,6.0,11.0,h,4.2,,False,,True,,https://en.wikipedia.org/w/index.php?title=Naloxegol&oldid=1322744851
+naloxone-compound,Naloxone,1.0,1.5,h,,2.0,,,True,,https://en.wikipedia.org/w/index.php?title=Naloxone&oldid=1375186586
+naltrexone-compound,Naltrexone,4.0,,h,20.0,5.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Naltrexone&oldid=1370715111
+nandrolone-compound,Nandrolone,4.3,,h,,3.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Nandrolone&oldid=1363015943
+naproxen-compound,Naproxen,14.0,,h,99.0,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Naproxen&oldid=1360544020
+naratriptan-compound,Naratriptan,5.0,8.0,h,,74.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Naratriptan&oldid=1338398722
+natalizumab-compound,Natalizumab,4.0,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Natalizumab&oldid=1361797720
+nebivolol-compound,Nebivolol,12.0,19.0,h,98.0,,,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Nebivolol&oldid=1369604339
+nefazodone-compound,Nefazodone,2.0,4.0,h,99.0,20.0,True,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Nefazodone&oldid=1358676122
+nefiracetam-compound,Nefiracetam,3.0,5.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Nefiracetam&oldid=1328700226
+nemolizumab-compound,Nemolizumab,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Nemolizumab&oldid=1337495889
+netarsudil-compound,Netarsudil,16.0,17.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Netarsudil&oldid=1333051436
+netupitant-compound,Netupitant,88.0,,h,99.0,60.0,False,,True,CYP2C9; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Netupitant&oldid=1368522106
+nevirapine-compound,Nevirapine,45.0,,h,,93.0,,,True,,https://en.wikipedia.org/w/index.php?title=Nevirapine&oldid=1328920477
+nicardipine-compound,Nicardipine,8.6,,h,95.0,,,,,,https://en.wikipedia.org/w/index.php?title=Nicardipine&oldid=1359023269
+nicorandil-compound,Nicorandil,1.0,,h,25.0,75.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Nicorandil&oldid=1356983302
+nicotine-compound,Nicotine,1.0,2.0,h,5.0,80.0,True,,True,CYP2A6; CYP2B6,https://en.wikipedia.org/w/index.php?title=Nicotine&oldid=1376342739
+nifedipine-compound,Nifedipine,2.0,,h,92.0,45.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Nifedipine&oldid=1364311559
+nifurtimox-compound,Nifurtimox,1.19,,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Nifurtimox&oldid=1373219699
+nilotinib-compound,Nilotinib,15.0,17.0,h,98.0,30.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Nilotinib&oldid=1362647876
+nilutamide-compound,Nilutamide,56.0,,h,80.0,,True,,True,CYP2C19,https://en.wikipedia.org/w/index.php?title=Nilutamide&oldid=1353660792
+nimesulide-compound,Nimesulide,1.8,4.7,h,97.5,,True,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Nimesulide&oldid=1364936004
+nimodipine-compound,Nimodipine,8.0,9.0,h,95.0,13.0,,,True,,https://en.wikipedia.org/w/index.php?title=Nimodipine&oldid=1350628279
+nitazoxanide-compound,Nitazoxanide,3.5,,h,99.0,,,,,,https://en.wikipedia.org/w/index.php?title=Nitazoxanide&oldid=1376092849
+nitisinone-compound,Nitisinone,54.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Nitisinone&oldid=1329361321
+nitrofurantoin-compound,Nitrofurantoin,0.33,1.7,h,60.0,20.0,,0.25,,,https://en.wikipedia.org/w/index.php?title=Nitrofurantoin&oldid=1365942340
+nivolumab-compound,Nivolumab,27.0,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Nivolumab&oldid=1347861612
+nizatidine-compound,Nizatidine,1.0,2.0,h,35.0,70.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Nizatidine&oldid=1366288761
+norelgestromin-compound,Norelgestromin,17.0,37.0,h,99.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Norelgestromin&oldid=1374433236
+norepinephrine-drug-compound,Norepinephrine,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Norepinephrine&oldid=1370844288
+norethindrone-compound,Norethisterone,5.2,12.8,h,97.0,47.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Norethisterone&oldid=1373583252
+norethynodrel-compound,Noretynodrel,30.0,,min,,,,,True,,https://en.wikipedia.org/w/index.php?title=Noretynodrel&oldid=1367851360
+norfloxacin-compound,Norfloxacin,3.0,4.0,h,10.0,30.0,,,True,,https://en.wikipedia.org/w/index.php?title=Norfloxacin&oldid=1335561485
+norgestimate-compound,Norgestimate,17.0,37.0,h,99.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Norgestimate&oldid=1369013524
+nortriptyline-compound,Nortriptyline,18.0,44.0,h,92.0,32.0,,,True,,https://en.wikipedia.org/w/index.php?title=Nortriptyline&oldid=1373955529
+nsi-189-compound,Amdiglurax,17.4,20.5,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Amdiglurax&oldid=1373783917
+nusinersen-compound,Nusinersen,135.0,177.0,d,94.0,100.0,,,,,https://en.wikipedia.org/w/index.php?title=Nusinersen&oldid=1339936485
+nystatin-compound,Nystatin,,,,,0.0,False,,,,https://en.wikipedia.org/w/index.php?title=Nystatin&oldid=1361358987
+obinutuzumab-compound,Obinutuzumab,28.4,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Obinutuzumab&oldid=1339774020
+octreotide-compound,Octreotide,1.7,1.9,h,40.0,60.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Octreotide&oldid=1330263762
+ofatumumab-compound,Ofatumumab,14.0,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Ofatumumab&oldid=1350544500
+ofloxacin-compound,Ofloxacin,8.0,9.0,h,32.0,85.0,,,,,https://en.wikipedia.org/w/index.php?title=Ofloxacin&oldid=1368543095
+olanzapine-compound,Olanzapine,33.0,,h,93.0,60.0,,0.07,True,CYP1A2,https://en.wikipedia.org/w/index.php?title=Olanzapine&oldid=1375958074
+olmesartan-compound,Olmesartan,13.0,,h,,26.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Olmesartan&oldid=1358312989
+olmesartan-medoxomil-compound,Olmesartan,13.0,,h,,26.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Olmesartan&oldid=1358312989
+olodaterol-compound,Olodaterol,7.5,,h,60.0,30.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Olodaterol&oldid=1330257445
+olokizumab-compound,Olokizumab,31.0,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Olokizumab&oldid=1300694775
+olopatadine-compound,Olopatadine,3.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Olopatadine&oldid=1348787908
+olsalazine-compound,Olsalazine,0.9,,h,99.0,,,,,,https://en.wikipedia.org/w/index.php?title=Olsalazine&oldid=1329361849
+omalizumab-compound,Omalizumab,26.0,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Omalizumab&oldid=1372783889
+ombitasvir-compound,Ombitasvir,21.0,25.0,h,99.9,,False,,True,,https://en.wikipedia.org/w/index.php?title=Ombitasvir&oldid=1332195687
+omeprazole-compound,Omeprazole,1.0,1.2,h,95.0,35.0,True,,True,CYP2C19; CYP3A4,https://en.wikipedia.org/w/index.php?title=Omeprazole&oldid=1362259565
+ondansetron-compound,Ondansetron,5.7,,h,70.0,60.0,True,,True,CYP1A2; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Ondansetron&oldid=1370221139
+oral-tretinoin-compound,Tretinoin,0.5,2.0,h,95.0,,,,,,https://en.wikipedia.org/w/index.php?title=Tretinoin&oldid=1368186417
+orforglipron-compound,Orforglipron,29.0,49.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Orforglipron&oldid=1371069211
+oritavancin-compound,Oritavancin,16.0,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Oritavancin&oldid=1357733499
+orlistat-compound,Orlistat,1.0,2.0,h,99.0,,False,,,,https://en.wikipedia.org/w/index.php?title=Orlistat&oldid=1367132106
+orphenadrine-compound,Orphenadrine,13.0,20.0,h,95.0,90.0,,,True,,https://en.wikipedia.org/w/index.php?title=Orphenadrine&oldid=1363068383
+oseltamivir-compound,Oseltamivir,1.0,3.0,h,42.0,80.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Oseltamivir&oldid=1368822991
+osimertinib-compound,Osimertinib,48.0,,h,,,False,,True,,https://en.wikipedia.org/w/index.php?title=Osimertinib&oldid=1372172312
+ostarine-compound,Enobosarm,14.0,24.0,h,,100.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Enobosarm&oldid=1375979110
+oxandrolone-compound,Oxandrolone,9.4,10.4,h,94.0,97.0,,0.28,True,,https://en.wikipedia.org/w/index.php?title=Oxandrolone&oldid=1371442481
+oxaprozin-compound,Oxaprozin,54.9,,h,99.0,95.0,,,True,,https://en.wikipedia.org/w/index.php?title=Oxaprozin&oldid=1316039149
+oxazepam-compound,Oxazepam,6.0,9.0,h,,92.8,True,,True,,https://en.wikipedia.org/w/index.php?title=Oxazepam&oldid=1369619112
+oxcarbazepine-compound,Oxcarbazepine,1.0,5.0,h,,95.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Oxcarbazepine&oldid=1356507495
+oxiracetam-compound,Oxiracetam,8.0,,h,,56.0,True,,,,https://en.wikipedia.org/w/index.php?title=Oxiracetam&oldid=1368668595
+oxprenolol-compound,Oxprenolol,1.0,2.0,h,,20.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Oxprenolol&oldid=1359198474
+oxybutynin-compound,Oxybutynin,12.4,13.2,h,91.0,,,,,,https://en.wikipedia.org/w/index.php?title=Oxybutynin&oldid=1375448425
+oxycodone-compound,Oxycodone,2.0,3.0,h,45.0,60.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Oxycodone&oldid=1373295533
+oxymetholone-compound,Oxymetholone,,,,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Oxymetholone&oldid=1347233272
+oxytocin-compound,Oxytocin,1.0,6.0,min,30.0,,False,,True,,https://en.wikipedia.org/w/index.php?title=Oxytocin&oldid=1375895379
+ozanimod-compound,Ozanimod,19.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Ozanimod&oldid=1329068113
+paliperidone-compound,Paliperidone,23.0,,h,,28.0,,0.01,,,https://en.wikipedia.org/w/index.php?title=Paliperidone&oldid=1369113631
+palonosetron-compound,Palonosetron,40.0,50.0,h,62.0,97.0,True,0.49,True,CYP1A2; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Palonosetron&oldid=1333743869
+pamidronate-compound,Pamidronic acid,7.0,,h,54.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Pamidronic_acid&oldid=1332210726
+pancuronium-compound,Pancuronium bromide,1.5,2.7,h,77.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Pancuronium_bromide&oldid=1374846632
+panobinostat-compound,Panobinostat,37.0,,h,90.0,21.0,True,,True,CYP2C19; CYP2D6,https://en.wikipedia.org/w/index.php?title=Panobinostat&oldid=1368886946
+pantoprazole-compound,Pantoprazole,1.0,2.0,h,98.0,77.0,,,True,CYP2C19; CYP3A4,https://en.wikipedia.org/w/index.php?title=Pantoprazole&oldid=1371018706
+papaverine-compound,Papaverine,1.5,2.0,h,90.0,80.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Papaverine&oldid=1370506783
+parecoxib-compound,Parecoxib,22.0,,min,98.0,100.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Parecoxib&oldid=1370867901
+pargyline-compound,Pargyline,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Pargyline&oldid=1373332120
+paricalcitol-compound,Paricalcitol,14.0,20.0,h,99.8,72.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Paricalcitol&oldid=1337150305
+paromomycin-compound,Paromomycin,,,,,,False,,,,https://en.wikipedia.org/w/index.php?title=Paromomycin&oldid=1374394030
+paroxetine-compound,Paroxetine,21.0,,h,93.0,50.0,,0.02,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Paroxetine&oldid=1373241436
+patiromer-compound,Patiromer,,,,,,False,,,,https://en.wikipedia.org/w/index.php?title=Patiromer&oldid=1329362585
+pazopanib-compound,Pazopanib,4.0,,h,99.5,21.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Pazopanib&oldid=1329209972
+pemetrexed-compound,Pemetrexed,3.5,,h,81.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Pemetrexed&oldid=1329362768
+penicillamine-compound,Penicillamine,1.0,,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Penicillamine&oldid=1374815367
+pentamidine-compound,Pentamidine,6.4,9.4,h,69.0,,,,,,https://en.wikipedia.org/w/index.php?title=Pentamidine&oldid=1315092083
+pentazocine-compound,Pentazocine,2.0,3.0,h,,20.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Pentazocine&oldid=1362511808
+pentobarbital-compound,Pentobarbital,15.0,48.0,h,20.0,70.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Pentobarbital&oldid=1376096069
+pentosan-polysulfate-compound,Pentosan polysulfate,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Pentosan_polysulfate&oldid=1366703696
+pentoxifylline-compound,Pentoxifylline,0.4,0.8,h,,10.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Pentoxifylline&oldid=1361439043
+peramivir-compound,Peramivir,7.7,20.8,h,,100.0,True,,,,https://en.wikipedia.org/w/index.php?title=Peramivir&oldid=1369623481
+perampanel-compound,Perampanel,105.0,,h,95.0,,,,True,CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Perampanel&oldid=1373296477
+pergolide-compound,Pergolide,27.0,,h,90.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Pergolide&oldid=1370680932
+perhexiline-compound,Perhexiline,,,,,,,,True,,https://en.wikipedia.org/w/index.php?title=Perhexiline&oldid=1329363061
+perindopril-compound,Perindopril,1.0,17.0,h,20.0,24.0,,,,,https://en.wikipedia.org/w/index.php?title=Perindopril&oldid=1374815372
+perphenazine-compound,Perphenazine,,,,,40.0,,,True,,https://en.wikipedia.org/w/index.php?title=Perphenazine&oldid=1315044627
+phendimetrazine-compound,Phendimetrazine,19.0,24.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Phendimetrazine&oldid=1365182914
+phenelzine-compound,Phenelzine,11.6,,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Phenelzine&oldid=1369799230
+phenindione-compound,Phenindione,5.0,10.0,h,88.0,,,,,,https://en.wikipedia.org/w/index.php?title=Phenindione&oldid=1332212018
+pheniramine-compound,Pheniramine,16.0,19.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Pheniramine&oldid=1345559105
+phenmetrazine-compound,Phenmetrazine,16.0,31.0,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Phenmetrazine&oldid=1352010212
+phenobarbital-compound,Phenobarbital,53.0,118.0,h,20.0,95.0,,,True,CYP2C19,https://en.wikipedia.org/w/index.php?title=Phenobarbital&oldid=1376696621
+phenoxybenzamine-compound,Phenoxybenzamine,24.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Phenoxybenzamine&oldid=1358709879
+phenprocoumon-compound,Phenprocoumon,6.0,7.0,d,99.0,100.0,True,,True,CYP2C9; CYP3A4,https://en.wikipedia.org/w/index.php?title=Phenprocoumon&oldid=1334264213
+phentermine-compound,Phentermine,20.0,25.0,h,17.5,100.0,True,0.85,,,https://en.wikipedia.org/w/index.php?title=Phentermine&oldid=1374263603
+phentolamine-compound,Phentolamine,19.0,,min,,,,,True,,https://en.wikipedia.org/w/index.php?title=Phentolamine&oldid=1328687303
+phenylephrine-compound,Phenylephrine,2.0,3.0,h,95.0,38.0,True,0.16,True,,https://en.wikipedia.org/w/index.php?title=Phenylephrine&oldid=1359707321
+phenylpiracetam-compound,Phenylpiracetam,3.0,5.0,h,,100.0,False,,,,https://en.wikipedia.org/w/index.php?title=Phenylpiracetam&oldid=1364725280
+phenytoin-compound,Phenytoin,10.0,22.0,h,95.0,70.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Phenytoin&oldid=1371791164
+physostigmine-compound,Physostigmine,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Physostigmine&oldid=1368633509
+pibrentasvir-compound,Pibrentasvir,13.0,,h,99.9,,False,,,,https://en.wikipedia.org/w/index.php?title=Pibrentasvir&oldid=1360537432
+pilocarpine-compound,Pilocarpine,0.76,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Pilocarpine&oldid=1363378330
+pimavanserin-compound,Pimavanserin,54.0,57.0,h,94.0,,,,True,CYP2J2; CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Pimavanserin&oldid=1358505193
+pimecrolimus-compound,Pimecrolimus,,,,74.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Pimecrolimus&oldid=1371791182
+pimobendan-compound,Pimobendan,0.4,,h,,60.0,,,,,https://en.wikipedia.org/w/index.php?title=Pimobendan&oldid=1376565658
+pimozide-compound,Pimozide,55.0,,h,,40.0,True,,True,CYP1A2; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Pimozide&oldid=1373564887
+pindolol-compound,Pindolol,3.0,4.0,h,,50.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Pindolol&oldid=1362281818
+pioglitazone-compound,Pioglitazone,3.0,7.0,h,99.0,,False,,True,CYP2C8,https://en.wikipedia.org/w/index.php?title=Pioglitazone&oldid=1365691930
+piperacillin-compound,Piperacillin,36.0,72.0,min,30.0,0.0,True,0.8,,,https://en.wikipedia.org/w/index.php?title=Piperacillin&oldid=1289430734
+piracetam-compound,Piracetam,4.0,5.0,h,,100.0,True,,,,https://en.wikipedia.org/w/index.php?title=Piracetam&oldid=1367146418
+piroxicam-compound,Piroxicam,50.0,,h,99.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Piroxicam&oldid=1316039180
+pitavastatin-compound,Pitavastatin,11.0,,h,96.0,60.0,False,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Pitavastatin&oldid=1334235016
+pitolisant-compound,Pitolisant,10.0,12.0,h,91.0,90.0,,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Pitolisant&oldid=1367387265
+pomalidomide-compound,Pomalidomide,7.5,,h,12.0,73.0,True,,True,CYP1A2; CYP2C19; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Pomalidomide&oldid=1326042409
+ponatinib-compound,Ponatinib,12.0,66.0,h,99.0,,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Ponatinib&oldid=1371079761
+posaconazole-compound,Posaconazole,16.0,31.0,h,98.0,8.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Posaconazole&oldid=1370055331
+pramipexole-compound,Pramipexole,8.0,12.0,h,15.0,90.0,True,,,,https://en.wikipedia.org/w/index.php?title=Pramipexole&oldid=1376132340
+pramlintide-compound,Pramlintide,48.0,,min,60.0,30.0,,,,,https://en.wikipedia.org/w/index.php?title=Pramlintide&oldid=1357844855
+pranlukast-compound,Pranlukast,1.5,,h,,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Pranlukast&oldid=1332213073
+prasugrel-compound,Prasugrel,7.0,,h,98.0,79.0,True,,,,https://en.wikipedia.org/w/index.php?title=Prasugrel&oldid=1358311753
+pravastatin-compound,Pravastatin,1.0,3.0,h,50.0,18.0,,,True,,https://en.wikipedia.org/w/index.php?title=Pravastatin&oldid=1369273013
+prazepam-compound,Prazepam,36.0,200.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Prazepam&oldid=1359593550
+praziquantel-compound,Praziquantel,0.8,1.5,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Praziquantel&oldid=1369381784
+prazosin-compound,Prazosin,2.0,3.0,h,97.0,60.0,,,,,https://en.wikipedia.org/w/index.php?title=Prazosin&oldid=1374677697
+prednisolone-compound,Prednisolone,2.0,3.5,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Prednisolone&oldid=1356473838
+prednisone-compound,Prednisone,3.0,4.0,h,,70.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Prednisone&oldid=1347320163
+pregabalin-compound,Pregabalin,4.5,7.0,h,1.0,90.0,True,,,,https://en.wikipedia.org/w/index.php?title=Pregabalin&oldid=1374816232
+prilocaine-compound,Prilocaine,10.0,150.0,min,55.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Prilocaine&oldid=1329364863
+primaquine-compound,Primaquine,6.0,,h,,96.0,,,True,,https://en.wikipedia.org/w/index.php?title=Primaquine&oldid=1370237394
+primidone-compound,Primidone,5.0,18.0,h,25.0,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Primidone&oldid=1314757574
+probenecid-compound,Probenecid,2.0,6.0,h,75.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Probenecid&oldid=1361384214
+probucol-compound,Probucol,50.0,62.0,h,,,False,,,,https://en.wikipedia.org/w/index.php?title=Probucol&oldid=1334716938
+procainamide-compound,Procainamide,2.5,4.5,h,15.0,85.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Procainamide&oldid=1342505612
+procaine-compound,Procaine,,,,,,True,,,,https://en.wikipedia.org/w/index.php?title=Procaine&oldid=1351167068
+procaterol-compound,Procaterol,3.8,4.3,h,,,True,0.2,True,,https://en.wikipedia.org/w/index.php?title=Procaterol&oldid=1366288487
+proguanil-compound,Proguanil,12.0,21.0,h,75.0,,,,True,CYP2C19,https://en.wikipedia.org/w/index.php?title=Proguanil&oldid=1338892608
+promazine-compound,Promazine,20.0,40.0,h,94.0,,,,,,https://en.wikipedia.org/w/index.php?title=Promazine&oldid=1358652202
+promethazine-compound,Promethazine,10.0,19.0,h,93.0,88.0,,,True,,https://en.wikipedia.org/w/index.php?title=Promethazine&oldid=1375475864
+propafenone-compound,Propafenone,2.0,10.0,h,97.0,,,,,,https://en.wikipedia.org/w/index.php?title=Propafenone&oldid=1336262917
+propiomazine-compound,Propiomazine,9.0,,h,81.0,33.0,,,True,,https://en.wikipedia.org/w/index.php?title=Propiomazine&oldid=1358906079
+propiverine-compound,Propiverine,20.1,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Propiverine&oldid=1332213685
+propofol-compound,Propofol,1.5,31.0,h,95.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Propofol&oldid=1376002434
+propranolol-compound,Propranolol,4.0,,h,90.0,25.0,True,,True,CYP1A2; CYP2C19; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Propranolol&oldid=1369411043
+propylthiouracil-compound,Propylthiouracil,2.0,,h,,80.0,,,,,https://en.wikipedia.org/w/index.php?title=Propylthiouracil&oldid=1367461604
+protriptyline-compound,Protriptyline,54.0,92.0,h,92.0,77.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Protriptyline&oldid=1328704064
+prulifloxacin-compound,Prulifloxacin,7.7,8.9,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Prulifloxacin&oldid=1335561946
+pseudoephedrine-compound,Pseudoephedrine,5.4,,h,21.0,100.0,True,0.96,,,https://en.wikipedia.org/w/index.php?title=Pseudoephedrine&oldid=1376385599
+psilocybin-compound,Psilocybin,2.1,4.7,h,66.0,20.4,,0.04,True,,https://en.wikipedia.org/w/index.php?title=Psilocybin&oldid=1376563392
+pt141-compound,Bremelanotide,2.7,,h,21.0,100.0,True,,,,https://en.wikipedia.org/w/index.php?title=Bremelanotide&oldid=1376322571
+pyrantel-compound,Pyrantel,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Pyrantel&oldid=1366674848
+pyrazinamide-compound,Pyrazinamide,9.0,10.0,h,,90.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Pyrazinamide&oldid=1375390898
+pyridostigmine-compound,Pyridostigmine,0.24,,h,,2.4,True,,,,https://en.wikipedia.org/w/index.php?title=Pyridostigmine&oldid=1367130428
+pyrimethamine-compound,Pyrimethamine,96.0,,h,87.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Pyrimethamine&oldid=1338328453
+quazepam-compound,Quazepam,39.0,,h,,29.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Quazepam&oldid=1373108225
+quetiapine-compound,Quetiapine,7.0,,h,83.0,100.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Quetiapine&oldid=1372676814
+quinapril-compound,Quinapril,2.0,,h,97.0,,,,,,https://en.wikipedia.org/w/index.php?title=Quinapril&oldid=1360853596
+quinbolone-compound,Quinbolone,,,,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Quinbolone&oldid=1367650149
+quinestrol-compound,Quinestrol,120.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Quinestrol&oldid=1329013637
+quinidine-compound,Quinidine,6.0,8.0,h,,70.0,,0.2,True,,https://en.wikipedia.org/w/index.php?title=Quinidine&oldid=1357376898
+quinine-compound,Quinine,8.0,14.0,h,70.0,,True,,True,CYP2C19; CYP3A4,https://en.wikipedia.org/w/index.php?title=Quinine&oldid=1373786693
+quisinostat-compound,Quisinostat,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Quisinostat&oldid=1329688884
+rabeprazole-compound,Rabeprazole,1.0,,h,96.3,52.0,True,,True,CYP2C19; CYP3A4,https://en.wikipedia.org/w/index.php?title=Rabeprazole&oldid=1328910438
+rad140-compound,Vosilasarm,45.0,60.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Vosilasarm&oldid=1363831447
+radotinib-compound,Radotinib,13.0,15.0,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Radotinib&oldid=1370533809
+raloxifene-compound,Raloxifene,28.0,,h,95.0,2.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Raloxifene&oldid=1328958249
+raltegravir-compound,Raltegravir,9.0,,h,83.0,60.0,,,True,,https://en.wikipedia.org/w/index.php?title=Raltegravir&oldid=1337657435
+ramelteon-compound,Ramelteon,1.0,2.6,h,82.0,1.8,True,,True,CYP1A2; CYP3A4,https://en.wikipedia.org/w/index.php?title=Ramelteon&oldid=1362641733
+ramipril-compound,Ramipril,13.0,17.0,h,73.0,28.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Ramipril&oldid=1356471664
+ramosetron-compound,Ramosetron,5.8,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Ramosetron&oldid=1335641757
+ranitidine-compound,Ranitidine,2.0,3.0,h,15.0,50.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Ranitidine&oldid=1375228960
+ranolazine-compound,Ranolazine,1.4,1.9,h,62.0,35.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Ranolazine&oldid=1359319819
+rapamycin-compound,Sirolimus,57.0,63.0,h,92.0,14.0,,,True,,https://en.wikipedia.org/w/index.php?title=Sirolimus&oldid=1368796458
+rasagiline-compound,Rasagiline,3.0,,h,88.0,36.0,True,,True,CYP1A2,https://en.wikipedia.org/w/index.php?title=Rasagiline&oldid=1375491838
+rasburicase-compound,Rasburicase,18.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Rasburicase&oldid=1337699059
+ravulizumab-compound,Ravulizumab,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Ravulizumab&oldid=1367004137
+reboxetine-compound,Reboxetine,12.0,12.5,h,97.0,94.0,,0.1,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Reboxetine&oldid=1356037234
+relugolix-compound,Relugolix,36.0,65.0,h,68.0,,False,,,,https://en.wikipedia.org/w/index.php?title=Relugolix&oldid=1370061117
+remifentanil-compound,Remifentanil,1.0,20.0,min,70.0,100.0,,,,,https://en.wikipedia.org/w/index.php?title=Remifentanil&oldid=1376668131
+remimazolam-compound,Remimazolam,45.0,70.0,min,,,,,,,https://en.wikipedia.org/w/index.php?title=Remimazolam&oldid=1362777558
+reserpine-compound,Reserpine,4.5,,h,,50.0,,,True,,https://en.wikipedia.org/w/index.php?title=Reserpine&oldid=1371358256
+reslizumab-compound,Reslizumab,24.0,,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Reslizumab&oldid=1317754918
+retigabine-compound,Retigabine,8.0,,h,60.0,60.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Retigabine&oldid=1364201705
+rezafungin-compound,Rezafungin,,,,,,False,,,,https://en.wikipedia.org/w/index.php?title=Rezafungin&oldid=1357733502
+ribavirin-compound,Ribavirin,298.0,,h,0.0,64.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Ribavirin&oldid=1359690341
+rifabutin-compound,Rifabutin,28.0,62.0,h,85.0,85.0,,,True,,https://en.wikipedia.org/w/index.php?title=Rifabutin&oldid=1369532616
+rifampicin-compound,Rifampicin,3.0,4.0,h,80.0,90.0,,,True,,https://en.wikipedia.org/w/index.php?title=Rifampicin&oldid=1374979670
+rifaximin-compound,Rifaximin,6.0,,h,,0.4,False,,True,,https://en.wikipedia.org/w/index.php?title=Rifaximin&oldid=1368063117
+rilpivirine-compound,Rilpivirine,45.0,,h,99.7,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Rilpivirine&oldid=1367291504
+riluzole-compound,Riluzole,9.0,15.0,h,97.0,18.0,True,,True,CYP1A2,https://en.wikipedia.org/w/index.php?title=Riluzole&oldid=1369406002
+rimexolone-compound,Rimexolone,1.0,2.0,h,,,False,,,,https://en.wikipedia.org/w/index.php?title=Rimexolone&oldid=1330111425
+rimonabant-compound,Rimonabant,6.0,9.0,d,100.0,,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Rimonabant&oldid=1370371728
+riociguat-compound,Riociguat,12.0,,h,95.0,94.0,False,,True,CYP1A1; CYP2C8; CYP2J2; CYP3A4,https://en.wikipedia.org/w/index.php?title=Riociguat&oldid=1370555009
+risedronate-compound,Risedronic acid,1.5,,h,24.0,0.63,,,,,https://en.wikipedia.org/w/index.php?title=Risedronic_acid&oldid=1334621308
+risperidone-compound,Risperidone,20.0,,h,90.0,70.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Risperidone&oldid=1375738316
+ritonavir-compound,Ritonavir,3.0,4.0,h,98.0,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Ritonavir&oldid=1376695682
+rituximab-compound,Rituximab,30.0,400.0,h,,100.0,,,,,https://en.wikipedia.org/w/index.php?title=Rituximab&oldid=1372311002
+rivaroxaban-compound,Rivaroxaban,5.0,9.0,h,,80.0,,,True,CYP2J2; CYP3A4,https://en.wikipedia.org/w/index.php?title=Rivaroxaban&oldid=1356485488
+rivastigmine-compound,Rivastigmine,1.5,,h,40.0,60.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Rivastigmine&oldid=1357081093
+rizatriptan-compound,Rizatriptan,2.0,3.0,h,14.0,45.0,True,,,,https://en.wikipedia.org/w/index.php?title=Rizatriptan&oldid=1356473769
+rocuronium-compound,Rocuronium bromide,66.0,80.0,min,30.0,,,,,,https://en.wikipedia.org/w/index.php?title=Rocuronium_bromide&oldid=1329367204
+rofecoxib-compound,Rofecoxib,17.0,,h,87.0,93.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Rofecoxib&oldid=1373664641
+roflumilast-compound,Roflumilast,17.0,,h,99.0,79.0,True,,True,CYP1A2; CYP3A4,https://en.wikipedia.org/w/index.php?title=Roflumilast&oldid=1367341055
+roflumilast-foam-compound,Roflumilast,17.0,,h,99.0,79.0,True,,True,CYP1A2; CYP3A4,https://en.wikipedia.org/w/index.php?title=Roflumilast&oldid=1367341055
+roflumilast-topical-compound,Roflumilast,17.0,,h,99.0,79.0,True,,True,CYP1A2; CYP3A4,https://en.wikipedia.org/w/index.php?title=Roflumilast&oldid=1367341055
+rolapitant-compound,Rolapitant,169.0,183.0,h,99.8,100.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Rolapitant&oldid=1368522467
+rolipram-compound,Rolipram,3.0,,h,,75.0,True,,True,CYP2C19; CYP2C8; CYP2C9; CYP2D6,https://en.wikipedia.org/w/index.php?title=Rolipram&oldid=1329367371
+romidepsin-compound,Romidepsin,3.0,,h,92.0,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Romidepsin&oldid=1365485021
+ropinirole-compound,Ropinirole,5.0,6.0,h,,50.0,,,True,CYP1A2,https://en.wikipedia.org/w/index.php?title=Ropinirole&oldid=1374715842
+ropivacaine-compound,Ropivacaine,1.6,6.0,h,,87.0,True,,True,CYP1A2,https://en.wikipedia.org/w/index.php?title=Ropivacaine&oldid=1359319839
+rosiglitazone-compound,Rosiglitazone,3.0,4.0,h,99.8,99.0,True,,True,CYP2C8,https://en.wikipedia.org/w/index.php?title=Rosiglitazone&oldid=1354915995
+rosuvastatin-compound,Rosuvastatin,19.0,,h,88.0,20.0,False,,True,CYP2C19; CYP2C9,https://en.wikipedia.org/w/index.php?title=Rosuvastatin&oldid=1365389534
+rotigotine-compound,Rotigotine,5.0,7.0,h,92.0,37.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Rotigotine&oldid=1366385573
+roxatidine-compound,Roxatidine acetate,5.0,7.0,h,5.0,80.0,True,,True,CYP2A6; CYP2D6,https://en.wikipedia.org/w/index.php?title=Roxatidine_acetate&oldid=1330111613
+rufinamide-compound,Rufinamide,6.0,10.0,h,34.0,85.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Rufinamide&oldid=1370061387
+rupatadine-compound,Rupatadine,5.9,,h,98.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Rupatadine&oldid=1356513565
+ruxolitinib-compound,Ruxolitinib,2.8,3.0,h,97.0,95.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Ruxolitinib&oldid=1362797040
+ruxolitinib-cream-compound,Ruxolitinib,2.8,3.0,h,97.0,95.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Ruxolitinib&oldid=1362797040
+ruxolitinib-topical-compound,Ruxolitinib,2.8,3.0,h,97.0,95.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Ruxolitinib&oldid=1362797040
+safinamide-compound,Safinamide,20.0,30.0,h,88.0,95.0,,,True,,https://en.wikipedia.org/w/index.php?title=Safinamide&oldid=1361846684
+salbutamol-compound,Salbutamol,3.8,6.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Salbutamol&oldid=1376825391
+salmeterol-compound,Salmeterol,5.5,,h,96.0,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Salmeterol&oldid=1328958670
+salvinorin-a-compound,Salvinorin A,50.0,,min,83.0,,,,True,,https://en.wikipedia.org/w/index.php?title=Salvinorin_A&oldid=1369393454
+samidorphan-compound,Samidorphan,7.0,9.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Samidorphan&oldid=1314973710
+saquinavir-compound,Saquinavir,9.0,15.0,h,98.0,4.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Saquinavir&oldid=1335536263
+sarilumab-compound,Sarilumab,21.0,,d,,80.0,,,,,https://en.wikipedia.org/w/index.php?title=Sarilumab&oldid=1347461148
+saroglitazar-compound,Saroglitazar,5.6,,h,99.0,,False,,True,CYP2C8; CYP3A4,https://en.wikipedia.org/w/index.php?title=Saroglitazar&oldid=1369643786
+saxagliptin-compound,Saxagliptin,2.5,,h,,75.0,True,,True,CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Saxagliptin&oldid=1329368130
+scopolamine-compound,Scopolamine,5.0,,h,,20.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Scopolamine&oldid=1369150808
+secobarbital-compound,Secobarbital,15.0,40.0,h,45.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Secobarbital&oldid=1376093252
+selegiline-compound,Selegiline,1.2,3.5,h,85.0,4.0,True,,True,CYP2B6; CYP2C19,https://en.wikipedia.org/w/index.php?title=Selegiline&oldid=1369810254
+selegiline-oral-compound,Selegiline,1.2,3.5,h,85.0,4.0,True,,True,CYP2B6; CYP2C19,https://en.wikipedia.org/w/index.php?title=Selegiline&oldid=1369810254
+selexipag-compound,Selexipag,0.8,2.5,h,99.0,49.0,False,,True,CYP2C8,https://en.wikipedia.org/w/index.php?title=Selexipag&oldid=1329368752
+seltorexant-compound,Seltorexant,2.0,3.0,h,,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Seltorexant&oldid=1364000212
+semaglutide-compound,Semaglutide,7.0,,d,,89.0,,,,,https://en.wikipedia.org/w/index.php?title=Semaglutide&oldid=1373913203
+serdexmethylphenidate-compound,Serdexmethylphenidate,5.7,,h,,3.0,,,,,https://en.wikipedia.org/w/index.php?title=Serdexmethylphenidate&oldid=1373297767
+sertaconazole-compound,Sertaconazole,,,,99.0,,,,,,https://en.wikipedia.org/w/index.php?title=Sertaconazole&oldid=1370371824
+sertindole-compound,Sertindole,3.0,,d,99.5,75.0,False,0.01,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Sertindole&oldid=1362889706
+sertraline-compound,Sertraline,26.0,,h,,40.0,,,True,CYP2B6; CYP2C19,https://en.wikipedia.org/w/index.php?title=Sertraline&oldid=1375702628
+sevelamer-compound,Sevelamer,,,,,0.0,False,,,,https://en.wikipedia.org/w/index.php?title=Sevelamer&oldid=1347720565
+sevoflurane-compound,Sevoflurane,15.0,23.0,h,,,True,,True,CYP2E1,https://en.wikipedia.org/w/index.php?title=Sevoflurane&oldid=1374089495
+sibutramine-compound,Sibutramine,1.0,,h,97.0,77.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Sibutramine&oldid=1374492573
+sildenafil-compound,Sildenafil,3.0,4.0,h,96.0,41.0,False,,True,CYP2C9; CYP3A4,https://en.wikipedia.org/w/index.php?title=Sildenafil&oldid=1376217569
+silodosin-compound,Silodosin,8.0,,h,96.6,32.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Silodosin&oldid=1370555904
+simeprevir-compound,Simeprevir,10.0,13.0,h,99.9,62.0,False,,True,CYP2C19; CYP2C8,https://en.wikipedia.org/w/index.php?title=Simeprevir&oldid=1369127743
+simvastatin-compound,Simvastatin,2.0,,h,95.0,5.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Simvastatin&oldid=1373792994
+sirolimus-compound,Sirolimus,57.0,63.0,h,92.0,14.0,,,True,,https://en.wikipedia.org/w/index.php?title=Sirolimus&oldid=1368796458
+sitagliptin-compound,Sitagliptin,8.0,14.0,h,38.0,87.0,True,,True,CYP2C8; CYP3A4,https://en.wikipedia.org/w/index.php?title=Sitagliptin&oldid=1371791385
+sodium-oxybate-compound,Γ-Hydroxybutyric acid,30.0,60.0,min,,25.0,,,True,,https://en.wikipedia.org/w/index.php?title=%CE%93-Hydroxybutyric_acid&oldid=1375974367
+sofosbuvir-compound,Sofosbuvir,0.4,,h,61.0,92.0,,,,,https://en.wikipedia.org/w/index.php?title=Sofosbuvir&oldid=1346949376
+solifenacin-compound,Solifenacin,45.0,68.0,h,98.0,90.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Solifenacin&oldid=1363792577
+solriamfetol-compound,Solriamfetol,7.1,,h,13.3,95.0,True,0.95,,,https://en.wikipedia.org/w/index.php?title=Solriamfetol&oldid=1366998979
+sorafenib-compound,Sorafenib,25.0,48.0,h,99.5,38.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Sorafenib&oldid=1373726418
+sotalol-compound,Sotalol,12.0,,h,,90.0,True,,,,https://en.wikipedia.org/w/index.php?title=Sotalol&oldid=1356962329
+spironolactone-compound,Spironolactone,1.4,,h,88.0,60.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Spironolactone&oldid=1369649243
+stanozolol-compound,Stanozolol,9.0,,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Stanozolol&oldid=1375988362
+streptomycin-compound,Streptomycin,5.0,6.0,h,,84.0,True,,,,https://en.wikipedia.org/w/index.php?title=Streptomycin&oldid=1364906430
+strontium-ranelate-compound,Strontium ranelate,60.0,,h,25.0,25.0,True,,,,https://en.wikipedia.org/w/index.php?title=Strontium_ranelate&oldid=1374806953
+succinylcholine-compound,Suxamethonium chloride,,,,,,True,,,,https://en.wikipedia.org/w/index.php?title=Suxamethonium_chloride&oldid=1368852794
+sucralfate-compound,Sucralfate,,,,,3.0,,,True,,https://en.wikipedia.org/w/index.php?title=Sucralfate&oldid=1365200054
+sufentanil-compound,Sufentanil,162.0,,min,,53.0,,,,,https://en.wikipedia.org/w/index.php?title=Sufentanil&oldid=1369469187
+sulbactam-compound,Sulbactam,0.65,1.2,h,29.0,,,,,,https://en.wikipedia.org/w/index.php?title=Sulbactam&oldid=1366237601
+sulbutiamine-compound,Sulbutiamine,5.0,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Sulbutiamine&oldid=1376302376
+sulfamethoxazole-compound,Sulfamethoxazole,10.0,,h,70.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Sulfamethoxazole&oldid=1321678938
+sulfasalazine-compound,Sulfasalazine,5.0,10.0,h,,15.0,,,,,https://en.wikipedia.org/w/index.php?title=Sulfasalazine&oldid=1314714428
+sulfinpyrazone-compound,Sulfinpyrazone,,,,98.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Sulfinpyrazone&oldid=1292151760
+sulindac-compound,Sulindac,7.8,,h,,90.0,True,,,,https://en.wikipedia.org/w/index.php?title=Sulindac&oldid=1339456381
+sulpiride-compound,Sulpiride,6.0,8.0,h,40.0,25.0,,,,,https://en.wikipedia.org/w/index.php?title=Sulpiride&oldid=1374838272
+sultiame-compound,Sultiame,24.0,,h,29.0,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Sultiame&oldid=1371756606
+sumatriptan-compound,Sumatriptan,2.5,,h,14.0,15.0,True,,,,https://en.wikipedia.org/w/index.php?title=Sumatriptan&oldid=1368799875
+sunitinib-compound,Sunitinib,40.0,60.0,h,95.0,,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Sunitinib&oldid=1328958998
+superdrol-compound,Methasterone,8.0,12.0,h,,50.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Methasterone&oldid=1329021477
+suprofen-compound,Suprofen,,,,20.0,,,,,,https://en.wikipedia.org/w/index.php?title=Suprofen&oldid=1300139965
+suvorexant-compound,Suvorexant,12.2,,h,99.5,82.0,False,,True,CYP2C19,https://en.wikipedia.org/w/index.php?title=Suvorexant&oldid=1368799943
+tacedinaline-compound,Tacedinaline,9.6,14.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Tacedinaline&oldid=1369189922
+tacrolimus-compound,Tacrolimus,11.3,,h,98.8,24.0,,,True,CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Tacrolimus&oldid=1359242183
+tacrolimus-topical-compound,Tacrolimus,11.3,,h,98.8,24.0,,,True,CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Tacrolimus&oldid=1359242183
+tadalafil-compound,Tadalafil,17.5,,h,94.0,,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Tadalafil&oldid=1366433668
+tafluprost-compound,Tafluprost,,,,,,,,True,,https://en.wikipedia.org/w/index.php?title=Tafluprost&oldid=1330112631
+tak-653-compound,Osavampator,33.1,47.8,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Osavampator&oldid=1370307035
+tamoxifen-compound,Tamoxifen,5.0,7.0,d,99.0,100.0,False,,True,CYP2C9; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Tamoxifen&oldid=1365921295
+tamsulosin-compound,Tamsulosin,9.0,13.0,h,,100.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Tamsulosin&oldid=1358585814
+tapentadol-compound,Tapentadol,4.0,,h,20.0,32.0,,,True,CYP2C19; CYP2C9; CYP2D6,https://en.wikipedia.org/w/index.php?title=Tapentadol&oldid=1373295674
+tasimelteon-compound,Tasimelteon,0.9,1.7,h,89.0,,,,True,CYP1A2; CYP3A4,https://en.wikipedia.org/w/index.php?title=Tasimelteon&oldid=1329184391
+tazarotene-compound,Tazarotene,19.0,,h,99.0,,,,,,https://en.wikipedia.org/w/index.php?title=Tazarotene&oldid=1354947664
+tedizolid-compound,Tedizolid,12.0,,h,70.0,91.0,False,,,,https://en.wikipedia.org/w/index.php?title=Tedizolid&oldid=1337980067
+teduglutide-compound,Teduglutide,2.0,,h,,88.0,,,,,https://en.wikipedia.org/w/index.php?title=Teduglutide&oldid=1338719112
+tegaserod-compound,Tegaserod,5.0,,h,98.0,10.0,,,True,,https://en.wikipedia.org/w/index.php?title=Tegaserod&oldid=1335304481
+teicoplanin-compound,Teicoplanin,70.0,100.0,h,90.0,90.0,True,0.97,,,https://en.wikipedia.org/w/index.php?title=Teicoplanin&oldid=1369644635
+telavancin-compound,Telavancin,9.0,,h,90.0,,,,,,https://en.wikipedia.org/w/index.php?title=Telavancin&oldid=1329507747
+telbivudine-compound,Telbivudine,40.0,49.0,h,3.3,,True,,,,https://en.wikipedia.org/w/index.php?title=Telbivudine&oldid=1346950187
+telmisartan-compound,Telmisartan,24.0,,h,99.5,42.0,False,,True,,https://en.wikipedia.org/w/index.php?title=Telmisartan&oldid=1356471866
+temazepam-compound,Temazepam,8.0,20.0,h,,96.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Temazepam&oldid=1373802947
+tenatoprazole-compound,Tenatoprazole,4.8,7.7,h,,,,,True,CYP2C19,https://en.wikipedia.org/w/index.php?title=Tenatoprazole&oldid=1332224692
+tenecteplase-compound,Tenecteplase,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Tenecteplase&oldid=1371761697
+tenofovir-compound,Tenofovir disoproxil,,,,,25.0,,,,,https://en.wikipedia.org/w/index.php?title=Tenofovir_disoproxil&oldid=1356054623
+tenoxicam-compound,Tenoxicam,30.0,140.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Tenoxicam&oldid=1318139775
+terazosin-compound,Terazosin,12.0,,h,90.0,,,,,,https://en.wikipedia.org/w/index.php?title=Terazosin&oldid=1329438738
+terbinafine-compound,Terbinafine,,,,99.0,70.0,,,True,,https://en.wikipedia.org/w/index.php?title=Terbinafine&oldid=1337996088
+terbutaline-compound,Terbutaline,11.0,16.0,h,25.0,,True,0.6,True,,https://en.wikipedia.org/w/index.php?title=Terbutaline&oldid=1366688901
+terfenadine-compound,Terfenadine,3.5,,h,70.0,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Terfenadine&oldid=1359942064
+teriflunomide-compound,Teriflunomide,2.0,,wk,99.3,,False,,,,https://en.wikipedia.org/w/index.php?title=Teriflunomide&oldid=1329508095
+teriparatide-compound,Teriparatide,1.0,,h,,95.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Teriparatide&oldid=1363759353
+terlipressin-compound,Terlipressin,,,,30.0,,,,,,https://en.wikipedia.org/w/index.php?title=Terlipressin&oldid=1359655991
+tesamorelin-compound,Tesamorelin,26.0,38.0,min,,4.0,True,,,,https://en.wikipedia.org/w/index.php?title=Tesamorelin&oldid=1373828962
+tesofensine-compound,Tesofensine,220.0,,h,,90.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Tesofensine&oldid=1374173975
+testolactone-compound,Testolactone,,,,85.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Testolactone&oldid=1329012865
+testosterone-cypionate-compound,Testosterone cypionate,,,,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Testosterone_cypionate&oldid=1371345261
+testosterone-enanthate-compound,Testosterone enanthate,4.0,5.0,d,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Testosterone_enanthate&oldid=1375428688
+testosterone-propionate-compound,Testosterone propionate,0.8,,d,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Testosterone_propionate&oldid=1373737638
+testosterone-undecanoate-compound,Testosterone undecanoate,20.9,,d,,3.0,,,True,,https://en.wikipedia.org/w/index.php?title=Testosterone_undecanoate&oldid=1348065874
+tetrabenazine-compound,Tetrabenazine,10.0,,h,82.0,,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Tetrabenazine&oldid=1372155211
+tetracaine-compound,Tetracaine,,,,,,,,,,https://en.wikipedia.org/w/index.php?title=Tetracaine&oldid=1314133385
+tetracycline-compound,Tetracycline,8.0,11.0,h,,80.0,True,,,,https://en.wikipedia.org/w/index.php?title=Tetracycline&oldid=1372368010
+tetrazepam-compound,Tetrazepam,3.0,26.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Tetrazepam&oldid=1308334054
+thalidomide-compound,Thalidomide,5.0,7.5,h,55.0,90.0,,,True,CYP2C19,https://en.wikipedia.org/w/index.php?title=Thalidomide&oldid=1376197756
+theanine-compound,Theanine,1.2,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Theanine&oldid=1375168479
+theobromine-compound,Theobromine,6.0,8.0,h,,,,0.1,True,,https://en.wikipedia.org/w/index.php?title=Theobromine&oldid=1376212585
+theophylline-compound,Theophylline,5.0,8.0,h,40.0,100.0,,,True,CYP1A2; CYP2E1; CYP3A4,https://en.wikipedia.org/w/index.php?title=Theophylline&oldid=1367811625
+thiamylal-compound,Thiamylal,14.3,,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Thiamylal&oldid=1301699611
+thioridazine-compound,Thioridazine,21.0,24.0,h,,,False,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Thioridazine&oldid=1358955507
+thiothixene-compound,Tiotixene,10.0,20.0,h,,100.0,,,True,,https://en.wikipedia.org/w/index.php?title=Tiotixene&oldid=1338566826
+tiagabine-compound,Tiagabine,4.5,9.0,h,96.0,90.0,False,0.03,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Tiagabine&oldid=1368825659
+tianeptine-compound,Tianeptine,2.5,3.0,h,95.0,99.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Tianeptine&oldid=1367854425
+ticagrelor-compound,Ticagrelor,7.0,,h,99.7,36.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Ticagrelor&oldid=1370064813
+ticlopidine-compound,Ticlopidine,12.0,,h,98.0,80.0,,,True,,https://en.wikipedia.org/w/index.php?title=Ticlopidine&oldid=1353661243
+tigecycline-compound,Tigecycline,42.4,,h,71.0,,,,,,https://en.wikipedia.org/w/index.php?title=Tigecycline&oldid=1354792999
+timolol-compound,Timolol,2.5,5.0,h,,60.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Timolol&oldid=1356469146
+tinzaparin-compound,Tinzaparin sodium,200.0,,min,,90.0,,,True,,https://en.wikipedia.org/w/index.php?title=Tinzaparin_sodium&oldid=1353808137
+tipranavir-compound,Tipranavir,4.8,6.0,h,99.9,,False,,True,,https://en.wikipedia.org/w/index.php?title=Tipranavir&oldid=1357072460
+tiratricol-compound,Tiratricol,,,,,,False,,True,,https://en.wikipedia.org/w/index.php?title=Tiratricol&oldid=1329508838
+tirofiban-compound,Tirofiban,2.0,,h,65.0,,,,,,https://en.wikipedia.org/w/index.php?title=Tirofiban&oldid=1348511357
+tirzepatide-compound,Tirzepatide,5.0,,d,,80.0,,,True,,https://en.wikipedia.org/w/index.php?title=Tirzepatide&oldid=1373755314
+tobramycin-compound,Tobramycin,2.0,3.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Tobramycin&oldid=1329508925
+tocilizumab-compound,Tocilizumab,8.0,14.0,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Tocilizumab&oldid=1360662761
+tofacitinib-compound,Tofacitinib,3.0,,h,40.0,74.0,True,,True,CYP2C19; CYP3A4,https://en.wikipedia.org/w/index.php?title=Tofacitinib&oldid=1371080185
+tolazamide-compound,Tolazamide,7.0,,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Tolazamide&oldid=1332225999
+tolbutamide-compound,Tolbutamide,4.5,6.5,h,96.0,,True,,True,CYP2C19,https://en.wikipedia.org/w/index.php?title=Tolbutamide&oldid=1330113537
+tolcapone-compound,Tolcapone,2.0,3.0,h,99.9,65.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Tolcapone&oldid=1333688199
+tolmetin-compound,Tolmetin,1.0,2.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Tolmetin&oldid=1316039494
+tolterodine-compound,Tolterodine,1.9,3.7,h,96.3,77.0,,,,,https://en.wikipedia.org/w/index.php?title=Tolterodine&oldid=1374985017
+tolvaptan-compound,Tolvaptan,12.0,,h,99.0,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Tolvaptan&oldid=1331158991
+topiramate-compound,Topiramate,21.0,,h,13.0,80.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Topiramate&oldid=1356289493
+toremifene-compound,Toremifene,3.0,7.0,d,99.7,100.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Toremifene&oldid=1328755055
+torsemide-compound,Torasemide,3.5,,h,99.0,80.0,,,True,,https://en.wikipedia.org/w/index.php?title=Torasemide&oldid=1356287130
+tramadol-compound,Tramadol,1.4,,h,20.0,68.0,True,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Tramadol&oldid=1376793549
+trandolapril-compound,Trandolapril,6.0,,h,80.0,,False,,True,,https://en.wikipedia.org/w/index.php?title=Trandolapril&oldid=1329069976
+tranexamic-acid-compound,Tranexamic acid,3.1,,h,,34.0,,,,,https://en.wikipedia.org/w/index.php?title=Tranexamic_acid&oldid=1346731021
+tranylcypromine-compound,Tranylcypromine,2.5,,h,,50.0,,,True,,https://en.wikipedia.org/w/index.php?title=Tranylcypromine&oldid=1374868074
+travoprost-compound,Travoprost,1.5,,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Travoprost&oldid=1370544334
+trazodone-compound,Trazodone,4.0,15.0,h,89.0,63.0,,,True,CYP1A2; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Trazodone&oldid=1372334694
+trenbolone-compound,Trenbolone,6.0,8.0,h,,80.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Trenbolone&oldid=1357987435
+treprostinil-compound,Treprostinil,4.0,,h,,100.0,,0.04,True,,https://en.wikipedia.org/w/index.php?title=Treprostinil&oldid=1329070006
+tretinoin-compound,Tretinoin,0.5,2.0,h,95.0,,,,,,https://en.wikipedia.org/w/index.php?title=Tretinoin&oldid=1368186417
+triamcinolone-acetonide-compound,Triamcinolone acetonide,,,,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Triamcinolone_acetonide&oldid=1349587310
+triamcinolone-compound,Triamcinolone,200.0,300.0,min,68.0,90.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Triamcinolone&oldid=1356291455
+triamterene-compound,Triamterene,1.0,2.0,h,67.0,30.0,True,0.21,True,,https://en.wikipedia.org/w/index.php?title=Triamterene&oldid=1352633925
+triazolam-compound,Triazolam,1.5,5.5,h,,44.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Triazolam&oldid=1373297910
+trifluoperazine-compound,Trifluoperazine,10.0,20.0,h,,,,,True,,https://en.wikipedia.org/w/index.php?title=Trifluoperazine&oldid=1325077324
+trimebutine-compound,Trimebutine,2.77,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Trimebutine&oldid=1374092334
+trimetazidine-compound,Trimetazidine,7.0,12.0,h,16.0,,,,,,https://en.wikipedia.org/w/index.php?title=Trimetazidine&oldid=1370866766
+trimethoprim-compound,Trimethoprim,8.0,12.0,h,44.0,90.0,,,True,,https://en.wikipedia.org/w/index.php?title=Trimethoprim&oldid=1376490173
+trimipramine-compound,Trimipramine,23.0,24.0,h,94.9,41.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Trimipramine&oldid=1365883663
+tripelennamine-compound,Tripelennamine,4.0,6.0,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Tripelennamine&oldid=1359017200
+triprolidine-compound,Triprolidine,4.0,6.0,h,90.0,4.0,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Triprolidine&oldid=1354892877
+triptorelin-compound,Triptorelin,6.6,,h,,,True,,,,https://en.wikipedia.org/w/index.php?title=Triptorelin&oldid=1349528803
+troglitazone-compound,Troglitazone,16.0,34.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Troglitazone&oldid=1375250442
+tropicamide-compound,Tropicamide,,,,45.0,,,,,,https://en.wikipedia.org/w/index.php?title=Tropicamide&oldid=1363790199
+tropisetron-compound,Tropisetron,6.0,8.0,h,71.0,60.0,,,True,CYP1A2; CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Tropisetron&oldid=1374431947
+trospium-compound,Trospium chloride,20.0,,h,50.0,,,,,,https://en.wikipedia.org/w/index.php?title=Trospium_chloride&oldid=1369672636
+turinabol-compound,Chlorodehydromethyltestosterone,16.0,,h,,,True,,True,,https://en.wikipedia.org/w/index.php?title=Chlorodehydromethyltestosterone&oldid=1371750478
+ubrogepant-compound,Ubrogepant,5.0,7.0,h,87.0,,False,,,,https://en.wikipedia.org/w/index.php?title=Ubrogepant&oldid=1345910393
+udenafil-compound,Udenafil,7.3,12.1,h,93.9,,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Udenafil&oldid=1366312134
+upadacitinib-compound,Upadacitinib,,,,52.0,,,0.38,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Upadacitinib&oldid=1370557393
+ustekinumab-compound,Ustekinumab,15.0,32.0,d,,,,,,,https://en.wikipedia.org/w/index.php?title=Ustekinumab&oldid=1373343438
+valacyclovir-compound,Valaciclovir,30.0,,min,13.0,55.0,,,True,,https://en.wikipedia.org/w/index.php?title=Valaciclovir&oldid=1356290223
+valbenazine-compound,Valbenazine,15.0,22.0,h,99.0,,,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Valbenazine&oldid=1357688439
+valdecoxib-compound,Valdecoxib,8.0,11.0,h,98.0,83.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Valdecoxib&oldid=1354232170
+valganciclovir-compound,Valganciclovir,4.0,,h,1.0,60.0,True,,,,https://en.wikipedia.org/w/index.php?title=Valganciclovir&oldid=1373772191
+valproate-compound,Valproate,9.0,16.0,h,80.0,90.0,,,True,,https://en.wikipedia.org/w/index.php?title=Valproate&oldid=1373159311
+valsartan-compound,Valsartan,6.0,,h,95.0,25.0,False,,,,https://en.wikipedia.org/w/index.php?title=Valsartan&oldid=1376811471
+vancomycin-compound,Vancomycin,4.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Vancomycin&oldid=1372674281
+vapreotide-compound,Vapreotide,30.0,,min,,,,,,,https://en.wikipedia.org/w/index.php?title=Vapreotide&oldid=1365484323
+vardenafil-compound,Vardenafil,4.0,5.0,h,95.0,15.0,False,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Vardenafil&oldid=1365731239
+vasopressin-drug-compound,Vasopressin,10.0,20.0,min,1.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Vasopressin&oldid=1368665481
+vecuronium-compound,Vecuronium bromide,51.0,80.0,min,,100.0,False,0.3,True,,https://en.wikipedia.org/w/index.php?title=Vecuronium_bromide&oldid=1338335222
+velpatasvir-compound,Velpatasvir,15.0,,h,99.5,,False,,True,CYP2B6,https://en.wikipedia.org/w/index.php?title=Velpatasvir&oldid=1269008786
+venetoclax-compound,Venetoclax,26.0,,h,99.9,,False,0.208,True,CYP3A4; CYP3A5,https://en.wikipedia.org/w/index.php?title=Venetoclax&oldid=1349607450
+venlafaxine-compound,Venlafaxine,2.0,,h,2.0,15.0,,0.05,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Venlafaxine&oldid=1371433947
+verapamil-compound,Verapamil,2.8,7.4,h,,35.1,True,,True,,https://en.wikipedia.org/w/index.php?title=Verapamil&oldid=1370506845
+vernakalant-compound,Vernakalant,3.0,5.5,h,,,,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Vernakalant&oldid=1365682995
+vigabatrin-compound,Vigabatrin,5.0,8.0,h,0.0,80.0,True,,,,https://en.wikipedia.org/w/index.php?title=Vigabatrin&oldid=1374816235
+vilazodone-compound,Vilazodone,25.0,,h,,72.0,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Vilazodone&oldid=1356260930
+vildagliptin-compound,Vildagliptin,2.0,3.0,h,9.3,85.0,True,,True,,https://en.wikipedia.org/w/index.php?title=Vildagliptin&oldid=1367270801
+viloxazine-compound,Viloxazine,2.0,5.0,h,76.0,,True,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Viloxazine&oldid=1374847014
+vinpocetine-compound,Vinpocetine,0.48,,h,,8.9,True,,True,,https://en.wikipedia.org/w/index.php?title=Vinpocetine&oldid=1367372936
+vitamin-c-compound,Vitamin C,,,,,,True,,,,https://en.wikipedia.org/w/index.php?title=Vitamin_C&oldid=1375053900
+vonoprazan-compound,Vonoprazan,7.7,,h,80.0,,True,,True,,https://en.wikipedia.org/w/index.php?title=Vonoprazan&oldid=1337697053
+vorapaxar-compound,Vorapaxar,5.0,13.0,d,99.0,100.0,False,,True,CYP2J2; CYP3A4,https://en.wikipedia.org/w/index.php?title=Vorapaxar&oldid=1328756248
+voriconazole-compound,Voriconazole,,,,58.0,96.0,True,,True,CYP2C19; CYP2C9; CYP3A4,https://en.wikipedia.org/w/index.php?title=Voriconazole&oldid=1370056373
+vorinostat-compound,Vorinostat,2.0,,h,71.0,1.8,True,,True,,https://en.wikipedia.org/w/index.php?title=Vorinostat&oldid=1370306811
+vortioxetine-compound,Vortioxetine,66.0,,h,98.0,75.0,,,True,CYP2D6,https://en.wikipedia.org/w/index.php?title=Vortioxetine&oldid=1365717923
+vosilasarm-compound,Vosilasarm,45.0,60.0,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Vosilasarm&oldid=1363831447
+warfarin-compound,Warfarin,7.0,,d,99.0,79.0,True,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Warfarin&oldid=1368670593
+xipamide-compound,Xipamide,5.8,8.2,h,98.0,95.0,,,True,,https://en.wikipedia.org/w/index.php?title=Xipamide&oldid=1359319984
+yohimbine-compound,Yohimbine,0.25,2.5,h,,7.0,True,,,,https://en.wikipedia.org/w/index.php?title=Yohimbine&oldid=1373876958
+zafirlukast-compound,Zafirlukast,10.0,,h,99.0,,False,,True,CYP2C9,https://en.wikipedia.org/w/index.php?title=Zafirlukast&oldid=1345260498
+zaleplon-compound,Zaleplon,1.0,,h,,30.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Zaleplon&oldid=1347114340
+zanamivir-compound,Zanamivir,2.5,5.1,h,10.0,2.0,True,,,,https://en.wikipedia.org/w/index.php?title=Zanamivir&oldid=1363171383
+zidovudine-compound,Zidovudine,0.5,3.0,h,30.0,75.0,,,True,,https://en.wikipedia.org/w/index.php?title=Zidovudine&oldid=1366106723
+zileuton-compound,Zileuton,2.5,,h,93.0,,True,,True,CYP1A2; CYP2C9; CYP3A4,https://en.wikipedia.org/w/index.php?title=Zileuton&oldid=1336258545
+zilpaterol-compound,Zilpaterol,11.9,13.2,h,,,False,,,,https://en.wikipedia.org/w/index.php?title=Zilpaterol&oldid=1346820811
+zimelidine-compound,Zimelidine,2.0,,h,,,,,,,https://en.wikipedia.org/w/index.php?title=Zimelidine&oldid=1373242152
+ziprasidone-compound,Ziprasidone,7.0,10.0,h,,60.0,,,True,,https://en.wikipedia.org/w/index.php?title=Ziprasidone&oldid=1368778199
+zoledronic-acid-compound,Zoledronic acid,146.0,,h,22.0,,True,,,,https://en.wikipedia.org/w/index.php?title=Zoledronic_acid&oldid=1372632814
+zolmitriptan-compound,Zolmitriptan,3.0,,h,25.0,40.0,True,,True,CYP1A2,https://en.wikipedia.org/w/index.php?title=Zolmitriptan&oldid=1362428117
+zolpidem-compound,Zolpidem,2.0,3.0,h,92.0,70.0,True,,True,CYP1A2; CYP2C9; CYP3A4,https://en.wikipedia.org/w/index.php?title=Zolpidem&oldid=1369645518
+zonisamide-compound,Zonisamide,63.0,,h,40.0,100.0,True,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Zonisamide&oldid=1368051743
+zopiclone-compound,Zopiclone,5.0,,h,52.0,75.0,True,,True,CYP2E1; CYP3A4,https://en.wikipedia.org/w/index.php?title=Zopiclone&oldid=1369948564
+zuclopenthixol-compound,Zuclopenthixol,20.0,,h,98.0,49.0,False,,True,CYP2D6; CYP3A4,https://en.wikipedia.org/w/index.php?title=Zuclopenthixol&oldid=1358444199
+zuranolone-compound,Zuranolone,16.0,23.0,h,99.5,,,,True,CYP3A4,https://en.wikipedia.org/w/index.php?title=Zuranolone&oldid=1364099628

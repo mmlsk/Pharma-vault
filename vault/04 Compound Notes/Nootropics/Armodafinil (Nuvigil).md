@@ -20,29 +20,36 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 10.0
+  value-max: 17.0
+  unit: h
+  notes: 10–17hours
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: Unknown (but for modafinil is moderate, primarily to albumin)
+bioavailability:
+  value: 40.0
+  value-max: 65.0
+  notes: Unknown (due to poor aqueous solubility; but modafinil is 40–65% based on urinary excretion)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Unknown (but modafinil is excreted 80% in urine and 1.0% in feces)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver, including CYP3A4 and other enzymes (hydrolytic amidation, sulfoxidation, aromatic ring hydroxylation, and glucuronide conjugation)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
@@ -50,13 +57,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/nootropic
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Armodafinil
+  url: https://en.wikipedia.org/w/index.php?title=Armodafinil&oldid=1370773396
+  revision: 1370773396
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Armodafinil (Nuvigil)
@@ -83,7 +98,18 @@ The longer-lived R-enantiomer of modafinil, with the same dopamine transporter m
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Armodafinil*](https://en.wikipedia.org/w/index.php?title=Armodafinil&oldid=1370773396) (revision 1370773396, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 10–17 h | 10–17hours |
+| Protein binding | - | Unknown (but for modafinil is moderate, primarily to albumin) |
+| Bioavailability | 40–65 % | Unknown (due to poor aqueous solubility; but modafinil is 40–65% based on urinary excretion) |
+| Metabolism | hepatic | Liver, including CYP3A4 and other enzymes (hydrolytic amidation, sulfoxidation, aromatic ring hydroxylation, and glucuronide conjugation) |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | • Armodafinil acid; • Modafinil sulfone |
+| Excretion | - | Unknown (but modafinil is excreted 80% in urine and 1.0% in feces) |
 
 ## Safety routing
 
@@ -91,3 +117,4 @@ Group-level triage (not compound-specific): `cns-activity`, `evidence-limited`
 
 - [[Stacking and Interaction Risks]]
 - [[Experimental and Evidence-Limited Compounds]]
+- [[CYP450 Metabolism]]

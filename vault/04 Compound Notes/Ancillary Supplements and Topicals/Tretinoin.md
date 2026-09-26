@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 0.5
+  value-max: 2.0
+  unit: h
+  notes: 0.5–2 hours
 protein-binding:
-  value: null
+  value: 95.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: '> 95%'
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Tretinoin
+  url: https://en.wikipedia.org/w/index.php?title=Tretinoin&oldid=1368186417
+  revision: 1368186417
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Tretinoin
@@ -79,7 +89,13 @@ Topical retinoic acid prescribed for photoaging and acne, the active metabolite 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Tretinoin*](https://en.wikipedia.org/w/index.php?title=Tretinoin&oldid=1368186417) (revision 1368186417, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 0.5–2 h | 0.5–2 hours |
+| Protein binding | 95 % | > 95% |
 
 ## Safety routing
 

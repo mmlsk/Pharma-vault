@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: CHEMBL4297526
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 45.0
+  value-max: 70.0
+  unit: min
+  notes: 45–70 minutes
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Remimazolam
+  url: https://en.wikipedia.org/w/index.php?title=Remimazolam&oldid=1362777558
+  revision: 1362777558
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Remimazolam
@@ -84,7 +93,12 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Remimazolam*](https://en.wikipedia.org/w/index.php?title=Remimazolam&oldid=1362777558) (revision 1362777558, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 45–70 min | 45–70 minutes |
 
 ## Safety routing
 

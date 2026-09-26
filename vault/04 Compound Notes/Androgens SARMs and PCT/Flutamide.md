@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: 6.0
+  unit: h
+  notes: 'Flutamide: 5–6 hours; Hydroxyflutamide: 8–10 hours'
 protein-binding:
-  value: null
+  value: 94.0
+  value-max: 96.0
   unit: percent
-  notes: null
+  notes: 'Flutamide: 94–96%; Hydroxyflutamide: 92–94%'
+bioavailability:
+  value: 90.0
+  value-max: null
+  notes: Complete (>90%)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (mainly); Feces (4.2%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP1A2)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP1A2
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP1A2 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Flutamide
+  url: https://en.wikipedia.org/w/index.php?title=Flutamide&oldid=1358397623
+  revision: 1358397623
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Flutamide
@@ -79,7 +94,18 @@ Early nonsteroidal antiandrogen that blocks androgen receptor function; largely 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Flutamide*](https://en.wikipedia.org/w/index.php?title=Flutamide&oldid=1358397623) (revision 1358397623, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5–6 h | Flutamide: 5–6 hours; Hydroxyflutamide: 8–10 hours |
+| Protein binding | 94–96 % | Flutamide: 94–96%; Hydroxyflutamide: 92–94% |
+| Bioavailability | 90 % | Complete (>90%) |
+| Metabolism | hepatic | Liver (CYP1A2) |
+| CYP (metabolised by) | CYP1A2 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | Hydroxyflutamide |
+| Excretion | - | Urine (mainly); Feces (4.2%) |
 
 ## Safety routing
 
@@ -87,4 +113,5 @@ Group-level triage (not compound-specific): `endocrine-feedback-disruption`
 
 - [[Stacking and Interaction Risks]]
 - [[Hormonal Axis Suppression]]
+- [[CYP450 Metabolism]]
 - [[HPG and GH-IGF-1 Axes]]

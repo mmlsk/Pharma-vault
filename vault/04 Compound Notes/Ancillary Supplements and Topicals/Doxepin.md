@@ -18,42 +18,58 @@ review-status: stub
 chembl-id: CHEMBL1628227
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 8.0
+  value-max: 24.0
+  unit: h
+  notes: 'Doxepin: 8–24 hours (mean 17 hours); Nordoxepin: 28–31 hours'
 protein-binding:
-  value: null
+  value: 76.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 76%
+bioavailability:
+  value: 13.0
+  value-max: 45.0
+  notes: 13–45% (mean 29%)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Kidney: ~50%; Feces: minor'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP2D6, CYP2C19)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2C19
+  - CYP2D6
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2C19, CYP2D6 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Doxepin
+  url: https://en.wikipedia.org/w/index.php?title=Doxepin&oldid=1357572789
+  revision: 1357572789
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Doxepin
@@ -84,10 +100,22 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Doxepin*](https://en.wikipedia.org/w/index.php?title=Doxepin&oldid=1357572789) (revision 1357572789, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 8–24 h | Doxepin: 8–24 hours (mean 17 hours); Nordoxepin: 28–31 hours |
+| Protein binding | 76 % | 76% |
+| Bioavailability | 13–45 % | 13–45% (mean 29%) |
+| Metabolism | hepatic | Liver (CYP2D6, CYP2C19) |
+| CYP (metabolised by) | CYP2C19, CYP2D6 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | Nordoxepin, glucuronide conjugates |
+| Excretion | mainly urinary | Kidney: ~50%; Feces: minor |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

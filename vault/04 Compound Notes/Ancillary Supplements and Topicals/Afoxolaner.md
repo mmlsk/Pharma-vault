@@ -18,18 +18,23 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: 2
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 14.0
+  value-max: null
+  unit: d
+  notes: 14 days
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 74.0
+  value-max: null
+  notes: 74% (Tmax = 2–4 hours)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Bile duct (major route)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Afoxolaner
+  url: https://en.wikipedia.org/w/index.php?title=Afoxolaner&oldid=1365001897
+  revision: 1365001897
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Afoxolaner
@@ -83,7 +96,14 @@ ectoparasiticide for systemic use _(ChEMBL curated mechanism, as quoted by the s
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Afoxolaner*](https://en.wikipedia.org/w/index.php?title=Afoxolaner&oldid=1365001897) (revision 1365001897, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 14 d | 14 days |
+| Bioavailability | 74 % | 74% (Tmax = 2–4 hours) |
+| Excretion | mainly non-renal | Bile duct (major route) |
 
 ## Safety routing
 

@@ -22,18 +22,23 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 74.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 74%–87%
+bioavailability:
+  value: null
+  value-max: null
+  notes: low systemic absorption
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic CYP3A
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/derm
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Pimecrolimus
+  url: https://en.wikipedia.org/w/index.php?title=Pimecrolimus&oldid=1371791182
+  revision: 1371791182
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Pimecrolimus
@@ -79,7 +92,14 @@ Topical calcineurin inhibitor for atopic dermatitis, used on face and flexures w
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Pimecrolimus*](https://en.wikipedia.org/w/index.php?title=Pimecrolimus&oldid=1371791182) (revision 1371791182, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 74 % | 74%–87% |
+| Bioavailability | - | low systemic absorption |
+| Metabolism | hepatic | Hepatic CYP3A |
 
 ## Safety routing
 

@@ -22,9 +22,14 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: '>99% to plasma'
+bioavailability:
+  value: null
+  value-max: null
+  notes: Negligible
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Sertaconazole
+  url: https://en.wikipedia.org/w/index.php?title=Sertaconazole&oldid=1370371824
+  revision: 1370371824
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Sertaconazole
@@ -79,7 +92,13 @@ Topical imidazole for tinea with an additional direct membrane action beyond erg
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Sertaconazole*](https://en.wikipedia.org/w/index.php?title=Sertaconazole&oldid=1370371824) (revision 1370371824, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 99 % | >99% to plasma |
+| Bioavailability | - | Negligible |
 
 ## Safety routing
 

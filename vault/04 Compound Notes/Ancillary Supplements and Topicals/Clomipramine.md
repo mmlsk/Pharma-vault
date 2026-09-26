@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: CHEMBL415
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 19.0
+  value-max: 37.0
+  unit: h
+  notes: 'CMI: 19–37 hours; DCMI: 54–77 hours'
 protein-binding:
-  value: null
+  value: 96.0
+  value-max: 98.0
   unit: percent
-  notes: null
+  notes: 96–98%
+bioavailability:
+  value: 50.0
+  value-max: null
+  notes: ~50%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (51–60%); Feces (24–32%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP2D6)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2D6
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2D6 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Clomipramine
+  url: https://en.wikipedia.org/w/index.php?title=Clomipramine&oldid=1374798625
+  revision: 1374798625
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Clomipramine
@@ -84,10 +99,22 @@ Serotonin transporter inhibitor _(ChEMBL curated mechanism, as quoted by the sou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Clomipramine*](https://en.wikipedia.org/w/index.php?title=Clomipramine&oldid=1374798625) (revision 1374798625, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 19–37 h | CMI: 19–37 hours; DCMI: 54–77 hours |
+| Protein binding | 96–98 % | 96–98% |
+| Bioavailability | 50 % | ~50% |
+| Metabolism | hepatic | Liver (CYP2D6) |
+| CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | Desmethylclomipramine |
+| Excretion | - | Kidney (51–60%); Feces (24–32%) |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

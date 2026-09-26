@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: 3.0
+  unit: h
+  notes: 2–3 hours
 protein-binding:
-  value: null
+  value: 14.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 14%
+bioavailability:
+  value: 45.0
+  value-max: null
+  notes: 45%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 82% urine; 12% feces
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: By monoamine oxidase
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +54,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/neuropsych
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Rizatriptan
+  url: https://en.wikipedia.org/w/index.php?title=Rizatriptan&oldid=1356473769
+  revision: 1356473769
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Rizatriptan
@@ -80,7 +94,16 @@ Fast-onset oral triptan available as an orally disintegrating wafer, with the sh
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Rizatriptan*](https://en.wikipedia.org/w/index.php?title=Rizatriptan&oldid=1356473769) (revision 1356473769, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2–3 h | 2–3 hours |
+| Protein binding | 14 % | 14% |
+| Bioavailability | 45 % | 45% |
+| Metabolism | - | By monoamine oxidase |
+| Excretion | mainly urinary | 82% urine; 12% feces |
 
 ## Safety routing
 

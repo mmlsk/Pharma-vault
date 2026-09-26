@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: CHEMBL865
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 8.0
+  value-max: 11.0
+  unit: h
+  notes: 8 to 11 hours
 protein-binding:
-  value: null
+  value: 98.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 98%
+bioavailability:
+  value: 83.0
+  value-max: null
+  notes: 83%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic (CYP3A4 and 2C9 involved)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Valdecoxib
+  url: https://en.wikipedia.org/w/index.php?title=Valdecoxib&oldid=1354232170
+  revision: 1354232170
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Valdecoxib
@@ -84,10 +99,21 @@ Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Valdecoxib*](https://en.wikipedia.org/w/index.php?title=Valdecoxib&oldid=1354232170) (revision 1354232170, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 8–11 h | 8 to 11 hours |
+| Protein binding | 98 % | 98% |
+| Bioavailability | 83 % | 83% |
+| Metabolism | hepatic | Hepatic (CYP3A4 and 2C9 involved) |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary | Renal |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

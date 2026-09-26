@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.0
+  value-max: null
+  unit: h
+  notes: 'Oral (Revia):; • Naltrexone: 4 hours; • 6β-Naltrexol: 13 hours; Oral (Contrave):; • Naltrexone: 5 hours; IM (Vivitrol):; • Naltrexone: 5–10 days; • 6β-Naltrexol: 5–10 days'
 protein-binding:
-  value: null
+  value: 20.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 20%
+bioavailability:
+  value: 5.0
+  value-max: 60.0
+  notes: 5–60%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (non-CYP450)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +54,21 @@ risk-domains: []
 group-risk-triage:
 - glucose-metabolism
 - gastrointestinal
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/glp1
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Naltrexone
+  url: https://en.wikipedia.org/w/index.php?title=Naltrexone&oldid=1370715111
+  revision: 1370715111
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Naltrexone
@@ -80,7 +94,17 @@ Opioid-receptor antagonist used for alcohol and opioid-use disorders and paired 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Naltrexone*](https://en.wikipedia.org/w/index.php?title=Naltrexone&oldid=1370715111) (revision 1370715111, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4 h | Oral (Revia):; • Naltrexone: 4 hours; • 6β-Naltrexol: 13 hours; Oral (Contrave):; • Naltrexone: 5 hours; IM (Vivitrol):; • Naltrexone: 5–10 days; • 6β-Naltrexol: 5–10 days |
+| Protein binding | 20 % | 20% |
+| Bioavailability | 5–60 % | 5–60% |
+| Metabolism | hepatic | Liver (non-CYP450) |
+| Metabolites | - | 6β-Naltrexol, others |
+| Excretion | mainly urinary | Urine |
 
 ## Safety routing
 

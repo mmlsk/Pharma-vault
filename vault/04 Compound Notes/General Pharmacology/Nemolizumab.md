@@ -33,7 +33,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Proteolytic enzymes
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +47,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/immunology
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Nemolizumab
+  url: https://en.wikipedia.org/w/index.php?title=Nemolizumab&oldid=1337495889
+  revision: 1337495889
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Nemolizumab
@@ -79,7 +87,12 @@ Anti-IL-31-receptor antibody targeting itch specifically, used in prurigo nodula
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Nemolizumab*](https://en.wikipedia.org/w/index.php?title=Nemolizumab&oldid=1337495889) (revision 1337495889, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Metabolism | - | Proteolytic enzymes |
 
 ## Safety routing
 

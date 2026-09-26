@@ -36,8 +36,8 @@ CHOLINERGIC = re.compile(r"cholin|acetylcholinesterase|muscarinic|nicotinic", re
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
 
-def frontmatter(r: dict) -> dict:
-    return {
+def frontmatter(r: dict, pk: dict | None = None) -> dict:
+    fm = {
         "type": "compound",
         "schema-version": 2,
         "compound-id": r["compound_id"],
@@ -72,16 +72,97 @@ def frontmatter(r: dict) -> dict:
         "last-reviewed": None,
         "tags": r["tags"] + ["stub"],
     }
+    if pk:
+        apply_pk(fm, pk)
+    return fm
 
 
-def body(r: dict) -> str:
+def apply_pk(fm: dict, pk: dict) -> None:
+    """Merge auto-extracted PK (data/processed/pk.json) into a stub's frontmatter."""
+    hl = pk.get("half-life")
+    if hl:
+        fm["half-life"] = {"value": hl["value"], "value-max": hl.get("value-max"), "unit": hl["unit"], "notes": hl["notes"]}
+    pb = pk.get("protein-binding")
+    if pb:
+        fm["protein-binding"] = {"value": pb["value"], "value-max": pb.get("value-max"),
+                                 "unit": "percent" if pb["value"] is not None else None, "notes": pb["notes"]}
+    ba = pk.get("bioavailability")
+    rc, hc, cy = pk.get("renal-clearance"), pk.get("hepatic-clearance"), pk.get("cyp-interactions")
+    if rc:
+        fm["renal-clearance"] = rc
+    if hc:
+        fm["hepatic-clearance"] = hc
+    if cy:
+        fm["cyp-interactions"] = cy
+    # keep key order readable: bioavailability right after protein-binding
+    if ba:
+        items = list(fm.items())
+        pos = [k for k, _ in items].index("protein-binding") + 1
+        items.insert(pos, ("bioavailability", ba))
+        fm.clear()
+        fm.update(items)
+    fm["source-status"] = "auto-extracted"
+    fm["pk-source"] = {"type": "wikipedia-infobox", "title": pk["source-title"], "url": pk["source-url"],
+                       "revision": pk["revid"], "retrieved": pk["retrieved"], "chembl-confirmed": pk["chembl-confirmed"]}
+    fm["tags"] = fm["tags"] + ["pk-auto"]
+
+
+UNIT_PL = {"min": "min", "h": "h", "d": "d", "wk": "tyg."}
+
+
+def _rng(v, vmax, unit=""):
+    if v is None:
+        return None
+    fmt = lambda x: f"{x:g}"
+    return (f"{fmt(v)}–{fmt(vmax)}" if vmax else fmt(v)) + (f" {unit}" if unit else "")
+
+
+def pk_section(pk: dict | None) -> list[str]:
+    if not pk:
+        return ["## Pharmacokinetics", "",
+                "_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._", ""]
+    rows = []
+    hl, pb, ba = pk.get("half-life") or {}, pk.get("protein-binding") or {}, pk.get("bioavailability") or {}
+    rc, hc, cy = pk.get("renal-clearance") or {}, pk.get("hepatic-clearance") or {}, pk.get("cyp-interactions") or {}
+    esc = lambda t: (t or "").replace("|", "\\|")
+    if hl:
+        rows.append(("Elimination t½", _rng(hl.get("value"), hl.get("value-max"), hl.get("unit") or "") or "-", hl.get("notes")))
+    if pb:
+        rows.append(("Protein binding", _rng(pb.get("value"), pb.get("value-max"), "%") or "-", pb.get("notes")))
+    if ba:
+        rows.append(("Bioavailability", _rng(ba.get("value"), ba.get("value-max"), "%") or "-", ba.get("notes")))
+    if hc:
+        rows.append(("Metabolism", "hepatic" if hc.get("primary-route") else "-", hc.get("notes")))
+    if cy.get("substrates"):
+        rows.append(("CYP (metabolised by)", ", ".join(cy["substrates"]), "roles as inhibitor/inducer not assessed"))
+    if pk.get("metabolites-text"):
+        rows.append(("Metabolites", "-", pk["metabolites-text"]))
+    if rc:
+        route = {True: "mainly urinary", False: "mainly non-renal", None: "-"}[rc.get("primary-route")]
+        fe = rc.get("fraction-excreted-unchanged")
+        rows.append(("Excretion", route + (f" · fe {fe:g}" if fe is not None else ""), rc.get("notes")))
+    lines = ["## Pharmacokinetics", "",
+             "> [!info] Auto-extracted - verify before use",
+             f"> Parsed from the [Wikipedia infobox of *{pk['source-title']}*]({pk['source-url']}) "
+             f"(revision {pk['revid']}, retrieved {pk['retrieved']})"
+             + ("; ChEMBL id matches the catalogue." if pk.get("chembl-confirmed") else "; identity matched by name.")
+             + " Confirm against the SmPC / FDA label before relying on it.", "",
+             "| Parameter | Parsed | Source text |", "|---|---|---|"]
+    lines += [f"| {a} | {esc(b)} | {esc(c)} |" for a, b, c in rows]
+    return lines + [""]
+
+
+def body(r: dict, pk: dict | None = None) -> str:
     hubs = ["Stacking and Interaction Risks"]
     for t in r["group_risk_triage"]:
         if t in TRIAGE_TO_HUB and TRIAGE_TO_HUB[t] not in hubs:
             hubs.append(TRIAGE_TO_HUB[t])
     if CHOLINERGIC.search(r["description"] + " " + r["mechanism"]):
         hubs.append("Cholinergic Load")
-    pathways = sorted({TRIAGE_TO_PATHWAY[t] for t in r["group_risk_triage"] if t in TRIAGE_TO_PATHWAY})
+    pathways = {TRIAGE_TO_PATHWAY[t] for t in r["group_risk_triage"] if t in TRIAGE_TO_PATHWAY}
+    if pk and (pk.get("cyp-interactions") or {}).get("substrates"):
+        pathways.add("CYP450 Metabolism")
+    pathways = sorted(pathways)
 
     lines = [
         f"# {r['name']}", "",
@@ -105,8 +186,7 @@ def body(r: dict) -> str:
         "## Evidence boundaries", "",
         "- Evidence tier: _not assigned_ - see [[Evidence Tiers]].",
         "- A catalogue or vendor listing is not evidence of efficacy, purity, legality or safety.", "",
-        "## Pharmacokinetics", "",
-        "_To be curated - see [[Pharmacokinetics Summary]] for field conventions._", "",
+        *pk_section(pk),
         "## Safety routing", "",
         "Group-level triage (not compound-specific): " + (", ".join(f"`{t}`" for t in r["group_risk_triage"]) or "-"),
         "",
@@ -134,6 +214,8 @@ def main() -> None:
     args = ap.parse_args()
 
     rows = json.loads((PROCESSED / "substances.json").read_text(encoding="utf-8"))
+    pk_path = PROCESSED / "pk.json"
+    pks = {p["compound_id"]: p for p in json.loads(pk_path.read_text(encoding="utf-8"))} if pk_path.exists() else {}
     existing = existing_notes()
     used, written, kept = set(), 0, 0
     for r in rows:
@@ -151,8 +233,9 @@ def main() -> None:
         if prev and prev[0] != target:
             prev[0].unlink()
         folder.mkdir(parents=True, exist_ok=True)
-        fm = yaml.safe_dump(frontmatter(r), sort_keys=False, allow_unicode=True, width=1000)
-        target.write_text(f"---\n{fm}---\n\n{body(r)}", encoding="utf-8")
+        pk = pks.get(r["compound_id"])
+        fm = yaml.safe_dump(frontmatter(r, pk), sort_keys=False, allow_unicode=True, width=1000)
+        target.write_text(f"---\n{fm}---\n\n{body(r, pk)}", encoding="utf-8")
         written += 1
 
     pruned = 0

@@ -18,29 +18,37 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 105.0
+  value-max: null
+  unit: h
+  notes: 105 hours, 295 hours (moderate hepatic impairment)
 protein-binding:
-  value: null
+  value: 95.0
+  value-max: 96.0
   unit: percent
-  notes: null
+  notes: 95–96%
+bioavailability:
+  value: null
+  value-max: null
+  notes: 116%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 70% faeces, 30% urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver, mostly via CYP3A4 and/or CYP3A5
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
+  - CYP3A5
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4, CYP3A5 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
@@ -48,13 +56,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/neuropsych
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Perampanel
+  url: https://en.wikipedia.org/w/index.php?title=Perampanel&oldid=1373296477
+  revision: 1373296477
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Perampanel
@@ -80,7 +96,17 @@ Selective non-competitive AMPA receptor antagonist, the first of its class, carr
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Perampanel*](https://en.wikipedia.org/w/index.php?title=Perampanel&oldid=1373296477) (revision 1373296477, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 105 h | 105 hours, 295 hours (moderate hepatic impairment) |
+| Protein binding | 95–96 % | 95–96% |
+| Bioavailability | - | 116% |
+| Metabolism | hepatic | Liver, mostly via CYP3A4 and/or CYP3A5 |
+| CYP (metabolised by) | CYP3A4, CYP3A5 | roles as inhibitor/inducer not assessed |
+| Excretion | - | 70% faeces, 30% urine |
 
 ## Safety routing
 
@@ -88,3 +114,4 @@ Group-level triage (not compound-specific): `cns-activity`, `serotonergic-or-dop
 
 - [[Stacking and Interaction Risks]]
 - [[Serotonin Toxicity]]
+- [[CYP450 Metabolism]]

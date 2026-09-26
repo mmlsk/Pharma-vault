@@ -83,7 +83,7 @@ Shorter-acting phenylpropionate ester of nandrolone; the same 19-nor hormone as 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

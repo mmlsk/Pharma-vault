@@ -33,7 +33,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: various proteases
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +47,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ravulizumab
+  url: https://en.wikipedia.org/w/index.php?title=Ravulizumab&oldid=1367004137
+  revision: 1367004137
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ravulizumab
@@ -79,7 +87,12 @@ Inhibits a step of the complement cascade; blocking terminal complement raises e
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ravulizumab*](https://en.wikipedia.org/w/index.php?title=Ravulizumab&oldid=1367004137) (revision 1367004137, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Metabolism | - | various proteases |
 
 ## Safety routing
 

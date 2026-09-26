@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 13.0
+  value-max: 30.0
+  unit: h
+  notes: 13–30hours
 protein-binding:
   value: null
   unit: percent
@@ -48,13 +49,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/neuropsych
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Fenfluramine
+  url: https://en.wikipedia.org/w/index.php?title=Fenfluramine&oldid=1365703472
+  revision: 1365703472
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Fenfluramine
@@ -80,7 +89,12 @@ Withdrawn appetite suppressant reintroduced at low dose for Dravet syndrome, whe
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Fenfluramine*](https://en.wikipedia.org/w/index.php?title=Fenfluramine&oldid=1365703472) (revision 1365703472, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 13–30 h | 13–30hours |
 
 ## Safety routing
 

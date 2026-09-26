@@ -18,18 +18,23 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 8.0
+  value-max: null
+  unit: h
+  notes: 8 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 56.0
+  value-max: 82.0
+  notes: 56-82%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -48,13 +53,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/nootropic
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Oxiracetam
+  url: https://en.wikipedia.org/w/index.php?title=Oxiracetam&oldid=1368668595
+  revision: 1368668595
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Oxiracetam
@@ -80,7 +93,14 @@ A racetam marketed for memory, with the same weak evidence base and unconfirmed 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Oxiracetam*](https://en.wikipedia.org/w/index.php?title=Oxiracetam&oldid=1368668595) (revision 1368668595, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 8 h | 8 hours |
+| Bioavailability | 56–82 % | 56-82% |
+| Excretion | mainly urinary | Renal |
 
 ## Safety routing
 

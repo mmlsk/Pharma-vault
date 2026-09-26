@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL1511
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 12.0
+  value-max: 20.0
+  unit: h
+  notes: 'Oral: 12–20 hours (as E2); IM injection: 3.5 (1.2–7.2) days'
 protein-binding:
-  value: null
+  value: 98.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 'Estradiol: ~98% (to albumin and SHBG)'
+bioavailability:
+  value: 3.0
+  value-max: 5.0
+  notes: 'Oral: 3–5%; IM injection: 100%'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (80%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Cleavage via esterases in the liver, blood, and tissues
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Estradiol valerate
+  url: https://en.wikipedia.org/w/index.php?title=Estradiol_valerate&oldid=1371910144
+  revision: 1371910144
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Estradiol Valerate
@@ -84,7 +98,17 @@ Estrogen receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the sou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Estradiol valerate*](https://en.wikipedia.org/w/index.php?title=Estradiol_valerate&oldid=1371910144) (revision 1371910144, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 12–20 h | Oral: 12–20 hours (as E2); IM injection: 3.5 (1.2–7.2) days |
+| Protein binding | 98 % | Estradiol: ~98% (to albumin and SHBG) |
+| Bioavailability | 3–5 % | Oral: 3–5%; IM injection: 100% |
+| Metabolism | hepatic | Cleavage via esterases in the liver, blood, and tissues |
+| Metabolites | - | Estradiol, valeric acid, and metabolites of estradiol |
+| Excretion | mainly urinary | Urine (80%) |
 
 ## Safety routing
 

@@ -20,42 +20,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.0
+  value-max: 5.0
+  unit: wk
+  notes: 4–5 weeks
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 99%
+bioavailability:
+  value: 60.0
+  value-max: null
+  notes: 60%
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.05
+  notes: 'Feces: 40% (metabolites); Urine: 5% (unchanged)'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP3A4)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Dutasteride
+  url: https://en.wikipedia.org/w/index.php?title=Dutasteride&oldid=1375820985
+  revision: 1375820985
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Dutasteride (Avodart)
@@ -82,10 +97,22 @@ Dual type-1/type-2 5-alpha-reductase inhibitor, more complete DHT suppression th
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Dutasteride*](https://en.wikipedia.org/w/index.php?title=Dutasteride&oldid=1375820985) (revision 1375820985, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4–5 wk | 4–5 weeks |
+| Protein binding | 99 % | 99% |
+| Bioavailability | 60 % | 60% |
+| Metabolism | hepatic | Liver (CYP3A4) |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | • 4'-Hydroxydutasteride; • 6'-Hydroxydutasteride; • 1,2-Dihydrodutasteride; (All three active) |
+| Excretion | - · fe 0.05 | Feces: 40% (metabolites); Urine: 5% (unchanged) |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

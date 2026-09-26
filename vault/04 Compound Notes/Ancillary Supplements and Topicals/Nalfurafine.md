@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 14.0
+  value-max: null
+  unit: h
+  notes: 14 hours (acute);; 25–28 hours (chronic)
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Nalfurafine
+  url: https://en.wikipedia.org/w/index.php?title=Nalfurafine&oldid=1374489763
+  revision: 1374489763
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Nalfurafine
@@ -79,7 +88,12 @@ Kappa agonist approved in Japan for pruritus, engineered to minimise dysphoria.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Nalfurafine*](https://en.wikipedia.org/w/index.php?title=Nalfurafine&oldid=1374489763) (revision 1374489763, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 14 h | 14 hours (acute);; 25–28 hours (chronic) |
 
 ## Safety routing
 

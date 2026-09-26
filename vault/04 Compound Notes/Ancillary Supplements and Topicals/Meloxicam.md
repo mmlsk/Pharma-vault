@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: CHEMBL599
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 20.0
+  value-max: null
+  unit: h
+  notes: 20 hours
 protein-binding:
-  value: null
+  value: 99.4
+  value-max: null
   unit: percent
-  notes: null
+  notes: 99.4%
+bioavailability:
+  value: 89.0
+  value-max: null
+  notes: 89%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine and feces equally
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP2C9 and 3A4-mediated)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2C9
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2C9 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Meloxicam
+  url: https://en.wikipedia.org/w/index.php?title=Meloxicam&oldid=1370163287
+  revision: 1370163287
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Meloxicam
@@ -84,10 +99,21 @@ Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Meloxicam*](https://en.wikipedia.org/w/index.php?title=Meloxicam&oldid=1370163287) (revision 1370163287, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 20 h | 20 hours |
+| Protein binding | 99.4 % | 99.4% |
+| Bioavailability | 89 % | 89% |
+| Metabolism | hepatic | Liver (CYP2C9 and 3A4-mediated) |
+| CYP (metabolised by) | CYP2C9 | roles as inhibitor/inducer not assessed |
+| Excretion | - | Urine and feces equally |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

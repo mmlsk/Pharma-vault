@@ -82,7 +82,7 @@ Cell-permeable cAMP analogue that acts as cAMP itself rather than changing its p
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

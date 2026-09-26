@@ -18,42 +18,59 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 6.0
+  value-max: 9.0
+  unit: h
+  notes: 6–9 hours
 protein-binding:
-  value: null
+  value: 68.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: c. 68%
+bioavailability:
+  value: 73.0
+  value-max: null
+  notes: 73%; Tmax = ~2.5 hours
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (58%), faeces (39%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP3A4, with minor contributions from CYP2A6, CYP1A2)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP1A2
+  - CYP2A6
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP1A2, CYP2A6, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Apremilast
+  url: https://en.wikipedia.org/w/index.php?title=Apremilast&oldid=1329075237
+  revision: 1329075237
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Apremilast
@@ -79,10 +96,22 @@ Inhibits PDE4 to raise intracellular cAMP and dampen inflammatory cytokine produ
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Apremilast*](https://en.wikipedia.org/w/index.php?title=Apremilast&oldid=1329075237) (revision 1329075237, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 6–9 h | 6–9 hours |
+| Protein binding | 68 % | c. 68% |
+| Bioavailability | 73 % | 73%; Tmax = ~2.5 hours |
+| Metabolism | hepatic | Liver (CYP3A4, with minor contributions from CYP2A6, CYP1A2) |
+| CYP (metabolised by) | CYP1A2, CYP2A6, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | O-desmethylapremilast glucuronide (and others) |
+| Excretion | mainly urinary | Urine (58%), faeces (39%) |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

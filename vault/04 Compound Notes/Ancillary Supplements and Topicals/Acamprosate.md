@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL1201293
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 20.0
+  value-max: 33.0
+  unit: h
+  notes: 20–33 hours
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: Negligible
+bioavailability:
+  value: 11.0
+  value-max: null
+  notes: 11%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Nil
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Acamprosate
+  url: https://en.wikipedia.org/w/index.php?title=Acamprosate&oldid=1371631806
+  revision: 1371631806
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Acamprosate
@@ -84,7 +98,16 @@ GABA-A receptor; anion channel positive modulator _(ChEMBL curated mechanism, as
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Acamprosate*](https://en.wikipedia.org/w/index.php?title=Acamprosate&oldid=1371631806) (revision 1371631806, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 20–33 h | 20–33 hours |
+| Protein binding | - | Negligible |
+| Bioavailability | 11 % | 11% |
+| Metabolism | - | Nil |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

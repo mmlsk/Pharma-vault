@@ -20,18 +20,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 45.0
+  value-max: null
+  unit: min
+  notes: 45 min after intravenous application
 protein-binding:
-  value: null
+  value: 88.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 88%
+bioavailability:
+  value: null
+  value-max: null
+  notes: Low
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 67% Kidney, 25% fecal
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Bimatoprost
+  url: https://en.wikipedia.org/w/index.php?title=Bimatoprost&oldid=1376475376
+  revision: 1376475376
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Bimatoprost (Latisse)
@@ -82,7 +96,15 @@ The prostaglandin analogue actually approved for growing eyelashes.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Bimatoprost*](https://en.wikipedia.org/w/index.php?title=Bimatoprost&oldid=1376475376) (revision 1376475376, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 45 min | 45 min after intravenous application |
+| Protein binding | 88 % | 88% |
+| Bioavailability | - | Low |
+| Excretion | - | 67% Kidney, 25% fecal |
 
 ## Safety routing
 

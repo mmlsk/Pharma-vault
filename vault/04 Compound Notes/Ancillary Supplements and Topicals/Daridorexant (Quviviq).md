@@ -20,42 +20,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 8.0
+  value-max: null
+  unit: h
+  notes: 8 hours (6–10 hours)
 protein-binding:
-  value: null
+  value: 99.7
+  value-max: null
   unit: percent
-  notes: null
+  notes: 99.7%
+bioavailability:
+  value: 62.0
+  value-max: null
+  notes: 62%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Feces: ~57%; Urine: ~28%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Extensive (mainly CYP3A4 (89%))
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Daridorexant
+  url: https://en.wikipedia.org/w/index.php?title=Daridorexant&oldid=1368786208
+  revision: 1368786208
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Daridorexant (Quviviq)
@@ -82,10 +97,21 @@ Dual orexin receptor antagonist for insomnia, engineered for a short half-life t
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Daridorexant*](https://en.wikipedia.org/w/index.php?title=Daridorexant&oldid=1368786208) (revision 1368786208, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 8 h | 8 hours (6–10 hours) |
+| Protein binding | 99.7 % | 99.7% |
+| Bioavailability | 62 % | 62% |
+| Metabolism | hepatic | Extensive (mainly CYP3A4 (89%)) |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly non-renal | Feces: ~57%; Urine: ~28% |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

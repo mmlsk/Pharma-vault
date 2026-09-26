@@ -20,22 +20,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.3
+  value-max: null
+  unit: h
+  notes: '• Nandrolone: <4.3 hours; • ND (IM): 6–12 days; • NPP: 2.7 days'
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 3.0
+  value-max: null
+  notes: '• Oral: <3% (pigs); • Intramuscular: high'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (reduction)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +55,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Nandrolone
+  url: https://en.wikipedia.org/w/index.php?title=Nandrolone&oldid=1363015943
+  revision: 1363015943
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Deca (Nandrolone)
@@ -83,7 +96,16 @@ tags:
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Nandrolone*](https://en.wikipedia.org/w/index.php?title=Nandrolone&oldid=1363015943) (revision 1363015943, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4.3 h | • Nandrolone: <4.3 hours; • ND (IM): 6–12 days; • NPP: 2.7 days |
+| Bioavailability | 3 % | • Oral: <3% (pigs); • Intramuscular: high |
+| Metabolism | hepatic | Liver (reduction) |
+| Metabolites | - | • 5α-Dihydronandrolone; • 19-Norandrosterone; • 19-Noretiocholanolone; • Conjugates |
+| Excretion | mainly urinary | Urine |
 
 ## Safety routing
 

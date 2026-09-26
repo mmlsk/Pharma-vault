@@ -18,22 +18,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 42.4
+  value-max: null
+  unit: h
+  notes: 42.4 hours
 protein-binding:
-  value: null
+  value: 71.0
+  value-max: 89.0
   unit: percent
-  notes: null
+  notes: 71–89%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 59% Bile duct, 33% kidney
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Not metabolized
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Tigecycline
+  url: https://en.wikipedia.org/w/index.php?title=Tigecycline&oldid=1354792999
+  revision: 1354792999
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Tigecycline
@@ -79,7 +89,15 @@ Inhibits bacterial protein synthesis at the ribosome; spectrum, resistance, and 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Tigecycline*](https://en.wikipedia.org/w/index.php?title=Tigecycline&oldid=1354792999) (revision 1354792999, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 42.4 h | 42.4 hours |
+| Protein binding | 71–89 % | 71–89% |
+| Metabolism | - | Not metabolized |
+| Excretion | - | 59% Bile duct, 33% kidney |
 
 ## Safety routing
 

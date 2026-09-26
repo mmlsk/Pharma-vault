@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 8.0
+  value-max: 12.0
+  unit: h
+  notes: 8–12 hours
 protein-binding:
-  value: null
+  value: 44.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 44%
+bioavailability:
+  value: 90.0
+  value-max: 100.0
+  notes: 90–100%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (50–60%), faeces (4%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Trimethoprim
+  url: https://en.wikipedia.org/w/index.php?title=Trimethoprim&oldid=1376490173
+  revision: 1376490173
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Trimethoprim
@@ -79,7 +93,16 @@ Bacterial dihydrofolate reductase inhibitor used alone for urinary infection and
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Trimethoprim*](https://en.wikipedia.org/w/index.php?title=Trimethoprim&oldid=1376490173) (revision 1376490173, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 8–12 h | 8–12 hours |
+| Protein binding | 44 % | 44% |
+| Bioavailability | 90–100 % | 90–100% |
+| Metabolism | hepatic | Liver |
+| Excretion | - | Kidney (50–60%), faeces (4%) |
 
 ## Safety routing
 

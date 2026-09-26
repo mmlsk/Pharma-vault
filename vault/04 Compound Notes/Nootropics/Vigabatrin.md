@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: 8.0
+  unit: h
+  notes: 5–8 hours in young adults, 12–13 hours in the elderly.
 protein-binding:
-  value: null
+  value: 0.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 0%
+bioavailability:
+  value: 80.0
+  value-max: 90.0
+  notes: 80–90%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: not metabolized
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +54,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/neuropsych
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Vigabatrin
+  url: https://en.wikipedia.org/w/index.php?title=Vigabatrin&oldid=1374816235
+  revision: 1374816235
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Vigabatrin
@@ -80,7 +94,16 @@ Irreversible GABA transaminase inhibitor, uniquely effective in infantile spasms
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Vigabatrin*](https://en.wikipedia.org/w/index.php?title=Vigabatrin&oldid=1374816235) (revision 1374816235, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5–8 h | 5–8 hours in young adults, 12–13 hours in the elderly. |
+| Protein binding | 0 % | 0% |
+| Bioavailability | 80–90 % | 80–90% |
+| Metabolism | - | not metabolized |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

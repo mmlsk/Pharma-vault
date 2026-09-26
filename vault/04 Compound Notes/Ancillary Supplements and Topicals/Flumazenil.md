@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: CHEMBL407
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 7.0
+  value-max: 15.0
+  unit: min
+  notes: 7–15 min (initial) ; 20–30 min (brain) ; 40–80 min (terminal)
 protein-binding:
   value: null
   unit: percent
@@ -29,11 +30,11 @@ active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine 90–95% ; Feces 5–10%
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: 'Hepatic: hydrolysis of the ester and glucuronidation'
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Flumazenil
+  url: https://en.wikipedia.org/w/index.php?title=Flumazenil&oldid=1366733453
+  revision: 1366733453
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Flumazenil
@@ -84,7 +93,14 @@ GABA-A receptor; anion channel allosteric antagonist _(ChEMBL curated mechanism,
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Flumazenil*](https://en.wikipedia.org/w/index.php?title=Flumazenil&oldid=1366733453) (revision 1366733453, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 7–15 min | 7–15 min (initial) ; 20–30 min (brain) ; 40–80 min (terminal) |
+| Metabolism | hepatic | Hepatic: hydrolysis of the ester and glucuronidation |
+| Excretion | - | Urine 90–95% ; Feces 5–10% |
 
 ## Safety routing
 

@@ -29,11 +29,11 @@ active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine, faeces
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Mainly unchanged, ~15% N-demethylation
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +47,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Elinogrel
+  url: https://en.wikipedia.org/w/index.php?title=Elinogrel&oldid=1371485863
+  revision: 1371485863
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Elinogrel
@@ -79,7 +87,13 @@ Inhibits platelet P2Y12 ADP signalling to reduce aggregation, at the cost of ble
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Elinogrel*](https://en.wikipedia.org/w/index.php?title=Elinogrel&oldid=1371485863) (revision 1371485863, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Metabolism | hepatic | Mainly unchanged, ~15% N-demethylation |
+| Excretion | - | Urine, faeces |
 
 ## Safety routing
 

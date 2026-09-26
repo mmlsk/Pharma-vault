@@ -18,13 +18,18 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 10.0
+  value-max: 20.0
+  unit: d
+  notes: 10–20 days
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 64.0
+  value-max: null
+  notes: 64% (subcutaneous), 0% (by mouth)
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Adalimumab
+  url: https://en.wikipedia.org/w/index.php?title=Adalimumab&oldid=1376394101
+  revision: 1376394101
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Adalimumab
@@ -79,7 +92,13 @@ Neutralizes TNF or its receptor signaling to suppress systemic inflammation, inc
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Adalimumab*](https://en.wikipedia.org/w/index.php?title=Adalimumab&oldid=1376394101) (revision 1376394101, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 10–20 d | 10–20 days |
+| Bioavailability | 64 % | 64% (subcutaneous), 0% (by mouth) |
 
 ## Safety routing
 

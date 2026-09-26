@@ -18,22 +18,24 @@ review-status: stub
 chembl-id: CHEMBL1200807
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 17.0
+  value-max: 37.0
+  unit: h
+  notes: 17–37 hours
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 99% (to albumin but not to SHBG)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine and feces
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (oxime to ketone reaction, hydroxylation, conjugation)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Norelgestromin
+  url: https://en.wikipedia.org/w/index.php?title=Norelgestromin&oldid=1374433236
+  revision: 1374433236
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Norelgestromin
@@ -84,7 +94,16 @@ Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the sourc
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Norelgestromin*](https://en.wikipedia.org/w/index.php?title=Norelgestromin&oldid=1374433236) (revision 1374433236, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 17–37 h | 17–37 hours |
+| Protein binding | 99 % | 99% (to albumin but not to SHBG) |
+| Metabolism | hepatic | Liver (oxime to ketone reaction, hydroxylation, conjugation) |
+| Metabolites | - | • Levonorgestrel |
+| Excretion | - | Urine and feces |
 
 ## Safety routing
 

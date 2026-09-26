@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: CHEMBL1170
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 0.8
+  value-max: null
+  unit: d
+  notes: 'Intramuscular: 0.8 days (~20 hours)'
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: 'Oral: very low; Intramuscular: very high'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +53,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Testosterone propionate
+  url: https://en.wikipedia.org/w/index.php?title=Testosterone_propionate&oldid=1373737638
+  revision: 1373737638
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Testosterone Propionate
@@ -85,7 +98,15 @@ Androgen Receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Testosterone propionate*](https://en.wikipedia.org/w/index.php?title=Testosterone_propionate&oldid=1373737638) (revision 1373737638, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 0.8 d | Intramuscular: 0.8 days (~20 hours) |
+| Bioavailability | - | Oral: very low; Intramuscular: very high |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Urine |
 
 ## Safety routing
 

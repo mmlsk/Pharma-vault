@@ -18,13 +18,18 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 162.0
+  value-max: null
+  unit: min
+  notes: 162 minutes
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 53.0
+  value-max: null
+  notes: 'Sublingual: 53%; IV/IM/SC: 100%'
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/analgesia
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Sufentanil
+  url: https://en.wikipedia.org/w/index.php?title=Sufentanil&oldid=1369469187
+  revision: 1369469187
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Sufentanil
@@ -79,7 +92,13 @@ The most potent opioid in routine clinical use, given intravenously and intrathe
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Sufentanil*](https://en.wikipedia.org/w/index.php?title=Sufentanil&oldid=1369469187) (revision 1369469187, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 162 min | 162 minutes |
+| Bioavailability | 53 % | Sublingual: 53%; IV/IM/SC: 100% |
 
 ## Safety routing
 

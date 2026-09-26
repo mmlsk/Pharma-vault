@@ -25,6 +25,10 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: Very low
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -48,13 +52,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - glucose-metabolism
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/gh
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Masoprocol
+  url: https://en.wikipedia.org/w/index.php?title=Masoprocol&oldid=1360132863
+  revision: 1360132863
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Masoprocol
@@ -85,7 +97,12 @@ Insulin-like growth factor I receptor inhibitor _(ChEMBL curated mechanism, as q
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Masoprocol*](https://en.wikipedia.org/w/index.php?title=Masoprocol&oldid=1360132863) (revision 1360132863, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | - | Very low |
 
 ## Safety routing
 

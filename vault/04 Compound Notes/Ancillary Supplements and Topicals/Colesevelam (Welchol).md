@@ -21,21 +21,26 @@ chembl-id: null
 chembl-max-phase: null
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: N/A (non-systemic drug)
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: N/A
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: By intestines only, colesevelam is non-systemic
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Colesevelam is not absorbed and not metabolized
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +54,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Colesevelam
+  url: https://en.wikipedia.org/w/index.php?title=Colesevelam&oldid=1329247337
+  revision: 1329247337
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Colesevelam (Welchol)
@@ -82,7 +95,15 @@ Modern bile acid sequestrant with far fewer interactions than cholestyramine, pl
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Colesevelam*](https://en.wikipedia.org/w/index.php?title=Colesevelam&oldid=1329247337) (revision 1329247337, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | N/A (non-systemic drug) |
+| Bioavailability | - | N/A |
+| Metabolism | - | Colesevelam is not absorbed and not metabolized |
+| Excretion | - | By intestines only, colesevelam is non-systemic |
 
 ## Safety routing
 

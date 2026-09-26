@@ -20,9 +20,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.8
+  value-max: null
+  unit: h
+  notes: 5.8 hours
 protein-binding:
   value: null
   unit: percent
@@ -50,13 +51,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - glucose-metabolism
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/gh
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Mecasermin
+  url: https://en.wikipedia.org/w/index.php?title=Mecasermin&oldid=1298592287
+  revision: 1298592287
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Mecasermin (Increlex)
@@ -83,7 +92,12 @@ Recombinant IGF-1, used when growth failure doesn't respond to GH itself (e.g. G
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Mecasermin*](https://en.wikipedia.org/w/index.php?title=Mecasermin&oldid=1298592287) (revision 1298592287, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5.8 h | 5.8 hours |
 
 ## Safety routing
 

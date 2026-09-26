@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL1590
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.4
+  value-max: null
+  unit: h
+  notes: 5.4hours (range 3–16hours dependent on urine pH)
 protein-binding:
-  value: null
+  value: 21.0
+  value-max: 29.0
   unit: percent
-  notes: null
+  notes: 21–29% (AGP, HSA)
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: ~100%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  primary-route: true
+  fraction-excreted-unchanged: 0.96
+  notes: 'Urine: 43–96% (unchanged)'
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Not extensively metabolized
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Pseudoephedrine
+  url: https://en.wikipedia.org/w/index.php?title=Pseudoephedrine&oldid=1376385599
+  revision: 1376385599
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Pseudoephedrine
@@ -84,7 +98,17 @@ Norepinephrine transporter releasing agent _(ChEMBL curated mechanism, as quoted
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Pseudoephedrine*](https://en.wikipedia.org/w/index.php?title=Pseudoephedrine&oldid=1376385599) (revision 1376385599, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5.4 h | 5.4hours (range 3–16hours dependent on urine pH) |
+| Protein binding | 21–29 % | 21–29% (AGP, HSA) |
+| Bioavailability | 100 % | ~100% |
+| Metabolism | - | Not extensively metabolized |
+| Metabolites | - | • Norpseudoephedrine |
+| Excretion | mainly urinary · fe 0.96 | Urine: 43–96% (unchanged) |
 
 ## Safety routing
 

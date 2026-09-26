@@ -18,22 +18,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: 3
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 10.9
+  value-max: 21.7
+  unit: h
+  notes: 10.9–21.7 hours
 protein-binding:
-  value: null
+  value: 84.21
+  value-max: 85.95
   unit: percent
-  notes: null
+  notes: 84.21–85.95%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Feces (92.7%), urine (5.3%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: UGT1A8 and 1A9 (major)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Acotiamide
+  url: https://en.wikipedia.org/w/index.php?title=Acotiamide&oldid=1354487138
+  revision: 1354487138
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Acotiamide
@@ -83,7 +93,15 @@ acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the sour
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Acotiamide*](https://en.wikipedia.org/w/index.php?title=Acotiamide&oldid=1354487138) (revision 1354487138, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 10.9–21.7 h | 10.9–21.7 hours |
+| Protein binding | 84.21–85.95 % | 84.21–85.95% |
+| Metabolism | hepatic | UGT1A8 and 1A9 (major) |
+| Excretion | mainly non-renal | Feces (92.7%), urine (5.3%) |
 
 ## Safety routing
 

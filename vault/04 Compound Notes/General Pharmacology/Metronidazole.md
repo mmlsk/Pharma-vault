@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 8.0
+  value-max: null
+  unit: h
+  notes: 8 hours
 protein-binding:
-  value: null
+  value: 20.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 20%
+bioavailability:
+  value: 80.0
+  value-max: null
+  notes: 80% (by mouth), 60–80% (rectal), 20–25% (vaginal)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (77%), faeces (14%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Metronidazole
+  url: https://en.wikipedia.org/w/index.php?title=Metronidazole&oldid=1374900844
+  revision: 1374900844
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Metronidazole
@@ -79,7 +93,17 @@ Nitroimidazole active only against organisms with an anaerobic reducing environm
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Metronidazole*](https://en.wikipedia.org/w/index.php?title=Metronidazole&oldid=1374900844) (revision 1374900844, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 8 h | 8 hours |
+| Protein binding | 20 % | 20% |
+| Bioavailability | 80 % | 80% (by mouth), 60–80% (rectal), 20–25% (vaginal) |
+| Metabolism | hepatic | Liver |
+| Metabolites | - | Hydroxymetronidazole |
+| Excretion | mainly urinary | Urine (77%), faeces (14%) |
 
 ## Safety routing
 

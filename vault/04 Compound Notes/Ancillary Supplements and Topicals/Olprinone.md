@@ -79,7 +79,7 @@ PDE3 inhibitor approved in Japan, with inotropic, vasodilator and bronchodilator
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

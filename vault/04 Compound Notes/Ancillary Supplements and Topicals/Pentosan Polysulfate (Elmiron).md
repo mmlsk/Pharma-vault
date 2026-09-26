@@ -31,7 +31,7 @@ active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Feces, urine
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -49,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Pentosan polysulfate
+  url: https://en.wikipedia.org/w/index.php?title=Pentosan_polysulfate&oldid=1366703696
+  revision: 1366703696
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Pentosan Polysulfate (Elmiron)
@@ -82,7 +90,12 @@ Semisynthetic heparinoid used for interstitial cystitis and, off-label, as a joi
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Pentosan polysulfate*](https://en.wikipedia.org/w/index.php?title=Pentosan_polysulfate&oldid=1366703696) (revision 1366703696, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Excretion | - | Feces, urine |
 
 ## Safety routing
 

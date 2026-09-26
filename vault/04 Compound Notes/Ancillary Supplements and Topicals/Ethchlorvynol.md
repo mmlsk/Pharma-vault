@@ -22,9 +22,10 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 35.0
+  value-max: 50.0
   unit: percent
-  notes: null
+  notes: 35–50%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ethchlorvynol
+  url: https://en.wikipedia.org/w/index.php?title=Ethchlorvynol&oldid=1373297741
+  revision: 1373297741
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Ethchlorvynol
@@ -84,7 +93,12 @@ GABA-A receptor; anion channel positive modulator _(ChEMBL curated mechanism, as
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ethchlorvynol*](https://en.wikipedia.org/w/index.php?title=Ethchlorvynol&oldid=1373297741) (revision 1373297741, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 35–50 % | 35–50% |
 
 ## Safety routing
 

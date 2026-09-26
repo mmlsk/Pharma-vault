@@ -18,22 +18,24 @@ review-status: stub
 chembl-id: CHEMBL1201891
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.1
+  value-max: 1.9
+  unit: h
+  notes: 1.1–1.9 hours (metabolite)
 protein-binding:
-  value: null
+  value: 40.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 40%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (70%) and fecal (30%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: By plasma esterases, to active metabolite
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Deflazacort
+  url: https://en.wikipedia.org/w/index.php?title=Deflazacort&oldid=1336537703
+  revision: 1336537703
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Deflazacort
@@ -84,7 +94,15 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Deflazacort*](https://en.wikipedia.org/w/index.php?title=Deflazacort&oldid=1336537703) (revision 1336537703, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.1–1.9 h | 1.1–1.9 hours (metabolite) |
+| Protein binding | 40 % | 40% |
+| Metabolism | - | By plasma esterases, to active metabolite |
+| Excretion | mainly urinary | Kidney (70%) and fecal (30%) |
 
 ## Safety routing
 

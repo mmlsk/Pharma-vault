@@ -18,13 +18,19 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.9
+  value-max: 3.7
+  unit: h
+  notes: 1.9–3.7 hours
 protein-binding:
-  value: null
+  value: 96.3
+  value-max: null
   unit: percent
-  notes: null
+  notes: Approximately 96.3%
+bioavailability:
+  value: 77.0
+  value-max: null
+  notes: 77%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Tolterodine
+  url: https://en.wikipedia.org/w/index.php?title=Tolterodine&oldid=1374985017
+  revision: 1374985017
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Tolterodine
@@ -79,7 +93,14 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Tolterodine*](https://en.wikipedia.org/w/index.php?title=Tolterodine&oldid=1374985017) (revision 1374985017, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.9–3.7 h | 1.9–3.7 hours |
+| Protein binding | 96.3 % | Approximately 96.3% |
+| Bioavailability | 77 % | 77% |
 
 ## Safety routing
 

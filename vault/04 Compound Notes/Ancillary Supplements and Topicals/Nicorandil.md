@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: null
+  unit: h
+  notes: 1 hour
 protein-binding:
-  value: null
+  value: 25.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 25%
+bioavailability:
+  value: 75.0
+  value-max: 80.0
+  notes: 75 to 80%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (21%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Nicorandil
+  url: https://en.wikipedia.org/w/index.php?title=Nicorandil&oldid=1356983302
+  revision: 1356983302
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Nicorandil
@@ -79,7 +93,16 @@ Potassium-channel opener and nitrate-like antianginal; hypotension and serious m
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Nicorandil*](https://en.wikipedia.org/w/index.php?title=Nicorandil&oldid=1356983302) (revision 1356983302, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1 h | 1 hour |
+| Protein binding | 25 % | 25% |
+| Bioavailability | 75–80 % | 75 to 80% |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Kidney (21%) |
 
 ## Safety routing
 

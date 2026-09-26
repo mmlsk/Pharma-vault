@@ -18,18 +18,23 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 7.7
+  value-max: 20.8
+  unit: h
+  notes: 7.7 to 20.8 hours (in patients with normal renal function)
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100% (IV)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Peramivir
+  url: https://en.wikipedia.org/w/index.php?title=Peramivir&oldid=1369623481
+  revision: 1369623481
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Peramivir
@@ -79,7 +92,14 @@ Single-dose intravenous neuraminidase inhibitor for patients who cannot take ora
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Peramivir*](https://en.wikipedia.org/w/index.php?title=Peramivir&oldid=1369623481) (revision 1369623481, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 7.7–20.8 h | 7.7 to 20.8 hours (in patients with normal renal function) |
+| Bioavailability | 100 % | 100% (IV) |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

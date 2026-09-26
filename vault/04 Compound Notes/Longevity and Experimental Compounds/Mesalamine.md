@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: CHEMBL704
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: null
+  unit: h
+  notes: 5 hours after initial dose.; At steady state 7 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 20.0
+  value-max: 30.0
+  notes: 'Oral: 20–30% ; Rectal: 10–35%'
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Rapidly and extensively metabolized intestinal mucosal wall and the liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Mesalazine
+  url: https://en.wikipedia.org/w/index.php?title=Mesalazine&oldid=1369100049
+  revision: 1369100049
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Mesalamine
@@ -84,7 +97,14 @@ Peroxisome proliferator-activated receptor gamma agonist _(ChEMBL curated mechan
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Mesalazine*](https://en.wikipedia.org/w/index.php?title=Mesalazine&oldid=1369100049) (revision 1369100049, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5 h | 5 hours after initial dose.; At steady state 7 hours |
+| Bioavailability | 20–30 % | Oral: 20–30% ; Rectal: 10–35% |
+| Metabolism | hepatic | Rapidly and extensively metabolized intestinal mucosal wall and the liver |
 
 ## Safety routing
 

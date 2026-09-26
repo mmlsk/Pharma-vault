@@ -25,15 +25,19 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: Not absorbed
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Feces
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: None
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Patiromer
+  url: https://en.wikipedia.org/w/index.php?title=Patiromer&oldid=1329362585
+  revision: 1329362585
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Patiromer
@@ -79,7 +91,14 @@ Potassium binding polymer that allows renin-angiotensin blockade to continue in 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Patiromer*](https://en.wikipedia.org/w/index.php?title=Patiromer&oldid=1329362585) (revision 1329362585, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | - | Not absorbed |
+| Metabolism | - | None |
+| Excretion | mainly non-renal | Feces |
 
 ## Safety routing
 

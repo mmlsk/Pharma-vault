@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 24.0
+  value-max: null
+  unit: h
+  notes: 'Initial phase: 24 hours; Second phase: approximately 15 days'
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100% (IV) low (oral)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 40% found in urine after single cumulated over several days; Biliary excretion is also important
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: kidney
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Amphotericin B
+  url: https://en.wikipedia.org/w/index.php?title=Amphotericin_B&oldid=1358547003
+  revision: 1358547003
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Amphotericin B
@@ -79,7 +92,15 @@ Disrupts fungal ergosterol synthesis or membrane function; interaction and organ
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Amphotericin B*](https://en.wikipedia.org/w/index.php?title=Amphotericin_B&oldid=1358547003) (revision 1358547003, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 24 h | Initial phase: 24 hours; Second phase: approximately 15 days |
+| Bioavailability | 100 % | 100% (IV) low (oral) |
+| Metabolism | - | kidney |
+| Excretion | - | 40% found in urine after single cumulated over several days; Biliary excretion is also important |
 
 ## Safety routing
 

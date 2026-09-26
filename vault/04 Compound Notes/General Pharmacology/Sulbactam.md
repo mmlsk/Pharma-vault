@@ -18,18 +18,20 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 0.65
+  value-max: 1.2
+  unit: h
+  notes: 0.65–1.20 hrs
 protein-binding:
-  value: null
+  value: 29.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 29%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Mainly kidneys (41–66% within 8 hrs)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Sulbactam
+  url: https://en.wikipedia.org/w/index.php?title=Sulbactam&oldid=1366237601
+  revision: 1366237601
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Sulbactam
@@ -79,7 +89,14 @@ Beta-lactamase inhibitor that is also, uniquely in this group, a direct antibact
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Sulbactam*](https://en.wikipedia.org/w/index.php?title=Sulbactam&oldid=1366237601) (revision 1366237601, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 0.65–1.2 h | 0.65–1.20 hrs |
+| Protein binding | 29 % | 29% |
+| Excretion | - | Mainly kidneys (41–66% within 8 hrs) |
 
 ## Safety routing
 

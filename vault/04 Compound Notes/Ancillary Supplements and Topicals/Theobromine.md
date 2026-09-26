@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 6.0
+  value-max: 8.0
+  unit: h
+  notes: 6–8 hours
 protein-binding:
   value: null
   unit: percent
@@ -28,12 +29,12 @@ protein-binding:
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.1
+  notes: Renal (10% unchanged, rest as metabolites)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic demethylation and oxidation
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Theobromine
+  url: https://en.wikipedia.org/w/index.php?title=Theobromine&oldid=1376212585
+  revision: 1376212585
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Theobromine
@@ -79,7 +88,14 @@ The dominant methylxanthine in cocoa. Weaker adenosine antagonist than caffeine 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Theobromine*](https://en.wikipedia.org/w/index.php?title=Theobromine&oldid=1376212585) (revision 1376212585, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 6–8 h | 6–8 hours |
+| Metabolism | hepatic | Hepatic demethylation and oxidation |
+| Excretion | - · fe 0.1 | Renal (10% unchanged, rest as metabolites) |
 
 ## Safety routing
 

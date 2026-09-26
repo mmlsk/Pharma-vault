@@ -25,15 +25,19 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 70.0
+  value-max: null
+  notes: 70%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Bile duct, kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Dantrolene
+  url: https://en.wikipedia.org/w/index.php?title=Dantrolene&oldid=1337101387
+  revision: 1337101387
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Dantrolene
@@ -79,7 +91,14 @@ Ryanodine receptor antagonist and the only effective treatment for malignant hyp
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Dantrolene*](https://en.wikipedia.org/w/index.php?title=Dantrolene&oldid=1337101387) (revision 1337101387, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | 70 % | 70% |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly non-renal | Bile duct, kidney |
 
 ## Safety routing
 

@@ -8,8 +8,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - run: pip install -r requirements.txt
-      - run: make catalog vault
+      - run: make catalog pk vault graph
       - name: Generated files are committed and up to date
-        run: git diff --exit-code -- data/processed "vault/04 Compound Notes"
+        run: git diff --exit-code -- data/processed "vault/04 Compound Notes" apps/graph-viewer/graph-data.js
       - run: cd scripts && python validate.py --no-report
       - run: python -m pytest -q

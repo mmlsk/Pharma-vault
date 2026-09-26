@@ -20,9 +20,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.1
+  value-max: null
+  unit: h
+  notes: 4.1 hours
 protein-binding:
   value: null
   unit: percent
@@ -33,16 +34,17 @@ renal-clearance:
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic (CYP3A4-mediated)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
@@ -50,13 +52,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - glucose-metabolism
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/gh
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Macimorelin
+  url: https://en.wikipedia.org/w/index.php?title=Macimorelin&oldid=1328964534
+  revision: 1328964534
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Macimorelin (Macrilen)
@@ -83,7 +93,14 @@ Oral ghrelin receptor agonist approved as a diagnostic test, not a treatment.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Macimorelin*](https://en.wikipedia.org/w/index.php?title=Macimorelin&oldid=1328964534) (revision 1328964534, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4.1 h | 4.1 hours |
+| Metabolism | hepatic | Hepatic (CYP3A4-mediated) |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 
 ## Safety routing
 
@@ -91,5 +108,6 @@ Group-level triage (not compound-specific): `endocrine-feedback-disruption`, `gl
 
 - [[Stacking and Interaction Risks]]
 - [[Hormonal Axis Suppression]]
+- [[CYP450 Metabolism]]
 - [[Glucose and Incretin Signaling]]
 - [[HPG and GH-IGF-1 Axes]]

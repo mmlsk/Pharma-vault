@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 12.0
+  value-max: null
+  unit: h
+  notes: 12 hours
 protein-binding:
-  value: null
+  value: 98.2
+  value-max: null
   unit: percent
-  notes: null
+  notes: 98.2%
+bioavailability:
+  value: 37.0
+  value-max: null
+  notes: 37% (estimate)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 93.3% via feces, <2% via kidneys
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: glucuronidation (UGT1A1/1A3) to a minor extent
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Letermovir
+  url: https://en.wikipedia.org/w/index.php?title=Letermovir&oldid=1335510246
+  revision: 1335510246
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Letermovir
@@ -79,7 +93,16 @@ CMV prophylactic with a target unique to that virus, avoiding the marrow toxicit
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Letermovir*](https://en.wikipedia.org/w/index.php?title=Letermovir&oldid=1335510246) (revision 1335510246, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 12 h | 12 hours |
+| Protein binding | 98.2 % | 98.2% |
+| Bioavailability | 37 % | 37% (estimate) |
+| Metabolism | hepatic | glucuronidation (UGT1A1/1A3) to a minor extent |
+| Excretion | - | 93.3% via feces, <2% via kidneys |
 
 ## Safety routing
 

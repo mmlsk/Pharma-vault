@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 14.4
+  value-max: null
+  unit: d
+  notes: 14.4 day
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Dalbavancin
+  url: https://en.wikipedia.org/w/index.php?title=Dalbavancin&oldid=1371790451
+  revision: 1371790451
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Dalbavancin
@@ -79,7 +88,12 @@ Long-acting lipoglycopeptide dosed once or twice per course, which turns a skin 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Dalbavancin*](https://en.wikipedia.org/w/index.php?title=Dalbavancin&oldid=1371790451) (revision 1371790451, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 14.4 d | 14.4 day |
 
 ## Safety routing
 

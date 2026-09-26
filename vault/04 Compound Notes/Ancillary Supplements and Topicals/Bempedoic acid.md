@@ -18,22 +18,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 11.0
+  value-max: null
+  unit: h
+  notes: 21±11 hrs
 protein-binding:
-  value: null
+  value: 99.3
+  value-max: null
   unit: percent
-  notes: null
+  notes: 99.3%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 70% urine, 30% feces
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Glucuronidation
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Bempedoic acid
+  url: https://en.wikipedia.org/w/index.php?title=Bempedoic_acid&oldid=1364444411
+  revision: 1364444411
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Bempedoic acid
@@ -79,7 +89,15 @@ ATP citrate lyase inhibitor that lowers LDL without acting in muscle -- the reas
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Bempedoic acid*](https://en.wikipedia.org/w/index.php?title=Bempedoic_acid&oldid=1364444411) (revision 1364444411, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 11 h | 21±11 hrs |
+| Protein binding | 99.3 % | 99.3% |
+| Metabolism | hepatic | Glucuronidation |
+| Excretion | - | 70% urine, 30% feces |
 
 ## Safety routing
 

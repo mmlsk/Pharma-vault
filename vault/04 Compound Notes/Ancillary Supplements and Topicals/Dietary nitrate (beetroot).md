@@ -82,7 +82,7 @@ Inorganic nitrate reduced to nitrite and then NO -- a dietary route to the same 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

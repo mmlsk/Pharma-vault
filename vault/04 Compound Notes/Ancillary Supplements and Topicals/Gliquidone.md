@@ -25,15 +25,19 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: High (Tmax = 2–3 hours)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Biliary (95%), renal (5%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Extensive hepatic
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Gliquidone
+  url: https://en.wikipedia.org/w/index.php?title=Gliquidone&oldid=1329466247
+  revision: 1329466247
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Gliquidone
@@ -79,7 +91,14 @@ Closes pancreatic beta-cell KATP channels to stimulate insulin release, with hyp
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Gliquidone*](https://en.wikipedia.org/w/index.php?title=Gliquidone&oldid=1329466247) (revision 1329466247, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | - | High (Tmax = 2–3 hours) |
+| Metabolism | hepatic | Extensive hepatic |
+| Excretion | mainly non-renal | Biliary (95%), renal (5%) |
 
 ## Safety routing
 

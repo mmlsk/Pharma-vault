@@ -80,7 +80,7 @@ TAAR1 agonist investigated as a non-D2 antipsychotic; phase 3 results were disap
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

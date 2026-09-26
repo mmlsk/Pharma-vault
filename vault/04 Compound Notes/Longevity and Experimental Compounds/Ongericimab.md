@@ -79,7 +79,7 @@ Blocks PCSK9 so hepatic LDL receptors recycle instead of being degraded, lowerin
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

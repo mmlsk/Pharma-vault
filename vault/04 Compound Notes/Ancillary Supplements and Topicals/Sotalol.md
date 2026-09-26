@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 12.0
+  value-max: null
+  unit: h
+  notes: 12 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 90.0
+  value-max: 100.0
+  notes: 90–100%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney ; Mammary gland (In lactating individuals)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Not metabolized
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Sotalol
+  url: https://en.wikipedia.org/w/index.php?title=Sotalol&oldid=1356962329
+  revision: 1356962329
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Sotalol
@@ -79,7 +92,15 @@ Alters cardiac repolarization through potassium-channel effects; QT prolongation
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Sotalol*](https://en.wikipedia.org/w/index.php?title=Sotalol&oldid=1356962329) (revision 1356962329, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 12 h | 12 hours |
+| Bioavailability | 90–100 % | 90–100% |
+| Metabolism | - | Not metabolized |
+| Excretion | mainly urinary | Kidney ; Mammary gland (In lactating individuals) |
 
 ## Safety routing
 

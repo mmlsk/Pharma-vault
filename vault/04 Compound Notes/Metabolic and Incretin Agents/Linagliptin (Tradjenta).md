@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 24.0
+  value-max: null
+  unit: h
+  notes: ~24 hours
 protein-binding:
-  value: null
+  value: 75.0
+  value-max: 99.0
   unit: percent
-  notes: null
+  notes: 75–99% (concentration-dependent)
+bioavailability:
+  value: 30.0
+  value-max: null
+  notes: ~30% (Tmax = 1.5 hours)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Feces (80%), urine (5%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Minimal (~10% metabolized)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +56,21 @@ risk-domains: []
 group-risk-triage:
 - glucose-metabolism
 - gastrointestinal
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/glp1
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Linagliptin
+  url: https://en.wikipedia.org/w/index.php?title=Linagliptin&oldid=1329259847
+  revision: 1329259847
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Linagliptin (Tradjenta)
@@ -83,7 +97,17 @@ DPP-4 inhibitor for type 2 diabetes, unusual in requiring no renal dose adjustme
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Linagliptin*](https://en.wikipedia.org/w/index.php?title=Linagliptin&oldid=1329259847) (revision 1329259847, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 24 h | ~24 hours |
+| Protein binding | 75–99 % | 75–99% (concentration-dependent) |
+| Bioavailability | 30 % | ~30% (Tmax = 1.5 hours) |
+| Metabolism | - | Minimal (~10% metabolized) |
+| Metabolites | - | Pharmacologically inactive |
+| Excretion | mainly non-renal | Feces (80%), urine (5%) |
 
 ## Safety routing
 

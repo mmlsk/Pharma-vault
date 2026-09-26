@@ -18,18 +18,23 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 30.0
+  value-max: 400.0
+  unit: h
+  notes: 30 to 400 hours (varies by dose and length of treatment)
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100% (IV)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Uncertain: may undergo phagocytosis and catabolism in RES'
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/immunology
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Rituximab
+  url: https://en.wikipedia.org/w/index.php?title=Rituximab&oldid=1372311002
+  revision: 1372311002
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Rituximab
@@ -79,7 +92,14 @@ The first therapeutic monoclonal antibody approved for cancer, now used far more
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Rituximab*](https://en.wikipedia.org/w/index.php?title=Rituximab&oldid=1372311002) (revision 1372311002, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 30–400 h | 30 to 400 hours (varies by dose and length of treatment) |
+| Bioavailability | 100 % | 100% (IV) |
+| Excretion | - | Uncertain: may undergo phagocytosis and catabolism in RES |
 
 ## Safety routing
 

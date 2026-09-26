@@ -19,21 +19,27 @@ chembl-id: CHEMBL189171
 chembl-max-phase: 4
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: 4.5±2.8 (up to 16) hrs
 protein-binding:
-  value: null
+  value: 80.0
+  value-max: 90.0
   unit: percent
-  notes: null
+  notes: 80–90%
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: ~100%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 40% renal, 50% biliary
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hydrolysis, glucuronidation
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Acemetacin
+  url: https://en.wikipedia.org/w/index.php?title=Acemetacin&oldid=1341436393
+  revision: 1341436393
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Acemetacin
@@ -84,7 +98,16 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Acemetacin*](https://en.wikipedia.org/w/index.php?title=Acemetacin&oldid=1341436393) (revision 1341436393, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | 4.5±2.8 (up to 16) hrs |
+| Protein binding | 80–90 % | 80–90% |
+| Bioavailability | 100 % | ~100% |
+| Metabolism | hepatic | Hydrolysis, glucuronidation |
+| Excretion | mainly urinary | 40% renal, 50% biliary |
 
 ## Safety routing
 

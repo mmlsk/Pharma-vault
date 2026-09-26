@@ -18,22 +18,24 @@ review-status: stub
 chembl-id: CHEMBL768
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 9.0
+  value-max: null
+  unit: min
+  notes: 9 minutes
 protein-binding:
-  value: null
+  value: 60.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 60%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Red blood cell (erythrocytic)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Esmolol
+  url: https://en.wikipedia.org/w/index.php?title=Esmolol&oldid=1357212768
+  revision: 1357212768
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Esmolol
@@ -84,7 +94,15 @@ Beta-2 adrenergic receptor antagonist _(ChEMBL curated mechanism, as quoted by t
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Esmolol*](https://en.wikipedia.org/w/index.php?title=Esmolol&oldid=1357212768) (revision 1357212768, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 9 min | 9 minutes |
+| Protein binding | 60 % | 60% |
+| Metabolism | - | Red blood cell (erythrocytic) |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

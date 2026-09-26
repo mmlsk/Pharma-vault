@@ -20,42 +20,58 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 17.0
+  value-max: null
+  unit: h
+  notes: 17 hours (30 hours [active metabolite])
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 99%
+bioavailability:
+  value: 79.0
+  value-max: null
+  notes: 79%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (70%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic via CYP1A2 & CYP3A4
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP1A2
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP1A2, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Roflumilast
+  url: https://en.wikipedia.org/w/index.php?title=Roflumilast&oldid=1367341055
+  revision: 1367341055
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Roflumilast Foam (Zoryve)
@@ -82,10 +98,21 @@ Topical PDE4 inhibitor for seborrheic dermatitis and plaque psoriasis, designed 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Roflumilast*](https://en.wikipedia.org/w/index.php?title=Roflumilast&oldid=1367341055) (revision 1367341055, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 17 h | 17 hours (30 hours [active metabolite]) |
+| Protein binding | 99 % | 99% |
+| Bioavailability | 79 % | 79% |
+| Metabolism | hepatic | Hepatic via CYP1A2 & CYP3A4 |
+| CYP (metabolised by) | CYP1A2, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary | Urine (70%) |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

@@ -18,18 +18,19 @@ review-status: stub
 chembl-id: CHEMBL1200617
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: 2.0
+  unit: h
+  notes: estimated 1–2 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: '>80% faeces'
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Rimexolone
+  url: https://en.wikipedia.org/w/index.php?title=Rimexolone&oldid=1330111425
+  revision: 1330111425
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Rimexolone
@@ -84,7 +93,13 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Rimexolone*](https://en.wikipedia.org/w/index.php?title=Rimexolone&oldid=1330111425) (revision 1330111425, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1–2 h | estimated 1–2 hours |
+| Excretion | mainly non-renal | >80% faeces |
 
 ## Safety routing
 

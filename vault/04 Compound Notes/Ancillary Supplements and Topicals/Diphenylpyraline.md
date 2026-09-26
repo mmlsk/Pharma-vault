@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: CHEMBL1492
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 24.0
+  value-max: 40.0
+  unit: h
+  notes: 24–40 hours
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Diphenylpyraline
+  url: https://en.wikipedia.org/w/index.php?title=Diphenylpyraline&oldid=1329178123
+  revision: 1329178123
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Diphenylpyraline
@@ -84,7 +93,12 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Diphenylpyraline*](https://en.wikipedia.org/w/index.php?title=Diphenylpyraline&oldid=1329178123) (revision 1329178123, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 24–40 h | 24–40 hours |
 
 ## Safety routing
 

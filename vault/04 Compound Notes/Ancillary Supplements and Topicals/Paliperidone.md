@@ -18,18 +18,23 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 23.0
+  value-max: null
+  unit: h
+  notes: 23 hours (by mouth)
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 28.0
+  value-max: null
+  notes: 28% (oral)
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.01
+  notes: 1% unchanged in urine 18% unchanged in feces
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Paliperidone
+  url: https://en.wikipedia.org/w/index.php?title=Paliperidone&oldid=1369113631
+  revision: 1369113631
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Paliperidone
@@ -79,7 +92,14 @@ Antagonizes or partially agonizes dopamine D2 receptors; movement, metabolic, an
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Paliperidone*](https://en.wikipedia.org/w/index.php?title=Paliperidone&oldid=1369113631) (revision 1369113631, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 23 h | 23 hours (by mouth) |
+| Bioavailability | 28 % | 28% (oral) |
+| Excretion | - · fe 0.01 | 1% unchanged in urine 18% unchanged in feces |
 
 ## Safety routing
 

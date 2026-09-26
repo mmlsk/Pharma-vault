@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 16.0
+  value-max: null
+  unit: min
+  notes: 16 minutes
 protein-binding:
-  value: null
+  value: 8.0
+  value-max: 12.0
   unit: percent
-  notes: null
+  notes: 8 to 12%
+bioavailability:
+  value: 28.0
+  value-max: 100.0
+  notes: 28 to 100%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Intracellular and liver (CYP-mediated)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cytotoxicity
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/oncology
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Fluorouracil
+  url: https://en.wikipedia.org/w/index.php?title=Fluorouracil&oldid=1351404942
+  revision: 1351404942
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # 5-Fluorouracil
@@ -79,7 +93,16 @@ A fluoropyrimidine whose active metabolite forms a covalent ternary complex with
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Fluorouracil*](https://en.wikipedia.org/w/index.php?title=Fluorouracil&oldid=1351404942) (revision 1351404942, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 16 min | 16 minutes |
+| Protein binding | 8–12 % | 8 to 12% |
+| Bioavailability | 28–100 % | 28 to 100% |
+| Metabolism | hepatic | Intracellular and liver (CYP-mediated) |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

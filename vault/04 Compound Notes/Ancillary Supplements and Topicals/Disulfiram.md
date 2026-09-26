@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.5
+  value-max: null
+  unit: h
+  notes: 7.3 +/-1.5 hours
 protein-binding:
   value: null
   unit: percent
@@ -31,9 +32,9 @@ renal-clearance:
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: In Liver to diethylthiocarbamate
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Disulfiram
+  url: https://en.wikipedia.org/w/index.php?title=Disulfiram&oldid=1369701892
+  revision: 1369701892
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Disulfiram
@@ -79,7 +88,13 @@ Alcohol deterrent that works by making drinking acutely unpleasant rather than b
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Disulfiram*](https://en.wikipedia.org/w/index.php?title=Disulfiram&oldid=1369701892) (revision 1369701892, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.5 h | 7.3 +/-1.5 hours |
+| Metabolism | hepatic | In Liver to diethylthiocarbamate |
 
 ## Safety routing
 

@@ -18,22 +18,23 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 50.0
+  value-max: 62.0
+  unit: h
+  notes: 50-62 h initial, 98 h steady-state
 protein-binding:
   value: null
   unit: percent
   notes: null
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: fecal (84%), urinary (1.9%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: minimally renal
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Probucol
+  url: https://en.wikipedia.org/w/index.php?title=Probucol&oldid=1334716938
+  revision: 1334716938
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Probucol
@@ -79,7 +88,14 @@ Legacy lipid-lowering antioxidant that lowers LDL and HDL and can prolong QT; wi
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Probucol*](https://en.wikipedia.org/w/index.php?title=Probucol&oldid=1334716938) (revision 1334716938, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 50–62 h | 50-62 h initial, 98 h steady-state |
+| Metabolism | - | minimally renal |
+| Excretion | mainly non-renal | fecal (84%), urinary (1.9%) |
 
 ## Safety routing
 

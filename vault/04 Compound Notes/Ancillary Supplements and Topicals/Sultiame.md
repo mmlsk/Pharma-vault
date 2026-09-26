@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 24.0
+  value-max: null
+  unit: h
+  notes: 24 hours
 protein-binding:
-  value: null
+  value: 29.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 29%
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100% (oral)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Fecal (10%) and renal (90%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic secretion
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Sultiame
+  url: https://en.wikipedia.org/w/index.php?title=Sultiame&oldid=1371756606
+  revision: 1371756606
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Sultiame
@@ -79,7 +93,16 @@ Inhibits carbonic anhydrase, lowering bicarbonate-dependent fluid secretion; met
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Sultiame*](https://en.wikipedia.org/w/index.php?title=Sultiame&oldid=1371756606) (revision 1371756606, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 24 h | 24 hours |
+| Protein binding | 29 % | 29% |
+| Bioavailability | 100 % | 100% (oral) |
+| Metabolism | hepatic | Hepatic secretion |
+| Excretion | mainly urinary | Fecal (10%) and renal (90%) |
 
 ## Safety routing
 

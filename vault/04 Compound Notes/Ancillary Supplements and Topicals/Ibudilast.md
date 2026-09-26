@@ -18,13 +18,18 @@ review-status: stub
 chembl-id: CHEMBL19449
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 19.0
+  value-max: null
+  unit: h
+  notes: 'Half-life: 19h'
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 90.0
+  value-max: null
+  notes: 90% ±
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ibudilast
+  url: https://en.wikipedia.org/w/index.php?title=Ibudilast&oldid=1369655217
+  revision: 1369655217
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Ibudilast
@@ -84,7 +97,14 @@ Phosphodiesterase 5A inhibitor _(ChEMBL curated mechanism, as quoted by the sour
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ibudilast*](https://en.wikipedia.org/w/index.php?title=Ibudilast&oldid=1369655217) (revision 1369655217, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 19 h | Half-life: 19h |
+| Bioavailability | 90 % | 90% ± |
+| Metabolites | - | Dihydrodiol-ibudilast |
 
 ## Safety routing
 

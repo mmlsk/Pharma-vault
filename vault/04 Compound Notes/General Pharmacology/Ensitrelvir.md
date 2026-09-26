@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 42.0
+  value-max: 48.0
+  unit: h
+  notes: 42–48 hours
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ensitrelvir
+  url: https://en.wikipedia.org/w/index.php?title=Ensitrelvir&oldid=1370836531
+  revision: 1370836531
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ensitrelvir
@@ -79,7 +88,12 @@ Non-covalent oral SARS-CoV-2 main protease inhibitor developed in Japan, notable
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ensitrelvir*](https://en.wikipedia.org/w/index.php?title=Ensitrelvir&oldid=1370836531) (revision 1370836531, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 42–48 h | 42–48 hours |
 
 ## Safety routing
 

@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: null
+  unit: h
+  notes: 2 hours
 protein-binding:
-  value: null
+  value: 76.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 76%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -33,7 +35,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: 7 metabolites known, not metabolized extensively
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +50,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/neuropsych
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Carbidopa
+  url: https://en.wikipedia.org/w/index.php?title=Carbidopa&oldid=1373023885
+  revision: 1373023885
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Carbidopa
@@ -80,7 +90,14 @@ A peripheral AADC inhibitor that does not cross the blood-brain barrier. It has 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Carbidopa*](https://en.wikipedia.org/w/index.php?title=Carbidopa&oldid=1373023885) (revision 1373023885, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2 h | 2 hours |
+| Protein binding | 76 % | 76% |
+| Metabolism | - | 7 metabolites known, not metabolized extensively |
 
 ## Safety routing
 

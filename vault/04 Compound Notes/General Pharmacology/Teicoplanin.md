@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 70.0
+  value-max: 100.0
+  unit: h
+  notes: 70 to 100 hours
 protein-binding:
-  value: null
+  value: 90.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 90% to 95%
+bioavailability:
+  value: 90.0
+  value-max: null
+  notes: 90% (given IM)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  primary-route: true
+  fraction-excreted-unchanged: 0.97
+  notes: Kidney (97% unchanged)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Nil
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Teicoplanin
+  url: https://en.wikipedia.org/w/index.php?title=Teicoplanin&oldid=1369644635
+  revision: 1369644635
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Teicoplanin
@@ -79,7 +93,16 @@ Lipoglycopeptide with a much longer half-life than vancomycin and less nephrotox
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Teicoplanin*](https://en.wikipedia.org/w/index.php?title=Teicoplanin&oldid=1369644635) (revision 1369644635, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 70–100 h | 70 to 100 hours |
+| Protein binding | 90 % | 90% to 95% |
+| Bioavailability | 90 % | 90% (given IM) |
+| Metabolism | - | Nil |
+| Excretion | mainly urinary · fe 0.97 | Kidney (97% unchanged) |
 
 ## Safety routing
 

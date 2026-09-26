@@ -79,7 +79,7 @@ An Fc-FGF21 fusion protein in trials for metabolic dysfunction-associated steato
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

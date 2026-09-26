@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: null
+  unit: h
+  notes: Approx. 1 hour
 protein-binding:
-  value: null
+  value: 15.0
+  value-max: 25.0
   unit: percent
-  notes: null
+  notes: 15 to 25%
+bioavailability:
+  value: 62.0
+  value-max: null
+  notes: 62% ±17% (parenteral); < 30–55% (oral)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 75 to 85% kidney
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: 12 to 50%
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ampicillin
+  url: https://en.wikipedia.org/w/index.php?title=Ampicillin&oldid=1364413005
+  revision: 1364413005
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ampicillin
@@ -79,7 +93,17 @@ The parenteral aminopenicillin, retaining unique activity against Listeria and E
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ampicillin*](https://en.wikipedia.org/w/index.php?title=Ampicillin&oldid=1364413005) (revision 1364413005, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1 h | Approx. 1 hour |
+| Protein binding | 15–25 % | 15 to 25% |
+| Bioavailability | 62 % | 62% ±17% (parenteral); < 30–55% (oral) |
+| Metabolism | - | 12 to 50% |
+| Metabolites | - | Penicilloic acid |
+| Excretion | mainly urinary | 75 to 85% kidney |
 
 ## Safety routing
 

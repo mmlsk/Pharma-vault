@@ -83,7 +83,7 @@ Oral FGFR1-3 inhibitor approved for FGFR2-fusion cholangiocarcinoma; FGFR3 activ
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

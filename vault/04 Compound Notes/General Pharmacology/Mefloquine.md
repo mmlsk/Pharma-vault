@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: 4.0
+  unit: wk
+  notes: 2 to 4 weeks
 protein-binding:
   value: null
   unit: percent
@@ -28,12 +29,12 @@ protein-binding:
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.09
+  notes: Primarily bile and feces; urine (9% as unchanged drug, 4% as primary metabolite)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Extensive liver; main metabolite is inactive
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Mefloquine
+  url: https://en.wikipedia.org/w/index.php?title=Mefloquine&oldid=1374571427
+  revision: 1374571427
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Mefloquine
@@ -79,7 +88,14 @@ Quinoline methanol for malaria prophylaxis in chloroquine-resistant areas, restr
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Mefloquine*](https://en.wikipedia.org/w/index.php?title=Mefloquine&oldid=1374571427) (revision 1374571427, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2–4 wk | 2 to 4 weeks |
+| Metabolism | hepatic | Extensive liver; main metabolite is inactive |
+| Excretion | - · fe 0.09 | Primarily bile and feces; urine (9% as unchanged drug, 4% as primary metabolite) |
 
 ## Safety routing
 

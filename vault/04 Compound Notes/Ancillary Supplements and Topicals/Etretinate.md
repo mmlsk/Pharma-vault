@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: CHEMBL464
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 120.0
+  value-max: null
+  unit: d
+  notes: 120 days
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: '>99%'
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Etretinate
+  url: https://en.wikipedia.org/w/index.php?title=Etretinate&oldid=1341590172
+  revision: 1341590172
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Etretinate
@@ -84,7 +94,14 @@ Retinoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Etretinate*](https://en.wikipedia.org/w/index.php?title=Etretinate&oldid=1341590172) (revision 1341590172, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 120 d | 120 days |
+| Protein binding | 99 % | >99% |
+| Metabolites | - | Free acid, Z-form, chain shortening |
 
 ## Safety routing
 

@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 9.6
+  value-max: 14.0
+  unit: h
+  notes: 9.6–14hours
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cytotoxicity
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/oncology
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Tacedinaline
+  url: https://en.wikipedia.org/w/index.php?title=Tacedinaline&oldid=1369189922
+  revision: 1369189922
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Tacedinaline
@@ -79,7 +88,12 @@ Tacedinaline is a named HDAC research compound with a curated biochemical result
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Tacedinaline*](https://en.wikipedia.org/w/index.php?title=Tacedinaline&oldid=1369189922) (revision 1369189922, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 9.6–14 h | 9.6–14hours |
 
 ## Safety routing
 

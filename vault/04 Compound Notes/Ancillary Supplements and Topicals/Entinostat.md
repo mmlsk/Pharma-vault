@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 33.0
+  value-max: 150.0
+  unit: h
+  notes: 33–150hours
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Entinostat
+  url: https://en.wikipedia.org/w/index.php?title=Entinostat&oldid=1368798893
+  revision: 1368798893
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Entinostat
@@ -79,7 +88,12 @@ Class I selective HDAC inhibitor investigated in combination oncology.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Entinostat*](https://en.wikipedia.org/w/index.php?title=Entinostat&oldid=1368798893) (revision 1368798893, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 33–150 h | 33–150hours |
 
 ## Safety routing
 

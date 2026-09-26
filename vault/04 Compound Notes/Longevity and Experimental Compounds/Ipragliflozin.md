@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL2018096
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.58
+  value-max: null
+  unit: h
+  notes: 14.97±4.58 hours
 protein-binding:
-  value: null
+  value: 94.6
+  value-max: 96.5
   unit: percent
-  notes: null
+  notes: 94.6–96.5%
+bioavailability:
+  value: 90.2
+  value-max: null
+  notes: 90.2%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (67.9%), feces (32.7%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: UGT2B7 (major), UGT2B4, 1A8, 1A9 (minor)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ipragliflozin
+  url: https://en.wikipedia.org/w/index.php?title=Ipragliflozin&oldid=1370302319
+  revision: 1370302319
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Ipragliflozin
@@ -84,7 +98,16 @@ Sodium/glucose cotransporter 2 inhibitor _(ChEMBL curated mechanism, as quoted b
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ipragliflozin*](https://en.wikipedia.org/w/index.php?title=Ipragliflozin&oldid=1370302319) (revision 1370302319, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4.58 h | 14.97±4.58 hours |
+| Protein binding | 94.6–96.5 % | 94.6–96.5% |
+| Bioavailability | 90.2 % | 90.2% |
+| Metabolism | hepatic | UGT2B7 (major), UGT2B4, 1A8, 1A9 (minor) |
+| Excretion | mainly urinary | Urine (67.9%), feces (32.7%) |
 
 ## Safety routing
 

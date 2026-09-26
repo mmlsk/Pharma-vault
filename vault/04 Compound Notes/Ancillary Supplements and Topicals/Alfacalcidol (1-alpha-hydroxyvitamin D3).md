@@ -82,7 +82,7 @@ Vitamin D analogue needing only hepatic hydroxylation to become calcitriol; stan
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

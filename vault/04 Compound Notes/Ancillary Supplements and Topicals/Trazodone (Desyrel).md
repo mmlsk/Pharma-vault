@@ -20,42 +20,59 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.0
+  value-max: 15.0
+  unit: h
+  notes: '• Trazodone (IR): 4–15 hours; • Trazodone (ER): 9–13 hours; • mCPP: 3–16 hours'
 protein-binding:
-  value: null
+  value: 89.0
+  value-max: 95.0
   unit: percent
-  notes: null
+  notes: 89–95%
+bioavailability:
+  value: 63.0
+  value-max: 80.0
+  notes: 'By mouth: 63–80%'
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Urine: 70–75%; Feces: 21%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP3A4, CYP2D6, CYP1A2?)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP1A2
+  - CYP2D6
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP1A2, CYP2D6, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Trazodone
+  url: https://en.wikipedia.org/w/index.php?title=Trazodone&oldid=1372334694
+  revision: 1372334694
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Trazodone (Desyrel)
@@ -82,10 +99,22 @@ Serotonin antagonist and reuptake inhibitor, licensed as an antidepressant but o
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Trazodone*](https://en.wikipedia.org/w/index.php?title=Trazodone&oldid=1372334694) (revision 1372334694, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4–15 h | • Trazodone (IR): 4–15 hours; • Trazodone (ER): 9–13 hours; • mCPP: 3–16 hours |
+| Protein binding | 89–95 % | 89–95% |
+| Bioavailability | 63–80 % | By mouth: 63–80% |
+| Metabolism | hepatic | Liver (CYP3A4, CYP2D6, CYP1A2?) |
+| CYP (metabolised by) | CYP1A2, CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | mCPP |
+| Excretion | - | Urine: 70–75%; Feces: 21% |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

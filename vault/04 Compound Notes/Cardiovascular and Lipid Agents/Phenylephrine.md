@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: 3.0
+  unit: h
+  notes: 2–3hours
 protein-binding:
-  value: null
+  value: 95.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 95%
+bioavailability:
+  value: 38.0
+  value-max: null
+  notes: 'Oral: conflicting—38% or 0.003%'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  primary-route: true
+  fraction-excreted-unchanged: 0.16
+  notes: 'Urine: 86% (3–16% unchanged)'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver and intestines (via oxidative deamination by MAO-A and MAO-B; sulfation; glucuronidation)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/cardio
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Phenylephrine
+  url: https://en.wikipedia.org/w/index.php?title=Phenylephrine&oldid=1359707321
+  revision: 1359707321
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Phenylephrine
@@ -79,7 +93,17 @@ Pure alpha-1 agonist used as a vasopressor, a mydriatic and a decongestant, thou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Phenylephrine*](https://en.wikipedia.org/w/index.php?title=Phenylephrine&oldid=1359707321) (revision 1359707321, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2–3 h | 2–3hours |
+| Protein binding | 95 % | 95% |
+| Bioavailability | 38 % | Oral: conflicting—38% or 0.003% |
+| Metabolism | hepatic | Liver and intestines (via oxidative deamination by MAO-A and MAO-B; sulfation; glucuronidation) |
+| Metabolites | - | • [https://pubchem.ncbi.nlm.nih.gov/compound/3-Hydroxymandelic-acid meta-Hydroxymandelic acid]; • Sulfate conjugates; • Glucuronide conjugates |
+| Excretion | mainly urinary · fe 0.16 | Urine: 86% (3–16% unchanged) |
 
 ## Safety routing
 

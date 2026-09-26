@@ -20,42 +20,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 26.0
+  value-max: null
+  unit: h
+  notes: 'Sertraline: 26 hours (32 hours in females, 22 hours in males; range 13–45 hours); Desmethylsertraline: 62–104 hours'
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 40.0
+  value-max: 45.0
+  notes: ~40–45%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (primarily N-demethylation mainly by CYP2B6; also metabolism by CYP2C19, others)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2B6
+  - CYP2C19
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2B6, CYP2C19 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Sertraline
+  url: https://en.wikipedia.org/w/index.php?title=Sertraline&oldid=1375702628
+  revision: 1375702628
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Sertraline (Zoloft)
@@ -82,7 +97,16 @@ SSRI widely used for depression, anxiety, PTSD, and OCD; gastrointestinal and se
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Sertraline*](https://en.wikipedia.org/w/index.php?title=Sertraline&oldid=1375702628) (revision 1375702628, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 26 h | Sertraline: 26 hours (32 hours in females, 22 hours in males; range 13–45 hours); Desmethylsertraline: 62–104 hours |
+| Bioavailability | 40–45 % | ~40–45% |
+| Metabolism | hepatic | Liver (primarily N-demethylation mainly by CYP2B6; also metabolism by CYP2C19, others) |
+| CYP (metabolised by) | CYP2B6, CYP2C19 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | Desmethylsertraline; Others (e.g., hydroxylated metabolites, glucuronide conjugates) |
 
 ## Safety routing
 
@@ -90,3 +114,4 @@ Group-level triage (not compound-specific): `evidence-limited`
 
 - [[Stacking and Interaction Risks]]
 - [[Experimental and Evidence-Limited Compounds]]
+- [[CYP450 Metabolism]]

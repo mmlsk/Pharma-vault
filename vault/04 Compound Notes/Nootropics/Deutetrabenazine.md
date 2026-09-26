@@ -80,7 +80,7 @@ Deuterated tetrabenazine whose carbon-deuterium bonds slow CYP2D6 metabolism, sm
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

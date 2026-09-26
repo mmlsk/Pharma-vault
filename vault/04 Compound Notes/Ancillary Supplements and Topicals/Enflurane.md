@@ -22,9 +22,10 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 97.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 97%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Enflurane
+  url: https://en.wikipedia.org/w/index.php?title=Enflurane&oldid=1345827653
+  revision: 1345827653
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Enflurane
@@ -84,7 +93,12 @@ GABA-A receptor; anion channel positive modulator _(ChEMBL curated mechanism, as
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Enflurane*](https://en.wikipedia.org/w/index.php?title=Enflurane&oldid=1345827653) (revision 1345827653, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 97 % | 97% |
 
 ## Safety routing
 

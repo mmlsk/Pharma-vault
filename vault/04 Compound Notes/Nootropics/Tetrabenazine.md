@@ -18,29 +18,36 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 10.0
+  value-max: null
+  unit: h
+  notes: 10 hours parent compound (2 to 8 hours active metabolites)
 protein-binding:
-  value: null
+  value: 82.0
+  value-max: 85.0
   unit: percent
-  notes: null
+  notes: 82–85%
+bioavailability:
+  value: null
+  value-max: null
+  notes: Low, extensive first pass effect
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (~75%) and fecal (7–16%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP2D6-mediated)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2D6
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2D6 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
@@ -48,13 +55,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/neuropsych
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Tetrabenazine
+  url: https://en.wikipedia.org/w/index.php?title=Tetrabenazine&oldid=1372155211
+  revision: 1372155211
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Tetrabenazine
@@ -80,7 +95,17 @@ VMAT2 inhibitor for Huntington chorea, effective but limited by depression and p
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Tetrabenazine*](https://en.wikipedia.org/w/index.php?title=Tetrabenazine&oldid=1372155211) (revision 1372155211, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 10 h | 10 hours parent compound (2 to 8 hours active metabolites) |
+| Protein binding | 82–85 % | 82–85% |
+| Bioavailability | - | Low, extensive first pass effect |
+| Metabolism | hepatic | Liver (CYP2D6-mediated) |
+| CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary | Kidney (~75%) and fecal (7–16%) |
 
 ## Safety routing
 
@@ -88,3 +113,4 @@ Group-level triage (not compound-specific): `cns-activity`, `serotonergic-or-dop
 
 - [[Stacking and Interaction Risks]]
 - [[Serotonin Toxicity]]
+- [[CYP450 Metabolism]]

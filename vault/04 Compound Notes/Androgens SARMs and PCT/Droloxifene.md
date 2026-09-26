@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: 3
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 19.0
+  value-max: 37.0
+  unit: h
+  notes: 19–37 hours
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Droloxifene
+  url: https://en.wikipedia.org/w/index.php?title=Droloxifene&oldid=1362185779
+  revision: 1362185779
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Droloxifene
@@ -83,7 +92,12 @@ estrogen receptor modulator _(ChEMBL curated mechanism, as quoted by the source)
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Droloxifene*](https://en.wikipedia.org/w/index.php?title=Droloxifene&oldid=1362185779) (revision 1362185779, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 19–37 h | 19–37 hours |
 
 ## Safety routing
 

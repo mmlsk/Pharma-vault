@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: CHEMBL141305
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 18.0
+  value-max: 29.0
+  unit: h
+  notes: 18–29 hours
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Cyclofenil
+  url: https://en.wikipedia.org/w/index.php?title=Cyclofenil&oldid=1314441606
+  revision: 1314441606
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Cyclofenil
@@ -84,7 +93,12 @@ Estrogen receptor modulator _(ChEMBL curated mechanism, as quoted by the source)
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Cyclofenil*](https://en.wikipedia.org/w/index.php?title=Cyclofenil&oldid=1314441606) (revision 1314441606, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 18–29 h | 18–29 hours |
 
 ## Safety routing
 

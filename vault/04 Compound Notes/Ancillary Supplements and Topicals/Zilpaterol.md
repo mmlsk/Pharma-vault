@@ -18,18 +18,19 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 11.9
+  value-max: 13.2
+  unit: h
+  notes: 11.9–13.2 hours (first phase)
 protein-binding:
   value: null
   unit: percent
   notes: null
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (88.2–84.3%) and feces (8.6–8.7%) (in cattle)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Zilpaterol
+  url: https://en.wikipedia.org/w/index.php?title=Zilpaterol&oldid=1346820811
+  revision: 1346820811
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Zilpaterol
@@ -79,7 +88,13 @@ Beta-2 agonist feed additive for cattle. Appears in human and equine anti-doping
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Zilpaterol*](https://en.wikipedia.org/w/index.php?title=Zilpaterol&oldid=1346820811) (revision 1346820811, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 11.9–13.2 h | 11.9–13.2 hours (first phase) |
+| Excretion | mainly non-renal | Urine (88.2–84.3%) and feces (8.6–8.7%) (in cattle) |
 
 ## Safety routing
 

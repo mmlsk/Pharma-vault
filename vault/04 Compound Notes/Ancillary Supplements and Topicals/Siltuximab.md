@@ -79,7 +79,7 @@ Antibody against IL-6 itself rather than its receptor, approved for Castleman di
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

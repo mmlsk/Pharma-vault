@@ -23,8 +23,9 @@ half-life:
   notes: null
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: '75.6'
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/analgesia
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Tetracaine
+  url: https://en.wikipedia.org/w/index.php?title=Tetracaine&oldid=1314133385
+  revision: 1314133385
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Tetracaine
@@ -79,7 +88,12 @@ Long-acting ester local anaesthetic used topically on eye and skin and in spinal
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Tetracaine*](https://en.wikipedia.org/w/index.php?title=Tetracaine&oldid=1314133385) (revision 1314133385, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | - | 75.6 |
 
 ## Safety routing
 

@@ -19,12 +19,14 @@ chembl-id: null
 chembl-max-phase: null
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: 4 months
 protein-binding:
-  value: null
+  value: 33.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: ~33%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Dorzolamide
+  url: https://en.wikipedia.org/w/index.php?title=Dorzolamide&oldid=1366236200
+  revision: 1366236200
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Dorzolamide
@@ -79,7 +89,13 @@ Inhibits carbonic anhydrase, lowering bicarbonate-dependent fluid secretion; met
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Dorzolamide*](https://en.wikipedia.org/w/index.php?title=Dorzolamide&oldid=1366236200) (revision 1366236200, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | 4 months |
+| Protein binding | 33 % | ~33% |
 
 ## Safety routing
 

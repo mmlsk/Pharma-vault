@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 7.0
+  value-max: 9.0
+  unit: h
+  notes: 7–9 hours
 protein-binding:
-  value: null
+  value: 60.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 60%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Aminophylline
+  url: https://en.wikipedia.org/w/index.php?title=Aminophylline&oldid=1329963873
+  revision: 1329963873
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Aminophylline
@@ -79,7 +89,13 @@ Inhibits PDE5 so nitric-oxide/cGMP vasodilation persists in corporal and pulmona
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Aminophylline*](https://en.wikipedia.org/w/index.php?title=Aminophylline&oldid=1329963873) (revision 1329963873, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 7–9 h | 7–9 hours |
+| Protein binding | 60 % | 60% |
 
 ## Safety routing
 

@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: CHEMBL118
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 7.8
+  value-max: null
+  unit: h
+  notes: 7.8 hours; 11 hours (mild hepatic impairment); 13 hours (moderate-severe hepatic impairment)
 protein-binding:
-  value: null
+  value: 97.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 97% (mainly to serum albumin)
+bioavailability:
+  value: null
+  value-max: null
+  notes: Unknown
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Faeces (57%), urine (27%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (mainly CYP2C9)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2C9
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2C9 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Celecoxib
+  url: https://en.wikipedia.org/w/index.php?title=Celecoxib&oldid=1366925464
+  revision: 1366925464
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Celecoxib
@@ -84,10 +99,21 @@ Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Celecoxib*](https://en.wikipedia.org/w/index.php?title=Celecoxib&oldid=1366925464) (revision 1366925464, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 7.8 h | 7.8 hours; 11 hours (mild hepatic impairment); 13 hours (moderate-severe hepatic impairment) |
+| Protein binding | 97 % | 97% (mainly to serum albumin) |
+| Bioavailability | - | Unknown |
+| Metabolism | hepatic | Liver (mainly CYP2C9) |
+| CYP (metabolised by) | CYP2C9 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly non-renal | Faeces (57%), urine (27%) |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

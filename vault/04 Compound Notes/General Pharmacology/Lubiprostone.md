@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 0.9
+  value-max: 1.4
+  unit: h
+  notes: Unknown (lubiprostone); 0.9–1.4 hours (main metabolite)
 protein-binding:
-  value: null
+  value: 94.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 94%
+bioavailability:
+  value: null
+  value-max: null
+  notes: Negligible
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (60%) and fecal (30%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Extensive, CYP not involved
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/gi
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Lubiprostone
+  url: https://en.wikipedia.org/w/index.php?title=Lubiprostone&oldid=1329260443
+  revision: 1329260443
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Lubiprostone
@@ -79,7 +93,16 @@ Prostone chloride channel activator for chronic constipation, working through a 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Lubiprostone*](https://en.wikipedia.org/w/index.php?title=Lubiprostone&oldid=1329260443) (revision 1329260443, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 0.9–1.4 h | Unknown (lubiprostone); 0.9–1.4 hours (main metabolite) |
+| Protein binding | 94 % | 94% |
+| Bioavailability | - | Negligible |
+| Metabolism | hepatic | Extensive, CYP not involved |
+| Excretion | mainly urinary | Kidney (60%) and fecal (30%) |
 
 ## Safety routing
 

@@ -29,7 +29,7 @@ active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Hepatic
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +47,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Hydrocortamate
+  url: https://en.wikipedia.org/w/index.php?title=Hydrocortamate&oldid=1330825153
+  revision: 1330825153
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Hydrocortamate
@@ -84,7 +92,12 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Hydrocortamate*](https://en.wikipedia.org/w/index.php?title=Hydrocortamate&oldid=1330825153) (revision 1330825153, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Excretion | - | Hepatic |
 
 ## Safety routing
 

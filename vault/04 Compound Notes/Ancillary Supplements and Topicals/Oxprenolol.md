@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: CHEMBL546
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: 2.0
+  unit: h
+  notes: 1–2 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 20.0
+  value-max: 70.0
+  notes: 20–70%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney ; Lactic (in lactiferous females)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Oxprenolol
+  url: https://en.wikipedia.org/w/index.php?title=Oxprenolol&oldid=1359198474
+  revision: 1359198474
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Oxprenolol
@@ -84,7 +97,15 @@ Beta-2 adrenergic receptor antagonist _(ChEMBL curated mechanism, as quoted by t
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Oxprenolol*](https://en.wikipedia.org/w/index.php?title=Oxprenolol&oldid=1359198474) (revision 1359198474, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1–2 h | 1–2 hours |
+| Bioavailability | 20–70 % | 20–70% |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Kidney ; Lactic (in lactiferous females) |
 
 ## Safety routing
 

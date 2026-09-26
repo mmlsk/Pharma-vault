@@ -80,7 +80,7 @@ Multi-receptor somatostatin analog used to control growth hormone and ACTH hyper
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

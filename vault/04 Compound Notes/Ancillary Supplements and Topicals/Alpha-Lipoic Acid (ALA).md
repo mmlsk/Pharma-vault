@@ -82,7 +82,7 @@ Antioxidant compound studied for improving insulin sensitivity in type 2 diabete
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

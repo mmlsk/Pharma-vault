@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL644
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 23.0
+  value-max: 24.0
+  unit: h
+  notes: 23–24 hours
 protein-binding:
-  value: null
+  value: 94.9
+  value-max: null
   unit: percent
-  notes: null
+  notes: 94.9%
+bioavailability:
+  value: 41.0
+  value-max: null
+  notes: 41%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Trimipramine
+  url: https://en.wikipedia.org/w/index.php?title=Trimipramine&oldid=1365883663
+  revision: 1365883663
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Trimipramine
@@ -84,7 +98,16 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Trimipramine*](https://en.wikipedia.org/w/index.php?title=Trimipramine&oldid=1365883663) (revision 1365883663, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 23–24 h | 23–24 hours |
+| Protein binding | 94.9 % | 94.9% |
+| Bioavailability | 41 % | 41% |
+| Metabolism | hepatic | Hepatic |
+| Excretion | mainly urinary | Renal |
 
 ## Safety routing
 

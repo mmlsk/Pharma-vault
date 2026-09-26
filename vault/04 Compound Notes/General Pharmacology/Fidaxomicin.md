@@ -18,18 +18,23 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.8
+  value-max: null
+  unit: h
+  notes: 11.7 ± 4.80 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: Minimal systemic absorption
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (<1%), faeces (92%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Fidaxomicin
+  url: https://en.wikipedia.org/w/index.php?title=Fidaxomicin&oldid=1369629710
+  revision: 1369629710
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Fidaxomicin
@@ -79,7 +92,14 @@ Macrocyclic antibiotic for Clostridioides difficile that is barely absorbed and 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Fidaxomicin*](https://en.wikipedia.org/w/index.php?title=Fidaxomicin&oldid=1369629710) (revision 1369629710, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4.8 h | 11.7 ± 4.80 hours |
+| Bioavailability | - | Minimal systemic absorption |
+| Excretion | mainly non-renal | Urine (<1%), faeces (92%) |
 
 ## Safety routing
 

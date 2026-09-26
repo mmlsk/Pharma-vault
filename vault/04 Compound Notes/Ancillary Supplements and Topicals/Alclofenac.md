@@ -18,18 +18,20 @@ review-status: stub
 chembl-id: CHEMBL94081
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.5
+  value-max: 5.5
+  unit: h
+  notes: 1.5-5.5 h
 protein-binding:
-  value: null
+  value: 90.0
+  value-max: 99.0
   unit: percent
-  notes: null
+  notes: 90-99%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Mostly renal
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Alclofenac
+  url: https://en.wikipedia.org/w/index.php?title=Alclofenac&oldid=1367948665
+  revision: 1367948665
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Alclofenac
@@ -84,7 +94,14 @@ Cyclooxygenase-1 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Alclofenac*](https://en.wikipedia.org/w/index.php?title=Alclofenac&oldid=1367948665) (revision 1367948665, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.5–5.5 h | 1.5-5.5 h |
+| Protein binding | 90–99 % | 90-99% |
+| Excretion | - | Mostly renal |
 
 ## Safety routing
 

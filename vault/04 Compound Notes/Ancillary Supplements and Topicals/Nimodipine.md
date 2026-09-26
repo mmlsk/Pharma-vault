@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL1428
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 8.0
+  value-max: 9.0
+  unit: h
+  notes: 8–9 hours
 protein-binding:
-  value: null
+  value: 95.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 95%
+bioavailability:
+  value: 13.0
+  value-max: null
+  notes: 13% (by mouth)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Feces and Urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Nimodipine
+  url: https://en.wikipedia.org/w/index.php?title=Nimodipine&oldid=1350628279
+  revision: 1350628279
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Nimodipine
@@ -84,7 +98,16 @@ Mineralocorticoid receptor antagonist _(ChEMBL curated mechanism, as quoted by t
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Nimodipine*](https://en.wikipedia.org/w/index.php?title=Nimodipine&oldid=1350628279) (revision 1350628279, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 8–9 h | 8–9 hours |
+| Protein binding | 95 % | 95% |
+| Bioavailability | 13 % | 13% (by mouth) |
+| Metabolism | hepatic | Hepatic |
+| Excretion | - | Feces and Urine |
 
 ## Safety routing
 

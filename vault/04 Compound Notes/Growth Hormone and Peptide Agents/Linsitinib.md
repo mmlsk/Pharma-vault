@@ -84,7 +84,7 @@ insulin-like growth factor I receptor inhibitor _(ChEMBL curated mechanism, as q
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

@@ -82,7 +82,7 @@ A PPAR-delta agonist that shifts muscle toward fatty acid oxidation and raised e
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

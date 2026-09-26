@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.6
+  value-max: 4.3
+  unit: d
+  notes: 'Oral: 1.6–4.3 days; IM: 3–4.3 days'
 protein-binding:
-  value: null
+  value: 93.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 'Albumin: 93%; Free: 7%'
+bioavailability:
+  value: 68.0
+  value-max: 100.0
+  notes: 'Oral: 68–100%'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Feces: 70%; Urine: 30%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic (CYP3A4)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Cyproterone acetate
+  url: https://en.wikipedia.org/w/index.php?title=Cyproterone_acetate&oldid=1376024299
+  revision: 1376024299
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Cyproterone Acetate
@@ -79,7 +94,18 @@ Steroidal antiandrogen and progestin that blocks the androgen receptor and suppr
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Cyproterone acetate*](https://en.wikipedia.org/w/index.php?title=Cyproterone_acetate&oldid=1376024299) (revision 1376024299, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.6–4.3 d | Oral: 1.6–4.3 days; IM: 3–4.3 days |
+| Protein binding | 93 % | Albumin: 93%; Free: 7% |
+| Bioavailability | 68–100 % | Oral: 68–100% |
+| Metabolism | hepatic | Hepatic (CYP3A4) |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | • 15β-OH-CPA (major); • Cyproterone (minor); • Acetic acid (minor) |
+| Excretion | mainly non-renal | Feces: 70%; Urine: 30% |
 
 ## Safety routing
 
@@ -87,4 +113,5 @@ Group-level triage (not compound-specific): `endocrine-feedback-disruption`
 
 - [[Stacking and Interaction Risks]]
 - [[Hormonal Axis Suppression]]
+- [[CYP450 Metabolism]]
 - [[HPG and GH-IGF-1 Axes]]

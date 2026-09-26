@@ -31,9 +31,9 @@ renal-clearance:
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +48,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Mibolerone
+  url: https://en.wikipedia.org/w/index.php?title=Mibolerone&oldid=1336144546
+  revision: 1336144546
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Mibolerone
@@ -80,7 +88,12 @@ Extremely potent veterinary anabolic steroid occasionally diverted for human dop
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Mibolerone*](https://en.wikipedia.org/w/index.php?title=Mibolerone&oldid=1336144546) (revision 1336144546, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Metabolism | hepatic | Liver |
 
 ## Safety routing
 

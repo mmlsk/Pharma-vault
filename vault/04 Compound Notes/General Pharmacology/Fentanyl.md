@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 6.0
+  value-max: null
+  unit: min
+  notes: 'IV: 6mins (T1/2 α); 1hours (T1/2 β); 16hours (T1/2 ɣ); Intranasal: 15–25hours; Transdermal: 20–27hours; Sublingual: 5–13.5hours; Buccal: 3.2–6.4hours'
 protein-binding:
-  value: null
+  value: 80.0
+  value-max: 85.0
   unit: percent
-  notes: null
+  notes: 80–85%
+bioavailability:
+  value: 90.0
+  value-max: 92.0
+  notes: 'Transdermal: 90–92%; Intranasal: 89%; Buccal: 51% (tablets), 71% (film); Sublingual: 54% (Abstral tablets), 76% (spray); Oral: 35%; Inhalation: 56–96%; IM & IV: 100%'
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.1
+  notes: Mostly urinary (metabolites, <10% unchanged drug)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver, primarily by CYP3A4; Norfentanyl; Despropionylfentanyl (minor); Hydroxyfentanyl (minor); Hydroxynorfentanyl (minor secondary metabolite)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/analgesia
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Fentanyl
+  url: https://en.wikipedia.org/w/index.php?title=Fentanyl&oldid=1376528965
+  revision: 1376528965
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Fentanyl
@@ -79,7 +94,17 @@ Highly lipophilic synthetic opioid with rapid brain entry, used clinically by ev
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Fentanyl*](https://en.wikipedia.org/w/index.php?title=Fentanyl&oldid=1376528965) (revision 1376528965, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 6 min | IV: 6mins (T1/2 α); 1hours (T1/2 β); 16hours (T1/2 ɣ); Intranasal: 15–25hours; Transdermal: 20–27hours; Sublingual: 5–13.5hours; Buccal: 3.2–6.4hours |
+| Protein binding | 80–85 % | 80–85% |
+| Bioavailability | 90–92 % | Transdermal: 90–92%; Intranasal: 89%; Buccal: 51% (tablets), 71% (film); Sublingual: 54% (Abstral tablets), 76% (spray); Oral: 35%; Inhalation: 56–96%; IM & IV: 100% |
+| Metabolism | hepatic | Liver, primarily by CYP3A4; Norfentanyl; Despropionylfentanyl (minor); Hydroxyfentanyl (minor); Hydroxynorfentanyl (minor secondary metabolite) |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Excretion | - · fe 0.1 | Mostly urinary (metabolites, <10% unchanged drug) |
 
 ## Safety routing
 
@@ -87,3 +112,4 @@ Group-level triage (not compound-specific): `sedation-respiratory-depression`
 
 - [[Stacking and Interaction Risks]]
 - [[Respiratory Depression and Fatal Overdose]]
+- [[CYP450 Metabolism]]

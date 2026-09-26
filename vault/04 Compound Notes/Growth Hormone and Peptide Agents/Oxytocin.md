@@ -18,22 +18,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: 6.0
+  unit: min
+  notes: 1–6 min (IV); ~2 h (intranasal)
 protein-binding:
-  value: null
+  value: 30.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 30%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Biliary and kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver and other oxytocinases
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +50,21 @@ risk-domains: []
 group-risk-triage:
 - evidence-limited
 - identity-contamination
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/peptides
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Oxytocin
+  url: https://en.wikipedia.org/w/index.php?title=Oxytocin&oldid=1375895379
+  revision: 1375895379
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Oxytocin
@@ -80,7 +90,15 @@ Neuropeptide hormone increasingly studied for a direct role in muscle stem cell 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Oxytocin*](https://en.wikipedia.org/w/index.php?title=Oxytocin&oldid=1375895379) (revision 1375895379, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1–6 min | 1–6 min (IV); ~2 h (intranasal) |
+| Protein binding | 30 % | 30% |
+| Metabolism | hepatic | Liver and other oxytocinases |
+| Excretion | mainly non-renal | Biliary and kidney |
 
 ## Safety routing
 

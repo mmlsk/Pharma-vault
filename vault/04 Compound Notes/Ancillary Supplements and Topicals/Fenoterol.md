@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: CHEMBL32800
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 6.5
+  value-max: null
+  unit: h
+  notes: ~6.5 hours
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Fenoterol
+  url: https://en.wikipedia.org/w/index.php?title=Fenoterol&oldid=1358051342
+  revision: 1358051342
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Fenoterol
@@ -84,7 +93,12 @@ Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Fenoterol*](https://en.wikipedia.org/w/index.php?title=Fenoterol&oldid=1358051342) (revision 1358051342, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 6.5 h | ~6.5 hours |
 
 ## Safety routing
 

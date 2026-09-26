@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 13.0
+  value-max: 17.0
+  unit: h
+  notes: 13 to 17 hours
 protein-binding:
-  value: null
+  value: 73.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 73% (ramipril); 56% (ramiprilat)
+bioavailability:
+  value: 28.0
+  value-max: null
+  notes: 28%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (60%) and fecal (40%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver, to ramiprilat
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ramipril
+  url: https://en.wikipedia.org/w/index.php?title=Ramipril&oldid=1356471664
+  revision: 1356471664
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ramipril (Altace)
@@ -82,7 +96,16 @@ ACE inhibitor whose cardiovascular prevention trial changed how the class is pre
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ramipril*](https://en.wikipedia.org/w/index.php?title=Ramipril&oldid=1356471664) (revision 1356471664, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 13–17 h | 13 to 17 hours |
+| Protein binding | 73 % | 73% (ramipril); 56% (ramiprilat) |
+| Bioavailability | 28 % | 28% |
+| Metabolism | hepatic | Liver, to ramiprilat |
+| Excretion | mainly urinary | Kidney (60%) and fecal (40%) |
 
 ## Safety routing
 

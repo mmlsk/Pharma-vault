@@ -18,13 +18,18 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 40.0
+  value-max: 100.0
+  unit: min
+  notes: 40–100min (0.7–1.7h)
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 80.0
+  value-max: null
+  notes: 80% (IM)
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -48,13 +53,21 @@ risk-domains: []
 group-risk-triage:
 - evidence-limited
 - identity-contamination
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/peptides
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Carbetocin
+  url: https://en.wikipedia.org/w/index.php?title=Carbetocin&oldid=1365375725
+  revision: 1365375725
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Carbetocin
@@ -80,7 +93,13 @@ Acts at the oxytocin receptor to drive uterine contraction and milk ejection, or
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Carbetocin*](https://en.wikipedia.org/w/index.php?title=Carbetocin&oldid=1365375725) (revision 1365375725, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 40–100 min | 40–100min (0.7–1.7h) |
+| Bioavailability | 80 % | 80% (IM) |
 
 ## Safety routing
 

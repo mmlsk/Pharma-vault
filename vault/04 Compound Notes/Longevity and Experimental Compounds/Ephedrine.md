@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 6.0
+  value-max: null
+  unit: h
+  notes: 6hours
 protein-binding:
-  value: null
+  value: 24.0
+  value-max: 29.0
   unit: percent
-  notes: null
+  notes: ~24–29% (5–10% to albumin)
+bioavailability:
+  value: 88.0
+  value-max: null
+  notes: 88%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  primary-route: true
+  fraction-excreted-unchanged: 0.6
+  notes: Mainly urine (60% unchanged)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Largely unmetabolized
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ephedrine
+  url: https://en.wikipedia.org/w/index.php?title=Ephedrine&oldid=1368687200
+  revision: 1368687200
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ephedrine
@@ -79,7 +93,17 @@ Sympathomimetic stimulant that raises energy expenditure substantially through b
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ephedrine*](https://en.wikipedia.org/w/index.php?title=Ephedrine&oldid=1368687200) (revision 1368687200, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 6 h | 6hours |
+| Protein binding | 24–29 % | ~24–29% (5–10% to albumin) |
+| Bioavailability | 88 % | 88% |
+| Metabolism | - | Largely unmetabolized |
+| Metabolites | - | • Norephedrine |
+| Excretion | mainly urinary · fe 0.6 | Mainly urine (60% unchanged) |
 
 ## Safety routing
 

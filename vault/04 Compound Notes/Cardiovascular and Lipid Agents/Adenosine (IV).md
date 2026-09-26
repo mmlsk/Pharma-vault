@@ -21,21 +21,27 @@ chembl-id: null
 chembl-max-phase: null
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: 'cleared plasma <30 seconds; half-life <10 seconds [not stored as a number: non-human or sub-minute data]'
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: 'No'
+bioavailability:
+  value: null
+  value-max: null
+  notes: Rapidly cleared from circulation via enzyme degradation
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: can leave cell intact or can be degraded to hypoxanthine, xanthine, and ultimately uric acid
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Rapidly converted to inosine and adenosine monophosphate
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/cardio
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Adenosine
+  url: https://en.wikipedia.org/w/index.php?title=Adenosine&oldid=1376143840
+  revision: 1376143840
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Adenosine (IV)
@@ -82,7 +96,16 @@ Endogenous nucleoside given as a rapid intravenous bolus to terminate AV-nodal r
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Adenosine*](https://en.wikipedia.org/w/index.php?title=Adenosine&oldid=1376143840) (revision 1376143840, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | cleared plasma <30 seconds; half-life <10 seconds [not stored as a number: non-human or sub-minute data] |
+| Protein binding | - | No |
+| Bioavailability | - | Rapidly cleared from circulation via enzyme degradation |
+| Metabolism | - | Rapidly converted to inosine and adenosine monophosphate |
+| Excretion | - | can leave cell intact or can be degraded to hypoxanthine, xanthine, and ultimately uric acid |
 
 ## Safety routing
 

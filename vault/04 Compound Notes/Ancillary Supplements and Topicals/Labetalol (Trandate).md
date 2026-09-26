@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 6.0
+  value-max: 8.0
+  unit: h
+  notes: 'Oral: 6–8hours; IV: 5.52hours'
 protein-binding:
-  value: null
+  value: 50.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 50%
+bioavailability:
+  value: 25.0
+  value-max: null
+  notes: 25% (11–86%)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  primary-route: true
+  fraction-excreted-unchanged: 0.6
+  notes: Urine (55–60% as conjugates or unchanged within 24hours)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Mainly conjugation via glucuronidation
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Labetalol
+  url: https://en.wikipedia.org/w/index.php?title=Labetalol&oldid=1364189106
+  revision: 1364189106
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Labetalol (Trandate)
@@ -82,7 +96,17 @@ Combined alpha-1 and non-selective beta blocker; the standard oral and intraveno
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Labetalol*](https://en.wikipedia.org/w/index.php?title=Labetalol&oldid=1364189106) (revision 1364189106, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 6–8 h | Oral: 6–8hours; IV: 5.52hours |
+| Protein binding | 50 % | 50% |
+| Bioavailability | 25 % | 25% (11–86%) |
+| Metabolism | hepatic | Mainly conjugation via glucuronidation |
+| Metabolites | - | • Glucuronide conjugates |
+| Excretion | mainly urinary · fe 0.6 | Urine (55–60% as conjugates or unchanged within 24hours) |
 
 ## Safety routing
 

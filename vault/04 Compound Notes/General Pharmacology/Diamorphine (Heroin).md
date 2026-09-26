@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: 3.0
+  unit: min
+  notes: 2–3 minutes
 protein-binding:
-  value: null
+  value: 0.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 0% (morphine metabolite 35%)
+bioavailability:
+  value: 35.0
+  value-max: null
+  notes: <35% (by mouth), 44–61% (inhalation)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 90% kidney as glucuronides, rest bile duct
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/analgesia
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Heroin
+  url: https://en.wikipedia.org/w/index.php?title=Heroin&oldid=1376264455
+  revision: 1376264455
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Diamorphine (Heroin)
@@ -82,7 +96,17 @@ Diacetylmorphine, a prodrug of morphine used clinically in the United Kingdom fo
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Heroin*](https://en.wikipedia.org/w/index.php?title=Heroin&oldid=1376264455) (revision 1376264455, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2–3 min | 2–3 minutes |
+| Protein binding | 0 % | 0% (morphine metabolite 35%) |
+| Bioavailability | 35 % | <35% (by mouth), 44–61% (inhalation) |
+| Metabolism | hepatic | Liver |
+| Metabolites | - | 6-Monoacetylmorphine, morphine |
+| Excretion | mainly urinary | 90% kidney as glucuronides, rest bile duct |
 
 ## Safety routing
 

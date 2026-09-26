@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 0.4
+  value-max: null
+  unit: h
+  notes: 0.4 hrs (sofosbuvir); 27 hrs (inactive metabolite GS-331007)
 protein-binding:
-  value: null
+  value: 61.0
+  value-max: 65.0
   unit: percent
-  notes: null
+  notes: 61–65%
+bioavailability:
+  value: 92.0
+  value-max: null
+  notes: 92%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 80% urine, 14% feces (mostly as GS-331007)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Quickly activated to triphosphate (CatA/CES1, HIST1, phosphorylation)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Sofosbuvir
+  url: https://en.wikipedia.org/w/index.php?title=Sofosbuvir&oldid=1346949376
+  revision: 1346949376
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Sofosbuvir
@@ -79,7 +93,16 @@ Blocks an HCV replication target and is combined with complementary direct-actin
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Sofosbuvir*](https://en.wikipedia.org/w/index.php?title=Sofosbuvir&oldid=1346949376) (revision 1346949376, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 0.4 h | 0.4 hrs (sofosbuvir); 27 hrs (inactive metabolite GS-331007) |
+| Protein binding | 61–65 % | 61–65% |
+| Bioavailability | 92 % | 92% |
+| Metabolism | - | Quickly activated to triphosphate (CatA/CES1, HIST1, phosphorylation) |
+| Excretion | - | 80% urine, 14% feces (mostly as GS-331007) |
 
 ## Safety routing
 

@@ -79,7 +79,7 @@ TRPV1 agonist used topically for neuropathic pain and studied for thermogenesis;
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

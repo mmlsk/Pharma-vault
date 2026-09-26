@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 30.0
+  value-max: null
+  unit: min
+  notes: 30 min
 protein-binding:
   value: null
   unit: percent
@@ -29,11 +30,11 @@ active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Liver and unspecific plasma estearases
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver, plasma
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/analgesia
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Articaine
+  url: https://en.wikipedia.org/w/index.php?title=Articaine&oldid=1349757673
+  revision: 1349757673
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Articaine
@@ -79,7 +88,14 @@ Dental local anaesthetic with a thiophene ring for tissue penetration and an est
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Articaine*](https://en.wikipedia.org/w/index.php?title=Articaine&oldid=1349757673) (revision 1349757673, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 30 min | 30 min |
+| Metabolism | hepatic | Liver, plasma |
+| Excretion | - | Liver and unspecific plasma estearases |
 
 ## Safety routing
 

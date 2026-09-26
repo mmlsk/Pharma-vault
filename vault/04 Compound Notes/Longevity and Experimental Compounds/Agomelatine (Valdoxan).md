@@ -20,42 +20,58 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: 2.0
+  unit: h
+  notes: 1–2 hours
 protein-binding:
-  value: null
+  value: 95.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 95%
+bioavailability:
+  value: 1.0
+  value-max: null
+  notes: ~1%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (80%, mostly as metabolites)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (90% CYP1A2 and 10% CYP2C9)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP1A2
+  - CYP2C9
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP1A2, CYP2C9 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Agomelatine
+  url: https://en.wikipedia.org/w/index.php?title=Agomelatine&oldid=1366468764
+  revision: 1366468764
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Agomelatine (Valdoxan)
@@ -82,7 +98,17 @@ Melatonin-receptor agonist and 5-HT2C antagonist antidepressant used outside the
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Agomelatine*](https://en.wikipedia.org/w/index.php?title=Agomelatine&oldid=1366468764) (revision 1366468764, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1–2 h | 1–2 hours |
+| Protein binding | 95 % | 95% |
+| Bioavailability | 1 % | ~1% |
+| Metabolism | hepatic | Liver (90% CYP1A2 and 10% CYP2C9) |
+| CYP (metabolised by) | CYP1A2, CYP2C9 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary | Kidney (80%, mostly as metabolites) |
 
 ## Safety routing
 
@@ -90,3 +116,4 @@ Group-level triage (not compound-specific): `evidence-limited`
 
 - [[Stacking and Interaction Risks]]
 - [[Experimental and Evidence-Limited Compounds]]
+- [[CYP450 Metabolism]]

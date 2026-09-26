@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 12.0
+  value-max: null
+  unit: h
+  notes: 12 hours
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: '0'
+bioavailability:
+  value: 25.0
+  value-max: null
+  notes: approx. 25%, but a wide range between individuals (6 to 60%)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Eliminated unchanged in urine
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: None
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Lisinopril
+  url: https://en.wikipedia.org/w/index.php?title=Lisinopril&oldid=1374815147
+  revision: 1374815147
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Lisinopril
@@ -79,7 +93,16 @@ ACE inhibitor and ALLHAT first-line arm; cheap and effective, dry cough being th
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Lisinopril*](https://en.wikipedia.org/w/index.php?title=Lisinopril&oldid=1374815147) (revision 1374815147, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 12 h | 12 hours |
+| Protein binding | - | 0 |
+| Bioavailability | 25 % | approx. 25%, but a wide range between individuals (6 to 60%) |
+| Metabolism | - | None |
+| Excretion | - | Eliminated unchanged in urine |
 
 ## Safety routing
 

@@ -83,7 +83,7 @@ Designer prohormone-era oral anabolic steroid marketed as a 'methylated superdro
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

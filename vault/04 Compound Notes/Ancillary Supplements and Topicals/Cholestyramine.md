@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: null
+  unit: h
+  notes: 1 hour
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: unknown
+bioavailability:
+  value: null
+  value-max: null
+  notes: low
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Faecal
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: bile acids
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Colestyramine
+  url: https://en.wikipedia.org/w/index.php?title=Colestyramine&oldid=1339777528
+  revision: 1339777528
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Cholestyramine
@@ -79,7 +93,16 @@ Bile acid sequestrant; the oldest lipid drug class with hard outcome data behind
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Colestyramine*](https://en.wikipedia.org/w/index.php?title=Colestyramine&oldid=1339777528) (revision 1339777528, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1 h | 1 hour |
+| Protein binding | - | unknown |
+| Bioavailability | - | low |
+| Metabolism | - | bile acids |
+| Excretion | mainly non-renal | Faecal |
 
 ## Safety routing
 

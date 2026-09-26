@@ -21,21 +21,26 @@ chembl-id: null
 chembl-max-phase: null
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: Unknown
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: Well-absorbed
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +55,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Oxymetholone
+  url: https://en.wikipedia.org/w/index.php?title=Oxymetholone&oldid=1347233272
+  revision: 1347233272
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Anadrol (Oxymetholone)
@@ -83,7 +96,15 @@ Strong oral steroid producing rapid mass and strength gains, with high hepatotox
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Oxymetholone*](https://en.wikipedia.org/w/index.php?title=Oxymetholone&oldid=1347233272) (revision 1347233272, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | Unknown |
+| Bioavailability | - | Well-absorbed |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Urine |
 
 ## Safety routing
 

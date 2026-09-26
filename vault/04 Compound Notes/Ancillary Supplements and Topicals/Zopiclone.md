@@ -18,42 +18,58 @@ review-status: stub
 chembl-id: CHEMBL135400
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: null
+  unit: h
+  notes: ~5 hours (3.5–6.5 hours) ; ~7–9 hours for 65+ years old
 protein-binding:
-  value: null
+  value: 52.0
+  value-max: 59.0
   unit: percent
-  notes: null
+  notes: 52–59%
+bioavailability:
+  value: 75.0
+  value-max: 80.0
+  notes: 75–80%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (80%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic through CYP3A4 and CYP2E1
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2E1
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2E1, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Zopiclone
+  url: https://en.wikipedia.org/w/index.php?title=Zopiclone&oldid=1369948564
+  revision: 1369948564
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Zopiclone
@@ -84,10 +100,21 @@ GABA-A receptor; agonist GABA site positive allosteric modulator _(ChEMBL curate
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Zopiclone*](https://en.wikipedia.org/w/index.php?title=Zopiclone&oldid=1369948564) (revision 1369948564, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5 h | ~5 hours (3.5–6.5 hours) ; ~7–9 hours for 65+ years old |
+| Protein binding | 52–59 % | 52–59% |
+| Bioavailability | 75–80 % | 75–80% |
+| Metabolism | hepatic | Hepatic through CYP3A4 and CYP2E1 |
+| CYP (metabolised by) | CYP2E1, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary | Urine (80%) |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

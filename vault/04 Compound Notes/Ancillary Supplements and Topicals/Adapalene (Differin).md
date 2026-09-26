@@ -20,22 +20,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 51.0
+  value-max: null
+  unit: h
+  notes: between 7 and 51 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: Very low
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Bile duct
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Known to accumulate in the liver and GI-tract. In human, mouse, rat, rabbit, and dog cultured hepatocytes, metabolism appears to affect the methoxybenzene moiety but remains incompletely characterized. The major products of metabolism are glucuronides. Approximately 25% of the drug is metabolized; the rest is excreted as parent drug
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +54,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Adapalene
+  url: https://en.wikipedia.org/w/index.php?title=Adapalene&oldid=1368544655
+  revision: 1368544655
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Adapalene (Differin)
@@ -82,7 +95,16 @@ Third-generation topical retinoid, receptor-selective for RAR, a first-line OTC 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Adapalene*](https://en.wikipedia.org/w/index.php?title=Adapalene&oldid=1368544655) (revision 1368544655, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 51 h | between 7 and 51 hours |
+| Bioavailability | - | Very low |
+| Metabolism | hepatic | Known to accumulate in the liver and GI-tract. In human, mouse, rat, rabbit, and dog cultured hepatocytes, metabolism appears to affect the methoxybenzene moiety but remains incompletely characterized. The major products of metabolism are glucuronides. Approximately 25% of the drug is metabolized; the rest is excreted as parent drug |
+| Metabolites | - | Glucuronides |
+| Excretion | mainly non-renal | Bile duct |
 
 ## Safety routing
 

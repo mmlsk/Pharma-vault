@@ -82,7 +82,7 @@ Alpha-2 adrenergic antagonist related to yohimbine, sold as a stimulant fat-loss
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

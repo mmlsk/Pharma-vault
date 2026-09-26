@@ -83,7 +83,7 @@ MC4R agonist approved for genetic obesity syndromes, directly activating the mel
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

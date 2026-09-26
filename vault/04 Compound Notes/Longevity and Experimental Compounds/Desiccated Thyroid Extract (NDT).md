@@ -82,7 +82,7 @@ Porcine thyroid powder containing both T4 and T3; a pre-1938 preparation still p
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

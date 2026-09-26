@@ -79,7 +79,7 @@ A triglyceride prodrug of butyrate that survives gastric passage and releases bu
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

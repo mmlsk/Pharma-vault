@@ -18,18 +18,20 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: null
+  unit: wk
+  notes: 2 weeks
 protein-binding:
-  value: null
+  value: 99.3
+  value-max: null
   unit: percent
-  notes: null
+  notes: '>99.3%'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Bile duct/fecal, kidney
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/immunology
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Teriflunomide
+  url: https://en.wikipedia.org/w/index.php?title=Teriflunomide&oldid=1329508095
+  revision: 1329508095
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Teriflunomide
@@ -79,7 +89,14 @@ The active metabolite of leflunomide, developed in its own right as an oral dise
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Teriflunomide*](https://en.wikipedia.org/w/index.php?title=Teriflunomide&oldid=1329508095) (revision 1329508095, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2 wk | 2 weeks |
+| Protein binding | 99.3 % | >99.3% |
+| Excretion | mainly non-renal | Bile duct/fecal, kidney |
 
 ## Safety routing
 

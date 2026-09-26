@@ -18,42 +18,53 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 7.3
+  value-max: 12.1
+  unit: h
+  notes: 7.3–12.1 hours
 protein-binding:
-  value: null
+  value: 93.9
+  value-max: null
   unit: percent
-  notes: null
+  notes: 93,9%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Biliary
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (mainly CYP3A4)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Udenafil
+  url: https://en.wikipedia.org/w/index.php?title=Udenafil&oldid=1366312134
+  revision: 1366312134
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Udenafil
@@ -79,10 +90,20 @@ Inhibits PDE5 so nitric-oxide/cGMP vasodilation persists in corporal and pulmona
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Udenafil*](https://en.wikipedia.org/w/index.php?title=Udenafil&oldid=1366312134) (revision 1366312134, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 7.3–12.1 h | 7.3–12.1 hours |
+| Protein binding | 93.9 % | 93,9% |
+| Metabolism | hepatic | Liver (mainly CYP3A4) |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly non-renal | Biliary |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

@@ -19,21 +19,26 @@ chembl-id: null
 chembl-max-phase: null
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: '40–84 seconds [not stored as a number: non-human or sub-minute data]'
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: N/A
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal; <!--
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Hydrolysis by plasma esterases
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/analgesia
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Procaine
+  url: https://en.wikipedia.org/w/index.php?title=Procaine&oldid=1351167068
+  revision: 1351167068
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Procaine
@@ -79,7 +92,15 @@ An ester local anaesthetic that also binds CpG-rich DNA and inhibits DNA methylt
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Procaine*](https://en.wikipedia.org/w/index.php?title=Procaine&oldid=1351167068) (revision 1351167068, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | 40–84 seconds [not stored as a number: non-human or sub-minute data] |
+| Bioavailability | - | N/A |
+| Metabolism | - | Hydrolysis by plasma esterases |
+| Excretion | mainly urinary | Renal; <!-- |
 
 ## Safety routing
 

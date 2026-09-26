@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 27.0
+  value-max: null
+  unit: d
+  notes: 27 days
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/immunology
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Nivolumab
+  url: https://en.wikipedia.org/w/index.php?title=Nivolumab&oldid=1347861612
+  revision: 1347861612
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Nivolumab
@@ -79,7 +88,12 @@ Anti-PD-1 antibody used alone and combined with ipilimumab, where the combinatio
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Nivolumab*](https://en.wikipedia.org/w/index.php?title=Nivolumab&oldid=1347861612) (revision 1347861612, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 27 d | 27 days |
 
 ## Safety routing
 

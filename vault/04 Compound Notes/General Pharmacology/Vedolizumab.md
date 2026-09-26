@@ -79,7 +79,7 @@ Gut-selective anti-alpha-4-beta-7 antibody for inflammatory bowel disease, whose
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

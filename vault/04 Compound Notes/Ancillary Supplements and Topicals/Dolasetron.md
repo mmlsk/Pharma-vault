@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 8.1
+  value-max: null
+  unit: h
+  notes: 8.1 hours
 protein-binding:
-  value: null
+  value: 69.0
+  value-max: 77.0
   unit: percent
-  notes: null
+  notes: 69 to 77%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Dolasetron
+  url: https://en.wikipedia.org/w/index.php?title=Dolasetron&oldid=1339067846
+  revision: 1339067846
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Dolasetron
@@ -79,7 +89,13 @@ Antagonises 5-HT3 receptors on vagal afferents and in the area postrema; QT effe
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Dolasetron*](https://en.wikipedia.org/w/index.php?title=Dolasetron&oldid=1339067846) (revision 1339067846, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 8.1 h | 8.1 hours |
+| Protein binding | 69–77 % | 69 to 77% |
 
 ## Safety routing
 

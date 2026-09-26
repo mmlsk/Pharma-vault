@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.5
+  value-max: null
+  unit: h
+  notes: phase 1 = 4.5h,; phase 2 = 271h, ; average = 33h
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 50.0
+  value-max: null
+  notes: 50%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 62% feces / 8% urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: gut/liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +53,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/neuropsych
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Reserpine
+  url: https://en.wikipedia.org/w/index.php?title=Reserpine&oldid=1371358256
+  revision: 1371358256
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Reserpine
@@ -80,7 +93,15 @@ Rauwolfia alkaloid, the first effective antihypertensive and the drug whose depr
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Reserpine*](https://en.wikipedia.org/w/index.php?title=Reserpine&oldid=1371358256) (revision 1371358256, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4.5 h | phase 1 = 4.5h,; phase 2 = 271h, ; average = 33h |
+| Bioavailability | 50 % | 50% |
+| Metabolism | hepatic | gut/liver |
+| Excretion | - | 62% feces / 8% urine |
 
 ## Safety routing
 

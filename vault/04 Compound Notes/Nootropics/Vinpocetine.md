@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 0.48
+  value-max: null
+  unit: h
+  notes: 2.54 ± 0.48 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 8.9
+  value-max: null
+  notes: 56.6 ± 8.9%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: renal
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: hepatic
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +53,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/nootropic
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Vinpocetine
+  url: https://en.wikipedia.org/w/index.php?title=Vinpocetine&oldid=1367372936
+  revision: 1367372936
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Vinpocetine
@@ -80,7 +93,15 @@ Semi-synthetic vincamine derivative acting as a cerebral vasodilator and PDE1 in
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Vinpocetine*](https://en.wikipedia.org/w/index.php?title=Vinpocetine&oldid=1367372936) (revision 1367372936, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 0.48 h | 2.54 ± 0.48 hours |
+| Bioavailability | 8.9 % | 56.6 ± 8.9% |
+| Metabolism | hepatic | hepatic |
+| Excretion | mainly urinary | renal |
 
 ## Safety routing
 

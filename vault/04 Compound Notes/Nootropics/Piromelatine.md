@@ -80,7 +80,7 @@ Agonises MT1/MT2 receptors to shift circadian phase and shorten sleep latency; i
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

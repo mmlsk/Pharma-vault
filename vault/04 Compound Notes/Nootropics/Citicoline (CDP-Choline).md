@@ -27,11 +27,15 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 90.0
+  value-max: null
+  notes: 90% oral
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: respiration (as CO2) and urine
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -50,13 +54,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/nootropic
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Citicoline
+  url: https://en.wikipedia.org/w/index.php?title=Citicoline&oldid=1359563001
+  revision: 1359563001
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Citicoline (CDP-Choline)
@@ -83,7 +95,13 @@ Supplies both choline for acetylcholine and cytidine for membrane phospholipid s
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Citicoline*](https://en.wikipedia.org/w/index.php?title=Citicoline&oldid=1359563001) (revision 1359563001, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | 90 % | 90% oral |
+| Excretion | - | respiration (as CO2) and urine |
 
 ## Safety routing
 

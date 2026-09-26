@@ -20,22 +20,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 146.0
+  value-max: null
+  unit: h
+  notes: 146 hours
 protein-binding:
-  value: null
+  value: 22.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 22%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (partial)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Nil
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Zoledronic acid
+  url: https://en.wikipedia.org/w/index.php?title=Zoledronic_acid&oldid=1372632814
+  revision: 1372632814
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Zoledronic Acid (Reclast)
@@ -82,7 +92,15 @@ Potent IV nitrogen-containing bisphosphonate given as an annual infusion, used f
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Zoledronic acid*](https://en.wikipedia.org/w/index.php?title=Zoledronic_acid&oldid=1372632814) (revision 1372632814, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 146 h | 146 hours |
+| Protein binding | 22 % | 22% |
+| Metabolism | - | Nil |
+| Excretion | mainly urinary | Kidney (partial) |
 
 ## Safety routing
 

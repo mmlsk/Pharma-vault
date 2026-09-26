@@ -19,21 +19,26 @@ chembl-id: CHEMBL1201101
 chembl-max-phase: 4
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: ~(7-8) days i.m.)
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: 'Oral: very low; Intramuscular: very high'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 90% Urine; 6% feces
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +53,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Testosterone cypionate
+  url: https://en.wikipedia.org/w/index.php?title=Testosterone_cypionate&oldid=1371345261
+  revision: 1371345261
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Testosterone Cypionate
@@ -85,7 +98,15 @@ Androgen Receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Testosterone cypionate*](https://en.wikipedia.org/w/index.php?title=Testosterone_cypionate&oldid=1371345261) (revision 1371345261, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | ~(7-8) days i.m.) |
+| Bioavailability | - | Oral: very low; Intramuscular: very high |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | 90% Urine; 6% feces |
 
 ## Safety routing
 

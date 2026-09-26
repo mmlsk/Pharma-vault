@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL1303
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: 7.0
+  unit: h
+  notes: 5–7 hours
 protein-binding:
-  value: null
+  value: 92.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 92%
+bioavailability:
+  value: 37.0
+  value-max: null
+  notes: 37% (transdermal)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (71%), Feces (23%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP-mediated)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Rotigotine
+  url: https://en.wikipedia.org/w/index.php?title=Rotigotine&oldid=1366385573
+  revision: 1366385573
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Rotigotine
@@ -84,7 +98,16 @@ D2-like dopamine receptor agonist _(ChEMBL curated mechanism, as quoted by the s
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Rotigotine*](https://en.wikipedia.org/w/index.php?title=Rotigotine&oldid=1366385573) (revision 1366385573, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5–7 h | 5–7 hours |
+| Protein binding | 92 % | 92% |
+| Bioavailability | 37 % | 37% (transdermal) |
+| Metabolism | hepatic | Liver (CYP-mediated) |
+| Excretion | mainly urinary | Urine (71%), Feces (23%) |
 
 ## Safety routing
 

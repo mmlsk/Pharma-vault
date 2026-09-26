@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: CHEMBL408
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 16.0
+  value-max: 34.0
+  unit: h
+  notes: 16–34 hours
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Troglitazone
+  url: https://en.wikipedia.org/w/index.php?title=Troglitazone&oldid=1375250442
+  revision: 1375250442
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Troglitazone
@@ -84,7 +93,12 @@ Peroxisome proliferator-activated receptor gamma agonist _(ChEMBL curated mechan
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Troglitazone*](https://en.wikipedia.org/w/index.php?title=Troglitazone&oldid=1375250442) (revision 1375250442, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 16–34 h | 16–34 hours |
 
 ## Safety routing
 

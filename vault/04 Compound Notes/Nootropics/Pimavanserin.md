@@ -18,29 +18,34 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 54.0
+  value-max: 57.0
+  unit: h
+  notes: 'Pimavanserin: 54–57h; N-Desmethyl-pimavanserin (active): 200h'
 protein-binding:
-  value: null
+  value: 94.0
+  value-max: 97.0
   unit: percent
-  notes: null
+  notes: 94–97%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic (CYP3A4, CYP3A5, CYP2J2)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2J2
+  - CYP3A4
+  - CYP3A5
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2J2, CYP3A4, CYP3A5 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
@@ -48,13 +53,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/neuropsych
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Pimavanserin
+  url: https://en.wikipedia.org/w/index.php?title=Pimavanserin&oldid=1358505193
+  revision: 1358505193
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Pimavanserin
@@ -80,7 +93,16 @@ Selective 5-HT2A inverse agonist for Parkinson disease psychosis, treating psych
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Pimavanserin*](https://en.wikipedia.org/w/index.php?title=Pimavanserin&oldid=1358505193) (revision 1358505193, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 54–57 h | Pimavanserin: 54–57h; N-Desmethyl-pimavanserin (active): 200h |
+| Protein binding | 94–97 % | 94–97% |
+| Metabolism | hepatic | Hepatic (CYP3A4, CYP3A5, CYP2J2) |
+| CYP (metabolised by) | CYP2J2, CYP3A4, CYP3A5 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | N-Desmethyl-pimavanserin |
 
 ## Safety routing
 
@@ -88,3 +110,4 @@ Group-level triage (not compound-specific): `cns-activity`, `serotonergic-or-dop
 
 - [[Stacking and Interaction Risks]]
 - [[Serotonin Toxicity]]
+- [[CYP450 Metabolism]]

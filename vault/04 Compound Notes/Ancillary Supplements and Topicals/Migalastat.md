@@ -18,18 +18,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 3.0
+  value-max: 5.0
+  unit: h
+  notes: 3–5 hours (single dose)
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: None
+bioavailability:
+  value: 75.0
+  value-max: null
+  notes: 75%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (77%), feces (20%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Migalastat
+  url: https://en.wikipedia.org/w/index.php?title=Migalastat&oldid=1370389401
+  revision: 1370389401
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Migalastat
@@ -79,7 +93,16 @@ Oral pharmacological chaperone for Fabry disease, stabilising a patient's own mu
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Migalastat*](https://en.wikipedia.org/w/index.php?title=Migalastat&oldid=1370389401) (revision 1370389401, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 3–5 h | 3–5 hours (single dose) |
+| Protein binding | - | None |
+| Bioavailability | 75 % | 75% |
+| Metabolites | - | O-glucuronides (<15%) |
+| Excretion | mainly urinary | Urine (77%), feces (20%) |
 
 ## Safety routing
 

@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 40.0
+  value-max: null
+  unit: min
+  notes: 'α phase: 40 min,; β phase: 10 hours'
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: ~99%
+bioavailability:
+  value: 37.0
+  value-max: 66.0
+  notes: 37–66%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Biliary (95%), urine (negligible)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (glucuronidation)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Dipyridamole
+  url: https://en.wikipedia.org/w/index.php?title=Dipyridamole&oldid=1330713177
+  revision: 1330713177
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Dipyridamole
@@ -79,7 +93,16 @@ Antiplatelet and vasodilator used mainly with aspirin after stroke or with selec
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Dipyridamole*](https://en.wikipedia.org/w/index.php?title=Dipyridamole&oldid=1330713177) (revision 1330713177, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 40 min | α phase: 40 min,; β phase: 10 hours |
+| Protein binding | 99 % | ~99% |
+| Bioavailability | 37–66 % | 37–66% |
+| Metabolism | hepatic | Liver (glucuronidation) |
+| Excretion | mainly urinary | Biliary (95%), urine (negligible) |
 
 ## Safety routing
 

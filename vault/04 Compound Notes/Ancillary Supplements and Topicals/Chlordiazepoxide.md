@@ -18,22 +18,23 @@ review-status: stub
 chembl-id: CHEMBL451
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: 30.0
+  unit: h
+  notes: 5–30 hours (Active metabolite desmethyldiazepam 36–200 hours; other active metabolites include oxazepam)
 protein-binding:
   value: null
   unit: percent
   notes: null
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Chlordiazepoxide
+  url: https://en.wikipedia.org/w/index.php?title=Chlordiazepoxide&oldid=1372839306
+  revision: 1372839306
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Chlordiazepoxide
@@ -84,7 +93,15 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Chlordiazepoxide*](https://en.wikipedia.org/w/index.php?title=Chlordiazepoxide&oldid=1372839306) (revision 1372839306, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5–30 h | 5–30 hours (Active metabolite desmethyldiazepam 36–200 hours; other active metabolites include oxazepam) |
+| Metabolism | hepatic | Liver |
+| Metabolites | - | • Desmethyldiazepam; Desmethylchlordiazepoxide; • Demoxepam; • Oxazepam |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

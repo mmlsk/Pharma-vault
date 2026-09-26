@@ -82,7 +82,7 @@ A haemoglobin oxygen-affinity modulator that stabilises the R state so less HbS 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

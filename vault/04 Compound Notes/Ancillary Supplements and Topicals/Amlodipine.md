@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 30.0
+  value-max: 50.0
+  unit: h
+  notes: 30–50 hours
 protein-binding:
-  value: null
+  value: 93.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 93%
+bioavailability:
+  value: 64.0
+  value-max: 90.0
+  notes: 64–90%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Amlodipine
+  url: https://en.wikipedia.org/w/index.php?title=Amlodipine&oldid=1368611723
+  revision: 1368611723
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Amlodipine
@@ -79,7 +93,17 @@ Dihydropyridine calcium channel blocker and ALLHAT first-line arm; ankle oedema 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Amlodipine*](https://en.wikipedia.org/w/index.php?title=Amlodipine&oldid=1368611723) (revision 1368611723, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 30–50 h | 30–50 hours |
+| Protein binding | 93 % | 93% |
+| Bioavailability | 64–90 % | 64–90% |
+| Metabolism | hepatic | Liver |
+| Metabolites | - | Various inactive pyrimidine metabolites |
+| Excretion | mainly urinary | Urine |
 
 ## Safety routing
 

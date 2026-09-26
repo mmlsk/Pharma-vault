@@ -82,7 +82,7 @@ Potent oral 11-beta-hydroxylase inhibitor approved for Cushing's disease and Cus
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

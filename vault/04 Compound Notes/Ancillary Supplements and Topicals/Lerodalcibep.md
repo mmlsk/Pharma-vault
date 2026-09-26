@@ -79,7 +79,7 @@ Investigational long-acting PCSK9-binding fusion protein designed for monthly LD
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

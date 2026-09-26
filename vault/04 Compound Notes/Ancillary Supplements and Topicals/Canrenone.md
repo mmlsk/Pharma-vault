@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: CHEMBL1463345
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 16.5
+  value-max: null
+  unit: h
+  notes: 16.5 hours
 protein-binding:
-  value: null
+  value: 95.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 95%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Canrenone
+  url: https://en.wikipedia.org/w/index.php?title=Canrenone&oldid=1351773744
+  revision: 1351773744
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Canrenone
@@ -84,7 +94,13 @@ Mineralocorticoid receptor antagonist _(ChEMBL curated mechanism, as quoted by t
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Canrenone*](https://en.wikipedia.org/w/index.php?title=Canrenone&oldid=1351773744) (revision 1351773744, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 16.5 h | 16.5 hours |
+| Protein binding | 95 % | 95% |
 
 ## Safety routing
 

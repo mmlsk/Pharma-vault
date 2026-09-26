@@ -22,18 +22,23 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 92.9
+  value-max: 95.8
   unit: percent
-  notes: null
+  notes: 92.9–95.8%
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100% (IV)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: UGT1A1
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Belinostat
+  url: https://en.wikipedia.org/w/index.php?title=Belinostat&oldid=1329528223
+  revision: 1329528223
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Belinostat
@@ -79,7 +92,15 @@ Intravenous pan-HDAC inhibitor for peripheral T-cell lymphoma.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Belinostat*](https://en.wikipedia.org/w/index.php?title=Belinostat&oldid=1329528223) (revision 1329528223, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 92.9–95.8 % | 92.9–95.8% |
+| Bioavailability | 100 % | 100% (IV) |
+| Metabolism | hepatic | UGT1A1 |
+| Excretion | mainly urinary | Urine |
 
 ## Safety routing
 

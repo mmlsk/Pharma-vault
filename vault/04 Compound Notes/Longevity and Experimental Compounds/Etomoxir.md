@@ -79,7 +79,7 @@ An irreversible CPT1 inhibitor and the standard research tool for blocking fatty
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

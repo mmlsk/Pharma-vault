@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: CHEMBL1172
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 27.0
+  value-max: null
+  unit: h
+  notes: 27 hours, 33.7 hours in elderly patients
 protein-binding:
-  value: null
+  value: 83.0
+  value-max: 87.0
   unit: percent
-  notes: null
+  notes: 83–87%
+bioavailability:
+  value: null
+  value-max: null
+  notes: Rapidly absorbed
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 40% as conjugated metabolites into urine; Similar amount into the feces
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: UGT2B10, CYP2C8
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2C8
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2C8 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Desloratadine
+  url: https://en.wikipedia.org/w/index.php?title=Desloratadine&oldid=1357378936
+  revision: 1357378936
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Desloratadine
@@ -84,10 +99,22 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Desloratadine*](https://en.wikipedia.org/w/index.php?title=Desloratadine&oldid=1357378936) (revision 1357378936, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 27 h | 27 hours, 33.7 hours in elderly patients |
+| Protein binding | 83–87 % | 83–87% |
+| Bioavailability | - | Rapidly absorbed |
+| Metabolism | hepatic | UGT2B10, CYP2C8 |
+| CYP (metabolised by) | CYP2C8 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | 3-Hydroxydesloratadine |
+| Excretion | - | 40% as conjugated metabolites into urine; Similar amount into the feces |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

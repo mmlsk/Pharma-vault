@@ -22,9 +22,10 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 30.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: ~30%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Terlipressin
+  url: https://en.wikipedia.org/w/index.php?title=Terlipressin&oldid=1359655991
+  revision: 1359655991
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Terlipressin
@@ -79,7 +88,12 @@ Acts on vasopressin receptors to alter free-water handling or vascular tone; sod
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Terlipressin*](https://en.wikipedia.org/w/index.php?title=Terlipressin&oldid=1359655991) (revision 1359655991, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 30 % | ~30% |
 
 ## Safety routing
 

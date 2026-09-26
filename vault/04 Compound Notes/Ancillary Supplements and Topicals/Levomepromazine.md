@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: CHEMBL1764
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 20.0
+  value-max: null
+  unit: h
+  notes: ~20 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 50.0
+  value-max: 60.0
+  notes: ~50–60%
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.01
+  notes: In feces and urine (metabolites), unchanged drug only 1%
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hepatic
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Levomepromazine
+  url: https://en.wikipedia.org/w/index.php?title=Levomepromazine&oldid=1360365557
+  revision: 1360365557
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Levomepromazine
@@ -84,7 +97,15 @@ D2-like dopamine receptor antagonist _(ChEMBL curated mechanism, as quoted by th
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Levomepromazine*](https://en.wikipedia.org/w/index.php?title=Levomepromazine&oldid=1360365557) (revision 1360365557, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 20 h | ~20 hours |
+| Bioavailability | 50–60 % | ~50–60% |
+| Metabolism | hepatic | Hepatic |
+| Excretion | - · fe 0.01 | In feces and urine (metabolites), unchanged drug only 1% |
 
 ## Safety routing
 

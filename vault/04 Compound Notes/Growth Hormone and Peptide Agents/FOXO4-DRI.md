@@ -80,7 +80,7 @@ Senolytic peptide designed to disrupt the FOXO4-p53 interaction in senescent cel
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

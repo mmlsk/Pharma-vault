@@ -22,9 +22,10 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 96.0
+  value-max: 99.0
   unit: percent
-  notes: null
+  notes: 96–99%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Abarelix
+  url: https://en.wikipedia.org/w/index.php?title=Abarelix&oldid=1362095780
+  revision: 1362095780
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Abarelix
@@ -84,7 +93,12 @@ Gonadotropin-releasing hormone receptor antagonist _(ChEMBL curated mechanism, a
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Abarelix*](https://en.wikipedia.org/w/index.php?title=Abarelix&oldid=1362095780) (revision 1362095780, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 96–99 % | 96–99% |
 
 ## Safety routing
 

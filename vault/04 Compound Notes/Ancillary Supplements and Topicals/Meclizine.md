@@ -18,42 +18,56 @@ review-status: stub
 chembl-id: CHEMBL1623
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: 6.0
+  unit: h
+  notes: 5-6 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 22.0
+  value-max: 32.0
+  notes: 22 - 32%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP2D6)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2D6
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2D6 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Meclizine
+  url: https://en.wikipedia.org/w/index.php?title=Meclizine&oldid=1365249255
+  revision: 1365249255
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Meclizine
@@ -84,10 +98,19 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Meclizine*](https://en.wikipedia.org/w/index.php?title=Meclizine&oldid=1365249255) (revision 1365249255, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5–6 h | 5-6 hours |
+| Bioavailability | 22–32 % | 22 - 32% |
+| Metabolism | hepatic | Liver (CYP2D6) |
+| CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

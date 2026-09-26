@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: 1.5
+  unit: h
+  notes: 1–1.5 h
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 2.0
+  value-max: null
+  notes: 2% (by mouth, 90% absorption but high first-pass metabolism); 43–54% (intranasal); 98% (intramuscular, subcutaneous)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine, bile
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Naloxone
+  url: https://en.wikipedia.org/w/index.php?title=Naloxone&oldid=1375186586
+  revision: 1375186586
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Naloxone
@@ -79,7 +92,15 @@ Short-acting opioid antagonist for overdose reversal; its half-life is shorter t
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Naloxone*](https://en.wikipedia.org/w/index.php?title=Naloxone&oldid=1375186586) (revision 1375186586, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1–1.5 h | 1–1.5 h |
+| Bioavailability | 2 % | 2% (by mouth, 90% absorption but high first-pass metabolism); 43–54% (intranasal); 98% (intramuscular, subcutaneous) |
+| Metabolism | hepatic | Liver |
+| Excretion | - | Urine, bile |
 
 ## Safety routing
 

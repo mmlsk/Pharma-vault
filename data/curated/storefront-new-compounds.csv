@@ -1,35 +1,35 @@
-product_name,found_in_pdf,catalog_compound_id,initial_tags
-4F-Phenibut / 4-Fluorophenibut,Nootropic-Zion-Pharma,,source-derived; needs-expansion; evidence-limited
-9-Me-BC,Nootropic-Zion-Pharma; Sklep-Nootropy-Zion-Pharma-2,9-me-bc-compound,source-derived; needs-expansion; evidence-limited
-Aticaprant,Nootropic-Zion-Pharma; Sklep-Nootropy-Zion-Pharma-2,,source-derived; needs-expansion; evidence-limited
-Betahistine mesylate,Nootropic-Zion-Pharma,,source-derived; needs-expansion; evidence-limited
-Brexpiprazole,Nootropic-Zion-Pharma,brexpiprazole-compound,source-derived; needs-expansion; evidence-limited
-Cetilistat,Nootropic-Zion-Pharma,cetilistat-compound,source-derived; needs-expansion; evidence-limited
-Chlodantane,Nootropic-Zion-Pharma,,source-derived; needs-expansion; evidence-limited
-Didesoxymodafinil,Nootropic-Zion-Pharma,,source-derived; needs-expansion; evidence-limited
-Edaravone,Nootropic-Zion-Pharma,,source-derived; needs-expansion; evidence-limited
-Flmodafinil,Nootropic-Zion-Pharma,,source-derived; needs-expansion; evidence-limited
-GTS-21 dihydrochloride,Nootropic-Zion-Pharma,,source-derived; needs-expansion; evidence-limited
-Guanfacine HCl,Nootropic-Zion-Pharma,,source-derived; needs-expansion; evidence-limited
-Homotaurine,Nootropic-Zion-Pharma,,source-derived; needs-expansion; evidence-limited
-Huperzine A,Nootropic-Zion-Pharma,huperzine-a-compound,source-derived; needs-expansion; evidence-limited
-Hyperforin,Nootropic-Zion-Pharma,,source-derived; needs-expansion; evidence-limited
-Methylene blue,not-found-in-text-layer,methylene-blue-cation-compound,source-derived; needs-expansion; evidence-limited
-D-serine,not-found-in-text-layer,,source-derived; needs-expansion; evidence-limited
-Phenibut FAA,not-found-in-text-layer,,source-derived; needs-expansion; evidence-limited
-Phenibut HCl,not-found-in-text-layer,,source-derived; needs-expansion; evidence-limited
-Phenylpiracetam hydrazide,not-found-in-text-layer,,source-derived; needs-expansion; evidence-limited
-Yohimbine HCl,not-found-in-text-layer,,source-derived; needs-expansion; evidence-limited
-L-DOPA / levodopa,Sklep-Strona-2-Nootropy-Zion-Pharma-3,levodopa-compound,source-derived; needs-expansion; evidence-limited
-Magnesium L-threonate,not-found-in-text-layer,magnesium-l-threonate-compound,source-derived; needs-expansion; evidence-limited
-Nicotinamide mononucleotide / NMN,Sklep-Strona-2-Nootropy-Zion-Pharma-3,nmn-compound,source-derived; needs-expansion; evidence-limited
-NACET,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,source-derived; needs-expansion; evidence-limited
-Nefiracetam,Sklep-Strona-2-Nootropy-Zion-Pharma-3,nefiracetam-compound,source-derived; needs-expansion; evidence-limited
-Nooglutyl,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,source-derived; needs-expansion; evidence-limited
-Oroxylin A,not-found-in-text-layer,,source-derived; needs-expansion; evidence-limited
-Pitolisant,Sklep-Strona-2-Nootropy-Zion-Pharma-3,pitolisant-compound,source-derived; needs-expansion; evidence-limited
-PRL-8-53,Sklep-Strona-2-Nootropy-Zion-Pharma-3,prl-8-53-compound,source-derived; needs-expansion; evidence-limited
-Rapastinel / GLYX-13,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,source-derived; needs-expansion; evidence-limited
-Scyllo-inositol,not-found-in-text-layer,,source-derived; needs-expansion; evidence-limited
-Sunifiram,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,source-derived; needs-expansion; evidence-limited
-TAK-653,Sklep-Strona-2-Nootropy-Zion-Pharma-3,tak-653-compound,source-derived; needs-expansion; evidence-limited
+product_name,found_in_pdf,storefront_label,price_as_listed,catalog_compound_id,match_note,verification,initial_tags
+4F-Phenibut / 4-Fluorophenibut,Nootropic-Zion-Pharma,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+9-Me-BC,Nootropic-Zion-Pharma; Sklep-Nootropy-Zion-Pharma-2,,,9-me-bc-compound,exact,text-layer match,source-derived; needs-expansion; evidence-limited
+Aticaprant,Nootropic-Zion-Pharma; Sklep-Nootropy-Zion-Pharma-2,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+Betahistine mesylate,Nootropic-Zion-Pharma,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+Brexpiprazole,Nootropic-Zion-Pharma,,,brexpiprazole-compound,exact,text-layer match,source-derived; needs-expansion; evidence-limited
+Cetilistat,Nootropic-Zion-Pharma,,,cetilistat-compound,exact,text-layer match,source-derived; needs-expansion; evidence-limited
+Chlodantane,Nootropic-Zion-Pharma,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+Didesoxymodafinil,Nootropic-Zion-Pharma,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+Edaravone,Nootropic-Zion-Pharma,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+Flmodafinil,Nootropic-Zion-Pharma,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+GTS-21 dihydrochloride,Nootropic-Zion-Pharma,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+Guanfacine HCl,Nootropic-Zion-Pharma,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+Homotaurine,Nootropic-Zion-Pharma,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+Huperzine A,Nootropic-Zion-Pharma,,,huperzine-a-compound,exact,text-layer match,source-derived; needs-expansion; evidence-limited
+Hyperforin,Nootropic-Zion-Pharma,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+Methylene blue,Sklep-Nootropy-Zion-Pharma-2,Błękit metylenowy,"29,00–59,00 zł",methylene-blue-compound,exact (duplicate id: methylene-blue-cation-compound — see alias-collisions),manual-visual 2026-09-26 (Polish label; package label read from product image),source-derived; needs-expansion; evidence-limited
+D-serine,Sklep-Nootropy-Zion-Pharma-2,D-seryna,"99,00 zł",,none,manual-visual 2026-09-26 (Polish label; package label read from product image),source-derived; needs-expansion; evidence-limited
+Phenibut FAA,Sklep-Nootropy-Zion-Pharma-2,Fenibut FAA,"65,00–199,00 zł",,none (free amino acid form of phenibut),manual-visual 2026-09-26 (Polish label; package label read from product image),source-derived; needs-expansion; evidence-limited
+Phenibut HCl,Sklep-Nootropy-Zion-Pharma-2,Fenibut HCl (Phenibut),"49,00–349,00 zł",,none (hydrochloride salt of phenibut),manual-visual 2026-09-26 (Polish label; package label read from product image),source-derived; needs-expansion; evidence-limited
+Phenylpiracetam hydrazide,Sklep-Nootropy-Zion-Pharma-2,Fenylopiracetam hydrazyd,"49,00–278,00 zł",,related: phenylpiracetam-compound (distinct molecule — do not merge),manual-visual 2026-09-26 (Polish label; package label read from product image),source-derived; needs-expansion; evidence-limited
+Yohimbine HCl,Sklep-Strona-2-Nootropy-Zion-Pharma-3,Johimbina HCl,"39,00–129,00 zł",yohimbine-compound,salt-of parent,manual-visual 2026-09-26 (Polish label; package label read from product image),source-derived; needs-expansion; evidence-limited
+L-DOPA / levodopa,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,,levodopa-compound,exact,text-layer match,source-derived; needs-expansion; evidence-limited
+Magnesium L-threonate,Sklep-Strona-2-Nootropy-Zion-Pharma-3,Magnezu l-treonian,"40,00–165,00 zł",magnesium-l-threonate-compound,exact,manual-visual 2026-09-26 (Polish label; package label read from product image),source-derived; needs-expansion; evidence-limited
+Nicotinamide mononucleotide / NMN,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,,nmn-compound,exact,text-layer match,source-derived; needs-expansion; evidence-limited
+NACET,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+Nefiracetam,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,,nefiracetam-compound,exact,text-layer match,source-derived; needs-expansion; evidence-limited
+Nooglutyl,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+Oroxylin A,Sklep-Strona-2-Nootropy-Zion-Pharma-3,Oroksylina-A 99%,"97,00–165,00 zł",,none,manual-visual 2026-09-26 (Polish label; package label read from product image),source-derived; needs-expansion; evidence-limited
+Pitolisant,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,,pitolisant-compound,exact,text-layer match,source-derived; needs-expansion; evidence-limited
+PRL-8-53,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,,prl-8-53-compound,exact,text-layer match,source-derived; needs-expansion; evidence-limited
+Rapastinel / GLYX-13,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+Scyllo-inositol,Sklep-Strona-2-Nootropy-Zion-Pharma-3,Scyllo-Inozytol,"195,00–350,00 zł",,none,manual-visual 2026-09-26 (Polish label; package label read from product image),source-derived; needs-expansion; evidence-limited
+Sunifiram,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,,,none,text-layer match,source-derived; needs-expansion; evidence-limited
+TAK-653,Sklep-Strona-2-Nootropy-Zion-Pharma-3,,,tak-653-compound,exact,text-layer match,source-derived; needs-expansion; evidence-limited

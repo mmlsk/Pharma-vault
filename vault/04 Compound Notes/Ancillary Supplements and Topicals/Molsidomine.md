@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: 2.0
+  unit: h
+  notes: 1–2 hrs (linsidomine)
 protein-binding:
-  value: null
+  value: 3.0
+  value-max: 11.0
   unit: percent
-  notes: null
+  notes: 3–11%
+bioavailability:
+  value: 44.0
+  value-max: 59.0
+  notes: 44–59%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: '>90% renal'
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Hydrolysis
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Molsidomine
+  url: https://en.wikipedia.org/w/index.php?title=Molsidomine&oldid=1365345946
+  revision: 1365345946
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Molsidomine
@@ -79,7 +93,17 @@ NO-donor prodrug converted to linsidomine (SIN-1). Unlike organic nitrates it do
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Molsidomine*](https://en.wikipedia.org/w/index.php?title=Molsidomine&oldid=1365345946) (revision 1365345946, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1–2 h | 1–2 hrs (linsidomine) |
+| Protein binding | 3–11 % | 3–11% |
+| Bioavailability | 44–59 % | 44–59% |
+| Metabolism | - | Hydrolysis |
+| Metabolites | - | Linsidomine |
+| Excretion | mainly urinary | >90% renal |
 
 ## Safety routing
 

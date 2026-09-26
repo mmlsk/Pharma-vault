@@ -22,9 +22,10 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 90.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 90%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Acetohexamide
+  url: https://en.wikipedia.org/w/index.php?title=Acetohexamide&oldid=1357901449
+  revision: 1357901449
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Acetohexamide
@@ -79,7 +88,12 @@ Closes pancreatic beta-cell KATP channels to stimulate insulin release, with hyp
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Acetohexamide*](https://en.wikipedia.org/w/index.php?title=Acetohexamide&oldid=1357901449) (revision 1357901449, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 90 % | 90% |
 
 ## Safety routing
 

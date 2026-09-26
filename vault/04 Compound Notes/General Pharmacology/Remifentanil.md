@@ -18,13 +18,19 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: 20.0
+  unit: min
+  notes: 1-20 minutes
 protein-binding:
-  value: null
+  value: 70.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 70% (bound to plasma proteins)
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: IV/IM; 100%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -33,7 +39,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: cleaved by non-specific plasma and tissue esterases
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/analgesia
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Remifentanil
+  url: https://en.wikipedia.org/w/index.php?title=Remifentanil&oldid=1376668131
+  revision: 1376668131
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Remifentanil
@@ -79,7 +93,15 @@ Ultra-short-acting opioid cleared by non-specific plasma esterases, so its conte
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Remifentanil*](https://en.wikipedia.org/w/index.php?title=Remifentanil&oldid=1376668131) (revision 1376668131, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1–20 min | 1-20 minutes |
+| Protein binding | 70 % | 70% (bound to plasma proteins) |
+| Bioavailability | 100 % | IV/IM; 100% |
+| Metabolism | - | cleaved by non-specific plasma and tissue esterases |
 
 ## Safety routing
 

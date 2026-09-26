@@ -79,7 +79,7 @@ The first CFTR corrector. Its clinical usefulness was limited by modest efficacy
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

@@ -18,29 +18,36 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 3.0
+  value-max: 10.0
+  unit: h
+  notes: 'Acute: 3–10 hours; Chronic: 24–26 hours'
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: To albumin, SHBG, CBG
+bioavailability:
+  value: null
+  value-max: null
+  notes: Saturable with dosage, higher with food intake
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine, feces
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP3A4)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
@@ -48,13 +55,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Danazol
+  url: https://en.wikipedia.org/w/index.php?title=Danazol&oldid=1354397142
+  revision: 1354397142
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Danazol
@@ -80,7 +95,18 @@ Synthetic attenuated androgen used for endometriosis and hereditary angioedema; 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Danazol*](https://en.wikipedia.org/w/index.php?title=Danazol&oldid=1354397142) (revision 1354397142, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 3–10 h | Acute: 3–10 hours; Chronic: 24–26 hours |
+| Protein binding | - | To albumin, SHBG, CBG |
+| Bioavailability | - | Saturable with dosage, higher with food intake |
+| Metabolism | hepatic | Liver (CYP3A4) |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | • 2-OHM-Ethisterone; • Ethisterone |
+| Excretion | - | Urine, feces |
 
 ## Safety routing
 
@@ -89,4 +115,5 @@ Group-level triage (not compound-specific): `endocrine-feedback-disruption`, `ca
 - [[Stacking and Interaction Risks]]
 - [[Hormonal Axis Suppression]]
 - [[Stimulant and Cardiovascular Load]]
+- [[CYP450 Metabolism]]
 - [[HPG and GH-IGF-1 Axes]]

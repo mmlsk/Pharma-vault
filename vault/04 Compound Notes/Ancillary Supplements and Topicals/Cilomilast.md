@@ -79,7 +79,7 @@ Inhibits PDE4 to raise intracellular cAMP and dampen inflammatory cytokine produ
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

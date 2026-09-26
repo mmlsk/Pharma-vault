@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: CHEMBL43064
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 3.0
+  value-max: 4.0
+  unit: h
+  notes: 3–4 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: Low
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: urine, faeces
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Entire
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Cinnarizine
+  url: https://en.wikipedia.org/w/index.php?title=Cinnarizine&oldid=1375073475
+  revision: 1375073475
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Cinnarizine
@@ -84,7 +97,15 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Cinnarizine*](https://en.wikipedia.org/w/index.php?title=Cinnarizine&oldid=1375073475) (revision 1375073475, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 3–4 h | 3–4 hours |
+| Bioavailability | - | Low |
+| Metabolism | - | Entire |
+| Excretion | - | urine, faeces |
 
 ## Safety routing
 

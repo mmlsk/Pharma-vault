@@ -18,42 +18,59 @@ review-status: stub
 chembl-id: CHEMBL655
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.5
+  value-max: 2.5
+  unit: h
+  notes: 1.5–2.5 hours
 protein-binding:
-  value: null
+  value: 97.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 97%
+bioavailability:
+  value: 40.0
+  value-max: null
+  notes: 'By mouth: variable, around 40%; Intramuscular: ≥90%'
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: 'Liver: CYP3A3, CYP3A4, CYP3A5'
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A3
+  - CYP3A4
+  - CYP3A5
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A3, CYP3A4, CYP3A5 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Midazolam
+  url: https://en.wikipedia.org/w/index.php?title=Midazolam&oldid=1368778567
+  revision: 1368778567
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Midazolam
@@ -84,10 +101,21 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Midazolam*](https://en.wikipedia.org/w/index.php?title=Midazolam&oldid=1368778567) (revision 1368778567, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.5–2.5 h | 1.5–2.5 hours |
+| Protein binding | 97 % | 97% |
+| Bioavailability | 40 % | By mouth: variable, around 40%; Intramuscular: ≥90% |
+| Metabolism | hepatic | Liver: CYP3A3, CYP3A4, CYP3A5 |
+| CYP (metabolised by) | CYP3A3, CYP3A4, CYP3A5 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

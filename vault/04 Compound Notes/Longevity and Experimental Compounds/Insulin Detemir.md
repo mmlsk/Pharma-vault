@@ -18,13 +18,18 @@ review-status: stub
 chembl-id: CHEMBL2104391
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: 7.0
+  unit: h
+  notes: 5–7 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 60.0
+  value-max: null
+  notes: 60% (subcutaneous)
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Insulin detemir
+  url: https://en.wikipedia.org/w/index.php?title=Insulin_detemir&oldid=1361851093
+  revision: 1361851093
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Insulin Detemir
@@ -84,7 +97,13 @@ Insulin receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Insulin detemir*](https://en.wikipedia.org/w/index.php?title=Insulin_detemir&oldid=1361851093) (revision 1361851093, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5–7 h | 5–7 hours |
+| Bioavailability | 60 % | 60% (subcutaneous) |
 
 ## Safety routing
 

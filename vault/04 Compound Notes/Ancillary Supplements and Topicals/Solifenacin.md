@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 45.0
+  value-max: 68.0
+  unit: h
+  notes: 45 to 68 hours
 protein-binding:
-  value: null
+  value: 98.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 98%
+bioavailability:
+  value: 90.0
+  value-max: null
+  notes: 90%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (69.2%) and fecal (22.5%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: CYP3A4
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Solifenacin
+  url: https://en.wikipedia.org/w/index.php?title=Solifenacin&oldid=1363792577
+  revision: 1363792577
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Solifenacin
@@ -79,7 +94,18 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Solifenacin*](https://en.wikipedia.org/w/index.php?title=Solifenacin&oldid=1363792577) (revision 1363792577, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 45–68 h | 45 to 68 hours |
+| Protein binding | 98 % | 98% |
+| Bioavailability | 90 % | 90% |
+| Metabolism | hepatic | CYP3A4 |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | Glucuronide, N-oxide, others |
+| Excretion | mainly urinary | Kidney (69.2%) and fecal (22.5%) |
 
 ## Safety routing
 
@@ -87,3 +113,4 @@ Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
 - [[Cholinergic Load]]
+- [[CYP450 Metabolism]]

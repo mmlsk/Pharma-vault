@@ -20,9 +20,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.0
+  value-max: 6.0
+  unit: h
+  notes: 4–6 hours (in beagles); IGF-1 levels remain elevated in humans with a single oral dose for up to 24 hours
 protein-binding:
   value: null
   unit: percent
@@ -50,13 +51,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - glucose-metabolism
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/gh
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ibutamoren
+  url: https://en.wikipedia.org/w/index.php?title=Ibutamoren&oldid=1363882996
+  revision: 1363882996
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # MK-677 (Ibutamoren)
@@ -83,7 +92,12 @@ Oral ghrelin-mimetic growth hormone secretagogue that raises GH and IGF-1 withou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ibutamoren*](https://en.wikipedia.org/w/index.php?title=Ibutamoren&oldid=1363882996) (revision 1363882996, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4–6 h | 4–6 hours (in beagles); IGF-1 levels remain elevated in humans with a single oral dose for up to 24 hours |
 
 ## Safety routing
 

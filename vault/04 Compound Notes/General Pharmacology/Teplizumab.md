@@ -79,7 +79,7 @@ Anti-CD3 antibody that delays the onset of clinical type 1 diabetes in at-risk r
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

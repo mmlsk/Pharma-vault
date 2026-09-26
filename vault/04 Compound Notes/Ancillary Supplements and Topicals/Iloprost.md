@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 20.0
+  value-max: 30.0
+  unit: min
+  notes: 20–30 minutes
 protein-binding:
-  value: null
+  value: 60.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 60%
+bioavailability:
+  value: null
+  value-max: null
+  notes: Not determined
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (68%) and fecal (12%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Via β-oxidation to inactive tetranor-iloprost
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Iloprost
+  url: https://en.wikipedia.org/w/index.php?title=Iloprost&oldid=1329257849
+  revision: 1329257849
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Iloprost
@@ -79,7 +93,16 @@ Synthetic prostacyclin analogue, inhaled or intravenous, for pulmonary arterial 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Iloprost*](https://en.wikipedia.org/w/index.php?title=Iloprost&oldid=1329257849) (revision 1329257849, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 20–30 min | 20–30 minutes |
+| Protein binding | 60 % | 60% |
+| Bioavailability | - | Not determined |
+| Metabolism | hepatic | Via β-oxidation to inactive tetranor-iloprost |
+| Excretion | mainly urinary | Kidney (68%) and fecal (12%) |
 
 ## Safety routing
 

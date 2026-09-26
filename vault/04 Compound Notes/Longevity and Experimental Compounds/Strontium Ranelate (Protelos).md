@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 60.0
+  value-max: null
+  unit: h
+  notes: 60 hours
 protein-binding:
-  value: null
+  value: 25.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 25% for plasma protein and high affinity for bone tissue
+bioavailability:
+  value: 25.0
+  value-max: null
+  notes: 25% (range 19–27%)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal and gastrointestinal. Plasma clearance is about 12 ml/min (CV 22%) and renal clearance about 7 ml/min (CV 28%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: As a divalent cation, strontium is not metabolised. Does not inhibit cytochrome P450 enzymes
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Strontium ranelate
+  url: https://en.wikipedia.org/w/index.php?title=Strontium_ranelate&oldid=1374806953
+  revision: 1374806953
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Strontium Ranelate (Protelos)
@@ -82,7 +96,16 @@ Divalent strontium salt marketed as a dual-action bone agent; withdrawn in Europ
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Strontium ranelate*](https://en.wikipedia.org/w/index.php?title=Strontium_ranelate&oldid=1374806953) (revision 1374806953, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 60 h | 60 hours |
+| Protein binding | 25 % | 25% for plasma protein and high affinity for bone tissue |
+| Bioavailability | 25 % | 25% (range 19–27%) |
+| Metabolism | - | As a divalent cation, strontium is not metabolised. Does not inhibit cytochrome P450 enzymes |
+| Excretion | mainly urinary | Renal and gastrointestinal. Plasma clearance is about 12 ml/min (CV 22%) and renal clearance about 7 ml/min (CV 28%) |
 
 ## Safety routing
 

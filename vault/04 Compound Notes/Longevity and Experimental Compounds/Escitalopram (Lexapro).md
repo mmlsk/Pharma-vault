@@ -20,42 +20,59 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 27.0
+  value-max: 32.0
+  unit: h
+  notes: ~27–32 hours
 protein-binding:
-  value: null
+  value: 55.0
+  value-max: 56.0
   unit: percent
-  notes: null
+  notes: ~55–56% (low)
+bioavailability:
+  value: 80.0
+  value-max: null
+  notes: ~80%
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.1
+  notes: Urine (major; 8–10% unchanged), feces (minor)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP2C19, CYP3A4, CYP2D6)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2C19
+  - CYP2D6
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2C19, CYP2D6, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Escitalopram
+  url: https://en.wikipedia.org/w/index.php?title=Escitalopram&oldid=1373241194
+  revision: 1373241194
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Escitalopram (Lexapro)
@@ -82,7 +99,18 @@ Selective SSRI for depression and generalized anxiety; QT, sexual, withdrawal, a
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Escitalopram*](https://en.wikipedia.org/w/index.php?title=Escitalopram&oldid=1373241194) (revision 1373241194, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 27–32 h | ~27–32 hours |
+| Protein binding | 55–56 % | ~55–56% (low) |
+| Bioavailability | 80 % | ~80% |
+| Metabolism | hepatic | Liver (CYP2C19, CYP3A4, CYP2D6) |
+| CYP (metabolised by) | CYP2C19, CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | • Desmethylcitalopram; • Didesmethylcitalopram |
+| Excretion | - · fe 0.1 | Urine (major; 8–10% unchanged), feces (minor) |
 
 ## Safety routing
 
@@ -90,3 +118,4 @@ Group-level triage (not compound-specific): `evidence-limited`
 
 - [[Stacking and Interaction Risks]]
 - [[Experimental and Evidence-Limited Compounds]]
+- [[CYP450 Metabolism]]

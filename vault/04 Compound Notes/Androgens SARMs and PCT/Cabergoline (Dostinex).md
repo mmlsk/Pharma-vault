@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 63.0
+  value-max: 69.0
+  unit: h
+  notes: 63–69 hours (estimated)
 protein-binding:
-  value: null
+  value: 40.0
+  value-max: 42.0
   unit: percent
-  notes: null
+  notes: Moderately bound (40–42%); concentration-independent
+bioavailability:
+  value: 50.0
+  value-max: 80.0
+  notes: 50–80%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (22%), feces (60%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver, predominately via hydrolysis of the acylurea bond or the urea moiety
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Cabergoline
+  url: https://en.wikipedia.org/w/index.php?title=Cabergoline&oldid=1374387906
+  revision: 1374387906
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Cabergoline (Dostinex)
@@ -82,7 +96,16 @@ Long-acting dopamine agonist that suppresses prolactin, commonly used off-label 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Cabergoline*](https://en.wikipedia.org/w/index.php?title=Cabergoline&oldid=1374387906) (revision 1374387906, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 63–69 h | 63–69 hours (estimated) |
+| Protein binding | 40–42 % | Moderately bound (40–42%); concentration-independent |
+| Bioavailability | 50–80 % | 50–80% |
+| Metabolism | hepatic | Liver, predominately via hydrolysis of the acylurea bond or the urea moiety |
+| Excretion | mainly non-renal | Urine (22%), feces (60%) |
 
 ## Safety routing
 

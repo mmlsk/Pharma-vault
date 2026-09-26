@@ -25,6 +25,10 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: poorly absorbed
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Pyrantel
+  url: https://en.wikipedia.org/w/index.php?title=Pyrantel&oldid=1366674848
+  revision: 1366674848
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Pyrantel Pamoate
@@ -79,7 +91,12 @@ Depolarising neuromuscular blocker for the worm, causing spastic paralysis, whic
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Pyrantel*](https://en.wikipedia.org/w/index.php?title=Pyrantel&oldid=1366674848) (revision 1366674848, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | - | poorly absorbed |
 
 ## Safety routing
 

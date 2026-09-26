@@ -18,22 +18,24 @@ review-status: stub
 chembl-id: CHEMBL19299
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 75.0
+  value-max: null
+  unit: min
+  notes: 75 minutes
 protein-binding:
-  value: null
+  value: 97.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 97%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver glucuronidation
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Loxoprofen
+  url: https://en.wikipedia.org/w/index.php?title=Loxoprofen&oldid=1331526208
+  revision: 1331526208
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Loxoprofen
@@ -84,7 +94,15 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Loxoprofen*](https://en.wikipedia.org/w/index.php?title=Loxoprofen&oldid=1331526208) (revision 1331526208, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 75 min | 75 minutes |
+| Protein binding | 97 % | 97% |
+| Metabolism | hepatic | Liver glucuronidation |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

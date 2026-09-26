@@ -79,7 +79,7 @@ Dual Na/K-ATPase inhibitor and SERCA2a activator investigated for acute heart fa
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

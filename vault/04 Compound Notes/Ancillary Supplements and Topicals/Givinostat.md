@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 6.0
+  value-max: null
+  unit: h
+  notes: ~6hours
 protein-binding:
-  value: null
+  value: 96.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 96%
+bioavailability:
+  value: null
+  value-max: null
+  notes: Unknown
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.03
+  notes: 'Urine: <3% unchanged'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Extensive (not CYP450 or UGT)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Givinostat
+  url: https://en.wikipedia.org/w/index.php?title=Givinostat&oldid=1370187447
+  revision: 1370187447
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Givinostat
@@ -79,7 +93,16 @@ HDAC inhibitor approved for Duchenne muscular dystrophy — an unusual non-oncol
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Givinostat*](https://en.wikipedia.org/w/index.php?title=Givinostat&oldid=1370187447) (revision 1370187447, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 6 h | ~6hours |
+| Protein binding | 96 % | 96% |
+| Bioavailability | - | Unknown |
+| Metabolism | hepatic | Extensive (not CYP450 or UGT) |
+| Excretion | - · fe 0.03 | Urine: <3% unchanged |
 
 ## Safety routing
 

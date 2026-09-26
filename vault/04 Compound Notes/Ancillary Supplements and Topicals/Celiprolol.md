@@ -18,13 +18,18 @@ review-status: stub
 chembl-id: CHEMBL27810
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: null
+  unit: h
+  notes: 5 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 30.0
+  value-max: 70.0
+  notes: 30-70%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Celiprolol
+  url: https://en.wikipedia.org/w/index.php?title=Celiprolol&oldid=1330777343
+  revision: 1330777343
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Celiprolol
@@ -84,7 +97,13 @@ Beta-2 adrenergic receptor partial agonist _(ChEMBL curated mechanism, as quoted
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Celiprolol*](https://en.wikipedia.org/w/index.php?title=Celiprolol&oldid=1330777343) (revision 1330777343, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5 h | 5 hours |
+| Bioavailability | 30–70 % | 30-70% |
 
 ## Safety routing
 

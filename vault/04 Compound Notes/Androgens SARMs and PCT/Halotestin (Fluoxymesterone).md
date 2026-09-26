@@ -20,22 +20,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 9.2
+  value-max: null
+  unit: h
+  notes: 9.2 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 80.0
+  value-max: null
+  notes: 'Oral: 80%'
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.05
+  notes: Urine (<5% unchanged)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (6β-hydroxylation, 5α- and 5β-reduction, 3α- and 3β-keto-oxidation, 11β-hydroxy-oxidation)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +55,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Fluoxymesterone
+  url: https://en.wikipedia.org/w/index.php?title=Fluoxymesterone&oldid=1303035595
+  revision: 1303035595
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Halotestin (Fluoxymesterone)
@@ -83,7 +96,16 @@ Highly androgenic oral steroid used for strength/aggression, minimal mass gain, 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Fluoxymesterone*](https://en.wikipedia.org/w/index.php?title=Fluoxymesterone&oldid=1303035595) (revision 1303035595, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 9.2 h | 9.2 hours |
+| Bioavailability | 80 % | Oral: 80% |
+| Metabolism | hepatic | Liver (6β-hydroxylation, 5α- and 5β-reduction, 3α- and 3β-keto-oxidation, 11β-hydroxy-oxidation) |
+| Metabolites | - | • 5α-Dihydrofluoxymesterone; • 11-Oxofluoxymesterone |
+| Excretion | - · fe 0.05 | Urine (<5% unchanged) |
 
 ## Safety routing
 

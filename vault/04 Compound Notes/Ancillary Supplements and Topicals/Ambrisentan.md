@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: CHEMBL1111
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 15.0
+  value-max: null
+  unit: h
+  notes: 15 hours (terminal)
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 99%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ambrisentan
+  url: https://en.wikipedia.org/w/index.php?title=Ambrisentan&oldid=1329074832
+  revision: 1329074832
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Ambrisentan
@@ -84,7 +94,13 @@ Endothelin receptor, ET-A/ET-B antagonist _(ChEMBL curated mechanism, as quoted 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ambrisentan*](https://en.wikipedia.org/w/index.php?title=Ambrisentan&oldid=1329074832) (revision 1329074832, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 15 h | 15 hours (terminal) |
+| Protein binding | 99 % | 99% |
 
 ## Safety routing
 

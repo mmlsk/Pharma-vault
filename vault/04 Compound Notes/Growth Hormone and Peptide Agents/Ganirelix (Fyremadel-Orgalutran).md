@@ -21,18 +21,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 16.2
+  value-max: null
+  unit: h
+  notes: 16.2 hours
 protein-binding:
-  value: null
+  value: 81.9
+  value-max: null
   unit: percent
-  notes: null
+  notes: 81.9%
+bioavailability:
+  value: 91.1
+  value-max: null
+  notes: 91.1%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Feces: 75%; Urine: 22%'
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -51,13 +57,21 @@ risk-domains: []
 group-risk-triage:
 - evidence-limited
 - identity-contamination
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/peptides
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ganirelix
+  url: https://en.wikipedia.org/w/index.php?title=Ganirelix&oldid=1329009390
+  revision: 1329009390
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ganirelix (Fyremadel/Orgalutran)
@@ -84,7 +98,15 @@ Third-generation GnRH receptor antagonist; suppresses LH immediately, with no fl
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ganirelix*](https://en.wikipedia.org/w/index.php?title=Ganirelix&oldid=1329009390) (revision 1329009390, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 16.2 h | 16.2 hours |
+| Protein binding | 81.9 % | 81.9% |
+| Bioavailability | 91.1 % | 91.1% |
+| Excretion | mainly non-renal | Feces: 75%; Urine: 22% |
 
 ## Safety routing
 

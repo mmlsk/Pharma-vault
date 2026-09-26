@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 20.0
+  value-max: 25.0
+  unit: h
+  notes: 20–25hours, urinary pH-dependent
 protein-binding:
-  value: null
+  value: 17.5
+  value-max: null
   unit: percent
-  notes: null
+  notes: 17.5%
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: High (almost 100%)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  primary-route: true
+  fraction-excreted-unchanged: 0.85
+  notes: Urine (62–85% unchanged)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Minimal (6%)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Phentermine
+  url: https://en.wikipedia.org/w/index.php?title=Phentermine&oldid=1374263603
+  revision: 1374263603
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Phentermine
@@ -79,7 +93,16 @@ FDA-approved sympathomimetic appetite suppressant, most often prescribed combine
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Phentermine*](https://en.wikipedia.org/w/index.php?title=Phentermine&oldid=1374263603) (revision 1374263603, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 20–25 h | 20–25hours, urinary pH-dependent |
+| Protein binding | 17.5 % | 17.5% |
+| Bioavailability | 100 % | High (almost 100%) |
+| Metabolism | - | Minimal (6%) |
+| Excretion | mainly urinary · fe 0.85 | Urine (62–85% unchanged) |
 
 ## Safety routing
 

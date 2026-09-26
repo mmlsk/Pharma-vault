@@ -20,9 +20,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 24.0
+  value-max: 36.0
+  unit: h
+  notes: 24–36 hours
 protein-binding:
   value: null
   unit: percent
@@ -51,13 +52,21 @@ group-risk-triage:
 - endocrine-feedback-disruption
 - identity-contamination
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/sarms
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: LGD-4033
+  url: https://en.wikipedia.org/w/index.php?title=LGD-4033&oldid=1370576375
+  revision: 1370576375
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ligandrol (LGD-4033)
@@ -84,7 +93,12 @@ Potent SARM studied for lean mass and strength gains via selective androgen rece
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *LGD-4033*](https://en.wikipedia.org/w/index.php?title=LGD-4033&oldid=1370576375) (revision 1370576375, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 24–36 h | 24–36 hours |
 
 ## Safety routing
 

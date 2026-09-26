@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 128.0
+  value-max: 149.0
+  unit: h
+  notes: 128–149 hours
 protein-binding:
-  value: null
+  value: 13.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 13% (in vitro)
+bioavailability:
+  value: null
+  value-max: null
+  notes: n/a (≥70)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney 62–73%
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: negligible/nil
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Entecavir
+  url: https://en.wikipedia.org/w/index.php?title=Entecavir&oldid=1339067882
+  revision: 1339067882
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Entecavir
@@ -79,7 +93,16 @@ Guanosine analogue for hepatitis B with a very high genetic barrier to resistanc
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Entecavir*](https://en.wikipedia.org/w/index.php?title=Entecavir&oldid=1339067882) (revision 1339067882, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 128–149 h | 128–149 hours |
+| Protein binding | 13 % | 13% (in vitro) |
+| Bioavailability | - | n/a (≥70) |
+| Metabolism | - | negligible/nil |
+| Excretion | mainly urinary | Kidney 62–73% |
 
 ## Safety routing
 

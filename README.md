@@ -10,6 +10,7 @@
 |---|---|
 | 🧪 Substancje w katalogu | **2 351** (18 grup źródłowych → 8 klastrów) |
 | 🧬 Z mechanizmem ChEMBL | 661 |
+| ⏱️ Z danymi PK (auto, Wikipedia) | **1117** (t½ liczbowo: 1016 · wiązanie z białkami: 663 · biodostępność: 639 · substraty CYP: 310) |
 | 🔀 Kolizje aliasów do przeglądu | 51 |
 | 🛡️ Huby bezpieczeństwa | 7 |
 | 📋 Kandydaci do rozszerzenia | 264 |
@@ -24,7 +25,10 @@ flowchart LR
   C[data/curated<br/>aliasy · backlog] -.przegląd.-> V
   H[notatki ręczne<br/>MOC · huby · ścieżki] --> V
   V --> O[Obsidian + Dataview]
-  P -.docelowo.-> G[apps/graph-viewer]
+  W[data/enrichment<br/>cache infoboksów Wikipedii] -->|enrich_pk.py parse| K[(pk.json)]
+  K --> V
+  P -->|build_graph_data.py| G[apps/graph-viewer<br/>graph-data.js]
+  K --> G
 ```
 
 Zasada: **jedno źródło prawdy, reszta to widoki generowane** — zob. [ADR-0001](docs/adr/0001-canonical-source-of-truth.md).
@@ -36,7 +40,8 @@ Pharma-vault/
 ├── apps/graph-viewer/        🕸️ interaktywny graf HTML (Canvas)
 ├── data/
 │   ├── raw/                  📥 źródła (JS pharmapedia, PDF sklepu) + SHA-256
-│   ├── processed/            🗄️ kanoniczny katalog (CSV/JSON, manifest)
+│   ├── processed/            🗄️ kanoniczny katalog (CSV/JSON, manifest) + pk.json
+│   ├── enrichment/           ⏱️ cache infoboksów Wikipedii, odrzucenia, pokrycie PK
 │   └── curated/              ✍️ aliasy, backlog rozszerzeń, produkty sklepu
 ├── docs/
 │   ├── architecture/         🏛️ plan wdrożenia, rejestr decyzji, backend, wizja
@@ -61,7 +66,8 @@ Pharma-vault/
 
 ```bash
 pip install -r requirements.txt
-make all        # catalog → vault → validate → test
+make all        # catalog → pk → vault → graph → validate → test (offline)
+make enrich     # sieć: odśwież cache infoboksów Wikipedii i przelicz pk.json
 make xlsx       # opcjonalnie: substances.xlsx
 ```
 
@@ -82,6 +88,8 @@ Obsidian: **Open folder as vault → `vault/`**, włącz wtyczkę **Dataview**. 
 |---|---|
 | Katalog 2 351 substancji | Deterministyczny parse `data/raw/pharmapedia-source/CompoundCatalog.source.js.txt` |
 | Notatki-stuby | Generowane z katalogu (**nie** są przeglądem klinicznym) |
+| Farmakokinetyka w stubach | Automatycznie z `{{Infobox drug}}` angielskiej Wikipedii, wersje przypięte (`oldid`), `source-status: auto-extracted` — zob. [data/enrichment](data/enrichment/README.md) |
+| Graf | `apps/graph-viewer/graph-data.js` generowany z `substances.json` + `pk.json` |
 | Huby, ścieżki, koncepcje, szablony | Napisane ręcznie w v3 na podstawie projektu z wątku roboczego |
 | `docs/research`, `docs/architecture` | Eksport wątku roboczego z nagłówkiem proweniencji |
 | `Resources/` | Oryginalna zawartość repo v1 (commit `6a43d7d`) |

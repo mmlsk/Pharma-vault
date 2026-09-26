@@ -83,7 +83,7 @@ Soluble ActRIIB-Fc decoy receptor that soaks up myostatin and related ligands. C
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

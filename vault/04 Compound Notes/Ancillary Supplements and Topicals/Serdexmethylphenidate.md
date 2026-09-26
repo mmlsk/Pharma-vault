@@ -18,13 +18,18 @@ review-status: stub
 chembl-id: CHEMBL4301162
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.7
+  value-max: null
+  unit: h
+  notes: 5.7 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 3.0
+  value-max: null
+  notes: < 3% (absolute oral)
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Serdexmethylphenidate
+  url: https://en.wikipedia.org/w/index.php?title=Serdexmethylphenidate&oldid=1373297767
+  revision: 1373297767
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Serdexmethylphenidate
@@ -84,7 +97,14 @@ Norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by th
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Serdexmethylphenidate*](https://en.wikipedia.org/w/index.php?title=Serdexmethylphenidate&oldid=1373297767) (revision 1373297767, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5.7 h | 5.7 hours |
+| Bioavailability | 3 % | < 3% (absolute oral) |
+| Metabolites | - | Dexmethylphenidate, ritalinic acid |
 
 ## Safety routing
 

@@ -18,22 +18,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: 9.0
+  unit: h
+  notes: 5 to 9 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 15.0
+  value-max: null
+  notes: 15% (Eprosartan mesylate)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney 10%, bile duct 90%
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: not metabolized
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Eprosartan
+  url: https://en.wikipedia.org/w/index.php?title=Eprosartan&oldid=1330816283
+  revision: 1330816283
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Eprosartan
@@ -79,7 +92,15 @@ Angiotensin II receptor blocker for hypertension with class risks of hyperkalemi
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Eprosartan*](https://en.wikipedia.org/w/index.php?title=Eprosartan&oldid=1330816283) (revision 1330816283, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5–9 h | 5 to 9 hours |
+| Bioavailability | 15 % | 15% (Eprosartan mesylate) |
+| Metabolism | - | not metabolized |
+| Excretion | mainly non-renal | Kidney 10%, bile duct 90% |
 
 ## Safety routing
 

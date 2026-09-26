@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.7
+  value-max: null
+  unit: h
+  notes: 5.7 hours (mean)
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: Nil
+bioavailability:
+  value: 30.0
+  value-max: 37.0
+  notes: 30–37% (by mouth, fosfomycin tromethamine); varies with food intake
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney, unchanged
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Nil
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Fosfomycin
+  url: https://en.wikipedia.org/w/index.php?title=Fosfomycin&oldid=1358847915
+  revision: 1358847915
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Fosfomycin
@@ -79,7 +93,16 @@ Single-dose oral agent for uncomplicated cystitis, and intravenously a partner d
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Fosfomycin*](https://en.wikipedia.org/w/index.php?title=Fosfomycin&oldid=1358847915) (revision 1358847915, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5.7 h | 5.7 hours (mean) |
+| Protein binding | - | Nil |
+| Bioavailability | 30–37 % | 30–37% (by mouth, fosfomycin tromethamine); varies with food intake |
+| Metabolism | - | Nil |
+| Excretion | mainly urinary | Kidney, unchanged |
 
 ## Safety routing
 

@@ -20,42 +20,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.8
+  value-max: null
+  unit: d
+  notes: 'Single-dose: 5.8 days; Continuous: 7–10 days; <!--'
 protein-binding:
-  value: null
+  value: 96.1
+  value-max: null
   unit: percent
-  notes: null
+  notes: 'Racemate: 96.1%; (R)-Isomer: 99.6%; (Mainly to albumin)'
+bioavailability:
+  value: null
+  value-max: null
+  notes: Well-absorbed; absolute bioavailability unknown
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Feces: 43%; Urine: 34%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (extensively):; • Hydroxylation (CYP3A4); • Glucuronidation (UGT1A9)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Bicalutamide
+  url: https://en.wikipedia.org/w/index.php?title=Bicalutamide&oldid=1371710878
+  revision: 1371710878
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Bicalutamide (Casodex)
@@ -82,7 +97,18 @@ Nonsteroidal antiandrogen that competitively blocks testosterone and DHT at the 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Bicalutamide*](https://en.wikipedia.org/w/index.php?title=Bicalutamide&oldid=1371710878) (revision 1371710878, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5.8 d | Single-dose: 5.8 days; Continuous: 7–10 days; <!-- |
+| Protein binding | 96.1 % | Racemate: 96.1%; (R)-Isomer: 99.6%; (Mainly to albumin) |
+| Bioavailability | - | Well-absorbed; absolute bioavailability unknown |
+| Metabolism | hepatic | Liver (extensively):; • Hydroxylation (CYP3A4); • Glucuronidation (UGT1A9) |
+| CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | • Bicalutamide glucuronide; • Hydroxybicalutamide; • Hydroxybicalutamide gluc.; (All inactive); <!-- |
+| Excretion | - | Feces: 43%; Urine: 34% |
 
 ## Safety routing
 
@@ -90,4 +116,5 @@ Group-level triage (not compound-specific): `endocrine-feedback-disruption`
 
 - [[Stacking and Interaction Risks]]
 - [[Hormonal Axis Suppression]]
+- [[CYP450 Metabolism]]
 - [[HPG and GH-IGF-1 Axes]]

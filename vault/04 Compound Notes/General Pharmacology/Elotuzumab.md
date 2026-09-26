@@ -25,6 +25,10 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100% (IV)
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/immunology
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Elotuzumab
+  url: https://en.wikipedia.org/w/index.php?title=Elotuzumab&oldid=1347865846
+  revision: 1347865846
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Elotuzumab
@@ -79,7 +91,12 @@ Anti-SLAMF7 antibody for myeloma that works partly by activating natural killer 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Elotuzumab*](https://en.wikipedia.org/w/index.php?title=Elotuzumab&oldid=1347865846) (revision 1347865846, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | 100 % | 100% (IV) |
 
 ## Safety routing
 

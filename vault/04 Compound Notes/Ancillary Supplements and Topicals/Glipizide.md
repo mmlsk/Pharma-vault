@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: 5.0
+  unit: h
+  notes: 2 to 5 hours
 protein-binding:
-  value: null
+  value: 98.0
+  value-max: 99.0
   unit: percent
-  notes: null
+  notes: 98 to 99%
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100% (regular formulation); 90% (extended release)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney and fecal
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver hydroxylation
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Glipizide
+  url: https://en.wikipedia.org/w/index.php?title=Glipizide&oldid=1356288077
+  revision: 1356288077
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Glipizide
@@ -79,7 +93,16 @@ Closes pancreatic beta-cell KATP channels to stimulate insulin release, with hyp
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Glipizide*](https://en.wikipedia.org/w/index.php?title=Glipizide&oldid=1356288077) (revision 1356288077, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2–5 h | 2 to 5 hours |
+| Protein binding | 98–99 % | 98 to 99% |
+| Bioavailability | 100 % | 100% (regular formulation); 90% (extended release) |
+| Metabolism | hepatic | Liver hydroxylation |
+| Excretion | - | Kidney and fecal |
 
 ## Safety routing
 

@@ -79,7 +79,7 @@ A glycopegylated FGF21 analogue engineered for a longer half-life, in late-stage
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

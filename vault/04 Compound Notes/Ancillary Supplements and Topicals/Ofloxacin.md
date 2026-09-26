@@ -18,13 +18,19 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 8.0
+  value-max: 9.0
+  unit: h
+  notes: 8–9 hours
 protein-binding:
-  value: null
+  value: 32.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 32%
+bioavailability:
+  value: 85.0
+  value-max: 95.0
+  notes: 85–95%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ofloxacin
+  url: https://en.wikipedia.org/w/index.php?title=Ofloxacin&oldid=1368543095
+  revision: 1368543095
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ofloxacin
@@ -79,7 +93,14 @@ Inhibits bacterial DNA gyrase or topoisomerase IV; tendon, neurologic, cardiac, 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ofloxacin*](https://en.wikipedia.org/w/index.php?title=Ofloxacin&oldid=1368543095) (revision 1368543095, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 8–9 h | 8–9 hours |
+| Protein binding | 32 % | 32% |
+| Bioavailability | 85–95 % | 85–95% |
 
 ## Safety routing
 

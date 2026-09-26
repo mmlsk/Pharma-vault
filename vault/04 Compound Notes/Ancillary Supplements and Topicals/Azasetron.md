@@ -25,11 +25,15 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 90.0
+  value-max: null
+  notes: 90%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 60-70%
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Azasetron
+  url: https://en.wikipedia.org/w/index.php?title=Azasetron&oldid=1369401441
+  revision: 1369401441
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Azasetron
@@ -79,7 +91,13 @@ Antagonises 5-HT3 receptors on vagal afferents and in the area postrema; QT effe
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Azasetron*](https://en.wikipedia.org/w/index.php?title=Azasetron&oldid=1369401441) (revision 1369401441, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | 90 % | 90% |
+| Excretion | - | 60-70% |
 
 ## Safety routing
 

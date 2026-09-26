@@ -22,18 +22,23 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 97.4
+  value-max: null
   unit: percent
-  notes: null
+  notes: 97.4%
+bioavailability:
+  value: 4.4
+  value-max: null
+  notes: 4.4%
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.01
+  notes: <1% excreted unchanged in urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Multiple UGTs, CYP450s, and AKR enzymes
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Lumateperone
+  url: https://en.wikipedia.org/w/index.php?title=Lumateperone&oldid=1371377593
+  revision: 1371377593
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Lumateperone
@@ -84,7 +97,15 @@ Serotonin transporter inhibitor _(ChEMBL curated mechanism, as quoted by the sou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Lumateperone*](https://en.wikipedia.org/w/index.php?title=Lumateperone&oldid=1371377593) (revision 1371377593, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 97.4 % | 97.4% |
+| Bioavailability | 4.4 % | 4.4% |
+| Metabolism | hepatic | Multiple UGTs, CYP450s, and AKR enzymes |
+| Excretion | - · fe 0.01 | <1% excreted unchanged in urine |
 
 ## Safety routing
 

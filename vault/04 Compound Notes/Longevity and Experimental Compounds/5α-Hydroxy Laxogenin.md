@@ -81,7 +81,7 @@ Plant-derived brassinosteroid analogue marketed as a non-hormonal anabolic despi
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

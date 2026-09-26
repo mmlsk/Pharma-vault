@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 14.0
+  value-max: 26.0
+  unit: h
+  notes: 14–26 hours (IV), 20.7 hours (IM), 14–37 hours (oral)
 protein-binding:
-  value: null
+  value: 90.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: ~90%
+bioavailability:
+  value: 60.0
+  value-max: 70.0
+  notes: 60–70% (by mouth)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Biliary (hence in feces) and in urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver-mediated
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Haloperidol
+  url: https://en.wikipedia.org/w/index.php?title=Haloperidol&oldid=1368777994
+  revision: 1368777994
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Haloperidol
@@ -79,7 +93,17 @@ Antagonizes or partially agonizes dopamine D2 receptors; movement, metabolic, an
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Haloperidol*](https://en.wikipedia.org/w/index.php?title=Haloperidol&oldid=1368777994) (revision 1368777994, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 14–26 h | 14–26 hours (IV), 20.7 hours (IM), 14–37 hours (oral) |
+| Protein binding | 90 % | ~90% |
+| Bioavailability | 60–70 % | 60–70% (by mouth) |
+| Metabolism | hepatic | Liver-mediated |
+| Metabolites | - | • HPP+ |
+| Excretion | - | Biliary (hence in feces) and in urine |
 
 ## Safety routing
 

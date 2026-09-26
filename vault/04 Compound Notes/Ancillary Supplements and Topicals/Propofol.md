@@ -18,22 +18,24 @@ review-status: stub
 chembl-id: CHEMBL526
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.5
+  value-max: 31.0
+  unit: h
+  notes: 1.5–31 hours
 protein-binding:
-  value: null
+  value: 95.0
+  value-max: 99.0
   unit: percent
-  notes: null
+  notes: 95–99%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Liver
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver glucuronidation
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Propofol
+  url: https://en.wikipedia.org/w/index.php?title=Propofol&oldid=1376002434
+  revision: 1376002434
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Propofol
@@ -84,7 +94,15 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Propofol*](https://en.wikipedia.org/w/index.php?title=Propofol&oldid=1376002434) (revision 1376002434, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.5–31 h | 1.5–31 hours |
+| Protein binding | 95–99 % | 95–99% |
+| Metabolism | hepatic | Liver glucuronidation |
+| Excretion | - | Liver |
 
 ## Safety routing
 

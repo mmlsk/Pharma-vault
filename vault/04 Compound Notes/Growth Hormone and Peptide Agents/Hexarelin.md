@@ -80,7 +80,7 @@ Potent ghrelin-mimetic GH secretagogue peptide, more potent than GHRP-6 but with
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

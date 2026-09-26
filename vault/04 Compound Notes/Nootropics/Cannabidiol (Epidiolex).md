@@ -20,13 +20,18 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 18.0
+  value-max: 32.0
+  unit: h
+  notes: 18–32 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 6.0
+  value-max: null
+  notes: 'Oral administration; Oral: 6% (fasted); 36–57% (fed-state); Inhalation: 31% (range 11–45%) Sublingual: 12–35%'
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -50,13 +55,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/neuropsych
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Cannabidiol
+  url: https://en.wikipedia.org/w/index.php?title=Cannabidiol&oldid=1376409525
+  revision: 1376409525
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Cannabidiol (Epidiolex)
@@ -83,7 +96,13 @@ Purified plant cannabidiol licensed for Dravet, Lennox-Gastaut and tuberous scle
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Cannabidiol*](https://en.wikipedia.org/w/index.php?title=Cannabidiol&oldid=1376409525) (revision 1376409525, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 18–32 h | 18–32 hours |
+| Bioavailability | 6 % | Oral administration; Oral: 6% (fasted); 36–57% (fed-state); Inhalation: 31% (range 11–45%) Sublingual: 12–35% |
 
 ## Safety routing
 

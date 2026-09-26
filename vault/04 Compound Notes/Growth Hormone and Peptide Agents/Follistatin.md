@@ -80,7 +80,7 @@ Peptide that binds and neutralizes myostatin, studied for dramatic muscle growth
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

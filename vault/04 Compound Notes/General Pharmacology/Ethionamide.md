@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: 3.0
+  unit: h
+  notes: 2 to 3 hours
 protein-binding:
-  value: null
+  value: 30.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: ~30%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ethionamide
+  url: https://en.wikipedia.org/w/index.php?title=Ethionamide&oldid=1372674176
+  revision: 1372674176
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ethionamide
@@ -79,7 +89,13 @@ Structural analogue of isoniazid activated by a different mycobacterial enzyme, 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ethionamide*](https://en.wikipedia.org/w/index.php?title=Ethionamide&oldid=1372674176) (revision 1372674176, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2–3 h | 2 to 3 hours |
+| Protein binding | 30 % | ~30% |
 
 ## Safety routing
 

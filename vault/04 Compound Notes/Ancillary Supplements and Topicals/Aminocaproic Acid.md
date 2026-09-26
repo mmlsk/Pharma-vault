@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: null
+  unit: h
+  notes: 2 hours
 protein-binding:
   value: null
   unit: percent
@@ -33,7 +34,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Kidney
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Aminocaproic acid
+  url: https://en.wikipedia.org/w/index.php?title=Aminocaproic_acid&oldid=1332569940
+  revision: 1332569940
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Aminocaproic Acid
@@ -79,7 +88,13 @@ Lysine analogue antifibrinolytic blocking plasminogen binding to fibrin.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Aminocaproic acid*](https://en.wikipedia.org/w/index.php?title=Aminocaproic_acid&oldid=1332569940) (revision 1332569940, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2 h | 2 hours |
+| Metabolism | - | Kidney |
 
 ## Safety routing
 

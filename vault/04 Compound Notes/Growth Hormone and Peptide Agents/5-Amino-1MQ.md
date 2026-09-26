@@ -80,7 +80,7 @@ NNMT inhibitor with promising mouse adipose data and nothing at all in humans.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

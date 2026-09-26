@@ -21,17 +21,23 @@ chembl-id: null
 chembl-max-phase: null
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: Varies according to plasma concentration
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: Negligible
+bioavailability:
+  value: null
+  value-max: null
+  notes: Rapid, diminishes as dose increases
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Vitamin C
+  url: https://en.wikipedia.org/w/index.php?title=Vitamin_C&oldid=1375053900
+  revision: 1375053900
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Vitamin C (Ascorbic Acid)
@@ -82,7 +96,15 @@ Essential cofactor for the enzymes that hydroxylate collagen during synthesis; a
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Vitamin C*](https://en.wikipedia.org/w/index.php?title=Vitamin_C&oldid=1375053900) (revision 1375053900, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | Varies according to plasma concentration |
+| Protein binding | - | Negligible |
+| Bioavailability | - | Rapid, diminishes as dose increases |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

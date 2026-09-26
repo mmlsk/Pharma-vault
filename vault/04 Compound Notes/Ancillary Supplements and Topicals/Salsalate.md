@@ -79,7 +79,7 @@ Non-acetylated salicylate that spares platelets and has been studied for insulin
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

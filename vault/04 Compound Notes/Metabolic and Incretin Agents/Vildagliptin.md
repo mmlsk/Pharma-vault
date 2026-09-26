@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: 3.0
+  unit: h
+  notes: 2 to 3 hours
 protein-binding:
-  value: null
+  value: 9.3
+  value-max: null
   unit: percent
-  notes: null
+  notes: 9.3%
+bioavailability:
+  value: 85.0
+  value-max: null
+  notes: 85%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Mainly hydrolysis to inactive metabolite; CYP450 not appreciably involved
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +54,21 @@ risk-domains: []
 group-risk-triage:
 - glucose-metabolism
 - gastrointestinal
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/glp1
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Vildagliptin
+  url: https://en.wikipedia.org/w/index.php?title=Vildagliptin&oldid=1367270801
+  revision: 1367270801
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Vildagliptin
@@ -80,7 +94,16 @@ Inhibits DPP-4 to prolong endogenous incretin signaling and glucose-dependent in
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Vildagliptin*](https://en.wikipedia.org/w/index.php?title=Vildagliptin&oldid=1367270801) (revision 1367270801, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2–3 h | 2 to 3 hours |
+| Protein binding | 9.3 % | 9.3% |
+| Bioavailability | 85 % | 85% |
+| Metabolism | hepatic | Mainly hydrolysis to inactive metabolite; CYP450 not appreciably involved |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 70.0
+  value-max: null
+  unit: d
+  notes: 70 days
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Clofazimine
+  url: https://en.wikipedia.org/w/index.php?title=Clofazimine&oldid=1371686832
+  revision: 1371686832
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Clofazimine
@@ -79,7 +88,12 @@ Riminophenazine used in leprosy and resistant tuberculosis, notorious for the re
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Clofazimine*](https://en.wikipedia.org/w/index.php?title=Clofazimine&oldid=1371686832) (revision 1371686832, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 70 d | 70 days |
 
 ## Safety routing
 

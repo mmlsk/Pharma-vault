@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL110691
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 25.0
+  value-max: 89.0
+  unit: h
+  notes: 25–89 hours
 protein-binding:
-  value: null
+  value: 96.6
+  value-max: 99.4
   unit: percent
-  notes: null
+  notes: 96.6–99.4% (to albumin and not to SHBG or CBG)
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Urine: 33–45%; Feces: 24–41%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (reduction, hydroxylation, deacetylation, conjugation)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Chlormadinone acetate
+  url: https://en.wikipedia.org/w/index.php?title=Chlormadinone_acetate&oldid=1329002308
+  revision: 1329002308
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Chlormadinone Acetate
@@ -84,7 +98,17 @@ Progesterone receptor modulator _(ChEMBL curated mechanism, as quoted by the sou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Chlormadinone acetate*](https://en.wikipedia.org/w/index.php?title=Chlormadinone_acetate&oldid=1329002308) (revision 1329002308, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 25–89 h | 25–89 hours |
+| Protein binding | 96.6–99.4 % | 96.6–99.4% (to albumin and not to SHBG or CBG) |
+| Bioavailability | 100 % | 100% |
+| Metabolism | hepatic | Liver (reduction, hydroxylation, deacetylation, conjugation) |
+| Metabolites | - | • 3α-Hydroxy-CMA; • 3β-Hydroxy-CMA; • Others |
+| Excretion | - | Urine: 33–45%; Feces: 24–41% |
 
 ## Safety routing
 

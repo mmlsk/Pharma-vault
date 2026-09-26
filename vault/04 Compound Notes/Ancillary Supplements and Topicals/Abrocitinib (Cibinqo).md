@@ -20,9 +20,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.8
+  value-max: 5.2
+  unit: h
+  notes: 2.8–5.2 h
 protein-binding:
   value: null
   unit: percent
@@ -30,8 +31,8 @@ protein-binding:
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.044
+  notes: 1.0–4.4% unchanged in urine
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -49,13 +50,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Abrocitinib
+  url: https://en.wikipedia.org/w/index.php?title=Abrocitinib&oldid=1352069148
+  revision: 1352069148
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Abrocitinib (Cibinqo)
@@ -82,7 +91,13 @@ Oral JAK1 inhibitor for refractory atopic dermatitis carrying JAK-class boxed wa
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Abrocitinib*](https://en.wikipedia.org/w/index.php?title=Abrocitinib&oldid=1352069148) (revision 1352069148, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2.8–5.2 h | 2.8–5.2 h |
+| Excretion | - · fe 0.044 | 1.0–4.4% unchanged in urine |
 
 ## Safety routing
 

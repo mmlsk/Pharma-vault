@@ -18,18 +18,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 9.0
+  value-max: null
+  unit: h
+  notes: 9 hours
 protein-binding:
-  value: null
+  value: 90.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 90%, mostly to albumin
+bioavailability:
+  value: null
+  value-max: null
+  notes: N/A
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 76% in urine, <1% in feces
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Telavancin
+  url: https://en.wikipedia.org/w/index.php?title=Telavancin&oldid=1329507747
+  revision: 1329507747
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Telavancin
@@ -79,7 +93,15 @@ Lipoglycopeptide with dual cell wall and membrane activity, limited in practice 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Telavancin*](https://en.wikipedia.org/w/index.php?title=Telavancin&oldid=1329507747) (revision 1329507747, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 9 h | 9 hours |
+| Protein binding | 90 % | 90%, mostly to albumin |
+| Bioavailability | - | N/A |
+| Excretion | - | 76% in urine, <1% in feces |
 
 ## Safety routing
 

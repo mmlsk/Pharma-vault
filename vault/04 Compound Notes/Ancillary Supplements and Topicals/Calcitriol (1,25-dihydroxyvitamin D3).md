@@ -21,22 +21,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: 8.0
+  unit: h
+  notes: 5–8 hours (adults), 27 hours (children)
 protein-binding:
-  value: null
+  value: 99.9
+  value-max: null
   unit: percent
-  notes: null
+  notes: 99.9%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Faeces (50%), urine (16%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Kidney
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Calcitriol
+  url: https://en.wikipedia.org/w/index.php?title=Calcitriol&oldid=1375810255
+  revision: 1375810255
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Calcitriol (1,25-dihydroxyvitamin D3)
@@ -83,7 +93,15 @@ The fully active vitamin D hormone; needs no renal activation, and has the narro
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Calcitriol*](https://en.wikipedia.org/w/index.php?title=Calcitriol&oldid=1375810255) (revision 1375810255, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5–8 h | 5–8 hours (adults), 27 hours (children) |
+| Protein binding | 99.9 % | 99.9% |
+| Metabolism | - | Kidney |
+| Excretion | mainly non-renal | Faeces (50%), urine (16%) |
 
 ## Safety routing
 

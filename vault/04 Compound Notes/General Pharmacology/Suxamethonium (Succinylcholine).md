@@ -27,15 +27,19 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: NA
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (10%)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: By pseudocholinesterase, to succinylmonocholine and choline
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/analgesia
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Suxamethonium chloride
+  url: https://en.wikipedia.org/w/index.php?title=Suxamethonium_chloride&oldid=1368852794
+  revision: 1368852794
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Suxamethonium (Succinylcholine)
@@ -82,7 +94,14 @@ The only depolarising neuromuscular blocker in use, giving the fastest onset and
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Suxamethonium chloride*](https://en.wikipedia.org/w/index.php?title=Suxamethonium_chloride&oldid=1368852794) (revision 1368852794, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | - | NA |
+| Metabolism | - | By pseudocholinesterase, to succinylmonocholine and choline |
+| Excretion | mainly urinary | Kidney (10%) |
 
 ## Safety routing
 

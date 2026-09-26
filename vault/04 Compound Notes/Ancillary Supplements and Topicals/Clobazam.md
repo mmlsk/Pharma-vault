@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL70418
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 36.0
+  value-max: 42.0
+  unit: h
+  notes: '• Clobazam: 36–42 hours; • N-desmethylclobazam: 71–82 hours'
 protein-binding:
-  value: null
+  value: 80.0
+  value-max: 90.0
   unit: percent
-  notes: null
+  notes: 80–90%
+bioavailability:
+  value: 87.0
+  value-max: null
+  notes: Rapidly and extensively absorbed; 87%–95% (oral)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (82%); Feces (11%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Clobazam
+  url: https://en.wikipedia.org/w/index.php?title=Clobazam&oldid=1371526607
+  revision: 1371526607
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Clobazam
@@ -84,7 +98,17 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Clobazam*](https://en.wikipedia.org/w/index.php?title=Clobazam&oldid=1371526607) (revision 1371526607, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 36–42 h | • Clobazam: 36–42 hours; • N-desmethylclobazam: 71–82 hours |
+| Protein binding | 80–90 % | 80–90% |
+| Bioavailability | 87 % | Rapidly and extensively absorbed; 87%–95% (oral) |
+| Metabolism | hepatic | Liver |
+| Metabolites | - | • N-desmethylclobazam; (Norclobazam, 4-oxo-Lofendazam); • N-desmethylclobazam-3',4'-dihydrodiol; • 9-Hydroxy-N-desmethylclobazam;; • 4'-Hydroxy-N-desmethylclobazam; • 4'-Hydroxyclobazam |
+| Excretion | mainly urinary | Kidney (82%); Feces (11%) |
 
 ## Safety routing
 

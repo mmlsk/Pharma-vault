@@ -20,9 +20,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 45.0
+  value-max: 60.0
+  unit: h
+  notes: 45–60 hours
 protein-binding:
   value: null
   unit: percent
@@ -51,13 +52,21 @@ group-risk-triage:
 - endocrine-feedback-disruption
 - identity-contamination
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/sarms
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Vosilasarm
+  url: https://en.wikipedia.org/w/index.php?title=Vosilasarm&oldid=1363831447
+  revision: 1363831447
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # RAD-140 (Testolone)
@@ -84,7 +93,12 @@ Investigational SARM with high androgen receptor affinity in muscle and bone tis
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Vosilasarm*](https://en.wikipedia.org/w/index.php?title=Vosilasarm&oldid=1363831447) (revision 1363831447, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 45–60 h | 45–60 hours |
 
 ## Safety routing
 

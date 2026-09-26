@@ -20,13 +20,19 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: 3.0
+  unit: h
+  notes: 2–3 hours
 protein-binding:
-  value: null
+  value: 97.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 97%
+bioavailability:
+  value: 60.0
+  value-max: null
+  notes: ~60%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Prazosin
+  url: https://en.wikipedia.org/w/index.php?title=Prazosin&oldid=1374677697
+  revision: 1374677697
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Prazosin (Minipress)
@@ -82,7 +96,14 @@ The original selective alpha-1 blocker; now used more for PTSD nightmares and ph
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Prazosin*](https://en.wikipedia.org/w/index.php?title=Prazosin&oldid=1374677697) (revision 1374677697, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2–3 h | 2–3 hours |
+| Protein binding | 97 % | 97% |
+| Bioavailability | 60 % | ~60% |
 
 ## Safety routing
 

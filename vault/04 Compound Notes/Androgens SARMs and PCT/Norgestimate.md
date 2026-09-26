@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL1200934
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 17.0
+  value-max: 37.0
+  unit: h
+  notes: '• Norgestimate: very short; • Norelgestromin: 17–37 hours; • Levonorgestrel: 24–32 hours'
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: '• Norelgestromin: 99% (to albumin); • Levonorgestrel: 98% (to albumin and SHBG); • Levonorgestrel acetate: ? (to albumin)'
+bioavailability:
+  value: null
+  value-max: null
+  notes: Unknown
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Urine: 47%; Feces: 37%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver, intestines (deacetylation, reduction, hydroxylation, conjugation)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Norgestimate
+  url: https://en.wikipedia.org/w/index.php?title=Norgestimate&oldid=1369013524
+  revision: 1369013524
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Norgestimate
@@ -84,7 +98,17 @@ Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the sourc
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Norgestimate*](https://en.wikipedia.org/w/index.php?title=Norgestimate&oldid=1369013524) (revision 1369013524, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 17–37 h | • Norgestimate: very short; • Norelgestromin: 17–37 hours; • Levonorgestrel: 24–32 hours |
+| Protein binding | 99 % | • Norelgestromin: 99% (to albumin); • Levonorgestrel: 98% (to albumin and SHBG); • Levonorgestrel acetate: ? (to albumin) |
+| Bioavailability | - | Unknown |
+| Metabolism | hepatic | Liver, intestines (deacetylation, reduction, hydroxylation, conjugation) |
+| Metabolites | - | • Norelgestromin; • Levonorgestrel; • Levonorgestrel acetate |
+| Excretion | - | Urine: 47%; Feces: 37% |
 
 ## Safety routing
 

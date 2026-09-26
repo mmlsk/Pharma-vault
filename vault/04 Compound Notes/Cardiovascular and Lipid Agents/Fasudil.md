@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 0.76
+  value-max: null
+  unit: h
+  notes: 0.76 hours. Active metabolite (hydroxyfasudil) 4.66 hours.
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/cardio
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Fasudil
+  url: https://en.wikipedia.org/w/index.php?title=Fasudil&oldid=1336138545
+  revision: 1336138545
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Fasudil
@@ -79,7 +88,13 @@ Rho kinase inhibitor licensed in Japan and China for cerebral vasospasm after su
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Fasudil*](https://en.wikipedia.org/w/index.php?title=Fasudil&oldid=1336138545) (revision 1336138545, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 0.76 h | 0.76 hours. Active metabolite (hydroxyfasudil) 4.66 hours. |
+| Metabolites | - | Hydroxyfasudil |
 
 ## Safety routing
 

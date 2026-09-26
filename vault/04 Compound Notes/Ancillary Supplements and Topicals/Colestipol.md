@@ -25,11 +25,15 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: None
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Faeces, in complex with bile acids
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Colestipol
+  url: https://en.wikipedia.org/w/index.php?title=Colestipol&oldid=1330098771
+  revision: 1330098771
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Colestipol
@@ -79,7 +91,13 @@ Bile-acid sequestrant that lowers LDL but can raise triglycerides and impair abs
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Colestipol*](https://en.wikipedia.org/w/index.php?title=Colestipol&oldid=1330098771) (revision 1330098771, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | - | None |
+| Excretion | mainly non-renal | Faeces, in complex with bile acids |
 
 ## Safety routing
 

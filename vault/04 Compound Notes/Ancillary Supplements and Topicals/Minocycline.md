@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 15.5
+  value-max: null
+  unit: h
+  notes: 15.5h (11–26h)
 protein-binding:
-  value: null
+  value: 70.0
+  value-max: 75.0
   unit: percent
-  notes: null
+  notes: 70–75%
+bioavailability:
+  value: 90.0
+  value-max: 100.0
+  notes: 90–100%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Mostly fecal, 10–15% renal
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Minocycline
+  url: https://en.wikipedia.org/w/index.php?title=Minocycline&oldid=1363129899
+  revision: 1363129899
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Minocycline
@@ -79,7 +93,16 @@ Tetracycline antibiotic used for inflammatory acne; vestibular effects, pigmenta
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Minocycline*](https://en.wikipedia.org/w/index.php?title=Minocycline&oldid=1363129899) (revision 1363129899, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 15.5 h | 15.5h (11–26h) |
+| Protein binding | 70–75 % | 70–75% |
+| Bioavailability | 90–100 % | 90–100% |
+| Metabolism | hepatic | Liver |
+| Excretion | - | Mostly fecal, 10–15% renal |
 
 ## Safety routing
 

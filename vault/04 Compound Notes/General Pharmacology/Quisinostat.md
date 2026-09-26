@@ -25,6 +25,10 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: oral
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cytotoxicity
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/oncology
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Quisinostat
+  url: https://en.wikipedia.org/w/index.php?title=Quisinostat&oldid=1329688884
+  revision: 1329688884
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Quisinostat
@@ -79,7 +91,12 @@ A second-generation hydroxamate with unusually high potency against HDAC1, allow
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Quisinostat*](https://en.wikipedia.org/w/index.php?title=Quisinostat&oldid=1329688884) (revision 1329688884, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | - | oral |
 
 ## Safety routing
 

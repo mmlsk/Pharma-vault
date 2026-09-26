@@ -79,7 +79,7 @@ Anti-PD-1 antibody and the archetype of checkpoint blockade, effective across ma
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.8
+  value-max: null
+  unit: h
+  notes: 5.8 hours
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ramosetron
+  url: https://en.wikipedia.org/w/index.php?title=Ramosetron&oldid=1335641757
+  revision: 1335641757
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ramosetron
@@ -79,7 +88,12 @@ Antagonises 5-HT3 receptors on vagal afferents and in the area postrema; QT effe
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ramosetron*](https://en.wikipedia.org/w/index.php?title=Ramosetron&oldid=1335641757) (revision 1335641757, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5.8 h | 5.8 hours |
 
 ## Safety routing
 

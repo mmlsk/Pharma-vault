@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL2107067
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 20.9
+  value-max: null
+  unit: d
+  notes: 'IM (in tea seed oil): 20.9 days; IM (in castor oil): 33.9 days'
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: High (testosterone)
+bioavailability:
+  value: 3.0
+  value-max: 7.0
+  notes: 'Oral: 3–7%; Intramuscular: high'
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: ~90% Urine, 6% feces
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +54,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Testosterone undecanoate
+  url: https://en.wikipedia.org/w/index.php?title=Testosterone_undecanoate&oldid=1348065874
+  revision: 1348065874
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Testosterone Undecanoate
@@ -85,7 +99,17 @@ Androgen Receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Testosterone undecanoate*](https://en.wikipedia.org/w/index.php?title=Testosterone_undecanoate&oldid=1348065874) (revision 1348065874, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 20.9 d | IM (in tea seed oil): 20.9 days; IM (in castor oil): 33.9 days |
+| Protein binding | - | High (testosterone) |
+| Bioavailability | 3–7 % | Oral: 3–7%; Intramuscular: high |
+| Metabolism | hepatic | Liver |
+| Metabolites | - | Testosterone, undecanoic acid, metabolites of testosterone |
+| Excretion | - | ~90% Urine, 6% feces |
 
 ## Safety routing
 

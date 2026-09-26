@@ -19,22 +19,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: null
+  unit: h
+  notes: 'Phase 1: 2 hrs; Phase 2: 12–14 hrs'
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: None
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: None
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +54,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Acipimox
+  url: https://en.wikipedia.org/w/index.php?title=Acipimox&oldid=1329963383
+  revision: 1329963383
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Acipimox
@@ -81,7 +95,16 @@ Nicotinic-acid analogue and anti-lipolytic drug used for hypertriglyceridaemia i
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Acipimox*](https://en.wikipedia.org/w/index.php?title=Acipimox&oldid=1329963383) (revision 1329963383, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2 h | Phase 1: 2 hrs; Phase 2: 12–14 hrs |
+| Protein binding | - | None |
+| Bioavailability | 100 % | 100% |
+| Metabolism | - | None |
+| Excretion | mainly urinary | Renal |
 
 ## Safety routing
 

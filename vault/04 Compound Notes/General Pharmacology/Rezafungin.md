@@ -27,9 +27,9 @@ protein-binding:
   notes: null
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Feces
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +47,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Rezafungin
+  url: https://en.wikipedia.org/w/index.php?title=Rezafungin&oldid=1357733502
+  revision: 1357733502
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Rezafungin
@@ -79,7 +87,12 @@ Long-acting echinocandin dosed once weekly, engineered for stability by replacin
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Rezafungin*](https://en.wikipedia.org/w/index.php?title=Rezafungin&oldid=1357733502) (revision 1357733502, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Excretion | mainly non-renal | Feces |
 
 ## Safety routing
 

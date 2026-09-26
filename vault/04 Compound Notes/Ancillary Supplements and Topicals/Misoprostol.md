@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 20.0
+  value-max: 40.0
+  unit: min
+  notes: 20–40 minutes
 protein-binding:
-  value: null
+  value: 80.0
+  value-max: 90.0
   unit: percent
-  notes: null
+  notes: 80–90% (active metabolite, misoprostol acid)
+bioavailability:
+  value: null
+  value-max: null
+  notes: extensively absorbed
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (80%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (extensive to misoprostic acid)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Misoprostol
+  url: https://en.wikipedia.org/w/index.php?title=Misoprostol&oldid=1371674112
+  revision: 1371674112
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Misoprostol
@@ -79,7 +93,16 @@ PGE1 analogue used for NSAID ulcer prophylaxis and in obstetrics; uterotonic eff
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Misoprostol*](https://en.wikipedia.org/w/index.php?title=Misoprostol&oldid=1371674112) (revision 1371674112, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 20–40 min | 20–40 minutes |
+| Protein binding | 80–90 % | 80–90% (active metabolite, misoprostol acid) |
+| Bioavailability | - | extensively absorbed |
+| Metabolism | hepatic | Liver (extensive to misoprostic acid) |
+| Excretion | mainly urinary | Urine (80%) |
 
 ## Safety routing
 

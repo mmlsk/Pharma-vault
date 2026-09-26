@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL448
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 15.0
+  value-max: 48.0
+  unit: h
+  notes: 15–48 hours
 protein-binding:
-  value: null
+  value: 20.0
+  value-max: 45.0
   unit: percent
-  notes: null
+  notes: 20–45%
+bioavailability:
+  value: 70.0
+  value-max: 90.0
+  notes: 70–90% (oral); 90% (rectal)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Pentobarbital
+  url: https://en.wikipedia.org/w/index.php?title=Pentobarbital&oldid=1376096069
+  revision: 1376096069
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Pentobarbital
@@ -84,7 +98,16 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Pentobarbital*](https://en.wikipedia.org/w/index.php?title=Pentobarbital&oldid=1376096069) (revision 1376096069, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 15–48 h | 15–48 hours |
+| Protein binding | 20–45 % | 20–45% |
+| Bioavailability | 70–90 % | 70–90% (oral); 90% (rectal) |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

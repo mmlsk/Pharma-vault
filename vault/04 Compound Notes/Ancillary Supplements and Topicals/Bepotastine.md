@@ -22,14 +22,19 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 55.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: ~55%
+bioavailability:
+  value: null
+  value-max: null
+  notes: High (oral); Minimal (topical)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Renal (75–85
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Bepotastine
+  url: https://en.wikipedia.org/w/index.php?title=Bepotastine&oldid=1329528471
+  revision: 1329528471
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Bepotastine
@@ -84,7 +97,14 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Bepotastine*](https://en.wikipedia.org/w/index.php?title=Bepotastine&oldid=1329528471) (revision 1329528471, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 55 % | ~55% |
+| Bioavailability | - | High (oral); Minimal (topical) |
+| Excretion | mainly urinary | Renal (75–85 |
 
 ## Safety routing
 

@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 0.5
+  value-max: 3.0
+  unit: h
+  notes: 0.5 to 3 hours
 protein-binding:
-  value: null
+  value: 30.0
+  value-max: 38.0
   unit: percent
-  notes: null
+  notes: 30 to 38%
+bioavailability:
+  value: 75.0
+  value-max: null
+  notes: Complete absorption, following first-pass metabolism systemic availability 75% (range 52 to 75%)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney and Bile duct
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Zidovudine
+  url: https://en.wikipedia.org/w/index.php?title=Zidovudine&oldid=1366106723
+  revision: 1366106723
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Zidovudine
@@ -79,7 +93,16 @@ Inhibits HIV reverse transcriptase and is used only as part of a resistance-awar
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Zidovudine*](https://en.wikipedia.org/w/index.php?title=Zidovudine&oldid=1366106723) (revision 1366106723, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 0.5–3 h | 0.5 to 3 hours |
+| Protein binding | 30–38 % | 30 to 38% |
+| Bioavailability | 75 % | Complete absorption, following first-pass metabolism systemic availability 75% (range 52 to 75%) |
+| Metabolism | hepatic | Liver |
+| Excretion | - | Kidney and Bile duct |
 
 ## Safety routing
 

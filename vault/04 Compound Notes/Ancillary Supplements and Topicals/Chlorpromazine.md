@@ -18,42 +18,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 30.0
+  value-max: null
+  unit: h
+  notes: 30 hours
 protein-binding:
-  value: null
+  value: 90.0
+  value-max: 99.0
   unit: percent
-  notes: null
+  notes: 90–99%
+bioavailability:
+  value: 10.0
+  value-max: 80.0
+  notes: 10–80% (Oral; large interindividual variation)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (43–65% in 24 hrs)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver, mostly CYP2D6-mediated
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2D6
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2D6 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Chlorpromazine
+  url: https://en.wikipedia.org/w/index.php?title=Chlorpromazine&oldid=1368875372
+  revision: 1368875372
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Chlorpromazine
@@ -79,10 +94,21 @@ Antagonizes or partially agonizes dopamine D2 receptors; movement, metabolic, an
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Chlorpromazine*](https://en.wikipedia.org/w/index.php?title=Chlorpromazine&oldid=1368875372) (revision 1368875372, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 30 h | 30 hours |
+| Protein binding | 90–99 % | 90–99% |
+| Bioavailability | 10–80 % | 10–80% (Oral; large interindividual variation) |
+| Metabolism | hepatic | Liver, mostly CYP2D6-mediated |
+| CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary | Kidney (43–65% in 24 hrs) |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

@@ -20,42 +20,58 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 70.0
+  value-max: null
+  unit: h
+  notes: 70 hours Around 100 hours in elderly patients.
 protein-binding:
-  value: null
+  value: 96.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 96%, albumin (about 75%) and alpha1-acid glycoprotein (21%).
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100%
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.17
+  notes: 0.11–0.13 (L/h/kg); excreted mostly by the kidneys. Around 17% is excreted unchanged in the urine. About 15% to 20% is excreted in feces. Steady-state clearance is similar at all ages.
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: CYP2D6, CYP3A4, and glucuronidation. Four major metabolites, two of which are active.
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2D6
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2D6, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Donepezil
+  url: https://en.wikipedia.org/w/index.php?title=Donepezil&oldid=1356481650
+  revision: 1356481650
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Donepezil (Aricept)
@@ -82,7 +98,17 @@ Reversible, centrally selective acetylcholinesterase inhibitor; the most widely 
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Donepezil*](https://en.wikipedia.org/w/index.php?title=Donepezil&oldid=1356481650) (revision 1356481650, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 70 h | 70 hours Around 100 hours in elderly patients. |
+| Protein binding | 96 % | 96%, albumin (about 75%) and alpha1-acid glycoprotein (21%). |
+| Bioavailability | 100 % | 100% |
+| Metabolism | hepatic | CYP2D6, CYP3A4, and glucuronidation. Four major metabolites, two of which are active. |
+| CYP (metabolised by) | CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Excretion | - · fe 0.17 | 0.11–0.13 (L/h/kg); excreted mostly by the kidneys. Around 17% is excreted unchanged in the urine. About 15% to 20% is excreted in feces. Steady-state clearance is similar at all ages. |
 
 ## Safety routing
 
@@ -90,3 +116,4 @@ Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
 - [[Cholinergic Load]]
+- [[CYP450 Metabolism]]

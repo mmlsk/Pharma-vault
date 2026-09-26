@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 3.0
+  value-max: 6.0
+  unit: d
+  notes: 3-6 days
 protein-binding:
-  value: null
+  value: 99.7
+  value-max: null
   unit: percent
-  notes: null
+  notes: 99.7%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Lumefantrine
+  url: https://en.wikipedia.org/w/index.php?title=Lumefantrine&oldid=1343037699
+  revision: 1343037699
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Lumefantrine
@@ -79,7 +89,14 @@ Long-acting partner drug to artemether, clearing residual parasites after the ar
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Lumefantrine*](https://en.wikipedia.org/w/index.php?title=Lumefantrine&oldid=1343037699) (revision 1343037699, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 3–6 d | 3-6 days |
+| Protein binding | 99.7 % | 99.7% |
+| Metabolites | - | desbutyl-lumefantrine |
 
 ## Safety routing
 

@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL856
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: 18.0
+  unit: h
+  notes: 'Primidone: 5-18 h,; Phenobarbital: 75-120 h,; PEMA: 16 h; Time to reach steady state:; Primidone: 2-3 days,; Phenobarbital&PEMA 1-4weeks'
 protein-binding:
-  value: null
+  value: 25.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 25%
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: ~100%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Primidone
+  url: https://en.wikipedia.org/w/index.php?title=Primidone&oldid=1314757574
+  revision: 1314757574
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Primidone
@@ -84,7 +98,16 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Primidone*](https://en.wikipedia.org/w/index.php?title=Primidone&oldid=1314757574) (revision 1314757574, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5–18 h | Primidone: 5-18 h,; Phenobarbital: 75-120 h,; PEMA: 16 h; Time to reach steady state:; Primidone: 2-3 days,; Phenobarbital&PEMA 1-4weeks |
+| Protein binding | 25 % | 25% |
+| Bioavailability | 100 % | ~100% |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

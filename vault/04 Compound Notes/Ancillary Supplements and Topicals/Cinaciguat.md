@@ -79,7 +79,7 @@ Soluble guanylate cyclase ACTIVATOR — it works on the oxidised, haem-free enzy
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

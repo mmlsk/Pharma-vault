@@ -20,9 +20,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 26.0
+  value-max: null
+  unit: d
+  notes: 26 days
 protein-binding:
   value: null
   unit: percent
@@ -49,13 +50,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Omalizumab
+  url: https://en.wikipedia.org/w/index.php?title=Omalizumab&oldid=1372783889
+  revision: 1372783889
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Omalizumab (Xolair)
@@ -82,7 +91,12 @@ Anti-IgE monoclonal antibody for allergic asthma, chronic urticaria, and food-al
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Omalizumab*](https://en.wikipedia.org/w/index.php?title=Omalizumab&oldid=1372783889) (revision 1372783889, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 26 d | 26 days |
 
 ## Safety routing
 

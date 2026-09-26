@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 56.0
+  value-max: 72.0
+  unit: h
+  notes: 56-72 hours
 protein-binding:
   value: null
   unit: percent
@@ -48,13 +49,21 @@ risk-domains: []
 group-risk-triage:
 - evidence-limited
 - identity-contamination
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/peptides
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: IGF-1 LR3
+  url: https://en.wikipedia.org/w/index.php?title=IGF-1_LR3&oldid=1160989525
+  revision: 1160989525
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # IGF-1 LR3
@@ -80,7 +89,12 @@ Long-acting analog of IGF-1 with reduced binding-protein affinity, studied for m
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *IGF-1 LR3*](https://en.wikipedia.org/w/index.php?title=IGF-1_LR3&oldid=1160989525) (revision 1160989525, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 56–72 h | 56-72 hours |
 
 ## Safety routing
 

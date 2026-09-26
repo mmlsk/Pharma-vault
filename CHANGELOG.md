@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.1.0] — 2026-09-26 — PK i graf z danych
+### Dodano
+- `scripts/enrich_pk.py` + `data/enrichment/` — farmakokinetyka z `{{Infobox drug}}` Wikipedii (wersje przypięte): **1117** substancji z danymi PK, 1016 z liczbowym t½, 310 z substratami CYP; 26 stron odrzuconych przez niezgodny ChEMBL ID.
+- `data/processed/pk.json`, `pk.csv`.
+- `scripts/build_graph_data.py` → `apps/graph-viewer/graph-data.js`; nowy graf 2 351 substancji (wyszukiwarka, filtry, panel PK, linki Obsidian/ChEMBL/Wikipedia).
+- Makefile: `enrich`, `pk`, `graph`; 5 nowych testów (pk.json, brak liczbowego t½ z danych zwierzęcych, walidacja wzbogaconych notatek, spójność grafu).
+### Zmieniono
+- Schemat v2: `value-max` w `half-life` i `protein-binding`, nowe obiekty `bioavailability` i `pk-source`, status `auto-extracted`.
+- Stuby z danymi PK: tabela „Pharmacokinetics” z tekstem źródłowym, callout o automatycznej ekstrakcji, link do [[CYP450 Metabolism]] dla substratów CYP.
+- `storefront-new-compounds.csv`: 9 produktów niewykrytych w warstwie tekstowej PDF zweryfikowano wzrokowo — nieodnalezionych: 0.
+- Poprzedni graf 40 węzłów → `apps/graph-viewer/legacy-overview.html`.
+
 ## [3.0.0] — 2026-09-26 — restrukturyzacja
 ### Dodano
 - `data/` — surowe źródła z SHA-256, kanoniczny katalog **2 351 substancji / 18 grup / 8 klastrów**, tabele kuratorskie (aliasy, 264-pozycyjny backlog, 34 produkty sklepu).

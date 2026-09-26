@@ -31,9 +31,9 @@ renal-clearance:
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Activation by ester hydrolysis, deactivation by beta oxidation
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +47,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Tafluprost
+  url: https://en.wikipedia.org/w/index.php?title=Tafluprost&oldid=1330112631
+  revision: 1330112631
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Tafluprost
@@ -79,7 +87,12 @@ Preservative-free prostaglandin analogue for glaucoma.
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Tafluprost*](https://en.wikipedia.org/w/index.php?title=Tafluprost&oldid=1330112631) (revision 1330112631, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Metabolism | hepatic | Activation by ester hydrolysis, deactivation by beta oxidation |
 
 ## Safety routing
 

@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL1201649
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 26.7
+  value-max: null
+  unit: h
+  notes: 'Estrone: 26.7 hours; Estrone (BA): 14.8 hours; Equilin: 11.4 hours'
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: High (to albumin and SHBG)
+bioavailability:
+  value: null
+  value-max: null
+  notes: Variable
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Conjugated estrogens
+  url: https://en.wikipedia.org/w/index.php?title=Conjugated_estrogens&oldid=1351672617
+  revision: 1351672617
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Estrogens, Conjugated
@@ -84,7 +98,16 @@ Estrogen receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Conjugated estrogens*](https://en.wikipedia.org/w/index.php?title=Conjugated_estrogens&oldid=1351672617) (revision 1351672617, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 26.7 h | Estrone: 26.7 hours; Estrone (BA): 14.8 hours; Equilin: 11.4 hours |
+| Protein binding | - | High (to albumin and SHBG) |
+| Bioavailability | - | Variable |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

@@ -18,42 +18,59 @@ review-status: stub
 chembl-id: CHEMBL629
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 21.0
+  value-max: null
+  unit: h
+  notes: 21 hours
 protein-binding:
-  value: null
+  value: 96.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 96%
+bioavailability:
+  value: 45.0
+  value-max: 53.0
+  notes: 45–53%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Urine: 12–80% after 48 hours; feces: not studied'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP2D6, CYP2C19, CYP3A4)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2C19
+  - CYP2D6
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2C19, CYP2D6, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Amitriptyline
+  url: https://en.wikipedia.org/w/index.php?title=Amitriptyline&oldid=1375865422
+  revision: 1375865422
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Amitriptyline
@@ -84,10 +101,22 @@ Serotonin transporter inhibitor _(ChEMBL curated mechanism, as quoted by the sou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Amitriptyline*](https://en.wikipedia.org/w/index.php?title=Amitriptyline&oldid=1375865422) (revision 1375865422, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 21 h | 21 hours |
+| Protein binding | 96 % | 96% |
+| Bioavailability | 45–53 % | 45–53% |
+| Metabolism | hepatic | Liver (CYP2D6, CYP2C19, CYP3A4) |
+| CYP (metabolised by) | CYP2C19, CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | nortriptyline, (E)-10-hydroxynortriptyline |
+| Excretion | - | Urine: 12–80% after 48 hours; feces: not studied |
 
 ## Safety routing
 
 Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
+- [[CYP450 Metabolism]]

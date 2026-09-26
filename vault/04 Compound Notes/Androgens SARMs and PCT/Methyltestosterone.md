@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 150.0
+  value-max: null
+  unit: min
+  notes: 150 minutes (~2.5–3 hours)
 protein-binding:
-  value: null
+  value: 98.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 98%
+bioavailability:
+  value: 70.0
+  value-max: null
+  notes: ~70%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Urine: 90%; Feces: 6%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +54,21 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - cardiovascular-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/steroids
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Methyltestosterone
+  url: https://en.wikipedia.org/w/index.php?title=Methyltestosterone&oldid=1371351356
+  revision: 1371351356
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Methyltestosterone
@@ -80,7 +94,16 @@ tags:
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Methyltestosterone*](https://en.wikipedia.org/w/index.php?title=Methyltestosterone&oldid=1371351356) (revision 1371351356, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 150 min | 150 minutes (~2.5–3 hours) |
+| Protein binding | 98 % | 98% |
+| Bioavailability | 70 % | ~70% |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Urine: 90%; Feces: 6% |
 
 ## Safety routing
 

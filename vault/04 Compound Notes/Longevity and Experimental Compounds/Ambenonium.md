@@ -25,6 +25,10 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: null
+  value-max: null
+  notes: Low
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/longevity
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ambenonium chloride
+  url: https://en.wikipedia.org/w/index.php?title=Ambenonium_chloride&oldid=1354487190
+  revision: 1354487190
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Ambenonium
@@ -84,7 +96,12 @@ Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the sour
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ambenonium chloride*](https://en.wikipedia.org/w/index.php?title=Ambenonium_chloride&oldid=1354487190) (revision 1354487190, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | - | Low |
 
 ## Safety routing
 

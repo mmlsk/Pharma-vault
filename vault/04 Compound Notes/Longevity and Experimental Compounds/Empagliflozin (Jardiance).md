@@ -82,7 +82,7 @@ SGLT2 inhibitor that blocks renal glucose reabsorption; the landmark EMPA-REG tr
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

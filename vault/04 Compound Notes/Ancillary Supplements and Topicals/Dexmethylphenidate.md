@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: CHEMBL827
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 4.0
+  value-max: null
+  unit: h
+  notes: 4 hours
 protein-binding:
-  value: null
+  value: 30.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 30%
+bioavailability:
+  value: 11.0
+  value-max: 52.0
+  notes: 11–52%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Dexmethylphenidate
+  url: https://en.wikipedia.org/w/index.php?title=Dexmethylphenidate&oldid=1373389587
+  revision: 1373389587
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Dexmethylphenidate
@@ -84,7 +98,16 @@ Norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by th
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Dexmethylphenidate*](https://en.wikipedia.org/w/index.php?title=Dexmethylphenidate&oldid=1373389587) (revision 1373389587, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 4 h | 4 hours |
+| Protein binding | 30 % | 30% |
+| Bioavailability | 11–52 % | 11–52% |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

@@ -18,18 +18,24 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 3.7
+  value-max: 6.0
+  unit: h
+  notes: 3.7–6 hours
 protein-binding:
-  value: null
+  value: 81.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 81%
+bioavailability:
+  value: 1.0
+  value-max: null
+  notes: 1.0 % (low due to poor gastrointestinal permeability and significant first-pass metabolism)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 82.2% (feces), <1% (urine)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Eluxadoline
+  url: https://en.wikipedia.org/w/index.php?title=Eluxadoline&oldid=1363340378
+  revision: 1363340378
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Eluxadoline
@@ -79,7 +93,15 @@ Mixed mu agonist / delta antagonist acting locally in the gut for IBS with diarr
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Eluxadoline*](https://en.wikipedia.org/w/index.php?title=Eluxadoline&oldid=1363340378) (revision 1363340378, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 3.7–6 h | 3.7–6 hours |
+| Protein binding | 81 % | 81% |
+| Bioavailability | 1 % | 1.0 % (low due to poor gastrointestinal permeability and significant first-pass metabolism) |
+| Excretion | - | 82.2% (feces), <1% (urine) |
 
 ## Safety routing
 

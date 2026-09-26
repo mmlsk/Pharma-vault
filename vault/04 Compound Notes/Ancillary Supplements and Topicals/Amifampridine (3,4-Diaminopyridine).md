@@ -21,22 +21,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.5
+  value-max: null
+  unit: h
+  notes: 2.5 hrs (amifampridine); 4 hrs (3-N-acetyl&shy;amifampridine)
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 93.0
+  value-max: 100.0
+  notes: 93–100%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (19% unmetabolized, 74–81% 3-N-acetyl&shy;amifampridine)
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Acetylation to 3-N-acetyl&shy;amifampridine
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Amifampridine
+  url: https://en.wikipedia.org/w/index.php?title=Amifampridine&oldid=1337381039
+  revision: 1337381039
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Amifampridine (3,4-Diaminopyridine)
@@ -83,7 +96,15 @@ Presynaptic voltage-gated potassium channel blocker; the approved symptomatic tr
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Amifampridine*](https://en.wikipedia.org/w/index.php?title=Amifampridine&oldid=1337381039) (revision 1337381039, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2.5 h | 2.5 hrs (amifampridine); 4 hrs (3-N-acetyl&shy;amifampridine) |
+| Bioavailability | 93–100 % | 93–100% |
+| Metabolism | - | Acetylation to 3-N-acetyl&shy;amifampridine |
+| Excretion | mainly urinary | Kidney (19% unmetabolized, 74–81% 3-N-acetyl&shy;amifampridine) |
 
 ## Safety routing
 

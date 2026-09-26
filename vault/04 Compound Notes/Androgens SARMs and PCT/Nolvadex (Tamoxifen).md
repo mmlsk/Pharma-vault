@@ -20,42 +20,59 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 5.0
+  value-max: 7.0
+  unit: d
+  notes: 5–7 days
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: '>99% (albumin)'
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: ~100%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: false
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 'Feces: 65%; Urine: 9%'
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP3A4, CYP2C9, CYP2D6)
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2C9
+  - CYP2D6
+  - CYP3A4
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2C9, CYP2D6, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Tamoxifen
+  url: https://en.wikipedia.org/w/index.php?title=Tamoxifen&oldid=1365921295
+  revision: 1365921295
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Nolvadex (Tamoxifen)
@@ -82,7 +99,18 @@ SERM used post-cycle and to manage gynecomastia by blocking estrogen receptors i
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Tamoxifen*](https://en.wikipedia.org/w/index.php?title=Tamoxifen&oldid=1365921295) (revision 1365921295, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 5–7 d | 5–7 days |
+| Protein binding | 99 % | >99% (albumin) |
+| Bioavailability | 100 % | ~100% |
+| Metabolism | hepatic | Liver (CYP3A4, CYP2C9, CYP2D6) |
+| CYP (metabolised by) | CYP2C9, CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | • N-Desmethyltamoxifen; • Endoxifen (4-hydroxy-N-desmethyltamoxifen); • Afimoxifene (4-hydroxytamoxifen); • N,N-Didesmethyltamoxifen; • Norendoxifen (4-hydroxy-N,N-didesmethyltamoxifen); • Others, conjugates |
+| Excretion | mainly non-renal | Feces: 65%; Urine: 9% |
 
 ## Safety routing
 
@@ -90,4 +118,5 @@ Group-level triage (not compound-specific): `endocrine-feedback-disruption`
 
 - [[Stacking and Interaction Risks]]
 - [[Hormonal Axis Suppression]]
+- [[CYP450 Metabolism]]
 - [[HPG and GH-IGF-1 Axes]]

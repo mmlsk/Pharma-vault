@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 3.0
+  value-max: 6.0
+  unit: min
+  notes: ~3–6 minutes
 protein-binding:
-  value: null
+  value: 97.0
+  value-max: 98.0
   unit: percent
-  notes: null
+  notes: ~97–98%.
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: 100% (IV)
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney (58%), Bile duct (35%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Rapid deactivation in the circulation (independent of CYP system)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Cangrelor
+  url: https://en.wikipedia.org/w/index.php?title=Cangrelor&oldid=1329245666
+  revision: 1329245666
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Cangrelor
@@ -79,7 +93,16 @@ Inhibits platelet P2Y12 ADP signalling to reduce aggregation, at the cost of ble
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Cangrelor*](https://en.wikipedia.org/w/index.php?title=Cangrelor&oldid=1329245666) (revision 1329245666, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 3–6 min | ~3–6 minutes |
+| Protein binding | 97–98 % | ~97–98%. |
+| Bioavailability | 100 % | 100% (IV) |
+| Metabolism | hepatic | Rapid deactivation in the circulation (independent of CYP system) |
+| Excretion | mainly urinary | Kidney (58%), Bile duct (35%) |
 
 ## Safety routing
 

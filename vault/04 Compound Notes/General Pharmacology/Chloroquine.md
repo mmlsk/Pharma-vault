@@ -19,8 +19,9 @@ chembl-id: null
 chembl-max-phase: null
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: 1-2 months
 protein-binding:
   value: null
   unit: percent
@@ -31,9 +32,9 @@ renal-clearance:
   fraction-excreted-unchanged: null
   notes: null
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Chloroquine
+  url: https://en.wikipedia.org/w/index.php?title=Chloroquine&oldid=1368924934
+  revision: 1368924934
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Chloroquine
@@ -79,7 +88,13 @@ The archetypal 4-aminoquinoline antimalarial, largely defeated by resistance but
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Chloroquine*](https://en.wikipedia.org/w/index.php?title=Chloroquine&oldid=1368924934) (revision 1368924934, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | 1-2 months |
+| Metabolism | hepatic | Liver |
 
 ## Safety routing
 

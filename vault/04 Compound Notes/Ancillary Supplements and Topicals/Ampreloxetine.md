@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: 3
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 30.0
+  value-max: 40.0
+  unit: h
+  notes: 30–40 hours
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ampreloxetine
+  url: https://en.wikipedia.org/w/index.php?title=Ampreloxetine&oldid=1343211011
+  revision: 1343211011
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ampreloxetine
@@ -83,7 +92,12 @@ norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by th
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ampreloxetine*](https://en.wikipedia.org/w/index.php?title=Ampreloxetine&oldid=1343211011) (revision 1343211011, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 30–40 h | 30–40 hours |
 
 ## Safety routing
 

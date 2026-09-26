@@ -21,42 +21,57 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 7.0
+  value-max: null
+  unit: h
+  notes: 7 hours
 protein-binding:
-  value: null
+  value: 18.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 18%
+bioavailability:
+  value: 80.0
+  value-max: 100.0
+  notes: 80–100%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  primary-route: true
+  fraction-excreted-unchanged: 0.32
+  notes: Kidney (95%, of which 32% unchanged), fecal (5%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver partially CYP450:CYP2D6/3A4 substrate
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2D6
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2D6 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Galantamine
+  url: https://en.wikipedia.org/w/index.php?title=Galantamine&oldid=1354799288
+  revision: 1354799288
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Galantamine (Reminyl / Razadyne)
@@ -83,7 +98,17 @@ Alkaloid cholinesterase inhibitor that is also a positive allosteric modulator o
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Galantamine*](https://en.wikipedia.org/w/index.php?title=Galantamine&oldid=1354799288) (revision 1354799288, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 7 h | 7 hours |
+| Protein binding | 18 % | 18% |
+| Bioavailability | 80–100 % | 80–100% |
+| Metabolism | hepatic | Liver partially CYP450:CYP2D6/3A4 substrate |
+| CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
+| Excretion | mainly urinary · fe 0.32 | Kidney (95%, of which 32% unchanged), fecal (5%) |
 
 ## Safety routing
 
@@ -91,3 +116,4 @@ Group-level triage (not compound-specific): `needs-compound-review`
 
 - [[Stacking and Interaction Risks]]
 - [[Cholinergic Load]]
+- [[CYP450 Metabolism]]

@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.1
+  value-max: 4.7
+  unit: h
+  notes: 'Oral (as psilocin): 2.1–4.7h (range 1.2–18.6h); IV (as psilocin): 1.2h (range 1.8–4.5h)'
 protein-binding:
-  value: null
+  value: 66.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 66%
+bioavailability:
+  value: 20.4
+  value-max: null
+  notes: 'Oral: 52.7 ± 20.4% (as psilocin) (n=3)'
 active-metabolites: []
 renal-clearance:
   primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  fraction-excreted-unchanged: 0.04
+  notes: urine (mainly as psilocin-O-glucuronide, 2–4% as unchanged psilocin)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver, other tissues:; • Dephosphorylation (ALP); • Demethylation and deamination (MAO); • Oxidation (ALDH); • Glucuronidation (UGTs)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -48,13 +54,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/neuropsych
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Psilocybin
+  url: https://en.wikipedia.org/w/index.php?title=Psilocybin&oldid=1376563392
+  revision: 1376563392
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Psilocybin
@@ -80,7 +94,17 @@ A prodrug dephosphorylated to psilocin, a 5-HT2A agonist. Trials in treatment-re
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Psilocybin*](https://en.wikipedia.org/w/index.php?title=Psilocybin&oldid=1376563392) (revision 1376563392, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2.1–4.7 h | Oral (as psilocin): 2.1–4.7h (range 1.2–18.6h); IV (as psilocin): 1.2h (range 1.8–4.5h) |
+| Protein binding | 66 % | 66% |
+| Bioavailability | 20.4 % | Oral: 52.7 ± 20.4% (as psilocin) (n=3) |
+| Metabolism | hepatic | Liver, other tissues:; • Dephosphorylation (ALP); • Demethylation and deamination (MAO); • Oxidation (ALDH); • Glucuronidation (UGTs) |
+| Metabolites | - | • Psilocin; • Psilocin-O-glucuronide; • 4-Hydroxyindole-3-acetaldehyde; • 4-Hydroxyindole-3-acetic acid (4-HIAA); • 4-Hydroxytryptophol |
+| Excretion | - · fe 0.04 | urine (mainly as psilocin-O-glucuronide, 2–4% as unchanged psilocin) |
 
 ## Safety routing
 

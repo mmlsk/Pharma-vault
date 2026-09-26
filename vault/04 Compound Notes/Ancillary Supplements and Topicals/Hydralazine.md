@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 2.0
+  value-max: 8.0
+  unit: h
+  notes: 2–8 hours, 7–16 hours (renal impairment)
 protein-binding:
-  value: null
+  value: 85.0
+  value-max: 90.0
   unit: percent
-  notes: null
+  notes: 85–90%
+bioavailability:
+  value: 26.0
+  value-max: 50.0
+  notes: 26–50%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Hydralazine
+  url: https://en.wikipedia.org/w/index.php?title=Hydralazine&oldid=1365125817
+  revision: 1365125817
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Hydralazine
@@ -79,7 +93,16 @@ Direct arterial vasodilator; causes reflex tachycardia and, at higher doses, a d
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Hydralazine*](https://en.wikipedia.org/w/index.php?title=Hydralazine&oldid=1365125817) (revision 1365125817, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 2–8 h | 2–8 hours, 7–16 hours (renal impairment) |
+| Protein binding | 85–90 % | 85–90% |
+| Bioavailability | 26–50 % | 26–50% |
+| Metabolism | hepatic | Liver |
+| Excretion | mainly urinary | Urine |
 
 ## Safety routing
 

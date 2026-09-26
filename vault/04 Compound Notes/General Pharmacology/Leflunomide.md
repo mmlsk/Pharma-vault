@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 14.0
+  value-max: 18.0
+  unit: d
+  notes: 14–18 days
 protein-binding:
-  value: null
+  value: 99.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: '>99%'
+bioavailability:
+  value: 80.0
+  value-max: null
+  notes: 80%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Faeces (48%), urine (43%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: GI mucosa and liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/immunology
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Leflunomide
+  url: https://en.wikipedia.org/w/index.php?title=Leflunomide&oldid=1363895358
+  revision: 1363895358
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Leflunomide
@@ -79,7 +93,17 @@ Pyrimidine synthesis inhibitor for rheumatoid arthritis with an active metabolit
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Leflunomide*](https://en.wikipedia.org/w/index.php?title=Leflunomide&oldid=1363895358) (revision 1363895358, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 14–18 d | 14–18 days |
+| Protein binding | 99 % | >99% |
+| Bioavailability | 80 % | 80% |
+| Metabolism | hepatic | GI mucosa and liver |
+| Metabolites | - | Teriflunomide |
+| Excretion | - | Faeces (48%), urine (43%) |
 
 ## Safety routing
 

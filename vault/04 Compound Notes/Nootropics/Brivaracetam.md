@@ -18,29 +18,36 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 9.0
+  value-max: null
+  unit: h
+  notes: ≈9 hours
 protein-binding:
-  value: null
+  value: 20.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: ≤20%
+bioavailability:
+  value: 100.0
+  value-max: null
+  notes: Nearly 100%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidneys (>95%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Hydrolysis by amidase, CYP2C19-mediated hydroxylation
 dosage-ranges: {}
 cyp-interactions:
-  substrates: []
+  substrates:
+  - CYP2C19
   inhibitors: []
   inducers: []
   transporters: []
-  notes: null
+  notes: Metabolised by CYP2C19 (from metabolism field); inhibitor/inducer roles not assessed
 contraindications: []
 major-interactions: []
 monitoring: []
@@ -48,13 +55,21 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/neuropsych
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Brivaracetam
+  url: https://en.wikipedia.org/w/index.php?title=Brivaracetam&oldid=1370095828
+  revision: 1370095828
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Brivaracetam
@@ -80,7 +95,18 @@ Higher-affinity SV2A ligand developed from levetiracetam, with a better behaviou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Brivaracetam*](https://en.wikipedia.org/w/index.php?title=Brivaracetam&oldid=1370095828) (revision 1370095828, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 9 h | ≈9 hours |
+| Protein binding | 20 % | ≤20% |
+| Bioavailability | 100 % | Nearly 100% |
+| Metabolism | hepatic | Hydrolysis by amidase, CYP2C19-mediated hydroxylation |
+| CYP (metabolised by) | CYP2C19 | roles as inhibitor/inducer not assessed |
+| Metabolites | - | 3 inactive metabolites |
+| Excretion | mainly urinary | Kidneys (>95%) |
 
 ## Safety routing
 
@@ -88,3 +114,4 @@ Group-level triage (not compound-specific): `cns-activity`, `serotonergic-or-dop
 
 - [[Stacking and Interaction Risks]]
 - [[Serotonin Toxicity]]
+- [[CYP450 Metabolism]]

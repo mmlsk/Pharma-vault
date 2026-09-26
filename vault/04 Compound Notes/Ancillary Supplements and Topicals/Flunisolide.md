@@ -18,13 +18,15 @@ review-status: stub
 chembl-id: CHEMBL1512
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.8
+  value-max: null
+  unit: h
+  notes: 1.8 hours
 protein-binding:
-  value: null
+  value: 40.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 40% after inhalation
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +49,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Flunisolide
+  url: https://en.wikipedia.org/w/index.php?title=Flunisolide&oldid=1338068789
+  revision: 1338068789
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Flunisolide
@@ -84,7 +94,13 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Flunisolide*](https://en.wikipedia.org/w/index.php?title=Flunisolide&oldid=1338068789) (revision 1338068789, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1.8 h | 1.8 hours |
+| Protein binding | 40 % | 40% after inhalation |
 
 ## Safety routing
 

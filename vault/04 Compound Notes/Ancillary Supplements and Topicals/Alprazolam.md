@@ -22,18 +22,23 @@ half-life:
   unit: null
   notes: null
 protein-binding:
-  value: null
+  value: 80.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 80%
+bioavailability:
+  value: 80.0
+  value-max: 90.0
+  notes: 80–90%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver, via cytochrome P450 3A4
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Alprazolam
+  url: https://en.wikipedia.org/w/index.php?title=Alprazolam&oldid=1369242307
+  revision: 1369242307
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Alprazolam
@@ -84,7 +97,16 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Alprazolam*](https://en.wikipedia.org/w/index.php?title=Alprazolam&oldid=1369242307) (revision 1369242307, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Protein binding | 80 % | 80% |
+| Bioavailability | 80–90 % | 80–90% |
+| Metabolism | hepatic | Liver, via cytochrome P450 3A4 |
+| Metabolites | - | α-hydroxyalprazolam; 4-hydroxyalprazolam |
+| Excretion | mainly urinary | Kidney |
 
 ## Safety routing
 

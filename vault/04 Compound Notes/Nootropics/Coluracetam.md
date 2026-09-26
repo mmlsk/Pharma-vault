@@ -80,7 +80,7 @@ Racetam claimed to act as a high-affinity choline uptake enhancer, a mechanism d
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

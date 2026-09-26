@@ -79,7 +79,7 @@ TACI-Fc fusion protein blocking both BAFF and APRIL, approved in China for syste
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

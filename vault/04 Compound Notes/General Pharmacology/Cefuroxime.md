@@ -18,18 +18,23 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 80.0
+  value-max: null
+  unit: min
+  notes: 80 minutes
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 37.0
+  value-max: null
+  notes: 37% on an empty stomach, up to 52% if taken after food
 active-metabolites: []
 renal-clearance:
-  primary-route: null
-  fraction-excreted-unchanged: null
-  notes: null
+  primary-route: true
+  fraction-excreted-unchanged: 1.0
+  notes: Urine 66–100% unchanged
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -47,13 +52,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Cefuroxime
+  url: https://en.wikipedia.org/w/index.php?title=Cefuroxime&oldid=1352009481
+  revision: 1352009481
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Cefuroxime
@@ -79,7 +92,14 @@ Second-generation cephalosporin with improved stability to staphylococcal and so
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Cefuroxime*](https://en.wikipedia.org/w/index.php?title=Cefuroxime&oldid=1352009481) (revision 1352009481, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 80 min | 80 minutes |
+| Bioavailability | 37 % | 37% on an empty stomach, up to 52% if taken after food |
+| Excretion | mainly urinary · fe 1 | Urine 66–100% unchanged |
 
 ## Safety routing
 

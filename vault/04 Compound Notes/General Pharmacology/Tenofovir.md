@@ -25,6 +25,10 @@ protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 25.0
+  value-max: null
+  notes: 25%
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -33,7 +37,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Ester hydrolysis
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +51,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Tenofovir disoproxil
+  url: https://en.wikipedia.org/w/index.php?title=Tenofovir_disoproxil&oldid=1356054623
+  revision: 1356054623
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Tenofovir
@@ -79,7 +91,14 @@ Nucleotide reverse transcriptase inhibitor at the centre of HIV therapy and of p
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Tenofovir disoproxil*](https://en.wikipedia.org/w/index.php?title=Tenofovir_disoproxil&oldid=1356054623) (revision 1356054623, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Bioavailability | 25 % | 25% |
+| Metabolism | - | Ester hydrolysis |
+| Metabolites | - | Tenofovir |
 
 ## Safety routing
 

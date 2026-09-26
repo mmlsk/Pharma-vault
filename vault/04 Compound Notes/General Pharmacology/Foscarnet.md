@@ -18,13 +18,19 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 3.3
+  value-max: 6.8
+  unit: h
+  notes: 3.3–6.8 hours
 protein-binding:
-  value: null
+  value: 14.0
+  value-max: 17.0
   unit: percent
-  notes: null
+  notes: 14–17%
+bioavailability:
+  value: null
+  value-max: null
+  notes: NA
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Foscarnet
+  url: https://en.wikipedia.org/w/index.php?title=Foscarnet&oldid=1373275641
+  revision: 1373275641
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Foscarnet
@@ -79,7 +93,14 @@ Pyrophosphate analogue needing no activation at all, which is why it works again
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Foscarnet*](https://en.wikipedia.org/w/index.php?title=Foscarnet&oldid=1373275641) (revision 1373275641, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 3.3–6.8 h | 3.3–6.8 hours |
+| Protein binding | 14–17 % | 14–17% |
+| Bioavailability | - | NA |
 
 ## Safety routing
 

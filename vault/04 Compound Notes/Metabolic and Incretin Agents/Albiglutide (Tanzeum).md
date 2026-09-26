@@ -21,12 +21,14 @@ chembl-id: null
 chembl-max-phase: null
 half-life:
   value: null
+  value-max: null
   unit: null
-  notes: null
+  notes: 5 (4–7) days
 protein-binding:
   value: null
-  unit: percent
-  notes: null
+  value-max: null
+  unit: null
+  notes: Probably none
 active-metabolites: []
 renal-clearance:
   primary-route: null
@@ -35,7 +37,7 @@ renal-clearance:
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
-  notes: null
+  notes: Most likely proteolysis
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -50,13 +52,21 @@ risk-domains: []
 group-risk-triage:
 - glucose-metabolism
 - gastrointestinal
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/glp1
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Albiglutide
+  url: https://en.wikipedia.org/w/index.php?title=Albiglutide&oldid=1371982231
+  revision: 1371982231
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Albiglutide (Tanzeum)
@@ -83,7 +93,14 @@ Once-weekly GLP-1 approved and then withdrawn for commercial reasons, not safety
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Albiglutide*](https://en.wikipedia.org/w/index.php?title=Albiglutide&oldid=1371982231) (revision 1371982231, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | - | 5 (4–7) days |
+| Protein binding | - | Probably none |
+| Metabolism | - | Most likely proteolysis |
 
 ## Safety routing
 

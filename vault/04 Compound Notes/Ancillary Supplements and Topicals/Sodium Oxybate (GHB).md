@@ -20,22 +20,27 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 30.0
+  value-max: 60.0
+  unit: min
+  notes: 30–60 minutes
 protein-binding:
   value: null
   unit: percent
   notes: null
+bioavailability:
+  value: 25.0
+  value-max: null
+  notes: 25% (oral)
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: 1–5%, kidney
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: 95–98%, mainly liver, also in blood and tissues
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +54,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Γ-Hydroxybutyric acid
+  url: https://en.wikipedia.org/w/index.php?title=%CE%93-Hydroxybutyric_acid&oldid=1375974367
+  revision: 1375974367
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Sodium Oxybate (GHB)
@@ -82,7 +95,16 @@ Sodium salt of GHB, approved for narcolepsy with cataplexy under restricted dist
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Γ-Hydroxybutyric acid*](https://en.wikipedia.org/w/index.php?title=%CE%93-Hydroxybutyric_acid&oldid=1375974367) (revision 1375974367, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 30–60 min | 30–60 minutes |
+| Bioavailability | 25 % | 25% (oral) |
+| Metabolism | hepatic | 95–98%, mainly liver, also in blood and tissues |
+| Metabolites | - | Succinic semialdehyde, Succinic acid |
+| Excretion | - | 1–5%, kidney |
 
 ## Safety routing
 

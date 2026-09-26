@@ -20,22 +20,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 49.0
+  value-max: null
+  unit: h
+  notes: 49 hours
 protein-binding:
-  value: null
+  value: 99.9
+  value-max: null
   unit: percent
-  notes: null
+  notes: '>99.9%'
+bioavailability:
+  value: 60.0
+  value-max: null
+  notes: 60%
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Faeces & urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -49,13 +55,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Acitretin
+  url: https://en.wikipedia.org/w/index.php?title=Acitretin&oldid=1366318727
+  revision: 1366318727
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Acitretin (oral, Soriatane)
@@ -82,7 +96,16 @@ Oral monoaromatic retinoid for severe psoriasis; the active metabolite of etreti
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Acitretin*](https://en.wikipedia.org/w/index.php?title=Acitretin&oldid=1366318727) (revision 1366318727, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 49 h | 49 hours |
+| Protein binding | 99.9 % | >99.9% |
+| Bioavailability | 60 % | 60% |
+| Metabolism | hepatic | Liver |
+| Excretion | - | Faeces & urine |
 
 ## Safety routing
 

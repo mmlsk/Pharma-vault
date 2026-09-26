@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: CHEMBL1020
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 1.0
+  value-max: 2.0
+  unit: h
+  notes: 1-2 hours, next phase up to 5 hours
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/ancillary
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Tolmetin
+  url: https://en.wikipedia.org/w/index.php?title=Tolmetin&oldid=1316039494
+  revision: 1316039494
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Tolmetin
@@ -84,7 +93,12 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Tolmetin*](https://en.wikipedia.org/w/index.php?title=Tolmetin&oldid=1316039494) (revision 1316039494, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 1–2 h | 1-2 hours, next phase up to 5 hours |
 
 ## Safety routing
 

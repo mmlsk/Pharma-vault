@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 20.8
+  value-max: null
+  unit: h
+  notes: 38.9 ± 20.8 h
 protein-binding:
-  value: null
+  value: 93.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 93%
+bioavailability:
+  value: null
+  value-max: null
+  notes: not determined
 active-metabolites: []
 renal-clearance:
   primary-route: null
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Feces; <1% urine
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: Liver (CYP450)
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ivermectin
+  url: https://en.wikipedia.org/w/index.php?title=Ivermectin&oldid=1376285411
+  revision: 1376285411
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ivermectin
@@ -79,7 +93,16 @@ Avermectin antiparasitic that made onchocerciasis control possible, and the subj
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ivermectin*](https://en.wikipedia.org/w/index.php?title=Ivermectin&oldid=1376285411) (revision 1376285411, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 20.8 h | 38.9 ± 20.8 h |
+| Protein binding | 93 % | 93% |
+| Bioavailability | - | not determined |
+| Metabolism | hepatic | Liver (CYP450) |
+| Excretion | - | Feces; <1% urine |
 
 ## Safety routing
 

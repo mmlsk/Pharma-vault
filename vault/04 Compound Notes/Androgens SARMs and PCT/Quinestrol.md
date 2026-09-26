@@ -18,9 +18,10 @@ review-status: stub
 chembl-id: CHEMBL1201165
 chembl-max-phase: 4
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 120.0
+  value-max: null
+  unit: h
+  notes: '>120 hours (>5 days)'
 protein-binding:
   value: null
   unit: percent
@@ -47,13 +48,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/pct
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Quinestrol
+  url: https://en.wikipedia.org/w/index.php?title=Quinestrol&oldid=1329013637
+  revision: 1329013637
+  retrieved: '2026-09-26'
+  chembl-confirmed: true
 ---
 
 # Quinestrol
@@ -84,7 +93,12 @@ Estrogen receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Quinestrol*](https://en.wikipedia.org/w/index.php?title=Quinestrol&oldid=1329013637) (revision 1329013637, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 120 h | >120 hours (>5 days) |
 
 ## Safety routing
 

@@ -18,22 +18,28 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: null
-  unit: null
-  notes: null
+  value: 298.0
+  value-max: null
+  unit: h
+  notes: 298 hours (multiple dose); 43.6 hours (single dose)
 protein-binding:
-  value: null
+  value: 0.0
+  value-max: null
   unit: percent
-  notes: null
+  notes: 0%
+bioavailability:
+  value: 64.0
+  value-max: null
+  notes: 64%
 active-metabolites: []
 renal-clearance:
-  primary-route: null
+  primary-route: true
   fraction-excreted-unchanged: null
-  notes: null
+  notes: Urine (61%), faeces (12%)
 hepatic-clearance:
-  primary-route: null
+  primary-route: true
   extraction-ratio: null
-  notes: null
+  notes: liver and intracellularly
 dosage-ranges: {}
 cyp-interactions:
   substrates: []
@@ -47,13 +53,21 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: source-summary-only
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
 - source-derived
 - group/antiinfective
 - stub
+- pk-auto
+pk-source:
+  type: wikipedia-infobox
+  title: Ribavirin
+  url: https://en.wikipedia.org/w/index.php?title=Ribavirin&oldid=1359690341
+  revision: 1359690341
+  retrieved: '2026-09-26'
+  chembl-confirmed: false
 ---
 
 # Ribavirin
@@ -79,7 +93,16 @@ Old broad-spectrum nucleoside with several proposed mechanisms, now mainly a hep
 
 ## Pharmacokinetics
 
-_To be curated - see [[Pharmacokinetics Summary]] for field conventions._
+> [!info] Auto-extracted - verify before use
+> Parsed from the [Wikipedia infobox of *Ribavirin*](https://en.wikipedia.org/w/index.php?title=Ribavirin&oldid=1359690341) (revision 1359690341, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+
+| Parameter | Parsed | Source text |
+|---|---|---|
+| Elimination t½ | 298 h | 298 hours (multiple dose); 43.6 hours (single dose) |
+| Protein binding | 0 % | 0% |
+| Bioavailability | 64 % | 64% |
+| Metabolism | hepatic | liver and intracellularly |
+| Excretion | mainly urinary | Urine (61%), faeces (12%) |
 
 ## Safety routing
 
