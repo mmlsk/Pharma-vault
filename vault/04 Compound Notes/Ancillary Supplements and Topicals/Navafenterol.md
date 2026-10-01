@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-stereo-check
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4297483
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.1
     full-molformula: C38H42N6O6S2
+  identity-check: connectivity-match
 ---
 
 # Navafenterol
@@ -95,7 +97,7 @@ chembl:
 - **Compound ID:** `navafenterol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4297483](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297483/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297483](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297483/) · max phase 2 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

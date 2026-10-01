@@ -59,6 +59,7 @@ tags:
 - group/sarms
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL125236
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.45
     full-molformula: C19H18F3N3O6
+  identity-check: structure-confirmed
 ---
 
 # Andarine (S4)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** SARMs (`sarms`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Andarine, S4
-- **ChEMBL:** [CHEMBL125236](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL125236/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL125236](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL125236/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

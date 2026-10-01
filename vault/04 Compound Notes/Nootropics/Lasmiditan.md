@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3039520
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.83
     full-molformula: C19H18F3N3O2
+  identity-check: structure-confirmed
 ---
 
 # Lasmiditan
@@ -95,7 +97,7 @@ chembl:
 - **Compound ID:** `lasmiditan-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL3039520](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3039520/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3039520](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3039520/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

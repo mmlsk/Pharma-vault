@@ -65,7 +65,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Baricitinib
@@ -101,11 +104,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.72
     full-molformula: C16H17N7O2S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 866e9f35-9035-4581-a4b1-75a621ab55cf
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=866e9f35-9035-4581-a4b1-75a621ab55cf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Olumiant
+  ema-number: EMEA/H/C/004085
+  url: https://www.ema.europa.eu/en/documents/product-information/olumiant-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/olumiant-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -124,7 +139,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Baricitinib, Olumiant
-- **ChEMBL:** [CHEMBL2105759](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105759/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2105759](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105759/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -174,12 +189,17 @@ Tyrosine-protein kinase JAK1 inhibitor; Tyrosine-protein kinase JAK2 inhibitor _
 > - half-life: consistent (label values: 10.8, 12, 16)
 > - protein-binding: consistent (label values: 45, 50)
 
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Olumiant*](https://www.ema.europa.eu/en/documents/product-information/olumiant-epar-product-information_en.pdf) (EMEA/H/C/004085) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/olumiant-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 8, 9, 10, 12.5, 12.9, 13)
+> - protein-binding: consistent (SmPC values: 50)
+
 ## Related compounds (auto)
 
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
 - **Shared target:** [[Filgotinib]] (Tyrosine-protein kinase JAK1; Tyrosine-protein kinase JAK2), [[Momelotinib]] (Tyrosine-protein kinase JAK1; Tyrosine-protein kinase JAK2), [[Abrocitinib (Cibinqo)]] (Tyrosine-protein kinase JAK1), [[Brepocitinib]] (Tyrosine-protein kinase JAK1), [[Cerdulatinib]] (Tyrosine-protein kinase JAK1), [[Fedratinib]] (Tyrosine-protein kinase JAK2), [[Golidocitinib]] (Tyrosine-protein kinase JAK1), [[Lestaurtinib]] (Tyrosine-protein kinase JAK2), [[Pacritinib]] (Tyrosine-protein kinase JAK2)
-- **Same ATC subgroup:** [[Filgotinib]], [[Peficitinib]], [[Ritlecitinib (oral, Litfulo)]], [[Tofacitinib]], [[Upadacitinib (Rinvoq)]]
+- **Same ATC subgroup:** [[Deucravacitinib (Sotyktu)]], [[Filgotinib]], [[Peficitinib]], [[Ritlecitinib (oral, Litfulo)]], [[Tofacitinib]], [[Upadacitinib (Rinvoq)]]
 - **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing

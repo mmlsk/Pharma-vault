@@ -63,7 +63,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Selexipag
@@ -96,11 +99,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.38
     full-molformula: C26H32N4O4S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: a7a23b87-f892-4e2c-8e2e-ebf841220f90
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a7a23b87-f892-4e2c-8e2e-ebf841220f90
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Uptravi
+  ema-number: EMEA/H/C/003774
+  url: https://www.ema.europa.eu/en/documents/product-information/uptravi-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/uptravi-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -118,7 +133,7 @@ pk-verification:
 - **Compound ID:** `selexipag-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL238804](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL238804/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL238804](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL238804/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -167,6 +182,11 @@ Prostanoid IP receptor agonist _(ChEMBL curated mechanism of the parent molecule
 > Automated comparison with the [US prescribing information (DailyMed set a7a23b87…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a7a23b87-f892-4e2c-8e2e-ebf841220f90), label version 20260528. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.8, 2.5, 3, 4, 6.2, 13.5)
 > - protein-binding: consistent (label values: 99)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Uptravi*](https://www.ema.europa.eu/en/documents/product-information/uptravi-epar-product-information_en.pdf) (EMEA/H/C/003774) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/uptravi-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.8, 2.5, 6.2, 13.5)
+> - protein-binding: consistent (SmPC values: 99)
 
 ## Related compounds (auto)
 

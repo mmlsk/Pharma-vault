@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1200370
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.6
     full-molformula: C14H10O4
+  identity-check: structure-confirmed
 ---
 
 # Benzoyl Peroxide (topical)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Benzoyl Peroxide
-- **ChEMBL:** [CHEMBL1200370](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200370/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1200370](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200370/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

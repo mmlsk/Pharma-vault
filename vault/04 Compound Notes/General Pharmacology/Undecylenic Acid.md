@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1276010
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.44
     full-molformula: C11H20O2
+  identity-check: structure-confirmed
 ---
 
 # Undecylenic Acid
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `undecylenic-acid-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1276010](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1276010/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1276010](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1276010/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

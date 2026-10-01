@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL17976
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.32
     full-molformula: C37H40O9
+  identity-check: structure-confirmed
 ---
 
 # Resiniferatoxin
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `resiniferatoxin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL17976](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL17976/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL17976](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL17976/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

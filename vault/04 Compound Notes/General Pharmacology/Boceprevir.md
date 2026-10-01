@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL218394
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.36
     full-molformula: C27H45N5O5
+  identity-check: structure-confirmed
 ---
 
 # Boceprevir
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `boceprevir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL218394](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL218394/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL218394](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL218394/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

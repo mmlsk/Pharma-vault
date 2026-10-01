@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Metolazone
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.86
     full-molformula: C16H16ClN3O3S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -114,7 +116,7 @@ pk-verification:
 - **Compound ID:** `metolazone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL878](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL878/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL878](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL878/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

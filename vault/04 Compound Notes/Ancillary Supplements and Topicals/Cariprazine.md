@@ -64,7 +64,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Cariprazine
@@ -94,11 +97,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.76
     full-molformula: C21H32Cl2N4O
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 4b5f7c65-aa2d-452a-b3db-bc85c06ff12f
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4b5f7c65-aa2d-452a-b3db-bc85c06ff12f
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Reagila
+  ema-number: EMEA/H/C/002770
+  url: https://www.ema.europa.eu/en/documents/product-information/reagila-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/reagila-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -116,7 +131,7 @@ pk-verification:
 - **Compound ID:** `cariprazine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2028019](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2028019/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2028019](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2028019/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -157,6 +172,11 @@ Antagonizes or partially agonizes dopamine D2 receptors; movement, metabolic, an
 > Automated comparison with the [US prescribing information (DailyMed set 4b5f7c65…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4b5f7c65-aa2d-452a-b3db-bc85c06ff12f), label version 20251218. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 24, 48, 96)
 > - protein-binding: consistent (label values: 91, 97)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Reagila*](https://www.ema.europa.eu/en/documents/product-information/reagila-epar-product-information_en.pdf) (EMEA/H/C/002770) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/reagila-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 24, 48, 72, 192, 312, 456)
+> - protein-binding: consistent (SmPC values: 92, 94, 96, 97)
 
 ## Related compounds (auto)
 

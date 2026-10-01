@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL363387
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.54
     full-molformula: C18H11F3N2O2S
+  identity-check: structure-confirmed
 ---
 
 # Lidorestat
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `lidorestat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL363387](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL363387/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL363387](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL363387/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

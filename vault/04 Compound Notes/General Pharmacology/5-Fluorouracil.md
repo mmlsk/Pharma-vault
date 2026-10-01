@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -102,6 +103,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.48
     full-molformula: C4H3FN2O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -124,7 +126,7 @@ pk-verification:
 - **Compound ID:** `fluorouracil-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL185](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL185/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL185](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL185/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

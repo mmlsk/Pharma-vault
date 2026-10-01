@@ -55,6 +55,7 @@ tags:
 - group/gi
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4297588
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.11
     full-molformula: C37H48N4O8S2
+  identity-check: structure-confirmed
 ---
 
 # Odevixibat
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `odevixibat-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL4297588](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297588/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297588](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297588/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

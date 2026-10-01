@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Remimazolam
@@ -93,6 +94,16 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Byfavo
+  ema-number: EMEA/H/C/005246
+  url: https://www.ema.europa.eu/en/documents/product-information/byfavo-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
 ---
 
 # Remimazolam
@@ -142,6 +153,10 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 | Elimination t½ | 45–70 min | 45–70 minutes |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Byfavo*](https://www.ema.europa.eu/en/documents/product-information/byfavo-epar-product-information_en.pdf) (EMEA/H/C/005246). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 0.008, 0.033, 0.117, 0.183)
 
 ## Related compounds (auto)
 

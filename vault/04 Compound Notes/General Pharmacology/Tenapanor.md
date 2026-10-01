@@ -55,6 +55,7 @@ tags:
 - group/gi
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3304485
@@ -70,6 +71,7 @@ chembl:
     full-mwt: 1145.07
     mw-freebase: 1145.07
     full-molformula: C50H66Cl4N8O10S2
+  identity-check: structure-confirmed
 ---
 
 # Tenapanor
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `tenapanor-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3304485](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3304485/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3304485](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3304485/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

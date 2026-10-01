@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1851943
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.39
     full-molformula: C20H30N4O2
+  identity-check: structure-confirmed
 ---
 
 # Pracinostat
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `pracinostat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1851943](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1851943/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1851943](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1851943/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

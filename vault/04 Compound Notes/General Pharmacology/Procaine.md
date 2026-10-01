@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Procaine
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.6
     full-molformula: C13H20N2O2
+  identity-check: structure-confirmed
 ---
 
 # Procaine
@@ -106,7 +108,7 @@ chembl:
 - **Compound ID:** `procaine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL569](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL569/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL569](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL569/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

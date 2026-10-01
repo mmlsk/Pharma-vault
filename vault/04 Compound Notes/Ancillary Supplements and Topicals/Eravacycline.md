@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-formula-match
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1951095
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.22
     full-molformula: C27H31FN4O8
+  identity-check: formula-match
 ---
 
 # Eravacycline
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `eravacycline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1951095](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1951095/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1951095](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1951095/) · max phase 4 · id via exact ChEMBL name match · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

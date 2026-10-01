@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL43185
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.63
     full-molformula: C17H19NO3
+  identity-check: structure-confirmed
 ---
 
 # Piperine (Black Pepper Extract)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Piperine, Black Pepper Extract
-- **ChEMBL:** [CHEMBL43185](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL43185/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL43185](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL43185/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

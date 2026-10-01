@@ -59,6 +59,8 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Ambrisentan
@@ -96,6 +98,17 @@ pk-verification:
   status: consistent
   set-id: 291a782a-77e1-8a8e-e1c8-2626f305c2b7
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=291a782a-77e1-8a8e-e1c8-2626f305c2b7
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Volibris
+  ema-number: EMEA/H/C/000839
+  url: https://www.ema.europa.eu/en/documents/product-information/volibris-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/volibris-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -157,6 +170,11 @@ Endothelin receptor, ET-A/ET-B antagonist _(ChEMBL curated mechanism, as quoted 
 > Automated comparison with the [US prescribing information (DailyMed set 291a782a…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=291a782a-77e1-8a8e-e1c8-2626f305c2b7), label version 20260903. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 9)
 > - protein-binding: consistent (label values: 99)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Volibris*](https://www.ema.europa.eu/en/documents/product-information/volibris-epar-product-information_en.pdf) (EMEA/H/C/000839) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/volibris-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 13.6, 16.5)
+> - protein-binding: consistent (SmPC values: 98.8)
 
 ## Related compounds (auto)
 

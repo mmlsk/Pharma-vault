@@ -66,7 +66,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Propranolol
@@ -96,11 +99,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.84
     full-molformula: C16H21NO2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 54dd0fad-64ee-788f-e063-6394a90ac88e
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=54dd0fad-64ee-788f-e063-6394a90ac88e
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Hemangiol
+  ema-number: EMEA/H/C/002621
+  url: https://www.ema.europa.eu/en/documents/product-information/hemangiol-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -118,7 +133,7 @@ pk-verification:
 - **Compound ID:** `propranolol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL27](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL27/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL27](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL27/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -159,6 +174,11 @@ Classic non-selective beta-blocker; blocks rather than activates beta-adrenergic
 > Automated comparison with the [US prescribing information (DailyMed set 54dd0fad…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=54dd0fad-64ee-788f-e063-6394a90ac88e), label version 20260622. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.083, 0.167, 2, 2.533, 5.5)
 > - protein-binding: consistent (label values: 90)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Hemangiol*](https://www.ema.europa.eu/en/documents/product-information/hemangiol-epar-product-information_en.pdf) (EMEA/H/C/002621). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 3, 6)
+> - protein-binding: consistent (SmPC values: 90)
 
 ## Related compounds (auto)
 

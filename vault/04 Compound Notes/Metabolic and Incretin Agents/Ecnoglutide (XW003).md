@@ -70,6 +70,7 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Ecnoglutide (XW003)
@@ -84,7 +85,7 @@ chembl:
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
 - **Aliases:** Ecnoglutide, XW003
-- **ChEMBL:** [CHEMBL5095115](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095115/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL5095115](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095115/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

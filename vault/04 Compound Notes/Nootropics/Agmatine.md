@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL58343
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.26
     full-molformula: C5H14N4
+  identity-check: structure-confirmed
 ---
 
 # Agmatine
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `agmatine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL58343](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL58343/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL58343](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL58343/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -85,6 +86,7 @@ chembl:
     full-mwt: 1084.25
     mw-freebase: 1084.25
     full-molformula: C46H65N15O12S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -108,7 +110,7 @@ pk-verification:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Vasopressin, IV
-- **ChEMBL:** [CHEMBL373742](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL373742/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL373742](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL373742/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

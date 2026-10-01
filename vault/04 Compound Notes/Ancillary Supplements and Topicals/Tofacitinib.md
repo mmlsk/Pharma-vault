@@ -65,6 +65,8 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Tofacitinib
@@ -99,6 +101,17 @@ pk-verification:
   status: consistent
   set-id: 253635c8-1ea7-41ba-b216-dea5e3305c47
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=253635c8-1ea7-41ba-b216-dea5e3305c47
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Xeljanz
+  ema-number: EMEA/H/C/004214
+  url: https://www.ema.europa.eu/en/documents/product-information/xeljanz-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -161,11 +174,16 @@ Janus Kinase (JAK) inhibitor _(ChEMBL curated mechanism, as quoted by the source
 > - half-life: consistent (label values: 0.5, 1, 3)
 > - protein-binding: consistent (label values: 40)
 
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Xeljanz*](https://www.ema.europa.eu/en/documents/product-information/xeljanz-epar-product-information_en.pdf) (EMEA/H/C/004214). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.5, 1, 3)
+> - protein-binding: consistent (SmPC values: 40)
+
 ## Related compounds (auto)
 
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
-- **Same ATC subgroup:** [[Baricitinib (oral, Olumiant)]], [[Filgotinib]], [[Peficitinib]], [[Ritlecitinib (oral, Litfulo)]], [[Upadacitinib (Rinvoq)]]
+- **Same ATC subgroup:** [[Baricitinib (oral, Olumiant)]], [[Deucravacitinib (Sotyktu)]], [[Filgotinib]], [[Peficitinib]], [[Ritlecitinib (oral, Litfulo)]], [[Upadacitinib (Rinvoq)]]
 - **Shared CYP substrate pool:** CYP2C19 (+43 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing

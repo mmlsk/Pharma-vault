@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Ertapenem
@@ -101,11 +104,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.36
     full-molformula: C22H25N3O7S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 2398d418-6efc-b4d2-3265-936001df9b8b
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2398d418-6efc-b4d2-3265-936001df9b8b
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Invanz
+  ema-number: EMEA/H/C/000389
+  url: https://www.ema.europa.eu/en/documents/product-information/invanz-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -123,7 +138,7 @@ pk-verification:
 - **Compound ID:** `ertapenem-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1359](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1359/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1359](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1359/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -171,6 +186,11 @@ Bacterial penicillin-binding protein inhibitor; Cell shape peptidoglycan synthet
 > Automated comparison with the [US prescribing information (DailyMed set 2398d418…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2398d418-6efc-b4d2-3265-936001df9b8b), label version 20251224. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 2.5, 4, 4.8)
 > - protein-binding: consistent (label values: 85, 95)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Invanz*](https://www.ema.europa.eu/en/documents/product-information/invanz-epar-product-information_en.pdf) (EMEA/H/C/000389). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2.5, 4)
+> - protein-binding: consistent (SmPC values: 92, 95)
 
 ## Related compounds (auto)
 

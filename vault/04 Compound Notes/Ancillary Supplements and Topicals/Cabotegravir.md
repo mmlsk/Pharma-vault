@@ -58,7 +58,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Cabotegravir
@@ -91,11 +94,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.79
     full-molformula: C19H17F2N3O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 4338428e-43d4-4e02-ac9d-bd98e738a7da
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4338428e-43d4-4e02-ac9d-bd98e738a7da
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Vocabria
+  ema-number: EMEA/H/C/004976
+  url: https://www.ema.europa.eu/en/documents/product-information/vocabria-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/vocabria-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: no-label-value
@@ -113,7 +128,7 @@ pk-verification:
 - **Compound ID:** `cabotegravir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2403238](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2403238/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2403238](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2403238/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -159,6 +174,11 @@ Human immunodeficiency virus type 1 integrase inhibitor _(ChEMBL curated mechani
 > Automated comparison with the [US prescribing information (DailyMed set 4338428e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4338428e-43d4-4e02-ac9d-bd98e738a7da), label version 20250411. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
 > - protein-binding: consistent (label values: 99)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Vocabria*](https://www.ema.europa.eu/en/documents/product-information/vocabria-epar-product-information_en.pdf) (EMEA/H/C/004976) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/vocabria-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
+> - protein-binding: consistent (SmPC values: 99)
 
 ## Related compounds (auto)
 

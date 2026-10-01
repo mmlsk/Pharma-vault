@@ -60,6 +60,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Seltorexant
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.66
     full-molformula: C21H22FN7O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `seltorexant-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL3597971](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3597971/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3597971](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3597971/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

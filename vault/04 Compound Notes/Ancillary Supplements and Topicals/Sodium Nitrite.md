@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1161681
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.31
     full-molformula: HNO2
+  identity-check: structure-confirmed
 ---
 
 # Sodium Nitrite
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `sodium-nitrite-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL93268](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL93268/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL93268](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL93268/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

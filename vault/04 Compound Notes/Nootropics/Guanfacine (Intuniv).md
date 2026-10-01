@@ -66,7 +66,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Guanfacine
@@ -96,11 +99,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C9H9Cl2N3O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 04a3bd2d-9a9c-43e8-a0e2-280e02265f16
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=04a3bd2d-9a9c-43e8-a0e2-280e02265f16
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Intuniv
+  ema-number: EMEA/H/C/003759
+  url: https://www.ema.europa.eu/en/documents/product-information/intuniv-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/intuniv-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -119,7 +134,7 @@ pk-verification:
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Guanfacine, Intuniv
-- **ChEMBL:** [CHEMBL862](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL862/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL862](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL862/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -158,6 +173,11 @@ Alpha-2A adrenergic agonist. Improves working memory by closing prefrontal HCN c
 > Automated comparison with the [US prescribing information (DailyMed set 04a3bd2d…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=04a3bd2d-9a9c-43e8-a0e2-280e02265f16), label version 20260904. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 10, 13, 14, 17, 30)
 > - protein-binding: consistent (label values: 70)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Intuniv*](https://www.ema.europa.eu/en/documents/product-information/intuniv-epar-product-information_en.pdf) (EMEA/H/C/003759) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/intuniv-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 18)
+> - protein-binding: consistent (SmPC values: 70)
 
 ## Related compounds (auto)
 

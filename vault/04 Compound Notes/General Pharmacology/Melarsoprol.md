@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Melarsoprol
@@ -79,6 +80,7 @@ chembl:
     full-mwt: 398.35
     mw-freebase: 398.35
     full-molformula: C12H15AsN6OS2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -99,7 +101,7 @@ pk-verification:
 - **Compound ID:** `melarsoprol-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL166](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL166/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL166](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL166/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

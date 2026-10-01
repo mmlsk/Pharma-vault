@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Gemifloxacin
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C18H20FN5O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `gemifloxacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL430](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL430/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL430](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL430/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

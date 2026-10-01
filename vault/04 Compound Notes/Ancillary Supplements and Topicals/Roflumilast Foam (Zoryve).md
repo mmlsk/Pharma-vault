@@ -66,7 +66,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
+- pk-ema-consistent
+- pk-sources-disagree
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -101,6 +104,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.7
     full-molformula: C17H14Cl2F2N2O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -109,6 +113,17 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Daxas
+  ema-number: EMEA/H/C/001179
+  url: https://www.ema.europa.eu/en/documents/product-information/daxas-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/daxas-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
     protein-binding: consistent
 ---
 
@@ -124,7 +139,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Roflumilast Foam, Zoryve
-- **ChEMBL:** [CHEMBL193240](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL193240/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL193240](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL193240/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -172,6 +187,11 @@ Phosphodiesterase 4 inhibitor _(ChEMBL curated mechanism of the parent molecule,
 > Automated comparison with the [US prescribing information (DailyMed set f9e0b4a9…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f9e0b4a9-a227-4947-b00c-41fb18d16589), label version 20260902. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 86.4, 120)
 > - protein-binding: consistent (label values: 97, 99)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Daxas*](https://www.ema.europa.eu/en/documents/product-information/daxas-epar-product-information_en.pdf) (EMEA/H/C/001179) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/daxas-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 17, 30)
+> - protein-binding: consistent (SmPC values: 97, 99)
 
 ## Related compounds (auto)
 

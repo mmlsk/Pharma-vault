@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Chloroquine
@@ -86,6 +87,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.76
     full-molformula: C18H26ClN3
+  identity-check: structure-confirmed
 ---
 
 # Chloroquine
@@ -99,7 +101,7 @@ chembl:
 - **Compound ID:** `chloroquine-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL76](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL76/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL76](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL76/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3702854
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.21
     full-molformula: C36H40FN9O3
+  identity-check: structure-confirmed
 ---
 
 # Rilzabrutinib
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `rilzabrutinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3702854](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3702854/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3702854](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3702854/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

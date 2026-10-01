@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2218898
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.12
     full-molformula: C40H63N9O8S
+  identity-check: structure-confirmed
 ---
 
 # Barusiban
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `barusiban-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL2218898](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2218898/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2218898](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2218898/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

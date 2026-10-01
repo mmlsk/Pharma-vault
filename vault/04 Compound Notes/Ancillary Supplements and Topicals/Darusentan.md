@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Darusentan
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.57
     full-molformula: C22H22N2O6
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `darusentan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL23261](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL23261/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL23261](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL23261/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

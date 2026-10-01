@@ -55,6 +55,7 @@ tags:
 - group/analgesia
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL278172
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.53
     full-molformula: C9H11NO2
+  identity-check: structure-confirmed
 ---
 
 # Benzocaine
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `benzocaine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL278172](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL278172/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL278172](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL278172/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

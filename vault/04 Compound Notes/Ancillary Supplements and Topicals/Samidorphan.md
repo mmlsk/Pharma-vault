@@ -58,6 +58,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Samidorphan
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.74
     full-molformula: C21H26N2O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -109,7 +111,7 @@ pk-verification:
 - **Compound ID:** `samidorphan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL426084](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL426084/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL426084](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL426084/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Disulfiram
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.57
     full-molformula: C10H20N2S4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -112,7 +114,7 @@ pk-verification:
 - **Compound ID:** `disulfiram-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL964](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL964/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL964](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL964/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL582857
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.4
     full-molformula: C30H32ClN3O8S
+  identity-check: structure-confirmed
 ---
 
 # Nelivaptan
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `nelivaptan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL582857](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL582857/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL582857](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL582857/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Mipomersen
@@ -82,6 +83,7 @@ chembl:
     full-mwt: 7177.25
     mw-freebase: 7177.25
     full-molformula: C230H324N67O122P19S19
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -103,7 +105,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Mipomersen, Kynamro
-- **ChEMBL:** [CHEMBL502097](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL502097/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL502097](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL502097/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

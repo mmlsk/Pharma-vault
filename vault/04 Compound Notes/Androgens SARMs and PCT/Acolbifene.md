@@ -55,6 +55,7 @@ tags:
 - group/pct
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL68055
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.47
     full-molformula: C29H31NO4
+  identity-check: structure-confirmed
 ---
 
 # Acolbifene
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `acolbifene-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL68055](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL68055/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL68055](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL68055/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

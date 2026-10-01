@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Lomefloxacin
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.88
     full-molformula: C17H19F2N3O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -108,7 +110,7 @@ pk-verification:
 - **Compound ID:** `lomefloxacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL561](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL561/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL561](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL561/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

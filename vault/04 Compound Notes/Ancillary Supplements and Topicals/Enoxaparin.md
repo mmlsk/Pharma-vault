@@ -57,7 +57,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Enoxaparin sodium
@@ -76,11 +79,22 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 45a66675-b159-42b8-9f18-ff80f28e1503
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=45a66675-b159-42b8-9f18-ff80f28e1503
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Inhixa
+  ema-number: EMEA/H/C/004264
+  url: https://www.ema.europa.eu/en/documents/product-information/inhixa-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -97,7 +111,7 @@ pk-verification:
 - **Compound ID:** `enoxaparin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201685](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201685/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201685](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201685/) · max phase n/a · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -124,6 +138,10 @@ Low-molecular-weight heparin anticoagulant; renal dosing and bleeding surveillan
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 45a66675…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=45a66675-b159-42b8-9f18-ff80f28e1503), label version 20260902. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 4.5, 7)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Inhixa*](https://www.ema.europa.eu/en/documents/product-information/inhixa-epar-product-information_en.pdf) (EMEA/H/C/004264). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 5, 7)
 
 ## Safety routing
 

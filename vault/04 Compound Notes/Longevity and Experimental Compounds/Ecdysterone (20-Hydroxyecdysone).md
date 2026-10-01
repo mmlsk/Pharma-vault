@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: 20-Hydroxyecdysone
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.35
     full-molformula: C27H44O7
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -109,7 +111,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** 20E, Ecdysterone, 20-Hydroxyecdysone
-- **ChEMBL:** [CHEMBL224128](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL224128/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL224128](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL224128/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

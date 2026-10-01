@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Tamsulosin
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C20H28N2O5S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `tamsulosin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL836](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL836/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL836](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL836/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

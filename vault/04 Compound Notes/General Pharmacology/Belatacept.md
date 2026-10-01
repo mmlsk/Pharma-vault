@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1742990
@@ -74,6 +75,7 @@ chembl:
     name: T-lymphocyte activation antigen CD80
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Belatacept
@@ -87,7 +89,7 @@ chembl:
 - **Compound ID:** `belatacept-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1742990](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742990/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1742990](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742990/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

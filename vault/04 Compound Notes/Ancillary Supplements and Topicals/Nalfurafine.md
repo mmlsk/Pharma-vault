@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Nalfurafine
@@ -86,6 +87,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.65
     full-molformula: C28H32N2O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -106,7 +108,7 @@ pk-verification:
 - **Compound ID:** `nalfurafine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL267495](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL267495/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL267495](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL267495/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

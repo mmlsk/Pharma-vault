@@ -59,7 +59,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Bosutinib
@@ -101,11 +104,23 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.38
     full-molformula: C26H29Cl2N5O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: d5929f91-6496-4c0e-97e8-0bd524e15763
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d5929f91-6496-4c0e-97e8-0bd524e15763
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Bosulif
+  ema-number: EMEA/H/C/002373
+  url: https://www.ema.europa.eu/en/documents/product-information/bosulif-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/bosulif-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: no-label-value
@@ -123,7 +138,7 @@ pk-verification:
 - **Compound ID:** `bosutinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL288441](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL288441/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL288441](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL288441/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -172,6 +187,11 @@ Tyrosine-protein kinase ABL inhibitor; Tyrosine-protein kinase HCK inhibitor; Ty
 > Automated comparison with the [US prescribing information (DailyMed set d5929f91…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d5929f91-6496-4c0e-97e8-0bd524e15763), label version 20260528. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
 > - protein-binding: consistent (label values: 94, 96)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Bosulif*](https://www.ema.europa.eu/en/documents/product-information/bosulif-epar-product-information_en.pdf) (EMEA/H/C/002373) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/bosulif-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
+> - protein-binding: consistent (SmPC values: 94, 96)
 
 ## Related compounds (auto)
 

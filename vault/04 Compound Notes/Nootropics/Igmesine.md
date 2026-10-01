@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2110660
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.6
     full-molformula: C23H29N
+  identity-check: structure-confirmed
 ---
 
 # Igmesine
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `igmesine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL2110660](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2110660/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2110660](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2110660/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

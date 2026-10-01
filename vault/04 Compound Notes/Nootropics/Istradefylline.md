@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.65
     full-molformula: C20H24N4O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -117,7 +119,7 @@ pk-verification:
 - **Compound ID:** `istradefylline-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL431770](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL431770/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL431770](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL431770/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

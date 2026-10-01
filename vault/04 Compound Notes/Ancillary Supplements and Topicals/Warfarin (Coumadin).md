@@ -65,6 +65,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.75
     full-molformula: C19H16O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -118,7 +120,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Warfarin, Coumadin
-- **ChEMBL:** [CHEMBL1464](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1464/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1464](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1464/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

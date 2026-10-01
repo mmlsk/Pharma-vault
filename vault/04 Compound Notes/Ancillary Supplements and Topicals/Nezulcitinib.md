@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4802163
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.35
     full-molformula: C30H37N7O2
+  identity-check: structure-confirmed
 ---
 
 # Nezulcitinib
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `nezulcitinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4802163](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802163/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4802163](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802163/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

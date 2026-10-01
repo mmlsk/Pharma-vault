@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL56337
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.68
     full-molformula: C15H13NO3S2
+  identity-check: structure-confirmed
 ---
 
 # Epalrestat
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `epalrestat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL56337](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL56337/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL56337](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL56337/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

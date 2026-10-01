@@ -67,6 +67,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
 - possible-duplicate
 pk-source:
@@ -101,6 +102,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.65
     full-molformula: C13H17N
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -124,7 +126,7 @@ pk-verification:
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Selegiline, L-Deprenyl
-- **ChEMBL:** [CHEMBL972](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL972/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL972](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL972/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

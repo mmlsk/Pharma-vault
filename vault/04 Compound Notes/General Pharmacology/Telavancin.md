@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Telavancin
@@ -84,6 +85,7 @@ chembl:
     full-mwt: 1755.66
     mw-freebase: 1755.66
     full-molformula: C80H106Cl2N11O27P
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -104,7 +106,7 @@ pk-verification:
 - **Compound ID:** `telavancin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL507870](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL507870/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL507870](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL507870/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

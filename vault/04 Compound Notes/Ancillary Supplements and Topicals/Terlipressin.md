@@ -58,6 +58,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Terlipressin
@@ -86,6 +87,7 @@ chembl:
     full-mwt: 1227.4
     mw-freebase: 1227.4
     full-molformula: C52H74N16O15S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -107,7 +109,7 @@ pk-verification:
 - **Compound ID:** `terlipressin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2135460](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2135460/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2135460](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2135460/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

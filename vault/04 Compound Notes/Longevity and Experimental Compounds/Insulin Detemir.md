@@ -62,6 +62,8 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Insulin detemir
@@ -92,6 +94,16 @@ pk-verification:
   status: consistent
   set-id: 82192527-99aa-4b53-8ce9-9173668d309c
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=82192527-99aa-4b53-8ce9-9173668d309c
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Levemir
+  ema-number: EMEA/H/C/000528
+  url: https://www.ema.europa.eu/en/documents/product-information/levemir-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -150,6 +162,10 @@ Insulin receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 82192527…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=82192527-99aa-4b53-8ce9-9173668d309c), label version 20241009. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 5, 7)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Levemir*](https://www.ema.europa.eu/en/documents/product-information/levemir-epar-product-information_en.pdf) (EMEA/H/C/000528). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 5, 7)
 
 ## Related compounds (auto)
 

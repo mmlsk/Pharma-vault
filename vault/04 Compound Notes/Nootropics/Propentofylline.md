@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1079905
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.72
     full-molformula: C15H22N4O3
+  identity-check: structure-confirmed
 ---
 
 # Propentofylline
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `propentofylline-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1079905](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1079905/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1079905](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1079905/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

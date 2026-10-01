@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-formula-match
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1200558
@@ -76,6 +77,7 @@ chembl:
     full-mwt: 1422.72
     mw-freebase: 1422.72
     full-molformula: C66H103N17O16S
+  identity-check: formula-match
 ---
 
 # Bacitracin
@@ -89,7 +91,7 @@ chembl:
 - **Compound ID:** `bacitracin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1200558](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200558/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1200558](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200558/) · max phase 4 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

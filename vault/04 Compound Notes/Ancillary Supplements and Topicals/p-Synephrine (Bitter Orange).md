@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL33720
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.62
     full-molformula: C9H13NO2
+  identity-check: structure-confirmed
 ---
 
 # p-Synephrine (Bitter Orange)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** p-Synephrine, Bitter Orange
-- **ChEMBL:** [CHEMBL33720](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL33720/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL33720](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL33720/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1456
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.47
     full-molformula: C23H31NO7
+  identity-check: structure-confirmed
 ---
 
 # Mycophenolate Mofetil
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `mycophenolate-mofetil-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1456](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1456/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1456](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1456/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

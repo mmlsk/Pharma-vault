@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.68
     full-molformula: C24H38N2O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -115,7 +117,7 @@ pk-verification:
 - **Compound ID:** `valbenazine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL2364639](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2364639/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2364639](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2364639/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

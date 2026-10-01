@@ -63,6 +63,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Ledipasvir
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.11
     full-molformula: C49H54F2N8O6
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -114,7 +116,7 @@ pk-verification:
 - **Compound ID:** `ledipasvir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2374220](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2374220/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2374220](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2374220/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Furosemide
@@ -95,6 +98,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.77
     full-molformula: C12H11ClN2O5S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -104,6 +108,17 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Bopediat
+  ema-number: EMEA/H/C/006617
+  url: https://www.ema.europa.eu/en/documents/product-information/bopediat-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Furosemide
@@ -117,7 +132,7 @@ pk-verification:
 - **Compound ID:** `furosemide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL35](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL35/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL35](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL35/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -164,6 +179,11 @@ Sodium-(potassium)-chloride cotransporter 2 inhibitor _(ChEMBL curated mechanism
 > Automated comparison with the [US prescribing information (DailyMed set dba00759…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dba00759-87b4-4ecf-998e-ba03ed3d2f1a), label version 20260817. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 2)
 > - protein-binding: no-label-value (label values: -)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Bopediat*](https://www.ema.europa.eu/en/documents/product-information/bopediat-epar-product-information_en.pdf) (EMEA/H/C/006617). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.833, 7.7, 19.9)
+> - protein-binding: consistent (SmPC values: 96, 98)
 
 ## Related compounds (auto)
 

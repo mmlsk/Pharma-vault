@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1743035
@@ -76,6 +77,7 @@ chembl:
     name: Interleukin-13
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Lebrikizumab (Ebglyss)
@@ -90,7 +92,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Lebrikizumab, Ebglyss
-- **ChEMBL:** [CHEMBL1743035](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743035/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1743035](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743035/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Aciclovir
@@ -97,6 +98,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C8H11N5O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -117,7 +119,7 @@ pk-verification:
 - **Compound ID:** `acyclovir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL184](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL184/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL184](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL184/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL356066
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.26
     full-molformula: C22H25N3O3
+  identity-check: structure-confirmed
 ---
 
 # Dacinostat
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `dacinostat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL356066](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL356066/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL356066](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL356066/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

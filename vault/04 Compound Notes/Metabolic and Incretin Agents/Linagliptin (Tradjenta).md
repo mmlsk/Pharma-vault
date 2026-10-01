@@ -65,7 +65,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Linagliptin
@@ -98,11 +101,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.44
     full-molformula: C25H28N8O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: dfe327e8-f6ab-41e5-bdef-d520118cd83a
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dfe327e8-f6ab-41e5-bdef-d520118cd83a
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Trajenta
+  ema-number: EMEA/H/C/002110
+  url: https://www.ema.europa.eu/en/documents/product-information/trajenta-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -121,7 +136,7 @@ pk-verification:
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
 - **Aliases:** Linagliptin, Tradjenta
-- **ChEMBL:** [CHEMBL237500](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL237500/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL237500](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL237500/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -168,6 +183,11 @@ Dipeptidyl peptidase IV inhibitor _(ChEMBL curated mechanism of the parent molec
 > Automated comparison with the [US prescribing information (DailyMed set dfe327e8…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dfe327e8-f6ab-41e5-bdef-d520118cd83a), label version 20250827. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 11, 12, 100, 200)
 > - protein-binding: consistent (label values: 20, 30, 70, 75, 80, 89)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Trajenta*](https://www.ema.europa.eu/en/documents/product-information/trajenta-epar-product-information_en.pdf) (EMEA/H/C/002110). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 12, 100)
+> - protein-binding: consistent (SmPC values: 20, 30, 70, 75, 80, 89)
 
 ## Related compounds (auto)
 

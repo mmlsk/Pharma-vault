@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Tiratricol
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.49
     full-molformula: C14H9I3O4
+  identity-check: structure-confirmed
 ---
 
 # Tiratricol (TRIAC)
@@ -105,7 +107,7 @@ chembl:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Tiratricol, TRIAC
-- **ChEMBL:** [CHEMBL41632](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL41632/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL41632](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL41632/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

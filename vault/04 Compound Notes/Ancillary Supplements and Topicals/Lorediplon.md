@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4303403
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.49
     full-molformula: C20H15FN4O2S
+  identity-check: structure-confirmed
 ---
 
 # Lorediplon
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `lorediplon-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4303403](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4303403/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4303403](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4303403/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

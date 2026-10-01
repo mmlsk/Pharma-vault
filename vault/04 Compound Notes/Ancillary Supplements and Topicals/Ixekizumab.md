@@ -61,7 +61,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Ixekizumab
@@ -84,11 +87,22 @@ chembl:
     name: Interleukin-17A
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: ac96658a-d7dc-4c7c-8928-2adcdf4318b2
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ac96658a-d7dc-4c7c-8928-2adcdf4318b2
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Taltz
+  ema-number: EMEA/H/C/003943
+  url: https://www.ema.europa.eu/en/documents/product-information/taltz-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -105,7 +119,7 @@ pk-verification:
 - **Compound ID:** `ixekizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1743034](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743034/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1743034](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743034/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -144,6 +158,10 @@ Interleukin 17A inhibitor _(ChEMBL curated mechanism of the parent molecule, via
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set ac96658a…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ac96658a-d7dc-4c7c-8928-2adcdf4318b2), label version 20260122. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 312)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Taltz*](https://www.ema.europa.eu/en/documents/product-information/taltz-epar-product-information_en.pdf) (EMEA/H/C/003943). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 312)
 
 ## Related compounds (auto)
 

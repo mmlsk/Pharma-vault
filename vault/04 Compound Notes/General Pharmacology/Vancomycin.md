@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -89,6 +90,7 @@ chembl:
     full-mwt: 1449.27
     mw-freebase: 1449.27
     full-molformula: C66H75Cl2N9O24
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `vancomycin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL262777](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL262777/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL262777](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL262777/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

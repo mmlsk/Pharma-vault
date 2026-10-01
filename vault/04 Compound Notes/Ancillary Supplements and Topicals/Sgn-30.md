@@ -70,6 +70,7 @@ chembl:
     name: Tumor necrosis factor receptor superfamily member 8
     action: AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Sgn-30
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `sgn-30-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2109256](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109256/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2109256](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109256/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -98,6 +99,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.83
     full-molformula: C12H15N3O2S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -120,7 +122,7 @@ pk-verification:
 - **Compound ID:** `albendazole-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1483](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1483/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1483](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1483/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

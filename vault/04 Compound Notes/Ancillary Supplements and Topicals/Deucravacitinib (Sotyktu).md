@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: CHEMBL435170
-chembl-max-phase: 2
+chembl-id: CHEMBL4435170
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: null
@@ -65,7 +65,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-curated
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Deucravacitinib
@@ -74,31 +77,44 @@ pk-source:
   retrieved: '2026-09-26'
   chembl-confirmed: false
 chembl:
-  identity-source: wikipedia-infobox
-  parent-id: CHEMBL435170
-  pref-name: ADAPROLOL
+  identity-source: curated-identity
+  parent-id: CHEMBL4596392
+  pref-name: DEUCRAVACITINIB
   molecule-type: Small molecule
-  first-approval: null
+  first-approval: 2022
   black-box-warning: false
   withdrawn: false
-  atc-codes: []
+  atc-codes:
+  - L04AF07
   targets: []
   properties:
-    full-mwt: 429.6
-    mw-freebase: 429.6
-    alogp: 4.12
-    psa: 67.79
-    hba: 5
-    hbd: 2
-    rtb: 11
+    full-mwt: 422.45
+    mw-freebase: 422.45
+    alogp: 1.73
+    psa: 135.95
+    hba: 9
+    hbd: 3
+    rtb: 7
     num-ro5-violations: 0
     qed-weighted: 0.52
-    full-molformula: C26H39NO4
+    full-molformula: C20H22N8O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: ff4d7258-5068-4cdf-9692-8cae04c3198e
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ff4d7258-5068-4cdf-9692-8cae04c3198e
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Sotyktu
+  ema-number: EMEA/H/C/005755
+  url: https://www.ema.europa.eu/en/documents/product-information/sotyktu-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/sotyktu-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -117,7 +133,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Deucravacitinib, Sotyktu
-- **ChEMBL:** [CHEMBL435170](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL435170/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4435170](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4435170/) · max phase 4 · id via curated identity decision · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -126,10 +142,12 @@ Allosteric TYK2 inhibitor for plaque psoriasis with greater kinase selectivity t
 ## ChEMBL profile
 
 - **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2022
+- **ATC L04AF07:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Janus-associated kinase (JAK) inhibitors
 
 | MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
 |---|---|---|---|---|---|
-| 429.6 | 4.12 | 67.79 | 2/5 | 0 | C26H39NO4 |
+| 422.45 | 1.73 | 135.95 | 3/9 | 0 | C20H22N8O3 |
 
 ## Evidence boundaries
 
@@ -156,10 +174,16 @@ Allosteric TYK2 inhibitor for plaque psoriasis with greater kinase selectivity t
 > - half-life: consistent (label values: 10)
 > - protein-binding: consistent (label values: 82, 90)
 
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Sotyktu*](https://www.ema.europa.eu/en/documents/product-information/sotyktu-epar-product-information_en.pdf) (EMEA/H/C/005755) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/sotyktu-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 10, 11)
+> - protein-binding: consistent (SmPC values: 81.6)
+
 ## Related compounds (auto)
 
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
+- **Same ATC subgroup:** [[Baricitinib (oral, Olumiant)]], [[Filgotinib]], [[Peficitinib]], [[Ritlecitinib (oral, Litfulo)]], [[Tofacitinib]], [[Upadacitinib (Rinvoq)]]
 - **Shared CYP substrate pool:** CYP1A2 (+42 others) → [[CYP450 Metabolism]]
 
 ## Safety routing

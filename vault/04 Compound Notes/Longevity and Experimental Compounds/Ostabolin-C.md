@@ -70,6 +70,7 @@ chembl:
     name: Parathyroid hormone/parathyroid hormone-related peptide receptor
     action: AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Ostabolin-C
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `ostabolin-c-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL4802222](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802222/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4802222](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802222/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

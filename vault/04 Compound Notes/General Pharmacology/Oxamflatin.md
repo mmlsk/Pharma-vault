@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-formula-match
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL314389
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.34
     full-molformula: C17H14N2O4S
+  identity-check: formula-match
 ---
 
 # Oxamflatin
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `oxamflatin-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL314389](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL314389/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL314389](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL314389/) · max phase n/a · id via exact ChEMBL name match · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - possible-duplicate
 chembl:
   identity-source: chembl-name-match
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.23
     full-molformula: C19H30N5O10P
+  identity-check: structure-confirmed
 ---
 
 # Tenofovir Disoproxil
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `tenofovir-disoproxil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1538](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1538/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1538](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1538/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

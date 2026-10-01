@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1928262
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.42
     full-molformula: C23H33N7O5S
+  identity-check: structure-confirmed
 ---
 
 # Gisadenafil
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `gisadenafil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1928262](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1928262/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1928262](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1928262/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

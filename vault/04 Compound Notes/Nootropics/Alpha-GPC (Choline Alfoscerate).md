@@ -58,6 +58,7 @@ tags:
 - group/nootropic
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1567463
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.41
     full-molformula: C8H20NO6P
+  identity-check: structure-confirmed
 ---
 
 # Alpha-GPC (Choline Alfoscerate)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Alpha-GPC, Choline Alfoscerate
-- **ChEMBL:** [CHEMBL1567463](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1567463/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1567463](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1567463/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

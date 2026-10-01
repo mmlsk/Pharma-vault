@@ -70,6 +70,7 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Navepegritide (TransCon CNP)
@@ -84,7 +85,7 @@ chembl:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Navepegritide, TransCon CNP
-- **ChEMBL:** [CHEMBL4594507](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594507/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4594507](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594507/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

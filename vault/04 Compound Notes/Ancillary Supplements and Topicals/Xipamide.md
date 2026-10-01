@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Xipamide
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.79
     full-molformula: C15H15ClN2O4S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `xipamide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL517199](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL517199/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL517199](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL517199/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL272427
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.4
     full-molformula: C26H45NO6S
+  identity-check: structure-confirmed
 ---
 
 # TUDCA (Tauroursodeoxycholic Acid)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** TUDCA, Tauroursodeoxycholic Acid
-- **ChEMBL:** [CHEMBL272427](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL272427/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL272427](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL272427/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

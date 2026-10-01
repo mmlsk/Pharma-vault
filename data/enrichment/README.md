@@ -84,6 +84,38 @@ make verify         # offline: -> data/processed/pk-verification.json, pk-verifi
 - `consistent` → `source-status: partially-verified` i tag `pk-fda-consistent`. To **automatyczna zgodność dwóch źródeł, nie przegląd ekspercki** (`review-status` pozostaje `stub`).
 - Typowe przyczyny `discrepant`: pozorny t½ postaci o przedłużonym uwalnianiu/depot (buprenorfina, naltrekson ER, implant afamelanotydu), t½ metabolitu, frakcja wolna zamiast związanej. Lista: `01 Maps of Content/Review Queue.md`.
 
+# 🔬 Potwierdzenie strukturalne tożsamości (v3.3)
+
+```bash
+make identity-fetch   # sieć: ChEMBL standard InChIKey (chembl/structures.jsonl), PubChem CID/nazwa (pubchem-cid.jsonl, pubchem-name-evidence.jsonl)
+make identity         # offline: data/processed/identity-review.json + .csv, identity-review-coverage.json
+```
+
+| Werdykt | infoboks (1035) | dopasowanie nazwy (604) |
+|---|---|---|
+| ✅ `structure-confirmed` (InChIKey identyczny z cząsteczką lub rodzicem) | 895 | 367 |
+| 🏷️ `inn-match-ema` (biologik: nazwa = INN produktu EMA) | 48 | 72 |
+| ⚠️ `connectivity-match` (ten sam szkielet, inna stereochemia/izotopy) | 50 | 22 |
+| ≈ `formula-match` (ten sam wzór, inny InChIKey — tautomery: tetracykliny, kumaryny, oksykamy) | 18 | 5 |
+| `no-chembl-structure` (przeciwciała, białka, oligonukleotydy) | 18 | 127 |
+| `no-evidence` | 4 | 8 |
+| ❌ `conflict` | 2 (oba rozstrzygnięte) | 3 (2 rozstrzygnięte; otwarty: satawaptan) |
+
+Decyzje: `data/curated/identity-decisions.csv`; stosowane w `enrich_chembl.py` (`replace`, `reject`) i dołączane do werdyktu (`confirm`).
+
+# 🇪🇺 Porównanie z ChPL / SmPC (EMA, v3.3)
+
+```bash
+make ema-fetch   # sieć: raport EMA „Medicines output” (ema/medicines.jsonl) + PDF-y informacji o produkcie (sekcja 5.2) -> ema/smpc-pk.jsonl
+make ema         # offline: data/processed/pk-verification-ema.json, pk-verification-ema-coverage.json
+```
+
+- Dopasowanie: INN produktu (jedna substancja) = nazwa ChEMBL / katalogu / alias (bez nazw soli). Produkt referencyjny: dopuszczony, nie generyk/biopodobny, najwcześniejsze pozwolenie.
+- 292 substancje dopasowane; zgodne **238**, rozbieżne 31, bez wartości 12, bez tekstu sekcji 5.2 11. ATC z EMA zgodny z ChEMBL w 229 przypadkach.
+- Cache: wyłącznie zdania o t½ i wiązaniu z białkami + URL SmPC (EN) i ChPL (PL, 148 zweryfikowanych). PDF-y nie są przechowywane.
+- Typowe rozbieżności: produkt referencyjny jest postacią specjalną (doksorubicyna liposomalna, fentanyl donosowy/przezskórny, oktreotyd LAR, buprenorfina implant), t½ metabolitu lub inna populacja.
+- EMA stosuje limit zapytań (HTTP 429) — `fetch` ponawia tylko brakujące rekordy.
+
 # 📜 Licencje źródeł
 
 | Źródło | Licencja | Zakres w repo |
@@ -92,3 +124,4 @@ make verify         # offline: -> data/processed/pk-verification.json, pk-verifi
 | ChEMBL (EMBL-EBI) | CC BY-SA 3.0 | identyfikatory, mechanizmy, cele, ATC, właściwości |
 | PubChem (NCBI) | domena publiczna | CID, InChIKey |
 | openFDA / DailyMed | domena publiczna (US Gov) | zdania PK z etykiet, set id |
+| EMA (EPAR, raport leków) | © European Medicines Agency — powielanie dozwolone z podaniem źródła | zdania z sekcji 5.2 SmPC, numery EMEA, URL-e |

@@ -59,6 +59,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Norepinephrine
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.47
     full-molformula: C8H11NO3
+  identity-check: structure-confirmed
 ---
 
 # Noradrenaline (Norepinephrine, IV)
@@ -102,7 +104,7 @@ chembl:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Noradrenaline, Norepinephrine, IV
-- **ChEMBL:** [CHEMBL1437](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1437/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1437](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1437/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

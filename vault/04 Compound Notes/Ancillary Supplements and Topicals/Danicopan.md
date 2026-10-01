@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4250860
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.27
     full-molformula: C26H23BrFN7O3
+  identity-check: inn-match-ema
 ---
 
 # Danicopan
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `danicopan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4250860](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4250860/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4250860](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4250860/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

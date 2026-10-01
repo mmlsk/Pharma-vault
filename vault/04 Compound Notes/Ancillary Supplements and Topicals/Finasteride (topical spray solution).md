@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 - possible-duplicate
 pk-source:
@@ -99,6 +100,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.74
     full-molformula: C23H36N2O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -122,7 +124,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Finasteride
-- **ChEMBL:** [CHEMBL710](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL710/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL710](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL710/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

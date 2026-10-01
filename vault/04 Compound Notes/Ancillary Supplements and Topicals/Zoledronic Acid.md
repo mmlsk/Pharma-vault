@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL924
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.43
     full-molformula: C5H10N2O7P2
+  identity-check: structure-confirmed
 ---
 
 # Zoledronic Acid
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `zoledronate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4303669](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4303669/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4303669](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4303669/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

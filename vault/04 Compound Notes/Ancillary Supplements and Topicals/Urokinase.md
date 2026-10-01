@@ -70,6 +70,7 @@ chembl:
     name: Urokinase-type plasminogen activator
     action: EXOGENOUS PROTEIN
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Urokinase
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `urokinase-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201420](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201420/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201420](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201420/) · max phase 4 · id via Wikipedia infobox · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

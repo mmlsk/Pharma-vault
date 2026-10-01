@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL28079
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.75
     full-molformula: C13H13N5O2
+  identity-check: structure-confirmed
 ---
 
 # Zaprinast
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `zaprinast-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL28079](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL28079/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL28079](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL28079/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

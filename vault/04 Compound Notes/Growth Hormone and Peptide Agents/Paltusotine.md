@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL5267842
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.43
     full-molformula: C27H22F2N4O
+  identity-check: structure-confirmed
 ---
 
 # Paltusotine
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `paltusotine-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL5267842](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5267842/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL5267842](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5267842/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

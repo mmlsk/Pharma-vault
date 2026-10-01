@@ -60,6 +60,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Grazoprevir
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.35
     full-molformula: C38H50N6O9S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -112,7 +114,7 @@ pk-verification:
 - **Compound ID:** `grazoprevir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3039533](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3039533/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3039533](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3039533/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -72,6 +72,7 @@ chembl:
     name: Calcitonin receptor
     action: AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Calcitonin (salmon)
@@ -86,7 +87,7 @@ chembl:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Calcitonin, salmon
-- **ChEMBL:** [CHEMBL4594242](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594242/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4594242](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594242/) · max phase 4 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

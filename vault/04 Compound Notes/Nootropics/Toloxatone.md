@@ -56,6 +56,7 @@ tags:
 - group/nootropic
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL18116
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.8
     full-molformula: C11H13NO3
+  identity-check: structure-confirmed
 ---
 
 # Toloxatone
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `toloxatone-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL18116](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL18116/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL18116](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL18116/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

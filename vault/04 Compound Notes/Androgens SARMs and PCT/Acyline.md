@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL262747
@@ -73,6 +74,7 @@ chembl:
     full-mwt: 1533.24
     mw-freebase: 1533.24
     full-molformula: C80H102ClN15O14
+  identity-check: structure-confirmed
 ---
 
 # Acyline
@@ -86,7 +88,7 @@ chembl:
 - **Compound ID:** `acyline-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL262747](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL262747/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL262747](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL262747/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

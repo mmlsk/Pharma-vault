@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4297770
@@ -70,6 +71,7 @@ chembl:
   - N07XX15
   targets: []
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Inotersen (Tegsedi)
@@ -84,7 +86,7 @@ chembl:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Inotersen, Tegsedi
-- **ChEMBL:** [CHEMBL4297770](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297770/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297770](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297770/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

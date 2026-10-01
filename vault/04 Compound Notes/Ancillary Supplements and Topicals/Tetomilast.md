@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL332750
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.67
     full-molformula: C19H18N2O4S
+  identity-check: structure-confirmed
 ---
 
 # Tetomilast
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `tetomilast-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL332750](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL332750/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL332750](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL332750/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

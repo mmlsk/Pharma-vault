@@ -63,7 +63,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Teriparatide
@@ -89,11 +92,22 @@ chembl:
     full-mwt: 4117.79
     mw-freebase: 4117.79
     full-molformula: C181H291N55O51S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: aae667c5-381f-4f92-93df-2ed6158d07b0
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=aae667c5-381f-4f92-93df-2ed6158d07b0
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Forsteo
+  ema-number: EMEA/H/C/000425
+  url: https://www.ema.europa.eu/en/documents/product-information/forsteo-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -111,7 +125,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Teriparatide, Forteo
-- **ChEMBL:** [CHEMBL525610](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL525610/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL525610](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL525610/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -156,6 +170,10 @@ Parathyroid hormone receptor agonist _(ChEMBL curated mechanism of the parent mo
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set aae667c5…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=aae667c5-381f-4f92-93df-2ed6158d07b0), label version 20260803. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 1)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Forsteo*](https://www.ema.europa.eu/en/documents/product-information/forsteo-epar-product-information_en.pdf) (EMEA/H/C/000425). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 1)
 
 ## Related compounds (auto)
 

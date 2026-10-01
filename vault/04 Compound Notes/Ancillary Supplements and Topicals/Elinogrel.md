@@ -57,6 +57,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Elinogrel
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.32
     full-molformula: C20H15ClFN5O5S2
+  identity-check: structure-confirmed
 ---
 
 # Elinogrel
@@ -101,7 +103,7 @@ chembl:
 - **Compound ID:** `elinogrel-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2103828](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103828/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2103828](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103828/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

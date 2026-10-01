@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL25028
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.41
     full-molformula: C2H6O2S
+  identity-check: structure-confirmed
 ---
 
 # MSM (Methylsulfonylmethane)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** MSM, Methylsulfonylmethane
-- **ChEMBL:** [CHEMBL25028](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL25028/) · max phase 1 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL25028](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL25028/) · max phase 1 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

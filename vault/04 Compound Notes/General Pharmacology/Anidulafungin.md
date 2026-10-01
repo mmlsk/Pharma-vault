@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Anidulafungin
@@ -84,11 +87,23 @@ chembl:
     full-mwt: 1140.25
     mw-freebase: 1140.25
     full-molformula: C58H73N7O17
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
   set-id: a88d9010-55fb-4a02-baff-042cd27688ea
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a88d9010-55fb-4a02-baff-042cd27688ea
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Ecalta
+  ema-number: EMEA/H/C/000788
+  url: https://www.ema.europa.eu/en/documents/product-information/ecalta-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/ecalta-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -106,7 +121,7 @@ pk-verification:
 - **Compound ID:** `anidulafungin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1630215](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1630215/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1630215](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1630215/) · max phase n/a · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -142,6 +157,11 @@ Echinocandin cleared by spontaneous chemical degradation rather than by any enzy
 > Automated comparison with the [US prescribing information (DailyMed set a88d9010…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a88d9010-55fb-4a02-baff-042cd27688ea), label version 20250819. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.5, 1, 24, 40, 50, 240)
 > - protein-binding: consistent (label values: 99)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Ecalta*](https://www.ema.europa.eu/en/documents/product-information/ecalta-epar-product-information_en.pdf) (EMEA/H/C/000788) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/ecalta-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.5, 1, 24, 40, 50)
+> - protein-binding: consistent (SmPC values: 99)
 
 ## Safety routing
 

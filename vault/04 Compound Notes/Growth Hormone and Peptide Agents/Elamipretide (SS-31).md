@@ -61,6 +61,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - possible-duplicate
 chembl:
   identity-source: chembl-name-match
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.05
     full-molformula: C32H49N9O5
+  identity-check: structure-confirmed
 ---
 
 # Elamipretide (SS-31)
@@ -97,7 +99,7 @@ chembl:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** SS31, MTP-131, Bendavia, Elamipretide
-- **ChEMBL:** [CHEMBL3833370](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833370/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3833370](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833370/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

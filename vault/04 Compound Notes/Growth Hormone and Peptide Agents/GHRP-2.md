@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL106593
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.05
     full-molformula: C45H55N9O6
+  identity-check: structure-confirmed
 ---
 
 # GHRP-2
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `ghrp2-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL106593](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL106593/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL106593](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL106593/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

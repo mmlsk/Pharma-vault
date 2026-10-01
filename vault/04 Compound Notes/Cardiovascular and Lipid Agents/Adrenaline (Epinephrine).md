@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL679
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.51
     full-molformula: C9H13NO3
+  identity-check: structure-confirmed
 ---
 
 # Adrenaline (Epinephrine)
@@ -104,7 +106,7 @@ chembl:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Adrenaline, Epinephrine
-- **ChEMBL:** [CHEMBL679](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL679/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL679](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL679/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

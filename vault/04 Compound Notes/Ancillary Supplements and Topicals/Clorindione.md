@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL278519
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C15H9ClO2
+  identity-check: structure-confirmed
 ---
 
 # Clorindione
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `clorindione-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL278519](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL278519/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL278519](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL278519/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

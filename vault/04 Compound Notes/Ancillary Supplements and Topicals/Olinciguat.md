@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4297616
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.31
     full-molformula: C21H16F5N7O3
+  identity-check: structure-confirmed
 ---
 
 # Olinciguat
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `olinciguat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4297616](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297616/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297616](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297616/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

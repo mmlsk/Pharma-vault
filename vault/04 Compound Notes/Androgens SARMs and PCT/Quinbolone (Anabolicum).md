@@ -60,6 +60,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Quinbolone
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.63
     full-molformula: C24H32O2
+  identity-check: structure-confirmed
 ---
 
 # Quinbolone (Anabolicum)
@@ -103,7 +105,7 @@ chembl:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Quinbolone, Anabolicum
-- **ChEMBL:** [CHEMBL2106999](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106999/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2106999](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106999/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

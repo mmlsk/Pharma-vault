@@ -54,7 +54,7 @@ risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
 - glucose-metabolism
-source-status: partially-verified
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
@@ -63,7 +63,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-discrepant
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Octreotide
@@ -86,6 +89,7 @@ chembl:
     full-mwt: 1019.26
     mw-freebase: 1019.26
     full-molformula: C49H66N10O10S2
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
@@ -95,6 +99,17 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Oczyesa
+  ema-number: EMEA/H/C/006322
+  url: https://www.ema.europa.eu/en/documents/product-information/oczyesa-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Octreotide
@@ -108,7 +123,7 @@ pk-verification:
 - **Compound ID:** `octreotide-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL1680](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1680/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1680](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1680/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -146,6 +161,11 @@ Somatostatin analog that suppresses growth hormone (and other hormone) secretion
 > Automated comparison with the [US prescribing information (DailyMed set 58d80bc6…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=58d80bc6-bdfb-4908-93e7-aace447c8d1a), label version 20250724. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.2, 1.9, 2.3, 2.7, 3.2, 3.4)
 > - protein-binding: no-label-value (label values: -)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Oczyesa*](https://www.ema.europa.eu/en/documents/product-information/oczyesa-epar-product-information_en.pdf) (EMEA/H/C/006322). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 216, 217, 279, 288)
+> - protein-binding: consistent (SmPC values: 65)
 
 ## Related compounds (auto)
 

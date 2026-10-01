@@ -72,6 +72,7 @@ chembl:
     name: Tissue-type plasminogen activator
     action: EXOGENOUS PROTEIN
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Alteplase
@@ -85,7 +86,7 @@ chembl:
 - **Compound ID:** `alteplase-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201593](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201593/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1201593](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201593/) · max phase 4 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

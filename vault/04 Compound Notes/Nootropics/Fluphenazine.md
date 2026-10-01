@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Fluphenazine
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C22H26F3N3OS
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `fluphenazine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL726](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL726/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL726](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL726/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

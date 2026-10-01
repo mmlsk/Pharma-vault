@@ -206,7 +206,8 @@ def test_pk_verification_consistency():
     notes = {fm(p)["compound-id"]: fm(p) for p in list(VAULT.glob("04 Compound Notes/*/*.md"))[:800]}
     for cid, n in notes.items():
         if n.get("source-status") == "partially-verified":
-            assert ver[cid]["status"] == "consistent"
+            sts = {x["status"] for x in (n.get("pk-verification"), n.get("pk-verification-ema")) if x}
+            assert "consistent" in sts and "discrepant" not in sts, cid
 
 
 def test_links_symmetric_and_targets_have_notes():
@@ -234,4 +235,61 @@ def test_sqlite_export(tmp_path):
     con = sqlite3.connect(PROCESSED / "pharma-vault.db")
     assert con.execute("SELECT COUNT(*) FROM substances").fetchone()[0] == 2537
     assert con.execute("SELECT COUNT(*) FROM compound_targets").fetchone()[0] > 1000
+    con.close()
+
+
+# ---------- v3.3: identity curation + EU SmPC (ChPL) cross-check
+IDENTITY_VERDICTS = {"structure-confirmed", "connectivity-match", "formula-match", "inn-match-ema",
+                     "no-chembl-structure", "no-evidence", "conflict"}
+
+
+def test_identity_decisions_applied(rows):
+    ids = {r["compound_id"] for r in rows}
+    ch = {c["compound_id"]: c for c in load("chembl.json")}
+    dec = list(csv.DictReader(open(ROOT / "data/curated/identity-decisions.csv", encoding="utf-8")))
+    assert dec
+    for d in dec:
+        assert d["compound_id"] in ids and d["decision"] in ("confirm", "replace", "reject") and d["reason"] and d["reviewer"]
+        if d["decision"] == "reject":
+            assert d["compound_id"] not in ch
+        else:
+            assert ch[d["compound_id"]]["identity"]["chembl-id"] == d["chembl_id"]
+    # regression: infobox typo 435170 (adaprolol) must not resurface
+    assert ch["deucravacitinib-compound"]["identity"]["chembl-id"] == "CHEMBL4435170"
+
+
+def test_identity_review_shape():
+    rev = load("identity-review.json")
+    assert len(rev) > 1500 and {x["verdict"] for x in rev} <= IDENTITY_VERDICTS
+    assert all(x["tier"] != "catalogue" for x in rev)
+    by = {x["compound_id"]: x for x in rev}
+    open_conflicts = [x for x in rev if x["verdict"] == "conflict" and not x.get("decision")]
+    assert len(open_conflicts) <= 5, [x["compound_id"] for x in open_conflicts]
+    assert by["clozapine-compound"]["verdict"] in ("structure-confirmed", "formula-match")
+
+
+def test_section_52_extraction():
+    from verify_pk_ema import section_52
+    text = "4.2 Posology\nx\n5.2 Pharmacokinetic properties\nThe mean half-life is 12 hours.\n5.3 Preclinical safety data\nrat t1/2 99 h"
+    sec = section_52(text)
+    assert "12 hours" in sec and "rat" not in sec
+
+
+def test_ema_verification():
+    ema = load("pk-verification-ema.json")
+    assert len(ema) > 150
+    assert {v["status"] for v in ema} <= {"consistent", "discrepant", "no-smpc-value", "no-smpc-text"}
+    for v in ema:
+        assert v["epar-url"].startswith("https://www.ema.europa.eu/")
+        assert not v.get("chpl-url") or v["chpl-url"].endswith("_pl.pdf")
+        assert not re.search(r"/|,|;|\band\b|\+", v["inn"])  # single-substance products only
+    assert sum(v["status"] == "consistent" for v in ema) > 100
+
+
+def test_sqlite_has_v33_tables():
+    import sqlite3
+    subprocess.run([sys.executable, "export_sqlite.py"], cwd=ROOT / "scripts", check=True, capture_output=True)
+    con = sqlite3.connect(PROCESSED / "pharma-vault.db")
+    assert con.execute("SELECT COUNT(*) FROM identity_review").fetchone()[0] > 1500
+    assert con.execute("SELECT COUNT(*) FROM pk_verification_ema").fetchone()[0] > 150
     con.close()

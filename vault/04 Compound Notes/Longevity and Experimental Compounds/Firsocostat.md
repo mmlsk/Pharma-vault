@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3407547
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.32
     full-molformula: C28H31N3O8S
+  identity-check: structure-confirmed
 ---
 
 # Firsocostat
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `firsocostat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL3407547](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3407547/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3407547](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3407547/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

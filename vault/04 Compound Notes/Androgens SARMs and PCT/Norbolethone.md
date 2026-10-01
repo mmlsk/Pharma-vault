@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2105134
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.8
     full-molformula: C21H32O2
+  identity-check: structure-confirmed
 ---
 
 # Norbolethone
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `norbolethone-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL2105134](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105134/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2105134](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105134/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

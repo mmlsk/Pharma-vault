@@ -56,6 +56,7 @@ tags:
 - group/steroids
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL195836
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.67
     full-molformula: C19H30O2
+  identity-check: structure-confirmed
 ---
 
 # 4-Androstenediol
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `androstenediol-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL195836](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL195836/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL195836](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL195836/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

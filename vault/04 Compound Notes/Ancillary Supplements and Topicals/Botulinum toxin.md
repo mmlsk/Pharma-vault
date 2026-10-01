@@ -71,6 +71,7 @@ chembl:
     name: Synaptosomal-associated protein 25
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Botulinum toxin
@@ -84,7 +85,7 @@ chembl:
 - **Compound ID:** `botulinum-toxin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201574](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201574/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1201574](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201574/) · max phase 4 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

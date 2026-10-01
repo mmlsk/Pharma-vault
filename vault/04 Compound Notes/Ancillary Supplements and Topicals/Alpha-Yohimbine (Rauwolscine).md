@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL10347
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.77
     full-molformula: C21H26N2O3
+  identity-check: structure-confirmed
 ---
 
 # Alpha-Yohimbine (Rauwolscine)
@@ -92,7 +94,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Alpha-Yohimbine, Rauwolscine
-- **ChEMBL:** [CHEMBL10347](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL10347/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL10347](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL10347/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -65,7 +65,9 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Ranolazine
@@ -101,11 +103,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.64
     full-molformula: C24H33N3O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
   set-id: 90c5a0c2-542c-467e-9c0c-ef320534c560
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=90c5a0c2-542c-467e-9c0c-ef320534c560
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Ranexa (previously Latixa)
+  ema-number: EMEA/H/C/000805
+  url: https://www.ema.europa.eu/en/documents/product-information/ranexa-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/ranexa-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: discrepant
@@ -124,7 +138,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Ranolazine, Ranexa
-- **ChEMBL:** [CHEMBL1404](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1404/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1404](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1404/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -172,6 +186,11 @@ Sodium channel protein type IV alpha subunit blocker; Sodium channel protein typ
 > Automated comparison with the [US prescribing information (DailyMed set 90c5a0c2…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=90c5a0c2-542c-467e-9c0c-ef320534c560), label version 20260819. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 6, 7, 22)
 > - protein-binding: consistent (label values: 62)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Ranexa (previously Latixa)*](https://www.ema.europa.eu/en/documents/product-information/ranexa-epar-product-information_en.pdf) (EMEA/H/C/000805) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/ranexa-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 3, 7)
+> - protein-binding: consistent (SmPC values: 62)
 
 ## Related compounds (auto)
 

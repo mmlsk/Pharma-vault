@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Canagliflozin
@@ -92,11 +93,22 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.49
     full-molformula: C24H25FO5S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
   set-id: b9057d3b-b104-4f09-8a61-c61ef9d4a3f3
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b9057d3b-b104-4f09-8a61-c61ef9d4a3f3
+  checked: '2026-10-01'
+  fields:
+    protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-value
+  product: Invokana
+  ema-number: EMEA/H/C/002649
+  url: https://www.ema.europa.eu/en/documents/product-information/invokana-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/invokana-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     protein-binding: no-label-value
@@ -114,7 +126,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Canagliflozin, Invokana
-- **ChEMBL:** [CHEMBL2103841](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103841/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2103841](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103841/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -151,6 +163,10 @@ SGLT2 inhibitor studied in the large CANVAS Program, which found real cardiovasc
 > [!note] FDA label cross-check: **no-label-value**
 > Automated comparison with the [US prescribing information (DailyMed set b9057d3b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b9057d3b-b104-4f09-8a61-c61ef9d4a3f3), label version 20260611. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - protein-binding: no-label-value (label values: -)
+
+> [!note] EU SmPC cross-check: **no-smpc-value**
+> Automated comparison with section 5.2 of the [EU SmPC of *Invokana*](https://www.ema.europa.eu/en/documents/product-information/invokana-epar-product-information_en.pdf) (EMEA/H/C/002649) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/invokana-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Safety routing
 

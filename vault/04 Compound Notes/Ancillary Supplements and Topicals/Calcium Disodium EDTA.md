@@ -70,6 +70,7 @@ chembl:
     full-mwt: 374.27
     mw-freebase: 374.27
     full-molformula: C10H12CaN2Na2O8
+  identity-check: no-evidence
 ---
 
 # Calcium Disodium EDTA
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `edetate-calcium-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200375](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200375/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1200375](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200375/) · max phase 4 · id via exact ChEMBL name match · structure check: no PubChem structure available
 
 ## Source summary
 

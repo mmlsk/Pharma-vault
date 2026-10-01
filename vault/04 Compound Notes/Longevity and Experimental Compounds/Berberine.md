@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL295124
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.67
     full-molformula: C20H18NO4+
+  identity-check: structure-confirmed
 ---
 
 # Berberine
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `berberine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL295124](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL295124/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL295124](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL295124/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

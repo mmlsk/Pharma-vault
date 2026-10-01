@@ -57,6 +57,7 @@ tags:
 - group/cardio
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2103837
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.76
     full-molformula: C14H7Cl2NO3
+  identity-check: structure-confirmed
 ---
 
 # Tafamidis (Vyndaqel)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Tafamidis, Vyndaqel
-- **ChEMBL:** [CHEMBL2103837](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103837/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2103837](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103837/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

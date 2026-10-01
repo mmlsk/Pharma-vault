@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Telbivudine
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.58
     full-molformula: C10H14N2O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `telbivudine-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL374731](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL374731/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL374731](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL374731/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

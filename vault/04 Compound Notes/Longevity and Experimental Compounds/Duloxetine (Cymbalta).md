@@ -66,7 +66,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Duloxetine
@@ -96,6 +99,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.72
     full-molformula: C18H19NOS
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -105,6 +109,17 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Yentreve
+  ema-number: EMEA/H/C/000545
+  url: https://www.ema.europa.eu/en/documents/product-information/yentreve-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Duloxetine (Cymbalta)
@@ -119,7 +134,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Duloxetine, Cymbalta
-- **ChEMBL:** [CHEMBL1175](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1175/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1175](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1175/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -159,6 +174,11 @@ SNRI used for depression, anxiety, and neuropathic pain; withdrawal, liver, bloo
 > Automated comparison with the [US prescribing information (DailyMed set 79bfd6be…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=79bfd6be-a1ff-4786-b4e2-abbd0a3e3932), label version 20260909. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 8, 12, 17)
 > - protein-binding: no-label-value (label values: -)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Yentreve*](https://www.ema.europa.eu/en/documents/product-information/yentreve-epar-product-information_en.pdf) (EMEA/H/C/000545). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 8, 12, 17)
+> - protein-binding: consistent (SmPC values: 96)
 
 ## Related compounds (auto)
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3990145
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.51
     full-molformula: C27H41N5O4
+  identity-check: structure-confirmed
 ---
 
 # Imarikiren
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `imarikiren-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3990145](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990145/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3990145](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990145/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

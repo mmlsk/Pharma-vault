@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4066936
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.45
     full-molformula: C19H16F2N8O2
+  identity-check: structure-confirmed
 ---
 
 # Vericiguat (Verquvo)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Vericiguat, Verquvo
-- **ChEMBL:** [CHEMBL4066936](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4066936/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4066936](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4066936/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

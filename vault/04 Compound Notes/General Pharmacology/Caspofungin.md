@@ -62,6 +62,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Caspofungin
@@ -83,6 +85,7 @@ chembl:
     full-mwt: 1093.33
     mw-freebase: 1093.33
     full-molformula: C52H88N10O15
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -90,6 +93,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Cancidas (previously Caspofungin MSD)
+  ema-number: EMEA/H/C/000379
+  url: https://www.ema.europa.eu/en/documents/product-information/cancidas-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/cancidas-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: no-label-value
 ---
 
 # Caspofungin
@@ -103,7 +117,7 @@ pk-verification:
 - **Compound ID:** `caspofungin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL499808](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL499808/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL499808](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL499808/) · max phase n/a · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -136,6 +150,11 @@ First echinocandin, fungicidal against Candida and fungistatic against Aspergill
 | Excretion | - | Kidney (41%), feces (35%) |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Cancidas (previously Caspofungin MSD)*](https://www.ema.europa.eu/en/documents/product-information/cancidas-epar-product-information_en.pdf) (EMEA/H/C/000379) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/cancidas-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 45, 288, 360)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Safety routing
 

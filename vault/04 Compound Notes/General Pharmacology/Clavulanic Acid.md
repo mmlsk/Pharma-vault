@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL777
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C8H9NO5
+  identity-check: structure-confirmed
 ---
 
 # Clavulanic Acid
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `clavulanate-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL777](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL777/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL777](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL777/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

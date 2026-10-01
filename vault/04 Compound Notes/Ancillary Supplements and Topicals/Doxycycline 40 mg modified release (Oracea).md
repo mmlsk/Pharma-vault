@@ -94,6 +94,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.33
     full-molformula: C22H24N2O8
+  identity-check: no-evidence
 pk-verification:
   source: fda-label
   status: consistent
@@ -117,7 +118,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Doxycycline 40 mg modified release, Oracea
-- **ChEMBL:** [CHEMBL1433](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1433/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1433](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1433/) · max phase 4 · id via Wikipedia infobox · structure check: no PubChem structure available
 
 ## Source summary
 

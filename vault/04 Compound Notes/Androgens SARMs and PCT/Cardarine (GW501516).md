@@ -59,6 +59,7 @@ tags:
 - group/sarms
 - stub
 - chembl-profile
+- identity-confirmed
 - possible-duplicate
 chembl:
   identity-source: wikipedia-infobox
@@ -84,6 +85,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.43
     full-molformula: C21H18F3NO3S2
+  identity-check: structure-confirmed
 ---
 
 # Cardarine (GW501516)
@@ -98,7 +100,7 @@ chembl:
 - **Source group:** SARMs (`sarms`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Cardarine, GW501516
-- **ChEMBL:** [CHEMBL38943](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL38943/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL38943](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL38943/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3989987
@@ -73,6 +74,7 @@ chembl:
     name: Transthyretin mRNA
     action: RNAI INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Patisiran (Onpattro)
@@ -87,7 +89,7 @@ chembl:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Patisiran, Onpattro
-- **ChEMBL:** [CHEMBL3989987](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989987/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3989987](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989987/) · max phase 3 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

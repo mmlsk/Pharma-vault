@@ -56,6 +56,7 @@ tags:
 - group/glp1
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2107857
@@ -71,6 +72,7 @@ chembl:
     name: Leptin receptor
     action: AGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Metreleptin
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `metreleptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL2107857](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107857/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2107857](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107857/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

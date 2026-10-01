@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1852688
@@ -84,6 +85,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.38
     full-molformula: C26H31Cl2N7O3
+  identity-check: structure-confirmed
 ---
 
 # Truseltiq (Infigratinib)
@@ -98,7 +100,7 @@ chembl:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Truseltiq, Infigratinib
-- **ChEMBL:** [CHEMBL1834657](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1834657/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1834657](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1834657/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

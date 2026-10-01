@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3781751
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.84
     full-molformula: C15H22N2
+  identity-check: connectivity-match
 ---
 
 # Iadademstat (ORY-1001)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Iadademstat, ORY-1001
-- **ChEMBL:** [CHEMBL3781751](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3781751/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3781751](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3781751/) · max phase 2 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

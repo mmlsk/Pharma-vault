@@ -63,7 +63,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Nilotinib
@@ -93,11 +96,23 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.27
     full-molformula: C28H22F3N7O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: b34e7fd4-53c5-46d8-bf8a-1fcbe7a16504
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b34e7fd4-53c5-46d8-bf8a-1fcbe7a16504
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Tasigna
+  ema-number: EMEA/H/C/000798
+  url: https://www.ema.europa.eu/en/documents/product-information/tasigna-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/tasigna-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -115,7 +130,7 @@ pk-verification:
 - **Compound ID:** `nilotinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL255863](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL255863/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL255863](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL255863/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -155,6 +170,11 @@ Inhibits BCR–ABL-family kinase signaling; mutation coverage and off-target car
 > Automated comparison with the [US prescribing information (DailyMed set b34e7fd4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b34e7fd4-53c5-46d8-bf8a-1fcbe7a16504), label version 20260831. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 17)
 > - protein-binding: consistent (label values: 98)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Tasigna*](https://www.ema.europa.eu/en/documents/product-information/tasigna-epar-product-information_en.pdf) (EMEA/H/C/000798) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/tasigna-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 17)
+> - protein-binding: consistent (SmPC values: 98)
 
 ## Related compounds (auto)
 

@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Perphenazine
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.79
     full-molformula: C21H26ClN3OS
+  identity-check: structure-confirmed
 ---
 
 # Perphenazine
@@ -107,7 +109,7 @@ chembl:
 - **Compound ID:** `perphenazine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL567](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL567/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL567](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL567/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

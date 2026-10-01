@@ -70,6 +70,7 @@ chembl:
     name: Tumor necrosis factor ligand superfamily member 4
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Oxelumab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `oxelumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2108720](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108720/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108720](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108720/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

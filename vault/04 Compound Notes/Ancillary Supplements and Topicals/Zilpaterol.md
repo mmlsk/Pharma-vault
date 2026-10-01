@@ -58,6 +58,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Zilpaterol
@@ -86,6 +87,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.76
     full-molformula: C14H19N3O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -106,7 +108,7 @@ pk-verification:
 - **Compound ID:** `zilpaterol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2218907](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2218907/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2218907](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2218907/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

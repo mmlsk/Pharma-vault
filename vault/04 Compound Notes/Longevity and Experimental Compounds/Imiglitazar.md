@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL592054
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.21
     full-molformula: C28H26N2O5
+  identity-check: structure-confirmed
 ---
 
 # Imiglitazar
@@ -96,7 +98,7 @@ chembl:
 - **Compound ID:** `imiglitazar-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL592054](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL592054/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL592054](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL592054/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

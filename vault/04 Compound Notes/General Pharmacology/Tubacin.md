@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL356769
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.03
     full-molformula: C41H43N3O7S
+  identity-check: structure-confirmed
 ---
 
 # Tubacin
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `tubacin-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL356769](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL356769/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL356769](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL356769/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Yohimbine
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.77
     full-molformula: C21H26N2O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `yohimbine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL15245](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL15245/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL15245](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL15245/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1601669
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.53
     full-molformula: C27H44O2
+  identity-check: structure-confirmed
 ---
 
 # Alfacalcidol (1-alpha-hydroxyvitamin D3)
@@ -97,7 +99,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Alfacalcidol, 1-alpha-hydroxyvitamin D3
-- **ChEMBL:** [CHEMBL1601669](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1601669/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1601669](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1601669/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL515606
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.62
     full-molformula: C22H31N3O5
+  identity-check: structure-confirmed
 ---
 
 # Cilazapril
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `cilazapril-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL515606](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL515606/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL515606](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL515606/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

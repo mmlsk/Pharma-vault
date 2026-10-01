@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3989968
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.47
     full-molformula: C23H24F2N2O5
+  identity-check: structure-confirmed
 ---
 
 # Difamilast
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `difamilast-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3989968](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989968/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3989968](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989968/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

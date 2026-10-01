@@ -10,13 +10,16 @@
 > | v3.1 | PK z Wikipedii (wersje przypięte), graf z `substances.json` | ✅ |
 > | v3.2 | +187 substancji (NPS), warstwa ChEMBL (tożsamość/mechanizmy/cele/ATC), automatyczne porównanie PK z FDA, `links.json`, notatki celów, eksport SQLite, histogram i krawędzie celów w grafie — [ADR-0002](../adr/0002-identity-tiers-and-automated-pk-crosscheck.md) | ✅ |
 >
-> ## 🔭 Proponowany v3.3
+> | v3.3 | kuracja tożsamości (InChIKey ChEMBL vs PubChem, INN EMA, `identity-decisions.csv`), porównanie PK z ChPL/SmPC (EMA), reguła promocji „żaden regulator rozbieżny” — [ADR-0003](../adr/0003-structure-corroboration-and-eu-smpc.md) | ✅ |
 >
-> 1. Kuracja 607 tożsamości `chembl-name-match` (kolejka w Review Queue) i 3 niejednoznacznych kandydatów.
-> 2. PK dla NPS z Wikipedii/literatury z wyraźnym poziomem dowodów (brak etykiet FDA).
-> 3. Drugie porównanie PK z ChPL/EMA (EPAR) dla leków spoza rynku USA.
-> 4. Warstwa interakcji bez DrugBank: role CYP inhibitor/induktor z etykiet FDA (sekcja 7) + tabela FDA „Drug Development and Drug Interactions”.
-> 5. Zaplanowane odświeżanie cache (GitHub Actions `schedule`) z PR zamiast bezpośredniego commita.
+> ## 🔭 Proponowany v3.4
+>
+> 1. Ręczny (ludzki) przegląd 72 przypadków `connectivity-match`/`formula-match` i otwartego konfliktu satawaptanu; 127 biologików bez potwierdzenia INN.
+> 2. Rozbieżności FDA/ChPL (85 rekordów): rozróżnienie postaci leku (depot, liposomalna) w `pk.json` zamiast jednej wartości t½.
+> 3. PK dla NPS z literatury z wyraźnym poziomem dowodów (brak etykiet).
+> 4. Warstwa interakcji bez DrugBank: role CYP inhibitor/induktor z sekcji 4.5 ChPL i sekcji 7 etykiet FDA.
+> 5. Rejestr krajowy (URPL / Rejestr Produktów Leczniczych) dla leków bez rejestracji centralnej.
+> 6. Zaplanowane odświeżanie cache (GitHub Actions `schedule`) z PR.
 
 > Źródło: wątek projektu Pharma-vault (tura 20), wyeksportowany 2026-09-26. Treść zachowana w oryginalnym brzmieniu; numerowane odwołania typu [1] odnoszą się do źródeł przywołanych w oryginalnym wątku (materiały w `data/raw/`).
 

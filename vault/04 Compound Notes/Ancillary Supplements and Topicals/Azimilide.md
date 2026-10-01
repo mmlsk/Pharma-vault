@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL123558
@@ -76,6 +77,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.35
     full-molformula: C23H28ClN5O3
+  identity-check: structure-confirmed
 ---
 
 # Azimilide
@@ -89,7 +91,7 @@ chembl:
 - **Compound ID:** `azimilide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL123558](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL123558/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL123558](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL123558/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

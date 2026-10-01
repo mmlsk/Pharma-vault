@@ -64,6 +64,8 @@ tags:
 - stub
 - pk-auto
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Degarelix
@@ -76,6 +78,17 @@ pk-verification:
   status: consistent
   set-id: ab11dd8a-0fd9-4013-89ab-e114557c7e4b
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab11dd8a-0fd9-4013-89ab-e114557c7e4b
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Firmagon
+  ema-number: EMEA/H/C/000986
+  url: https://www.ema.europa.eu/en/documents/product-information/firmagon-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/firmagon-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -121,6 +134,11 @@ GnRH antagonist that drops testosterone in days without the testosterone surge a
 > Automated comparison with the [US prescribing information (DailyMed set ab11dd8a…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab11dd8a-0fd9-4013-89ab-e114557c7e4b), label version 20240130. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 1272)
 > - protein-binding: consistent (label values: 90)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Firmagon*](https://www.ema.europa.eu/en/documents/product-information/firmagon-epar-product-information_en.pdf) (EMEA/H/C/000986) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/firmagon-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 696)
+> - protein-binding: consistent (SmPC values: 90)
 
 ## Safety routing
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL730
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.37
     full-molformula: C3H5N3O9
+  identity-check: structure-confirmed
 ---
 
 # Nitroglycerin
@@ -96,7 +98,7 @@ chembl:
 - **Compound ID:** `nitroglycerin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL730](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL730/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL730](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL730/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

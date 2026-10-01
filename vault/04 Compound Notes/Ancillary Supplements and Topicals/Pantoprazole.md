@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.63
     full-molformula: C16H15F2N3O4S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -103,6 +105,15 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-text
+  product: Pantozol Control
+  ema-number: EMEA/H/C/001013
+  url: null
+  chpl-url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Pantoprazole
@@ -116,7 +127,7 @@ pk-verification:
 - **Compound ID:** `pantoprazole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1502](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1502/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1502](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1502/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

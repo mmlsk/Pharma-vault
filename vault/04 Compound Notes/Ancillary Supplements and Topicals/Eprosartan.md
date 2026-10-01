@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Eprosartan
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.46
     full-molformula: C23H24N2O4S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `eprosartan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL813](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL813/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL813](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL813/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

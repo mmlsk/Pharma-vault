@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: partially-verified
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
@@ -64,7 +64,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-discrepant
+- pk-sources-disagree
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -100,6 +103,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.16
     full-molformula: C51H79NO13
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -109,6 +113,17 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Rapamune
+  ema-number: EMEA/H/C/000273
+  url: https://www.ema.europa.eu/en/documents/product-information/rapamune-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/rapamune-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: no-label-value
 ---
 
 # Rapamycin (Sirolimus)
@@ -123,7 +138,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Rapamycin, Sirolimus
-- **ChEMBL:** [CHEMBL413](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL413/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL413](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL413/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -172,6 +187,11 @@ FK506-binding protein 1A inhibitor _(ChEMBL curated mechanism of the parent mole
 > Automated comparison with the [US prescribing information (DailyMed set fc81cb86…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=fc81cb86-61e1-4622-b2ce-cde263143aa0), label version 20260720. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 61.3, 62, 72.3)
 > - protein-binding: consistent (label values: 92, 97)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Rapamune*](https://www.ema.europa.eu/en/documents/product-information/rapamune-epar-product-information_en.pdf) (EMEA/H/C/000273) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/rapamune-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 16, 120, 168)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

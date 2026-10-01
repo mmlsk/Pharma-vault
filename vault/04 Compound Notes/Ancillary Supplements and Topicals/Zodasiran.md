@@ -67,6 +67,7 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Zodasiran
@@ -80,7 +81,7 @@ chembl:
 - **Compound ID:** `zodasiran-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL5314648](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5314648/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL5314648](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5314648/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

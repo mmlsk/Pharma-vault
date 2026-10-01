@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Alfentanil
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.61
     full-molformula: C21H32N6O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `alfentanil-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL634](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL634/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL634](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL634/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL272980
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.43
     full-molformula: C23H20N6O
+  identity-check: structure-confirmed
 ---
 
 # Mocetinostat
@@ -105,7 +107,7 @@ chembl:
 - **Compound ID:** `mocetinostat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL272980](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL272980/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL272980](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL272980/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -50,7 +50,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -59,6 +59,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Delamanid
@@ -91,6 +93,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.3
     full-molformula: C25H25F3N4O6
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -98,6 +101,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Deltyba
+  ema-number: EMEA/H/C/002552
+  url: https://www.ema.europa.eu/en/documents/product-information/deltyba-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/deltyba-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Delamanid
@@ -111,7 +125,7 @@ pk-verification:
 - **Compound ID:** `delamanid-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL218650](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL218650/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL218650](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL218650/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -155,6 +169,11 @@ Mycobacterium tuberculosis H37Rv inhibitor _(ChEMBL curated mechanism of the par
 | Excretion | - | not excreted in urine |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Deltyba*](https://www.ema.europa.eu/en/documents/product-information/deltyba-epar-product-information_en.pdf) (EMEA/H/C/002552) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/deltyba-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 30, 38)
+> - protein-binding: consistent (SmPC values: 99.5)
 
 ## Related compounds (auto)
 

@@ -56,6 +56,7 @@ tags:
 - group/gh
 - stub
 - chembl-profile
+- identity-stereo-check
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1091644
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.44
     full-molformula: C26H23N5O
+  identity-check: connectivity-match
 ---
 
 # Linsitinib
@@ -96,7 +98,7 @@ chembl:
 - **Compound ID:** `linsitinib-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL1091644](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1091644/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1091644](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1091644/) · max phase 3 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

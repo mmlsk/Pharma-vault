@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1742996
@@ -71,6 +72,7 @@ chembl:
     name: Interleukin-17 receptor A
     action: ANTAGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Brodalumab
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `brodalumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1742996](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742996/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1742996](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742996/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

@@ -65,7 +65,9 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - pk-fda-discrepant
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Cannabidiol
@@ -98,11 +100,22 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.51
     full-molformula: C21H30O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
   set-id: 8bf27097-4870-43fb-94f0-f3d0871d1eec
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8bf27097-4870-43fb-94f0-f3d0871d1eec
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Epidyolex
+  ema-number: EMEA/H/C/004675
+  url: https://www.ema.europa.eu/en/documents/product-information/epidyolex-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/epidyolex-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: discrepant
@@ -120,7 +133,7 @@ pk-verification:
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Cannabidiol, Epidiolex
-- **ChEMBL:** [CHEMBL190461](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL190461/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL190461](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL190461/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -162,6 +175,10 @@ Cannabinoid CB1 receptor negative allosteric modulator _(ChEMBL curated mechanis
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 8bf27097…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8bf27097-4870-43fb-94f0-f3d0871d1eec), label version 20260529. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 56, 61, 168)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Epidyolex*](https://www.ema.europa.eu/en/documents/product-information/epidyolex-epar-product-information_en.pdf) (EMEA/H/C/004675) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/epidyolex-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 56, 61, 168)
 
 ## Related compounds (auto)
 

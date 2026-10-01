@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.46
     full-molformula: C10H13N3O5S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -115,7 +117,7 @@ pk-verification:
 - **Compound ID:** `nifurtimox-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL290960](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL290960/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL290960](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL290960/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Tropicamide
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.88
     full-molformula: C17H20N2O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `tropicamide-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200604](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200604/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1200604](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200604/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

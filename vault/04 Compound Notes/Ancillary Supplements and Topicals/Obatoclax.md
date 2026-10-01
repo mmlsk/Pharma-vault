@@ -77,6 +77,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C20H19N3O
+  identity-check: no-evidence
 ---
 
 # Obatoclax
@@ -90,7 +91,7 @@ chembl:
 - **Compound ID:** `obatoclax-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL408194](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL408194/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL408194](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL408194/) · max phase 3 · id via exact ChEMBL name match · structure check: no PubChem structure available
 
 ## Source summary
 

@@ -70,6 +70,7 @@ chembl:
     name: Gonadotropin-releasing hormone receptor
     action: AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Triptorelin Acetate
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `triptorelin-acetate-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL5315073](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5315073/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL5315073](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5315073/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

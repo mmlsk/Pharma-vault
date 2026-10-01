@@ -65,6 +65,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Cetrorelix
@@ -87,6 +89,7 @@ chembl:
     full-mwt: 1431.06
     mw-freebase: 1431.06
     full-molformula: C70H92ClN17O14
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -94,6 +97,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Cetrotide
+  ema-number: EMEA/H/C/000233
+  url: https://www.ema.europa.eu/en/documents/product-information/cetrotide-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/cetrotide-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: no-label-value
 ---
 
 # Cetrorelix (Cetrotide)
@@ -108,7 +122,7 @@ pk-verification:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Cetrorelix, Cetrotide
-- **ChEMBL:** [CHEMBL1200490](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200490/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1200490](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200490/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -142,6 +156,11 @@ GnRH antagonist used in IVF to stop a premature LH surge; immediate suppression,
 | Excretion | - · fe 0.1 | feces (5% to 10% as unchanged drug and metabolites); urine (2% to 4% as unchanged drug) |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Cetrotide*](https://www.ema.europa.eu/en/documents/product-information/cetrotide-epar-product-information_en.pdf) (EMEA/H/C/000233) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/cetrotide-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 12, 30)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

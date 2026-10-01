@@ -67,6 +67,7 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Pegozafermin
@@ -80,7 +81,7 @@ chembl:
 - **Compound ID:** `pegozafermin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL4594466](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594466/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4594466](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594466/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

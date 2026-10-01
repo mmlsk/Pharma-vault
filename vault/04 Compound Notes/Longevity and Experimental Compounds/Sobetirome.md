@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL107400
@@ -76,6 +77,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.83
     full-molformula: C20H24O4
+  identity-check: structure-confirmed
 ---
 
 # Sobetirome
@@ -89,7 +91,7 @@ chembl:
 - **Compound ID:** `sobetirome-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL107400](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL107400/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL107400](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL107400/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

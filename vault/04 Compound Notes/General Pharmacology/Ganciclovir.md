@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Ganciclovir
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.49
     full-molformula: C9H13N5O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -115,7 +117,7 @@ pk-verification:
 - **Compound ID:** `ganciclovir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL182](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL182/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL182](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL182/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

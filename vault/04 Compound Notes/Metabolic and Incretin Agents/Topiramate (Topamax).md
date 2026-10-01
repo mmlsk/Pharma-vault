@@ -65,6 +65,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -113,6 +114,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.74
     full-molformula: C12H21NO8S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -136,7 +138,7 @@ pk-verification:
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
 - **Aliases:** Topiramate, Topamax
-- **ChEMBL:** [CHEMBL220492](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL220492/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL220492](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL220492/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

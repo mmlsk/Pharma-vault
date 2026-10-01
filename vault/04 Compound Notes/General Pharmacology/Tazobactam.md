@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL404
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.67
     full-molformula: C10H12N4O5S
+  identity-check: structure-confirmed
 ---
 
 # Tazobactam
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `tazobactam-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL404](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL404/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL404](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL404/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

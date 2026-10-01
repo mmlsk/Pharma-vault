@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -97,6 +98,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.52
     full-molformula: C28H28O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -119,7 +121,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Adapalene, Differin
-- **ChEMBL:** [CHEMBL1265](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1265/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1265](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1265/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

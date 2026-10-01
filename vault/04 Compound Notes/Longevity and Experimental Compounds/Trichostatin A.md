@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL99
@@ -76,6 +77,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.28
     full-molformula: C17H22N2O3
+  identity-check: structure-confirmed
 ---
 
 # Trichostatin A
@@ -89,7 +91,7 @@ chembl:
 - **Compound ID:** `trichostatin-a-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL99](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL99/) · max phase 1 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL99](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL99/) · max phase 1 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

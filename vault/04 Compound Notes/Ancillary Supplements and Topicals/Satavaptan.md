@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-conflict
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2107777
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.43
     full-molformula: C33H45N3O7S
+  identity-check: conflict
 ---
 
 # Satavaptan
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `satavaptan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2107777](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107777/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2107777](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107777/) · max phase 3 · id via exact ChEMBL name match · structure check: ❌ conflicts with PubChem - see Review Queue
 
 ## Source summary
 

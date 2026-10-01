@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL87045
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.9
     full-molformula: C18H18N2
+  identity-check: structure-confirmed
 ---
 
 # Cibenzoline
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `cibenzoline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL87045](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL87045/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL87045](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL87045/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

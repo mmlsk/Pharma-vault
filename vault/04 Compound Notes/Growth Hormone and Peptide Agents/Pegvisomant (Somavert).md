@@ -58,6 +58,7 @@ tags:
 - group/gh
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1201515
@@ -73,6 +74,7 @@ chembl:
     name: Growth hormone receptor
     action: ANTAGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Pegvisomant (Somavert)
@@ -87,7 +89,7 @@ chembl:
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Pegvisomant, Somavert
-- **ChEMBL:** [CHEMBL1201515](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201515/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201515](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201515/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-formula-match
 pk-source:
   type: wikipedia-infobox
   title: Minocycline
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.4
     full-molformula: C23H27N3O7
+  identity-check: formula-match
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -115,7 +117,7 @@ pk-verification:
 - **Compound ID:** `minocycline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1434](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1434/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1434](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1434/) · max phase 4 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

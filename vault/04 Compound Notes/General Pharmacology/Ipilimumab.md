@@ -57,7 +57,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Ipilimumab
@@ -80,11 +83,22 @@ chembl:
     name: Cytotoxic T-lymphocyte protein 4
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 2265ef30-253e-11df-8a39-0800200c9a66
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2265ef30-253e-11df-8a39-0800200c9a66
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Yervoy
+  ema-number: EMEA/H/C/002213
+  url: https://www.ema.europa.eu/en/documents/product-information/yervoy-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -101,7 +115,7 @@ pk-verification:
 - **Compound ID:** `ipilimumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1789844](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1789844/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1789844](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1789844/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -138,6 +152,10 @@ Cytotoxic T-lymphocyte protein 4 inhibitor _(ChEMBL curated mechanism of the par
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 2265ef30…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2265ef30-253e-11df-8a39-0800200c9a66), label version 20260820. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 369.6)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Yervoy*](https://www.ema.europa.eu/en/documents/product-information/yervoy-epar-product-information_en.pdf) (EMEA/H/C/002213). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 369.6)
 
 ## Related compounds (auto)
 

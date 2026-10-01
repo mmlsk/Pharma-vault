@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4298124
@@ -71,6 +72,7 @@ chembl:
     name: Programmed cell death protein 1
     action: ANTAGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Dostarlimab
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `dostarlimab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL4298124](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298124/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4298124](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298124/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL291657
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.31
     full-molformula: C27H28ClFN2OS
+  identity-check: structure-confirmed
 ---
 
 # Crinecerfont
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `crinecerfont-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL291657](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL291657/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL291657](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL291657/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

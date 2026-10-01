@@ -60,7 +60,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
+- pk-ema-consistent
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Afamelanotide
@@ -86,6 +89,7 @@ chembl:
     full-mwt: 1646.87
     mw-freebase: 1646.87
     full-molformula: C78H111N21O19
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -94,6 +98,16 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Scenesse
+  ema-number: EMEA/H/C/002548
+  url: https://www.ema.europa.eu/en/documents/product-information/scenesse-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/scenesse-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Afamelanotide (Melanotan I)
@@ -108,7 +122,7 @@ pk-verification:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Afamelanotide, Melanotan I
-- **ChEMBL:** [CHEMBL441738](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL441738/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL441738](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL441738/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -149,6 +163,10 @@ Melanocortin receptor 1 agonist _(ChEMBL curated mechanism of the parent molecul
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 94f53286…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=94f53286-11dd-7fbb-e053-2a95a90a7c48), label version 20260511. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 15)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Scenesse*](https://www.ema.europa.eu/en/documents/product-information/scenesse-epar-product-information_en.pdf) (EMEA/H/C/002548) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/scenesse-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.5)
 
 ## Related compounds (auto)
 

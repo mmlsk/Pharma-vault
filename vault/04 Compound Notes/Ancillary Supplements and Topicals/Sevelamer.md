@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 pk-source:
   type: wikipedia-infobox
   title: Sevelamer
@@ -81,6 +82,7 @@ chembl:
     name: Phosphate
     action: SEQUESTERING AGENT
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Sevelamer
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `sevelamer-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201492](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201492/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201492](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201492/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Ketoconazole
@@ -90,6 +92,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.46
     full-molformula: C26H28Cl2N4O4
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -97,6 +100,16 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Ketoconazole Esteve (previously Ketoconazole HRA)
+  ema-number: EMEA/H/C/003906
+  url: https://www.ema.europa.eu/en/documents/product-information/ketoconazole-esteve-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    protein-binding: consistent
 ---
 
 # Ketoconazole
@@ -110,7 +123,7 @@ pk-verification:
 - **Compound ID:** `ketoconazole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL75](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL75/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL75](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL75/) · max phase n/a · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -144,6 +157,10 @@ Antifungal with real antiandrogen activity via steroidogenic enzyme inhibition a
 | Excretion | mainly non-renal | Bile duct (major) and kidney |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Ketoconazole Esteve (previously Ketoconazole HRA)*](https://www.ema.europa.eu/en/documents/product-information/ketoconazole-esteve-epar-product-information_en.pdf) (EMEA/H/C/003906). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - protein-binding: consistent (SmPC values: 99)
 
 ## Safety routing
 

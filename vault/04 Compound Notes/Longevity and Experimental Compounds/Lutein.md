@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL173929
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.2
     full-molformula: C40H56O2
+  identity-check: structure-confirmed
 ---
 
 # Lutein
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `lutein-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL173929](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL173929/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL173929](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL173929/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.27
     full-molformula: C38H69NO13
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -116,7 +118,7 @@ pk-verification:
 - **Compound ID:** `clarithromycin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1741](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1741/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1741](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1741/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

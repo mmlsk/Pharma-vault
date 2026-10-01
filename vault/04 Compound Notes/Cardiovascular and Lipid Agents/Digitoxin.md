@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Digitoxin
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.19
     full-molformula: C41H64O13
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -115,7 +117,7 @@ pk-verification:
 - **Compound ID:** `digitoxin-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
-- **ChEMBL:** [CHEMBL254219](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL254219/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL254219](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL254219/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

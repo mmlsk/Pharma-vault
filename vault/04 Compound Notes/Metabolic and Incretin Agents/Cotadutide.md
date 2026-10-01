@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4297630
@@ -77,6 +78,7 @@ chembl:
     full-mwt: 3728.09
     mw-freebase: 3728.09
     full-molformula: C167H252N42O55
+  identity-check: structure-confirmed
 ---
 
 # Cotadutide
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `cotadutide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL4297630](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297630/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297630](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297630/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

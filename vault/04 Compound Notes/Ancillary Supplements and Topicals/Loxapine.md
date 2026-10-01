@@ -108,6 +108,15 @@ pk-verification:
   fields:
     half-life: no-label-value
     protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-text
+  product: Adasuve
+  ema-number: EMEA/H/C/002400
+  url: null
+  chpl-url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Loxapine

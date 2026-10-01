@@ -54,7 +54,7 @@ risk-domains: []
 group-risk-triage:
 - glucose-metabolism
 - gastrointestinal
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Vildagliptin
@@ -95,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.82
     full-molformula: C17H25N3O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -102,6 +105,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Galvus
+  ema-number: EMEA/H/C/000771
+  url: https://www.ema.europa.eu/en/documents/product-information/galvus-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Vildagliptin
@@ -115,7 +129,7 @@ pk-verification:
 - **Compound ID:** `vildagliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL142703](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL142703/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL142703](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL142703/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -158,6 +172,11 @@ Dipeptidyl peptidase IV inhibitor _(ChEMBL curated mechanism of the parent molec
 | Excretion | mainly urinary | Kidney |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Galvus*](https://www.ema.europa.eu/en/documents/product-information/galvus-epar-product-information_en.pdf) (EMEA/H/C/000771). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2)
+> - protein-binding: consistent (SmPC values: 9.3)
 
 ## Related compounds (auto)
 

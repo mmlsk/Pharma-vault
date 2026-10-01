@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4650349
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.16
     full-molformula: C36H29FN2O4
+  identity-check: structure-confirmed
 ---
 
 # Chiglitazar
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `chiglitazar-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL4650349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650349/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4650349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650349/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

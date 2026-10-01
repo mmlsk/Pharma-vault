@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1164992
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.22
     full-molformula: C26H39NO4
+  identity-check: connectivity-match
 ---
 
 # Triciferol
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `triciferol-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1164992](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1164992/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1164992](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1164992/) · max phase n/a · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

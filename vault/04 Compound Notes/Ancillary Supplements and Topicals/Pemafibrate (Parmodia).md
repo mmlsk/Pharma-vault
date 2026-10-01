@@ -82,6 +82,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.24
     full-molformula: C28H30N2O6
+  identity-check: no-evidence
 ---
 
 # Pemafibrate (Parmodia)
@@ -96,7 +97,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Pemafibrate, Parmodia
-- **ChEMBL:** [CHEMBL247951](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL247951/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL247951](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL247951/) · max phase 4 · id via Wikipedia infobox · structure check: no PubChem structure available
 
 ## Source summary
 

@@ -1,0 +1,10 @@
+compound_id,decision,chembl_id,reviewer,reason
+deucravacitinib-compound,replace,CHEMBL4435170,agent-review 2026-10-01,"Wikipedia infobox ChEMBL field 435170 (= ADAPROLOL) is a typo of CHEMBL4435170; PubChem CID 134821691 InChIKey resolves exactly to CHEMBL4435170 DEUCRAVACITINIB"
+bolandiol-compound,replace,CHEMBL307500,agent-review 2026-10-01,"infobox id is the dipropionate ester; free diol (PubChem CID 9835303) resolves by exact InChIKey to CHEMBL307500"
+trestolone-compound,replace,CHEMBL5197302,agent-review 2026-10-01,"name match selected trestolone acetate; MENT is the free 7alpha-methyl-19-nortestosterone (PubChem CID 9838899) = CHEMBL5197302 by exact InChIKey"
+boldenone-compound,confirm,CHEMBL2106059,agent-review 2026-10-01,"catalogue entry is 'Equipoise', the brand of boldenone undecylenate; the ester identity is intended (free boldenone = CHEMBL209073)"
+stenbolone-compound,confirm,CHEMBL2107251,agent-review 2026-10-01,"catalogue entry is 'Anatrofin', the brand of stenbolone acetate; ester identity intended (free stenbolone has no ChEMBL record)"
+vitamin-k2-compound,reject,,agent-review 2026-10-01,"vitamin K2 is a class (menaquinones MK-4 ... MK-13); ChEMBL match MENAQUINONE 6 is one arbitrary member - no single structure"
+ghrelin-compound,reject,,agent-review 2026-10-01,"ChEMBL GHRELIN formula C147H245N45O42 differs from human ghrelin C149H249N47O42 by C2H4N2, consistent with the rat sequence (R11K, V12A); species-specific identity not accepted"
+somapacitan-compound,confirm,CHEMBL3707290,agent-review 2026-10-01,"191-aa growth-hormone derivative; both ChEMBL and PubChem store only the albumin-binding side-chain fragment, so structure comparison is not meaningful; INN pref_name matches"
+voxilaprevir-compound,confirm,CHEMBL3707372,agent-review 2026-10-01,"INN pref_name matches; ChEMBL structure (C42H58F2N6O9S) differs from PubChem/INN formula C40H52F4N6O9S - identity kept, ChEMBL physicochemical properties flagged as unreliable"

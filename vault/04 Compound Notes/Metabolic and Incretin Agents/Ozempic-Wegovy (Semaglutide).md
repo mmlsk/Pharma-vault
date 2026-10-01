@@ -65,6 +65,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 pk-source:
   type: wikipedia-infobox
   title: Semaglutide
@@ -87,11 +88,22 @@ chembl:
     name: Glucagon-like peptide 1 receptor
     action: AGONIST
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: no-label-value
   set-id: 42bdd912-2393-44c4-b7e0-47672ca28991
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=42bdd912-2393-44c4-b7e0-47672ca28991
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-value
+  product: Ozempic
+  ema-number: EMEA/H/C/004174
+  url: https://www.ema.europa.eu/en/documents/product-information/ozempic-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/ozempic-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: no-label-value
@@ -109,7 +121,7 @@ pk-verification:
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
 - **Aliases:** Ozempic/Wegovy, Semaglutide
-- **ChEMBL:** [CHEMBL2108724](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108724/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108724](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108724/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -150,6 +162,10 @@ Glucagon-like peptide 1 receptor agonist _(ChEMBL curated mechanism of the paren
 > [!note] FDA label cross-check: **no-label-value**
 > Automated comparison with the [US prescribing information (DailyMed set 42bdd912…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=42bdd912-2393-44c4-b7e0-47672ca28991), label version 20260730. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
+
+> [!note] EU SmPC cross-check: **no-smpc-value**
+> Automated comparison with section 5.2 of the [EU SmPC of *Ozempic*](https://www.ema.europa.eu/en/documents/product-information/ozempic-epar-product-information_en.pdf) (EMEA/H/C/004174) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/ozempic-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

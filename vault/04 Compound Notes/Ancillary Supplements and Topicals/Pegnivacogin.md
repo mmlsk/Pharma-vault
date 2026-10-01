@@ -70,6 +70,7 @@ chembl:
     name: Coagulation factor IX
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Pegnivacogin
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `pegnivacogin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2107870](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107870/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2107870](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107870/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

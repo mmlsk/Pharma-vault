@@ -57,6 +57,7 @@ tags:
 - group/cardio
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL222863
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.14
     full-molformula: C29H44O12
+  identity-check: structure-confirmed
 ---
 
 # Ouabain (g-strophanthin)
@@ -92,7 +94,7 @@ chembl:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Ouabain, g-strophanthin
-- **ChEMBL:** [CHEMBL222863](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL222863/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL222863](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL222863/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

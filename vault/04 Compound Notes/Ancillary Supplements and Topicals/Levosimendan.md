@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 pk-source:
   type: wikipedia-infobox
   title: Levosimendan
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.64
     full-molformula: C14H12N6O
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `levosimendan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL313136](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL313136/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL313136](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL313136/) · max phase 2 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

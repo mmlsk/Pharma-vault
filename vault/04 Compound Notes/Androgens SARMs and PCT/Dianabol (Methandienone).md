@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -98,6 +99,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C20H28O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -119,7 +121,7 @@ pk-verification:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Dianabol, Methandienone
-- **ChEMBL:** [CHEMBL1418176](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1418176/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1418176](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1418176/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

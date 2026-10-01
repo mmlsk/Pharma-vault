@@ -48,7 +48,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Filgotinib
@@ -105,6 +106,16 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Jyseleca
+  ema-number: EMEA/H/C/005113
+  url: https://www.ema.europa.eu/en/documents/product-information/jyseleca-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/jyseleca-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Filgotinib
@@ -161,12 +172,16 @@ Tyrosine-protein kinase JAK1 inhibitor _(ChEMBL curated mechanism, as quoted by 
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
 
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Jyseleca*](https://www.ema.europa.eu/en/documents/product-information/jyseleca-epar-product-information_en.pdf) (EMEA/H/C/005113) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/jyseleca-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 7, 19)
+
 ## Related compounds (auto)
 
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
 - **Shared target:** [[Cerdulatinib]] (Non-receptor tyrosine-protein kinase TYK2; Tyrosine-protein kinase JAK1; Tyrosine-protein kinase JAK3), [[Baricitinib (oral, Olumiant)]] (Tyrosine-protein kinase JAK1; Tyrosine-protein kinase JAK2), [[Brepocitinib]] (Non-receptor tyrosine-protein kinase TYK2; Tyrosine-protein kinase JAK1), [[Momelotinib]] (Tyrosine-protein kinase JAK1; Tyrosine-protein kinase JAK2), [[Abrocitinib (Cibinqo)]] (Tyrosine-protein kinase JAK1), [[Fedratinib]] (Tyrosine-protein kinase JAK2), [[Golidocitinib]] (Tyrosine-protein kinase JAK1), [[Lestaurtinib]] (Tyrosine-protein kinase JAK2), [[Pacritinib]] (Tyrosine-protein kinase JAK2), [[Ritlecitinib (oral, Litfulo)]] (Tyrosine-protein kinase JAK3)
-- **Same ATC subgroup:** [[Baricitinib (oral, Olumiant)]], [[Peficitinib]], [[Ritlecitinib (oral, Litfulo)]], [[Tofacitinib]], [[Upadacitinib (Rinvoq)]]
+- **Same ATC subgroup:** [[Baricitinib (oral, Olumiant)]], [[Deucravacitinib (Sotyktu)]], [[Peficitinib]], [[Ritlecitinib (oral, Litfulo)]], [[Tofacitinib]], [[Upadacitinib (Rinvoq)]]
 
 ## Safety routing
 

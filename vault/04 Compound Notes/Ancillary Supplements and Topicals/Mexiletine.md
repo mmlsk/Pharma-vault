@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Mexiletine
@@ -92,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.77
     full-molformula: C11H17NO
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -99,6 +102,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Namuscla
+  ema-number: EMEA/H/C/004584
+  url: https://www.ema.europa.eu/en/documents/product-information/namuscla-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/namuscla-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Mexiletine
@@ -112,7 +126,7 @@ pk-verification:
 - **Compound ID:** `mexiletine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL558](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL558/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL558](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL558/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -149,6 +163,11 @@ Modulates fast cardiac sodium channels to alter impulse conduction; proarrhythmi
 | Excretion | mainly urinary | Kidney (10%) |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Namuscla*](https://www.ema.europa.eu/en/documents/product-information/namuscla-epar-product-information_en.pdf) (EMEA/H/C/004584) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/namuscla-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 5, 10, 15)
+> - protein-binding: consistent (SmPC values: 55)
 
 ## Related compounds (auto)
 

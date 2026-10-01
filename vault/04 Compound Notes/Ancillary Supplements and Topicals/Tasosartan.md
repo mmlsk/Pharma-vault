@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL432162
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C23H21N7O
+  identity-check: structure-confirmed
 ---
 
 # Tasosartan
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `tasosartan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL432162](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL432162/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL432162](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL432162/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

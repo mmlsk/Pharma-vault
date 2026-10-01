@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Ketamine
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.86
     full-molformula: C13H16ClNO
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -113,7 +115,7 @@ pk-verification:
 - **Compound ID:** `ketamine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL742](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL742/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL742](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL742/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

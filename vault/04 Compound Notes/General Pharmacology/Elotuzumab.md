@@ -61,6 +61,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 pk-source:
   type: wikipedia-infobox
   title: Elotuzumab
@@ -83,6 +84,7 @@ chembl:
     name: SLAM family member 7
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Elotuzumab
@@ -96,7 +98,7 @@ chembl:
 - **Compound ID:** `elotuzumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1743010](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743010/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1743010](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743010/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

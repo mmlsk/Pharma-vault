@@ -57,6 +57,7 @@ tags:
 - group/pct
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2105395
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.41
     full-molformula: C24H23ClO2
+  identity-check: structure-confirmed
 ---
 
 # Ospemifene (Osphena)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Ospemifene, Osphena
-- **ChEMBL:** [CHEMBL2105395](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105395/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2105395](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105395/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

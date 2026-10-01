@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL52606
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.47
     full-molformula: C22H34O7
+  identity-check: structure-confirmed
 ---
 
 # Forskolin
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `forskolin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL52606](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL52606/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL52606](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL52606/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

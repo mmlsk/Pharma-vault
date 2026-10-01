@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.39
     full-molformula: C14H11NO5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -105,6 +107,15 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-text
+  product: Tasmar
+  ema-number: EMEA/H/C/000132
+  url: null
+  chpl-url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tolcapone
@@ -118,7 +129,7 @@ pk-verification:
 - **Compound ID:** `tolcapone-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1324](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1324/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1324](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1324/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -79,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.47
     full-molformula: C28H38O6
+  identity-check: no-evidence
 ---
 
 # Ashwagandha (Withania somnifera)
@@ -93,7 +94,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Ashwagandha, Withania somnifera
-- **ChEMBL:** [CHEMBL4288984](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4288984/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4288984](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4288984/) · max phase 3 · id via exact ChEMBL name match · structure check: no PubChem structure available
 
 ## Source summary
 

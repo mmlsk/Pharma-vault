@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL227875
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.6
     full-molformula: C14H12F3N3O5
+  identity-check: structure-confirmed
 ---
 
 # Pretomanid
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `pretomanid-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL227875](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL227875/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL227875](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL227875/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

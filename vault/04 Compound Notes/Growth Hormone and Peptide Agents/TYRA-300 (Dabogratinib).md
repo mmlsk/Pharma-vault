@@ -58,6 +58,7 @@ tags:
 - group/fgfr
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL5595500
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.37
     full-molformula: C25H24Cl2N6O3S
+  identity-check: structure-confirmed
 ---
 
 # TYRA-300 (Dabogratinib)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** TYRA-300, Dabogratinib
-- **ChEMBL:** [CHEMBL5595500](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5595500/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL5595500](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5595500/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

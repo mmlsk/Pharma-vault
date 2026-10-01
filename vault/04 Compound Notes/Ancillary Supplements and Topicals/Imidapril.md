@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Imidapril
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.59
     full-molformula: C20H27N3O6
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -114,7 +116,7 @@ pk-verification:
 - **Compound ID:** `imidapril-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL317094](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL317094/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL317094](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL317094/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -100,6 +101,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.35
     full-molformula: C24H26N2O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -122,7 +124,7 @@ pk-verification:
 - **Compound ID:** `carvedilol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL723](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL723/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL723](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL723/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

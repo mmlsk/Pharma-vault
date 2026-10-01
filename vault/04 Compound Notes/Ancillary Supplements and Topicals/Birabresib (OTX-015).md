@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3581647
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.37
     full-molformula: C25H22ClN5O2S
+  identity-check: structure-confirmed
 ---
 
 # Birabresib (OTX-015)
@@ -95,7 +97,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Birabresib, OTX-015
-- **ChEMBL:** [CHEMBL3581647](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3581647/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3581647](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3581647/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

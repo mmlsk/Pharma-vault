@@ -57,6 +57,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 pk-source:
   type: wikipedia-infobox
   title: Tenecteplase
@@ -79,6 +80,7 @@ chembl:
     name: Tissue-type plasminogen activator
     action: EXOGENOUS PROTEIN
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Tenecteplase
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `tenecteplase-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2108791](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108791/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108791](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108791/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

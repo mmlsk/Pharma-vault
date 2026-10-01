@@ -67,7 +67,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Apixaban
@@ -100,11 +103,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.63
     full-molformula: C25H25N5O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: a454cd24-0c6d-46e8-b1e4-197388606175
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a454cd24-0c6d-46e8-b1e4-197388606175
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Eliquis
+  ema-number: EMEA/H/C/002148
+  url: https://www.ema.europa.eu/en/documents/product-information/eliquis-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/eliquis-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -123,7 +138,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Apixaban, Eliquis
-- **ChEMBL:** [CHEMBL231779](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL231779/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL231779](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL231779/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -171,6 +186,11 @@ Coagulation factor X inhibitor _(ChEMBL curated mechanism of the parent molecule
 > Automated comparison with the [US prescribing information (DailyMed set a454cd24…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a454cd24-0c6d-46e8-b1e4-197388606175), label version 20260424. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 12)
 > - protein-binding: consistent (label values: 87, 92, 94)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Eliquis*](https://www.ema.europa.eu/en/documents/product-information/eliquis-epar-product-information_en.pdf) (EMEA/H/C/002148) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/eliquis-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 12)
+> - protein-binding: consistent (SmPC values: 87)
 
 ## Related compounds (auto)
 

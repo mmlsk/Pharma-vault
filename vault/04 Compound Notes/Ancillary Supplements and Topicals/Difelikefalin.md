@@ -61,7 +61,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
+- pk-ema-consistent
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Difelikefalin
@@ -94,6 +97,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.11
     full-molformula: C36H53N7O6
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -102,6 +106,16 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Kapruvia
+  ema-number: EMEA/H/C/005612
+  url: https://www.ema.europa.eu/en/documents/product-information/kapruvia-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/kapruvia-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Difelikefalin
@@ -115,7 +129,7 @@ pk-verification:
 - **Compound ID:** `difelikefalin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3989915](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989915/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3989915](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989915/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -159,6 +173,10 @@ Kappa opioid receptor agonist _(ChEMBL curated mechanism of the parent molecule,
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 0c7b81f2…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0c7b81f2-0fd3-47cb-8b0f-185e07f19c87), label version 20250826. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 23, 31)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Kapruvia*](https://www.ema.europa.eu/en/documents/product-information/kapruvia-epar-product-information_en.pdf) (EMEA/H/C/005612) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/kapruvia-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2, 3, 23, 31)
 
 ## Related compounds (auto)
 

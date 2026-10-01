@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -98,6 +99,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.7
     full-molformula: C16H14F3N3O2S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -120,7 +122,7 @@ pk-verification:
 - **Compound ID:** `lansoprazole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL480](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL480/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL480](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL480/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

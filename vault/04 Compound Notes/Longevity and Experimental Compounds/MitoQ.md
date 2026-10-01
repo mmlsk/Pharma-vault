@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1229093
@@ -76,6 +77,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.1
     full-molformula: C37H44O4P+
+  identity-check: structure-confirmed
 ---
 
 # MitoQ
@@ -89,7 +91,7 @@ chembl:
 - **Compound ID:** `mitoquinone-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL4074884](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4074884/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4074884](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4074884/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

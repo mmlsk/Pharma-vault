@@ -66,6 +66,8 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Midazolam
@@ -103,6 +105,17 @@ pk-verification:
   status: consistent
   set-id: f0c8b6cd-9efc-4344-9212-fbdd3b8e2f9b
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f0c8b6cd-9efc-4344-9212-fbdd3b8e2f9b
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Buccolam
+  ema-number: EMEA/H/C/002267
+  url: https://www.ema.europa.eu/en/documents/product-information/buccolam-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/buccolam-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -168,6 +181,11 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 > Automated comparison with the [US prescribing information (DailyMed set f0c8b6cd…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f0c8b6cd-9efc-4344-9212-fbdd3b8e2f9b), label version 20260619. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 1.8, 3, 6.4)
 > - protein-binding: consistent (label values: 97)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Buccolam*](https://www.ema.europa.eu/en/documents/product-information/buccolam-epar-product-information_en.pdf) (EMEA/H/C/002267) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/buccolam-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.45, 2.3, 3.4, 5.5)
+> - protein-binding: consistent (SmPC values: 96, 98)
 
 ## Related compounds (auto)
 

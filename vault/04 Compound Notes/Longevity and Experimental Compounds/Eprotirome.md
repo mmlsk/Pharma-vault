@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2035874
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.48
     full-molformula: C18H17Br2NO5
+  identity-check: structure-confirmed
 ---
 
 # Eprotirome
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `eprotirome-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL2035874](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2035874/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2035874](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2035874/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

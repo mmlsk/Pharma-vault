@@ -66,6 +66,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Enobosarm
@@ -97,6 +98,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.82
     full-molformula: C19H14F3N3O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -118,7 +120,7 @@ pk-verification:
 - **Source group:** SARMs (`sarms`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Ostarine, MK-2866
-- **ChEMBL:** [CHEMBL1738889](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1738889/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1738889](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1738889/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

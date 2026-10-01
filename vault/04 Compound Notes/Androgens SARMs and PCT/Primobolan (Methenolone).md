@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2106880
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.65
     full-molformula: C22H32O3
+  identity-check: structure-confirmed
 ---
 
 # Primobolan (Methenolone)
@@ -95,7 +97,7 @@ chembl:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Primobolan, Methenolone
-- **ChEMBL:** [CHEMBL2106880](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106880/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2106880](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106880/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

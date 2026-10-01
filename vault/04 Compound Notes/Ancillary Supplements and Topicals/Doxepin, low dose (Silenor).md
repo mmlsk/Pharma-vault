@@ -66,6 +66,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 - possible-duplicate
 pk-source:
@@ -101,6 +102,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.84
     full-molformula: C19H21NO
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -124,7 +126,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Doxepin, low dose, Silenor
-- **ChEMBL:** [CHEMBL1628227](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1628227/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1628227](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1628227/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

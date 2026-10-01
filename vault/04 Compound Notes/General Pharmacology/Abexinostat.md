@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2103863
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.31
     full-molformula: C21H23N3O5
+  identity-check: structure-confirmed
 ---
 
 # Abexinostat
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `abexinostat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL2103863](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103863/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2103863](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103863/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

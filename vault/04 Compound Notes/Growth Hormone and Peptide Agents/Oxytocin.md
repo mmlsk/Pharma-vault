@@ -59,6 +59,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Oxytocin
@@ -84,6 +85,7 @@ chembl:
     full-mwt: 1007.21
     mw-freebase: 1007.21
     full-molformula: C43H66N12O12S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -106,7 +108,7 @@ pk-verification:
 - **Compound ID:** `oxytocin-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL395429](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL395429/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL395429](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL395429/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

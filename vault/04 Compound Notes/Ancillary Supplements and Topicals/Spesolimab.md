@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4297911
@@ -71,6 +72,7 @@ chembl:
     name: IL36 receptor
     action: ANTAGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Spesolimab
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `spesolimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4297911](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297911/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297911](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297911/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

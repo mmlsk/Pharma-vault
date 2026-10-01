@@ -68,6 +68,7 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Cagrilintide
@@ -81,7 +82,7 @@ chembl:
 - **Compound ID:** `cagrilintide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL4802169](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802169/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4802169](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802169/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

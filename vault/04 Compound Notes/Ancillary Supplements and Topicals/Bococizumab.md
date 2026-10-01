@@ -69,6 +69,7 @@ chembl:
     name: Proprotein convertase subtilisin/kexin type 9
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Bococizumab
@@ -82,7 +83,7 @@ chembl:
 - **Compound ID:** `bococizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3137349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137349/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3137349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137349/) · max phase 3 · id via Wikipedia infobox · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

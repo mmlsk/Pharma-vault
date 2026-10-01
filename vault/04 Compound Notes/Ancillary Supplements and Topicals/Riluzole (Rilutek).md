@@ -65,7 +65,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Riluzole
@@ -98,11 +101,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.82
     full-molformula: C8H5F3N2OS
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 75d68f19-4208-109e-e053-2991aa0ac857
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=75d68f19-4208-109e-e053-2991aa0ac857
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Rilutek
+  ema-number: EMEA/H/C/000109
+  url: https://www.ema.europa.eu/en/documents/product-information/rilutek-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -121,7 +136,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Riluzole, Rilutek
-- **ChEMBL:** [CHEMBL744](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL744/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL744](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL744/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -168,6 +183,11 @@ Sodium channel alpha subunit blocker _(ChEMBL curated mechanism of the parent mo
 > Automated comparison with the [US prescribing information (DailyMed set 75d68f19…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=75d68f19-4208-109e-e053-2991aa0ac857), label version 20260727. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.8, 12)
 > - protein-binding: consistent (label values: 9, 35, 55, 60, 96)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Rilutek*](https://www.ema.europa.eu/en/documents/product-information/rilutek-epar-product-information_en.pdf) (EMEA/H/C/000109). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 9, 15)
+> - protein-binding: consistent (SmPC values: 97)
 
 ## Related compounds (auto)
 

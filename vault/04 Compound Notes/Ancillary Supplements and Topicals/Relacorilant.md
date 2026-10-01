@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4068611
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.26
     full-molformula: C27H22F4N6O3S
+  identity-check: structure-confirmed
 ---
 
 # Relacorilant
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `relacorilant-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4068611](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4068611/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4068611](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4068611/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

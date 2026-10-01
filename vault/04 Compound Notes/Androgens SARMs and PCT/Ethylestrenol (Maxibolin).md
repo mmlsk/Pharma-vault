@@ -58,6 +58,7 @@ tags:
 - group/steroids
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1200623
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.67
     full-molformula: C20H32O
+  identity-check: structure-confirmed
 ---
 
 # Ethylestrenol (Maxibolin)
@@ -97,7 +99,7 @@ chembl:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Ethylestrenol, Maxibolin
-- **ChEMBL:** [CHEMBL1200623](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200623/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1200623](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200623/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Pentosan polysulfate
@@ -86,6 +87,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.13
     full-molformula: C10H18O21S4
+  identity-check: structure-confirmed
 ---
 
 # Pentosan Polysulfate (Elmiron)
@@ -100,7 +102,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Pentosan Polysulfate, Elmiron
-- **ChEMBL:** [CHEMBL4073796](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4073796/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4073796](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4073796/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

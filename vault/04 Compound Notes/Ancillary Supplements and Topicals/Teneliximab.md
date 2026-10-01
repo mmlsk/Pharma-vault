@@ -70,6 +70,7 @@ chembl:
     name: Tumor necrosis factor receptor superfamily member 5
     action: PARTIAL AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Teneliximab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `teneliximab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2108144](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108144/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108144](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108144/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

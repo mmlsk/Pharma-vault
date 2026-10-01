@@ -60,7 +60,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Venetoclax
@@ -93,11 +96,23 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.08
     full-molformula: C45H50ClN7O7S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: b118a40d-6b56-cee3-10f6-ded821a97018
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b118a40d-6b56-cee3-10f6-ded821a97018
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Venclyxto
+  ema-number: EMEA/H/C/004106
+  url: https://www.ema.europa.eu/en/documents/product-information/venclyxto-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -115,7 +130,7 @@ pk-verification:
 - **Compound ID:** `venetoclax-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3137309](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137309/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3137309](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137309/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -161,6 +176,11 @@ Apoptosis regulator Bcl-2 inhibitor _(ChEMBL curated mechanism of the parent mol
 > Automated comparison with the [US prescribing information (DailyMed set b118a40d…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b118a40d-6b56-cee3-10f6-ded821a97018), label version 20260520. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 26)
 > - protein-binding: no-label-value (label values: -)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Venclyxto*](https://www.ema.europa.eu/en/documents/product-information/venclyxto-epar-product-information_en.pdf) (EMEA/H/C/004106). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 26)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

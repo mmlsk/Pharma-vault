@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL117785
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.85
     full-molformula: C19H27NO3
+  identity-check: connectivity-match
 ---
 
 # Deutetrabenazine
@@ -96,7 +98,7 @@ chembl:
 - **Compound ID:** `deutetrabenazine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL3137326](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137326/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3137326](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137326/) · max phase 4 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

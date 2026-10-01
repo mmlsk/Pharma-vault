@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3311228
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.34
     full-molformula: C23H16F7N5O2
+  identity-check: structure-confirmed
 ---
 
 # Oteseconazole
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `oteseconazole-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3311228](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3311228/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3311228](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3311228/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

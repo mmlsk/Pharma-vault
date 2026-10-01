@@ -1,0 +1,24 @@
+{
+ "atc_agrees_chembl": {
+  "False": 36,
+  "None": 27,
+  "True": 229
+ },
+ "checked": 292,
+ "matched_products": 292,
+ "per_field": {
+  "half-life:consistent": 229,
+  "half-life:discrepant": 25,
+  "half-life:no-label-value": 22,
+  "protein-binding:consistent": 159,
+  "protein-binding:discrepant": 7,
+  "protein-binding:no-label-value": 28
+ },
+ "status": {
+  "consistent": 238,
+  "discrepant": 31,
+  "no-smpc-text": 11,
+  "no-smpc-value": 12
+ },
+ "with_polish_chpl": 148
+}

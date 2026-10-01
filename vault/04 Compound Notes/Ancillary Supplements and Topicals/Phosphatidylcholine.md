@@ -77,6 +77,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.03
     full-molformula: C40H80NO8PS2
+  identity-check: no-evidence
 ---
 
 # Phosphatidylcholine
@@ -90,7 +91,7 @@ chembl:
 - **Compound ID:** `phosphatidylcholine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL503481](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL503481/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL503481](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL503481/) · max phase 3 · id via exact ChEMBL name match · structure check: no PubChem structure available
 
 ## Source summary
 

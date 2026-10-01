@@ -55,6 +55,7 @@ tags:
 - group/derm
 - stub
 - chembl-profile
+- identity-confirmed
 - possible-duplicate
 chembl:
   identity-source: wikipedia-infobox
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.48
     full-molformula: C25H31ClF2O5
+  identity-check: structure-confirmed
 ---
 
 # Halobetasol Propionate
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `halobetasol-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200908](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200908/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1200908](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200908/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

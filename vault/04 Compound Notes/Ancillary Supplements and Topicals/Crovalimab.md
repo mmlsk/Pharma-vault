@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4594316
@@ -71,6 +72,7 @@ chembl:
     name: Complement C5
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Crovalimab
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `crovalimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4594316](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594316/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4594316](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594316/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

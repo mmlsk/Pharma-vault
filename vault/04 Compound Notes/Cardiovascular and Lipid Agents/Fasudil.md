@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Fasudil
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.9
     full-molformula: C14H17N3O2S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -109,7 +111,7 @@ pk-verification:
 - **Compound ID:** `fasudil-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
-- **ChEMBL:** [CHEMBL38380](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL38380/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL38380](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL38380/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

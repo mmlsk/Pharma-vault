@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Suxamethonium chloride
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.45
     full-molformula: C14H30N2O4+2
+  identity-check: structure-confirmed
 ---
 
 # Suxamethonium (Succinylcholine)
@@ -105,7 +107,7 @@ chembl:
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Suxamethonium, Succinylcholine
-- **ChEMBL:** [CHEMBL983](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL983/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL983](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL983/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

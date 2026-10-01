@@ -58,6 +58,7 @@ tags:
 - group/steroids
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL166444
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.74
     full-molformula: C19H24O2
+  identity-check: structure-confirmed
 ---
 
 # Methyltrienolone (R1881)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Methyltrienolone, R1881
-- **ChEMBL:** [CHEMBL166444](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL166444/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL166444](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL166444/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

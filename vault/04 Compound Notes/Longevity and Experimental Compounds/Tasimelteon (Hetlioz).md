@@ -67,7 +67,10 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Tasimelteon
@@ -100,11 +103,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.88
     full-molformula: C15H19NO2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: ce5a2fa3-ed54-422d-96c2-1821496eb32f
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ce5a2fa3-ed54-422d-96c2-1821496eb32f
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Hetlioz
+  ema-number: EMEA/H/C/003870
+  url: https://www.ema.europa.eu/en/documents/product-information/hetlioz-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -123,7 +138,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Tasimelteon, Hetlioz
-- **ChEMBL:** [CHEMBL2103822](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103822/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2103822](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103822/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -170,6 +185,11 @@ Melatonin receptor agonist _(ChEMBL curated mechanism of the parent molecule, vi
 > Automated comparison with the [US prescribing information (DailyMed set ce5a2fa3…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ce5a2fa3-ed54-422d-96c2-1821496eb32f), label version 20260818. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 1.3)
 > - protein-binding: no-label-value (label values: -)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Hetlioz*](https://www.ema.europa.eu/en/documents/product-information/hetlioz-epar-product-information_en.pdf) (EMEA/H/C/003870). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 1.3)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

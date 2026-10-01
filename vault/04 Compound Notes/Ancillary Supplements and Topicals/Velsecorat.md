@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3666807
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.29
     full-molformula: C32H32F2N4O6
+  identity-check: connectivity-match
 ---
 
 # Velsecorat
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `velsecorat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3666807](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3666807/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3666807](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3666807/) · max phase 2 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

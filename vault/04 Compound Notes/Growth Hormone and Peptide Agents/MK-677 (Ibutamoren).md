@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 pk-source:
   type: wikipedia-infobox
   title: Ibutamoren
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.54
     full-molformula: C27H36N4O5S
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -109,7 +111,7 @@ pk-verification:
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** MK-677, Ibutamoren
-- **ChEMBL:** [CHEMBL13817](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL13817/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL13817](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL13817/) · max phase 2 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

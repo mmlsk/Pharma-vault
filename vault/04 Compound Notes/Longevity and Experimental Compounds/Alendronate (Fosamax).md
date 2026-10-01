@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Alendronic acid
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.33
     full-molformula: C4H13NO7P2
+  identity-check: structure-confirmed
 ---
 
 # Alendronate (Fosamax)
@@ -106,7 +108,7 @@ chembl:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Alendronate, Fosamax
-- **ChEMBL:** [CHEMBL870](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL870/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL870](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL870/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

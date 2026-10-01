@@ -55,6 +55,7 @@ tags:
 - group/immunology
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3137343
@@ -70,6 +71,7 @@ chembl:
     name: Programmed cell death protein 1
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Pembrolizumab
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `pembrolizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3137343](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137343/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3137343](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137343/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

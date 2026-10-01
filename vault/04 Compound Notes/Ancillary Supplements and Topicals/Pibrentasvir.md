@@ -59,6 +59,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Pibrentasvir
@@ -83,6 +84,7 @@ chembl:
     full-mwt: 1113.2
     mw-freebase: 1113.2
     full-molformula: C57H65F5N10O8
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -103,7 +105,7 @@ pk-verification:
 - **Compound ID:** `pibrentasvir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3545123](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545123/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3545123](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545123/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

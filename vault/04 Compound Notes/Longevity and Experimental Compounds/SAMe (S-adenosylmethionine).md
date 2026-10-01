@@ -80,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.34
     full-molformula: C15H22N6O5S
+  identity-check: no-evidence
 ---
 
 # SAMe (S-adenosylmethionine)
@@ -94,7 +95,7 @@ chembl:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** SAMe, S-adenosylmethionine
-- **ChEMBL:** [CHEMBL1088977](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1088977/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1088977](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1088977/) · max phase 3 · id via exact ChEMBL name match · structure check: no PubChem structure available
 
 ## Source summary
 

@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-stereo-check
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2221250
@@ -70,6 +71,7 @@ chembl:
     full-mwt: 1321.44
     mw-freebase: 1321.44
     full-molformula: C50H88N28O15
+  identity-check: connectivity-match
 ---
 
 # Capreomycin
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `capreomycin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL2221250](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2221250/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2221250](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2221250/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

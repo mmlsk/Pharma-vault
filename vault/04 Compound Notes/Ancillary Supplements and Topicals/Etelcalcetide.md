@@ -58,7 +58,10 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Etelcalcetide
@@ -84,11 +87,22 @@ chembl:
     full-mwt: 1048.27
     mw-freebase: 1048.27
     full-molformula: C38H73N21O10S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: cd270093-c6a8-4596-a4ab-e6aa0a2c8a0c
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=cd270093-c6a8-4596-a4ab-e6aa0a2c8a0c
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Parsabiv
+  ema-number: EMEA/H/C/003995
+  url: https://www.ema.europa.eu/en/documents/product-information/parsabiv-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -105,7 +119,7 @@ pk-verification:
 - **Compound ID:** `etelcalcetide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3545184](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545184/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3545184](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545184/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -148,6 +162,10 @@ Calcium sensing receptor agonist _(ChEMBL curated mechanism of the parent molecu
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set cd270093…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=cd270093-c6a8-4596-a4ab-e6aa0a2c8a0c), label version 20260308. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 72, 96)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Parsabiv*](https://www.ema.europa.eu/en/documents/product-information/parsabiv-epar-product-information_en.pdf) (EMEA/H/C/003995). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 72, 120)
 
 ## Related compounds (auto)
 

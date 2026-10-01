@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1094982
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.13
     full-molformula: C42H30N6O12
+  identity-check: connectivity-match
 ---
 
 # Inositol Hexanicotinate
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `inositol-hexanicotinate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1094982](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1094982/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1094982](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1094982/) · max phase 2 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

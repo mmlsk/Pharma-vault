@@ -58,7 +58,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Bempedoic acid
@@ -91,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.4
     full-molformula: C19H36O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -99,6 +103,17 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Nilemdo
+  ema-number: EMEA/H/C/004958
+  url: https://www.ema.europa.eu/en/documents/product-information/nilemdo-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/nilemdo-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
     protein-binding: consistent
 ---
 
@@ -113,7 +128,7 @@ pk-verification:
 - **Compound ID:** `bempedoic-acid-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3545313](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545313/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3545313](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545313/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -158,6 +173,11 @@ ATP-citrate synthase inhibitor _(ChEMBL curated mechanism of the parent molecule
 > Automated comparison with the [US prescribing information (DailyMed set 88d06d89…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=88d06d89-a3da-40b4-b273-8f4f7d56c4c9), label version 20260625. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 21)
 > - protein-binding: consistent (label values: 98.8, 99.2, 99.3)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Nilemdo*](https://www.ema.europa.eu/en/documents/product-information/nilemdo-epar-product-information_en.pdf) (EMEA/H/C/004958) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/nilemdo-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
+> - protein-binding: consistent (SmPC values: 98.8, 99.2, 99.3)
 
 ## Related compounds (auto)
 

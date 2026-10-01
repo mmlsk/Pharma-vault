@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Frovatriptan
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.74
     full-molformula: C14H17N3O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `frovatriptan-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1279](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1279/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1279](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1279/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

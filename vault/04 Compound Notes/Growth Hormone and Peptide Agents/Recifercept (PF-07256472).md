@@ -70,6 +70,7 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Recifercept (PF-07256472)
@@ -84,7 +85,7 @@ chembl:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Recifercept, PF-07256472
-- **ChEMBL:** [CHEMBL4650420](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650420/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4650420](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650420/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

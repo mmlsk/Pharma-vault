@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL489411
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.76
     full-molformula: C21H35NO
+  identity-check: structure-confirmed
 ---
 
 # Amorolfine
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `amorolfine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL489411](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL489411/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL489411](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL489411/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

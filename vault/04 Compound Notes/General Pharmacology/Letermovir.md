@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Letermovir
@@ -95,11 +98,23 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.38
     full-molformula: C29H28F4N4O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 1b49df80-be4f-47e0-a0b7-123f3e69395b
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1b49df80-be4f-47e0-a0b7-123f3e69395b
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Prevymis
+  ema-number: EMEA/H/C/004536
+  url: https://www.ema.europa.eu/en/documents/product-information/prevymis-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -117,7 +132,7 @@ pk-verification:
 - **Compound ID:** `letermovir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1241951](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1241951/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1241951](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1241951/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -163,6 +178,11 @@ DNA terminase inhibitor _(ChEMBL curated mechanism of the parent molecule, via C
 > Automated comparison with the [US prescribing information (DailyMed set 1b49df80…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1b49df80-be4f-47e0-a0b7-123f3e69395b), label version 20260114. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 12)
 > - protein-binding: consistent (label values: 2, 70, 84.27, 93, 97, 99)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Prevymis*](https://www.ema.europa.eu/en/documents/product-information/prevymis-epar-product-information_en.pdf) (EMEA/H/C/004536). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 12)
+> - protein-binding: consistent (SmPC values: 98.2)
 
 ## Related compounds (auto)
 

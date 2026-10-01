@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Sultiame
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.84
     full-molformula: C10H14N2O4S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -114,7 +116,7 @@ pk-verification:
 - **Compound ID:** `sultiame-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL328560](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL328560/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL328560](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL328560/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -70,6 +70,7 @@ chembl:
     name: Lymphocyte activation gene 3 protein
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Relatlimab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `relatlimab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3990044](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990044/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3990044](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990044/) · max phase 4 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

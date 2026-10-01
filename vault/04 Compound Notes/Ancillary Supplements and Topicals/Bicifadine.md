@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Bicifadine
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.68
     full-molformula: C12H15N
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -108,7 +110,7 @@ pk-verification:
 - **Compound ID:** `bicifadine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL511099](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL511099/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL511099](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL511099/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

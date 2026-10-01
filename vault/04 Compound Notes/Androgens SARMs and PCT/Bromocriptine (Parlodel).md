@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Bromocriptine
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.46
     full-molformula: C32H40BrN5O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -114,7 +116,7 @@ pk-verification:
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Bromocriptine, Parlodel
-- **ChEMBL:** [CHEMBL493](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL493/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL493](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL493/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

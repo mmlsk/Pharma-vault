@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: MDMA
@@ -100,6 +101,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.79
     full-molformula: C11H15NO2
+  identity-check: structure-confirmed
 ---
 
 # MDMA
@@ -113,7 +115,7 @@ chembl:
 - **Compound ID:** `mdma-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL43048](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL43048/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL43048](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL43048/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

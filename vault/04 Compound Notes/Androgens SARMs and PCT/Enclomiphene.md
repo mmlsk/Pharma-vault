@@ -59,6 +59,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Enclomifene
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.37
     full-molformula: C26H28ClNO
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `enclomiphene-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL954](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL954/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL954](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL954/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

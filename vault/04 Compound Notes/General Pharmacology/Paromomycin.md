@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Paromomycin
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.11
     full-molformula: C23H45N5O14
+  identity-check: structure-confirmed
 ---
 
 # Paromomycin
@@ -102,7 +104,7 @@ chembl:
 - **Compound ID:** `paromomycin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL370143](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL370143/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL370143](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL370143/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

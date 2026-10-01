@@ -59,6 +59,7 @@ tags:
 - group/sarms
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1961796
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.44
     full-molformula: C20H24ClN3O4S
+  identity-check: structure-confirmed
 ---
 
 # SR9009 (Stenabolic)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** SARMs (`sarms`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** SR9009, Stenabolic
-- **ChEMBL:** [CHEMBL1961796](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1961796/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1961796](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1961796/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

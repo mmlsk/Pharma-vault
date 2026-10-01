@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -102,6 +103,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.41
     full-molformula: C7H7NO3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -123,7 +125,7 @@ pk-verification:
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Mesalazine, 5-ASA
-- **ChEMBL:** [CHEMBL704](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL704/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL704](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL704/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL522892
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.49
     full-molformula: C21H21FN6O
+  identity-check: structure-confirmed
 ---
 
 # Dovitinib
@@ -106,7 +108,7 @@ chembl:
 - **Compound ID:** `dovitinib-compound`
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL522892](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL522892/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL522892](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL522892/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

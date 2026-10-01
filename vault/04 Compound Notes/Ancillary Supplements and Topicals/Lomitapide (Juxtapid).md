@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL354541
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.13
     full-molformula: C39H37F6N3O2
+  identity-check: structure-confirmed
 ---
 
 # Lomitapide (Juxtapid)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Lomitapide, Juxtapid
-- **ChEMBL:** [CHEMBL354541](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL354541/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL354541](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL354541/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

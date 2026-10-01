@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1672973
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.28
     full-molformula: C29H33ClFNO4
+  identity-check: structure-confirmed
 ---
 
 # Encaleret
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `encaleret-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1672973](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1672973/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1672973](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1672973/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

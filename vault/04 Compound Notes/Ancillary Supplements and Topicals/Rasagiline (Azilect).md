@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: partially-verified
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
@@ -65,7 +65,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-discrepant
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Rasagiline
@@ -95,6 +98,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.67
     full-molformula: C12H13N
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -104,6 +108,17 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Azilect
+  ema-number: EMEA/H/C/000574
+  url: https://www.ema.europa.eu/en/documents/product-information/azilect-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/azilect-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: discrepant
 ---
 
 # Rasagiline (Azilect)
@@ -118,7 +133,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Rasagiline, Azilect
-- **ChEMBL:** [CHEMBL887](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL887/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL887](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL887/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -158,6 +173,11 @@ Selective irreversible MAO-B inhibitor of the propargylamine class, given once d
 > Automated comparison with the [US prescribing information (DailyMed set 9bf059f4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9bf059f4-4da8-48fe-aacb-c50717d36606), label version 20260826. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 3)
 > - protein-binding: consistent (label values: 61, 63, 88, 94)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Azilect*](https://www.ema.europa.eu/en/documents/product-information/azilect-epar-product-information_en.pdf) (EMEA/H/C/000574) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/azilect-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.6, 2)
+> - protein-binding: discrepant (SmPC values: 60, 70)
 
 ## Related compounds (auto)
 

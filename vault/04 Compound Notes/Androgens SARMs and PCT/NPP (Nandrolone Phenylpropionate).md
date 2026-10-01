@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - possible-duplicate
 chembl:
   identity-source: chembl-name-match
@@ -84,6 +85,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.6
     full-molformula: C27H34O3
+  identity-check: structure-confirmed
 ---
 
 # NPP (Nandrolone Phenylpropionate)
@@ -98,7 +100,7 @@ chembl:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** NPP, Nandrolone Phenylpropionate
-- **ChEMBL:** [CHEMBL1200412](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200412/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1200412](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200412/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

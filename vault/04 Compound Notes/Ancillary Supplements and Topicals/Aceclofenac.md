@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL93645
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.77
     full-molformula: C16H13Cl2NO4
+  identity-check: structure-confirmed
 ---
 
 # Aceclofenac
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `aceclofenac-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL93645](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL93645/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL93645](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL93645/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -64,7 +64,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Capecitabine
@@ -103,6 +106,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.64
     full-molformula: C15H22FN3O6
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -111,6 +115,17 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Xeloda
+  ema-number: EMEA/H/C/000316
+  url: https://www.ema.europa.eu/en/documents/product-information/xeloda-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/xeloda-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
     protein-binding: consistent
 ---
 
@@ -126,7 +141,7 @@ pk-verification:
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Capecitabine, Xeloda
-- **ChEMBL:** [CHEMBL1773](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1773/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1773](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1773/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -175,6 +190,11 @@ DNA inhibitor; RNA inhibitor; Thymidylate synthase inhibitor _(ChEMBL curated me
 > Automated comparison with the [US prescribing information (DailyMed set 0b59e98c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0b59e98c-5b34-4b93-90f6-20526f4d4f88), label version 20260721. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.75)
 > - protein-binding: consistent (label values: 60)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Xeloda*](https://www.ema.europa.eu/en/documents/product-information/xeloda-epar-product-information_en.pdf) (EMEA/H/C/000316) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/xeloda-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
+> - protein-binding: consistent (SmPC values: 10, 54, 62)
 
 ## Related compounds (auto)
 

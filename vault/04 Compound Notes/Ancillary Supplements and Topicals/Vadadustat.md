@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3646221
@@ -86,6 +87,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.8
     full-molformula: C14H11ClN2O4
+  identity-check: structure-confirmed
 ---
 
 # Vadadustat
@@ -99,7 +101,7 @@ chembl:
 - **Compound ID:** `vadadustat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3646221](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3646221/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3646221](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3646221/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

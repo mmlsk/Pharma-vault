@@ -64,6 +64,8 @@ tags:
 - stub
 - pk-auto
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Asenapine
@@ -76,6 +78,17 @@ pk-verification:
   status: consistent
   set-id: 3512687b-d1c7-45c4-8822-3a2ad53575a5
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3512687b-d1c7-45c4-8822-3a2ad53575a5
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Sycrest
+  ema-number: EMEA/H/C/001177
+  url: https://www.ema.europa.eu/en/documents/product-information/sycrest-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/sycrest-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -121,6 +134,11 @@ Sublingual atypical antipsychotic with an exceptionally broad receptor profile, 
 > Automated comparison with the [US prescribing information (DailyMed set 3512687b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3512687b-d1c7-45c4-8822-3a2ad53575a5), label version 20251125. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 24)
 > - protein-binding: consistent (label values: 95)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Sycrest*](https://www.ema.europa.eu/en/documents/product-information/sycrest-epar-product-information_en.pdf) (EMEA/H/C/001177) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/sycrest-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 24)
+> - protein-binding: consistent (SmPC values: 95)
 
 ## Related compounds (auto)
 

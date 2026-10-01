@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2107729
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.44
     full-molformula: C21H19Cl2N3O6S3
+  identity-check: structure-confirmed
 ---
 
 # Ataciguat (HMR1766)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Ataciguat, HMR1766
-- **ChEMBL:** [CHEMBL2107729](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107729/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2107729](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107729/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

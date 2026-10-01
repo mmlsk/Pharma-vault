@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3291398
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.38
     full-molformula: C28H45NO5S
+  identity-check: structure-confirmed
 ---
 
 # Lefamulin
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `lefamulin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3291398](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3291398/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3291398](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3291398/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

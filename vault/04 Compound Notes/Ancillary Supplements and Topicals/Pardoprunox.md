@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2103832
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.79
     full-molformula: C12H15N3O2
+  identity-check: structure-confirmed
 ---
 
 # Pardoprunox
@@ -96,7 +98,7 @@ chembl:
 - **Compound ID:** `pardoprunox-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2103832](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103832/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2103832](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103832/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

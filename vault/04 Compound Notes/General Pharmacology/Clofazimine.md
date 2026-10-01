@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.27
     full-molformula: C27H22Cl2N4
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: discrepant
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `clofazimine-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1292](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1292/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1292](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1292/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

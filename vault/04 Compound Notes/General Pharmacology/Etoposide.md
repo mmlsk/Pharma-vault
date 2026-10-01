@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.43
     full-molformula: C29H32O13
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -118,7 +120,7 @@ pk-verification:
 - **Compound ID:** `etoposide-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL44657](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL44657/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL44657](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL44657/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

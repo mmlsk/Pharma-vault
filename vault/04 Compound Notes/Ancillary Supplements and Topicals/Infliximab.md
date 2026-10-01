@@ -61,7 +61,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -85,11 +88,22 @@ chembl:
     name: Tumor necrosis factor
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: dbf738c4-3fac-4422-a9d8-51d9c83a8789
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dbf738c4-3fac-4422-a9d8-51d9c83a8789
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Remicade
+  ema-number: EMEA/H/C/000240
+  url: https://www.ema.europa.eu/en/documents/product-information/remicade-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -106,7 +120,7 @@ pk-verification:
 - **Compound ID:** `infliximab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201581](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201581/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201581](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201581/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -146,6 +160,10 @@ TNF-alpha inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMB
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set dbf738c4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dbf738c4-3fac-4422-a9d8-51d9c83a8789), label version 20260828. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 184.8, 228)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Remicade*](https://www.ema.europa.eu/en/documents/product-information/remicade-epar-product-information_en.pdf) (EMEA/H/C/000240). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 192, 228)
 
 ## Related compounds (auto)
 

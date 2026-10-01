@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL566534
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.7
     full-molformula: C16H26O5
+  identity-check: structure-confirmed
 ---
 
 # Artemether
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `artemether-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL566534](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL566534/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL566534](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL566534/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

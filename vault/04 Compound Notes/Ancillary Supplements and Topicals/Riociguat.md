@@ -67,6 +67,8 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Riociguat
@@ -104,6 +106,17 @@ pk-verification:
   status: consistent
   set-id: 7b57509a-3d5d-41d4-8fed-1471e26372a3
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7b57509a-3d5d-41d4-8fed-1471e26372a3
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Adempas
+  ema-number: EMEA/H/C/002737
+  url: https://www.ema.europa.eu/en/documents/product-information/adempas-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -170,6 +183,11 @@ Soluble guanylate cyclase positive allosteric modulator _(ChEMBL curated mechani
 > Automated comparison with the [US prescribing information (DailyMed set 7b57509a…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7b57509a-3d5d-41d4-8fed-1471e26372a3), label version 20260813. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 7, 12)
 > - protein-binding: consistent (label values: 95)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Adempas*](https://www.ema.europa.eu/en/documents/product-information/adempas-epar-product-information_en.pdf) (EMEA/H/C/002737). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 7, 8.24, 12)
+> - protein-binding: consistent (SmPC values: 95)
 
 ## Related compounds (auto)
 

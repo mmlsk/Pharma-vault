@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Itopride
@@ -97,6 +98,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.75
     full-molformula: C20H26N2O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -117,7 +119,7 @@ pk-verification:
 - **Compound ID:** `itopride-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL2107457](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107457/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2107457](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107457/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

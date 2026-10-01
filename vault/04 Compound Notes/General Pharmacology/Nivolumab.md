@@ -57,7 +57,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Nivolumab
@@ -80,11 +83,22 @@ chembl:
     name: Programmed cell death protein 1
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: f570b9c4-6846-4de2-abfa-4d0a4ae4e394
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f570b9c4-6846-4de2-abfa-4d0a4ae4e394
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Opdivo
+  ema-number: EMEA/H/C/003985
+  url: https://www.ema.europa.eu/en/documents/product-information/opdivo-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -101,7 +115,7 @@ pk-verification:
 - **Compound ID:** `nivolumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL2108738](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108738/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2108738](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108738/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -138,6 +152,10 @@ Programmed cell death protein 1 inhibitor _(ChEMBL curated mechanism of the pare
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set f570b9c4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f570b9c4-6846-4de2-abfa-4d0a4ae4e394), label version 20260812. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 600)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Opdivo*](https://www.ema.europa.eu/en/documents/product-information/opdivo-epar-product-information_en.pdf) (EMEA/H/C/003985). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 600)
 
 ## Related compounds (auto)
 

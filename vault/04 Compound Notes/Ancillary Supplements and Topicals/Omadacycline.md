@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-formula-match
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1689772
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.28
     full-molformula: C29H40N4O7
+  identity-check: formula-match
 ---
 
 # Omadacycline
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `omadacycline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1689772](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1689772/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1689772](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1689772/) · max phase 4 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

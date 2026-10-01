@@ -61,7 +61,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Etanercept
@@ -84,11 +87,22 @@ chembl:
     name: Tumor necrosis factor
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: a002b40c-097d-47a5-957f-7a7b1807af7f
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a002b40c-097d-47a5-957f-7a7b1807af7f
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Enbrel
+  ema-number: EMEA/H/C/000262
+  url: https://www.ema.europa.eu/en/documents/product-information/enbrel-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -105,7 +119,7 @@ pk-verification:
 - **Compound ID:** `etanercept-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201572](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201572/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201572](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201572/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -144,6 +158,10 @@ TNF-alpha inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMB
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set a002b40c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a002b40c-097d-47a5-957f-7a7b1807af7f), label version 20260511. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 102)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Enbrel*](https://www.ema.europa.eu/en/documents/product-information/enbrel-epar-product-information_en.pdf) (EMEA/H/C/000262). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 70)
 
 ## Related compounds (auto)
 

@@ -57,7 +57,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -66,6 +66,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Agomelatine
@@ -101,6 +103,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.9
     full-molformula: C15H17NO2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -108,6 +111,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Valdoxan
+  ema-number: EMEA/H/C/000915
+  url: https://www.ema.europa.eu/en/documents/product-information/valdoxan-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/valdoxan-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Agomelatine (Valdoxan)
@@ -122,7 +136,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Agomelatine, Valdoxan
-- **ChEMBL:** [CHEMBL10878](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL10878/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL10878](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL10878/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -167,6 +181,11 @@ Melatonin receptor agonist; Serotonin 2c (5-HT2c) receptor antagonist _(ChEMBL c
 | Excretion | mainly urinary | Kidney (80%, mostly as metabolites) |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Valdoxan*](https://www.ema.europa.eu/en/documents/product-information/valdoxan-epar-product-information_en.pdf) (EMEA/H/C/000915) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/valdoxan-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 1, 2)
+> - protein-binding: consistent (SmPC values: 95)
 
 ## Related compounds (auto)
 

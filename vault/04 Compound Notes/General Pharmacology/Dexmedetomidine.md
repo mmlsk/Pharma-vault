@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Dexmedetomidine
@@ -92,11 +95,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.79
     full-molformula: C13H16N2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: eee6145b-d83f-4596-92d3-733934d8a3a4
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=eee6145b-d83f-4596-92d3-733934d8a3a4
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Dexdor
+  ema-number: EMEA/H/C/002268
+  url: https://www.ema.europa.eu/en/documents/product-information/dexdor-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/dexdor-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -114,7 +129,7 @@ pk-verification:
 - **Compound ID:** `dexmedetomidine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL778](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL778/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL778](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL778/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -153,6 +168,11 @@ Highly selective alpha-2 agonist producing sedation that resembles natural sleep
 > Automated comparison with the [US prescribing information (DailyMed set eee6145b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=eee6145b-d83f-4596-92d3-733934d8a3a4), label version 20260805. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.1, 0.167, 0.583, 2, 2.67, 12)
 > - protein-binding: consistent (label values: 94)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Dexdor*](https://www.ema.europa.eu/en/documents/product-information/dexdor-epar-product-information_en.pdf) (EMEA/H/C/002268) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/dexdor-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.1, 1.5, 1.9, 2.5, 3.68, 7.4)
+> - protein-binding: consistent (SmPC values: 94)
 
 ## Related compounds (auto)
 

@@ -56,6 +56,7 @@ tags:
 - group/glp1
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4518483
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.31
     full-molformula: C31H30FN5O4
+  identity-check: structure-confirmed
 ---
 
 # Danuglipron
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `danuglipron-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL4518483](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4518483/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4518483](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4518483/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL295698
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.46
     full-molformula: C26H28Cl2N4O4
+  identity-check: structure-confirmed
 ---
 
 # Levoketoconazole
@@ -102,7 +104,7 @@ chembl:
 - **Compound ID:** `levoketoconazole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL295698](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL295698/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL295698](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL295698/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

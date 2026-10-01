@@ -70,6 +70,7 @@ chembl:
     name: Interleukin-22
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Fezakinumab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `fezakinumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1743017](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743017/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1743017](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743017/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

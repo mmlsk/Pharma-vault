@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
+- pk-ema-consistent
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Bupivacaine
@@ -96,6 +99,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.89
     full-molformula: C18H28N2O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -104,6 +108,17 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Exparel liposomal
+  ema-number: EMEA/H/C/004586
+  url: https://www.ema.europa.eu/en/documents/product-information/exparel-liposomal-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/exparel-liposomal-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
     protein-binding: consistent
 ---
 
@@ -118,7 +133,7 @@ pk-verification:
 - **Compound ID:** `bupivacaine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1098](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1098/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1098](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1098/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -166,6 +181,11 @@ Sodium channel protein type IV alpha subunit blocker _(ChEMBL curated mechanism 
 > Automated comparison with the [US prescribing information (DailyMed set bb5a9e59…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=bb5a9e59-0f51-11df-8a39-0800200c9a66), label version 20251212. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 0, 40, 72, 96, 120, 168)
 > - protein-binding: consistent (label values: 95)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Exparel liposomal*](https://www.ema.europa.eu/en/documents/product-information/exparel-liposomal-epar-product-information_en.pdf) (EMEA/H/C/004586) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/exparel-liposomal-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
+> - protein-binding: consistent (SmPC values: 95)
 
 ## Related compounds (auto)
 

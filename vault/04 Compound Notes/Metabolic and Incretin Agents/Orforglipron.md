@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -87,6 +88,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.17
     full-molformula: C48H48F2N10O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -108,7 +110,7 @@ pk-verification:
 - **Compound ID:** `orforglipron-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL4446782](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4446782/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4446782](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4446782/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

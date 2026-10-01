@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.54
     full-molformula: C24H34N4O5S
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
@@ -118,7 +120,7 @@ pk-verification:
 - **Compound ID:** `glimepiride-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1481](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1481/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1481](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1481/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

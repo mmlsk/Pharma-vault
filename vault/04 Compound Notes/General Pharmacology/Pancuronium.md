@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Pancuronium bromide
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.3
     full-molformula: C35H60N2O4+2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `pancuronium-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL185073](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL185073/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL185073](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL185073/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

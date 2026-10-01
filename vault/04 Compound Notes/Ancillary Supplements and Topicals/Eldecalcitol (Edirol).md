@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4297608
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.32
     full-molformula: C30H50O5
+  identity-check: connectivity-match
 ---
 
 # Eldecalcitol (Edirol)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Eldecalcitol, Edirol
-- **ChEMBL:** [CHEMBL4297608](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297608/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297608](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297608/) · max phase 3 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

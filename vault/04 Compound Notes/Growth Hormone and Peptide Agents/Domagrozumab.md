@@ -71,6 +71,7 @@ chembl:
     name: Growth/differentiation factor 8
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Domagrozumab
@@ -84,7 +85,7 @@ chembl:
 - **Compound ID:** `domagrozumab-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL3544991](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544991/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3544991](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544991/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

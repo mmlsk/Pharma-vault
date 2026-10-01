@@ -58,6 +58,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1141
@@ -75,6 +76,7 @@ chembl:
     full-mwt: 166.0
     mw-freebase: 166.0
     full-molformula: IK
+  identity-check: structure-confirmed
 ---
 
 # Potassium Iodide (SSKI/KI)
@@ -89,7 +91,7 @@ chembl:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Potassium Iodide, SSKI, KI
-- **ChEMBL:** [CHEMBL1141](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1141/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1141](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1141/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

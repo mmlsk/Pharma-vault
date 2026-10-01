@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL548
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.37
     full-molformula: C20H32O5
+  identity-check: structure-confirmed
 ---
 
 # Dinoprostone
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `dinoprostone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL548](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL548/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL548](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL548/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

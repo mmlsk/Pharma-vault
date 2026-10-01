@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL12318
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.41
     full-molformula: CH4Cl2O6P2
+  identity-check: structure-confirmed
 ---
 
 # Clodronate
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `clodronate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL12318](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL12318/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL12318](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL12318/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4650276
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.61
     full-molformula: C22H20F3N3O4S
+  identity-check: structure-confirmed
 ---
 
 # Rezvilutamide
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `rezvilutamide-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL4650276](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650276/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4650276](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650276/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

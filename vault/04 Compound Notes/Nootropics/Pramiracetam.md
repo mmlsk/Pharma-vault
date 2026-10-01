@@ -56,6 +56,7 @@ tags:
 - group/nootropic
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL159776
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.75
     full-molformula: C14H27N3O2
+  identity-check: structure-confirmed
 ---
 
 # Pramiracetam
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `pramiracetam-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL159776](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL159776/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL159776](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL159776/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL265502
@@ -69,6 +70,7 @@ chembl:
     full-mwt: 1297.3
     mw-freebase: 1297.3
     full-molformula: C51H40N6O23S6
+  identity-check: structure-confirmed
 ---
 
 # Suramin
@@ -82,7 +84,7 @@ chembl:
 - **Compound ID:** `suramin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL265502](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL265502/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL265502](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL265502/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

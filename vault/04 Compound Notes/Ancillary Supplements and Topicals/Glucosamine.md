@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL493287
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.29
     full-molformula: C6H13NO5
+  identity-check: structure-confirmed
 ---
 
 # Glucosamine
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `glucosamine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL493287](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL493287/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL493287](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL493287/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Valaciclovir
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.44
     full-molformula: C13H20N6O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `valacyclovir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1349/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1349/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

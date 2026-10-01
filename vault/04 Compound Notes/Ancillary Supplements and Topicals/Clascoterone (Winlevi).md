@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 - possible-duplicate
 chembl:
   identity-source: wikipedia-infobox
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.72
     full-molformula: C24H34O5
+  identity-check: structure-confirmed
 ---
 
 # Clascoterone (Winlevi)
@@ -97,7 +99,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Clascoterone, Winlevi
-- **ChEMBL:** [CHEMBL3590187](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3590187/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3590187](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3590187/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

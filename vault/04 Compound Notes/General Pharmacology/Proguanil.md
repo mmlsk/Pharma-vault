@@ -59,6 +59,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Proguanil
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.41
     full-molformula: C11H16ClN5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -109,7 +111,7 @@ pk-verification:
 - **Compound ID:** `proguanil-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1377](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1377/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1377](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1377/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

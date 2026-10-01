@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Sibutramine
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.75
     full-molformula: C17H26ClN
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -113,7 +115,7 @@ pk-verification:
 - **Compound ID:** `sibutramine-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL1419](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1419/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1419](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1419/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Gonadorelin
@@ -81,6 +82,7 @@ chembl:
     full-mwt: 1182.31
     mw-freebase: 1182.31
     full-molformula: C55H75N17O13
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -101,7 +103,7 @@ pk-verification:
 - **Compound ID:** `gonadorelin-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL1007](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1007/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1007](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1007/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

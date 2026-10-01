@@ -74,6 +74,7 @@ chembl:
     full-mwt: 457.84
     mw-freebase: 457.84
     full-molformula: C3La2O9
+  identity-check: no-chembl-structure
 ---
 
 # Lanthanum Carbonate
@@ -87,7 +88,7 @@ chembl:
 - **Compound ID:** `lanthanum-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2096647](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2096647/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2096647](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2096647/) · max phase 4 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

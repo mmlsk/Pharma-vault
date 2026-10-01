@@ -70,6 +70,7 @@ chembl:
     name: Tumor necrosis factor ligand superfamily member 13B
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Tabalumab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `tabalumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1743075](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743075/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1743075](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743075/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

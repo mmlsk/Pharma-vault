@@ -56,6 +56,7 @@ tags:
 - group/steroids
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL259548
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.71
     full-molformula: C21H32O2
+  identity-check: structure-confirmed
 ---
 
 # Bolasterone
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `bolasterone-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL259548](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL259548/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL259548](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL259548/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

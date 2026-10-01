@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4577523
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.36
     full-molformula: C25H31N9O2
+  identity-check: structure-confirmed
 ---
 
 # Golidocitinib
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `golidocitinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4577523](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4577523/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4577523](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4577523/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

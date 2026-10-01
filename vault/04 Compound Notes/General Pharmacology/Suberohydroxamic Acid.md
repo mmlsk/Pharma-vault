@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL320497
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.27
     full-molformula: C8H16N2O4
+  identity-check: structure-confirmed
 ---
 
 # Suberohydroxamic Acid
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `suberohydroxamic-acid-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL320497](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL320497/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL320497](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL320497/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -38,7 +38,8 @@ CHOLINERGIC = re.compile(r"cholin|acetylcholinesterase|muscarinic|nicotinic", re
 FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
 
-def frontmatter(r: dict, pk: dict | None = None, ch: dict | None = None, ver: dict | None = None) -> dict:
+def frontmatter(r: dict, pk: dict | None = None, ch: dict | None = None, ver: dict | None = None,
+                ema: dict | None = None) -> dict:
     fm = {
         "type": "compound",
         "schema-version": 2,
@@ -80,6 +81,14 @@ def frontmatter(r: dict, pk: dict | None = None, ch: dict | None = None, ver: di
         apply_chembl(fm, r, ch)
     if ver and pk:
         apply_verification(fm, ver)
+    if ema and pk:
+        apply_ema(fm, ema)
+    # promotion rule: >= 1 regulator source consistent AND none discrepant
+    sts = [x["status"] for x in (fm.get("pk-verification"), fm.get("pk-verification-ema")) if x]
+    if pk:
+        fm["source-status"] = "partially-verified" if "consistent" in sts and "discrepant" not in sts else "auto-extracted"
+        if "consistent" in sts and "discrepant" in sts:
+            fm["tags"] = fm["tags"] + ["pk-sources-disagree"]
     return fm
 
 
@@ -100,6 +109,32 @@ def apply_chembl(fm: dict, r: dict, ch: dict) -> None:
         "properties": ch["properties"],
     }
     fm["tags"] = fm["tags"] + ["chembl-profile"] + (["chembl-name-match"] if idn["source"] == "chembl-name-match" else [])
+    rv = ch.get("identity-review")
+    if rv:
+        fm["chembl"]["identity-check"] = rv["verdict"]
+        if rv.get("decision"):
+            fm["chembl"]["identity-decision"] = rv["decision"]
+        tag = IDENTITY_TAG.get(rv["verdict"])
+        if rv.get("decision") or idn["source"] == "curated-identity":
+            tag = "identity-curated"
+        if tag:
+            fm["tags"] = fm["tags"] + [tag]
+
+
+IDENTITY_TAG = {"structure-confirmed": "identity-confirmed", "inn-match-ema": "identity-inn-ema",
+                "connectivity-match": "identity-stereo-check", "formula-match": "identity-formula-match",
+                "conflict": "identity-conflict"}
+
+
+def apply_ema(fm: dict, v: dict) -> None:
+    """Automated cross-check against the EU SmPC (data/processed/pk-verification-ema.json)."""
+    fm["pk-verification-ema"] = {"source": "ema-smpc", "status": v["status"], "product": v["product"],
+                                 "ema-number": v["ema-number"], "url": v.get("smpc-url"), "chpl-url": v.get("chpl-url"),
+                                 "checked": v["checked"], "fields": {k: f["status"] for k, f in v.get("fields", {}).items()}}
+    if v["status"] in ("consistent", "discrepant"):
+        fm["tags"] = fm["tags"] + [f"pk-ema-{v['status']}"]
+    if v["status"] == "consistent" and (fm.get("pk-verification") or {}).get("status") == "consistent":
+        fm["tags"] = fm["tags"] + ["pk-2-regulators"]
 
 
 def apply_verification(fm: dict, v: dict) -> None:
@@ -153,7 +188,7 @@ def _rng(v, vmax, unit=""):
     return (f"{fmt(v)}–{fmt(vmax)}" if vmax else fmt(v)) + (f" {unit}" if unit else "")
 
 
-def pk_section(pk: dict | None, ver: dict | None = None) -> list[str]:
+def pk_section(pk: dict | None, ver: dict | None = None, ema: dict | None = None) -> list[str]:
     if not pk:
         return ["## Pharmacokinetics", "",
                 "_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._", ""]
@@ -197,11 +232,21 @@ def pk_section(pk: dict | None, ver: dict | None = None) -> list[str]:
         lines.append("")
     elif ver and ver["status"] == "no-label":
         lines += ["_No FDA label found for automated cross-check (not US-approved, or different name)._", ""]
+    if ema and ema.get("fields"):
+        icon = {"consistent": "success", "discrepant": "danger"}.get(ema["status"], "note")
+        lines += [f"> [!{icon}] EU SmPC cross-check: **{ema['status']}**",
+                  f"> Automated comparison with section 5.2 of the [EU SmPC of *{ema['product']}*]({ema['smpc-url']})"
+                  f" ({ema['ema-number']})" + (f" · [ChPL po polsku]({ema['chpl-url']})" if ema.get("chpl-url") else "")
+                  + ". Tolerance: t½ ×0.5–1.5, protein binding ±10 pp."]
+        for k, f in ema["fields"].items():
+            got = f.get("smpc-values-h") or f.get("smpc-values-pct") or []
+            lines.append(f"> - {k}: {f['status']} (SmPC values: {', '.join(f'{x:g}' for x in got[:6]) or '-'})")
+        lines.append("")
     return lines
 
 
 def body(r: dict, pk: dict | None = None, ch: dict | None = None, ver: dict | None = None,
-         rel: dict | None = None, link=None) -> str:
+         rel: dict | None = None, link=None, ema: dict | None = None) -> str:
     hubs = ["Stacking and Interaction Risks"]
     for t in r["group_risk_triage"]:
         if t in TRIAGE_TO_HUB and TRIAGE_TO_HUB[t] not in hubs:
@@ -228,8 +273,14 @@ def body(r: dict, pk: dict | None = None, ch: dict | None = None, ver: dict | No
     cid_ = r["chembl_id"] or (ch or {}).get("identity", {}).get("chembl-id")
     if cid_:
         src = {"catalogue": "source catalogue", "curated-addition": "curated addition, exact ChEMBL match",
-               "wikipedia-infobox": "Wikipedia infobox", "chembl-name-match": "exact ChEMBL name match - confirm"}
+               "wikipedia-infobox": "Wikipedia infobox", "chembl-name-match": "exact ChEMBL name match",
+               "curated-identity": "curated identity decision"}
         how = src.get((ch or {}).get("identity", {}).get("source", "catalogue"), "")
+        rv = (ch or {}).get("identity-review")
+        if rv:
+            how += " · structure check: " + IDENTITY_TEXT.get(rv["verdict"], rv["verdict"])
+            if rv.get("decision"):
+                how += f" · decision: {rv['decision']['decision']} ({rv['decision']['reason']})"
         phase = r["chembl_max_phase"] or (f"{ch['max-phase']:g}" if ch and ch.get("max-phase") is not None and ch["max-phase"] >= 0 else "n/a")
         lines.append(f"- **ChEMBL:** [{cid_}](https://www.ebi.ac.uk/chembl/compound_report_card/{cid_}/)"
                      f" · max phase {phase} · id via {how}")
@@ -247,7 +298,7 @@ def body(r: dict, pk: dict | None = None, ch: dict | None = None, ver: dict | No
         "## Evidence boundaries", "",
         "- Evidence tier: _not assigned_ - see [[Evidence Tiers]].",
         "- A catalogue or vendor listing is not evidence of efficacy, purity, legality or safety.", "",
-        *pk_section(pk, ver),
+        *pk_section(pk, ver, ema),
         *related_section(rel, link),
         "## Safety routing", "",
         "Group-level triage (not compound-specific): " + (", ".join(f"`{t}`" for t in r["group_risk_triage"]) or "-"),
@@ -257,6 +308,13 @@ def body(r: dict, pk: dict | None = None, ch: dict | None = None, ver: dict | No
         "",
     ]
     return "\n".join(lines)
+
+
+IDENTITY_TEXT = {"structure-confirmed": "✅ InChIKey matches PubChem", "connectivity-match": "⚠️ same skeleton, stereo/isotope layer differs",
+                 "formula-match": "≈ same formula, different InChIKey (tautomer/representation)",
+                 "inn-match-ema": "INN matches an EU-authorised product (no comparable structure)",
+                 "no-chembl-structure": "no small-molecule structure in ChEMBL", "no-evidence": "no PubChem structure available",
+                 "conflict": "❌ conflicts with PubChem - see Review Queue"}
 
 
 def target_note_name(t: dict) -> str:
@@ -349,6 +407,11 @@ def main() -> None:
     loadp = lambda n: json.loads((PROCESSED / n).read_text(encoding="utf-8")) if (PROCESSED / n).exists() else []
     chs = {c["compound_id"]: c for c in loadp("chembl.json")}
     vers = {v["compound_id"]: v for v in loadp("pk-verification.json")}
+    emas = {v["compound_id"]: v for v in loadp("pk-verification-ema.json")}
+    for x in loadp("identity-review.json"):
+        c = chs.get(x["compound_id"])
+        if c and c["identity"]["chembl-id"] == x["chembl-id"]:
+            c["identity-review"] = x
     links = loadp("links.json") or {}
     rels = links.get("related", {})
     existing = existing_notes()
@@ -376,14 +439,14 @@ def main() -> None:
             prev[0].unlink()
         folder.mkdir(parents=True, exist_ok=True)
         cid = r["compound_id"]
-        pk, ch, ver = pks.get(cid), chs.get(cid), vers.get(cid)
-        fmd = frontmatter(r, pk, ch, ver)
+        pk, ch, ver, ema = pks.get(cid), chs.get(cid), vers.get(cid), emas.get(cid)
+        fmd = frontmatter(r, pk, ch, ver, ema)
         if (rels.get(cid) or {}).get("same-molecule"):
             fmd["tags"] = fmd["tags"] + ["possible-duplicate"]
         if r.get("pubchem_cid"):
             fmd["pubchem-cid"] = int(r["pubchem_cid"])
         fm = yaml.safe_dump(fmd, sort_keys=False, allow_unicode=True, width=1000)
-        target.write_text(f"---\n{fm}---\n\n{body(r, pk, ch, ver, rels.get(cid), link)}", encoding="utf-8")
+        target.write_text(f"---\n{fm}---\n\n{body(r, pk, ch, ver, rels.get(cid), link, ema)}", encoding="utf-8")
         written_paths.add(target)
         written += 1
 

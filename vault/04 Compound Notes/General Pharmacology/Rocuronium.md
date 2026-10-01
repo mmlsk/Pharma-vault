@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.32
     full-molformula: C32H53N2O4+
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -113,7 +115,7 @@ pk-verification:
 - **Compound ID:** `rocuronium-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1201244](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201244/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201244](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201244/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

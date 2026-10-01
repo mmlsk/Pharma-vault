@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL334830
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.59
     full-molformula: C17H11BrFN3O4
+  identity-check: structure-confirmed
 ---
 
 # Ranirestat
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `ranirestat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL334830](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL334830/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL334830](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL334830/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

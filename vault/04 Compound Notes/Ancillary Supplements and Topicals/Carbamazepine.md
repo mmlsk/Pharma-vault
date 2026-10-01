@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.75
     full-molformula: C15H12N2O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -118,7 +120,7 @@ pk-verification:
 - **Compound ID:** `carbamazepine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL108](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL108/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL108](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL108/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

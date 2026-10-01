@@ -70,6 +70,7 @@ chembl:
     name: Atrial natriuretic peptide receptor 1
     action: AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Nesiritide
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `nesiritide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201668](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201668/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201668](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201668/) · max phase 4 · id via Wikipedia infobox · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

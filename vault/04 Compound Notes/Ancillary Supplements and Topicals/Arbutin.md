@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL232202
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.46
     full-molformula: C12H16O7
+  identity-check: structure-confirmed
 ---
 
 # Arbutin
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `arbutin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL232202](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL232202/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL232202](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL232202/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

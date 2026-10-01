@@ -70,6 +70,7 @@ chembl:
   - A05BA10
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Omega-3 Fatty Acids (Fish Oil)
@@ -84,7 +85,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Omega-3 Fatty Acids, Fish Oil
-- **ChEMBL:** [CHEMBL4298065](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298065/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4298065](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298065/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

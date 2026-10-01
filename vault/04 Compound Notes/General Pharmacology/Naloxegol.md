@@ -59,6 +59,8 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Naloxegol
@@ -88,6 +90,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.13
     full-molformula: C34H53NO11
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -95,6 +98,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Moventig
+  ema-number: EMEA/H/C/002810
+  url: https://www.ema.europa.eu/en/documents/product-information/moventig-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/moventig-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: discrepant
 ---
 
 # Naloxegol
@@ -108,7 +122,7 @@ pk-verification:
 - **Compound ID:** `naloxegol-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL2219418](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2219418/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2219418](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2219418/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -142,6 +156,11 @@ PEGylated naloxone derivative for opioid-induced constipation, kept out of the b
 | Excretion | mainly non-renal | Feces (68%), urine (16%) |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Moventig*](https://www.ema.europa.eu/en/documents/product-information/moventig-epar-product-information_en.pdf) (EMEA/H/C/002810) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/moventig-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 6, 11)
+> - protein-binding: discrepant (SmPC values: 80, 100)
 
 ## Related compounds (auto)
 

@@ -70,6 +70,7 @@ chembl:
     name: Interleukin-2 receptor
     action: AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Aldesleukin
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `aldesleukin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201438](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201438/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201438](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201438/) · max phase 4 · id via Wikipedia infobox · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

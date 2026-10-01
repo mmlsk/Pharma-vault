@@ -70,6 +70,7 @@ chembl:
     name: Platelet glycoprotein Ib alpha chain
     action: ANTAGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Anfibatide
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `anfibatide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4297694](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297694/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297694](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297694/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

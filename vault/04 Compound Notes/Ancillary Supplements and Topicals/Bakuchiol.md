@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL262344
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.68
     full-molformula: C18H24O
+  identity-check: structure-confirmed
 ---
 
 # Bakuchiol
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `bakuchiol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL262344](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL262344/) · max phase 1 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL262344](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL262344/) · max phase 1 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

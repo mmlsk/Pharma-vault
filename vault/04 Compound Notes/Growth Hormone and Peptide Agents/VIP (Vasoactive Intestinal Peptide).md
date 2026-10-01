@@ -73,6 +73,7 @@ chembl:
     full-mwt: 3326.84
     mw-freebase: 3326.84
     full-molformula: C147H237N43O43S
+  identity-check: no-evidence
 ---
 
 # VIP (Vasoactive Intestinal Peptide)
@@ -87,7 +88,7 @@ chembl:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** VIP, Vasoactive Intestinal Peptide
-- **ChEMBL:** [CHEMBL525028](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL525028/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL525028](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL525028/) · max phase 3 · id via exact ChEMBL name match · structure check: no PubChem structure available
 
 ## Source summary
 

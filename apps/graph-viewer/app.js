@@ -13,6 +13,19 @@
     "Novel Psychoactive Substances": "NPS i dopalacze",
   };
   const IDS_PL = { catalogue: "katalog źródłowy", "curated-addition": "dodatek kuratorowany", "wikipedia-infobox": "infoboks Wikipedii", "chembl-name-match": "dokładna nazwa w ChEMBL" };
+  const VER_TEST = {
+    consistent: (c) => c.v && c.v.s === "consistent", discrepant: (c) => c.v && c.v.s === "discrepant",
+    "no-label-value": (c) => c.v && c.v.s === "no-label-value", chembl: (c) => c.tg,
+    "ema-consistent": (c) => c.ve && c.ve.s === "consistent", "ema-discrepant": (c) => c.ve && c.ve.s === "discrepant",
+    both: (c) => c.v && c.v.s === "consistent" && c.ve && c.ve.s === "consistent",
+    "id-ok": (c) => ["structure-confirmed", "curated", "inn-match-ema"].includes(c.ic),
+    "id-check": (c) => ["connectivity-match", "formula-match", "conflict", "no-evidence"].includes(c.ic),
+  };
+  const IC_PL = { "structure-confirmed": "✅ InChIKey zgodny z PubChem", "connectivity-match": "⚠️ ten sam szkielet, inna stereochemia/izotopy",
+    "formula-match": "≈ ten sam wzór sumaryczny, inny InChIKey (tautomer)", "inn-match-ema": "INN zgodny z produktem EMA (bez struktury)",
+    "no-chembl-structure": "brak struktury małocząsteczkowej (biologik/mieszanina)", "no-evidence": "brak danych PubChem",
+    conflict: "❌ konflikt z PubChem — do przeglądu", curated: "✍️ decyzja kuratorska" };
+  const EMA_PL = { consistent: "zgodne z ChPL", discrepant: "rozbieżne z ChPL", "no-label-value": "ChPL bez wartości", "no-smpc-value": "ChPL bez wartości" };
   const VER_PL = { consistent: "zgodne z etykietą FDA", discrepant: "rozbieżne z etykietą FDA", "no-label-value": "etykieta bez wartości", "no-label": "brak etykiety FDA" };
   const T = G.targets || [];
   const byTarget = T.map(() => []);
@@ -41,7 +54,7 @@
   const HB = [-2, -1, 0, 1, 2, 3, 4]; // log10(hours) bin edges: 36 s … 10^4 h
   const binOf = (h) => Math.max(0, Math.min(HB.length - 2, Math.floor(Math.log10(h)) - HB[0]));
   const visible = (c) => state.clusters.has(c.c) && (!state.pkOnly || c.pk) && (!state.cypOnly || (c.pk && c.pk.cyp)) && (state.hub === null || c.l.includes(state.hub))
-    && (!state.ver || (state.ver === "chembl" ? c.tg : (c.v && c.v.s === state.ver))) && (state.hlBin === null || (c.hlh && binOf(c.hlh) === state.hlBin));
+    && (!state.ver || VER_TEST[state.ver](c)) && (state.hlBin === null || (c.hlh && binOf(c.hlh) === state.hlBin));
   function stats() {
     const vis = C.filter(visible).length;
     $("sAll").textContent = G.meta.substances.toLocaleString("pl");
@@ -50,6 +63,8 @@
     $("sHl").textContent = C.filter((c) => c.pk && c.pk.hl).length.toLocaleString("pl");
     $("sTg").textContent = (G.meta.with_targets || 0).toLocaleString("pl");
     $("sFda").textContent = (G.meta.pk_fda_consistent || 0).toLocaleString("pl");
+    $("sEma").textContent = (G.meta.pk_ema_consistent || 0).toLocaleString("pl");
+    $("sId").textContent = (G.meta.identity_confirmed || 0).toLocaleString("pl");
     histogram();
   }
   // ---------- t½ histogram (log scale, visible compounds)
@@ -160,7 +175,7 @@
       ctx.fillStyle = CL_COLORS[c.c];
       ctx.beginPath(); ctx.arc(x, y, c.pk ? baseR : baseR * 0.7, 0, 7); ctx.fill();
       if (c.pk && c.pk.cyp && k > 0.9) { ctx.strokeStyle = warn; ctx.lineWidth = 1; ctx.stroke(); }
-      if (c.v && c.v.s === "discrepant" && k > 1.4) { ctx.strokeStyle = css("--color-error") || "#dd6974"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, baseR + 2, 0, 7); ctx.stroke(); }
+      if (((c.v && c.v.s === "discrepant") || (c.ve && c.ve.s === "discrepant")) && k > 1.4) { ctx.strokeStyle = css("--color-error") || "#dd6974"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, baseR + 2, 0, 7); ctx.stroke(); }
     });
     ctx.globalAlpha = 1;
 
@@ -341,12 +356,16 @@
     const verHtml = v ? `<div class="ver ver-${esc(v.s)}"><b>Weryfikacja PK:</b> ${esc(VER_PL[v.s] || v.s)}${vf.length ? " — " + vf.map(([f, [st, vals]]) =>
       `${f === "half-life" ? "t½" : "wiązanie z białkami"}: ${esc(VER_PL[st] || st)}${vals.length ? ` (etykieta: ${vals.map((x) => (+x).toLocaleString("pl")).join(", ")}${f === "half-life" ? " h" : " %"})` : ""}`).join("; ") : ""}
       ${v.u ? `<br><a href="${esc(v.u)}" target="_blank" rel="noopener">Etykieta FDA (DailyMed, wersja ${esc(v.et)}) ↗</a>` : ""}</div>` : "";
+    const e = c.ve, ef = e && e.f ? Object.entries(e.f) : [];
+    const emaHtml = e ? `<div class="ver ver-${esc(e.s)}"><b>ChPL / SmPC (EMA):</b> ${esc(EMA_PL[e.s] || e.s)} — ` + ef.map(([f, [st, vals]]) =>
+      `${f === "half-life" ? "t½" : "wiązanie z białkami"}: ${esc(EMA_PL[st] || st)}${vals.length ? ` (ChPL: ${vals.map((x) => (+x).toLocaleString("pl")).join(", ")}${f === "half-life" ? " h" : " %"})` : ""}`).join("; ")
+      + `<br>${e.pl ? `<a href="${esc(e.pl)}" target="_blank" rel="noopener">ChPL ${esc(e.p)} (PL) ↗</a> · ` : ""}<a href="${esc(e.u)}" target="_blank" rel="noopener">SmPC ${esc(e.p)} (EN) ↗</a></div>` : "";
     const facts = [];
     if (c.mt) facts.push(["Typ cząsteczki", c.mt]);
     if (c.fa) facts.push(["Pierwsza rejestracja", c.fa]);
     if (c.atc) facts.push(["ATC", c.atc.map((a) => `${a[0]} ${a[1].toLowerCase()}`).join("; ")]);
     if (c.pr) facts.push(["MW · ALogP · PSA · Ro5", c.pr.map((x) => x ?? "—").join(" · ")]);
-    if (c.ids) facts.push(["Identyfikacja ChEMBL", IDS_PL[c.ids] || c.ids]);
+    if (c.ids) facts.push(["Identyfikacja ChEMBL", (IDS_PL[c.ids] || c.ids) + (c.ic ? " · " + (IC_PL[c.ic] || c.ic) : "")]);
     const nb = neighbours(c).slice(0, 14);
     const chemblHtml = (facts.length || c.tg) ? `<div class="label" style="margin-top:1rem">Profil ChEMBL</div>
       ${c.bb || c.wd ? `<div class="tags">${c.bb ? '<span class="tag warn">ostrzeżenie w ramce (black box)</span>' : ""}${c.wd ? '<span class="tag warn">wycofany</span>' : ""}</div>` : ""}
@@ -356,7 +375,7 @@
         `<button data-c="${i}"><span class="dot" style="background:${CL_COLORS[C[i].c]};width:8px;height:8px;margin-right:6px"></span>${esc(C[i].n)}${n > 1 ? ` <small>×${n}</small>` : ""}</button>`).join("")}</div>` : ""}` : "";
     return `<div class="label">${esc(CL_PL[G.clusters[c.c].name])} · ${esc(g.label)}</div>
       <div class="title">${esc(c.n)}</div>
-      <div class="tags">${(c.t || []).map((t) => `<span class="tag warn">${esc(t)}</span>`).join("")}${c.ph ? `<span class="tag">ChEMBL faza ${c.ph}</span>` : ""}${k ? '<span class="tag">PK auto</span>' : ""}${v && v.s === "consistent" ? '<span class="tag ok">PK ✓ FDA</span>' : ""}${v && v.s === "discrepant" ? '<span class="tag warn">PK ≠ FDA</span>' : ""}</div>
+      <div class="tags">${(c.t || []).map((t) => `<span class="tag warn">${esc(t)}</span>`).join("")}${c.ph ? `<span class="tag">ChEMBL faza ${c.ph}</span>` : ""}${k ? '<span class="tag">PK auto</span>' : ""}${v && v.s === "consistent" ? '<span class="tag ok">PK ✓ FDA</span>' : ""}${v && v.s === "discrepant" ? '<span class="tag warn">PK ≠ FDA</span>' : ""}${e && e.s === "consistent" ? '<span class="tag ok">PK ✓ ChPL</span>' : ""}${e && e.s === "discrepant" ? '<span class="tag warn">PK ≠ ChPL</span>' : ""}${c.ic === "conflict" ? '<span class="tag warn">tożsamość?</span>' : ""}</div>
       ${c.d ? `<p class="muted" style="margin-bottom:.6rem">${esc(c.d)}${c.d.length >= 420 ? "…" : ""}</p>` : ""}
       ${c.m ? `<p class="muted"><b>Mechanizm (ChEMBL):</b> ${esc(c.m)}</p>` : ""}
       <div class="label" style="margin-top:1rem">Farmakokinetyka</div>
@@ -364,6 +383,7 @@
         <p class="note" style="margin-top:.4rem">Źródło: <a href="${esc(k.src)}" target="_blank" rel="noopener">Wikipedia - ${esc(k.title)} (wersja przypięta)</a></p>`
         : '<p class="empty">Brak dopasowanych danych PK w infoboksie Wikipedii.</p>'}
       ${verHtml}
+      ${emaHtml}
       ${chemblHtml}
       <div class="label" style="margin-top:1rem">Powiązania</div>
       <div class="links">${c.l.map((li) => `<button data-core="${li}">${KIND_PL[CORE[li].kind]}: ${esc(CORE[li].name)}</button>`).join("")}</div>

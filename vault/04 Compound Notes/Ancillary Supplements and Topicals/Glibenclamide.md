@@ -50,7 +50,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -59,6 +59,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-consistent
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -92,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.52
     full-molformula: C23H28ClN3O5S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -99,6 +102,16 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Amglidia
+  ema-number: EMEA/H/C/004379
+  url: https://www.ema.europa.eu/en/documents/product-information/amglidia-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/amglidia-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Glibenclamide
@@ -112,7 +125,7 @@ pk-verification:
 - **Compound ID:** `glibenclamide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL472](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL472/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL472](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL472/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -155,6 +168,10 @@ Sulfonylurea receptor 1, Kir6.2 blocker _(ChEMBL curated mechanism of the parent
 | Excretion | - | Kidney and bile duct |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Amglidia*](https://www.ema.europa.eu/en/documents/product-information/amglidia-epar-product-information_en.pdf) (EMEA/H/C/004379) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/amglidia-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2.5, 5, 8, 10, 15)
 
 ## Related compounds (auto)
 

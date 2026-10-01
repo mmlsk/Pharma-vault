@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 - possible-duplicate
 chembl:
   identity-source: wikipedia-infobox
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.58
     full-molformula: C6H6N2O
+  identity-check: structure-confirmed
 ---
 
 # Nicotinamide (oral 500 mg, vitamin B3)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Nicotinamide, vitamin B3
-- **ChEMBL:** [CHEMBL1140](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1140/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1140](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1140/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL484785
@@ -75,6 +76,7 @@ chembl:
     full-mwt: 251.05
     mw-freebase: 251.05
     full-molformula: C14H10BNO3
+  identity-check: structure-confirmed
 ---
 
 # Crisaborole (topical 2% ointment, Eucrisa)
@@ -89,7 +91,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Crisaborole, Eucrisa
-- **ChEMBL:** [CHEMBL484785](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL484785/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL484785](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL484785/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

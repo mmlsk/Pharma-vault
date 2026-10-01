@@ -70,6 +70,7 @@ chembl:
     name: Tumor necrosis factor receptor superfamily member 5
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Bleselumab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `bleselumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3990028](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990028/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3990028](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990028/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

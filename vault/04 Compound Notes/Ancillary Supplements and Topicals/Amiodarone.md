@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Amiodarone
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.17
     full-molformula: C25H29I2NO3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `amiodarone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL633](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL633/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL633](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL633/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

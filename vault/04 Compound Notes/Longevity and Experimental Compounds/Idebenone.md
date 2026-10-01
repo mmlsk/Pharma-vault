@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Idebenone
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.44
     full-molformula: C19H30O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -98,6 +100,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-value
+  product: Raxone
+  ema-number: EMEA/H/C/003834
+  url: https://www.ema.europa.eu/en/documents/product-information/raxone-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/raxone-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Idebenone
@@ -111,7 +124,7 @@ pk-verification:
 - **Compound ID:** `idebenone-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL252556](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL252556/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL252556](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL252556/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -149,6 +162,11 @@ Antioxidant and mitochondrial electron carrier _(ChEMBL curated mechanism of the
 | Excretion | mainly urinary | Urine (80%) and feces |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!note] EU SmPC cross-check: **no-smpc-value**
+> Automated comparison with section 5.2 of the [EU SmPC of *Raxone*](https://www.ema.europa.eu/en/documents/product-information/raxone-epar-product-information_en.pdf) (EMEA/H/C/003834) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/raxone-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

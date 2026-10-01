@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4072833
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.54
     full-molformula: C25H27N5O2
+  identity-check: structure-confirmed
 ---
 
 # Evobrutinib
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `evobrutinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4072833](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4072833/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4072833](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4072833/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

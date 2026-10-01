@@ -82,6 +82,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.47
     full-molformula: C28H44O
+  identity-check: no-evidence
 ---
 
 # Vitamin D
@@ -95,7 +96,7 @@ chembl:
 - **Compound ID:** `vitamin-d-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1536](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1536/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1536](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1536/) · max phase 4 · id via exact ChEMBL name match · structure check: no PubChem structure available
 
 ## Source summary
 

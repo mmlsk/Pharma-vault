@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1743078
@@ -71,6 +72,7 @@ chembl:
     name: T-cell surface glycoprotein CD3 epsilon chain
     action: OTHER
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Teplizumab
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `teplizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1743078](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743078/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1743078](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743078/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL13960
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.53
     full-molformula: C2H2Cl2O2
+  identity-check: connectivity-match
 ---
 
 # Dichloroacetate
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `dichloroacetate-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL13960](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL13960/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL13960](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL13960/) · max phase 3 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

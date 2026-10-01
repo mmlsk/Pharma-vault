@@ -65,6 +65,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.82
     full-molformula: C13H18ClNO
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -117,7 +119,7 @@ pk-verification:
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
 - **Aliases:** Bupropion, Wellbutrin
-- **ChEMBL:** [CHEMBL894](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL894/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL894](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL894/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

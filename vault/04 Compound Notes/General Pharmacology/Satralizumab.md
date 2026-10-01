@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3833307
@@ -71,6 +72,7 @@ chembl:
     name: IL6Ralpha/GP130
     action: ANTAGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Satralizumab
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `satralizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3833307](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833307/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3833307](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833307/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

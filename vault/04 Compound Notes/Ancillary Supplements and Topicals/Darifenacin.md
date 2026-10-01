@@ -64,7 +64,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Darifenacin
@@ -94,11 +97,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.62
     full-molformula: C28H30N2O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: e84f1ae3-b9a2-4a15-a299-c75373891cc1
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e84f1ae3-b9a2-4a15-a299-c75373891cc1
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Emselex
+  ema-number: EMEA/H/C/000554
+  url: https://www.ema.europa.eu/en/documents/product-information/emselex-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/emselex-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -116,7 +131,7 @@ pk-verification:
 - **Compound ID:** `darifenacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1346](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1346/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1346](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1346/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -155,6 +170,11 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 > Automated comparison with the [US prescribing information (DailyMed set e84f1ae3…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e84f1ae3-b9a2-4a15-a299-c75373891cc1), label version 20260210. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 13, 19)
 > - protein-binding: consistent (label values: 98)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Emselex*](https://www.ema.europa.eu/en/documents/product-information/emselex-epar-product-information_en.pdf) (EMEA/H/C/000554) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/emselex-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 13, 19)
+> - protein-binding: consistent (SmPC values: 98)
 
 ## Related compounds (auto)
 

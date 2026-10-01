@@ -64,7 +64,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Lenvatinib
@@ -94,11 +97,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C21H19ClN4O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: f4bedd21-efde-44c6-9d9c-b48b78d7ed1e
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f4bedd21-efde-44c6-9d9c-b48b78d7ed1e
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Lenvima
+  ema-number: EMEA/H/C/003727
+  url: https://www.ema.europa.eu/en/documents/product-information/lenvima-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -116,7 +131,7 @@ pk-verification:
 - **Compound ID:** `lenvatinib-compound`
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL1289601](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1289601/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1289601](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1289601/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -156,6 +171,11 @@ Multi-kinase inhibitor with FGFR1-4 activity used in thyroid, hepatocellular and
 > Automated comparison with the [US prescribing information (DailyMed set f4bedd21…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f4bedd21-efde-44c6-9d9c-b48b78d7ed1e), label version 20260630. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 28)
 > - protein-binding: consistent (label values: 97, 99)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Lenvima*](https://www.ema.europa.eu/en/documents/product-information/lenvima-epar-product-information_en.pdf) (EMEA/H/C/003727). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 26, 31)
+> - protein-binding: consistent (SmPC values: 98, 99)
 
 ## Related compounds (auto)
 

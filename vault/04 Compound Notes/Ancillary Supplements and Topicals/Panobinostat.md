@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -65,6 +65,8 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Panobinostat
@@ -94,6 +96,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.23
     full-molformula: C21H23N3O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -101,6 +104,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Farydak
+  ema-number: EMEA/H/C/003725
+  url: https://www.ema.europa.eu/en/documents/product-information/farydak-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Panobinostat
@@ -114,7 +128,7 @@ pk-verification:
 - **Compound ID:** `panobinostat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL483254](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL483254/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL483254](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL483254/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -151,6 +165,11 @@ Potent pan-HDAC inhibitor used in myeloma with substantial toxicity.
 | Excretion | mainly urinary | Fecal (44–77%), renal (29–51%) |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Farydak*](https://www.ema.europa.eu/en/documents/product-information/farydak-epar-product-information_en.pdf) (EMEA/H/C/003725). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 37)
+> - protein-binding: consistent (SmPC values: 90)
 
 ## Related compounds (auto)
 

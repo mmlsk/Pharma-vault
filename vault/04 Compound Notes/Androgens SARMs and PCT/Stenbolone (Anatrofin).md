@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-curated
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2107251
@@ -80,6 +81,11 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.65
     full-molformula: C22H32O3
+  identity-check: conflict
+  identity-decision:
+    decision: confirm
+    reviewer: agent-review 2026-10-01
+    reason: catalogue entry is 'Anatrofin', the brand of stenbolone acetate; ester identity intended (free stenbolone has no ChEMBL record)
 ---
 
 # Stenbolone (Anatrofin)
@@ -94,7 +100,7 @@ chembl:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Stenbolone, Anatrofin
-- **ChEMBL:** [CHEMBL2107251](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107251/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2107251](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107251/) · max phase 2 · id via exact ChEMBL name match · structure check: ❌ conflicts with PubChem - see Review Queue · decision: confirm (catalogue entry is 'Anatrofin', the brand of stenbolone acetate; ester identity intended (free stenbolone has no ChEMBL record))
 
 ## Source summary
 

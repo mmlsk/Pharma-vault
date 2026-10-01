@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - pk-fda-discrepant
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Hydroxocobalamin
@@ -70,6 +71,17 @@ pk-verification:
   status: discrepant
   set-id: d56fcc8d-bd64-46ab-b0c0-2124bd745a6b
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d56fcc8d-bd64-46ab-b0c0-2124bd745a6b
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Cyanokit
+  ema-number: EMEA/H/C/000806
+  url: https://www.ema.europa.eu/en/documents/product-information/cyanokit-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/cyanokit-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: discrepant
@@ -112,6 +124,11 @@ Vitamin B12 form used as the first-line cyanide antidote, binding cyanide direct
 > Automated comparison with the [US prescribing information (DailyMed set d56fcc8d…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d56fcc8d-bd64-46ab-b0c0-2124bd745a6b), label version 20230427. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 26, 31)
 > - protein-binding: no-label-value (label values: -)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Cyanokit*](https://www.ema.europa.eu/en/documents/product-information/cyanokit-epar-product-information_en.pdf) (EMEA/H/C/000806) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/cyanokit-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 26, 31)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Safety routing
 

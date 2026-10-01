@@ -58,6 +58,7 @@ tags:
 - group/peptides
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2111029
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.47
     full-molformula: C16H19N3O5
+  identity-check: structure-confirmed
 ---
 
 # Thymogen (Glutamyl-Tryptophan)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Thymogen, Glutamyl-Tryptophan
-- **ChEMBL:** [CHEMBL2111029](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2111029/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2111029](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2111029/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

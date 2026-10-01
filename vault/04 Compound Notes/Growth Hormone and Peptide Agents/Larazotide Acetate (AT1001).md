@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2105646
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.06
     full-molformula: C32H55N9O10
+  identity-check: structure-confirmed
 ---
 
 # Larazotide Acetate (AT1001)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Larazotide Acetate, AT1001
-- **ChEMBL:** [CHEMBL2103815](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103815/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2103815](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103815/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

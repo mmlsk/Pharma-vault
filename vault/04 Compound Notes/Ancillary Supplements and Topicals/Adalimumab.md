@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -84,6 +85,7 @@ chembl:
     name: Tumor necrosis factor
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
@@ -92,6 +94,16 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-value
+  product: Humira
+  ema-number: EMEA/H/C/000481
+  url: https://www.ema.europa.eu/en/documents/product-information/humira-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/humira-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Adalimumab
@@ -105,7 +117,7 @@ pk-verification:
 - **Compound ID:** `adalimumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201580](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201580/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201580](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201580/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -144,6 +156,10 @@ TNF-alpha inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMB
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 2488b0bc…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2488b0bc-7b8f-4cc8-91ea-48e7ea5e8915), label version 20260108. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 240, 480)
+
+> [!note] EU SmPC cross-check: **no-smpc-value**
+> Automated comparison with section 5.2 of the [EU SmPC of *Humira*](https://www.ema.europa.eu/en/documents/product-information/humira-epar-product-information_en.pdf) (EMEA/H/C/000481) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/humira-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

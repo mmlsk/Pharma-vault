@@ -73,6 +73,7 @@ chembl:
     name: Glucagon receptor
     action: AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Efinopegdutide
@@ -86,7 +87,7 @@ chembl:
 - **Compound ID:** `efinopegdutide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL4297576](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297576/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297576](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297576/) · max phase 2 · id via Wikipedia infobox · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

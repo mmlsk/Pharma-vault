@@ -62,7 +62,9 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Lamivudine
@@ -107,11 +109,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.7
     full-molformula: C8H11N3O3S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
   set-id: 6bd6b9da-df69-46db-813e-4e7f3bdecf95
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6bd6b9da-df69-46db-813e-4e7f3bdecf95
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Epivir
+  ema-number: EMEA/H/C/000107
+  url: https://www.ema.europa.eu/en/documents/product-information/epivir-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: discrepant
@@ -129,7 +143,7 @@ pk-verification:
 - **Compound ID:** `lamivudine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL141](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL141/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL141](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL141/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -179,6 +193,11 @@ DNA inhibitor; DNA polymerase/reverse transcriptase inhibitor; Human immunodefic
 > Automated comparison with the [US prescribing information (DailyMed set 6bd6b9da…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6bd6b9da-df69-46db-813e-4e7f3bdecf95), label version 20260729. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 13, 19, 72)
 > - protein-binding: consistent (label values: 36)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Epivir*](https://www.ema.europa.eu/en/documents/product-information/epivir-epar-product-information_en.pdf) (EMEA/H/C/000107). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 16, 18, 19)
+> - protein-binding: consistent (SmPC values: 5, 10, 16, 36)
 
 ## Related compounds (auto)
 

@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL281764
@@ -84,6 +85,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.37
     full-molformula: C32H40N4O3
+  identity-check: structure-confirmed
 ---
 
 # Tabimorelin
@@ -97,7 +99,7 @@ chembl:
 - **Compound ID:** `tabimorelin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL281764](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL281764/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL281764](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL281764/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

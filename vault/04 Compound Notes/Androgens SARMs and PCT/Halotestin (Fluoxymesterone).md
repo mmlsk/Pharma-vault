@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Fluoxymesterone
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.71
     full-molformula: C20H29FO3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -117,7 +119,7 @@ pk-verification:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Halotestin, Fluoxymesterone
-- **ChEMBL:** [CHEMBL1445](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1445/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1445](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1445/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

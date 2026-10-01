@@ -64,7 +64,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Aripiprazole
@@ -103,11 +106,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.61
     full-molformula: C23H27Cl2N3O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: b72c0cff-9f4d-42e2-b884-d06dea3e6378
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b72c0cff-9f4d-42e2-b884-d06dea3e6378
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Abilify
+  ema-number: EMEA/H/C/000471
+  url: https://www.ema.europa.eu/en/documents/product-information/abilify-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/abilify-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -125,7 +140,7 @@ pk-verification:
 - **Compound ID:** `aripiprazole-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1112](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1112/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1112](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1112/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -176,6 +191,11 @@ Dopamine D2 receptor partial agonist; Serotonin 1a (5-HT1a) receptor partial ago
 > Automated comparison with the [US prescribing information (DailyMed set b72c0cff…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b72c0cff-9f4d-42e2-b884-d06dea3e6378), label version 20260908. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 75, 94, 146)
 > - protein-binding: consistent (label values: 99)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Abilify*](https://www.ema.europa.eu/en/documents/product-information/abilify-epar-product-information_en.pdf) (EMEA/H/C/000471) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/abilify-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 75, 146)
+> - protein-binding: consistent (SmPC values: 99)
 
 ## Related compounds (auto)
 

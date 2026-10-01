@@ -57,6 +57,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 pk-source:
   type: wikipedia-infobox
   title: Ravulizumab
@@ -79,6 +80,7 @@ chembl:
     name: Complement C5
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Ravulizumab
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `ravulizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3989986](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989986/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3989986](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989986/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

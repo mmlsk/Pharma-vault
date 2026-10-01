@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Desmopressin
@@ -84,6 +85,7 @@ chembl:
     full-mwt: 1069.24
     mw-freebase: 1069.24
     full-molformula: C46H64N14O12S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -104,7 +106,7 @@ pk-verification:
 - **Compound ID:** `desmopressin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1429](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1429/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1429](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1429/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

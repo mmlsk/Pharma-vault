@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Ponatinib
@@ -92,6 +94,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.39
     full-molformula: C29H27F3N6O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -99,6 +102,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Iclusig
+  ema-number: EMEA/H/C/002695
+  url: https://www.ema.europa.eu/en/documents/product-information/iclusig-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Ponatinib
@@ -112,7 +126,7 @@ pk-verification:
 - **Compound ID:** `ponatinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1171837](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1171837/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1171837](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1171837/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -149,6 +163,11 @@ Inhibits BCR–ABL-family kinase signaling; mutation coverage and off-target car
 | Excretion | mainly non-renal | Feces (87%), urine (5%) |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Iclusig*](https://www.ema.europa.eu/en/documents/product-information/iclusig-epar-product-information_en.pdf) (EMEA/H/C/002695). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 22)
+> - protein-binding: consistent (SmPC values: 99)
 
 ## Related compounds (auto)
 

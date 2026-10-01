@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1963681
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.42
     full-molformula: C23H26ClN7O3
+  identity-check: structure-confirmed
 ---
 
 # Avanafil (Stendra)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Avanafil, Stendra
-- **ChEMBL:** [CHEMBL1963681](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1963681/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1963681](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1963681/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

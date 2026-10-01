@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -89,6 +90,7 @@ chembl:
     full-mwt: 1202.63
     mw-freebase: 1202.63
     full-molformula: C62H111N11O12
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -97,6 +99,16 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-value
+  product: Ikervis
+  ema-number: EMEA/H/C/002066
+  url: https://www.ema.europa.eu/en/documents/product-information/ikervis-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/ikervis-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Cyclosporine
@@ -110,7 +122,7 @@ pk-verification:
 - **Compound ID:** `cyclosporine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL160](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL160/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL160](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL160/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -157,6 +169,10 @@ Cyclophilin A modulator _(ChEMBL curated mechanism of the parent molecule, via C
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 5baaf78c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5baaf78c-90f6-abcf-52c8-814490f3cf9f), label version 20260910. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 5, 8.4, 18)
+
+> [!note] EU SmPC cross-check: **no-smpc-value**
+> Automated comparison with section 5.2 of the [EU SmPC of *Ikervis*](https://www.ema.europa.eu/en/documents/product-information/ikervis-epar-product-information_en.pdf) (EMEA/H/C/002066) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/ikervis-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

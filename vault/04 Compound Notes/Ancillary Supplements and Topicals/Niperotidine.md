@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1909284
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.3
     full-molformula: C20H26N4O5S
+  identity-check: connectivity-match
 ---
 
 # Niperotidine
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `niperotidine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1909284](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1909284/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1909284](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1909284/) · max phase 2 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

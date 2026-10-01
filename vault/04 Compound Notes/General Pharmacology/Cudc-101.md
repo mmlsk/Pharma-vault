@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL598797
@@ -86,6 +87,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.18
     full-molformula: C24H26N4O4
+  identity-check: structure-confirmed
 ---
 
 # Cudc-101
@@ -99,7 +101,7 @@ chembl:
 - **Compound ID:** `cudc-101-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL598797](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL598797/) · max phase 1 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL598797](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL598797/) · max phase 1 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

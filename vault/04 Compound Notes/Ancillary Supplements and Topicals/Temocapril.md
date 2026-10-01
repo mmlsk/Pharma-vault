@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2110627
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.51
     full-molformula: C23H28N2O5S2
+  identity-check: structure-confirmed
 ---
 
 # Temocapril
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `temocapril-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2110627](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2110627/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2110627](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2110627/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

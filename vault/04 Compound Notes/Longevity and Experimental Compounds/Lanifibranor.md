@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4091374
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.48
     full-molformula: C19H15ClN2O4S2
+  identity-check: structure-confirmed
 ---
 
 # Lanifibranor
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `lanifibranor-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL4091374](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4091374/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4091374](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4091374/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.21
     full-molformula: C19H24N6O5S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -112,7 +114,7 @@ pk-verification:
 - **Compound ID:** `cefepime-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL186](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL186/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL186](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL186/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

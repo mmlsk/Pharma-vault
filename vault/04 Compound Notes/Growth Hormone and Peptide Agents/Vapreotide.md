@@ -59,6 +59,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-formula-match
 pk-source:
   type: wikipedia-infobox
   title: Vapreotide
@@ -90,6 +91,7 @@ chembl:
     full-mwt: 1131.4
     mw-freebase: 1131.4
     full-molformula: C57H70N12O9S2
+  identity-check: formula-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `vapreotide-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL3349523](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3349523/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3349523](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3349523/) · max phase 3 · id via exact ChEMBL name match · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

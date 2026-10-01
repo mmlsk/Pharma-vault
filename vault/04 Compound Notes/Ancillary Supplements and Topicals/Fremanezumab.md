@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4297756
@@ -71,6 +72,7 @@ chembl:
     name: Calcitonin gene-related peptide
     action: ANTAGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Fremanezumab
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `fremanezumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4297756](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297756/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297756](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297756/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

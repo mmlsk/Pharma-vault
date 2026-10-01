@@ -56,6 +56,7 @@ tags:
 - group/glp1
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2105762
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.83
     full-molformula: C17H20F2N4O3S
+  identity-check: structure-confirmed
 ---
 
 # Omarigliptin
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `omarigliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL2105762](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105762/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2105762](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105762/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

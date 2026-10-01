@@ -58,6 +58,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Islatravir
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.49
     full-molformula: C12H12FN5O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -112,7 +114,7 @@ pk-verification:
 - **Compound ID:** `islatravir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL517231](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL517231/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL517231](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL517231/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3785197
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.15
     full-molformula: C32H31F9N4O5
+  identity-check: structure-confirmed
 ---
 
 # Obicetrapib
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `obicetrapib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3785197](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3785197/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3785197](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3785197/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

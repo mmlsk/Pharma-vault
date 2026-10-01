@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4116008
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C20H27N7O3S
+  identity-check: structure-confirmed
 ---
 
 # Cerdulatinib
@@ -102,7 +104,7 @@ chembl:
 - **Compound ID:** `cerdulatinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4116008](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4116008/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4116008](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4116008/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

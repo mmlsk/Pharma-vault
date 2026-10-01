@@ -58,6 +58,7 @@ tags:
 - group/fgfr
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4297522
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.57
     full-molformula: C24H27F2N5O4
+  identity-check: structure-confirmed
 ---
 
 # Pemazyre (Pemigatinib)
@@ -103,7 +105,7 @@ chembl:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Pemazyre, Pemigatinib
-- **ChEMBL:** [CHEMBL4297522](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297522/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297522](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297522/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3301581
@@ -70,6 +71,7 @@ chembl:
     name: Parathyroid hormone/parathyroid hormone-related peptide receptor
     action: AGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Abaloparatide
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `abaloparatide-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL3301581](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301581/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3301581](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301581/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

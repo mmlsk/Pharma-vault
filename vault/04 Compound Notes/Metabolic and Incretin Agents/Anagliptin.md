@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1929396
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.76
     full-molformula: C19H25N7O2
+  identity-check: structure-confirmed
 ---
 
 # Anagliptin
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `anagliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL1929396](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1929396/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1929396](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1929396/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

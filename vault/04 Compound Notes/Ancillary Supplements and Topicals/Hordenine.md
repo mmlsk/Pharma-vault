@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL505789
@@ -76,6 +77,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C10H15NO
+  identity-check: structure-confirmed
 ---
 
 # Hordenine
@@ -89,7 +91,7 @@ chembl:
 - **Compound ID:** `hordenine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL505789](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL505789/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL505789](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL505789/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

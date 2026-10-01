@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1201834
@@ -72,6 +73,7 @@ chembl:
     name: Interleukin-1 beta
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Canakinumab (Ilaris)
@@ -86,7 +88,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Canakinumab, Ilaris
-- **ChEMBL:** [CHEMBL1201834](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201834/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201834](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201834/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

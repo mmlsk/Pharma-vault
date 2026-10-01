@@ -58,6 +58,7 @@ tags:
 - group/fgfr
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3701238
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.51
     full-molformula: C22H22N6O3
+  identity-check: structure-confirmed
 ---
 
 # Lytgobi (Futibatinib)
@@ -97,7 +99,7 @@ chembl:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Lytgobi, Futibatinib
-- **ChEMBL:** [CHEMBL3701238](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3701238/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3701238](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3701238/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

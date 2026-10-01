@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2316582
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.37
     full-molformula: C29H27F3N6O
+  identity-check: structure-confirmed
 ---
 
 # Olverembatinib
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `olverembatinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL2316582](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2316582/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2316582](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2316582/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

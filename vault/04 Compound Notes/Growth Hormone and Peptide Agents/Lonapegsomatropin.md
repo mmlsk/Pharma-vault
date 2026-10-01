@@ -56,6 +56,7 @@ tags:
 - group/gh
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4298185
@@ -71,6 +72,7 @@ chembl:
     name: Growth hormone receptor
     action: AGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Lonapegsomatropin
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `lonapegsomatropin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL4298185](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298185/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4298185](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298185/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

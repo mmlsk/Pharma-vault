@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4594275
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.52
     full-molformula: C24H28N8O2
+  identity-check: structure-confirmed
 ---
 
 # Gusacitinib
@@ -95,7 +97,7 @@ chembl:
 - **Compound ID:** `gusacitinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4594275](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594275/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4594275](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594275/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - possible-duplicate
 chembl:
   identity-source: chembl-name-match
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.09
     full-molformula: C27H41NO8
+  identity-check: structure-confirmed
 ---
 
 # Latanoprostene Bunod
@@ -95,7 +97,7 @@ chembl:
 - **Compound ID:** `latanoprostene-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2364612](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2364612/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2364612](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2364612/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

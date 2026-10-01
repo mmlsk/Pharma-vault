@@ -70,6 +70,7 @@ chembl:
     name: Tumor necrosis factor ligand superfamily member 4
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Amlitelimab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `amlitelimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4594569](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594569/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4594569](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594569/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

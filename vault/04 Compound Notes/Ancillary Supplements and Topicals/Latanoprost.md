@@ -57,7 +57,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Latanoprost
@@ -90,11 +93,22 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.25
     full-molformula: C26H40O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: be74d517-7f73-a74c-e053-2a95a90a3819
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=be74d517-7f73-a74c-e053-2a95a90a3819
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Catiolanze
+  ema-number: EMEA/H/C/005933
+  url: https://www.ema.europa.eu/en/documents/product-information/catiolanze-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -111,7 +125,7 @@ pk-verification:
 - **Compound ID:** `latanoprost-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1051](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1051/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1051](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1051/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -155,6 +169,10 @@ Prostanoid FP receptor agonist _(ChEMBL curated mechanism of the parent molecule
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set be74d517…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=be74d517-7f73-a74c-e053-2a95a90a3819), label version 20260904. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.283)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Catiolanze*](https://www.ema.europa.eu/en/documents/product-information/catiolanze-epar-product-information_en.pdf) (EMEA/H/C/005933). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.283, 0.333)
 
 ## Related compounds (auto)
 

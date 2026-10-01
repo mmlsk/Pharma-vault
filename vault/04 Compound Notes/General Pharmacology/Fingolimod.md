@@ -55,6 +55,7 @@ tags:
 - group/immunology
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL314854
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.52
     full-molformula: C19H33NO2
+  identity-check: structure-confirmed
 ---
 
 # Fingolimod
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `fingolimod-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL314854](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL314854/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL314854](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL314854/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL304383
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.47
     full-molformula: C3H7NO2
+  identity-check: structure-confirmed
 ---
 
 # Sarcosine (N-methylglycine)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Sarcosine, N-methylglycine
-- **ChEMBL:** [CHEMBL304383](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL304383/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL304383](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL304383/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

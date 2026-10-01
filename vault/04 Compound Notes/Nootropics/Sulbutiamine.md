@@ -59,6 +59,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 pk-source:
   type: wikipedia-infobox
   title: Sulbutiamine
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.12
     full-molformula: C32H46N8O6S2
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -108,7 +110,7 @@ pk-verification:
 - **Compound ID:** `sulbutiamine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1874002](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1874002/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1874002](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1874002/) · max phase 2 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

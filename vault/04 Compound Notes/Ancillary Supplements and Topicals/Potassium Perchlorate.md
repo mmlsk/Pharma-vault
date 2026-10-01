@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1200696
@@ -71,6 +72,7 @@ chembl:
     full-mwt: 138.55
     mw-freebase: 138.55
     full-molformula: ClKO4
+  identity-check: structure-confirmed
 ---
 
 # Potassium Perchlorate
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `potassium-perchlorate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200696](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200696/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1200696](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200696/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

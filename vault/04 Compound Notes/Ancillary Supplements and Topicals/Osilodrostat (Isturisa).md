@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3099695
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.75
     full-molformula: C13H10FN3
+  identity-check: structure-confirmed
 ---
 
 # Osilodrostat (Isturisa)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Osilodrostat, Isturisa
-- **ChEMBL:** [CHEMBL3099695](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3099695/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3099695](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3099695/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

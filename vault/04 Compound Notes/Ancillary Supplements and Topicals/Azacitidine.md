@@ -48,7 +48,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: partially-verified
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
@@ -57,7 +57,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-discrepant
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Azacitidine
@@ -99,6 +102,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.43
     full-molformula: C8H12N4O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -107,6 +111,16 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Vidaza
+  ema-number: EMEA/H/C/000978
+  url: https://www.ema.europa.eu/en/documents/product-information/vidaza-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/vidaza-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
 ---
 
 # Azacitidine
@@ -120,7 +134,7 @@ pk-verification:
 - **Compound ID:** `azacitidine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1489](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1489/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1489](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1489/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -165,6 +179,10 @@ DNA (cytosine-5)-methyltransferase 1 inhibitor; DNA (cytosine-5)-methyltransfera
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set a6a5ca37…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a6a5ca37-37e8-ab65-bc0b-9c0682ab52f7), label version 20260908. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.683, 4)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Vidaza*](https://www.ema.europa.eu/en/documents/product-information/vidaza-epar-product-information_en.pdf) (EMEA/H/C/000978) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/vidaza-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 0.09, 0.3, 0.38, 0.4, 0.683)
 
 ## Related compounds (auto)
 

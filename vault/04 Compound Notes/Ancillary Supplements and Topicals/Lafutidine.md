@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1742461
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.43
     full-molformula: C22H29N3O4S
+  identity-check: structure-confirmed
 ---
 
 # Lafutidine
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `lafutidine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1742461](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742461/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1742461](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742461/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

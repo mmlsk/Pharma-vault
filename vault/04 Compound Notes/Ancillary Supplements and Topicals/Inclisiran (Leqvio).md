@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3990033
@@ -73,6 +74,7 @@ chembl:
     name: PCSK9 mRNA
     action: RNAI INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Inclisiran (Leqvio)
@@ -87,7 +89,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Inclisiran, Leqvio
-- **ChEMBL:** [CHEMBL3990033](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990033/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3990033](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990033/) · max phase 3 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

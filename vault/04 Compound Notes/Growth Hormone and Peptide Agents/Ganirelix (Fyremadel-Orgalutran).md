@@ -57,7 +57,7 @@ risk-domains: []
 group-risk-triage:
 - evidence-limited
 - identity-contamination
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -66,6 +66,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-formula-match
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Ganirelix
@@ -91,6 +93,7 @@ chembl:
     full-mwt: 1570.35
     mw-freebase: 1570.35
     full-molformula: C80H113ClN18O13
+  identity-check: formula-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -98,6 +101,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Orgalutran
+  ema-number: EMEA/H/C/000274
+  url: https://www.ema.europa.eu/en/documents/product-information/orgalutran-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/orgalutran-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Ganirelix (Fyremadel/Orgalutran)
@@ -112,7 +126,7 @@ pk-verification:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Ganirelix, Fyremadel, Orgalutran
-- **ChEMBL:** [CHEMBL1251](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1251/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1251](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1251/) · max phase 4 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 
@@ -154,6 +168,11 @@ Gonadotropin-releasing hormone receptor antagonist _(ChEMBL curated mechanism of
 | Excretion | mainly non-renal | Feces: 75%; Urine: 22% |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Orgalutran*](https://www.ema.europa.eu/en/documents/product-information/orgalutran-epar-product-information_en.pdf) (EMEA/H/C/000274) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/orgalutran-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 13)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

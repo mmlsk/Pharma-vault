@@ -58,7 +58,10 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Reslizumab
@@ -81,11 +84,22 @@ chembl:
     name: Interleukin-5
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 053b9158-2a5b-48b9-bf47-5fa78a35ec33
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=053b9158-2a5b-48b9-bf47-5fa78a35ec33
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Cinqaero
+  ema-number: EMEA/H/C/003912
+  url: https://www.ema.europa.eu/en/documents/product-information/cinqaero-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/cinqaero-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -102,7 +116,7 @@ pk-verification:
 - **Compound ID:** `reslizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL2107884](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107884/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2107884](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107884/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -141,6 +155,10 @@ Interleukin-5 inhibitor _(ChEMBL curated mechanism of the parent molecule, via C
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 053b9158…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=053b9158-2a5b-48b9-bf47-5fa78a35ec33), label version 20200229. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 576)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Cinqaero*](https://www.ema.europa.eu/en/documents/product-information/cinqaero-epar-product-information_en.pdf) (EMEA/H/C/003912) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/cinqaero-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 576)
 
 ## Related compounds (auto)
 

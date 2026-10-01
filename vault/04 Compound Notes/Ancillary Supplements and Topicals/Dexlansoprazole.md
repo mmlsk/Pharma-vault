@@ -56,6 +56,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Dexlansoprazole
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.7
     full-molformula: C16H14F3N3O2S
+  identity-check: structure-confirmed
 ---
 
 # Dexlansoprazole
@@ -101,7 +103,7 @@ chembl:
 - **Compound ID:** `dexlansoprazole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201863](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201863/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201863](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201863/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

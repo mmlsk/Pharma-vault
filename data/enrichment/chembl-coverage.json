@@ -1,15 +1,16 @@
 {
  "substances": 2537,
- "with_chembl_identity": 2264,
+ "with_chembl_identity": 2262,
  "identity_source": {
   "catalogue": 499,
-  "chembl-name-match": 607,
+  "chembl-name-match": 604,
   "curated-addition": 121,
-  "wikipedia-infobox": 1037
+  "curated-identity": 3,
+  "wikipedia-infobox": 1035
  },
  "unresolved_ids": 0,
  "with_mechanism": 1366,
- "with_atc": 1411,
+ "with_atc": 1412,
  "black_box": 450,
  "withdrawn": 104,
  "distinct_targets": 546,

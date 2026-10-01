@@ -64,7 +64,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Enzalutamide
@@ -97,11 +100,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C21H16F4N4O2S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: b129fdc9-1d8e-425c-a5a9-8a2ed36dfbdf
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b129fdc9-1d8e-425c-a5a9-8a2ed36dfbdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Xtandi
+  ema-number: EMEA/H/C/002639
+  url: https://www.ema.europa.eu/en/documents/product-information/xtandi-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/xtandi-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -119,7 +134,7 @@ pk-verification:
 - **Compound ID:** `enzalutamide-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1082407](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1082407/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1082407](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1082407/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -167,6 +182,11 @@ Androgen Receptor antagonist _(ChEMBL curated mechanism of the parent molecule, 
 > Automated comparison with the [US prescribing information (DailyMed set b129fdc9…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b129fdc9-1d8e-425c-a5a9-8a2ed36dfbdf), label version 20260728. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 67.2, 139.2, 187.2, 206.4, 244.8)
 > - protein-binding: consistent (label values: 95, 97, 98)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Xtandi*](https://www.ema.europa.eu/en/documents/product-information/xtandi-epar-product-information_en.pdf) (EMEA/H/C/002639) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/xtandi-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 67.2, 112.8, 139.2, 244.8, 249.6)
+> - protein-binding: consistent (SmPC values: 95, 97, 98)
 
 ## Related compounds (auto)
 

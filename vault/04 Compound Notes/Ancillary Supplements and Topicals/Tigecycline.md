@@ -58,7 +58,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-formula-match
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Tigecycline
@@ -91,11 +94,23 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.18
     full-molformula: C29H39N5O8
+  identity-check: formula-match
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 6e9a34af-8dee-4ba2-9157-2f5cb46958a9
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6e9a34af-8dee-4ba2-9157-2f5cb46958a9
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Tygacil
+  ema-number: EMEA/H/C/000644
+  url: https://www.ema.europa.eu/en/documents/product-information/tygacil-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -113,7 +128,7 @@ pk-verification:
 - **Compound ID:** `tigecycline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL376140](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL376140/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL376140](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL376140/) · max phase 4 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 
@@ -159,6 +174,11 @@ Bacterial 70S ribosome inhibitor _(ChEMBL curated mechanism of the parent molecu
 > Automated comparison with the [US prescribing information (DailyMed set 6e9a34af…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6e9a34af-8dee-4ba2-9157-2f5cb46958a9), label version 20260217. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0, 12, 24)
 > - protein-binding: consistent (label values: 15, 22, 27, 30, 33, 36)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Tygacil*](https://www.ema.europa.eu/en/documents/product-information/tygacil-epar-product-information_en.pdf) (EMEA/H/C/000644). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 42)
+> - protein-binding: consistent (SmPC values: 71, 89)
 
 ## Related compounds (auto)
 

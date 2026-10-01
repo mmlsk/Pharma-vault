@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1650443
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.86
     full-molformula: C18H20FN5O2
+  identity-check: structure-confirmed
 ---
 
 # Trelagliptin
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `trelagliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL1650443](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1650443/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1650443](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1650443/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

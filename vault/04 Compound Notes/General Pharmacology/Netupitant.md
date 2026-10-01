@@ -65,6 +65,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Netupitant
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.31
     full-molformula: C30H32F6N4O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -116,7 +118,7 @@ pk-verification:
 - **Compound ID:** `netupitant-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL206253](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL206253/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL206253](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL206253/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

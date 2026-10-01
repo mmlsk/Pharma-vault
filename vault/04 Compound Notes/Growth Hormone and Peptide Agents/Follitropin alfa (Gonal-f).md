@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1201692
@@ -74,6 +75,7 @@ chembl:
     name: Follicle-stimulating hormone receptor
     action: AGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Follitropin alfa (Gonal-f)
@@ -88,7 +90,7 @@ chembl:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Follitropin alfa, Gonal-f
-- **ChEMBL:** [CHEMBL1201692](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201692/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1201692](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201692/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

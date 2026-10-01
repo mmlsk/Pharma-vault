@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2087140
@@ -76,6 +77,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.29
     full-molformula: C27H44O8
+  identity-check: structure-confirmed
 ---
 
 # Turkesterone
@@ -89,7 +91,7 @@ chembl:
 - **Compound ID:** `turkesterone-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL2087140](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2087140/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2087140](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2087140/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -79,6 +79,7 @@ chembl:
     name: Interleukin-6
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 pk-verification:
   source: fda-label
   status: no-label
@@ -99,7 +100,7 @@ pk-verification:
 - **Compound ID:** `olokizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1743050](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743050/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1743050](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743050/) · max phase 3 · id via Wikipedia infobox · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

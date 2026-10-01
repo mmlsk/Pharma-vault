@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL76903
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.2
     full-molformula: C26H43NO3
+  identity-check: structure-confirmed
 ---
 
 # Olvanil
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `olvanil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL76903](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL76903/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL76903](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL76903/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

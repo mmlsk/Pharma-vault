@@ -69,6 +69,7 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Ginger (Zingiber officinale)
@@ -83,7 +84,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Ginger, Zingiber officinale
-- **ChEMBL:** [CHEMBL2108465](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108465/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108465](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108465/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

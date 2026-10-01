@@ -66,7 +66,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Apalutamide
@@ -99,11 +102,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.54
     full-molformula: C21H15F4N5O2S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: d1cda4f7-cb33-46ea-b9ac-431f6452b1a5
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d1cda4f7-cb33-46ea-b9ac-431f6452b1a5
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Erleada
+  ema-number: EMEA/H/C/004452
+  url: https://www.ema.europa.eu/en/documents/product-information/erleada-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/erleada-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -122,7 +137,7 @@ pk-verification:
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Apalutamide, Erleada
-- **ChEMBL:** [CHEMBL3183409](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3183409/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3183409](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3183409/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -170,6 +185,11 @@ Androgen Receptor antagonist _(ChEMBL curated mechanism of the parent molecule, 
 > Automated comparison with the [US prescribing information (DailyMed set d1cda4f7…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d1cda4f7-cb33-46ea-b9ac-431f6452b1a5), label version 20260702. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 72)
 > - protein-binding: consistent (label values: 95, 96)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Erleada*](https://www.ema.europa.eu/en/documents/product-information/erleada-epar-product-information_en.pdf) (EMEA/H/C/004452) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/erleada-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 72)
+> - protein-binding: consistent (SmPC values: 95, 96)
 
 ## Related compounds (auto)
 

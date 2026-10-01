@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL456
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.64
     full-molformula: C13H12Cl2O4
+  identity-check: structure-confirmed
 ---
 
 # Ethacrynic Acid
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `ethacrynic-acid-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL456](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL456/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL456](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL456/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -59,7 +59,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Ritonavir
@@ -95,6 +98,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.11
     full-molformula: C37H48N6O5S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -103,6 +107,17 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Norvir
+  ema-number: EMEA/H/C/000127
+  url: https://www.ema.europa.eu/en/documents/product-information/norvir-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
     protein-binding: consistent
 ---
 
@@ -117,7 +132,7 @@ pk-verification:
 - **Compound ID:** `ritonavir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL163](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL163/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL163](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL163/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -165,6 +180,11 @@ Cytochrome P450 3A inhibitor; Human immunodeficiency virus type 1 protease inhib
 > Automated comparison with the [US prescribing information (DailyMed set a32cb2e3…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a32cb2e3-d4e5-4bbf-9d88-20b2b249e779), label version 20260806. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 3, 5, 12)
 > - protein-binding: consistent (label values: 98, 99)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Norvir*](https://www.ema.europa.eu/en/documents/product-information/norvir-epar-product-information_en.pdf) (EMEA/H/C/000127). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
+> - protein-binding: consistent (SmPC values: 98, 99)
 
 ## Related compounds (auto)
 

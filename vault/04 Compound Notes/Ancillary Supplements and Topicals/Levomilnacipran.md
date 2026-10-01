@@ -64,6 +64,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Levomilnacipran
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.86
     full-molformula: C15H22N2O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -113,7 +115,7 @@ pk-verification:
 - **Compound ID:** `levomilnacipran-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL99946](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL99946/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL99946](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL99946/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

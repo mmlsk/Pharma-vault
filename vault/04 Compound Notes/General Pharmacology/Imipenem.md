@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Imipenem
@@ -86,6 +87,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.22
     full-molformula: C12H17N3O4S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -106,7 +108,7 @@ pk-verification:
 - **Compound ID:** `imipenem-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL43708](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL43708/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL43708](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL43708/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

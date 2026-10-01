@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1371937
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.41
     full-molformula: C9H19NO4
+  identity-check: structure-confirmed
 ---
 
 # Panthenol
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `panthenol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1371937](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1371937/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1371937](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1371937/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

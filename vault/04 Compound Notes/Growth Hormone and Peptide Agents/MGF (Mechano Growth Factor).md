@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 - possible-duplicate
 chembl:
   identity-source: chembl-name-match
@@ -75,6 +76,7 @@ chembl:
     name: Insulin-like growth factor 1 receptor
     action: AGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # MGF (Mechano Growth Factor)
@@ -89,7 +91,7 @@ chembl:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** MGF, Mechano Growth Factor
-- **ChEMBL:** [CHEMBL1201716](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201716/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1201716](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201716/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

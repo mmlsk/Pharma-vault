@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Cisapride
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.44
     full-molformula: C23H29ClFN3O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -112,7 +114,7 @@ pk-verification:
 - **Compound ID:** `cisapride-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1729](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1729/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1729](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1729/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

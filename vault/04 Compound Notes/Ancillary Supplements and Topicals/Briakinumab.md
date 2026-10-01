@@ -86,6 +86,7 @@ chembl:
     name: Interleukin-12
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Briakinumab
@@ -99,7 +100,7 @@ chembl:
 - **Compound ID:** `briakinumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1742995](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742995/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1742995](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742995/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

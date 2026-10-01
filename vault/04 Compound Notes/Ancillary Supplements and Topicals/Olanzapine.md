@@ -63,7 +63,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-formula-match
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Olanzapine
@@ -102,11 +105,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.81
     full-molformula: C17H20N4S
+  identity-check: formula-match
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 5af81f87-5582-aa23-e063-6294a90a1ee8
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5af81f87-5582-aa23-e063-6294a90a1ee8
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Zyprexa
+  ema-number: EMEA/H/C/000115
+  url: https://www.ema.europa.eu/en/documents/product-information/zyprexa-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/zyprexa-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -124,7 +139,7 @@ pk-verification:
 - **Compound ID:** `olanzapine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL715](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL715/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL715](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL715/) · max phase 4 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 
@@ -174,6 +189,11 @@ D2-like dopamine receptor antagonist; Serotonin 2a (5-HT2a) receptor antagonist;
 > Automated comparison with the [US prescribing information (DailyMed set 5af81f87…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5af81f87-5582-aa23-e063-6294a90a1ee8), label version 20260908. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 21, 30, 54)
 > - protein-binding: consistent (label values: 93)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Zyprexa*](https://www.ema.europa.eu/en/documents/product-information/zyprexa-epar-product-information_en.pdf) (EMEA/H/C/000115) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/zyprexa-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 30.4, 32.3, 32.4, 33.8)
+> - protein-binding: consistent (SmPC values: 93)
 
 ## Related compounds (auto)
 

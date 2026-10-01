@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2181929
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.91
     full-molformula: C17H17FN2O4S
+  identity-check: structure-confirmed
 ---
 
 # Apararenone
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `apararenone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2181929](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2181929/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2181929](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2181929/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Theobromine
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.56
     full-molformula: C7H8N4O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -108,7 +110,7 @@ pk-verification:
 - **Compound ID:** `theobromine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1114](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1114/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1114](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1114/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

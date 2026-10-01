@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL287556
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.57
     full-molformula: C6H6O4
+  identity-check: structure-confirmed
 ---
 
 # Kojic Acid
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `kojic-acid-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL287556](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL287556/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL287556](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL287556/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

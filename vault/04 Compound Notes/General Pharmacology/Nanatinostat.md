@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1801250
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.45
     full-molformula: C20H19FN6O2
+  identity-check: connectivity-match
 ---
 
 # Nanatinostat
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `nanatinostat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1801250](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1801250/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1801250](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1801250/) · max phase 2 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

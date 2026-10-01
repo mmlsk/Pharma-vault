@@ -55,6 +55,7 @@ tags:
 - group/immunology
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4298128
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.41
     full-molformula: C26H34F3N7O4S
+  identity-check: structure-confirmed
 ---
 
 # Elexacaftor
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `elexacaftor-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL4298128](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298128/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4298128](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298128/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

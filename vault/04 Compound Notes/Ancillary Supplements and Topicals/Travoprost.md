@@ -57,7 +57,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Travoprost
@@ -90,11 +93,22 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.22
     full-molformula: C26H35F3O6
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: efe2861a-f7ca-ae06-e053-2995a90a50e9
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=efe2861a-f7ca-ae06-e053-2995a90a50e9
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Travatan
+  ema-number: EMEA/H/C/000390
+  url: https://www.ema.europa.eu/en/documents/product-information/travatan-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -111,7 +125,7 @@ pk-verification:
 - **Compound ID:** `travoprost-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200799](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200799/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1200799](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200799/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -155,6 +169,10 @@ Prostanoid FP receptor agonist _(ChEMBL curated mechanism of the parent molecule
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set efe2861a…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=efe2861a-f7ca-ae06-e053-2995a90a50e9), label version 20251121. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.283, 0.75, 1.433)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Travatan*](https://www.ema.europa.eu/en/documents/product-information/travatan-epar-product-information_en.pdf) (EMEA/H/C/000390). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 1.5)
 
 ## Related compounds (auto)
 

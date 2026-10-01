@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2109334
@@ -71,6 +72,7 @@ chembl:
     name: B-lymphocyte antigen CD19
     action: BINDING AGENT
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Inebilizumab
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `inebilizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL2109334](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109334/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2109334](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109334/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

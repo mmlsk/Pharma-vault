@@ -56,6 +56,7 @@ tags:
 - group/nootropic
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL596802
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.85
     full-molformula: C15H23NO2S
+  identity-check: structure-confirmed
 ---
 
 # Pridopidine
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `pridopidine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL596802](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL596802/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL596802](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL596802/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

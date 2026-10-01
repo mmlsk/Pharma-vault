@@ -64,7 +64,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Pramipexole
@@ -94,11 +97,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.8
     full-molformula: C10H17N3S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: a7405a56-de1c-4875-b57f-210c991474ba
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a7405a56-de1c-4875-b57f-210c991474ba
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Sifrol
+  ema-number: EMEA/H/C/000133
+  url: https://www.ema.europa.eu/en/documents/product-information/sifrol-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -117,7 +132,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Pramipexole, Mirapex
-- **ChEMBL:** [CHEMBL301265](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL301265/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL301265](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL301265/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -154,6 +169,11 @@ Non-ergoline dopamine agonist with D3 receptor preference; used in Parkinson's d
 > Automated comparison with the [US prescribing information (DailyMed set a7405a56…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a7405a56-de1c-4875-b57f-210c991474ba), label version 20161013. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 8, 12)
 > - protein-binding: consistent (label values: 15)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Sifrol*](https://www.ema.europa.eu/en/documents/product-information/sifrol-epar-product-information_en.pdf) (EMEA/H/C/000133). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 8, 12)
+> - protein-binding: consistent (SmPC values: 20)
 
 ## Related compounds (auto)
 

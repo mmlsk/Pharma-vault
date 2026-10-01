@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL443684
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.1
     full-molformula: C47H55ClF3N5O6S3
+  identity-check: structure-confirmed
 ---
 
 # Navitoclax (ABT-263)
@@ -103,7 +105,7 @@ chembl:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Navitoclax, ABT-263
-- **ChEMBL:** [CHEMBL443684](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL443684/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL443684](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL443684/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

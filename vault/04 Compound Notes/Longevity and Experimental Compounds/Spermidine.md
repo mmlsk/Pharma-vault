@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL19612
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.43
     full-molformula: C7H19N3
+  identity-check: structure-confirmed
 ---
 
 # Spermidine
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `spermidine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL19612](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL19612/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL19612](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL19612/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

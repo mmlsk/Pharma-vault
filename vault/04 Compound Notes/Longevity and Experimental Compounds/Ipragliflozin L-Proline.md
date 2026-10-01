@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4297658
@@ -73,6 +74,7 @@ chembl:
     full-mwt: 519.59
     mw-freebase: 519.59
     full-molformula: C26H30FNO7S
+  identity-check: structure-confirmed
 ---
 
 # Ipragliflozin L-Proline
@@ -86,7 +88,7 @@ chembl:
 - **Compound ID:** `ipragliflozin-l-proline-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL4297658](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297658/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297658](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297658/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

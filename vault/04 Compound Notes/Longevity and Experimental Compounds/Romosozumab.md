@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2107874
@@ -71,6 +72,7 @@ chembl:
     name: Sclerostin
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Romosozumab
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `romosozumab-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL2107874](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107874/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2107874](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107874/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

@@ -57,7 +57,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Eculizumab
@@ -80,11 +83,22 @@ chembl:
     name: Complement C5
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: ebcd67fa-b4d1-4a22-b33d-ee8bf6b9c722
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ebcd67fa-b4d1-4a22-b33d-ee8bf6b9c722
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Soliris
+  ema-number: EMEA/H/C/000791
+  url: https://www.ema.europa.eu/en/documents/product-information/soliris-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/soliris-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -101,7 +115,7 @@ pk-verification:
 - **Compound ID:** `eculizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201828](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201828/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201828](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201828/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -139,6 +153,10 @@ Complement C5 inhibitor _(ChEMBL curated mechanism of the parent molecule, via C
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set ebcd67fa…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ebcd67fa-b4d1-4a22-b33d-ee8bf6b9c722), label version 20260708. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 90.2, 141, 882)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Soliris*](https://www.ema.europa.eu/en/documents/product-information/soliris-epar-product-information_en.pdf) (EMEA/H/C/000791) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/soliris-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 1, 52.4, 271.2, 297, 297.6, 348)
 
 ## Related compounds (auto)
 

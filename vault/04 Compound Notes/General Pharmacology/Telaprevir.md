@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL231813
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.23
     full-molformula: C36H53N7O6
+  identity-check: structure-confirmed
 ---
 
 # Telaprevir
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `telaprevir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL231813](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL231813/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL231813](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL231813/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

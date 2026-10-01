@@ -131,7 +131,7 @@ _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for fiel
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
 - **Shared target:** [[Delgocitinib]] (Janus Kinase (JAK)), [[Gusacitinib]] (Janus Kinase (JAK)), [[Nezulcitinib]] (Janus Kinase (JAK))
-- **Same ATC subgroup:** [[Baricitinib (oral, Olumiant)]], [[Filgotinib]], [[Ritlecitinib (oral, Litfulo)]], [[Tofacitinib]], [[Upadacitinib (Rinvoq)]]
+- **Same ATC subgroup:** [[Baricitinib (oral, Olumiant)]], [[Deucravacitinib (Sotyktu)]], [[Filgotinib]], [[Ritlecitinib (oral, Litfulo)]], [[Tofacitinib]], [[Upadacitinib (Rinvoq)]]
 
 ## Safety routing
 

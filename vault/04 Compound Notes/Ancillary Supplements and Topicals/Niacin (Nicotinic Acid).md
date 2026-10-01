@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - possible-duplicate
 chembl:
   identity-source: chembl-name-match
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.6
     full-molformula: C6H5NO2
+  identity-check: structure-confirmed
 ---
 
 # Niacin (Nicotinic Acid)
@@ -97,7 +99,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Niacin, Nicotinic Acid
-- **ChEMBL:** [CHEMBL573](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL573/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL573](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL573/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

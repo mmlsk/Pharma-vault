@@ -55,6 +55,7 @@ tags:
 - group/derm
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL571546
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.56
     full-molformula: C26H29N3O3
+  identity-check: structure-confirmed
 ---
 
 # Tirbanibulin
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `tirbanibulin-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL571546](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL571546/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL571546](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL571546/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

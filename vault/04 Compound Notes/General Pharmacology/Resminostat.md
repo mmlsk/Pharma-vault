@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4296717
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.47
     full-molformula: C16H19N3O4S
+  identity-check: structure-confirmed
 ---
 
 # Resminostat
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `resminostat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL4296717](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4296717/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4296717](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4296717/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

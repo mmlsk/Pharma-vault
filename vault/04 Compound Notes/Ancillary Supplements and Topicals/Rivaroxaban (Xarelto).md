@@ -65,7 +65,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Rivaroxaban
@@ -98,11 +101,22 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.78
     full-molformula: C19H18ClN3O5S
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 10db92f9-2300-4a80-836b-673e1ae91610
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=10db92f9-2300-4a80-836b-673e1ae91610
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Xarelto
+  ema-number: EMEA/H/C/000944
+  url: https://www.ema.europa.eu/en/documents/product-information/xarelto-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -120,7 +134,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Rivaroxaban, Xarelto
-- **ChEMBL:** [CHEMBL198362](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL198362/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL198362](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL198362/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -166,6 +180,10 @@ Coagulation factor X inhibitor _(ChEMBL curated mechanism of the parent molecule
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 10db92f9…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=10db92f9-2300-4a80-836b-673e1ae91610), label version 20260910. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 1.6, 1.9, 3, 4.2, 5, 9)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Xarelto*](https://www.ema.europa.eu/en/documents/product-information/xarelto-epar-product-information_en.pdf) (EMEA/H/C/000944). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 4.5, 5, 9, 11, 13)
 
 ## Related compounds (auto)
 

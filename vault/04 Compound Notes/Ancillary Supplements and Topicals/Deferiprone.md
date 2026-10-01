@@ -57,7 +57,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Deferiprone
@@ -87,11 +90,22 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.56
     full-molformula: C7H9NO2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 58dd1370-5042-833f-e063-6394a90a0777
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=58dd1370-5042-833f-e063-6394a90a0777
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Ferriprox
+  ema-number: EMEA/H/C/000236
+  url: https://www.ema.europa.eu/en/documents/product-information/ferriprox-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/ferriprox-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -108,7 +122,7 @@ pk-verification:
 - **Compound ID:** `deferiprone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL70927](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL70927/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL70927](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL70927/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -148,6 +162,10 @@ Unknown _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 58dd1370…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=58dd1370-5042-833f-e063-6394a90a0777), label version 20260812. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 2)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Ferriprox*](https://www.ema.europa.eu/en/documents/product-information/ferriprox-epar-product-information_en.pdf) (EMEA/H/C/000236) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/ferriprox-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2, 3)
 
 ## Related compounds (auto)
 

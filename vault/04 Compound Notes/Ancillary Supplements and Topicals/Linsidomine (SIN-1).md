@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1189150
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.54
     full-molformula: C6H10N4O2
+  identity-check: structure-confirmed
 ---
 
 # Linsidomine (SIN-1)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Linsidomine, SIN-1
-- **ChEMBL:** [CHEMBL1189150](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1189150/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1189150](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1189150/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

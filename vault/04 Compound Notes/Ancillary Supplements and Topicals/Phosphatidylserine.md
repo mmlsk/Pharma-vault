@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4297669
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.03
     full-molformula: C42H82NO10P
+  identity-check: structure-confirmed
 ---
 
 # Phosphatidylserine
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `phosphatidylserine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4297669](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297669/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297669](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297669/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

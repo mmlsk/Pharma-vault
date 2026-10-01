@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: LGD-4033
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.84
     full-molformula: C14H12F6N2O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -113,7 +115,7 @@ pk-verification:
 - **Source group:** SARMs (`sarms`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Ligandrol, LGD-4033
-- **ChEMBL:** [CHEMBL5170587](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5170587/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL5170587](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5170587/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

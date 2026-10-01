@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1234579
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.28
     full-molformula: N2O
+  identity-check: structure-confirmed
 ---
 
 # Nitrous Oxide
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `nitrous-oxide-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1234579](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1234579/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1234579](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1234579/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

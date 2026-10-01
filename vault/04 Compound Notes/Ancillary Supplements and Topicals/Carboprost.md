@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1237122
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.31
     full-molformula: C21H36O5
+  identity-check: structure-confirmed
 ---
 
 # Carboprost
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `carboprost-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1237122](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237122/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1237122](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237122/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

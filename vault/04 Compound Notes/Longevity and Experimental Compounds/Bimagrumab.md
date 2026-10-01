@@ -70,6 +70,7 @@ chembl:
     name: Activin receptor type-2B
     action: ANTAGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Bimagrumab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `bimagrumab-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL3137353](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137353/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3137353](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137353/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

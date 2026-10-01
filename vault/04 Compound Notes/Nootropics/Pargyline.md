@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Pargyline
@@ -86,6 +87,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.61
     full-molformula: C11H13N
+  identity-check: structure-confirmed
 ---
 
 # Pargyline
@@ -99,7 +101,7 @@ chembl:
 - **Compound ID:** `pargyline-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL673](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL673/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL673](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL673/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

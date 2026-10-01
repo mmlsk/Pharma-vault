@@ -56,6 +56,7 @@ tags:
 - group/steroids
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL272195
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C19H30O2
+  identity-check: structure-confirmed
 ---
 
 # Epiandrosterone
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `epiandrosterone-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL272195](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL272195/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL272195](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL272195/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

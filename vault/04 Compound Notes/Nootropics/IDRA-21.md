@@ -56,6 +56,7 @@ tags:
 - group/nootropic
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL77862
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.71
     full-molformula: C8H9ClN2O2S
+  identity-check: structure-confirmed
 ---
 
 # IDRA-21
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `idra-21-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL77862](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL77862/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL77862](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL77862/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

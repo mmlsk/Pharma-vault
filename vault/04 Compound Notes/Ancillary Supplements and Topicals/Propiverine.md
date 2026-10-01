@@ -58,6 +58,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Propiverine
@@ -87,6 +88,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.69
     full-molformula: C23H29NO3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -107,7 +109,7 @@ pk-verification:
 - **Compound ID:** `propiverine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1078261](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1078261/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1078261](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1078261/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

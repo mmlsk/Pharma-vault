@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1350
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.5
     full-molformula: C7H9ClO6P2S
+  identity-check: structure-confirmed
 ---
 
 # Tiludronate
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `tiludronate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1350](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1350/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1350](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1350/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL553204
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.14
     full-molformula: C33H40O15
+  identity-check: structure-confirmed
 ---
 
 # Icariin
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `icariin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL553204](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL553204/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL553204](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL553204/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

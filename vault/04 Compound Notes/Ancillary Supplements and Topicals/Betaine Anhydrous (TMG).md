@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 - possible-duplicate
 chembl:
   identity-source: chembl-name-match
@@ -84,6 +85,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.51
     full-molformula: C5H12NO2+
+  identity-check: connectivity-match
 ---
 
 # Betaine Anhydrous (TMG)
@@ -98,7 +100,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Betaine Anhydrous, TMG
-- **ChEMBL:** [CHEMBL95889](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL95889/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL95889](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL95889/) · max phase 4 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

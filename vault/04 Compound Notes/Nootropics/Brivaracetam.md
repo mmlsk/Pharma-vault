@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -97,6 +98,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.74
     full-molformula: C11H20N2O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -106,6 +108,15 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-text
+  product: 'Briviact (in Italy: Nubriveo)'
+  ema-number: EMEA/H/C/003898
+  url: null
+  chpl-url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Brivaracetam
@@ -119,7 +130,7 @@ pk-verification:
 - **Compound ID:** `brivaracetam-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL607400](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL607400/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL607400](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL607400/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

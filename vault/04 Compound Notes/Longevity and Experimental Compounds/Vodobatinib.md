@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4130229
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.33
     full-molformula: C27H20ClN3O2
+  identity-check: structure-confirmed
 ---
 
 # Vodobatinib
@@ -96,7 +98,7 @@ chembl:
 - **Compound ID:** `vodobatinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL4130229](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4130229/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4130229](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4130229/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

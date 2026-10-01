@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Saquinavir
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.2
     full-molformula: C38H50N6O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -115,7 +117,7 @@ pk-verification:
 - **Compound ID:** `saquinavir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL114](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL114/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL114](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL114/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

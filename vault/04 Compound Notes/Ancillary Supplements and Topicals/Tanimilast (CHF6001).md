@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3113974
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.11
     full-molformula: C30H30Cl2F2N2O8S
+  identity-check: structure-confirmed
 ---
 
 # Tanimilast (CHF6001)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Tanimilast, CHF6001
-- **ChEMBL:** [CHEMBL3113974](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3113974/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3113974](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3113974/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -64,7 +64,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Azilsartan
@@ -96,11 +99,22 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.38
     full-molformula: C25H20N4O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: b1c8de43-3b26-408f-8c7e-6c7d76348199
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b1c8de43-3b26-408f-8c7e-6c7d76348199
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Edarbi
+  ema-number: EMEA/H/C/002293
+  url: https://www.ema.europa.eu/en/documents/product-information/edarbi-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/edarbi-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -118,7 +132,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Azilsartan medoxomil, Edarbi
-- **ChEMBL:** [CHEMBL57242](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL57242/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL57242](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL57242/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -161,6 +175,10 @@ Type-1 angiotensin II receptor antagonist _(ChEMBL curated mechanism of the pare
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set b1c8de43…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b1c8de43-3b26-408f-8c7e-6c7d76348199), label version 20260513. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 11)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Edarbi*](https://www.ema.europa.eu/en/documents/product-information/edarbi-epar-product-information_en.pdf) (EMEA/H/C/002293) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/edarbi-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 11)
 
 ## Related compounds (auto)
 

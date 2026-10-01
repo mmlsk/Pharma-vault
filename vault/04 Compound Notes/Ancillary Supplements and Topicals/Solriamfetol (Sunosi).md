@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.74
     full-molformula: C10H14N2O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -103,6 +105,15 @@ pk-verification:
   fields:
     half-life: no-label-value
     protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-text
+  product: Sunosi
+  ema-number: EMEA/H/C/004893
+  url: null
+  chpl-url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Solriamfetol (Sunosi)
@@ -117,7 +128,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Solriamfetol, Sunosi
-- **ChEMBL:** [CHEMBL4297620](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297620/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297620](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297620/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

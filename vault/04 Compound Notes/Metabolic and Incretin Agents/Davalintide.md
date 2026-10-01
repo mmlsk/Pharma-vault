@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2105635
@@ -77,6 +78,7 @@ chembl:
     full-mwt: 3624.09
     mw-freebase: 3624.09
     full-molformula: C152H248N50O49S2
+  identity-check: connectivity-match
 ---
 
 # Davalintide
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `davalintide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL2105635](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105635/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2105635](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105635/) · max phase 2 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

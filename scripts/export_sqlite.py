@@ -43,6 +43,11 @@ def main() -> None:
     CREATE TABLE compound_targets (compound_id TEXT REFERENCES substances, target_id TEXT REFERENCES targets, action TEXT, mechanism TEXT);
     CREATE TABLE pk_verification (compound_id TEXT PRIMARY KEY REFERENCES substances, status TEXT, set_id TEXT, url TEXT, effective_time TEXT);
     CREATE TABLE pk_verification_fields (compound_id TEXT, field TEXT, status TEXT, wikipedia TEXT, label_values TEXT);
+    CREATE TABLE pk_verification_ema (compound_id TEXT PRIMARY KEY REFERENCES substances, status TEXT, product TEXT, ema_number TEXT,
+                                      smpc_url TEXT, chpl_url TEXT, ema_atc TEXT, atc_agrees_chembl INTEGER);
+    CREATE TABLE pk_verification_ema_fields (compound_id TEXT, field TEXT, status TEXT, wikipedia TEXT, smpc_values TEXT);
+    CREATE TABLE identity_review (compound_id TEXT PRIMARY KEY REFERENCES substances, tier TEXT, chembl_id TEXT, verdict TEXT,
+                                  decision TEXT, reason TEXT, pubchem_cids TEXT);
     """)
     for r in load("substances.json"):
         cur.execute("INSERT INTO substances VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", (
@@ -73,9 +78,22 @@ def main() -> None:
             cur.execute("INSERT INTO pk_verification_fields VALUES (?,?,?,?,?)", (
                 v["compound_id"], f, d["status"], json.dumps(d.get("wikipedia-h") or d.get("wikipedia-pct")),
                 json.dumps(d.get("label-values-h") or d.get("label-values-pct"))))
+    for v in load("pk-verification-ema.json"):
+        cur.execute("INSERT INTO pk_verification_ema VALUES (?,?,?,?,?,?,?,?)", (
+            v["compound_id"], v["status"], v["product"], v["ema-number"], v.get("smpc-url"), v.get("chpl-url"), v.get("ema-atc"),
+            None if v.get("atc-agrees-chembl") is None else int(v["atc-agrees-chembl"])))
+        for f, d in v.get("fields", {}).items():
+            cur.execute("INSERT INTO pk_verification_ema_fields VALUES (?,?,?,?,?)", (
+                v["compound_id"], f, d["status"], json.dumps(d.get("wikipedia-h") or d.get("wikipedia-pct")),
+                json.dumps(d.get("smpc-values-h") or d.get("smpc-values-pct"))))
+    for x in load("identity-review.json"):
+        d = x.get("decision") or {}
+        cur.execute("INSERT INTO identity_review VALUES (?,?,?,?,?,?,?)", (
+            x["compound_id"], x["tier"], x["chembl-id"], x["verdict"], d.get("decision"), d.get("reason"),
+            ";".join(str(e.get("cid") or e.get("ema-number")) for e in x["evidence"])))
     con.commit()
     n = {t: cur.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0] for t in
-         ("substances", "pk", "chembl", "atc", "targets", "compound_targets", "pk_verification")}
+         ("substances", "pk", "chembl", "atc", "targets", "compound_targets", "pk_verification", "pk_verification_ema", "identity_review")}
     con.close()
     print("sqlite:", n, "->", DB.name)
 

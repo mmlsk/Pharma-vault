@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Tetracaine
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.58
     full-molformula: C15H24N2O2
+  identity-check: structure-confirmed
 ---
 
 # Tetracaine
@@ -105,7 +107,7 @@ chembl:
 - **Compound ID:** `tetracaine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL698](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL698/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL698](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL698/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

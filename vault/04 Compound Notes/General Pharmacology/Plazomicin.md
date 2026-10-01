@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1650559
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.09
     full-molformula: C25H48N6O10
+  identity-check: structure-confirmed
 ---
 
 # Plazomicin
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `plazomicin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1650559](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1650559/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1650559](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1650559/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

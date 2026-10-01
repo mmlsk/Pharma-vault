@@ -64,6 +64,8 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -100,6 +102,17 @@ pk-verification:
   status: consistent
   set-id: f1c82580-87ae-11e0-bc84-0002a5d5c51b
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f1c82580-87ae-11e0-bc84-0002a5d5c51b
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Jakavi
+  ema-number: EMEA/H/C/002464
+  url: https://www.ema.europa.eu/en/documents/product-information/jakavi-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -162,6 +175,11 @@ Tyrosine-protein kinase JAK1 inhibitor _(ChEMBL curated mechanism, as quoted by 
 > Automated comparison with the [US prescribing information (DailyMed set f1c82580…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f1c82580-87ae-11e0-bc84-0002a5d5c51b), label version 20260720. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 3, 3.7, 5, 5.8, 6)
 > - protein-binding: consistent (label values: 97)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Jakavi*](https://www.ema.europa.eu/en/documents/product-information/jakavi-epar-product-information_en.pdf) (EMEA/H/C/002464). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2.8, 3, 4.1, 5)
+> - protein-binding: consistent (SmPC values: 97)
 
 ## Related compounds (auto)
 

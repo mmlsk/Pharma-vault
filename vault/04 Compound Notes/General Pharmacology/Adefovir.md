@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Adefovir
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.49
     full-molformula: C8H12N5O4P
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -113,7 +115,7 @@ pk-verification:
 - **Compound ID:** `adefovir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL484](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL484/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL484](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL484/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

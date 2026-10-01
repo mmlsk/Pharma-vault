@@ -61,7 +61,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Rasburicase
@@ -85,11 +88,22 @@ chembl:
     name: Uric acid
     action: OXIDATIVE ENZYME
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 0ae10bc4-6b65-402f-9db5-2d7753054922
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0ae10bc4-6b65-402f-9db5-2d7753054922
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Fasturtec
+  ema-number: EMEA/H/C/000331
+  url: https://www.ema.europa.eu/en/documents/product-information/fasturtec-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -106,7 +120,7 @@ pk-verification:
 - **Compound ID:** `rasburicase-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201594](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201594/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201594](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201594/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -146,6 +160,10 @@ Uric acid oxidative enzyme _(ChEMBL curated mechanism of the parent molecule, vi
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 0ae10bc4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0ae10bc4-6b65-402f-9db5-2d7753054922), label version 20260730. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 15.7, 22.5)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Fasturtec*](https://www.ema.europa.eu/en/documents/product-information/fasturtec-epar-product-information_en.pdf) (EMEA/H/C/000331). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 15.7, 22.5)
 
 ## Related compounds (auto)
 

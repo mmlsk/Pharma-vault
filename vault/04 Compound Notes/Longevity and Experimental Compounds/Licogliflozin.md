@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4297625
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.58
     full-molformula: C23H28O7
+  identity-check: structure-confirmed
 ---
 
 # Licogliflozin
@@ -95,7 +97,7 @@ chembl:
 - **Compound ID:** `licogliflozin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL4297625](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297625/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297625](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297625/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

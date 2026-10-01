@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL256147
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.21
     full-molformula: C7H16N4O2
+  identity-check: structure-confirmed
 ---
 
 # L-NMMA (Tilarginine)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** L-NMMA, Tilarginine
-- **ChEMBL:** [CHEMBL256147](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL256147/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL256147](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL256147/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

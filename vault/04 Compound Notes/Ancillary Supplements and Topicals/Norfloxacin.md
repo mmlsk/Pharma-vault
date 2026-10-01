@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Norfloxacin
@@ -98,6 +99,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.89
     full-molformula: C16H18FN3O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -118,7 +120,7 @@ pk-verification:
 - **Compound ID:** `norfloxacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL9](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL9/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL9](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL9/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

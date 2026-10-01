@@ -61,7 +61,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-discrepant
+- pk-ema-consistent
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Atropine
@@ -101,6 +104,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.86
     full-molformula: C17H23NO3
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: discrepant
@@ -109,6 +113,16 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Ryjunea
+  ema-number: EMEA/H/C/006324
+  url: https://www.ema.europa.eu/en/documents/product-information/ryjunea-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/ryjunea-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Atropine
@@ -122,7 +136,7 @@ pk-verification:
 - **Compound ID:** `atropine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL517712](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL517712/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL517712](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL517712/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -169,6 +183,10 @@ Muscarinic acetylcholine receptor M1 antagonist; Muscarinic acetylcholine recept
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set e2d4307d…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e2d4307d-da8f-49f5-aac0-02355dd9ffb7), label version 20220915. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 0.333)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Ryjunea*](https://www.ema.europa.eu/en/documents/product-information/ryjunea-epar-product-information_en.pdf) (EMEA/H/C/006324) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/ryjunea-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2, 5)
 
 ## Related compounds (auto)
 

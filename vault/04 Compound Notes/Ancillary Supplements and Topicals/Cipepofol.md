@@ -56,6 +56,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Cipepofol
@@ -87,6 +88,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.79
     full-molformula: C14H20O
+  identity-check: structure-confirmed
 ---
 
 # Cipepofol
@@ -100,7 +102,7 @@ chembl:
 - **Compound ID:** `cipepofol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4094894](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4094894/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4094894](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4094894/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

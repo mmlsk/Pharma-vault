@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2338329
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.65
     full-molformula: C19H16N2O5
+  identity-check: structure-confirmed
 ---
 
 # Roxadustat
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `roxadustat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2338329](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2338329/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2338329](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2338329/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

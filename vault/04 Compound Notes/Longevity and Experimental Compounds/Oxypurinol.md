@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL859
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.48
     full-molformula: C5H4N4O2
+  identity-check: structure-confirmed
 ---
 
 # Oxypurinol
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `oxypurinol-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL859](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL859/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL859](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL859/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

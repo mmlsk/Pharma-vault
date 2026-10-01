@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3990014
@@ -71,6 +72,7 @@ chembl:
     name: Interleukin-23
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Mirikizumab
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `mirikizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3990014](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990014/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3990014](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990014/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

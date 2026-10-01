@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL55895
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.54
     full-molformula: C10H13NO2
+  identity-check: structure-confirmed
 ---
 
 # Phenylbutyrylhydroxamic Acid
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `phenylbutyrylhydroxamic-acid-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL55895](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL55895/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL55895](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL55895/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

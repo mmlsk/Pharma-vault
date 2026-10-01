@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL313006
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.5
     full-molformula: C23H35NO2S
+  identity-check: structure-confirmed
 ---
 
 # Dalcetrapib
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `dalcetrapib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL313006](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL313006/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL313006](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL313006/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

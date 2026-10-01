@@ -56,6 +56,7 @@ tags:
 - group/glp1
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL5314631
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.3
     full-molformula: C31H31ClN4O5
+  identity-check: structure-confirmed
 ---
 
 # Lotiglipron
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `lotiglipron-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL5314631](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5314631/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL5314631](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5314631/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

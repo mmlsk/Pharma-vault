@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 - possible-duplicate
 pk-source:
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.38
     full-molformula: C21H31N3O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -113,7 +115,7 @@ pk-verification:
 - **Compound ID:** `lisinopril-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1237](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1237](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

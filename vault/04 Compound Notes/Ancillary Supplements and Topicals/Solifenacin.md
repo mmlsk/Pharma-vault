@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Solifenacin
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.81
     full-molformula: C23H26N2O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -112,7 +114,7 @@ pk-verification:
 - **Compound ID:** `solifenacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1734](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1734/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1734](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1734/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

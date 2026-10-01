@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1738757
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.24
     full-molformula: C30H28FN7O3
+  identity-check: structure-confirmed
 ---
 
 # Rebastinib
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `rebastinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1738757](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1738757/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1738757](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1738757/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

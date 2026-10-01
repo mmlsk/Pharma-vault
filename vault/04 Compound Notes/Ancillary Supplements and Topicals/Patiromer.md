@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 pk-source:
   type: wikipedia-infobox
   title: Patiromer
@@ -81,6 +82,7 @@ chembl:
     name: Potassium
     action: CHELATING AGENT
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Patiromer
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `patiromer-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2107875](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107875/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2107875](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107875/) · max phase 3 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

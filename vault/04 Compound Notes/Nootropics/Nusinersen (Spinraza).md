@@ -66,6 +66,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -86,6 +87,7 @@ chembl:
   - M09AX07
   targets: []
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
@@ -94,6 +96,17 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+    protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-value
+  product: Spinraza
+  ema-number: EMEA/H/C/004312
+  url: https://www.ema.europa.eu/en/documents/product-information/spinraza-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
     protein-binding: no-label-value
 ---
 
@@ -109,7 +122,7 @@ pk-verification:
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Nusinersen, Spinraza
-- **ChEMBL:** [CHEMBL3301572](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301572/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3301572](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301572/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -141,6 +154,11 @@ An intrathecal antisense oligonucleotide that blocks an intronic splice silencer
 > Automated comparison with the [US prescribing information (DailyMed set dd70cd5f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dd70cd5f-b0fc-4ba4-a5ea-89a34778bd94), label version 20260331. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 1512, 2088, 3240, 4248)
 > - protein-binding: no-label-value (label values: -)
+
+> [!note] EU SmPC cross-check: **no-smpc-value**
+> Automated comparison with section 5.2 of the [EU SmPC of *Spinraza*](https://www.ema.europa.eu/en/documents/product-information/spinraza-epar-product-information_en.pdf) (EMEA/H/C/004312). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

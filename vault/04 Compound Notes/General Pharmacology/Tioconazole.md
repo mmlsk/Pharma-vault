@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1200438
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.53
     full-molformula: C16H13Cl3N2OS
+  identity-check: structure-confirmed
 ---
 
 # Tioconazole
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `tioconazole-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1200438](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200438/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1200438](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200438/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

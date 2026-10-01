@@ -65,7 +65,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Tirzepatide
@@ -91,11 +94,22 @@ chembl:
     name: Glucagon-like peptide 1 receptor
     action: AGONIST
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 487cd7e7-434c-4925-99fa-aa80b1cc776b
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=487cd7e7-434c-4925-99fa-aa80b1cc776b
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Mounjaro
+  ema-number: EMEA/H/C/005620
+  url: https://www.ema.europa.eu/en/documents/product-information/mounjaro-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -113,7 +127,7 @@ pk-verification:
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
 - **Aliases:** Mounjaro/Zepbound, Tirzepatide
-- **ChEMBL:** [CHEMBL4297839](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297839/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297839](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297839/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -156,6 +170,10 @@ Gastric inhibitory polypeptide receptor agonist; Glucagon-like peptide 1 recepto
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 487cd7e7…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=487cd7e7-434c-4925-99fa-aa80b1cc776b), label version 20260828. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 120, 144)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Mounjaro*](https://www.ema.europa.eu/en/documents/product-information/mounjaro-epar-product-information_en.pdf) (EMEA/H/C/005620). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 120)
 
 ## Related compounds (auto)
 

@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL53366
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.76
     full-molformula: C20H21N3O
+  identity-check: structure-confirmed
 ---
 
 # Imidafenacin
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `imidafenacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL53366](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL53366/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL53366](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL53366/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

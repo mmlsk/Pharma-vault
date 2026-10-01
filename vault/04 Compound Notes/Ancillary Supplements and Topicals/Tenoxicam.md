@@ -59,6 +59,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-formula-match
 pk-source:
   type: wikipedia-infobox
   title: Tenoxicam
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.87
     full-molformula: C13H11N3O4S2
+  identity-check: formula-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -108,7 +110,7 @@ pk-verification:
 - **Compound ID:** `tenoxicam-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL302795](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL302795/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL302795](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL302795/) · max phase 2 · id via exact ChEMBL name match · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

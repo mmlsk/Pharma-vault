@@ -62,6 +62,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 pk-source:
   type: wikipedia-infobox
   title: Blinatumomab
@@ -87,11 +88,22 @@ chembl:
     name: B-lymphocyte antigen CD19
     action: CROSS-LINKING AGENT
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: no-label-value
   set-id: 38b482a8-960b-4591-9857-5031ecb830aa
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=38b482a8-960b-4591-9857-5031ecb830aa
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-value
+  product: Blincyto
+  ema-number: EMEA/H/C/003731
+  url: https://www.ema.europa.eu/en/documents/product-information/blincyto-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/blincyto-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: no-label-value
@@ -108,7 +120,7 @@ pk-verification:
 - **Compound ID:** `blinatumomab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1742992](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742992/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1742992](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742992/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -150,6 +162,10 @@ B-lymphocyte antigen CD19 cross-linking agent; T cell surface glycoprotein CD3 c
 > [!note] FDA label cross-check: **no-label-value**
 > Automated comparison with the [US prescribing information (DailyMed set 38b482a8…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=38b482a8-960b-4591-9857-5031ecb830aa), label version 20260414. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
+
+> [!note] EU SmPC cross-check: **no-smpc-value**
+> Automated comparison with section 5.2 of the [EU SmPC of *Blincyto*](https://www.ema.europa.eu/en/documents/product-information/blincyto-epar-product-information_en.pdf) (EMEA/H/C/003731) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/blincyto-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

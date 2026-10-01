@@ -58,6 +58,7 @@ tags:
 - group/nootropic
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4541964
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.6
     full-molformula: C21H15ClF3NO2
+  identity-check: structure-confirmed
 ---
 
 # Zatolmilast (BPN14770)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Zatolmilast, BPN14770
-- **ChEMBL:** [CHEMBL4541964](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4541964/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4541964](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4541964/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

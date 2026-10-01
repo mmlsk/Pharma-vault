@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL6622
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.45
     full-molformula: C6H8N2O8
+  identity-check: structure-confirmed
 ---
 
 # Isosorbide Dinitrate
@@ -96,7 +98,7 @@ chembl:
 - **Compound ID:** `isosorbide-dinitrate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL6622](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6622/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL6622](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6622/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

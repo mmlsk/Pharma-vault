@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1800955
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.82
     full-molformula: C20H24FN5O3
+  identity-check: structure-confirmed
 ---
 
 # Omecamtiv Mecarbil
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `omecamtiv-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
-- **ChEMBL:** [CHEMBL1800955](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1800955/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1800955](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1800955/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

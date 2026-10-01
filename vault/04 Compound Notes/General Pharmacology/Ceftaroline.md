@@ -58,7 +58,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-discrepant
+- pk-ema-consistent
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Ceftaroline fosamil
@@ -97,6 +100,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.07
     full-molformula: C22H21N8O8PS4
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: discrepant
@@ -105,6 +109,17 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Zinforo
+  ema-number: EMEA/H/C/002252
+  url: https://www.ema.europa.eu/en/documents/product-information/zinforo-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/zinforo-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
     protein-binding: consistent
 ---
 
@@ -119,7 +134,7 @@ pk-verification:
 - **Compound ID:** `ceftaroline-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL501122](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL501122/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL501122](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL501122/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -166,6 +181,11 @@ Bacterial penicillin-binding protein inhibitor; Penicillin-binding protein 2a in
 > Automated comparison with the [US prescribing information (DailyMed set 3cee3c08…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3cee3c08-ed60-06c5-ac49-103b7ad2ef5f), label version 20260529. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 0.083, 8, 12, 120, 336)
 > - protein-binding: consistent (label values: 14.5, 20, 28)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Zinforo*](https://www.ema.europa.eu/en/documents/product-information/zinforo-epar-product-information_en.pdf) (EMEA/H/C/002252) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/zinforo-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2.5)
+> - protein-binding: consistent (SmPC values: 20)
 
 ## Related compounds (auto)
 

@@ -70,6 +70,7 @@ chembl:
     name: Tumor necrosis factor ligand superfamily member 14
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Quisovalimab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `quisovalimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4802198](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802198/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4802198](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802198/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

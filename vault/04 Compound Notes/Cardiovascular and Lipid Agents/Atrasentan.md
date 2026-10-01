@@ -55,6 +55,7 @@ tags:
 - group/cardio
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL9194
@@ -76,6 +77,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.44
     full-molformula: C29H38N2O6
+  identity-check: structure-confirmed
 ---
 
 # Atrasentan
@@ -89,7 +91,7 @@ chembl:
 - **Compound ID:** `atrasentan-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
-- **ChEMBL:** [CHEMBL9194](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL9194/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL9194](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL9194/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

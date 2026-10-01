@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL429736
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.66
     full-molformula: C27H34N4O5
+  identity-check: structure-confirmed
 ---
 
 # Retosiban
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `retosiban-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL429736](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL429736/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL429736](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL429736/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

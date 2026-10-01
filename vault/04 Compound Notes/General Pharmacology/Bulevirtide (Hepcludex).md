@@ -57,6 +57,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4297711
@@ -69,6 +70,7 @@ chembl:
   - J05AX28
   targets: []
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Bulevirtide (Hepcludex)
@@ -83,7 +85,7 @@ chembl:
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Bulevirtide, Hepcludex
-- **ChEMBL:** [CHEMBL4297711](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297711/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297711](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297711/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

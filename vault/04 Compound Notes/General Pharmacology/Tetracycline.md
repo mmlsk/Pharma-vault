@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-formula-match
 pk-source:
   type: wikipedia-infobox
   title: Tetracycline
@@ -98,6 +99,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.34
     full-molformula: C22H24N2O8
+  identity-check: formula-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -118,7 +120,7 @@ pk-verification:
 - **Compound ID:** `tetracycline-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1440](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1440/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1440](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1440/) · max phase 4 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

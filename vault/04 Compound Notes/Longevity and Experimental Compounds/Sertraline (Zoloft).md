@@ -65,6 +65,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.81
     full-molformula: C17H17Cl2N
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -117,7 +119,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Sertraline, Zoloft
-- **ChEMBL:** [CHEMBL809](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL809/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL809](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL809/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

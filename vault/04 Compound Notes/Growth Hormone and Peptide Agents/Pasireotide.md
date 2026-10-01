@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3349607
@@ -72,6 +73,7 @@ chembl:
     full-mwt: 1047.23
     mw-freebase: 1047.23
     full-molformula: C58H66N10O9
+  identity-check: structure-confirmed
 ---
 
 # Pasireotide
@@ -85,7 +87,7 @@ chembl:
 - **Compound ID:** `pasireotide-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL3349607](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3349607/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3349607](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3349607/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

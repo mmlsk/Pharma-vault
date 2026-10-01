@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Sunitinib
@@ -119,6 +121,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.63
     full-molformula: C22H27FN4O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -126,6 +129,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Sutent
+  ema-number: EMEA/H/C/000687
+  url: https://www.ema.europa.eu/en/documents/product-information/sutent-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Sunitinib
@@ -139,7 +153,7 @@ pk-verification:
 - **Compound ID:** `sunitinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL535](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL535/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL535](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL535/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -192,6 +206,11 @@ Macrophage colony stimulating factor receptor inhibitor; Platelet-derived growth
 | Excretion | mainly non-renal | Fecal (61%) and kidney (16%) |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Sutent*](https://www.ema.europa.eu/en/documents/product-information/sutent-epar-product-information_en.pdf) (EMEA/H/C/000687). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 40, 60, 80, 110)
+> - protein-binding: consistent (SmPC values: 90, 95)
 
 ## Related compounds (auto)
 

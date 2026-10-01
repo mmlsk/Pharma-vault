@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Emtricitabine
@@ -95,11 +98,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C8H10FN3O3S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: a229c922-58eb-4795-9219-6cebb1779e35
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a229c922-58eb-4795-9219-6cebb1779e35
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Emtriva
+  ema-number: EMEA/H/C/000533
+  url: https://www.ema.europa.eu/en/documents/product-information/emtriva-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -117,7 +132,7 @@ pk-verification:
 - **Compound ID:** `emtricitabine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL885](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL885/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL885](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL885/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -164,6 +179,11 @@ Human immunodeficiency virus type 1 reverse transcriptase inhibitor _(ChEMBL cur
 > Automated comparison with the [US prescribing information (DailyMed set a229c922…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a229c922-58eb-4795-9219-6cebb1779e35), label version 20260818. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 10)
 > - protein-binding: consistent (label values: 4)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Emtriva*](https://www.ema.europa.eu/en/documents/product-information/emtriva-epar-product-information_en.pdf) (EMEA/H/C/000533). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 10, 39)
+> - protein-binding: consistent (SmPC values: 4)
 
 ## Related compounds (auto)
 

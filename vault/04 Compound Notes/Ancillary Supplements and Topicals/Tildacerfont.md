@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL5095198
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.59
     full-molformula: C20H26ClN5OS
+  identity-check: structure-confirmed
 ---
 
 # Tildacerfont
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `tildacerfont-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL5095198](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095198/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL5095198](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095198/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

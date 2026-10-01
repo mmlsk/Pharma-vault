@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4298211
@@ -71,6 +72,7 @@ chembl:
     name: Complement C3
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Pegcetacoplan
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `pegcetacoplan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4298211](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298211/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4298211](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298211/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

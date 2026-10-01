@@ -67,6 +67,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -97,6 +98,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.85
     full-molformula: C17H21NO
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -120,7 +122,7 @@ pk-verification:
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Atomoxetine, Strattera
-- **ChEMBL:** [CHEMBL641](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL641/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL641](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL641/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

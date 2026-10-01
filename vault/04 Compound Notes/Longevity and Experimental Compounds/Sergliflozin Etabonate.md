@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL450044
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.52
     full-molformula: C23H28O9
+  identity-check: structure-confirmed
 ---
 
 # Sergliflozin Etabonate
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `sergliflozin-etabonate-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL450044](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL450044/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL450044](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL450044/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Methotrexate
@@ -96,11 +99,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.29
     full-molformula: C20H22N8O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: dd035a9f-cd40-4314-b9d8-2294b8a924e2
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dd035a9f-cd40-4314-b9d8-2294b8a924e2
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Nordimet
+  ema-number: EMEA/H/C/003983
+  url: https://www.ema.europa.eu/en/documents/product-information/nordimet-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/nordimet-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -118,7 +133,7 @@ pk-verification:
 - **Compound ID:** `methotrexate-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL34259](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL34259/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL34259](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL34259/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -166,6 +181,11 @@ Dihydrofolate reductase inhibitor _(ChEMBL curated mechanism of the parent molec
 > Automated comparison with the [US prescribing information (DailyMed set dd035a9f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dd035a9f-cd40-4314-b9d8-2294b8a924e2), label version 20260904. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.7, 0.9, 2.3, 3, 5.8, 8)
 > - protein-binding: consistent (label values: 50)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Nordimet*](https://www.ema.europa.eu/en/documents/product-information/nordimet-epar-product-information_en.pdf) (EMEA/H/C/003983) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/nordimet-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 3, 6, 7, 17)
+> - protein-binding: consistent (SmPC values: 50)
 
 ## Related compounds (auto)
 

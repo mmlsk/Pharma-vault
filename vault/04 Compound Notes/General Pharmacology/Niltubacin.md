@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1213539
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.07
     full-molformula: C41H42N2O7S
+  identity-check: structure-confirmed
 ---
 
 # Niltubacin
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `niltubacin-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1213539](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1213539/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1213539](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1213539/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

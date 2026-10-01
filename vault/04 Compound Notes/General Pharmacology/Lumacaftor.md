@@ -55,6 +55,7 @@ tags:
 - group/immunology
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2103870
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.58
     full-molformula: C24H18F2N2O5
+  identity-check: structure-confirmed
 ---
 
 # Lumacaftor
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `lumacaftor-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL2103870](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103870/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2103870](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103870/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

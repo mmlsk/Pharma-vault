@@ -50,7 +50,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -59,6 +59,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Bromfenac
@@ -96,6 +97,17 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: no-label-value
+    protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Yellox
+  ema-number: EMEA/H/C/001198
+  url: https://www.ema.europa.eu/en/documents/product-information/yellox-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/yellox-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
     protein-binding: no-label-value
 ---
 
@@ -154,6 +166,11 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 > Automated comparison with the [US prescribing information (DailyMed set 144a5072…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=144a5072-341b-4591-8705-773b63044bcc), label version 20260108. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
 > - protein-binding: no-label-value (label values: -)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Yellox*](https://www.ema.europa.eu/en/documents/product-information/yellox-epar-product-information_en.pdf) (EMEA/H/C/001198) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/yellox-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 1.4)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

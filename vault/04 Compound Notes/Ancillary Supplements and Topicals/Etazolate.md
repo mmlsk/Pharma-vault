@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL356388
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.52
     full-molformula: C14H19N5O2
+  identity-check: structure-confirmed
 ---
 
 # Etazolate
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `etazolate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL356388](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL356388/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL356388](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL356388/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

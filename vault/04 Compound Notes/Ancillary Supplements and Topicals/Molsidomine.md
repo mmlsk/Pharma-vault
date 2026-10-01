@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 pk-source:
   type: wikipedia-infobox
   title: Molsidomine
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.59
     full-molformula: C9H14N4O4
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `molsidomine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1256353](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1256353/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1256353](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1256353/) · max phase n/a · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

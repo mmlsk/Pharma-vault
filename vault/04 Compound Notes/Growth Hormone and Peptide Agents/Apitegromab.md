@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4594326
@@ -71,6 +72,7 @@ chembl:
     name: Growth/differentiation factor 8
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Apitegromab
@@ -84,7 +86,7 @@ chembl:
 - **Compound ID:** `apitegromab-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL4594326](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594326/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4594326](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594326/) · max phase 3 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

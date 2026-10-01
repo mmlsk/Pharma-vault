@@ -63,7 +63,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Gefitinib
@@ -96,11 +99,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.52
     full-molformula: C22H24ClFN4O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 1a3c0ce7-06a1-4e04-9106-14ddb2a866a5
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1a3c0ce7-06a1-4e04-9106-14ddb2a866a5
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Iressa
+  ema-number: EMEA/H/C/001016
+  url: https://www.ema.europa.eu/en/documents/product-information/iressa-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -118,7 +133,7 @@ pk-verification:
 - **Compound ID:** `gefitinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL939](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL939/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL939](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL939/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -165,6 +180,11 @@ Epidermal growth factor receptor erbB1 inhibitor _(ChEMBL curated mechanism of t
 > Automated comparison with the [US prescribing information (DailyMed set 1a3c0ce7…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1a3c0ce7-06a1-4e04-9106-14ddb2a866a5), label version 20260310. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 48)
 > - protein-binding: consistent (label values: 90)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Iressa*](https://www.ema.europa.eu/en/documents/product-information/iressa-epar-product-information_en.pdf) (EMEA/H/C/001016). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 41)
+> - protein-binding: consistent (SmPC values: 90)
 
 ## Related compounds (auto)
 

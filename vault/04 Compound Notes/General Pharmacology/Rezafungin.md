@@ -57,6 +57,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Rezafungin
@@ -78,6 +79,7 @@ chembl:
     full-mwt: 1226.41
     mw-freebase: 1226.41
     full-molformula: C63H85N8O17+
+  identity-check: structure-confirmed
 ---
 
 # Rezafungin
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `rezafungin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3989945](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989945/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3989945](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989945/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

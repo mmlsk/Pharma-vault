@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3261331
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.64
     full-molformula: C17H12Cl2N6O4
+  identity-check: structure-confirmed
 ---
 
 # Resmetirom (Rezdiffra)
@@ -95,7 +97,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Resmetirom, Rezdiffra
-- **ChEMBL:** [CHEMBL3261331](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3261331/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3261331](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3261331/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

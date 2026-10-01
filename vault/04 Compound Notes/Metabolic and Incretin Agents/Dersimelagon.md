@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4802160
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.33
     full-molformula: C36H45F4N3O5
+  identity-check: structure-confirmed
 ---
 
 # Dersimelagon
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `dersimelagon-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL4802160](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802160/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4802160](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802160/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

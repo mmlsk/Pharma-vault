@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL808
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.54
     full-molformula: C18H15Cl3N2O
+  identity-check: structure-confirmed
 ---
 
 # Econazole
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `econazole-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL808](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL808/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL808](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL808/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

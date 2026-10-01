@@ -59,6 +59,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Nimesulide
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.68
     full-molformula: C13H12N2O5S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -109,7 +111,7 @@ pk-verification:
 - **Compound ID:** `nimesulide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL56367](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL56367/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL56367](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL56367/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

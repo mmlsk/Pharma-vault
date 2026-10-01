@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Dabigatran
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.22
     full-molformula: C25H25N7O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -116,7 +118,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Dabigatran, Pradaxa
-- **ChEMBL:** [CHEMBL48361](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL48361/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL48361](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL48361/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

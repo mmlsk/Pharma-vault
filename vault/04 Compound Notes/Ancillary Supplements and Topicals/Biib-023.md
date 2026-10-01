@@ -70,6 +70,7 @@ chembl:
     name: Tumor necrosis factor ligand superfamily member 12
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Biib-023
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `biib-023-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2109598](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109598/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2109598](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109598/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

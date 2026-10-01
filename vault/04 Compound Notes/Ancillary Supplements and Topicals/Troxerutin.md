@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-stereo-check
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3182320
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.08
     full-molformula: C33H42O19
+  identity-check: connectivity-match
 ---
 
 # Troxerutin
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `troxerutin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3182320](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3182320/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3182320](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3182320/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

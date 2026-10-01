@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.23
     full-molformula: C19H30N5O10P
+  identity-check: structure-confirmed
 ---
 
 # Tenofovir
@@ -103,7 +105,7 @@ chembl:
 - **Compound ID:** `tenofovir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1538](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1538/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1538](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1538/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

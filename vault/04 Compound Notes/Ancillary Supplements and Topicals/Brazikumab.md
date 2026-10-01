@@ -70,6 +70,7 @@ chembl:
     name: Interleukin-23
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Brazikumab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `brazikumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3833372](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833372/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3833372](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833372/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

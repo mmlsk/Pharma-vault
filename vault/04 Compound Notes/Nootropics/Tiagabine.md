@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Tiagabine
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.77
     full-molformula: C20H25NO2S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -113,7 +115,7 @@ pk-verification:
 - **Compound ID:** `tiagabine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1027](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1027/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1027](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1027/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

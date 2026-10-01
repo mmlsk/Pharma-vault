@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2103920
@@ -72,6 +73,7 @@ chembl:
     full-mwt: 3505.99
     mw-freebase: 3505.99
     full-molformula: C145H234N52O44S3
+  identity-check: structure-confirmed
 ---
 
 # Ularitide (Urodilatin)
@@ -86,7 +88,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Ularitide, Urodilatin
-- **ChEMBL:** [CHEMBL2103920](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103920/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2103920](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103920/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-formula-match
 pk-source:
   type: wikipedia-infobox
   title: Rifampicin
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.11
     full-molformula: C43H58N4O12
+  identity-check: formula-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -114,7 +116,7 @@ pk-verification:
 - **Compound ID:** `rifampicin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL374478](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL374478/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL374478](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL374478/) · max phase 4 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

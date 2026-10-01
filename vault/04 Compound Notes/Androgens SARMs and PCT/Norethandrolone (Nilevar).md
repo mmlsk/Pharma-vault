@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1697845
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.79
     full-molformula: C20H30O2
+  identity-check: structure-confirmed
 ---
 
 # Norethandrolone (Nilevar)
@@ -95,7 +97,7 @@ chembl:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Norethandrolone, Nilevar
-- **ChEMBL:** [CHEMBL1697845](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1697845/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1697845](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1697845/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

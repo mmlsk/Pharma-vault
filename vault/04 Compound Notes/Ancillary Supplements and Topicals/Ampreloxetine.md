@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Ampreloxetine
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.91
     full-molformula: C18H18F3NO
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -108,7 +110,7 @@ pk-verification:
 - **Compound ID:** `ampreloxetine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4297646](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297646/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297646](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297646/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

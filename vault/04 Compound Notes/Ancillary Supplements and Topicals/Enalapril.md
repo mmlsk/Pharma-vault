@@ -61,7 +61,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Enalapril
@@ -91,11 +94,22 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.64
     full-molformula: C20H28N2O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: e81a8aca-0e7c-4a02-b596-09e4ac22c70e
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e81a8aca-0e7c-4a02-b596-09e4ac22c70e
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Aqumeldi
+  ema-number: EMEA/H/C/005731
+  url: https://www.ema.europa.eu/en/documents/product-information/aqumeldi-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/aqumeldi-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -112,7 +126,7 @@ pk-verification:
 - **Compound ID:** `enalapril-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL578](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL578/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL578](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL578/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -149,6 +163,10 @@ ACE inhibitor with the best-documented haematocrit-lowering effect of any drug i
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set e81a8aca…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e81a8aca-0e7c-4a02-b596-09e4ac22c70e), label version 20190329. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 11, 14, 24)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Aqumeldi*](https://www.ema.europa.eu/en/documents/product-information/aqumeldi-epar-product-information_en.pdf) (EMEA/H/C/005731) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/aqumeldi-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.11, 0.77, 1.67, 2, 6, 21.66)
 
 ## Related compounds (auto)
 

@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Olopatadine
@@ -94,6 +95,16 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Opatanol
+  ema-number: EMEA/H/C/000407
+  url: https://www.ema.europa.eu/en/documents/product-information/opatanol-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/opatanol-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
 ---
 
 # Olopatadine
@@ -143,6 +154,10 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Elimination t½ | 3 h | 3 hours |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Opatanol*](https://www.ema.europa.eu/en/documents/product-information/opatanol-epar-product-information_en.pdf) (EMEA/H/C/000407) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/opatanol-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 12)
 
 ## Related compounds (auto)
 

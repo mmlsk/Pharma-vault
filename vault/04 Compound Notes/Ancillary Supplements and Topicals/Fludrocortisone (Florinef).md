@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Fludrocortisone
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.68
     full-molformula: C21H29FO5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -109,7 +111,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Fludrocortisone, Florinef
-- **ChEMBL:** [CHEMBL1201388](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201388/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201388](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201388/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

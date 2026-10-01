@@ -54,7 +54,7 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Safinamide
@@ -95,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.83
     full-molformula: C17H19FN2O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -102,6 +105,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Xadago
+  ema-number: EMEA/H/C/002396
+  url: https://www.ema.europa.eu/en/documents/product-information/xadago-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/xadago-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Safinamide
@@ -115,7 +129,7 @@ pk-verification:
 - **Compound ID:** `safinamide-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL396778](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL396778/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL396778](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL396778/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -158,6 +172,11 @@ Monoamine oxidase B inhibitor _(ChEMBL curated mechanism of the parent molecule,
 | Excretion | - | 76% Kidney, 1.5% faeces |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Xadago*](https://www.ema.europa.eu/en/documents/product-information/xadago-epar-product-information_en.pdf) (EMEA/H/C/002396) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/xadago-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 20, 30, 80)
+> - protein-binding: consistent (SmPC values: 88, 90)
 
 ## Related compounds (auto)
 

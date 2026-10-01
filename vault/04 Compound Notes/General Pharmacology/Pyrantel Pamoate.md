@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Pyrantel
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C11H14N2S
+  identity-check: structure-confirmed
 ---
 
 # Pyrantel Pamoate
@@ -102,7 +104,7 @@ chembl:
 - **Compound ID:** `pyrantel-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1626223](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1626223/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1626223](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1626223/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

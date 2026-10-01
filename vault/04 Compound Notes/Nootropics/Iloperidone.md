@@ -65,6 +65,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -101,6 +102,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.38
     full-molformula: C24H27FN2O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -123,7 +125,7 @@ pk-verification:
 - **Compound ID:** `iloperidone-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL14376](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL14376/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL14376](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL14376/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

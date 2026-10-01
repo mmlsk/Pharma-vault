@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4594446
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.85
     full-molformula: C14H9Cl2NO4S
+  identity-check: structure-confirmed
 ---
 
 # Dotinurad
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `dotinurad-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL4594446](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594446/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4594446](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594446/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

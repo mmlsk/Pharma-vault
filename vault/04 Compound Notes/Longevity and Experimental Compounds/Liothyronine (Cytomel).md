@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Liothyronine
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.43
     full-molformula: C15H12I3NO4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -112,7 +114,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Liothyronine, Cytomel
-- **ChEMBL:** [CHEMBL1544](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1544/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1544](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1544/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

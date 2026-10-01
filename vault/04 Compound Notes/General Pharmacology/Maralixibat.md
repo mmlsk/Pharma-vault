@@ -55,6 +55,7 @@ tags:
 - group/gi
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL363392
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.21
     full-molformula: C40H56N3O4S+
+  identity-check: inn-match-ema
 ---
 
 # Maralixibat
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `maralixibat-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL363392](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL363392/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL363392](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL363392/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

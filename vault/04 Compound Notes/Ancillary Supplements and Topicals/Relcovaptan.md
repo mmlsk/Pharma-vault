@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL419667
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.41
     full-molformula: C28H27Cl2N3O7S
+  identity-check: structure-confirmed
 ---
 
 # Relcovaptan
@@ -95,7 +97,7 @@ chembl:
 - **Compound ID:** `relcovaptan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL419667](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL419667/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL419667](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL419667/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

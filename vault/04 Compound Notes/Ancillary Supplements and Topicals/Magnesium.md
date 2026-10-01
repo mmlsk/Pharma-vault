@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1201230
@@ -70,6 +71,7 @@ chembl:
     full-mwt: 24.3
     mw-freebase: 24.3
     full-molformula: Mg
+  identity-check: structure-confirmed
 ---
 
 # Magnesium
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `magnesium-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201230](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201230/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1201230](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201230/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

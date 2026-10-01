@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4298169
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.21
     full-molformula: C29H25F4N3O5S
+  identity-check: connectivity-match
 ---
 
 # Tropifexor
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `tropifexor-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL4298169](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298169/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4298169](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298169/) · max phase 2 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

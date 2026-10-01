@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-stereo-check
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL511115
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.87
     full-molformula: C20H25NO4
+  identity-check: connectivity-match
 ---
 
 # Cilomilast
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `cilomilast-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL511115](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL511115/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL511115](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL511115/) · max phase 3 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.6
     full-molformula: C19H24N2O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -117,7 +119,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Labetalol, Trandate
-- **ChEMBL:** [CHEMBL429](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL429/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL429](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL429/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

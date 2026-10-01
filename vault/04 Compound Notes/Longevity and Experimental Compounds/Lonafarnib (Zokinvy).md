@@ -57,6 +57,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL298734
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.45
     full-molformula: C27H31Br2ClN4O2
+  identity-check: structure-confirmed
 ---
 
 # Lonafarnib (Zokinvy)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Lonafarnib, Zokinvy
-- **ChEMBL:** [CHEMBL298734](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL298734/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL298734](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL298734/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

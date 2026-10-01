@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3287255
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.38
     full-molformula: C15H18N4O3S2
+  identity-check: structure-confirmed
 ---
 
 # Bisthianostat
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `bisthianostat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3287255](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3287255/) · max phase 1 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3287255](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3287255/) · max phase 1 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

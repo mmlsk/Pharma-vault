@@ -64,7 +64,9 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-discrepant
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Buprenorphine
@@ -102,11 +104,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.69
     full-molformula: C29H41NO4
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: discrepant
   set-id: 6189fb21-9432-45f8-8481-0bfaf3ccde95
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6189fb21-9432-45f8-8481-0bfaf3ccde95
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Buvidal
+  ema-number: EMEA/H/C/004651
+  url: https://www.ema.europa.eu/en/documents/product-information/buvidal-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/buvidal-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: discrepant
@@ -124,7 +138,7 @@ pk-verification:
 - **Compound ID:** `buprenorphine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL511142](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL511142/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL511142](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL511142/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -176,6 +190,11 @@ Kappa opioid receptor agonist; Mu opioid receptor agonist _(ChEMBL curated mecha
 > Automated comparison with the [US prescribing information (DailyMed set 6189fb21…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6189fb21-9432-45f8-8481-0bfaf3ccde95), label version 20260727. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 1032, 1440)
 > - protein-binding: consistent (label values: 96)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Buvidal*](https://www.ema.europa.eu/en/documents/product-information/buvidal-epar-product-information_en.pdf) (EMEA/H/C/004651) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/buvidal-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 72, 120)
+> - protein-binding: consistent (SmPC values: 96)
 
 ## Related compounds (auto)
 

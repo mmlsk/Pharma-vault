@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: partially-verified
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-consistent
+- pk-ema-discrepant
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Ibuprofen
@@ -110,6 +112,17 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Pedea
+  ema-number: EMEA/H/C/000549
+  url: https://www.ema.europa.eu/en/documents/product-information/pedea-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/pedea-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Ibuprofen
@@ -177,6 +190,11 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 > Automated comparison with the [US prescribing information (DailyMed set 2144eff0…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2144eff0-d7ab-486d-b116-a4ff3ae2afe2), label version 20260908. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 1.8, 2)
 > - protein-binding: no-label-value (label values: -)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Pedea*](https://www.ema.europa.eu/en/documents/product-information/pedea-epar-product-information_en.pdf) (EMEA/H/C/000549) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/pedea-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 30)
+> - protein-binding: consistent (SmPC values: 95, 99)
 
 ## Related compounds (auto)
 

@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4594287
@@ -85,6 +86,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.57
     full-molformula: C26H31N5O4
+  identity-check: connectivity-match
 ---
 
 # Ensifentrine (Ohtuvayre)
@@ -99,7 +101,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Ensifentrine, Ohtuvayre
-- **ChEMBL:** [CHEMBL4594287](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594287/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4594287](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594287/) · max phase 4 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

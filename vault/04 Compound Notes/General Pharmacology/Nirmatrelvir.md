@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4802135
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.5
     full-molformula: C23H32F3N5O4
+  identity-check: structure-confirmed
 ---
 
 # Nirmatrelvir
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `nirmatrelvir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL4802135](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802135/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4802135](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802135/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

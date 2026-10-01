@@ -60,6 +60,8 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Zuranolone
@@ -97,6 +99,17 @@ pk-verification:
   status: consistent
   set-id: f18e53b0-d0bb-422d-8de7-ab64b7292b29
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f18e53b0-d0bb-422d-8de7-ab64b7292b29
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Zurzuvae
+  ema-number: EMEA/H/C/006488
+  url: https://www.ema.europa.eu/en/documents/product-information/zurzuvae-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -160,6 +173,11 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 > Automated comparison with the [US prescribing information (DailyMed set f18e53b0…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f18e53b0-d0bb-422d-8de7-ab64b7292b29), label version 20260615. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 19.7, 24.6)
 > - protein-binding: consistent (label values: 99.5)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Zurzuvae*](https://www.ema.europa.eu/en/documents/product-information/zurzuvae-epar-product-information_en.pdf) (EMEA/H/C/006488). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 19.7, 24.6)
+> - protein-binding: consistent (SmPC values: 99.5)
 
 ## Related compounds (auto)
 

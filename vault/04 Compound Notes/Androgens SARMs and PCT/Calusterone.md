@@ -56,6 +56,7 @@ tags:
 - group/steroids
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL455706
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.71
     full-molformula: C21H32O2
+  identity-check: structure-confirmed
 ---
 
 # Calusterone
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `calusterone-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL455706](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL455706/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL455706](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL455706/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -49,7 +49,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -57,6 +57,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Tipranavir
@@ -71,6 +72,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Aptivus
+  ema-number: EMEA/H/C/000631
+  url: https://www.ema.europa.eu/en/documents/product-information/aptivus-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Tipranavir
@@ -107,6 +119,11 @@ Non-peptidic HIV protease inhibitor reserved for multidrug-resistant virus, carr
 | Excretion | mainly non-renal | Feces (82.3%), urine (4.4%) |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Aptivus*](https://www.ema.europa.eu/en/documents/product-information/aptivus-epar-product-information_en.pdf) (EMEA/H/C/000631). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 4.8, 6)
+> - protein-binding: consistent (SmPC values: 99.9)
 
 ## Safety routing
 

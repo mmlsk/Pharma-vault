@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2108675
@@ -74,6 +75,7 @@ chembl:
     name: Interleukin-4 receptor subunit alpha
     action: ANTAGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Dupilumab (Dupixent, subcutaneous)
@@ -88,7 +90,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Dupilumab, Dupixent, subcutaneous
-- **ChEMBL:** [CHEMBL2108675](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108675/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108675](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108675/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

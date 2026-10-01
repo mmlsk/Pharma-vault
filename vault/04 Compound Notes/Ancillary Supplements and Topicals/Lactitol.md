@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1661
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.2
     full-molformula: C12H24O11
+  identity-check: structure-confirmed
 ---
 
 # Lactitol
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `lactitol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1661](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1661/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1661](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1661/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

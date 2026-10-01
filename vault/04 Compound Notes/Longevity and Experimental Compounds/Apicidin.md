@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL430060
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.31
     full-molformula: C34H49N5O6
+  identity-check: structure-confirmed
 ---
 
 # Apicidin
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `apicidin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL430060](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL430060/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL430060](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL430060/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

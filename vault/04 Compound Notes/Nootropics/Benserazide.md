@@ -56,6 +56,7 @@ tags:
 - group/neuropsych
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1096979
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.24
     full-molformula: C10H15N3O5
+  identity-check: structure-confirmed
 ---
 
 # Benserazide
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `benserazide-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1096979](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1096979/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1096979](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1096979/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

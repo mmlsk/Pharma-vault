@@ -66,6 +66,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.9
     full-molformula: C16H21NO2
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
@@ -118,7 +120,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Ramelteon, Rozerem
-- **ChEMBL:** [CHEMBL133775](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL133775/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL133775](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL133775/) · max phase n/a · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

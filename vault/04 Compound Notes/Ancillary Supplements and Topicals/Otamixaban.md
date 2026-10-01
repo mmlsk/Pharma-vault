@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL46618
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.16
     full-molformula: C25H26N4O4
+  identity-check: structure-confirmed
 ---
 
 # Otamixaban
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `otamixaban-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL46618](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL46618/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL46618](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL46618/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

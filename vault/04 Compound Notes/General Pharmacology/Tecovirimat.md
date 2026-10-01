@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1257073
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.64
     full-molformula: C19H15F3N2O3
+  identity-check: structure-confirmed
 ---
 
 # Tecovirimat
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `tecovirimat-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1257073](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1257073/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1257073](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1257073/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4594417
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.33
     full-molformula: C24H19F4N5O2S
+  identity-check: structure-confirmed
 ---
 
 # Pruxelutamide
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `pruxelutamide-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL4594417](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594417/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4594417](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594417/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

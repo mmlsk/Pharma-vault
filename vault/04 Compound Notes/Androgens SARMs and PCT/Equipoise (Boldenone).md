@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-curated
 pk-source:
   type: wikipedia-infobox
   title: Boldenone
@@ -88,6 +89,11 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.2
     full-molformula: C30H44O3
+  identity-check: conflict
+  identity-decision:
+    decision: confirm
+    reviewer: agent-review 2026-10-01
+    reason: catalogue entry is 'Equipoise', the brand of boldenone undecylenate; the ester identity is intended (free boldenone = CHEMBL209073)
 pk-verification:
   source: fda-label
   status: no-label
@@ -109,7 +115,7 @@ pk-verification:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Equipoise, Boldenone
-- **ChEMBL:** [CHEMBL2106059](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106059/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2106059](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106059/) · max phase 2 · id via Wikipedia infobox · structure check: ❌ conflicts with PubChem - see Review Queue · decision: confirm (catalogue entry is 'Equipoise', the brand of boldenone undecylenate; the ester identity is intended (free boldenone = CHEMBL209073))
 
 ## Source summary
 

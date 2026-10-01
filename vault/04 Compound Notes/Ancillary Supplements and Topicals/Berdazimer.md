@@ -66,6 +66,7 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Berdazimer
@@ -79,7 +80,7 @@ chembl:
 - **Compound ID:** `berdazimer-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4298064](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298064/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4298064](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298064/) · max phase 4 · id via Wikipedia infobox · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

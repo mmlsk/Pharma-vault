@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL428880
@@ -84,6 +85,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.35
     full-molformula: C23H16O11
+  identity-check: structure-confirmed
 ---
 
 # Sodium Cromoglicate
@@ -97,7 +99,7 @@ chembl:
 - **Compound ID:** `cromolyn-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL74](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL74/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL74](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL74/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

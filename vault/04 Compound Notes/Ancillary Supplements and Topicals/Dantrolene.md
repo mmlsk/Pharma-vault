@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 pk-source:
   type: wikipedia-infobox
   title: Dantrolene
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.4
     full-molformula: C14H10N4O5
+  identity-check: connectivity-match
 ---
 
 # Dantrolene
@@ -102,7 +104,7 @@ chembl:
 - **Compound ID:** `dantrolene-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201288](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201288/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201288](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201288/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

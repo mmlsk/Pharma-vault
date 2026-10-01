@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Parecoxib
@@ -102,6 +103,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Dynastat
+  ema-number: EMEA/H/C/000381
+  url: https://www.ema.europa.eu/en/documents/product-information/dynastat-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/dynastat-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Parecoxib
@@ -160,6 +172,11 @@ Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 | Excretion | mainly urinary | Kidney (70%, metabolites) |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Dynastat*](https://www.ema.europa.eu/en/documents/product-information/dynastat-epar-product-information_en.pdf) (EMEA/H/C/000381) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/dynastat-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.367, 8)
+> - protein-binding: consistent (SmPC values: 98)
 
 ## Related compounds (auto)
 

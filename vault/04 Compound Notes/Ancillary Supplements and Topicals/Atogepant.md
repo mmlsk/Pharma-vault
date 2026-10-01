@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3991065
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.35
     full-molformula: C29H23F6N5O3
+  identity-check: structure-confirmed
 ---
 
 # Atogepant
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `atogepant-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3991065](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3991065/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3991065](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3991065/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

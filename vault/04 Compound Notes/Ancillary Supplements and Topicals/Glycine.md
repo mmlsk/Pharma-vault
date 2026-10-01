@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL773
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.42
     full-molformula: C2H5NO2
+  identity-check: structure-confirmed
 ---
 
 # Glycine
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `glycine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL773](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL773/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL773](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL773/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.87
     full-molformula: C18H21N5O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -116,7 +118,7 @@ pk-verification:
 - **Compound ID:** `alogliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL376359](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL376359/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL376359](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL376359/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

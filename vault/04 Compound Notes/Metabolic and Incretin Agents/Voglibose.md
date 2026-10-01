@@ -56,6 +56,7 @@ tags:
 - group/glp1
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL476960
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.25
     full-molformula: C10H21NO7
+  identity-check: structure-confirmed
 ---
 
 # Voglibose
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `voglibose-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL476960](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL476960/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL476960](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL476960/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

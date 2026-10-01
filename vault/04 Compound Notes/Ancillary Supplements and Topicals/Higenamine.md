@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL19344
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.63
     full-molformula: C16H17NO3
+  identity-check: structure-confirmed
 ---
 
 # Higenamine
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `higenamine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL19344](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL19344/) · max phase 1 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL19344](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL19344/) · max phase 1 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

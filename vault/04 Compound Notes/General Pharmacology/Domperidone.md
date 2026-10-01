@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Domperidone
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.51
     full-molformula: C22H24ClN5O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -115,7 +117,7 @@ pk-verification:
 - **Compound ID:** `domperidone-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL219916](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL219916/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL219916](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL219916/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

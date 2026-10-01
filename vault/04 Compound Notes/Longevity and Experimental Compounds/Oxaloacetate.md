@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1794791
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.38
     full-molformula: C4H4O5
+  identity-check: structure-confirmed
 ---
 
 # Oxaloacetate
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `oxaloacetate-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1794791](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1794791/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1794791](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1794791/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

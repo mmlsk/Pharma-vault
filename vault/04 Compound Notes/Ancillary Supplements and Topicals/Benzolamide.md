@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL73962
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.81
     full-molformula: C8H8N4O4S3
+  identity-check: structure-confirmed
 ---
 
 # Benzolamide
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `benzolamide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL73962](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL73962/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL73962](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL73962/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

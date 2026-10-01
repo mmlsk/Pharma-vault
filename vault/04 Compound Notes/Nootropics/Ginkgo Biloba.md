@@ -69,6 +69,7 @@ chembl:
   - N06DX02
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Ginkgo Biloba
@@ -82,7 +83,7 @@ chembl:
 - **Compound ID:** `ginkgo-biloba-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL2108466](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108466/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108466](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108466/) · max phase 4 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

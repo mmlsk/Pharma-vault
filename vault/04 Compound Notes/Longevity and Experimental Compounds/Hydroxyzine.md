@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Hydroxyzine
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.72
     full-molformula: C21H27ClN2O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -115,7 +117,7 @@ pk-verification:
 - **Compound ID:** `hydroxyzine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL896](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL896/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL896](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL896/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

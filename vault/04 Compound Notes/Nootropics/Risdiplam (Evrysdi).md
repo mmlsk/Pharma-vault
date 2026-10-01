@@ -58,6 +58,7 @@ tags:
 - group/neuropsych
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4297528
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C22H23N7O
+  identity-check: structure-confirmed
 ---
 
 # Risdiplam (Evrysdi)
@@ -97,7 +99,7 @@ chembl:
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Risdiplam, Evrysdi
-- **ChEMBL:** [CHEMBL4297528](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297528/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297528](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297528/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

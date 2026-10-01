@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Azasetron
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.88
     full-molformula: C17H20ClN3O3
+  identity-check: structure-confirmed
 ---
 
 # Azasetron
@@ -101,7 +103,7 @@ chembl:
 - **Compound ID:** `azasetron-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1598608](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1598608/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1598608](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1598608/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.67
     full-molformula: C20H30NO3+
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `ipratropium-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2134724](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2134724/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2134724](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2134724/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

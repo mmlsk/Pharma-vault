@@ -70,6 +70,7 @@ chembl:
     name: Gonadotropin-releasing hormone receptor
     action: ANTAGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Ozarelix
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `ozarelix-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL2108312](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108312/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108312](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108312/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

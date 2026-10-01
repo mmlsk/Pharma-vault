@@ -61,7 +61,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Rituximab
@@ -84,11 +87,22 @@ chembl:
     name: B-lymphocyte antigen CD20
     action: BINDING AGENT
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: b172773b-3905-4a1c-ad95-bab4b6126563
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b172773b-3905-4a1c-ad95-bab4b6126563
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: MabThera
+  ema-number: EMEA/H/C/000165
+  url: https://www.ema.europa.eu/en/documents/product-information/mabthera-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -105,7 +119,7 @@ pk-verification:
 - **Compound ID:** `rituximab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1201576](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201576/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201576](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201576/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -145,6 +159,10 @@ B-lymphocyte antigen CD20 binding agent _(ChEMBL curated mechanism of the parent
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set b172773b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b172773b-3905-4a1c-ad95-bab4b6126563), label version 20250106. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 124.08, 146.4, 336, 432, 528, 768)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *MabThera*](https://www.ema.europa.eu/en/documents/product-information/mabthera-epar-product-information_en.pdf) (EMEA/H/C/000165). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 146.4, 205.92, 216, 264, 336, 360)
 
 ## Related compounds (auto)
 

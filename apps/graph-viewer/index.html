@@ -147,6 +147,11 @@
         <option value="consistent">PK zgodne z etykietą FDA</option>
         <option value="discrepant">PK rozbieżne z etykietą FDA (do przeglądu)</option>
         <option value="no-label-value">Etykieta FDA bez wartości</option>
+        <option value="ema-consistent">PK zgodne z ChPL (EMA)</option>
+        <option value="ema-discrepant">PK rozbieżne z ChPL (do przeglądu)</option>
+        <option value="both">PK zgodne z FDA i ChPL</option>
+        <option value="id-ok">Tożsamość potwierdzona strukturalnie</option>
+        <option value="id-check">Tożsamość do sprawdzenia</option>
         <option value="chembl">Z celem molekularnym ChEMBL</option>
       </select>
     </div>
@@ -163,6 +168,8 @@
       <div class="stat"><b id="sHl">–</b><span>z liczbowym t½</span></div>
       <div class="stat"><b id="sTg">–</b><span>z celem ChEMBL</span></div>
       <div class="stat"><b id="sFda">–</b><span>PK ✓ FDA</span></div>
+      <div class="stat"><b id="sEma">–</b><span>PK ✓ ChPL (EMA)</span></div>
+      <div class="stat"><b id="sId">–</b><span>tożsamość potwierdzona</span></div>
     </div>
     <p class="note">Dane generowane z <code>substances.json</code>, <code>pk.json</code>, <code>chembl.json</code>, <code>pk-verification.json</code> i <code>links.json</code> przez <code>scripts/build_graph_data.py</code>.</p>
   </aside>

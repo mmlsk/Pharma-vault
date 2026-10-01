@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3137316
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.3
     full-molformula: C29H30F3N2O5P
+  identity-check: structure-confirmed
 ---
 
 # Fosdagrocorat
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `fosdagrocorat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3137316](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137316/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3137316](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137316/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

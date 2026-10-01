@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL466659
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.31
     full-molformula: C5H8N4O12
+  identity-check: structure-confirmed
 ---
 
 # Pentaerythritol Tetranitrate
@@ -95,7 +97,7 @@ chembl:
 - **Compound ID:** `pentaerythritol-tetranitrate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL466659](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL466659/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL466659](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL466659/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

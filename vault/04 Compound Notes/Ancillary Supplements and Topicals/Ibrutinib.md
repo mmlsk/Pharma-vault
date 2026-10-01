@@ -59,7 +59,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Ibrutinib
@@ -92,11 +95,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.47
     full-molformula: C25H24N6O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 0dfd0279-ff17-4ea9-89be-9803c71bab44
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0dfd0279-ff17-4ea9-89be-9803c71bab44
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Imbruvica
+  ema-number: EMEA/H/C/003791
+  url: https://www.ema.europa.eu/en/documents/product-information/imbruvica-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/imbruvica-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -114,7 +129,7 @@ pk-verification:
 - **Compound ID:** `ibrutinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1873475](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1873475/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1873475](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1873475/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -160,6 +175,11 @@ Tyrosine-protein kinase BTK inhibitor _(ChEMBL curated mechanism of the parent m
 > Automated comparison with the [US prescribing information (DailyMed set 0dfd0279…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0dfd0279-ff17-4ea9-89be-9803c71bab44), label version 20251021. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 4, 6)
 > - protein-binding: consistent (label values: 97.3)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Imbruvica*](https://www.ema.europa.eu/en/documents/product-information/imbruvica-epar-product-information_en.pdf) (EMEA/H/C/003791) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/imbruvica-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 4, 13)
+> - protein-binding: consistent (SmPC values: 97.3)
 
 ## Related compounds (auto)
 

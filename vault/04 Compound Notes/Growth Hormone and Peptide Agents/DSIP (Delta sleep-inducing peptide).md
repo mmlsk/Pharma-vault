@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2104403
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.04
     full-molformula: C35H48N10O15
+  identity-check: structure-confirmed
 ---
 
 # DSIP (Delta sleep-inducing peptide)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** DSIP, Delta sleep-inducing peptide
-- **ChEMBL:** [CHEMBL2104403](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2104403/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2104403](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2104403/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

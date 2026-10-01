@@ -72,6 +72,7 @@ chembl:
   - S03AA03
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Polymyxin B
@@ -85,7 +86,7 @@ chembl:
 - **Compound ID:** `polymyxin-b-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL5314354](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5314354/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL5314354](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5314354/) · max phase 4 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL443052
@@ -74,6 +75,7 @@ chembl:
     full-mwt: 151.93
     mw-freebase: 151.93
     full-molformula: C7H6BFO2
+  identity-check: structure-confirmed
 ---
 
 # Tavaborole
@@ -87,7 +89,7 @@ chembl:
 - **Compound ID:** `tavaborole-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL443052](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL443052/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL443052](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL443052/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

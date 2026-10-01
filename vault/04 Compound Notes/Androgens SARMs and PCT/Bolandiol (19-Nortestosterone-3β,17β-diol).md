@@ -18,8 +18,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: CHEMBL2106664
-chembl-max-phase: 2
+chembl-id: CHEMBL307500
+chembl-max-phase: null
 half-life:
   value: null
   unit: null
@@ -59,10 +59,11 @@ tags:
 - group/steroids
 - stub
 - chembl-profile
+- identity-curated
 chembl:
-  identity-source: wikipedia-infobox
-  parent-id: CHEMBL2106664
-  pref-name: BOLANDIOL DIPROPIONATE
+  identity-source: curated-identity
+  parent-id: CHEMBL307500
+  pref-name: null
   molecule-type: Small molecule
   first-approval: null
   black-box-warning: false
@@ -70,16 +71,17 @@ chembl:
   atc-codes: []
   targets: []
   properties:
-    full-mwt: 388.55
-    mw-freebase: 388.55
-    alogp: 5.2
-    psa: 52.6
-    hba: 4
-    hbd: 0
-    rtb: 4
-    num-ro5-violations: 1
-    qed-weighted: 0.49
-    full-molformula: C24H36O4
+    full-mwt: 276.42
+    mw-freebase: 276.42
+    alogp: 3.28
+    psa: 40.46
+    hba: 2
+    hbd: 2
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C18H28O2
+  identity-check: structure-confirmed
 ---
 
 # Bolandiol (19-Nortestosterone-3β,17β-diol)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Bolandiol, 19-Nortestosterone-3β, 17β-diol
-- **ChEMBL:** [CHEMBL2106664](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106664/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL307500](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL307500/) · max phase n/a · id via curated identity decision · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -106,7 +108,7 @@ Nandrolone precursor, converted to 19-nortestosterone in vivo. Sold as a prohorm
 
 | MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
 |---|---|---|---|---|---|
-| 388.55 | 5.2 | 52.6 | 0/4 | 1 | C24H36O4 |
+| 276.42 | 3.28 | 40.46 | 2/2 | 0 | C18H28O2 |
 
 ## Evidence boundaries
 

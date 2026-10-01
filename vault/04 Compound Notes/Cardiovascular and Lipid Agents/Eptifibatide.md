@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Eptifibatide
@@ -95,11 +98,23 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.05
     full-molformula: C35H49N11O9S2
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 2ab98ecd-c578-4032-a3d5-ae14d58d86a7
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2ab98ecd-c578-4032-a3d5-ae14d58d86a7
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Eptifibatide Accord
+  ema-number: EMEA/H/C/004104
+  url: https://www.ema.europa.eu/en/documents/product-information/eptifibatide-accord-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -117,7 +132,7 @@ pk-verification:
 - **Compound ID:** `eptifibatide-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
-- **ChEMBL:** [CHEMBL1174](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1174/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1174](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1174/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -162,6 +177,11 @@ Integrin alpha-IIb/beta-3 inhibitor _(ChEMBL curated mechanism of the parent mol
 > Automated comparison with the [US prescribing information (DailyMed set 2ab98ecd…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2ab98ecd-c578-4032-a3d5-ae14d58d86a7), label version 20260209. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 2.5)
 > - protein-binding: consistent (label values: 25)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Eptifibatide Accord*](https://www.ema.europa.eu/en/documents/product-information/eptifibatide-accord-epar-product-information_en.pdf) (EMEA/H/C/004104). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2.5)
+> - protein-binding: consistent (SmPC values: 25)
 
 ## Related compounds (auto)
 

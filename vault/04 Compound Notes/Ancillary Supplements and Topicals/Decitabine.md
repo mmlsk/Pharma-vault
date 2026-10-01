@@ -58,7 +58,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
+- pk-ema-consistent
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Decitabine
@@ -97,6 +100,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.53
     full-molformula: C8H12N4O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -106,6 +110,17 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Dacogen
+  ema-number: EMEA/H/C/002221
+  url: https://www.ema.europa.eu/en/documents/product-information/dacogen-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/dacogen-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Decitabine
@@ -119,7 +134,7 @@ pk-verification:
 - **Compound ID:** `decitabine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201129](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201129/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201129](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201129/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -164,6 +179,11 @@ DNA (cytosine-5)-methyltransferase 1 inhibitor; DNA (cytosine-5)-methyltransfera
 > Automated comparison with the [US prescribing information (DailyMed set 5975fa81…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5975fa81-1e29-4d56-e063-6394a90a9cd5), label version 20260820. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 8, 72, 120)
 > - protein-binding: no-label-value (label values: -)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Dacogen*](https://www.ema.europa.eu/en/documents/product-information/dacogen-epar-product-information_en.pdf) (EMEA/H/C/002221) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/dacogen-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.5, 120)
+> - protein-binding: consistent (SmPC values: 1)
 
 ## Related compounds (auto)
 

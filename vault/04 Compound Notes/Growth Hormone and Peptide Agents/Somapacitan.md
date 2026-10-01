@@ -56,6 +56,7 @@ tags:
 - group/gh
 - stub
 - chembl-profile
+- identity-curated
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3707290
@@ -74,6 +75,11 @@ chembl:
     full-mwt: 1308.59
     mw-freebase: 1308.59
     full-molformula: C55H97N13O19S2
+  identity-check: conflict
+  identity-decision:
+    decision: confirm
+    reviewer: agent-review 2026-10-01
+    reason: 191-aa growth-hormone derivative; both ChEMBL and PubChem store only the albumin-binding side-chain fragment, so structure comparison is not meaningful; INN pref_name matches
 ---
 
 # Somapacitan
@@ -87,7 +93,7 @@ chembl:
 - **Compound ID:** `somapacitan-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL3707290](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707290/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3707290](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707290/) · max phase 4 · id via Wikipedia infobox · structure check: ❌ conflicts with PubChem - see Review Queue · decision: confirm (191-aa growth-hormone derivative; both ChEMBL and PubChem store only the albumin-binding side-chain fragment, so structure comparison is not meaningful; INN pref_name matches)
 
 ## Source summary
 

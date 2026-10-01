@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.68
     full-molformula: C16H17N3O4S
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
@@ -113,7 +115,7 @@ pk-verification:
 - **Compound ID:** `cephalexin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1727](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1727/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1727](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1727/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Vitamin C
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.39
     full-molformula: C6H8O6
+  identity-check: structure-confirmed
 ---
 
 # Vitamin C (Ascorbic Acid)
@@ -109,7 +111,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Vitamin C, Ascorbic Acid
-- **ChEMBL:** [CHEMBL196](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL196/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL196](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL196/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

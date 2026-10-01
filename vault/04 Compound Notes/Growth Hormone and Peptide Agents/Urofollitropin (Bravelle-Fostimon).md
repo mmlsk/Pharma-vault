@@ -74,6 +74,7 @@ chembl:
     name: Follicle-stimulating hormone receptor
     action: AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Urofollitropin (Bravelle/Fostimon)
@@ -88,7 +89,7 @@ chembl:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Urofollitropin, Bravelle, Fostimon
-- **ChEMBL:** [CHEMBL1201520](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201520/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201520](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201520/) · max phase 4 · id via Wikipedia infobox · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

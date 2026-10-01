@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 pk-source:
   type: wikipedia-infobox
   title: Denosumab
@@ -84,6 +85,7 @@ chembl:
     name: Tumor necrosis factor ligand superfamily member 11
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Denosumab (Prolia)
@@ -98,7 +100,7 @@ chembl:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Denosumab, Prolia
-- **ChEMBL:** [CHEMBL1237023](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237023/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1237023](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237023/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

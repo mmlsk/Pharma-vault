@@ -63,7 +63,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Atazanavir
@@ -93,11 +96,23 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.15
     full-molformula: C38H52N6O7
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 7fbea274-d6b5-4faa-bbf0-05fefab42114
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7fbea274-d6b5-4faa-bbf0-05fefab42114
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Reyataz
+  ema-number: EMEA/H/C/000494
+  url: https://www.ema.europa.eu/en/documents/product-information/reyataz-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/reyataz-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -115,7 +130,7 @@ pk-verification:
 - **Compound ID:** `atazanavir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1163](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1163/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1163](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1163/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -154,6 +169,11 @@ HIV protease inhibitor with a relatively lipid-friendly profile, distinguished b
 > Automated comparison with the [US prescribing information (DailyMed set 7fbea274…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7fbea274-d6b5-4faa-bbf0-05fefab42114), label version 20250806. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 6.4, 7, 12.1)
 > - protein-binding: consistent (label values: 86)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Reyataz*](https://www.ema.europa.eu/en/documents/product-information/reyataz-epar-product-information_en.pdf) (EMEA/H/C/000494) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/reyataz-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 6.4, 12, 12.1)
+> - protein-binding: consistent (SmPC values: 86)
 
 ## Related compounds (auto)
 

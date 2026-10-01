@@ -64,7 +64,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Erlotinib
@@ -94,11 +97,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.42
     full-molformula: C22H23N3O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: a3b2d622-b4d5-4819-862b-f8fd3adcec6f
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a3b2d622-b4d5-4819-862b-f8fd3adcec6f
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Tarceva
+  ema-number: EMEA/H/C/000618
+  url: https://www.ema.europa.eu/en/documents/product-information/tarceva-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -116,7 +131,7 @@ pk-verification:
 - **Compound ID:** `erlotinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL553](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL553/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL553](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL553/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -155,6 +170,11 @@ Inhibits oncogenic EGFR-family signaling; activity depends on tumor genotype and
 > Automated comparison with the [US prescribing information (DailyMed set a3b2d622…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a3b2d622-b4d5-4819-862b-f8fd3adcec6f), label version 20240626. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 36.2)
 > - protein-binding: consistent (label values: 93)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Tarceva*](https://www.ema.europa.eu/en/documents/product-information/tarceva-epar-product-information_en.pdf) (EMEA/H/C/000618). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 36.2)
+> - protein-binding: consistent (SmPC values: 95)
 
 ## Related compounds (auto)
 

@@ -63,7 +63,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Sorafenib
@@ -93,11 +96,23 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.46
     full-molformula: C21H16ClF3N4O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: faa9d847-2cd5-6538-e053-6394a90aa92b
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=faa9d847-2cd5-6538-e053-6394a90aa92b
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Nexavar
+  ema-number: EMEA/H/C/000690
+  url: https://www.ema.europa.eu/en/documents/product-information/nexavar-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -115,7 +130,7 @@ pk-verification:
 - **Compound ID:** `sorafenib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1336](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1336/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1336](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1336/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -154,6 +169,11 @@ Inhibits VEGF-receptor angiogenic signaling; hypertension, bleeding, thrombosis,
 > Automated comparison with the [US prescribing information (DailyMed set faa9d847…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=faa9d847-2cd5-6538-e053-6394a90aa92b), label version 20260728. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 25, 48)
 > - protein-binding: consistent (label values: 99.5)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Nexavar*](https://www.ema.europa.eu/en/documents/product-information/nexavar-epar-product-information_en.pdf) (EMEA/H/C/000690). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 25, 48)
+> - protein-binding: consistent (SmPC values: 99.5)
 
 ## Related compounds (auto)
 

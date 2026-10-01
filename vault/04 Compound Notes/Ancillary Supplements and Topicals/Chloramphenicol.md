@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Chloramphenicol
@@ -100,6 +101,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.41
     full-molformula: C11H12Cl2N2O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -120,7 +122,7 @@ pk-verification:
 - **Compound ID:** `chloramphenicol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL130](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL130/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL130](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL130/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

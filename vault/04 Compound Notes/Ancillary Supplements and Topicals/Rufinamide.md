@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Rufinamide
@@ -95,11 +98,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.85
     full-molformula: C10H8F2N4O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 1a0b80de-754d-4e60-b5a9-b6daa323bf58
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1a0b80de-754d-4e60-b5a9-b6daa323bf58
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Inovelon
+  ema-number: EMEA/H/C/000660
+  url: https://www.ema.europa.eu/en/documents/product-information/inovelon-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/inovelon-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -117,7 +132,7 @@ pk-verification:
 - **Compound ID:** `rufinamide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201754](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201754/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201754](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201754/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -164,6 +179,11 @@ Sodium channel alpha subunit blocker _(ChEMBL curated mechanism of the parent mo
 > Automated comparison with the [US prescribing information (DailyMed set 1a0b80de…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1a0b80de-754d-4e60-b5a9-b6daa323bf58), label version 20260904. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 6, 10, 12)
 > - protein-binding: consistent (label values: 27, 34)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Inovelon*](https://www.ema.europa.eu/en/documents/product-information/inovelon-epar-product-information_en.pdf) (EMEA/H/C/000660) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/inovelon-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 6, 10)
+> - protein-binding: consistent (SmPC values: 34, 80)
 
 ## Related compounds (auto)
 

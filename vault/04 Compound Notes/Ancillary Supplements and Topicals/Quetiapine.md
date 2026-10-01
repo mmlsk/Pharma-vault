@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.8
     full-molformula: C21H25N3O2S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -115,7 +117,7 @@ pk-verification:
 - **Compound ID:** `quetiapine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL716](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL716/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL716](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL716/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

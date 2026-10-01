@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1951143
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.34
     full-molformula: C27H31N7OS
+  identity-check: structure-confirmed
 ---
 
 # Fimasartan
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `fimasartan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1951143](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1951143/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1951143](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1951143/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -71,6 +71,7 @@ chembl:
     name: Tumor necrosis factor
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Afelimomab
@@ -84,7 +85,7 @@ chembl:
 - **Compound ID:** `afelimomab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2108887](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108887/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108887](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108887/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

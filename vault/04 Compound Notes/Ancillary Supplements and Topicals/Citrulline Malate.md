@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - possible-duplicate
 chembl:
   identity-source: chembl-name-match
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.39
     full-molformula: C6H13N3O3
+  identity-check: structure-confirmed
 ---
 
 # Citrulline Malate
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `citrulline-malate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4297667](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297667/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297667](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297667/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

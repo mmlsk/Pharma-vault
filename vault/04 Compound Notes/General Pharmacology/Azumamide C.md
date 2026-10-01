@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL257972
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.27
     full-molformula: C27H38N4O7
+  identity-check: structure-confirmed
 ---
 
 # Azumamide C
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `azumamide-c-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL257972](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL257972/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL257972](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL257972/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

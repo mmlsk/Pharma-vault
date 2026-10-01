@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Pamidronic acid
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.32
     full-molformula: C3H11NO7P2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -114,7 +116,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Pamidronate, Aredia
-- **ChEMBL:** [CHEMBL834](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL834/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL834](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL834/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

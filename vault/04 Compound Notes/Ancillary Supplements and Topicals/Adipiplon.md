@@ -79,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C18H18FN7
+  identity-check: no-evidence
 ---
 
 # Adipiplon
@@ -92,7 +93,7 @@ chembl:
 - **Compound ID:** `adipiplon-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2103791](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103791/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2103791](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103791/) · max phase 2 · id via Wikipedia infobox · structure check: no PubChem structure available
 
 ## Source summary
 

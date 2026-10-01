@@ -55,6 +55,7 @@ tags:
 - group/pct
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL267431
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.37
     full-molformula: C28H35NO4
+  identity-check: structure-confirmed
 ---
 
 # Asoprisnil
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `asoprisnil-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL267431](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL267431/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL267431](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL267431/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

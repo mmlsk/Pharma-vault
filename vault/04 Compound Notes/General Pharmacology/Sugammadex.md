@@ -55,6 +55,7 @@ tags:
 - group/analgesia
 - stub
 - chembl-profile
+- identity-stereo-check
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2111107
@@ -70,6 +71,7 @@ chembl:
     full-mwt: 2002.18
     mw-freebase: 2002.18
     full-molformula: C72H112O48S8
+  identity-check: connectivity-match
 ---
 
 # Sugammadex
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `sugammadex-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL2111107](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2111107/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2111107](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2111107/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

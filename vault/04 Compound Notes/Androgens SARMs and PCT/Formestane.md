@@ -55,6 +55,7 @@ tags:
 - group/pct
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL132530
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.74
     full-molformula: C19H26O3
+  identity-check: structure-confirmed
 ---
 
 # Formestane
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `formestane-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL132530](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL132530/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL132530](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL132530/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

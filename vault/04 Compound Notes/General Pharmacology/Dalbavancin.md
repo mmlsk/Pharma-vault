@@ -48,7 +48,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: partially-verified
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
@@ -57,7 +57,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-discrepant
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Dalbavancin
@@ -80,6 +83,7 @@ chembl:
     full-mwt: 1816.72
     mw-freebase: 1816.72
     full-molformula: C88H100Cl2N10O28
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -88,6 +92,16 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Xydalba
+  ema-number: EMEA/H/C/002840
+  url: https://www.ema.europa.eu/en/documents/product-information/xydalba-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
 ---
 
 # Dalbavancin
@@ -101,7 +115,7 @@ pk-verification:
 - **Compound ID:** `dalbavancin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3301669](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301669/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3301669](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301669/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -134,6 +148,10 @@ Long-acting lipoglycopeptide dosed once or twice per course, which turns a skin 
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set f4c0bd0f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f4c0bd0f-03c2-4ce5-bcc2-b58f21ce75c1), label version 20260728. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 204)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Xydalba*](https://www.ema.europa.eu/en/documents/product-information/xydalba-epar-product-information_en.pdf) (EMEA/H/C/002840). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 120, 168)
 
 ## Related compounds (auto)
 

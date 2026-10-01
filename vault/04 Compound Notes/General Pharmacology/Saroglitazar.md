@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Saroglitazar
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.41
     full-molformula: C25H29NO4S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -114,7 +116,7 @@ pk-verification:
 - **Compound ID:** `saroglitazar-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL4297530](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297530/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297530](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297530/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

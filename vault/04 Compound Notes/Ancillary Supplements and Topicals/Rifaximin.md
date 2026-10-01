@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.11
     full-molformula: C43H51N3O11
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -116,7 +118,7 @@ pk-verification:
 - **Compound ID:** `rifaximin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1617](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1617/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1617](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1617/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

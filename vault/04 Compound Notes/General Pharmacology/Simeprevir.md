@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Simeprevir
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.29
     full-molformula: C38H47N5O7S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -113,7 +115,7 @@ pk-verification:
 - **Compound ID:** `simeprevir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL501849](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL501849/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL501849](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL501849/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

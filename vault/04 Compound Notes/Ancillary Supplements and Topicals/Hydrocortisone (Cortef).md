@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Hydrocortisone
@@ -105,6 +107,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.7
     full-molformula: C21H30O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -112,6 +115,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Plenadren
+  ema-number: EMEA/H/C/002185
+  url: https://www.ema.europa.eu/en/documents/product-information/plenadren-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/plenadren-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Hydrocortisone (Cortef)
@@ -126,7 +140,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Hydrocortisone, Cortef
-- **ChEMBL:** [CHEMBL389621](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL389621/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL389621](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL389621/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -179,6 +193,11 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism of the parent molecul
 | Excretion | - · fe 0.01 | Urine: >90% (<1% unchanged) |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Plenadren*](https://www.ema.europa.eu/en/documents/product-information/plenadren-epar-product-information_en.pdf) (EMEA/H/C/002185) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/plenadren-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 1.5, 3)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

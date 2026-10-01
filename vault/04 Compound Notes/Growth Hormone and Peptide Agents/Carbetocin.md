@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Carbetocin
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.07
     full-molformula: C45H69N11O12S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -114,7 +116,7 @@ pk-verification:
 - **Compound ID:** `carbetocin-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL3301668](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301668/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3301668](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301668/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 - possible-duplicate
 pk-source:
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C21H31N5O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -117,7 +119,7 @@ pk-verification:
 - **Compound ID:** `buspirone-drug-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL49](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL49/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL49](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL49/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

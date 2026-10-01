@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL501174
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.14
     full-molformula: C40H56
+  identity-check: structure-confirmed
 ---
 
 # Lycopene
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `lycopene-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL501174](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL501174/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL501174](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL501174/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

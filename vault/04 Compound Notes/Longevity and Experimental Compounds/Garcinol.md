@@ -77,6 +77,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.08
     full-molformula: C38H50O6
+  identity-check: no-evidence
 ---
 
 # Garcinol
@@ -90,7 +91,7 @@ chembl:
 - **Compound ID:** `garcinol-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL502489](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL502489/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL502489](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL502489/) · max phase n/a · id via exact ChEMBL name match · structure check: no PubChem structure available
 
 ## Source summary
 

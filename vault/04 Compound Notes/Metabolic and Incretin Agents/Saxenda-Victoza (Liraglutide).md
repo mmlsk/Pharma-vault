@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4084119
@@ -77,6 +78,7 @@ chembl:
     full-mwt: 3751.26
     mw-freebase: 3751.26
     full-molformula: C172H265N43O51
+  identity-check: structure-confirmed
 ---
 
 # Saxenda/Victoza (Liraglutide)
@@ -91,7 +93,7 @@ chembl:
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
 - **Aliases:** Saxenda/Victoza, Liraglutide
-- **ChEMBL:** [CHEMBL4084119](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4084119/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4084119](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4084119/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

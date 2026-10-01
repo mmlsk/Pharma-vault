@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1796689
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.34
     full-molformula: C21H28N4O4S3
+  identity-check: structure-confirmed
 ---
 
 # Largazole Thiol
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `largazole-thiol-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1796689](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1796689/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1796689](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1796689/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -58,7 +58,10 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Obinutuzumab
@@ -81,11 +84,22 @@ chembl:
     name: B-lymphocyte antigen CD20
     action: BINDING AGENT
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: df12ceb2-5b4b-4ab5-a317-2a36bf2a3cda
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=df12ceb2-5b4b-4ab5-a317-2a36bf2a3cda
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Gazyvaro
+  ema-number: EMEA/H/C/002799
+  url: https://www.ema.europa.eu/en/documents/product-information/gazyvaro-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/gazyvaro-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -102,7 +116,7 @@ pk-verification:
 - **Compound ID:** `obinutuzumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1743048](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743048/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1743048](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743048/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -140,6 +154,10 @@ B-lymphocyte antigen CD20 binding agent _(ChEMBL curated mechanism of the parent
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set df12ceb2…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=df12ceb2-5b4b-4ab5-a317-2a36bf2a3cda), label version 20251219. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 537.6)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Gazyvaro*](https://www.ema.europa.eu/en/documents/product-information/gazyvaro-epar-product-information_en.pdf) (EMEA/H/C/002799) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/gazyvaro-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 537.6, 633.6, 883.2)
 
 ## Related compounds (auto)
 

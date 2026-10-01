@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL7679
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.74
     full-molformula: C17H12BrFN2O3
+  identity-check: structure-confirmed
 ---
 
 # Ponalrestat
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `ponalrestat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL7679](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL7679/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL7679](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL7679/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

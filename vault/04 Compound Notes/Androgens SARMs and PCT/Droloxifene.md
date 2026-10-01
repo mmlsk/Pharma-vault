@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Droloxifene
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.5
     full-molformula: C26H29NO2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -108,7 +110,7 @@ pk-verification:
 - **Compound ID:** `droloxifene-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL487](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL487/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL487](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL487/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

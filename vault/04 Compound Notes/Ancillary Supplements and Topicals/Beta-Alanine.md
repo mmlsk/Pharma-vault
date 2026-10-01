@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL297569
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.48
     full-molformula: C3H7NO2
+  identity-check: structure-confirmed
 ---
 
 # Beta-Alanine
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `beta-alanine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL297569](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL297569/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL297569](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL297569/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

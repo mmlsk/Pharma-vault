@@ -57,7 +57,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Abatacept
@@ -83,11 +86,22 @@ chembl:
     name: T-lymphocyte activation antigen CD80
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 0836c6ac-ee37-5640-2fed-a3185a0b16eb
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0836c6ac-ee37-5640-2fed-a3185a0b16eb
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Orencia
+  ema-number: EMEA/H/C/000701
+  url: https://www.ema.europa.eu/en/documents/product-information/orencia-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/orencia-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -104,7 +118,7 @@ pk-verification:
 - **Compound ID:** `abatacept-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1201823](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201823/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201823](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201823/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -142,6 +156,10 @@ T-lymphocyte activation antigen CD80 inhibitor; T-lymphocyte activation antigen 
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 0836c6ac…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0836c6ac-ee37-5640-2fed-a3185a0b16eb), label version 20251113. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 343.2)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Orencia*](https://www.ema.europa.eu/en/documents/product-information/orencia-epar-product-information_en.pdf) (EMEA/H/C/000701) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/orencia-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 192, 273.6, 314.4, 600)
 
 ## Related compounds (auto)
 

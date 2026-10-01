@@ -72,6 +72,7 @@ chembl:
     name: Plasminogen
     action: ACTIVATOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Streptokinase
@@ -85,7 +86,7 @@ chembl:
 - **Compound ID:** `streptokinase-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2108147](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108147/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108147](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108147/) · max phase 4 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

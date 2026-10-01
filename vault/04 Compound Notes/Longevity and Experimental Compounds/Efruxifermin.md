@@ -66,6 +66,7 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Efruxifermin
@@ -79,7 +80,7 @@ chembl:
 - **Compound ID:** `efruxifermin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL4594389](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594389/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4594389](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594389/) · max phase 3 · id via Wikipedia infobox · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

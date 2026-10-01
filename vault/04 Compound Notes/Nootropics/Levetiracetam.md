@@ -63,7 +63,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Levetiracetam
@@ -99,11 +102,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.64
     full-molformula: C8H14N2O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 0348fec4-d919-4307-ac90-35360819bc00
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0348fec4-d919-4307-ac90-35360819bc00
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Keppra
+  ema-number: EMEA/H/C/000277
+  url: https://www.ema.europa.eu/en/documents/product-information/keppra-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -121,7 +136,7 @@ pk-verification:
 - **Compound ID:** `levetiracetam-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1286](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1286/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1286](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1286/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -168,6 +183,11 @@ Synaptic vesicle glycoprotein 2A modulator; Voltage-gated N-type calcium channel
 > Automated comparison with the [US prescribing information (DailyMed set 0348fec4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0348fec4-d919-4307-ac90-35360819bc00), label version 20260904. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 1, 2.5, 5, 5.3, 7, 7.2)
 > - protein-binding: consistent (label values: 10)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Keppra*](https://www.ema.europa.eu/en/documents/product-information/keppra-epar-product-information_en.pdf) (EMEA/H/C/000277). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 1, 3.1, 5, 5.3, 6, 7.2)
+> - protein-binding: consistent (SmPC values: 10)
 
 ## Related compounds (auto)
 

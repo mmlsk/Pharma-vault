@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Tiotixene
@@ -97,6 +98,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.6
     full-molformula: C23H29N3O2S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -117,7 +119,7 @@ pk-verification:
 - **Compound ID:** `thiothixene-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1201](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

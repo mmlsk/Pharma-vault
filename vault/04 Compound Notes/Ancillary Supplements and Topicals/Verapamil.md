@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Verapamil
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.42
     full-molformula: C27H38N2O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `verapamil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL6966](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6966/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL6966](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6966/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

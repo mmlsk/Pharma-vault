@@ -65,7 +65,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -95,11 +98,22 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.8
     full-molformula: C18H25N3O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: e286ffd4-c598-47fb-af06-2e15f7e6f99f
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e286ffd4-c598-47fb-af06-2e15f7e6f99f
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Onglyza
+  ema-number: EMEA/H/C/001039
+  url: https://www.ema.europa.eu/en/documents/product-information/onglyza-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -116,7 +130,7 @@ pk-verification:
 - **Compound ID:** `saxagliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL385517](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL385517/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL385517](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL385517/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -153,6 +167,10 @@ Inhibits DPP-4 to prolong endogenous incretin signaling and glucose-dependent in
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set e286ffd4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e286ffd4-c598-47fb-af06-2e15f7e6f99f), label version 20260127. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 2.5, 3.1)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Onglyza*](https://www.ema.europa.eu/en/documents/product-information/onglyza-epar-product-information_en.pdf) (EMEA/H/C/001039). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2.5, 3.1, 26.9)
 
 ## Related compounds (auto)
 

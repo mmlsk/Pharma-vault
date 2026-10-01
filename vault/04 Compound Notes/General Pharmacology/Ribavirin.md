@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Ribavirin
@@ -100,6 +101,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.44
     full-molformula: C8H12N4O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -122,7 +124,7 @@ pk-verification:
 - **Compound ID:** `ribavirin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1643](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1643/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1643](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1643/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

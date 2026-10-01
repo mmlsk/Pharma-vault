@@ -58,6 +58,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL286452
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.76
     full-molformula: C18H24O2
+  identity-check: structure-confirmed
 ---
 
 # Alfatradiol (17α-Estradiol)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** 17-alpha estradiol, Alfatradiol, 17α-Estradiol
-- **ChEMBL:** [CHEMBL286452](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL286452/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL286452](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL286452/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

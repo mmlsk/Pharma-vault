@@ -70,6 +70,7 @@ chembl:
     name: Toll-like receptor 5
     action: AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Entolimod
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `entolimod-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2108683](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108683/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108683](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108683/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

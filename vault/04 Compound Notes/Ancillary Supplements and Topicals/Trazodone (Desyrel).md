@@ -67,6 +67,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Trazodone
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.69
     full-molformula: C19H22ClN5O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -117,7 +119,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Trazodone, Desyrel
-- **ChEMBL:** [CHEMBL621](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL621/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL621](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL621/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

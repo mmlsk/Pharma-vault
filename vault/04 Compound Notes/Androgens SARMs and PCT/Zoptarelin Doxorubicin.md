@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3544954
@@ -73,6 +74,7 @@ chembl:
     full-mwt: 1893.04
     mw-freebase: 1893.04
     full-molformula: C91H117N19O26
+  identity-check: structure-confirmed
 ---
 
 # Zoptarelin Doxorubicin
@@ -86,7 +88,7 @@ chembl:
 - **Compound ID:** `zoptarelin-doxorubicin-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL3544954](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544954/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3544954](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544954/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

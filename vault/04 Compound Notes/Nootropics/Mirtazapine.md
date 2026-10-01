@@ -66,6 +66,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -105,6 +106,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C17H19N3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -127,7 +129,7 @@ pk-verification:
 - **Compound ID:** `mirtazapine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL654](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL654/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL654](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL654/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL274445
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.27
     full-molformula: C34H42N4O6
+  identity-check: connectivity-match
 ---
 
 # Trapoxin A
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `trapoxin-a-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL274445](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL274445/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL274445](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL274445/) · max phase n/a · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

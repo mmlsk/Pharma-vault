@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4085457
@@ -85,6 +86,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.85
     full-molformula: C15H19N5O
+  identity-check: structure-confirmed
 ---
 
 # Ritlecitinib (oral, Litfulo)
@@ -99,7 +101,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Ritlecitinib, Litfulo
-- **ChEMBL:** [CHEMBL4085457](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4085457/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4085457](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4085457/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -139,7 +141,7 @@ _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for fiel
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
 - **Shared target:** [[Cerdulatinib]] (Tyrosine-protein kinase JAK3), [[Filgotinib]] (Tyrosine-protein kinase JAK3)
-- **Same ATC subgroup:** [[Baricitinib (oral, Olumiant)]], [[Filgotinib]], [[Peficitinib]], [[Tofacitinib]], [[Upadacitinib (Rinvoq)]]
+- **Same ATC subgroup:** [[Baricitinib (oral, Olumiant)]], [[Deucravacitinib (Sotyktu)]], [[Filgotinib]], [[Peficitinib]], [[Tofacitinib]], [[Upadacitinib (Rinvoq)]]
 
 ## Safety routing
 

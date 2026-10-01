@@ -63,7 +63,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Γ-Hydroxybutyric acid
@@ -92,11 +95,22 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.52
     full-molformula: C4H8O3
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 5dcf9a5c-312b-420b-82f3-42177d8f9ee4
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5dcf9a5c-312b-420b-82f3-42177d8f9ee4
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Xyrem
+  ema-number: EMEA/H/C/000593
+  url: https://www.ema.europa.eu/en/documents/product-information/xyrem-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -114,7 +128,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Sodium Oxybate, GHB
-- **ChEMBL:** [CHEMBL1342](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1342/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1342](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1342/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -151,6 +165,10 @@ Sodium salt of GHB, approved for narcolepsy with cataplexy under restricted dist
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 5dcf9a5c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5dcf9a5c-312b-420b-82f3-42177d8f9ee4), label version 20260421. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.367, 0.5, 0.533, 0.983, 1)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Xyrem*](https://www.ema.europa.eu/en/documents/product-information/xyrem-epar-product-information_en.pdf) (EMEA/H/C/000593). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.367, 0.5, 1)
 
 ## Safety routing
 

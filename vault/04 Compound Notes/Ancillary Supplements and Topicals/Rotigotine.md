@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Rotigotine
@@ -101,6 +102,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Neupro
+  ema-number: EMEA/H/C/000626
+  url: https://www.ema.europa.eu/en/documents/product-information/neupro-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Rotigotine
@@ -157,6 +169,11 @@ D2-like dopamine receptor agonist _(ChEMBL curated mechanism, as quoted by the s
 | Excretion | mainly urinary | Urine (71%), Feces (23%) |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Neupro*](https://www.ema.europa.eu/en/documents/product-information/neupro-epar-product-information_en.pdf) (EMEA/H/C/000626). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2, 3, 5, 7)
+> - protein-binding: consistent (SmPC values: 92)
 
 ## Related compounds (auto)
 

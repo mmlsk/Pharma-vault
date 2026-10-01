@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-formula-match
 pk-source:
   type: wikipedia-infobox
   title: Acenocoumarol
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.43
     full-molformula: C19H15NO6
+  identity-check: formula-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -109,7 +111,7 @@ pk-verification:
 - **Compound ID:** `acenocoumarol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL397420](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL397420/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL397420](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL397420/) · max phase 4 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

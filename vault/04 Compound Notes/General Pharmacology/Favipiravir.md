@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL221722
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.57
     full-molformula: C5H4FN3O2
+  identity-check: structure-confirmed
 ---
 
 # Favipiravir
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `favipiravir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL221722](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL221722/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL221722](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL221722/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

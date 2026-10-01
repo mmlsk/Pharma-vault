@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4110551
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.59
     full-molformula: C22H32N6O4
+  identity-check: structure-confirmed
 ---
 
 # Sitokiren
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `sitokiren-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4110551](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4110551/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4110551](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4110551/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

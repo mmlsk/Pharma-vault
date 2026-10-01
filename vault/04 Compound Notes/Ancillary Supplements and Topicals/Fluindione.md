@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL24924
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.72
     full-molformula: C15H9FO2
+  identity-check: structure-confirmed
 ---
 
 # Fluindione
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `fluindione-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL24924](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL24924/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL24924](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL24924/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

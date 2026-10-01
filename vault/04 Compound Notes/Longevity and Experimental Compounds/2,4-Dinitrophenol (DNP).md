@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL273386
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C6H4N2O5
+  identity-check: structure-confirmed
 ---
 
 # 2,4-Dinitrophenol (DNP)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** 2,4-Dinitrophenol, DNP
-- **ChEMBL:** [CHEMBL273386](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL273386/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL273386](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL273386/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

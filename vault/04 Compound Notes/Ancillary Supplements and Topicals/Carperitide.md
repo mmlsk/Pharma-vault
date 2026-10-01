@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2104386
@@ -73,6 +74,7 @@ chembl:
     full-mwt: 3080.5
     mw-freebase: 3080.5
     full-molformula: C127H203N45O39S3
+  identity-check: structure-confirmed
 ---
 
 # Carperitide
@@ -86,7 +88,7 @@ chembl:
 - **Compound ID:** `carperitide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2104386](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2104386/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2104386](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2104386/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

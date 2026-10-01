@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4594438
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.1
     full-molformula: C39H32ClF10N7O5S2
+  identity-check: inn-match-ema
 ---
 
 # Lenacapavir
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `lenacapavir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4594438](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594438/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4594438](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594438/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

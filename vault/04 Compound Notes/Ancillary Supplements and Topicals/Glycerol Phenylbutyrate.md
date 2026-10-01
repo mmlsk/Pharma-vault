@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2105745
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.16
     full-molformula: C33H38O6
+  identity-check: structure-confirmed
 ---
 
 # Glycerol Phenylbutyrate
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `glycerol-phenylbutyrate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2105745](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105745/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2105745](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105745/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

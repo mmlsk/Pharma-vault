@@ -65,6 +65,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Mesterolone
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C20H32O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -115,7 +117,7 @@ pk-verification:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Proviron, Mesterolone
-- **ChEMBL:** [CHEMBL258918](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL258918/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL258918](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL258918/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

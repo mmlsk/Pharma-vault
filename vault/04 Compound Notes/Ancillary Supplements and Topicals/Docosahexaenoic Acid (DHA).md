@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL367149
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.37
     full-molformula: C22H32O2
+  identity-check: structure-confirmed
 ---
 
 # Docosahexaenoic Acid (DHA)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Docosahexaenoic Acid, DHA
-- **ChEMBL:** [CHEMBL367149](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL367149/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL367149](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL367149/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

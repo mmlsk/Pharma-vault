@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL985
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.37
     full-molformula: CH4N2O
+  identity-check: structure-confirmed
 ---
 
 # Urea (topical, 5% to 40%)
@@ -95,7 +97,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Urea
-- **ChEMBL:** [CHEMBL985](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL985/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL985](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL985/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

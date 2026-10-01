@@ -70,6 +70,7 @@ chembl:
     name: LPA mRNA
     action: ANTISENSE INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Pelacarsen
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `pelacarsen-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4298202](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298202/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4298202](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298202/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

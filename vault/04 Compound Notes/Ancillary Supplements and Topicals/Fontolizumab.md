@@ -70,6 +70,7 @@ chembl:
     name: Interferon gamma
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Fontolizumab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `fontolizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2108459](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108459/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108459](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108459/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

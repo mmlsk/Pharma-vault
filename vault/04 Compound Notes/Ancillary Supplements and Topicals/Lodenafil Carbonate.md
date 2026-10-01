@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4297515
@@ -70,6 +71,7 @@ chembl:
     full-mwt: 1035.22
     mw-freebase: 1035.22
     full-molformula: C47H62N12O11S2
+  identity-check: structure-confirmed
 ---
 
 # Lodenafil Carbonate
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `lodenafil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4297515](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297515/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297515](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297515/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

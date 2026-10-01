@@ -64,6 +64,8 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Budesonide
@@ -104,6 +106,17 @@ pk-verification:
   status: consistent
   set-id: 3235e2a4-8e12-2d58-e063-6294a90a4936
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3235e2a4-8e12-2d58-e063-6294a90a4936
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Jorveza
+  ema-number: EMEA/H/C/004655
+  url: https://www.ema.europa.eu/en/documents/product-information/jorveza-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/jorveza-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -172,6 +185,11 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 > Automated comparison with the [US prescribing information (DailyMed set 3235e2a4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3235e2a4-8e12-2d58-e063-6294a90a4936), label version 20260716. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 2.3)
 > - protein-binding: consistent (label values: 85, 90)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Jorveza*](https://www.ema.europa.eu/en/documents/product-information/jorveza-epar-product-information_en.pdf) (EMEA/H/C/004655) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/jorveza-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2, 3, 4, 5)
+> - protein-binding: consistent (SmPC values: 85, 90)
 
 ## Related compounds (auto)
 

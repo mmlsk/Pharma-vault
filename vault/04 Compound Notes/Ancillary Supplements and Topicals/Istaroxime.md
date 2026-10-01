@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-stereo-check
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2093999
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.62
     full-molformula: C21H32N2O3
+  identity-check: connectivity-match
 ---
 
 # Istaroxime
@@ -95,7 +97,7 @@ chembl:
 - **Compound ID:** `istaroxime-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2093999](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2093999/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2093999](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2093999/) · max phase 2 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

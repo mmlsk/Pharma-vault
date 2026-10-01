@@ -70,6 +70,7 @@ chembl:
     name: Interleukin-17A
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Perakizumab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `perakizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2109470](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109470/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2109470](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109470/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

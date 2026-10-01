@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL6068503
@@ -70,6 +71,7 @@ chembl:
     full-mwt: 78.96
     mw-freebase: 78.96
     full-molformula: Se
+  identity-check: structure-confirmed
 ---
 
 # Selenium
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `selenium-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL6068503](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6068503/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL6068503](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6068503/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

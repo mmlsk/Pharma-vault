@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Probenecid
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.83
     full-molformula: C13H19NO4S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -118,7 +120,7 @@ pk-verification:
 - **Compound ID:** `probenecid-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL897](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL897/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL897](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL897/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

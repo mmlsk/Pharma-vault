@@ -66,6 +66,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -98,6 +99,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.64
     full-molformula: C23H36O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -119,7 +121,7 @@ pk-verification:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Masteron, Drostanolone
-- **ChEMBL:** [CHEMBL1201048](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201048/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1201048](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201048/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

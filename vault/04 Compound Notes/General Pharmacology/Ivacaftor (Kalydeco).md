@@ -60,7 +60,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Ivacaftor
@@ -93,11 +96,23 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.57
     full-molformula: C24H28N2O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 0ab0c9f8-3eee-4e0f-9f3f-c1e16aaffe25
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0ab0c9f8-3eee-4e0f-9f3f-c1e16aaffe25
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Kalydeco
+  ema-number: EMEA/H/C/002494
+  url: https://www.ema.europa.eu/en/documents/product-information/kalydeco-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -116,7 +131,7 @@ pk-verification:
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Ivacaftor, Kalydeco
-- **ChEMBL:** [CHEMBL2010601](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2010601/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2010601](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2010601/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -161,6 +176,11 @@ Cystic fibrosis transmembrane conductance regulator positive modulator _(ChEMBL 
 > Automated comparison with the [US prescribing information (DailyMed set 0ab0c9f8…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0ab0c9f8-3eee-4e0f-9f3f-c1e16aaffe25), label version 20260323. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 12)
 > - protein-binding: consistent (label values: 99)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Kalydeco*](https://www.ema.europa.eu/en/documents/product-information/kalydeco-epar-product-information_en.pdf) (EMEA/H/C/002494). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 12)
+> - protein-binding: consistent (SmPC values: 99)
 
 ## Related compounds (auto)
 

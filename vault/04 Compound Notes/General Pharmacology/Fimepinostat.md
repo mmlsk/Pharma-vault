@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3622533
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.28
     full-molformula: C23H24N8O4S
+  identity-check: structure-confirmed
 ---
 
 # Fimepinostat
@@ -102,7 +104,7 @@ chembl:
 - **Compound ID:** `fimepinostat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3622533](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3622533/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3622533](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3622533/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

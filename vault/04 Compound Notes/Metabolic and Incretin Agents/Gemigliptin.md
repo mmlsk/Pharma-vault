@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Gemigliptin
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.66
     full-molformula: C18H19F8N5O2
+  identity-check: structure-confirmed
 ---
 
 # Gemigliptin
@@ -107,7 +109,7 @@ chembl:
 - **Compound ID:** `gemigliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL3707235](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707235/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3707235](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707235/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

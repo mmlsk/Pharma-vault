@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Androstenedione
@@ -85,6 +86,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.67
     full-molformula: C19H26O2
+  identity-check: structure-confirmed
 ---
 
 # Androstenedione
@@ -98,7 +100,7 @@ chembl:
 - **Compound ID:** `androstenedione-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL274826](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL274826/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL274826](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL274826/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

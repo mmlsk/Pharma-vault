@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1911053
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.13
     full-molformula: C25H32O13
+  identity-check: structure-confirmed
 ---
 
 # Oleuropein
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `oleuropein-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1911053](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1911053/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1911053](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1911053/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

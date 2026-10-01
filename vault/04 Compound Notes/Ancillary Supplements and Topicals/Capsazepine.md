@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL391997
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.56
     full-molformula: C19H21ClN2O2S
+  identity-check: structure-confirmed
 ---
 
 # Capsazepine
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `capsazepine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL391997](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL391997/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL391997](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL391997/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

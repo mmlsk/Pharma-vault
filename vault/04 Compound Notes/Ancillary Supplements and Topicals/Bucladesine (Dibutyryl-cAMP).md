@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL485980
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.45
     full-molformula: C18H24N5O8P
+  identity-check: structure-confirmed
 ---
 
 # Bucladesine (Dibutyryl-cAMP)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Bucladesine, Dibutyryl-cAMP
-- **ChEMBL:** [CHEMBL485980](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL485980/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL485980](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL485980/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

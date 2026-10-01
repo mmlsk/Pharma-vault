@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL331378
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.72
     full-molformula: C22H23NO4S2
+  identity-check: structure-confirmed
 ---
 
 # Zofenopril
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `zofenopril-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL331378](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL331378/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL331378](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL331378/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

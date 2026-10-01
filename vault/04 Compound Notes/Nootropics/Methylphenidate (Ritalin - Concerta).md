@@ -66,6 +66,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -102,6 +103,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.81
     full-molformula: C14H19NO2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -111,6 +113,15 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-text
+  product: Tuzulby
+  ema-number: EMEA/H/C/005975
+  url: null
+  chpl-url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Methylphenidate (Ritalin / Concerta)
@@ -125,7 +136,7 @@ pk-verification:
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Methylphenidate, Ritalin, Concerta
-- **ChEMBL:** [CHEMBL796](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL796/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL796](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL796/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

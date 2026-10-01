@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2181927
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.83
     full-molformula: C21H22N4O3
+  identity-check: structure-confirmed
 ---
 
 # Finerenone (Kerendia)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Finerenone, Kerendia
-- **ChEMBL:** [CHEMBL2181927](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2181927/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2181927](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2181927/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

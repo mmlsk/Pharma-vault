@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL108335
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.04
     full-molformula: C47H58N12O6
+  identity-check: structure-confirmed
 ---
 
 # Hexarelin
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `hexarelin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL108335](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL108335/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL108335](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL108335/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

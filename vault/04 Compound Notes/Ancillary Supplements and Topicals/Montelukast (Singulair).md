@@ -67,6 +67,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -98,6 +99,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.17
     full-molformula: C35H36ClNO3S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -121,7 +123,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Montelukast, Singulair
-- **ChEMBL:** [CHEMBL787](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL787/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL787](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL787/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

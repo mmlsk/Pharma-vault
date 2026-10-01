@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Sertaconazole
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.32
     full-molformula: C20H15Cl3N2OS
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `sertaconazole-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1201196](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201196/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201196](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201196/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

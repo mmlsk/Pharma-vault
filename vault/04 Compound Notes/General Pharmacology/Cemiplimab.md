@@ -48,7 +48,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -58,6 +58,8 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Cemiplimab
@@ -80,6 +82,7 @@ chembl:
     name: Programmed cell death protein 1
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: no-label
@@ -87,6 +90,16 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Libtayo
+  ema-number: EMEA/H/C/004844
+  url: https://www.ema.europa.eu/en/documents/product-information/libtayo-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/libtayo-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Cemiplimab
@@ -100,7 +113,7 @@ pk-verification:
 - **Compound ID:** `cemiplimab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL4297723](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297723/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297723](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297723/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -135,6 +148,10 @@ Programmed cell death protein 1 inhibitor _(ChEMBL curated mechanism of the pare
 | Elimination t½ | 19 d | 19 days |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Libtayo*](https://www.ema.europa.eu/en/documents/product-information/libtayo-epar-product-information_en.pdf) (EMEA/H/C/004844) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/libtayo-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 528)
 
 ## Related compounds (auto)
 

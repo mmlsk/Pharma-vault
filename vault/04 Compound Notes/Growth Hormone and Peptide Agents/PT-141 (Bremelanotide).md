@@ -65,6 +65,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 - possible-duplicate
 pk-source:
@@ -92,6 +93,7 @@ chembl:
     full-mwt: 1025.18
     mw-freebase: 1025.18
     full-molformula: C50H68N14O10
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -115,7 +117,7 @@ pk-verification:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** PT-141, Bremelanotide
-- **ChEMBL:** [CHEMBL2070241](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2070241/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2070241](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2070241/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

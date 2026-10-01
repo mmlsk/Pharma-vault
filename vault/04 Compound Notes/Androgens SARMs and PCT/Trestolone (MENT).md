@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: CHEMBL452329
-chembl-max-phase: 2
+chembl-id: CHEMBL5197302
+chembl-max-phase: null
 half-life:
   value: null
   unit: null
@@ -58,28 +58,29 @@ tags:
 - group/steroids
 - stub
 - chembl-profile
-- chembl-name-match
+- identity-curated
 chembl:
-  identity-source: chembl-name-match
-  parent-id: CHEMBL452329
-  pref-name: TRESTOLONE ACETATE
-  molecule-type: Small molecule
+  identity-source: curated-identity
+  parent-id: CHEMBL5197302
+  pref-name: null
+  molecule-type: null
   first-approval: null
   black-box-warning: false
   withdrawn: false
   atc-codes: []
   targets: []
   properties:
-    full-mwt: 330.47
-    mw-freebase: 330.47
-    alogp: 4.31
-    psa: 43.37
-    hba: 3
-    hbd: 0
-    rtb: 1
+    full-mwt: 288.43
+    mw-freebase: 288.43
+    alogp: 3.74
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 0
     num-ro5-violations: 0
-    qed-weighted: 0.67
-    full-molformula: C21H30O3
+    qed-weighted: 0.74
+    full-molformula: C19H28O2
+  identity-check: structure-confirmed
 ---
 
 # Trestolone (MENT)
@@ -94,7 +95,7 @@ chembl:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Trestolone, MENT
-- **ChEMBL:** [CHEMBL452329](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL452329/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL5197302](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5197302/) · max phase n/a · id via curated identity decision · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -102,11 +103,11 @@ Experimental potent synthetic androgen resistant to 5-alpha-reduction, studied f
 
 ## ChEMBL profile
 
-- **Molecule type:** Small molecule
+- **Molecule type:** -
 
 | MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
 |---|---|---|---|---|---|
-| 330.47 | 4.31 | 43.37 | 0/3 | 0 | C21H30O3 |
+| 288.43 | 3.74 | 37.3 | 1/2 | 0 | C19H28O2 |
 
 ## Evidence boundaries
 

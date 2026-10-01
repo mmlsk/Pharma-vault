@@ -26,13 +26,13 @@ Sources to prefer: SmPC/FDA label, DrugBank, ChEMBL, primary PK studies.
 |---|---|
 | `source-summary-only` | Only the catalogue description; no PK fields |
 | `auto-extracted` | PK parsed from a revision-pinned Wikipedia infobox (`pk-source`) |
-| `partially-verified` | Auto-extracted **and** consistent with the FDA label in an automated cross-check (`pk-verification.status = consistent`). Still not a human review |
+| `partially-verified` | Auto-extracted **and** consistent with at least one regulatory text in an automated cross-check - US label (`pk-verification`) or EU SmPC/ChPL (`pk-verification-ema`) - with **no** regulator discrepant. Still not a human review |
 | `verified` | Human-reviewed against SmPC/label/primary literature (set by hand; then `review-status` ≠ `stub`) |
 
 ## Auto-extracted PK (all)
 ```dataview
 TABLE WITHOUT ID file.link AS Compound, cluster AS Cluster, half-life.value AS "t½", half-life.unit AS Unit,
-  protein-binding.value AS "PB %", bioavailability.value AS "F %", pk-verification.status AS "FDA check"
+  protein-binding.value AS "PB %", bioavailability.value AS "F %", pk-verification.status AS "FDA check", pk-verification-ema.status AS "ChPL check"
 FROM #pk-auto
 SORT file.name ASC
 ```
@@ -41,6 +41,21 @@ SORT file.name ASC
 ```dataview
 TABLE WITHOUT ID file.link AS Compound, half-life.value AS "t½", half-life.unit AS Unit, pk-verification.fields AS Fields
 FROM #pk-fda-consistent
+SORT file.name ASC
+```
+
+## Consistent with both FDA label and EU SmPC (ChPL)
+```dataview
+TABLE WITHOUT ID file.link AS Compound, half-life.value AS "t½", half-life.unit AS Unit, pk-verification-ema.product AS "EU product", pk-verification-ema.chpl-url AS ChPL
+FROM #pk-2-regulators
+SORT file.name ASC
+```
+
+## Regulators disagree (FDA vs EU)
+One regulatory text matches, the other does not - usually a different reference product (depot, liposomal, transdermal) or population.
+```dataview
+TABLE WITHOUT ID file.link AS Compound, pk-verification.fields AS FDA, pk-verification-ema.fields AS EU, pk-verification-ema.product AS "EU product"
+FROM #pk-sources-disagree
 SORT file.name ASC
 ```
 

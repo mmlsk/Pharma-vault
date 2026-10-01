@@ -68,6 +68,7 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Mazdutide
@@ -81,7 +82,7 @@ chembl:
 - **Compound ID:** `mazdutide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL5095358](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095358/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL5095358](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095358/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

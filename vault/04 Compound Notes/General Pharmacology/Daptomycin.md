@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - pk-fda-discrepant
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Daptomycin
@@ -74,6 +75,17 @@ pk-verification:
   status: discrepant
   set-id: e6fef9de-e357-4fa3-8839-f483edf1b4d0
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e6fef9de-e357-4fa3-8839-f483edf1b4d0
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Cubicin
+  ema-number: EMEA/H/C/000637
+  url: https://www.ema.europa.eu/en/documents/product-information/cubicin-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/cubicin-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: discrepant
@@ -117,6 +129,11 @@ Cyclic lipopeptide that is rapidly bactericidal against gram-positive organisms 
 > Automated comparison with the [US prescribing information (DailyMed set e6fef9de…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e6fef9de-e357-4fa3-8839-f483edf1b4d0), label version 20260826. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 0, 24)
 > - protein-binding: consistent (label values: 84, 86, 88)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Cubicin*](https://www.ema.europa.eu/en/documents/product-information/cubicin-epar-product-information_en.pdf) (EMEA/H/C/000637) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/cubicin-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 0, 0.5, 1, 24)
+> - protein-binding: consistent (SmPC values: 90)
 
 ## Safety routing
 

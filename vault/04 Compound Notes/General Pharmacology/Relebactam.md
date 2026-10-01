@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3112741
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C12H20N4O6S
+  identity-check: structure-confirmed
 ---
 
 # Relebactam
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `relebactam-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3301605](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301605/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3301605](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301605/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

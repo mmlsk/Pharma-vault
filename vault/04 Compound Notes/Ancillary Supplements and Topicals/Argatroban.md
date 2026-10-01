@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.16
     full-molformula: C23H36N6O5S
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
@@ -117,7 +119,7 @@ pk-verification:
 - **Compound ID:** `argatroban-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1166](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1166/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1166](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1166/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

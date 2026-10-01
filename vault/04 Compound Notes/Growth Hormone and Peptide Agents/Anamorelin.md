@@ -59,6 +59,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Anamorelin
@@ -87,6 +88,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.36
     full-molformula: C31H42N6O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -107,7 +109,7 @@ pk-verification:
 - **Compound ID:** `anamorelin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL2110579](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2110579/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2110579](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2110579/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1474900
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.72
     full-molformula: C14H10N4O
+  identity-check: structure-confirmed
 ---
 
 # Olprinone
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `olprinone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1474900](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1474900/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1474900](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1474900/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

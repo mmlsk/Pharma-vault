@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1135
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.49
     full-molformula: C4H11NO
+  identity-check: structure-confirmed
 ---
 
 # DMAE (Dimethylaminoethanol)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** DMAE, Dimethylaminoethanol
-- **ChEMBL:** [CHEMBL1135](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1135/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1135](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1135/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-stereo-check
 - possible-duplicate
 chembl:
   identity-source: wikipedia-infobox
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.37
     full-molformula: C25H22O10
+  identity-check: connectivity-match
 ---
 
 # Milk Thistle (Silymarin)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Milk Thistle, Silymarin
-- **ChEMBL:** [CHEMBL9509](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL9509/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL9509](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL9509/) · max phase 3 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

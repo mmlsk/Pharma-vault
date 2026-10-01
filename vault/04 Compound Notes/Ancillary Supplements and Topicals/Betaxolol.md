@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.62
     full-molformula: C18H29NO3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -114,7 +116,7 @@ pk-verification:
 - **Compound ID:** `betaxolol-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL423](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL423/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL423](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL423/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

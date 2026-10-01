@@ -391,6 +391,13 @@ def identities() -> dict:
                 if u:
                     out[r["compound_id"]] = {"chembl-id": u["id"], "source": "chembl-name-match", "matched-name": q}
                     break
+    # v3.3: manual identity decisions (data/curated/identity-decisions.csv) - reject / replace
+    p = CURATED / "identity-decisions.csv"
+    for d in (csv.DictReader(open(p, encoding="utf-8")) if p.exists() else []):
+        if d["decision"] == "reject":
+            out.pop(d["compound_id"], None)
+        elif d["decision"] == "replace":
+            out[d["compound_id"]] = {"chembl-id": d["chembl_id"], "source": "curated-identity"}
     return out
 
 

@@ -63,6 +63,8 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Ertugliflozin
@@ -100,6 +102,17 @@ pk-verification:
   status: consistent
   set-id: e6f3e718-bb99-48f1-ab94-b9f0af05fed6
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e6f3e718-bb99-48f1-ab94-b9f0af05fed6
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Steglatro
+  ema-number: EMEA/H/C/004315
+  url: https://www.ema.europa.eu/en/documents/product-information/steglatro-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -164,6 +177,11 @@ Sodium/glucose cotransporter 2 inhibitor _(ChEMBL curated mechanism, as quoted b
 > Automated comparison with the [US prescribing information (DailyMed set e6f3e718…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e6f3e718-bb99-48f1-ab94-b9f0af05fed6), label version 20260603. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 16.6)
 > - protein-binding: consistent (label values: 93.6)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Steglatro*](https://www.ema.europa.eu/en/documents/product-information/steglatro-epar-product-information_en.pdf) (EMEA/H/C/004315). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 17)
+> - protein-binding: consistent (SmPC values: 93.6)
 
 ## Related compounds (auto)
 

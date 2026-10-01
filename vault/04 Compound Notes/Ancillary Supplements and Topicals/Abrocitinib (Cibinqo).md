@@ -59,7 +59,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Abrocitinib
@@ -92,11 +95,22 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.83
     full-molformula: C14H21N5O2S
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 3f6d6fcd-e9f9-42c8-bfa2-bb2cfc9ed258
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3f6d6fcd-e9f9-42c8-bfa2-bb2cfc9ed258
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Cibinqo
+  ema-number: EMEA/H/C/005452
+  url: https://www.ema.europa.eu/en/documents/product-information/cibinqo-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/cibinqo-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -114,7 +128,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Abrocitinib, Cibinqo
-- **ChEMBL:** [CHEMBL3655081](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3655081/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3655081](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3655081/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -157,6 +171,10 @@ Tyrosine-protein kinase JAK1 inhibitor _(ChEMBL curated mechanism of the parent 
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 3f6d6fcd…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3f6d6fcd-e9f9-42c8-bfa2-bb2cfc9ed258), label version 20260909. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 3, 5, 216)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Cibinqo*](https://www.ema.europa.eu/en/documents/product-information/cibinqo-epar-product-information_en.pdf) (EMEA/H/C/005452) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/cibinqo-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 5)
 
 ## Related compounds (auto)
 

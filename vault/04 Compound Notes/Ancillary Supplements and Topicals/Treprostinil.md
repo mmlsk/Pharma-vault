@@ -61,6 +61,8 @@ tags:
 - stub
 - pk-auto
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Treprostinil
@@ -73,6 +75,16 @@ pk-verification:
   status: consistent
   set-id: 6c80bb38-e8db-4138-9f0d-dbbf9c673185
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6c80bb38-e8db-4138-9f0d-dbbf9c673185
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Trepulmix
+  ema-number: EMEA/H/C/005207
+  url: https://www.ema.europa.eu/en/documents/product-information/trepulmix-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -114,6 +126,10 @@ Prostacyclin analogue stable enough for subcutaneous, inhaled and oral delivery,
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 6c80bb38…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6c80bb38-e8db-4138-9f0d-dbbf9c673185), label version 20260702. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 4)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Trepulmix*](https://www.ema.europa.eu/en/documents/product-information/trepulmix-epar-product-information_en.pdf) (EMEA/H/C/005207). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 1.32, 1.42, 2.93, 4.61, 6, 72)
 
 ## Safety routing
 

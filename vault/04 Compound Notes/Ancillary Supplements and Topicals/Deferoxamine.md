@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Deferoxamine
@@ -86,6 +87,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.06
     full-molformula: C25H48N6O8
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -106,7 +108,7 @@ pk-verification:
 - **Compound ID:** `deferoxamine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL556](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL556/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL556](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL556/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

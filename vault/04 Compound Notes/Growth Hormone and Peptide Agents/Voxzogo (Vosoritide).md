@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3707276
@@ -74,6 +75,7 @@ chembl:
     name: Atrial natriuretic peptide receptor 2
     action: BINDING AGENT
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Voxzogo (Vosoritide)
@@ -88,7 +90,7 @@ chembl:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Voxzogo, Vosoritide
-- **ChEMBL:** [CHEMBL3707276](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707276/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3707276](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707276/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

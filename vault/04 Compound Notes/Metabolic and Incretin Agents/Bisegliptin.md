@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4297624
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.76
     full-molformula: C18H26FN3O3
+  identity-check: structure-confirmed
 ---
 
 # Bisegliptin
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `bisegliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL4297624](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297624/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297624](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297624/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

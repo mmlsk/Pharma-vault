@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4483575
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.41
     full-molformula: C27H27F2N5O3
+  identity-check: structure-confirmed
 ---
 
 # Remibrutinib
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `remibrutinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4483575](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4483575/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4483575](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4483575/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

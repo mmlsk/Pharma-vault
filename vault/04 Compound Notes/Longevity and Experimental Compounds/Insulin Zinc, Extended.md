@@ -70,6 +70,7 @@ chembl:
     name: Insulin receptor
     action: AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Insulin Zinc, Extended
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `insulin-zinc-extended-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL2108492](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108492/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108492](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108492/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

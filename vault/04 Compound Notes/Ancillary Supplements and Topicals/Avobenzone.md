@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1200522
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.61
     full-molformula: C20H22O3
+  identity-check: structure-confirmed
 ---
 
 # Avobenzone
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `avobenzone-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200522](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200522/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1200522](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200522/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

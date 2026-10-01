@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - possible-duplicate
 chembl:
   identity-source: chembl-name-match
@@ -72,6 +73,7 @@ chembl:
     full-mwt: 1302.46
     mw-freebase: 1302.46
     full-molformula: C63H83N17O14
+  identity-check: structure-confirmed
 ---
 
 # Kisspeptin-10
@@ -85,7 +87,7 @@ chembl:
 - **Compound ID:** `kisspeptin-10-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL376756](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL376756/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL376756](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL376756/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3989969
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.08
     full-molformula: C25H19F3N4O5S
+  identity-check: structure-confirmed
 ---
 
 # Opigolix
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `opigolix-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL3989969](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989969/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3989969](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989969/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

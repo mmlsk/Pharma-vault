@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2109540
@@ -73,6 +74,7 @@ chembl:
     name: Proprotein convertase subtilisin/kexin type 9
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Alirocumab (Praluent)
@@ -87,7 +89,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Alirocumab, Praluent
-- **ChEMBL:** [CHEMBL2109540](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109540/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2109540](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109540/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

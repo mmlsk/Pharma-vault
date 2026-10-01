@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4650320
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.29
     full-molformula: C13H19N3O7
+  identity-check: structure-confirmed
 ---
 
 # Molnupiravir
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `molnupiravir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL4650320](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650320/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4650320](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650320/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

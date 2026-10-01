@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL58547
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.06
     full-molformula: C38H49N9O5
+  identity-check: structure-confirmed
 ---
 
 # Ipamorelin
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `ipamorelin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL58547](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL58547/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL58547](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL58547/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

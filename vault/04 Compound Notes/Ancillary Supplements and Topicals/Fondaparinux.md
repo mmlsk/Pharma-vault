@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Fondaparinux
@@ -84,6 +86,7 @@ chembl:
     full-mwt: 1508.27
     mw-freebase: 1508.27
     full-molformula: C31H53N3O49S8
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -91,6 +94,17 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Arixtra
+  ema-number: EMEA/H/C/000403
+  url: https://www.ema.europa.eu/en/documents/product-information/arixtra-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Fondaparinux
@@ -104,7 +118,7 @@ pk-verification:
 - **Compound ID:** `fondaparinux-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201202](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201202/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201202](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201202/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -139,6 +153,11 @@ Synthetic factor Xa inhibitor given by injection; bleeding risk rises sharply wi
 | Metabolism | - | renally excreted unchanged |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Arixtra*](https://www.ema.europa.eu/en/documents/product-information/arixtra-epar-product-information_en.pdf) (EMEA/H/C/000403). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 17, 21, 29, 72)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Safety routing
 

@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Danazol
@@ -99,6 +100,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.72
     full-molformula: C22H27NO2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -120,7 +122,7 @@ pk-verification:
 - **Compound ID:** `danazol-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1479](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1479/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1479](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1479/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

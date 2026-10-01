@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.15
     full-molformula: C43H68ClNO11
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: discrepant
@@ -115,7 +117,7 @@ pk-verification:
 - **Compound ID:** `pimecrolimus-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200686](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200686/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1200686](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200686/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

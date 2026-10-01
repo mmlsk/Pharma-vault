@@ -59,6 +59,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3833321
@@ -74,6 +75,7 @@ chembl:
     name: Amyloid-beta precursor protein
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Lecanemab (Leqembi)
@@ -88,7 +90,7 @@ chembl:
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Lecanemab, Leqembi
-- **ChEMBL:** [CHEMBL3833321](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833321/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3833321](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833321/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

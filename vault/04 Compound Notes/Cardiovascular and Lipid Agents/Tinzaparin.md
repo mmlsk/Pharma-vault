@@ -83,6 +83,7 @@ chembl:
     name: Antithrombin-III
     action: ACTIVATOR
   properties: {}
+  identity-check: no-chembl-structure
 pk-verification:
   source: fda-label
   status: no-label
@@ -103,7 +104,7 @@ pk-verification:
 - **Compound ID:** `tinzaparin-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
-- **ChEMBL:** [CHEMBL1201414](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201414/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201414](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201414/) · max phase 4 · id via Wikipedia infobox · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

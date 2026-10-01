@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1963249
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.56
     full-molformula: C30H39FN4O4
+  identity-check: structure-confirmed
 ---
 
 # Ulimorelin
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `ulimorelin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL1963249](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1963249/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1963249](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1963249/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

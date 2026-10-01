@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Cisatracurium besilate
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.04
     full-molformula: C53H72N2O12+2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `cisatracurium-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1200641](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200641/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1200641](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200641/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

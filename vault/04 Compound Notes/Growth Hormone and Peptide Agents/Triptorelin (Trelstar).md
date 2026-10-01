@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Triptorelin
@@ -82,6 +83,7 @@ chembl:
     full-mwt: 1311.47
     mw-freebase: 1311.47
     full-molformula: C64H82N18O13
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -104,7 +106,7 @@ pk-verification:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Triptorelin, Trelstar
-- **ChEMBL:** [CHEMBL1201334](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201334/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201334](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201334/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

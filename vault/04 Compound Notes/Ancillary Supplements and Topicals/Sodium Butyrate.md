@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL62381
@@ -70,6 +71,7 @@ chembl:
     full-mwt: 110.09
     mw-freebase: 110.09
     full-molformula: C4H7NaO2
+  identity-check: structure-confirmed
 ---
 
 # Sodium Butyrate
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `sodium-butyrate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL62381](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL62381/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL62381](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL62381/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

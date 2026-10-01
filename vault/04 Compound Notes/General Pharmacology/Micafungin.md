@@ -58,6 +58,8 @@ tags:
 - stub
 - pk-auto
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Micafungin
@@ -73,6 +75,17 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: no-label-value
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Mycamine
+  ema-number: EMEA/H/C/000734
+  url: https://www.ema.europa.eu/en/documents/product-information/mycamine-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/mycamine-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
     protein-binding: consistent
 ---
 
@@ -113,6 +126,11 @@ Echinocandin with no meaningful renal clearance and few drug interactions, widel
 > Automated comparison with the [US prescribing information (DailyMed set 230fcff4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=230fcff4-ad4b-ea25-e063-6394a90a1fab), label version 20260414. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
 > - protein-binding: consistent (label values: 99)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Mycamine*](https://www.ema.europa.eu/en/documents/product-information/mycamine-epar-product-information_en.pdf) (EMEA/H/C/000734) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/mycamine-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 10, 17)
+> - protein-binding: consistent (SmPC values: 99)
 
 ## Safety routing
 

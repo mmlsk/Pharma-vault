@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Femoxetine
@@ -85,6 +86,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.84
     full-molformula: C20H25NO2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -105,7 +107,7 @@ pk-verification:
 - **Compound ID:** `femoxetine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL94739](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL94739/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL94739](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL94739/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

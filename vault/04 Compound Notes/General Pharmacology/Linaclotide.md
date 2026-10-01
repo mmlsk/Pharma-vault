@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3301675
@@ -74,6 +75,7 @@ chembl:
     full-mwt: 1526.77
     mw-freebase: 1526.77
     full-molformula: C59H79N15O21S6
+  identity-check: structure-confirmed
 ---
 
 # Linaclotide
@@ -87,7 +89,7 @@ chembl:
 - **Compound ID:** `linaclotide-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3301675](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301675/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3301675](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301675/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

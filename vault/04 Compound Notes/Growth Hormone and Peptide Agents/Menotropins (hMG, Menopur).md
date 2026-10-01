@@ -77,6 +77,7 @@ chembl:
     name: Follicle-stimulating hormone receptor
     action: AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Menotropins (hMG, Menopur)
@@ -91,7 +92,7 @@ chembl:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Menotropins, hMG, Menopur
-- **ChEMBL:** [CHEMBL2108427](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108427/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108427](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108427/) · max phase 4 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.68
     full-molformula: C9H15NO3S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -118,7 +120,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Captopril, Capoten
-- **ChEMBL:** [CHEMBL1560](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1560/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1560](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1560/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

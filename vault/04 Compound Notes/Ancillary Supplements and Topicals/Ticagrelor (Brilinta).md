@@ -65,7 +65,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Ticagrelor
@@ -98,11 +101,23 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.23
     full-molformula: C23H28F2N6O4S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 557351f1-47b7-216d-e063-6394a90afb51
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=557351f1-47b7-216d-e063-6394a90afb51
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Brilique
+  ema-number: EMEA/H/C/001241
+  url: https://www.ema.europa.eu/en/documents/product-information/brilique-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -121,7 +136,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Ticagrelor, Brilinta
-- **ChEMBL:** [CHEMBL398435](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL398435/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL398435](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL398435/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -169,6 +184,11 @@ Purinergic receptor P2Y12 negative allosteric modulator _(ChEMBL curated mechani
 > Automated comparison with the [US prescribing information (DailyMed set 557351f1…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=557351f1-47b7-216d-e063-6394a90afb51), label version 20260901. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 7, 9)
 > - protein-binding: consistent (label values: 99)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Brilique*](https://www.ema.europa.eu/en/documents/product-information/brilique-epar-product-information_en.pdf) (EMEA/H/C/001241). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 7, 8.5)
+> - protein-binding: consistent (SmPC values: 99)
 
 ## Related compounds (auto)
 

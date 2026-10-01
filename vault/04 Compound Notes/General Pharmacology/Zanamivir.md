@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Zanamivir
@@ -98,6 +101,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.18
     full-molformula: C12H20N4O7
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -106,6 +110,17 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: no-label-value
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Dectova
+  ema-number: EMEA/H/C/004102
+  url: https://www.ema.europa.eu/en/documents/product-information/dectova-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
     protein-binding: consistent
 ---
 
@@ -120,7 +135,7 @@ pk-verification:
 - **Compound ID:** `zanamivir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL222813](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL222813/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL222813](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL222813/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -167,6 +182,11 @@ Neuraminidase inhibitor _(ChEMBL curated mechanism of the parent molecule, via C
 > Automated comparison with the [US prescribing information (DailyMed set b4e68930…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b4e68930-4e6d-4d27-b1f0-abf60d12e28d), label version 20260723. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
 > - protein-binding: consistent (label values: 10)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Dectova*](https://www.ema.europa.eu/en/documents/product-information/dectova-epar-product-information_en.pdf) (EMEA/H/C/004102). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2, 3, 12, 20)
+> - protein-binding: consistent (SmPC values: 10)
 
 ## Related compounds (auto)
 

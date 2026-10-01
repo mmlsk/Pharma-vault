@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4650337
@@ -84,6 +85,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.75
     full-molformula: C9H13NOS
+  identity-check: structure-confirmed
 ---
 
 # Ulotaront
@@ -97,7 +99,7 @@ chembl:
 - **Compound ID:** `ulotaront-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL4650337](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650337/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4650337](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650337/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

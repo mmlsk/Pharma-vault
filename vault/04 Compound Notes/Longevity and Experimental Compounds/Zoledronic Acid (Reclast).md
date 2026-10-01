@@ -51,7 +51,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: partially-verified
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
@@ -60,7 +60,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-discrepant
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Zoledronic acid
@@ -89,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.43
     full-molformula: C5H10N2O7P2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -98,6 +102,17 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Zometa
+  ema-number: EMEA/H/C/000336
+  url: https://www.ema.europa.eu/en/documents/product-information/zometa-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: discrepant
 ---
 
 # Zoledronic Acid (Reclast)
@@ -112,7 +127,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Zoledronic Acid, Reclast
-- **ChEMBL:** [CHEMBL924](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL924/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL924](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL924/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -148,6 +163,11 @@ Potent IV nitrogen-containing bisphosphonate given as an annual infusion, used f
 > Automated comparison with the [US prescribing information (DailyMed set 8aac81ae…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8aac81ae-f92c-4f0b-b480-44badf72b5f5), label version 20260709. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.24, 1.87, 24, 146)
 > - protein-binding: consistent (label values: 28, 53)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Zometa*](https://www.ema.europa.eu/en/documents/product-information/zometa-epar-product-information_en.pdf) (EMEA/H/C/000336). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 1.87, 146)
+> - protein-binding: discrepant (SmPC values: 60, 77)
 
 ## Safety routing
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 pk-source:
   type: wikipedia-infobox
   title: Tafluprost
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.27
     full-molformula: C25H34F2O5
+  identity-check: connectivity-match
 ---
 
 # Tafluprost
@@ -101,7 +103,7 @@ chembl:
 - **Compound ID:** `tafluprost-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1963683](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1963683/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1963683](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1963683/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

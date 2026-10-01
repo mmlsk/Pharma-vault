@@ -65,7 +65,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Palonosetron
@@ -96,11 +99,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.8
     full-molformula: C19H24N2O
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
   set-id: ee6f6f94-1ca7-481e-9909-b19ae64e80c2
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ee6f6f94-1ca7-481e-9909-b19ae64e80c2
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Aloxi
+  ema-number: EMEA/H/C/000563
+  url: https://www.ema.europa.eu/en/documents/product-information/aloxi-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -118,7 +133,7 @@ pk-verification:
 - **Compound ID:** `palonosetron-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1189679](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1189679/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1189679](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1189679/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -158,6 +173,11 @@ Antagonises 5-HT3 receptors on vagal afferents and in the area postrema; QT effe
 > Automated comparison with the [US prescribing information (DailyMed set ee6f6f94…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ee6f6f94-1ca7-481e-9909-b19ae64e80c2), label version 20260825. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 20, 30, 40)
 > - protein-binding: consistent (label values: 62)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Aloxi*](https://www.ema.europa.eu/en/documents/product-information/aloxi-epar-product-information_en.pdf) (EMEA/H/C/000563). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 20, 29.5, 30, 40, 100)
+> - protein-binding: consistent (SmPC values: 62)
 
 ## Related compounds (auto)
 

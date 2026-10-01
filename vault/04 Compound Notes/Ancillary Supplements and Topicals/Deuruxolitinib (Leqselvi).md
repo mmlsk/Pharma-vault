@@ -58,6 +58,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1789941
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.8
     full-molformula: C17H18N6
+  identity-check: structure-confirmed
 ---
 
 # Deuruxolitinib (Leqselvi)
@@ -95,7 +97,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** CTP-543, Deuruxolitinib, Leqselvi
-- **ChEMBL:** [CHEMBL4594381](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594381/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4594381](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594381/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

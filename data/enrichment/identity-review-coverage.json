@@ -1,0 +1,23 @@
+{
+ "wikipedia-infobox": {
+  "conflict": 2,
+  "connectivity-match": 50,
+  "formula-match": 18,
+  "inn-match-ema": 48,
+  "no-chembl-structure": 18,
+  "no-evidence": 4,
+  "structure-confirmed": 895
+ },
+ "chembl-name-match": {
+  "conflict": 3,
+  "connectivity-match": 22,
+  "formula-match": 5,
+  "inn-match-ema": 72,
+  "no-chembl-structure": 127,
+  "no-evidence": 8,
+  "structure-confirmed": 367
+ },
+ "curated-identity": {
+  "structure-confirmed": 3
+ }
+}

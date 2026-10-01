@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL245019
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.4
     full-molformula: C9H13N3O6
+  identity-check: structure-confirmed
 ---
 
 # Mizoribine
@@ -96,7 +98,7 @@ chembl:
 - **Compound ID:** `mizoribine-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL245019](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL245019/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL245019](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL245019/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

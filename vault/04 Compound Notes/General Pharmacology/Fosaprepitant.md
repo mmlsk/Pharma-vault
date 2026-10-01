@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.26
     full-molformula: C23H22F7N4O6P
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -100,6 +102,15 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-text
+  product: Ivemend
+  ema-number: EMEA/H/C/000743
+  url: https://www.ema.europa.eu/en/documents/product-information/ivemend-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Fosaprepitant
@@ -113,7 +124,7 @@ pk-verification:
 - **Compound ID:** `fosaprepitant-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1199324](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1199324/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1199324](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1199324/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

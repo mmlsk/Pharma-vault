@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3544994
@@ -69,6 +70,7 @@ chembl:
   - C10AX18
   targets: []
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Volanesorsen (Waylivra)
@@ -83,7 +85,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Volanesorsen, Waylivra
-- **ChEMBL:** [CHEMBL3544994](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544994/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3544994](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544994/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

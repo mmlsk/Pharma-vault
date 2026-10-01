@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL37935
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.93
     full-molformula: C19H23N3O3
+  identity-check: structure-confirmed
 ---
 
 # Coluracetam
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `coluracetam-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL37935](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL37935/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL37935](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL37935/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL435716
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.07
     full-molformula: C43H65N11O12S2
+  identity-check: connectivity-match
 ---
 
 # Demoxytocin
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `demoxytocin-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL435716](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL435716/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL435716](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL435716/) · max phase 2 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

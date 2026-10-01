@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Dihydroergotamine
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.43
     full-molformula: C33H37N5O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -112,7 +114,7 @@ pk-verification:
 - **Compound ID:** `dihydroergotamine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1732](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1732/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1732](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1732/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

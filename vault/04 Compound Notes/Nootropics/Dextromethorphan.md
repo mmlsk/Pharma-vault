@@ -65,6 +65,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Dextromethorphan
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.78
     full-molformula: C18H25NO
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -115,7 +117,7 @@ pk-verification:
 - **Compound ID:** `dextromethorphan-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL52440](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL52440/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL52440](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL52440/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

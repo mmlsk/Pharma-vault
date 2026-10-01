@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.3.0] — 2026-10-01 — kuracja tożsamości i ChPL/EMA
+### Dodano
+- `scripts/curate_identity.py` — strukturalne potwierdzenie tożsamości ChEMBL (InChIKey vs PubChem: CID z infoboksu, wyszukanie nazwy, parent CID dla soli) → `identity-review.json/.csv`. Dopasowania nazwy (604): **367 potwierdzonych strukturą + 72 przez INN produktu EMA**, 27 różnic stereo/tautomerów, 127 biologików bez struktury, 8 bez danych, 3 konflikty (2 rozstrzygnięte).
+- `data/curated/identity-decisions.csv` — 9 decyzji (`replace` ×3, `confirm` ×4, `reject` ×2) z uzasadnieniem; m.in. deukrawacytynib CHEMBL435170 (adaprolol, literówka w infoboksie) → CHEMBL4435170.
+- `scripts/verify_pk_ema.py` — porównanie PK z sekcją 5.2 SmPC (EMA EPAR) → `pk-verification-ema.json`: **238 zgodnych**, 31 rozbieżnych, 12 bez wartości, 11 bez tekstu; 148 linków do polskiej ChPL.
+- Notatki: callout „EU SmPC cross-check” z linkiem do ChPL, `pk-verification-ema` i `chembl.identity-check` we frontmatterze, tagi `identity-*`, `pk-ema-*`, `pk-2-regulators` (176), `pk-sources-disagree` (30).
+- Graf: filtry „zgodne z ChPL”, „FDA + ChPL”, „tożsamość potwierdzona / do sprawdzenia”, status ChPL i weryfikacji tożsamości w panelu, nowe liczniki.
+- SQLite: tabele `pk_verification_ema(_fields)`, `identity_review`. ADR-0003. 5 nowych testów (34).
+### Zmieniono
+- `partially-verified` wymaga braku rozbieżności u któregokolwiek regulatora (473 notatki).
+- Review Queue: konflikty tożsamości, różnice stereo/tautomerów, rozbieżności z ChPL, decyzje kuratorskie; Pharmacokinetics Summary: zgodność z dwoma regulatorami i sprzeczności FDA vs UE.
+
+
 ## [3.2.0] — 2026-10-01 — rozszerzenie, ChEMBL, weryfikacja PK, powiązania
 ### Dodano
 - **+187 substancji** z backlogu i sklepu (`data/curated/additions.csv`, każda z ChEMBL ID lub PubChem CID i proweniencją); nowa grupa/klaster **NPS i dopalacze** (74). Katalog: **2537 / 19 grup / 9 klastrów**.

@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.3
     full-molformula: C16H16N4O8S
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `cefuroxime-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL466](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL466/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL466](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL466/) · max phase n/a · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

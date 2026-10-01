@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-formula-match
 pk-source:
   type: wikipedia-infobox
   title: Dicoumarol
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C19H12O6
+  identity-check: formula-match
 ---
 
 # Dicoumarol
@@ -102,7 +104,7 @@ chembl:
 - **Compound ID:** `dicoumarol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1466](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1466/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1466](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1466/) · max phase 4 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

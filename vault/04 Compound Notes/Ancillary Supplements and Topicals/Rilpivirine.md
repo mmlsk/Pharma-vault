@@ -59,7 +59,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Rilpivirine
@@ -92,11 +95,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.62
     full-molformula: C22H18N6
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: dadbf50d-6b7d-4fb5-bd9f-7769b048e764
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dadbf50d-6b7d-4fb5-bd9f-7769b048e764
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Edurant
+  ema-number: EMEA/H/C/002264
+  url: https://www.ema.europa.eu/en/documents/product-information/edurant-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -114,7 +129,7 @@ pk-verification:
 - **Compound ID:** `rilpivirine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL175691](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL175691/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL175691](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL175691/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -160,6 +175,11 @@ Human immunodeficiency virus type 1 reverse transcriptase inhibitor _(ChEMBL cur
 > Automated comparison with the [US prescribing information (DailyMed set dadbf50d…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dadbf50d-6b7d-4fb5-bd9f-7769b048e764), label version 20260715. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 50)
 > - protein-binding: consistent (label values: 99, 99.7)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Edurant*](https://www.ema.europa.eu/en/documents/product-information/edurant-epar-product-information_en.pdf) (EMEA/H/C/002264). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 45)
+> - protein-binding: consistent (SmPC values: 99.7)
 
 ## Related compounds (auto)
 

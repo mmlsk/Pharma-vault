@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4297734
@@ -73,6 +74,7 @@ chembl:
     name: P-selectin
     action: BLOCKER
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Crizanlizumab (Adakveo)
@@ -87,7 +89,7 @@ chembl:
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Crizanlizumab, Adakveo
-- **ChEMBL:** [CHEMBL4297734](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297734/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297734](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297734/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

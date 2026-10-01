@@ -64,6 +64,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-formula-match
 pk-source:
   type: wikipedia-infobox
   title: Lornoxicam
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.84
     full-molformula: C13H10ClN3O4S2
+  identity-check: formula-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -116,7 +118,7 @@ pk-verification:
 - **Compound ID:** `lornoxicam-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1569487](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1569487/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1569487](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1569487/) · max phase 3 · id via exact ChEMBL name match · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

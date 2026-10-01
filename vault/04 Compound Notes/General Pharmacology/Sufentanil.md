@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Sufentanil
@@ -90,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.68
     full-molformula: C22H30N2O2S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -97,6 +100,16 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Dzuveo
+  ema-number: EMEA/H/C/004335
+  url: https://www.ema.europa.eu/en/documents/product-information/dzuveo-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Sufentanil
@@ -110,7 +123,7 @@ pk-verification:
 - **Compound ID:** `sufentanil-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL658](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL658/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL658](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL658/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -143,6 +156,10 @@ The most potent opioid in routine clinical use, given intravenously and intrathe
 | Bioavailability | 53 % | Sublingual: 53%; IV/IM/SC: 100% |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Dzuveo*](https://www.ema.europa.eu/en/documents/product-information/dzuveo-epar-product-information_en.pdf) (EMEA/H/C/004335). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2.5, 5.3, 12.68, 13.4, 26.91, 34.4)
 
 ## Related compounds (auto)
 

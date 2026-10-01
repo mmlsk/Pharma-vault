@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3661754
@@ -76,6 +77,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.6
     full-molformula: C27H29N5O
+  identity-check: structure-confirmed
 ---
 
 # Denifanstat
@@ -89,7 +91,7 @@ chembl:
 - **Compound ID:** `denifanstat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL3661754](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3661754/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3661754](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3661754/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - group/neuropsych
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL21536
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.72
     full-molformula: C14H23N3OS
+  identity-check: structure-confirmed
 ---
 
 # Xanomeline
@@ -96,7 +98,7 @@ chembl:
 - **Compound ID:** `xanomeline-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL21536](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL21536/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL21536](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL21536/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

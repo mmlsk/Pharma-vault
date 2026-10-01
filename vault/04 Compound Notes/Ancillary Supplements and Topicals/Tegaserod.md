@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-formula-match
 pk-source:
   type: wikipedia-infobox
   title: Tegaserod
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.27
     full-molformula: C16H23N5O
+  identity-check: formula-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `tegaserod-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL76370](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL76370/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL76370](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL76370/) · max phase 4 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

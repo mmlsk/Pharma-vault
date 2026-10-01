@@ -58,7 +58,10 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Ensitrelvir
@@ -88,11 +91,22 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.35
     full-molformula: C22H17ClF3N9O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 526acf60-abc3-2cc2-e063-6294a90affa6
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=526acf60-abc3-2cc2-e063-6294a90affa6
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Zokovea
+  ema-number: EMEA/H/C/006063
+  url: https://www.ema.europa.eu/en/documents/product-information/zokovea-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -109,7 +123,7 @@ pk-verification:
 - **Compound ID:** `ensitrelvir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL5183847](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5183847/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL5183847](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5183847/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -141,6 +155,10 @@ Non-covalent oral SARS-CoV-2 main protease inhibitor developed in Japan, notable
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 526acf60…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=526acf60-abc3-2cc2-e063-6294a90affa6), label version 20260603. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 42.2, 48.1)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Zokovea*](https://www.ema.europa.eu/en/documents/product-information/zokovea-epar-product-information_en.pdf) (EMEA/H/C/006063). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 58)
 
 ## Related compounds (auto)
 

@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Afoxolaner
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.31
     full-molformula: C26H17ClF9N3O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -109,7 +111,7 @@ pk-verification:
 - **Compound ID:** `afoxolaner-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2219412](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2219412/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2219412](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2219412/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

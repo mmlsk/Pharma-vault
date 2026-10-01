@@ -61,7 +61,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Anakinra
@@ -84,11 +87,22 @@ chembl:
     name: Interleukin-1 receptor type 1
     action: ANTAGONIST
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
   set-id: d9d74915-6606-4570-9c52-c4001d3177de
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d9d74915-6606-4570-9c52-c4001d3177de
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Kineret
+  ema-number: EMEA/H/C/000363
+  url: https://www.ema.europa.eu/en/documents/product-information/kineret-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/kineret-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -105,7 +119,7 @@ pk-verification:
 - **Compound ID:** `anakinra-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201570](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201570/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201570](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201570/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -144,6 +158,10 @@ Interleukin-1 receptor antagonist _(ChEMBL curated mechanism of the parent molec
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set d9d74915…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d9d74915-6606-4570-9c52-c4001d3177de), label version 20260403. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 3, 4, 6, 7)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Kineret*](https://www.ema.europa.eu/en/documents/product-information/kineret-epar-product-information_en.pdf) (EMEA/H/C/000363) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/kineret-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 4, 6)
 
 ## Related compounds (auto)
 

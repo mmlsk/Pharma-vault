@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -95,6 +96,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.49
     full-molformula: C24H31ClO7
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -117,7 +119,7 @@ pk-verification:
 - **Compound ID:** `loteprednol-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200865](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200865/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1200865](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200865/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

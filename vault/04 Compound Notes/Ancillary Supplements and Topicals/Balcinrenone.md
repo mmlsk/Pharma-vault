@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3916929
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.82
     full-molformula: C20H18FN3O5
+  identity-check: structure-confirmed
 ---
 
 # Balcinrenone
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `balcinrenone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3916929](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3916929/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3916929](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3916929/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

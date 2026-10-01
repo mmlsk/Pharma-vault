@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3544916
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.15
     full-molformula: C18H24N9O10P
+  identity-check: structure-confirmed
 ---
 
 # Guadecitabine (SGI-110)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Guadecitabine, SGI-110
-- **ChEMBL:** [CHEMBL3544916](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544916/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3544916](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544916/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

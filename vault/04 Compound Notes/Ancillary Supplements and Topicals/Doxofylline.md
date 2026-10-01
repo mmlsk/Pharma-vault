@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1527608
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.68
     full-molformula: C11H14N4O4
+  identity-check: structure-confirmed
 ---
 
 # Doxofylline
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `doxofylline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1527608](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1527608/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1527608](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1527608/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

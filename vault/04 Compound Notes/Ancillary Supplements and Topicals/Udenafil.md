@@ -60,6 +60,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Udenafil
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.4
     full-molformula: C25H36N6O4S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -112,7 +114,7 @@ pk-verification:
 - **Compound ID:** `udenafil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2103849](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103849/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2103849](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103849/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

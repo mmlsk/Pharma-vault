@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3621988
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.44
     full-molformula: C22H19FN4O2
+  identity-check: structure-confirmed
 ---
 
 # Tucidinostat (chidamide)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Tucidinostat, chidamide
-- **ChEMBL:** [CHEMBL3621988](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3621988/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3621988](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3621988/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

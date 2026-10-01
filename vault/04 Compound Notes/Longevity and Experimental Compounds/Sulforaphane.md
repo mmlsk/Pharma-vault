@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL48802
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.27
     full-molformula: C6H11NOS2
+  identity-check: structure-confirmed
 ---
 
 # Sulforaphane
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `sulforaphane-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL48802](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL48802/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL48802](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL48802/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1254990
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.69
     full-molformula: C23H38O4
+  identity-check: structure-confirmed
 ---
 
 # Norursodeoxycholic Acid
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `norursodeoxycholic-acid-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1254990](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1254990/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1254990](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1254990/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

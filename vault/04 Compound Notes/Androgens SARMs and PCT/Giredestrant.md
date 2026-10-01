@@ -55,6 +55,7 @@ tags:
 - group/pct
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4650316
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.35
     full-molformula: C27H31F5N4O
+  identity-check: structure-confirmed
 ---
 
 # Giredestrant
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `giredestrant-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL4650316](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650316/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4650316](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650316/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

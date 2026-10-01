@@ -67,6 +67,7 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Saw Palmetto
@@ -80,7 +81,7 @@ chembl:
 - **Compound ID:** `saw-palmetto-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2108769](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108769/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108769](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108769/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

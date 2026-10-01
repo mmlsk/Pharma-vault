@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL920
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.48
     full-molformula: C5H14NO+
+  identity-check: structure-confirmed
 ---
 
 # Choline
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `choline-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL920](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL920/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL920](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL920/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

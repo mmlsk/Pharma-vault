@@ -55,6 +55,7 @@ tags:
 - group/oncology
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4297641
@@ -76,6 +77,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.54
     full-molformula: C20H23ClN4O4S
+  identity-check: structure-confirmed
 ---
 
 # Seclidemstat
@@ -89,7 +91,7 @@ chembl:
 - **Compound ID:** `seclidemstat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL4297641](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297641/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297641](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297641/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

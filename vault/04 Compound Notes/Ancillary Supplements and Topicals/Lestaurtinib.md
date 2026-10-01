@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Lestaurtinib
@@ -103,6 +104,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.37
     full-molformula: C26H21N3O4
+  identity-check: structure-confirmed
 ---
 
 # Lestaurtinib
@@ -116,7 +118,7 @@ chembl:
 - **Compound ID:** `lestaurtinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL603469](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL603469/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL603469](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL603469/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

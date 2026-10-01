@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2107790
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.39
     full-molformula: C13H11F6N3O5
+  identity-check: connectivity-match
 ---
 
 # Fluridil (Eucapil)
@@ -93,7 +95,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Fluridil, Eucapil
-- **ChEMBL:** [CHEMBL2107790](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107790/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2107790](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107790/) · max phase 2 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

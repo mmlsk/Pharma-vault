@@ -67,6 +67,7 @@ chembl:
   atc-codes: []
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Telitacicept
@@ -80,7 +81,7 @@ chembl:
 - **Compound ID:** `telitacicept-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL5095293](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095293/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL5095293](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095293/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

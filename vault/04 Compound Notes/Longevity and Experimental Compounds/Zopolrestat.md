@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL10372
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C19H12F3N3O3S
+  identity-check: structure-confirmed
 ---
 
 # Zopolrestat
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `zopolrestat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL10372](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL10372/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL10372](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL10372/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

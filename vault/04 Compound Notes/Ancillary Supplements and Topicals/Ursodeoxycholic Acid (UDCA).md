@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1551
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.66
     full-molformula: C24H40O4
+  identity-check: structure-confirmed
 ---
 
 # Ursodeoxycholic Acid (UDCA)
@@ -97,7 +99,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Ursodeoxycholic Acid, UDCA
-- **ChEMBL:** [CHEMBL1551](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1551/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1551](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1551/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

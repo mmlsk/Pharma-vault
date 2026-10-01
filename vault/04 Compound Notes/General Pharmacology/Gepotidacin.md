@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3317856
@@ -84,6 +85,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.62
     full-molformula: C24H28N6O3
+  identity-check: structure-confirmed
 ---
 
 # Gepotidacin
@@ -97,7 +99,7 @@ chembl:
 - **Compound ID:** `gepotidacin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3317856](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3317856/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3317856](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3317856/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

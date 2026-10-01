@@ -70,6 +70,7 @@ chembl:
   - N05BX05
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Silexan (Lavender Oil, oral)
@@ -84,7 +85,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Silexan, Lavender Oil
-- **ChEMBL:** [CHEMBL2108210](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108210/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108210](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108210/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

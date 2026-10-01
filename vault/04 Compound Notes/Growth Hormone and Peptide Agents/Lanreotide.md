@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 pk-source:
   type: wikipedia-infobox
   title: Lanreotide
@@ -85,6 +86,7 @@ chembl:
     full-mwt: 1096.35
     mw-freebase: 1096.35
     full-molformula: C54H69N11O10S2
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -105,7 +107,7 @@ pk-verification:
 - **Compound ID:** `lanreotide-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL1201185](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201185/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201185](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201185/) · max phase 4 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

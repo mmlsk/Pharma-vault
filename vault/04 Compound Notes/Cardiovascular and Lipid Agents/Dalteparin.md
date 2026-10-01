@@ -85,6 +85,7 @@ chembl:
     name: Antithrombin-III
     action: ACTIVATOR
   properties: {}
+  identity-check: no-chembl-structure
 pk-verification:
   source: fda-label
   status: consistent
@@ -106,7 +107,7 @@ pk-verification:
 - **Compound ID:** `dalteparin-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
-- **ChEMBL:** [CHEMBL1201460](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201460/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1201460](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201460/) · max phase 4 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

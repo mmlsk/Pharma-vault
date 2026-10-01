@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.85
     full-molformula: C20H23NO4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -118,7 +120,7 @@ pk-verification:
 - **Compound ID:** `naltrexone-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL19019](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL19019/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL19019](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL19019/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL537
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.49
     full-molformula: C6H6O2
+  identity-check: structure-confirmed
 ---
 
 # Hydroquinone
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `hydroquinone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL537](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL537/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL537](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL537/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

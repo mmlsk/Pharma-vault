@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1159650
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.5
     full-molformula: C25H32ClFO5
+  identity-check: structure-confirmed
 ---
 
 # Clobetasol Propionate
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `clobetasol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1159650](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1159650/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1159650](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1159650/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

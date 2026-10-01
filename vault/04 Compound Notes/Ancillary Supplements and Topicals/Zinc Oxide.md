@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3988900
@@ -70,6 +71,7 @@ chembl:
     full-mwt: 81.39
     mw-freebase: 81.39
     full-molformula: OZn
+  identity-check: structure-confirmed
 ---
 
 # Zinc Oxide
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `zinc-oxide-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3988900](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3988900/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3988900](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3988900/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

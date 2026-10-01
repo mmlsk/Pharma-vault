@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL33864
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.55
     full-molformula: C8H14O2S2
+  identity-check: structure-confirmed
 ---
 
 # Alpha-Lipoic Acid (ALA)
@@ -94,7 +96,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Alpha-Lipoic Acid, ALA
-- **ChEMBL:** [CHEMBL33864](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL33864/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL33864](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL33864/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

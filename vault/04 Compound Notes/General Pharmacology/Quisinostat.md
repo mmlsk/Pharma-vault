@@ -61,6 +61,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Quisinostat
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.44
     full-molformula: C21H26N6O2
+  identity-check: structure-confirmed
 ---
 
 # Quisinostat
@@ -105,7 +107,7 @@ chembl:
 - **Compound ID:** `quisinostat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL2105763](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105763/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2105763](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105763/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

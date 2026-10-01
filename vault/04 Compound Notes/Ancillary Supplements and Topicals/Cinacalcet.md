@@ -65,7 +65,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Cinacalcet
@@ -95,11 +98,23 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.52
     full-molformula: C22H22F3N
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 44b548ef-1679-4d15-86ad-0d9636b48a45
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=44b548ef-1679-4d15-86ad-0d9636b48a45
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Cinacalcet Viatris (previously Cinacalcet Mylan)
+  ema-number: EMEA/H/C/004014
+  url: https://www.ema.europa.eu/en/documents/product-information/cinacalcet-viatris-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/cinacalcet-viatris-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -117,7 +132,7 @@ pk-verification:
 - **Compound ID:** `cinacalcet-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201284](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201284/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201284](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201284/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -156,6 +171,11 @@ Acts on the PTH axis: intermittent PTH1R agonism is anabolic for bone, while cal
 > Automated comparison with the [US prescribing information (DailyMed set 44b548ef…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=44b548ef-1679-4d15-86ad-0d9636b48a45), label version 20260828. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 6, 30, 40, 49, 65, 84)
 > - protein-binding: consistent (label values: 93, 97)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Cinacalcet Viatris (previously Cinacalcet Mylan)*](https://www.ema.europa.eu/en/documents/product-information/cinacalcet-viatris-epar-product-information_en.pdf) (EMEA/H/C/004014) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/cinacalcet-viatris-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 6, 30, 40)
+> - protein-binding: consistent (SmPC values: 97)
 
 ## Related compounds (auto)
 

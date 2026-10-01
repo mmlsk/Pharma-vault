@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL291962
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.58
     full-molformula: C6H13NO2
+  identity-check: structure-confirmed
 ---
 
 # Leucine
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `leucine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL291962](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL291962/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL291962](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL291962/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

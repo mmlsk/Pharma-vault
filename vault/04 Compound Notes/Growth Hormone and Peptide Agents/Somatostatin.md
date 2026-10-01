@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1823872
@@ -75,6 +76,7 @@ chembl:
     full-mwt: 1637.91
     mw-freebase: 1637.91
     full-molformula: C76H104N18O19S2
+  identity-check: structure-confirmed
 ---
 
 # Somatostatin
@@ -88,7 +90,7 @@ chembl:
 - **Compound ID:** `somatostatin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL1823872](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1823872/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1823872](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1823872/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

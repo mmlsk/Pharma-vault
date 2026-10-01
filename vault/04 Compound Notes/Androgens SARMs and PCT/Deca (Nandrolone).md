@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Nandrolone
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C18H26O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -113,7 +115,7 @@ pk-verification:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Deca, Nandrolone
-- **ChEMBL:** [CHEMBL757](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL757/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL757](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL757/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

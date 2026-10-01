@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL182066
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.66
     full-molformula: C21H20FN3O4
+  identity-check: structure-confirmed
 ---
 
 # Radiprodil
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `radiprodil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL182066](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL182066/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL182066](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL182066/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

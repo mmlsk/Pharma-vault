@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3544914
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.36
     full-molformula: C26H27F3N2O6
+  identity-check: structure-confirmed
 ---
 
 # Tezacaftor
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `tezacaftor-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3544914](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544914/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3544914](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544914/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

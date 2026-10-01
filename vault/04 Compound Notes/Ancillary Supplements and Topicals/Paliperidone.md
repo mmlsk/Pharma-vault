@@ -61,7 +61,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Paliperidone
@@ -97,11 +100,22 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.69
     full-molformula: C23H27FN4O3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: bbbaa057-f587-4eb9-a0d2-463dbcd57661
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=bbbaa057-f587-4eb9-a0d2-463dbcd57661
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Invega
+  ema-number: EMEA/H/C/000746
+  url: https://www.ema.europa.eu/en/documents/product-information/invega-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/invega-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -118,7 +132,7 @@ pk-verification:
 - **Compound ID:** `paliperidone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1621](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1621/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1621](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1621/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -163,6 +177,10 @@ Dopamine D2 receptor antagonist; Serotonin 2a (5-HT2a) receptor antagonist _(ChE
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set bbbaa057…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=bbbaa057-f587-4eb9-a0d2-463dbcd57661), label version 20260728. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 23, 24, 40, 51)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Invega*](https://www.ema.europa.eu/en/documents/product-information/invega-epar-product-information_en.pdf) (EMEA/H/C/000746) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/invega-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 23, 51)
 
 ## Related compounds (auto)
 

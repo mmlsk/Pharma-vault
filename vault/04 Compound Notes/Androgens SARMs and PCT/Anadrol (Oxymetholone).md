@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Oxymetholone
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.51
     full-molformula: C21H32O3
+  identity-check: structure-confirmed
 ---
 
 # Anadrol (Oxymetholone)
@@ -110,7 +112,7 @@ chembl:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Anadrol, Oxymetholone
-- **ChEMBL:** [CHEMBL1200585](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200585/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1200585](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200585/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

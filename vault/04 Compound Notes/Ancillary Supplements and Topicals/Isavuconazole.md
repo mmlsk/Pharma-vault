@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1183349
@@ -76,6 +77,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.13
     full-molformula: C35H35F2N8O5S+
+  identity-check: structure-confirmed
 ---
 
 # Isavuconazole
@@ -89,7 +91,7 @@ chembl:
 - **Compound ID:** `isavuconazole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1183349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1183349/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1183349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1183349/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Prulifloxacin
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.63
     full-molformula: C21H20FN3O6S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -112,7 +114,7 @@ pk-verification:
 - **Compound ID:** `prulifloxacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL422648](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL422648/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL422648](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL422648/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

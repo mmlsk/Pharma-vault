@@ -63,6 +63,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Daclatasvir
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.14
     full-molformula: C40H50N8O6
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -112,7 +114,7 @@ pk-verification:
 - **Compound ID:** `daclatasvir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2023898](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2023898/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2023898](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2023898/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

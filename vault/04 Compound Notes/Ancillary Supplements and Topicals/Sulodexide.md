@@ -68,6 +68,7 @@ chembl:
   - B01AB11
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Sulodexide
@@ -81,7 +82,7 @@ chembl:
 - **Compound ID:** `sulodexide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2108086](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108086/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108086](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108086/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

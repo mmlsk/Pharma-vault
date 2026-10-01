@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL479527
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.32
     full-molformula: C26H25F9N2O4
+  identity-check: structure-confirmed
 ---
 
 # Torcetrapib
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `torcetrapib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL479527](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL479527/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL479527](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL479527/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

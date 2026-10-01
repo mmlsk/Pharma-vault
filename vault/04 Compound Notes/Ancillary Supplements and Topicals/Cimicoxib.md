@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL435381
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.75
     full-molformula: C16H13ClFN3O3S
+  identity-check: structure-confirmed
 ---
 
 # Cimicoxib
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `cimicoxib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL435381](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL435381/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL435381](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL435381/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

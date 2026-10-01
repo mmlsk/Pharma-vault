@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL298470
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.41
     full-molformula: C24H28F3N3O3
+  identity-check: structure-confirmed
 ---
 
 # Tafenoquine
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `tafenoquine-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL298470](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL298470/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL298470](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL298470/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

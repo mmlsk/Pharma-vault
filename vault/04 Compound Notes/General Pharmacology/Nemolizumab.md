@@ -57,6 +57,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 pk-source:
   type: wikipedia-infobox
   title: Nemolizumab
@@ -79,6 +80,7 @@ chembl:
     name: Interleukin-31 receptor subunit alpha
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Nemolizumab
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `nemolizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL4297794](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297794/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297794](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297794/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

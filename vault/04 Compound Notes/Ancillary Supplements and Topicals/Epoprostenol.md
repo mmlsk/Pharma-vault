@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Prostacyclin
@@ -86,6 +87,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.41
     full-molformula: C20H32O5
+  identity-check: structure-confirmed
 ---
 
 # Epoprostenol
@@ -99,7 +101,7 @@ chembl:
 - **Compound ID:** `epoprostenol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1139](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1139/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1139](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1139/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

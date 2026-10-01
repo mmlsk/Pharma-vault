@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-formula-match
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.76
     full-molformula: C22H19ClO3
+  identity-check: formula-match
 pk-verification:
   source: fda-label
   status: consistent
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `atovaquone-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1450](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1450/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1450](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1450/) · max phase 4 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

@@ -64,7 +64,9 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Doxorubicin
@@ -94,6 +96,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.24
     full-molformula: C27H29NO11
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -103,6 +106,17 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Caelyx pegylated liposomal
+  ema-number: EMEA/H/C/000089
+  url: https://www.ema.europa.eu/en/documents/product-information/caelyx-pegylated-liposomal-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/caelyx-pegylated-liposomal-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: no-label-value
 ---
 
 # Doxorubicin (Adriamycin)
@@ -117,7 +131,7 @@ pk-verification:
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Doxorubicin, Adriamycin
-- **ChEMBL:** [CHEMBL53463](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL53463/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL53463](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL53463/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -156,6 +170,11 @@ An anthracycline that intercalates DNA, poisons topoisomerase II and generates i
 > Automated comparison with the [US prescribing information (DailyMed set d928625e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d928625e-c1ef-4f25-8d25-764c8c6aab67), label version 20240529. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 0.083, 20, 35, 48)
 > - protein-binding: consistent (label values: 75)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Caelyx pegylated liposomal*](https://www.ema.europa.eu/en/documents/product-information/caelyx-pegylated-liposomal-epar-product-information_en.pdf) (EMEA/H/C/000089) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/caelyx-pegylated-liposomal-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 24, 36.1, 45.2, 71.5, 73.9, 75)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Safety routing
 

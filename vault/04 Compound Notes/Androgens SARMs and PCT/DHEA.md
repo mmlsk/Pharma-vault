@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL90593
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.69
     full-molformula: C19H28O2
+  identity-check: structure-confirmed
 ---
 
 # DHEA
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `dhea-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL90593](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL90593/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL90593](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL90593/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

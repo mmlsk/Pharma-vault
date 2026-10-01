@@ -70,6 +70,7 @@ chembl:
     name: Beta-2 adrenergic receptor mRNA
     action: RNAI INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Bamosiran
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `bamosiran-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4298113](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298113/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4298113](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298113/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

@@ -58,6 +58,7 @@ tags:
 - group/peptides
 - stub
 - chembl-profile
+- identity-confirmed
 - possible-duplicate
 chembl:
   identity-source: wikipedia-infobox
@@ -76,6 +77,7 @@ chembl:
     full-mwt: 1257.32
     mw-freebase: 1257.32
     full-molformula: C51H84N16O21
+  identity-check: structure-confirmed
 ---
 
 # ARA-290 (Cibinetide)
@@ -90,7 +92,7 @@ chembl:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** ARA-290, Cibinetide
-- **ChEMBL:** [CHEMBL3545305](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545305/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3545305](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545305/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

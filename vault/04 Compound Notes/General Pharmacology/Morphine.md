@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Morphine
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.7
     full-molformula: C17H19NO3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -115,7 +117,7 @@ pk-verification:
 - **Compound ID:** `morphine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL70](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL70/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL70](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL70/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

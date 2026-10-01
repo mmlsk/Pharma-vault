@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4297520
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.35
     full-molformula: C20H13Cl2F2N3O5S
+  identity-check: structure-confirmed
 ---
 
 # Oglemilast
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `oglemilast-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4297520](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297520/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297520](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297520/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

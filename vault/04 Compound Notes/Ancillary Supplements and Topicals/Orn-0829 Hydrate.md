@@ -70,6 +70,7 @@ chembl:
     name: Orexin receptor
     action: ANTAGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Orn-0829 Hydrate
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `orn-0829-hydrate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4650522](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650522/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4650522](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650522/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

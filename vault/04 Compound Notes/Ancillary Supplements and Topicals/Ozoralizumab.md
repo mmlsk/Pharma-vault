@@ -70,6 +70,7 @@ chembl:
     name: Tumor necrosis factor
     action: INHIBITOR
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Ozoralizumab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `ozoralizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1743054](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743054/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1743054](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743054/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

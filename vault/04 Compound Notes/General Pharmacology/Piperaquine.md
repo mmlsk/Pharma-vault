@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL303933
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.33
     full-molformula: C29H32Cl2N6
+  identity-check: structure-confirmed
 ---
 
 # Piperaquine
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `piperaquine-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL303933](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL303933/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL303933](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL303933/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

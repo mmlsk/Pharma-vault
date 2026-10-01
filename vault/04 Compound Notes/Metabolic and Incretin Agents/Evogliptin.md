@@ -56,6 +56,7 @@ tags:
 - group/glp1
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1779710
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.71
     full-molformula: C19H26F3N3O3
+  identity-check: structure-confirmed
 ---
 
 # Evogliptin
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `evogliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL1779710](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1779710/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1779710](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1779710/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

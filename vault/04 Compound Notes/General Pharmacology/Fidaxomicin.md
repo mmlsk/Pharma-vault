@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Fidaxomicin
@@ -86,6 +88,7 @@ chembl:
     full-mwt: 1058.05
     mw-freebase: 1058.05
     full-molformula: C52H74Cl2O18
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -94,6 +97,16 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Dificlir
+  ema-number: EMEA/H/C/002087
+  url: https://www.ema.europa.eu/en/documents/product-information/dificlir-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/dificlir-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Fidaxomicin
@@ -107,7 +120,7 @@ pk-verification:
 - **Compound ID:** `fidaxomicin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1255800](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1255800/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1255800](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1255800/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -150,6 +163,10 @@ DNA-directed RNA polymerase inhibitor _(ChEMBL curated mechanism of the parent m
 > [!note] FDA label cross-check: **no-label-value**
 > Automated comparison with the [US prescribing information (DailyMed set 5e8ad2f1…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5e8ad2f1-a227-4171-9b66-cd6ce49b8baa), label version 20260522. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Dificlir*](https://www.ema.europa.eu/en/documents/product-information/dificlir-epar-product-information_en.pdf) (EMEA/H/C/002087) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/dificlir-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 8, 10)
 
 ## Related compounds (auto)
 

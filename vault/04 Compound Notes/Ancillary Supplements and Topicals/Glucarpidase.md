@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1863515
@@ -70,6 +71,7 @@ chembl:
     name: Methotrexate
     action: HYDROLYTIC ENZYME
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Glucarpidase
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `glucarpidase-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1863515](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1863515/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1863515](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1863515/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

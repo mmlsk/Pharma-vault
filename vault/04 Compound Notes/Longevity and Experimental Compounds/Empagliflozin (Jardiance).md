@@ -57,6 +57,7 @@ tags:
 - group/longevity
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2107830
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.53
     full-molformula: C23H27ClO7
+  identity-check: structure-confirmed
 ---
 
 # Empagliflozin (Jardiance)
@@ -96,7 +98,7 @@ chembl:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Empagliflozin, Jardiance
-- **ChEMBL:** [CHEMBL2107830](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107830/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2107830](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107830/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

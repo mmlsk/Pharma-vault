@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL231884
@@ -79,6 +80,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.16
     full-molformula: C28H32O15
+  identity-check: structure-confirmed
 ---
 
 # Diosmin
@@ -92,7 +94,7 @@ chembl:
 - **Compound ID:** `diosmin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL231884](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL231884/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL231884](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL231884/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -48,7 +48,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -58,6 +58,8 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-stereo-check
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Oritavancin
@@ -80,6 +82,7 @@ chembl:
     full-mwt: 1793.12
     mw-freebase: 1793.12
     full-molformula: C86H97Cl3N10O26
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -87,6 +90,16 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Tenkasi (previously Orbactiv)
+  ema-number: EMEA/H/C/003785
+  url: https://www.ema.europa.eu/en/documents/product-information/tenkasi-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Oritavancin
@@ -100,7 +113,7 @@ pk-verification:
 - **Compound ID:** `oritavancin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL1688530](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1688530/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1688530](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1688530/) · max phase 4 · id via exact ChEMBL name match · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -131,6 +144,10 @@ Lipoglycopeptide with three mechanisms rather than one, given as a single infusi
 | Elimination t½ | 16 d | 16 day |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Tenkasi (previously Orbactiv)*](https://www.ema.europa.eu/en/documents/product-information/tenkasi-epar-product-information_en.pdf) (EMEA/H/C/003785). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 245)
 
 ## Related compounds (auto)
 

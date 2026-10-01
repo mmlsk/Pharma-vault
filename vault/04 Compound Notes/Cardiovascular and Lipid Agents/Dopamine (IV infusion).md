@@ -59,6 +59,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Dopamine
@@ -88,6 +89,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.54
     full-molformula: C8H11NO2
+  identity-check: structure-confirmed
 ---
 
 # Dopamine (IV infusion)
@@ -102,7 +104,7 @@ chembl:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Dopamine, IV infusion
-- **ChEMBL:** [CHEMBL59](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL59/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL59](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL59/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

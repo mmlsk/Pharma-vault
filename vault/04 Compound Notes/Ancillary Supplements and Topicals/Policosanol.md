@@ -68,6 +68,7 @@ chembl:
   - C10AX08
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Policosanol
@@ -81,7 +82,7 @@ chembl:
 - **Compound ID:** `policosanol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3707352](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707352/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3707352](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707352/) · max phase 3 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

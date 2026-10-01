@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 pk-source:
   type: wikipedia-infobox
   title: Flupentixol
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.63
     full-molformula: C23H25F3N2OS
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: no-label
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `flupentixol-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL42055](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL42055/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL42055](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL42055/) · max phase 2 · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 

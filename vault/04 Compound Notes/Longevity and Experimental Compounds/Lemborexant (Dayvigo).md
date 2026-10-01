@@ -66,6 +66,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -102,6 +103,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.67
     full-molformula: C22H20F2N4O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -125,7 +127,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Lemborexant, Dayvigo
-- **ChEMBL:** [CHEMBL3545367](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545367/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3545367](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545367/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

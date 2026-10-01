@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-curated
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3707372
@@ -80,6 +81,11 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.31
     full-molformula: C42H58F2N6O9S
+  identity-check: conflict
+  identity-decision:
+    decision: confirm
+    reviewer: agent-review 2026-10-01
+    reason: INN pref_name matches; ChEMBL structure (C42H58F2N6O9S) differs from PubChem/INN formula C40H52F4N6O9S - identity kept, ChEMBL physicochemical properties flagged as unreliable
 ---
 
 # Voxilaprevir
@@ -93,7 +99,7 @@ chembl:
 - **Compound ID:** `voxilaprevir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3707372](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707372/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3707372](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707372/) · max phase 4 · id via exact ChEMBL name match · structure check: ❌ conflicts with PubChem - see Review Queue · decision: confirm (INN pref_name matches; ChEMBL structure (C42H58F2N6O9S) differs from PubChem/INN formula C40H52F4N6O9S - identity kept, ChEMBL physicochemical properties flagged as unreliable)
 
 ## Source summary
 

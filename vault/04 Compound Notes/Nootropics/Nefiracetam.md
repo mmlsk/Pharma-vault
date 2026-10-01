@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Nefiracetam
@@ -86,6 +87,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.88
     full-molformula: C14H18N2O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -106,7 +108,7 @@ pk-verification:
 - **Compound ID:** `nefiracetam-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL260829](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL260829/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL260829](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL260829/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

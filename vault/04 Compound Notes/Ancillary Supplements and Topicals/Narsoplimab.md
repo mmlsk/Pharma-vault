@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4298195
@@ -70,6 +71,7 @@ chembl:
     name: Mannan-binding lectin serine protease 2
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Narsoplimab
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `narsoplimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4298195](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298195/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4298195](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298195/) · max phase 3 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

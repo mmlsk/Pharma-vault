@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1200826
@@ -77,6 +78,7 @@ chembl:
     full-mwt: 73.89
     mw-freebase: 73.89
     full-molformula: CLi2O3
+  identity-check: structure-confirmed
 ---
 
 # Lithium Carbonate
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `lithium-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1200826](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200826/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1200826](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200826/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

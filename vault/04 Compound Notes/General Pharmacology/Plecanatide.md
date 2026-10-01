@@ -55,6 +55,7 @@ tags:
 - group/gi
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2103867
@@ -73,6 +74,7 @@ chembl:
     full-mwt: 1681.91
     mw-freebase: 1681.91
     full-molformula: C65H104N18O26S4
+  identity-check: structure-confirmed
 ---
 
 # Plecanatide
@@ -86,7 +88,7 @@ chembl:
 - **Compound ID:** `plecanatide-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL2103867](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103867/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2103867](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103867/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

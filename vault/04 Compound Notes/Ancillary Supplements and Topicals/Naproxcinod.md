@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2103831
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.3
     full-molformula: C18H21NO6
+  identity-check: structure-confirmed
 ---
 
 # Naproxcinod
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `naproxcinod-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2103831](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103831/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2103831](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103831/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

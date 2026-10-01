@@ -55,6 +55,7 @@ tags:
 - group/immunology
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3989871
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.29
     full-molformula: C33H35F4N3O2
+  identity-check: structure-confirmed
 ---
 
 # Avacopan
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `avacopan-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3989871](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989871/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3989871](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989871/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

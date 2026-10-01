@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Brimonidine
@@ -88,11 +89,22 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.84
     full-molformula: C11H10BrN5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
   set-id: c899b329-cc5e-4443-8e94-451314de47c9
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c899b329-cc5e-4443-8e94-451314de47c9
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-value
+  product: Mirvaso
+  ema-number: EMEA/H/C/002642
+  url: https://www.ema.europa.eu/en/documents/product-information/mirvaso-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/mirvaso-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: no-label-value
@@ -109,7 +121,7 @@ pk-verification:
 - **Compound ID:** `brimonidine-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL844](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL844/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL844](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL844/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -145,6 +157,10 @@ Alpha-2 agonist used as a glaucoma drop and as a topical gel for rosacea erythem
 > [!note] FDA label cross-check: **no-label-value**
 > Automated comparison with the [US prescribing information (DailyMed set c899b329…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c899b329-cc5e-4443-8e94-451314de47c9), label version 20240731. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
+
+> [!note] EU SmPC cross-check: **no-smpc-value**
+> Automated comparison with section 5.2 of the [EU SmPC of *Mirvaso*](https://www.ema.europa.eu/en/documents/product-information/mirvaso-epar-product-information_en.pdf) (EMEA/H/C/002642) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/mirvaso-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

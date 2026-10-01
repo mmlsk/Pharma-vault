@@ -59,6 +59,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Glecaprevir
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.28
     full-molformula: C38H46F4N6O9S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -110,7 +112,7 @@ pk-verification:
 - **Compound ID:** `glecaprevir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3545363](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545363/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3545363](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545363/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-formula-match
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2105401
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.36
     full-molformula: C22H16Cl2O4S
+  identity-check: formula-match
 ---
 
 # Tioclomarol
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `tioclomarol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2105401](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105401/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2105401](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105401/) · max phase 2 · id via Wikipedia infobox · structure check: ≈ same formula, different InChIKey (tautomer/representation)
 
 ## Source summary
 

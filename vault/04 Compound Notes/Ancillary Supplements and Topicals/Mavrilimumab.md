@@ -70,6 +70,7 @@ chembl:
     name: Granulocyte-macrophage colony-stimulating factor receptor
     action: ANTAGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Mavrilimumab
@@ -83,7 +84,7 @@ chembl:
 - **Compound ID:** `mavrilimumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1743039](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743039/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1743039](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743039/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

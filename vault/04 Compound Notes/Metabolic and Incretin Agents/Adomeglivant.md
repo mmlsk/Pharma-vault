@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3707351
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.27
     full-molformula: C32H36F3NO4
+  identity-check: structure-confirmed
 ---
 
 # Adomeglivant
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `adomeglivant-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL3707351](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707351/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3707351](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707351/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

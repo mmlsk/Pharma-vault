@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL96051
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.37
     full-molformula: C18H18N2O4
+  identity-check: structure-confirmed
 ---
 
 # Scriptaid
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `scriptaid-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL96051](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL96051/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL96051](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL96051/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

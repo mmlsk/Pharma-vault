@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3317857
@@ -73,6 +74,7 @@ chembl:
     full-mwt: 297.14
     mw-freebase: 297.14
     full-molformula: C12H16BNO5S
+  identity-check: structure-confirmed
 ---
 
 # Vaborbactam
@@ -86,7 +88,7 @@ chembl:
 - **Compound ID:** `vaborbactam-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3317857](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3317857/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3317857](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3317857/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

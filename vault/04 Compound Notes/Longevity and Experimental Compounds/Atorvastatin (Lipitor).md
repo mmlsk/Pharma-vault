@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Atorvastatin
@@ -93,6 +94,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.16
     full-molformula: C33H35FN2O5
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -114,7 +116,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Atorvastatin, Lipitor
-- **ChEMBL:** [CHEMBL1487](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1487/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1487](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1487/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

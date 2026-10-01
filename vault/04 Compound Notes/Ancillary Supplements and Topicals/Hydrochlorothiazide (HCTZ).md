@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Hydrochlorothiazide
@@ -96,6 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.65
     full-molformula: C7H8ClN3O4S2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -118,7 +120,7 @@ pk-verification:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Hydrochlorothiazide, HCTZ
-- **ChEMBL:** [CHEMBL435](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL435/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL435](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL435/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

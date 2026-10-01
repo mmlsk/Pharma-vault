@@ -55,6 +55,7 @@ tags:
 - group/pct
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL46740
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.33
     full-molformula: C30H34N2O3
+  identity-check: structure-confirmed
 ---
 
 # Bazedoxifene
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `bazedoxifene-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL46740](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL46740/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL46740](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL46740/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

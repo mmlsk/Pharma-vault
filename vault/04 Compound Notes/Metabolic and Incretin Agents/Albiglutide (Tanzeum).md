@@ -62,6 +62,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 pk-source:
   type: wikipedia-infobox
   title: Albiglutide
@@ -84,6 +85,7 @@ chembl:
     name: Glucagon-like peptide 1 receptor
     action: AGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Albiglutide (Tanzeum)
@@ -98,7 +100,7 @@ chembl:
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
 - **Aliases:** Albiglutide, Tanzeum
-- **ChEMBL:** [CHEMBL2107841](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107841/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2107841](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107841/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

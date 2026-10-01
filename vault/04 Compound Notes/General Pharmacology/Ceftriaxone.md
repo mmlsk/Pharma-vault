@@ -61,6 +61,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -92,6 +93,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.13
     full-molformula: C18H18N8O7S3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -113,7 +115,7 @@ pk-verification:
 - **Compound ID:** `ceftriaxone-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL161](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL161/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL161](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL161/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

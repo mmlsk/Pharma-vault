@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: partially-verified
+source-status: auto-extracted
 last-reviewed: null
 tags:
 - compound
@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-discrepant
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Sofosbuvir
@@ -95,6 +98,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.31
     full-molformula: C22H29FN3O9P
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -104,6 +108,17 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Sovaldi
+  ema-number: EMEA/H/C/002798
+  url: https://www.ema.europa.eu/en/documents/product-information/sovaldi-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: discrepant
 ---
 
 # Sofosbuvir
@@ -117,7 +132,7 @@ pk-verification:
 - **Compound ID:** `sofosbuvir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1259059](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1259059/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1259059](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1259059/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -164,6 +179,11 @@ RNA-directed RNA polymerase inhibitor _(ChEMBL curated mechanism of the parent m
 > Automated comparison with the [US prescribing information (DailyMed set 80beab2c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=80beab2c-396e-4a37-a4dc-40fdb62859cf), label version 20241226. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.4, 27)
 > - protein-binding: consistent (label values: 61, 65)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Sovaldi*](https://www.ema.europa.eu/en/documents/product-information/sovaldi-epar-product-information_en.pdf) (EMEA/H/C/002798). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 0.4, 27)
+> - protein-binding: discrepant (SmPC values: 85)
 
 ## Related compounds (auto)
 

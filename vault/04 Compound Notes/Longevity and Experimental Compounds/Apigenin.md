@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL28
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.63
     full-molformula: C15H10O5
+  identity-check: structure-confirmed
 ---
 
 # Apigenin
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `apigenin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL28](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL28/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL28](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL28/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

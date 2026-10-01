@@ -62,7 +62,10 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 - pk-fda-discrepant
+- pk-ema-consistent
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Sarilumab
@@ -85,6 +88,7 @@ chembl:
     name: Interleukin-6 receptor subunit alpha
     action: ANTAGONIST
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: discrepant
@@ -93,6 +97,16 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Kevzara
+  ema-number: EMEA/H/C/004254
+  url: https://www.ema.europa.eu/en/documents/product-information/kevzara-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/kevzara-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Sarilumab
@@ -106,7 +120,7 @@ pk-verification:
 - **Compound ID:** `sarilumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2108730](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108730/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2108730](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108730/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -146,6 +160,10 @@ Interleukin-6 receptor alpha subunit antagonist _(ChEMBL curated mechanism of th
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 827bc01c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=827bc01c-d379-4266-a18c-c7f904b76af3), label version 20260227. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 192, 240)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Kevzara*](https://www.ema.europa.eu/en/documents/product-information/kevzara-epar-product-information_en.pdf) (EMEA/H/C/004254) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/kevzara-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 192, 240, 504)
 
 ## Related compounds (auto)
 

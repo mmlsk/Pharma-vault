@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1421
@@ -98,6 +99,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.47
     full-molformula: C22H26ClN7O2S
+  identity-check: structure-confirmed
 ---
 
 # Dasatinib (Sprycel)
@@ -112,7 +114,7 @@ chembl:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Dasatinib, Sprycel
-- **ChEMBL:** [CHEMBL5416410](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5416410/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL5416410](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5416410/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

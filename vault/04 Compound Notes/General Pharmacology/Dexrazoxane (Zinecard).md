@@ -57,6 +57,7 @@ tags:
 - group/oncology
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL1738
@@ -85,6 +86,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.54
     full-molformula: C11H16N4O4
+  identity-check: structure-confirmed
 ---
 
 # Dexrazoxane (Zinecard)
@@ -99,7 +101,7 @@ chembl:
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Dexrazoxane, Zinecard
-- **ChEMBL:** [CHEMBL1738](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1738/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1738](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1738/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

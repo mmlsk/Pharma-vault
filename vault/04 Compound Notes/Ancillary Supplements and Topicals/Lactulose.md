@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Lactulose
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.24
     full-molformula: C12H22O11
+  identity-check: structure-confirmed
 ---
 
 # Lactulose
@@ -103,7 +105,7 @@ chembl:
 - **Compound ID:** `lactulose-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL296306](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL296306/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL296306](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL296306/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

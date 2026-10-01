@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4296719
@@ -74,6 +75,7 @@ chembl:
     full-mwt: 241.1
     mw-freebase: 241.1
     full-molformula: C10H20BN3O3
+  identity-check: structure-confirmed
 ---
 
 # Dutogliptin
@@ -87,7 +89,7 @@ chembl:
 - **Compound ID:** `dutogliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL4296719](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4296719/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4296719](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4296719/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

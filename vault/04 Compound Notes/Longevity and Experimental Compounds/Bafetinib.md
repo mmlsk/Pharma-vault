@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL206834
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.29
     full-molformula: C30H31F3N8O
+  identity-check: structure-confirmed
 ---
 
 # Bafetinib
@@ -96,7 +98,7 @@ chembl:
 - **Compound ID:** `bafetinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL206834](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL206834/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL206834](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL206834/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

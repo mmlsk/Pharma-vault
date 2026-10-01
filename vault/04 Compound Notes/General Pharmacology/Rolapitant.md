@@ -64,6 +64,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.52
     full-molformula: C25H26F6N2O2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -116,7 +118,7 @@ pk-verification:
 - **Compound ID:** `rolapitant-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL3707331](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707331/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3707331](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707331/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -64,7 +64,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Pemetrexed
@@ -103,11 +106,23 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.29
     full-molformula: C20H21N5O6
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: caef07ce-066b-4c48-98dc-974b05ebbbe0
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=caef07ce-066b-4c48-98dc-974b05ebbbe0
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Alimta
+  ema-number: EMEA/H/C/000564
+  url: https://www.ema.europa.eu/en/documents/product-information/alimta-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -126,7 +141,7 @@ pk-verification:
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Pemetrexed, Alimta
-- **ChEMBL:** [CHEMBL225072](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL225072/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL225072](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL225072/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -174,6 +189,11 @@ Dihydrofolate reductase inhibitor; GAR transformylase inhibitor; Thymidylate syn
 > Automated comparison with the [US prescribing information (DailyMed set caef07ce…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=caef07ce-066b-4c48-98dc-974b05ebbbe0), label version 20260618. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 3.5)
 > - protein-binding: consistent (label values: 81)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Alimta*](https://www.ema.europa.eu/en/documents/product-information/alimta-epar-product-information_en.pdf) (EMEA/H/C/000564). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 3.5)
+> - protein-binding: consistent (SmPC values: 81)
 
 ## Related compounds (auto)
 

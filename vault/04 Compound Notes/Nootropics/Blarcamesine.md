@@ -56,6 +56,7 @@ tags:
 - group/nootropic
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4297224
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.85
     full-molformula: C19H23NO
+  identity-check: structure-confirmed
 ---
 
 # Blarcamesine
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `blarcamesine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL4297224](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297224/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4297224](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297224/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

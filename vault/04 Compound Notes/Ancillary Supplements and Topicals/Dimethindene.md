@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL22108
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.82
     full-molformula: C20H24N2
+  identity-check: structure-confirmed
 ---
 
 # Dimethindene
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `dimethindene-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL22108](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL22108/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL22108](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL22108/) · max phase 3 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

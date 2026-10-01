@@ -76,6 +76,7 @@ chembl:
     name: Gastric inhibitory polypeptide receptor
     action: AGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Retatrutide
@@ -89,7 +90,7 @@ chembl:
 - **Compound ID:** `retatrutide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL5095485](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095485/) · max phase 3 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL5095485](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095485/) · max phase 3 · id via Wikipedia infobox · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

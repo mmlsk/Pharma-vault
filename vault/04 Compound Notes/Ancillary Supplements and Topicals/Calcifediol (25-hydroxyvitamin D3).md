@@ -58,6 +58,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1040
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.52
     full-molformula: C27H44O2
+  identity-check: structure-confirmed
 ---
 
 # Calcifediol (25-hydroxyvitamin D3)
@@ -95,7 +97,7 @@ chembl:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Calcifediol, 25-hydroxyvitamin D3
-- **ChEMBL:** [CHEMBL3544909](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544909/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3544909](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544909/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

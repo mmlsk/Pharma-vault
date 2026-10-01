@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-inn-ema
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3990029
@@ -70,6 +71,7 @@ chembl:
     name: Interleukin-23
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Risankizumab
@@ -83,7 +85,7 @@ chembl:
 - **Compound ID:** `risankizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3990029](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990029/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3990029](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990029/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

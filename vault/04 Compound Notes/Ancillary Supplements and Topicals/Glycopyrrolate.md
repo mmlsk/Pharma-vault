@@ -57,7 +57,9 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Glycopyrronium bromide
@@ -89,11 +91,22 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.69
     full-molformula: C19H28NO3+
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
   set-id: 62e1ba35-bc84-4818-be54-8b534a1bf93c
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=62e1ba35-bc84-4818-be54-8b534a1bf93c
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Seebri Breezhaler
+  ema-number: EMEA/H/C/002430
+  url: https://www.ema.europa.eu/en/documents/product-information/seebri-breezhaler-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/seebri-breezhaler-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: discrepant
@@ -110,7 +123,7 @@ pk-verification:
 - **Compound ID:** `glycopyrrolate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201027](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201027/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201027](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201027/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -146,6 +159,10 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 62e1ba35…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=62e1ba35-bc84-4818-be54-8b534a1bf93c), label version 20260910. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 3, 3.1)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Seebri Breezhaler*](https://www.ema.europa.eu/en/documents/product-information/seebri-breezhaler-epar-product-information_en.pdf) (EMEA/H/C/002430) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/seebri-breezhaler-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 2.8, 6.2, 33, 57)
 
 ## Related compounds (auto)
 

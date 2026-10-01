@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL5314379
@@ -74,6 +75,7 @@ chembl:
     full-mwt: 1214.65
     mw-freebase: 1214.65
     full-molformula: C63H111N11O12
+  identity-check: structure-confirmed
 ---
 
 # Voclosporin
@@ -87,7 +89,7 @@ chembl:
 - **Compound ID:** `voclosporin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL5314379](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5314379/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL5314379](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5314379/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

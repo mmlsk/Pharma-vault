@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL589583
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.51
     full-molformula: C26H32N2O5
+  identity-check: structure-confirmed
 ---
 
 # Delapril
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `delapril-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL589583](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL589583/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL589583](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL589583/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

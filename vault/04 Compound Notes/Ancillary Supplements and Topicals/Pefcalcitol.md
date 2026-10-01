@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL3989862
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.33
     full-molformula: C26H34F5NO4
+  identity-check: structure-confirmed
 ---
 
 # Pefcalcitol
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `pefcalcitol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3989862](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989862/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL3989862](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989862/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

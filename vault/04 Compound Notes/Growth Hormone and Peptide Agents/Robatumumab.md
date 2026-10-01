@@ -71,6 +71,7 @@ chembl:
     name: Insulin-like growth factor 1 receptor
     action: ANTAGONIST
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Robatumumab
@@ -84,7 +85,7 @@ chembl:
 - **Compound ID:** `robatumumab-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL1743064](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743064/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1743064](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743064/) · max phase 2 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1201147
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.32
     full-molformula: C24H27NO2
+  identity-check: structure-confirmed
 ---
 
 # Octocrylene
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `octocrylene-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201147](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201147/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1201147](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201147/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

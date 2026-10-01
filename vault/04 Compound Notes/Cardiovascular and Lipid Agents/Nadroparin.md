@@ -84,6 +84,7 @@ chembl:
     name: Antithrombin-III
     action: ACTIVATOR
   properties: {}
+  identity-check: no-chembl-structure
 pk-verification:
   source: fda-label
   status: no-label
@@ -104,7 +105,7 @@ pk-verification:
 - **Compound ID:** `nadroparin-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
-- **ChEMBL:** [CHEMBL2109204](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109204/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2109204](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109204/) · max phase 4 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

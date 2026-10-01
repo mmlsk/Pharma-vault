@@ -59,6 +59,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Carbidopa
@@ -87,6 +88,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.28
     full-molformula: C10H14N2O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -109,7 +111,7 @@ pk-verification:
 - **Compound ID:** `carbidopa-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1201236](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201236/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201236](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201236/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

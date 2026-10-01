@@ -58,6 +58,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Radotinib
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.29
     full-molformula: C27H21F3N8O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -109,7 +111,7 @@ pk-verification:
 - **Compound ID:** `radotinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL4297524](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297524/) · max phase 3 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297524](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297524/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

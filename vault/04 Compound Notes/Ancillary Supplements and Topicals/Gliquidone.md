@@ -60,6 +60,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Gliquidone
@@ -89,6 +90,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.53
     full-molformula: C27H33N3O6S
+  identity-check: structure-confirmed
 ---
 
 # Gliquidone
@@ -102,7 +104,7 @@ chembl:
 - **Compound ID:** `gliquidone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL383634](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL383634/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL383634](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL383634/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

@@ -63,7 +63,10 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Teduglutide
@@ -89,11 +92,22 @@ chembl:
     full-mwt: 3752.14
     mw-freebase: 3752.14
     full-molformula: C164H252N44O55S
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 66b69c1e-b25c-44d3-b5ff-1c1de9a516fa
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=66b69c1e-b25c-44d3-b5ff-1c1de9a516fa
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Revestive
+  ema-number: EMEA/H/C/002345
+  url: https://www.ema.europa.eu/en/documents/product-information/revestive-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -110,7 +124,7 @@ pk-verification:
 - **Compound ID:** `teduglutide-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL2104987](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2104987/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2104987](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2104987/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -153,6 +167,10 @@ Glucagon-like peptide 2 receptor agonist _(ChEMBL curated mechanism of the paren
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 66b69c1e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=66b69c1e-b25c-44d3-b5ff-1c1de9a516fa), label version 20250905. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 1.3, 2)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Revestive*](https://www.ema.europa.eu/en/documents/product-information/revestive-epar-product-information_en.pdf) (EMEA/H/C/002345). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 2)
 
 ## Related compounds (auto)
 

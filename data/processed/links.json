@@ -7642,6 +7642,7 @@
   ],
   "L04AF": [
    "baricitinib-compound",
+   "deucravacitinib-compound",
    "filgotinib-compound",
    "peficitinib-compound",
    "ritlecitinib-compound",
@@ -15811,6 +15812,7 @@
     ]
    ],
    "same-atc4": [
+    "deucravacitinib-compound",
     "filgotinib-compound",
     "peficitinib-compound",
     "ritlecitinib-compound",
@@ -28636,7 +28638,14 @@
   },
   "deucravacitinib-compound": {
    "shared-target": [],
-   "same-atc4": [],
+   "same-atc4": [
+    "baricitinib-compound",
+    "filgotinib-compound",
+    "peficitinib-compound",
+    "ritlecitinib-compound",
+    "tofacitinib-compound",
+    "upadacitinib-compound"
+   ],
    "shared-cyp": {
     "CYP1A2": 42
    }
@@ -39817,6 +39826,7 @@
    ],
    "same-atc4": [
     "baricitinib-compound",
+    "deucravacitinib-compound",
     "peficitinib-compound",
     "ritlecitinib-compound",
     "tofacitinib-compound",
@@ -67674,6 +67684,7 @@
    ],
    "same-atc4": [
     "baricitinib-compound",
+    "deucravacitinib-compound",
     "filgotinib-compound",
     "ritlecitinib-compound",
     "tofacitinib-compound",
@@ -74755,6 +74766,7 @@
    ],
    "same-atc4": [
     "baricitinib-compound",
+    "deucravacitinib-compound",
     "filgotinib-compound",
     "peficitinib-compound",
     "tofacitinib-compound",
@@ -84043,6 +84055,7 @@
    "shared-target": [],
    "same-atc4": [
     "baricitinib-compound",
+    "deucravacitinib-compound",
     "filgotinib-compound",
     "peficitinib-compound",
     "ritlecitinib-compound",
@@ -86231,6 +86244,7 @@
    "shared-target": [],
    "same-atc4": [
     "baricitinib-compound",
+    "deucravacitinib-compound",
     "filgotinib-compound",
     "peficitinib-compound",
     "ritlecitinib-compound",

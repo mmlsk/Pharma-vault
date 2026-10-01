@@ -57,6 +57,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -80,6 +81,7 @@ chembl:
     name: Interleukin-6 receptor subunit alpha
     action: INHIBITOR
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: consistent
@@ -88,6 +90,15 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-text
+  product: RoActemra
+  ema-number: EMEA/H/C/000955
+  url: null
+  chpl-url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tocilizumab
@@ -101,7 +112,7 @@ pk-verification:
 - **Compound ID:** `tocilizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1237022](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237022/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1237022](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237022/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

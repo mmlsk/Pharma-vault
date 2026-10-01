@@ -63,6 +63,8 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Diflunisal
@@ -104,6 +106,17 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Attrogy
+  ema-number: EMEA/H/C/006248
+  url: https://www.ema.europa.eu/en/documents/product-information/attrogy-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/attrogy-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Diflunisal
@@ -164,6 +177,11 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 > Automated comparison with the [US prescribing information (DailyMed set 666f89b4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=666f89b4-fd81-420a-a390-eb1cd4014f61), label version 20260804. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 2, 8, 12)
 > - protein-binding: no-label-value (label values: -)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Attrogy*](https://www.ema.europa.eu/en/documents/product-information/attrogy-epar-product-information_en.pdf) (EMEA/H/C/006248) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/attrogy-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 8, 10, 96, 120)
+> - protein-binding: consistent (SmPC values: 98, 99)
 
 ## Related compounds (auto)
 

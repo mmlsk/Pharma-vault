@@ -395,7 +395,8 @@
             "catalogue",
             "curated-addition",
             "wikipedia-infobox",
-            "chembl-name-match"
+            "chembl-name-match",
+            "curated-identity"
           ]
         },
         "parent-id": {
@@ -465,6 +466,40 @@
         },
         "properties": {
           "type": "object"
+        },
+        "identity-check": {
+          "enum": [
+            "structure-confirmed",
+            "connectivity-match",
+            "formula-match",
+            "inn-match-ema",
+            "no-chembl-structure",
+            "no-evidence",
+            "conflict",
+            null
+          ],
+          "description": "Automated structure corroboration (curate_identity.py): ChEMBL InChIKey vs PubChem evidence"
+        },
+        "identity-decision": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "decision": {
+              "enum": [
+                "confirm",
+                "replace",
+                "reject"
+              ]
+            },
+            "reviewer": {
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          }
         }
       },
       "required": [
@@ -529,6 +564,70 @@
         "null"
       ],
       "minimum": 1
+    },
+    "pk-verification-ema": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Automated cross-check of auto-extracted PK against the EU SmPC (EMA EPAR product information, section 5.2) - not a human review",
+      "properties": {
+        "source": {
+          "enum": [
+            "ema-smpc"
+          ]
+        },
+        "status": {
+          "enum": [
+            "consistent",
+            "discrepant",
+            "no-smpc-value",
+            "no-smpc-text"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "checked": {
+          "type": "string",
+          "format": "date"
+        },
+        "fields": {
+          "type": "object",
+          "additionalProperties": {
+            "enum": [
+              "consistent",
+              "discrepant",
+              "no-label-value"
+            ]
+          }
+        },
+        "product": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ema-number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chpl-url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "source",
+        "status"
+      ]
     }
   },
   "$defs": {

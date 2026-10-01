@@ -57,6 +57,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-inn-ema
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL4297830
@@ -72,6 +73,7 @@ chembl:
     name: Growth hormone receptor
     action: AGONIST
   properties: {}
+  identity-check: inn-match-ema
 ---
 
 # Somatrogon
@@ -85,7 +87,7 @@ chembl:
 - **Compound ID:** `somatrogon-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL4297830](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297830/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL4297830](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297830/) · max phase 4 · id via exact ChEMBL name match · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 

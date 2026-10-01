@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1469
@@ -78,6 +79,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.74
     full-molformula: C10H12O2
+  identity-check: structure-confirmed
 ---
 
 # Sodium Phenylbutyrate
@@ -91,7 +93,7 @@ chembl:
 - **Compound ID:** `sodium-phenylbutyrate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1746](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1746/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL1746](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1746/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

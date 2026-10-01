@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL73451
@@ -81,6 +82,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.8
     full-molformula: C20H22N2S
+  identity-check: structure-confirmed
 ---
 
 # Mequitazine
@@ -94,7 +96,7 @@ chembl:
 - **Compound ID:** `mequitazine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL73451](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL73451/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL73451](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL73451/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

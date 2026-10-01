@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-inn-ema
+- pk-ema-consistent
 pk-source:
   type: wikipedia-infobox
   title: Erenumab
@@ -83,6 +85,7 @@ chembl:
     name: Calcitonin gene-related peptide type 1 receptor
     action: ANTAGONIST
   properties: {}
+  identity-check: inn-match-ema
 pk-verification:
   source: fda-label
   status: no-label
@@ -90,6 +93,16 @@ pk-verification:
   url: null
   checked: '2026-10-01'
   fields: {}
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Aimovig
+  ema-number: EMEA/H/C/004447
+  url: https://www.ema.europa.eu/en/documents/product-information/aimovig-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Erenumab
@@ -103,7 +116,7 @@ pk-verification:
 - **Compound ID:** `erenumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3833329](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833329/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3833329](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833329/) · max phase 4 · id via Wikipedia infobox · structure check: INN matches an EU-authorised product (no comparable structure)
 
 ## Source summary
 
@@ -140,6 +153,10 @@ Calcitonin gene-related peptide type 1 receptor antagonist _(ChEMBL curated mech
 | Metabolism | - | Proteolysis |
 
 _No FDA label found for automated cross-check (not US-approved, or different name)._
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Aimovig*](https://www.ema.europa.eu/en/documents/product-information/aimovig-epar-product-information_en.pdf) (EMEA/H/C/004447). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 672)
 
 ## Related compounds (auto)
 

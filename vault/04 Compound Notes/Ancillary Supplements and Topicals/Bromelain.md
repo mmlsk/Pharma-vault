@@ -69,6 +69,7 @@ chembl:
   - M09AB03
   targets: []
   properties: {}
+  identity-check: no-chembl-structure
 ---
 
 # Bromelain
@@ -82,7 +83,7 @@ chembl:
 - **Compound ID:** `bromelain-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2109027](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109027/) · max phase 4 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL2109027](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109027/) · max phase 4 · id via exact ChEMBL name match · structure check: no small-molecule structure in ChEMBL
 
 ## Source summary
 

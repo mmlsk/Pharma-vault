@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Aniracetam
@@ -87,6 +88,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.71
     full-molformula: C12H13NO3
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -107,7 +109,7 @@ pk-verification:
 - **Compound ID:** `aniracetam-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL36994](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL36994/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL36994](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL36994/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

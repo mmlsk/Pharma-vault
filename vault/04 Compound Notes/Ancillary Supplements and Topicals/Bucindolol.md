@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL321582
@@ -82,6 +83,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.57
     full-molformula: C22H25N3O2
+  identity-check: structure-confirmed
 ---
 
 # Bucindolol
@@ -95,7 +97,7 @@ chembl:
 - **Compound ID:** `bucindolol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2107546](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107546/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2107546](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107546/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

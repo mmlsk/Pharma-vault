@@ -56,6 +56,7 @@ tags:
 - group/peptides
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL2037511
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.64
     full-molformula: C30H38N4O4
+  identity-check: structure-confirmed
 ---
 
 # Epelsiban
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `epelsiban-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL2037511](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2037511/) · max phase 2 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL2037511](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2037511/) · max phase 2 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

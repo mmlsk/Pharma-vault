@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Tranylcypromine
@@ -90,6 +91,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.62
     full-molformula: C9H11N
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -111,7 +113,7 @@ pk-verification:
 - **Compound ID:** `tranylcypromine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1179](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1179/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1179](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1179/) · max phase n/a · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

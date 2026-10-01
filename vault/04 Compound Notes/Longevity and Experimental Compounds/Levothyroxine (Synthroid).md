@@ -63,6 +63,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Levothyroxine
@@ -91,6 +92,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.39
     full-molformula: C15H11I4NO4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label
@@ -112,7 +114,7 @@ pk-verification:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Levothyroxine, Synthroid
-- **ChEMBL:** [CHEMBL1624](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1624/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1624](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1624/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

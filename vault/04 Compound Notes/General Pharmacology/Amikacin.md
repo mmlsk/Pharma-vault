@@ -62,6 +62,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
@@ -94,6 +95,7 @@ chembl:
     num-ro5-violations: 3
     qed-weighted: 0.11
     full-molformula: C22H43N5O13
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -103,6 +105,15 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-text
+  product: Arikayce liposomal
+  ema-number: EMEA/H/C/005264
+  url: null
+  chpl-url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Amikacin
@@ -116,7 +127,7 @@ pk-verification:
 - **Compound ID:** `amikacin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL177](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL177/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL177](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL177/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

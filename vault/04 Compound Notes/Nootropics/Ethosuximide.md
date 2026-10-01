@@ -64,6 +64,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 pk-source:
   type: wikipedia-infobox
   title: Ethosuximide
@@ -97,6 +98,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.54
     full-molformula: C7H11NO2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -118,7 +120,7 @@ pk-verification:
 - **Compound ID:** `ethosuximide-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL696](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL696/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL696](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL696/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

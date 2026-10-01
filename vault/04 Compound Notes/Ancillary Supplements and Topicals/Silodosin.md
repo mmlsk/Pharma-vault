@@ -63,7 +63,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
+- pk-ema-consistent
+- pk-sources-disagree
 pk-source:
   type: wikipedia-infobox
   title: Silodosin
@@ -96,6 +99,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.37
     full-molformula: C25H32F3N3O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -105,6 +109,17 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Urorec
+  ema-number: EMEA/H/C/001092
+  url: https://www.ema.europa.eu/en/documents/product-information/urorec-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Silodosin
@@ -118,7 +133,7 @@ pk-verification:
 - **Compound ID:** `silodosin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL24778](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL24778/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL24778](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL24778/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -165,6 +180,11 @@ Alpha-1a adrenergic receptor antagonist _(ChEMBL curated mechanism of the parent
 > Automated comparison with the [US prescribing information (DailyMed set ee8d577e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ee8d577e-948d-4164-9671-c876544ac83b), label version 20260818. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 24)
 > - protein-binding: no-label-value (label values: -)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Urorec*](https://www.ema.europa.eu/en/documents/product-information/urorec-epar-product-information_en.pdf) (EMEA/H/C/001092). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 11, 18, 24)
+> - protein-binding: consistent (SmPC values: 91, 96.6)
 
 ## Related compounds (auto)
 

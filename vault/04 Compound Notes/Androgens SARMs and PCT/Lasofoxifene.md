@@ -55,6 +55,7 @@ tags:
 - group/pct
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL328190
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.56
     full-molformula: C28H31NO2
+  identity-check: structure-confirmed
 ---
 
 # Lasofoxifene
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `lasofoxifene-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL328190](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL328190/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL328190](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL328190/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

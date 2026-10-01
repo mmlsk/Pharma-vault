@@ -58,6 +58,7 @@ tags:
 - group/glp1
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL3301624
@@ -76,6 +77,7 @@ chembl:
     full-mwt: 1117.33
     mw-freebase: 1117.33
     full-molformula: C49H68N18O9S2
+  identity-check: structure-confirmed
 ---
 
 # Setmelanotide (Imcivree)
@@ -90,7 +92,7 @@ chembl:
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
 - **Aliases:** Setmelanotide, Imcivree
-- **ChEMBL:** [CHEMBL3301624](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301624/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL3301624](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301624/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

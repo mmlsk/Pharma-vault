@@ -62,7 +62,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-stereo-check
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Maraviroc
@@ -91,6 +94,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.47
     full-molformula: C29H41F2N5O
+  identity-check: connectivity-match
 pk-verification:
   source: fda-label
   status: consistent
@@ -99,6 +103,17 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: no-label-value
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Celsentri
+  ema-number: EMEA/H/C/000811
+  url: https://www.ema.europa.eu/en/documents/product-information/celsentri-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/celsentri-epar-product-information_pl.pdf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
     protein-binding: consistent
 ---
 
@@ -113,7 +128,7 @@ pk-verification:
 - **Compound ID:** `maraviroc-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201187](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201187/) · max phase n/a · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1201187](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201187/) · max phase n/a · id via Wikipedia infobox · structure check: ⚠️ same skeleton, stereo/isotope layer differs
 
 ## Source summary
 
@@ -150,6 +165,11 @@ Inhibits HIV integrase strand transfer as a component of combination antiretrovi
 > Automated comparison with the [US prescribing information (DailyMed set 5c4a1da5…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5c4a1da5-a8e1-4038-970d-fb15c189c35e), label version 20260708. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
 > - protein-binding: consistent (label values: 76)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Celsentri*](https://www.ema.europa.eu/en/documents/product-information/celsentri-epar-product-information_en.pdf) (EMEA/H/C/000811) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/celsentri-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 13.2)
+> - protein-binding: consistent (SmPC values: 76)
 
 ## Safety routing
 

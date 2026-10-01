@@ -63,7 +63,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Pregabalin
@@ -96,11 +99,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.63
     full-molformula: C8H17NO2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: ab06a36d-9a2d-4eae-8991-4eab5bc8311c
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab06a36d-9a2d-4eae-8991-4eab5bc8311c
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Lyrica
+  ema-number: EMEA/H/C/000546
+  url: https://www.ema.europa.eu/en/documents/product-information/lyrica-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -118,7 +133,7 @@ pk-verification:
 - **Compound ID:** `pregabalin-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
-- **ChEMBL:** [CHEMBL1059](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1059/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL1059](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1059/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -165,6 +180,11 @@ Voltage-gated calcium channel modulator _(ChEMBL curated mechanism of the parent
 > Automated comparison with the [US prescribing information (DailyMed set ab06a36d…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab06a36d-9a2d-4eae-8991-4eab5bc8311c), label version 20260911. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 3, 4, 6, 6.3)
 > - protein-binding: no-label-value (label values: -)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Lyrica*](https://www.ema.europa.eu/en/documents/product-information/lyrica-epar-product-information_en.pdf) (EMEA/H/C/000546). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 3, 4, 6, 6.3)
+> - protein-binding: no-label-value (SmPC values: -)
 
 ## Related compounds (auto)
 

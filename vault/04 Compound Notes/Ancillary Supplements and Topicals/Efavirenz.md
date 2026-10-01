@@ -64,7 +64,10 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Efavirenz
@@ -97,11 +100,23 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.73
     full-molformula: C14H9ClF3NO2
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
   set-id: 13ca3456-e5bf-4bb1-af95-b1378658a358
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=13ca3456-e5bf-4bb1-af95-b1378658a358
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Efavirenz Teva
+  ema-number: EMEA/H/C/002352
+  url: https://www.ema.europa.eu/en/documents/product-information/efavirenz-teva-epar-product-information_en.pdf
+  chpl-url: null
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -119,7 +134,7 @@ pk-verification:
 - **Compound ID:** `efavirenz-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL223228](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL223228/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL223228](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL223228/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -166,6 +181,11 @@ Human immunodeficiency virus type 1 reverse transcriptase inhibitor _(ChEMBL cur
 > Automated comparison with the [US prescribing information (DailyMed set 13ca3456…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=13ca3456-e5bf-4bb1-af95-b1378658a358), label version 20240628. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 40, 52, 55, 76, 240)
 > - protein-binding: consistent (label values: 99.5, 99.75)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Efavirenz Teva*](https://www.ema.europa.eu/en/documents/product-information/efavirenz-teva-epar-product-information_en.pdf) (EMEA/H/C/002352). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 40, 52, 55, 240)
+> - protein-binding: consistent (SmPC values: 99.5, 99.75)
 
 ## Related compounds (auto)
 

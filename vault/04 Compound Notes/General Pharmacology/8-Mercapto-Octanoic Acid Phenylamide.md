@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL326433
@@ -77,6 +78,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.53
     full-molformula: C14H21NOS
+  identity-check: structure-confirmed
 ---
 
 # 8-Mercapto-Octanoic Acid Phenylamide
@@ -90,7 +92,7 @@ chembl:
 - **Compound ID:** `8-mercapto-octanoic-acid-phenylamide-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL326433](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL326433/) · max phase n/a · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL326433](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL326433/) · max phase n/a · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

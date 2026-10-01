@@ -63,7 +63,9 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-discrepant
+- pk-ema-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Fentanyl
@@ -98,6 +100,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.79
     full-molformula: C22H28N2O
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: discrepant
@@ -107,6 +110,17 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: no-label-value
+pk-verification-ema:
+  source: ema-smpc
+  status: discrepant
+  product: Effentora
+  ema-number: EMEA/H/C/000833
+  url: https://www.ema.europa.eu/en/documents/product-information/effentora-epar-product-information_en.pdf
+  chpl-url: null
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Fentanyl
@@ -120,7 +134,7 @@ pk-verification:
 - **Compound ID:** `fentanyl-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL596](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL596/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL596](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL596/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
@@ -170,6 +184,11 @@ Mu opioid receptor agonist _(ChEMBL curated mechanism of the parent molecule, vi
 > Automated comparison with the [US prescribing information (DailyMed set 73897c38…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=73897c38-e4ec-40bc-9f41-3359ee23a5a8), label version 20260407. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 23.5, 34, 34.4)
 > - protein-binding: no-label-value (label values: -)
+
+> [!danger] EU SmPC cross-check: **discrepant**
+> Automated comparison with section 5.2 of the [EU SmPC of *Effentora*](https://www.ema.europa.eu/en/documents/product-information/effentora-epar-product-information_en.pdf) (EMEA/H/C/000833). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (SmPC values: 18, 22)
+> - protein-binding: consistent (SmPC values: 80, 85)
 
 ## Related compounds (auto)
 

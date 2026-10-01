@@ -64,6 +64,8 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-consistent
+- pk-ema-consistent
+- pk-2-regulators
 pk-source:
   type: wikipedia-infobox
   title: Desloratadine
@@ -101,6 +103,17 @@ pk-verification:
   status: consistent
   set-id: 21174c0f-9204-4c75-b6e6-2f9ada5b535d
   url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=21174c0f-9204-4c75-b6e6-2f9ada5b535d
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: consistent
+  product: Azomyr
+  ema-number: EMEA/H/C/000310
+  url: https://www.ema.europa.eu/en/documents/product-information/azomyr-epar-product-information_en.pdf
+  chpl-url: https://www.ema.europa.eu/pl/documents/product-information/azomyr-epar-product-information_pl.pdf
   checked: '2026-10-01'
   fields:
     half-life: consistent
@@ -166,6 +179,11 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 > Automated comparison with the [US prescribing information (DailyMed set 21174c0f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=21174c0f-9204-4c75-b6e6-2f9ada5b535d), label version 20260826. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 27, 33.7, 50, 336)
 > - protein-binding: consistent (label values: 82, 85, 87, 89)
+
+> [!success] EU SmPC cross-check: **consistent**
+> Automated comparison with section 5.2 of the [EU SmPC of *Azomyr*](https://www.ema.europa.eu/en/documents/product-information/azomyr-epar-product-information_en.pdf) (EMEA/H/C/000310) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/azomyr-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (SmPC values: 3, 7, 27, 89)
+> - protein-binding: consistent (SmPC values: 83, 87)
 
 ## Related compounds (auto)
 

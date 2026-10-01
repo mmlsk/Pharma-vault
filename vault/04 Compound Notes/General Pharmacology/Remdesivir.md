@@ -55,6 +55,7 @@ tags:
 - group/antiinfective
 - stub
 - chembl-profile
+- identity-confirmed
 chembl:
   identity-source: wikipedia-infobox
   parent-id: CHEMBL4065616
@@ -83,6 +84,7 @@ chembl:
     num-ro5-violations: 2
     qed-weighted: 0.16
     full-molformula: C27H35N6O8P
+  identity-check: structure-confirmed
 ---
 
 # Remdesivir
@@ -96,7 +98,7 @@ chembl:
 - **Compound ID:** `remdesivir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL4065616](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4065616/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL4065616](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4065616/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

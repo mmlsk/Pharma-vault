@@ -66,6 +66,7 @@ tags:
 - stub
 - pk-auto
 - chembl-profile
+- identity-confirmed
 - pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
@@ -99,6 +100,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.54
     full-molformula: C13H11N3O4
+  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: consistent
@@ -108,6 +110,15 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-verification-ema:
+  source: ema-smpc
+  status: no-smpc-text
+  product: Imnovid (previously Pomalidomide Celgene)
+  ema-number: EMEA/H/C/002682
+  url: null
+  chpl-url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Pomalidomide
@@ -121,7 +132,7 @@ pk-verification:
 - **Compound ID:** `pomalidomide-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
-- **ChEMBL:** [CHEMBL43452](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL43452/) · max phase 4 · id via Wikipedia infobox
+- **ChEMBL:** [CHEMBL43452](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL43452/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 

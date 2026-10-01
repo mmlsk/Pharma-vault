@@ -56,6 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
+- identity-confirmed
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL197672
@@ -80,6 +81,7 @@ chembl:
     num-ro5-violations: 1
     qed-weighted: 0.2
     full-molformula: C26H27F4N3O7
+  identity-check: structure-confirmed
 ---
 
 # Emricasan
@@ -93,7 +95,7 @@ chembl:
 - **Compound ID:** `emricasan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL197672](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL197672/) · max phase 2 · id via exact ChEMBL name match - confirm
+- **ChEMBL:** [CHEMBL197672](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL197672/) · max phase 2 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
