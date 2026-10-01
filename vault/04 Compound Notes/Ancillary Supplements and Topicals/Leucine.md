@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL291962
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL291962
+  pref-name: LEUCINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 131.17
+    mw-freebase: 131.17
+    alogp: 0.44
+    psa: 63.32
+    hba: 2
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.58
+    full-molformula: C6H13NO2
 ---
 
 # Leucine
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `leucine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL291962](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL291962/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Branched-chain amino acid that directly activates mTORC1 signaling, the single strongest known dietary trigger of muscle protein synthesis among individual amino acids.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 131.17 | 0.44 | 63.32 | 2/2 | 0 | C6H13NO2 |
 
 ## Evidence boundaries
 

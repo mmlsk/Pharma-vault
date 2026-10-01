@@ -8,15 +8,15 @@ cluster: Metabolic and Incretin Agents
 group: glp1
 class: null
 subclass: null
-mechanism: null
+mechanism: Monoamine transporter inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3989690
+chembl-max-phase: 2
 half-life:
   value: 220.0
   value-max: null
@@ -62,6 +62,8 @@ tags:
 - group/glp1
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Tesofensine
@@ -69,6 +71,37 @@ pk-source:
   revision: 1374173975
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3989690
+  pref-name: TESOFENSINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2363064
+    name: Monoamine transporter
+    action: INHIBITOR
+  properties:
+    full-mwt: 328.28
+    mw-freebase: 328.28
+    alogp: 4.6
+    psa: 12.47
+    hba: 2
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C17H23Cl2NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tesofensine
@@ -82,10 +115,27 @@ pk-source:
 - **Compound ID:** `tesofensine-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL3989690](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989690/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Investigational triple monoamine-reuptake inhibitor with substantial weight-loss signals but dose-related heart-rate and blood-pressure concerns; not broadly approved.
+
+## Mechanism
+
+Monoamine transporter inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 328.28 | 4.6 | 12.47 | 0/2 | 0 | C17H23Cl2NO |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Monoamine transporter (CHEMBL2363064)|Monoamine transporter]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -104,6 +154,15 @@ Investigational triple monoamine-reuptake inhibitor with substantial weight-loss
 | Metabolism | hepatic | 15–20% renal; hepatic: CYP3A4 |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - | Not applicable |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Bicifadine]] (Monoamine transporter), [[Mazindol]] (Monoamine transporter)
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin-2 receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201438
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201438
+  pref-name: ALDESLEUKIN
+  molecule-type: Protein
+  first-approval: 1992
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L03AC01
+  targets:
+  - id: CHEMBL2364167
+    name: Interleukin-2 receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Aldesleukin
@@ -67,10 +83,26 @@ tags:
 - **Compound ID:** `aldesleukin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201438](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201438/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Recombinant IL-2; high-dose for melanoma and renal cancer, low-dose to expand regulatory T cells.
+
+## Mechanism
+
+Interleukin-2 receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1992
+- **Flags:** black-box warning
+- **ATC L03AC01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSTIMULANTS › Interleukins
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-2 receptor (CHEMBL2364167)|Interleukin-2 receptor]] - agonist · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -80,6 +112,12 @@ Recombinant IL-2; high-dose for melanoma and renal cancer, low-dose to expand re
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Basiliximab]] (Interleukin-2 receptor)
 
 ## Safety routing
 

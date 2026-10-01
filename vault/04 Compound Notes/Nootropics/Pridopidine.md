@@ -8,15 +8,15 @@ cluster: Nootropics
 group: nootropic
 class: null
 subclass: null
-mechanism: null
+mechanism: Dopamine D2 receptor modulator
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL596802
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -55,6 +55,31 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL596802
+  pref-name: PRIDOPIDINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL217
+    name: D(2) dopamine receptor
+    action: MODULATOR
+  properties:
+    full-mwt: 281.42
+    mw-freebase: 281.42
+    alogp: 2.68
+    psa: 37.38
+    hba: 3
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.85
+    full-molformula: C15H23NO2S
 ---
 
 # Pridopidine
@@ -68,10 +93,27 @@ tags:
 - **Compound ID:** `pridopidine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL596802](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL596802/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Engages the sigma-1 chaperone at the ER-mitochondrial interface, modulating calcium handling and ER stress responses; investigational.
+
+## Mechanism
+
+Dopamine D2 receptor modulator _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 281.42 | 2.68 | 37.38 | 0/3 | 0 | C15H23NO2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[D(2) dopamine receptor (CHEMBL217)|D(2) dopamine receptor]] - modulator · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -81,6 +123,12 @@ Engages the sigma-1 chaperone at the ER-mitochondrial interface, modulating calc
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aripiprazole]] (D(2) dopamine receptor), [[Benperidol]] (D(2) dopamine receptor), [[Brexpiprazole]] (D(2) dopamine receptor), [[Cabergoline (Dostinex)]] (D(2) dopamine receptor), [[Clozapine]] (D(2) dopamine receptor), [[Domperidone]] (D(2) dopamine receptor), [[Iloperidone]] (D(2) dopamine receptor), [[Itopride]] (D(2) dopamine receptor), [[Lumateperone]] (D(2) dopamine receptor), [[Paliperidone]] (D(2) dopamine receptor), [[Perphenazine]] (D(2) dopamine receptor), [[Remoxipride]] (D(2) dopamine receptor)
 
 ## Safety routing
 

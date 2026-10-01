@@ -49,7 +49,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -57,6 +57,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Propofol
@@ -64,6 +66,40 @@ pk-source:
   revision: 1376002434
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL526
+  pref-name: PROPOFOL
+  molecule-type: Small molecule
+  first-approval: 1989
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N01AX10
+  targets:
+  - id: CHEMBL2093872
+    name: GABA-A receptor; anion channel
+    action: POSITIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 178.27
+    mw-freebase: 178.27
+    alogp: 3.64
+    psa: 20.23
+    hba: 1
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C12H18O
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 9ba70032-40c2-41c5-9f99-d1f94032d3dc
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9ba70032-40c2-41c5-9f99-d1f94032d3dc
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Propofol
@@ -77,7 +113,7 @@ pk-source:
 - **Compound ID:** `propofol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL526](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL526/) · max phase 4
+- **ChEMBL:** [CHEMBL526](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL526/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +122,20 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1989
+- **ATC N01AX10:** NERVOUS SYSTEM › ANESTHETICS, GENERAL › Other general anesthetics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 178.27 | 3.64 | 20.23 | 1/1 | 0 | C12H18O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-A receptor; anion channel (CHEMBL2093872)|GABA-A receptor; anion channel]] - positive allosteric modulator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -103,6 +153,18 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 | Protein binding | 95–99 % | 95–99% |
 | Metabolism | hepatic | Liver glucuronidation |
 | Excretion | - | Liver |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 9ba70032…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9ba70032-40c2-41c5-9f99-d1f94032d3dc), label version 20260918. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 24, 72)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abp-700]] (GABA-A receptor; anion channel), [[Adipiplon]] (GABA-A receptor; anion channel), [[Alprazolam]] (GABA-A receptor; anion channel), [[Brexanolone]] (GABA-A receptor; anion channel), [[Butalbital]] (GABA-A receptor; anion channel), [[Cenobamate]] (GABA-A receptor; anion channel), [[Chlordiazepoxide]] (GABA-A receptor; anion channel), [[Cipepofol]] (GABA-A receptor; anion channel), [[Clobazam]] (GABA-A receptor; anion channel), [[Clomethiazole]] (GABA-A receptor; anion channel), [[Clonazepam]] (GABA-A receptor; anion channel), [[Clotiazepam]] (GABA-A receptor; anion channel)
+- **Same ATC subgroup:** [[Esketamine (Spravato)]], [[Etomidate]], [[Ketamine]], [[Nitrous Oxide]], [[Propanidid]]
 
 ## Safety routing
 

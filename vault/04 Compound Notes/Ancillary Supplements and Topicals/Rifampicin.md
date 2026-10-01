@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Bacterial DNA-directed RNA polymerase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL374478
+chembl-max-phase: 4
 half-life:
   value: 3.0
   value-max: 4.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Rifampicin
@@ -68,6 +69,38 @@ pk-source:
   revision: 1374979670
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL374478
+  pref-name: RIFAMPIN
+  molecule-type: Small molecule
+  first-approval: 1971
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J04AB02
+  targets:
+  - id: CHEMBL2364672
+    name: Bacterial DNA-directed RNA polymerase
+    action: INHIBITOR
+  properties:
+    full-mwt: 822.95
+    mw-freebase: 822.95
+    alogp: 4.34
+    psa: 220.15
+    hba: 15
+    hbd: 6
+    rtb: 4
+    num-ro5-violations: 3
+    qed-weighted: 0.11
+    full-molformula: C43H58N4O12
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Rifampicin
@@ -81,10 +114,29 @@ pk-source:
 - **Compound ID:** `rifampicin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL374478](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL374478/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Antimycobacterial and the archetypal enzyme inducer — the reference case for PXR-mediated CYP3A4 induction.
+
+## Mechanism
+
+Bacterial DNA-directed RNA polymerase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1971
+- **ATC J04AB02:** ANTIINFECTIVES FOR SYSTEMIC USE › DRUGS FOR TREATMENT OF TUBERCULOSIS › Antibiotics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 822.95 | 4.34 | 220.15 | 6/15 | 3 | C43H58N4O12 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Bacterial DNA-directed RNA polymerase (CHEMBL2364672)|Bacterial DNA-directed RNA polymerase]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -103,6 +155,15 @@ Antimycobacterial and the archetypal enzyme inducer — the reference case for P
 | Bioavailability | 90–95 % | 90–95% (by mouth) |
 | Metabolism | hepatic | Liver and intestinal wall |
 | Excretion | - | Urine (~30%), faeces (60–65%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Rifabutin]] (Bacterial DNA-directed RNA polymerase), [[Rifaximin]] (Bacterial DNA-directed RNA polymerase)
+- **Same ATC subgroup:** [[Capreomycin]], [[Cycloserine]], [[Rifabutin]]
 
 ## Safety routing
 

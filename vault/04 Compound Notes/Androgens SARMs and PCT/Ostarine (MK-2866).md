@@ -10,15 +10,15 @@ cluster: Androgens SARMs and PCT
 group: sarms
 class: null
 subclass: null
-mechanism: null
+mechanism: Androgen Receptor modulator
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1738889
+chembl-max-phase: 3
 half-life:
   value: 14.0
   value-max: 24.0
@@ -29,7 +29,7 @@ protein-binding:
   unit: percent
   notes: null
 bioavailability:
-  value: 100.0
+  value: null
   value-max: null
   notes: 100% (rats)
 active-metabolites: []
@@ -65,6 +65,7 @@ tags:
 - group/sarms
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Enobosarm
@@ -72,6 +73,37 @@ pk-source:
   revision: 1375979110
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1738889
+  pref-name: ENOBOSARM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1871
+    name: Androgen receptor
+    action: MODULATOR
+  properties:
+    full-mwt: 389.33
+    mw-freebase: 389.33
+    alogp: 3.22
+    psa: 106.14
+    hba: 5
+    hbd: 2
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C19H14F3N3O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ostarine (MK-2866)
@@ -86,10 +118,27 @@ pk-source:
 - **Source group:** SARMs (`sarms`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Ostarine, MK-2866
+- **ChEMBL:** [CHEMBL1738889](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1738889/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Selective androgen receptor modulator (SARM) studied for muscle wasting, with milder side effects than steroids.
+
+## Mechanism
+
+Androgen Receptor modulator _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 389.33 | 3.22 | 106.14 | 2/5 | 0 | C19H14F3N3O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Androgen receptor (CHEMBL1871)|Androgen receptor]] - modulator · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -104,11 +153,20 @@ Selective androgen receptor modulator (SARM) studied for muscle wasting, with mi
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 14–24 h | 14–24 hours |
-| Bioavailability | 100 % | 100% (rats) |
+| Bioavailability | - | 100% (rats) |
 | Metabolism | hepatic | CYP3A4, UGT1A1, UGT2B7 |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Enobosarm glucuronide |
 | Excretion | mainly urinary | Feces (70%), urine (21–25%) (rats) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Anadrol (Oxymetholone)]] (Androgen receptor), [[Anavar (Oxandrolone)]] (Androgen receptor), [[Apalutamide (Erleada)]] (Androgen receptor), [[Apc-100]] (Androgen receptor), [[Bicalutamide (Casodex)]] (Androgen receptor), [[CB-03-01 (Clascoterone research formulation)]] (Androgen receptor), [[Clascoterone (Winlevi)]] (Androgen receptor), [[Cyproterone Acetate]] (Androgen receptor), [[Danazol]] (Androgen receptor), [[Darolutamide (Nubeqa)]] (Androgen receptor), [[Dianabol (Methandienone)]] (Androgen receptor), [[Dromostanolone Propionate]] (Androgen receptor)
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

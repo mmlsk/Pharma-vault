@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1037
+  pref-name: GUANADREL
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 213.28
+    mw-freebase: 213.28
+    alogp: 0.55
+    psa: 80.36
+    hba: 3
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.46
+    full-molformula: C10H19N3O2
 ---
 
 # Guanadrel
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `guanadrel-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1037](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1037/) · max phase 4
+- **ChEMBL:** [CHEMBL1037](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1037/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,15 @@ Norepinephrine transporter substrate; approved/marketed compound catalogued by C
 ## Mechanism
 
 Norepinephrine transporter substrate _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 213.28 | 0.55 | 80.36 | 3/3 | 0 | C10H19N3O2 |
 
 ## Evidence boundaries
 

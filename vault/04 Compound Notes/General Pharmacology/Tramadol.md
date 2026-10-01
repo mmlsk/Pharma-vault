@@ -15,10 +15,10 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1066
 chembl-max-phase: null
 half-life:
-  value: 1.4
+  value: 6.3
   value-max: null
   unit: h
   notes: 6.3 ± 1.4 h
@@ -63,6 +63,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tramadol
@@ -70,6 +71,34 @@ pk-source:
   revision: 1376793549
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1066
+  pref-name: (R,R)-TRAMADOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 263.38
+    mw-freebase: 263.38
+    alogp: 2.63
+    psa: 32.7
+    hba: 3
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.91
+    full-molformula: C16H25NO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tramadol
@@ -83,10 +112,19 @@ pk-source:
 - **Compound ID:** `tramadol-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1066](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1066/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 Weak opioid with substantial monoaminergic activity, marketed as low-risk and responsible for a great deal of serotonin syndrome and seizure.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 263.38 | 2.63 | 32.7 | 1/3 | 0 | C16H25NO2 |
 
 ## Evidence boundaries
 
@@ -100,13 +138,21 @@ Weak opioid with substantial monoaminergic activity, marketed as low-risk and re
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 1.4 h | 6.3 ± 1.4 h |
+| Elimination t½ | 6.3 h | 6.3 ± 1.4 h |
 | Protein binding | 20 % | 20% |
 | Bioavailability | 68 % | 68% (by mouth), 77% (rectal), 100% (IM) |
 | Metabolism | hepatic | Liver-mediated demethylation and glucuronidation via CYP2D6 & CYP3A4 |
 | CYP (metabolised by) | CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | O-desmethyltramadol; N-desmethyltramadol |
 | Excretion | mainly urinary | Urine (95%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared CYP substrate pool:** CYP2D6 (+83 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

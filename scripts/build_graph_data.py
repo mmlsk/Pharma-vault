@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build apps/graph-viewer/graph-data.js from the canonical catalogue.
 
-Inputs : data/processed/substances.json (+ data/processed/pk.json when present)
+Inputs : data/processed/substances.json (+ pk.json, chembl.json, pk-verification.json, links.json when present)
 Output : apps/graph-viewer/graph-data.js  ->  window.PV_GRAPH = {...}
 
 A .js wrapper (not .json) is used on purpose: the viewer must work when index.html is
@@ -26,7 +26,8 @@ PATHWAYS = ["Cholinergic Signaling", "Catecholamines and Attention", "Serotonerg
 CONCEPTS = ["Evidence Tiers", "Stack Redundancy", "Interaction Overlap"]
 CLUSTER_ORDER = ["Nootropics", "Metabolic and Incretin Agents", "Growth Hormone and Peptide Agents",
                  "Androgens SARMs and PCT", "Cardiovascular and Lipid Agents",
-                 "Longevity and Experimental Compounds", "Ancillary Supplements and Topicals", "General Pharmacology"]
+                 "Longevity and Experimental Compounds", "Ancillary Supplements and Topicals", "General Pharmacology",
+                 "Novel Psychoactive Substances"]
 # hub -> pathway / concept links drawn in the core of the graph
 CORE_EDGES = [
     ("Cholinergic Load", "Cholinergic Signaling"), ("Stimulant and Cardiovascular Load", "Catecholamines and Attention"),
@@ -48,6 +49,12 @@ def main() -> None:
     rows = json.loads((PROCESSED / "substances.json").read_text(encoding="utf-8"))
     pk_path = PROCESSED / "pk.json"
     pk = {p["compound_id"]: p for p in json.loads(pk_path.read_text(encoding="utf-8"))} if pk_path.exists() else {}
+
+    loadp = lambda n: json.loads((PROCESSED / n).read_text(encoding="utf-8")) if (PROCESSED / n).exists() else []
+    ch = {c["compound_id"]: c for c in loadp("chembl.json")}
+    ver = {v["compound_id"]: v for v in loadp("pk-verification.json")}
+    links = loadp("links.json") or {"targets": []}
+    t_index = {t["id"]: i for i, t in enumerate(links["targets"])}
 
     by_group: dict[str, list] = defaultdict(list)
     labels = {}
@@ -122,6 +129,36 @@ def main() -> None:
             item["f"] = f"04 Compound Notes/{r['cluster']}/{fname}"
             if p:
                 item["pk"] = compact_pk(p)
+            c = ch.get(r["compound_id"])
+            if c:
+                item["ch"] = item.get("ch") or c["identity"]["chembl-id"]
+                if "ph" not in item and c["max-phase"] is not None and c["max-phase"] >= 0:
+                    item["ph"] = c["max-phase"] if c["max-phase"] % 1 else int(c["max-phase"])
+                if "m" not in item and c["mechanisms"]:
+                    item["m"] = "; ".join(sorted({m["text"] for m in c["mechanisms"] if m["text"]}))
+                item["ids"] = c["identity"]["source"]
+                if c["molecule-type"]:
+                    item["mt"] = c["molecule-type"]
+                if c["atc"]:
+                    item["atc"] = [[a["code"], a["level4"] or a["level3"] or ""] for a in c["atc"]][:4]
+                if c["black-box-warning"]:
+                    item["bb"] = 1
+                if c["withdrawn"]:
+                    item["wd"] = 1
+                if c["first-approval"]:
+                    item["fa"] = c["first-approval"]
+                tg = sorted({t_index[m["target-chembl-id"]] for m in c["mechanisms"] if m["target-chembl-id"] in t_index})
+                if tg:
+                    item["tg"] = tg
+                pr = c["properties"]
+                if pr:
+                    item["pr"] = [pr.get("mw-freebase"), pr.get("alogp"), pr.get("psa"), pr.get("num-ro5-violations")]
+            v = ver.get(r["compound_id"])
+            if v and v.get("fields"):
+                item["v"] = {"s": v["status"], "u": v["url"], "et": v["effective-time"],
+                             "f": {k: [f["status"], (f.get("label-values-h") or f.get("label-values-pct") or [])[:6]] for k, f in v["fields"].items()}}
+            elif v:
+                item["v"] = {"s": v["status"]}
             compounds.append(item)
     # disambiguated filenames mirror generate_vault_notes.py
     seen = set()
@@ -141,8 +178,16 @@ def main() -> None:
                     "x": r1(gpos[g][0]), "y": r1(gpos[g][1]), "r": r1(radii[g]), "n": len(by_group[g])} for g in groups],
         "core": [{"name": n, "kind": k, "x": r1(x), "y": r1(y)} for n, (k, x, y) in core.items()],
         "coreEdges": [[idx[a], idx[b]] for a, b in CORE_EDGES],
+        "targets": [{"id": t["id"], "n": t["name"], "ty": t["type"]} for t in links["targets"]],
         "compounds": compounds,
     }
+    data["meta"].update({
+        "with_chembl": sum(1 for c in compounds if c.get("ch")),
+        "with_targets": sum(1 for c in compounds if c.get("tg")),
+        "pk_fda_consistent": sum(1 for c in compounds if (c.get("v") or {}).get("s") == "consistent"),
+        "pk_fda_discrepant": sum(1 for c in compounds if (c.get("v") or {}).get("s") == "discrepant"),
+        "curated_additions": sum(1 for r in rows if r["source"] == "curated-addition"),
+    })
     OUT.write_text("/* generated by scripts/build_graph_data.py - do not edit */\nwindow.PV_GRAPH = "
                    + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
     print(f"compounds={len(compounds)} with_pk={data['meta']['with_pk']} size_kb={OUT.stat().st_size // 1024}")

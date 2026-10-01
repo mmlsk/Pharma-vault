@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4297886
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297886
+  pref-name: ASUNERCEPT
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL5714
+    name: Tumor necrosis factor ligand superfamily member 6
+    action: BINDING AGENT
+  properties: {}
 ---
 
 # Asunercept
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `asunercept-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4297886](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297886/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -75,6 +92,14 @@ Asunercept is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is 
 ## Mechanism
 
 tumor necrosis factor ligand superfamily member 6 binding agent _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor ligand superfamily member 6 (CHEMBL5714)|Tumor necrosis factor ligand superfamily member 6]] - binding agent · SINGLE PROTEIN
 
 ## Evidence boundaries
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL501849
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: 13.0
@@ -63,6 +63,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Simeprevir
@@ -70,6 +71,35 @@ pk-source:
   revision: 1369127743
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL501849
+  pref-name: SIMEPREVIR
+  molecule-type: Small molecule
+  first-approval: 2013
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J05AP05
+  targets: []
+  properties:
+    full-mwt: 749.96
+    mw-freebase: 749.96
+    alogp: 5.25
+    psa: 156.89
+    hba: 10
+    hbd: 2
+    rtb: 8
+    num-ro5-violations: 2
+    qed-weighted: 0.29
+    full-molformula: C38H47N5O7S2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Simeprevir
@@ -83,10 +113,22 @@ pk-source:
 - **Compound ID:** `simeprevir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL501849](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL501849/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Second-wave hepatitis C protease inhibitor, superseded by pangenotypic regimens but historically important in the first interferon-free combinations.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2013
+- **Flags:** black-box warning
+- **ATC J05AP05:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Antivirals for treatment of HCV infections
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 749.96 | 5.25 | 156.89 | 2/10 | 2 | C38H47N5O7S2 |
 
 ## Evidence boundaries
 
@@ -106,6 +148,15 @@ Second-wave hepatitis C protease inhibitor, superseded by pangenotypic regimens 
 | Metabolism | hepatic | Liver (CYP3A, CYP2C8, CYP2C19) |
 | CYP (metabolised by) | CYP2C19, CYP2C8 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | Feces (91%), urine (<1%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Boceprevir]], [[Daclatasvir]], [[Elbasvir]], [[Grazoprevir]], [[Ribavirin]], [[Sofosbuvir]], [[Telaprevir]]
+- **Shared CYP substrate pool:** CYP2C19 (+43 others), CYP2C8 (+15 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

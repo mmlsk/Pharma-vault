@@ -8,15 +8,15 @@ cluster: Androgens SARMs and PCT
 group: pct
 class: null
 subclass: null
-mechanism: null
+mechanism: Estrogen receptor alpha agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL135
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,33 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL135
+  pref-name: ESTRADIOL
+  molecule-type: Small molecule
+  first-approval: 1975
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - G03CA03
+  targets:
+  - id: CHEMBL206
+    name: Estrogen receptor
+    action: AGONIST
+  properties:
+    full-mwt: 272.39
+    mw-freebase: 272.39
+    alogp: 3.61
+    psa: 40.46
+    hba: 2
+    hbd: 2
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.76
+    full-molformula: C18H24O2
 ---
 
 # Estradiol
@@ -67,10 +94,30 @@ tags:
 - **Compound ID:** `estradiol-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL135](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL135/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 The primary and most potent naturally occurring estrogen; used clinically in HRT, and the downstream hormone that aromatase produces from testosterone -- the target that AIs like anastrozole work to suppress.
+
+## Mechanism
+
+Estrogen receptor alpha agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1975
+- **Flags:** black-box warning
+- **ATC G03CA03:** GENITO URINARY SYSTEM AND SEX HORMONES › ESTROGENS › Natural and semisynthetic estrogens, plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 272.39 | 3.61 | 40.46 | 2/2 | 0 | C18H24O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Estrogen receptor (CHEMBL206)|Estrogen receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +127,13 @@ The primary and most potent naturally occurring estrogen; used clinically in HRT
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dienestrol]] (Estrogen receptor), [[Diethylstilbestrol]] (Estrogen receptor), [[Elacestrant]] (Estrogen receptor), [[Enclomiphene]] (Estrogen receptor), [[Estradiol Acetate]] (Estrogen receptor), [[Estradiol Cypionate]] (Estrogen receptor), [[Estradiol Valerate]] (Estrogen receptor), [[Estrone]] (Estrogen receptor), [[Ethinyl Estradiol]] (Estrogen receptor), [[Fulvestrant (Faslodex)]] (Estrogen receptor), [[Giredestrant]] (Estrogen receptor), [[Mestranol]] (Estrogen receptor)
+- **Same ATC subgroup:** [[Chlorotrianisene]], [[Estriol]], [[Estrogens, Conjugated]], [[Estrone]], [[Ethinyl Estradiol]]
 
 ## Safety routing
 

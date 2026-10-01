@@ -42,7 +42,12 @@ GROUP_TO_CLUSTER = {
     "analgesia": "General Pharmacology",
     "gi": "General Pharmacology",
     "oncology": "General Pharmacology",
+    # v3.2: curated-addition-only group (forensic NPS from the expansion backlog)
+    "nps": "Novel Psychoactive Substances",
 }
+
+# Groups that exist only through data/curated/additions.csv (not in the raw source).
+ADDED_GROUPS = {"nps": "Novel Psychoactive Substances (forensic NPS, curated addition)"}
 
 # Group-level *triage* labels only. They route a compound to a safety hub for
 # review; they are NOT compound-level clinical facts and must be replaced by
@@ -66,6 +71,7 @@ GROUP_RISK_TRIAGE = {
     "gi": ["needs-compound-review"],
     "derm": ["needs-compound-review"],
     "oncology": ["cytotoxicity"],
+    "nps": ["cns-activity", "identity-contamination", "evidence-limited"],
 }
 
 EVIDENCE_TIERS = [

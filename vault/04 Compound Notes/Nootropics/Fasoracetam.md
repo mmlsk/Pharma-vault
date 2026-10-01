@@ -15,20 +15,20 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2106179
+chembl-max-phase: 2
 half-life:
   value: 4.0
   value-max: 6.5
   unit: h
-  notes: 4–6.5hours
+  notes: 4–6.5 hours
 protein-binding:
   value: null
   unit: percent
   notes: null
 bioavailability:
-  value: 79.0
-  value-max: 97.0
+  value: null
+  value-max: null
   notes: 79–97% (animals)
 active-metabolites: []
 renal-clearance:
@@ -61,6 +61,7 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Fasoracetam
@@ -68,6 +69,34 @@ pk-source:
   revision: 1368840898
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2106179
+  pref-name: FASORACETAM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 196.25
+    mw-freebase: 196.25
+    alogp: 0.28
+    psa: 49.41
+    hba: 2
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.65
+    full-molformula: C10H16N2O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Fasoracetam
@@ -81,10 +110,19 @@ pk-source:
 - **Compound ID:** `fasoracetam-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL2106179](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106179/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Racetam investigated for ADHD in adolescents with glutamatergic gene variants; development did not complete.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 196.25 | 0.28 | 49.41 | 1/2 | 0 | C10H16N2O2 |
 
 ## Evidence boundaries
 
@@ -98,8 +136,10 @@ Racetam investigated for ADHD in adolescents with glutamatergic gene variants; d
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 4–6.5 h | 4–6.5hours |
-| Bioavailability | 79–97 % | 79–97% (animals) |
+| Elimination t½ | 4–6.5 h | 4–6.5 hours |
+| Bioavailability | - | 79–97% (animals) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

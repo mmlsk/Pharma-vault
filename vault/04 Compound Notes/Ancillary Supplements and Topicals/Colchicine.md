@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Tubulin inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL107
+chembl-max-phase: 4
 half-life:
   value: 26.6
   value-max: 31.2
@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Colchicine
@@ -69,6 +71,40 @@ pk-source:
   revision: 1374505164
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL107
+  pref-name: COLCHICINE
+  molecule-type: Small molecule
+  first-approval: 1961
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M04AC01
+  targets:
+  - id: CHEMBL2095182
+    name: Tubulin
+    action: INHIBITOR
+  properties:
+    full-mwt: 399.44
+    mw-freebase: 399.44
+    alogp: 2.87
+    psa: 83.09
+    hba: 6
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.83
+    full-molformula: C22H25NO6
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 5a0b4246-e7dd-29e5-e063-6294a90a2871
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5a0b4246-e7dd-29e5-e063-6294a90a2871
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Colchicine
@@ -82,10 +118,29 @@ pk-source:
 - **Compound ID:** `colchicine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL107](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL107/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Low-dose anti-inflammatory with a hard cardiovascular outcome trial behind it -- the only compound here targeting inflammation directly.
+
+## Mechanism
+
+Tubulin inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1961
+- **ATC M04AC01:** MUSCULO-SKELETAL SYSTEM › ANTIGOUT PREPARATIONS › Preparations with no effect on uric acid metabolism
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 399.44 | 2.87 | 83.09 | 1/6 | 0 | C22H25NO6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tubulin (CHEMBL2095182)|Tubulin]] - inhibitor · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -105,6 +160,18 @@ Low-dose anti-inflammatory with a hard cardiovascular outcome trial behind it --
 | Metabolism | hepatic | Metabolism, partly by CYP3A4 |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | Feces (65%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 5a0b4246…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5a0b4246-e7dd-29e5-e063-6294a90a2871), label version 20260827. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 4.4, 26.6, 31.2, 36, 240)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Belantamab Mafodotin]] (Tubulin), [[Brentuximab Vedotin]] (Tubulin), [[Davunetide]] (Tubulin)
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

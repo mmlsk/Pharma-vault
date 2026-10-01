@@ -11,15 +11,15 @@ cluster: Metabolic and Incretin Agents
 group: glp1
 class: null
 subclass: null
-mechanism: null
+mechanism: Gastric lipase inhibitor; Pancreatic lipase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL175247
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: 2.0
@@ -57,7 +57,7 @@ risk-domains: []
 group-risk-triage:
 - glucose-metabolism
 - gastrointestinal
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -65,6 +65,8 @@ tags:
 - group/glp1
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Orlistat
@@ -72,6 +74,43 @@ pk-source:
   revision: 1367132106
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL175247
+  pref-name: ORLISTAT
+  molecule-type: Small molecule
+  first-approval: 1998
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A08AB01
+  targets:
+  - id: CHEMBL1796
+    name: Gastric triacylglycerol lipase
+    action: INHIBITOR
+  - id: CHEMBL1812
+    name: Pancreatic triacylglycerol lipase
+    action: INHIBITOR
+  properties:
+    full-mwt: 495.75
+    mw-freebase: 495.75
+    alogp: 6.88
+    psa: 81.7
+    hba: 5
+    hbd: 1
+    rtb: 23
+    num-ro5-violations: 1
+    qed-weighted: 0.09
+    full-molformula: C29H53NO5
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 6240792b-9224-2d10-e053-2a91aa0a2c3e
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6240792b-9224-2d10-e053-2a91aa0a2c3e
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Orlistat (Xenical/Alli)
@@ -86,10 +125,30 @@ pk-source:
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
 - **Aliases:** Orlistat, Xenical, Alli
+- **ChEMBL:** [CHEMBL175247](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL175247/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Gastrointestinal lipase inhibitor that reduces dietary-fat absorption; produces modest weight loss and can impair fat-soluble vitamin absorption.
+
+## Mechanism
+
+Gastric lipase inhibitor; Pancreatic lipase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1998
+- **ATC A08AB01:** ALIMENTARY TRACT AND METABOLISM › ANTIOBESITY PREPARATIONS, EXCL. DIET PRODUCTS › Peripherally acting antiobesity products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 495.75 | 6.88 | 81.7 | 1/5 | 1 | C29H53NO5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Gastric triacylglycerol lipase (CHEMBL1796)|Gastric triacylglycerol lipase]] - inhibitor · SINGLE PROTEIN
+- [[Pancreatic triacylglycerol lipase (CHEMBL1812)|Pancreatic triacylglycerol lipase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -108,6 +167,17 @@ Gastrointestinal lipase inhibitor that reduces dietary-fat absorption; produces 
 | Bioavailability | - | Negligible |
 | Metabolism | - | In the GI tract |
 | Excretion | mainly non-renal | Fecal |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 6240792b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6240792b-9224-2d10-e053-2a91aa0a2c3e), label version 20260109. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1, 2, 3, 13.5)
+> - protein-binding: consistent (label values: 99)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Cetilistat]] (Gastric triacylglycerol lipase; Pancreatic triacylglycerol lipase)
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1746
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1469
+  pref-name: SODIUM PHENYLBUTYRATE
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A16AX03
+  targets: []
+  properties:
+    full-mwt: 164.2
+    mw-freebase: 164.2
+    alogp: 2.09
+    psa: 37.3
+    hba: 1
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.74
+    full-molformula: C10H12O2
 ---
 
 # Sodium Phenylbutyrate
@@ -67,10 +91,22 @@ tags:
 - **Compound ID:** `sodium-phenylbutyrate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1746](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1746/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Nitrogen-scavenging drug for urea-cycle disorders; high sodium load and gastrointestinal effects require supervision.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **Flags:** prodrug
+- **ATC A16AX03:** ALIMENTARY TRACT AND METABOLISM › OTHER ALIMENTARY TRACT AND METABOLISM PRODUCTS › Various alimentary tract and metabolism products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 164.2 | 2.09 | 37.3 | 1/1 | 0 | C10H12O2 |
 
 ## Evidence boundaries
 
@@ -80,6 +116,12 @@ Nitrogen-scavenging drug for urea-cycle disorders; high sodium load and gastroin
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alpha-Lipoic Acid (ALA)]], [[Eliglustat]], [[Glycerol Phenylbutyrate]], [[Lonafarnib (Zokinvy)]], [[Migalastat]], [[Miglustat]], [[Nitisinone]], [[Teduglutide]], [[Trientine]]
 
 ## Safety routing
 

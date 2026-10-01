@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Glucocorticoid receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4068611
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4068611
+  pref-name: RELACORILANT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2034
+    name: Glucocorticoid receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 586.57
+    mw-freebase: 586.57
+    alogp: 4.06
+    psa: 102.98
+    hba: 8
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.26
+    full-molformula: C27H22F4N6O3S
 ---
 
 # Relacorilant
@@ -67,10 +93,27 @@ tags:
 - **Compound ID:** `relacorilant-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4068611](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4068611/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Selective glucocorticoid-receptor modulator developed for hypercortisolism without progesterone antagonism.
+
+## Mechanism
+
+Glucocorticoid receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 586.57 | 4.06 | 102.98 | 0/8 | 1 | C27H22F4N6O3S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucocorticoid receptor (CHEMBL2034)|Glucocorticoid receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +123,12 @@ Selective glucocorticoid-receptor modulator developed for hypercortisolism witho
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor)
 
 ## Safety routing
 

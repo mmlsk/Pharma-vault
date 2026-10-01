@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1078261
+chembl-max-phase: 4
 half-life:
   value: 20.1
   value-max: null
@@ -56,6 +56,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Propiverine
@@ -63,6 +65,35 @@ pk-source:
   revision: 1332213685
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1078261
+  pref-name: PROPIVERINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04BD06
+  targets: []
+  properties:
+    full-mwt: 367.49
+    mw-freebase: 367.49
+    alogp: 3.99
+    psa: 38.77
+    hba: 4
+    hbd: 0
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C23H29NO3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Propiverine
@@ -76,10 +107,20 @@ pk-source:
 - **Compound ID:** `propiverine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1078261](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1078261/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Antagonises muscarinic receptors; peripheral selectivity determines how much dry mouth, constipation and central anticholinergic burden an agent carries.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC G04BD06:** GENITO URINARY SYSTEM AND SEX HORMONES › UROLOGICALS › Drugs for urinary frequency and incontinence
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 367.49 | 3.99 | 38.77 | 0/4 | 0 | C23H29NO3 |
 
 ## Evidence boundaries
 
@@ -94,6 +135,14 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 20.1 h | 20.1 h |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Darifenacin]], [[Fesoterodine]], [[Imidafenacin]], [[Oxybutynin]], [[Solifenacin]], [[Tolterodine]]
 
 ## Safety routing
 

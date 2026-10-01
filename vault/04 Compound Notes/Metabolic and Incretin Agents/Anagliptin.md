@@ -8,15 +8,15 @@ cluster: Metabolic and Incretin Agents
 group: glp1
 class: null
 subclass: null
-mechanism: null
+mechanism: Dipeptidyl peptidase IV inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1929396
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,32 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1929396
+  pref-name: ANAGLIPTIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL284
+    name: Dipeptidyl peptidase 4
+    action: INHIBITOR
+  properties:
+    full-mwt: 383.46
+    mw-freebase: 383.46
+    alogp: 0.65
+    psa: 115.42
+    hba: 7
+    hbd: 2
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.76
+    full-molformula: C19H25N7O2
 ---
 
 # Anagliptin
@@ -68,10 +94,27 @@ tags:
 - **Compound ID:** `anagliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL1929396](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1929396/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits DPP-4 to prolong endogenous incretin signaling and glucose-dependent insulin release.
+
+## Mechanism
+
+Dipeptidyl peptidase IV inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 383.46 | 0.65 | 115.42 | 2/7 | 0 | C19H25N7O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Dipeptidyl peptidase 4 (CHEMBL284)|Dipeptidyl peptidase 4]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -81,6 +124,12 @@ Inhibits DPP-4 to prolong endogenous incretin signaling and glucose-dependent in
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Bisegliptin]] (Dipeptidyl peptidase 4), [[Dutogliptin]] (Dipeptidyl peptidase 4), [[Evogliptin]] (Dipeptidyl peptidase 4), [[Gemigliptin]] (Dipeptidyl peptidase 4), [[Gosogliptin]] (Dipeptidyl peptidase 4), [[Linagliptin (Tradjenta)]] (Dipeptidyl peptidase 4), [[Omarigliptin]] (Dipeptidyl peptidase 4), [[Teneligliptin]] (Dipeptidyl peptidase 4), [[Vildagliptin]] (Dipeptidyl peptidase 4)
 
 ## Safety routing
 

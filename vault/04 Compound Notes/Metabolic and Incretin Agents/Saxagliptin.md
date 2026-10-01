@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL385517
+chembl-max-phase: 4
 half-life:
   value: 2.5
   value-max: null
@@ -56,7 +56,7 @@ risk-domains: []
 group-risk-triage:
 - glucose-metabolism
 - gastrointestinal
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,9 @@ tags:
 - group/glp1
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Saxagliptin
@@ -71,6 +74,35 @@ pk-source:
   revision: 1329368130
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL385517
+  pref-name: SAXAGLIPTIN ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 2009
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 315.42
+    mw-freebase: 315.42
+    alogp: 1.16
+    psa: 90.35
+    hba: 4
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C18H25N3O2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: e286ffd4-c598-47fb-af06-2e15f7e6f99f
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e286ffd4-c598-47fb-af06-2e15f7e6f99f
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Saxagliptin
@@ -84,10 +116,20 @@ pk-source:
 - **Compound ID:** `saxagliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL385517](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL385517/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits DPP-4 to prolong endogenous incretin signaling and glucose-dependent insulin release.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2009
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 315.42 | 1.16 | 90.35 | 2/4 | 0 | C18H25N3O2 |
 
 ## Evidence boundaries
 
@@ -107,6 +149,17 @@ Inhibits DPP-4 to prolong endogenous incretin signaling and glucose-dependent in
 | Metabolism | hepatic | Liver (CYP3A4 and CYP3A5) |
 | CYP (metabolised by) | CYP3A4, CYP3A5 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | 22% (Bile duct), 75% (Urine) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set e286ffd4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e286ffd4-c598-47fb-af06-2e15f7e6f99f), label version 20260127. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2.5, 3.1)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Saxagliptin Anhydrous]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others), CYP3A5 (+13 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

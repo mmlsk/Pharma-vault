@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Dexbrompheniramine
@@ -63,6 +64,36 @@ pk-source:
   revision: 1346476817
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201287
+  pref-name: DEXBROMPHENIRAMINE
+  molecule-type: Small molecule
+  first-approval: 1963
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AB06
+  - R06AB56
+  targets: []
+  properties:
+    full-mwt: 319.25
+    mw-freebase: 319.25
+    alogp: 3.93
+    psa: 16.13
+    hba: 2
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.83
+    full-molformula: C16H19BrN2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Dexbrompheniramine
@@ -76,7 +107,7 @@ pk-source:
 - **Compound ID:** `dexbrompheniramine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201287](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201287/) · max phase 4
+- **ChEMBL:** [CHEMBL1201287](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201287/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +116,17 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1963
+- **ATC R06AB06:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Substituted alkylamines
+- **ATC R06AB56:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Substituted alkylamines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 319.25 | 3.93 | 16.13 | 0/2 | 0 | C16H19BrN2 |
 
 ## Evidence boundaries
 
@@ -99,6 +141,14 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 25 h | 25 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Brompheniramine]], [[Chlorpheniramine]], [[Dexchlorpheniramine]], [[Dimethindene]], [[Pheniramine]]
 
 ## Safety routing
 

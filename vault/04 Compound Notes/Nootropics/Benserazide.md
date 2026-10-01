@@ -8,15 +8,15 @@ cluster: Nootropics
 group: neuropsych
 class: null
 subclass: null
-mechanism: null
+mechanism: DOPA decarboxylase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1096979
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -55,6 +55,31 @@ tags:
 - source-derived
 - group/neuropsych
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1096979
+  pref-name: BENSERAZIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1843
+    name: Aromatic-L-amino-acid decarboxylase
+    action: INHIBITOR
+  properties:
+    full-mwt: 257.25
+    mw-freebase: 257.25
+    alogp: -1.76
+    psa: 148.07
+    hba: 7
+    hbd: 7
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.24
+    full-molformula: C10H15N3O5
 ---
 
 # Benserazide
@@ -68,10 +93,27 @@ tags:
 - **Compound ID:** `benserazide-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1096979](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1096979/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 The peripheral decarboxylase inhibitor used with levodopa outside North America, pharmacologically interchangeable with carbidopa at the doses used in co-formulation.
+
+## Mechanism
+
+DOPA decarboxylase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 257.25 | -1.76 | 148.07 | 7/7 | 1 | C10H15N3O5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Aromatic-L-amino-acid decarboxylase (CHEMBL1843)|Aromatic-L-amino-acid decarboxylase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

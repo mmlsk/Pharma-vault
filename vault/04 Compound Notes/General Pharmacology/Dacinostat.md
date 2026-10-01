@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL356066
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL356066
+  pref-name: DACINOSTAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 379.46
+    mw-freebase: 379.46
+    alogp: 2.72
+    psa: 88.59
+    hba: 4
+    hbd: 4
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.26
+    full-molformula: C22H25N3O3
 ---
 
 # Dacinostat
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `dacinostat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL356066](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL356066/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Dacinostat is a named HDAC research compound with a curated biochemical result against HDAC3. ChEMBL records IC50 0.4 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 379.46 | 2.72 | 88.59 | 4/4 | 0 | C22H25N3O3 |
 
 ## Evidence boundaries
 

@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201173
+  pref-name: MEDRYSONE
+  molecule-type: Small molecule
+  first-approval: 1969
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - S01BA08
+  targets:
+  - id: CHEMBL2034
+    name: Glucocorticoid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 344.5
+    mw-freebase: 344.5
+    alogp: 3.94
+    psa: 54.37
+    hba: 3
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.78
+    full-molformula: C22H32O3
 ---
 
 # Medrysone
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `medrysone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201173](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201173/) · max phase 4
+- **ChEMBL:** [CHEMBL1201173](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201173/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +103,20 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1969
+- **ATC S01BA08:** SENSORY ORGANS › ANTIINFLAMMATORY AGENTS › Corticosteroids, plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 344.5 | 3.94 | 54.37 | 1/3 | 0 | C22H32O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucocorticoid receptor (CHEMBL2034)|Glucocorticoid receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +125,13 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor)
+- **Same ATC subgroup:** [[Alclometasone Dipropionate]], [[Betamethasone]], [[Cortisone Acetate]], [[Desonide]], [[Dexamethasone]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluorometholone]], [[Hydrocortisone (Cortef)]], [[Loteprednol Etabonate]], [[Loteprednol Etabonate (loteprednol-etabonate-compound)|Loteprednol Etabonate]], [[Prednisolone]]
 
 ## Safety routing
 

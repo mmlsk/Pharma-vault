@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: TNF-alpha inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2107911
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2107911
+  pref-name: ONERCEPT
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1825
+    name: Tumor necrosis factor
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Onercept
@@ -67,10 +83,23 @@ tags:
 - **Compound ID:** `onercept-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2107911](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107911/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Neutralizes TNF or its receptor signaling to suppress systemic inflammation, increasing susceptibility to selected infections.
+
+## Mechanism
+
+TNF-alpha inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor (CHEMBL1825)|Tumor necrosis factor]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +109,12 @@ Neutralizes TNF or its receptor signaling to suppress systemic inflammation, inc
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Adalimumab]] (Tumor necrosis factor), [[Afelimomab]] (Tumor necrosis factor), [[Certolizumab Pegol]] (Tumor necrosis factor), [[Certolizumab Pegol]] (Tumor necrosis factor), [[Etanercept]] (Tumor necrosis factor), [[Golimumab]] (Tumor necrosis factor), [[Infliximab]] (Tumor necrosis factor), [[Infliximab-abda]] (Tumor necrosis factor), [[Ozoralizumab]] (Tumor necrosis factor)
 
 ## Safety routing
 

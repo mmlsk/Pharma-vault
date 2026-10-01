@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: FK506-binding protein 1A inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1908360
+chembl-max-phase: 4
 half-life:
   value: 30.0
   value-max: null
@@ -48,7 +48,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -56,6 +56,8 @@ tags:
 - group/immunology
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Everolimus
@@ -63,6 +65,40 @@ pk-source:
   revision: 1369115271
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1908360
+  pref-name: EVEROLIMUS
+  molecule-type: Small molecule
+  first-approval: 2009
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L01EG02
+  - L04AH02
+  targets:
+  - id: CHEMBL1902
+    name: Peptidyl-prolyl cis-trans isomerase FKBP1A
+    action: INHIBITOR
+  properties:
+    full-mwt: 958.24
+    mw-freebase: 958.24
+    alogp: 6.2
+    psa: 204.66
+    hba: 14
+    hbd: 3
+    rtb: 9
+    num-ro5-violations: 3
+    qed-weighted: 0.13
+    full-molformula: C53H83NO14
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 5aaf2fb7-93f6-40d6-941a-9583a3794ce7
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5aaf2fb7-93f6-40d6-941a-9583a3794ce7
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Everolimus
@@ -76,10 +112,31 @@ pk-source:
 - **Compound ID:** `everolimus-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1908360](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1908360/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Hydroxyethyl derivative of sirolimus with a shorter half-life, used in transplantation, oncology and tuberous sclerosis.
+
+## Mechanism
+
+FK506-binding protein 1A inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2009
+- **Flags:** black-box warning
+- **ATC L01EG02:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › PROTEIN KINASE INHIBITORS › Mammalian target of rapamycin (mTOR) kinase inhibitors
+- **ATC L04AH02:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Mammalian target of rapamycin (mTOR) kinase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 958.24 | 6.2 | 204.66 | 3/14 | 3 | C53H83NO14 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Peptidyl-prolyl cis-trans isomerase FKBP1A (CHEMBL1902)|Peptidyl-prolyl cis-trans isomerase FKBP1A]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -94,6 +151,17 @@ Hydroxyethyl derivative of sirolimus with a shorter half-life, used in transplan
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 30 h | ~30 hours |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 5aaf2fb7…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5aaf2fb7-93f6-40d6-941a-9583a3794ce7), label version 20260814. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 30)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Pimecrolimus]] (Peptidyl-prolyl cis-trans isomerase FKBP1A), [[Rapamycin (Sirolimus)]] (Peptidyl-prolyl cis-trans isomerase FKBP1A), [[Sirolimus (Rapamycin)]] (Peptidyl-prolyl cis-trans isomerase FKBP1A)
+- **Same ATC subgroup:** [[Rapamycin (Sirolimus)]], [[Sirolimus (Rapamycin)]]
 
 ## Safety routing
 

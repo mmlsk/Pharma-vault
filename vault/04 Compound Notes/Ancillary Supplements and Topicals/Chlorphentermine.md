@@ -21,7 +21,7 @@ half-life:
   value: 40.0
   value-max: null
   unit: h
-  notes: 40hours–5days
+  notes: 40 hours–5 days
 protein-binding:
   value: null
   unit: percent
@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Chlorphentermine
@@ -63,6 +64,34 @@ pk-source:
   revision: 1351775821
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201269
+  pref-name: CHLORPHENTERMINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 183.68
+    mw-freebase: 183.68
+    alogp: 2.62
+    psa: 26.02
+    hba: 1
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.75
+    full-molformula: C10H14ClN
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Chlorphentermine
@@ -76,7 +105,7 @@ pk-source:
 - **Compound ID:** `chlorphentermine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201269](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201269/) · max phase 4
+- **ChEMBL:** [CHEMBL1201269](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201269/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +114,15 @@ Serotonin transporter substrate; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Serotonin transporter substrate _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 183.68 | 2.62 | 26.02 | 1/1 | 0 | C10H14ClN |
 
 ## Evidence boundaries
 
@@ -98,7 +136,9 @@ Serotonin transporter substrate _(ChEMBL curated mechanism, as quoted by the sou
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 40 h | 40hours–5days |
+| Elimination t½ | 40 h | 40 hours–5 days |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

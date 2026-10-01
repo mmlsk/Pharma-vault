@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297914
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -55,6 +55,19 @@ tags:
 - source-derived
 - group/peptides
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297914
+  pref-name: TALDEFGROBEP ALFA
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Taldefgrobep Alfa
@@ -68,10 +81,15 @@ tags:
 - **Compound ID:** `taldefgrobep-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL4297914](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297914/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Investigational myostatin-targeting fusion protein studied in neuromuscular disease.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
 
 ## Evidence boundaries
 

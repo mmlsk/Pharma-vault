@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Complement C1s inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297832
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297832
+  pref-name: SUTIMLIMAB
+  molecule-type: Antibody
+  first-approval: 2022
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AJ04
+  targets:
+  - id: CHEMBL3913
+    name: Complement C1s subcomponent
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Sutimlimab
@@ -67,10 +84,25 @@ tags:
 - **Compound ID:** `sutimlimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4297832](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297832/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits a step of the complement cascade; blocking terminal complement raises encapsulated-organism risk and requires meningococcal vaccination; C1s inhibitor.
+
+## Mechanism
+
+Complement C1s inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2022
+- **ATC L04AJ04:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Complement inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Complement C1s subcomponent (CHEMBL3913)|Complement C1s subcomponent]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +112,12 @@ Inhibits a step of the complement cascade; blocking terminal complement raises e
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Avacopan]], [[Crovalimab]], [[Danicopan]], [[Eculizumab]], [[Iptacopan]], [[Pegcetacoplan]], [[Ravulizumab]], [[Zilucoplan]]
 
 ## Safety routing
 

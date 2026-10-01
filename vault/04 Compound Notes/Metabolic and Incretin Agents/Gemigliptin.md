@@ -8,15 +8,15 @@ cluster: Metabolic and Incretin Agents
 group: glp1
 class: null
 subclass: null
-mechanism: null
+mechanism: Dipeptidyl peptidase IV inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3707235
+chembl-max-phase: 3
 half-life:
   value: null
   value-max: null
@@ -27,7 +27,7 @@ protein-binding:
   unit: percent
   notes: null
 bioavailability:
-  value: 94.0
+  value: null
   value-max: null
   notes: 94% (rat), 73% (dog), 26% (monkey)
 active-metabolites: []
@@ -61,6 +61,7 @@ tags:
 - group/glp1
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Gemigliptin
@@ -68,6 +69,31 @@ pk-source:
   revision: 1371811053
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3707235
+  pref-name: GEMIGLIPTIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A10BH06
+  targets:
+  - id: CHEMBL284
+    name: Dipeptidyl peptidase 4
+    action: INHIBITOR
+  properties:
+    full-mwt: 489.37
+    mw-freebase: 489.37
+    alogp: 2.37
+    psa: 92.42
+    hba: 5
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.66
+    full-molformula: C18H19F8N5O2
 ---
 
 # Gemigliptin
@@ -81,10 +107,28 @@ pk-source:
 - **Compound ID:** `gemigliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL3707235](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707235/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits DPP-4 to prolong endogenous incretin signaling and glucose-dependent insulin release.
+
+## Mechanism
+
+Dipeptidyl peptidase IV inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A10BH06:** ALIMENTARY TRACT AND METABOLISM › BLOOD GLUCOSE LOWERING DRUGS, EXCL. INSULINS › Dipeptidyl peptidase 4 (DPP-4) inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 489.37 | 2.37 | 92.42 | 1/5 | 0 | C18H19F8N5O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Dipeptidyl peptidase 4 (CHEMBL284)|Dipeptidyl peptidase 4]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -99,7 +143,14 @@ Inhibits DPP-4 to prolong endogenous incretin signaling and glucose-dependent in
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | - | 3.6 h (rat), 5.2 h (dog), 5.4 h (monkey) [not stored as a number: non-human or sub-minute data] |
-| Bioavailability | 94 % | 94% (rat), 73% (dog), 26% (monkey) |
+| Bioavailability | - | 94% (rat), 73% (dog), 26% (monkey) |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Anagliptin]] (Dipeptidyl peptidase 4), [[Bisegliptin]] (Dipeptidyl peptidase 4), [[Dutogliptin]] (Dipeptidyl peptidase 4), [[Evogliptin]] (Dipeptidyl peptidase 4), [[Gosogliptin]] (Dipeptidyl peptidase 4), [[Linagliptin (Tradjenta)]] (Dipeptidyl peptidase 4), [[Omarigliptin]] (Dipeptidyl peptidase 4), [[Teneligliptin]] (Dipeptidyl peptidase 4), [[Vildagliptin]] (Dipeptidyl peptidase 4)
+- **Same ATC subgroup:** [[Alogliptin]], [[Evogliptin]], [[Linagliptin (Tradjenta)]], [[Sitagliptin (Januvia)]], [[Teneligliptin]], [[Vildagliptin]]
 
 ## Safety routing
 

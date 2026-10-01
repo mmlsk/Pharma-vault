@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Levosalbutamol
@@ -63,6 +64,34 @@ pk-source:
   revision: 1328964207
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1002
+  pref-name: LEVOSALBUTAMOL
+  molecule-type: Small molecule
+  first-approval: 1999
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 239.31
+    mw-freebase: 239.31
+    alogp: 1.31
+    psa: 72.72
+    hba: 4
+    hbd: 4
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.64
+    full-molformula: C13H21NO3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Levosalbutamol
@@ -76,7 +105,7 @@ pk-source:
 - **Compound ID:** `levosalbutamol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1002](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1002/) · max phase 4
+- **ChEMBL:** [CHEMBL1002](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1002/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +114,16 @@ Beta-2 adrenergic receptor agonist; approved/marketed compound catalogued by ChE
 ## Mechanism
 
 Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1999
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 239.31 | 1.31 | 72.72 | 4/4 | 0 | C13H21NO3 |
 
 ## Evidence boundaries
 
@@ -101,6 +140,8 @@ Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the 
 | Elimination t½ | 3.3–4 h | 3.3–4 hours |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Urinary |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

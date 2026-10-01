@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Benzphetamine
@@ -64,6 +65,34 @@ pk-source:
   revision: 1351586670
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL3545985
+  pref-name: BENZPHETAMINE
+  molecule-type: Small molecule
+  first-approval: 1960
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 239.36
+    mw-freebase: 239.36
+    alogp: 3.75
+    psa: 3.24
+    hba: 1
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.77
+    full-molformula: C17H21N
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Benzphetamine
@@ -77,7 +106,7 @@ pk-source:
 - **Compound ID:** `benzphetamine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3545985](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545985/) · max phase 4
+- **ChEMBL:** [CHEMBL3545985](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545985/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +115,15 @@ Norepinephrine transporter releasing agent; approved/marketed compound catalogue
 ## Mechanism
 
 Norepinephrine transporter releasing agent _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1960
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 239.36 | 3.75 | 3.24 | 0/1 | 0 | C17H21N |
 
 ## Evidence boundaries
 
@@ -102,6 +140,8 @@ Norepinephrine transporter releasing agent _(ChEMBL curated mechanism, as quoted
 | Elimination t½ | 4–6 h | 4–6 hours |
 | Protein binding | 75–99 % | 75–99% |
 | Metabolites | - | • Dextromethamphetamine; • Dextroamphetamine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

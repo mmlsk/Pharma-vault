@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1598608
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -59,6 +59,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Azasetron
@@ -66,6 +67,27 @@ pk-source:
   revision: 1369401441
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1598608
+  pref-name: AZASETRON
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 349.82
+    mw-freebase: 349.82
+    alogp: 1.52
+    psa: 61.88
+    hba: 4
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.88
+    full-molformula: C17H20ClN3O3
 ---
 
 # Azasetron
@@ -79,10 +101,19 @@ pk-source:
 - **Compound ID:** `azasetron-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1598608](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1598608/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Antagonises 5-HT3 receptors on vagal afferents and in the area postrema; QT effects vary by agent; approved in Japan.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 349.82 | 1.52 | 61.88 | 1/4 | 0 | C17H20ClN3O3 |
 
 ## Evidence boundaries
 

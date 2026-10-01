@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: G protein-coupled receptor 44 antagonist; Thromboxane A2 receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL361812
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,34 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL361812
+  pref-name: RAMATROBAN
+  molecule-type: Small molecule
+  first-approval: 2000
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL5071
+    name: Prostaglandin D2 receptor 2
+    action: ANTAGONIST
+  - id: CHEMBL2069
+    name: Thromboxane A2 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 416.47
+    mw-freebase: 416.47
+    alogp: 3.09
+    psa: 88.4
+    hba: 4
+    hbd: 2
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.65
+    full-molformula: C21H21FN2O4S
 ---
 
 # Ramatroban
@@ -67,10 +95,29 @@ tags:
 - **Compound ID:** `ramatroban-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL361812](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL361812/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Dual thromboxane TP and CRTH2 antagonist marketed in Japan for allergic rhinitis.
+
+## Mechanism
+
+G protein-coupled receptor 44 antagonist; Thromboxane A2 receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2000
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 416.47 | 3.09 | 88.4 | 2/4 | 0 | C21H21FN2O4S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prostaglandin D2 receptor 2 (CHEMBL5071)|Prostaglandin D2 receptor 2]] - antagonist · SINGLE PROTEIN
+- [[Thromboxane A2 receptor (CHEMBL2069)|Thromboxane A2 receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 

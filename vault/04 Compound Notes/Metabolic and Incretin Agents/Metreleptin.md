@@ -8,15 +8,15 @@ cluster: Metabolic and Incretin Agents
 group: glp1
 class: null
 subclass: null
-mechanism: null
+mechanism: Leptin receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2107857
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,22 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2107857
+  pref-name: METRELEPTIN
+  molecule-type: Protein
+  first-approval: 2014
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - A16AA07
+  targets:
+  - id: CHEMBL5913
+    name: Leptin receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Metreleptin
@@ -68,10 +84,26 @@ tags:
 - **Compound ID:** `metreleptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL2107857](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107857/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Recombinant leptin approved for generalized lipodystrophy, not routine obesity treatment.
+
+## Mechanism
+
+Leptin receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2014
+- **Flags:** black-box warning
+- **ATC A16AA07:** ALIMENTARY TRACT AND METABOLISM › OTHER ALIMENTARY TRACT AND METABOLISM PRODUCTS › Amino acids and derivatives
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Leptin receptor (CHEMBL5913)|Leptin receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -81,6 +113,13 @@ Recombinant leptin approved for generalized lipodystrophy, not routine obesity t
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Mibavademab]] (Leptin receptor)
+- **Same ATC subgroup:** [[Betaine (TMG)]], [[Betaine Anhydrous (TMG)]], [[Carglumic Acid]], [[SAMe (S-adenosylmethionine)]]
 
 ## Safety routing
 

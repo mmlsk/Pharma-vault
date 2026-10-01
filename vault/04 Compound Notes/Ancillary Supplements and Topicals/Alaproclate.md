@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL36591
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL36591
+  pref-name: ALAPROCLATE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N06AB07
+  targets: []
+  properties:
+    full-mwt: 255.75
+    mw-freebase: 255.75
+    alogp: 2.55
+    psa: 52.32
+    hba: 3
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.84
+    full-molformula: C13H18ClNO2
 ---
 
 # Alaproclate
@@ -67,10 +90,20 @@ tags:
 - **Compound ID:** `alaproclate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL36591](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL36591/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits serotonin reuptake through SERT; benefits, activation, sexual effects, and withdrawal profiles differ by agent.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC N06AB07:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Selective serotonin reuptake inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 255.75 | 2.55 | 52.32 | 1/3 | 0 | C13H18ClNO2 |
 
 ## Evidence boundaries
 
@@ -80,6 +113,12 @@ Inhibits serotonin reuptake through SERT; benefits, activation, sexual effects, 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Citalopram]], [[Escitalopram (Lexapro)]], [[Fluoxetine (Prozac)]], [[Fluvoxamine]], [[Paroxetine]], [[Sertraline (Zoloft)]], [[Zimelidine]]
 
 ## Safety routing
 

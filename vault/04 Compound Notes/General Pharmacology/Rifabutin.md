@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Bacterial DNA-directed RNA polymerase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL444633
+chembl-max-phase: 4
 half-life:
   value: 28.0
   value-max: 62.0
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Rifabutin
@@ -68,6 +70,40 @@ pk-source:
   revision: 1369532616
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL444633
+  pref-name: RIFABUTIN
+  molecule-type: Small molecule
+  first-approval: 1992
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J04AB04
+  targets:
+  - id: CHEMBL2364672
+    name: Bacterial DNA-directed RNA polymerase
+    action: INHIBITOR
+  properties:
+    full-mwt: 847.02
+    mw-freebase: 847.02
+    alogp: 4.62
+    psa: 205.55
+    hba: 14
+    hbd: 5
+    rtb: 4
+    num-ro5-violations: 2
+    qed-weighted: 0.26
+    full-molformula: C46H62N4O11
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 25a60937-cbbe-4a50-994f-2ce15203f589
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=25a60937-cbbe-4a50-994f-2ce15203f589
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Rifabutin
@@ -81,10 +117,29 @@ pk-source:
 - **Compound ID:** `rifabutin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL444633](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL444633/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Rifamycin preferred over rifampicin in HIV coinfection because it induces CYP3A4 far less, at the cost of uveitis at higher doses.
+
+## Mechanism
+
+Bacterial DNA-directed RNA polymerase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1992
+- **ATC J04AB04:** ANTIINFECTIVES FOR SYSTEMIC USE › DRUGS FOR TREATMENT OF TUBERCULOSIS › Antibiotics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 847.02 | 4.62 | 205.55 | 5/14 | 2 | C46H62N4O11 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Bacterial DNA-directed RNA polymerase (CHEMBL2364672)|Bacterial DNA-directed RNA polymerase]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -103,6 +158,18 @@ Rifamycin preferred over rifampicin in HIV coinfection because it induces CYP3A4
 | Bioavailability | 85 % | 85% |
 | Metabolism | hepatic | Liver |
 | Excretion | - | Kidney and fecal |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 25a60937…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=25a60937-cbbe-4a50-994f-2ce15203f589), label version 20260901. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 16, 69)
+> - protein-binding: consistent (label values: 85)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Rifampicin]] (Bacterial DNA-directed RNA polymerase), [[Rifaximin]] (Bacterial DNA-directed RNA polymerase)
+- **Same ATC subgroup:** [[Capreomycin]], [[Cycloserine]], [[Rifampicin]]
 
 ## Safety routing
 

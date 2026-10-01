@@ -8,15 +8,15 @@ cluster: Cardiovascular and Lipid Agents
 group: cardio
 class: null
 subclass: null
-mechanism: null
+mechanism: Heparin inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201651
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/cardio
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1201651
+  pref-name: PROTAMINE SULFATE
+  molecule-type: Unknown
+  first-approval: 1969
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - V03AB14
+  targets:
+  - id: CHEMBL2364712
+    name: Heparin
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Protamine Sulfate
@@ -67,10 +84,26 @@ tags:
 - **Compound ID:** `protamine-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
+- **ChEMBL:** [CHEMBL1201651](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201651/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Heparin antidote, a strongly cationic peptide that neutralises heparin by direct charge interaction, and itself an anticoagulant if overdosed.
+
+## Mechanism
+
+Heparin inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+- **First approval (ChEMBL):** 1969
+- **Flags:** black-box warning
+- **ATC V03AB14:** VARIOUS › ALL OTHER THERAPEUTIC PRODUCTS › Antidotes
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Heparin (CHEMBL2364712)|Heparin]] - inhibitor · OLIGOSACCHARIDE
 
 ## Evidence boundaries
 
@@ -80,6 +113,12 @@ Heparin antidote, a strongly cationic peptide that neutralises heparin by direct
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Andexanet Alfa]], [[Flumazenil]], [[Fomepizole]], [[Glutathione]], [[Idarucizumab]], [[Methylene Blue]], [[NAC (N-Acetylcysteine)]], [[Naloxone]], [[Phentolamine]], [[Physostigmine]], [[Potassium Iodide (SSKI-KI)|Potassium Iodide (SSKI/KI)]], [[Pralidoxime]]
 
 ## Safety routing
 

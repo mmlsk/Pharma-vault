@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201288
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -59,6 +59,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Dantrolene
@@ -66,6 +67,28 @@ pk-source:
   revision: 1337101387
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201288
+  pref-name: DANTROLENE
+  molecule-type: Small molecule
+  first-approval: 1974
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - M03CA01
+  targets: []
+  properties:
+    full-mwt: 314.26
+    mw-freebase: 314.26
+    alogp: 1.74
+    psa: 118.05
+    hba: 6
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.4
+    full-molformula: C14H10N4O5
 ---
 
 # Dantrolene
@@ -79,10 +102,22 @@ pk-source:
 - **Compound ID:** `dantrolene-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201288](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201288/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Ryanodine receptor antagonist and the only effective treatment for malignant hyperthermia.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1974
+- **Flags:** black-box warning
+- **ATC M03CA01:** MUSCULO-SKELETAL SYSTEM › MUSCLE RELAXANTS, DIRECTLY ACTING AGENTS › Dantrolene and derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 314.26 | 1.74 | 118.05 | 1/6 | 0 | C14H10N4O5 |
 
 ## Evidence boundaries
 

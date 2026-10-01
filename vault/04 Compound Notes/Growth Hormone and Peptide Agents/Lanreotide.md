@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201185
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: null
@@ -62,6 +62,7 @@ tags:
 - group/gh
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Lanreotide
@@ -69,6 +70,28 @@ pk-source:
   revision: 1330106317
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201185
+  pref-name: LANREOTIDE
+  molecule-type: Protein
+  first-approval: 2007
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01CB03
+  targets: []
+  properties:
+    full-mwt: 1096.35
+    mw-freebase: 1096.35
+    full-molformula: C54H69N11O10S2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Lanreotide
@@ -82,10 +105,21 @@ pk-source:
 - **Compound ID:** `lanreotide-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL1201185](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201185/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Long-acting somatostatin analog used to suppress excess growth hormone secretion.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2007
+- **ATC H01CB03:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › HYPOTHALAMIC HORMONES › Somatostatin and analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1096.35 | - | - | -/- | - | C54H69N11O10S2 |
 
 ## Evidence boundaries
 
@@ -104,6 +138,14 @@ Long-acting somatostatin analog used to suppress excess growth hormone secretion
 | Bioavailability | 80 % | Approximately 80% |
 | Metabolism | - | In GI tract |
 | Excretion | - | Mostly bile duct |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Octreotide]], [[Pasireotide]], [[Somatostatin]], [[Vapreotide]]
 
 ## Safety routing
 

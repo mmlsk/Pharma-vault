@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: derm
 class: null
 subclass: null
-mechanism: null
+mechanism: Sunscreen
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1625
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/derm
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1625
+  pref-name: OXYBENZONE
+  molecule-type: Small molecule
+  first-approval: 1992
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 228.25
+    mw-freebase: 228.25
+    alogp: 2.63
+    psa: 46.53
+    hba: 3
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C14H12O3
 ---
 
 # Oxybenzone
@@ -67,10 +90,24 @@ tags:
 - **Compound ID:** `oxybenzone-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1625](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1625/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Broad organic UV filter whose systemic absorption and environmental persistence have made it the most controversial sunscreen ingredient.
+
+## Mechanism
+
+Sunscreen _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1992
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 228.25 | 2.63 | 46.53 | 1/3 | 0 | C14H12O3 |
 
 ## Evidence boundaries
 

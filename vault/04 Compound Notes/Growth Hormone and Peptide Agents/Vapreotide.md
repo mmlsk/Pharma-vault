@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL3349523
 chembl-max-phase: 3
 half-life:
   value: 30.0
@@ -57,6 +57,8 @@ tags:
 - group/gh
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Vapreotide
@@ -64,6 +66,37 @@ pk-source:
   revision: 1365484323
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3349523
+  pref-name: VAPREOTIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01CB04
+  targets:
+  - id: CHEMBL1804
+    name: Somatostatin receptor type 2
+    action: AGONIST
+  - id: CHEMBL2028
+    name: Somatostatin receptor type 3
+    action: AGONIST
+  - id: CHEMBL1792
+    name: Somatostatin receptor type 5
+    action: AGONIST
+  properties:
+    full-mwt: 1131.4
+    mw-freebase: 1131.4
+    full-molformula: C57H70N12O9S2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Vapreotide
@@ -77,6 +110,7 @@ pk-source:
 - **Compound ID:** `vapreotide-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL3349523](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3349523/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -85,6 +119,21 @@ Vapreotide is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is 
 ## Mechanism
 
 somatostatin receptor 2 agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **ATC H01CB04:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › HYPOTHALAMIC HORMONES › Somatostatin and analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1131.4 | - | - | -/- | - | C57H70N12O9S2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Somatostatin receptor type 2 (CHEMBL1804)|Somatostatin receptor type 2]] - agonist · SINGLE PROTEIN
+- [[Somatostatin receptor type 3 (CHEMBL2028)|Somatostatin receptor type 3]] - agonist · SINGLE PROTEIN
+- [[Somatostatin receptor type 5 (CHEMBL1792)|Somatostatin receptor type 5]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -99,6 +148,15 @@ somatostatin receptor 2 agonist _(ChEMBL curated mechanism, as quoted by the sou
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 30 min | 30 minutes |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Paltusotine]] (Somatostatin receptor type 2)
+- **Same ATC subgroup:** [[Lanreotide]], [[Octreotide]], [[Pasireotide]], [[Somatostatin]]
 
 ## Safety routing
 

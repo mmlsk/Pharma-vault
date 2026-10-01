@@ -1,0 +1,546 @@
+{"organism": "Homo sapiens", "pref_name": "Pyruvate kinase PKLR", "target_chembl_id": "CHEMBL1075126", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor receptor superfamily member 10B", "target_chembl_id": "CHEMBL1075153", "target_type": "SINGLE PROTEIN"}
+{"organism": "Influenza A virus (A/Puerto Rico/8/1934(H1N1))", "pref_name": "Polymerase acidic protein", "target_chembl_id": "CHEMBL1169598", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-5", "target_chembl_id": "CHEMBL1169600", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor receptor superfamily member 5", "target_chembl_id": "CHEMBL1250358", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Potassium/sodium hyperpolarization-activated cyclic nucleotide-gated channel 4", "target_chembl_id": "CHEMBL1250417", "target_type": "SINGLE PROTEIN"}
+{"organism": "Human herpesvirus 5", "pref_name": "Serine/threonine protein kinase UL97", "target_chembl_id": "CHEMBL1287608", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Chloride channel protein 2", "target_chembl_id": "CHEMBL1628478", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Solute carrier family 22 member 6", "target_chembl_id": "CHEMBL1641347", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Organic anion transporter 3", "target_chembl_id": "CHEMBL1641348", "target_type": "SINGLE PROTEIN"}
+{"organism": "Human immunodeficiency virus 2", "pref_name": "Reverse transcriptase", "target_chembl_id": "CHEMBL1681630", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "NACHT, LRR and PYD domains-containing protein 3", "target_chembl_id": "CHEMBL1741208", "target_type": "SINGLE PROTEIN"}
+{"organism": "Plasmodium falciparum", "pref_name": "Cytochrome b", "target_chembl_id": "CHEMBL1777", "target_type": "SINGLE PROTEIN"}
+{"organism": "Candida albicans (strain SC5314 / ATCC MYA-2876) (Yeast)", "pref_name": "Lanosterol 14-alpha demethylase", "target_chembl_id": "CHEMBL1780", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Glucagon-like peptide 1 receptor", "target_chembl_id": "CHEMBL1784", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Endothelin receptor type B", "target_chembl_id": "CHEMBL1785", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Inositol monophosphatase 1", "target_chembl_id": "CHEMBL1786", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Vasopressin V2 receptor", "target_chembl_id": "CHEMBL1790", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Somatostatin receptor type 5", "target_chembl_id": "CHEMBL1792", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Parathyroid hormone/parathyroid hormone-related peptide receptor", "target_chembl_id": "CHEMBL1793", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Atrial natriuretic peptide receptor 2", "target_chembl_id": "CHEMBL1795", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-6", "target_chembl_id": "CHEMBL1795129", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Guanylyl cyclase C", "target_chembl_id": "CHEMBL1795197", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Gastric triacylglycerol lipase", "target_chembl_id": "CHEMBL1796", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Cysteinyl leukotriene receptor 1", "target_chembl_id": "CHEMBL1798", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Corticotropin-releasing factor receptor 1", "target_chembl_id": "CHEMBL1800", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Plasminogen", "target_chembl_id": "CHEMBL1801", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Somatostatin receptor type 2", "target_chembl_id": "CHEMBL1804", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "5-hydroxytryptamine receptor 1F", "target_chembl_id": "CHEMBL1805", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Angiotensin-converting enzyme", "target_chembl_id": "CHEMBL1808", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Prostaglandin E2 receptor EP1 subtype", "target_chembl_id": "CHEMBL1811", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Pancreatic triacylglycerol lipase", "target_chembl_id": "CHEMBL1812", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Erythropoietin receptor", "target_chembl_id": "CHEMBL1817", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Muscarinic acetylcholine receptor M4", "target_chembl_id": "CHEMBL1821", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Inosine-5'-monophosphate dehydrogenase 1", "target_chembl_id": "CHEMBL1822", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Receptor tyrosine-protein kinase erbB-2", "target_chembl_id": "CHEMBL1824", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor", "target_chembl_id": "CHEMBL1825", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "cGMP-specific 3',5'-cyclic phosphodiesterase", "target_chembl_id": "CHEMBL1827", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Histone deacetylase 3", "target_chembl_id": "CHEMBL1829", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Calcitonin receptor", "target_chembl_id": "CHEMBL1832", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Immunoglobulin heavy constant epsilon", "target_chembl_id": "CHEMBL1834", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Thyroid peroxidase", "target_chembl_id": "CHEMBL1839", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Aromatic-L-amino-acid decarboxylase", "target_chembl_id": "CHEMBL1843", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Macrophage colony-stimulating factor 1 receptor", "target_chembl_id": "CHEMBL1844", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Gamma-aminobutyric acid receptor subunit beta-3", "target_chembl_id": "CHEMBL1847", "target_type": "SINGLE PROTEIN"}
+{"organism": "Mycobacterium tuberculosis", "pref_name": "Enoyl-[acyl-carrier-protein] reductase [NADH]", "target_chembl_id": "CHEMBL1849", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Lutropin-choriogonadotropic hormone receptor", "target_chembl_id": "CHEMBL1854", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Gonadotropin-releasing hormone receptor", "target_chembl_id": "CHEMBL1855", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "3-oxo-5-alpha-steroid 4-dehydrogenase 2", "target_chembl_id": "CHEMBL1856", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "4-hydroxyphenylpyruvate dioxygenase", "target_chembl_id": "CHEMBL1861", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tyrosine-protein kinase ABL1", "target_chembl_id": "CHEMBL1862", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Protein deacetylase HDAC6", "target_chembl_id": "CHEMBL1865", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Vascular endothelial growth factor receptor 1", "target_chembl_id": "CHEMBL1868", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Androgen receptor", "target_chembl_id": "CHEMBL1871", "target_type": "SINGLE PROTEIN"}
+{"organism": "Herpes simplex virus (type 1 / strain 17)", "pref_name": "DNA polymerase catalytic subunit", "target_chembl_id": "CHEMBL1872", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tissue-type plasminogen activator", "target_chembl_id": "CHEMBL1873", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Solute carrier family 12 member 1", "target_chembl_id": "CHEMBL1874", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "5-hydroxytryptamine receptor 4", "target_chembl_id": "CHEMBL1875", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Solute carrier family 12 member 3", "target_chembl_id": "CHEMBL1876", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Extracellular calcium-sensing receptor", "target_chembl_id": "CHEMBL1878", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Prostaglandin E2 receptor EP2 subtype", "target_chembl_id": "CHEMBL1881", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "ATP-sensitive inward rectifier potassium channel 11", "target_chembl_id": "CHEMBL1886", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interferon alpha/beta receptor 1", "target_chembl_id": "CHEMBL1887", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Vasopressin V1a receptor", "target_chembl_id": "CHEMBL1889", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Synaptic vesicular amine transporter", "target_chembl_id": "CHEMBL1893", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "5-hydroxytryptamine receptor 1B", "target_chembl_id": "CHEMBL1898", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "5-hydroxytryptamine receptor 3A", "target_chembl_id": "CHEMBL1899", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Aldo-keto reductase family 1 member B1", "target_chembl_id": "CHEMBL1900", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Peptidyl-prolyl cis-trans isomerase FKBP1A", "target_chembl_id": "CHEMBL1902", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Neuronal acetylcholine receptor; alpha4/beta2", "target_chembl_id": "CHEMBL1907589", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Integrin alpha-V/beta-3", "target_chembl_id": "CHEMBL1907598", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Integrin alpha-4/beta-1", "target_chembl_id": "CHEMBL1907599", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Glutamate NMDA receptor; GRIN1/GRIN2B", "target_chembl_id": "CHEMBL1907603", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Cytochrome P450 11B1, mitochondrial", "target_chembl_id": "CHEMBL1908", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-1 beta", "target_chembl_id": "CHEMBL1909490", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Succinate-semialdehyde dehydrogenase, mitochondrial", "target_chembl_id": "CHEMBL1911", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "CAMPATH-1 antigen", "target_chembl_id": "CHEMBL1912", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Platelet-derived growth factor receptor beta", "target_chembl_id": "CHEMBL1913", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Cholinesterase", "target_chembl_id": "CHEMBL1914", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Vasopressin V1b receptor", "target_chembl_id": "CHEMBL1921", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Xanthine dehydrogenase/oxidase", "target_chembl_id": "CHEMBL1929", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Vitamin K epoxide reductase complex subunit 1", "target_chembl_id": "CHEMBL1930", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Aldehyde dehydrogenase, mitochondrial", "target_chembl_id": "CHEMBL1935", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Mast/stem cell growth factor receptor Kit", "target_chembl_id": "CHEMBL1936", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Histone deacetylase 2", "target_chembl_id": "CHEMBL1937", "target_type": "SINGLE PROTEIN"}
+{"organism": "Plasmodium falciparum K1", "pref_name": "Bifunctional dihydrofolate reductase-thymidylate synthase", "target_chembl_id": "CHEMBL1939", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Histamine H2 receptor", "target_chembl_id": "CHEMBL1941", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Neprilysin", "target_chembl_id": "CHEMBL1944", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Thyroid hormone receptor beta", "target_chembl_id": "CHEMBL1947", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Peptidyl-prolyl cis-trans isomerase A", "target_chembl_id": "CHEMBL1949", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Antithrombin-III", "target_chembl_id": "CHEMBL1950", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Amine oxidase [flavin-containing] A", "target_chembl_id": "CHEMBL1951", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Thymidylate synthase", "target_chembl_id": "CHEMBL1952", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Vascular endothelial growth factor receptor 3", "target_chembl_id": "CHEMBL1955", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Insulin-like growth factor 1 receptor", "target_chembl_id": "CHEMBL1957", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-1 receptor type 1", "target_chembl_id": "CHEMBL1959", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Gamma-aminobutyric acid receptor subunit alpha-1", "target_chembl_id": "CHEMBL1962", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Thyrotropin receptor", "target_chembl_id": "CHEMBL1963", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Adrenocorticotropic hormone receptor", "target_chembl_id": "CHEMBL1965", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Dihydroorotate dehydrogenase (quinone), mitochondrial", "target_chembl_id": "CHEMBL1966", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tyrosinase", "target_chembl_id": "CHEMBL1973", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Receptor-type tyrosine-protein kinase FLT3", "target_chembl_id": "CHEMBL1974", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "T-cell surface glycoprotein CD3 epsilon chain", "target_chembl_id": "CHEMBL1975", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Growth hormone receptor", "target_chembl_id": "CHEMBL1976", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Vitamin D3 receptor", "target_chembl_id": "CHEMBL1977", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Aromatase", "target_chembl_id": "CHEMBL1978", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Sodium channel protein type 5 subunit alpha", "target_chembl_id": "CHEMBL1980", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Insulin receptor", "target_chembl_id": "CHEMBL1981", "target_type": "SINGLE PROTEIN"}
+{"organism": "Staphylococcus aureus", "pref_name": "Isoleucine--tRNA ligase", "target_chembl_id": "CHEMBL1982", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "5-hydroxytryptamine receptor 1D", "target_chembl_id": "CHEMBL1983", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Glucagon receptor", "target_chembl_id": "CHEMBL1985", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Prostaglandin F2-alpha receptor", "target_chembl_id": "CHEMBL1987", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Atrial natriuretic peptide receptor 1", "target_chembl_id": "CHEMBL1988", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Inhibitor of nuclear factor kappa-B kinase subunit beta", "target_chembl_id": "CHEMBL1991", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "DNA (cytosine-5)-methyltransferase 3A", "target_chembl_id": "CHEMBL1992", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "DNA (cytosine-5)-methyltransferase 1", "target_chembl_id": "CHEMBL1993", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Mineralocorticoid receptor", "target_chembl_id": "CHEMBL1994", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Prostacyclin receptor", "target_chembl_id": "CHEMBL1995", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Equilibrative nucleoside transporter 1", "target_chembl_id": "CHEMBL1997", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Synaptic vesicle glycoprotein 2A", "target_chembl_id": "CHEMBL1998", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "P2Y purinoceptor 12", "target_chembl_id": "CHEMBL2001", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Retinoic acid receptor gamma", "target_chembl_id": "CHEMBL2003", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Platelet-derived growth factor receptor alpha", "target_chembl_id": "CHEMBL2007", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Retinoic acid receptor beta", "target_chembl_id": "CHEMBL2008", "target_type": "SINGLE PROTEIN"}
+{"organism": "Mycobacterium tuberculosis", "pref_name": "Fatty acid synthase", "target_chembl_id": "CHEMBL2011", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Coagulation factor IX", "target_chembl_id": "CHEMBL2016", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Type I iodothyronine deiodinase", "target_chembl_id": "CHEMBL2019", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Dihydrofolate reductase", "target_chembl_id": "CHEMBL202", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Catechol O-methyltransferase", "target_chembl_id": "CHEMBL2023", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Follicle-stimulating hormone receptor", "target_chembl_id": "CHEMBL2024", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "NPC1-like intracellular cholesterol transporter 1", "target_chembl_id": "CHEMBL2027", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Somatostatin receptor type 3", "target_chembl_id": "CHEMBL2028", "target_type": "SINGLE PROTEIN"}
+{"organism": "Influenza B virus (strain B/Lee/1940)", "pref_name": "Polymerase acidic protein", "target_chembl_id": "CHEMBL2028641", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Epidermal growth factor receptor", "target_chembl_id": "CHEMBL203", "target_type": "SINGLE PROTEIN"}
+{"organism": "Mycobacterium tuberculosis", "pref_name": "D-alanine--D-alanine ligase", "target_chembl_id": "CHEMBL2030", "target_type": "SINGLE PROTEIN"}
+{"organism": "Mycobacterium tuberculosis", "pref_name": "Alanine racemase", "target_chembl_id": "CHEMBL2031", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Growth hormone-releasing hormone receptor", "target_chembl_id": "CHEMBL2032", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Cholesterol side-chain cleavage enzyme, mitochondrial", "target_chembl_id": "CHEMBL2033", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Glucocorticoid receptor", "target_chembl_id": "CHEMBL2034", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Amine oxidase [flavin-containing] B", "target_chembl_id": "CHEMBL2039", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Prothrombin", "target_chembl_id": "CHEMBL204", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Proto-oncogene tyrosine-protein kinase receptor Ret", "target_chembl_id": "CHEMBL2041", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "4-aminobutyrate aminotransferase, mitochondrial", "target_chembl_id": "CHEMBL2044", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Bile acid receptor", "target_chembl_id": "CHEMBL2047", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Oxytocin receptor", "target_chembl_id": "CHEMBL2049", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Carbonic anhydrase 2", "target_chembl_id": "CHEMBL205", "target_type": "SINGLE PROTEIN"}
+{"organism": "Influenza A virus (A/Puerto Rico/8/1934(H1N1))", "pref_name": "Neuraminidase", "target_chembl_id": "CHEMBL2051", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Retinoic acid receptor alpha", "target_chembl_id": "CHEMBL2055", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "B-lymphocyte antigen CD20", "target_chembl_id": "CHEMBL2058", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Estrogen receptor", "target_chembl_id": "CHEMBL206", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Ceramide glucosyltransferase", "target_chembl_id": "CHEMBL2063", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Ephrin type-A receptor 2", "target_chembl_id": "CHEMBL2068", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Thromboxane A2 receptor", "target_chembl_id": "CHEMBL2069", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Sodium channel protein type 4 subunit alpha", "target_chembl_id": "CHEMBL2072", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Solute carrier family 22 member 11", "target_chembl_id": "CHEMBL2073677", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Maltase-glucoamylase", "target_chembl_id": "CHEMBL2074", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Progesterone receptor", "target_chembl_id": "CHEMBL208", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Asialoglycoprotein receptor 1", "target_chembl_id": "CHEMBL2084", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Macrophage migration inhibitory factor", "target_chembl_id": "CHEMBL2085", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Phosphodiesterase 4", "target_chembl_id": "CHEMBL2093863", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Histone deacetylase", "target_chembl_id": "CHEMBL2093865", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Estrogen receptor", "target_chembl_id": "CHEMBL2093866", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Integrin alpha-IIb/beta-3", "target_chembl_id": "CHEMBL2093869", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "GABA-A receptor; anion channel", "target_chembl_id": "CHEMBL2093872", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Protein farnesyltransferase", "target_chembl_id": "CHEMBL2094108", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Adrenergic receptor beta", "target_chembl_id": "CHEMBL2094118", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Glutamate [NMDA] receptor", "target_chembl_id": "CHEMBL2094124", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Phosphodiesterase 3", "target_chembl_id": "CHEMBL2094125", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Adrenergic receptor alpha-1", "target_chembl_id": "CHEMBL2094251", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Cyclooxygenase", "target_chembl_id": "CHEMBL2094253", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "DNA topoisomerase II", "target_chembl_id": "CHEMBL2094255", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Adenosine A2 receptor", "target_chembl_id": "CHEMBL2094257", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Melatonin receptor", "target_chembl_id": "CHEMBL2094268", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Adrenergic receptor alpha-2", "target_chembl_id": "CHEMBL2095158", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Hemoglobin HbA", "target_chembl_id": "CHEMBL2095168", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Dopamine receptors; D2 & D3", "target_chembl_id": "CHEMBL2095169", "target_type": "SELECTIVITY GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Potassium-transporting ATPase", "target_chembl_id": "CHEMBL2095173", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Carbonic anhydrase", "target_chembl_id": "CHEMBL2095180", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Opioid receptors; mu/kappa/delta", "target_chembl_id": "CHEMBL2095181", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Tubulin", "target_chembl_id": "CHEMBL2095182", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Integrin alpha-4/beta-7", "target_chembl_id": "CHEMBL2095184", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Sodium/potassium-transporting ATPase", "target_chembl_id": "CHEMBL2095186", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Glycogen synthase kinase-3", "target_chembl_id": "CHEMBL2095188", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Platelet-derived growth factor receptor", "target_chembl_id": "CHEMBL2095189", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Sulfonylurea receptor 2, Kir6.2", "target_chembl_id": "CHEMBL2095198", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Serotonin 2 (5-HT2) receptor", "target_chembl_id": "CHEMBL2095200", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Monoamine oxidase", "target_chembl_id": "CHEMBL2095205", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Ribonucleoside-diphosphate reductase RR1", "target_chembl_id": "CHEMBL2095215", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Fibroblast growth factor receptor", "target_chembl_id": "CHEMBL2095217", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Vascular endothelial growth factor receptor", "target_chembl_id": "CHEMBL2095227", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Voltage-gated L-type calcium channel", "target_chembl_id": "CHEMBL2095229", "target_type": "PROTEIN FAMILY"}
+{"organism": "Hepatitis C virus", "pref_name": "Hepatitis C virus serine protease, NS3/NS4A", "target_chembl_id": "CHEMBL2095231", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Cholinesterases; ACHE & BCHE", "target_chembl_id": "CHEMBL2095233", "target_type": "SELECTIVITY GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Bcr/Abl fusion protein", "target_chembl_id": "CHEMBL2096618", "target_type": "CHIMERIC PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Serotonin 2 receptors; 5-HT2a & 5-HT2c", "target_chembl_id": "CHEMBL2096662", "target_type": "SELECTIVITY GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Glutamate receptor ionotropic AMPA", "target_chembl_id": "CHEMBL2096670", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Endothelin receptor, ET-A/ET-B", "target_chembl_id": "CHEMBL2096678", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Serotonin (5-HT) receptor", "target_chembl_id": "CHEMBL2096904", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Dopamine receptor", "target_chembl_id": "CHEMBL2096905", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Sulfonylurea receptor 1, Kir6.2", "target_chembl_id": "CHEMBL2096972", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Beta-2 adrenergic receptor", "target_chembl_id": "CHEMBL210", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Amiloride-sensitive sodium channel, ENaC", "target_chembl_id": "CHEMBL2107836", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Calcitonin-gene-related peptide receptor, CALCRL/RAMP1", "target_chembl_id": "CHEMBL2107838", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Neuronal acetylcholine receptor; alpha6/beta2", "target_chembl_id": "CHEMBL2109237", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Glutamate receptor ionotropic kainate", "target_chembl_id": "CHEMBL2109241", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Homo sapiens", "pref_name": "GABA-A receptor; agonist GABA site", "target_chembl_id": "CHEMBL2109244", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Muscarinic acetylcholine receptor M2", "target_chembl_id": "CHEMBL211", "target_type": "SINGLE PROTEIN"}
+{"organism": "Mycobacterium tuberculosis H37Rv", "pref_name": "Mycobacterium tuberculosis H37Rv", "target_chembl_id": "CHEMBL2111188", "target_type": "ORGANISM"}
+{"organism": "Homo sapiens", "pref_name": "Amylin receptor AMY1, CALCR/RAMP1", "target_chembl_id": "CHEMBL2111189", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Adenosine receptor", "target_chembl_id": "CHEMBL2111329", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Atrial natriuretic peptide receptor", "target_chembl_id": "CHEMBL2111337", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Dopamine D1 and D2 receptor", "target_chembl_id": "CHEMBL2111341", "target_type": "SELECTIVITY GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Soluble guanylate cyclase", "target_chembl_id": "CHEMBL2111348", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Inosine-5'-monophosphate dehydrogenase (IMPDH)", "target_chembl_id": "CHEMBL2111369", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "GABA A receptor alpha-1/beta-1/gamma-2", "target_chembl_id": "CHEMBL2111392", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Somatostatin receptor", "target_chembl_id": "CHEMBL2111436", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Vasopressin V1 receptor", "target_chembl_id": "CHEMBL2111456", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Rho-associated protein kinase", "target_chembl_id": "CHEMBL2111459", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Thyroid hormone receptor", "target_chembl_id": "CHEMBL2111462", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "GABA-B receptor", "target_chembl_id": "CHEMBL2111463", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Beta-1 adrenergic receptor", "target_chembl_id": "CHEMBL213", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "5-hydroxytryptamine receptor 1A", "target_chembl_id": "CHEMBL214", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tyrosine-protein kinase JAK3", "target_chembl_id": "CHEMBL2148", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Polyunsaturated fatty acid 5-lipoxygenase", "target_chembl_id": "CHEMBL215", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Muscarinic acetylcholine receptor M1", "target_chembl_id": "CHEMBL216", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "D(2) dopamine receptor", "target_chembl_id": "CHEMBL217", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Complement factor D", "target_chembl_id": "CHEMBL2176771", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Toll-like receptor 5", "target_chembl_id": "CHEMBL2176839", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Cannabinoid receptor 1", "target_chembl_id": "CHEMBL218", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Acetylcholinesterase", "target_chembl_id": "CHEMBL220", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Prostaglandin G/H synthase 1", "target_chembl_id": "CHEMBL221", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Sodium-dependent noradrenaline transporter", "target_chembl_id": "CHEMBL222", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "5-hydroxytryptamine receptor 2A", "target_chembl_id": "CHEMBL224", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Fatty-acid amide hydrolase 1", "target_chembl_id": "CHEMBL2243", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "5-hydroxytryptamine receptor 2C", "target_chembl_id": "CHEMBL225", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Type-1 angiotensin II receptor", "target_chembl_id": "CHEMBL227", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Sphingosine 1-phosphate receptor 5", "target_chembl_id": "CHEMBL2274", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Sodium-dependent serotonin transporter", "target_chembl_id": "CHEMBL228", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Alpha-1A adrenergic receptor", "target_chembl_id": "CHEMBL229", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Prostaglandin G/H synthase 2", "target_chembl_id": "CHEMBL230", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Histamine H1 receptor", "target_chembl_id": "CHEMBL231", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "DNA", "target_chembl_id": "CHEMBL2311221", "target_type": "NUCLEIC-ACID"}
+{"organism": "Homo sapiens", "pref_name": "RNA", "target_chembl_id": "CHEMBL2311222", "target_type": "NUCLEIC-ACID"}
+{"organism": "Bacteria", "pref_name": "Bacterial DNA gyrase", "target_chembl_id": "CHEMBL2311224", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Potassium channel subfamily K member 3", "target_chembl_id": "CHEMBL2321613", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Potassium channel subfamily K member 9", "target_chembl_id": "CHEMBL2321614", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Potassium channel subfamily K member 2", "target_chembl_id": "CHEMBL2321615", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Carbonic anhydrase 7", "target_chembl_id": "CHEMBL2326", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Mu-type opioid receptor", "target_chembl_id": "CHEMBL233", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Potassium channel subfamily K member 10", "target_chembl_id": "CHEMBL2331041", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Potassium channel subfamily K member 18", "target_chembl_id": "CHEMBL2331042", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Sodium channel alpha subunit", "target_chembl_id": "CHEMBL2331043", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Adrenergic receptor", "target_chembl_id": "CHEMBL2331074", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "D2-like dopamine receptor", "target_chembl_id": "CHEMBL2331075", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Sodium- and chloride-dependent glycine transporter 1", "target_chembl_id": "CHEMBL2337", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "D(3) dopamine receptor", "target_chembl_id": "CHEMBL234", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Peroxisome proliferator-activated receptor gamma", "target_chembl_id": "CHEMBL235", "target_type": "SINGLE PROTEIN"}
+{"organism": "Bacteria", "pref_name": "Bacterial penicillin-binding protein", "target_chembl_id": "CHEMBL2354204", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Phospholipid-transporting ATPase ABCA1", "target_chembl_id": "CHEMBL2362986", "target_type": "SINGLE PROTEIN"}
+{"organism": "Human immunodeficiency virus", "pref_name": "Transmembrane glycoprotein gp41", "target_chembl_id": "CHEMBL2362987", "target_type": "SINGLE PROTEIN"}
+{"organism": "Pediculus humanus capitis", "pref_name": "Acetylcholinesterase", "target_chembl_id": "CHEMBL2362988", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Carbamoyl-phosphate synthase [ammonia], mitochondrial", "target_chembl_id": "CHEMBL2362990", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Amidophosphoribosyltransferase", "target_chembl_id": "CHEMBL2362992", "target_type": "SINGLE PROTEIN"}
+{"organism": "Mycobacterium leprae (strain TN)", "pref_name": "Dihydropteroate synthase", "target_chembl_id": "CHEMBL2362993", "target_type": "SINGLE PROTEIN"}
+{"organism": "Hepatitis B virus", "pref_name": "DNA polymerase/reverse transcriptase", "target_chembl_id": "CHEMBL2362994", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Voltage-gated T-type calcium channel", "target_chembl_id": "CHEMBL2362995", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Voltage-gated potassium channel", "target_chembl_id": "CHEMBL2362996", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Voltage-gated calcium channel", "target_chembl_id": "CHEMBL2363032", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Homo sapiens", "pref_name": "Alcohol dehydrogenase class I", "target_chembl_id": "CHEMBL2363044", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Human immunodeficiency virus 1", "pref_name": "DNA", "target_chembl_id": "CHEMBL2363046", "target_type": "NUCLEIC-ACID"}
+{"organism": "Human immunodeficiency virus 2", "pref_name": "DNA", "target_chembl_id": "CHEMBL2363047", "target_type": "NUCLEIC-ACID"}
+{"organism": "Hepatitis B virus", "pref_name": "DNA", "target_chembl_id": "CHEMBL2363048", "target_type": "NUCLEIC-ACID"}
+{"organism": "Homo sapiens", "pref_name": "Glycine receptor (alpha-1/beta)", "target_chembl_id": "CHEMBL2363052", "target_type": "PROTEIN COMPLEX"}
+{"organism": null, "pref_name": "Copper", "target_chembl_id": "CHEMBL2363057", "target_type": "METAL"}
+{"organism": null, "pref_name": "Iron", "target_chembl_id": "CHEMBL2363058", "target_type": "METAL"}
+{"organism": "Homo sapiens", "pref_name": "Janus Kinase (JAK)", "target_chembl_id": "CHEMBL2363062", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "KCNQ (Kv7) potassium channel", "target_chembl_id": "CHEMBL2363063", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Monoamine transporter", "target_chembl_id": "CHEMBL2363064", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "3',5'-cyclic phosphodiesterase", "target_chembl_id": "CHEMBL2363066", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Prostaglandin E2 receptor", "target_chembl_id": "CHEMBL2363068", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Retinoic acid receptor", "target_chembl_id": "CHEMBL2363069", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Retinoid receptor", "target_chembl_id": "CHEMBL2363071", "target_type": "PROTEIN FAMILY"}
+{"organism": "Hepacivirus hominis", "pref_name": "RNA", "target_chembl_id": "CHEMBL2363073", "target_type": "NUCLEIC-ACID"}
+{"organism": "Homo sapiens", "pref_name": "SRC", "target_chembl_id": "CHEMBL2363074", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Steroid 5-alpha-reductase", "target_chembl_id": "CHEMBL2363075", "target_type": "PROTEIN FAMILY"}
+{"organism": "Bacteria", "pref_name": "Topoisomerase IV", "target_chembl_id": "CHEMBL2363076", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Vasopressin receptor", "target_chembl_id": "CHEMBL2363078", "target_type": "PROTEIN FAMILY"}
+{"organism": "Schistosoma mansoni", "pref_name": "Voltage-activated calcium channel beta 1 subunit", "target_chembl_id": "CHEMBL2363079", "target_type": "SINGLE PROTEIN"}
+{"organism": "Schistosoma mansoni", "pref_name": "Voltage-activated calcium channel beta 2 subunit", "target_chembl_id": "CHEMBL2363080", "target_type": "SINGLE PROTEIN"}
+{"organism": "Bacteria", "pref_name": "Bacterial 70S ribosome", "target_chembl_id": "CHEMBL2363135", "target_type": "PROTEIN NUCLEIC-ACID COMPLEX"}
+{"organism": "Clostridium difficile", "pref_name": "DNA-directed RNA polymerase", "target_chembl_id": "CHEMBL2363852", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Mycobacterium tuberculosis", "pref_name": "70S ribosome", "target_chembl_id": "CHEMBL2363965", "target_type": "PROTEIN NUCLEIC-ACID COMPLEX"}
+{"organism": "Pseudomonas aeruginosa", "pref_name": "70S ribosome", "target_chembl_id": "CHEMBL2364022", "target_type": "PROTEIN NUCLEIC-ACID COMPLEX"}
+{"organism": "Sarcoptes scabiei", "pref_name": "GABA-A receptor", "target_chembl_id": "CHEMBL2364024", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Pediculus humanus", "pref_name": "GABA-A receptor", "target_chembl_id": "CHEMBL2364025", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Cryptosporidium parvum", "pref_name": "Pyruvate dehydrogenase [NADP(+)]", "target_chembl_id": "CHEMBL2364026", "target_type": "SINGLE PROTEIN"}
+{"organism": "Giardia intestinalis", "pref_name": "Pyruvate:ferredoxin oxidoreductase", "target_chembl_id": "CHEMBL2364027", "target_type": "SINGLE PROTEIN"}
+{"organism": "Candida albicans", "pref_name": "Ergosterol", "target_chembl_id": "CHEMBL2364028", "target_type": "SMALL MOLECULE"}
+{"organism": "null", "pref_name": "Lead", "target_chembl_id": "CHEMBL2364029", "target_type": "METAL"}
+{"organism": "Bacteria", "pref_name": "C55-isoprenyl pyrophosphate", "target_chembl_id": "CHEMBL2364036", "target_type": "SMALL MOLECULE"}
+{"organism": "Bacteria", "pref_name": "DNA", "target_chembl_id": "CHEMBL2364041", "target_type": "NUCLEIC-ACID"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-12", "target_chembl_id": "CHEMBL2364153", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-23", "target_chembl_id": "CHEMBL2364154", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-6 receptor subunit alpha", "target_chembl_id": "CHEMBL2364155", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "T-lymphocyte activation antigen CD86", "target_chembl_id": "CHEMBL2364156", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "T-lymphocyte activation antigen CD80", "target_chembl_id": "CHEMBL2364157", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor ligand superfamily member 13B", "target_chembl_id": "CHEMBL2364158", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Synaptosomal-associated protein 25", "target_chembl_id": "CHEMBL2364159", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor receptor superfamily member 8", "target_chembl_id": "CHEMBL2364161", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor ligand superfamily member 11", "target_chembl_id": "CHEMBL2364162", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Complement C5", "target_chembl_id": "CHEMBL2364163", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Cytotoxic T-lymphocyte protein 4", "target_chembl_id": "CHEMBL2364164", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-2 receptor", "target_chembl_id": "CHEMBL2364167", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "T cell surface glycoprotein CD3", "target_chembl_id": "CHEMBL2364168", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Granulocyte-macrophage colony-stimulating factor receptor", "target_chembl_id": "CHEMBL2364169", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Interferon alpha/beta receptor", "target_chembl_id": "CHEMBL2364170", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Bile acids", "target_chembl_id": "CHEMBL2364175", "target_type": "SMALL MOLECULE"}
+{"organism": "Homo sapiens", "pref_name": "Uric acid", "target_chembl_id": "CHEMBL2364183", "target_type": "SMALL MOLECULE"}
+{"organism": "Homo sapiens", "pref_name": "Phosphate", "target_chembl_id": "CHEMBL2364184", "target_type": "SMALL MOLECULE"}
+{"organism": "Bacteria", "pref_name": "Dihydropteroate synthase", "target_chembl_id": "CHEMBL2364668", "target_type": "SINGLE PROTEIN"}
+{"organism": "Bacteria", "pref_name": "Dihydrofolate reductase", "target_chembl_id": "CHEMBL2364669", "target_type": "SINGLE PROTEIN"}
+{"organism": "Streptococcus pyogenes", "pref_name": "Isoleucine--tRNA ligase", "target_chembl_id": "CHEMBL2364671", "target_type": "SINGLE PROTEIN"}
+{"organism": "Bacteria", "pref_name": "Bacterial DNA-directed RNA polymerase", "target_chembl_id": "CHEMBL2364672", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Cytochrome P450 3A", "target_chembl_id": "CHEMBL2364675", "target_type": "PROTEIN FAMILY"}
+{"organism": "Trichophyton", "pref_name": "Squalene monooxygenase", "target_chembl_id": "CHEMBL2364679", "target_type": "SINGLE PROTEIN"}
+{"organism": "Candida albicans", "pref_name": "Thymidylate synthase", "target_chembl_id": "CHEMBL2364680", "target_type": "SINGLE PROTEIN"}
+{"organism": "Trichophyton", "pref_name": "Tubulin", "target_chembl_id": "CHEMBL2364703", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Taeniidae", "pref_name": "Tubulin", "target_chembl_id": "CHEMBL2364704", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": "Nematoda", "pref_name": "Tubulin", "target_chembl_id": "CHEMBL2364705", "target_type": "PROTEIN COMPLEX GROUP"}
+{"organism": null, "pref_name": "Methotrexate", "target_chembl_id": "CHEMBL2364710", "target_type": "SMALL MOLECULE"}
+{"organism": "Homo sapiens", "pref_name": "Heparin", "target_chembl_id": "CHEMBL2364712", "target_type": "OLIGOSACCHARIDE"}
+{"organism": "Homo sapiens", "pref_name": "Glutamine", "target_chembl_id": "CHEMBL2366039", "target_type": "SMALL MOLECULE"}
+{"organism": "Mycobacterium leprae", "pref_name": "DNA", "target_chembl_id": "CHEMBL2366041", "target_type": "NUCLEIC-ACID"}
+{"organism": "Schistosoma mansoni", "pref_name": "DNA", "target_chembl_id": "CHEMBL2366043", "target_type": "NUCLEIC-ACID"}
+{"organism": "Taenia", "pref_name": "DNA", "target_chembl_id": "CHEMBL2366044", "target_type": "NUCLEIC-ACID"}
+{"organism": "Human immunodeficiency virus 1", "pref_name": "Structural capsid protein", "target_chembl_id": "CHEMBL2366504", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Kappa-type opioid receptor", "target_chembl_id": "CHEMBL237", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "C5a anaphylatoxin chemotactic receptor 1", "target_chembl_id": "CHEMBL2373", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Sodium-dependent dopamine transporter", "target_chembl_id": "CHEMBL238", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Peroxisome proliferator-activated receptor alpha", "target_chembl_id": "CHEMBL239", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Voltage-gated inwardly rectifying potassium channel KCNH2", "target_chembl_id": "CHEMBL240", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "cGMP-inhibited 3',5'-cyclic phosphodiesterase 3A", "target_chembl_id": "CHEMBL241", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Estrogen receptor beta", "target_chembl_id": "CHEMBL242", "target_type": "SINGLE PROTEIN"}
+{"organism": "Human immunodeficiency virus 1", "pref_name": "Human immunodeficiency virus type 1 protease", "target_chembl_id": "CHEMBL243", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Coagulation factor X", "target_chembl_id": "CHEMBL244", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Muscarinic acetylcholine receptor M3", "target_chembl_id": "CHEMBL245", "target_type": "SINGLE PROTEIN"}
+{"organism": "Human immunodeficiency virus 1", "pref_name": "Human immunodeficiency virus type 1 reverse transcriptase", "target_chembl_id": "CHEMBL247", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Amyloid-beta precursor protein", "target_chembl_id": "CHEMBL2487", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Substance-P receptor", "target_chembl_id": "CHEMBL249", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Neuronal acetylcholine receptor subunit alpha-7", "target_chembl_id": "CHEMBL2492", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Platelet-activating factor receptor", "target_chembl_id": "CHEMBL250", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Adenosine receptor A2a", "target_chembl_id": "CHEMBL251", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Endothelin-1 receptor", "target_chembl_id": "CHEMBL252", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Alpha-galactosidase A", "target_chembl_id": "CHEMBL2524", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Melanocortin receptor 4", "target_chembl_id": "CHEMBL259", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tyrosine-protein kinase SYK", "target_chembl_id": "CHEMBL2599", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Lysosomal alpha-glucosidase", "target_chembl_id": "CHEMBL2608", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Carbonic anhydrase 1", "target_chembl_id": "CHEMBL261", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Histamine H3 receptor", "target_chembl_id": "CHEMBL264", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Proto-oncogene tyrosine-protein kinase Src", "target_chembl_id": "CHEMBL267", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Cytochrome P450 11B2, mitochondrial", "target_chembl_id": "CHEMBL2722", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Fibroblast growth factor receptor 3", "target_chembl_id": "CHEMBL2742", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "T-cell surface glycoprotein CD4", "target_chembl_id": "CHEMBL2754", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Ileal sodium/bile acid cotransporter", "target_chembl_id": "CHEMBL2778", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Vascular endothelial growth factor receptor 2", "target_chembl_id": "CHEMBL279", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "High affinity nerve growth factor receptor", "target_chembl_id": "CHEMBL2815", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tyrosine-protein kinase JAK1", "target_chembl_id": "CHEMBL2835", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Dipeptidyl peptidase 4", "target_chembl_id": "CHEMBL284", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Serine/threonine-protein kinase mTOR", "target_chembl_id": "CHEMBL2842", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Renin", "target_chembl_id": "CHEMBL286", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "3',5'-cyclic-AMP phosphodiesterase 4D", "target_chembl_id": "CHEMBL288", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Proprotein convertase subtilisin/kexin type 9", "target_chembl_id": "CHEMBL2929", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tyrosine-protein kinase JAK2", "target_chembl_id": "CHEMBL2971", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Receptor tyrosine-protein kinase erbB-4", "target_chembl_id": "CHEMBL3009", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Prolyl hydroxylase EGLN2", "target_chembl_id": "CHEMBL3028", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Nicotinic acetylcholine receptor alpha4/beta2/alpha5", "target_chembl_id": "CHEMBL3038461", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Keap1/Nrf2", "target_chembl_id": "CHEMBL3038498", "target_type": "PROTEIN-PROTEIN INTERACTION"}
+{"organism": "Bacteria", "pref_name": "Peptidoglycan", "target_chembl_id": "CHEMBL3041361", "target_type": "MACROMOLECULE"}
+{"organism": "Homo sapiens", "pref_name": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform", "target_chembl_id": "CHEMBL3130", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "IL6Ralpha/GP130", "target_chembl_id": "CHEMBL3137266", "target_type": "PROTEIN-PROTEIN INTERACTION"}
+{"organism": "Homo sapiens", "pref_name": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit beta isoform", "target_chembl_id": "CHEMBL3145", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Histone deacetylase 8", "target_chembl_id": "CHEMBL3192", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Transthyretin", "target_chembl_id": "CHEMBL3194", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Aryl hydrocarbon receptor", "target_chembl_id": "CHEMBL3201", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Insulin-like growth factor 1", "target_chembl_id": "CHEMBL3217394", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tyrosine-protein kinase HCK", "target_chembl_id": "CHEMBL3234", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Carbonic anhydrase 12", "target_chembl_id": "CHEMBL3242", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Histone deacetylase 1", "target_chembl_id": "CHEMBL325", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Urokinase-type plasminogen activator", "target_chembl_id": "CHEMBL3286", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interferon gamma", "target_chembl_id": "CHEMBL3286073", "target_type": "SINGLE PROTEIN"}
+{"organism": "Trichophyton rubrum (strain ATCC MYA-4607 / CBS 118892) (Athlete'sfoot fungus)", "pref_name": "Leucine-tRNA ligase", "target_chembl_id": "CHEMBL3307222", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Programmed cell death protein 1", "target_chembl_id": "CHEMBL3307223", "target_type": "SINGLE PROTEIN"}
+{"organism": "Hepatitis C virus", "pref_name": "Nonstructural protein 5A", "target_chembl_id": "CHEMBL3307224", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Orexin receptor", "target_chembl_id": "CHEMBL3307226", "target_type": "PROTEIN FAMILY"}
+{"organism": "Escherichia coli", "pref_name": "Cell shape peptidoglycan synthetase penicillin-binding protein 2", "target_chembl_id": "CHEMBL3309036", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Histone deacetylase 11", "target_chembl_id": "CHEMBL3310", "target_type": "SINGLE PROTEIN"}
+{"organism": "Influenza B virus (strain B/Lee/1940)", "pref_name": "Neuraminidase", "target_chembl_id": "CHEMBL3377", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "B-lymphocyte antigen CD19", "target_chembl_id": "CHEMBL3390821", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-17A", "target_chembl_id": "CHEMBL3390822", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Betaine-homocysteine S-methyltransferase", "target_chembl_id": "CHEMBL3391661", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Cytochrome P450 3A4", "target_chembl_id": "CHEMBL340", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Growth/differentiation factor 8", "target_chembl_id": "CHEMBL3407325", "target_type": "SINGLE PROTEIN"}
+{"organism": "Human immunodeficiency virus 1", "pref_name": "Human immunodeficiency virus type 1 integrase", "target_chembl_id": "CHEMBL3471", "target_type": "SINGLE PROTEIN"}
+{"organism": "Staphylococcus aureus", "pref_name": "Penicillin-binding protein 2a", "target_chembl_id": "CHEMBL3512", "target_type": "SINGLE PROTEIN"}
+{"organism": "Human immunodeficiency virus type 1 group M subtype B (isolate HXB2)(HIV-1)", "pref_name": "Envelope glycoprotein gp160", "target_chembl_id": "CHEMBL3520", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Steroid 17-alpha-hydroxylase/17,20 lyase", "target_chembl_id": "CHEMBL3522", "target_type": "SINGLE PROTEIN"}
+{"organism": null, "pref_name": "Dabigatran", "target_chembl_id": "CHEMBL3545433", "target_type": "SMALL MOLECULE"}
+{"organism": null, "pref_name": "Potassium", "target_chembl_id": "CHEMBL3545434", "target_type": "METAL"}
+{"organism": "Homo sapiens", "pref_name": "Non-receptor tyrosine-protein kinase TYK2", "target_chembl_id": "CHEMBL3553", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "SLAM family member 7", "target_chembl_id": "CHEMBL3559386", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Peroxisome proliferator-activated receptor", "target_chembl_id": "CHEMBL3559683", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Cholesteryl ester transfer protein", "target_chembl_id": "CHEMBL3572", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-5 receptor subunit alpha", "target_chembl_id": "CHEMBL3580483", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-17 receptor A", "target_chembl_id": "CHEMBL3580485", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-13", "target_chembl_id": "CHEMBL3580486", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Sclerostin", "target_chembl_id": "CHEMBL3580487", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-4 receptor subunit alpha", "target_chembl_id": "CHEMBL3580490", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Programmed cell death 1 ligand 1", "target_chembl_id": "CHEMBL3580522", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Angiotensinogen", "target_chembl_id": "CHEMBL3596085", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Fibroblast growth factor receptor 1", "target_chembl_id": "CHEMBL3650", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Prostaglandin E2 receptor EP3 subtype", "target_chembl_id": "CHEMBL3710", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Angiopoietin-related protein 3", "target_chembl_id": "CHEMBL3710485", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor receptor superfamily member 9", "target_chembl_id": "CHEMBL3712857", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor ligand superfamily member 4", "target_chembl_id": "CHEMBL3712900", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor ligand superfamily member 14", "target_chembl_id": "CHEMBL3712914", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-22", "target_chembl_id": "CHEMBL3712915", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Thymic stromal lymphopoietin", "target_chembl_id": "CHEMBL3712931", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Granulocyte-macrophage colony-stimulating factor", "target_chembl_id": "CHEMBL3712955", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Insulin-like growth factor 2", "target_chembl_id": "CHEMBL3712957", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor receptor superfamily member 18", "target_chembl_id": "CHEMBL3712995", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor ligand superfamily member 12", "target_chembl_id": "CHEMBL3713023", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tissue factor pathway inhibitor", "target_chembl_id": "CHEMBL3713062", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor ligand superfamily member 13", "target_chembl_id": "CHEMBL3713436", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "ATP-citrate synthase", "target_chembl_id": "CHEMBL3720", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Carbonic anhydrase 4", "target_chembl_id": "CHEMBL3729", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Melanocyte-stimulating hormone receptor", "target_chembl_id": "CHEMBL3795", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Calcitonin gene-related peptide type 1 receptor", "target_chembl_id": "CHEMBL3798", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "SMN2 pre-mRNA", "target_chembl_id": "CHEMBL3826841", "target_type": "NUCLEIC-ACID"}
+{"organism": "Homo sapiens", "pref_name": "Hypoxia-inducible factor prolyl hydroxylase", "target_chembl_id": "CHEMBL3831261", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Cardiac myosin", "target_chembl_id": "CHEMBL3831286", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Caspase", "target_chembl_id": "CHEMBL3831289", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Calcitonin gene-related peptide", "target_chembl_id": "CHEMBL3832947", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "CRL4(CRBN) E3 ubiquitin ligase", "target_chembl_id": "CHEMBL3833061", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Epstein-Barr virus (strain GD1) (HHV-4) (Human herpesvirus 4)", "pref_name": "Serine/threonine-protein kinase BGLF4", "target_chembl_id": "CHEMBL3833483", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Alpha glucosidase", "target_chembl_id": "CHEMBL3833502", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Sodium/glucose cotransporter 2", "target_chembl_id": "CHEMBL3884", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Acetyl-CoA carboxylase", "target_chembl_id": "CHEMBL3885507", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Sarcoplasmic/endoplasmic reticulum calcium ATPase 2", "target_chembl_id": "CHEMBL3901", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tyrosine-protein kinase Lyn", "target_chembl_id": "CHEMBL3905", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Complement C1s subcomponent", "target_chembl_id": "CHEMBL3913", "target_type": "SINGLE PROTEIN"}
+{"organism": "Severe acute respiratory syndrome-related coronavirus", "pref_name": "Replicase polyprotein 1a", "target_chembl_id": "CHEMBL3927", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Trifunctional purine biosynthetic protein adenosine-3", "target_chembl_id": "CHEMBL3972", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Peroxisome proliferator-activated receptor delta", "target_chembl_id": "CHEMBL3979", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Transforming growth factor beta", "target_chembl_id": "CHEMBL3988637", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor receptor superfamily member 4", "target_chembl_id": "CHEMBL3989383", "target_type": "SINGLE PROTEIN"}
+{"organism": "Human cytomegalovirus (strain AD169) (HHV-5) (Human herpesvirus 5)", "pref_name": "DNA terminase", "target_chembl_id": "CHEMBL3991482", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit alpha isoform", "target_chembl_id": "CHEMBL4005", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "3-hydroxy-3-methylglutaryl-coenzyme A reductase", "target_chembl_id": "CHEMBL402", "target_type": "SINGLE PROTEIN"}
+{"organism": "Canis lupus familiaris", "pref_name": "Cyclooxygenase-2", "target_chembl_id": "CHEMBL4033", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Cystic fibrosis transmembrane conductance regulator", "target_chembl_id": "CHEMBL4051", "target_type": "SINGLE PROTEIN"}
+{"organism": "Canis lupus familiaris", "pref_name": "Glucocorticoid receptor", "target_chembl_id": "CHEMBL4105966", "target_type": "SINGLE PROTEIN"}
+{"organism": "Canis lupus familiaris", "pref_name": "Prostaglandin G/H synthase 1", "target_chembl_id": "CHEMBL4133", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Fibroblast growth factor receptor 2", "target_chembl_id": "CHEMBL4142", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Mannan-binding lectin serine protease 2", "target_chembl_id": "CHEMBL4295646", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Sodium channel protein type 9 subunit alpha", "target_chembl_id": "CHEMBL4296", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Transthyretin mRNA", "target_chembl_id": "CHEMBL4296221", "target_type": "NUCLEIC-ACID"}
+{"organism": "Hepacivirus hominis", "pref_name": "RNA-directed RNA polymerase", "target_chembl_id": "CHEMBL4296320", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Bromodomain and extra-terminal motif (BET)", "target_chembl_id": "CHEMBL4296614", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "TEC family kinase", "target_chembl_id": "CHEMBL4296642", "target_type": "PROTEIN FAMILY"}
+{"organism": "Zaire ebolavirus (strain Mayinga-76) (ZEBOV) (Zaire Ebola virus)", "pref_name": "RNA-directed RNA polymerase L", "target_chembl_id": "CHEMBL4303062", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Gastric inhibitory polypeptide receptor", "target_chembl_id": "CHEMBL4383", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "cAMP and cAMP-inhibited cGMP 3',5'-cyclic phosphodiesterase 10A", "target_chembl_id": "CHEMBL4409", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Protein phosphatase 3 catalytic subunit alpha", "target_chembl_id": "CHEMBL4445", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Voltage-dependent N-type calcium channel subunit alpha-1B", "target_chembl_id": "CHEMBL4478", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Nitric oxide synthase, inducible", "target_chembl_id": "CHEMBL4481", "target_type": "SINGLE PROTEIN"}
+{"organism": "Trypanosoma cruzi", "pref_name": "DNA", "target_chembl_id": "CHEMBL4495551", "target_type": "NUCLEIC-ACID"}
+{"organism": null, "pref_name": "Rivaroxaban", "target_chembl_id": "CHEMBL4495555", "target_type": "SMALL MOLECULE"}
+{"organism": null, "pref_name": "Apixaban", "target_chembl_id": "CHEMBL4495556", "target_type": "SMALL MOLECULE"}
+{"organism": "Severe acute respiratory syndrome coronavirus 2", "pref_name": "Replicase polyprotein 1ab", "target_chembl_id": "CHEMBL4523582", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "E3 ubiquitin ligase TRAF3IP2", "target_chembl_id": "CHEMBL4523586", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor receptor superfamily member 17", "target_chembl_id": "CHEMBL4523587", "target_type": "SINGLE PROTEIN"}
+{"organism": "Influenza A virus (strain A/Puerto Rico/8/1934 H1N1)", "pref_name": "RNA-directed RNA polymerase", "target_chembl_id": "CHEMBL4523676", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Arachidonate 5-lipoxygenase-activating protein", "target_chembl_id": "CHEMBL4550", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Type-2 angiotensin II receptor", "target_chembl_id": "CHEMBL4607", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Growth hormone secretagogue receptor type 1", "target_chembl_id": "CHEMBL4616", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Angiopoietin like 3 (ANGPTL3) mRNA", "target_chembl_id": "CHEMBL4622825", "target_type": "NUCLEIC-ACID"}
+{"organism": "Homo sapiens", "pref_name": "Bcl-2-like protein 1", "target_chembl_id": "CHEMBL4625", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Beta-2 adrenergic receptor mRNA", "target_chembl_id": "CHEMBL4630578", "target_type": "NUCLEIC-ACID"}
+{"organism": "Homo sapiens", "pref_name": "PCSK9 mRNA", "target_chembl_id": "CHEMBL4630662", "target_type": "NUCLEIC-ACID"}
+{"organism": "Homo sapiens", "pref_name": "Nitric oxide synthase", "target_chembl_id": "CHEMBL4630725", "target_type": "PROTEIN FAMILY"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-17F", "target_chembl_id": "CHEMBL4630880", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Lymphocyte activation gene 3 protein", "target_chembl_id": "CHEMBL4630881", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor receptor superfamily member 13C", "target_chembl_id": "CHEMBL4630882", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Platelet glycoprotein Ib alpha chain", "target_chembl_id": "CHEMBL4630891", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Interleukin-31 receptor subunit alpha", "target_chembl_id": "CHEMBL4630894", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase 1", "target_chembl_id": "CHEMBL4660", "target_type": "SINGLE PROTEIN"}
+{"organism": "Fungi", "pref_name": "Lanosterol 14-alpha demethylase", "target_chembl_id": "CHEMBL4662933", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "LPA mRNA", "target_chembl_id": "CHEMBL4662965", "target_type": "NUCLEIC-ACID"}
+{"organism": "Cryptococcus neoformans var. neoformans B-3501A", "pref_name": "Thymidylate synthase", "target_chembl_id": "CHEMBL4665", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "IL36 receptor", "target_chembl_id": "CHEMBL4665591", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Homo sapiens", "pref_name": "Bcl-2-like protein 2", "target_chembl_id": "CHEMBL4677", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "ATP-sensitive inward rectifier potassium channel 8", "target_chembl_id": "CHEMBL4770", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Orexin receptor type 2", "target_chembl_id": "CHEMBL4792", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Transient receptor potential cation channel subfamily V member 1", "target_chembl_id": "CHEMBL4794", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Innate repair receptor", "target_chembl_id": "CHEMBL4804252", "target_type": "PROTEIN COMPLEX"}
+{"organism": "Dermatophytes", "pref_name": "3-hydroxy-3-methylglutaryl-coenzyme A reductase", "target_chembl_id": "CHEMBL4804261", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Apolipoprotein C-III mRNA", "target_chembl_id": "CHEMBL4834388", "target_type": "NUCLEIC-ACID"}
+{"organism": "Homo sapiens", "pref_name": "Apoptosis regulator Bcl-2", "target_chembl_id": "CHEMBL4860", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "BDNF/NT-3 growth factors receptor", "target_chembl_id": "CHEMBL4898", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Complement C3", "target_chembl_id": "CHEMBL4917", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Gamma-aminobutyric acid receptor subunit alpha-2", "target_chembl_id": "CHEMBL4956", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Sodium/glucose cotransporter 1", "target_chembl_id": "CHEMBL4979", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Prostaglandin D2 receptor 2", "target_chembl_id": "CHEMBL5071", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Orexin/Hypocretin receptor type 1", "target_chembl_id": "CHEMBL5113", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tyrosine-protein kinase BTK", "target_chembl_id": "CHEMBL5251", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Bone morphogenetic protein receptor type-1A", "target_chembl_id": "CHEMBL5275", "target_type": "SINGLE PROTEIN"}
+{"organism": "Felis catus", "pref_name": "Cyclooxygenase 2", "target_chembl_id": "CHEMBL5303558", "target_type": "SINGLE PROTEIN"}
+{"organism": "Canis lupus familiaris", "pref_name": "Arachidonate 5-lipoxygenase", "target_chembl_id": "CHEMBL5303560", "target_type": "SINGLE PROTEIN"}
+{"organism": "Sus scrofa", "pref_name": "Gonadotropin-releasing hormone receptor", "target_chembl_id": "CHEMBL5303564", "target_type": "SINGLE PROTEIN"}
+{"organism": "Equus caballus", "pref_name": "Cyclooxygenase-1", "target_chembl_id": "CHEMBL5303565", "target_type": "SINGLE PROTEIN"}
+{"organism": "Equus caballus", "pref_name": "Prostaglandin G/H synthase 2", "target_chembl_id": "CHEMBL5303566", "target_type": "SINGLE PROTEIN"}
+{"organism": "Variola virus", "pref_name": "Envelope phospholipase OPG057", "target_chembl_id": "CHEMBL5308522", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "P-selectin", "target_chembl_id": "CHEMBL5378", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Activin receptor type-2B", "target_chembl_id": "CHEMBL5466", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Bone morphogenetic protein receptor type-2", "target_chembl_id": "CHEMBL5467", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Bone morphogenetic protein receptor type-1B", "target_chembl_id": "CHEMBL5476", "target_type": "SINGLE PROTEIN"}
+{"organism": "Escherichia coli", "pref_name": "Peptidoglycan D,D-transpeptidase FtsI", "target_chembl_id": "CHEMBL5500282", "target_type": "SINGLE PROTEIN"}
+{"organism": "Severe acute respiratory syndrome coronavirus 2", "pref_name": "RNA", "target_chembl_id": "CHEMBL5604041", "target_type": "NUCLEIC-ACID"}
+{"organism": "Homo sapiens", "pref_name": "NT-3 growth factor receptor", "target_chembl_id": "CHEMBL5608", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Activin receptor type-2A", "target_chembl_id": "CHEMBL5616", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Egl nine homolog 1", "target_chembl_id": "CHEMBL5697", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Prolyl hydroxylase EGLN3", "target_chembl_id": "CHEMBL5705", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Tumor necrosis factor ligand superfamily member 6", "target_chembl_id": "CHEMBL5714", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "GMP synthase [glutamine-hydrolyzing]", "target_chembl_id": "CHEMBL5721", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Complement factor B", "target_chembl_id": "CHEMBL5731", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Receptor tyrosine-protein kinase erbB-3", "target_chembl_id": "CHEMBL5838", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Glucagon-like peptide 2 receptor", "target_chembl_id": "CHEMBL5844", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Trace amine-associated receptor 1", "target_chembl_id": "CHEMBL5857", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Activin receptor type-1", "target_chembl_id": "CHEMBL5903", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Leptin receptor", "target_chembl_id": "CHEMBL5913", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "IgG receptor FcRn large subunit p51", "target_chembl_id": "CHEMBL5966", "target_type": "SINGLE PROTEIN"}
+{"organism": "Mycobacterium tuberculosis", "pref_name": "Dihydrofolate reductase", "target_chembl_id": "CHEMBL6065", "target_type": "SINGLE PROTEIN"}
+{"organism": "Homo sapiens", "pref_name": "Solute carrier family 22 member 12", "target_chembl_id": "CHEMBL6120", "target_type": "SINGLE PROTEIN"}
+{"organism": "Klebsiella pneumoniae", "pref_name": "Carbapenem-hydrolyzing beta-lactamase KPC", "target_chembl_id": "CHEMBL6132", "target_type": "SINGLE PROTEIN"}
+{"organism": "Plasmodium falciparum", "pref_name": "Ferriprotoporphyrin IX", "target_chembl_id": "CHEMBL613897", "target_type": "SMALL MOLECULE"}
+{"organism": "Streptococcus pneumoniae serotype 4 (strain ATCC BAA-334 / TIGR4)", "pref_name": "Penicillin-binding protein 2x", "target_chembl_id": "CHEMBL6188", "target_type": "SINGLE PROTEIN"}

@@ -17,24 +17,25 @@ Cache `wikipedia-infobox.jsonl` jest commitowany, więc CI i `make all` działaj
 
 | Metryka | Liczba |
 |---|---|
-| Substancje w katalogu | 2351 |
-| Dopasowana strona z `Infobox drug` | 1767 |
-| Rekordy z ≥1 polem PK | **1117** |
-| t½ liczbowo | 1016 |
-| Wiązanie z białkami liczbowo | 663 |
-| Biodostępność liczbowo | 639 |
-| Główna droga wydalania ustalona (nerki / pozanerkowo) | 576 |
-| Frakcja wydalana w postaci niezmienionej (fe) | 70 |
-| Metabolizm wątrobowy ustalony | 708 |
-| Substraty CYP | 310 |
-| Tożsamość potwierdzona zgodnym ChEMBL ID | 235 |
+| Substancje w katalogu | 2537 |
+| Dopasowana strona z `Infobox drug` | 1919 |
+| Rekordy z ≥1 polem PK | **1158** |
+| t½ liczbowo | 1048 |
+| Wiązanie z białkami liczbowo | 669 |
+| Biodostępność liczbowo | 645 |
+| Główna droga wydalania ustalona (nerki / pozanerkowo) | 591 |
+| Frakcja wydalana w postaci niezmienionej (fe) | 74 |
+| Metabolizm wątrobowy ustalony | 728 |
+| Substraty CYP | 314 |
+| Tożsamość potwierdzona ChEMBL ID (także sól ↔ związek macierzysty) | 262 |
 | Odrzucone (niezgodny ChEMBL ID) | 26 → `rejected.csv` |
 
 ## Reguły bezpieczeństwa danych
 
 - Strona jest odrzucana, gdy ChEMBL ID katalogu i infoboksu są różne (najczęściej sól vs. związek macierzysty — do ręcznej kuracji).
 - Tożsamość pozostałych rekordów opiera się na nazwie/aliasie z przekierowaniami Wikipedii (np. *Glyburide → Glibenclamide*, *Ostarine → Enobosarm*); pole `pk-source.chembl-confirmed` rozróżnia oba przypadki.
-- t½ z badań na zwierzętach (szczur, mysz, pies…) **nie** jest zapisywany jako liczba — tylko w `notes` (np. BPC-157).
+- t½ z badań na zwierzętach (szczur, mysz, pies…) **nie** jest zapisywany jako liczba — tylko w `notes` (np. BPC-157). Od v3.2 to samo dotyczy biodostępności i wiązania z białkami (np. LSD „65–90% in guinea pigs”); wiązanie z białkami „in vitro” jest dopuszczone, bo tak się je standardowo mierzy.
+- Od v3.2: „± SD” jest usuwane przed parsowaniem (39 poprawionych wartości, np. abakawir 0,63 → 1,54 h), a szablony `{{ndash}}`/`{{nbsp}}` są zamieniane na znaki (lorazepam 10–20 h, morfina 2–3 h).
 - Enzymy CYP z pola *metabolism* zapisywane są wyłącznie jako **substraty**; role inhibitora/induktora nie są oceniane (wymagają ChPL/etykiety FDA).
 - Każda wartość ma zachowany oryginalny tekst (`notes`) i stały URL wersji (`…&oldid=REVID`).
 - Notatki kuratorskie (`review-status` ≠ `stub`) nigdy nie są nadpisywane; stuby dostają `source-status: auto-extracted` i tag `pk-auto`.
@@ -49,3 +50,45 @@ Cache `wikipedia-infobox.jsonl` jest commitowany, więc CI i `make all` działaj
 ## Licencja i atrybucja
 
 Teksty z Wikipedii są dostępne na licencji [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Atrybucja: link do konkretnej wersji artykułu w każdym rekordzie (`source-url`) — historia autorów jest dostępna pod tym adresem. Wyciągnięte fragmenty w `notes`, `pk.json` i notatkach vaultu podlegają tej samej licencji.
+
+
+---
+
+# 🧬 Warstwa ChEMBL (v3.2)
+
+```bash
+make chembl-fetch   # sieć: enrich_chembl.py resolve + fetch -> data/enrichment/chembl/*.jsonl
+make chembl         # offline: enrich_chembl.py parse -> data/processed/chembl.json, chembl-coverage.json
+```
+
+| Cache (`chembl/`) | Zawartość |
+|---|---|
+| `name-lookup.jsonl` | dokładne dopasowania nazwy/synonimu → ChEMBL (z `pref_name`, rodzicem) |
+| `pubchem-lookup.jsonl` | PubChem PUG REST: nazwa → CID → InChIKey → ChEMBL |
+| `molecules.jsonl`, `mechanisms.jsonl`, `targets.jsonl`, `atc.jsonl` | rekordy ChEMBL API v2 (tylko używane pola) |
+
+Kolejność ustalania tożsamości: **katalog → infoboks Wikipedii (tylko jeśli ID istnieje w ChEMBL) → dokładny synonim ChEMBL z jednoznacznym rodzicem → PubChem (jeden CID)**. Zapytania ≤ 3 znaków wymagają potwierdzenia ChEMBL. Wyjątki: `data/curated/identity-overrides.csv`. Szczegóły i uzasadnienie: [ADR-0002](../../docs/adr/0002-identity-tiers-and-automated-pk-crosscheck.md).
+
+Pokrycie (`chembl-coverage.json`): **2264** tożsamości (katalog 499 · infoboks 1037 · dopasowanie nazwy 607 · dodatki 121), mechanizm 1366, ATC 1411, ostrzeżenie „black box” 450, wycofane 104, **546 celów** (268 wspólnych dla ≥ 2 substancji).
+
+# 🇺🇸 Automatyczne porównanie z etykietami FDA (v3.2)
+
+```bash
+make verify-fetch   # sieć: verify_pk_fda.py fetch -> openfda/label-pk.jsonl
+make verify         # offline: -> data/processed/pk-verification.json, pk-verification-coverage.json
+```
+
+- Źródło: openFDA `drug/label` (`openfda.generic_name.exact`, najnowsza etykieta). Cache przechowuje **tylko zdania** z t½ i wiązaniem z białkami + set id / wersję (link DailyMed).
+- Tolerancja: t½ zgodne, gdy wartość z etykiety mieści się w ×0,5–1,5 zakresu z Wikipedii; wiązanie z białkami ±10 p.p.
+- Statusy: `consistent` 441 · `discrepant` 54 · `no-label-value` 72 · `no-label` 512 (z 1079 rekordów z t½ lub PB).
+- `consistent` → `source-status: partially-verified` i tag `pk-fda-consistent`. To **automatyczna zgodność dwóch źródeł, nie przegląd ekspercki** (`review-status` pozostaje `stub`).
+- Typowe przyczyny `discrepant`: pozorny t½ postaci o przedłużonym uwalnianiu/depot (buprenorfina, naltrekson ER, implant afamelanotydu), t½ metabolitu, frakcja wolna zamiast związanej. Lista: `01 Maps of Content/Review Queue.md`.
+
+# 📜 Licencje źródeł
+
+| Źródło | Licencja | Zakres w repo |
+|---|---|---|
+| Wikipedia | CC BY-SA 4.0 | fragmenty infoboksów, link do wersji `oldid` |
+| ChEMBL (EMBL-EBI) | CC BY-SA 3.0 | identyfikatory, mechanizmy, cele, ATC, właściwości |
+| PubChem (NCBI) | domena publiczna | CID, InChIKey |
+| openFDA / DailyMed | domena publiczna (US Gov) | zdania PK z etykiet, set id |

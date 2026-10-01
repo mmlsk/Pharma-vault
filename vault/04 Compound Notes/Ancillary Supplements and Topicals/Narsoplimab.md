@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Mannan-binding lectin serine protease 2 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4298195
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4298195
+  pref-name: NARSOPLIMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4295646
+    name: Mannan-binding lectin serine protease 2
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Narsoplimab
@@ -67,10 +83,23 @@ tags:
 - **Compound ID:** `narsoplimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4298195](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298195/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits a step of the complement cascade; blocking terminal complement raises encapsulated-organism risk and requires meningococcal vaccination; MASP-2 inhibitor, investigational.
+
+## Mechanism
+
+Mannan-binding lectin serine protease 2 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Mannan-binding lectin serine protease 2 (CHEMBL4295646)|Mannan-binding lectin serine protease 2]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

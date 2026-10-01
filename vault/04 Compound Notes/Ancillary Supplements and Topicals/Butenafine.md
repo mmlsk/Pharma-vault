@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL990
+chembl-max-phase: 4
 half-life:
   value: 35.0
   value-max: 100.0
@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Butenafine
@@ -63,6 +64,35 @@ pk-source:
   revision: 1344636880
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL990
+  pref-name: BUTENAFINE
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D01AE23
+  targets: []
+  properties:
+    full-mwt: 317.48
+    mw-freebase: 317.48
+    alogp: 5.77
+    psa: 3.24
+    hba: 1
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 1
+    qed-weighted: 0.59
+    full-molformula: C23H27N
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Butenafine
@@ -76,10 +106,21 @@ pk-source:
 - **Compound ID:** `butenafine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL990](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL990/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Disrupts fungal ergosterol synthesis or membrane function; interaction and organ-toxicity profiles differ substantially.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **ATC D01AE23:** DERMATOLOGICALS › ANTIFUNGALS FOR TOPICAL USE › Other antifungals for topical use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 317.48 | 5.77 | 3.24 | 0/1 | 1 | C23H27N |
 
 ## Evidence boundaries
 
@@ -95,6 +136,14 @@ Disrupts fungal ergosterol synthesis or membrane function; interaction and organ
 |---|---|---|
 | Elimination t½ | 35–100 h | 35–100 hours |
 | Metabolism | hepatic | Hepatic |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amorolfine]], [[Flucytosine]], [[Naftifine]], [[Salicylic Acid]], [[Tavaborole]], [[Terbinafine (oral, Lamisil)]], [[Undecylenic Acid]]
 
 ## Safety routing
 

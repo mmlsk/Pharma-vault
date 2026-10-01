@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL402363
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL402363
+  pref-name: AZUMAMIDE E
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 514.62
+    mw-freebase: 514.62
+    alogp: 1.31
+    psa: 153.7
+    hba: 5
+    hbd: 5
+    rtb: 8
+    num-ro5-violations: 1
+    qed-weighted: 0.33
+    full-molformula: C27H38N4O6
 ---
 
 # Azumamide E
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `azumamide-e-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL402363](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL402363/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Azumamide E is a named HDAC research compound with a curated biochemical result against HDAC2. ChEMBL records Ki 50.0 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 514.62 | 1.31 | 153.7 | 5/5 | 1 | C27H38N4O6 |
 
 ## Evidence boundaries
 

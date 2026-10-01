@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Mifepristone
@@ -70,6 +71,14 @@ pk-source:
   revision: 1375990318
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: b63fad9b-7f12-4400-9019-b0586054e534
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b63fad9b-7f12-4400-9019-b0586054e534
+  checked: '2026-10-01'
+  fields:
+    protein-binding: consistent
 ---
 
 # Mifepristone (Korlym/Mifeprex)
@@ -105,6 +114,10 @@ Glucocorticoid and progesterone receptor antagonist; blocks cortisol action rath
 | Bioavailability | 69 % | 69% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly non-renal | Feces: 83%; urine: 9% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set b63fad9b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b63fad9b-7f12-4400-9019-b0586054e534), label version 20260606. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - protein-binding: consistent (label values: 98)
 
 ## Safety routing
 

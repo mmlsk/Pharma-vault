@@ -20,7 +20,7 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: 20.8
+  value: 38.9
   value-max: null
   unit: h
   notes: 38.9 ± 20.8 h
@@ -70,6 +70,13 @@ pk-source:
   revision: 1376285411
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ivermectin (topical 1% cream, Soolantra)
@@ -101,11 +108,13 @@ Once-daily anti-parasitic cream for papulopustular rosacea, acting on Demodex an
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 20.8 h | 38.9 ± 20.8 h |
+| Elimination t½ | 38.9 h | 38.9 ± 20.8 h |
 | Protein binding | 93 % | 93% |
 | Bioavailability | - | not determined |
 | Metabolism | hepatic | Liver (CYP450) |
 | Excretion | - | Feces; <1% urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

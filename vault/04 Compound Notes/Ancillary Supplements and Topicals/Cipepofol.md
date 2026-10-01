@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4094894
 chembl-max-phase: 3
 half-life:
   value: null
@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Cipepofol
@@ -62,6 +63,30 @@ pk-source:
   revision: 1376612237
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4094894
+  pref-name: CIPEPOFOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2093872
+    name: GABA-A receptor; anion channel
+    action: AGONIST
+  properties:
+    full-mwt: 204.31
+    mw-freebase: 204.31
+    alogp: 4.03
+    psa: 20.23
+    hba: 1
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.79
+    full-molformula: C14H20O
 ---
 
 # Cipepofol
@@ -75,6 +100,7 @@ pk-source:
 - **Compound ID:** `cipepofol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4094894](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4094894/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -83,6 +109,18 @@ Cipepofol is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is g
 ## Mechanism
 
 gABA-A receptor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 204.31 | 4.03 | 20.23 | 1/1 | 0 | C14H20O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-A receptor; anion channel (CHEMBL2093872)|GABA-A receptor; anion channel]] - agonist · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -98,6 +136,12 @@ gABA-A receptor _(ChEMBL curated mechanism, as quoted by the source)._
 |---|---|---|
 | Metabolism | hepatic | Liver glucuronidation |
 | Excretion | mainly urinary | Kidney |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abp-700]] (GABA-A receptor; anion channel), [[Adipiplon]] (GABA-A receptor; anion channel), [[Alprazolam]] (GABA-A receptor; anion channel), [[Brexanolone]] (GABA-A receptor; anion channel), [[Butalbital]] (GABA-A receptor; anion channel), [[Cenobamate]] (GABA-A receptor; anion channel), [[Chlordiazepoxide]] (GABA-A receptor; anion channel), [[Clobazam]] (GABA-A receptor; anion channel), [[Clomethiazole]] (GABA-A receptor; anion channel), [[Clonazepam]] (GABA-A receptor; anion channel), [[Clotiazepam]] (GABA-A receptor; anion channel), [[Darigabat]] (GABA-A receptor; anion channel)
 
 ## Safety routing
 

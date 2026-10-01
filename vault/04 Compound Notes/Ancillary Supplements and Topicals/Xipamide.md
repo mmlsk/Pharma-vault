@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL517199
+chembl-max-phase: 2
 half-life:
   value: 5.8
   value-max: 8.2
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Xipamide
@@ -68,6 +69,35 @@ pk-source:
   revision: 1359319984
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL517199
+  pref-name: XIPAMIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C03BA10
+  targets: []
+  properties:
+    full-mwt: 354.81
+    mw-freebase: 354.81
+    alogp: 2.56
+    psa: 109.49
+    hba: 4
+    hbd: 3
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.79
+    full-molformula: C15H15ClN2O4S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Xipamide
@@ -81,10 +111,20 @@ pk-source:
 - **Compound ID:** `xipamide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL517199](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL517199/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Thiazide-like diuretic retaining efficacy at lower glomerular filtration rates than most thiazides.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C03BA10:** CARDIOVASCULAR SYSTEM › LOW-CEILING DIURETICS, EXCL. THIAZIDES › Sulfonamides, plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 354.81 | 2.56 | 109.49 | 3/4 | 0 | C15H15ClN2O4S |
 
 ## Evidence boundaries
 
@@ -103,6 +143,14 @@ Thiazide-like diuretic retaining efficacy at lower glomerular filtration rates t
 | Bioavailability | 95 % | 95% |
 | Metabolism | hepatic | glucuronide (30%) |
 | Excretion | - | kidney (1/3) and bile duct (2/3) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Chlorthalidone]], [[Indapamide]], [[Metolazone]]
 
 ## Safety routing
 

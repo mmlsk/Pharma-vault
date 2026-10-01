@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Amcinonide
@@ -62,6 +63,31 @@ pk-source:
   revision: 1346125143
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200732
+  pref-name: AMCINONIDE
+  molecule-type: Small molecule
+  first-approval: 1979
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D07AC11
+  targets:
+  - id: CHEMBL2034
+    name: Glucocorticoid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 502.58
+    mw-freebase: 502.58
+    alogp: 3.52
+    psa: 99.13
+    hba: 7
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 1
+    qed-weighted: 0.59
+    full-molformula: C28H35FO7
 ---
 
 # Amcinonide
@@ -75,7 +101,7 @@ pk-source:
 - **Compound ID:** `amcinonide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200732](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200732/) · max phase 4
+- **ChEMBL:** [CHEMBL1200732](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200732/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -84,6 +110,20 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1979
+- **ATC D07AC11:** DERMATOLOGICALS › CORTICOSTEROIDS, PLAIN › Corticosteroids, potent (group III)
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 502.58 | 3.52 | 99.13 | 1/7 | 1 | C28H35FO7 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucocorticoid receptor (CHEMBL2034)|Glucocorticoid receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -99,6 +139,13 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 |---|---|---|
 | Metabolism | hepatic | Hepatic |
 | Excretion | - | Urine and bile |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor), [[Clocortolone Pivalate]] (Glucocorticoid receptor)
+- **Same ATC subgroup:** [[Beclomethasone Dipropionate]], [[Betamethasone]], [[Budesonide]], [[Desoximetasone]], [[Diflorasone Diacetate]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluocinonide]], [[Flurandrenolide]], [[Fluticasone Propionate]], [[Halobetasol Propionate]], [[Halobetasol Propionate (halobetasol-propionate-compound)|Halobetasol Propionate]]
 
 ## Safety routing
 

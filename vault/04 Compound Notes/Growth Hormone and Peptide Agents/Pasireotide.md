@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3349607
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,23 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3349607
+  pref-name: PASIREOTIDE
+  molecule-type: Protein
+  first-approval: 2012
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01CB05
+  targets: []
+  properties:
+    full-mwt: 1047.23
+    mw-freebase: 1047.23
+    full-molformula: C58H66N10O9
 ---
 
 # Pasireotide
@@ -68,10 +85,21 @@ tags:
 - **Compound ID:** `pasireotide-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL3349607](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3349607/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Multi-receptor somatostatin analog used to control growth hormone and ACTH hypersecretion.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2012
+- **ATC H01CB05:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › HYPOTHALAMIC HORMONES › Somatostatin and analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1047.23 | - | - | -/- | - | C58H66N10O9 |
 
 ## Evidence boundaries
 
@@ -81,6 +109,12 @@ Multi-receptor somatostatin analog used to control growth hormone and ACTH hyper
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Lanreotide]], [[Octreotide]], [[Somatostatin]], [[Vapreotide]]
 
 ## Safety routing
 

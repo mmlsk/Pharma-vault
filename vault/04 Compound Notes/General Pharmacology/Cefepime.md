@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL186
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: null
@@ -60,6 +60,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Cefepime
@@ -67,6 +69,36 @@ pk-source:
   revision: 1373478954
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL186
+  pref-name: CEFEPIME
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J01DE01
+  targets: []
+  properties:
+    full-mwt: 480.57
+    mw-freebase: 480.57
+    alogp: -1.28
+    psa: 150.04
+    hba: 10
+    hbd: 2
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.21
+    full-molformula: C19H24N6O5S2
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: be5f8ca6-7232-423a-a2d5-cccb7abe7921
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=be5f8ca6-7232-423a-a2d5-cccb7abe7921
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
 ---
 
 # Cefepime
@@ -80,10 +112,21 @@ pk-source:
 - **Compound ID:** `cefepime-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL186](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL186/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Fourth-generation cephalosporin combining antipseudomonal and gram-positive activity, and a poor inducer of AmpC beta-lactamases.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **ATC J01DE01:** ANTIINFECTIVES FOR SYSTEMIC USE › OTHER BETA-LACTAM ANTIBACTERIALS › Fourth-generation cephalosporins
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 480.57 | -1.28 | 150.04 | 2/10 | 0 | C19H24N6O5S2 |
 
 ## Evidence boundaries
 
@@ -101,6 +144,10 @@ Fourth-generation cephalosporin combining antipseudomonal and gram-positive acti
 | Bioavailability | 100 % | 100% (IM) |
 | Metabolism | hepatic | Hepatic 15% |
 | Excretion | mainly urinary | Renal 70–99% |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set be5f8ca6…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=be5f8ca6-7232-423a-a2d5-cccb7abe7921), label version 20260625. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 8, 12)
 
 ## Safety routing
 

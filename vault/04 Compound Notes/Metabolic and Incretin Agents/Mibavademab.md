@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4650509
 chembl-max-phase: 2
 half-life:
   value: null
@@ -55,6 +55,22 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4650509
+  pref-name: MIBAVADEMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL5913
+    name: Leptin receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Mibavademab
@@ -68,6 +84,7 @@ tags:
 - **Compound ID:** `mibavademab-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL4650509](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650509/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -77,6 +94,14 @@ Mibavademab is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is
 
 leptin receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Leptin receptor (CHEMBL5913)|Leptin receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +110,12 @@ leptin receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Metreleptin]] (Leptin receptor)
 
 ## Safety routing
 

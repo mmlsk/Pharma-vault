@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL829
+  pref-name: METHYLPROMAZINE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AD01
+  targets: []
+  properties:
+    full-mwt: 298.45
+    mw-freebase: 298.45
+    alogp: 4.49
+    psa: 6.48
+    hba: 3
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C18H22N2S
 ---
 
 # Methylpromazine
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `methylpromazine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL829](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL829/) · max phase 4
+- **ChEMBL:** [CHEMBL829](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL829/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +100,16 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC R06AD01:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Phenothiazine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 298.45 | 4.49 | 6.48 | 0/3 | 0 | C18H22N2S |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +118,12 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Mequitazine]], [[Methdilazine]], [[Promethazine]]
 
 ## Safety routing
 

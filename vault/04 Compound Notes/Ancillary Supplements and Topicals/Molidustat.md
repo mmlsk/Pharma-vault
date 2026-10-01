@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Egl nine homolog 1 inhibitor; Egl nine homolog 3 inhibitor; Hypoxia-inducible factor prolyl hydroxylase 1 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3646118
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,38 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3646118
+  pref-name: MOLIDUSTAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B03XA09
+  targets:
+  - id: CHEMBL5697
+    name: Egl nine homolog 1
+    action: INHIBITOR
+  - id: CHEMBL3028
+    name: Prolyl hydroxylase EGLN2
+    action: INHIBITOR
+  - id: CHEMBL5705
+    name: Prolyl hydroxylase EGLN3
+    action: INHIBITOR
+  properties:
+    full-mwt: 314.31
+    mw-freebase: 314.31
+    alogp: -0.63
+    psa: 106.75
+    hba: 9
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C13H14N8O2
 ---
 
 # Molidustat
@@ -67,10 +99,30 @@ tags:
 - **Compound ID:** `molidustat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3646118](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3646118/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 HIF-PHI approved in Japan for renal anaemia.
+
+## Mechanism
+
+Egl nine homolog 1 inhibitor; Egl nine homolog 3 inhibitor; Hypoxia-inducible factor prolyl hydroxylase 1 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC B03XA09:** BLOOD AND BLOOD FORMING ORGANS › OTHER ANTIANEMIC PREPARATIONS › Other antianemic preparations
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 314.31 | -0.63 | 106.75 | 1/9 | 0 | C13H14N8O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Egl nine homolog 1 (CHEMBL5697)|Egl nine homolog 1]] - inhibitor · SINGLE PROTEIN
+- [[Prolyl hydroxylase EGLN2 (CHEMBL3028)|Prolyl hydroxylase EGLN2]] - inhibitor · SINGLE PROTEIN
+- [[Prolyl hydroxylase EGLN3 (CHEMBL5705)|Prolyl hydroxylase EGLN3]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +132,13 @@ HIF-PHI approved in Japan for renal anaemia.
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Vadadustat]] (Egl nine homolog 1; Prolyl hydroxylase EGLN2; Prolyl hydroxylase EGLN3)
+- **Same ATC subgroup:** [[Daprodustat]], [[Darbepoetin Alfa]], [[Epoetin Beta]], [[Luspatercept]], [[Methoxy Polyethylene Glycol-Epoetin Beta]], [[Peginesatide]], [[Roxadustat]], [[Vadadustat]]
 
 ## Safety routing
 

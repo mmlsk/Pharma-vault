@@ -56,6 +56,21 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201697
+  pref-name: LH (MENOTROPINS)
+  molecule-type: Protein
+  first-approval: 1975
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1854
+    name: Lutropin-choriogonadotropic hormone receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Lh (Menotropins)
@@ -70,7 +85,7 @@ tags:
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Lh, Menotropins
-- **ChEMBL:** [CHEMBL1201697](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201697/) · max phase 4
+- **ChEMBL:** [CHEMBL1201697](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201697/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -80,6 +95,15 @@ Luteinizing hormone/Choriogonadotropin receptor agonist; approved/marketed compo
 
 Luteinizing hormone/Choriogonadotropin receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1975
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Lutropin-choriogonadotropic hormone receptor (CHEMBL1854)|Lutropin-choriogonadotropic hormone receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -88,6 +112,12 @@ Luteinizing hormone/Choriogonadotropin receptor agonist _(ChEMBL curated mechani
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Choriogonadotropin Alfa]] (Lutropin-choriogonadotropic hormone receptor), [[Gonadotropin, Chorionic]] (Lutropin-choriogonadotropic hormone receptor), [[Lutropin Alfa]] (Lutropin-choriogonadotropic hormone receptor), [[Menotropins (hMG, Menopur)]] (Lutropin-choriogonadotropic hormone receptor)
 
 ## Safety routing
 

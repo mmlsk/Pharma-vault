@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL165
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL165
+  pref-name: RESVERATROL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 228.25
+    mw-freebase: 228.25
+    alogp: 2.97
+    psa: 60.69
+    hba: 3
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C14H12O3
 ---
 
 # Resveratrol
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `resveratrol-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL165](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL165/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Plant polyphenol studied as a sirtuin (SIRT1) activator and mitochondrial function booster, the compound that popularized the sirtuin-longevity research area.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 228.25 | 2.97 | 60.69 | 3/3 | 0 | C14H12O3 |
 
 ## Evidence boundaries
 

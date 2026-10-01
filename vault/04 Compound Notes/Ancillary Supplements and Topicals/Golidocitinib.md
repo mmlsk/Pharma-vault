@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4577523
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4577523
+  pref-name: GOLIDOCITINIB
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2835
+    name: Tyrosine-protein kinase JAK1
+    action: INHIBITOR
+  properties:
+    full-mwt: 489.58
+    mw-freebase: 489.58
+    alogp: 2.69
+    psa: 116.23
+    hba: 9
+    hbd: 3
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.36
+    full-molformula: C25H31N9O2
 ---
 
 # Golidocitinib
@@ -67,6 +92,7 @@ tags:
 - **Compound ID:** `golidocitinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4577523](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4577523/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -76,6 +102,18 @@ Golidocitinib is a phase 2 compound catalogued by ChEMBL. Its curated mechanism 
 
 tyrosine-protein kinase JAK1 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 489.58 | 2.69 | 116.23 | 3/9 | 0 | C25H31N9O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tyrosine-protein kinase JAK1 (CHEMBL2835)|Tyrosine-protein kinase JAK1]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +122,12 @@ tyrosine-protein kinase JAK1 inhibitor _(ChEMBL curated mechanism, as quoted by 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abrocitinib (Cibinqo)]] (Tyrosine-protein kinase JAK1), [[Baricitinib (oral, Olumiant)]] (Tyrosine-protein kinase JAK1), [[Brepocitinib]] (Tyrosine-protein kinase JAK1), [[Cerdulatinib]] (Tyrosine-protein kinase JAK1), [[Filgotinib]] (Tyrosine-protein kinase JAK1), [[Momelotinib]] (Tyrosine-protein kinase JAK1)
 
 ## Safety routing
 

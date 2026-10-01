@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1626223
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -59,6 +59,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Pyrantel
@@ -66,6 +67,28 @@ pk-source:
   revision: 1366674848
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1626223
+  pref-name: PYRANTEL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - P02CC01
+  targets: []
+  properties:
+    full-mwt: 206.31
+    mw-freebase: 206.31
+    alogp: 2.5
+    psa: 15.6
+    hba: 3
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C11H14N2S
 ---
 
 # Pyrantel Pamoate
@@ -79,10 +102,20 @@ pk-source:
 - **Compound ID:** `pyrantel-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1626223](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1626223/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Depolarising neuromuscular blocker for the worm, causing spastic paralysis, which is why it must not be combined with piperazine.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC P02CC01:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › ANTINEMATODAL AGENTS › Tetrahydropyrimidine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 206.31 | 2.5 | 15.6 | 0/3 | 0 | C11H14N2S |
 
 ## Evidence boundaries
 

@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: T-lymphocyte activation antigen CD80 inhibitor; T-lymphocyte activation antigen CD86 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1742990
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,26 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1742990
+  pref-name: BELATACEPT
+  molecule-type: Protein
+  first-approval: 2011
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L04AA28
+  targets:
+  - id: CHEMBL2364156
+    name: T-lymphocyte activation antigen CD86
+    action: INHIBITOR
+  - id: CHEMBL2364157
+    name: T-lymphocyte activation antigen CD80
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Belatacept
@@ -67,10 +87,27 @@ tags:
 - **Compound ID:** `belatacept-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1742990](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742990/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Higher-affinity CTLA-4-Ig developed for kidney transplantation as a calcineurin-free maintenance regimen preserving renal function.
+
+## Mechanism
+
+T-lymphocyte activation antigen CD80 inhibitor; T-lymphocyte activation antigen CD86 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2011
+- **Flags:** black-box warning
+- **ATC L04AA28:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Selective immunosuppressants
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[T-lymphocyte activation antigen CD86 (CHEMBL2364156)|T-lymphocyte activation antigen CD86]] - inhibitor · SINGLE PROTEIN
+- [[T-lymphocyte activation antigen CD80 (CHEMBL2364157)|T-lymphocyte activation antigen CD80]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +117,13 @@ Higher-affinity CTLA-4-Ig developed for kidney transplantation as a calcineurin-
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abatacept]] (T-lymphocyte activation antigen CD80; T-lymphocyte activation antigen CD86)
+- **Same ATC subgroup:** [[Abatacept]], [[Apremilast]], [[Efgartigimod]], [[Remibrutinib]]
 
 ## Safety routing
 

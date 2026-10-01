@@ -10,15 +10,15 @@ cluster: Cardiovascular and Lipid Agents
 group: cardio
 class: null
 subclass: null
-mechanism: null
+mechanism: Adenosine receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL477
+chembl-max-phase: 4
 half-life:
   value: null
   value-max: null
@@ -63,6 +63,7 @@ tags:
 - group/cardio
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Adenosine
@@ -70,6 +71,31 @@ pk-source:
   revision: 1376143840
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL477
+  pref-name: ADENOSINE
+  molecule-type: Small molecule
+  first-approval: 1989
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01EB10
+  targets:
+  - id: CHEMBL2111329
+    name: Adenosine receptor
+    action: AGONIST
+  properties:
+    full-mwt: 267.25
+    mw-freebase: 267.25
+    alogp: -1.98
+    psa: 139.54
+    hba: 9
+    hbd: 4
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.49
+    full-molformula: C10H13N5O4
 ---
 
 # Adenosine (IV)
@@ -84,10 +110,29 @@ pk-source:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Adenosine, IV
+- **ChEMBL:** [CHEMBL477](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL477/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Endogenous nucleoside given as a rapid intravenous bolus to terminate AV-nodal reentrant tachycardia, with a half-life of under ten seconds.
+
+## Mechanism
+
+Adenosine receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1989
+- **ATC C01EB10:** CARDIOVASCULAR SYSTEM › OTHER CARDIAC PREPARATIONS › Other cardiac preparations
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 267.25 | -1.98 | 139.54 | 4/9 | 0 | C10H13N5O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Adenosine receptor (CHEMBL2111329)|Adenosine receptor]] - agonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -106,6 +151,13 @@ Endogenous nucleoside given as a rapid intravenous bolus to terminate AV-nodal r
 | Bioavailability | - | Rapidly cleared from circulation via enzyme degradation |
 | Metabolism | - | Rapidly converted to inosine and adenosine monophosphate |
 | Excretion | - | can leave cell intact or can be degraded to hypoxanthine, xanthine, and ultimately uric acid |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Caffeine]] (Adenosine receptor)
+- **Same ATC subgroup:** [[Coenzyme Q10]], [[Ibuprofen]], [[Indomethacin]], [[Ivabradine (Corlanor)]], [[Mavacamten]], [[Meldonium]], [[Ranolazine (Ranexa)]], [[Trimetazidine]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1727
+chembl-max-phase: 4
 half-life:
   value: 0.6
   value-max: 1.2
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Cefalexin
@@ -68,6 +70,36 @@ pk-source:
   revision: 1374815637
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1727
+  pref-name: CEPHALEXIN ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 1971
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 347.4
+    mw-freebase: 347.4
+    alogp: 0.44
+    psa: 112.73
+    hba: 5
+    hbd: 3
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.68
+    full-molformula: C16H17N3O4S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: e54df878-c235-4aa3-af33-fe5287c73138
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e54df878-c235-4aa3-af33-fe5287c73138
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: consistent
 ---
 
 # Cephalexin
@@ -81,10 +113,20 @@ pk-source:
 - **Compound ID:** `cephalexin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1727](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1727/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral first-generation cephalosporin used for skin and soft tissue infection and for uncomplicated urinary infection in pregnancy.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1971
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 347.4 | 0.44 | 112.73 | 3/5 | 0 | C16H17N3O4S |
 
 ## Evidence boundaries
 
@@ -103,6 +145,11 @@ Oral first-generation cephalosporin used for skin and soft tissue infection and 
 | Bioavailability | - | Well absorbed |
 | Metabolism | - | 80% excreted unchanged in urine within 6 hours of administration |
 | Excretion | mainly urinary | Kidney |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set e54df878…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e54df878-c235-4aa3-af33-fe5287c73138), label version 20260914. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: consistent (label values: 10, 15)
 
 ## Safety routing
 

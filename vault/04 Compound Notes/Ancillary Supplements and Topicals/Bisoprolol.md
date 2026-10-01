@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL645
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: 12.0
@@ -63,6 +63,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Bisoprolol
@@ -70,6 +71,35 @@ pk-source:
   revision: 1356470142
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL645
+  pref-name: BISOPROLOL
+  molecule-type: Small molecule
+  first-approval: 1992
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C07AB07
+  targets: []
+  properties:
+    full-mwt: 325.45
+    mw-freebase: 325.45
+    alogp: 2.37
+    psa: 59.95
+    hba: 5
+    hbd: 2
+    rtb: 12
+    num-ro5-violations: 0
+    qed-weighted: 0.58
+    full-molformula: C18H31NO4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Bisoprolol
@@ -83,10 +113,21 @@ pk-source:
 - **Compound ID:** `bisoprolol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL645](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL645/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 One of the most beta-1 selective blockers available; a heart failure mainstay.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1992
+- **ATC C07AB07:** CARDIOVASCULAR SYSTEM › BETA BLOCKING AGENTS › Beta blocking agents, selective
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 325.45 | 2.37 | 59.95 | 2/5 | 0 | C18H31NO4 |
 
 ## Evidence boundaries
 
@@ -106,6 +147,15 @@ One of the most beta-1 selective blockers available; a heart failure mainstay.
 | Metabolism | hepatic | 50% liver, CYP2D6, CYP3A4 |
 | CYP (metabolised by) | CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - | Kidney, fecal (<2%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Atenolol (Tenormin)]], [[Betaxolol]], [[Celiprolol]], [[Esmolol]], [[Metoprolol]], [[Nebivolol]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

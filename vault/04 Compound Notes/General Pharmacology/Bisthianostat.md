@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3287255
+chembl-max-phase: 1
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3287255
+  pref-name: BISTHIANOSTAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 366.47
+    mw-freebase: 366.47
+    alogp: 2.55
+    psa: 104.21
+    hba: 7
+    hbd: 3
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.38
+    full-molformula: C15H18N4O3S2
 ---
 
 # Bisthianostat
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `bisthianostat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL3287255](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3287255/) · max phase 1 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Bisthianostat is a named HDAC research compound with a curated biochemical result against HDAC3. ChEMBL records IC50 260.0 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 366.47 | 2.55 | 104.21 | 3/7 | 0 | C15H18N4O3S2 |
 
 ## Evidence boundaries
 

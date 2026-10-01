@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL273386
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -56,6 +56,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL273386
+  pref-name: 2,4-DINITROPHENOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 184.11
+    mw-freebase: 184.11
+    alogp: 1.21
+    psa: 106.51
+    hba: 5
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C6H4N2O5
 ---
 
 # 2,4-Dinitrophenol (DNP)
@@ -70,10 +93,19 @@ tags:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** 2,4-Dinitrophenol, DNP
+- **ChEMBL:** [CHEMBL273386](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL273386/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Chemical uncoupler that dissipates the proton gradient as heat. Genuinely effective for fat loss and genuinely lethal — there is no margin between the effective and fatal dose, and deaths from supplement use are recurrent.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 184.11 | 1.21 | 106.51 | 1/5 | 0 | C6H4N2O5 |
 
 ## Evidence boundaries
 

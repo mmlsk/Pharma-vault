@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3544916
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -56,6 +56,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3544916
+  pref-name: GUADECITABINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 557.42
+    mw-freebase: 557.42
+    alogp: -2.63
+    psa: 278.07
+    hba: 17
+    hbd: 6
+    rtb: 8
+    num-ro5-violations: 3
+    qed-weighted: 0.15
+    full-molformula: C18H24N9O10P
 ---
 
 # Guadecitabine (SGI-110)
@@ -70,10 +93,20 @@ tags:
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Guadecitabine, SGI-110
+- **ChEMBL:** [CHEMBL3544916](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544916/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 A dinucleotide of decitabine and deoxyguanosine that resists cytidine deaminase, extending decitabine exposure without a longer infusion. The phase 3 trials in AML and MDS were nonetheless negative.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 557.42 | -2.63 | 278.07 | 6/17 | 3 | C18H24N9O10P |
 
 ## Evidence boundaries
 

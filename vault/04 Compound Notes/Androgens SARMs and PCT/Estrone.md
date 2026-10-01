@@ -54,6 +54,33 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1405
+  pref-name: ESTRONE
+  molecule-type: Small molecule
+  first-approval: 1979
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G03CA07
+  - G03CC04
+  targets:
+  - id: CHEMBL206
+    name: Estrogen receptor
+    action: AGONIST
+  properties:
+    full-mwt: 270.37
+    mw-freebase: 270.37
+    alogp: 3.82
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.78
+    full-molformula: C18H22O2
 ---
 
 # Estrone
@@ -67,7 +94,7 @@ tags:
 - **Compound ID:** `estrone-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1405](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1405/) · max phase 4
+- **ChEMBL:** [CHEMBL1405](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1405/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +104,21 @@ Estrogen receptor alpha agonist; approved/marketed compound catalogued by ChEMBL
 
 Estrogen receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1979
+- **ATC G03CA07:** GENITO URINARY SYSTEM AND SEX HORMONES › ESTROGENS › Natural and semisynthetic estrogens, plain
+- **ATC G03CC04:** GENITO URINARY SYSTEM AND SEX HORMONES › ESTROGENS › Estrogens, combinations with other drugs
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 270.37 | 3.82 | 37.3 | 1/2 | 0 | C18H22O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Estrogen receptor (CHEMBL206)|Estrogen receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +127,13 @@ Estrogen receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dienestrol]] (Estrogen receptor), [[Diethylstilbestrol]] (Estrogen receptor), [[Elacestrant]] (Estrogen receptor), [[Enclomiphene]] (Estrogen receptor), [[Estradiol]] (Estrogen receptor), [[Estradiol Acetate]] (Estrogen receptor), [[Estradiol Cypionate]] (Estrogen receptor), [[Estradiol Valerate]] (Estrogen receptor), [[Ethinyl Estradiol]] (Estrogen receptor), [[Fulvestrant (Faslodex)]] (Estrogen receptor), [[Giredestrant]] (Estrogen receptor), [[Mestranol]] (Estrogen receptor)
+- **Same ATC subgroup:** [[Chlorotrianisene]], [[Dienestrol]], [[Diethylstilbestrol]], [[Estradiol]], [[Estriol]], [[Estrogens, Conjugated]], [[Ethinyl Estradiol]]
 
 ## Safety routing
 

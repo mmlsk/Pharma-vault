@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1175
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: 12.0
@@ -57,7 +57,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -65,6 +65,8 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Duloxetine
@@ -72,6 +74,37 @@ pk-source:
   revision: 1371441880
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1175
+  pref-name: DULOXETINE
+  molecule-type: Small molecule
+  first-approval: 2004
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N06AX21
+  targets: []
+  properties:
+    full-mwt: 297.42
+    mw-freebase: 297.42
+    alogp: 4.63
+    psa: 21.26
+    hba: 3
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.72
+    full-molformula: C18H19NOS
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 79bfd6be-a1ff-4786-b4e2-abbd0a3e3932
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=79bfd6be-a1ff-4786-b4e2-abbd0a3e3932
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Duloxetine (Cymbalta)
@@ -86,10 +119,22 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Duloxetine, Cymbalta
+- **ChEMBL:** [CHEMBL1175](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1175/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 SNRI used for depression, anxiety, and neuropathic pain; withdrawal, liver, blood-pressure, and sexual effects matter.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2004
+- **Flags:** black-box warning
+- **ATC N06AX21:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Other antidepressants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 297.42 | 4.63 | 21.26 | 1/3 | 0 | C18H19NOS |
 
 ## Evidence boundaries
 
@@ -109,6 +154,18 @@ SNRI used for depression, anxiety, and neuropathic pain; withdrawal, liver, bloo
 | Metabolism | hepatic | Liver, two P450 isozymes, CYP2D6 and CYP1A2 |
 | CYP (metabolised by) | CYP1A2, CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | - | 70% in urine, 20% in feces |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 79bfd6be…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=79bfd6be-a1ff-4786-b4e2-abbd0a3e3932), label version 20260909. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 8, 12, 17)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Agomelatine (Valdoxan)]], [[Brexanolone]], [[Bupropion (Wellbutrin)]], [[Desvenlafaxine]], [[Esketamine (Spravato)]], [[Levomilnacipran]], [[Minaprine]], [[Mirtazapine]], [[Nefazodone]], [[Tianeptine]], [[Trazodone (Desyrel)]], [[Venlafaxine (Effexor)]]
+- **Shared CYP substrate pool:** CYP1A2 (+42 others), CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

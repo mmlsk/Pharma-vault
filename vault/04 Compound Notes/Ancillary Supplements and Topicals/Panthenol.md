@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1371937
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1371937
+  pref-name: PANTHENOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 205.25
+    mw-freebase: 205.25
+    alogp: -1.14
+    psa: 89.79
+    hba: 4
+    hbd: 4
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.41
+    full-molformula: C9H19NO4
 ---
 
 # Panthenol
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `panthenol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1371937](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1371937/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Provitamin B5 used topically as a humectant to support skin barrier hydration.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 205.25 | -1.14 | 89.79 | 4/4 | 0 | C9H19NO4 |
 
 ## Evidence boundaries
 

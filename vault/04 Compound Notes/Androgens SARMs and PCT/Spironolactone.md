@@ -8,15 +8,15 @@ cluster: Androgens SARMs and PCT
 group: pct
 class: null
 subclass: null
-mechanism: null
+mechanism: Mineralocorticoid receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1393
+chembl-max-phase: 4
 half-life:
   value: 1.4
   value-max: null
@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Spironolactone
@@ -69,6 +71,40 @@ pk-source:
   revision: 1369649243
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1393
+  pref-name: SPIRONOLACTONE
+  molecule-type: Small molecule
+  first-approval: 1960
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C03DA01
+  targets:
+  - id: CHEMBL1994
+    name: Mineralocorticoid receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 416.58
+    mw-freebase: 416.58
+    alogp: 4.85
+    psa: 60.44
+    hba: 5
+    hbd: 0
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.57
+    full-molformula: C24H32O4S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 8b76a904-6c99-485a-a05f-13a36c5f720c
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8b76a904-6c99-485a-a05f-13a36c5f720c
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Spironolactone
@@ -82,10 +118,30 @@ pk-source:
 - **Compound ID:** `spironolactone-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL1393](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1393/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Potassium-sparing diuretic with real antiandrogenic activity at the androgen receptor, commonly used off-label for hormonal acne and hirsutism.
+
+## Mechanism
+
+Mineralocorticoid receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1960
+- **Flags:** black-box warning
+- **ATC C03DA01:** CARDIOVASCULAR SYSTEM › ALDOSTERONE ANTAGONISTS AND OTHER POTASSIUM-SPARING AGENTS › Aldosterone antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 416.58 | 4.85 | 60.44 | 0/5 | 0 | C24H32O4S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Mineralocorticoid receptor (CHEMBL1994)|Mineralocorticoid receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -106,6 +162,19 @@ Potassium-sparing diuretic with real antiandrogenic activity at the androgen rec
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | 7α-TS, 7α-TMS, 6β-OH-7α-TMS, canrenone, others; (All three active) |
 | Excretion | - | Urine, bile |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 8b76a904…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8b76a904-6c99-485a-a05f-13a36c5f720c), label version 20260915. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1.4, 15)
+> - protein-binding: consistent (label values: 90)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Apararenone]] (Mineralocorticoid receptor), [[Balcinrenone]] (Mineralocorticoid receptor), [[Canrenone]] (Mineralocorticoid receptor), [[Desoxycorticosterone Acetate]] (Mineralocorticoid receptor), [[Desoxycorticosterone Pivalate]] (Mineralocorticoid receptor), [[Drospirenone]] (Mineralocorticoid receptor), [[Eplerenone]] (Mineralocorticoid receptor), [[Felodipine]] (Mineralocorticoid receptor), [[Finerenone (Kerendia)]] (Mineralocorticoid receptor), [[Fludrocortisone Acetate]] (Mineralocorticoid receptor), [[Nimodipine]] (Mineralocorticoid receptor), [[Vamorolone]] (Mineralocorticoid receptor)
+- **Same ATC subgroup:** [[Canrenone]], [[Eplerenone]], [[Finerenone (Kerendia)]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

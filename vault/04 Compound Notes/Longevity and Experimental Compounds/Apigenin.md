@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL28
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL28
+  pref-name: APIGENIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 270.24
+    mw-freebase: 270.24
+    alogp: 2.58
+    psa: 90.9
+    hba: 5
+    hbd: 3
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.63
+    full-molformula: C15H10O5
 ---
 
 # Apigenin
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `apigenin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL28](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL28/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Chamomile flavonoid taken as a CD38 inhibitor to spare NAD+; human evidence is thin.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 270.24 | 2.58 | 90.9 | 3/5 | 0 | C15H10O5 |
 
 ## Evidence boundaries
 

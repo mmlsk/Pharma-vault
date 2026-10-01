@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL140
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL140
+  pref-name: CURCUMIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 368.39
+    mw-freebase: 368.39
+    alogp: 3.37
+    psa: 93.06
+    hba: 6
+    hbd: 2
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C21H20O6
 ---
 
 # Curcumin
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `curcumin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL140](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL140/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Anti-inflammatory compound from turmeric that inhibits NF-kB signaling; poor natural bioavailability limits how much of its preclinical promise translates to oral supplementation without a specialized delivery formulation.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 368.39 | 3.37 | 93.06 | 2/6 | 0 | C21H20O6 |
 
 ## Evidence boundaries
 

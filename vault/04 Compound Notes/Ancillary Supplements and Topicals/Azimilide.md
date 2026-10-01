@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL123558
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL123558
+  pref-name: AZIMILIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 457.96
+    mw-freebase: 457.96
+    alogp: 3.23
+    psa: 72.6
+    hba: 6
+    hbd: 0
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.35
+    full-molformula: C23H28ClN5O3
 ---
 
 # Azimilide
@@ -67,10 +89,19 @@ tags:
 - **Compound ID:** `azimilide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL123558](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL123558/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Alters cardiac repolarization through potassium-channel effects; QT prolongation and torsades risk vary by agent.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 457.96 | 3.23 | 72.6 | 0/6 | 0 | C23H28ClN5O3 |
 
 ## Evidence boundaries
 

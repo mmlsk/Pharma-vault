@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: IL6Ralpha/GP130 antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3833307
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3833307
+  pref-name: SATRALIZUMAB
+  molecule-type: Antibody
+  first-approval: 2020
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AC19
+  targets:
+  - id: CHEMBL3137266
+    name: IL6Ralpha/GP130
+    action: ANTAGONIST
+  properties: {}
 ---
 
 # Satralizumab
@@ -67,10 +84,25 @@ tags:
 - **Compound ID:** `satralizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL3833307](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833307/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Anti-IL-6-receptor antibody engineered for recycling, used in aquaporin-4-positive neuromyelitis optica.
+
+## Mechanism
+
+IL6Ralpha/GP130 antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2020
+- **ATC L04AC19:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Interleukin inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[IL6Ralpha-GP130 (CHEMBL3137266)|IL6Ralpha/GP130]] - antagonist · PROTEIN-PROTEIN INTERACTION
 
 ## Evidence boundaries
 
@@ -80,6 +112,12 @@ Anti-IL-6-receptor antibody engineered for recycling, used in aquaporin-4-positi
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Anakinra]], [[Basiliximab]], [[Bimekizumab]], [[Briakinumab]], [[Brodalumab]], [[Canakinumab (Ilaris)]], [[Guselkumab]], [[Ixekizumab]], [[Mirikizumab]], [[Netakimab]], [[Olokizumab]], [[Rilonacept]]
 
 ## Safety routing
 

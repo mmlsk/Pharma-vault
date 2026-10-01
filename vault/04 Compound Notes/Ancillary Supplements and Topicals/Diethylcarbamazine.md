@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL684
+  pref-name: DIETHYLCARBAMAZINE
+  molecule-type: Small molecule
+  first-approval: 1950
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - P02CB02
+  targets: []
+  properties:
+    full-mwt: 199.3
+    mw-freebase: 199.3
+    alogp: 0.7
+    psa: 26.79
+    hba: 2
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.65
+    full-molformula: C10H21N3O
 ---
 
 # Diethylcarbamazine
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `diethylcarbamazine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL684](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL684/) · max phase 4
+- **ChEMBL:** [CHEMBL684](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL684/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +99,16 @@ Nematode GABA-A receptor positive modulator; approved/marketed compound catalogu
 ## Mechanism
 
 Nematode GABA-A receptor positive modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1950
+- **ATC P02CB02:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › ANTINEMATODAL AGENTS › Piperazine and derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 199.3 | 0.7 | 26.79 | 0/2 | 0 | C10H21N3O |
 
 ## Evidence boundaries
 

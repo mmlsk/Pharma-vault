@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Type-1 angiotensin II receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1200692
+chembl-max-phase: 4
 half-life:
   value: 13.0
   value-max: null
@@ -62,6 +62,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Olmesartan
@@ -69,6 +71,38 @@ pk-source:
   revision: 1358312989
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1200692
+  pref-name: OLMESARTAN MEDOXOMIL
+  molecule-type: Small molecule
+  first-approval: 2002
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C09CA08
+  targets:
+  - id: CHEMBL227
+    name: Type-1 angiotensin II receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 558.6
+    mw-freebase: 558.6
+    alogp: 4.17
+    psa: 162.16
+    hba: 11
+    hbd: 2
+    rtb: 10
+    num-ro5-violations: 2
+    qed-weighted: 0.24
+    full-molformula: C29H30N6O6
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Olmesartan (Benicar)
@@ -83,10 +117,30 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Olmesartan, Benicar
+- **ChEMBL:** [CHEMBL1200692](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200692/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Potent ARB carrying a distinctive warning about a sprue-like enteropathy.
+
+## Mechanism
+
+Type-1 angiotensin II receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2002
+- **Flags:** black-box warning, prodrug
+- **ATC C09CA08:** CARDIOVASCULAR SYSTEM › ANGIOTENSIN II RECEPTOR BLOCKERS (ARBs), PLAIN › Angiotensin II receptor blockers (ARBs), plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 558.6 | 4.17 | 162.16 | 2/11 | 2 | C29H30N6O6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Type-1 angiotensin II receptor (CHEMBL227)|Type-1 angiotensin II receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -104,6 +158,16 @@ Potent ARB carrying a distinctive warning about a sprue-like enteropathy.
 | Bioavailability | 26 % | 26% |
 | Metabolism | hepatic | Liver (cannot be removed by hemodialysis) |
 | Excretion | mainly non-renal | Kidney 40%, bile duct 60% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Olmesartan Medoxomil]]
+- **Shared target:** [[Azilsartan medoxomil (Edarbi)]] (Type-1 angiotensin II receptor), [[Candesartan (Atacand)]] (Type-1 angiotensin II receptor), [[Candesartan Cilexetil]] (Type-1 angiotensin II receptor), [[Fimasartan]] (Type-1 angiotensin II receptor), [[Irbesartan (Avapro)]] (Type-1 angiotensin II receptor), [[Olmesartan Medoxomil]] (Type-1 angiotensin II receptor), [[Sparsentan]] (Type-1 angiotensin II receptor), [[Tasosartan]] (Type-1 angiotensin II receptor), [[Telmisartan]] (Type-1 angiotensin II receptor), [[Trv-120027]] (Type-1 angiotensin II receptor), [[Valsartan (Diovan)]] (Type-1 angiotensin II receptor)
+- **Same ATC subgroup:** [[Azilsartan Medoxomil]], [[Candesartan (Atacand)]], [[Eprosartan]], [[Fimasartan]], [[Irbesartan (Avapro)]], [[Losartan]], [[Olmesartan Medoxomil]], [[Tasosartan]], [[Telmisartan]], [[Valsartan (Diovan)]]
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Hepatitis C virus serine protease, NS3/NS4A inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL231813
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,33 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL231813
+  pref-name: TELAPREVIR
+  molecule-type: Small molecule
+  first-approval: 2011
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J05AP02
+  targets:
+  - id: CHEMBL2095231
+    name: Hepatitis C virus serine protease, NS3/NS4A
+    action: INHIBITOR
+  properties:
+    full-mwt: 679.86
+    mw-freebase: 679.86
+    alogp: 2.45
+    psa: 179.56
+    hba: 8
+    hbd: 4
+    rtb: 13
+    num-ro5-violations: 1
+    qed-weighted: 0.23
+    full-molformula: C36H53N7O6
 ---
 
 # Telaprevir
@@ -67,10 +94,30 @@ tags:
 - **Compound ID:** `telaprevir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL231813](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL231813/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 The other first-generation hepatitis C protease inhibitor, withdrawn after severe cutaneous reactions including fatal toxic epidermal necrolysis.
+
+## Mechanism
+
+Hepatitis C virus serine protease, NS3/NS4A inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2011
+- **Flags:** black-box warning
+- **ATC J05AP02:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Antivirals for treatment of HCV infections
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 679.86 | 2.45 | 179.56 | 4/8 | 1 | C36H53N7O6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Hepatitis C virus serine protease, NS3-NS4A (CHEMBL2095231)|Hepatitis C virus serine protease, NS3/NS4A]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -80,6 +127,13 @@ The other first-generation hepatitis C protease inhibitor, withdrawn after sever
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Boceprevir]] (Hepatitis C virus serine protease, NS3/NS4A), [[Glecaprevir]] (Hepatitis C virus serine protease, NS3/NS4A), [[Grazoprevir]] (Hepatitis C virus serine protease, NS3/NS4A), [[Voxilaprevir]] (Hepatitis C virus serine protease, NS3/NS4A)
+- **Same ATC subgroup:** [[Boceprevir]], [[Daclatasvir]], [[Elbasvir]], [[Grazoprevir]], [[Ribavirin]], [[Simeprevir]], [[Sofosbuvir]]
 
 ## Safety routing
 

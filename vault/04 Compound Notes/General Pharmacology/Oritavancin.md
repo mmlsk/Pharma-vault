@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1688530
+chembl-max-phase: 4
 half-life:
   value: 16.0
   value-max: null
@@ -56,6 +56,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Oritavancin
@@ -63,6 +65,28 @@ pk-source:
   revision: 1357733499
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1688530
+  pref-name: ORITAVANCIN
+  molecule-type: Small molecule
+  first-approval: 2014
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J01XA05
+  targets: []
+  properties:
+    full-mwt: 1793.12
+    mw-freebase: 1793.12
+    full-molformula: C86H97Cl3N10O26
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Oritavancin
@@ -76,10 +100,21 @@ pk-source:
 - **Compound ID:** `oritavancin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1688530](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1688530/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Lipoglycopeptide with three mechanisms rather than one, given as a single infusion for skin and soft tissue infection.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2014
+- **ATC J01XA05:** ANTIINFECTIVES FOR SYSTEMIC USE › OTHER ANTIBACTERIALS › Glycopeptide antibacterials
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1793.12 | - | - | -/- | - | C86H97Cl3N10O26 |
 
 ## Evidence boundaries
 
@@ -94,6 +129,14 @@ Lipoglycopeptide with three mechanisms rather than one, given as a single infusi
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 16 d | 16 day |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Dalbavancin]], [[Telavancin]], [[Vancomycin]]
 
 ## Safety routing
 

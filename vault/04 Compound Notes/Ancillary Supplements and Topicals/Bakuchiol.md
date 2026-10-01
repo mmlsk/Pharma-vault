@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL262344
+chembl-max-phase: 1
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL262344
+  pref-name: BAKUCHIOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 256.39
+    mw-freebase: 256.39
+    alogp: 5.34
+    psa: 20.23
+    hba: 1
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.68
+    full-molformula: C18H24O
 ---
 
 # Bakuchiol
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `bakuchiol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL262344](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL262344/) · max phase 1 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Plant-derived retinol alternative studied for anti-aging effects with less irritation.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 256.39 | 5.34 | 20.23 | 1/1 | 1 | C18H24O |
 
 ## Evidence boundaries
 

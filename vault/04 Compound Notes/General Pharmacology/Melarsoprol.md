@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL166
+chembl-max-phase: 3
 half-life:
   value: 35.0
   value-max: null
@@ -56,6 +56,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Melarsoprol
@@ -63,6 +64,28 @@ pk-source:
   revision: 1373206205
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL166
+  pref-name: MELARSOPROL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - P01CD01
+  targets: []
+  properties:
+    full-mwt: 398.35
+    mw-freebase: 398.35
+    full-molformula: C12H15AsN6OS2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Melarsoprol
@@ -76,10 +99,21 @@ pk-source:
 - **Compound ID:** `melarsoprol-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL166](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL166/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Arsenical for late-stage African trypanosomiasis, formulated in propylene glycol and lethal to roughly one treated patient in twenty.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** prodrug
+- **ATC P01CD01:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › AGENTS AGAINST LEISHMANIASIS AND TRYPANOSOMIASIS › Arsenic compounds
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 398.35 | - | - | -/- | - | C12H15AsN6OS2 |
 
 ## Evidence boundaries
 
@@ -95,6 +129,8 @@ Arsenical for late-stage African trypanosomiasis, formulated in propylene glycol
 |---|---|---|
 | Elimination t½ | 35 h | 35 hours |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

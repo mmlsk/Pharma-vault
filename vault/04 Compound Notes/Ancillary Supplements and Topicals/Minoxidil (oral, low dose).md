@@ -10,20 +10,20 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Sulfonylurea receptor 2, Kir6.2 opener
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL802
+chembl-max-phase: 4
 half-life:
   value: 3.0
   value-max: 4.0
   unit: h
-  notes: 'Oral: 3–4 hours; Topical: 22hours'
+  notes: 'Oral: 3–4 hours; Topical: 22 hours'
 protein-binding:
   value: null
   value-max: null
@@ -37,7 +37,7 @@ active-metabolites: []
 renal-clearance:
   primary-route: true
   fraction-excreted-unchanged: 0.15
-  notes: 'Urine: >97% (10–15% unchanged; within 12–20hours for oral and 4days for topical)'
+  notes: 'Urine: >97% (10–15% unchanged; within 12–20 hours for oral and 4 days for topical)'
 hepatic-clearance:
   primary-route: true
   extraction-ratio: null
@@ -63,6 +63,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Minoxidil
@@ -70,6 +72,39 @@ pk-source:
   revision: 1374824602
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL802
+  pref-name: MINOXIDIL
+  molecule-type: Small molecule
+  first-approval: 1979
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C02DC01
+  - D11AX01
+  targets:
+  - id: CHEMBL2095198
+    name: Sulfonylurea receptor 2, Kir6.2
+    action: OPENER
+  properties:
+    full-mwt: 209.25
+    mw-freebase: 209.25
+    alogp: -0.13
+    psa: 95.11
+    hba: 5
+    hbd: 2
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.5
+    full-molformula: C9H15N5O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Minoxidil (oral, low dose)
@@ -84,10 +119,31 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Minoxidil, low dose
+- **ChEMBL:** [CHEMBL802](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL802/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The original systemic antihypertensive vasodilator, now used off-label at 0.25 to 5 mg for hair loss; NOT the topical scalp solution.
+
+## Mechanism
+
+Sulfonylurea receptor 2, Kir6.2 opener _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1979
+- **Flags:** black-box warning, prodrug
+- **ATC C02DC01:** CARDIOVASCULAR SYSTEM › ARTERIOLAR SMOOTH MUSCLE, AGENTS ACTING ON › Pyrimidine derivatives
+- **ATC D11AX01:** DERMATOLOGICALS › OTHER DERMATOLOGICAL PREPARATIONS › Other dermatologicals
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 209.25 | -0.13 | 95.11 | 2/5 | 0 | C9H15N5O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Sulfonylurea receptor 2, Kir6.2 (CHEMBL2095198)|Sulfonylurea receptor 2, Kir6.2]] - opener · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -101,12 +157,22 @@ The original systemic antihypertensive vasodilator, now used off-label at 0.25 t
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 3–4 h | Oral: 3–4 hours; Topical: 22hours |
+| Elimination t½ | 3–4 h | Oral: 3–4 hours; Topical: 22 hours |
 | Protein binding | - | Minimal or negligible |
 | Bioavailability | 90 % | Oral: ≥90% (absorption); Topical: ~1.2–1.4% |
 | Metabolism | hepatic | Primarily liver via glucuronidation, hydroxylation, and sulfation (SULT1A1, SULT2A1) |
 | Metabolites | - | • Minoxidil glucuronide; • Minoxidil sulfate |
-| Excretion | mainly urinary · fe 0.15 | Urine: >97% (10–15% unchanged; within 12–20hours for oral and 4days for topical) |
+| Excretion | mainly urinary · fe 0.15 | Urine: >97% (10–15% unchanged; within 12–20 hours for oral and 4 days for topical) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Minoxidil]]
+- **Shared target:** [[Minoxidil]] (Sulfonylurea receptor 2, Kir6.2)
+- **Same ATC subgroup:** [[Brimonidine]], [[Caffeine]], [[Diclofenac]], [[Finasteride]], [[Finasteride (topical spray solution)]], [[Hydroquinone]], [[Mequinol]], [[Minoxidil]], [[Monobenzone]], [[Tiratricol (TRIAC)]]
 
 ## Safety routing
 

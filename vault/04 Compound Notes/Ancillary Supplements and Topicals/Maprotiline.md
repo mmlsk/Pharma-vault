@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL21731
+chembl-max-phase: 4
 half-life:
   value: 27.0
   value-max: 58.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Maprotiline
@@ -68,6 +69,35 @@ pk-source:
   revision: 1374531921
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL21731
+  pref-name: MAPROTILINE
+  molecule-type: Small molecule
+  first-approval: 1980
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N06AA21
+  targets: []
+  properties:
+    full-mwt: 277.41
+    mw-freebase: 277.41
+    alogp: 4.21
+    psa: 12.03
+    hba: 1
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.83
+    full-molformula: C20H23N
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Maprotiline
@@ -81,10 +111,22 @@ pk-source:
 - **Compound ID:** `maprotiline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL21731](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL21731/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits norepinephrine reuptake, often alongside serotonin effects; blood pressure and discontinuation effects require attention.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1980
+- **Flags:** black-box warning
+- **ATC N06AA21:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Non-selective monoamine reuptake inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 277.41 | 4.21 | 12.03 | 1/1 | 0 | C20H23N |
 
 ## Evidence boundaries
 
@@ -103,6 +145,14 @@ Inhibits norepinephrine reuptake, often alongside serotonin effects; blood press
 | Bioavailability | 66–70 % | 66–70% |
 | Metabolism | hepatic | hepatic |
 | Excretion | - · fe 0.04 | Urine (57%) and bile (30%) as glucuronides, 3–4% as unchanged drug |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amineptine]], [[Amitriptyline]], [[Amoxapine]], [[Clomipramine]], [[Desipramine]], [[Dibenzepin]], [[Dothiepin]], [[Doxepin]], [[Doxepin, low dose (Silenor)]], [[Imipramine]], [[Nortriptyline]], [[Protriptyline]]
 
 ## Safety routing
 

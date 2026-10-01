@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Lindane
@@ -64,6 +65,41 @@ pk-source:
   revision: 1376459973
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL15891
+  pref-name: LINDANE
+  molecule-type: Small molecule
+  first-approval: 1974
+  black-box-warning: true
+  withdrawn: true
+  atc-codes:
+  - P03AB02
+  targets:
+  - id: CHEMBL2364024
+    name: GABA-A receptor
+    action: NEGATIVE ALLOSTERIC MODULATOR
+  - id: CHEMBL2364025
+    name: GABA-A receptor
+    action: NEGATIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 290.83
+    mw-freebase: 290.83
+    alogp: 3.64
+    psa: 0.0
+    hba: 0
+    hbd: 0
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.6
+    full-molformula: C6H6Cl6
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Lindane
@@ -77,7 +113,7 @@ pk-source:
 - **Compound ID:** `lindane-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL15891](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL15891/) · max phase 4
+- **ChEMBL:** [CHEMBL15891](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL15891/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +122,22 @@ GABA-A receptor negative allosteric modulator; approved/marketed compound catalo
 ## Mechanism
 
 GABA-A receptor negative allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1974
+- **Flags:** black-box warning, withdrawn
+- **ATC P03AB02:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › ECTOPARASITICIDES, INCL. SCABICIDES › Chlorine containing products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 290.83 | 3.64 | 0.0 | 0/0 | 0 | C6H6Cl6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-A receptor (CHEMBL2364024)|GABA-A receptor]] - negative allosteric modulator · PROTEIN COMPLEX GROUP
+- [[GABA-A receptor (CHEMBL2364025)|GABA-A receptor]] - negative allosteric modulator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -102,6 +154,8 @@ GABA-A receptor negative allosteric modulator _(ChEMBL curated mechanism, as quo
 | Elimination t½ | 18 h | 18 hours |
 | Protein binding | 91 % | 91% |
 | Metabolism | hepatic | Hepatic cytochrome P-450 oxygenase system |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

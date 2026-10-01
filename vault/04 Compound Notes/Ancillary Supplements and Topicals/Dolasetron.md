@@ -64,6 +64,13 @@ pk-source:
   revision: 1339067846
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Dolasetron
@@ -96,6 +103,8 @@ Antagonises 5-HT3 receptors on vagal afferents and in the area postrema; QT effe
 |---|---|---|
 | Elimination t½ | 8.1 h | 8.1 hours |
 | Protein binding | 69–77 % | 69 to 77% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Bepotastine
@@ -67,6 +68,34 @@ pk-source:
   revision: 1329528471
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201758
+  pref-name: BEPOTASTINE
+  molecule-type: Small molecule
+  first-approval: 2009
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 388.9
+    mw-freebase: 388.9
+    alogp: 4.17
+    psa: 62.66
+    hba: 4
+    hbd: 1
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C21H25ClN2O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Bepotastine
@@ -80,7 +109,7 @@ pk-source:
 - **Compound ID:** `bepotastine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201758](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201758/) · max phase 4
+- **ChEMBL:** [CHEMBL1201758](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201758/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +118,15 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2009
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 388.9 | 4.17 | 62.66 | 1/4 | 0 | C21H25ClN2O3 |
 
 ## Evidence boundaries
 
@@ -105,6 +143,8 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Protein binding | 55 % | ~55% |
 | Bioavailability | - | High (oral); Minimal (topical) |
 | Excretion | mainly urinary | Renal (75–85 |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

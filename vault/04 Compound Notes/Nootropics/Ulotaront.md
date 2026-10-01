@@ -8,15 +8,15 @@ cluster: Nootropics
 group: nootropic
 class: null
 subclass: null
-mechanism: null
+mechanism: Serotonin 1a (5-HT1a) receptor agonist; Trace amine-associated receptor 1 agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4650337
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -55,6 +55,35 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4650337
+  pref-name: ULOTARONT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL214
+    name: 5-hydroxytryptamine receptor 1A
+    action: AGONIST
+  - id: CHEMBL5857
+    name: Trace amine-associated receptor 1
+    action: AGONIST
+  properties:
+    full-mwt: 183.28
+    mw-freebase: 183.28
+    alogp: 1.58
+    psa: 21.26
+    hba: 3
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.75
+    full-molformula: C9H13NOS
 ---
 
 # Ulotaront
@@ -68,10 +97,28 @@ tags:
 - **Compound ID:** `ulotaront-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL4650337](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650337/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 TAAR1 agonist investigated as a non-D2 antipsychotic; phase 3 results were disappointing.
+
+## Mechanism
+
+Serotonin 1a (5-HT1a) receptor agonist; Trace amine-associated receptor 1 agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 183.28 | 1.58 | 21.26 | 1/3 | 0 | C9H13NOS |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[5-hydroxytryptamine receptor 1A (CHEMBL214)|5-hydroxytryptamine receptor 1A]] - agonist · SINGLE PROTEIN
+- [[Trace amine-associated receptor 1 (CHEMBL5857)|Trace amine-associated receptor 1]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -81,6 +128,12 @@ TAAR1 agonist investigated as a non-D2 antipsychotic; phase 3 results were disap
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aripiprazole]] (5-hydroxytryptamine receptor 1A), [[Brexpiprazole]] (5-hydroxytryptamine receptor 1A), [[Pardoprunox]] (5-hydroxytryptamine receptor 1A)
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: TNF-alpha inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201831
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,24 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+- chembl-name-match
+- possible-duplicate
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1201831
+  pref-name: CERTOLIZUMAB PEGOL
+  molecule-type: Antibody
+  first-approval: 2008
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L04AB05
+  targets:
+  - id: CHEMBL1825
+    name: Tumor necrosis factor
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Certolizumab Pegol
@@ -67,10 +85,26 @@ tags:
 - **Compound ID:** `certolizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1201831](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201831/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 PEGylated anti-TNF Fab fragment with no Fc region, which is why it does not cross the placenta by active transport.
+
+## Mechanism
+
+TNF-alpha inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2008
+- **Flags:** black-box warning
+- **ATC L04AB05:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Tumor necrosis factor alpha (TNF-alpha) inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor (CHEMBL1825)|Tumor necrosis factor]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +114,14 @@ PEGylated anti-TNF Fab fragment with no Fc region, which is why it does not cros
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Certolizumab Pegol]]
+- **Shared target:** [[Adalimumab]] (Tumor necrosis factor), [[Afelimomab]] (Tumor necrosis factor), [[Certolizumab Pegol]] (Tumor necrosis factor), [[Etanercept]] (Tumor necrosis factor), [[Golimumab]] (Tumor necrosis factor), [[Infliximab]] (Tumor necrosis factor), [[Infliximab-abda]] (Tumor necrosis factor), [[Onercept]] (Tumor necrosis factor), [[Ozoralizumab]] (Tumor necrosis factor)
+- **Same ATC subgroup:** [[Adalimumab]], [[Afelimomab]], [[Certolizumab Pegol]], [[Etanercept]], [[Golimumab]], [[Infliximab]], [[Infliximab-abda]]
 
 ## Safety routing
 

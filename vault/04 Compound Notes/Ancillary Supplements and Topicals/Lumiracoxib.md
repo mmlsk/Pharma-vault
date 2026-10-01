@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Lumiracoxib
@@ -69,6 +70,38 @@ pk-source:
   revision: 1353680253
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL404108
+  pref-name: LUMIRACOXIB
+  molecule-type: Small molecule
+  first-approval: 2005
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - M01AH06
+  targets:
+  - id: CHEMBL230
+    name: Prostaglandin G/H synthase 2
+    action: INHIBITOR
+  properties:
+    full-mwt: 293.73
+    mw-freebase: 293.73
+    alogp: 4.16
+    psa: 49.33
+    hba: 2
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.89
+    full-molformula: C15H13ClFNO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Lumiracoxib
@@ -82,7 +115,7 @@ pk-source:
 - **Compound ID:** `lumiracoxib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL404108](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL404108/) · max phase 4
+- **ChEMBL:** [CHEMBL404108](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL404108/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -91,6 +124,21 @@ Cyclooxygenase-2 inhibitor; approved/marketed compound catalogued by ChEMBL (CHE
 ## Mechanism
 
 Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2005
+- **Flags:** withdrawn
+- **ATC M01AH06:** MUSCULO-SKELETAL SYSTEM › ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS, NON-STEROIDS › Coxibs
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 293.73 | 4.16 | 49.33 | 2/2 | 0 | C15H13ClFNO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prostaglandin G-H synthase 2 (CHEMBL230)|Prostaglandin G/H synthase 2]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -110,6 +158,16 @@ Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 | Metabolism | hepatic | Predominantly in the liver via oxidation and hydroxylation (CYP2C9) |
 | CYP (metabolised by) | CYP2C9 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Urine (54%) and faeces (43%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aceclofenac]] (Prostaglandin G/H synthase 2), [[Carprofen]] (Prostaglandin G/H synthase 2), [[Celecoxib]] (Prostaglandin G/H synthase 2), [[Cimicoxib]] (Prostaglandin G/H synthase 2), [[Etodolac]] (Prostaglandin G/H synthase 2), [[Etoricoxib]] (Prostaglandin G/H synthase 2), [[Gw-406381]] (Prostaglandin G/H synthase 2), [[Iguratimod]] (Prostaglandin G/H synthase 2), [[Meloxicam]] (Prostaglandin G/H synthase 2), [[Nabumetone]] (Prostaglandin G/H synthase 2), [[Parecoxib]] (Prostaglandin G/H synthase 2), [[Rofecoxib]] (Prostaglandin G/H synthase 2)
+- **Same ATC subgroup:** [[Celecoxib]], [[Etoricoxib]], [[Parecoxib]], [[Rofecoxib]], [[Valdecoxib]]
+- **Shared CYP substrate pool:** CYP2C9 (+40 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

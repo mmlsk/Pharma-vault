@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL331378
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL331378
+  pref-name: ZOFENOPRIL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C09AA15
+  targets: []
+  properties:
+    full-mwt: 429.56
+    mw-freebase: 429.56
+    alogp: 4.04
+    psa: 74.68
+    hba: 5
+    hbd: 1
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.72
+    full-molformula: C22H23NO4S2
 ---
 
 # Zofenopril
@@ -67,10 +90,21 @@ tags:
 - **Compound ID:** `zofenopril-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL331378](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL331378/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Blocks the renin–angiotensin system to reduce angiotensin-driven vasoconstriction or aldosterone signaling.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** prodrug
+- **ATC C09AA15:** CARDIOVASCULAR SYSTEM › ACE INHIBITORS, PLAIN › ACE inhibitors, plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 429.56 | 4.04 | 74.68 | 1/5 | 0 | C22H23NO4S2 |
 
 ## Evidence boundaries
 
@@ -80,6 +114,12 @@ Blocks the renin–angiotensin system to reduce angiotensin-driven vasoconstrict
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Benazepril (Lotensin)]], [[Captopril (Capoten)]], [[Cilazapril]], [[Delapril]], [[Enalapril]], [[Fosinopril]], [[Imidapril]], [[Moexipril]], [[Perindopril (Aceon)]], [[Quinapril]], [[Ramipril (Altace)]], [[Spirapril]]
 
 ## Safety routing
 

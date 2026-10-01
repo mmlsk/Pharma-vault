@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: RNA disrupting agent
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4650320
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4650320
+  pref-name: MOLNUPIRAVIR
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AB18
+  targets:
+  - id: CHEMBL5604041
+    name: RNA
+    action: DISRUPTING AGENT
+  properties:
+    full-mwt: 329.31
+    mw-freebase: 329.31
+    alogp: -1.72
+    psa: 146.37
+    hba: 9
+    hbd: 4
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.29
+    full-molformula: C13H19N3O7
 ---
 
 # Molnupiravir
@@ -67,10 +93,29 @@ tags:
 - **Compound ID:** `molnupiravir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL4650320](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650320/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral ribonucleoside prodrug that works by error catastrophe rather than chain termination, which is both its mechanism and its main safety concern.
+
+## Mechanism
+
+RNA disrupting agent _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** prodrug
+- **ATC J05AB18:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 329.31 | -1.72 | 146.37 | 4/9 | 0 | C13H19N3O7 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[RNA (CHEMBL5604041)|RNA]] - disrupting agent · NUCLEIC-ACID
 
 ## Evidence boundaries
 
@@ -80,6 +125,12 @@ Oral ribonucleoside prodrug that works by error catastrophe rather than chain te
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Aciclovir]], [[Ganciclovir]], [[Remdesivir]], [[Valaciclovir]], [[Valganciclovir]]
 
 ## Safety routing
 

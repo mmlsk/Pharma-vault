@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: derm
 class: null
 subclass: null
-mechanism: null
+mechanism: Prostanoid FP receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1200963
+chembl-max-phase: 4
 half-life:
   value: 45.0
   value-max: null
@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,9 @@ tags:
 - group/derm
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Bimatoprost
@@ -70,6 +73,40 @@ pk-source:
   revision: 1376475376
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1200963
+  pref-name: BIMATOPROST
+  molecule-type: Small molecule
+  first-approval: 2001
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - S01EE03
+  targets:
+  - id: CHEMBL1987
+    name: Prostaglandin F2-alpha receptor
+    action: AGONIST
+  properties:
+    full-mwt: 415.57
+    mw-freebase: 415.57
+    alogp: 3.15
+    psa: 89.79
+    hba: 4
+    hbd: 4
+    rtb: 12
+    num-ro5-violations: 0
+    qed-weighted: 0.31
+    full-molformula: C25H37NO4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: f5c1c8c6-2a7f-482b-6ecf-9cabd3a6a5c1
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f5c1c8c6-2a7f-482b-6ecf-9cabd3a6a5c1
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Bimatoprost (topical, Latisse)
@@ -84,10 +121,29 @@ pk-source:
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Bimatoprost, Latisse
+- **ChEMBL:** [CHEMBL1200963](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200963/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Prostamide analogue applied to the lash line for eyelash hypotrichosis, a glaucoma drug repurposed on its side effect.
+
+## Mechanism
+
+Prostanoid FP receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2001
+- **ATC S01EE03:** SENSORY ORGANS › ANTIGLAUCOMA PREPARATIONS AND MIOTICS › Prostaglandin analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 415.57 | 3.15 | 89.79 | 4/4 | 0 | C25H37NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prostaglandin F2-alpha receptor (CHEMBL1987)|Prostaglandin F2-alpha receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -105,6 +161,19 @@ Prostamide analogue applied to the lash line for eyelash hypotrichosis, a glauco
 | Protein binding | 88 % | 88% |
 | Bioavailability | - | Low |
 | Excretion | - | 67% Kidney, 25% fecal |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set f5c1c8c6…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f5c1c8c6-2a7f-482b-6ecf-9cabd3a6a5c1), label version 20260909. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 0.75)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Bimatoprost (Latisse)]]
+- **Shared target:** [[Bimatoprost (Latisse)]] (Prostaglandin F2-alpha receptor), [[Latanoprost]] (Prostaglandin F2-alpha receptor), [[Latanoprostene Bunod]] (Prostaglandin F2-alpha receptor), [[Latanoprostene Bunod (latanoprostene-compound)|Latanoprostene Bunod]] (Prostaglandin F2-alpha receptor), [[Tafluprost]] (Prostaglandin F2-alpha receptor), [[Travoprost]] (Prostaglandin F2-alpha receptor)
+- **Same ATC subgroup:** [[Bimatoprost (Latisse)]], [[Latanoprost]], [[Latanoprostene Bunod]], [[Latanoprostene Bunod (latanoprostene-compound)|Latanoprostene Bunod]], [[Tafluprost]], [[Travoprost]]
 
 ## Safety routing
 

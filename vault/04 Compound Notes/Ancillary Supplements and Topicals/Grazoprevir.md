@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Hepatitis C virus serine protease, NS3/NS4A inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3039533
+chembl-max-phase: 4
 half-life:
   value: 31.0
   value-max: null
@@ -58,6 +58,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Grazoprevir
@@ -65,6 +67,38 @@ pk-source:
   revision: 1363943243
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2063090
+  pref-name: GRAZOPREVIR
+  molecule-type: Small molecule
+  first-approval: 2016
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AP11
+  targets:
+  - id: CHEMBL2095231
+    name: Hepatitis C virus serine protease, NS3/NS4A
+    action: INHIBITOR
+  properties:
+    full-mwt: 766.92
+    mw-freebase: 766.92
+    alogp: 3.3
+    psa: 195.22
+    hba: 11
+    hbd: 3
+    rtb: 7
+    num-ro5-violations: 2
+    qed-weighted: 0.35
+    full-molformula: C38H50N6O9S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Grazoprevir
@@ -78,10 +112,29 @@ pk-source:
 - **Compound ID:** `grazoprevir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3039533](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3039533/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Blocks an HCV replication target and is combined with complementary direct-acting antivirals to prevent resistance.
+
+## Mechanism
+
+Hepatitis C virus serine protease, NS3/NS4A inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2016
+- **ATC J05AP11:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Antivirals for treatment of HCV infections
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 766.92 | 3.3 | 195.22 | 3/11 | 2 | C38H50N6O9S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Hepatitis C virus serine protease, NS3-NS4A (CHEMBL2095231)|Hepatitis C virus serine protease, NS3/NS4A]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -100,6 +153,16 @@ Blocks an HCV replication target and is combined with complementary direct-actin
 | Metabolism | hepatic | CYP3A4 |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - | >90% via faeces, <1% via urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Boceprevir]] (Hepatitis C virus serine protease, NS3/NS4A), [[Glecaprevir]] (Hepatitis C virus serine protease, NS3/NS4A), [[Telaprevir]] (Hepatitis C virus serine protease, NS3/NS4A), [[Voxilaprevir]] (Hepatitis C virus serine protease, NS3/NS4A)
+- **Same ATC subgroup:** [[Boceprevir]], [[Daclatasvir]], [[Elbasvir]], [[Ribavirin]], [[Simeprevir]], [[Sofosbuvir]], [[Telaprevir]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

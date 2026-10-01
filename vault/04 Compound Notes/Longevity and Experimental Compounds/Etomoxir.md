@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2051959
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2051959
+  pref-name: ETOMOXIR
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 326.82
+    mw-freebase: 326.82
+    alogp: 4.0
+    psa: 48.06
+    hba: 4
+    hbd: 0
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.37
+    full-molformula: C17H23ClO4
 ---
 
 # Etomoxir
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `etomoxir-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL2051959](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2051959/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 An irreversible CPT1 inhibitor and the standard research tool for blocking fatty acid oxidation. Developed as an antidiabetic and abandoned after hepatotoxicity in trials; now used almost entirely in immunometabolism research.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 326.82 | 4.0 | 48.06 | 0/4 | 0 | C17H23ClO4 |
 
 ## Evidence boundaries
 

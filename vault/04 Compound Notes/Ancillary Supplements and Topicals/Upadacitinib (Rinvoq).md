@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3622821
+chembl-max-phase: 4
 half-life:
   value: null
   value-max: null
@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Upadacitinib
@@ -67,6 +69,36 @@ pk-source:
   revision: 1370557393
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3622821
+  pref-name: UPADACITINIB
+  molecule-type: Small molecule
+  first-approval: 2019
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L04AF03
+  targets: []
+  properties:
+    full-mwt: 380.37
+    mw-freebase: 380.37
+    alogp: 2.91
+    psa: 78.32
+    hba: 4
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C17H19F3N6O
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 2966aec7-2ef0-923c-d8ff-fe1a957bf095
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2966aec7-2ef0-923c-d8ff-fe1a957bf095
+  checked: '2026-10-01'
+  fields:
+    protein-binding: consistent
 ---
 
 # Upadacitinib (Rinvoq)
@@ -81,10 +113,22 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Upadacitinib, Rinvoq
+- **ChEMBL:** [CHEMBL3622821](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3622821/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral JAK1 inhibitor for multiple inflammatory diseases with boxed warnings for infection, malignancy, thrombosis, and cardiovascular events.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2019
+- **Flags:** black-box warning
+- **ATC L04AF03:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Janus-associated kinase (JAK) inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 380.37 | 2.91 | 78.32 | 2/4 | 0 | C17H19F3N6O |
 
 ## Evidence boundaries
 
@@ -104,6 +148,17 @@ Oral JAK1 inhibitor for multiple inflammatory diseases with boxed warnings for i
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | M4, an acyl glucuronide |
 | Excretion | - · fe 0.38 | Mainly unchanged in feces (38%) and urine (24%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 2966aec7…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2966aec7-2ef0-923c-d8ff-fe1a957bf095), label version 20260630. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - protein-binding: consistent (label values: 52)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Baricitinib (oral, Olumiant)]], [[Filgotinib]], [[Peficitinib]], [[Ritlecitinib (oral, Litfulo)]], [[Tofacitinib]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

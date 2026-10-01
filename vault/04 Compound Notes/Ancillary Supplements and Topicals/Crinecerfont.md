@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Corticotropin releasing factor receptor 1 antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL291657
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL291657
+  pref-name: CRINECERFONT
+  molecule-type: Small molecule
+  first-approval: 2024
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1800
+    name: Corticotropin-releasing factor receptor 1
+    action: ANTAGONIST
+  properties:
+    full-mwt: 483.05
+    mw-freebase: 483.05
+    alogp: 7.52
+    psa: 25.36
+    hba: 4
+    hbd: 0
+    rtb: 8
+    num-ro5-violations: 1
+    qed-weighted: 0.31
+    full-molformula: C27H28ClFN2OS
 ---
 
 # Crinecerfont
@@ -67,10 +92,28 @@ tags:
 - **Compound ID:** `crinecerfont-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL291657](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL291657/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 CRF1 receptor antagonist used to reduce excess adrenal androgen production in congenital adrenal hyperplasia.
+
+## Mechanism
+
+Corticotropin releasing factor receptor 1 antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2024
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 483.05 | 7.52 | 25.36 | 0/4 | 1 | C27H28ClFN2OS |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Corticotropin-releasing factor receptor 1 (CHEMBL1800)|Corticotropin-releasing factor receptor 1]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 

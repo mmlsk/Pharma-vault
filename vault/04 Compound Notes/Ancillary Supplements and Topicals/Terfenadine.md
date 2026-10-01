@@ -58,6 +58,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Terfenadine
@@ -65,6 +66,38 @@ pk-source:
   revision: 1359942064
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL17157
+  pref-name: TERFENADINE
+  molecule-type: Small molecule
+  first-approval: 1985
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - R06AX12
+  targets:
+  - id: CHEMBL231
+    name: Histamine H1 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 471.69
+    mw-freebase: 471.69
+    alogp: 6.45
+    psa: 43.7
+    hba: 3
+    hbd: 2
+    rtb: 8
+    num-ro5-violations: 1
+    qed-weighted: 0.4
+    full-molformula: C32H41NO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Terfenadine
@@ -78,7 +111,7 @@ pk-source:
 - **Compound ID:** `terfenadine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL17157](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL17157/) · max phase 4
+- **ChEMBL:** [CHEMBL17157](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL17157/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -87,6 +120,21 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1985
+- **Flags:** withdrawn, prodrug
+- **ATC R06AX12:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Other antihistamines for systemic use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 471.69 | 6.45 | 43.7 | 2/3 | 1 | C32H41NO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Histamine H1 receptor (CHEMBL231)|Histamine H1 receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -105,6 +153,16 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Metabolism | hepatic | Hepatic (CYP3A4) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Fexofenadine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acrivastine]] (Histamine H1 receptor), [[Alcaftadine]] (Histamine H1 receptor), [[Astemizole]] (Histamine H1 receptor), [[Betahistine]] (Histamine H1 receptor), [[Bilastine]] (Histamine H1 receptor), [[Chlorphenoxamine]] (Histamine H1 receptor), [[Cinnarizine]] (Histamine H1 receptor), [[Desloratadine]] (Histamine H1 receptor), [[Dibenzepin]] (Histamine H1 receptor), [[Dimenhydrinate]] (Histamine H1 receptor), [[Dimethindene]] (Histamine H1 receptor), [[Doxepin]] (Histamine H1 receptor)
+- **Same ATC subgroup:** [[Acrivastine]], [[Antazoline]], [[Astemizole]], [[Azatadine]], [[Azelastine]], [[Bilastine]], [[Cyproheptadine]], [[Desloratadine]], [[Ebastine]], [[Epinastine]], [[Fexofenadine]], [[Ketotifen]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

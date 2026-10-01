@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL4298199
+  pref-name: IDECABTAGENE VICLEUCEL
+  molecule-type: Gene
+  first-approval: 2021
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L01XL07
+  targets:
+  - id: CHEMBL4523587
+    name: Tumor necrosis factor receptor superfamily member 17
+    action: BINDING AGENT
+  properties: {}
 ---
 
 # Idecabtagene Vicleucel
@@ -67,7 +83,7 @@ tags:
 - **Compound ID:** `idecabtagene-vicleucel-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4298199](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298199/) · max phase 4
+- **ChEMBL:** [CHEMBL4298199](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298199/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +93,17 @@ Tumor necrosis factor receptor superfamily member 17 binding agent; approved/mar
 
 Tumor necrosis factor receptor superfamily member 17 binding agent _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Gene
+- **First approval (ChEMBL):** 2021
+- **Flags:** black-box warning
+- **ATC L01XL07:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › OTHER ANTINEOPLASTIC AGENTS › Antineoplastic cell and gene therapy
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor receptor superfamily member 17 (CHEMBL4523587)|Tumor necrosis factor receptor superfamily member 17]] - binding agent · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +112,13 @@ Tumor necrosis factor receptor superfamily member 17 binding agent _(ChEMBL cura
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Belantamab Mafodotin]] (Tumor necrosis factor receptor superfamily member 17), [[Ciltacabtagene Autoleucel]] (Tumor necrosis factor receptor superfamily member 17), [[Elranatamab]] (Tumor necrosis factor receptor superfamily member 17), [[Teclistamab]] (Tumor necrosis factor receptor superfamily member 17)
+- **Same ATC subgroup:** [[Ciltacabtagene Autoleucel]]
 
 ## Safety routing
 

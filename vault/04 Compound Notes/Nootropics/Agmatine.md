@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL58343
 chembl-max-phase: null
 half-life:
   value: null
@@ -55,6 +55,29 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL58343
+  pref-name: AGMATINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 130.19
+    mw-freebase: 130.19
+    alogp: -1.0
+    psa: 90.42
+    hba: 2
+    hbd: 3
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.26
+    full-molformula: C5H14N4
 ---
 
 # Agmatine
@@ -68,10 +91,19 @@ tags:
 - **Compound ID:** `agmatine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL58343](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL58343/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Decarboxylated arginine acting as an NMDA channel blocker and imidazoline ligand. Mostly preclinical, with essentially no controlled human cognitive data.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 130.19 | -1.0 | 90.42 | 3/2 | 0 | C5H14N4 |
 
 ## Evidence boundaries
 

@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL182066
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL182066
+  pref-name: RADIPRODIL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1907603
+    name: Glutamate NMDA receptor; GRIN1/GRIN2B
+    action: ANTAGONIST
+  properties:
+    full-mwt: 397.41
+    mw-freebase: 397.41
+    alogp: 3.09
+    psa: 95.67
+    hba: 5
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.66
+    full-molformula: C21H20FN3O4
 ---
 
 # Radiprodil
@@ -67,6 +92,7 @@ tags:
 - **Compound ID:** `radiprodil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL182066](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL182066/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -75,6 +101,18 @@ Radiprodil is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is 
 ## Mechanism
 
 glutamate NMDA receptor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 397.41 | 3.09 | 95.67 | 2/5 | 0 | C21H20FN3O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glutamate NMDA receptor; GRIN1-GRIN2B (CHEMBL1907603)|Glutamate NMDA receptor; GRIN1/GRIN2B]] - antagonist · PROTEIN COMPLEX
 
 ## Evidence boundaries
 

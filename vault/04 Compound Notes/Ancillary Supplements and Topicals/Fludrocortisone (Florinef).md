@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201388
+chembl-max-phase: 2
 half-life:
   value: 3.5
   value-max: null
@@ -59,6 +59,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Fludrocortisone
@@ -66,6 +67,34 @@ pk-source:
   revision: 1338249319
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201388
+  pref-name: FLUDROCORTISONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 380.46
+    mw-freebase: 380.46
+    alogp: 1.87
+    psa: 94.83
+    hba: 5
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.68
+    full-molformula: C21H29FO5
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Fludrocortisone (Florinef)
@@ -80,10 +109,19 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Fludrocortisone, Florinef
+- **ChEMBL:** [CHEMBL1201388](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201388/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Synthetic mineralocorticoid used for aldosterone replacement and for volume expansion.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 380.46 | 1.87 | 94.83 | 3/5 | 0 | C21H29FO5 |
 
 ## Evidence boundaries
 
@@ -100,6 +138,8 @@ Synthetic mineralocorticoid used for aldosterone replacement and for volume expa
 | Elimination t½ | 3.5 h | 3.5 hours |
 | Protein binding | - | High |
 | Metabolism | hepatic | Liver |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

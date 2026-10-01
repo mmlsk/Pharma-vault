@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Acamprosate
@@ -68,6 +69,35 @@ pk-source:
   revision: 1371631806
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201293
+  pref-name: ACAMPROSATE
+  molecule-type: Small molecule
+  first-approval: 2004
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N07BB03
+  targets: []
+  properties:
+    full-mwt: 181.21
+    mw-freebase: 181.21
+    alogp: -0.6
+    psa: 83.47
+    hba: 3
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.45
+    full-molformula: C5H11NO4S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Acamprosate
@@ -81,7 +111,7 @@ pk-source:
 - **Compound ID:** `acamprosate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201293](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201293/) · max phase 4
+- **ChEMBL:** [CHEMBL1201293](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201293/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +120,16 @@ GABA-A receptor; anion channel positive modulator; approved/marketed compound ca
 ## Mechanism
 
 GABA-A receptor; anion channel positive modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2004
+- **ATC N07BB03:** NERVOUS SYSTEM › DRUGS USED IN ADDICTIVE DISORDERS › Drugs used in alcohol dependence
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 181.21 | -0.6 | 83.47 | 2/3 | 0 | C5H11NO4S |
 
 ## Evidence boundaries
 
@@ -108,6 +148,14 @@ GABA-A receptor; anion channel positive modulator _(ChEMBL curated mechanism, as
 | Bioavailability | 11 % | 11% |
 | Metabolism | - | Nil |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Disulfiram]], [[Nalmefene]], [[Naltrexone]]
 
 ## Safety routing
 

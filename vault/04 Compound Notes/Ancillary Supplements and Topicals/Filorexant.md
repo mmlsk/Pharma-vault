@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2107822
 chembl-max-phase: 2
 half-life:
   value: 3.0
@@ -56,6 +56,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Filorexant
@@ -63,6 +65,37 @@ pk-source:
   revision: 1370552207
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2107822
+  pref-name: FILOREXANT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3307226
+    name: Orexin receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 420.49
+    mw-freebase: 420.49
+    alogp: 4.31
+    psa: 68.21
+    hba: 5
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.62
+    full-molformula: C24H25FN4O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Filorexant
@@ -76,6 +109,7 @@ pk-source:
 - **Compound ID:** `filorexant-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2107822](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107822/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -84,6 +118,18 @@ Filorexant is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is 
 ## Mechanism
 
 orexin receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 420.49 | 4.31 | 68.21 | 0/5 | 0 | C24H25FN4O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Orexin receptor (CHEMBL3307226)|Orexin receptor]] - antagonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -98,6 +144,14 @@ orexin receptor antagonist _(ChEMBL curated mechanism, as quoted by the source).
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 3–6 h | 3–6 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Almorexant]] (Orexin receptor), [[Daridorexant (Quviviq)]] (Orexin receptor), [[Orn-0829 Hydrate]] (Orexin receptor), [[Suvorexant (Belsomra)]] (Orexin receptor)
 
 ## Safety routing
 

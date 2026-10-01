@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL537
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL537
+  pref-name: HYDROQUINONE
+  molecule-type: Small molecule
+  first-approval: 2002
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D11AX11
+  targets: []
+  properties:
+    full-mwt: 110.11
+    mw-freebase: 110.11
+    alogp: 1.1
+    psa: 40.46
+    hba: 2
+    hbd: 2
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.49
+    full-molformula: C6H6O2
 ---
 
 # Hydroquinone
@@ -67,10 +91,21 @@ tags:
 - **Compound ID:** `hydroquinone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL537](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL537/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 The long-standing gold-standard prescription skin-lightening agent, a direct and potent tyrosinase inhibitor; more effective than most OTC alternatives but restricted/banned in some countries over long-term safety concerns.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2002
+- **ATC D11AX11:** DERMATOLOGICALS › OTHER DERMATOLOGICAL PREPARATIONS › Other dermatologicals
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 110.11 | 1.1 | 40.46 | 2/2 | 0 | C6H6O2 |
 
 ## Evidence boundaries
 
@@ -80,6 +115,12 @@ The long-standing gold-standard prescription skin-lightening agent, a direct and
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Brimonidine]], [[Caffeine]], [[Diclofenac]], [[Finasteride]], [[Finasteride (topical spray solution)]], [[Mequinol]], [[Minoxidil]], [[Minoxidil (oral, low dose)]], [[Monobenzone]], [[Tiratricol (TRIAC)]]
 
 ## Safety routing
 

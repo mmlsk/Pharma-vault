@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201271
+  pref-name: BUCLIZINE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AE01
+  - R06AE51
+  targets: []
+  properties:
+    full-mwt: 433.04
+    mw-freebase: 433.04
+    alogp: 6.54
+    psa: 6.48
+    hba: 2
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.45
+    full-molformula: C28H33ClN2
 ---
 
 # Buclizine
@@ -67,7 +91,7 @@ tags:
 - **Compound ID:** `buclizine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201271](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201271/) · max phase 4
+- **ChEMBL:** [CHEMBL1201271](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201271/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +101,17 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC R06AE01:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Piperazine derivatives
+- **ATC R06AE51:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Piperazine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 433.04 | 6.54 | 6.48 | 0/2 | 1 | C28H33ClN2 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +120,12 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Cetirizine]], [[Cyclizine]], [[Levocetirizine]], [[Meclizine]]
 
 ## Safety routing
 

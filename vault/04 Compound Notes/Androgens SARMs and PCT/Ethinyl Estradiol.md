@@ -62,6 +62,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ethinylestradiol
@@ -69,6 +70,39 @@ pk-source:
   revision: 1375707907
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL691
+  pref-name: ETHINYL ESTRADIOL
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G03CA01
+  - L02AA03
+  targets:
+  - id: CHEMBL206
+    name: Estrogen receptor
+    action: AGONIST
+  properties:
+    full-mwt: 296.41
+    mw-freebase: 296.41
+    alogp: 3.61
+    psa: 40.46
+    hba: 2
+    hbd: 2
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.72
+    full-molformula: C20H24O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ethinyl Estradiol
@@ -82,7 +116,7 @@ pk-source:
 - **Compound ID:** `ethinyl-estradiol-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL691](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL691/) · max phase 4
+- **ChEMBL:** [CHEMBL691](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL691/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -91,6 +125,21 @@ Estrogen receptor alpha agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Estrogen receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC G03CA01:** GENITO URINARY SYSTEM AND SEX HORMONES › ESTROGENS › Natural and semisynthetic estrogens, plain
+- **ATC L02AA03:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › HORMONES AND RELATED AGENTS › Estrogens
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 296.41 | 3.61 | 40.46 | 2/2 | 0 | C20H24O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Estrogen receptor (CHEMBL206)|Estrogen receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -111,6 +160,16 @@ Estrogen receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the sou
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | • Ethinylestradiol sulfate; • Others |
 | Excretion | mainly non-renal | Feces: 62%; Urine: 38% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dienestrol]] (Estrogen receptor), [[Diethylstilbestrol]] (Estrogen receptor), [[Elacestrant]] (Estrogen receptor), [[Enclomiphene]] (Estrogen receptor), [[Estradiol]] (Estrogen receptor), [[Estradiol Acetate]] (Estrogen receptor), [[Estradiol Cypionate]] (Estrogen receptor), [[Estradiol Valerate]] (Estrogen receptor), [[Estrone]] (Estrogen receptor), [[Fulvestrant (Faslodex)]] (Estrogen receptor), [[Giredestrant]] (Estrogen receptor), [[Mestranol]] (Estrogen receptor)
+- **Same ATC subgroup:** [[Chlorotrianisene]], [[Diethylstilbestrol]], [[Diethylstilbestrol Diphosphate]], [[Estradiol]], [[Estriol]], [[Estrogens, Conjugated]], [[Estrone]], [[Polyestradiol Phosphate]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

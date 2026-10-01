@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL163238
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL163238
+  pref-name: PILSICAINIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 272.39
+    mw-freebase: 272.39
+    alogp: 3.26
+    psa: 32.34
+    hba: 2
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.92
+    full-molformula: C17H24N2O
 ---
 
 # Pilsicainide
@@ -67,10 +89,19 @@ tags:
 - **Compound ID:** `pilsicainide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL163238](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL163238/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Modulates fast cardiac sodium channels to alter impulse conduction; proarrhythmia makes clinical supervision essential.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 272.39 | 3.26 | 32.34 | 1/2 | 0 | C17H24N2O |
 
 ## Evidence boundaries
 

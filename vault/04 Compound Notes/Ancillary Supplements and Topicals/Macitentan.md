@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Macitentan
@@ -63,6 +64,31 @@ pk-source:
   revision: 1329260588
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2103873
+  pref-name: MACITENTAN
+  molecule-type: Small molecule
+  first-approval: 2010
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C02KX04
+  targets:
+  - id: CHEMBL2096678
+    name: Endothelin receptor, ET-A/ET-B
+    action: ANTAGONIST
+  properties:
+    full-mwt: 588.28
+    mw-freebase: 588.28
+    alogp: 3.57
+    psa: 128.22
+    hba: 8
+    hbd: 2
+    rtb: 11
+    num-ro5-violations: 1
+    qed-weighted: 0.33
+    full-molformula: C19H20Br2N6O4S
 ---
 
 # Macitentan
@@ -76,7 +102,7 @@ pk-source:
 - **Compound ID:** `macitentan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2103873](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103873/) · max phase 4
+- **ChEMBL:** [CHEMBL2103873](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103873/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +111,21 @@ Endothelin receptor, ET-A/ET-B antagonist; approved/marketed compound catalogued
 ## Mechanism
 
 Endothelin receptor, ET-A/ET-B antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2010
+- **Flags:** black-box warning
+- **ATC C02KX04:** CARDIOVASCULAR SYSTEM › OTHER ANTIHYPERTENSIVES › Antihypertensives for pulmonary arterial hypertension
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 588.28 | 3.57 | 128.22 | 2/8 | 1 | C19H20Br2N6O4S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Endothelin receptor, ET-A-ET-B (CHEMBL2096678)|Endothelin receptor, ET-A/ET-B]] - antagonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -101,6 +142,14 @@ Endothelin receptor, ET-A/ET-B antagonist _(ChEMBL curated mechanism, as quoted 
 | Metabolism | hepatic | Hydrolysis, oxidation (CYP3A4) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - | 2/3 urine, 1/3 faeces |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ambrisentan]] (Endothelin receptor, ET-A/ET-B), [[Aprocitentan]] (Endothelin receptor, ET-A/ET-B), [[Bosentan]] (Endothelin receptor, ET-A/ET-B), [[Sitaxentan]] (Endothelin receptor, ET-A/ET-B)
+- **Same ATC subgroup:** [[Ambrisentan]], [[Bosentan]], [[Riociguat]], [[Sitaxentan]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

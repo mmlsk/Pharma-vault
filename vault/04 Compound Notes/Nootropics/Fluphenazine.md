@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL726
+chembl-max-phase: 4
 half-life:
   value: 15.0
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Fluphenazine
@@ -68,6 +69,35 @@ pk-source:
   revision: 1347484226
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL726
+  pref-name: FLUPHENAZINE
+  molecule-type: Small molecule
+  first-approval: 1959
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N05AB02
+  targets: []
+  properties:
+    full-mwt: 437.53
+    mw-freebase: 437.53
+    alogp: 4.31
+    psa: 29.95
+    hba: 5
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C22H26F3N3OS
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Fluphenazine
@@ -81,10 +111,22 @@ pk-source:
 - **Compound ID:** `fluphenazine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL726](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL726/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 High-potency phenothiazine available as a long-acting depot, effective but with a high extrapyramidal burden.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1959
+- **Flags:** black-box warning
+- **ATC N05AB02:** NERVOUS SYSTEM › ANTIPSYCHOTICS › Phenothiazines with piperazine structure
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 437.53 | 4.31 | 29.95 | 1/5 | 0 | C22H26F3N3OS |
 
 ## Evidence boundaries
 
@@ -102,6 +144,14 @@ High-potency phenothiazine available as a long-acting depot, effective but with 
 | Bioavailability | 2.7 % | 2.7% (by mouth) |
 | Metabolism | - | unclear |
 | Excretion | - | Urine, feces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Perphenazine]], [[Trifluoperazine]]
 
 ## Safety routing
 

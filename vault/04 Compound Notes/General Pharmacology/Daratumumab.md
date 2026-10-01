@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: Lymphocyte differentiation antigen CD38 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1743007
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1743007
+  pref-name: DARATUMUMAB
+  molecule-type: Antibody
+  first-approval: 2015
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L01FC01
+  targets:
+  - id: CHEMBL4660
+    name: ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase 1
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Daratumumab
@@ -67,10 +83,25 @@ tags:
 - **Compound ID:** `daratumumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1743007](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743007/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Anti-CD38 antibody that transformed myeloma treatment, and which interferes with blood transfusion cross-matching because red cells also carry CD38.
+
+## Mechanism
+
+Lymphocyte differentiation antigen CD38 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2015
+- **ATC L01FC01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › MONOCLONAL ANTIBODIES AND ANTIBODY DRUG CONJUGATES › CD38 (Clusters of Differentiation 38) inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[ADP-ribosyl cyclase-cyclic ADP-ribose hydrolase 1 (CHEMBL4660)|ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase 1]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

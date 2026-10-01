@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL34124
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL34124
+  pref-name: OLODANRIGAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4607
+    name: Type-2 angiotensin II receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 507.59
+    mw-freebase: 507.59
+    alogp: 5.44
+    psa: 76.07
+    hba: 4
+    hbd: 1
+    rtb: 8
+    num-ro5-violations: 2
+    qed-weighted: 0.34
+    full-molformula: C32H29NO5
 ---
 
 # Olodanrigan
@@ -67,6 +93,7 @@ tags:
 - **Compound ID:** `olodanrigan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL34124](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL34124/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -75,6 +102,18 @@ Olodanrigan is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is
 ## Mechanism
 
 angiotensin II type 2 (AT-2) receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 507.59 | 5.44 | 76.07 | 1/4 | 2 | C32H29NO5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Type-2 angiotensin II receptor (CHEMBL4607)|Type-2 angiotensin II receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 

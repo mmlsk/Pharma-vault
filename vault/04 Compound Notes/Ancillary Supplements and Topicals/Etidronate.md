@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL871
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: 6.0
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Etidronic acid
@@ -67,6 +68,35 @@ pk-source:
   revision: 1367568684
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL871
+  pref-name: ETIDRONIC ACID
+  molecule-type: Small molecule
+  first-approval: 1977
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M05BA01
+  targets: []
+  properties:
+    full-mwt: 206.03
+    mw-freebase: 206.03
+    alogp: -0.99
+    psa: 135.29
+    hba: 3
+    hbd: 5
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.37
+    full-molformula: C2H8O7P2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Etidronate
@@ -80,10 +110,21 @@ pk-source:
 - **Compound ID:** `etidronate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL871](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL871/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Suppresses osteoclast-mediated bone resorption; jaw osteonecrosis and atypical femoral fracture are rare long-term class risks; first-generation, largely superseded.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1977
+- **ATC M05BA01:** MUSCULO-SKELETAL SYSTEM › DRUGS AFFECTING BONE STRUCTURE AND MINERALIZATION › Bisphosphonates
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 206.03 | -0.99 | 135.29 | 5/3 | 0 | C2H8O7P2 |
 
 ## Evidence boundaries
 
@@ -101,6 +142,14 @@ Suppresses osteoclast-mediated bone resorption; jaw osteonecrosis and atypical f
 | Bioavailability | 3 % | 3% |
 | Metabolism | - | Nil |
 | Excretion | - | Renal and fecal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alendronate (Fosamax)]], [[Clodronate]], [[Ibandronate]], [[Pamidronate (Aredia)]], [[Risedronate]], [[Tiludronate]], [[Zoledronic Acid]]
 
 ## Safety routing
 

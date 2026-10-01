@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201265
+  pref-name: METHYLPREDNISOLONE HEMISUCCINATE
+  molecule-type: Small molecule
+  first-approval: 1959
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 474.55
+    mw-freebase: 474.55
+    alogp: 2.22
+    psa: 138.2
+    hba: 7
+    hbd: 3
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.5
+    full-molformula: C26H34O8
 ---
 
 # Methylprednisolone Hemisuccinate
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `methylprednisolone-hemisuccinate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201265](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201265/) · max phase 4
+- **ChEMBL:** [CHEMBL1201265](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201265/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,16 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1959
+- **Flags:** prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 474.55 | 2.22 | 138.2 | 3/7 | 0 | C26H34O8 |
 
 ## Evidence boundaries
 

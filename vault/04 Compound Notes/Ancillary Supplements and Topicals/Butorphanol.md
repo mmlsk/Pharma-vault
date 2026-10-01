@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL33986
+chembl-max-phase: 4
 half-life:
   value: 4.0
   value-max: 7.0
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Butorphanol
@@ -67,6 +68,35 @@ pk-source:
   revision: 1373297983
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL33986
+  pref-name: BUTORPHANOL
+  molecule-type: Small molecule
+  first-approval: 1978
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N02AF01
+  targets: []
+  properties:
+    full-mwt: 327.47
+    mw-freebase: 327.47
+    alogp: 3.37
+    psa: 43.7
+    hba: 3
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.88
+    full-molformula: C21H29NO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Butorphanol
@@ -80,10 +110,22 @@ pk-source:
 - **Compound ID:** `butorphanol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL33986](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL33986/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Kappa agonist / partial mu agonist available as a nasal spray.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1978
+- **Flags:** black-box warning
+- **ATC N02AF01:** NERVOUS SYSTEM › OPIOIDS › Morphinan derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 327.47 | 3.37 | 43.7 | 2/3 | 0 | C21H29NO2 |
 
 ## Evidence boundaries
 
@@ -101,6 +143,14 @@ Kappa agonist / partial mu agonist available as a nasal spray.
 | Bioavailability | 60–70 % | Intranasal: 60–70%; Oral: 10%; Sublingual/Buccal: 25–35% |
 | Metabolism | hepatic | Liver hydroxylated & glucuronidated |
 | Excretion | mainly urinary | Kidney, 75%; Biliary, 11-14%; Fecal, 15% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Nalbuphine]]
 
 ## Safety routing
 

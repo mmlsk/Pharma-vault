@@ -1,0 +1,2 @@
+duplicate_id,canonical_id,reason
+methylene-blue-cation-compound,methylene-blue-compound,"Same label 'Methylene Blue' in the same group, same ChEMBL molecule; the duplicate's description is kept in the canonical record"

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL920
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,29 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL920
+  pref-name: CHOLINE
+  molecule-type: Small molecule
+  first-approval: 2012
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 104.17
+    mw-freebase: 104.17
+    alogp: -0.32
+    psa: 20.23
+    hba: 1
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.48
+    full-molformula: C5H14NO+
 ---
 
 # Choline
@@ -68,10 +91,20 @@ tags:
 - **Compound ID:** `choline-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL920](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL920/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 The dietary precursor of acetylcholine and of membrane phosphatidylcholine. An essential nutrient most people under-consume, which is different from being a cognitive enhancer in the replete.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2012
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 104.17 | -0.32 | 20.23 | 1/1 | 0 | C5H14NO+ |
 
 ## Evidence boundaries
 

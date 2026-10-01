@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1377
+chembl-max-phase: 4
 half-life:
   value: 12.0
   value-max: 21.0
@@ -58,6 +58,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Proguanil
@@ -65,6 +66,36 @@ pk-source:
   revision: 1338892608
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1377
+  pref-name: PROGUANIL
+  molecule-type: Small molecule
+  first-approval: 2000
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - P01BB01
+  - P01BB51
+  targets: []
+  properties:
+    full-mwt: 253.74
+    mw-freebase: 253.74
+    alogp: 2.21
+    psa: 83.79
+    hba: 2
+    hbd: 5
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.41
+    full-molformula: C11H16ClN5
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Proguanil
@@ -78,10 +109,23 @@ pk-source:
 - **Compound ID:** `proguanil-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1377](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1377/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Biguanide prodrug whose active metabolite is an antifolate, paired with atovaquone for prophylaxis and treatment.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2000
+- **Flags:** prodrug
+- **ATC P01BB01:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › ANTIMALARIALS › Biguanides
+- **ATC P01BB51:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › ANTIMALARIALS › Biguanides
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 253.74 | 2.21 | 83.79 | 5/2 | 0 | C11H16ClN5 |
 
 ## Evidence boundaries
 
@@ -100,6 +144,14 @@ Biguanide prodrug whose active metabolite is an antifolate, paired with atovaquo
 | Metabolism | hepatic | By liver (CYP2C19) |
 | CYP (metabolised by) | CYP2C19 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | cycloguanil and 4-chlorophenylbiguanide |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared CYP substrate pool:** CYP2C19 (+43 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

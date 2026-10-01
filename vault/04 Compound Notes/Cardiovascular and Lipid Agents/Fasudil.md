@@ -8,15 +8,15 @@ cluster: Cardiovascular and Lipid Agents
 group: cardio
 class: null
 subclass: null
-mechanism: null
+mechanism: Rho-associated protein kinase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL38380
+chembl-max-phase: 3
 half-life:
   value: 0.76
   value-max: null
@@ -56,6 +56,7 @@ tags:
 - group/cardio
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Fasudil
@@ -63,6 +64,38 @@ pk-source:
   revision: 1336138545
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL38380
+  pref-name: FASUDIL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C04AX32
+  targets:
+  - id: CHEMBL2111459
+    name: Rho-associated protein kinase
+    action: INHIBITOR
+  properties:
+    full-mwt: 291.38
+    mw-freebase: 291.38
+    alogp: 1.22
+    psa: 62.3
+    hba: 4
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.9
+    full-molformula: C14H17N3O2S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Fasudil
@@ -76,10 +109,28 @@ pk-source:
 - **Compound ID:** `fasudil-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
+- **ChEMBL:** [CHEMBL38380](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL38380/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Rho kinase inhibitor licensed in Japan and China for cerebral vasospasm after subarachnoid haemorrhage.
+
+## Mechanism
+
+Rho-associated protein kinase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C04AX32:** CARDIOVASCULAR SYSTEM › PERIPHERAL VASODILATORS › Other peripheral vasodilators
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 291.38 | 1.22 | 62.3 | 1/4 | 0 | C14H17N3O2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Rho-associated protein kinase (CHEMBL2111459)|Rho-associated protein kinase]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -95,6 +146,14 @@ Rho kinase inhibitor licensed in Japan and China for cerebral vasospasm after su
 |---|---|---|
 | Elimination t½ | 0.76 h | 0.76 hours. Active metabolite (hydroxyfasudil) 4.66 hours. |
 | Metabolites | - | Hydroxyfasudil |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Clazosentan]], [[Naftidrofuryl (Naftidrofuryl Oxalate)]], [[Phenoxybenzamine]]
 
 ## Safety routing
 

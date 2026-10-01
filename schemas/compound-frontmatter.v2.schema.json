@@ -382,6 +382,153 @@
         "type",
         "url"
       ]
+    },
+    "chembl": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "ChEMBL identity and attributes (data/processed/chembl.json, via ChEMBL API cache)",
+      "properties": {
+        "identity-source": {
+          "enum": [
+            "catalogue",
+            "curated-addition",
+            "wikipedia-infobox",
+            "chembl-name-match"
+          ]
+        },
+        "parent-id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^CHEMBL[0-9]+$"
+        },
+        "pref-name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "molecule-type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "first-approval": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "black-box-warning": {
+          "type": "boolean"
+        },
+        "withdrawn": {
+          "type": "boolean"
+        },
+        "atc-codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$"
+          }
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^CHEMBL[0-9]+$"
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "action": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        "properties": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "identity-source"
+      ]
+    },
+    "pk-verification": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Automated cross-check of auto-extracted PK against a second source (not a human review)",
+      "properties": {
+        "source": {
+          "enum": [
+            "fda-label"
+          ]
+        },
+        "status": {
+          "enum": [
+            "consistent",
+            "discrepant",
+            "no-label-value",
+            "no-label"
+          ]
+        },
+        "set-id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "checked": {
+          "type": "string",
+          "format": "date"
+        },
+        "fields": {
+          "type": "object",
+          "additionalProperties": {
+            "enum": [
+              "consistent",
+              "discrepant",
+              "no-label-value"
+            ]
+          }
+        }
+      },
+      "required": [
+        "source",
+        "status"
+      ]
+    },
+    "pubchem-cid": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
     }
   },
   "$defs": {

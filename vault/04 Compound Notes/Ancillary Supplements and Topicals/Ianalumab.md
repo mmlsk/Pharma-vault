@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4594357
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4594357
+  pref-name: IANALUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4630882
+    name: Tumor necrosis factor receptor superfamily member 13C
+    action: BINDING AGENT
+  properties: {}
 ---
 
 # Ianalumab
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `ianalumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4594357](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594357/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -75,6 +92,14 @@ Ianalumab is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is t
 ## Mechanism
 
 tumor necrosis factor receptor superfamily member 13C binding agent _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor receptor superfamily member 13C (CHEMBL4630882)|Tumor necrosis factor receptor superfamily member 13C]] - binding agent · SINGLE PROTEIN
 
 ## Evidence boundaries
 

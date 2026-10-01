@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200624
+  pref-name: ETHYNODIOL DIACETATE
+  molecule-type: Small molecule
+  first-approval: 1966
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G03DC06
+  targets:
+  - id: CHEMBL208
+    name: Progesterone receptor
+    action: AGONIST
+  properties:
+    full-mwt: 384.52
+    mw-freebase: 384.52
+    alogp: 4.43
+    psa: 52.6
+    hba: 4
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.4
+    full-molformula: C24H32O4
 ---
 
 # Ethynodiol Diacetate
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `ethynodiol-diacetate-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1200624](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200624/) · max phase 4
+- **ChEMBL:** [CHEMBL1200624](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200624/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +103,21 @@ Progesterone receptor agonist; approved/marketed compound catalogued by ChEMBL (
 
 Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1966
+- **Flags:** prodrug
+- **ATC G03DC06:** GENITO URINARY SYSTEM AND SEX HORMONES › PROGESTOGENS › Estren derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 384.52 | 4.43 | 52.6 | 0/4 | 0 | C24H32O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Progesterone receptor (CHEMBL208)|Progesterone receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +126,13 @@ Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the sourc
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Asoprisnil]] (Progesterone receptor), [[Chlormadinone Acetate]] (Progesterone receptor), [[Cyproterone Acetate]] (Progesterone receptor), [[Danazol]] (Progesterone receptor), [[Desogestrel]] (Progesterone receptor), [[Drospirenone]] (Progesterone receptor), [[Dydrogesterone]] (Progesterone receptor), [[Etonogestrel]] (Progesterone receptor), [[Gestodene]] (Progesterone receptor), [[Hydroxyprogesterone Caproate]] (Progesterone receptor), [[Levonorgestrel]] (Progesterone receptor), [[Medroxyprogesterone Acetate]] (Progesterone receptor)
+- **Same ATC subgroup:** [[Norethindrone]]
 
 ## Safety routing
 

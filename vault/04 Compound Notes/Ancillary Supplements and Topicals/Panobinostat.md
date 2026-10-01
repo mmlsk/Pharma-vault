@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL483254
+chembl-max-phase: 4
 half-life:
   value: 37.0
   value-max: null
@@ -63,6 +63,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Panobinostat
@@ -70,6 +72,35 @@ pk-source:
   revision: 1368886946
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL483254
+  pref-name: PANOBINOSTAT
+  molecule-type: Small molecule
+  first-approval: 2015
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L01XH03
+  targets: []
+  properties:
+    full-mwt: 349.43
+    mw-freebase: 349.43
+    alogp: 3.33
+    psa: 77.15
+    hba: 3
+    hbd: 4
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.23
+    full-molformula: C21H23N3O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Panobinostat
@@ -83,10 +114,22 @@ pk-source:
 - **Compound ID:** `panobinostat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL483254](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL483254/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Potent pan-HDAC inhibitor used in myeloma with substantial toxicity.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2015
+- **Flags:** black-box warning
+- **ATC L01XH03:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › OTHER ANTINEOPLASTIC AGENTS › Histone deacetylase (HDAC) inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 349.43 | 3.33 | 77.15 | 4/3 | 0 | C21H23N3O2 |
 
 ## Evidence boundaries
 
@@ -106,6 +149,15 @@ Potent pan-HDAC inhibitor used in myeloma with substantial toxicity.
 | Metabolism | hepatic | CYP3A (40%), CYP2D6, CYP2C19 |
 | CYP (metabolised by) | CYP2C19, CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Fecal (44–77%), renal (29–51%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Belinostat]], [[Entinostat]], [[Resminostat]], [[Tucidinostat (chidamide)]], [[Vorinostat]]
+- **Shared CYP substrate pool:** CYP2C19 (+43 others), CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

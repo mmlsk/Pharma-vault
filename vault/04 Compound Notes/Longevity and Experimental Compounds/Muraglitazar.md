@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL557580
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,34 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL186179
+  pref-name: MURAGLITAZAR CHLORIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL239
+    name: Peroxisome proliferator-activated receptor alpha
+    action: AGONIST
+  - id: CHEMBL235
+    name: Peroxisome proliferator-activated receptor gamma
+    action: AGONIST
+  properties:
+    full-mwt: 516.55
+    mw-freebase: 516.55
+    alogp: 5.37
+    psa: 111.33
+    hba: 7
+    hbd: 1
+    rtb: 11
+    num-ro5-violations: 2
+    qed-weighted: 0.28
+    full-molformula: C29H28N2O7
 ---
 
 # Muraglitazar
@@ -67,6 +95,7 @@ tags:
 - **Compound ID:** `muraglitazar-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL557580](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL557580/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -76,6 +105,19 @@ Muraglitazar is a phase 3 compound catalogued by ChEMBL. Its curated mechanism i
 
 peroxisome proliferator-activated receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 516.55 | 5.37 | 111.33 | 1/7 | 2 | C29H28N2O7 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Peroxisome proliferator-activated receptor alpha (CHEMBL239)|Peroxisome proliferator-activated receptor alpha]] - agonist · SINGLE PROTEIN
+- [[Peroxisome proliferator-activated receptor gamma (CHEMBL235)|Peroxisome proliferator-activated receptor gamma]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +126,12 @@ peroxisome proliferator-activated receptor alpha agonist _(ChEMBL curated mechan
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aleglitazar]] (Peroxisome proliferator-activated receptor alpha; Peroxisome proliferator-activated receptor gamma), [[Imiglitazar]] (Peroxisome proliferator-activated receptor alpha; Peroxisome proliferator-activated receptor gamma), [[Mk-0767]] (Peroxisome proliferator-activated receptor alpha; Peroxisome proliferator-activated receptor gamma), [[Saroglitazar]] (Peroxisome proliferator-activated receptor alpha; Peroxisome proliferator-activated receptor gamma), [[Balaglitazone]] (Peroxisome proliferator-activated receptor gamma), [[Bardoxolone Methyl]] (Peroxisome proliferator-activated receptor gamma), [[Ciprofibrate]] (Peroxisome proliferator-activated receptor alpha), [[Clofibrate]] (Peroxisome proliferator-activated receptor alpha), [[Db959]] (Peroxisome proliferator-activated receptor gamma), [[Elafibranor]] (Peroxisome proliferator-activated receptor alpha), [[Fenofibrate]] (Peroxisome proliferator-activated receptor alpha), [[Fenofibric Acid]] (Peroxisome proliferator-activated receptor alpha)
 
 ## Safety routing
 

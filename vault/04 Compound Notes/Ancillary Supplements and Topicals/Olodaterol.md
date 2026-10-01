@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Olodaterol
@@ -68,6 +69,35 @@ pk-source:
   revision: 1330257445
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL605846
+  pref-name: OLODATEROL
+  molecule-type: Small molecule
+  first-approval: 2014
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R03AC19
+  targets: []
+  properties:
+    full-mwt: 386.45
+    mw-freebase: 386.45
+    alogp: 2.38
+    psa: 100.05
+    hba: 6
+    hbd: 4
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.58
+    full-molformula: C21H26N2O5
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Olodaterol
@@ -81,7 +111,7 @@ pk-source:
 - **Compound ID:** `olodaterol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL605846](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL605846/) · max phase 4
+- **ChEMBL:** [CHEMBL605846](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL605846/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +120,16 @@ Beta-2 adrenergic receptor agonist; approved/marketed compound catalogued by ChE
 ## Mechanism
 
 Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2014
+- **ATC R03AC19:** RESPIRATORY SYSTEM › ADRENERGICS, INHALANTS › Selective beta-2-adrenoreceptor agonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 386.45 | 2.38 | 100.05 | 4/6 | 0 | C21H26N2O5 |
 
 ## Evidence boundaries
 
@@ -108,6 +148,14 @@ Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the 
 | Bioavailability | 30 % | ~30% (inhalation) |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly non-renal | Feces (53%), urine (38%) — following IV administration |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Albuterol]], [[Bitolterol]], [[Clenbuterol]], [[Fenoterol]], [[Formoterol]], [[Indacaterol]], [[Isoetharine]], [[Pirbuterol]], [[Procaterol]], [[Salbutamol (Albuterol)]], [[Salmeterol]], [[Terbutaline]]
 
 ## Safety routing
 

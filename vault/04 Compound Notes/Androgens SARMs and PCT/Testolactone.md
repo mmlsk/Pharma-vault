@@ -8,15 +8,15 @@ cluster: Androgens SARMs and PCT
 group: pct
 class: null
 subclass: null
-mechanism: null
+mechanism: Cytochrome P450 19A1 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1571
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Testolactone
@@ -63,6 +64,37 @@ pk-source:
   revision: 1329012865
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1571
+  pref-name: TESTOLACTONE
+  molecule-type: Small molecule
+  first-approval: 1969
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1978
+    name: Aromatase
+    action: INHIBITOR
+  properties:
+    full-mwt: 300.4
+    mw-freebase: 300.4
+    alogp: 3.59
+    psa: 43.37
+    hba: 3
+    hbd: 0
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.64
+    full-molformula: C19H24O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Testolactone
@@ -76,10 +108,28 @@ pk-source:
 - **Compound ID:** `testolactone-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL1571](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1571/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 One of the first clinically used steroidal aromatase inhibitors for estrogen control.
+
+## Mechanism
+
+Cytochrome P450 19A1 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1969
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 300.4 | 3.59 | 43.37 | 0/3 | 0 | C19H24O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Aromatase (CHEMBL1978)|Aromatase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -96,6 +146,14 @@ One of the first clinically used steroidal aromatase inhibitors for estrogen con
 | Protein binding | 85 % | ~85% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aminoglutethimide]] (Aromatase), [[Arimidex (Anastrozole)]] (Aromatase), [[Aromasin (Exemestane)]] (Aromatase), [[Femara (Letrozole)]] (Aromatase)
 
 ## Safety routing
 

@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Oxprenolol
@@ -67,6 +68,35 @@ pk-source:
   revision: 1359198474
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL546
+  pref-name: OXPRENOLOL
+  molecule-type: Small molecule
+  first-approval: 1983
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C07AA02
+  targets: []
+  properties:
+    full-mwt: 265.35
+    mw-freebase: 265.35
+    alogp: 1.99
+    psa: 50.72
+    hba: 4
+    hbd: 2
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C15H23NO3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Oxprenolol
@@ -80,7 +110,7 @@ pk-source:
 - **Compound ID:** `oxprenolol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL546](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL546/) · max phase 4
+- **ChEMBL:** [CHEMBL546](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL546/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +119,16 @@ Beta-2 adrenergic receptor antagonist; approved/marketed compound catalogued by 
 ## Mechanism
 
 Beta-2 adrenergic receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1983
+- **ATC C07AA02:** CARDIOVASCULAR SYSTEM › BETA BLOCKING AGENTS › Beta blocking agents, non-selective
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 265.35 | 1.99 | 50.72 | 2/4 | 0 | C15H23NO3 |
 
 ## Evidence boundaries
 
@@ -106,6 +146,14 @@ Beta-2 adrenergic receptor antagonist _(ChEMBL curated mechanism, as quoted by t
 | Bioavailability | 20–70 % | 20–70% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney ; Lactic (in lactiferous females) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Nadolol]], [[Penbutolol]], [[Pindolol]], [[Propranolol]], [[Sotalol]], [[Timolol]]
 
 ## Safety routing
 

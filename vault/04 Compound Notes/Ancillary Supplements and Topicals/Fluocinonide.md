@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Fluocinonide
@@ -62,6 +63,32 @@ pk-source:
   revision: 1330279326
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1501
+  pref-name: FLUOCINONIDE
+  molecule-type: Small molecule
+  first-approval: 1971
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C05AA11
+  - D07AC08
+  targets:
+  - id: CHEMBL2034
+    name: Glucocorticoid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 494.53
+    mw-freebase: 494.53
+    alogp: 2.94
+    psa: 99.13
+    hba: 7
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.6
+    full-molformula: C26H32F2O7
 ---
 
 # Fluocinonide
@@ -75,7 +102,7 @@ pk-source:
 - **Compound ID:** `fluocinonide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1501](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1501/) · max phase 4
+- **ChEMBL:** [CHEMBL1501](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1501/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -84,6 +111,22 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1971
+- **Flags:** black-box warning
+- **ATC C05AA11:** CARDIOVASCULAR SYSTEM › AGENTS FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE › Corticosteroids
+- **ATC D07AC08:** DERMATOLOGICALS › CORTICOSTEROIDS, PLAIN › Corticosteroids, potent (group III)
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 494.53 | 2.94 | 99.13 | 1/7 | 0 | C26H32F2O7 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucocorticoid receptor (CHEMBL2034)|Glucocorticoid receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -98,6 +141,13 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Metabolism | hepatic | Liver |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor)
+- **Same ATC subgroup:** [[Amcinonide]], [[Beclomethasone Dipropionate]], [[Betamethasone]], [[Budesonide]], [[Desoximetasone]], [[Dexamethasone]], [[Diflorasone Diacetate]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluorometholone]], [[Flurandrenolide]], [[Fluticasone Propionate]]
 
 ## Safety routing
 

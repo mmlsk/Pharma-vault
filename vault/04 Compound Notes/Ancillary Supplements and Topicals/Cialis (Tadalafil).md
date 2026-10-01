@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Phosphodiesterase 5A inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL779
+chembl-max-phase: 4
 half-life:
   value: 17.5
   value-max: null
@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Tadalafil
@@ -71,6 +73,40 @@ pk-source:
   revision: 1366433668
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL779
+  pref-name: TADALAFIL
+  molecule-type: Small molecule
+  first-approval: 2002
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04BE08
+  targets:
+  - id: CHEMBL1827
+    name: cGMP-specific 3',5'-cyclic phosphodiesterase
+    action: INHIBITOR
+  properties:
+    full-mwt: 389.41
+    mw-freebase: 389.41
+    alogp: 2.21
+    psa: 74.87
+    hba: 4
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C22H19N3O4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 81222924-29d9-4031-954d-132923867b8e
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=81222924-29d9-4031-954d-132923867b8e
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Cialis (Tadalafil)
@@ -85,10 +121,29 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Cialis, Tadalafil
+- **ChEMBL:** [CHEMBL779](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL779/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Long-acting PDE5 inhibitor that lowers blood pressure and improves flow-mediated dilation on chronic dosing.
+
+## Mechanism
+
+Phosphodiesterase 5A inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2002
+- **ATC G04BE08:** GENITO URINARY SYSTEM AND SEX HORMONES › UROLOGICALS › Drugs used in erectile dysfunction
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 389.41 | 2.21 | 74.87 | 1/4 | 0 | C22H19N3O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[cGMP-specific 3',5'-cyclic phosphodiesterase (CHEMBL1827)|cGMP-specific 3',5'-cyclic phosphodiesterase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -109,6 +164,19 @@ Long-acting PDE5 inhibitor that lowers blood pressure and improves flow-mediated
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Catechol metabolite |
 | Excretion | mainly non-renal | Feces (~61%), urine (~36%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 81222924…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=81222924-29d9-4031-954d-132923867b8e), label version 20260909. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 17.5)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Avanafil (Stendra)]] (cGMP-specific 3',5'-cyclic phosphodiesterase), [[Gisadenafil]] (cGMP-specific 3',5'-cyclic phosphodiesterase), [[Ibudilast]] (cGMP-specific 3',5'-cyclic phosphodiesterase), [[Pf-00489791]] (cGMP-specific 3',5'-cyclic phosphodiesterase), [[Udenafil]] (cGMP-specific 3',5'-cyclic phosphodiesterase)
+- **Same ATC subgroup:** [[Alprostadil]], [[Apomorphine]], [[Avanafil (Stendra)]], [[Papaverine]], [[Sildenafil (Viagra)]], [[Udenafil]], [[Vardenafil (Levitra)]], [[Yohimbine]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

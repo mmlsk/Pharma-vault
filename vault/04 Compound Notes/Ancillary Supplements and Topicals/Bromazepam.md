@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Bromazepam
@@ -68,6 +69,38 @@ pk-source:
   revision: 1368400047
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL277062
+  pref-name: BROMAZEPAM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05BA08
+  targets:
+  - id: CHEMBL4956
+    name: Gamma-aminobutyric acid receptor subunit alpha-2
+    action: POSITIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 316.16
+    mw-freebase: 316.16
+    alogp: 2.63
+    psa: 54.35
+    hba: 3
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.88
+    full-molformula: C14H10BrN3O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Bromazepam
@@ -81,7 +114,7 @@ pk-source:
 - **Compound ID:** `bromazepam-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL277062](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL277062/) · max phase 4
+- **ChEMBL:** [CHEMBL277062](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL277062/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +123,19 @@ GABA receptor alpha-2 subunit positive allosteric modulator; approved/marketed c
 ## Mechanism
 
 GABA receptor alpha-2 subunit positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC N05BA08:** NERVOUS SYSTEM › ANXIOLYTICS › Benzodiazepine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 316.16 | 2.63 | 54.35 | 1/3 | 0 | C14H10BrN3O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Gamma-aminobutyric acid receptor subunit alpha-2 (CHEMBL4956)|Gamma-aminobutyric acid receptor subunit alpha-2]] - positive allosteric modulator · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -109,6 +155,14 @@ GABA receptor alpha-2 subunit positive allosteric modulator _(ChEMBL curated mec
 | Metabolism | hepatic | Liver: P450 |
 | Metabolites | - | 3-hydroxybromazepam |
 | Excretion | mainly urinary | Urine 69%, as metabolites |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alprazolam]], [[Bentazepam]], [[Chlordiazepoxide]], [[Clobazam]], [[Clotiazepam]], [[Diazepam]], [[Halazepam]], [[Lorazepam]], [[Oxazepam]], [[Prazepam]]
 
 ## Safety routing
 

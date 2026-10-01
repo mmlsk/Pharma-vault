@@ -48,7 +48,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -56,6 +56,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Dobutamine
@@ -63,6 +65,36 @@ pk-source:
   revision: 1329250429
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL926
+  pref-name: DOBUTAMINE
+  molecule-type: Small molecule
+  first-approval: 1978
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01CA07
+  targets: []
+  properties:
+    full-mwt: 301.39
+    mw-freebase: 301.39
+    alogp: 2.96
+    psa: 72.72
+    hba: 4
+    hbd: 4
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.59
+    full-molformula: C18H23NO3
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 89becb0c-da60-4f43-0a98-29ff7a9eca58
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=89becb0c-da60-4f43-0a98-29ff7a9eca58
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Dobutamine
@@ -76,7 +108,7 @@ pk-source:
 - **Compound ID:** `dobutamine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL926](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL926/) · max phase 4
+- **ChEMBL:** [CHEMBL926](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL926/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +117,16 @@ Beta-2 adrenergic receptor agonist; approved/marketed compound catalogued by ChE
 ## Mechanism
 
 Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1978
+- **ATC C01CA07:** CARDIOVASCULAR SYSTEM › CARDIAC STIMULANTS EXCL. CARDIAC GLYCOSIDES › Adrenergic and dopaminergic agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 301.39 | 2.96 | 72.72 | 4/4 | 0 | C18H23NO3 |
 
 ## Evidence boundaries
 
@@ -99,6 +141,16 @@ Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the 
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 2 min | 2 minutes |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 89becb0c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=89becb0c-da60-4f43-0a98-29ff7a9eca58), label version 20260527. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 0.033)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Adrenaline (Epinephrine)]], [[Dopamine (IV infusion)]], [[Ephedrine]], [[Noradrenaline (Norepinephrine, IV)]], [[p-Synephrine (Bitter Orange)]], [[Phenylephrine]]
 
 ## Safety routing
 

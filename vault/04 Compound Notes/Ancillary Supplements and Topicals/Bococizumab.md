@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Subtilisin/kexin type 9 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3137349
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,21 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3137349
+  pref-name: BOCOCIZUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2929
+    name: Proprotein convertase subtilisin/kexin type 9
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Bococizumab
@@ -67,10 +82,23 @@ tags:
 - **Compound ID:** `bococizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3137349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137349/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Discontinued anti-PCSK9 antibody whose efficacy waned because antidrug antibodies developed.
+
+## Mechanism
+
+Subtilisin/kexin type 9 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Proprotein convertase subtilisin-kexin type 9 (CHEMBL2929)|Proprotein convertase subtilisin/kexin type 9]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +108,12 @@ Discontinued anti-PCSK9 antibody whose efficacy waned because antidrug antibodie
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alirocumab (Praluent)]] (Proprotein convertase subtilisin/kexin type 9), [[Evolocumab]] (Proprotein convertase subtilisin/kexin type 9), [[Lerodalcibep]] (Proprotein convertase subtilisin/kexin type 9), [[Ongericimab]] (Proprotein convertase subtilisin/kexin type 9), [[Tafolecimab]] (Proprotein convertase subtilisin/kexin type 9)
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL49
+chembl-max-phase: 4
 half-life:
   value: 2.5
   value-max: null
@@ -55,7 +55,7 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,9 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Buspirone
@@ -70,6 +73,37 @@ pk-source:
   revision: 1365708327
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL49
+  pref-name: BUSPIRONE
+  molecule-type: Small molecule
+  first-approval: 1986
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05BE01
+  targets: []
+  properties:
+    full-mwt: 385.51
+    mw-freebase: 385.51
+    alogp: 2.09
+    psa: 69.64
+    hba: 6
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C21H31N5O2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 18e90d65-4a3a-864e-e063-6294a90ae99d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=18e90d65-4a3a-864e-e063-6294a90ae99d
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Buspirone
@@ -83,10 +117,21 @@ pk-source:
 - **Compound ID:** `buspirone-drug-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL49](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL49/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Azapirone anxiolytic acting through 5-HT1A partial agonism, with no sedation, no dependence and a two-week onset.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1986
+- **ATC N05BE01:** NERVOUS SYSTEM › ANXIOLYTICS › Azaspirodecanedione derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 385.51 | 2.09 | 69.64 | 0/6 | 0 | C21H31N5O2 |
 
 ## Evidence boundaries
 
@@ -107,6 +152,19 @@ Azapirone anxiolytic acting through 5-HT1A partial agonism, with no sedation, no
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | 5-OH-Buspirone;; 6-OH-Buspirone;; 8-OH-Buspirone;; 1-PP |
 | Excretion | - | Urine: 29–63%; Feces: 18–38% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 18e90d65…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=18e90d65-4a3a-864e-e063-6294a90ae99d), label version 20240515. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2, 3)
+> - protein-binding: consistent (label values: 86)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Buspirone (Buspar)]]
+- **Same ATC subgroup:** [[Buspirone (Buspar)]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

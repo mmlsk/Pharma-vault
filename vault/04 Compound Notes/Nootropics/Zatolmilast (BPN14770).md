@@ -10,15 +10,15 @@ cluster: Nootropics
 group: nootropic
 class: null
 subclass: null
-mechanism: null
+mechanism: Phosphodiesterase 4D inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4541964
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -57,6 +57,31 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4541964
+  pref-name: ZATOLMILAST
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL288
+    name: 3',5'-cyclic-AMP phosphodiesterase 4D
+    action: INHIBITOR
+  properties:
+    full-mwt: 405.8
+    mw-freebase: 405.8
+    alogp: 5.64
+    psa: 50.19
+    hba: 2
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.6
+    full-molformula: C21H15ClF3NO2
 ---
 
 # Zatolmilast (BPN14770)
@@ -71,10 +96,27 @@ tags:
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Zatolmilast, BPN14770
+- **ChEMBL:** [CHEMBL4541964](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4541964/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 PDE4D-selective inhibitor investigated for Fragile X syndrome. Subtype selectivity is the attempt to keep the cognitive benefit without the emesis that comes with pan-PDE4 blockade.
+
+## Mechanism
+
+Phosphodiesterase 4D inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 405.8 | 5.64 | 50.19 | 1/2 | 1 | C21H15ClF3NO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[3',5'-cyclic-AMP phosphodiesterase 4D (CHEMBL288)|3',5'-cyclic-AMP phosphodiesterase 4D]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

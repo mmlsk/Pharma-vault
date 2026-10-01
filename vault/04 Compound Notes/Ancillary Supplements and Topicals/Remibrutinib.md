@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4483575
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4483575
+  pref-name: REMIBRUTINIB
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AA60
+  targets: []
+  properties:
+    full-mwt: 507.54
+    mw-freebase: 507.54
+    alogp: 4.47
+    psa: 110.44
+    hba: 6
+    hbd: 2
+    rtb: 9
+    num-ro5-violations: 1
+    qed-weighted: 0.41
+    full-molformula: C27H27F2N5O3
 ---
 
 # Remibrutinib
@@ -67,10 +90,20 @@ tags:
 - **Compound ID:** `remibrutinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4483575](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4483575/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits BTK to interrupt B-cell receptor signalling; covalent and reversible agents differ in kinase selectivity, bleeding and atrial-fibrillation risk; investigational.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC L04AA60:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Selective immunosuppressants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 507.54 | 4.47 | 110.44 | 2/6 | 1 | C27H27F2N5O3 |
 
 ## Evidence boundaries
 
@@ -80,6 +113,12 @@ Inhibits BTK to interrupt B-cell receptor signalling; covalent and reversible ag
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Abatacept]], [[Apremilast]], [[Belatacept]], [[Efgartigimod]]
 
 ## Safety routing
 

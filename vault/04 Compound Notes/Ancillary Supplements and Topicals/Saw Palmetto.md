@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108769
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,19 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108769
+  pref-name: SAW PALMETTO
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Saw Palmetto
@@ -67,10 +80,15 @@ tags:
 - **Compound ID:** `saw-palmetto-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2108769](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108769/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Popular herbal 5-alpha-reductase inhibitor for hair loss/BPH; a tissue biopsy study confirmed real DHT reduction in the prostate, though real-world clinical results have been more mixed and weaker than pharmaceutical options like finasteride.
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
 
 ## Evidence boundaries
 

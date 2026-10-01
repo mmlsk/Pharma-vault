@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1755
+chembl-max-phase: 4
 half-life:
   value: 5.0
   value-max: null
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Conivaptan
@@ -67,6 +68,35 @@ pk-source:
   revision: 1330099039
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1755
+  pref-name: CONIVAPTAN
+  molecule-type: Small molecule
+  first-approval: 2005
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C03XA02
+  targets: []
+  properties:
+    full-mwt: 498.59
+    mw-freebase: 498.59
+    alogp: 6.51
+    psa: 78.09
+    hba: 3
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 1
+    qed-weighted: 0.3
+    full-molformula: C32H26N4O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Conivaptan
@@ -80,10 +110,21 @@ pk-source:
 - **Compound ID:** `conivaptan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1755](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1755/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Acts on vasopressin receptors to alter free-water handling or vascular tone; sodium shifts require monitoring; V1a/V2 antagonist.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2005
+- **ATC C03XA02:** CARDIOVASCULAR SYSTEM › OTHER DIURETICS › Vasopressin antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 498.59 | 6.51 | 78.09 | 2/3 | 1 | C32H26N4O2 |
 
 ## Evidence boundaries
 
@@ -99,6 +140,14 @@ Acts on vasopressin receptors to alter free-water handling or vascular tone; sod
 |---|---|---|
 | Elimination t½ | 5 h | 5 hours |
 | Bioavailability | - | N/A |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Tolvaptan]]
 
 ## Safety routing
 

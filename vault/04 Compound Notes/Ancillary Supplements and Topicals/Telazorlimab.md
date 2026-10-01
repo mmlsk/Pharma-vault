@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4594546
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4594546
+  pref-name: TELAZORLIMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3989383
+    name: Tumor necrosis factor receptor superfamily member 4
+    action: ANTAGONIST
+  properties: {}
 ---
 
 # Telazorlimab
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `telazorlimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4594546](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594546/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +93,14 @@ Telazorlimab is a phase 2 compound catalogued by ChEMBL. Its curated mechanism i
 
 tumor necrosis factor receptor superfamily member 4 antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor receptor superfamily member 4 (CHEMBL3989383)|Tumor necrosis factor receptor superfamily member 4]] - antagonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +109,12 @@ tumor necrosis factor receptor superfamily member 4 antagonist _(ChEMBL curated 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Gsk-3174998]] (Tumor necrosis factor receptor superfamily member 4), [[Ivuxolimab]] (Tumor necrosis factor receptor superfamily member 4), [[Medi-6469]] (Tumor necrosis factor receptor superfamily member 4), [[Rocatinlimab]] (Tumor necrosis factor receptor superfamily member 4)
 
 ## Safety routing
 

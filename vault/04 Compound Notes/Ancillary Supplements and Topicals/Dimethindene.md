@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL22108
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,33 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL22108
+  pref-name: DIMETHINDENE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D04AA13
+  - R06AB03
+  targets:
+  - id: CHEMBL231
+    name: Histamine H1 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 292.43
+    mw-freebase: 292.43
+    alogp: 4.15
+    psa: 16.13
+    hba: 2
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C20H24N2
 ---
 
 # Dimethindene
@@ -67,6 +94,7 @@ tags:
 - **Compound ID:** `dimethindene-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL22108](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL22108/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -76,6 +104,20 @@ Dimethindene is a phase 3 compound catalogued by ChEMBL. Its curated mechanism i
 
 histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC D04AA13:** DERMATOLOGICALS › ANTIPRURITICS, INCL. ANTIHISTAMINES, ANESTHETICS, ETC. › Antihistamines for topical use
+- **ATC R06AB03:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Substituted alkylamines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 292.43 | 4.15 | 16.13 | 0/2 | 0 | C20H24N2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Histamine H1 receptor (CHEMBL231)|Histamine H1 receptor]] - antagonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +126,13 @@ histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acrivastine]] (Histamine H1 receptor), [[Alcaftadine]] (Histamine H1 receptor), [[Astemizole]] (Histamine H1 receptor), [[Betahistine]] (Histamine H1 receptor), [[Bilastine]] (Histamine H1 receptor), [[Chlorphenoxamine]] (Histamine H1 receptor), [[Cinnarizine]] (Histamine H1 receptor), [[Desloratadine]] (Histamine H1 receptor), [[Dibenzepin]] (Histamine H1 receptor), [[Dimenhydrinate]] (Histamine H1 receptor), [[Doxepin]] (Histamine H1 receptor), [[Doxepin, low dose (Silenor)]] (Histamine H1 receptor)
+- **Same ATC subgroup:** [[Brompheniramine]], [[Chlorpheniramine]], [[Chlorphenoxamine]], [[Clemastine]], [[Dexbrompheniramine]], [[Dexchlorpheniramine]], [[Diphenhydramine (Benadryl)]], [[Pheniramine]], [[Promethazine]], [[Pyrilamine]], [[Thenalidine]], [[Tripelennamine]]
 
 ## Safety routing
 

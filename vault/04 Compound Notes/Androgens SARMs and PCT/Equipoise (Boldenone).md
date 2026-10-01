@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2106059
+chembl-max-phase: 2
 half-life:
   value: 14.0
   value-max: null
@@ -59,6 +59,7 @@ tags:
 - group/steroids
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Boldenone
@@ -66,6 +67,34 @@ pk-source:
   revision: 1329018044
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2106059
+  pref-name: BOLDENONE UNDECYLENATE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 452.68
+    mw-freebase: 452.68
+    alogp: 7.51
+    psa: 43.37
+    hba: 3
+    hbd: 0
+    rtb: 10
+    num-ro5-violations: 1
+    qed-weighted: 0.2
+    full-molformula: C30H44O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Equipoise (Boldenone)
@@ -80,10 +109,19 @@ pk-source:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Equipoise, Boldenone
+- **ChEMBL:** [CHEMBL2106059](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106059/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Veterinary-derived injectable steroid with slow-acting, moderate anabolic effects and high hematocrit impact.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 452.68 | 7.51 | 43.37 | 0/3 | 1 | C30H44O3 |
 
 ## Evidence boundaries
 
@@ -98,6 +136,8 @@ Veterinary-derived injectable steroid with slow-acting, moderate anabolic effect
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 14 d | Intramuscular: 14 days (as boldenone undecylenate) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

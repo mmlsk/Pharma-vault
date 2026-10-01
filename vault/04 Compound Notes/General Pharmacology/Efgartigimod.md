@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: IgG receptor FcRn large subunit p51 antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297551
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297551
+  pref-name: EFGARTIGIMOD ALFA
+  molecule-type: Protein
+  first-approval: 2021
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AA58
+  targets:
+  - id: CHEMBL5966
+    name: IgG receptor FcRn large subunit p51
+    action: ANTAGONIST
+  properties: {}
 ---
 
 # Efgartigimod
@@ -67,10 +84,25 @@ tags:
 - **Compound ID:** `efgartigimod-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL4297551](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297551/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Engineered Fc fragment that lowers circulating IgG by outcompeting it for the neonatal Fc receptor, used in myasthenia gravis.
+
+## Mechanism
+
+IgG receptor FcRn large subunit p51 antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2021
+- **ATC L04AA58:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Selective immunosuppressants
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[IgG receptor FcRn large subunit p51 (CHEMBL5966)|IgG receptor FcRn large subunit p51]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +112,12 @@ Engineered Fc fragment that lowers circulating IgG by outcompeting it for the ne
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Abatacept]], [[Apremilast]], [[Belatacept]], [[Remibrutinib]]
 
 ## Safety routing
 

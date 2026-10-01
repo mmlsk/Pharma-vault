@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL257972
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL257972
+  pref-name: AZUMAMIDE C
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 530.62
+    mw-freebase: 530.62
+    alogp: 1.01
+    psa: 173.93
+    hba: 6
+    hbd: 6
+    rtb: 8
+    num-ro5-violations: 2
+    qed-weighted: 0.27
+    full-molformula: C27H38N4O7
 ---
 
 # Azumamide C
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `azumamide-c-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL257972](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL257972/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Azumamide C is a named HDAC research compound with a curated biochemical result against HDAC11. ChEMBL records Ki 35.0 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 530.62 | 1.01 | 173.93 | 6/6 | 2 | C27H38N4O7 |
 
 ## Evidence boundaries
 

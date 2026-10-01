@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Romidepsin
@@ -69,6 +70,15 @@ pk-source:
   revision: 1365485021
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 73a2028d-6735-4cd4-b63d-d072df9927a1
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=73a2028d-6735-4cd4-b63d-d072df9927a1
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Romidepsin
@@ -104,6 +114,17 @@ Cyclic peptide HDAC inhibitor with class I selectivity; carries QT prolongation 
 | Bioavailability | - | Not applicable (IV only) |
 | Metabolism | hepatic | Liver (mostly CYP3A4-mediated) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 73a2028d…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=73a2028d-6735-4cd4-b63d-d072df9927a1), label version 20260429. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 3)
+> - protein-binding: consistent (label values: 92, 94)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

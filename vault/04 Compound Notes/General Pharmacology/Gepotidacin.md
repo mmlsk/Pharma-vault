@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Bacterial DNA gyrase inhibitor; Topoisomerase IV inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3317856
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,36 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3317856
+  pref-name: GEPOTIDACIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J01XX13
+  targets:
+  - id: CHEMBL2363076
+    name: Topoisomerase IV
+    action: INHIBITOR
+  - id: CHEMBL2311224
+    name: Bacterial DNA gyrase
+    action: INHIBITOR
+  properties:
+    full-mwt: 448.53
+    mw-freebase: 448.53
+    alogp: 1.09
+    psa: 94.28
+    hba: 9
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.62
+    full-molformula: C24H28N6O3
 ---
 
 # Gepotidacin
@@ -67,10 +97,29 @@ tags:
 - **Compound ID:** `gepotidacin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL3317856](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3317856/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 First-in-class triazaacenaphthylene, a bacterial topoisomerase inhibitor with a novel binding mode approved for uncomplicated urinary infection.
+
+## Mechanism
+
+Bacterial DNA gyrase inhibitor; Topoisomerase IV inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC J01XX13:** ANTIINFECTIVES FOR SYSTEMIC USE › OTHER ANTIBACTERIALS › Other antibacterials
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 448.53 | 1.09 | 94.28 | 1/9 | 0 | C24H28N6O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Topoisomerase IV (CHEMBL2363076)|Topoisomerase IV]] - inhibitor · PROTEIN COMPLEX
+- [[Bacterial DNA gyrase (CHEMBL2311224)|Bacterial DNA gyrase]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -80,6 +129,13 @@ First-in-class triazaacenaphthylene, a bacterial topoisomerase inhibitor with a 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ciprofloxacin]] (Bacterial DNA gyrase; Topoisomerase IV), [[Norfloxacin]] (Bacterial DNA gyrase; Topoisomerase IV), [[Prulifloxacin]] (Bacterial DNA gyrase; Topoisomerase IV), [[Ofloxacin]] (Bacterial DNA gyrase)
+- **Same ATC subgroup:** [[Bacitracin]], [[Fosfomycin]], [[Lefamulin]], [[Linezolid]], [[Tedizolid]]
 
 ## Safety routing
 

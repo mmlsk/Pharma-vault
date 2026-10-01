@@ -56,6 +56,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Minaprine
@@ -63,6 +64,50 @@ pk-source:
   revision: 1369618294
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL278819
+  pref-name: MINAPRINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - N06AX07
+  targets:
+  - id: CHEMBL220
+    name: Acetylcholinesterase
+    action: INHIBITOR
+  - id: CHEMBL2111341
+    name: Dopamine D1 and D2 receptor
+    action: AGONIST
+  - id: CHEMBL1951
+    name: Amine oxidase [flavin-containing] A
+    action: INHIBITOR
+  - id: CHEMBL216
+    name: Muscarinic acetylcholine receptor M1
+    action: AGONIST
+  - id: CHEMBL2095200
+    name: Serotonin 2 (5-HT2) receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 298.39
+    mw-freebase: 298.39
+    alogp: 2.2
+    psa: 50.28
+    hba: 5
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.92
+    full-molformula: C17H22N4O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Minaprine
@@ -76,7 +121,7 @@ pk-source:
 - **Compound ID:** `minaprine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL278819](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL278819/) · max phase 4
+- **ChEMBL:** [CHEMBL278819](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL278819/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +130,24 @@ Acetylcholinesterase inhibitor; approved/marketed compound catalogued by ChEMBL 
 ## Mechanism
 
 Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC N06AX07:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Other antidepressants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 298.39 | 2.2 | 50.28 | 1/5 | 0 | C17H22N4O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Acetylcholinesterase (CHEMBL220)|Acetylcholinesterase]] - inhibitor · SINGLE PROTEIN
+- [[Dopamine D1 and D2 receptor (CHEMBL2111341)|Dopamine D1 and D2 receptor]] - agonist · SELECTIVITY GROUP
+- [[Amine oxidase -flavin-containing- A (CHEMBL1951)|Amine oxidase [flavin-containing] A]] - inhibitor · SINGLE PROTEIN
+- [[Muscarinic acetylcholine receptor M1 (CHEMBL216)|Muscarinic acetylcholine receptor M1]] - agonist · SINGLE PROTEIN
+- [[Serotonin 2 (5-HT2) receptor (CHEMBL2095200)|Serotonin 2 (5-HT2) receptor]] - antagonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -99,6 +162,15 @@ Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the sour
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 2–2.5 h | 2-2.5 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Amineptine]] (Dopamine D1 and D2 receptor), [[Atropine]] (Muscarinic acetylcholine receptor M1), [[Distigmine]] (Acetylcholinesterase), [[Echothiophate]] (Acetylcholinesterase), [[Huperzine A]] (Acetylcholinesterase), [[Hyoscine (Scopolamine)]] (Muscarinic acetylcholine receptor M1), [[Isoflurophate]] (Acetylcholinesterase), [[Itopride]] (Acetylcholinesterase), [[Moclobemide]] (Amine oxidase [flavin-containing] A), [[Pilocarpine]] (Muscarinic acetylcholine receptor M1), [[Propanidid]] (Acetylcholinesterase), [[Talsaclidine]] (Muscarinic acetylcholine receptor M1)
+- **Same ATC subgroup:** [[Agomelatine (Valdoxan)]], [[Brexanolone]], [[Bupropion (Wellbutrin)]], [[Desvenlafaxine]], [[Duloxetine (Cymbalta)]], [[Esketamine (Spravato)]], [[Levomilnacipran]], [[Mirtazapine]], [[Nefazodone]], [[Tianeptine]], [[Trazodone (Desyrel)]], [[Venlafaxine (Effexor)]]
 
 ## Safety routing
 

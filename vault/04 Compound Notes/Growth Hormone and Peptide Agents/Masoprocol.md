@@ -60,6 +60,7 @@ tags:
 - group/gh
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Masoprocol
@@ -67,6 +68,34 @@ pk-source:
   revision: 1360132863
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL313972
+  pref-name: MASOPROCOL
+  molecule-type: Small molecule
+  first-approval: 1992
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L01XX10
+  targets:
+  - id: CHEMBL1824
+    name: Receptor tyrosine-protein kinase erbB-2
+    action: INHIBITOR
+  - id: CHEMBL1957
+    name: Insulin-like growth factor 1 receptor
+    action: INHIBITOR
+  properties:
+    full-mwt: 302.37
+    mw-freebase: 302.37
+    alogp: 3.57
+    psa: 80.92
+    hba: 4
+    hbd: 4
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.64
+    full-molformula: C18H22O4
 ---
 
 # Masoprocol
@@ -80,7 +109,7 @@ pk-source:
 - **Compound ID:** `masoprocol-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL313972](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL313972/) · max phase 4
+- **ChEMBL:** [CHEMBL313972](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL313972/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +118,21 @@ Insulin-like growth factor I receptor inhibitor; approved/marketed compound cata
 ## Mechanism
 
 Insulin-like growth factor I receptor inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1992
+- **ATC L01XX10:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › OTHER ANTINEOPLASTIC AGENTS › Other antineoplastic agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 302.37 | 3.57 | 80.92 | 4/4 | 0 | C18H22O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Receptor tyrosine-protein kinase erbB-2 (CHEMBL1824)|Receptor tyrosine-protein kinase erbB-2]] - inhibitor · SINGLE PROTEIN
+- [[Insulin-like growth factor 1 receptor (CHEMBL1957)|Insulin-like growth factor 1 receptor]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +147,13 @@ Insulin-like growth factor I receptor inhibitor _(ChEMBL curated mechanism, as q
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Bioavailability | - | Very low |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Cudc-101]] (Receptor tyrosine-protein kinase erbB-2), [[Dacomitinib]] (Receptor tyrosine-protein kinase erbB-2), [[Figitumumab]] (Insulin-like growth factor 1 receptor), [[Ganitumab]] (Insulin-like growth factor 1 receptor), [[Istiratumab]] (Insulin-like growth factor 1 receptor), [[Linsitinib]] (Insulin-like growth factor 1 receptor), [[Mecasermin (Increlex)]] (Insulin-like growth factor 1 receptor), [[Mecasermin Rinfabate]] (Insulin-like growth factor 1 receptor), [[MGF (Mechano Growth Factor)]] (Insulin-like growth factor 1 receptor), [[Robatumumab]] (Insulin-like growth factor 1 receptor), [[Teprotumumab]] (Insulin-like growth factor 1 receptor), [[Veligrotug]] (Insulin-like growth factor 1 receptor)
+- **Same ATC subgroup:** [[Anagrelide]], [[Celecoxib]], [[Hydroxyurea (hydroxycarbamide)]], [[Mitotane]], [[Navitoclax (ABT-263)]], [[Tazemetostat]], [[Venetoclax]]
 
 ## Safety routing
 

@@ -18,8 +18,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1437
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -58,6 +58,7 @@ tags:
 - group/cardio
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Norepinephrine
@@ -65,6 +66,28 @@ pk-source:
   revision: 1370844288
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1437
+  pref-name: NOREPINEPHRINE
+  molecule-type: Small molecule
+  first-approval: 1950
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C01CA03
+  targets: []
+  properties:
+    full-mwt: 169.18
+    mw-freebase: 169.18
+    alogp: 0.09
+    psa: 86.71
+    hba: 4
+    hbd: 4
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.47
+    full-molformula: C8H11NO3
 ---
 
 # Noradrenaline (Norepinephrine, IV)
@@ -79,10 +102,22 @@ pk-source:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Noradrenaline, Norepinephrine, IV
+- **ChEMBL:** [CHEMBL1437](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1437/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The first-line vasopressor in septic shock, chosen over dopamine after trials showed fewer arrhythmias.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1950
+- **Flags:** black-box warning
+- **ATC C01CA03:** CARDIOVASCULAR SYSTEM › CARDIAC STIMULANTS EXCL. CARDIAC GLYCOSIDES › Adrenergic and dopaminergic agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 169.18 | 0.09 | 86.71 | 4/4 | 0 | C8H11NO3 |
 
 ## Evidence boundaries
 
@@ -97,6 +132,12 @@ The first-line vasopressor in septic shock, chosen over dopamine after trials sh
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Metabolism | - | MAO-A; COMT |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Adrenaline (Epinephrine)]], [[Dobutamine]], [[Dopamine (IV infusion)]], [[Ephedrine]], [[p-Synephrine (Bitter Orange)]], [[Phenylephrine]]
 
 ## Safety routing
 

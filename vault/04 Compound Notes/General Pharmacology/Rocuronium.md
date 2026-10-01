@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201244
+chembl-max-phase: 4
 half-life:
   value: 66.0
   value-max: 80.0
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Rocuronium bromide
@@ -68,6 +70,36 @@ pk-source:
   revision: 1329367204
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201244
+  pref-name: ROCURONIUM
+  molecule-type: Small molecule
+  first-approval: 1994
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 529.79
+    mw-freebase: 529.79
+    alogp: 4.41
+    psa: 59.0
+    hba: 5
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.32
+    full-molformula: C32H53N2O4+
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 58ce3f40-cbb9-db9e-e063-6394a90ae611
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=58ce3f40-cbb9-db9e-e063-6394a90ae611
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Rocuronium
@@ -81,10 +113,20 @@ pk-source:
 - **Compound ID:** `rocuronium-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1201244](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201244/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Non-depolarising relaxant with an onset fast enough to replace suxamethonium for rapid sequence induction, especially now that sugammadex exists.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1994
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 529.79 | 4.41 | 59.0 | 1/5 | 1 | C32H53N2O4+ |
 
 ## Evidence boundaries
 
@@ -103,6 +145,11 @@ Non-depolarising relaxant with an onset fast enough to replace suxamethonium for
 | Bioavailability | - | NA |
 | Metabolism | - | some de-acetylation |
 | Excretion | - | Unchanged, in bile and urine |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 58ce3f40…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=58ce3f40-cbb9-db9e-e063-6394a90ae611), label version 20260811. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 0.017, 0.033, 0.233, 0.3, 0.7, 0.8)
+> - protein-binding: consistent (label values: 30)
 
 ## Safety routing
 

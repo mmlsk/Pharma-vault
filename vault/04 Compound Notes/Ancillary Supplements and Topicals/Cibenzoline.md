@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL87045
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL87045
+  pref-name: CIFENLINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01BG07
+  targets: []
+  properties:
+    full-mwt: 262.36
+    mw-freebase: 262.36
+    alogp: 2.99
+    psa: 24.39
+    hba: 2
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.9
+    full-molformula: C18H18N2
 ---
 
 # Cibenzoline
@@ -67,10 +91,20 @@ tags:
 - **Compound ID:** `cibenzoline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL87045](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL87045/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Modulates fast cardiac sodium channels to alter impulse conduction; proarrhythmia makes clinical supervision essential.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C01BG07:** CARDIOVASCULAR SYSTEM › ANTIARRHYTHMICS, CLASS I AND III › Other antiarrhythmics, class I and III
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 262.36 | 2.99 | 24.39 | 1/2 | 0 | C18H18N2 |
 
 ## Evidence boundaries
 
@@ -80,6 +114,12 @@ Modulates fast cardiac sodium channels to alter impulse conduction; proarrhythmi
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Vernakalant]]
 
 ## Safety routing
 

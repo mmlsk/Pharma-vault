@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200468
+  pref-name: MALATHION
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - P03AX03
+  targets:
+  - id: CHEMBL2362988
+    name: Acetylcholinesterase
+    action: INHIBITOR
+  properties:
+    full-mwt: 330.36
+    mw-freebase: 330.36
+    alogp: 2.12
+    psa: 71.06
+    hba: 8
+    hbd: 0
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.47
+    full-molformula: C10H19O6PS2
 ---
 
 # Malathion
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `malathion-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1200468](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200468/) · max phase 4
+- **ChEMBL:** [CHEMBL1200468](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200468/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +102,20 @@ Acetylcholinesterase inhibitor; approved/marketed compound catalogued by ChEMBL 
 ## Mechanism
 
 Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC P03AX03:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › ECTOPARASITICIDES, INCL. SCABICIDES › Other ectoparasiticides, incl. scabicides
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 330.36 | 2.12 | 71.06 | 0/8 | 0 | C10H19O6PS2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Acetylcholinesterase (CHEMBL2362988)|Acetylcholinesterase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

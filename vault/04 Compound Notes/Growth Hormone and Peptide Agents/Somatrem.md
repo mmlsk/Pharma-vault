@@ -55,6 +55,22 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201620
+  pref-name: SOMATREM
+  molecule-type: Protein
+  first-approval: 1985
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01AC02
+  targets:
+  - id: CHEMBL1976
+    name: Growth hormone receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Somatrem
@@ -68,7 +84,7 @@ tags:
 - **Compound ID:** `somatrem-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL1201620](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201620/) · max phase 4
+- **ChEMBL:** [CHEMBL1201620](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201620/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -78,6 +94,16 @@ Growth hormone receptor agonist; approved/marketed compound catalogued by ChEMBL
 
 Growth hormone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1985
+- **ATC H01AC02:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › ANTERIOR PITUITARY LOBE HORMONES AND ANALOGUES › Somatropin and somatropin agonists
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Growth hormone receptor (CHEMBL1976)|Growth hormone receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -86,6 +112,13 @@ Growth hormone receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Lonapegsomatropin]] (Growth hormone receptor), [[Pegvisomant (Somavert)]] (Growth hormone receptor), [[Somapacitan]] (Growth hormone receptor), [[Somatrogon]] (Growth hormone receptor), [[Somatropin (Human Growth Hormone)]] (Growth hormone receptor)
+- **Same ATC subgroup:** [[Lonapegsomatropin]], [[Mecasermin (Increlex)]], [[Mecasermin Rinfabate]], [[MGF (Mechano Growth Factor)]], [[Sermorelin]], [[Somapacitan]], [[Somatrogon]], [[Somatropin (Human Growth Hormone)]], [[Tesamorelin]]
 
 ## Safety routing
 

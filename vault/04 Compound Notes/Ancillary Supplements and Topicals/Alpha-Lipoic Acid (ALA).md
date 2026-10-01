@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL33864
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -56,6 +56,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL33864
+  pref-name: LIPOIC ACID, ALPHA
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A16AX01
+  targets: []
+  properties:
+    full-mwt: 206.33
+    mw-freebase: 206.33
+    alogp: 2.79
+    psa: 37.3
+    hba: 3
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C8H14O2S2
 ---
 
 # Alpha-Lipoic Acid (ALA)
@@ -70,10 +94,20 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Alpha-Lipoic Acid, ALA
+- **ChEMBL:** [CHEMBL33864](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL33864/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Antioxidant compound studied for improving insulin sensitivity in type 2 diabetes; also marketed as a general metabolic-health supplement.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A16AX01:** ALIMENTARY TRACT AND METABOLISM › OTHER ALIMENTARY TRACT AND METABOLISM PRODUCTS › Various alimentary tract and metabolism products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 206.33 | 2.79 | 37.3 | 1/3 | 0 | C8H14O2S2 |
 
 ## Evidence boundaries
 
@@ -83,6 +117,12 @@ Antioxidant compound studied for improving insulin sensitivity in type 2 diabete
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Eliglustat]], [[Glycerol Phenylbutyrate]], [[Lonafarnib (Zokinvy)]], [[Migalastat]], [[Miglustat]], [[Nitisinone]], [[Sodium Phenylbutyrate]], [[Teduglutide]], [[Trientine]]
 
 ## Safety routing
 

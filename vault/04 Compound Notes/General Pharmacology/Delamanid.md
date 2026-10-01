@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Mycobacterium tuberculosis H37Rv inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL218650
+chembl-max-phase: 4
 half-life:
   value: 30.0
   value-max: 38.0
@@ -58,6 +58,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Delamanid
@@ -65,6 +66,38 @@ pk-source:
   revision: 1343219893
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL218650
+  pref-name: DELAMANID
+  molecule-type: Small molecule
+  first-approval: 2014
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J04AK06
+  targets:
+  - id: CHEMBL2111188
+    name: Mycobacterium tuberculosis H37Rv
+    action: INHIBITOR
+  properties:
+    full-mwt: 534.49
+    mw-freebase: 534.49
+    alogp: 4.97
+    psa: 101.12
+    hba: 9
+    hbd: 0
+    rtb: 8
+    num-ro5-violations: 1
+    qed-weighted: 0.3
+    full-molformula: C25H25F3N4O6
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Delamanid
@@ -78,10 +111,30 @@ pk-source:
 - **Compound ID:** `delamanid-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL218650](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL218650/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Nitro-dihydro-imidazooxazole for multidrug-resistant tuberculosis, sharing pretomanid's activation route.
+
+## Mechanism
+
+Mycobacterium tuberculosis H37Rv inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2014
+- **Flags:** prodrug
+- **ATC J04AK06:** ANTIINFECTIVES FOR SYSTEMIC USE › DRUGS FOR TREATMENT OF TUBERCULOSIS › Other drugs for treatment of tuberculosis
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 534.49 | 4.97 | 101.12 | 0/9 | 1 | C25H25F3N4O6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Mycobacterium tuberculosis H37Rv (CHEMBL2111188)|Mycobacterium tuberculosis H37Rv]] - inhibitor · ORGANISM
 
 ## Evidence boundaries
 
@@ -100,6 +153,15 @@ Nitro-dihydro-imidazooxazole for multidrug-resistant tuberculosis, sharing preto
 | Metabolism | hepatic | in plasma by albumin, in liver; by CYP3A4 (to a lesser extent) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - | not excreted in urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Bedaquiline]], [[Ethambutol]], [[Pretomanid]], [[Pyrazinamide]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

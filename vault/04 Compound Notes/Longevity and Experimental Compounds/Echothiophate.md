@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201341
+  pref-name: ECHOTHIOPHATE
+  molecule-type: Small molecule
+  first-approval: 1960
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - S01EB03
+  targets:
+  - id: CHEMBL220
+    name: Acetylcholinesterase
+    action: INHIBITOR
+  properties:
+    full-mwt: 256.33
+    mw-freebase: 256.33
+    alogp: 2.61
+    psa: 35.53
+    hba: 4
+    hbd: 0
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.49
+    full-molformula: C9H23NO3PS+
 ---
 
 # Echothiophate
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `echothiophate-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1201341](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201341/) · max phase 4
+- **ChEMBL:** [CHEMBL1201341](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201341/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +103,20 @@ Acetylcholinesterase inhibitor; approved/marketed compound catalogued by ChEMBL 
 
 Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1960
+- **ATC S01EB03:** SENSORY ORGANS › ANTIGLAUCOMA PREPARATIONS AND MIOTICS › Parasympathomimetics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 256.33 | 2.61 | 35.53 | 0/4 | 0 | C9H23NO3PS+ |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Acetylcholinesterase (CHEMBL220)|Acetylcholinesterase]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +125,13 @@ Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the sour
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Distigmine]] (Acetylcholinesterase), [[Huperzine A]] (Acetylcholinesterase), [[Isoflurophate]] (Acetylcholinesterase), [[Itopride]] (Acetylcholinesterase), [[Minaprine]] (Acetylcholinesterase), [[Propanidid]] (Acetylcholinesterase)
+- **Same ATC subgroup:** [[Demecarium]], [[Isoflurophate]], [[Neostigmine]], [[Physostigmine]], [[Pilocarpine]]
 
 ## Safety routing
 

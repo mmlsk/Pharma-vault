@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Orphenadrine
@@ -68,6 +69,35 @@ pk-source:
   revision: 1363068383
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL900
+  pref-name: ORPHENADRINE
+  molecule-type: Small molecule
+  first-approval: 1957
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M03BC51
+  targets: []
+  properties:
+    full-mwt: 269.39
+    mw-freebase: 269.39
+    alogp: 3.66
+    psa: 12.47
+    hba: 2
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.79
+    full-molformula: C18H23NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Orphenadrine
@@ -81,7 +111,7 @@ pk-source:
 - **Compound ID:** `orphenadrine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL900](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL900/) · max phase 4
+- **ChEMBL:** [CHEMBL900](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL900/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +120,16 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1957
+- **ATC M03BC51:** MUSCULO-SKELETAL SYSTEM › MUSCLE RELAXANTS, CENTRALLY ACTING AGENTS › Ethers, chemically close to antihistamines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 269.39 | 3.66 | 12.47 | 0/2 | 0 | C18H23NO |
 
 ## Evidence boundaries
 
@@ -108,6 +148,8 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Bioavailability | 90 % | 90% |
 | Metabolism | hepatic | Hepatic demethylation |
 | Excretion | - | Renal and biliary |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

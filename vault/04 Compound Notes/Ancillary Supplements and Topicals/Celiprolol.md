@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Celiprolol
@@ -67,6 +68,44 @@ pk-source:
   revision: 1330777343
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL27810
+  pref-name: CELIPROLOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C07AB08
+  targets:
+  - id: CHEMBL210
+    name: Beta-2 adrenergic receptor
+    action: PARTIAL AGONIST
+  - id: CHEMBL2095158
+    name: Adrenergic receptor alpha-2
+    action: ANTAGONIST
+  - id: CHEMBL213
+    name: Beta-1 adrenergic receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 379.5
+    mw-freebase: 379.5
+    alogp: 2.89
+    psa: 90.9
+    hba: 5
+    hbd: 3
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.57
+    full-molformula: C20H33N3O4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Celiprolol
@@ -80,7 +119,7 @@ pk-source:
 - **Compound ID:** `celiprolol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL27810](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL27810/) · max phase 4
+- **ChEMBL:** [CHEMBL27810](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL27810/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +128,21 @@ Beta-2 adrenergic receptor partial agonist; approved/marketed compound catalogue
 ## Mechanism
 
 Beta-2 adrenergic receptor partial agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C07AB08:** CARDIOVASCULAR SYSTEM › BETA BLOCKING AGENTS › Beta blocking agents, selective
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 379.5 | 2.89 | 90.9 | 3/5 | 0 | C20H33N3O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Beta-2 adrenergic receptor (CHEMBL210)|Beta-2 adrenergic receptor]] - partial agonist · SINGLE PROTEIN
+- [[Adrenergic receptor alpha-2 (CHEMBL2095158)|Adrenergic receptor alpha-2]] - antagonist · PROTEIN FAMILY
+- [[Beta-1 adrenergic receptor (CHEMBL213)|Beta-1 adrenergic receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -104,6 +158,15 @@ Beta-2 adrenergic receptor partial agonist _(ChEMBL curated mechanism, as quoted
 |---|---|---|
 | Elimination t½ | 5 h | 5 hours |
 | Bioavailability | 30–70 % | 30-70% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Bucindolol]] (Beta-1 adrenergic receptor; Beta-2 adrenergic receptor), [[Nadolol]] (Beta-1 adrenergic receptor; Beta-2 adrenergic receptor), [[Pindolol]] (Beta-1 adrenergic receptor; Beta-2 adrenergic receptor), [[Pronetalol]] (Beta-1 adrenergic receptor; Beta-2 adrenergic receptor), [[Timolol]] (Beta-1 adrenergic receptor; Beta-2 adrenergic receptor), [[Albuterol]] (Beta-2 adrenergic receptor), [[Atenolol (Tenormin)]] (Beta-1 adrenergic receptor), [[Bambuterol]] (Beta-2 adrenergic receptor), [[Clenbuterol]] (Beta-2 adrenergic receptor), [[Clonidine]] (Adrenergic receptor alpha-2), [[Fenoterol]] (Beta-2 adrenergic receptor), [[Idazoxan]] (Adrenergic receptor alpha-2)
+- **Same ATC subgroup:** [[Atenolol (Tenormin)]], [[Betaxolol]], [[Bisoprolol]], [[Esmolol]], [[Metoprolol]], [[Nebivolol]]
 
 ## Safety routing
 

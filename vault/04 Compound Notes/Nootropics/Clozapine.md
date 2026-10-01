@@ -8,15 +8,15 @@ cluster: Nootropics
 group: neuropsych
 class: null
 subclass: null
-mechanism: null
+mechanism: Dopamine D2 receptor antagonist; Serotonin 2a (5-HT2a) receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL42
+chembl-max-phase: 4
 half-life:
   value: 4.0
   value-max: 26.0
@@ -55,7 +55,7 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Clozapine
@@ -70,6 +72,43 @@ pk-source:
   revision: 1374837470
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL42
+  pref-name: CLOZAPINE
+  molecule-type: Small molecule
+  first-approval: 1989
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N05AH02
+  targets:
+  - id: CHEMBL224
+    name: 5-hydroxytryptamine receptor 2A
+    action: ANTAGONIST
+  - id: CHEMBL217
+    name: D(2) dopamine receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 326.83
+    mw-freebase: 326.83
+    alogp: 3.72
+    psa: 30.87
+    hba: 4
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C18H19ClN4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 2592c9a8-fd74-4e0d-a895-b07b014cf355
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2592c9a8-fd74-4e0d-a895-b07b014cf355
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Clozapine
@@ -83,10 +122,31 @@ pk-source:
 - **Compound ID:** `clozapine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL42](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL42/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The only antipsychotic with proven superiority in treatment-resistant schizophrenia, requiring mandatory blood monitoring for agranulocytosis.
+
+## Mechanism
+
+Dopamine D2 receptor antagonist; Serotonin 2a (5-HT2a) receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1989
+- **Flags:** black-box warning
+- **ATC N05AH02:** NERVOUS SYSTEM › ANTIPSYCHOTICS › Diazepines, oxazepines, thiazepines and oxepines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 326.83 | 3.72 | 30.87 | 1/4 | 0 | C18H19ClN4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[5-hydroxytryptamine receptor 2A (CHEMBL224)|5-hydroxytryptamine receptor 2A]] - antagonist · SINGLE PROTEIN
+- [[D(2) dopamine receptor (CHEMBL217)|D(2) dopamine receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -106,6 +166,19 @@ The only antipsychotic with proven superiority in treatment-resistant schizophre
 | Metabolism | hepatic | Liver, by several CYP isozymes mainly via CYP2D6 |
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | 80% in metabolized state: 30% biliary and 50% kidney |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 2592c9a8…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2592c9a8-fd74-4e0d-a895-b07b014cf355), label version 20260906. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 4, 8, 12, 66)
+> - protein-binding: consistent (label values: 97)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aripiprazole]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Brexpiprazole]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Iloperidone]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Lumateperone]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Paliperidone]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Risperidone]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Thiothixene]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Benperidol]] (D(2) dopamine receptor), [[Cabergoline (Dostinex)]] (D(2) dopamine receptor), [[Chlorpromazine]] (5-hydroxytryptamine receptor 2A), [[Domperidone]] (D(2) dopamine receptor), [[Droperidol]] (5-hydroxytryptamine receptor 2A)
+- **Same ATC subgroup:** [[Loxapine]], [[Olanzapine]], [[Quetiapine]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

@@ -10,15 +10,15 @@ cluster: Androgens SARMs and PCT
 group: pct
 class: null
 subclass: null
-mechanism: null
+mechanism: Cytochrome P450 17A1 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL271227
+chembl-max-phase: 4
 half-life:
   value: 12.0
   value-max: 24.0
@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Abiraterone acetate
@@ -71,6 +73,39 @@ pk-source:
   revision: 1354022007
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL271227
+  pref-name: ABIRATERONE ACETATE
+  molecule-type: Small molecule
+  first-approval: 2011
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3522
+    name: Steroid 17-alpha-hydroxylase/17,20 lyase
+    action: INHIBITOR
+  properties:
+    full-mwt: 391.56
+    mw-freebase: 391.56
+    alogp: 5.97
+    psa: 39.19
+    hba: 3
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 1
+    qed-weighted: 0.46
+    full-molformula: C26H33NO2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 2ac063f0-4177-c90f-27c3-e70e29689255
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2ac063f0-4177-c90f-27c3-e70e29689255
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Abiraterone (Zytiga)
@@ -85,10 +120,29 @@ pk-source:
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Abiraterone, Zytiga
+- **ChEMBL:** [CHEMBL271227](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL271227/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 CYP17 inhibitor that blocks androgen biosynthesis at its source (testes, adrenals, and prostate tumor tissue itself), used for advanced prostate cancer.
+
+## Mechanism
+
+Cytochrome P450 17A1 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2011
+- **Flags:** prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 391.56 | 5.97 | 39.19 | 0/3 | 1 | C26H33NO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Steroid 17-alpha-hydroxylase-17,20 lyase (CHEMBL3522)|Steroid 17-alpha-hydroxylase/17,20 lyase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -109,6 +163,18 @@ CYP17 inhibitor that blocks androgen biosynthesis at its source (testes, adrenal
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Abiraterone, others |
 | Excretion | mainly non-renal | Feces: 88%; Urine: 5% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 2ac063f0…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2ac063f0-4177-c90f-27c3-e70e29689255), label version 20260903. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 12, 18, 19)
+> - protein-binding: consistent (label values: 99)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Levoketoconazole]] (Steroid 17-alpha-hydroxylase/17,20 lyase)
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

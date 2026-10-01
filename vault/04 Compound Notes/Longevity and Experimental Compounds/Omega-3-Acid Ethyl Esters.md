@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200711
+  pref-name: OMEGA-3-ACID ETHYL ESTERS
+  molecule-type: Small molecule
+  first-approval: 2004
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C10AX06
+  targets: []
+  properties:
+    full-mwt: 687.06
+    mw-freebase: 687.06
+    full-molformula: C46H70O4
 ---
 
 # Omega-3-Acid Ethyl Esters
@@ -67,7 +83,7 @@ tags:
 - **Compound ID:** `omega-3-acid-ethyl-esters-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1200711](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200711/) · max phase 4
+- **ChEMBL:** [CHEMBL1200711](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200711/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +93,16 @@ Unknown; approved/marketed compound catalogued by ChEMBL (CHEMBL1200711).
 
 Unknown _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2004
+- **ATC C10AX06:** CARDIOVASCULAR SYSTEM › LIPID MODIFYING AGENTS, PLAIN › Other lipid modifying agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 687.06 | - | - | -/- | - | C46H70O4 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +111,12 @@ Unknown _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alirocumab (Praluent)]], [[Bempedoic acid]], [[Dextrothyroxine]], [[Evinacumab (Evkeeza)]], [[Evolocumab]], [[Ezetimibe]], [[Inclisiran (Leqvio)]], [[Lomitapide (Juxtapid)]], [[Mipomersen (Kynamro)]], [[Policosanol]], [[Probucol]], [[Volanesorsen (Waylivra)]]
 
 ## Safety routing
 

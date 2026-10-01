@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL48310
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL48310
+  pref-name: HINOKITIOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 164.2
+    mw-freebase: 164.2
+    alogp: 1.88
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C10H12O2
 ---
 
 # Hinokitiol
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `hinokitiol-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL48310](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL48310/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Hinokitiol is a named HDAC research compound with a curated biochemical result against HDAC2. ChEMBL records Ki 15.44 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 164.2 | 1.88 | 37.3 | 1/2 | 0 | C10H12O2 |
 
 ## Evidence boundaries
 

@@ -49,7 +49,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -57,6 +57,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Micafungin
@@ -64,6 +65,15 @@ pk-source:
   revision: 1338331511
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 230fcff4-ad4b-ea25-e063-6394a90a1fab
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=230fcff4-ad4b-ea25-e063-6394a90a1fab
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: consistent
 ---
 
 # Micafungin
@@ -98,6 +108,11 @@ Echinocandin with no meaningful renal clearance and few drug interactions, widel
 | Protein binding | 99.8 % | 99.8% |
 | Metabolism | - | Via catechol-O-methyltransferase pathway |
 | Excretion | - | 40% feces, <15% urine |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 230fcff4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=230fcff4-ad4b-ea25-e063-6394a90a1fab), label version 20260414. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: consistent (label values: 99)
 
 ## Safety routing
 

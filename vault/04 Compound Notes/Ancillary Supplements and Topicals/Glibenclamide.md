@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Sulfonylurea receptor 1, Kir6.2 blocker
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL472
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: null
@@ -58,6 +58,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Glibenclamide
@@ -65,6 +67,38 @@ pk-source:
   revision: 1338578844
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL472
+  pref-name: GLYBURIDE
+  molecule-type: Small molecule
+  first-approval: 1984
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A10BB01
+  targets:
+  - id: CHEMBL2096972
+    name: Sulfonylurea receptor 1, Kir6.2
+    action: BLOCKER
+  properties:
+    full-mwt: 494.01
+    mw-freebase: 494.01
+    alogp: 3.64
+    psa: 113.6
+    hba: 5
+    hbd: 3
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.52
+    full-molformula: C23H28ClN3O5S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Glibenclamide
@@ -78,10 +112,29 @@ pk-source:
 - **Compound ID:** `glibenclamide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL472](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL472/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Closes pancreatic beta-cell KATP channels to stimulate insulin release, with hypoglycemia as the central class risk.
+
+## Mechanism
+
+Sulfonylurea receptor 1, Kir6.2 blocker _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1984
+- **ATC A10BB01:** ALIMENTARY TRACT AND METABOLISM › BLOOD GLUCOSE LOWERING DRUGS, EXCL. INSULINS › Sulfonylureas
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 494.01 | 3.64 | 113.6 | 3/5 | 0 | C23H28ClN3O5S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Sulfonylurea receptor 1, Kir6.2 (CHEMBL2096972)|Sulfonylurea receptor 1, Kir6.2]] - blocker · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -100,6 +153,17 @@ Closes pancreatic beta-cell KATP channels to stimulate insulin release, with hyp
 | Metabolism | hepatic | Liver hydroxylation (CYP2C9-mediated) |
 | CYP (metabolised by) | CYP2C9 | roles as inhibitor/inducer not assessed |
 | Excretion | - | Kidney and bile duct |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Glyburide]]
+- **Shared target:** [[Acetohexamide]] (Sulfonylurea receptor 1, Kir6.2), [[Chlorpropamide]] (Sulfonylurea receptor 1, Kir6.2), [[Gliclazide]] (Sulfonylurea receptor 1, Kir6.2), [[Glimepiride]] (Sulfonylurea receptor 1, Kir6.2), [[Glipizide]] (Sulfonylurea receptor 1, Kir6.2), [[Glyburide]] (Sulfonylurea receptor 1, Kir6.2), [[Tolazamide]] (Sulfonylurea receptor 1, Kir6.2), [[Tolbutamide]] (Sulfonylurea receptor 1, Kir6.2)
+- **Same ATC subgroup:** [[Acetohexamide]], [[Chlorpropamide]], [[Gliclazide]], [[Glimepiride]], [[Glipizide]], [[Gliquidone]], [[Glyburide]], [[Tolazamide]], [[Tolbutamide]]
+- **Shared CYP substrate pool:** CYP2C9 (+40 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

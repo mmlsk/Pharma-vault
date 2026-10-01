@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200845
+  pref-name: HALCINONIDE
+  molecule-type: Small molecule
+  first-approval: 1974
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D07AD02
+  targets:
+  - id: CHEMBL2034
+    name: Glucocorticoid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 454.97
+    mw-freebase: 454.97
+    alogp: 3.89
+    psa: 72.83
+    hba: 5
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.64
+    full-molformula: C24H32ClFO5
 ---
 
 # Halcinonide
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `halcinonide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200845](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200845/) · max phase 4
+- **ChEMBL:** [CHEMBL1200845](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200845/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +103,20 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1974
+- **ATC D07AD02:** DERMATOLOGICALS › CORTICOSTEROIDS, PLAIN › Corticosteroids, very potent (group IV)
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 454.97 | 3.89 | 72.83 | 1/5 | 0 | C24H32ClFO5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucocorticoid receptor (CHEMBL2034)|Glucocorticoid receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +125,13 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor)
+- **Same ATC subgroup:** [[Clobetasol Propionate]]
 
 ## Safety routing
 

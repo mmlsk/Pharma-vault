@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4297918
 chembl-max-phase: 3
 half-life:
   value: null
@@ -55,6 +55,22 @@ tags:
 - source-derived
 - group/fgfr
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297918
+  pref-name: SETRUSUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3580487
+    name: Sclerostin
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Setrusumab
@@ -68,6 +84,7 @@ tags:
 - **Compound ID:** `setrusumab-compound`
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL4297918](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297918/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -77,6 +94,14 @@ Setrusumab is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is 
 
 sclerostin inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Sclerostin (CHEMBL3580487)|Sclerostin]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +110,12 @@ sclerostin inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Romosozumab]] (Sclerostin)
 
 ## Safety routing
 

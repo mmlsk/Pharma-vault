@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Cinnarizine
@@ -67,6 +68,42 @@ pk-source:
   revision: 1375073475
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL43064
+  pref-name: CINNARIZINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N07CA02
+  - N07CA52
+  targets:
+  - id: CHEMBL2095229
+    name: Voltage-gated L-type calcium channel
+    action: BLOCKER
+  - id: CHEMBL231
+    name: Histamine H1 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 368.52
+    mw-freebase: 368.52
+    alogp: 5.11
+    psa: 6.48
+    hba: 2
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.6
+    full-molformula: C26H28N2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Cinnarizine
@@ -80,7 +117,7 @@ pk-source:
 - **Compound ID:** `cinnarizine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL43064](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL43064/) · max phase 4
+- **ChEMBL:** [CHEMBL43064](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL43064/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +126,21 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC N07CA02:** NERVOUS SYSTEM › ANTIVERTIGO PREPARATIONS › Antivertigo preparations
+- **ATC N07CA52:** NERVOUS SYSTEM › ANTIVERTIGO PREPARATIONS › Antivertigo preparations
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 368.52 | 5.11 | 6.48 | 0/2 | 1 | C26H28N2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Voltage-gated L-type calcium channel (CHEMBL2095229)|Voltage-gated L-type calcium channel]] - blocker · PROTEIN FAMILY
+- [[Histamine H1 receptor (CHEMBL231)|Histamine H1 receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -106,6 +158,15 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Bioavailability | - | Low |
 | Metabolism | - | Entire |
 | Excretion | - | urine, faeces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acrivastine]] (Histamine H1 receptor), [[Alcaftadine]] (Histamine H1 receptor), [[Astemizole]] (Histamine H1 receptor), [[Betahistine]] (Histamine H1 receptor), [[Bilastine]] (Histamine H1 receptor), [[Chlorphenoxamine]] (Histamine H1 receptor), [[Clevidipine]] (Voltage-gated L-type calcium channel), [[Desloratadine]] (Histamine H1 receptor), [[Dibenzepin]] (Histamine H1 receptor), [[Dimenhydrinate]] (Histamine H1 receptor), [[Dimethindene]] (Histamine H1 receptor), [[Doxepin]] (Histamine H1 receptor)
+- **Same ATC subgroup:** [[Betahistine]]
 
 ## Safety routing
 

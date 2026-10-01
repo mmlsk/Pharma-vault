@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297711
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,19 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4297711
+  pref-name: BULEVIRTIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AX28
+  targets: []
+  properties: {}
 ---
 
 # Bulevirtide (Hepcludex)
@@ -70,10 +83,16 @@ tags:
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Bulevirtide, Hepcludex
+- **ChEMBL:** [CHEMBL4297711](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297711/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 A myristoylated peptide that blocks the NTCP bile acid transporter hepatitis B and D use as their entry receptor. The first approved therapy specifically for hepatitis D.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **ATC J05AX28:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Other antivirals
 
 ## Evidence boundaries
 
@@ -83,6 +102,12 @@ A myristoylated peptide that blocks the NTCP bile acid transporter hepatitis B a
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Baloxavir Marboxil]], [[Enfuvirtide]], [[Favipiravir]], [[Fostemsavir]], [[Ibalizumab]], [[Lenacapavir]], [[Letermovir]], [[Maribavir]], [[Tecovirimat]]
 
 ## Safety routing
 

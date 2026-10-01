@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL314389
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL314389
+  pref-name: OXAMFLATIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 342.38
+    mw-freebase: 342.38
+    alogp: 1.9
+    psa: 95.5
+    hba: 4
+    hbd: 3
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.34
+    full-molformula: C17H14N2O4S
 ---
 
 # Oxamflatin
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `oxamflatin-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL314389](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL314389/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Oxamflatin is a named HDAC research compound with a curated biochemical result against HDAC3. ChEMBL records Ki 2.7 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 342.38 | 1.9 | 95.5 | 3/4 | 0 | C17H14N2O4S |
 
 ## Evidence boundaries
 

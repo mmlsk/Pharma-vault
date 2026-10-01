@@ -61,6 +61,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Conjugated estrogens
@@ -68,6 +69,29 @@ pk-source:
   revision: 1351672617
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201649
+  pref-name: ESTROGENS, CONJUGATED
+  molecule-type: Unknown
+  first-approval: 1942
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - G03CA57
+  targets:
+  - id: CHEMBL2093866
+    name: Estrogen receptor
+    action: AGONIST
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 87e2da8d-432c-4ed5-67a1-dc26294b2295
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=87e2da8d-432c-4ed5-67a1-dc26294b2295
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Estrogens, Conjugated
@@ -81,7 +105,7 @@ pk-source:
 - **Compound ID:** `estrogens-conjugated-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1201649](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201649/) · max phase 4
+- **ChEMBL:** [CHEMBL1201649](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201649/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +114,17 @@ Estrogen receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEM
 ## Mechanism
 
 Estrogen receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+- **First approval (ChEMBL):** 1942
+- **Flags:** black-box warning
+- **ATC G03CA57:** GENITO URINARY SYSTEM AND SEX HORMONES › ESTROGENS › Natural and semisynthetic estrogens, plain
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Estrogen receptor (CHEMBL2093866)|Estrogen receptor]] - agonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -108,6 +143,17 @@ Estrogen receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 | Bioavailability | - | Variable |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 87e2da8d…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=87e2da8d-432c-4ed5-67a1-dc26294b2295), label version 20250530. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acolbifene]] (Estrogen receptor), [[Cyclofenil]] (Estrogen receptor), [[Diethylstilbestrol Diphosphate]] (Estrogen receptor), [[Droloxifene]] (Estrogen receptor), [[Estriol]] (Estrogen receptor), [[Estrogens, Conjugated Synthetic A]] (Estrogen receptor), [[Estrogens, Esterified]] (Estrogen receptor), [[Lasofoxifene]] (Estrogen receptor), [[Ospemifene (Osphena)]] (Estrogen receptor), [[Quinestrol]] (Estrogen receptor), [[Synthetic Conjugated Estrogens, B]] (Estrogen receptor)
+- **Same ATC subgroup:** [[Chlorotrianisene]], [[Estradiol]], [[Estriol]], [[Estrone]], [[Ethinyl Estradiol]]
 
 ## Safety routing
 

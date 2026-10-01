@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL916
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: null
@@ -49,7 +49,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cardiovascular-load
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -57,6 +57,8 @@ tags:
 - group/cardio
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Tirofiban
@@ -64,6 +66,37 @@ pk-source:
   revision: 1348511357
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL916
+  pref-name: TIROFIBAN
+  molecule-type: Small molecule
+  first-approval: 1998
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B01AC17
+  targets: []
+  properties:
+    full-mwt: 440.61
+    mw-freebase: 440.61
+    alogp: 2.95
+    psa: 104.73
+    hba: 5
+    hbd: 3
+    rtb: 14
+    num-ro5-violations: 0
+    qed-weighted: 0.38
+    full-molformula: C22H36N2O5S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: e850111f-e713-41a2-9c65-21c517cf5511
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e850111f-e713-41a2-9c65-21c517cf5511
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Tirofiban
@@ -77,10 +110,21 @@ pk-source:
 - **Compound ID:** `tirofiban-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
+- **ChEMBL:** [CHEMBL916](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL916/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Small-molecule GPIIb/IIIa antagonist given intravenously during percutaneous coronary intervention.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1998
+- **ATC B01AC17:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Platelet aggregation inhibitors excl. heparin
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 440.61 | 2.95 | 104.73 | 3/5 | 0 | C22H36N2O5S |
 
 ## Evidence boundaries
 
@@ -96,6 +140,17 @@ Small-molecule GPIIb/IIIa antagonist given intravenously during percutaneous cor
 |---|---|---|
 | Elimination t½ | 2 h | 2 hours |
 | Protein binding | 65 % | 65% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set e850111f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e850111f-e713-41a2-9c65-21c517cf5511), label version 20250101. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Abciximab]], [[Aloxiprin]], [[Aspirin]], [[Beraprost]], [[Cangrelor]], [[Cilostazol]], [[Clopidogrel (Plavix)]], [[Dipyridamole]], [[Epoprostenol]], [[Eptifibatide]], [[Prasugrel (Effient)]], [[Selexipag]]
 
 ## Safety routing
 

@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL28527
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,35 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL28527
+  pref-name: MAVACOXIB
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4133
+    name: Prostaglandin G/H synthase 1
+    action: INHIBITOR
+  - id: CHEMBL4033
+    name: Cyclooxygenase-2
+    action: INHIBITOR
+  properties:
+    full-mwt: 385.34
+    mw-freebase: 385.34
+    alogp: 3.34
+    psa: 77.98
+    hba: 4
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.7
+    full-molformula: C16H11F4N3O2S
 ---
 
 # Mavacoxib
@@ -67,6 +96,7 @@ tags:
 - **Compound ID:** `mavacoxib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL28527](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL28527/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +106,19 @@ Mavacoxib is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is c
 
 cyclooxygenase-1 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 385.34 | 3.34 | 77.98 | 1/4 | 0 | C16H11F4N3O2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prostaglandin G-H synthase 1 (CHEMBL4133)|Prostaglandin G/H synthase 1]] - inhibitor · SINGLE PROTEIN
+- [[Cyclooxygenase-2 (CHEMBL4033)|Cyclooxygenase-2]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +127,12 @@ cyclooxygenase-1 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Tepoxalin]] (Cyclooxygenase-2; Prostaglandin G/H synthase 1), [[Firocoxib]] (Cyclooxygenase-2), [[Robenacoxib]] (Cyclooxygenase-2)
 
 ## Safety routing
 

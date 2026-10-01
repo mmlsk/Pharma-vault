@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3707352
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,20 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3707352
+  pref-name: POLICOSANOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C10AX08
+  targets: []
+  properties: {}
 ---
 
 # Policosanol
@@ -67,10 +81,16 @@ tags:
 - **Compound ID:** `policosanol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3707352](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707352/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Sugarcane-wax alcohol supplement marketed for cholesterol; independent trials have produced inconsistent results.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C10AX08:** CARDIOVASCULAR SYSTEM › LIPID MODIFYING AGENTS, PLAIN › Other lipid modifying agents
 
 ## Evidence boundaries
 
@@ -80,6 +100,12 @@ Sugarcane-wax alcohol supplement marketed for cholesterol; independent trials ha
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alirocumab (Praluent)]], [[Bempedoic acid]], [[Dextrothyroxine]], [[Evinacumab (Evkeeza)]], [[Evolocumab]], [[Ezetimibe]], [[Inclisiran (Leqvio)]], [[Lomitapide (Juxtapid)]], [[Mipomersen (Kynamro)]], [[Omega-3-Acid Ethyl Esters]], [[Probucol]], [[Volanesorsen (Waylivra)]]
 
 ## Safety routing
 

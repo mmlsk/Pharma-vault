@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL569
+chembl-max-phase: 4
 half-life:
   value: null
   value-max: null
@@ -60,6 +60,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Procaine
@@ -67,6 +68,31 @@ pk-source:
   revision: 1351167068
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL569
+  pref-name: PROCAINE
+  molecule-type: Small molecule
+  first-approval: 1954
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C05AD05
+  - N01BA02
+  - N01BA52
+  - S01HA05
+  targets: []
+  properties:
+    full-mwt: 236.31
+    mw-freebase: 236.31
+    alogp: 1.77
+    psa: 55.56
+    hba: 4
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.6
+    full-molformula: C13H20N2O2
 ---
 
 # Procaine
@@ -80,10 +106,24 @@ pk-source:
 - **Compound ID:** `procaine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL569](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL569/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 An ester local anaesthetic that also binds CpG-rich DNA and inhibits DNA methyltransferase, producing demethylation in cancer cell lines. The concentrations required are far above anaesthetic ones, so it is a mechanistic curiosity rather than a therapy.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1954
+- **ATC C05AD05:** CARDIOVASCULAR SYSTEM › AGENTS FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE › Local anesthetics
+- **ATC N01BA02:** NERVOUS SYSTEM › ANESTHETICS, LOCAL › Esters of aminobenzoic acid
+- **ATC N01BA52:** NERVOUS SYSTEM › ANESTHETICS, LOCAL › Esters of aminobenzoic acid
+- **ATC S01HA05:** SENSORY ORGANS › LOCAL ANESTHETICS › Local anesthetics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 236.31 | 1.77 | 55.56 | 1/4 | 0 | C13H20N2O2 |
 
 ## Evidence boundaries
 
@@ -101,6 +141,12 @@ An ester local anaesthetic that also binds CpG-rich DNA and inhibits DNA methylt
 | Bioavailability | - | N/A |
 | Metabolism | - | Hydrolysis by plasma esterases |
 | Excretion | mainly urinary | Renal; <!-- |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Benzocaine]], [[Chloroprocaine]], [[Lidocaine]], [[Tetracaine]]
 
 ## Safety routing
 

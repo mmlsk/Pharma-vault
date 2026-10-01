@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL24924
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL24924
+  pref-name: FLUINDIONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B01AA12
+  targets: []
+  properties:
+    full-mwt: 240.23
+    mw-freebase: 240.23
+    alogp: 2.99
+    psa: 34.14
+    hba: 2
+    hbd: 0
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.72
+    full-molformula: C15H9FO2
 ---
 
 # Fluindione
@@ -67,10 +91,20 @@ tags:
 - **Compound ID:** `fluindione-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL24924](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL24924/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits vitamin K epoxide reductase so clotting factors are undercarboxylated; effect is delayed, diet-sensitive and needs INR monitoring; indanedione, used in France.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC B01AA12:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Vitamin K antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 240.23 | 2.99 | 34.14 | 0/2 | 0 | C15H9FO2 |
 
 ## Evidence boundaries
 
@@ -80,6 +114,12 @@ Inhibits vitamin K epoxide reductase so clotting factors are undercarboxylated; 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Acenocoumarol]], [[Clorindione]], [[Dicoumarol]], [[Phenindione]], [[Phenprocoumon]], [[Tioclomarol]], [[Warfarin (Coumadin)]]
 
 ## Safety routing
 

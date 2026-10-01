@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Desflurane
@@ -63,6 +64,49 @@ pk-source:
   revision: 1368695042
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200733
+  pref-name: DESFLURANE
+  molecule-type: Small molecule
+  first-approval: 1992
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N01AB07
+  targets:
+  - id: CHEMBL2363052
+    name: Glycine receptor (alpha-1/beta)
+    action: POSITIVE MODULATOR
+  - id: CHEMBL2093872
+    name: GABA-A receptor; anion channel
+    action: POSITIVE ALLOSTERIC MODULATOR
+  - id: CHEMBL2331041
+    name: Potassium channel subfamily K member 10
+    action: OPENER
+  - id: CHEMBL2331042
+    name: Potassium channel subfamily K member 18
+    action: OPENER
+  - id: CHEMBL2321613
+    name: Potassium channel subfamily K member 3
+    action: OPENER
+  - id: CHEMBL2321614
+    name: Potassium channel subfamily K member 9
+    action: OPENER
+  - id: CHEMBL2321615
+    name: Potassium channel subfamily K member 2
+    action: OPENER
+  properties:
+    full-mwt: 168.04
+    mw-freebase: 168.04
+    alogp: 2.08
+    psa: 9.23
+    hba: 1
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.57
+    full-molformula: C3H2F6O
 ---
 
 # Desflurane
@@ -76,7 +120,7 @@ pk-source:
 - **Compound ID:** `desflurane-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200733](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200733/) · max phase 4
+- **ChEMBL:** [CHEMBL1200733](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200733/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +129,26 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1992
+- **ATC N01AB07:** NERVOUS SYSTEM › ANESTHETICS, GENERAL › Halogenated hydrocarbons
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 168.04 | 2.08 | 9.23 | 0/1 | 0 | C3H2F6O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glycine receptor (alpha-1-beta) (CHEMBL2363052)|Glycine receptor (alpha-1/beta)]] - positive modulator · PROTEIN COMPLEX
+- [[GABA-A receptor; anion channel (CHEMBL2093872)|GABA-A receptor; anion channel]] - positive allosteric modulator · PROTEIN COMPLEX GROUP
+- [[Potassium channel subfamily K member 10 (CHEMBL2331041)|Potassium channel subfamily K member 10]] - opener · SINGLE PROTEIN
+- [[Potassium channel subfamily K member 18 (CHEMBL2331042)|Potassium channel subfamily K member 18]] - opener · SINGLE PROTEIN
+- [[Potassium channel subfamily K member 3 (CHEMBL2321613)|Potassium channel subfamily K member 3]] - opener · SINGLE PROTEIN
+- [[Potassium channel subfamily K member 9 (CHEMBL2321614)|Potassium channel subfamily K member 9]] - opener · SINGLE PROTEIN
+- [[Potassium channel subfamily K member 2 (CHEMBL2321615)|Potassium channel subfamily K member 2]] - opener · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -100,6 +164,13 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 |---|---|---|
 | Elimination t½ | - | Elimination dependent on minute ventilation |
 | Metabolism | - | Minimally metabolized |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Enflurane]] (GABA-A receptor; anion channel; Glycine receptor (alpha-1/beta); Potassium channel subfamily K member 10), [[Halothane]] (GABA-A receptor; anion channel; Glycine receptor (alpha-1/beta); Potassium channel subfamily K member 10), [[Isoflurane]] (GABA-A receptor; anion channel; Glycine receptor (alpha-1/beta); Potassium channel subfamily K member 10), [[Sevoflurane]] (GABA-A receptor; anion channel; Glycine receptor (alpha-1/beta); Potassium channel subfamily K member 10), [[Methoxyflurane]] (GABA-A receptor; anion channel; Glycine receptor (alpha-1/beta)), [[Abp-700]] (GABA-A receptor; anion channel), [[Adipiplon]] (GABA-A receptor; anion channel), [[Alprazolam]] (GABA-A receptor; anion channel), [[Brexanolone]] (GABA-A receptor; anion channel), [[Butalbital]] (GABA-A receptor; anion channel), [[Cenobamate]] (GABA-A receptor; anion channel), [[Chlordiazepoxide]] (GABA-A receptor; anion channel)
+- **Same ATC subgroup:** [[Enflurane]], [[Halothane]], [[Isoflurane]], [[Sevoflurane]]
 
 ## Safety routing
 

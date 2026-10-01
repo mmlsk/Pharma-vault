@@ -70,6 +70,13 @@ pk-source:
   revision: 1371750478
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Turinabol (Chlorodehydromethyltestosterone)
@@ -105,6 +112,8 @@ Oral steroid derived from Dianabol with reduced aromatization, historically used
 | Bioavailability | - | High |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

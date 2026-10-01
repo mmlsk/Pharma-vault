@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL106593
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,29 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL106593
+  pref-name: PRALMORELIN
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 817.99
+    mw-freebase: 817.99
+    alogp: 1.75
+    psa: 256.42
+    hba: 8
+    hbd: 9
+    rtb: 21
+    num-ro5-violations: 2
+    qed-weighted: 0.05
+    full-molformula: C45H55N9O6
 ---
 
 # GHRP-2
@@ -68,10 +91,19 @@ tags:
 - **Compound ID:** `ghrp2-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL106593](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL106593/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Ghrelin-receptor GH secretagogue peptide with a stronger GH pulse and less appetite stimulation than GHRP-6.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 817.99 | 1.75 | 256.42 | 9/8 | 2 | C45H55N9O6 |
 
 ## Evidence boundaries
 

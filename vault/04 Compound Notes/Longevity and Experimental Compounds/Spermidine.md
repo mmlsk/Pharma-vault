@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL19612
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL19612
+  pref-name: SPERMIDINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 145.25
+    mw-freebase: 145.25
+    alogp: -0.34
+    psa: 64.07
+    hba: 3
+    hbd: 3
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.43
+    full-molformula: C7H19N3
 ---
 
 # Spermidine
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `spermidine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL19612](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL19612/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Natural polyamine that induces autophagy, studied for lifespan extension and cardioprotection; levels decline with age.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 145.25 | -0.34 | 64.07 | 3/3 | 0 | C7H19N3 |
 
 ## Evidence boundaries
 

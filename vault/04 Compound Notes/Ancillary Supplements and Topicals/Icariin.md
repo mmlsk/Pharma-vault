@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL553204
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL553204
+  pref-name: ICARIIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 676.67
+    mw-freebase: 676.67
+    alogp: 0.07
+    psa: 238.2
+    hba: 15
+    hbd: 8
+    rtb: 9
+    num-ro5-violations: 3
+    qed-weighted: 0.14
+    full-molformula: C33H40O15
 ---
 
 # Icariin
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `icariin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL553204](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL553204/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits PDE5 so nitric-oxide/cGMP vasodilation persists in corporal and pulmonary vascular smooth muscle; plant-derived weak PDE5 inhibitor, not a licensed medicine.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 676.67 | 0.07 | 238.2 | 8/15 | 3 | C33H40O15 |
 
 ## Evidence boundaries
 

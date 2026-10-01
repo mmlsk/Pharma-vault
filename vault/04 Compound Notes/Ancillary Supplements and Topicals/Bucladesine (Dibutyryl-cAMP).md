@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL485980
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -56,6 +56,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL485980
+  pref-name: BUCLADESINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01CE04
+  targets: []
+  properties:
+    full-mwt: 469.39
+    mw-freebase: 469.39
+    alogp: 1.69
+    psa: 163.99
+    hba: 11
+    hbd: 2
+    rtb: 7
+    num-ro5-violations: 1
+    qed-weighted: 0.45
+    full-molformula: C18H24N5O8P
 ---
 
 # Bucladesine (Dibutyryl-cAMP)
@@ -70,10 +93,20 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Bucladesine, Dibutyryl-cAMP
+- **ChEMBL:** [CHEMBL485980](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL485980/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Cell-permeable cAMP analogue that acts as cAMP itself rather than changing its production or breakdown. Approved in Japan as a topical agent; otherwise a laboratory tool.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C01CE04:** CARDIOVASCULAR SYSTEM › CARDIAC STIMULANTS EXCL. CARDIAC GLYCOSIDES › Phosphodiesterase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 469.39 | 1.69 | 163.99 | 2/11 | 1 | C18H24N5O8P |
 
 ## Evidence boundaries
 
@@ -83,6 +116,12 @@ Cell-permeable cAMP analogue that acts as cAMP itself rather than changing its p
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Enoximone]], [[Milrinone]]
 
 ## Safety routing
 

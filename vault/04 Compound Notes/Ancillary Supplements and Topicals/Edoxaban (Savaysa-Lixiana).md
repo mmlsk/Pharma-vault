@@ -18,8 +18,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1269025
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: 14.0
@@ -65,6 +65,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Edoxaban
@@ -72,6 +74,35 @@ pk-source:
   revision: 1337833755
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1269025
+  pref-name: EDOXABAN
+  molecule-type: Small molecule
+  first-approval: 2015
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - B01AF03
+  targets: []
+  properties:
+    full-mwt: 548.07
+    mw-freebase: 548.07
+    alogp: 1.29
+    psa: 136.63
+    hba: 8
+    hbd: 3
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.48
+    full-molformula: C24H30ClN7O4S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Edoxaban (Savaysa/Lixiana)
@@ -86,10 +117,22 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Edoxaban, Savaysa, Lixiana
+- **ChEMBL:** [CHEMBL1269025](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1269025/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Once-daily factor Xa inhibitor whose dosing depends on renal function and indication.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2015
+- **Flags:** black-box warning
+- **ATC B01AF03:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Direct factor Xa inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 548.07 | 1.29 | 136.63 | 3/8 | 1 | C24H30ClN7O4S |
 
 ## Evidence boundaries
 
@@ -109,6 +152,15 @@ Once-daily factor Xa inhibitor whose dosing depends on renal function and indica
 | Metabolism | hepatic | minimal CES1, CYP3A4/5, hydrolysis, glucuronidation |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - | 62% feces, 35% urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Apixaban (Eliquis)]], [[Betrixaban]], [[Rivaroxaban (Xarelto)]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

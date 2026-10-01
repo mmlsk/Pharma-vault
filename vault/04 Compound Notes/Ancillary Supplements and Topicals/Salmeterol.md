@@ -58,6 +58,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Salmeterol
@@ -65,6 +66,35 @@ pk-source:
   revision: 1328958670
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1263
+  pref-name: SALMETEROL
+  molecule-type: Small molecule
+  first-approval: 1994
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - R03AC12
+  targets: []
+  properties:
+    full-mwt: 415.57
+    mw-freebase: 415.57
+    alogp: 4.11
+    psa: 81.95
+    hba: 5
+    hbd: 4
+    rtb: 16
+    num-ro5-violations: 0
+    qed-weighted: 0.31
+    full-molformula: C25H37NO4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Salmeterol
@@ -78,7 +108,7 @@ pk-source:
 - **Compound ID:** `salmeterol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1263](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1263/) · max phase 4
+- **ChEMBL:** [CHEMBL1263](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1263/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -87,6 +117,17 @@ Beta-2 adrenergic receptor agonist; approved/marketed compound catalogued by ChE
 ## Mechanism
 
 Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1994
+- **Flags:** black-box warning
+- **ATC R03AC12:** RESPIRATORY SYSTEM › ADRENERGICS, INHALANTS › Selective beta-2-adrenoreceptor agonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 415.57 | 4.11 | 81.95 | 4/5 | 0 | C25H37NO4 |
 
 ## Evidence boundaries
 
@@ -104,6 +145,15 @@ Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the 
 | Protein binding | 96 % | 96% |
 | Metabolism | hepatic | Liver (CYP3A4) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Albuterol]], [[Bitolterol]], [[Clenbuterol]], [[Fenoterol]], [[Formoterol]], [[Indacaterol]], [[Isoetharine]], [[Olodaterol]], [[Pirbuterol]], [[Procaterol]], [[Salbutamol (Albuterol)]], [[Terbutaline]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

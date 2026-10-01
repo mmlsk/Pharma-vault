@@ -17,7 +17,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4073796
 chembl-max-phase: null
 half-life:
   value: null
@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Pentosan polysulfate
@@ -64,6 +65,27 @@ pk-source:
   revision: 1366703696
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4073796
+  pref-name: null
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 602.5
+    mw-freebase: 602.5
+    alogp: -4.81
+    psa: 322.55
+    hba: 17
+    hbd: 6
+    rtb: 10
+    num-ro5-violations: 3
+    qed-weighted: 0.13
+    full-molformula: C10H18O21S4
 ---
 
 # Pentosan Polysulfate (Elmiron)
@@ -78,10 +100,19 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Pentosan Polysulfate, Elmiron
+- **ChEMBL:** [CHEMBL4073796](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4073796/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 Semisynthetic heparinoid used for interstitial cystitis and, off-label, as a joint agent. Carries a well-documented and often-missed long-term risk.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 602.5 | -4.81 | 322.55 | 6/17 | 3 | C10H18O21S4 |
 
 ## Evidence boundaries
 

@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Tyrosine-protein kinase BTK inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3702854
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3702854
+  pref-name: RILZABRUTINIB
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL5251
+    name: Tyrosine-protein kinase BTK
+    action: INHIBITOR
+  properties:
+    full-mwt: 665.77
+    mw-freebase: 665.77
+    alogp: 4.42
+    psa: 138.66
+    hba: 11
+    hbd: 1
+    rtb: 8
+    num-ro5-violations: 2
+    qed-weighted: 0.21
+    full-molformula: C36H40FN9O3
 ---
 
 # Rilzabrutinib
@@ -67,10 +92,27 @@ tags:
 - **Compound ID:** `rilzabrutinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3702854](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3702854/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits BTK to interrupt B-cell receptor signalling; covalent and reversible agents differ in kinase selectivity, bleeding and atrial-fibrillation risk; reversible covalent.
+
+## Mechanism
+
+Tyrosine-protein kinase BTK inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 665.77 | 4.42 | 138.66 | 1/11 | 2 | C36H40FN9O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tyrosine-protein kinase BTK (CHEMBL5251)|Tyrosine-protein kinase BTK]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +122,12 @@ Inhibits BTK to interrupt B-cell receptor signalling; covalent and reversible ag
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acalabrutinib]] (Tyrosine-protein kinase BTK), [[Evobrutinib]] (Tyrosine-protein kinase BTK), [[Fenebrutinib]] (Tyrosine-protein kinase BTK), [[Ibrutinib]] (Tyrosine-protein kinase BTK), [[Orelabrutinib]] (Tyrosine-protein kinase BTK), [[Pirtobrutinib]] (Tyrosine-protein kinase BTK), [[Tirabrutinib]] (Tyrosine-protein kinase BTK), [[Zanubrutinib]] (Tyrosine-protein kinase BTK)
 
 ## Safety routing
 

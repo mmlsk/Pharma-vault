@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2104403
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -57,6 +57,29 @@ tags:
 - source-derived
 - group/peptides
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2104403
+  pref-name: EMIDELTIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 848.82
+    mw-freebase: 848.82
+    alogp: -5.73
+    psa: 406.74
+    hba: 13
+    hbd: 14
+    rtb: 25
+    num-ro5-violations: 3
+    qed-weighted: 0.04
+    full-molformula: C35H48N10O15
 ---
 
 # DSIP (Delta sleep-inducing peptide)
@@ -71,10 +94,19 @@ tags:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** DSIP, Delta sleep-inducing peptide
+- **ChEMBL:** [CHEMBL2104403](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2104403/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Historic sleep-research peptide with unresolved receptor pharmacology, studied for effects on sleep and stress-hormone secretion.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 848.82 | -5.73 | 406.74 | 14/13 | 3 | C35H48N10O15 |
 
 ## Evidence boundaries
 

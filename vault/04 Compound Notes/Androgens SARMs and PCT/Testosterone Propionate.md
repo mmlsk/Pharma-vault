@@ -61,6 +61,7 @@ tags:
 - group/steroids
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Testosterone propionate
@@ -68,6 +69,37 @@ pk-source:
   revision: 1373737638
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1170
+  pref-name: TESTOSTERONE PROPIONATE
+  molecule-type: Small molecule
+  first-approval: 1974
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1871
+    name: Androgen receptor
+    action: AGONIST
+  properties:
+    full-mwt: 344.5
+    mw-freebase: 344.5
+    alogp: 4.84
+    psa: 43.37
+    hba: 3
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C22H32O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Testosterone Propionate
@@ -81,7 +113,7 @@ pk-source:
 - **Compound ID:** `testosterone-propionate-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1170](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1170/) · max phase 4
+- **ChEMBL:** [CHEMBL1170](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1170/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +122,20 @@ Androgen Receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEM
 ## Mechanism
 
 Androgen Receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1974
+- **Flags:** prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 344.5 | 4.84 | 43.37 | 0/3 | 0 | C22H32O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Androgen receptor (CHEMBL1871)|Androgen receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -107,6 +153,14 @@ Androgen Receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 | Bioavailability | - | Oral: very low; Intramuscular: very high |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Anadrol (Oxymetholone)]] (Androgen receptor), [[Anavar (Oxandrolone)]] (Androgen receptor), [[Apalutamide (Erleada)]] (Androgen receptor), [[Apc-100]] (Androgen receptor), [[Bicalutamide (Casodex)]] (Androgen receptor), [[CB-03-01 (Clascoterone research formulation)]] (Androgen receptor), [[Clascoterone (Winlevi)]] (Androgen receptor), [[Cyproterone Acetate]] (Androgen receptor), [[Danazol]] (Androgen receptor), [[Darolutamide (Nubeqa)]] (Androgen receptor), [[Dianabol (Methandienone)]] (Androgen receptor), [[Dromostanolone Propionate]] (Androgen receptor)
 
 ## Safety routing
 

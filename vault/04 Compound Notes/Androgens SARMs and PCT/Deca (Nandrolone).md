@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL757
+chembl-max-phase: 3
 half-life:
   value: 4.3
   value-max: null
@@ -29,7 +29,7 @@ protein-binding:
   unit: percent
   notes: null
 bioavailability:
-  value: 3.0
+  value: null
   value-max: null
   notes: '• Oral: <3% (pigs); • Intramuscular: high'
 active-metabolites: []
@@ -63,6 +63,7 @@ tags:
 - group/steroids
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Nandrolone
@@ -70,6 +71,34 @@ pk-source:
   revision: 1363015943
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL757
+  pref-name: NANDROLONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 274.4
+    mw-freebase: 274.4
+    alogp: 3.49
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C18H26O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Deca (Nandrolone)
@@ -84,10 +113,19 @@ pk-source:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Deca, Nandrolone
+- **ChEMBL:** [CHEMBL757](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL757/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 19-nor injectable steroid valued for joint comfort and lean mass gain; long ester, long detection window.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 274.4 | 3.49 | 37.3 | 1/2 | 0 | C18H26O2 |
 
 ## Evidence boundaries
 
@@ -102,10 +140,12 @@ pk-source:
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 4.3 h | • Nandrolone: <4.3 hours; • ND (IM): 6–12 days; • NPP: 2.7 days |
-| Bioavailability | 3 % | • Oral: <3% (pigs); • Intramuscular: high |
+| Bioavailability | - | • Oral: <3% (pigs); • Intramuscular: high |
 | Metabolism | hepatic | Liver (reduction) |
 | Metabolites | - | • 5α-Dihydronandrolone; • 19-Norandrosterone; • 19-Noretiocholanolone; • Conjugates |
 | Excretion | mainly urinary | Urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

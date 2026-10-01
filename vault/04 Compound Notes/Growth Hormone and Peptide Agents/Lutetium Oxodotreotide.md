@@ -55,6 +55,21 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL4302409
+  pref-name: LUTETIUM OXODOTREOTIDE
+  molecule-type: Protein
+  first-approval: 2017
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 1607.59
+    mw-freebase: 1607.59
+    full-molformula: C65H87LuN14O19S2
 ---
 
 # Lutetium Oxodotreotide
@@ -68,7 +83,7 @@ tags:
 - **Compound ID:** `lutetium-oxodotreotide-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL4302409](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4302409/) · max phase 4
+- **ChEMBL:** [CHEMBL4302409](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4302409/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +92,15 @@ Somatostatin receptor binding agent; approved/marketed compound catalogued by Ch
 ## Mechanism
 
 Somatostatin receptor binding agent _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2017
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1607.59 | - | - | -/- | - | C65H87LuN14O19S2 |
 
 ## Evidence boundaries
 

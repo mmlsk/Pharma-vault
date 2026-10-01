@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2111107
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/analgesia
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2111107
+  pref-name: SUGAMMADEX
+  molecule-type: Oligosaccharide
+  first-approval: 2008
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - V03AB35
+  targets: []
+  properties:
+    full-mwt: 2002.18
+    mw-freebase: 2002.18
+    full-molformula: C72H112O48S8
 ---
 
 # Sugammadex
@@ -67,10 +83,21 @@ tags:
 - **Compound ID:** `sugammadex-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL2111107](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2111107/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Modified gamma-cyclodextrin that reverses steroidal neuromuscular blockade by encapsulating the drug, not by acting on any receptor.
+
+## ChEMBL profile
+
+- **Molecule type:** Oligosaccharide
+- **First approval (ChEMBL):** 2008
+- **ATC V03AB35:** VARIOUS › ALL OTHER THERAPEUTIC PRODUCTS › Antidotes
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 2002.18 | - | - | -/- | - | C72H112O48S8 |
 
 ## Evidence boundaries
 
@@ -80,6 +107,12 @@ Modified gamma-cyclodextrin that reverses steroidal neuromuscular blockade by en
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Andexanet Alfa]], [[Flumazenil]], [[Fomepizole]], [[Glutathione]], [[Idarucizumab]], [[Methylene Blue]], [[NAC (N-Acetylcysteine)]], [[Naloxone]], [[Phentolamine]], [[Physostigmine]], [[Potassium Iodide (SSKI-KI)|Potassium Iodide (SSKI/KI)]], [[Pralidoxime]]
 
 ## Safety routing
 

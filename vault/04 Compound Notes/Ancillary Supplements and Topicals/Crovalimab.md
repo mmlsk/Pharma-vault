@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Complement C5 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4594316
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4594316
+  pref-name: CROVALIMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AJ07
+  targets:
+  - id: CHEMBL2364163
+    name: Complement C5
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Crovalimab
@@ -67,10 +84,24 @@ tags:
 - **Compound ID:** `crovalimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4594316](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594316/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits a step of the complement cascade; blocking terminal complement raises encapsulated-organism risk and requires meningococcal vaccination; C5 inhibitor.
+
+## Mechanism
+
+Complement C5 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **ATC L04AJ07:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Complement inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Complement C5 (CHEMBL2364163)|Complement C5]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +111,13 @@ Inhibits a step of the complement cascade; blocking terminal complement raises e
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Eculizumab]] (Complement C5), [[Ravulizumab]] (Complement C5), [[Zilucoplan]] (Complement C5)
+- **Same ATC subgroup:** [[Avacopan]], [[Danicopan]], [[Eculizumab]], [[Iptacopan]], [[Pegcetacoplan]], [[Ravulizumab]], [[Sutimlimab]], [[Zilucoplan]]
 
 ## Safety routing
 

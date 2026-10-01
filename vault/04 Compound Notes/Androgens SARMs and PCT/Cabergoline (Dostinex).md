@@ -10,15 +10,15 @@ cluster: Androgens SARMs and PCT
 group: pct
 class: null
 subclass: null
-mechanism: null
+mechanism: Dopamine D2 receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201087
+chembl-max-phase: 4
 half-life:
   value: 63.0
   value-max: 69.0
@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Cabergoline
@@ -70,6 +72,41 @@ pk-source:
   revision: 1374387906
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201087
+  pref-name: CABERGOLINE
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G02CB03
+  - N04BC06
+  targets:
+  - id: CHEMBL217
+    name: D(2) dopamine receptor
+    action: AGONIST
+  properties:
+    full-mwt: 451.62
+    mw-freebase: 451.62
+    alogp: 3.19
+    psa: 71.68
+    hba: 4
+    hbd: 2
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.6
+    full-molformula: C26H37N5O2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: e497366b-a124-4d7f-bd45-a883c392d4bb
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e497366b-a124-4d7f-bd45-a883c392d4bb
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Cabergoline (Dostinex)
@@ -84,10 +121,30 @@ pk-source:
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Cabergoline, Dostinex
+- **ChEMBL:** [CHEMBL1201087](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201087/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Long-acting dopamine agonist that suppresses prolactin, commonly used off-label by AAS users to manage prolactin-related side effects from 19-nor compounds like nandrolone/trenbolone.
+
+## Mechanism
+
+Dopamine D2 receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **ATC G02CB03:** GENITO URINARY SYSTEM AND SEX HORMONES › OTHER GYNECOLOGICALS › Prolactine inhibitors
+- **ATC N04BC06:** NERVOUS SYSTEM › DOPAMINERGIC AGENTS › Dopamine agonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 451.62 | 3.19 | 71.68 | 2/4 | 0 | C26H37N5O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[D(2) dopamine receptor (CHEMBL217)|D(2) dopamine receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -106,6 +163,18 @@ Long-acting dopamine agonist that suppresses prolactin, commonly used off-label 
 | Bioavailability | 50–80 % | 50–80% |
 | Metabolism | hepatic | Liver, predominately via hydrolysis of the acylurea bond or the urea moiety |
 | Excretion | mainly non-renal | Urine (22%), feces (60%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set e497366b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e497366b-a124-4d7f-bd45-a883c392d4bb), label version 20260630. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 63, 69)
+> - protein-binding: consistent (label values: 40, 42)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aripiprazole]] (D(2) dopamine receptor), [[Benperidol]] (D(2) dopamine receptor), [[Brexpiprazole]] (D(2) dopamine receptor), [[Clozapine]] (D(2) dopamine receptor), [[Domperidone]] (D(2) dopamine receptor), [[Iloperidone]] (D(2) dopamine receptor), [[Itopride]] (D(2) dopamine receptor), [[Lumateperone]] (D(2) dopamine receptor), [[Paliperidone]] (D(2) dopamine receptor), [[Perphenazine]] (D(2) dopamine receptor), [[Pridopidine]] (D(2) dopamine receptor), [[Remoxipride]] (D(2) dopamine receptor)
+- **Same ATC subgroup:** [[Apomorphine]], [[Bromocriptine (Parlodel)]], [[Lisuride]], [[Pergolide]], [[Pramipexole (Mirapex)]], [[Ropinirole]], [[Rotigotine]]
 
 ## Safety routing
 

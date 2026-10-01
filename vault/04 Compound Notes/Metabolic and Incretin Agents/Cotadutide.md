@@ -8,15 +8,15 @@ cluster: Metabolic and Incretin Agents
 group: glp1
 class: null
 subclass: null
-mechanism: null
+mechanism: Glucagon receptor agonist; Glucagon-like peptide 1 receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297630
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,28 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297630
+  pref-name: COTADUTIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1985
+    name: Glucagon receptor
+    action: AGONIST
+  - id: CHEMBL1784
+    name: Glucagon-like peptide 1 receptor
+    action: AGONIST
+  properties:
+    full-mwt: 3728.09
+    mw-freebase: 3728.09
+    full-molformula: C167H252N42O55
 ---
 
 # Cotadutide
@@ -68,10 +90,28 @@ tags:
 - **Compound ID:** `cotadutide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL4297630](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297630/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Investigational GLP-1/glucagon dual agonist studied for weight loss and liver-fat reduction.
+
+## Mechanism
+
+Glucagon receptor agonist; Glucagon-like peptide 1 receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 3728.09 | - | - | -/- | - | C167H252N42O55 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucagon receptor (CHEMBL1985)|Glucagon receptor]] - agonist · SINGLE PROTEIN
+- [[Glucagon-like peptide 1 receptor (CHEMBL1784)|Glucagon-like peptide 1 receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -81,6 +121,12 @@ Investigational GLP-1/glucagon dual agonist studied for weight loss and liver-fa
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Efinopegdutide]] (Glucagon receptor; Glucagon-like peptide 1 receptor), [[Retatrutide]] (Glucagon receptor; Glucagon-like peptide 1 receptor), [[Survodutide]] (Glucagon receptor; Glucagon-like peptide 1 receptor), [[Adomeglivant]] (Glucagon receptor), [[Albiglutide (Tanzeum)]] (Glucagon-like peptide 1 receptor), [[Crotedumab]] (Glucagon receptor), [[Danuglipron]] (Glucagon-like peptide 1 receptor), [[Dasiglucagon Hydrochloride]] (Glucagon receptor), [[Dulaglutide (Trulicity)]] (Glucagon-like peptide 1 receptor), [[Efpeglenatide]] (Glucagon-like peptide 1 receptor), [[Exenatide (Byetta-Bydureon)|Exenatide (Byetta/Bydureon)]] (Glucagon-like peptide 1 receptor), [[Glucagon]] (Glucagon receptor)
 
 ## Safety routing
 

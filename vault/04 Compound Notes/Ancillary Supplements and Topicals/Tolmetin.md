@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tolmetin
@@ -63,6 +64,36 @@ pk-source:
   revision: 1316039494
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1020
+  pref-name: TOLMETIN
+  molecule-type: Small molecule
+  first-approval: 1976
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - M01AB03
+  - M02AA21
+  targets: []
+  properties:
+    full-mwt: 257.29
+    mw-freebase: 257.29
+    alogp: 2.19
+    psa: 59.3
+    hba: 3
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.85
+    full-molformula: C15H15NO3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tolmetin
@@ -76,7 +107,7 @@ pk-source:
 - **Compound ID:** `tolmetin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1020](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1020/) · max phase 4
+- **ChEMBL:** [CHEMBL1020](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1020/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +116,18 @@ Cyclooxygenase inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMB
 ## Mechanism
 
 Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1976
+- **Flags:** black-box warning
+- **ATC M01AB03:** MUSCULO-SKELETAL SYSTEM › ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS, NON-STEROIDS › Acetic acid derivatives and related substances
+- **ATC M02AA21:** MUSCULO-SKELETAL SYSTEM › TOPICAL PRODUCTS FOR JOINT AND MUSCULAR PAIN › Antiinflammatory preparations, non-steroids for topical use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 257.29 | 2.19 | 59.3 | 1/3 | 0 | C15H15NO3 |
 
 ## Evidence boundaries
 
@@ -99,6 +142,14 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 1–2 h | 1-2 hours, next phase up to 5 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Aceclofenac]], [[Acemetacin]], [[Alclofenac]], [[Benzydamine]], [[Dexketoprofen]], [[Diclofenac]], [[Esflurbiprofen]], [[Etodolac]], [[Flurbiprofen]], [[Ibuprofen]], [[Indomethacin]], [[Ketoprofen]]
 
 ## Safety routing
 

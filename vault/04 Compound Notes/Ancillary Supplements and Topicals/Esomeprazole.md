@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201320
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: 1.5
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Esomeprazole
@@ -69,6 +70,35 @@ pk-source:
   revision: 1363159768
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201320
+  pref-name: ESOMEPRAZOLE
+  molecule-type: Small molecule
+  first-approval: 2001
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A02BC05
+  targets: []
+  properties:
+    full-mwt: 345.42
+    mw-freebase: 345.42
+    alogp: 2.9
+    psa: 83.09
+    hba: 5
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.72
+    full-molformula: C17H19N3O3S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Esomeprazole
@@ -82,10 +112,22 @@ pk-source:
 - **Compound ID:** `esomeprazole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201320](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201320/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits the gastric proton pump to suppress acid secretion; long-term use affects micronutrient and mineral absorption.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2001
+- **Flags:** prodrug
+- **ATC A02BC05:** ALIMENTARY TRACT AND METABOLISM › DRUGS FOR PEPTIC ULCER AND GASTRO-OESOPHAGEAL REFLUX DISEASE (GORD) › Proton pump inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 345.42 | 2.9 | 83.09 | 1/5 | 0 | C17H19N3O3S |
 
 ## Evidence boundaries
 
@@ -104,6 +146,15 @@ Inhibits the gastric proton pump to suppress acid secretion; long-term use affec
 | Metabolism | hepatic | Liver (CYP2C19, CYP3A4) |
 | CYP (metabolised by) | CYP2C19, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | 80% Kidney; 20% Feces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Dexlansoprazole]], [[Ilaprazole]], [[Lansoprazole]], [[Omeprazole]], [[Pantoprazole]], [[Rabeprazole]], [[Vonoprazan]]
+- **Shared CYP substrate pool:** CYP2C19 (+43 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

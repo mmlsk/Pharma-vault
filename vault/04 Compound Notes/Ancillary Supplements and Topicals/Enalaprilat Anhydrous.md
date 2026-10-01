@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL577
+  pref-name: ENALAPRILAT ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 1988
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 348.4
+    mw-freebase: 348.4
+    alogp: 1.13
+    psa: 106.94
+    hba: 4
+    hbd: 3
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.65
+    full-molformula: C18H24N2O5
 ---
 
 # Enalaprilat Anhydrous
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `enalaprilat-anhydrous-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL577](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL577/) · max phase 4
+- **ChEMBL:** [CHEMBL577](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL577/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,16 @@ Angiotensin-converting enzyme inhibitor; approved/marketed compound catalogued b
 ## Mechanism
 
 Angiotensin-converting enzyme inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1988
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 348.4 | 1.13 | 106.94 | 3/4 | 0 | C18H24N2O5 |
 
 ## Evidence boundaries
 

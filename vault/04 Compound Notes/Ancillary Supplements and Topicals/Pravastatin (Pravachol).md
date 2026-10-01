@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1144
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: 3.0
@@ -63,6 +63,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Pravastatin
@@ -70,6 +71,35 @@ pk-source:
   revision: 1369273013
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1144
+  pref-name: PRAVASTATIN
+  molecule-type: Small molecule
+  first-approval: 1991
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C10AA03
+  targets: []
+  properties:
+    full-mwt: 424.53
+    mw-freebase: 424.53
+    alogp: 2.44
+    psa: 124.29
+    hba: 6
+    hbd: 4
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.4
+    full-molformula: C23H36O7
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Pravastatin (Pravachol)
@@ -84,10 +114,21 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Pravastatin, Pravachol
+- **ChEMBL:** [CHEMBL1144](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1144/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Hydrophilic statin, given in the active acid form and largely spared from CYP3A4 interactions.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1991
+- **ATC C10AA03:** CARDIOVASCULAR SYSTEM › LIPID MODIFYING AGENTS, PLAIN › HMG CoA reductase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 424.53 | 2.44 | 124.29 | 4/6 | 0 | C23H36O7 |
 
 ## Evidence boundaries
 
@@ -105,6 +146,14 @@ Hydrophilic statin, given in the active acid form and largely spared from CYP3A4
 | Protein binding | 50 % | 50% |
 | Bioavailability | 18 % | 18% |
 | Metabolism | hepatic | Liver (minimal) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Atorvastatin (Lipitor)]], [[Cerivastatin]], [[Fluvastatin]], [[Lovastatin (Mevacor)]], [[Pitavastatin (Livalo)]], [[Rosuvastatin (Crestor)]], [[Simvastatin (Zocor)]]
 
 ## Safety routing
 

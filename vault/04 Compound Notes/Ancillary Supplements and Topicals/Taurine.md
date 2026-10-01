@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL239243
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL239243
+  pref-name: TAURINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 125.15
+    mw-freebase: 125.15
+    alogp: -1.17
+    psa: 80.39
+    hba: 3
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.46
+    full-molformula: C2H7NO3S
 ---
 
 # Taurine
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `taurine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL239243](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL239243/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Conditionally essential amino acid studied for reducing advanced glycation end-product (AGE) formation, the same collagen-stiffening process implicated in skin aging.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 125.15 | -1.17 | 80.39 | 2/3 | 0 | C2H7NO3S |
 
 ## Evidence boundaries
 

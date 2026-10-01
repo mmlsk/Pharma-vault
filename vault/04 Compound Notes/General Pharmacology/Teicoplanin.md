@@ -68,6 +68,13 @@ pk-source:
   revision: 1369644635
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Teicoplanin
@@ -103,6 +110,8 @@ Lipoglycopeptide with a much longer half-life than vancomycin and less nephrotox
 | Bioavailability | 90 % | 90% (given IM) |
 | Metabolism | - | Nil |
 | Excretion | mainly urinary · fe 0.97 | Kidney (97% unchanged) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Vasopressin V1b receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL582857
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL582857
+  pref-name: NELIVAPTAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1921
+    name: Vasopressin V1b receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 630.12
+    mw-freebase: 630.12
+    alogp: 2.87
+    psa: 125.92
+    hba: 9
+    hbd: 1
+    rtb: 8
+    num-ro5-violations: 1
+    qed-weighted: 0.4
+    full-molformula: C30H32ClN3O8S
 ---
 
 # Nelivaptan
@@ -67,10 +92,27 @@ tags:
 - **Compound ID:** `nelivaptan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL582857](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL582857/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Acts on vasopressin receptors to alter free-water handling or vascular tone; sodium shifts require monitoring; investigational, discontinued.
+
+## Mechanism
+
+Vasopressin V1b receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 630.12 | 2.87 | 125.92 | 1/9 | 1 | C30H32ClN3O8S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Vasopressin V1b receptor (CHEMBL1921)|Vasopressin V1b receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 

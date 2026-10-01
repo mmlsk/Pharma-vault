@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4298065
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -56,6 +56,20 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4298065
+  pref-name: OMEGA-3 FATTY ACIDS
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A05BA10
+  targets: []
+  properties: {}
 ---
 
 # Omega-3 Fatty Acids (Fish Oil)
@@ -70,10 +84,16 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Omega-3 Fatty Acids, Fish Oil
+- **ChEMBL:** [CHEMBL4298065](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298065/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Long-chain polyunsaturated fatty acid supplement shown in an RCT to augment the muscle protein synthesis response to feeding, on top of its established anti-inflammatory and cardiovascular benefits.
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+- **ATC A05BA10:** ALIMENTARY TRACT AND METABOLISM › LIVER THERAPY, LIPOTROPICS › Liver therapy
 
 ## Evidence boundaries
 
@@ -83,6 +103,12 @@ Long-chain polyunsaturated fatty acid supplement shown in an RCT to augment the 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Milk Thistle (Silymarin)]], [[Silibinin]]
 
 ## Safety routing
 

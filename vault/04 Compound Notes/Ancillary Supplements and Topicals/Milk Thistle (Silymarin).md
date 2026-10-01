@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL9509
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -56,6 +56,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- possible-duplicate
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL9509
+  pref-name: SILIBININ
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A05BA03
+  targets: []
+  properties:
+    full-mwt: 482.44
+    mw-freebase: 482.44
+    alogp: 2.36
+    psa: 155.14
+    hba: 10
+    hbd: 5
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.37
+    full-molformula: C25H22O10
 ---
 
 # Milk Thistle (Silymarin)
@@ -70,10 +94,20 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Milk Thistle, Silymarin
+- **ChEMBL:** [CHEMBL9509](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL9509/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Flavonoid complex from the milk thistle plant studied for liver protection, most robustly for preventing drug-induced liver injury.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A05BA03:** ALIMENTARY TRACT AND METABOLISM › LIVER THERAPY, LIPOTROPICS › Liver therapy
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 482.44 | 2.36 | 155.14 | 5/10 | 0 | C25H22O10 |
 
 ## Evidence boundaries
 
@@ -83,6 +117,13 @@ Flavonoid complex from the milk thistle plant studied for liver protection, most
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Silibinin]]
+- **Same ATC subgroup:** [[Omega-3 Fatty Acids (Fish Oil)]], [[Silibinin]]
 
 ## Safety routing
 

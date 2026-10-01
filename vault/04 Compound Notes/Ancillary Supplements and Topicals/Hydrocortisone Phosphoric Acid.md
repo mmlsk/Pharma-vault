@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1641
+  pref-name: HYDROCORTISONE PHOSPHORIC ACID
+  molecule-type: Small molecule
+  first-approval: 1960
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 442.45
+    mw-freebase: 442.45
+    alogp: 1.9
+    psa: 141.36
+    hba: 6
+    hbd: 4
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.48
+    full-molformula: C21H31O8P
 ---
 
 # Hydrocortisone Phosphoric Acid
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `hydrocortisone-phosphoric-acid-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1641](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1641/) · max phase 4
+- **ChEMBL:** [CHEMBL1641](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1641/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,16 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1960
+- **Flags:** prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 442.45 | 1.9 | 141.36 | 4/6 | 0 | C21H31O8P |
 
 ## Evidence boundaries
 

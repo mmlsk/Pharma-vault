@@ -163,6 +163,8 @@ def clean(v: str) -> str:
     v = re.sub(r"<!--.*?-->", "", v, flags=re.S)
     v = re.sub(r"<ref[^>/]*/>", "", v)
     v = re.sub(r"<ref[^>]*>.*?</ref>", "", v, flags=re.S)
+    v = re.sub(r"\{\{\s*(?:ndash|snd|spaced ndash)\s*\}\}", "–", v, flags=re.I)
+    v = re.sub(r"\{\{\s*(?:nbsp|thinsp)\s*\}\}", " ", v, flags=re.I)
     v = re.sub(r"\{\{\s*(?:Val|val)\s*\|([^{}]*)\}\}", lambda m: _val(m.group(1)), v)
     v = re.sub(r"\{\{\s*(?:Unbulleted list|ubl|Plainlist|plainlist|flatlist|hlist)\s*\|([^{}]*)\}\}",
                lambda m: "; ".join(x.strip() for x in m.group(1).split("|") if "=" not in x), v, flags=re.I)
@@ -197,13 +199,21 @@ PCT = re.compile(r"(?:[<>≤≥~]|approximately\s+)?" + NUM + r"\s*(?:(?:–|-|�
 CYP = re.compile(r"\bCYP\s?(\d{1,2}[A-Z]\d{1,2})\b")
 
 
+SD = re.compile(r"\s*(?:±|\+/-|\+/−|\+-)\s*" + NUM)
+
+
+def strip_sd(text: str) -> str:
+    """'1.54 ± 0.63 h' -> '1.54 h' (a ± spread is a dispersion, never the central value)."""
+    return SD.sub("", text)
+
+
 def f(x):
     return float(x.replace(",", "."))
 
 
 def parse_half_life(text: str) -> dict:
-    seg = text.split(";")[0]
-    m = HL.search(seg) or HL.search(text)
+    seg = strip_sd(text.split(";")[0])
+    m = HL.search(seg) or HL.search(strip_sd(text))
     if not m:
         return {"value": None, "unit": None, "value-max": None, "notes": text}
     unit = UNITS.get(m.group(3).lower())
@@ -214,8 +224,13 @@ def parse_half_life(text: str) -> dict:
     return {"value": lo, "unit": unit, "value-max": hi if hi and hi > lo else None, "notes": text}
 
 
-def parse_percent(text: str, lo_max=100) -> tuple:
-    m = PCT.search(text)
+ANIMAL = re.compile(NON_HUMAN.pattern.replace("|in vitro", ""), re.I)  # plasma protein binding is legitimately measured in vitro
+
+
+def parse_percent(text: str, lo_max=100, allow_in_vitro: bool = False) -> tuple:
+    if (ANIMAL if allow_in_vitro else NON_HUMAN).search(text):  # animal (/ in-vitro) figures stay as text only
+        return None, None
+    m = PCT.search(strip_sd(text))
     if not m:
         return None, None
     lo, hi = f(m.group(1)), (f(m.group(2)) if m.group(2) else None)
@@ -258,24 +273,46 @@ def parse_excretion(text: str) -> dict:
     return {"primary-route": primary, "fraction-excreted-unchanged": fe, "notes": text}
 
 
+_MOLS: dict | None = None
+
+
+def _parent(cid: str) -> str | None:
+    """Parent molecule from the ChEMBL cache written by enrich_chembl.py (None if unknown)."""
+    global _MOLS
+    if _MOLS is None:
+        p = ENRICH / "chembl/molecules.jsonl"
+        _MOLS = {}
+        if p.exists():
+            for line in p.read_text(encoding="utf-8").splitlines():
+                m = json.loads(line)
+                _MOLS[m["molecule_chembl_id"]] = (m.get("molecule_hierarchy") or {}).get("parent_chembl_id") or m["molecule_chembl_id"]
+    return _MOLS.get(cid)
+
+
 def parse_record(rec: dict, catalogue: dict) -> dict | None:
     flds = {k: clean(v) for k, v in rec["fields"].items()}
     flds = {k: v for k, v in flds.items() if v}
     cat = catalogue[rec["compound_id"]]
     ib = re.sub(r"\D", "", flds.get("ChEMBL", ""))
     mine = re.sub(r"\D", "", cat.get("chembl_id") or "")
+    match = "exact" if ib and mine and ib == mine else None
     if ib and mine and ib != mine:
-        return {"compound_id": rec["compound_id"], "rejected": f"ChEMBL mismatch (catalogue {mine} vs page {ib})"}
+        pa, pb_ = _parent("CHEMBL" + ib), _parent("CHEMBL" + mine)
+        if not (pa and pa == pb_):
+            return {"compound_id": rec["compound_id"], "rejected": f"ChEMBL mismatch (catalogue {mine} vs page {ib}; parents {pb_} / {pa})"}
+        match = "parent"  # salt/ester vs parent molecule - same active moiety
     pk_keys = ["elimination_half-life", "protein_bound", "metabolism", "metabolites", "excretion", "bioavailability"]
     if not any(k in flds for k in pk_keys):
         return None
     out = {"compound_id": rec["compound_id"], "source-title": rec["title"], "revid": rec["revid"],
            "source-url": f"https://en.wikipedia.org/w/index.php?title={urllib.parse.quote(rec['title'].replace(' ', '_'))}&oldid={rec['revid']}",
-           "retrieved": rec["retrieved"], "chembl-confirmed": bool(ib and mine and ib == mine)}
+           "retrieved": rec["retrieved"], "chembl-confirmed": bool(match)}
+    if match == "parent":
+        out["chembl-match"] = "parent"
     if "elimination_half-life" in flds:
         out["half-life"] = parse_half_life(flds["elimination_half-life"])
     if "protein_bound" in flds:
-        lo, hi = parse_percent(flds["protein_bound"])
+        lo, hi = parse_percent(flds["protein_bound"], allow_in_vitro=True)
         out["protein-binding"] = {"value": lo, "value-max": hi, "unit": "percent" if lo is not None else None,
                                   "notes": flds["protein_bound"]}
     if "bioavailability" in flds:

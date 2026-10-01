@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Pheniramine
@@ -63,6 +64,36 @@ pk-source:
   revision: 1345559105
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1193
+  pref-name: PHENIRAMINE
+  molecule-type: Small molecule
+  first-approval: 1994
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D04AA16
+  - R06AB05
+  targets: []
+  properties:
+    full-mwt: 240.35
+    mw-freebase: 240.35
+    alogp: 3.17
+    psa: 16.13
+    hba: 2
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C16H20N2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Pheniramine
@@ -76,7 +107,7 @@ pk-source:
 - **Compound ID:** `pheniramine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1193](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1193/) · max phase 4
+- **ChEMBL:** [CHEMBL1193](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1193/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +116,17 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1994
+- **ATC D04AA16:** DERMATOLOGICALS › ANTIPRURITICS, INCL. ANTIHISTAMINES, ANESTHETICS, ETC. › Antihistamines for topical use
+- **ATC R06AB05:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Substituted alkylamines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 240.35 | 3.17 | 16.13 | 0/2 | 0 | C16H20N2 |
 
 ## Evidence boundaries
 
@@ -101,6 +143,14 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Elimination t½ | 16–19 h | 16 - 19 hrs (oral), 8 - 17 hrs (i.v.) |
 | Metabolism | hepatic | Hepatic hydroxylation, demethylation and glucuronidation |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Brompheniramine]], [[Chlorpheniramine]], [[Chlorphenoxamine]], [[Clemastine]], [[Dexbrompheniramine]], [[Dexchlorpheniramine]], [[Dimethindene]], [[Diphenhydramine (Benadryl)]], [[Promethazine]], [[Pyrilamine]], [[Thenalidine]], [[Tripelennamine]]
 
 ## Safety routing
 

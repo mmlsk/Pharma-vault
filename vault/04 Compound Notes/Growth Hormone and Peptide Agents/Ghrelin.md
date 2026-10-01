@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL500468
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -55,6 +55,22 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL500468
+  pref-name: GHRELIN
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 3314.85
+    mw-freebase: 3314.85
+    full-molformula: C147H245N45O42
 ---
 
 # Ghrelin
@@ -68,10 +84,19 @@ tags:
 - **Compound ID:** `ghrelin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL500468](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL500468/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Endogenous stomach-derived peptide that stimulates appetite and growth-hormone release through GHSR1a.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 3314.85 | - | - | -/- | - | C147H245N45O42 |
 
 ## Evidence boundaries
 

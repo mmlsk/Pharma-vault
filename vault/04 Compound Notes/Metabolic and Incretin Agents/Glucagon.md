@@ -55,6 +55,22 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL5314341
+  pref-name: GLUCAGON
+  molecule-type: Protein
+  first-approval: 1998
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H04AA01
+  targets:
+  - id: CHEMBL1985
+    name: Glucagon receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Glucagon
@@ -68,7 +84,7 @@ tags:
 - **Compound ID:** `glucagon-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL5314341](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5314341/) · max phase 4
+- **ChEMBL:** [CHEMBL5314341](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5314341/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -78,6 +94,16 @@ Glucagon receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEM
 
 Glucagon receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1998
+- **ATC H04AA01:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › GLYCOGENOLYTIC HORMONES › Glycogenolytic hormones
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucagon receptor (CHEMBL1985)|Glucagon receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -86,6 +112,12 @@ Glucagon receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Adomeglivant]] (Glucagon receptor), [[Cotadutide]] (Glucagon receptor), [[Crotedumab]] (Glucagon receptor), [[Dasiglucagon Hydrochloride]] (Glucagon receptor), [[Efinopegdutide]] (Glucagon receptor), [[Glucagon Hydrochloride]] (Glucagon receptor), [[Mk-3577]] (Glucagon receptor), [[Retatrutide]] (Glucagon receptor), [[Survodutide]] (Glucagon receptor)
 
 ## Safety routing
 

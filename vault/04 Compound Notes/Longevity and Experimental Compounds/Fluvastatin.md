@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2220442
+  pref-name: FLUVASTATIN
+  molecule-type: Small molecule
+  first-approval: 1993
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C10AA04
+  targets: []
+  properties:
+    full-mwt: 411.47
+    mw-freebase: 411.47
+    alogp: 4.63
+    psa: 82.69
+    hba: 4
+    hbd: 3
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.5
+    full-molformula: C24H26FNO4
 ---
 
 # Fluvastatin
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `fluvastatin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL2220442](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2220442/) · max phase 4
+- **ChEMBL:** [CHEMBL2220442](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2220442/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +100,16 @@ HMG-CoA reductase inhibitor; approved/marketed compound catalogued by ChEMBL (CH
 
 HMG-CoA reductase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1993
+- **ATC C10AA04:** CARDIOVASCULAR SYSTEM › LIPID MODIFYING AGENTS, PLAIN › HMG CoA reductase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 411.47 | 4.63 | 82.69 | 3/4 | 0 | C24H26FNO4 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +118,12 @@ HMG-CoA reductase inhibitor _(ChEMBL curated mechanism, as quoted by the source)
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Atorvastatin (Lipitor)]], [[Cerivastatin]], [[Lovastatin (Mevacor)]], [[Pitavastatin (Livalo)]], [[Pravastatin (Pravachol)]], [[Rosuvastatin (Crestor)]], [[Simvastatin (Zocor)]]
 
 ## Safety routing
 

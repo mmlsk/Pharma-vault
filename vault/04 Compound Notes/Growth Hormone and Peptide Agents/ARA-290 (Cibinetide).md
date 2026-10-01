@@ -10,15 +10,15 @@ cluster: Growth Hormone and Peptide Agents
 group: peptides
 class: null
 subclass: null
-mechanism: null
+mechanism: Innate repair receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3545305
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -57,6 +57,25 @@ tags:
 - source-derived
 - group/peptides
 - stub
+- chembl-profile
+- possible-duplicate
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3545305
+  pref-name: CIBINETIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4804252
+    name: Innate repair receptor
+    action: AGONIST
+  properties:
+    full-mwt: 1257.32
+    mw-freebase: 1257.32
+    full-molformula: C51H84N16O21
 ---
 
 # ARA-290 (Cibinetide)
@@ -71,10 +90,27 @@ tags:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** ARA-290, Cibinetide
+- **ChEMBL:** [CHEMBL3545305](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545305/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Eleven-amino-acid peptide from the EPO helix B domain. Engineered specifically to hit the innate repair receptor WITHOUT the erythropoietic effect — it does not raise haematocrit, which is the entire point of the molecule.
+
+## Mechanism
+
+Innate repair receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1257.32 | - | - | -/- | - | C51H84N16O21 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Innate repair receptor (CHEMBL4804252)|Innate repair receptor]] - agonist · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -84,6 +120,13 @@ Eleven-amino-acid peptide from the EPO helix B domain. Engineered specifically t
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Cibinetide (ARA-290)]]
+- **Shared target:** [[Cibinetide (ARA-290)]] (Innate repair receptor)
 
 ## Safety routing
 

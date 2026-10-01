@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL5315073
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL5315073
+  pref-name: TRIPTORELIN ACETATE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL5303564
+    name: Gonadotropin-releasing hormone receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Triptorelin Acetate
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `triptorelin-acetate-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL5315073](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5315073/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -75,6 +92,14 @@ Triptorelin Acetate is a phase 3 compound catalogued by ChEMBL. Its curated mech
 ## Mechanism
 
 gonadotropin-releasing hormone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Gonadotropin-releasing hormone receptor (CHEMBL5303564)|Gonadotropin-releasing hormone receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 

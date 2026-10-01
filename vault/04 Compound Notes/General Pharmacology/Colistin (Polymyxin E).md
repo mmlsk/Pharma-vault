@@ -69,6 +69,13 @@ pk-source:
   revision: 1371803618
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Colistin (Polymyxin E)
@@ -102,6 +109,8 @@ Last-line polypeptide for carbapenem-resistant gram-negative infection, revived 
 |---|---|---|
 | Elimination t½ | 5 h | 5 hours |
 | Bioavailability | 0 % | 0% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

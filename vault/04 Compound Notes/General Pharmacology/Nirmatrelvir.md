@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: SARS coronavirus 3C-like proteinase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4802135
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4802135
+  pref-name: NIRMATRELVIR
+  molecule-type: Small molecule
+  first-approval: 2023
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3927
+    name: Replicase polyprotein 1a
+    action: INHIBITOR
+  properties:
+    full-mwt: 499.53
+    mw-freebase: 499.53
+    alogp: 1.1
+    psa: 131.4
+    hba: 5
+    hbd: 3
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.5
+    full-molformula: C23H32F3N5O4
 ---
 
 # Nirmatrelvir
@@ -67,10 +93,28 @@ tags:
 - **Compound ID:** `nirmatrelvir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL4802135](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802135/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 SARS-CoV-2 main protease inhibitor, given with ritonavir purely to keep its concentrations high enough to work.
+
+## Mechanism
+
+SARS coronavirus 3C-like proteinase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2023
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 499.53 | 1.1 | 131.4 | 3/5 | 0 | C23H32F3N5O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Replicase polyprotein 1a (CHEMBL3927)|Replicase polyprotein 1a]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2355051
+chembl-max-phase: 4
 half-life:
   value: 4.0
   value-max: 7.0
@@ -63,6 +63,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Clomifene
@@ -70,6 +71,35 @@ pk-source:
   revision: 1368196377
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2355051
+  pref-name: CLOMIPHENE
+  molecule-type: Small molecule
+  first-approval: 1967
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G03GB02
+  targets: []
+  properties:
+    full-mwt: 405.97
+    mw-freebase: 405.97
+    alogp: 6.56
+    psa: 12.47
+    hba: 2
+    hbd: 0
+    rtb: 9
+    num-ro5-violations: 1
+    qed-weighted: 0.37
+    full-molformula: C26H28ClNO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Clomid (Clomiphene)
@@ -84,10 +114,21 @@ pk-source:
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Clomid, Clomiphene
+- **ChEMBL:** [CHEMBL2355051](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2355051/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Selective estrogen receptor modulator used post-cycle to restart endogenous LH/FSH and testosterone production.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1967
+- **ATC G03GB02:** GENITO URINARY SYSTEM AND SEX HORMONES › GONADOTROPINS AND OTHER OVULATION STIMULANTS › Ovulation stimulants, synthetic
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 405.97 | 6.56 | 12.47 | 0/2 | 1 | C26H28ClNO |
 
 ## Evidence boundaries
 
@@ -107,6 +148,15 @@ Selective estrogen receptor modulator used post-cycle to restart endogenous LH/F
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | 4-Hydroxyclomiphene (4-OH-CLO), 4-Hydroxy-N-desethylclomiphene (4-OH-DE-CLO) |
 | Excretion | - | Mainly feces, some in urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Cyclofenil]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

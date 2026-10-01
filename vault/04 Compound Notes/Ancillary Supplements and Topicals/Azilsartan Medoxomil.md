@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2028661
+  pref-name: AZILSARTAN MEDOXOMIL
+  molecule-type: Small molecule
+  first-approval: 2011
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C09CA09
+  targets: []
+  properties:
+    full-mwt: 568.54
+    mw-freebase: 568.54
+    alogp: 4.71
+    psa: 155.59
+    hba: 11
+    hbd: 1
+    rtb: 9
+    num-ro5-violations: 2
+    qed-weighted: 0.24
+    full-molformula: C30H24N4O8
 ---
 
 # Azilsartan Medoxomil
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `azilsartan-medoxomil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2028661](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2028661/) · max phase 4
+- **ChEMBL:** [CHEMBL2028661](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2028661/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +100,17 @@ Type-1 angiotensin II receptor antagonist; approved/marketed compound catalogued
 
 Type-1 angiotensin II receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2011
+- **Flags:** black-box warning, prodrug
+- **ATC C09CA09:** CARDIOVASCULAR SYSTEM › ANGIOTENSIN II RECEPTOR BLOCKERS (ARBs), PLAIN › Angiotensin II receptor blockers (ARBs), plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 568.54 | 4.71 | 155.59 | 1/11 | 2 | C30H24N4O8 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +119,12 @@ Type-1 angiotensin II receptor antagonist _(ChEMBL curated mechanism, as quoted 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Candesartan (Atacand)]], [[Eprosartan]], [[Fimasartan]], [[Irbesartan (Avapro)]], [[Losartan]], [[Olmesartan (Benicar)]], [[Olmesartan Medoxomil]], [[Tasosartan]], [[Telmisartan]], [[Valsartan (Diovan)]]
 
 ## Safety routing
 

@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4297694
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297694
+  pref-name: ANFIBATIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4630891
+    name: Platelet glycoprotein Ib alpha chain
+    action: ANTAGONIST
+  properties: {}
 ---
 
 # Anfibatide
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `anfibatide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4297694](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297694/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -75,6 +92,14 @@ Anfibatide is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is 
 ## Mechanism
 
 platelet glycoprotein Ib alpha chain antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Platelet glycoprotein Ib alpha chain (CHEMBL4630891)|Platelet glycoprotein Ib alpha chain]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL836
+chembl-max-phase: 4
 half-life:
   value: 9.0
   value-max: 13.0
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tamsulosin
@@ -67,6 +68,35 @@ pk-source:
   revision: 1358585814
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL836
+  pref-name: TAMSULOSIN
+  molecule-type: Small molecule
+  first-approval: 1997
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04CA02
+  targets: []
+  properties:
+    full-mwt: 408.52
+    mw-freebase: 408.52
+    alogp: 2.34
+    psa: 99.88
+    hba: 6
+    hbd: 2
+    rtb: 11
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C20H28N2O5S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tamsulosin
@@ -80,10 +110,21 @@ pk-source:
 - **Compound ID:** `tamsulosin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL836](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL836/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Blocks alpha-1 adrenoceptors to relax vascular or prostatic smooth muscle; first-dose hypotension and floppy-iris syndrome are class effects; alpha-1A selective.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1997
+- **ATC G04CA02:** GENITO URINARY SYSTEM AND SEX HORMONES › DRUGS USED IN BENIGN PROSTATIC HYPERTROPHY › Alpha-adrenoreceptor antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 408.52 | 2.34 | 99.88 | 2/6 | 0 | C20H28N2O5S |
 
 ## Evidence boundaries
 
@@ -101,6 +142,14 @@ Blocks alpha-1 adrenoceptors to relax vascular or prostatic smooth muscle; first
 | Bioavailability | 100 % | 100% (by mouth) |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | 76% Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alfuzosin]], [[Silodosin]], [[Terazosin]]
 
 ## Safety routing
 

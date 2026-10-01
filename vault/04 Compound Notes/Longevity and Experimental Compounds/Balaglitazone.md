@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2103991
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2103991
+  pref-name: BALAGLITAZONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL235
+    name: Peroxisome proliferator-activated receptor gamma
+    action: PARTIAL AGONIST
+  properties:
+    full-mwt: 395.44
+    mw-freebase: 395.44
+    alogp: 2.41
+    psa: 90.29
+    hba: 7
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.71
+    full-molformula: C20H17N3O4S
 ---
 
 # Balaglitazone
@@ -67,6 +93,7 @@ tags:
 - **Compound ID:** `balaglitazone-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL2103991](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103991/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +103,18 @@ Balaglitazone is a phase 3 compound catalogued by ChEMBL. Its curated mechanism 
 
 peroxisome proliferator-activated receptor gamma partial agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 395.44 | 2.41 | 90.29 | 1/7 | 0 | C20H17N3O4S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Peroxisome proliferator-activated receptor gamma (CHEMBL235)|Peroxisome proliferator-activated receptor gamma]] - partial agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +123,12 @@ peroxisome proliferator-activated receptor gamma partial agonist _(ChEMBL curate
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aleglitazar]] (Peroxisome proliferator-activated receptor gamma), [[Bardoxolone Methyl]] (Peroxisome proliferator-activated receptor gamma), [[Db959]] (Peroxisome proliferator-activated receptor gamma), [[Imiglitazar]] (Peroxisome proliferator-activated receptor gamma), [[Mesalamine]] (Peroxisome proliferator-activated receptor gamma), [[Mesalazine (5-ASA)]] (Peroxisome proliferator-activated receptor gamma), [[Mk-0767]] (Peroxisome proliferator-activated receptor gamma), [[Muraglitazar]] (Peroxisome proliferator-activated receptor gamma), [[Rivoglitazone]] (Peroxisome proliferator-activated receptor gamma), [[Rosiglitazone]] (Peroxisome proliferator-activated receptor gamma), [[Saroglitazar]] (Peroxisome proliferator-activated receptor gamma), [[Troglitazone]] (Peroxisome proliferator-activated receptor gamma)
 
 ## Safety routing
 

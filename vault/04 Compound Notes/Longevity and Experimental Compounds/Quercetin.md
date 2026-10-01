@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL50
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL50
+  pref-name: QUERCETIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 302.24
+    mw-freebase: 302.24
+    alogp: 1.99
+    psa: 131.36
+    hba: 7
+    hbd: 5
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.43
+    full-molformula: C15H10O7
 ---
 
 # Quercetin
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `quercetin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL50](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL50/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Flavonoid studied as a senolytic (typically paired with dasatinib) that selectively clears senescent cells; also has general antioxidant properties.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 302.24 | 1.99 | 131.36 | 5/7 | 0 | C15H10O7 |
 
 ## Evidence boundaries
 

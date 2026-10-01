@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL170
+chembl-max-phase: 4
 half-life:
   value: 8.0
   value-max: 14.0
@@ -51,7 +51,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -59,6 +59,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Quinine
@@ -66,6 +68,38 @@ pk-source:
   revision: 1373786693
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL170
+  pref-name: QUININE
+  molecule-type: Small molecule
+  first-approval: 2005
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - M09AA72
+  - P01BC01
+  targets: []
+  properties:
+    full-mwt: 324.42
+    mw-freebase: 324.42
+    alogp: 3.17
+    psa: 45.59
+    hba: 4
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.88
+    full-molformula: C20H24N2O2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: f567d5c7-ea5d-49a7-a035-b47208135f73
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f567d5c7-ea5d-49a7-a035-b47208135f73
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Quinine
@@ -79,10 +113,23 @@ pk-source:
 - **Compound ID:** `quinine-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL170](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL170/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The original antimalarial, still used for severe falciparum malaria and misused for leg cramps, with a well-characterised toxidrome.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2005
+- **Flags:** black-box warning
+- **ATC M09AA72:** MUSCULO-SKELETAL SYSTEM › OTHER DRUGS FOR DISORDERS OF THE MUSCULO-SKELETAL SYSTEM › Quinine and derivatives
+- **ATC P01BC01:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › ANTIMALARIALS › Methanolquinolines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 324.42 | 3.17 | 45.59 | 1/4 | 0 | C20H24N2O2 |
 
 ## Evidence boundaries
 
@@ -101,6 +148,18 @@ The original antimalarial, still used for severe falciparum malaria and misused 
 | Metabolism | hepatic | Liver (mostly CYP3A4 and CYP2C19-mediated) |
 | CYP (metabolised by) | CYP2C19, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Kidney (20%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set f567d5c7…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f567d5c7-ea5d-49a7-a035-b47208135f73), label version 20241209. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 4, 4.6, 7.5, 8, 8.1, 8.2)
+> - protein-binding: consistent (label values: 69, 78, 92, 95)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Mefloquine]]
+- **Shared CYP substrate pool:** CYP2C19 (+43 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

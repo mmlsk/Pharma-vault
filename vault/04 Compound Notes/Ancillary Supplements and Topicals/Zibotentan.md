@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1628688
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1628688
+  pref-name: ZIBOTENTAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL252
+    name: Endothelin-1 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 424.44
+    mw-freebase: 424.44
+    alogp: 2.71
+    psa: 132.99
+    hba: 9
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.5
+    full-molformula: C19H16N6O4S
 ---
 
 # Zibotentan
@@ -67,6 +93,7 @@ tags:
 - **Compound ID:** `zibotentan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1628688](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1628688/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +103,18 @@ Zibotentan is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is 
 
 endothelin receptor ET-A antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 424.44 | 2.71 | 132.99 | 1/9 | 0 | C19H16N6O4S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Endothelin-1 receptor (CHEMBL252)|Endothelin-1 receptor]] - antagonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +123,12 @@ endothelin receptor ET-A antagonist _(ChEMBL curated mechanism, as quoted by the
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Clazosentan]] (Endothelin-1 receptor), [[Darusentan]] (Endothelin-1 receptor), [[Sparsentan]] (Endothelin-1 receptor)
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL151
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL151
+  pref-name: LUTEOLIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 286.24
+    mw-freebase: 286.24
+    alogp: 2.28
+    psa: 111.13
+    hba: 6
+    hbd: 4
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.51
+    full-molformula: C15H10O6
 ---
 
 # Luteolin
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `luteolin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL151](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL151/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Dietary flavone with anti-inflammatory and antioxidant activity in laboratory models; oral bioavailability is limited and clinical evidence is indication-specific.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 286.24 | 2.28 | 111.13 | 4/6 | 0 | C15H10O6 |
 
 ## Evidence boundaries
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL23
+chembl-max-phase: 4
 half-life:
   value: 3.0
   value-max: 4.5
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Diltiazem
@@ -67,6 +68,36 @@ pk-source:
   revision: 1374684908
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL23
+  pref-name: DILTIAZEM
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C05AE03
+  - C08DB01
+  targets: []
+  properties:
+    full-mwt: 414.53
+    mw-freebase: 414.53
+    alogp: 3.37
+    psa: 59.08
+    hba: 6
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.68
+    full-molformula: C22H26N2O4S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Diltiazem
@@ -80,10 +111,22 @@ pk-source:
 - **Compound ID:** `diltiazem-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL23](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL23/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Non-dihydropyridine calcium channel blocker that slows the heart as well as dilating vessels.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC C05AE03:** CARDIOVASCULAR SYSTEM › AGENTS FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE › Muscle relaxants
+- **ATC C08DB01:** CARDIOVASCULAR SYSTEM › SELECTIVE CALCIUM CHANNEL BLOCKERS WITH DIRECT CARDIAC EFFECTS › Benzothiazepine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 414.53 | 3.37 | 59.08 | 0/6 | 0 | C22H26N2O4S |
 
 ## Evidence boundaries
 
@@ -101,6 +144,14 @@ Non-dihydropyridine calcium channel blocker that slows the heart as well as dila
 | Bioavailability | 40 % | 40% |
 | Metabolism | hepatic | Liver |
 | Excretion | - | Kidney; Bile duct |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Isosorbide Dinitrate]], [[Nitroglycerin]]
 
 ## Safety routing
 

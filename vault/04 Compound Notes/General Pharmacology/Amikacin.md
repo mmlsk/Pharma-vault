@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL177
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: 3.0
@@ -61,6 +61,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Amikacin
@@ -68,6 +70,39 @@ pk-source:
   revision: 1335943276
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL177
+  pref-name: AMIKACIN
+  molecule-type: Small molecule
+  first-approval: 1981
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - D06AX12
+  - J01GB06
+  - S01AA21
+  targets: []
+  properties:
+    full-mwt: 585.61
+    mw-freebase: 585.61
+    alogp: -8.42
+    psa: 331.94
+    hba: 17
+    hbd: 13
+    rtb: 10
+    num-ro5-violations: 3
+    qed-weighted: 0.11
+    full-molformula: C22H43N5O13
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 499ab990-2b21-474f-aaba-d86388965f40
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=499ab990-2b21-474f-aaba-d86388965f40
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Amikacin
@@ -81,10 +116,24 @@ pk-source:
 - **Compound ID:** `amikacin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL177](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL177/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Aminoglycoside resistant to most aminoglycoside-modifying enzymes, which makes it the reserve agent of the class and part of multidrug-resistant tuberculosis regimens.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1981
+- **Flags:** black-box warning
+- **ATC D06AX12:** DERMATOLOGICALS › ANTIBIOTICS FOR TOPICAL USE › Other antibiotics for topical use
+- **ATC J01GB06:** ANTIINFECTIVES FOR SYSTEMIC USE › AMINOGLYCOSIDE ANTIBACTERIALS › Other aminoglycosides
+- **ATC S01AA21:** SENSORY ORGANS › ANTIINFECTIVES › Antibiotics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 585.61 | -8.42 | 331.94 | 13/17 | 3 | C22H43N5O13 |
 
 ## Evidence boundaries
 
@@ -103,6 +152,17 @@ Aminoglycoside resistant to most aminoglycoside-modifying enzymes, which makes i
 | Bioavailability | 90 % | >90% |
 | Metabolism | - | Mostly unmetabolized |
 | Excretion | mainly urinary | Kidney |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 499ab990…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=499ab990-2b21-474f-aaba-d86388965f40), label version 20260804. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 5.9, 19.5)
+> - protein-binding: consistent (label values: 10)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Ampicillin]], [[Azithromycin]], [[Bacitracin]], [[Chloramphenicol]], [[Erythromycin]], [[Mupirocin]], [[Plazomicin]], [[Polymyxin B]], [[Rifaximin]], [[Tetracycline]], [[Tobramycin]], [[Vancomycin]]
 
 ## Safety routing
 

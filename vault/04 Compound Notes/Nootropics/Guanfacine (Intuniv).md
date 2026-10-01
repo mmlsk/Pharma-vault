@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL862
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: 17.0
@@ -57,7 +57,7 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -65,6 +65,8 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Guanfacine
@@ -72,6 +74,37 @@ pk-source:
   revision: 1373933768
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL862
+  pref-name: GUANFACINE
+  molecule-type: Small molecule
+  first-approval: 1986
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C02AC02
+  targets: []
+  properties:
+    full-mwt: 246.1
+    mw-freebase: 246.1
+    alogp: 1.55
+    psa: 78.97
+    hba: 2
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C9H9Cl2N3O
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 04a3bd2d-9a9c-43e8-a0e2-280e02265f16
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=04a3bd2d-9a9c-43e8-a0e2-280e02265f16
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Guanfacine (Intuniv)
@@ -86,10 +119,21 @@ pk-source:
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Guanfacine, Intuniv
+- **ChEMBL:** [CHEMBL862](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL862/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Alpha-2A adrenergic agonist. Improves working memory by closing prefrontal HCN channels rather than by raising catecholamines, which is why it is non-stimulant and sedating rather than activating.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1986
+- **ATC C02AC02:** CARDIOVASCULAR SYSTEM › ANTIADRENERGIC AGENTS, CENTRALLY ACTING › Imidazoline receptor agonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 246.1 | 1.55 | 78.97 | 3/2 | 0 | C9H9Cl2N3O |
 
 ## Evidence boundaries
 
@@ -109,6 +153,18 @@ Alpha-2A adrenergic agonist. Improves working memory by closing prefrontal HCN c
 | Metabolism | hepatic | CYP3A4 |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary · fe 0.75 | Kidney (80%; 50% [range: 40–75%] as unchanged drug) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 04a3bd2d…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=04a3bd2d-9a9c-43e8-a0e2-280e02265f16), label version 20260904. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 10, 13, 14, 17, 30)
+> - protein-binding: consistent (label values: 70)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Clonidine]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

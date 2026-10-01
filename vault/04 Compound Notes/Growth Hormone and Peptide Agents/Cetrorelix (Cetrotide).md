@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1200490
+chembl-max-phase: 4
 half-life:
   value: 62.8
   value-max: null
@@ -64,6 +64,7 @@ tags:
 - group/peptides
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Cetrorelix
@@ -71,6 +72,28 @@ pk-source:
   revision: 1329009186
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1200490
+  pref-name: CETRORELIX
+  molecule-type: Protein
+  first-approval: 1999
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01CC02
+  targets: []
+  properties:
+    full-mwt: 1431.06
+    mw-freebase: 1431.06
+    full-molformula: C70H92ClN17O14
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Cetrorelix (Cetrotide)
@@ -85,10 +108,21 @@ pk-source:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Cetrorelix, Cetrotide
+- **ChEMBL:** [CHEMBL1200490](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200490/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 GnRH antagonist used in IVF to stop a premature LH surge; immediate suppression, no flare.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1999
+- **ATC H01CC02:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › HYPOTHALAMIC HORMONES › Anti-gonadotropin-releasing hormones
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1431.06 | - | - | -/- | - | C70H92ClN17O14 |
 
 ## Evidence boundaries
 
@@ -106,6 +140,14 @@ GnRH antagonist used in IVF to stop a premature LH surge; immediate suppression,
 | Protein binding | 86 % | 86% |
 | Bioavailability | 85 % | 85% |
 | Excretion | - · fe 0.1 | feces (5% to 10% as unchanged drug and metabolites); urine (2% to 4% as unchanged drug) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Elagolix]], [[Ganirelix (Fyremadel-Orgalutran)|Ganirelix (Fyremadel/Orgalutran)]], [[Linzagolix]]
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: DNA polymerase/reverse transcriptase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL374731
+chembl-max-phase: 4
 half-life:
   value: 40.0
   value-max: 49.0
@@ -57,6 +57,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Telbivudine
@@ -64,6 +65,38 @@ pk-source:
   revision: 1346950187
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL374731
+  pref-name: TELBIVUDINE
+  molecule-type: Small molecule
+  first-approval: 2006
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J05AF11
+  targets:
+  - id: CHEMBL2362994
+    name: DNA polymerase/reverse transcriptase
+    action: INHIBITOR
+  properties:
+    full-mwt: 242.23
+    mw-freebase: 242.23
+    alogp: -1.51
+    psa: 104.55
+    hba: 6
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.58
+    full-molformula: C10H14N2O5
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Telbivudine
@@ -77,10 +110,30 @@ pk-source:
 - **Compound ID:** `telbivudine-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL374731](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL374731/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Thymidine analogue for hepatitis B, withdrawn in many markets after myopathy and neuropathy signals and a low resistance barrier.
+
+## Mechanism
+
+DNA polymerase/reverse transcriptase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2006
+- **Flags:** black-box warning, prodrug
+- **ATC J05AF11:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Nucleoside and nucleotide reverse transcriptase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 242.23 | -1.51 | 104.55 | 3/6 | 0 | C10H14N2O5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[DNA polymerase-reverse transcriptase (CHEMBL2362994)|DNA polymerase/reverse transcriptase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -98,6 +151,15 @@ Thymidine analogue for hepatitis B, withdrawn in many markets after myopathy and
 | Protein binding | 3.3 % | Low (3.3% in vitro) |
 | Metabolism | - | Nil |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Adefovir]] (DNA polymerase/reverse transcriptase), [[Lamivudine]] (DNA polymerase/reverse transcriptase)
+- **Same ATC subgroup:** [[Abacavir]], [[Emtricitabine]], [[Lamivudine]], [[Tenofovir]], [[Tenofovir Alafenamide]], [[Tenofovir Disoproxil]], [[Zidovudine]]
 
 ## Safety routing
 

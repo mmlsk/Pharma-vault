@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Endothelin receptor ET-A antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL109648
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL109648
+  pref-name: CLAZOSENTAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C04AX33
+  targets:
+  - id: CHEMBL252
+    name: Endothelin-1 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 577.58
+    mw-freebase: 577.58
+    alogp: 2.39
+    psa: 200.11
+    hba: 13
+    hbd: 3
+    rtb: 11
+    num-ro5-violations: 2
+    qed-weighted: 0.21
+    full-molformula: C25H23N9O6S
 ---
 
 # Clazosentan
@@ -67,10 +93,28 @@ tags:
 - **Compound ID:** `clazosentan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL109648](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL109648/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 ETA-selective antagonist approved in Japan for cerebral vasospasm after subarachnoid haemorrhage.
+
+## Mechanism
+
+Endothelin receptor ET-A antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C04AX33:** CARDIOVASCULAR SYSTEM › PERIPHERAL VASODILATORS › Other peripheral vasodilators
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 577.58 | 2.39 | 200.11 | 3/13 | 2 | C25H23N9O6S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Endothelin-1 receptor (CHEMBL252)|Endothelin-1 receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +124,13 @@ ETA-selective antagonist approved in Japan for cerebral vasospasm after subarach
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Darusentan]] (Endothelin-1 receptor), [[Sparsentan]] (Endothelin-1 receptor), [[Zibotentan]] (Endothelin-1 receptor)
+- **Same ATC subgroup:** [[Fasudil]], [[Naftidrofuryl (Naftidrofuryl Oxalate)]], [[Phenoxybenzamine]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL5095149
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,18 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL5095149
+  pref-name: EFOCIPEGTRUTIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Efocipegtrutide
@@ -68,10 +80,15 @@ tags:
 - **Compound ID:** `efocipegtrutide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL5095149](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095149/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Investigational long-acting GLP-1/glucagon receptor co-agonist studied for obesity and metabolic liver disease.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
 
 ## Evidence boundaries
 

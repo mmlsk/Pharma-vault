@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1411979
+  pref-name: METHAPYRILENE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - R06AC05
+  targets: []
+  properties:
+    full-mwt: 261.39
+    mw-freebase: 261.39
+    alogp: 2.71
+    psa: 19.37
+    hba: 4
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C14H19N3S
 ---
 
 # Methapyrilene
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `methapyrilene-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1411979](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1411979/) · max phase 4
+- **ChEMBL:** [CHEMBL1411979](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1411979/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +100,16 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC R06AC05:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Substituted ethylene diamines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 261.39 | 2.71 | 19.37 | 0/4 | 0 | C14H19N3S |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +118,12 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Pyrilamine]], [[Tripelennamine]]
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Vitamin k epoxide reductase complex subunit 1 isoform 1 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1466
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Dicoumarol
@@ -63,6 +64,31 @@ pk-source:
   revision: 1329250023
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1466
+  pref-name: DICUMAROL
+  molecule-type: Small molecule
+  first-approval: 1944
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B01AA01
+  targets:
+  - id: CHEMBL1930
+    name: Vitamin K epoxide reductase complex subunit 1
+    action: INHIBITOR
+  properties:
+    full-mwt: 336.3
+    mw-freebase: 336.3
+    alogp: 2.9
+    psa: 100.88
+    hba: 6
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C19H12O6
 ---
 
 # Dicoumarol
@@ -76,10 +102,29 @@ pk-source:
 - **Compound ID:** `dicoumarol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1466](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1466/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits vitamin K epoxide reductase so clotting factors are undercarboxylated; effect is delayed, diet-sensitive and needs INR monitoring; the original coumarin anticoagulant.
+
+## Mechanism
+
+Vitamin k epoxide reductase complex subunit 1 isoform 1 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1944
+- **ATC B01AA01:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Vitamin K antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 336.3 | 2.9 | 100.88 | 2/6 | 0 | C19H12O6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Vitamin K epoxide reductase complex subunit 1 (CHEMBL1930)|Vitamin K epoxide reductase complex subunit 1]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -96,6 +141,13 @@ Inhibits vitamin K epoxide reductase so clotting factors are undercarboxylated; 
 | Protein binding | - | plasmatic proteins |
 | Metabolism | hepatic | hepatic |
 | Excretion | - | faeces, urine |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acenocoumarol]] (Vitamin K epoxide reductase complex subunit 1), [[Phenindione]] (Vitamin K epoxide reductase complex subunit 1), [[Phenprocoumon]] (Vitamin K epoxide reductase complex subunit 1)
+- **Same ATC subgroup:** [[Acenocoumarol]], [[Clorindione]], [[Fluindione]], [[Phenindione]], [[Phenprocoumon]], [[Tioclomarol]], [[Warfarin (Coumadin)]]
 
 ## Safety routing
 

@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Flunitrazepam
@@ -67,6 +68,38 @@ pk-source:
   revision: 1366016711
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL13280
+  pref-name: FLUNITRAZEPAM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - N05CD03
+  targets:
+  - id: CHEMBL2093872
+    name: GABA-A receptor; anion channel
+    action: POSITIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 313.29
+    mw-freebase: 313.29
+    alogp: 2.55
+    psa: 75.81
+    hba: 4
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.63
+    full-molformula: C16H12FN3O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Flunitrazepam
@@ -80,7 +113,7 @@ pk-source:
 - **Compound ID:** `flunitrazepam-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL13280](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL13280/) · max phase 4
+- **ChEMBL:** [CHEMBL13280](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL13280/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +122,20 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC N05CD03:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Benzodiazepine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 313.29 | 2.55 | 75.81 | 0/4 | 0 | C16H12FN3O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-A receptor; anion channel (CHEMBL2093872)|GABA-A receptor; anion channel]] - positive allosteric modulator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -107,6 +154,15 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 | Metabolism | hepatic | Liver |
 | Metabolites | - | 7-aminoflunitrazepam, desmethylflunitrazepam and 3-hydroxydesmethylflunitrazepam |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abp-700]] (GABA-A receptor; anion channel), [[Adipiplon]] (GABA-A receptor; anion channel), [[Alprazolam]] (GABA-A receptor; anion channel), [[Brexanolone]] (GABA-A receptor; anion channel), [[Butalbital]] (GABA-A receptor; anion channel), [[Cenobamate]] (GABA-A receptor; anion channel), [[Chlordiazepoxide]] (GABA-A receptor; anion channel), [[Cipepofol]] (GABA-A receptor; anion channel), [[Clobazam]] (GABA-A receptor; anion channel), [[Clomethiazole]] (GABA-A receptor; anion channel), [[Clonazepam]] (GABA-A receptor; anion channel), [[Clotiazepam]] (GABA-A receptor; anion channel)
+- **Same ATC subgroup:** [[Estazolam]], [[Flurazepam]], [[Midazolam]], [[Quazepam]], [[Remimazolam]], [[Temazepam]], [[Triazolam]]
 
 ## Safety routing
 

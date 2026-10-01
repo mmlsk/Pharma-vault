@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: analgesia
 class: null
 subclass: null
-mechanism: null
+mechanism: Unknown
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL278172
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/analgesia
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL278172
+  pref-name: BENZOCAINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C05AD03
+  - D04AB04
+  - N01BA05
+  - R02AD01
+  targets: []
+  properties:
+    full-mwt: 165.19
+    mw-freebase: 165.19
+    alogp: 1.45
+    psa: 52.32
+    hba: 3
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.53
+    full-molformula: C9H11NO2
 ---
 
 # Benzocaine
@@ -67,10 +93,27 @@ tags:
 - **Compound ID:** `benzocaine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL278172](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL278172/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Over-the-counter topical ester anaesthetic, and the commonest drug cause of acquired methaemoglobinaemia.
+
+## Mechanism
+
+Unknown _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C05AD03:** CARDIOVASCULAR SYSTEM › AGENTS FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE › Local anesthetics
+- **ATC D04AB04:** DERMATOLOGICALS › ANTIPRURITICS, INCL. ANTIHISTAMINES, ANESTHETICS, ETC. › Anesthetics for topical use
+- **ATC N01BA05:** NERVOUS SYSTEM › ANESTHETICS, LOCAL › Esters of aminobenzoic acid
+- **ATC R02AD01:** RESPIRATORY SYSTEM › THROAT PREPARATIONS › Anesthetics, local
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 165.19 | 1.45 | 52.32 | 1/3 | 0 | C9H11NO2 |
 
 ## Evidence boundaries
 
@@ -80,6 +123,12 @@ Over-the-counter topical ester anaesthetic, and the commonest drug cause of acqu
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Chloroprocaine]], [[Lidocaine]], [[Procaine]], [[Tetracaine]]
 
 ## Safety routing
 

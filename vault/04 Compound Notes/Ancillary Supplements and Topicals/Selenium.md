@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL6068503
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL6068503
+  pref-name: SELENIUM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 78.96
+    mw-freebase: 78.96
+    full-molformula: Se
 ---
 
 # Selenium
@@ -67,10 +83,19 @@ tags:
 - **Compound ID:** `selenium-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL6068503](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6068503/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Trace mineral and essential cofactor for the deiodinase enzymes that convert inactive T4 thyroid hormone to active T3; studied for restoring thyroid function in autoimmune hypothyroidism.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 78.96 | - | - | -/- | - | Se |
 
 ## Evidence boundaries
 

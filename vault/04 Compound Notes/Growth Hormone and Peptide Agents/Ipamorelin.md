@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL58547
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,29 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL58547
+  pref-name: IPAMORELIN
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 711.87
+    mw-freebase: 711.87
+    alogp: 0.88
+    psa: 240.21
+    hba: 8
+    hbd: 8
+    rtb: 19
+    num-ro5-violations: 2
+    qed-weighted: 0.06
+    full-molformula: C38H49N9O5
 ---
 
 # Ipamorelin
@@ -68,10 +91,19 @@ tags:
 - **Compound ID:** `ipamorelin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL58547](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL58547/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Selective ghrelin-receptor GH secretagogue peptide with minimal cortisol/appetite side effects.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 711.87 | 0.88 | 240.21 | 8/8 | 2 | C38H49N9O5 |
 
 ## Evidence boundaries
 

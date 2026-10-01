@@ -54,6 +54,35 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2105345
+  pref-name: PROPANIDID
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - N01AX04
+  targets:
+  - id: CHEMBL1914
+    name: Cholinesterase
+    action: INHIBITOR
+  - id: CHEMBL220
+    name: Acetylcholinesterase
+    action: INHIBITOR
+  properties:
+    full-mwt: 337.42
+    mw-freebase: 337.42
+    alogp: 2.44
+    psa: 65.07
+    hba: 5
+    hbd: 0
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.61
+    full-molformula: C18H27NO5
 ---
 
 # Propanidid
@@ -67,7 +96,7 @@ tags:
 - **Compound ID:** `propanidid-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL2105345](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105345/) · max phase 4
+- **ChEMBL:** [CHEMBL2105345](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105345/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +106,21 @@ Butyrylcholinesterase inhibitor; approved/marketed compound catalogued by ChEMBL
 
 Butyrylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC N01AX04:** NERVOUS SYSTEM › ANESTHETICS, GENERAL › Other general anesthetics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 337.42 | 2.44 | 65.07 | 0/5 | 0 | C18H27NO5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cholinesterase (CHEMBL1914)|Cholinesterase]] - inhibitor · SINGLE PROTEIN
+- [[Acetylcholinesterase (CHEMBL220)|Acetylcholinesterase]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +129,13 @@ Butyrylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Distigmine]] (Acetylcholinesterase), [[Echothiophate]] (Acetylcholinesterase), [[Huperzine A]] (Acetylcholinesterase), [[Isoflurophate]] (Acetylcholinesterase), [[Itopride]] (Acetylcholinesterase), [[Minaprine]] (Acetylcholinesterase)
+- **Same ATC subgroup:** [[Esketamine (Spravato)]], [[Etomidate]], [[Ketamine]], [[Nitrous Oxide]], [[Propofol]]
 
 ## Safety routing
 

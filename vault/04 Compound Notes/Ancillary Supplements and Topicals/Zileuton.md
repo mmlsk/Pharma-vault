@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Zileuton
@@ -71,6 +73,39 @@ pk-source:
   revision: 1336258545
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL93
+  pref-name: ZILEUTON
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL215
+    name: Polyunsaturated fatty acid 5-lipoxygenase
+    action: INHIBITOR
+  properties:
+    full-mwt: 236.3
+    mw-freebase: 236.3
+    alogp: 2.73
+    psa: 66.56
+    hba: 3
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.62
+    full-molformula: C11H12N2O2S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: aee65202-fddb-497f-9f11-17cc727cb157
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=aee65202-fddb-497f-9f11-17cc727cb157
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Zileuton
@@ -84,7 +119,7 @@ pk-source:
 - **Compound ID:** `zileuton-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL93](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL93/) · max phase 4
+- **ChEMBL:** [CHEMBL93](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL93/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -93,6 +128,19 @@ Arachidonate 5-lipoxygenase inhibitor; approved/marketed compound catalogued by 
 ## Mechanism
 
 Arachidonate 5-lipoxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 236.3 | 2.73 | 66.56 | 2/3 | 0 | C11H12N2O2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Polyunsaturated fatty acid 5-lipoxygenase (CHEMBL215)|Polyunsaturated fatty acid 5-lipoxygenase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -112,6 +160,18 @@ Arachidonate 5-lipoxygenase inhibitor _(ChEMBL curated mechanism, as quoted by t
 | Metabolism | hepatic | Hepatic (CYP1A2, CYP2C9 and CYP3A4-mediated) |
 | CYP (metabolised by) | CYP1A2, CYP2C9, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Renal |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set aee65202…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=aee65202-fddb-497f-9f11-17cc727cb157), label version 20251130. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2.5)
+> - protein-binding: consistent (label values: 93)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Mesalamine]] (Polyunsaturated fatty acid 5-lipoxygenase), [[Mesalazine (5-ASA)]] (Polyunsaturated fatty acid 5-lipoxygenase), [[Pf-4191834]] (Polyunsaturated fatty acid 5-lipoxygenase), [[Sulfasalazine]] (Polyunsaturated fatty acid 5-lipoxygenase)
+- **Shared CYP substrate pool:** CYP1A2 (+42 others), CYP2C9 (+40 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

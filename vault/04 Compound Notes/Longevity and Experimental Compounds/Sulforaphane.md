@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL48802
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL48802
+  pref-name: SULFORAPHANE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 177.29
+    mw-freebase: 177.29
+    alogp: 1.25
+    psa: 35.42
+    hba: 3
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.27
+    full-molformula: C6H11NOS2
 ---
 
 # Sulforaphane
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `sulforaphane-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL48802](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL48802/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Broccoli-derived isothiocyanate and the best-characterised dietary Nrf2 activator.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 177.29 | 1.25 | 35.42 | 0/3 | 0 | C6H11NOS2 |
 
 ## Evidence boundaries
 

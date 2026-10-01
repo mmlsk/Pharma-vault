@@ -10,15 +10,15 @@ cluster: Androgens SARMs and PCT
 group: steroids
 class: null
 subclass: null
-mechanism: null
+mechanism: Androgen Receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1200623
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -57,6 +57,32 @@ tags:
 - source-derived
 - group/steroids
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1200623
+  pref-name: ETHYLESTRENOL
+  molecule-type: Small molecule
+  first-approval: 1964
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A14AB02
+  targets:
+  - id: CHEMBL1871
+    name: Androgen receptor
+    action: AGONIST
+  properties:
+    full-mwt: 288.48
+    mw-freebase: 288.48
+    alogp: 5.09
+    psa: 20.23
+    hba: 1
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 1
+    qed-weighted: 0.67
+    full-molformula: C20H32O
 ---
 
 # Ethylestrenol (Maxibolin)
@@ -71,10 +97,29 @@ tags:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Ethylestrenol, Maxibolin
+- **ChEMBL:** [CHEMBL1200623](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200623/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral 19-nor steroid that is metabolised to norethandrolone -- effectively a prodrug of a withdrawn drug.
+
+## Mechanism
+
+Androgen Receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1964
+- **ATC A14AB02:** ALIMENTARY TRACT AND METABOLISM › ANABOLIC STEROIDS › Estren derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 288.48 | 5.09 | 20.23 | 1/1 | 1 | C20H32O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Androgen receptor (CHEMBL1871)|Androgen receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -84,6 +129,12 @@ Oral 19-nor steroid that is metabolised to norethandrolone -- effectively a prod
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Anadrol (Oxymetholone)]] (Androgen receptor), [[Anavar (Oxandrolone)]] (Androgen receptor), [[Apalutamide (Erleada)]] (Androgen receptor), [[Apc-100]] (Androgen receptor), [[Bicalutamide (Casodex)]] (Androgen receptor), [[CB-03-01 (Clascoterone research formulation)]] (Androgen receptor), [[Clascoterone (Winlevi)]] (Androgen receptor), [[Cyproterone Acetate]] (Androgen receptor), [[Danazol]] (Androgen receptor), [[Darolutamide (Nubeqa)]] (Androgen receptor), [[Dianabol (Methandienone)]] (Androgen receptor), [[Dromostanolone Propionate]] (Androgen receptor)
 
 ## Safety routing
 

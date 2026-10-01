@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201662
+  pref-name: DESIRUDIN
+  molecule-type: Protein
+  first-approval: 1997
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B01AE01
+  targets:
+  - id: CHEMBL204
+    name: Prothrombin
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Desirudin
@@ -67,7 +83,7 @@ tags:
 - **Compound ID:** `desirudin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201662](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201662/) · max phase 4
+- **ChEMBL:** [CHEMBL1201662](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201662/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +93,16 @@ Thrombin inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMBL12016
 
 Thrombin inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1997
+- **ATC B01AE01:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Direct thrombin inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prothrombin (CHEMBL204)|Prothrombin]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +111,13 @@ Thrombin inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Antithrombin Alfa]] (Prothrombin), [[Argatroban]] (Prothrombin), [[Dabigatran (Pradaxa)]] (Prothrombin), [[Ichorcumab]] (Prothrombin), [[Lepirudin]] (Prothrombin), [[Ximelagatran]] (Prothrombin)
+- **Same ATC subgroup:** [[Argatroban]], [[Dabigatran Etexilate]], [[Lepirudin]], [[Ximelagatran]]
 
 ## Safety routing
 

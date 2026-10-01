@@ -8,15 +8,15 @@ cluster: Growth Hormone and Peptide Agents
 group: peptides
 class: null
 subclass: null
-mechanism: null
+mechanism: Oxytocin receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2037511
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,31 @@ tags:
 - source-derived
 - group/peptides
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2037511
+  pref-name: EPELSIBAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2049
+    name: Oxytocin receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 518.66
+    mw-freebase: 518.66
+    alogp: 2.76
+    psa: 91.84
+    hba: 5
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.64
+    full-molformula: C30H38N4O4
 ---
 
 # Epelsiban
@@ -68,10 +93,27 @@ tags:
 - **Compound ID:** `epelsiban-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL2037511](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2037511/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Acts at the oxytocin receptor to drive uterine contraction and milk ejection, or blocks it to suppress preterm labour; investigational antagonist.
+
+## Mechanism
+
+Oxytocin receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 518.66 | 2.76 | 91.84 | 1/5 | 1 | C30H38N4O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Oxytocin receptor (CHEMBL2049)|Oxytocin receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -81,6 +123,12 @@ Acts at the oxytocin receptor to drive uterine contraction and milk ejection, or
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Barusiban]] (Oxytocin receptor), [[Carbetocin]] (Oxytocin receptor), [[Oxytocin]] (Oxytocin receptor), [[Relcovaptan]] (Oxytocin receptor), [[Retosiban]] (Oxytocin receptor)
 
 ## Safety routing
 

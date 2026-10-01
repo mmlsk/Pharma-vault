@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL607
+chembl-max-phase: 4
 half-life:
   value: 2.5
   value-max: 4.0
@@ -66,6 +66,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Pethidine
@@ -73,6 +74,37 @@ pk-source:
   revision: 1373295642
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL607
+  pref-name: MEPERIDINE
+  molecule-type: Small molecule
+  first-approval: 1942
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N02AB02
+  - N02AB52
+  - N02AB72
+  targets: []
+  properties:
+    full-mwt: 247.34
+    mw-freebase: 247.34
+    alogp: 2.21
+    psa: 29.54
+    hba: 3
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.77
+    full-molformula: C15H21NO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Pethidine (Meperidine)
@@ -87,10 +119,24 @@ pk-source:
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Pethidine, Meperidine
+- **ChEMBL:** [CHEMBL607](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL607/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Old synthetic opioid largely abandoned because its normeperidine metabolite is a proconvulsant that accumulates.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1942
+- **Flags:** black-box warning
+- **ATC N02AB02:** NERVOUS SYSTEM › OPIOIDS › Phenylpiperidine derivatives
+- **ATC N02AB52:** NERVOUS SYSTEM › OPIOIDS › Phenylpiperidine derivatives
+- **ATC N02AB72:** NERVOUS SYSTEM › OPIOIDS › Phenylpiperidine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 247.34 | 2.21 | 29.54 | 0/3 | 0 | C15H21NO2 |
 
 ## Evidence boundaries
 
@@ -111,6 +157,15 @@ Old synthetic opioid largely abandoned because its normeperidine metabolite is a
 | CYP (metabolised by) | CYP2B6, CYP2C19, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Norpethidine; Pethidinic acid; others |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Fentanyl]]
+- **Shared CYP substrate pool:** CYP2B6 (+12 others), CYP2C19 (+43 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

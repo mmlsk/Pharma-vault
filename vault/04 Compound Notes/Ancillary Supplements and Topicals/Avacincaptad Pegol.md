@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL6068573
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,20 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL6068573
+  pref-name: AVACINCAPTAD PEGOL
+  molecule-type: Oligonucleotide
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - S01XA32
+  targets: []
+  properties: {}
 ---
 
 # Avacincaptad Pegol
@@ -67,10 +81,16 @@ tags:
 - **Compound ID:** `avacincaptad-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL6068573](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6068573/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits a step of the complement cascade; blocking terminal complement raises encapsulated-organism risk and requires meningococcal vaccination; C5 aptamer, intravitreal.
+
+## ChEMBL profile
+
+- **Molecule type:** Oligonucleotide
+- **ATC S01XA32:** SENSORY ORGANS › OTHER OPHTHALMOLOGICALS › Other ophthalmologicals
 
 ## Evidence boundaries
 
@@ -80,6 +100,12 @@ Inhibits a step of the complement cascade; blocking terminal complement raises e
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alteplase]], [[Cyclosporine]], [[NAC (N-Acetylcysteine)]], [[Pegcetacoplan]], [[Potassium Iodide (SSKI-KI)|Potassium Iodide (SSKI/KI)]], [[Rapamycin (Sirolimus)]], [[Retinol]], [[Sirolimus (Rapamycin)]], [[Vitamin C (Ascorbic Acid)]]
 
 ## Safety routing
 

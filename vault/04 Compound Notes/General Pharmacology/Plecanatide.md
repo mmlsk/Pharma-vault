@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: gi
 class: null
 subclass: null
-mechanism: null
+mechanism: Heat-stable enterotoxin receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2103867
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,25 @@ tags:
 - source-derived
 - group/gi
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2103867
+  pref-name: PLECANATIDE
+  molecule-type: Protein
+  first-approval: 2017
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - A06AX07
+  targets:
+  - id: CHEMBL1795197
+    name: Guanylyl cyclase C
+    action: AGONIST
+  properties:
+    full-mwt: 1681.91
+    mw-freebase: 1681.91
+    full-molformula: C65H104N18O26S4
 ---
 
 # Plecanatide
@@ -67,10 +86,30 @@ tags:
 - **Compound ID:** `plecanatide-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL2103867](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103867/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Uroguanylin analogue with pH-dependent activity, so it acts preferentially in the proximal small bowel.
+
+## Mechanism
+
+Heat-stable enterotoxin receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2017
+- **Flags:** black-box warning
+- **ATC A06AX07:** ALIMENTARY TRACT AND METABOLISM › DRUGS FOR CONSTIPATION › Other drugs for constipation
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1681.91 | - | - | -/- | - | C65H104N18O26S4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Guanylyl cyclase C (CHEMBL1795197)|Guanylyl cyclase C]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +119,13 @@ Uroguanylin analogue with pH-dependent activity, so it acts preferentially in th
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Linaclotide]] (Guanylyl cyclase C)
+- **Same ATC subgroup:** [[Linaclotide]], [[Lubiprostone]], [[Prucalopride]], [[Tegaserod]], [[Tenapanor]]
 
 ## Safety routing
 

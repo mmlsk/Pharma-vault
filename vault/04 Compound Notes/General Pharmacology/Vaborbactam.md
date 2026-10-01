@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Carbepenem-hydrolyzing beta-lactamase KPC inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3317857
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,25 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3317857
+  pref-name: VABORBACTAM
+  molecule-type: Small molecule
+  first-approval: 2017
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL6132
+    name: Carbapenem-hydrolyzing beta-lactamase KPC
+    action: INHIBITOR
+  properties:
+    full-mwt: 297.14
+    mw-freebase: 297.14
+    full-molformula: C12H16BNO5S
 ---
 
 # Vaborbactam
@@ -67,10 +86,28 @@ tags:
 - **Compound ID:** `vaborbactam-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL3317857](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3317857/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Cyclic boronate beta-lactamase inhibitor paired with meropenem, targeted specifically at KPC carbapenemases.
+
+## Mechanism
+
+Carbepenem-hydrolyzing beta-lactamase KPC inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2017
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 297.14 | - | - | -/- | - | C12H16BNO5S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Carbapenem-hydrolyzing beta-lactamase KPC (CHEMBL6132)|Carbapenem-hydrolyzing beta-lactamase KPC]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

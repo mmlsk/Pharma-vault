@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200689
+  pref-name: NITRIC OXIDE
+  molecule-type: Small molecule
+  first-approval: 1999
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R07AX01
+  targets:
+  - id: CHEMBL2111348
+    name: Soluble guanylate cyclase
+    action: ACTIVATOR
+  properties:
+    full-mwt: 30.01
+    mw-freebase: 30.01
+    alogp: -0.45
+    psa: 39.37
+    hba: 1
+    hbd: 0
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.36
+    full-molformula: 'NO'
 ---
 
 # Nitric Oxide
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `nitric-oxide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200689](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200689/) · max phase 4
+- **ChEMBL:** [CHEMBL1200689](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200689/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +103,20 @@ Soluble guanylate cyclase activator; approved/marketed compound catalogued by Ch
 
 Soluble guanylate cyclase activator _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1999
+- **ATC R07AX01:** RESPIRATORY SYSTEM › OTHER RESPIRATORY SYSTEM PRODUCTS › Other respiratory system products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 30.01 | -0.45 | 39.37 | 0/1 | 0 | NO |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Soluble guanylate cyclase (CHEMBL2111348)|Soluble guanylate cyclase]] - activator · PROTEIN COMPLEX GROUP
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +125,13 @@ Soluble guanylate cyclase activator _(ChEMBL curated mechanism, as quoted by the
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ataciguat (HMR1766)]] (Soluble guanylate cyclase), [[Cinaciguat]] (Soluble guanylate cyclase), [[Isosorbide Dinitrate]] (Soluble guanylate cyclase), [[Isosorbide Mononitrate]] (Soluble guanylate cyclase), [[Nitroglycerin]] (Soluble guanylate cyclase), [[Olinciguat]] (Soluble guanylate cyclase), [[Pentaerythritol Tetranitrate]] (Soluble guanylate cyclase), [[Praliciguat]] (Soluble guanylate cyclase), [[Riociguat]] (Soluble guanylate cyclase), [[Runcaciguat]] (Soluble guanylate cyclase), [[Vericiguat (Verquvo)]] (Soluble guanylate cyclase)
+- **Same ATC subgroup:** [[Ivacaftor (Kalydeco)]]
 
 ## Safety routing
 

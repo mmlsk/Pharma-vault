@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3182320
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3182320
+  pref-name: TROXERUTIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - C05CA04
+  - C05CA54
+  targets: []
+  properties:
+    full-mwt: 742.68
+    mw-freebase: 742.68
+    alogp: -2.69
+    psa: 297.12
+    hba: 19
+    hbd: 10
+    rtb: 15
+    num-ro5-violations: 3
+    qed-weighted: 0.08
+    full-molformula: C33H42O19
 ---
 
 # Troxerutin
@@ -67,10 +91,22 @@ tags:
 - **Compound ID:** `troxerutin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3182320](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3182320/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Hydroxyethylrutoside venotonic used in some countries for chronic venous insufficiency.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC C05CA04:** CARDIOVASCULAR SYSTEM › CAPILLARY STABILIZING AGENTS › Bioflavonoids
+- **ATC C05CA54:** CARDIOVASCULAR SYSTEM › CAPILLARY STABILIZING AGENTS › Bioflavonoids
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 742.68 | -2.69 | 297.12 | 10/19 | 3 | C33H42O19 |
 
 ## Evidence boundaries
 
@@ -80,6 +116,12 @@ Hydroxyethylrutoside venotonic used in some countries for chronic venous insuffi
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Diosmin]]
 
 ## Safety routing
 

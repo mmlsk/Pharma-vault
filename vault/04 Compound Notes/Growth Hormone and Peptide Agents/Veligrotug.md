@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2109357
 chembl-max-phase: 2
 half-life:
   value: null
@@ -55,6 +55,22 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2109357
+  pref-name: VELIGROTUG
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1957
+    name: Insulin-like growth factor 1 receptor
+    action: ANTAGONIST
+  properties: {}
 ---
 
 # Veligrotug
@@ -68,6 +84,7 @@ tags:
 - **Compound ID:** `veligrotug-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL2109357](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109357/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -77,6 +94,14 @@ Veligrotug is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is 
 
 insulin-like growth factor I receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Insulin-like growth factor 1 receptor (CHEMBL1957)|Insulin-like growth factor 1 receptor]] - antagonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +110,12 @@ insulin-like growth factor I receptor antagonist _(ChEMBL curated mechanism, as 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Figitumumab]] (Insulin-like growth factor 1 receptor), [[Ganitumab]] (Insulin-like growth factor 1 receptor), [[Istiratumab]] (Insulin-like growth factor 1 receptor), [[Linsitinib]] (Insulin-like growth factor 1 receptor), [[Masoprocol]] (Insulin-like growth factor 1 receptor), [[Mecasermin (Increlex)]] (Insulin-like growth factor 1 receptor), [[Mecasermin Rinfabate]] (Insulin-like growth factor 1 receptor), [[MGF (Mechano Growth Factor)]] (Insulin-like growth factor 1 receptor), [[Robatumumab]] (Insulin-like growth factor 1 receptor), [[Teprotumumab]] (Insulin-like growth factor 1 receptor)
 
 ## Safety routing
 

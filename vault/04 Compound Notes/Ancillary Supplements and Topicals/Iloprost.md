@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Iloprost
@@ -68,6 +69,15 @@ pk-source:
   revision: 1329257849
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 34036fc0-6832-d066-e063-6394a90a18a4
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=34036fc0-6832-d066-e063-6394a90a18a4
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Iloprost
@@ -103,6 +113,11 @@ Synthetic prostacyclin analogue, inhaled or intravenous, for pulmonary arterial 
 | Bioavailability | - | Not determined |
 | Metabolism | hepatic | Via β-oxidation to inactive tetranor-iloprost |
 | Excretion | mainly urinary | Kidney (68%) and fecal (12%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 34036fc0…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=34036fc0-6832-d066-e063-6394a90a18a4), label version 20260813. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 0.333, 0.5)
+> - protein-binding: consistent (label values: 60)
 
 ## Safety routing
 

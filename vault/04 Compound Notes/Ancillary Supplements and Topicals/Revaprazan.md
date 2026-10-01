@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1618279
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1618279
+  pref-name: REVAPRAZAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 362.45
+    mw-freebase: 362.45
+    alogp: 5.1
+    psa: 41.05
+    hba: 4
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 1
+    qed-weighted: 0.7
+    full-molformula: C22H23FN4
 ---
 
 # Revaprazan
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `revaprazan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1618279](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1618279/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits the gastric proton pump to suppress acid secretion; long-term use affects micronutrient and mineral absorption; potassium-competitive, South Korea.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 362.45 | 5.1 | 41.05 | 1/4 | 1 | C22H23FN4 |
 
 ## Evidence boundaries
 

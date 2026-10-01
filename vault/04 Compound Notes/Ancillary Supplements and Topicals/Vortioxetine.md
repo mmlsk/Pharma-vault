@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2204360
+chembl-max-phase: 4
 half-life:
   value: 66.0
   value-max: null
@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Vortioxetine
@@ -69,6 +71,37 @@ pk-source:
   revision: 1365717923
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2104993
+  pref-name: VORTIOXETINE
+  molecule-type: Small molecule
+  first-approval: 2013
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N06AX26
+  targets: []
+  properties:
+    full-mwt: 298.46
+    mw-freebase: 298.46
+    alogp: 3.86
+    psa: 15.27
+    hba: 3
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.93
+    full-molformula: C18H22N2S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 239215eb-be32-4286-9677-1e5556c6cccf
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=239215eb-be32-4286-9677-1e5556c6cccf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Vortioxetine
@@ -82,10 +115,22 @@ pk-source:
 - **Compound ID:** `vortioxetine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2204360](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2204360/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits serotonin reuptake through SERT; benefits, activation, sexual effects, and withdrawal profiles differ by agent.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2013
+- **Flags:** black-box warning
+- **ATC N06AX26:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Other antidepressants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 298.46 | 3.86 | 15.27 | 1/3 | 0 | C18H22N2S |
 
 ## Evidence boundaries
 
@@ -105,6 +150,18 @@ Inhibits serotonin reuptake through SERT; benefits, activation, sexual effects, 
 | Metabolism | hepatic | Liver, primarily CYP2D6-mediated oxidation |
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | - | 59% in urine, 26% in feces |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 239215eb…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=239215eb-be32-4286-9677-1e5556c6cccf), label version 20260423. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 66)
+> - protein-binding: consistent (label values: 98)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Agomelatine (Valdoxan)]], [[Brexanolone]], [[Bupropion (Wellbutrin)]], [[Desvenlafaxine]], [[Duloxetine (Cymbalta)]], [[Esketamine (Spravato)]], [[Levomilnacipran]], [[Minaprine]], [[Mirtazapine]], [[Nefazodone]], [[Tianeptine]], [[Trazodone (Desyrel)]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

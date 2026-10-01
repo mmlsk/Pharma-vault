@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1183349
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1183349
+  pref-name: ISAVUCONAZONIUM
+  molecule-type: Small molecule
+  first-approval: 2015
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 717.78
+    mw-freebase: 717.78
+    alogp: 4.58
+    psa: 159.37
+    hba: 12
+    hbd: 2
+    rtb: 13
+    num-ro5-violations: 2
+    qed-weighted: 0.13
+    full-molformula: C35H35F2N8O5S+
 ---
 
 # Isavuconazole
@@ -67,10 +89,21 @@ tags:
 - **Compound ID:** `isavuconazole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1183349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1183349/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Disrupts fungal ergosterol synthesis or membrane function; interaction and organ-toxicity profiles differ substantially.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2015
+- **Flags:** prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 717.78 | 4.58 | 159.37 | 2/12 | 2 | C35H35F2N8O5S+ |
 
 ## Evidence boundaries
 

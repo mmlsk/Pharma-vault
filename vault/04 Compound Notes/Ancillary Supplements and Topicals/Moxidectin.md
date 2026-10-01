@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2104415
+  pref-name: MOXIDECTIN
+  molecule-type: Small molecule
+  first-approval: 2018
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - P02CX03
+  targets: []
+  properties:
+    full-mwt: 639.83
+    mw-freebase: 639.83
+    alogp: 5.73
+    psa: 116.04
+    hba: 9
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 2
+    qed-weighted: 0.23
+    full-molformula: C37H53NO8
 ---
 
 # Moxidectin
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `moxidectin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2104415](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2104415/) · max phase 4
+- **ChEMBL:** [CHEMBL2104415](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2104415/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +99,16 @@ Unknown; approved/marketed compound catalogued by ChEMBL (CHEMBL2104415).
 ## Mechanism
 
 Unknown _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2018
+- **ATC P02CX03:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › ANTINEMATODAL AGENTS › Other antinematodals
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 639.83 | 5.73 | 116.04 | 2/9 | 2 | C37H53NO8 |
 
 ## Evidence boundaries
 

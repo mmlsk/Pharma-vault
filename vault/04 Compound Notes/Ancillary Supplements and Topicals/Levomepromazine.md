@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Levomepromazine
@@ -67,6 +68,38 @@ pk-source:
   revision: 1360365557
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1764
+  pref-name: LEVOMEPROMAZINE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05AA02
+  targets:
+  - id: CHEMBL2331075
+    name: D2-like dopamine receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 328.48
+    mw-freebase: 328.48
+    alogp: 4.5
+    psa: 15.71
+    hba: 4
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C19H24N2OS
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Levomepromazine
@@ -80,7 +113,7 @@ pk-source:
 - **Compound ID:** `levomepromazine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1764](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1764/) · max phase 4
+- **ChEMBL:** [CHEMBL1764](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1764/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +122,20 @@ D2-like dopamine receptor antagonist; approved/marketed compound catalogued by C
 ## Mechanism
 
 D2-like dopamine receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC N05AA02:** NERVOUS SYSTEM › ANTIPSYCHOTICS › Phenothiazines with aliphatic side-chain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 328.48 | 4.5 | 15.71 | 0/4 | 0 | C19H24N2OS |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[D2-like dopamine receptor (CHEMBL2331075)|D2-like dopamine receptor]] - antagonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -106,6 +153,15 @@ D2-like dopamine receptor antagonist _(ChEMBL curated mechanism, as quoted by th
 | Bioavailability | 50–60 % | ~50–60% |
 | Metabolism | hepatic | Hepatic |
 | Excretion | - · fe 0.01 | In feces and urine (metabolites), unchanged drug only 1% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Chlorpromazine]] (D2-like dopamine receptor), [[Droperidol]] (D2-like dopamine receptor), [[Haloperidol]] (D2-like dopamine receptor), [[Haloperidol Decanoate]] (D2-like dopamine receptor), [[Loxapine]] (D2-like dopamine receptor), [[Olanzapine]] (D2-like dopamine receptor), [[Rotigotine]] (D2-like dopamine receptor), [[Thioridazine]] (D2-like dopamine receptor)
+- **Same ATC subgroup:** [[Chlorpromazine]], [[Promazine]]
 
 ## Safety routing
 

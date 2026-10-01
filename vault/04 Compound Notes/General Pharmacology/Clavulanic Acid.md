@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL777
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL777
+  pref-name: CLAVULANIC ACID
+  molecule-type: Small molecule
+  first-approval: 1984
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 199.16
+    mw-freebase: 199.16
+    alogp: -1.1
+    psa: 87.07
+    hba: 4
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C8H9NO5
 ---
 
 # Clavulanic Acid
@@ -67,10 +90,20 @@ tags:
 - **Compound ID:** `clavulanate-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL777](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL777/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Suicide beta-lactamase inhibitor with negligible antibacterial activity of its own, paired with amoxicillin to restore activity against beta-lactamase producers.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1984
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 199.16 | -1.1 | 87.07 | 2/4 | 0 | C8H9NO5 |
 
 ## Evidence boundaries
 

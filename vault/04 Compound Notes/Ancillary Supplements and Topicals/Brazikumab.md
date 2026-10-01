@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin-23 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3833372
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3833372
+  pref-name: BRAZIKUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2364154
+    name: Interleukin-23
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Brazikumab
@@ -67,10 +83,23 @@ tags:
 - **Compound ID:** `brazikumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3833372](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833372/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Neutralizes IL-23 signaling to suppress pathogenic Th17 maintenance in immune-mediated disease.
+
+## Mechanism
+
+Interleukin-23 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-23 (CHEMBL2364154)|Interleukin-23]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -80,6 +109,12 @@ Neutralizes IL-23 signaling to suppress pathogenic Th17 maintenance in immune-me
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Briakinumab]] (Interleukin-23), [[Guselkumab]] (Interleukin-23), [[Mirikizumab]] (Interleukin-23), [[Risankizumab]] (Interleukin-23), [[Tildrakizumab]] (Interleukin-23), [[Ustekinumab]] (Interleukin-23)
 
 ## Safety routing
 

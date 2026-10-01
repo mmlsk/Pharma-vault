@@ -4,30 +4,65 @@
   const G = window.PV_GRAPH;
   if (!G) { document.getElementById("panel").textContent = "Brak graph-data.js - uruchom: make graph"; return; }
 
-  const CL_COLORS = ["#4f98a3", "#6daa45", "#bb653b", "#a86fdf", "#dd6974", "#d19900", "#5591c7", "#9aa2b4"];
+  const CL_COLORS = ["#4f98a3", "#6daa45", "#bb653b", "#a86fdf", "#dd6974", "#d19900", "#5591c7", "#9aa2b4", "#c2477e"];
   const CL_PL = {
     "Nootropics": "Nootropiki", "Metabolic and Incretin Agents": "Metabolizm i inkretyny",
     "Growth Hormone and Peptide Agents": "GH i peptydy", "Androgens SARMs and PCT": "Androgeny, SARM, PCT",
     "Cardiovascular and Lipid Agents": "Sercowo-naczyniowe i lipidy", "Longevity and Experimental Compounds": "Longevity i eksperymentalne",
     "Ancillary Supplements and Topicals": "Suplementy pomocnicze", "General Pharmacology": "Farmakologia ogólna",
+    "Novel Psychoactive Substances": "NPS i dopalacze",
   };
+  const IDS_PL = { catalogue: "katalog źródłowy", "curated-addition": "dodatek kuratorowany", "wikipedia-infobox": "infoboks Wikipedii", "chembl-name-match": "dokładna nazwa w ChEMBL" };
+  const VER_PL = { consistent: "zgodne z etykietą FDA", discrepant: "rozbieżne z etykietą FDA", "no-label-value": "etykieta bez wartości", "no-label": "brak etykiety FDA" };
+  const T = G.targets || [];
+  const byTarget = T.map(() => []);
   const KIND_PL = { hub: "Hub bezpieczeństwa", pathway: "Szlak", concept: "Koncepcja" };
   const C = G.compounds, GR = G.groups, CORE = G.core;
-  C.forEach((c, i) => { c.i = i; c.c = GR[c.g].c; c.hay = [c.n, c.id, ...(c.a || []), ...((c.pk && c.pk.cyp) || [])].join(" ").toLowerCase(); });
+  C.forEach((c, i) => {
+    c.i = i; c.c = GR[c.g].c; (c.tg || []).forEach((t) => byTarget[t].push(i));
+    c.hay = [c.n, c.id, ...(c.a || []), ...((c.pk && c.pk.cyp) || []), ...(c.tg || []).map((t) => T[t].n), ...(c.atc || []).map((a) => a[0])].join(" ").toLowerCase();
+    if (c.pk && c.pk.hl) { const u = { min: 1 / 60, h: 1, d: 24, wk: 168 }[c.pk.hl[2]]; if (u) c.hlh = Math.sqrt(c.pk.hl[0] * (c.pk.hl[1] || c.pk.hl[0])) * u; }
+  });
+  // shared-target neighbours (computed once on demand)
+  function neighbours(c) {
+    if (c._nb) return c._nb;
+    const score = new Map();
+    (c.tg || []).forEach((t) => byTarget[t].forEach((o) => { if (o !== c.i) score.set(o, (score.get(o) || 0) + 1); }));
+    c._nb = [...score.entries()].sort((a, b) => b[1] - a[1] || C[a[0]].n.localeCompare(C[b[0]].n)).map(([o, n]) => ({ i: o, n }));
+    return c._nb;
+  }
 
   const $ = (id) => document.getElementById(id);
   const cv = $("cv"), ctx = cv.getContext("2d"), tip = $("tip");
-  const state = { k: 1, tx: 0, ty: 0, sel: null, hover: null, clusters: new Set(G.clusters.map((_, i) => i)), pkOnly: false, cypOnly: false, hub: null };
+  const state = { k: 1, tx: 0, ty: 0, sel: null, hover: null, clusters: new Set(G.clusters.map((_, i) => i)), pkOnly: false, cypOnly: false, hub: null, ver: "", rel: true, focus: null, hlBin: null };
   let W = 0, H = 0, dpr = 1, raf = 0;
 
   // ---------- filters
-  const visible = (c) => state.clusters.has(c.c) && (!state.pkOnly || c.pk) && (!state.cypOnly || (c.pk && c.pk.cyp)) && (state.hub === null || c.l.includes(state.hub));
+  const HB = [-2, -1, 0, 1, 2, 3, 4]; // log10(hours) bin edges: 36 s … 10^4 h
+  const binOf = (h) => Math.max(0, Math.min(HB.length - 2, Math.floor(Math.log10(h)) - HB[0]));
+  const visible = (c) => state.clusters.has(c.c) && (!state.pkOnly || c.pk) && (!state.cypOnly || (c.pk && c.pk.cyp)) && (state.hub === null || c.l.includes(state.hub))
+    && (!state.ver || (state.ver === "chembl" ? c.tg : (c.v && c.v.s === state.ver))) && (state.hlBin === null || (c.hlh && binOf(c.hlh) === state.hlBin));
   function stats() {
     const vis = C.filter(visible).length;
     $("sAll").textContent = G.meta.substances.toLocaleString("pl");
     $("sVis").textContent = vis.toLocaleString("pl");
     $("sPk").textContent = G.meta.with_pk.toLocaleString("pl");
     $("sHl").textContent = C.filter((c) => c.pk && c.pk.hl).length.toLocaleString("pl");
+    $("sTg").textContent = (G.meta.with_targets || 0).toLocaleString("pl");
+    $("sFda").textContent = (G.meta.pk_fda_consistent || 0).toLocaleString("pl");
+    histogram();
+  }
+  // ---------- t½ histogram (log scale, visible compounds)
+  function histogram() {
+    const box = $("hist"); if (!box) return;
+    const prev = state.hlBin; state.hlBin = null;
+    const counts = HB.slice(0, -1).map(() => 0);
+    C.forEach((c) => { if (c.hlh && visible(c)) counts[binOf(c.hlh)]++; });
+    state.hlBin = prev;
+    const mx = Math.max(1, ...counts), lab = ["<0,1 h", "0,1–1 h", "1–10 h", "10–100 h", "100–1000 h", ">1000 h"];
+    box.innerHTML = counts.map((n, i) => `<button class="bar${state.hlBin === i ? " on" : ""}" data-bin="${i}" title="${lab[i]}: ${n} subst." aria-pressed="${state.hlBin === i}">
+      <span style="height:${Math.round(4 + 56 * n / mx)}px"></span><b>${n}</b><small>${lab[i]}</small></button>`).join("");
+    box.querySelectorAll("[data-bin]").forEach((b) => b.onclick = () => { const v = +b.dataset.bin; state.hlBin = state.hlBin === v ? null : v; stats(); search(); draw(); });
   }
 
   // ---------- view
@@ -35,10 +70,10 @@
     const r = cv.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; draw();
   }
+  const fitK = () => Math.min(W, H) / (2 * (G.meta.radius + Math.max(...GR.map((g) => g.r)) + 140));
   function fit() {
     if (!W || !H) return;
-    const ext = G.meta.radius + Math.max(...GR.map((g) => g.r)) + 140;
-    state.k = Math.min(W, H) / (2 * ext); state.tx = W / 2; state.ty = H / 2; draw();
+    state.k = fitK(); state.tx = W / 2; state.ty = H / 2; draw();
   }
   const toScreen = (x, y) => [x * state.k + state.tx, y * state.k + state.ty];
   const toWorld = (sx, sy) => [(sx - state.tx) / state.k, (sy - state.ty) / state.k];
@@ -61,6 +96,7 @@
       primary = css("--color-primary"), warn = css("--color-warning"), bg = css("--color-bg");
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
     const sel = state.sel, hubSel = sel && sel.type === "core" ? sel.i : state.hub;
+    const focus = sel && sel.type === "target" ? new Set(byTarget[sel.i]) : null;
 
     // group discs
     GR.forEach((g, gi) => {
@@ -99,16 +135,32 @@
       ctx.stroke();
     });
 
+    // shared-target edges of the selected compound / members of a selected target
+    const selC = sel && sel.type === "compound" ? C[sel.i] : null;
+    if (state.rel && selC && selC.tg) {
+      const [x, y] = toScreen(selC.x, selC.y), nb = neighbours(selC).slice(0, 60);
+      ctx.strokeStyle = css("--color-accent2") || "#c2477e"; ctx.lineWidth = 1.3; ctx.setLineDash([4, 3]); ctx.beginPath();
+      nb.forEach(({ i }) => { const o = C[i]; if (!visible(o)) return; const [ox, oy] = toScreen(o.x, o.y); ctx.moveTo(x, y); ctx.quadraticCurveTo((x + ox) / 2 + (oy - y) * 0.15, (y + oy) / 2 - (ox - x) * 0.15, ox, oy); });
+      ctx.stroke(); ctx.setLineDash([]);
+    }
+    if (focus && focus.size > 1 && focus.size < 400) {
+      const pts = [...focus].map((i) => C[i]).filter(visible), cx = pts.reduce((a, c) => a + c.x, 0) / pts.length, cy = pts.reduce((a, c) => a + c.y, 0) / pts.length;
+      const [sx, sy] = toScreen(cx, cy); ctx.strokeStyle = (css("--color-accent2") || "#c2477e") + "99"; ctx.lineWidth = 1; ctx.beginPath();
+      pts.forEach((c) => { const [x, y] = toScreen(c.x, c.y); ctx.moveTo(sx, sy); ctx.lineTo(x, y); }); ctx.stroke();
+      ctx.beginPath(); ctx.arc(sx, sy, 7, 0, 7); ctx.fillStyle = css("--color-accent2") || "#c2477e"; ctx.fill();
+    }
+
     // compounds
     const baseR = Math.max(1.4, Math.min(5.5, 4 * Math.sqrt(k)));
     C.forEach((c) => {
       const [x, y] = toScreen(c.x, c.y);
       if (x < -10 || y < -10 || x > W + 10 || y > H + 10) return;
       const on = visible(c), hl = hubSel !== null && hubSel !== undefined && c.l.includes(hubSel);
-      ctx.globalAlpha = on ? (hubSel !== null && hubSel !== undefined && !hl ? 0.18 : 1) : 0.07;
+      ctx.globalAlpha = on ? (focus ? (focus.has(c.i) ? 1 : 0.15) : hubSel !== null && hubSel !== undefined && !hl ? 0.18 : 1) : 0.07;
       ctx.fillStyle = CL_COLORS[c.c];
       ctx.beginPath(); ctx.arc(x, y, c.pk ? baseR : baseR * 0.7, 0, 7); ctx.fill();
       if (c.pk && c.pk.cyp && k > 0.9) { ctx.strokeStyle = warn; ctx.lineWidth = 1; ctx.stroke(); }
+      if (c.v && c.v.s === "discrepant" && k > 1.4) { ctx.strokeStyle = css("--color-error") || "#dd6974"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, baseR + 2, 0, 7); ctx.stroke(); }
     });
     ctx.globalAlpha = 1;
 
@@ -252,6 +304,14 @@
         <p class="note" style="margin:.5rem 0">Powiązania wynikają z reguł routingu w <code>generate_vault_notes.py</code> (triage grupy, regex cholinergiczny, substraty CYP) - nie są oceną ryzyka konkretnej substancji.</p>
         ${listHtml(linked.filter(visible))}`;
       if (fly) animateTo(n.x, n.y, Math.max(state.k, 0.9));
+    } else if (h.type === "target") {
+      const t = T[h.i], m = byTarget[h.i].map((i) => C[i]);
+      p.innerHTML = `<div class="label">Cel molekularny (ChEMBL) · ${esc(t.ty || "")}</div><div class="title">${esc(t.n)}</div>
+        <p class="muted">${m.length} substancji z katalogu działa na ten cel wg kuratorowanych mechanizmów ChEMBL.</p>
+        <div class="links"><a href="https://www.ebi.ac.uk/chembl/target_report_card/${esc(t.id)}/" target="_blank" rel="noopener">ChEMBL ${esc(t.id)} ↗</a></div>
+        ${listHtml(m)}`;
+      history.replaceState(null, "", "#target=" + t.id);
+      if (fly && m.length) { const cx = m.reduce((a, c) => a + c.x, 0) / m.length, cy = m.reduce((a, c) => a + c.y, 0) / m.length; animateTo(cx * 0.3, cy * 0.3, fitK() * 1.1); }
     } else {
       const g = GR[h.i], m = C.filter((c) => c.g === h.i);
       p.innerHTML = `<div class="label">Grupa · ${esc(CL_PL[G.clusters[g.c].name])}</div><div class="title">${esc(g.label)}</div>
@@ -277,15 +337,34 @@
       if (k.ex !== undefined) rows.push(["Wydalanie", k.ren === true ? "głównie z moczem" : k.ren === false ? "głównie pozanerkowo" : "—", (k.fe !== undefined ? `fe (niezmieniona) ${k.fe}; ` : "") + (k.ex || "")]);
     }
     const obs = "obsidian://open?vault=vault&file=" + encodeURIComponent(c.f);
+    const v = c.v, vf = v && v.f ? Object.entries(v.f) : [];
+    const verHtml = v ? `<div class="ver ver-${esc(v.s)}"><b>Weryfikacja PK:</b> ${esc(VER_PL[v.s] || v.s)}${vf.length ? " — " + vf.map(([f, [st, vals]]) =>
+      `${f === "half-life" ? "t½" : "wiązanie z białkami"}: ${esc(VER_PL[st] || st)}${vals.length ? ` (etykieta: ${vals.map((x) => (+x).toLocaleString("pl")).join(", ")}${f === "half-life" ? " h" : " %"})` : ""}`).join("; ") : ""}
+      ${v.u ? `<br><a href="${esc(v.u)}" target="_blank" rel="noopener">Etykieta FDA (DailyMed, wersja ${esc(v.et)}) ↗</a>` : ""}</div>` : "";
+    const facts = [];
+    if (c.mt) facts.push(["Typ cząsteczki", c.mt]);
+    if (c.fa) facts.push(["Pierwsza rejestracja", c.fa]);
+    if (c.atc) facts.push(["ATC", c.atc.map((a) => `${a[0]} ${a[1].toLowerCase()}`).join("; ")]);
+    if (c.pr) facts.push(["MW · ALogP · PSA · Ro5", c.pr.map((x) => x ?? "—").join(" · ")]);
+    if (c.ids) facts.push(["Identyfikacja ChEMBL", IDS_PL[c.ids] || c.ids]);
+    const nb = neighbours(c).slice(0, 14);
+    const chemblHtml = (facts.length || c.tg) ? `<div class="label" style="margin-top:1rem">Profil ChEMBL</div>
+      ${c.bb || c.wd ? `<div class="tags">${c.bb ? '<span class="tag warn">ostrzeżenie w ramce (black box)</span>' : ""}${c.wd ? '<span class="tag warn">wycofany</span>' : ""}</div>` : ""}
+      ${facts.length ? `<table class="pk">${facts.map(([a, b]) => `<tr><th>${a}</th><td>${esc(b)}</td></tr>`).join("")}</table>` : ""}
+      ${c.tg ? `<div class="label" style="margin-top:.8rem">Cele molekularne</div><div class="links">${c.tg.map((t) => `<button data-t="${t}">◎ ${esc(T[t].n)} <small>(${byTarget[t].length})</small></button>`).join("")}</div>` : ""}
+      ${nb.length ? `<div class="label" style="margin-top:.8rem">Wspólny cel (${neighbours(c).length})</div><div class="links">${nb.map(({ i, n }) =>
+        `<button data-c="${i}"><span class="dot" style="background:${CL_COLORS[C[i].c]};width:8px;height:8px;margin-right:6px"></span>${esc(C[i].n)}${n > 1 ? ` <small>×${n}</small>` : ""}</button>`).join("")}</div>` : ""}` : "";
     return `<div class="label">${esc(CL_PL[G.clusters[c.c].name])} · ${esc(g.label)}</div>
       <div class="title">${esc(c.n)}</div>
-      <div class="tags">${(c.t || []).map((t) => `<span class="tag warn">${esc(t)}</span>`).join("")}${c.ph ? `<span class="tag">ChEMBL faza ${c.ph}</span>` : ""}${k ? '<span class="tag">PK auto</span>' : ""}</div>
+      <div class="tags">${(c.t || []).map((t) => `<span class="tag warn">${esc(t)}</span>`).join("")}${c.ph ? `<span class="tag">ChEMBL faza ${c.ph}</span>` : ""}${k ? '<span class="tag">PK auto</span>' : ""}${v && v.s === "consistent" ? '<span class="tag ok">PK ✓ FDA</span>' : ""}${v && v.s === "discrepant" ? '<span class="tag warn">PK ≠ FDA</span>' : ""}</div>
       ${c.d ? `<p class="muted" style="margin-bottom:.6rem">${esc(c.d)}${c.d.length >= 420 ? "…" : ""}</p>` : ""}
       ${c.m ? `<p class="muted"><b>Mechanizm (ChEMBL):</b> ${esc(c.m)}</p>` : ""}
       <div class="label" style="margin-top:1rem">Farmakokinetyka</div>
       ${rows.length ? `<table class="pk">${rows.map(([a, b, t]) => `<tr><th>${a}</th><td>${esc(b) || ""}${t ? `<span class="raw">${esc(t)}</span>` : ""}</td></tr>`).join("")}</table>
         <p class="note" style="margin-top:.4rem">Źródło: <a href="${esc(k.src)}" target="_blank" rel="noopener">Wikipedia - ${esc(k.title)} (wersja przypięta)</a></p>`
         : '<p class="empty">Brak dopasowanych danych PK w infoboksie Wikipedii.</p>'}
+      ${verHtml}
+      ${chemblHtml}
       <div class="label" style="margin-top:1rem">Powiązania</div>
       <div class="links">${c.l.map((li) => `<button data-core="${li}">${KIND_PL[CORE[li].kind]}: ${esc(CORE[li].name)}</button>`).join("")}</div>
       <div class="label" style="margin-top:1rem">Otwórz</div>
@@ -296,6 +375,7 @@
   function wire(p) {
     p.querySelectorAll("[data-c]").forEach((b) => b.onclick = () => select({ type: "compound", i: +b.dataset.c }, true));
     p.querySelectorAll("[data-core]").forEach((b) => b.onclick = () => select({ type: "core", i: +b.dataset.core }, true));
+    p.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => select({ type: "target", i: +b.dataset.t }, true));
   }
 
   // ---------- sidebar controls
@@ -326,14 +406,18 @@
   };
   $("pkOnly").onchange = (e) => { state.pkOnly = e.target.checked; stats(); search(); draw(); };
   $("cypOnly").onchange = (e) => { state.cypOnly = e.target.checked; stats(); search(); draw(); };
+  $("relOn").onchange = (e) => { state.rel = e.target.checked; draw(); };
+  $("ver").onchange = (e) => { state.ver = e.target.value; stats(); search(); draw(); };
   const q = $("q"), res = $("results");
   function search() {
     const s = q.value.trim().toLowerCase();
     if (s.length < 2) { res.innerHTML = ""; return; }
     const hits = C.filter((c) => visible(c) && c.hay.includes(s))
       .sort((a, b) => (b.n.toLowerCase().startsWith(s) - a.n.toLowerCase().startsWith(s)) || a.n.length - b.n.length).slice(0, 40);
-    res.innerHTML = hits.length ? hits.map((c) => `<button role="option" data-c="${c.i}"><span class="dot" style="background:${CL_COLORS[c.c]}"></span>${esc(c.n)}<small>${c.pk ? "PK" : ""}</small></button>`).join("")
-      : '<p class="empty" style="padding:.4rem">Brak wyników przy obecnych filtrach.</p>';
+    const th = s.length >= 3 ? T.map((t, i) => [t, i]).filter(([t]) => (t.n || "").toLowerCase().includes(s)).slice(0, 6) : [];
+    res.innerHTML = th.map(([t, i]) => `<button role="option" data-t="${i}"><span class="dot" style="background:var(--color-accent2)"></span>◎ ${esc(t.n)}<small>${byTarget[i].length} subst.</small></button>`).join("") + (hits.length ? hits.map((c) => `<button role="option" data-c="${c.i}"><span class="dot" style="background:${CL_COLORS[c.c]}"></span>${esc(c.n)}<small>${c.pk ? "PK" : ""}</small></button>`).join("")
+      : (th.length ? "" : '<p class="empty" style="padding:.4rem">Brak wyników przy obecnych filtrach.</p>'));
+    res.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => select({ type: "target", i: +b.dataset.t }, true));
     res.querySelectorAll("[data-c]").forEach((b) => b.onclick = () => select({ type: "compound", i: +b.dataset.c }, true));
   }
   q.addEventListener("input", search);
@@ -346,5 +430,6 @@
   new ResizeObserver(resize).observe(cv);
   resize(); fit(); stats();
   const fromHash = decodeURIComponent(location.hash.slice(1));
-  if (fromHash) { const c = C.find((x) => x.id === fromHash); if (c) setTimeout(() => select({ type: "compound", i: c.i }, true), 50); }
+  if (fromHash.startsWith("target=")) { const ti = T.findIndex((t) => t.id === fromHash.slice(7)); if (ti >= 0) setTimeout(() => select({ type: "target", i: ti }, true), 50); }
+  else if (fromHash) { const c = C.find((x) => x.id === fromHash); if (c) setTimeout(() => select({ type: "compound", i: c.i }, true), 50); }
 })();

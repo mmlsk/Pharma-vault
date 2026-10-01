@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL154111
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL154111
+  pref-name: SALSALATE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N02BA06
+  targets: []
+  properties:
+    full-mwt: 258.23
+    mw-freebase: 258.23
+    alogp: 2.31
+    psa: 83.83
+    hba: 4
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.65
+    full-molformula: C14H10O5
 ---
 
 # Salsalate
@@ -67,10 +91,21 @@ tags:
 - **Compound ID:** `salsalate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL154111](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL154111/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Non-acetylated salicylate that spares platelets and has been studied for insulin resistance via NF-kB inhibition.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** prodrug
+- **ATC N02BA06:** NERVOUS SYSTEM › OTHER ANALGESICS AND ANTIPYRETICS › Salicylic acid and derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 258.23 | 2.31 | 83.83 | 2/4 | 0 | C14H10O5 |
 
 ## Evidence boundaries
 
@@ -80,6 +115,12 @@ Non-acetylated salicylate that spares platelets and has been studied for insulin
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Aloxiprin]], [[Aspirin]], [[Diflunisal]]
 
 ## Safety routing
 

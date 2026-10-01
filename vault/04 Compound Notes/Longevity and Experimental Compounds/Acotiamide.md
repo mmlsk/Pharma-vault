@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2107723
 chembl-max-phase: 3
 half-life:
   value: 10.9
@@ -57,6 +57,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Acotiamide
@@ -64,6 +65,35 @@ pk-source:
   revision: 1354487138
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2107723
+  pref-name: ACOTIAMIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A03FA10
+  targets: []
+  properties:
+    full-mwt: 450.56
+    mw-freebase: 450.56
+    alogp: 2.97
+    psa: 113.02
+    hba: 8
+    hbd: 3
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.51
+    full-molformula: C21H30N4O5S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Acotiamide
@@ -77,6 +107,7 @@ pk-source:
 - **Compound ID:** `acotiamide-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL2107723](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107723/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -85,6 +116,15 @@ Acotiamide is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is 
 ## Mechanism
 
 acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A03FA10:** ALIMENTARY TRACT AND METABOLISM › PROPULSIVES › Propulsives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 450.56 | 2.97 | 113.02 | 3/8 | 0 | C21H30N4O5S |
 
 ## Evidence boundaries
 
@@ -102,6 +142,14 @@ acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the sour
 | Protein binding | 84.21–85.95 % | 84.21–85.95% |
 | Metabolism | hepatic | UGT1A8 and 1A9 (major) |
 | Excretion | mainly non-renal | Feces (92.7%), urine (5.3%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Cisapride]], [[Domperidone]], [[Itopride]], [[Metoclopramide]]
 
 ## Safety routing
 

@@ -54,6 +54,33 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200989
+  pref-name: ALCLOMETASONE DIPROPIONATE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D07AB10
+  - S01BA10
+  targets:
+  - id: CHEMBL2034
+    name: Glucocorticoid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 521.05
+    mw-freebase: 521.05
+    alogp: 3.94
+    psa: 106.97
+    hba: 7
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.42
+    full-molformula: C28H37ClO7
 ---
 
 # Alclometasone Dipropionate
@@ -67,7 +94,7 @@ tags:
 - **Compound ID:** `alclometasone-dipropionate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200989](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200989/) · max phase 4
+- **ChEMBL:** [CHEMBL1200989](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200989/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +104,21 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC D07AB10:** DERMATOLOGICALS › CORTICOSTEROIDS, PLAIN › Corticosteroids, moderately potent (group II)
+- **ATC S01BA10:** SENSORY ORGANS › ANTIINFLAMMATORY AGENTS › Corticosteroids, plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 521.05 | 3.94 | 106.97 | 1/7 | 1 | C28H37ClO7 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucocorticoid receptor (CHEMBL2034)|Glucocorticoid receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +127,13 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor), [[Clocortolone Pivalate]] (Glucocorticoid receptor)
+- **Same ATC subgroup:** [[Betamethasone]], [[Cortisone Acetate]], [[Desonide]], [[Dexamethasone]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluorometholone]], [[Hydrocortisone (Cortef)]], [[Hydrocortisone Butyrate]], [[Hydrocortisone Probutate]], [[Loteprednol Etabonate]], [[Loteprednol Etabonate (loteprednol-etabonate-compound)|Loteprednol Etabonate]]
 
 ## Safety routing
 

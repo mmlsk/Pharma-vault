@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL383634
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -59,6 +59,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Gliquidone
@@ -66,6 +67,28 @@ pk-source:
   revision: 1329466247
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL383634
+  pref-name: GLIQUIDONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A10BB08
+  targets: []
+  properties:
+    full-mwt: 527.64
+    mw-freebase: 527.64
+    alogp: 3.52
+    psa: 121.88
+    hba: 6
+    hbd: 2
+    rtb: 7
+    num-ro5-violations: 1
+    qed-weighted: 0.53
+    full-molformula: C27H33N3O6S
 ---
 
 # Gliquidone
@@ -79,10 +102,20 @@ pk-source:
 - **Compound ID:** `gliquidone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL383634](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL383634/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Closes pancreatic beta-cell KATP channels to stimulate insulin release, with hypoglycemia as the central class risk.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A10BB08:** ALIMENTARY TRACT AND METABOLISM › BLOOD GLUCOSE LOWERING DRUGS, EXCL. INSULINS › Sulfonylureas
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 527.64 | 3.52 | 121.88 | 2/6 | 1 | C27H33N3O6S |
 
 ## Evidence boundaries
 
@@ -99,6 +132,12 @@ Closes pancreatic beta-cell KATP channels to stimulate insulin release, with hyp
 | Bioavailability | - | High (Tmax = 2–3 hours) |
 | Metabolism | hepatic | Extensive hepatic |
 | Excretion | mainly non-renal | Biliary (95%), renal (5%) |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Acetohexamide]], [[Chlorpropamide]], [[Glibenclamide]], [[Gliclazide]], [[Glimepiride]], [[Glipizide]], [[Glyburide]], [[Tolazamide]], [[Tolbutamide]]
 
 ## Safety routing
 

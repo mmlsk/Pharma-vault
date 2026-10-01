@@ -10,15 +10,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Melatonin receptor agonist; Serotonin 2c (5-HT2c) receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL10878
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: 2.0
@@ -65,6 +65,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Agomelatine
@@ -72,6 +73,41 @@ pk-source:
   revision: 1366468764
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL10878
+  pref-name: AGOMELATINE
+  molecule-type: Small molecule
+  first-approval: 2009
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N06AX22
+  targets:
+  - id: CHEMBL2094268
+    name: Melatonin receptor
+    action: AGONIST
+  - id: CHEMBL225
+    name: 5-hydroxytryptamine receptor 2C
+    action: ANTAGONIST
+  properties:
+    full-mwt: 243.31
+    mw-freebase: 243.31
+    alogp: 2.53
+    psa: 38.33
+    hba: 2
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.9
+    full-molformula: C15H17NO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Agomelatine (Valdoxan)
@@ -86,10 +122,30 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Agomelatine, Valdoxan
+- **ChEMBL:** [CHEMBL10878](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL10878/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Melatonin-receptor agonist and 5-HT2C antagonist antidepressant used outside the US; liver monitoring is required.
+
+## Mechanism
+
+Melatonin receptor agonist; Serotonin 2c (5-HT2c) receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2009
+- **ATC N06AX22:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Other antidepressants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 243.31 | 2.53 | 38.33 | 1/2 | 0 | C15H17NO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Melatonin receptor (CHEMBL2094268)|Melatonin receptor]] - agonist · PROTEIN FAMILY
+- [[5-hydroxytryptamine receptor 2C (CHEMBL225)|5-hydroxytryptamine receptor 2C]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -109,6 +165,16 @@ Melatonin-receptor agonist and 5-HT2C antagonist antidepressant used outside the
 | Metabolism | hepatic | Liver (90% CYP1A2 and 10% CYP2C9) |
 | CYP (metabolised by) | CYP1A2, CYP2C9 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Kidney (80%, mostly as metabolites) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Loxapine]] (5-hydroxytryptamine receptor 2C), [[Melatonin (oral)]] (Melatonin receptor), [[Mirtazapine]] (5-hydroxytryptamine receptor 2C), [[Olanzapine]] (5-hydroxytryptamine receptor 2C), [[Piromelatine]] (Melatonin receptor), [[Risperidone]] (5-hydroxytryptamine receptor 2C), [[Tasimelteon (Hetlioz)]] (Melatonin receptor), [[Thioridazine]] (5-hydroxytryptamine receptor 2C)
+- **Same ATC subgroup:** [[Brexanolone]], [[Bupropion (Wellbutrin)]], [[Desvenlafaxine]], [[Duloxetine (Cymbalta)]], [[Esketamine (Spravato)]], [[Levomilnacipran]], [[Minaprine]], [[Mirtazapine]], [[Nefazodone]], [[Tianeptine]], [[Trazodone (Desyrel)]], [[Venlafaxine (Effexor)]]
+- **Shared CYP substrate pool:** CYP1A2 (+42 others), CYP2C9 (+40 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

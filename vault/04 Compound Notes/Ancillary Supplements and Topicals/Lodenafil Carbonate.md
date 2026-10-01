@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297515
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297515
+  pref-name: LODENAFIL CARBONATE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 1035.22
+    mw-freebase: 1035.22
+    full-molformula: C47H62N12O11S2
 ---
 
 # Lodenafil Carbonate
@@ -67,10 +83,20 @@ tags:
 - **Compound ID:** `lodenafil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4297515](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297515/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits PDE5 so nitric-oxide/cGMP vasodilation persists in corporal and pulmonary vascular smooth muscle; approved in Brazil.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1035.22 | - | - | -/- | - | C47H62N12O11S2 |
 
 ## Evidence boundaries
 

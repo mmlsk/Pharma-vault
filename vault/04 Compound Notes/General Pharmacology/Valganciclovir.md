@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201314
+chembl-max-phase: 4
 half-life:
   value: 4.0
   value-max: null
@@ -61,6 +61,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Valganciclovir
@@ -68,6 +70,37 @@ pk-source:
   revision: 1373772191
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201314
+  pref-name: VALGANCICLOVIR
+  molecule-type: Small molecule
+  first-approval: 2001
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J05AB14
+  targets: []
+  properties:
+    full-mwt: 354.37
+    mw-freebase: 354.37
+    alogp: -1.44
+    psa: 171.37
+    hba: 10
+    hbd: 4
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.41
+    full-molformula: C14H22N6O5
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 4db6dd63-e56b-45a4-86b2-ee125a1854a0
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4db6dd63-e56b-45a4-86b2-ee125a1854a0
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Valganciclovir
@@ -81,10 +114,22 @@ pk-source:
 - **Compound ID:** `valganciclovir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1201314](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201314/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Valyl ester prodrug of ganciclovir that made oral CMV prophylaxis after transplantation practical.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2001
+- **Flags:** black-box warning, prodrug
+- **ATC J05AB14:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 354.37 | -1.44 | 171.37 | 4/10 | 0 | C14H22N6O5 |
 
 ## Evidence boundaries
 
@@ -103,6 +148,17 @@ Valyl ester prodrug of ganciclovir that made oral CMV prophylaxis after transpla
 | Bioavailability | 60 % | 60% |
 | Metabolism | - | Hydrolysed to ganciclovir |
 | Excretion | mainly urinary | Kidney |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 4db6dd63…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4db6dd63-e56b-45a4-86b2-ee125a1854a0), label version 20260624. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 0, 24, 624, 2400, 2976, 4800)
+> - protein-binding: consistent (label values: 1, 2, 10, 11)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Aciclovir]], [[Ganciclovir]], [[Molnupiravir]], [[Remdesivir]], [[Valaciclovir]]
 
 ## Safety routing
 

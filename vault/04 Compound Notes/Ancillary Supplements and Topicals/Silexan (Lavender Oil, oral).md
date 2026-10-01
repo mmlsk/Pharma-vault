@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108210
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -56,6 +56,20 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108210
+  pref-name: LAVENDER OIL
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05BX05
+  targets: []
+  properties: {}
 ---
 
 # Silexan (Lavender Oil, oral)
@@ -70,10 +84,16 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Silexan, Lavender Oil
+- **ChEMBL:** [CHEMBL2108210](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108210/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Standardised oral Lavandula angustifolia oil preparation licensed as a medicine in Germany for restlessness and subsyndromal anxiety.
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+- **ATC N05BX05:** NERVOUS SYSTEM › ANXIOLYTICS › Other anxiolytics
 
 ## Evidence boundaries
 
@@ -83,6 +103,12 @@ Standardised oral Lavandula angustifolia oil preparation licensed as a medicine 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Etifoxine]]
 
 ## Safety routing
 

@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ergoloid
@@ -68,6 +69,27 @@ pk-source:
   revision: 1337285213
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2364968
+  pref-name: ERGOLOID
+  molecule-type: Unknown
+  first-approval: 1953
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 2330.89
+    mw-freebase: 2330.89
+    full-molformula: C130H168N20O20
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ergoloid
@@ -81,7 +103,7 @@ pk-source:
 - **Compound ID:** `ergoloid-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2364968](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2364968/) · max phase 4
+- **ChEMBL:** [CHEMBL2364968](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2364968/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +112,15 @@ Dopamine receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEM
 ## Mechanism
 
 Dopamine receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+- **First approval (ChEMBL):** 1953
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 2330.89 | - | - | -/- | - | C130H168N20O20 |
 
 ## Evidence boundaries
 
@@ -107,6 +138,8 @@ Dopamine receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 | Protein binding | 98–99 % | 98–99% |
 | Bioavailability | 25 % | 25% |
 | Metabolism | - | 50% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

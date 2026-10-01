@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Tissue-type plasminogen activator exogenous protein
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201593
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,24 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1201593
+  pref-name: ALTEPLASE
+  molecule-type: Enzyme
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B01AD02
+  - S01XA13
+  targets:
+  - id: CHEMBL1873
+    name: Tissue-type plasminogen activator
+    action: EXOGENOUS PROTEIN
+  properties: {}
 ---
 
 # Alteplase
@@ -67,10 +85,26 @@ tags:
 - **Compound ID:** `alteplase-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201593](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201593/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Recombinant tPA for stroke, pulmonary embolism and myocardial infarction, within tight time windows.
+
+## Mechanism
+
+Tissue-type plasminogen activator exogenous protein _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Enzyme
+- **First approval (ChEMBL):** 1996
+- **ATC B01AD02:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Enzymes
+- **ATC S01XA13:** SENSORY ORGANS › OTHER OPHTHALMOLOGICALS › Other ophthalmologicals
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tissue-type plasminogen activator (CHEMBL1873)|Tissue-type plasminogen activator]] - exogenous protein · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +114,13 @@ Recombinant tPA for stroke, pulmonary embolism and myocardial infarction, within
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aminocaproic Acid]] (Tissue-type plasminogen activator), [[Reteplase]] (Tissue-type plasminogen activator), [[Tenecteplase]] (Tissue-type plasminogen activator)
+- **Same ATC subgroup:** [[Avacincaptad Pegol]], [[Cyclosporine]], [[NAC (N-Acetylcysteine)]], [[Pegcetacoplan]], [[Potassium Iodide (SSKI-KI)|Potassium Iodide (SSKI/KI)]], [[Rapamycin (Sirolimus)]], [[Reteplase]], [[Retinol]], [[Sirolimus (Rapamycin)]], [[Streptokinase]], [[Tenecteplase]], [[Urokinase]]
 
 ## Safety routing
 

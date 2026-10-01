@@ -9,15 +9,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Unknown
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL345714
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: null
@@ -62,6 +62,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Acipimox
@@ -69,6 +70,35 @@ pk-source:
   revision: 1329963383
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL345714
+  pref-name: ACIPIMOX
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C10AD06
+  targets: []
+  properties:
+    full-mwt: 154.12
+    mw-freebase: 154.12
+    alogp: -0.28
+    psa: 77.13
+    hba: 3
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.45
+    full-molformula: C6H6N2O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Acipimox
@@ -83,10 +113,24 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Olbetam
+- **ChEMBL:** [CHEMBL345714](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL345714/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Nicotinic-acid analogue and anti-lipolytic drug used for hypertriglyceridaemia in some countries. Controlled human studies show lower free fatty acids and triglycerides; flushing and metabolic tradeoffs still matter.
+
+## Mechanism
+
+Unknown _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C10AD06:** CARDIOVASCULAR SYSTEM › LIPID MODIFYING AGENTS, PLAIN › Nicotinic acid and derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 154.12 | -0.28 | 77.13 | 1/3 | 0 | C6H6N2O3 |
 
 ## Evidence boundaries
 
@@ -105,6 +149,14 @@ Nicotinic-acid analogue and anti-lipolytic drug used for hypertriglyceridaemia i
 | Bioavailability | 100 % | 100% |
 | Metabolism | - | None |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Niacin (extended-release)]], [[Niacin (Nicotinic Acid)]]
 
 ## Safety routing
 

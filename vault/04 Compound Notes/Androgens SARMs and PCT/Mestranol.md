@@ -56,6 +56,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Mestranol
@@ -63,6 +64,37 @@ pk-source:
   revision: 1365260747
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201151
+  pref-name: MESTRANOL
+  molecule-type: Small molecule
+  first-approval: 1961
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL206
+    name: Estrogen receptor
+    action: AGONIST
+  properties:
+    full-mwt: 310.44
+    mw-freebase: 310.44
+    alogp: 3.92
+    psa: 29.46
+    hba: 2
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C21H26O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Mestranol
@@ -76,7 +108,7 @@ pk-source:
 - **Compound ID:** `mestranol-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1201151](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201151/) · max phase 4
+- **ChEMBL:** [CHEMBL1201151](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201151/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +117,20 @@ Estrogen receptor alpha agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Estrogen receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1961
+- **Flags:** prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 310.44 | 3.92 | 29.46 | 1/2 | 0 | C21H26O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Estrogen receptor (CHEMBL206)|Estrogen receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -100,6 +146,14 @@ Estrogen receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the sou
 |---|---|---|
 | Elimination t½ | 50 min | Mestranol: 50 min; EE: 7–36 hours |
 | Metabolites | - | Ethinylestradiol |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dienestrol]] (Estrogen receptor), [[Diethylstilbestrol]] (Estrogen receptor), [[Elacestrant]] (Estrogen receptor), [[Enclomiphene]] (Estrogen receptor), [[Estradiol]] (Estrogen receptor), [[Estradiol Acetate]] (Estrogen receptor), [[Estradiol Cypionate]] (Estrogen receptor), [[Estradiol Valerate]] (Estrogen receptor), [[Estrone]] (Estrogen receptor), [[Ethinyl Estradiol]] (Estrogen receptor), [[Fulvestrant (Faslodex)]] (Estrogen receptor), [[Giredestrant]] (Estrogen receptor)
 
 ## Safety routing
 

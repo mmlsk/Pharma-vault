@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL80
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: 1.5
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Naloxone
@@ -67,6 +68,36 @@ pk-source:
   revision: 1375186586
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL80
+  pref-name: NALOXONE
+  molecule-type: Small molecule
+  first-approval: 1971
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A06AH04
+  - V03AB15
+  targets: []
+  properties:
+    full-mwt: 327.38
+    mw-freebase: 327.38
+    alogp: 1.3
+    psa: 70.0
+    hba: 5
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C19H21NO4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Naloxone
@@ -80,10 +111,22 @@ pk-source:
 - **Compound ID:** `naloxone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL80](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL80/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Short-acting opioid antagonist for overdose reversal; its half-life is shorter than most opioids, so re-narcotisation is a real risk.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1971
+- **ATC A06AH04:** ALIMENTARY TRACT AND METABOLISM › DRUGS FOR CONSTIPATION › Peripheral opioid receptor antagonists
+- **ATC V03AB15:** VARIOUS › ALL OTHER THERAPEUTIC PRODUCTS › Antidotes
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 327.38 | 1.3 | 70.0 | 2/5 | 0 | C19H21NO4 |
 
 ## Evidence boundaries
 
@@ -101,6 +144,14 @@ Short-acting opioid antagonist for overdose reversal; its half-life is shorter t
 | Bioavailability | 2 % | 2% (by mouth, 90% absorption but high first-pass metabolism); 43–54% (intranasal); 98% (intramuscular, subcutaneous) |
 | Metabolism | hepatic | Liver |
 | Excretion | - | Urine, bile |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Andexanet Alfa]], [[Flumazenil]], [[Fomepizole]], [[Glutathione]], [[Idarucizumab]], [[Methylene Blue]], [[NAC (N-Acetylcysteine)]], [[Naloxegol]], [[Phentolamine]], [[Physostigmine]], [[Potassium Iodide (SSKI-KI)|Potassium Iodide (SSKI/KI)]], [[Pralidoxime]]
 
 ## Safety routing
 

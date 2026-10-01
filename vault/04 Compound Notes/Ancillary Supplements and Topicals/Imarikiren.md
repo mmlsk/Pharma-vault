@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL3990145
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3990145
+  pref-name: IMARIKIREN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL286
+    name: Renin
+    action: INHIBITOR
+  properties:
+    full-mwt: 499.66
+    mw-freebase: 499.66
+    alogp: 2.4
+    psa: 88.93
+    hba: 7
+    hbd: 1
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.51
+    full-molformula: C27H41N5O4
 ---
 
 # Imarikiren
@@ -67,6 +93,7 @@ tags:
 - **Compound ID:** `imarikiren-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3990145](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990145/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +103,18 @@ Imarikiren is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is 
 
 renin inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 499.66 | 2.4 | 88.93 | 1/7 | 0 | C27H41N5O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Renin (CHEMBL286)|Renin]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +123,12 @@ renin inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Sitokiren]] (Renin)
 
 ## Safety routing
 

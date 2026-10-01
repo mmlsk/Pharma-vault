@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: GABA-B receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL701
+chembl-max-phase: 4
 half-life:
   value: 2.5
   value-max: 7.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Baclofen
@@ -68,6 +69,40 @@ pk-source:
   revision: 1374816189
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL701
+  pref-name: BACLOFEN
+  molecule-type: Small molecule
+  first-approval: 1977
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - M03BX01
+  targets:
+  - id: CHEMBL2111463
+    name: GABA-B receptor
+    action: AGONIST
+  properties:
+    full-mwt: 213.66
+    mw-freebase: 213.66
+    alogp: 1.86
+    psa: 63.32
+    hba: 2
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C10H12ClNO2
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: ab3760cd-a84b-49ba-88e3-b9ea73c55f82
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab3760cd-a84b-49ba-88e3-b9ea73c55f82
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Baclofen
@@ -81,10 +116,30 @@ pk-source:
 - **Compound ID:** `baclofen-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL701](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL701/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 GABA-B agonist for spasticity; abrupt withdrawal from intrathecal delivery is life-threatening.
+
+## Mechanism
+
+GABA-B receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1977
+- **Flags:** black-box warning
+- **ATC M03BX01:** MUSCULO-SKELETAL SYSTEM › MUSCLE RELAXANTS, CENTRALLY ACTING AGENTS › Other centrally acting agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 213.66 | 1.86 | 63.32 | 2/2 | 0 | C10H12ClNO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-B receptor (CHEMBL2111463)|GABA-B receptor]] - agonist · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -104,6 +159,17 @@ GABA-B agonist for spasticity; abrupt withdrawal from intrathecal delivery is li
 | Metabolism | - | 85% excreted in urine/faeces unchanged. 15% metabolised by deamination |
 | Metabolites | - | β-(p-chlorophenyl)-4-hydroxybutyric acid (γ-hydroxybaclofen) |
 | Excretion | mainly urinary | Kidney (70–80%) |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set ab3760cd…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab3760cd-a84b-49ba-88e3-b9ea73c55f82), label version 20260909. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Tetrazepam]]
 
 ## Safety routing
 

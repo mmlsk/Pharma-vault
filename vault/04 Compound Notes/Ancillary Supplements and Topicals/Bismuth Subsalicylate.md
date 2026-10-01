@@ -54,6 +54,24 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1120
+  pref-name: BISMUTH SUBSALICYLATE
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2094253
+    name: Cyclooxygenase
+    action: INHIBITOR
+  properties:
+    full-mwt: 362.09
+    mw-freebase: 362.09
+    full-molformula: C7H5BiO4
 ---
 
 # Bismuth Subsalicylate
@@ -67,7 +85,7 @@ tags:
 - **Compound ID:** `bismuth-subsalicylate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1120](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1120/) · max phase 4
+- **ChEMBL:** [CHEMBL1120](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1120/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +95,19 @@ Cyclooxygenase inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMB
 
 Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 362.09 | - | - | -/- | - | C7H5BiO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cyclooxygenase (CHEMBL2094253)|Cyclooxygenase]] - inhibitor · PROTEIN FAMILY
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +116,12 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acemetacin]] (Cyclooxygenase), [[Acetaminophen]] (Cyclooxygenase), [[Aloxiprin]] (Cyclooxygenase), [[Aspirin]] (Cyclooxygenase), [[Benzydamine]] (Cyclooxygenase), [[Clometacin]] (Cyclooxygenase), [[Dexibuprofen]] (Cyclooxygenase), [[Dexketoprofen]] (Cyclooxygenase), [[Diclofenac]] (Cyclooxygenase), [[Diflunisal]] (Cyclooxygenase), [[Esflurbiprofen]] (Cyclooxygenase), [[Fenclofenac]] (Cyclooxygenase)
 
 ## Safety routing
 

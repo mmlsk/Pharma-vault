@@ -8,17 +8,17 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: Integrin alpha-4/beta-1 inhibitor; Integrin alpha-4/beta-7 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201607
+chembl-max-phase: 4
 half-life:
-  value: 4.0
+  value: 11.0
   value-max: null
   unit: d
   notes: 11 ± 4 days
@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,8 @@ tags:
 - group/immunology
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Natalizumab
@@ -67,6 +69,32 @@ pk-source:
   revision: 1361797720
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201607
+  pref-name: NATALIZUMAB
+  molecule-type: Antibody
+  first-approval: 2004
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L04AG03
+  targets:
+  - id: CHEMBL2095184
+    name: Integrin alpha-4/beta-7
+    action: INHIBITOR
+  - id: CHEMBL1907599
+    name: Integrin alpha-4/beta-1
+    action: INHIBITOR
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: c5fdde91-1989-4dd2-9129-4f3323ea2962
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c5fdde91-1989-4dd2-9129-4f3323ea2962
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Natalizumab
@@ -80,10 +108,27 @@ pk-source:
 - **Compound ID:** `natalizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1201607](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201607/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Anti-alpha-4-integrin antibody, highly effective in multiple sclerosis and defined by the risk of progressive multifocal leukoencephalopathy.
+
+## Mechanism
+
+Integrin alpha-4/beta-1 inhibitor; Integrin alpha-4/beta-7 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2004
+- **Flags:** black-box warning
+- **ATC L04AG03:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Monoclonal antibodies
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Integrin alpha-4-beta-7 (CHEMBL2095184)|Integrin alpha-4/beta-7]] - inhibitor · PROTEIN COMPLEX
+- [[Integrin alpha-4-beta-1 (CHEMBL1907599)|Integrin alpha-4/beta-1]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -97,8 +142,19 @@ Anti-alpha-4-integrin antibody, highly effective in multiple sclerosis and defin
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 4 d | 11 ± 4 days |
+| Elimination t½ | 11 d | 11 ± 4 days |
 | Bioavailability | - | n/a |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set c5fdde91…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c5fdde91-1989-4dd2-9129-4f3323ea2962), label version 20250321. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 240, 264)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Vedolizumab]] (Integrin alpha-4/beta-7)
+- **Same ATC subgroup:** [[Alemtuzumab]], [[Anifrolumab]], [[Belimumab]], [[Inebilizumab]], [[Ocrelizumab]], [[Ofatumumab]], [[Teprotumumab]], [[Vedolizumab]]
 
 ## Safety routing
 

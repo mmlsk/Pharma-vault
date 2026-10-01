@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Phosphodiesterase 4 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL484785
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,25 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL484785
+  pref-name: CRISABOROLE
+  molecule-type: Small molecule
+  first-approval: 2016
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D11AH06
+  targets:
+  - id: CHEMBL2093863
+    name: Phosphodiesterase 4
+    action: INHIBITOR
+  properties:
+    full-mwt: 251.05
+    mw-freebase: 251.05
+    full-molformula: C14H10BNO3
 ---
 
 # Crisaborole (topical 2% ointment, Eucrisa)
@@ -70,10 +89,29 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Crisaborole, Eucrisa
+- **ChEMBL:** [CHEMBL484785](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL484785/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Boron-based topical PDE4 inhibitor for mild to moderate atopic dermatitis; steroid-free and unrestricted by body site.
+
+## Mechanism
+
+Phosphodiesterase 4 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2016
+- **ATC D11AH06:** DERMATOLOGICALS › OTHER DERMATOLOGICAL PREPARATIONS › Agents for dermatitis, excluding corticosteroids
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 251.05 | - | - | -/- | - | C14H10BNO3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Phosphodiesterase 4 (CHEMBL2093863)|Phosphodiesterase 4]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -83,6 +121,13 @@ Boron-based topical PDE4 inhibitor for mild to moderate atopic dermatitis; stero
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Apremilast]] (Phosphodiesterase 4), [[Cilomilast]] (Phosphodiesterase 4), [[Difamilast]] (Phosphodiesterase 4), [[Ensifentrine (Ohtuvayre)]] (Phosphodiesterase 4), [[Ibudilast]] (Phosphodiesterase 4), [[Oglemilast]] (Phosphodiesterase 4), [[Roflumilast]] (Phosphodiesterase 4), [[Roflumilast (topical)]] (Phosphodiesterase 4), [[Roflumilast Foam (Zoryve)]] (Phosphodiesterase 4), [[Rolipram]] (Phosphodiesterase 4), [[Tanimilast (CHF6001)]] (Phosphodiesterase 4), [[Tetomilast]] (Phosphodiesterase 4)
+- **Same ATC subgroup:** [[Abrocitinib (Cibinqo)]], [[Alitretinoin]], [[Alitretinoin (oral, Toctino)]], [[Delgocitinib]], [[Deuruxolitinib (Leqselvi)]], [[Dupilumab (Dupixent, subcutaneous)]], [[Lebrikizumab (Ebglyss)]], [[Nemolizumab]], [[Pimecrolimus]], [[Ruxolitinib]], [[Ruxolitinib (topical)]], [[Ruxolitinib cream 1.5% (Opzelura)]]
 
 ## Safety routing
 

@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Adrenergic receptor alpha-2 agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL459
+chembl-max-phase: 4
 half-life:
   value: 105.0
   value-max: null
@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Methyldopa
@@ -69,6 +71,39 @@ pk-source:
   revision: 1360767011
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL459
+  pref-name: METHYLDOPA
+  molecule-type: Small molecule
+  first-approval: 1962
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C02AB01
+  targets:
+  - id: CHEMBL2095158
+    name: Adrenergic receptor alpha-2
+    action: AGONIST
+  properties:
+    full-mwt: 211.22
+    mw-freebase: 211.22
+    alogp: 0.44
+    psa: 103.78
+    hba: 4
+    hbd: 4
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.54
+    full-molformula: C10H13NO4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 9e22e1d8-04ec-4b67-92ea-b09c706f2703
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9e22e1d8-04ec-4b67-92ea-b09c706f2703
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Methyldopa (Aldomet)
@@ -83,10 +118,29 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Methyldopa, Aldomet
+- **ChEMBL:** [CHEMBL459](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL459/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Centrally acting alpha-2 agonist prodrug from the 1960s, kept in use almost entirely for its pregnancy safety record.
+
+## Mechanism
+
+Adrenergic receptor alpha-2 agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1962
+- **ATC C02AB01:** CARDIOVASCULAR SYSTEM › ANTIADRENERGIC AGENTS, CENTRALLY ACTING › Methyldopa
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 211.22 | 0.44 | 103.78 | 4/4 | 0 | C10H13NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Adrenergic receptor alpha-2 (CHEMBL2095158)|Adrenergic receptor alpha-2]] - agonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -104,6 +158,16 @@ Centrally acting alpha-2 agonist prodrug from the 1960s, kept in use almost enti
 | Bioavailability | 50 % | ~50% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney for metabolites |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 9e22e1d8…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9e22e1d8-04ec-4b67-92ea-b09c706f2703), label version 20250328. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1.75)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Celiprolol]] (Adrenergic receptor alpha-2), [[Clonidine]] (Adrenergic receptor alpha-2), [[Idazoxan]] (Adrenergic receptor alpha-2), [[Mirtazapine]] (Adrenergic receptor alpha-2)
 
 ## Safety routing
 

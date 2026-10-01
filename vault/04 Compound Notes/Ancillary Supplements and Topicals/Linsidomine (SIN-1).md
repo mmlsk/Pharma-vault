@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1189150
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -56,6 +56,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1189150
+  pref-name: LINSIDOMINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01DX18
+  targets: []
+  properties:
+    full-mwt: 170.17
+    mw-freebase: 170.17
+    alogp: -0.39
+    psa: 66.18
+    hba: 4
+    hbd: 0
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.54
+    full-molformula: C6H10N4O2
 ---
 
 # Linsidomine (SIN-1)
@@ -70,10 +94,20 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Linsidomine, SIN-1
+- **ChEMBL:** [CHEMBL1189150](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1189150/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Active metabolite of molsidomine and a direct NO donor. Also generates superoxide as it releases NO, so it produces peroxynitrite — a genuine caveat for a molecule marketed as an NO source.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C01DX18:** CARDIOVASCULAR SYSTEM › VASODILATORS USED IN CARDIAC DISEASES › Other vasodilators used in cardiac diseases
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 170.17 | -0.39 | 66.18 | 0/4 | 0 | C6H10N4O2 |
 
 ## Evidence boundaries
 
@@ -83,6 +117,12 @@ Active metabolite of molsidomine and a direct NO donor. Also generates superoxid
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Nesiritide]], [[Nicorandil]], [[Vericiguat (Verquvo)]]
 
 ## Safety routing
 

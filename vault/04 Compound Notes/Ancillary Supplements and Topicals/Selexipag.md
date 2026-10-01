@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Prostanoid IP receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL238804
+chembl-max-phase: 4
 half-life:
   value: 0.8
   value-max: 2.5
@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Selexipag
@@ -69,6 +71,40 @@ pk-source:
   revision: 1329368752
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL238804
+  pref-name: SELEXIPAG
+  molecule-type: Small molecule
+  first-approval: 2015
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B01AC27
+  targets:
+  - id: CHEMBL1995
+    name: Prostacyclin receptor
+    action: AGONIST
+  properties:
+    full-mwt: 496.63
+    mw-freebase: 496.63
+    alogp: 3.9
+    psa: 101.49
+    hba: 7
+    hbd: 1
+    rtb: 12
+    num-ro5-violations: 0
+    qed-weighted: 0.38
+    full-molformula: C26H32N4O4S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: a7a23b87-f892-4e2c-8e2e-ebf841220f90
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a7a23b87-f892-4e2c-8e2e-ebf841220f90
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Selexipag
@@ -82,10 +118,30 @@ pk-source:
 - **Compound ID:** `selexipag-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL238804](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL238804/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Non-prostanoid selective IP receptor agonist, orally active with an active metabolite carrying most of the effect.
+
+## Mechanism
+
+Prostanoid IP receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2015
+- **Flags:** prodrug
+- **ATC B01AC27:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Platelet aggregation inhibitors excl. heparin
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 496.63 | 3.9 | 101.49 | 1/7 | 0 | C26H32N4O4S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prostacyclin receptor (CHEMBL1995)|Prostacyclin receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -106,6 +162,18 @@ Non-prostanoid selective IP receptor agonist, orally active with an active metab
 | CYP (metabolised by) | CYP2C8 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | ACT-333679, the free acid (active metabolite) |
 | Excretion | mainly non-renal | 93% faeces |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set a7a23b87…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a7a23b87-f892-4e2c-8e2e-ebf841220f90), label version 20260528. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 0.8, 2.5, 3, 4, 6.2, 13.5)
+> - protein-binding: consistent (label values: 99)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Abciximab]], [[Aloxiprin]], [[Aspirin]], [[Beraprost]], [[Cangrelor]], [[Cilostazol]], [[Clopidogrel (Plavix)]], [[Dipyridamole]], [[Epoprostenol]], [[Eptifibatide]], [[Prasugrel (Effient)]], [[Ticagrelor (Brilinta)]]
+- **Shared CYP substrate pool:** CYP2C8 (+15 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

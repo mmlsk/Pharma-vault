@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL76
+chembl-max-phase: 4
 half-life:
   value: null
   value-max: null
@@ -56,6 +56,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Chloroquine
@@ -63,6 +64,28 @@ pk-source:
   revision: 1368924934
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL76
+  pref-name: CHLOROQUINE
+  molecule-type: Small molecule
+  first-approval: 1949
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - P01BA01
+  targets: []
+  properties:
+    full-mwt: 319.88
+    mw-freebase: 319.88
+    alogp: 4.81
+    psa: 28.16
+    hba: 3
+    hbd: 1
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.76
+    full-molformula: C18H26ClN3
 ---
 
 # Chloroquine
@@ -76,10 +99,21 @@ pk-source:
 - **Compound ID:** `chloroquine-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL76](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL76/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The archetypal 4-aminoquinoline antimalarial, largely defeated by resistance but still central to malaria pharmacology and to lysosomal biology.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1949
+- **ATC P01BA01:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › ANTIMALARIALS › Aminoquinolines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 319.88 | 4.81 | 28.16 | 1/3 | 0 | C18H26ClN3 |
 
 ## Evidence boundaries
 
@@ -95,6 +129,12 @@ The archetypal 4-aminoquinoline antimalarial, largely defeated by resistance but
 |---|---|---|
 | Elimination t½ | - | 1-2 months |
 | Metabolism | hepatic | Liver |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Hydroxychloroquine]], [[Primaquine]], [[Tafenoquine]]
 
 ## Safety routing
 

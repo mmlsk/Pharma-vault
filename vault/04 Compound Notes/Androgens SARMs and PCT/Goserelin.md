@@ -49,7 +49,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -57,6 +57,8 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Goserelin
@@ -64,6 +66,30 @@ pk-source:
   revision: 1347154992
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201247
+  pref-name: GOSERELIN
+  molecule-type: Protein
+  first-approval: 1989
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L02AE03
+  targets: []
+  properties:
+    full-mwt: 1269.43
+    mw-freebase: 1269.43
+    full-molformula: C59H84N18O14
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 294b168b-6e5f-4db9-bf70-d599271458b3
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=294b168b-6e5f-4db9-bf70-d599271458b3
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: consistent
 ---
 
 # Goserelin
@@ -77,7 +103,7 @@ pk-source:
 - **Compound ID:** `goserelin-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1201247](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201247/) · max phase 4
+- **ChEMBL:** [CHEMBL1201247](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201247/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +112,16 @@ Gonadotropin-releasing hormone receptor agonist; approved/marketed compound cata
 ## Mechanism
 
 Gonadotropin-releasing hormone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1989
+- **ATC L02AE03:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › HORMONES AND RELATED AGENTS › Gonadotropin releasing hormone analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1269.43 | - | - | -/- | - | C59H84N18O14 |
 
 ## Evidence boundaries
 
@@ -101,6 +137,17 @@ Gonadotropin-releasing hormone receptor agonist _(ChEMBL curated mechanism, as q
 |---|---|---|
 | Elimination t½ | 4–5 h | 4–5 hours |
 | Protein binding | 27.3 % | 27.3% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 294b168b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=294b168b-6e5f-4db9-bf70-d599271458b3), label version 20260324. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: consistent (label values: 27.3)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Buserelin]], [[Histrelin]], [[Leuprolide (Lupron)]], [[Triptorelin (Trelstar)]]
 
 ## Safety routing
 

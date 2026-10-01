@@ -23,9 +23,9 @@ half-life:
   unit: h
   notes: 2 hours, with metabolites around 35 hours
 protein-binding:
-  value: 97.0
+  value: null
   value-max: null
-  unit: percent
+  unit: null
   notes: similar to THC (±97%)
 bioavailability:
   value: 20.0
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,7 @@ tags:
 - group/gi
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Nabilone
@@ -68,6 +69,14 @@ pk-source:
   revision: 1368778690
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 83c7ac15-ece9-47de-b83c-d575544fa449
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=83c7ac15-ece9-47de-b83c-d575544fa449
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Nabilone
@@ -99,8 +108,12 @@ Synthetic cannabinoid analogue for refractory chemotherapy-induced nausea, more 
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 2 h | 2 hours, with metabolites around 35 hours |
-| Protein binding | 97 % | similar to THC (±97%) |
+| Protein binding | - | similar to THC (±97%) |
 | Bioavailability | 20 % | 20% after first-pass by the liver |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 83c7ac15…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=83c7ac15-ece9-47de-b83c-d575544fa449), label version 20210119. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2, 35)
 
 ## Safety routing
 

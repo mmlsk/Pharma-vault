@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: B-lymphocyte antigen CD20 binding agent
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201576
+chembl-max-phase: 4
 half-life:
   value: 30.0
   value-max: 400.0
@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,8 @@ tags:
 - group/immunology
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Rituximab
@@ -67,6 +69,29 @@ pk-source:
   revision: 1372311002
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201576
+  pref-name: RITUXIMAB
+  molecule-type: Antibody
+  first-approval: 1997
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L01FA01
+  targets:
+  - id: CHEMBL2058
+    name: B-lymphocyte antigen CD20
+    action: BINDING AGENT
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: b172773b-3905-4a1c-ad95-bab4b6126563
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b172773b-3905-4a1c-ad95-bab4b6126563
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Rituximab
@@ -80,10 +105,26 @@ pk-source:
 - **Compound ID:** `rituximab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1201576](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201576/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The first therapeutic monoclonal antibody approved for cancer, now used far more widely in autoimmune disease. Depletes B cells for six to twelve months per cycle.
+
+## Mechanism
+
+B-lymphocyte antigen CD20 binding agent _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 1997
+- **Flags:** black-box warning
+- **ATC L01FA01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › MONOCLONAL ANTIBODIES AND ANTIBODY DRUG CONJUGATES › CD20 (Clusters of Differentiation 20) inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[B-lymphocyte antigen CD20 (CHEMBL2058)|B-lymphocyte antigen CD20]] - binding agent · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -100,6 +141,17 @@ The first therapeutic monoclonal antibody approved for cancer, now used far more
 | Elimination t½ | 30–400 h | 30 to 400 hours (varies by dose and length of treatment) |
 | Bioavailability | 100 % | 100% (IV) |
 | Excretion | - | Uncertain: may undergo phagocytosis and catabolism in RES |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set b172773b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b172773b-3905-4a1c-ad95-bab4b6126563), label version 20250106. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 124.08, 146.4, 336, 432, 528, 768)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Obinutuzumab]] (B-lymphocyte antigen CD20), [[Ocrelizumab]] (B-lymphocyte antigen CD20), [[Ofatumumab]] (B-lymphocyte antigen CD20)
+- **Same ATC subgroup:** [[Obinutuzumab]], [[Ofatumumab]]
 
 ## Safety routing
 

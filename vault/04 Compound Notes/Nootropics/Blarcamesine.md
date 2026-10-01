@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297224
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -55,6 +55,28 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4297224
+  pref-name: BLARCAMESINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 281.4
+    mw-freebase: 281.4
+    alogp: 3.53
+    psa: 12.47
+    hba: 2
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.85
+    full-molformula: C19H23NO
 ---
 
 # Blarcamesine
@@ -68,10 +90,19 @@ tags:
 - **Compound ID:** `blarcamesine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL4297224](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297224/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Engages the sigma-1 chaperone at the ER-mitochondrial interface, modulating calcium handling and ER stress responses; investigational, also called ANAVEX2-73.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 281.4 | 3.53 | 12.47 | 0/2 | 0 | C19H23NO |
 
 ## Evidence boundaries
 

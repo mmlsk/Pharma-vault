@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin-5 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108429
+chembl-max-phase: 4
 half-life:
   value: null
   value-max: null
@@ -61,6 +61,8 @@ tags:
 - group/immunology
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Mepolizumab
@@ -68,6 +70,21 @@ pk-source:
   revision: 1332048535
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108429
+  pref-name: MEPOLIZUMAB
+  molecule-type: Antibody
+  first-approval: 2015
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R03DX09
+  targets:
+  - id: CHEMBL1169600
+    name: Interleukin-5
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Mepolizumab
@@ -81,10 +98,25 @@ pk-source:
 - **Compound ID:** `mepolizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL2108429](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108429/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Anti-IL-5 antibody for severe eosinophilic asthma, eosinophilic granulomatosis with polyangiitis and hypereosinophilic syndrome.
+
+## Mechanism
+
+Interleukin-5 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2015
+- **ATC R03DX09:** RESPIRATORY SYSTEM › OTHER SYSTEMIC DRUGS FOR OBSTRUCTIVE AIRWAY DISEASES › Other systemic drugs for obstructive airway diseases
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-5 (CHEMBL1169600)|Interleukin-5]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -102,6 +134,13 @@ Anti-IL-5 antibody for severe eosinophilic asthma, eosinophilic granulomatosis w
 | Protein binding | - | None |
 | Bioavailability | 80 % | 80% (estimate) |
 | Metabolism | - | Proteolytic enzymes |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Reslizumab]] (Interleukin-5)
+- **Same ATC subgroup:** [[Benralizumab]], [[Omalizumab (Xolair)]], [[Reslizumab]], [[Roflumilast]], [[Roflumilast (topical)]], [[Roflumilast Foam (Zoryve)]], [[Tezepelumab]]
 
 ## Safety routing
 

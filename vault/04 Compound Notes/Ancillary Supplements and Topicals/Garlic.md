@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108463
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,19 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108463
+  pref-name: GARLIC
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Garlic
@@ -67,10 +80,15 @@ tags:
 - **Compound ID:** `garlic-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2108463](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108463/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Food-derived Allium preparation with small possible blood-pressure and lipid effects plus additive bleeding potential.
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
 
 ## Evidence boundaries
 

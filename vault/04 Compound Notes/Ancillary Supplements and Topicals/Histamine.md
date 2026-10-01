@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL90
+  pref-name: HISTAMINE
+  molecule-type: Small molecule
+  first-approval: 1939
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 111.15
+    mw-freebase: 111.15
+    alogp: -0.09
+    psa: 54.7
+    hba: 2
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.56
+    full-molformula: C5H9N3
 ---
 
 # Histamine
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `histamine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL90](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL90/) · max phase 4
+- **ChEMBL:** [CHEMBL90](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL90/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,16 @@ Histamine H1 receptor agonist; approved/marketed compound catalogued by ChEMBL (
 ## Mechanism
 
 Histamine H1 receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1939
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 111.15 | -0.09 | 54.7 | 2/2 | 0 | C5H9N3 |
 
 ## Evidence boundaries
 

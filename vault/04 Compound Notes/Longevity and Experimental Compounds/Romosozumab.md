@@ -8,15 +8,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Sclerostin inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2107874
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2107874
+  pref-name: ROMOSOZUMAB
+  molecule-type: Antibody
+  first-approval: 2019
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - M05BX06
+  targets:
+  - id: CHEMBL3580487
+    name: Sclerostin
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Romosozumab
@@ -67,10 +84,26 @@ tags:
 - **Compound ID:** `romosozumab-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL2107874](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107874/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Antibody that blocks sclerostin, both increasing bone formation and decreasing resorption.
+
+## Mechanism
+
+Sclerostin inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2019
+- **Flags:** black-box warning
+- **ATC M05BX06:** MUSCULO-SKELETAL SYSTEM › DRUGS AFFECTING BONE STRUCTURE AND MINERALIZATION › Other drugs affecting bone structure and mineralization
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Sclerostin (CHEMBL3580487)|Sclerostin]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +113,13 @@ Antibody that blocks sclerostin, both increasing bone formation and decreasing r
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Setrusumab]] (Sclerostin)
+- **Same ATC subgroup:** [[Denosumab (Prolia)]], [[Strontium Ranelate (Protelos)]], [[Voxzogo (Vosoritide)]]
 
 ## Safety routing
 

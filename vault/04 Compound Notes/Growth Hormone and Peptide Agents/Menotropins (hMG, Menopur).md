@@ -11,15 +11,15 @@ cluster: Growth Hormone and Peptide Agents
 group: peptides
 class: null
 subclass: null
-mechanism: null
+mechanism: Follicle stimulating hormone receptor agonist; Luteinizing hormone/Choriogonadotropin receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108427
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -58,6 +58,25 @@ tags:
 - source-derived
 - group/peptides
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108427
+  pref-name: MENOTROPINS
+  molecule-type: Protein
+  first-approval: 1975
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1854
+    name: Lutropin-choriogonadotropic hormone receptor
+    action: AGONIST
+  - id: CHEMBL2024
+    name: Follicle-stimulating hormone receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Menotropins (hMG, Menopur)
@@ -72,10 +91,25 @@ tags:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Menotropins, hMG, Menopur
+- **ChEMBL:** [CHEMBL2108427](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108427/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Human menopausal gonadotrophin: urinary FSH plus hCG-driven LH activity in roughly equal measure.
+
+## Mechanism
+
+Follicle stimulating hormone receptor agonist; Luteinizing hormone/Choriogonadotropin receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1975
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Lutropin-choriogonadotropic hormone receptor (CHEMBL1854)|Lutropin-choriogonadotropic hormone receptor]] - agonist · SINGLE PROTEIN
+- [[Follicle-stimulating hormone receptor (CHEMBL2024)|Follicle-stimulating hormone receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -85,6 +119,12 @@ Human menopausal gonadotrophin: urinary FSH plus hCG-driven LH activity in rough
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Choriogonadotropin Alfa]] (Lutropin-choriogonadotropic hormone receptor), [[Corifollitropin Alfa]] (Follicle-stimulating hormone receptor), [[Follitropin]] (Follicle-stimulating hormone receptor), [[Follitropin alfa (Gonal-f)]] (Follicle-stimulating hormone receptor), [[Follitropin Beta]] (Follicle-stimulating hormone receptor), [[Follitropin Delta]] (Follicle-stimulating hormone receptor), [[Gonadotropin, Chorionic]] (Lutropin-choriogonadotropic hormone receptor), [[Lh (Menotropins)]] (Lutropin-choriogonadotropic hormone receptor), [[Lutropin Alfa]] (Lutropin-choriogonadotropic hormone receptor), [[Urofollitropin (Bravelle-Fostimon)|Urofollitropin (Bravelle/Fostimon)]] (Follicle-stimulating hormone receptor)
 
 ## Safety routing
 

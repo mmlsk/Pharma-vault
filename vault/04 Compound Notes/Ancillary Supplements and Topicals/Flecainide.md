@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL652
+chembl-max-phase: 4
 half-life:
   value: 20.0
   value-max: null
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Flecainide
@@ -69,6 +70,35 @@ pk-source:
   revision: 1370307646
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL652
+  pref-name: FLECAINIDE
+  molecule-type: Small molecule
+  first-approval: 1985
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C01BC04
+  targets: []
+  properties:
+    full-mwt: 414.35
+    mw-freebase: 414.35
+    alogp: 3.44
+    psa: 59.59
+    hba: 4
+    hbd: 2
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C17H20F6N2O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Flecainide
@@ -82,10 +112,22 @@ pk-source:
 - **Compound ID:** `flecainide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL652](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL652/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Modulates fast cardiac sodium channels to alter impulse conduction; proarrhythmia makes clinical supervision essential.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1985
+- **Flags:** black-box warning
+- **ATC C01BC04:** CARDIOVASCULAR SYSTEM › ANTIARRHYTHMICS, CLASS I AND III › Antiarrhythmics, class Ic
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 414.35 | 3.44 | 59.59 | 2/4 | 0 | C17H20F6N2O3 |
 
 ## Evidence boundaries
 
@@ -105,6 +147,15 @@ Modulates fast cardiac sodium channels to alter impulse conduction; proarrhythmi
 | Metabolism | hepatic | CYP2D6 (limited) |
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Propafenone]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

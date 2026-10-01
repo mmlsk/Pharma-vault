@@ -67,6 +67,13 @@ pk-source:
   revision: 1357376898
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Quinidine
@@ -101,6 +108,8 @@ Modulates fast cardiac sodium channels to alter impulse conduction; proarrhythmi
 | Bioavailability | 70–85 % | 70–85% |
 | Metabolism | hepatic | 50–90% (by liver) |
 | Excretion | - · fe 0.2 | By the liver (20% as unchanged quinidine via urine) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

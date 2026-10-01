@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL435716
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,30 @@ tags:
 - source-derived
 - group/peptides
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL435716
+  pref-name: DEMOXYTOCIN
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01BB01
+  targets: []
+  properties:
+    full-mwt: 992.19
+    mw-freebase: 992.19
+    alogp: -2.55
+    psa: 373.51
+    hba: 14
+    hbd: 11
+    rtb: 17
+    num-ro5-violations: 3
+    qed-weighted: 0.07
+    full-molformula: C43H65N11O12S2
 ---
 
 # Demoxytocin
@@ -68,10 +92,20 @@ tags:
 - **Compound ID:** `demoxytocin-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL435716](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL435716/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Acts at the oxytocin receptor to drive uterine contraction and milk ejection, or blocks it to suppress preterm labour; buccal analogue.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **ATC H01BB01:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › POSTERIOR PITUITARY LOBE HORMONES › Oxytocin and analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 992.19 | -2.55 | 373.51 | 11/14 | 3 | C43H65N11O12S2 |
 
 ## Evidence boundaries
 
@@ -81,6 +115,12 @@ Acts at the oxytocin receptor to drive uterine contraction and milk ejection, or
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Carbetocin]], [[Oxytocin]]
 
 ## Safety routing
 

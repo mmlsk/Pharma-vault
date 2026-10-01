@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4298210
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4298210
+  pref-name: ISCALIMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1250358
+    name: Tumor necrosis factor receptor superfamily member 5
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Iscalimab
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `iscalimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4298210](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298210/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +93,14 @@ Iscalimab is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is t
 
 tumor necrosis factor receptor superfamily member 5 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor receptor superfamily member 5 (CHEMBL1250358)|Tumor necrosis factor receptor superfamily member 5]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +109,12 @@ tumor necrosis factor receptor superfamily member 5 inhibitor _(ChEMBL curated m
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Bleselumab]] (Tumor necrosis factor receptor superfamily member 5), [[Cd40 Ligand]] (Tumor necrosis factor receptor superfamily member 5), [[Cdx-1140]] (Tumor necrosis factor receptor superfamily member 5), [[Giloralimab]] (Tumor necrosis factor receptor superfamily member 5), [[Selicrelumab]] (Tumor necrosis factor receptor superfamily member 5), [[Sotigalimab]] (Tumor necrosis factor receptor superfamily member 5), [[Teneliximab]] (Tumor necrosis factor receptor superfamily member 5)
 
 ## Safety routing
 

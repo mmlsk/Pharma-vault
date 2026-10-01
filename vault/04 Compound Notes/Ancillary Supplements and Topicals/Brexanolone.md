@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Allopregnanolone
@@ -68,6 +69,38 @@ pk-source:
   revision: 1366926472
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL207538
+  pref-name: BREXANOLONE
+  molecule-type: Small molecule
+  first-approval: 2019
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N06AX29
+  targets:
+  - id: CHEMBL2093872
+    name: GABA-A receptor; anion channel
+    action: POSITIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 318.5
+    mw-freebase: 318.5
+    alogp: 4.6
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.77
+    full-molformula: C21H34O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Brexanolone
@@ -81,7 +114,7 @@ pk-source:
 - **Compound ID:** `brexanolone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL207538](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL207538/) · max phase 4
+- **ChEMBL:** [CHEMBL207538](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL207538/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +123,21 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2019
+- **Flags:** black-box warning
+- **ATC N06AX29:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Other antidepressants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 318.5 | 4.6 | 37.3 | 1/2 | 0 | C21H34O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-A receptor; anion channel (CHEMBL2093872)|GABA-A receptor; anion channel]] - positive allosteric modulator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -108,6 +156,15 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 | Bioavailability | 5 % | Oral: <5% |
 | Metabolism | hepatic | Non-CYP450 (keto-reduction via aldo-keto reductases (AKR), glucuronidation via glucuronosyltransferases (UGT), sulfation via sulfotransferases (SULT)) |
 | Excretion | - | Feces: 47%; Urine: 42% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abp-700]] (GABA-A receptor; anion channel), [[Adipiplon]] (GABA-A receptor; anion channel), [[Alprazolam]] (GABA-A receptor; anion channel), [[Butalbital]] (GABA-A receptor; anion channel), [[Cenobamate]] (GABA-A receptor; anion channel), [[Chlordiazepoxide]] (GABA-A receptor; anion channel), [[Cipepofol]] (GABA-A receptor; anion channel), [[Clobazam]] (GABA-A receptor; anion channel), [[Clomethiazole]] (GABA-A receptor; anion channel), [[Clonazepam]] (GABA-A receptor; anion channel), [[Clotiazepam]] (GABA-A receptor; anion channel), [[Darigabat]] (GABA-A receptor; anion channel)
+- **Same ATC subgroup:** [[Agomelatine (Valdoxan)]], [[Bupropion (Wellbutrin)]], [[Desvenlafaxine]], [[Duloxetine (Cymbalta)]], [[Esketamine (Spravato)]], [[Levomilnacipran]], [[Minaprine]], [[Mirtazapine]], [[Nefazodone]], [[Tianeptine]], [[Trazodone (Desyrel)]], [[Venlafaxine (Effexor)]]
 
 ## Safety routing
 

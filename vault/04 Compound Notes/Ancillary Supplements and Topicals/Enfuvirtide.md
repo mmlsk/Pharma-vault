@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Transmembrane glycoprotein gp41 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL525076
+chembl-max-phase: 4
 half-life:
   value: 3.8
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Enfuvirtide
@@ -68,6 +69,31 @@ pk-source:
   revision: 1352072970
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL525076
+  pref-name: ENFUVIRTIDE
+  molecule-type: Protein
+  first-approval: 2003
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AX07
+  targets:
+  - id: CHEMBL2362987
+    name: Transmembrane glycoprotein gp41
+    action: INHIBITOR
+  properties:
+    full-mwt: 4491.94
+    mw-freebase: 4491.94
+    full-molformula: C204H301N51O64
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Enfuvirtide
@@ -81,10 +107,29 @@ pk-source:
 - **Compound ID:** `enfuvirtide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL525076](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL525076/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits HIV integrase strand transfer as a component of combination antiretroviral therapy.
+
+## Mechanism
+
+Transmembrane glycoprotein gp41 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2003
+- **ATC J05AX07:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Other antivirals
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 4491.94 | - | - | -/- | - | C204H301N51O64 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Transmembrane glycoprotein gp41 (CHEMBL2362987)|Transmembrane glycoprotein gp41]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +148,14 @@ Inhibits HIV integrase strand transfer as a component of combination antiretrovi
 | Bioavailability | 84.3 % | 84.3% (SC) |
 | Metabolism | hepatic | Liver |
 | Excretion | - | unknown |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Baloxavir Marboxil]], [[Bulevirtide (Hepcludex)]], [[Favipiravir]], [[Fostemsavir]], [[Ibalizumab]], [[Lenacapavir]], [[Letermovir]], [[Maribavir]], [[Tecovirimat]]
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: oncology
 class: null
 subclass: null
-mechanism: null
+mechanism: Histone deacetylase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2105763
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -59,6 +59,8 @@ tags:
 - group/oncology
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Quisinostat
@@ -66,6 +68,30 @@ pk-source:
   revision: 1329688884
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2105763
+  pref-name: QUISINOSTAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2093865
+    name: Histone deacetylase
+    action: INHIBITOR
+  properties:
+    full-mwt: 394.48
+    mw-freebase: 394.48
+    alogp: 2.09
+    psa: 95.31
+    hba: 7
+    hbd: 3
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.44
+    full-molformula: C21H26N6O2
 ---
 
 # Quisinostat
@@ -79,10 +105,27 @@ pk-source:
 - **Compound ID:** `quisinostat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL2105763](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105763/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 A second-generation hydroxamate with unusually high potency against HDAC1, allowing weekly rather than daily dosing.
+
+## Mechanism
+
+Histone deacetylase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 394.48 | 2.09 | 95.31 | 3/7 | 0 | C21H26N6O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Histone deacetylase (CHEMBL2093865)|Histone deacetylase]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -97,6 +140,12 @@ A second-generation hydroxamate with unusually high potency against HDAC1, allow
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Bioavailability | - | oral |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abexinostat]] (Histone deacetylase), [[Belinostat]] (Histone deacetylase), [[Cudc-101]] (Histone deacetylase), [[Entinostat]] (Histone deacetylase), [[Fimepinostat]] (Histone deacetylase), [[Tacedinaline]] (Histone deacetylase)
 
 ## Safety routing
 

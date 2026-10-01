@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2106880
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -57,6 +57,30 @@ tags:
 - source-derived
 - group/steroids
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2106880
+  pref-name: METHENOLONE ACETATE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A14AA04
+  targets: []
+  properties:
+    full-mwt: 344.5
+    mw-freebase: 344.5
+    alogp: 4.7
+    psa: 43.37
+    hba: 3
+    hbd: 0
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.65
+    full-molformula: C22H32O3
 ---
 
 # Primobolan (Methenolone)
@@ -71,10 +95,20 @@ tags:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Primobolan, Methenolone
+- **ChEMBL:** [CHEMBL2106880](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106880/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Mild anabolic steroid with low androgenic activity, often used in cutting phases or by women.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A14AA04:** ALIMENTARY TRACT AND METABOLISM › ANABOLIC STEROIDS › Androstan derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 344.5 | 4.7 | 43.37 | 0/3 | 0 | C22H32O3 |
 
 ## Evidence boundaries
 
@@ -84,6 +118,12 @@ Mild anabolic steroid with low androgenic activity, often used in cutting phases
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Anadrol (Oxymetholone)]], [[Anavar (Oxandrolone)]], [[DHEA]], [[DHT (Dihydrotestosterone)]], [[Dianabol (Methandienone)]], [[Methandrostenolone]], [[Norethandrolone (Nilevar)]], [[Quinbolone (Anabolicum)]], [[Winstrol (Stanozolol)]]
 
 ## Safety routing
 

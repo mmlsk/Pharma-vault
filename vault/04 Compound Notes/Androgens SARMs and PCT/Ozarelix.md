@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2108312
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108312
+  pref-name: OZARELIX
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1855
+    name: Gonadotropin-releasing hormone receptor
+    action: ANTAGONIST
+  properties: {}
 ---
 
 # Ozarelix
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `ozarelix-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL2108312](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108312/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +93,14 @@ Ozarelix is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is go
 
 gonadotropin-releasing hormone receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Gonadotropin-releasing hormone receptor (CHEMBL1855)|Gonadotropin-releasing hormone receptor]] - antagonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +109,12 @@ gonadotropin-releasing hormone receptor antagonist _(ChEMBL curated mechanism, a
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abarelix]] (Gonadotropin-releasing hormone receptor), [[Acyline]] (Gonadotropin-releasing hormone receptor), [[Buserelin]] (Gonadotropin-releasing hormone receptor), [[Elagolix]] (Gonadotropin-releasing hormone receptor), [[Ganirelix (Fyremadel-Orgalutran)|Ganirelix (Fyremadel/Orgalutran)]] (Gonadotropin-releasing hormone receptor), [[Linzagolix]] (Gonadotropin-releasing hormone receptor), [[Opigolix]] (Gonadotropin-releasing hormone receptor), [[Relugolix (Orgovyx)]] (Gonadotropin-releasing hormone receptor), [[Zoptarelin Doxorubicin]] (Gonadotropin-releasing hormone receptor)
 
 ## Safety routing
 

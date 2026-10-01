@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Clobazam
@@ -68,6 +70,40 @@ pk-source:
   revision: 1371526607
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL70418
+  pref-name: CLOBAZAM
+  molecule-type: Small molecule
+  first-approval: 2005
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N05BA09
+  targets:
+  - id: CHEMBL2093872
+    name: GABA-A receptor; anion channel
+    action: POSITIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 300.75
+    mw-freebase: 300.75
+    alogp: 3.37
+    psa: 40.62
+    hba: 2
+    hbd: 0
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.76
+    full-molformula: C16H13ClN2O2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: fd1e63bf-496c-427c-83b7-6acabc00a5e5
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=fd1e63bf-496c-427c-83b7-6acabc00a5e5
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Clobazam
@@ -81,7 +117,7 @@ pk-source:
 - **Compound ID:** `clobazam-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL70418](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL70418/) · max phase 4
+- **ChEMBL:** [CHEMBL70418](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL70418/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +126,21 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2005
+- **Flags:** black-box warning
+- **ATC N05BA09:** NERVOUS SYSTEM › ANXIOLYTICS › Benzodiazepine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 300.75 | 3.37 | 40.62 | 0/2 | 0 | C16H13ClN2O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-A receptor; anion channel (CHEMBL2093872)|GABA-A receptor; anion channel]] - positive allosteric modulator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -109,6 +160,18 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 | Metabolism | hepatic | Liver |
 | Metabolites | - | • N-desmethylclobazam; (Norclobazam, 4-oxo-Lofendazam); • N-desmethylclobazam-3',4'-dihydrodiol; • 9-Hydroxy-N-desmethylclobazam;; • 4'-Hydroxy-N-desmethylclobazam; • 4'-Hydroxyclobazam |
 | Excretion | mainly urinary | Kidney (82%); Feces (11%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set fd1e63bf…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=fd1e63bf-496c-427c-83b7-6acabc00a5e5), label version 20260714. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 36, 42, 71, 82)
+> - protein-binding: consistent (label values: 70, 80, 90)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abp-700]] (GABA-A receptor; anion channel), [[Adipiplon]] (GABA-A receptor; anion channel), [[Alprazolam]] (GABA-A receptor; anion channel), [[Brexanolone]] (GABA-A receptor; anion channel), [[Butalbital]] (GABA-A receptor; anion channel), [[Cenobamate]] (GABA-A receptor; anion channel), [[Chlordiazepoxide]] (GABA-A receptor; anion channel), [[Cipepofol]] (GABA-A receptor; anion channel), [[Clomethiazole]] (GABA-A receptor; anion channel), [[Clonazepam]] (GABA-A receptor; anion channel), [[Clotiazepam]] (GABA-A receptor; anion channel), [[Darigabat]] (GABA-A receptor; anion channel)
+- **Same ATC subgroup:** [[Alprazolam]], [[Bentazepam]], [[Bromazepam]], [[Chlordiazepoxide]], [[Clotiazepam]], [[Diazepam]], [[Halazepam]], [[Lorazepam]], [[Oxazepam]], [[Prazepam]]
 
 ## Safety routing
 

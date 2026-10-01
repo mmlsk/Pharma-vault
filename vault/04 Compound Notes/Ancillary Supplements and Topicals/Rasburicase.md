@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Uric acid oxidative enzyme
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201594
+chembl-max-phase: 4
 half-life:
   value: 18.0
   value-max: null
@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Rasburicase
@@ -67,6 +69,30 @@ pk-source:
   revision: 1337699059
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201594
+  pref-name: RASBURICASE
+  molecule-type: Enzyme
+  first-approval: 2001
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - M04AX01
+  - V03AF07
+  targets:
+  - id: CHEMBL2364183
+    name: Uric acid
+    action: OXIDATIVE ENZYME
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 0ae10bc4-6b65-402f-9db5-2d7753054922
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0ae10bc4-6b65-402f-9db5-2d7753054922
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Rasburicase
@@ -80,10 +106,27 @@ pk-source:
 - **Compound ID:** `rasburicase-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201594](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201594/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Recombinant urate oxidase that converts uric acid to soluble allantoin, used for tumour lysis syndrome.
+
+## Mechanism
+
+Uric acid oxidative enzyme _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Enzyme
+- **First approval (ChEMBL):** 2001
+- **Flags:** black-box warning
+- **ATC M04AX01:** MUSCULO-SKELETAL SYSTEM › ANTIGOUT PREPARATIONS › Other antigout preparations
+- **ATC V03AF07:** VARIOUS › ALL OTHER THERAPEUTIC PRODUCTS › Detoxifying agents for antineoplastic treatment
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Uric acid (CHEMBL2364183)|Uric acid]] - oxidative enzyme · SMALL MOLECULE
 
 ## Evidence boundaries
 
@@ -99,6 +142,16 @@ Recombinant urate oxidase that converts uric acid to soluble allantoin, used for
 |---|---|---|
 | Elimination t½ | 18 h | 18 hrs |
 | Bioavailability | - | N/A |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 0ae10bc4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0ae10bc4-6b65-402f-9db5-2d7753054922), label version 20260730. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 15.7, 22.5)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Dexrazoxane (Zinecard)]], [[Glucarpidase]]
 
 ## Safety routing
 

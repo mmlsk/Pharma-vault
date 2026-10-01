@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1650443
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,29 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1650443
+  pref-name: TRELAGLIPTIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 357.39
+    mw-freebase: 357.39
+    alogp: 0.53
+    psa: 97.05
+    hba: 7
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.86
+    full-molformula: C18H20FN5O2
 ---
 
 # Trelagliptin
@@ -68,10 +91,19 @@ tags:
 - **Compound ID:** `trelagliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL1650443](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1650443/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits DPP-4 to prolong endogenous incretin signaling and glucose-dependent insulin release.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 357.39 | 0.53 | 97.05 | 1/7 | 0 | C18H20FN5O2 |
 
 ## Evidence boundaries
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1237026
+chembl-max-phase: 4
 half-life:
   value: 26.0
   value-max: 38.0
@@ -61,6 +61,9 @@ tags:
 - group/gh
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Tesamorelin
@@ -68,6 +71,26 @@ pk-source:
   revision: 1373828962
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1237026
+  pref-name: TESAMORELIN
+  molecule-type: Protein
+  first-approval: 2010
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01AC06
+  targets: []
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 3d783378-b02d-4f19-99dd-0fc91a042224
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3d783378-b02d-4f19-99dd-0fc91a042224
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
 ---
 
 # Tesamorelin
@@ -81,10 +104,17 @@ pk-source:
 - **Compound ID:** `tesamorelin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL1237026](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237026/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 GHRH analog peptide, FDA-approved for reducing visceral fat, notably in HIV-associated lipodystrophy.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2010
+- **ATC H01AC06:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › ANTERIOR PITUITARY LOBE HORMONES AND ANALOGUES › Somatropin and somatropin agonists
 
 ## Evidence boundaries
 
@@ -102,6 +132,16 @@ GHRH analog peptide, FDA-approved for reducing visceral fat, notably in HIV-asso
 | Bioavailability | 4 % | ≤4% |
 | Metabolism | - | Proteolysis |
 | Excretion | mainly urinary | Renal/proteolysis |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 3d783378…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3d783378-b02d-4f19-99dd-0fc91a042224), label version 20260729. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 0.133)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Lonapegsomatropin]], [[Mecasermin (Increlex)]], [[Mecasermin Rinfabate]], [[MGF (Mechano Growth Factor)]], [[Sermorelin]], [[Somapacitan]], [[Somatrem]], [[Somatrogon]], [[Somatropin (Human Growth Hormone)]]
 
 ## Safety routing
 

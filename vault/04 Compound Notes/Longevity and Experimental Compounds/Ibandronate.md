@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL997
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: 60.0
@@ -61,6 +61,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ibandronic acid
@@ -68,6 +69,35 @@ pk-source:
   revision: 1347358015
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL997
+  pref-name: IBANDRONIC ACID
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M05BA06
+  targets: []
+  properties:
+    full-mwt: 319.23
+    mw-freebase: 319.23
+    alogp: 0.5
+    psa: 138.53
+    hba: 4
+    hbd: 5
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.31
+    full-molformula: C9H23NO7P2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ibandronate
@@ -81,10 +111,21 @@ pk-source:
 - **Compound ID:** `ibandronate-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL997](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL997/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Bisphosphonate used to increase bone mineral density and reduce fracture risk.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **ATC M05BA06:** MUSCULO-SKELETAL SYSTEM › DRUGS AFFECTING BONE STRUCTURE AND MINERALIZATION › Bisphosphonates
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 319.23 | 0.5 | 138.53 | 5/4 | 0 | C9H23NO7P2 |
 
 ## Evidence boundaries
 
@@ -103,6 +144,14 @@ Bisphosphonate used to increase bone mineral density and reduce fracture risk.
 | Bioavailability | 0.6 % | 0.6% |
 | Metabolism | - | Nil |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alendronate (Fosamax)]], [[Clodronate]], [[Etidronate]], [[Pamidronate (Aredia)]], [[Risedronate]], [[Tiludronate]], [[Zoledronic Acid]]
 
 ## Safety routing
 

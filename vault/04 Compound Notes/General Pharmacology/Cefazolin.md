@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1435
+chembl-max-phase: 4
 half-life:
   value: 1.8
   value-max: null
@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Cefazolin
@@ -67,6 +69,36 @@ pk-source:
   revision: 1327396474
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1435
+  pref-name: CEFAZOLIN
+  molecule-type: Small molecule
+  first-approval: 1973
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J01DB04
+  targets: []
+  properties:
+    full-mwt: 454.52
+    mw-freebase: 454.52
+    alogp: -0.64
+    psa: 156.09
+    hba: 12
+    hbd: 2
+    rtb: 7
+    num-ro5-violations: 1
+    qed-weighted: 0.41
+    full-molformula: C14H14N8O4S3
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 1dc9de56-e259-4546-a1db-23119a8a088e
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1dc9de56-e259-4546-a1db-23119a8a088e
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Cefazolin
@@ -80,10 +112,21 @@ pk-source:
 - **Compound ID:** `cefazolin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1435](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1435/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 First-generation cephalosporin and the standard agent for surgical prophylaxis and for methicillin-sensitive Staphylococcus aureus bacteraemia, where it outperforms vancomycin.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1973
+- **ATC J01DB04:** ANTIINFECTIVES FOR SYSTEMIC USE › OTHER BETA-LACTAM ANTIBACTERIALS › First-generation cephalosporins
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 454.52 | -0.64 | 156.09 | 2/12 | 1 | C14H14N8O4S3 |
 
 ## Evidence boundaries
 
@@ -101,6 +144,10 @@ First-generation cephalosporin and the standard agent for surgical prophylaxis a
 | Bioavailability | - | NA |
 | Metabolism | - | ? |
 | Excretion | mainly urinary | kidney, unchanged |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 1dc9de56…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1dc9de56-e259-4546-a1db-23119a8a088e), label version 20260514. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1.8, 2)
 
 ## Safety routing
 

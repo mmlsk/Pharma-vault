@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL41
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: 3.0
@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Fluoxetine
@@ -71,6 +73,37 @@ pk-source:
   revision: 1373682188
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL41
+  pref-name: FLUOXETINE
+  molecule-type: Small molecule
+  first-approval: 1987
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N06AB03
+  targets: []
+  properties:
+    full-mwt: 309.33
+    mw-freebase: 309.33
+    alogp: 4.44
+    psa: 21.26
+    hba: 2
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.85
+    full-molformula: C17H18F3NO
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 6f4e4e9f-9ded-452f-b3ef-ab6aa9c72952
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6f4e4e9f-9ded-452f-b3ef-ab6aa9c72952
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Fluoxetine (Prozac)
@@ -85,10 +118,22 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Fluoxetine, Prozac
+- **ChEMBL:** [CHEMBL41](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL41/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Long-half-life SSRI for depression and related disorders; sexual dysfunction, activation, and serotonergic interactions matter.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1987
+- **Flags:** black-box warning
+- **ATC N06AB03:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Selective serotonin reuptake inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 309.33 | 4.44 | 21.26 | 1/2 | 0 | C17H18F3NO |
 
 ## Evidence boundaries
 
@@ -109,6 +154,18 @@ Long-half-life SSRI for depression and related disorders; sexual dysfunction, ac
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | • Norfluoxetine (desmethylfluoxetine) ; • Seproxetine (S-norfluoxetine, S-desmethylfluoxetine) |
 | Excretion | mainly urinary | Urine (80%), feces (15%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 6f4e4e9f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6f4e4e9f-9ded-452f-b3ef-ab6aa9c72952), label version 20260811. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 24, 72, 96, 144, 206.4, 223.2)
+> - protein-binding: consistent (label values: 94.5)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alaproclate]], [[Citalopram]], [[Escitalopram (Lexapro)]], [[Fluvoxamine]], [[Paroxetine]], [[Sertraline (Zoloft)]], [[Zimelidine]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

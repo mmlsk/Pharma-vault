@@ -8,17 +8,17 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: DNA inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL290960
+chembl-max-phase: 4
 half-life:
-  value: 1.19
+  value: 2.95
   value-max: null
   unit: h
   notes: 2.95 ± 1.19 hours
@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Nifurtimox
@@ -67,6 +69,39 @@ pk-source:
   revision: 1373219699
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL290960
+  pref-name: NIFURTIMOX
+  molecule-type: Small molecule
+  first-approval: 2020
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - P01CC01
+  targets:
+  - id: CHEMBL4495551
+    name: DNA
+    action: INHIBITOR
+  properties:
+    full-mwt: 287.3
+    mw-freebase: 287.3
+    alogp: 0.64
+    psa: 106.02
+    hba: 7
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.46
+    full-molformula: C10H13N3O5S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 90d09714-a8b1-4696-8ada-f99dc54d0721
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=90d09714-a8b1-4696-8ada-f99dc54d0721
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Nifurtimox
@@ -80,10 +115,29 @@ pk-source:
 - **Compound ID:** `nifurtimox-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL290960](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL290960/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Nitrofuran for Chagas disease and, combined with eflornithine, for late-stage African trypanosomiasis.
+
+## Mechanism
+
+DNA inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2020
+- **ATC P01CC01:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › AGENTS AGAINST LEISHMANIASIS AND TRYPANOSOMIASIS › Nitrofuran derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 287.3 | 0.64 | 106.02 | 0/7 | 0 | C10H13N3O5S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[DNA (CHEMBL4495551)|DNA]] - inhibitor · NUCLEIC-ACID
 
 ## Evidence boundaries
 
@@ -97,10 +151,14 @@ Nitrofuran for Chagas disease and, combined with eflornithine, for late-stage Af
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 1.19 h | 2.95 ± 1.19 hours |
+| Elimination t½ | 2.95 h | 2.95 ± 1.19 hours |
 | Bioavailability | - | Low |
 | Metabolism | hepatic | Liver (Cytochrome P450 oxidase (CYP) involved) |
 | Excretion | mainly urinary | Kidney, very low |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 90d09714…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=90d09714-a8b1-4696-8ada-f99dc54d0721), label version 20260303. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2.4, 3.6, 10, 28)
 
 ## Safety routing
 

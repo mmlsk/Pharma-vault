@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2048484
+  pref-name: CANAGLIFLOZIN ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 2011
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 444.52
+    mw-freebase: 444.52
+    alogp: 2.97
+    psa: 90.15
+    hba: 6
+    hbd: 4
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.49
+    full-molformula: C24H25FO5S
 ---
 
 # Canagliflozin Anhydrous
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `canagliflozin-anhydrous-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL2048484](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2048484/) · max phase 4
+- **ChEMBL:** [CHEMBL2048484](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2048484/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,16 @@ Sodium/glucose cotransporter 2 inhibitor; approved/marketed compound catalogued 
 ## Mechanism
 
 Sodium/glucose cotransporter 2 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2011
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 444.52 | 2.97 | 90.15 | 4/6 | 0 | C24H25FO5S |
 
 ## Evidence boundaries
 

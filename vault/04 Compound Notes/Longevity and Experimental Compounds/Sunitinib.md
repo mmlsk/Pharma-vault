@@ -8,15 +8,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Macrophage colony stimulating factor receptor inhibitor; Platelet-derived growth factor receptor alpha inhibitor; Platelet-derived growth factor receptor beta inhibitor; Stem cell growth factor receptor inhibitor; Tyrosine-protein kinase receptor FLT3 inhibitor; Tyrosine-protein kinase receptor RET inhibitor; Vascular endothelial growth factor receptor 1 inhibitor; Vascular endothelial growth factor receptor 2 inhibitor; Vascular endothelial growth factor receptor 3 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL535
+chembl-max-phase: 4
 half-life:
   value: 40.0
   value-max: 60.0
@@ -62,6 +62,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Sunitinib
@@ -69,6 +70,62 @@ pk-source:
   revision: 1328958998
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL535
+  pref-name: SUNITINIB
+  molecule-type: Small molecule
+  first-approval: 2006
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L01EX01
+  targets:
+  - id: CHEMBL1844
+    name: Macrophage colony-stimulating factor 1 receptor
+    action: INHIBITOR
+  - id: CHEMBL279
+    name: Vascular endothelial growth factor receptor 2
+    action: INHIBITOR
+  - id: CHEMBL1936
+    name: Mast/stem cell growth factor receptor Kit
+    action: INHIBITOR
+  - id: CHEMBL1913
+    name: Platelet-derived growth factor receptor beta
+    action: INHIBITOR
+  - id: CHEMBL2007
+    name: Platelet-derived growth factor receptor alpha
+    action: INHIBITOR
+  - id: CHEMBL1868
+    name: Vascular endothelial growth factor receptor 1
+    action: INHIBITOR
+  - id: CHEMBL1955
+    name: Vascular endothelial growth factor receptor 3
+    action: INHIBITOR
+  - id: CHEMBL1974
+    name: Receptor-type tyrosine-protein kinase FLT3
+    action: INHIBITOR
+  - id: CHEMBL2041
+    name: Proto-oncogene tyrosine-protein kinase receptor Ret
+    action: INHIBITOR
+  properties:
+    full-mwt: 398.48
+    mw-freebase: 398.48
+    alogp: 3.33
+    psa: 77.23
+    hba: 3
+    hbd: 3
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.63
+    full-molformula: C22H27FN4O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Sunitinib
@@ -82,10 +139,38 @@ pk-source:
 - **Compound ID:** `sunitinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL535](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL535/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits VEGF-receptor angiogenic signaling; hypertension, bleeding, thrombosis, and wound-healing effects require monitoring.
+
+## Mechanism
+
+Macrophage colony stimulating factor receptor inhibitor; Platelet-derived growth factor receptor alpha inhibitor; Platelet-derived growth factor receptor beta inhibitor; Stem cell growth factor receptor inhibitor; Tyrosine-protein kinase receptor FLT3 inhibitor; Tyrosine-protein kinase receptor RET inhibitor; Vascular endothelial growth factor receptor 1 inhibitor; Vascular endothelial growth factor receptor 2 inhibitor; Vascular endothelial growth factor receptor 3 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2006
+- **Flags:** black-box warning
+- **ATC L01EX01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › PROTEIN KINASE INHIBITORS › Other protein kinase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 398.48 | 3.33 | 77.23 | 3/3 | 0 | C22H27FN4O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Macrophage colony-stimulating factor 1 receptor (CHEMBL1844)|Macrophage colony-stimulating factor 1 receptor]] - inhibitor · SINGLE PROTEIN
+- [[Vascular endothelial growth factor receptor 2 (CHEMBL279)|Vascular endothelial growth factor receptor 2]] - inhibitor · SINGLE PROTEIN
+- [[Mast-stem cell growth factor receptor Kit (CHEMBL1936)|Mast/stem cell growth factor receptor Kit]] - inhibitor · SINGLE PROTEIN
+- [[Platelet-derived growth factor receptor beta (CHEMBL1913)|Platelet-derived growth factor receptor beta]] - inhibitor · SINGLE PROTEIN
+- [[Platelet-derived growth factor receptor alpha (CHEMBL2007)|Platelet-derived growth factor receptor alpha]] - inhibitor · SINGLE PROTEIN
+- [[Vascular endothelial growth factor receptor 1 (CHEMBL1868)|Vascular endothelial growth factor receptor 1]] - inhibitor · SINGLE PROTEIN
+- [[Vascular endothelial growth factor receptor 3 (CHEMBL1955)|Vascular endothelial growth factor receptor 3]] - inhibitor · SINGLE PROTEIN
+- [[Receptor-type tyrosine-protein kinase FLT3 (CHEMBL1974)|Receptor-type tyrosine-protein kinase FLT3]] - inhibitor · SINGLE PROTEIN
+- [[Proto-oncogene tyrosine-protein kinase receptor Ret (CHEMBL2041)|Proto-oncogene tyrosine-protein kinase receptor Ret]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -105,6 +190,16 @@ Inhibits VEGF-receptor angiogenic signaling; hypertension, bleeding, thrombosis,
 | Metabolism | hepatic | Liver (CYP3A4-mediated) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | Fecal (61%) and kidney (16%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dasatinib (Sprycel)]] (Mast/stem cell growth factor receptor Kit; Platelet-derived growth factor receptor beta), [[Dovitinib]] (Mast/stem cell growth factor receptor Kit; Receptor-type tyrosine-protein kinase FLT3), [[Lestaurtinib]] (Proto-oncogene tyrosine-protein kinase receptor Ret; Receptor-type tyrosine-protein kinase FLT3), [[Fedratinib]] (Receptor-type tyrosine-protein kinase FLT3), [[Pacritinib]] (Receptor-type tyrosine-protein kinase FLT3)
+- **Same ATC subgroup:** [[Cabozantinib]], [[Lenvatinib]], [[Pazopanib]], [[Sorafenib]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

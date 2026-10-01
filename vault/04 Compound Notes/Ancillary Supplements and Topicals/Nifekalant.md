@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL360861
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL360861
+  pref-name: NIFEKALANT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 405.46
+    mw-freebase: 405.46
+    alogp: 0.33
+    psa: 122.64
+    hba: 9
+    hbd: 2
+    rtb: 11
+    num-ro5-violations: 0
+    qed-weighted: 0.41
+    full-molformula: C19H27N5O5
 ---
 
 # Nifekalant
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `nifekalant-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL360861](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL360861/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Alters cardiac repolarization through potassium-channel effects; QT prolongation and torsades risk vary by agent.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 405.46 | 0.33 | 122.64 | 2/9 | 0 | C19H27N5O5 |
 
 ## Evidence boundaries
 

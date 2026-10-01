@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL501174
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL501174
+  pref-name: LYCOPENE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 536.89
+    mw-freebase: 536.89
+    alogp: 12.94
+    psa: 0.0
+    hba: 0
+    hbd: 0
+    rtb: 16
+    num-ro5-violations: 2
+    qed-weighted: 0.14
+    full-molformula: C40H56
 ---
 
 # Lycopene
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `lycopene-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL501174](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL501174/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Tomato-derived carotenoid antioxidant studied for photoprotection and prostate/cardiometabolic outcomes; supplementation results are mixed.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 536.89 | 12.94 | 0.0 | 0/0 | 2 | C40H56 |
 
 ## Evidence boundaries
 

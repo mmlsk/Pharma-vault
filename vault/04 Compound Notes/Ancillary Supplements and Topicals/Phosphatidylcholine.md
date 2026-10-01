@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL503481
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL503481
+  pref-name: PHOSPHATIDYLCHOLINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 798.19
+    mw-freebase: 798.19
+    alogp: 10.52
+    psa: 111.19
+    hba: 10
+    hbd: 0
+    rtb: 40
+    num-ro5-violations: 2
+    qed-weighted: 0.03
+    full-molformula: C40H80NO8PS2
 ---
 
 # Phosphatidylcholine
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `phosphatidylcholine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL503481](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL503481/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Membrane phospholipid and choline source used in nutrition and liver research; injectable cosmetic use has separate risks.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 798.19 | 10.52 | 111.19 | 0/10 | 2 | C40H80NO8PS2 |
 
 ## Evidence boundaries
 

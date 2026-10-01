@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL818
+  pref-name: IOBENGUANE
+  molecule-type: Small molecule
+  first-approval: 1994
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 275.09
+    mw-freebase: 275.09
+    alogp: 1.27
+    psa: 61.9
+    hba: 1
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.43
+    full-molformula: C8H10IN3
 ---
 
 # Iobenguane
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `iobenguane-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL818](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL818/) · max phase 4
+- **ChEMBL:** [CHEMBL818](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL818/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,15 @@ Norepinephrine transporter substrate; approved/marketed compound catalogued by C
 ## Mechanism
 
 Norepinephrine transporter substrate _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1994
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 275.09 | 1.27 | 61.9 | 3/1 | 0 | C8H10IN3 |
 
 ## Evidence boundaries
 

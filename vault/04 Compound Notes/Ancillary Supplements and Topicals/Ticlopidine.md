@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL833
+chembl-max-phase: 4
 half-life:
   value: 12.0
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ticlopidine
@@ -68,6 +69,35 @@ pk-source:
   revision: 1353661243
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL833
+  pref-name: TICLOPIDINE
+  molecule-type: Small molecule
+  first-approval: 1991
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - B01AC05
+  targets: []
+  properties:
+    full-mwt: 263.79
+    mw-freebase: 263.79
+    alogp: 3.96
+    psa: 3.24
+    hba: 2
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.79
+    full-molformula: C14H14ClNS
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ticlopidine
@@ -81,10 +111,22 @@ pk-source:
 - **Compound ID:** `ticlopidine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL833](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL833/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits platelet P2Y12 ADP signalling to reduce aggregation, at the cost of bleeding risk; largely superseded over neutropenia.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1991
+- **Flags:** black-box warning, prodrug
+- **ATC B01AC05:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Platelet aggregation inhibitors excl. heparin
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 263.79 | 3.96 | 3.24 | 0/2 | 0 | C14H14ClNS |
 
 ## Evidence boundaries
 
@@ -103,6 +145,14 @@ Inhibits platelet P2Y12 ADP signalling to reduce aggregation, at the cost of ble
 | Bioavailability | 80 % | >80% |
 | Metabolism | hepatic | Liver |
 | Excretion | - | Kidney and fecal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Abciximab]], [[Aloxiprin]], [[Aspirin]], [[Beraprost]], [[Cangrelor]], [[Cilostazol]], [[Clopidogrel (Plavix)]], [[Dipyridamole]], [[Epoprostenol]], [[Eptifibatide]], [[Prasugrel (Effient)]], [[Selexipag]]
 
 ## Safety routing
 

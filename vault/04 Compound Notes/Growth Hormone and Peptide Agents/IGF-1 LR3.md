@@ -64,6 +64,13 @@ pk-source:
   revision: 1160989525
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # IGF-1 LR3
@@ -95,6 +102,8 @@ Long-acting analog of IGF-1 with reduced binding-protein affinity, studied for m
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 56–72 h | 56-72 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

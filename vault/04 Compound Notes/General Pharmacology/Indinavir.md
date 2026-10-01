@@ -18,7 +18,7 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: 0.4
+  value: 1.8
   value-max: null
   unit: h
   notes: 1.8 ± 0.4 hours
@@ -69,6 +69,13 @@ pk-source:
   revision: 1351900307
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Indinavir
@@ -99,11 +106,19 @@ Early HIV protease inhibitor requiring rigid fasting and heavy hydration, rememb
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 0.4 h | 1.8 ± 0.4 hours |
+| Elimination t½ | 1.8 h | 1.8 ± 0.4 hours |
 | Protein binding | 60 % | 60% |
 | Bioavailability | 65 % | ~65% |
 | Metabolism | hepatic | Hepatic via CYP3A4 |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

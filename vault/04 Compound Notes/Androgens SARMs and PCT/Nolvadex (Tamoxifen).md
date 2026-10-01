@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL83
+chembl-max-phase: 4
 half-life:
   value: 5.0
   value-max: 7.0
@@ -66,6 +66,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tamoxifen
@@ -73,6 +74,35 @@ pk-source:
   revision: 1365921295
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL83
+  pref-name: TAMOXIFEN
+  molecule-type: Small molecule
+  first-approval: 1977
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L02BA01
+  targets: []
+  properties:
+    full-mwt: 371.52
+    mw-freebase: 371.52
+    alogp: 6.0
+    psa: 12.47
+    hba: 2
+    hbd: 0
+    rtb: 8
+    num-ro5-violations: 1
+    qed-weighted: 0.45
+    full-molformula: C26H29NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Nolvadex (Tamoxifen)
@@ -87,10 +117,22 @@ pk-source:
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Nolvadex, Tamoxifen
+- **ChEMBL:** [CHEMBL83](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL83/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 SERM used post-cycle and to manage gynecomastia by blocking estrogen receptors in breast tissue.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1977
+- **Flags:** black-box warning, prodrug
+- **ATC L02BA01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › HORMONE ANTAGONISTS AND RELATED AGENTS › Anti-estrogens
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 371.52 | 6.0 | 12.47 | 0/2 | 1 | C26H29NO |
 
 ## Evidence boundaries
 
@@ -111,6 +153,15 @@ SERM used post-cycle and to manage gynecomastia by blocking estrogen receptors i
 | CYP (metabolised by) | CYP2C9, CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | • N-Desmethyltamoxifen; • Endoxifen (4-hydroxy-N-desmethyltamoxifen); • Afimoxifene (4-hydroxytamoxifen); • N,N-Didesmethyltamoxifen; • Norendoxifen (4-hydroxy-N,N-didesmethyltamoxifen); • Others, conjugates |
 | Excretion | mainly non-renal | Feces: 65%; Urine: 9% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Elacestrant]], [[Fulvestrant (Faslodex)]], [[Toremifene (Fareston)]]
+- **Shared CYP substrate pool:** CYP2C9 (+40 others), CYP2D6 (+83 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

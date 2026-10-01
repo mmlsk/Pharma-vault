@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2111112
+chembl-max-phase: 4
 half-life:
   value: 3.0
   value-max: 5.5
@@ -58,6 +58,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Vernakalant
@@ -65,6 +67,35 @@ pk-source:
   revision: 1365682995
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2111112
+  pref-name: VERNAKALANT
+  molecule-type: Small molecule
+  first-approval: 2010
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01BG11
+  targets: []
+  properties:
+    full-mwt: 349.47
+    mw-freebase: 349.47
+    alogp: 2.64
+    psa: 51.16
+    hba: 5
+    hbd: 1
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C20H31NO4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Vernakalant
@@ -78,10 +109,21 @@ pk-source:
 - **Compound ID:** `vernakalant-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2111112](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2111112/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Alters cardiac repolarization through potassium-channel effects; QT prolongation and torsades risk vary by agent.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2010
+- **ATC C01BG11:** CARDIOVASCULAR SYSTEM › ANTIARRHYTHMICS, CLASS I AND III › Other antiarrhythmics, class I and III
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 349.47 | 2.64 | 51.16 | 1/5 | 0 | C20H31NO4 |
 
 ## Evidence boundaries
 
@@ -99,6 +141,15 @@ Alters cardiac repolarization through potassium-channel effects; QT prolongation
 | Protein binding | - | low |
 | Metabolism | hepatic | CYP2D6, glucuronidation |
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Cibenzoline]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

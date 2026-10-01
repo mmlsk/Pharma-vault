@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL391997
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL391997
+  pref-name: CAPSAZEPINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 376.91
+    mw-freebase: 376.91
+    alogp: 3.62
+    psa: 55.73
+    hba: 3
+    hbd: 3
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.56
+    full-molformula: C19H21ClN2O2S
 ---
 
 # Capsazepine
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `capsazepine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL391997](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL391997/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Activates TRPV1 on nociceptive afferents, where sustained exposure defunctionalises the nerve terminal and produces lasting analgesia; antagonist, research tool.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 376.91 | 3.62 | 55.73 | 3/3 | 0 | C19H21ClN2O2S |
 
 ## Evidence boundaries
 

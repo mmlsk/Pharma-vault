@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Bile acid receptor FXR agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL566315
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL566315
+  pref-name: OBETICHOLIC ACID
+  molecule-type: Small molecule
+  first-approval: 2016
+  black-box-warning: true
+  withdrawn: true
+  atc-codes:
+  - A05AA04
+  targets:
+  - id: CHEMBL2047
+    name: Bile acid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 420.63
+    mw-freebase: 420.63
+    alogp: 5.11
+    psa: 77.76
+    hba: 3
+    hbd: 3
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.58
+    full-molformula: C26H44O4
 ---
 
 # Obeticholic Acid (Ocaliva)
@@ -70,10 +96,30 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Obeticholic Acid, Ocaliva
+- **ChEMBL:** [CHEMBL566315](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL566315/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 FXR agonist for cholestatic liver disease; carries a boxed warning for fatal dosing errors.
+
+## Mechanism
+
+Bile acid receptor FXR agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2016
+- **Flags:** black-box warning, withdrawn
+- **ATC A05AA04:** ALIMENTARY TRACT AND METABOLISM › BILE THERAPY › Bile acids and derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 420.63 | 5.11 | 77.76 | 3/3 | 1 | C26H44O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Bile acid receptor (CHEMBL2047)|Bile acid receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -83,6 +129,13 @@ FXR agonist for cholestatic liver disease; carries a boxed warning for fatal dos
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Cilofexor]] (Bile acid receptor), [[Tropifexor]] (Bile acid receptor), [[Ursodeoxycholic Acid (UDCA)]] (Bile acid receptor)
+- **Same ATC subgroup:** [[TUDCA (Tauroursodeoxycholic Acid)]], [[Ursodeoxycholic Acid (UDCA)]]
 
 ## Safety routing
 

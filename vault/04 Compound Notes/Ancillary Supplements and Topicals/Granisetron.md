@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Granisetron
@@ -68,6 +69,15 @@ pk-source:
   revision: 1335737669
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: f7c7ffdd-8270-4030-bc1e-a1cb28a6de56
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f7c7ffdd-8270-4030-bc1e-a1cb28a6de56
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Granisetron
@@ -103,6 +113,11 @@ Antagonises 5-HT3 receptors on vagal afferents and in the area postrema; QT effe
 | Bioavailability | 60 % | 60% |
 | Metabolism | hepatic | Hepatic |
 | Excretion | - | Renal 11–12%, faecal 38% |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set f7c7ffdd…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f7c7ffdd-8270-4030-bc1e-a1cb28a6de56), label version 20260430. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 24)
+> - protein-binding: consistent (label values: 65)
 
 ## Safety routing
 

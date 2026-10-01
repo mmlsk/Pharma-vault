@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2106571
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -57,6 +57,28 @@ tags:
 - source-derived
 - group/steroids
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2106571
+  pref-name: CLOSTEBOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 322.88
+    mw-freebase: 322.88
+    alogp: 4.45
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.72
+    full-molformula: C19H27ClO2
 ---
 
 # Clostebol (4-Chlorotestosterone)
@@ -71,10 +93,19 @@ tags:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Clostebol, 4-Chlorotestosterone
+- **ChEMBL:** [CHEMBL2106571](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106571/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Chlorinated testosterone that cannot aromatise; notorious as an accidental doping positive from topical wound creams.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 322.88 | 4.45 | 37.3 | 1/2 | 0 | C19H27ClO2 |
 
 ## Evidence boundaries
 

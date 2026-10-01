@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: derm
 class: null
 subclass: null
-mechanism: null
+mechanism: Muscarinic acetylcholine receptor M3 antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1200604
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,7 @@ tags:
 - group/derm
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tropicamide
@@ -63,6 +64,40 @@ pk-source:
   revision: 1363790199
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1200604
+  pref-name: TROPICAMIDE
+  molecule-type: Small molecule
+  first-approval: 1960
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - S01FA06
+  - S01FA56
+  targets:
+  - id: CHEMBL245
+    name: Muscarinic acetylcholine receptor M3
+    action: ANTAGONIST
+  properties:
+    full-mwt: 284.36
+    mw-freebase: 284.36
+    alogp: 2.21
+    psa: 53.43
+    hba: 3
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.88
+    full-molformula: C17H20N2O2
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 378b5fe2-4b5d-4c87-a7d6-fd0caa6402af
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=378b5fe2-4b5d-4c87-a7d6-fd0caa6402af
+  checked: '2026-10-01'
+  fields:
+    protein-binding: no-label-value
 ---
 
 # Tropicamide
@@ -76,10 +111,30 @@ pk-source:
 - **Compound ID:** `tropicamide-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1200604](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200604/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The shortest-acting antimuscarinic mydriatic, standard for fundus examination.
+
+## Mechanism
+
+Muscarinic acetylcholine receptor M3 antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1960
+- **ATC S01FA06:** SENSORY ORGANS › MYDRIATICS AND CYCLOPLEGICS › Anticholinergics
+- **ATC S01FA56:** SENSORY ORGANS › MYDRIATICS AND CYCLOPLEGICS › Anticholinergics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 284.36 | 2.21 | 53.43 | 1/3 | 0 | C17H20N2O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Muscarinic acetylcholine receptor M3 (CHEMBL245)|Muscarinic acetylcholine receptor M3]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -94,6 +149,17 @@ The shortest-acting antimuscarinic mydriatic, standard for fundus examination.
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Protein binding | 45 % | 45% |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 378b5fe2…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=378b5fe2-4b5d-4c87-a7d6-fd0caa6402af), label version 20260410. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Atropine]] (Muscarinic acetylcholine receptor M3), [[Imidafenacin]] (Muscarinic acetylcholine receptor M3), [[Navafenterol]] (Muscarinic acetylcholine receptor M3), [[Oxybutynin]] (Muscarinic acetylcholine receptor M3), [[Pilocarpine]] (Muscarinic acetylcholine receptor M3), [[Talsaclidine]] (Muscarinic acetylcholine receptor M3)
+- **Same ATC subgroup:** [[Atropine]], [[Cyclopentolate]], [[Hyoscine (Scopolamine)]]
 
 ## Safety routing
 

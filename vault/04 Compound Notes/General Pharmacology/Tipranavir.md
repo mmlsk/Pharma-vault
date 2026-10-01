@@ -64,6 +64,13 @@ pk-source:
   revision: 1357072460
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tipranavir
@@ -98,6 +105,8 @@ Non-peptidic HIV protease inhibitor reserved for multidrug-resistant virus, carr
 | Protein binding | 99.9 % | 99.9% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly non-renal | Feces (82.3%), urine (4.4%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

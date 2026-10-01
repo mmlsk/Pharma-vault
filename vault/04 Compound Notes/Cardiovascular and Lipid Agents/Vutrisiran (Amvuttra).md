@@ -10,15 +10,15 @@ cluster: Cardiovascular and Lipid Agents
 group: cardio
 class: null
 subclass: null
-mechanism: null
+mechanism: Transthyretin mRNA rnai inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4594511
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,23 @@ tags:
 - source-derived
 - group/cardio
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4594511
+  pref-name: VUTRISIRAN
+  molecule-type: Oligonucleotide
+  first-approval: 2022
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N07XX18
+  targets:
+  - id: CHEMBL4296221
+    name: Transthyretin mRNA
+    action: RNAI INHIBITOR
+  properties: {}
 ---
 
 # Vutrisiran (Amvuttra)
@@ -70,10 +87,25 @@ tags:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Vutrisiran, Amvuttra
+- **ChEMBL:** [CHEMBL4594511](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594511/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 A GalNAc-conjugated siRNA against transthyretin given subcutaneously every three months, replacing patisiran's infusions and premedication with a far simpler regimen.
+
+## Mechanism
+
+Transthyretin mRNA rnai inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Oligonucleotide
+- **First approval (ChEMBL):** 2022
+- **ATC N07XX18:** NERVOUS SYSTEM › OTHER NERVOUS SYSTEM DRUGS › Other nervous system drugs
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Transthyretin mRNA (CHEMBL4296221)|Transthyretin mRNA]] - rnai inhibitor · NUCLEIC-ACID
 
 ## Evidence boundaries
 
@@ -83,6 +115,13 @@ A GalNAc-conjugated siRNA against transthyretin given subcutaneously every three
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Patisiran (Onpattro)]] (Transthyretin mRNA)
+- **Same ATC subgroup:** [[Amifampridine (3,4-Diaminopyridine)]], [[Deutetrabenazine]], [[Dextromethorphan]], [[Edaravone]], [[Inotersen (Tegsedi)]], [[Patisiran (Onpattro)]], [[Pitolisant (Wakix)]], [[Riluzole (Rilutek)]], [[Tafamidis (Vyndaqel)]], [[Tetrabenazine]], [[Troriluzole]], [[Valbenazine]]
 
 ## Safety routing
 

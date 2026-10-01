@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Triprolidine
@@ -69,6 +70,35 @@ pk-source:
   revision: 1354892877
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL855
+  pref-name: TRIPROLIDINE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AX07
+  targets: []
+  properties:
+    full-mwt: 278.4
+    mw-freebase: 278.4
+    alogp: 3.92
+    psa: 16.13
+    hba: 2
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.84
+    full-molformula: C19H22N2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Triprolidine
@@ -82,7 +112,7 @@ pk-source:
 - **Compound ID:** `triprolidine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL855](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL855/) · max phase 4
+- **ChEMBL:** [CHEMBL855](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL855/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -91,6 +121,16 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC R06AX07:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Other antihistamines for systemic use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 278.4 | 3.92 | 16.13 | 0/2 | 0 | C19H22N2 |
 
 ## Evidence boundaries
 
@@ -110,6 +150,15 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Metabolism | hepatic | Hepatic (CYP2D6) |
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Acrivastine]], [[Antazoline]], [[Astemizole]], [[Azatadine]], [[Azelastine]], [[Bilastine]], [[Cyproheptadine]], [[Desloratadine]], [[Ebastine]], [[Epinastine]], [[Fexofenadine]], [[Ketotifen]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

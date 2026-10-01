@@ -56,6 +56,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Cerivastatin
@@ -63,6 +64,35 @@ pk-source:
   revision: 1330601194
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1477
+  pref-name: CERIVASTATIN
+  molecule-type: Small molecule
+  first-approval: 1997
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - C10AA06
+  targets: []
+  properties:
+    full-mwt: 459.56
+    mw-freebase: 459.56
+    alogp: 4.88
+    psa: 99.88
+    hba: 5
+    hbd: 3
+    rtb: 11
+    num-ro5-violations: 0
+    qed-weighted: 0.44
+    full-molformula: C26H34FNO5
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Cerivastatin
@@ -76,7 +106,7 @@ pk-source:
 - **Compound ID:** `cerivastatin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1477](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1477/) · max phase 4
+- **ChEMBL:** [CHEMBL1477](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1477/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +115,17 @@ HMG-CoA reductase inhibitor; approved/marketed compound catalogued by ChEMBL (CH
 ## Mechanism
 
 HMG-CoA reductase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1997
+- **Flags:** withdrawn
+- **ATC C10AA06:** CARDIOVASCULAR SYSTEM › LIPID MODIFYING AGENTS, PLAIN › HMG CoA reductase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 459.56 | 4.88 | 99.88 | 3/5 | 0 | C26H34FNO5 |
 
 ## Evidence boundaries
 
@@ -99,6 +140,14 @@ HMG-CoA reductase inhibitor _(ChEMBL curated mechanism, as quoted by the source)
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 2–3 h | 2–3 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Atorvastatin (Lipitor)]], [[Fluvastatin]], [[Lovastatin (Mevacor)]], [[Pitavastatin (Livalo)]], [[Pravastatin (Pravachol)]], [[Rosuvastatin (Crestor)]], [[Simvastatin (Zocor)]]
 
 ## Safety routing
 

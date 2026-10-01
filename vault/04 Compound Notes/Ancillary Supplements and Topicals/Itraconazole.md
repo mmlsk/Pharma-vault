@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Itraconazole
@@ -69,6 +70,15 @@ pk-source:
   revision: 1370370404
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 6df5ff94-47ba-4881-abb4-b321e35a6955
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6df5ff94-47ba-4881-abb4-b321e35a6955
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Itraconazole
@@ -106,6 +116,17 @@ Disrupts fungal ergosterol synthesis or membrane function; interaction and organ
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Hydroxy-itraconazole, keto-itraconazole,; N-desalkyl-itraconazole |
 | Excretion | mainly non-renal | Kidney (35%), faeces (54%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 6df5ff94…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6df5ff94-47ba-4881-abb4-b321e35a6955), label version 20260818. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 16, 28, 34, 37, 42, 48)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

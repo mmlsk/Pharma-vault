@@ -10,15 +10,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: P-selectin blocker
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297734
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,23 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297734
+  pref-name: CRIZANLIZUMAB
+  molecule-type: Antibody
+  first-approval: 2019
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - B06AX01
+  targets:
+  - id: CHEMBL5378
+    name: P-selectin
+    action: BLOCKER
+  properties: {}
 ---
 
 # Crizanlizumab (Adakveo)
@@ -70,10 +87,26 @@ tags:
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Crizanlizumab, Adakveo
+- **ChEMBL:** [CHEMBL4297734](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297734/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 A monoclonal antibody against P-selectin that reduces the multicellular adhesion driving vaso-occlusive crises, targeting the adhesion step rather than the polymerisation step of sickle cell disease.
+
+## Mechanism
+
+P-selectin blocker _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2019
+- **Flags:** withdrawn
+- **ATC B06AX01:** BLOOD AND BLOOD FORMING ORGANS › OTHER HEMATOLOGICAL AGENTS › Other hematological agents
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[P-selectin (CHEMBL5378)|P-selectin]] - blocker · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -83,6 +116,12 @@ A monoclonal antibody against P-selectin that reduces the multicellular adhesion
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Mitapivat (Pyrukynd)]], [[Voxelotor (Oxbryta)]]
 
 ## Safety routing
 

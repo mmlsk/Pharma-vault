@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL938
+  pref-name: SARALASIN
+  molecule-type: Protein
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 912.06
+    mw-freebase: 912.06
+    alogp: -2.3
+    psa: 355.05
+    hba: 12
+    hbd: 13
+    rtb: 25
+    num-ro5-violations: 3
+    qed-weighted: 0.03
+    full-molformula: C42H65N13O10
 ---
 
 # Saralasin
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `saralasin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL938](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL938/) · max phase 4
+- **ChEMBL:** [CHEMBL938](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL938/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,15 @@ Type-1 angiotensin II receptor antagonist; approved/marketed compound catalogued
 ## Mechanism
 
 Type-1 angiotensin II receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1982
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 912.06 | -2.3 | 355.05 | 13/12 | 3 | C42H65N13O10 |
 
 ## Evidence boundaries
 

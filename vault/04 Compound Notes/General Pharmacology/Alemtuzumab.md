@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: CAMPATH-1 antigen inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201587
+chembl-max-phase: 4
 half-life:
   value: 288.0
   value-max: null
@@ -48,7 +48,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -56,6 +56,8 @@ tags:
 - group/immunology
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Alemtuzumab
@@ -63,6 +65,29 @@ pk-source:
   revision: 1375447530
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201587
+  pref-name: ALEMTUZUMAB
+  molecule-type: Antibody
+  first-approval: 2001
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L04AG06
+  targets:
+  - id: CHEMBL1912
+    name: CAMPATH-1 antigen
+    action: INHIBITOR
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 4f5f7255-7abc-4328-bd1a-ceaf139ef3e0
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4f5f7255-7abc-4328-bd1a-ceaf139ef3e0
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Alemtuzumab
@@ -76,10 +101,26 @@ pk-source:
 - **Compound ID:** `alemtuzumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1201587](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201587/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Anti-CD52 antibody producing profound, prolonged lymphocyte depletion, highly effective in multiple sclerosis and followed by a high rate of secondary autoimmunity.
+
+## Mechanism
+
+CAMPATH-1 antigen inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2001
+- **Flags:** black-box warning
+- **ATC L04AG06:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Monoclonal antibodies
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[CAMPATH-1 antigen (CHEMBL1912)|CAMPATH-1 antigen]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -94,6 +135,16 @@ Anti-CD52 antibody producing profound, prolonged lymphocyte depletion, highly ef
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 288 h | ~288 hrs |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 4f5f7255…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4f5f7255-7abc-4328-bd1a-ceaf139ef3e0), label version 20251105. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2, 11, 24, 32, 144, 336)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Anifrolumab]], [[Belimumab]], [[Inebilizumab]], [[Natalizumab]], [[Ocrelizumab]], [[Ofatumumab]], [[Teprotumumab]], [[Vedolizumab]]
 
 ## Safety routing
 

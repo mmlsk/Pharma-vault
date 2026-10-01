@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL272195
 chembl-max-phase: null
 half-life:
   value: null
@@ -55,6 +55,28 @@ tags:
 - source-derived
 - group/steroids
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL272195
+  pref-name: EPIANDROSTERONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 290.45
+    mw-freebase: 290.45
+    alogp: 3.96
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C19H30O2
 ---
 
 # Epiandrosterone
@@ -68,10 +90,19 @@ tags:
 - **Compound ID:** `epiandrosterone-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL272195](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL272195/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 Naturally occurring DHEA metabolite that converts onward to DHT; sold as a legal prohormone.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 290.45 | 3.96 | 37.3 | 1/2 | 0 | C19H30O2 |
 
 ## Evidence boundaries
 

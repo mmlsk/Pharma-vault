@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Potassium-transporting ATPase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201863
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Dexlansoprazole
@@ -62,6 +63,31 @@ pk-source:
   revision: 1371303275
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201863
+  pref-name: DEXLANSOPRAZOLE
+  molecule-type: Small molecule
+  first-approval: 2009
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A02BC06
+  targets:
+  - id: CHEMBL2095173
+    name: Potassium-transporting ATPase
+    action: INHIBITOR
+  properties:
+    full-mwt: 369.37
+    mw-freebase: 369.37
+    alogp: 3.52
+    psa: 73.86
+    hba: 4
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.7
+    full-molformula: C16H14F3N3O2S
 ---
 
 # Dexlansoprazole
@@ -75,10 +101,29 @@ pk-source:
 - **Compound ID:** `dexlansoprazole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201863](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201863/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits the gastric proton pump to suppress acid secretion; long-term use affects micronutrient and mineral absorption.
+
+## Mechanism
+
+Potassium-transporting ATPase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2009
+- **ATC A02BC06:** ALIMENTARY TRACT AND METABOLISM › DRUGS FOR PEPTIC ULCER AND GASTRO-OESOPHAGEAL REFLUX DISEASE (GORD) › Proton pump inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 369.37 | 3.52 | 73.86 | 1/4 | 0 | C16H14F3N3O2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Potassium-transporting ATPase (CHEMBL2095173)|Potassium-transporting ATPase]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -93,6 +138,13 @@ Inhibits the gastric proton pump to suppress acid secretion; long-term use affec
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Excretion | - | 50% renal and 47% in the feces |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ilaprazole]] (Potassium-transporting ATPase), [[Lansoprazole]] (Potassium-transporting ATPase), [[Omeprazole]] (Potassium-transporting ATPase)
+- **Same ATC subgroup:** [[Esomeprazole]], [[Ilaprazole]], [[Lansoprazole]], [[Omeprazole]], [[Pantoprazole]], [[Rabeprazole]], [[Vonoprazan]]
 
 ## Safety routing
 

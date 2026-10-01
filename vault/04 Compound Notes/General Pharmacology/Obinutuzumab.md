@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: B-lymphocyte antigen CD20 binding agent
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1743048
+chembl-max-phase: 4
 half-life:
   value: 28.4
   value-max: null
@@ -48,7 +48,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - immunosuppression-infection
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -56,6 +56,9 @@ tags:
 - group/immunology
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Obinutuzumab
@@ -63,6 +66,29 @@ pk-source:
   revision: 1339774020
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1743048
+  pref-name: OBINUTUZUMAB
+  molecule-type: Antibody
+  first-approval: 2013
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L01FA03
+  targets:
+  - id: CHEMBL2058
+    name: B-lymphocyte antigen CD20
+    action: BINDING AGENT
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: df12ceb2-5b4b-4ab5-a317-2a36bf2a3cda
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=df12ceb2-5b4b-4ab5-a317-2a36bf2a3cda
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Obinutuzumab
@@ -76,10 +102,26 @@ pk-source:
 - **Compound ID:** `obinutuzumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1743048](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743048/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Glycoengineered type II anti-CD20 with enhanced direct cell death and antibody-dependent killing, used in follicular lymphoma and lupus nephritis.
+
+## Mechanism
+
+B-lymphocyte antigen CD20 binding agent _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2013
+- **Flags:** black-box warning
+- **ATC L01FA03:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › MONOCLONAL ANTIBODIES AND ANTIBODY DRUG CONJUGATES › CD20 (Clusters of Differentiation 20) inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[B-lymphocyte antigen CD20 (CHEMBL2058)|B-lymphocyte antigen CD20]] - binding agent · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -94,6 +136,17 @@ Glycoengineered type II anti-CD20 with enhanced direct cell death and antibody-d
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 28.4 d | 28.4 days |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set df12ceb2…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=df12ceb2-5b4b-4ab5-a317-2a36bf2a3cda), label version 20251219. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 537.6)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ocrelizumab]] (B-lymphocyte antigen CD20), [[Ofatumumab]] (B-lymphocyte antigen CD20), [[Rituximab]] (B-lymphocyte antigen CD20)
+- **Same ATC subgroup:** [[Ofatumumab]], [[Rituximab]]
 
 ## Safety routing
 

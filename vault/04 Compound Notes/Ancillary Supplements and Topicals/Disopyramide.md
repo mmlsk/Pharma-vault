@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL517
+chembl-max-phase: 4
 half-life:
   value: 6.7
   value-max: null
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Disopyramide
@@ -69,6 +70,35 @@ pk-source:
   revision: 1340058687
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL517
+  pref-name: DISOPYRAMIDE
+  molecule-type: Small molecule
+  first-approval: 1977
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C01BA03
+  targets: []
+  properties:
+    full-mwt: 339.48
+    mw-freebase: 339.48
+    alogp: 3.36
+    psa: 59.22
+    hba: 3
+    hbd: 1
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C21H29N3O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Disopyramide
@@ -82,10 +112,22 @@ pk-source:
 - **Compound ID:** `disopyramide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL517](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL517/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Modulates fast cardiac sodium channels to alter impulse conduction; proarrhythmia makes clinical supervision essential.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1977
+- **Flags:** black-box warning
+- **ATC C01BA03:** CARDIOVASCULAR SYSTEM › ANTIARRHYTHMICS, CLASS I AND III › Antiarrhythmics, class Ia
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 339.48 | 3.36 | 59.22 | 1/3 | 0 | C21H29N3O |
 
 ## Evidence boundaries
 
@@ -105,6 +147,15 @@ Modulates fast cardiac sodium channels to alter impulse conduction; proarrhythmi
 | Metabolism | hepatic | Hepatic (CYP3A4-mediated) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Renal (80%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Procainamide]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

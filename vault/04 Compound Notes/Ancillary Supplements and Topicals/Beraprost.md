@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1207745
+chembl-max-phase: 3
 half-life:
   value: 35.0
   value-max: 40.0
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Beraprost
@@ -67,6 +68,35 @@ pk-source:
   revision: 1330663823
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1207745
+  pref-name: BERAPROST
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B01AC19
+  targets: []
+  properties:
+    full-mwt: 398.5
+    mw-freebase: 398.5
+    alogp: 3.29
+    psa: 86.99
+    hba: 4
+    hbd: 3
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.46
+    full-molformula: C24H30O5
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Beraprost
@@ -80,10 +110,20 @@ pk-source:
 - **Compound ID:** `beraprost-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1207745](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1207745/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Orally active prostacyclin analogue used in Japan and South Korea.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC B01AC19:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Platelet aggregation inhibitors excl. heparin
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 398.5 | 3.29 | 86.99 | 3/4 | 0 | C24H30O5 |
 
 ## Evidence boundaries
 
@@ -100,6 +140,14 @@ Orally active prostacyclin analogue used in Japan and South Korea.
 | Elimination t½ | 35–40 min | 35–40 minutes |
 | Bioavailability | 50–70 % | 50–70% |
 | Metabolism | - | Unknown |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Abciximab]], [[Aloxiprin]], [[Aspirin]], [[Cangrelor]], [[Cilostazol]], [[Clopidogrel (Plavix)]], [[Dipyridamole]], [[Epoprostenol]], [[Eptifibatide]], [[Prasugrel (Effient)]], [[Selexipag]], [[Ticagrelor (Brilinta)]]
 
 ## Safety routing
 

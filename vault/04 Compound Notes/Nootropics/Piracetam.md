@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL36715
+chembl-max-phase: 4
 half-life:
   value: 4.0
   value-max: 5.0
@@ -61,6 +61,7 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Piracetam
@@ -68,6 +69,35 @@ pk-source:
   revision: 1367146418
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL36715
+  pref-name: PIRACETAM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N06BX03
+  targets: []
+  properties:
+    full-mwt: 142.16
+    mw-freebase: 142.16
+    alogp: -0.91
+    psa: 63.4
+    hba: 2
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.54
+    full-molformula: C6H10N2O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Piracetam
@@ -81,10 +111,20 @@ pk-source:
 - **Compound ID:** `piracetam-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL36715](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL36715/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The original racetam and the compound the category is named after. A cyclic GABA derivative with no confirmed receptor target after fifty years; not approved in the United States.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC N06BX03:** NERVOUS SYSTEM › PSYCHOSTIMULANTS, AGENTS USED FOR ADHD AND NOOTROPICS › Other psychostimulants and nootropics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 142.16 | -0.91 | 63.4 | 1/2 | 0 | C6H10N2O2 |
 
 ## Evidence boundaries
 
@@ -101,6 +141,14 @@ The original racetam and the compound the category is named after. A cyclic GABA
 | Elimination t½ | 4–5 h | 4–5 hours |
 | Bioavailability | 100 % | ~100% |
 | Excretion | mainly urinary | Urinary |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Aniracetam]], [[Idebenone]], [[Linopirdine]], [[Oxiracetam]], [[Phenibut]], [[Pramiracetam]], [[Vinpocetine]]
 
 ## Safety routing
 

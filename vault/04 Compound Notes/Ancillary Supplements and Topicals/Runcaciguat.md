@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Soluble guanylate cyclase activator
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4650322
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4650322
+  pref-name: RUNCACIGUAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2111348
+    name: Soluble guanylate cyclase
+    action: ACTIVATOR
+  properties:
+    full-mwt: 488.33
+    mw-freebase: 488.33
+    alogp: 6.88
+    psa: 66.4
+    hba: 2
+    hbd: 2
+    rtb: 8
+    num-ro5-violations: 1
+    qed-weighted: 0.43
+    full-molformula: C23H22Cl2F3NO3
 ---
 
 # Runcaciguat
@@ -67,10 +92,27 @@ tags:
 - **Compound ID:** `runcaciguat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4650322](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650322/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 sGC activator developed for chronic kidney disease and diabetic retinopathy rather than for blood pressure.
+
+## Mechanism
+
+Soluble guanylate cyclase activator _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 488.33 | 6.88 | 66.4 | 2/2 | 1 | C23H22Cl2F3NO3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Soluble guanylate cyclase (CHEMBL2111348)|Soluble guanylate cyclase]] - activator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -80,6 +122,12 @@ sGC activator developed for chronic kidney disease and diabetic retinopathy rath
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ataciguat (HMR1766)]] (Soluble guanylate cyclase), [[Cinaciguat]] (Soluble guanylate cyclase), [[Isosorbide Dinitrate]] (Soluble guanylate cyclase), [[Isosorbide Mononitrate]] (Soluble guanylate cyclase), [[Nitric Oxide]] (Soluble guanylate cyclase), [[Nitroglycerin]] (Soluble guanylate cyclase), [[Olinciguat]] (Soluble guanylate cyclase), [[Pentaerythritol Tetranitrate]] (Soluble guanylate cyclase), [[Praliciguat]] (Soluble guanylate cyclase), [[Riociguat]] (Soluble guanylate cyclase), [[Vericiguat (Verquvo)]] (Soluble guanylate cyclase)
 
 ## Safety routing
 

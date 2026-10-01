@@ -55,6 +55,22 @@ tags:
 - source-derived
 - group/peptides
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL3039545
+  pref-name: LUSPATERCEPT
+  molecule-type: Protein
+  first-approval: 2019
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B03XA06
+  targets:
+  - id: CHEMBL3988637
+    name: Transforming growth factor beta
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Luspatercept
@@ -68,7 +84,7 @@ tags:
 - **Compound ID:** `luspatercept-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL3039545](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3039545/) · max phase 4
+- **ChEMBL:** [CHEMBL3039545](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3039545/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -78,6 +94,16 @@ Transforming growth factor beta inhibitor; approved/marketed compound catalogued
 
 Transforming growth factor beta inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2019
+- **ATC B03XA06:** BLOOD AND BLOOD FORMING ORGANS › OTHER ANTIANEMIC PREPARATIONS › Other antianemic preparations
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Transforming growth factor beta (CHEMBL3988637)|Transforming growth factor beta]] - inhibitor · PROTEIN FAMILY
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -86,6 +112,12 @@ Transforming growth factor beta inhibitor _(ChEMBL curated mechanism, as quoted 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Daprodustat]], [[Darbepoetin Alfa]], [[Epoetin Beta]], [[Methoxy Polyethylene Glycol-Epoetin Beta]], [[Molidustat]], [[Peginesatide]], [[Roxadustat]], [[Vadadustat]]
 
 ## Safety routing
 

@@ -15,13 +15,13 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1215855
 chembl-max-phase: null
 half-life:
   value: 7.0
   value-max: null
   unit: h
-  notes: 'Ibogaine: 7hours; Noribogaine: 24–50hours'
+  notes: 'Ibogaine: 7 hours; Noribogaine: 24–50 hours'
 protein-binding:
   value: null
   unit: percent
@@ -57,6 +57,7 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ibogaine
@@ -64,6 +65,34 @@ pk-source:
   revision: 1374626185
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1215855
+  pref-name: null
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 310.44
+    mw-freebase: 310.44
+    alogp: 3.94
+    psa: 28.26
+    hba: 2
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.91
+    full-molformula: C20H26N2O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ibogaine
@@ -77,10 +106,19 @@ pk-source:
 - **Compound ID:** `ibogaine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1215855](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1215855/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 An iboga alkaloid with NMDA, kappa-opioid, sigma and nicotinic activity, studied for interrupting opioid dependence. It causes marked QT prolongation and has caused deaths in unsupervised settings.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 310.44 | 3.94 | 28.26 | 1/2 | 0 | C20H26N2O |
 
 ## Evidence boundaries
 
@@ -94,8 +132,10 @@ An iboga alkaloid with NMDA, kappa-opioid, sigma and nicotinic activity, studied
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 7 h | Ibogaine: 7hours; Noribogaine: 24–50hours |
+| Elimination t½ | 7 h | Ibogaine: 7 hours; Noribogaine: 24–50 hours |
 | Metabolites | - | Noribogaine (major active metabolite) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

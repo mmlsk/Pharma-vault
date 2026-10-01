@@ -8,15 +8,15 @@ cluster: Growth Hormone and Peptide Agents
 group: gh
 class: null
 subclass: null
-mechanism: null
+mechanism: Somatostatin receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1823872
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -55,6 +55,26 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1823872
+  pref-name: SOMATOSTATIN
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01CB01
+  targets:
+  - id: CHEMBL2111436
+    name: Somatostatin receptor
+    action: AGONIST
+  properties:
+    full-mwt: 1637.91
+    mw-freebase: 1637.91
+    full-molformula: C76H104N18O19S2
 ---
 
 # Somatostatin
@@ -68,10 +88,28 @@ tags:
 - **Compound ID:** `somatostatin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL1823872](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1823872/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 The endogenous brake on growth hormone release -- the hormone octreotide was built to imitate.
+
+## Mechanism
+
+Somatostatin receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **ATC H01CB01:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › HYPOTHALAMIC HORMONES › Somatostatin and analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1637.91 | - | - | -/- | - | C76H104N18O19S2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Somatostatin receptor (CHEMBL2111436)|Somatostatin receptor]] - agonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -81,6 +119,12 @@ The endogenous brake on growth hormone release -- the hormone octreotide was bui
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Lanreotide]], [[Octreotide]], [[Pasireotide]], [[Vapreotide]]
 
 ## Safety routing
 

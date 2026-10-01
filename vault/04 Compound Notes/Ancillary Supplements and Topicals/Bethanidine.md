@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201260
+  pref-name: BETHANIDINE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C02CC01
+  targets: []
+  properties:
+    full-mwt: 177.25
+    mw-freebase: 177.25
+    alogp: 0.98
+    psa: 36.42
+    hba: 1
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.52
+    full-molformula: C10H15N3
 ---
 
 # Bethanidine
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `bethanidine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201260](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201260/) · max phase 4
+- **ChEMBL:** [CHEMBL1201260](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201260/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +100,16 @@ Norepinephrine transporter substrate; approved/marketed compound catalogued by C
 
 Norepinephrine transporter substrate _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC C02CC01:** CARDIOVASCULAR SYSTEM › ANTIADRENERGIC AGENTS, PERIPHERALLY ACTING › Guanidine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 177.25 | 0.98 | 36.42 | 2/1 | 0 | C10H15N3 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +118,12 @@ Norepinephrine transporter substrate _(ChEMBL curated mechanism, as quoted by th
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Debrisoquin]], [[Guanethidine]]
 
 ## Safety routing
 

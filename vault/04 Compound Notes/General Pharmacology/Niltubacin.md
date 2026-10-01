@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1213539
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1213539
+  pref-name: NILTUBACIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 706.86
+    mw-freebase: 706.86
+    alogp: 9.2
+    psa: 131.12
+    hba: 8
+    hbd: 3
+    rtb: 16
+    num-ro5-violations: 2
+    qed-weighted: 0.07
+    full-molformula: C41H42N2O7S
 ---
 
 # Niltubacin
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `niltubacin-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1213539](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1213539/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Niltubacin is a named HDAC research compound with a curated biochemical result against HDAC8. ChEMBL records Ki 750.0 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 706.86 | 9.2 | 131.12 | 3/8 | 2 | C41H42N2O7S |
 
 ## Evidence boundaries
 

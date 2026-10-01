@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin 17A inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4298102
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4298102
+  pref-name: VUNAKIZUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3390822
+    name: Interleukin-17A
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Vunakizumab
@@ -67,10 +83,23 @@ tags:
 - **Compound ID:** `vunakizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4298102](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298102/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Blocks IL-17 ligand or receptor signaling to reduce neutrophil-dominant inflammation.
+
+## Mechanism
+
+Interleukin 17A inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-17A (CHEMBL3390822)|Interleukin-17A]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +109,12 @@ Blocks IL-17 ligand or receptor signaling to reduce neutrophil-dominant inflamma
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Bimekizumab]] (Interleukin-17A), [[Ixekizumab]] (Interleukin-17A), [[Izokibep]] (Interleukin-17A), [[Perakizumab]] (Interleukin-17A), [[Secukinumab]] (Interleukin-17A), [[Sonelokimab]] (Interleukin-17A)
 
 ## Safety routing
 

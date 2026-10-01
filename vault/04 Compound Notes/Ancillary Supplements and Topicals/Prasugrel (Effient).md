@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201772
+chembl-max-phase: 4
 half-life:
   value: 7.0
   value-max: null
@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Prasugrel
@@ -70,6 +72,37 @@ pk-source:
   revision: 1358311753
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201772
+  pref-name: PRASUGREL
+  molecule-type: Small molecule
+  first-approval: 2009
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - B01AC22
+  targets: []
+  properties:
+    full-mwt: 373.45
+    mw-freebase: 373.45
+    alogp: 3.89
+    psa: 46.61
+    hba: 5
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.75
+    full-molformula: C20H20FNO3S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: f51e64e0-f556-65d0-a876-fb709aaeefea
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f51e64e0-f556-65d0-a876-fb709aaeefea
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Prasugrel (Effient)
@@ -84,10 +117,22 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Prasugrel, Effient
+- **ChEMBL:** [CHEMBL1201772](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201772/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Potent irreversible P2Y12 inhibitor used around coronary intervention, with greater bleeding risk in specific populations.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2009
+- **Flags:** black-box warning, prodrug
+- **ATC B01AC22:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Platelet aggregation inhibitors excl. heparin
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 373.45 | 3.89 | 46.61 | 0/5 | 0 | C20H20FNO3S |
 
 ## Evidence boundaries
 
@@ -105,6 +150,17 @@ Potent irreversible P2Y12 inhibitor used around coronary intervention, with grea
 | Protein binding | 98 % | Active metabolite: ~98% |
 | Bioavailability | 79 % | ≥79% |
 | Excretion | mainly urinary | Urine (~68% inactive metabolites); feces (27% inactive metabolites) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set f51e64e0…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f51e64e0-f556-65d0-a876-fb709aaeefea), label version 20260408. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2, 7, 15)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Abciximab]], [[Aloxiprin]], [[Aspirin]], [[Beraprost]], [[Cangrelor]], [[Cilostazol]], [[Clopidogrel (Plavix)]], [[Dipyridamole]], [[Epoprostenol]], [[Eptifibatide]], [[Selexipag]], [[Ticagrelor (Brilinta)]]
 
 ## Safety routing
 

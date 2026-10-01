@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL42055
+chembl-max-phase: 2
 half-life:
   value: 35.0
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Flupentixol
@@ -68,6 +69,34 @@ pk-source:
   revision: 1369614467
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL42055
+  pref-name: E-FLUPENTIXOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 434.53
+    mw-freebase: 434.53
+    alogp: 4.6
+    psa: 26.71
+    hba: 4
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.63
+    full-molformula: C23H25F3N2OS
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Flupentixol
@@ -81,10 +110,19 @@ pk-source:
 - **Compound ID:** `flupentixol-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL42055](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL42055/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Thioxanthene used as a depot antipsychotic and, at very low dose, as an antidepressant in several European countries.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 434.53 | 4.6 | 26.71 | 1/4 | 0 | C23H25F3N2OS |
 
 ## Evidence boundaries
 
@@ -102,6 +140,8 @@ Thioxanthene used as a depot antipsychotic and, at very low dose, as an antidepr
 | Bioavailability | 40–55 % | 40–55% (oral) |
 | Metabolism | hepatic | Gut wall, hepatic |
 | Excretion | mainly urinary | Renal (negligible) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

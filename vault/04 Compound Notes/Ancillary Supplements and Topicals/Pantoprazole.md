@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1502
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: 2.0
@@ -63,6 +63,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Pantoprazole
@@ -70,6 +72,37 @@ pk-source:
   revision: 1371018706
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1502
+  pref-name: PANTOPRAZOLE
+  molecule-type: Small molecule
+  first-approval: 2000
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A02BC02
+  targets: []
+  properties:
+    full-mwt: 383.38
+    mw-freebase: 383.38
+    alogp: 2.88
+    psa: 92.32
+    hba: 6
+    hbd: 1
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.63
+    full-molformula: C16H15F2N3O4S
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 59f50bcb-85e5-e3f6-e063-6294a90a11ae
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=59f50bcb-85e5-e3f6-e063-6294a90a11ae
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Pantoprazole
@@ -83,10 +116,21 @@ pk-source:
 - **Compound ID:** `pantoprazole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1502](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1502/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits the gastric proton pump to suppress acid secretion; long-term use affects micronutrient and mineral absorption.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2000
+- **ATC A02BC02:** ALIMENTARY TRACT AND METABOLISM › DRUGS FOR PEPTIC ULCER AND GASTRO-OESOPHAGEAL REFLUX DISEASE (GORD) › Proton pump inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 383.38 | 2.88 | 92.32 | 1/6 | 0 | C16H15F2N3O4S |
 
 ## Evidence boundaries
 
@@ -106,6 +150,18 @@ Inhibits the gastric proton pump to suppress acid secretion; long-term use affec
 | Metabolism | hepatic | Liver (CYP2C19, CYP3A4) |
 | CYP (metabolised by) | CYP2C19, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - | Urine, feces |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 59f50bcb…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=59f50bcb-85e5-e3f6-e063-6294a90a11ae), label version 20260826. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 7, 9)
+> - protein-binding: consistent (label values: 98)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Dexlansoprazole]], [[Esomeprazole]], [[Ilaprazole]], [[Lansoprazole]], [[Omeprazole]], [[Rabeprazole]], [[Vonoprazan]]
+- **Shared CYP substrate pool:** CYP2C19 (+43 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

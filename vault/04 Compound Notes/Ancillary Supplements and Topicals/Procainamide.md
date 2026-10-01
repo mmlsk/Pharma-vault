@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL640
+chembl-max-phase: 4
 half-life:
   value: 2.5
   value-max: 4.5
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Procainamide
@@ -69,6 +70,35 @@ pk-source:
   revision: 1342505612
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL640
+  pref-name: PROCAINAMIDE
+  molecule-type: Small molecule
+  first-approval: 1950
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C01BA02
+  targets: []
+  properties:
+    full-mwt: 235.33
+    mw-freebase: 235.33
+    alogp: 1.34
+    psa: 58.36
+    hba: 3
+    hbd: 2
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C13H21N3O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Procainamide
@@ -82,10 +112,22 @@ pk-source:
 - **Compound ID:** `procainamide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL640](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL640/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Modulates fast cardiac sodium channels to alter impulse conduction; proarrhythmia makes clinical supervision essential.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1950
+- **Flags:** black-box warning
+- **ATC C01BA02:** CARDIOVASCULAR SYSTEM › ANTIARRHYTHMICS, CLASS I AND III › Antiarrhythmics, class Ia
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 235.33 | 1.34 | 58.36 | 2/3 | 0 | C13H21N3O |
 
 ## Evidence boundaries
 
@@ -105,6 +147,15 @@ Modulates fast cardiac sodium channels to alter impulse conduction; proarrhythmi
 | Metabolism | hepatic | Liver (CYP2D6-mediated) |
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Disopyramide]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

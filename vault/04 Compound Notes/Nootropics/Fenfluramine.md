@@ -15,13 +15,13 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL87493
+chembl-max-phase: 4
 half-life:
   value: 13.0
   value-max: 30.0
   unit: h
-  notes: 13–30hours
+  notes: 13–30 hours
 protein-binding:
   value: null
   unit: percent
@@ -49,7 +49,7 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -57,6 +57,8 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Fenfluramine
@@ -64,6 +66,37 @@ pk-source:
   revision: 1365703472
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL87493
+  pref-name: FENFLURAMINE
+  molecule-type: Small molecule
+  first-approval: 1963
+  black-box-warning: true
+  withdrawn: true
+  atc-codes:
+  - A08AA02
+  - N03AX26
+  targets: []
+  properties:
+    full-mwt: 231.26
+    mw-freebase: 231.26
+    alogp: 3.25
+    psa: 12.03
+    hba: 1
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.84
+    full-molformula: C12H16F3N
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: e88f360e-33ad-4cd6-b2de-5ef885857c5d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e88f360e-33ad-4cd6-b2de-5ef885857c5d
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Fenfluramine
@@ -77,10 +110,23 @@ pk-source:
 - **Compound ID:** `fenfluramine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL87493](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL87493/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Withdrawn appetite suppressant reintroduced at low dose for Dravet syndrome, where it is among the most effective anticonvulsants available.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1963
+- **Flags:** black-box warning, withdrawn
+- **ATC A08AA02:** ALIMENTARY TRACT AND METABOLISM › ANTIOBESITY PREPARATIONS, EXCL. DIET PRODUCTS › Centrally acting antiobesity products
+- **ATC N03AX26:** NERVOUS SYSTEM › ANTIEPILEPTICS › Other antiepileptics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 231.26 | 3.25 | 12.03 | 1/1 | 0 | C12H16F3N |
 
 ## Evidence boundaries
 
@@ -94,7 +140,17 @@ Withdrawn appetite suppressant reintroduced at low dose for Dravet syndrome, whe
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 13–30 h | 13–30hours |
+| Elimination t½ | 13–30 h | 13–30 hours |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set e88f360e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e88f360e-33ad-4cd6-b2de-5ef885857c5d), label version 20251027. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 20)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Brivaracetam]], [[Cannabidiol (Epidiolex)]], [[Cenobamate]], [[Diethylpropion]], [[Ephedrine]], [[Felbamate]], [[Ganaxolone]], [[Lacosamide]], [[Lamotrigine]], [[Levetiracetam]], [[Mazindol]], [[Perampanel]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1950045
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1950045
+  pref-name: HYDROXYTYROSOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 154.16
+    mw-freebase: 154.16
+    alogp: 0.63
+    psa: 60.69
+    hba: 3
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C8H10O3
 ---
 
 # Hydroxytyrosol
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `hydroxytyrosol-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL1950045](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1950045/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Olive polyphenol with antioxidant and lipid-oxidation research; hard clinical outcomes are not established.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 154.16 | 0.63 | 60.69 | 3/3 | 0 | C8H10O3 |
 
 ## Evidence boundaries
 

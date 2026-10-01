@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Alpha-galactosidase A stabiliser
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL110458
+chembl-max-phase: 4
 half-life:
   value: 3.0
   value-max: 5.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Migalastat
@@ -68,6 +69,38 @@ pk-source:
   revision: 1370389401
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL110458
+  pref-name: MIGALASTAT
+  molecule-type: Small molecule
+  first-approval: 2016
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A16AX14
+  targets:
+  - id: CHEMBL2524
+    name: Alpha-galactosidase A
+    action: STABILISER
+  properties:
+    full-mwt: 163.17
+    mw-freebase: 163.17
+    alogp: -2.97
+    psa: 92.95
+    hba: 5
+    hbd: 5
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.28
+    full-molformula: C6H13NO4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Migalastat
@@ -81,10 +114,29 @@ pk-source:
 - **Compound ID:** `migalastat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL110458](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL110458/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral pharmacological chaperone for Fabry disease, stabilising a patient's own mutant enzyme rather than replacing it.
+
+## Mechanism
+
+Alpha-galactosidase A stabiliser _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2016
+- **ATC A16AX14:** ALIMENTARY TRACT AND METABOLISM › OTHER ALIMENTARY TRACT AND METABOLISM PRODUCTS › Various alimentary tract and metabolism products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 163.17 | -2.97 | 92.95 | 5/5 | 0 | C6H13NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Alpha-galactosidase A (CHEMBL2524)|Alpha-galactosidase A]] - stabiliser · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +155,14 @@ Oral pharmacological chaperone for Fabry disease, stabilising a patient's own mu
 | Bioavailability | 75 % | 75% |
 | Metabolites | - | O-glucuronides (<15%) |
 | Excretion | mainly urinary | Urine (77%), feces (20%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alpha-Lipoic Acid (ALA)]], [[Eliglustat]], [[Glycerol Phenylbutyrate]], [[Lonafarnib (Zokinvy)]], [[Miglustat]], [[Nitisinone]], [[Sodium Phenylbutyrate]], [[Teduglutide]], [[Trientine]]
 
 ## Safety routing
 

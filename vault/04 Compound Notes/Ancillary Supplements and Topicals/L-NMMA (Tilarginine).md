@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Nitric oxide synthase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL256147
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -56,6 +56,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL256147
+  pref-name: TILARGININE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4630725
+    name: Nitric oxide synthase
+    action: INHIBITOR
+  properties:
+    full-mwt: 188.23
+    mw-freebase: 188.23
+    alogp: -1.08
+    psa: 111.23
+    hba: 3
+    hbd: 5
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.21
+    full-molformula: C7H16N4O2
 ---
 
 # L-NMMA (Tilarginine)
@@ -70,10 +96,27 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** L-NMMA, Tilarginine
+- **ChEMBL:** [CHEMBL256147](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL256147/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Non-selective NOS inhibitor — the pharmacological opposite of the supplements above. Used experimentally to prove an effect is NO-mediated; a cardiogenic shock trial was stopped for harm.
+
+## Mechanism
+
+Nitric oxide synthase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 188.23 | -1.08 | 111.23 | 5/3 | 0 | C7H16N4O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Nitric oxide synthase (CHEMBL4630725)|Nitric oxide synthase]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 

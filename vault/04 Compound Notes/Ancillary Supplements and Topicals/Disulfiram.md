@@ -8,17 +8,17 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Aldehyde dehydrogenase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL964
+chembl-max-phase: 4
 half-life:
-  value: 1.5
+  value: 7.3
   value-max: null
   unit: h
   notes: 7.3 +/-1.5 hours
@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Disulfiram
@@ -63,6 +64,41 @@ pk-source:
   revision: 1369701892
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL964
+  pref-name: DISULFIRAM
+  molecule-type: Small molecule
+  first-approval: 1951
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N07BB01
+  - P03AA04
+  - P03AA54
+  targets:
+  - id: CHEMBL1935
+    name: Aldehyde dehydrogenase, mitochondrial
+    action: INHIBITOR
+  properties:
+    full-mwt: 296.55
+    mw-freebase: 296.55
+    alogp: 3.62
+    psa: 6.48
+    hba: 4
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.57
+    full-molformula: C10H20N2S4
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: d3832a1a-a140-49c1-a7df-134fa81341e3
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d3832a1a-a140-49c1-a7df-134fa81341e3
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Disulfiram
@@ -76,10 +112,32 @@ pk-source:
 - **Compound ID:** `disulfiram-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL964](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL964/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Alcohol deterrent that works by making drinking acutely unpleasant rather than by reducing craving.
+
+## Mechanism
+
+Aldehyde dehydrogenase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1951
+- **Flags:** black-box warning
+- **ATC N07BB01:** NERVOUS SYSTEM › DRUGS USED IN ADDICTIVE DISORDERS › Drugs used in alcohol dependence
+- **ATC P03AA04:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › ECTOPARASITICIDES, INCL. SCABICIDES › Sulfur containing products
+- **ATC P03AA54:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › ECTOPARASITICIDES, INCL. SCABICIDES › Sulfur containing products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 296.55 | 3.62 | 6.48 | 0/4 | 0 | C10H20N2S4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Aldehyde dehydrogenase, mitochondrial (CHEMBL1935)|Aldehyde dehydrogenase, mitochondrial]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -93,8 +151,18 @@ Alcohol deterrent that works by making drinking acutely unpleasant rather than b
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 1.5 h | 7.3 +/-1.5 hours |
+| Elimination t½ | 7.3 h | 7.3 +/-1.5 hours |
 | Metabolism | hepatic | In Liver to diethylthiocarbamate |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set d3832a1a…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d3832a1a-a140-49c1-a7df-134fa81341e3), label version 20260527. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Acamprosate]], [[Nalmefene]], [[Naltrexone]]
 
 ## Safety routing
 

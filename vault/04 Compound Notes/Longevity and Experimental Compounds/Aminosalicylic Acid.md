@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1169
+  pref-name: AMINOSALICYLIC ACID
+  molecule-type: Small molecule
+  first-approval: 1950
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J04AA01
+  targets:
+  - id: CHEMBL6065
+    name: Dihydrofolate reductase
+    action: INHIBITOR
+  properties:
+    full-mwt: 153.14
+    mw-freebase: 153.14
+    alogp: 0.67
+    psa: 83.55
+    hba: 3
+    hbd: 3
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.52
+    full-molformula: C7H7NO3
 ---
 
 # Aminosalicylic Acid
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `aminosalicylic-acid-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1169](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1169/) · max phase 4
+- **ChEMBL:** [CHEMBL1169](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1169/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +102,20 @@ Dihydrofolate reductase inhibitor; approved/marketed compound catalogued by ChEM
 ## Mechanism
 
 Dihydrofolate reductase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1950
+- **ATC J04AA01:** ANTIINFECTIVES FOR SYSTEMIC USE › DRUGS FOR TREATMENT OF TUBERCULOSIS › Aminosalicylic acid and derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 153.14 | 0.67 | 83.55 | 3/3 | 0 | C7H7NO3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Dihydrofolate reductase (CHEMBL6065)|Dihydrofolate reductase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

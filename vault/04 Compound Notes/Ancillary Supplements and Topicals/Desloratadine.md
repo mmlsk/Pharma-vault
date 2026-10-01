@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Desloratadine
@@ -69,6 +71,40 @@ pk-source:
   revision: 1357378936
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1172
+  pref-name: DESLORATADINE
+  molecule-type: Small molecule
+  first-approval: 2001
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AX27
+  targets:
+  - id: CHEMBL231
+    name: Histamine H1 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 310.83
+    mw-freebase: 310.83
+    alogp: 4.02
+    psa: 24.92
+    hba: 2
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.79
+    full-molformula: C19H19ClN2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 21174c0f-9204-4c75-b6e6-2f9ada5b535d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=21174c0f-9204-4c75-b6e6-2f9ada5b535d
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Desloratadine
@@ -82,7 +118,7 @@ pk-source:
 - **Compound ID:** `desloratadine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1172](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1172/) · max phase 4
+- **ChEMBL:** [CHEMBL1172](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1172/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -91,6 +127,20 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2001
+- **ATC R06AX27:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Other antihistamines for systemic use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 310.83 | 4.02 | 24.92 | 1/2 | 0 | C19H19ClN2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Histamine H1 receptor (CHEMBL231)|Histamine H1 receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -111,6 +161,19 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | CYP (metabolised by) | CYP2C8 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | 3-Hydroxydesloratadine |
 | Excretion | - | 40% as conjugated metabolites into urine; Similar amount into the feces |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 21174c0f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=21174c0f-9204-4c75-b6e6-2f9ada5b535d), label version 20260826. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 27, 33.7, 50, 336)
+> - protein-binding: consistent (label values: 82, 85, 87, 89)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acrivastine]] (Histamine H1 receptor), [[Alcaftadine]] (Histamine H1 receptor), [[Astemizole]] (Histamine H1 receptor), [[Betahistine]] (Histamine H1 receptor), [[Bilastine]] (Histamine H1 receptor), [[Chlorphenoxamine]] (Histamine H1 receptor), [[Cinnarizine]] (Histamine H1 receptor), [[Dibenzepin]] (Histamine H1 receptor), [[Dimenhydrinate]] (Histamine H1 receptor), [[Dimethindene]] (Histamine H1 receptor), [[Doxepin]] (Histamine H1 receptor), [[Doxepin, low dose (Silenor)]] (Histamine H1 receptor)
+- **Same ATC subgroup:** [[Acrivastine]], [[Antazoline]], [[Astemizole]], [[Azatadine]], [[Azelastine]], [[Bilastine]], [[Cyproheptadine]], [[Ebastine]], [[Epinastine]], [[Fexofenadine]], [[Ketotifen]], [[Loratadine]]
+- **Shared CYP substrate pool:** CYP2C8 (+15 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

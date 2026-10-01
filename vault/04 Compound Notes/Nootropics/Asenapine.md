@@ -55,7 +55,7 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,7 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Asenapine
@@ -70,6 +71,15 @@ pk-source:
   revision: 1375768934
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 3512687b-d1c7-45c4-8822-3a2ad53575a5
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3512687b-d1c7-45c4-8822-3a2ad53575a5
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Asenapine
@@ -106,6 +116,17 @@ Sublingual atypical antipsychotic with an exceptionally broad receptor profile, 
 | Metabolism | hepatic | hepatic (glucurinodation by UGT1A4 and oxidative metabolism by CYP1A2) |
 | CYP (metabolised by) | CYP1A2 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary · fe 0.16 | Kidney (50%), Fecal (40%; ~5–16% as unchanged drug in feces) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 3512687b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3512687b-d1c7-45c4-8822-3a2ad53575a5), label version 20251125. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 24)
+> - protein-binding: consistent (label values: 95)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared CYP substrate pool:** CYP1A2 (+42 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL666
+chembl-max-phase: 4
 half-life:
   value: 3.3
   value-max: 6.8
@@ -61,6 +61,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Foscarnet
@@ -68,6 +69,35 @@ pk-source:
   revision: 1373275641
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL666
+  pref-name: FOSCARNET
+  molecule-type: Small molecule
+  first-approval: 1991
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J05AD01
+  targets: []
+  properties:
+    full-mwt: 126.0
+    mw-freebase: 126.0
+    alogp: -0.16
+    psa: 94.83
+    hba: 2
+    hbd: 3
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.42
+    full-molformula: CH3O5P
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Foscarnet
@@ -81,10 +111,22 @@ pk-source:
 - **Compound ID:** `foscarnet-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL666](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL666/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Pyrophosphate analogue needing no activation at all, which is why it works against thymidine-kinase-deficient aciclovir-resistant herpes and UL97-mutant CMV.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1991
+- **Flags:** black-box warning
+- **ATC J05AD01:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Phosphonic acid derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 126.0 | -0.16 | 94.83 | 3/2 | 0 | CH3O5P |
 
 ## Evidence boundaries
 
@@ -101,6 +143,8 @@ Pyrophosphate analogue needing no activation at all, which is why it works again
 | Elimination t½ | 3.3–6.8 h | 3.3–6.8 hours |
 | Protein binding | 14–17 % | 14–17% |
 | Bioavailability | - | NA |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

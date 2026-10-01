@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL326433
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL326433
+  pref-name: 8-MERCAPTO-OCTANOIC ACID PHENYLAMIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 251.4
+    mw-freebase: 251.4
+    alogp: 3.9
+    psa: 29.1
+    hba: 2
+    hbd: 2
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.53
+    full-molformula: C14H21NOS
 ---
 
 # 8-Mercapto-Octanoic Acid Phenylamide
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `8-mercapto-octanoic-acid-phenylamide-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL326433](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL326433/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 8-Mercapto-Octanoic Acid Phenylamide is a named HDAC research compound with a curated biochemical result against HDAC3. ChEMBL records IC50 110.0 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 251.4 | 3.9 | 29.1 | 2/2 | 0 | C14H21NOS |
 
 ## Evidence boundaries
 

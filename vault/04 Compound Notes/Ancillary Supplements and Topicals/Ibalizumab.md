@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: T-cell surface antigen CD4 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1743029
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1743029
+  pref-name: IBALIZUMAB
+  molecule-type: Antibody
+  first-approval: 2018
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AX23
+  targets:
+  - id: CHEMBL2754
+    name: T-cell surface glycoprotein CD4
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Ibalizumab
@@ -67,10 +83,25 @@ tags:
 - **Compound ID:** `ibalizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1743029](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743029/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits HIV integrase strand transfer as a component of combination antiretroviral therapy.
+
+## Mechanism
+
+T-cell surface antigen CD4 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2018
+- **ATC J05AX23:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Other antivirals
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[T-cell surface glycoprotein CD4 (CHEMBL2754)|T-cell surface glycoprotein CD4]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +111,12 @@ Inhibits HIV integrase strand transfer as a component of combination antiretrovi
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Baloxavir Marboxil]], [[Bulevirtide (Hepcludex)]], [[Enfuvirtide]], [[Favipiravir]], [[Fostemsavir]], [[Lenacapavir]], [[Letermovir]], [[Maribavir]], [[Tecovirimat]]
 
 ## Safety routing
 

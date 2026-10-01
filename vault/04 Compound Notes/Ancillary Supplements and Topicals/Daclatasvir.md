@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2023898
+chembl-max-phase: 4
 half-life:
   value: 12.0
   value-max: 15.0
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Daclatasvir
@@ -68,6 +70,35 @@ pk-source:
   revision: 1322611182
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2023898
+  pref-name: DACLATASVIR
+  molecule-type: Small molecule
+  first-approval: 2014
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J05AP07
+  targets: []
+  properties:
+    full-mwt: 738.89
+    mw-freebase: 738.89
+    alogp: 6.22
+    psa: 174.64
+    hba: 8
+    hbd: 4
+    rtb: 11
+    num-ro5-violations: 2
+    qed-weighted: 0.14
+    full-molformula: C40H50N8O6
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Daclatasvir
@@ -81,10 +112,22 @@ pk-source:
 - **Compound ID:** `daclatasvir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2023898](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2023898/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Blocks an HCV replication target and is combined with complementary direct-acting antivirals to prevent resistance.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2014
+- **Flags:** black-box warning
+- **ATC J05AP07:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Antivirals for treatment of HCV infections
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 738.89 | 6.22 | 174.64 | 4/8 | 2 | C40H50N8O6 |
 
 ## Evidence boundaries
 
@@ -103,6 +146,14 @@ Blocks an HCV replication target and is combined with complementary direct-actin
 | Bioavailability | 67 % | 67% |
 | Metabolism | hepatic | CYP3A |
 | Excretion | mainly urinary · fe 0.53 | Fecal (53% as unchanged drug), kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Boceprevir]], [[Elbasvir]], [[Grazoprevir]], [[Ribavirin]], [[Simeprevir]], [[Sofosbuvir]], [[Telaprevir]]
 
 ## Safety routing
 

@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL260538
+  pref-name: ULIPRISTAL ACETATE
+  molecule-type: Small molecule
+  first-approval: 2009
+  black-box-warning: false
+  withdrawn: true
+  atc-codes: []
+  targets:
+  - id: CHEMBL208
+    name: Progesterone receptor
+    action: MODULATOR
+  properties:
+    full-mwt: 475.63
+    mw-freebase: 475.63
+    alogp: 5.54
+    psa: 63.68
+    hba: 5
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 1
+    qed-weighted: 0.53
+    full-molformula: C30H37NO4
 ---
 
 # Ulipristal Acetate
@@ -67,7 +92,7 @@ tags:
 - **Compound ID:** `ulipristal-acetate-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL260538](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL260538/) · max phase 4
+- **ChEMBL:** [CHEMBL260538](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL260538/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +102,20 @@ Progesterone receptor modulator; approved/marketed compound catalogued by ChEMBL
 
 Progesterone receptor modulator _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2009
+- **Flags:** withdrawn
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 475.63 | 5.54 | 63.68 | 0/5 | 1 | C30H37NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Progesterone receptor (CHEMBL208)|Progesterone receptor]] - modulator · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +124,12 @@ Progesterone receptor modulator _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Asoprisnil]] (Progesterone receptor), [[Chlormadinone Acetate]] (Progesterone receptor), [[Cyproterone Acetate]] (Progesterone receptor), [[Danazol]] (Progesterone receptor), [[Desogestrel]] (Progesterone receptor), [[Drospirenone]] (Progesterone receptor), [[Dydrogesterone]] (Progesterone receptor), [[Ethynodiol Diacetate]] (Progesterone receptor), [[Etonogestrel]] (Progesterone receptor), [[Gestodene]] (Progesterone receptor), [[Hydroxyprogesterone Caproate]] (Progesterone receptor), [[Levonorgestrel]] (Progesterone receptor)
 
 ## Safety routing
 

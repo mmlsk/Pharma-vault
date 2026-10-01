@@ -1,0 +1,396 @@
+{"chembl": null, "cids": [{"cid": 236666, "formula": "C19H28O2", "inchikey": "OKJCFMUGMSVJBG-ABEVXSGRSA-N", "title": "1-Testosterone"}], "query": "1-testosterone", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL286452", "parent": "CHEMBL286452", "pref_name": "ALFATRADIOL"}, "cids": [{"cid": 68570, "formula": "C18H24O2", "inchikey": "VOXZDWNPVJITMN-SFFUCWETSA-N", "title": "alpha-Estradiol"}], "query": "17-alpha-estradiol", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 92834, "formula": "C18H24O2", "inchikey": "JRIZOGLBRPZBLQ-QXUSFIETSA-N", "title": "(+)-Estr-4-ene-3,17-dione"}], "query": "19-norandrostenedione", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL274384", "parent": "CHEMBL274384", "pref_name": null}, "cids": [{"cid": 10171, "formula": "C20H24BrN3O", "inchikey": "VKRAXSZEDRWLAG-SJKOYZFVSA-N", "title": "Bromolysergide"}], "query": "2-bromo-lsd", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 121531, "formula": "C9H12FN", "inchikey": "GDSXNLDTQFFIEU-UHFFFAOYSA-N", "title": "2-Fluoroamphetamine"}], "query": "2-fa", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 13771619, "formula": "C13H17ClFNO", "inchikey": "FQOFLBNEXJTBJE-UHFFFAOYSA-N", "title": "2-Fluoro Deschloroketamine hydrochloride"}], "query": "2-fdck", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 24257263, "formula": "C10H14FN", "inchikey": "XNWIKJYFOIDUGD-UHFFFAOYSA-N", "title": "2-Fluoromethamphetamine"}], "query": "2-fma", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 56603536, "formula": "C11H15NO", "inchikey": "PRGXFAWAMOFULD-UHFFFAOYSA-N", "title": "2-Methylmethcathinone"}], "query": "2-mmc", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1686", "parent": "CHEMBL1686", "pref_name": "ALPHA-KETOGLUTARIC ACID"}, "cids": [{"cid": 51, "formula": "C5H6O5", "inchikey": "KPGXRSRHYNQIFN-UHFFFAOYSA-N", "title": "2-Oxoglutaric Acid"}], "query": "2-oxoglutarate", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL3590188", "parent": "CHEMBL3590188", "pref_name": null}, "cids": [{"cid": 9977044, "formula": "C18H22BrNO3", "inchikey": "SUXGNJVVBGJEFB-UHFFFAOYSA-N", "title": "Cimbi-36"}], "query": "25b-nbome", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 46856354, "formula": "C18H22ClNO3", "inchikey": "FJFPOGCVVLUYAQ-UHFFFAOYSA-N", "title": "2-(4-chloro-2,5-dimethoxyphenyl)-N-((2-methoxyphenyl)methyl)ethanamine"}], "query": "25c-nbome", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1908863", "parent": "CHEMBL1908863", "pref_name": null}, "cids": [{"cid": 10251906, "formula": "C18H22INO3", "inchikey": "ZFUOLNAKPBFDIJ-UHFFFAOYSA-N", "title": "25I-NBOMe"}], "query": "25i-nbome", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL292821", "parent": "CHEMBL292821", "pref_name": null}, "cids": [{"cid": 98527, "formula": "C10H14BrNO2", "inchikey": "YMHOBZXQZVXHBM-UHFFFAOYSA-N", "title": "4-Bromo-2,5-Dimethoxyphenethylamine"}], "query": "2c-b", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL124063", "parent": "CHEMBL124063", "pref_name": null}, "cids": [{"cid": 24729233, "formula": "C12H19NO2", "inchikey": "VDRGNAMREYBIHA-UHFFFAOYSA-N", "title": "4-Ethyl-2,5-dimethoxy-beta-phenethylamine"}], "query": "2c-e", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL338297", "parent": "CHEMBL338297", "pref_name": null}, "cids": [{"cid": 10267191, "formula": "C10H14INO2", "inchikey": "PQHQBRJAAZQXHL-UHFFFAOYSA-N", "title": "2,5-Dimethoxy-4-iodophenethylamine"}], "query": "2c-i", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 121501, "formula": "C9H12FN", "inchikey": "PIOCLGPCMNPZFT-UHFFFAOYSA-N", "title": "3-Fluoroamphetamine"}], "query": "3-fa", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 58216164, "formula": "C10H14FN", "inchikey": "RRVAUTPWWWFYQT-UHFFFAOYSA-N", "title": "3-Fluoro-N,alpha-dimethylbenzeneethanamine"}], "query": "3-fma", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 54673723, "formula": "C11H14FNO", "inchikey": "VHYVKJAQSJCYCK-UHFFFAOYSA-N", "title": "2-(3-Fluorophenyl)-3-methylmorpholine"}], "query": "3-fpm", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 137332171, "formula": "C14H21NO", "inchikey": "MIKNPNLBFHVMKK-UHFFFAOYSA-N", "title": "3-(1-(Ethylamino)cyclohexyl)phenol"}], "query": "3-ho-pce", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL123708", "parent": "CHEMBL123708", "pref_name": null}, "cids": [{"cid": 133277, "formula": "C17H25NO", "inchikey": "AMSXTZUCNOKUEN-UHFFFAOYSA-N", "title": "3-(1-(1-Piperidinyl)cyclohexyl)phenol"}], "query": "3-ho-pcp", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL275084", "parent": "CHEMBL275084", "pref_name": "ISOBUTYLMETHYLXANTHINE"}, "cids": [{"cid": 3758, "formula": "C10H14N4O2", "inchikey": "APIXJSLKIYYUKG-UHFFFAOYSA-N", "title": "3-Isobutyl-1-methylxanthine"}], "query": "3-isobutyl-1-methylxanthine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 57461569, "formula": "C15H23NO", "inchikey": "OFGOOZLOGUNDFS-UHFFFAOYSA-N", "title": "N-Ethyl-1-(3-methoxyphenyl)cyclohexanamine"}], "query": "3-meo-pce", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 11778080, "formula": "C18H27NO", "inchikey": "BQQSZHHKGPOXLN-UHFFFAOYSA-N", "title": "1-(1-(3-Methoxyphenyl)cyclohexyl)piperidine"}], "query": "3-meo-pcp", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 71741532, "formula": "C11H15NO", "inchikey": "QDNXSIYWHYGMCD-UHFFFAOYSA-N", "title": "3-Methylmethcathinone"}], "query": "3-mmc", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL2009392", "parent": "CHEMBL2009392", "pref_name": null}, "cids": [{"cid": 9986, "formula": "C9H12FN", "inchikey": "DGXWNDGLEOIEGT-UHFFFAOYSA-N", "title": "(+-)-p-Fluoroamphetamine"}], "query": "4-fa", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 103611, "formula": "C10H12FNO2", "inchikey": "QWHXHLDNSXLAPX-UHFFFAOYSA-N", "title": "4-Fluorophenibut"}], "query": "4-fluorophenibut", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 11745017, "formula": "C10H14FN", "inchikey": "YCWZPIHKUYZTFM-UHFFFAOYSA-N", "title": "4-Fluoromethamphetamine"}], "query": "4-fma", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "4c-d", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1253289", "parent": "CHEMBL1253289", "pref_name": null}, "cids": [{"cid": 52944002, "formula": "C14H18FNO2", "inchikey": "XISBAJBPDVRSPG-CHWSQXEVSA-N", "title": "4-Fluoromethylphenidate"}], "query": "4f-mph", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "4f-phenibut", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "5-amino-1mq", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 121491649, "formula": "C20H28FN3O3", "inchikey": "PWEKNGSNNAKWBL-QGZVFWFLSA-N", "title": "5F-Adb"}], "query": "5f-adb", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL5575138", "parent": "CHEMBL5575138", "pref_name": null}, "cids": [{"cid": 129597835, "formula": "C21H29FN2O3", "inchikey": "CHSUEEBESACQDV-GOSISDBHSA-N", "title": "L-Valine, N-((1-(5-fluoropentyl)-1H-indol-3-yl)carbonyl)-3-methyl-, methyl ester"}], "query": "5f-mdmb-pica", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 69906537, "formula": "C27H42O5", "inchikey": "HCRGPOQBVFMZFY-PPCFKNSFSA-N", "title": "25R,5alpha-Spirostan-3beta,5-diol-6-one"}, {"cid": 145705854, "formula": "C27H42O5", "inchikey": "HCRGPOQBVFMZFY-PIKBWKFRSA-N", "title": "Spirostan-6-one, 3,5-dihydroxy-, (3beta,5alpha,25R)-"}], "query": "5α-hydroxy laxogenin", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL61630", "parent": "CHEMBL61630", "pref_name": null}, "cids": [{"cid": 44301524, "formula": "C23H30N2O5", "inchikey": "RYENLSMHLCNXJT-CYXFISRXSA-N", "title": "7-Hydroxymitragynine"}], "query": "7-hydroxymitragynine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 193313, "formula": "C19H26O3", "inchikey": "KPRGOTLNGIBVFL-GINZOMEDSA-N", "title": "7-Keto-dehydroepiandrosterone"}], "query": "7-keto-dhea", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "9-me-bc", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "9-me-bc (9-methyl-β-carboline)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "9-methyl-β-carboline", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 154694212, "formula": "C14H20N2O", "inchikey": "KHEUWLQKCXGVEL-LLVKDONJSA-N", "title": "Aaz-A-154"}], "query": "aaz-a-154", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4083220", "parent": "CHEMBL4083220", "pref_name": null}, "cids": [{"cid": 58124325, "formula": "C20H21FN4O2", "inchikey": "AKOOIMKXADOPDA-KRWDZBQOSA-N", "title": "N-((1S)-1-(Aminocarbonyl)-2-methylpropyl)-1-((4-fluorophenyl)methyl)-1H-indazole-3-carboxamide"}], "query": "ab-fubinaca", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 71587772, "formula": "C35H62N14O11S", "inchikey": "AJLNZWYOJAWBCR-OOPVGHQCSA-N", "title": "Acetyl hexapeptide-3"}], "query": "acetyl hexapeptide-8", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 76283482, "formula": "C41H70N16O16S", "inchikey": "KMACPCJUCHVVGP-FNRPHRCSSA-N", "title": "Acetyl octapeptide-3"}], "query": "acetyl octapeptide-3", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "adamax", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL5169682", "parent": "CHEMBL5169682", "pref_name": null}, "cids": [{"cid": 155907792, "formula": "C18H26N4O2", "inchikey": "GPWADXHYJAZPAX-OAHLLOKOSA-N", "title": "Adb-butinaca"}], "query": "adb-butinaca", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 58124399, "formula": "C21H23FN4O2", "inchikey": "ZSSGCSINPVBLQD-GOSISDBHSA-N", "title": "Adb-fubinaca"}], "query": "adb-fubinaca", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 162705326, "formula": "C20H30N4O2", "inchikey": "PZMLDAGKYPJWHJ-UHFFFAOYSA-N", "title": "Adb-hexinaca"}, {"cid": 163191674, "formula": "C20H30N4O2", "inchikey": "PZMLDAGKYPJWHJ-QGZVFWFLSA-N", "title": "Adb-hexinaca [nflis-drug]"}], "query": "adb-hexinaca", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 163360068, "formula": "C111H206N36O28S2", "inchikey": "GZESIPHLGJDZRG-VCWDIOOSSA-N", "title": "Adipotide"}], "query": "adipotide", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "adipotide (ftpp)", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL457530", "parent": "CHEMBL457530", "pref_name": null}, "cids": [{"cid": 123831, "formula": "C8H18N4O2", "inchikey": "YDGMGEXADBMOMJ-LURJTMIESA-N", "title": "N,N-Dimethylarginine"}], "query": "adma", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "adma (asymmetric dimethylarginine)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 58516166, "formula": "C20H27N3OS", "inchikey": "XWMHYQATSBWUNT-UHFFFAOYSA-N", "title": "AF-710B"}], "query": "af710b", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL483849", "parent": "CHEMBL483849", "pref_name": null}, "cids": [{"cid": 65110, "formula": "C9H15N4O8P", "inchikey": "NOTGFIUVDGNKRI-UUOKFMHZSA-N", "title": "AICA Ribotide"}], "query": "aicar", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 87815447, "formula": "C12H19N3O8", "inchikey": "KXEVYGKATAMXJJ-ACZMJKKPSA-N", "title": "Alanyl-glutamyl-aspartic acid"}], "query": "ala-glu-asp", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL367149", "parent": "CHEMBL367149", "pref_name": "DOCONEXENT"}, "cids": [{"cid": 445580, "formula": "C22H32O2", "inchikey": "MBMBGCFOFBJSGT-KUBAVDMBSA-N", "title": "Doconexent"}], "query": "algal dha", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 156417714, "formula": "C21H30N2O5S", "inchikey": "IHNJMACFBQEKRJ-VHZYLWGESA-N", "title": "Alixorexton"}], "query": "alks 2680", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 164533, "formula": "C5H4O5-2", "inchikey": "KPGXRSRHYNQIFN-UHFFFAOYSA-L", "title": "Alpha-Ketoglutarate"}], "query": "alpha-ketoglutarate", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL8739", "parent": "CHEMBL8739", "pref_name": "LINOLENIC ACID"}, "cids": [{"cid": 5280934, "formula": "C18H30O2", "inchikey": "DTOSIQBPPRVQHS-PDBXOOCHSA-N", "title": "Linolenic Acid"}], "query": "alpha-linolenic acid", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "alpha-linolenic acid (ala)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 59809191, "formula": "C16H23NO", "inchikey": "UOZWZANRCOALQL-UHFFFAOYSA-N", "title": "4-Methyl-1-phenyl-2-(pyrrolidin-1-yl)pentan-1-one"}], "query": "alpha-phip", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 102107923, "formula": "C16H23NO", "inchikey": "KYIJLDDXQWBNGX-UHFFFAOYSA-N", "title": "alpha-PHP"}], "query": "alpha-php", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL205082", "parent": "CHEMBL205082", "pref_name": null}, "cids": [{"cid": 11148955, "formula": "C15H21NO", "inchikey": "YDIIDRWHPFMLGR-UHFFFAOYSA-N", "title": "Alpha-Pyrrolidinopentiophenone"}], "query": "alpha-pvp", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL3526578", "parent": "CHEMBL3526578", "pref_name": null}, "cids": [{"cid": 53393997, "formula": "C24H22FNO", "inchikey": "ALQFAGFPQCBPED-UHFFFAOYSA-N", "title": "AM 2201"}], "query": "am-2201", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "amycretin", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL33778", "parent": "CHEMBL33778", "pref_name": "ANACARDIC ACID"}, "cids": [{"cid": 167551, "formula": "C22H36O3", "inchikey": "ADFWQBGTDJIESE-UHFFFAOYSA-N", "title": "Anacardic Acid"}], "query": "anacardic acid", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 58516166, "formula": "C20H27N3OS", "inchikey": "XWMHYQATSBWUNT-UHFFFAOYSA-N", "title": "AF-710B"}], "query": "anavex3-71", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 67601772, "formula": "C19H22O2", "inchikey": "JRQNUFWAAQGESU-CDJYOOERSA-N", "title": "Androstatrienedione"}], "query": "androstatrienedione", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "anti-thymocyte globulin", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 71587772, "formula": "C35H62N14O11S", "inchikey": "AJLNZWYOJAWBCR-OOPVGHQCSA-N", "title": "Acetyl hexapeptide-3"}], "query": "argireline", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "argireline (acetyl hexapeptide-8)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 169886, "formula": "C13H21NO2", "inchikey": "MLYCFWZIAJAIGW-UHFFFAOYSA-N", "title": "1-(2,5-Dimethoxy-4-methylphenyl)butan-2-amine"}], "query": "ariadne", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL5266519", "parent": "CHEMBL5266519", "pref_name": null}, "cids": [{"cid": 150910, "formula": "C19H24O2", "inchikey": "VHDOTNMSJDQVEE-ZENYQMPMSA-N", "title": "Androsta-3,5-diene-7,17-dione"}], "query": "arimistane", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "arimistane (androstatrienedione)", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL457530", "parent": "CHEMBL457530", "pref_name": null}, "cids": [{"cid": 123831, "formula": "C8H18N4O2", "inchikey": "YDGMGEXADBMOMJ-LURJTMIESA-N", "title": "N,N-Dimethylarginine"}], "query": "asymmetric dimethylarginine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "bacopa monnieri", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL3627755", "parent": "CHEMBL3627755", "pref_name": null}, "cids": [{"cid": 565708, "formula": "C16H10F2N6O", "inchikey": "OEGJBRZAJRPPHL-UHFFFAOYSA-N", "title": "Bam15"}], "query": "bam15", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL370962", "parent": "CHEMBL370962", "pref_name": null}, "cids": [{"cid": 135564787, "formula": "C27H32N4O4", "inchikey": "MYTWFJKBZGMYCS-NQIIRXRSSA-N", "title": "2-(3,4-dimethoxybenzyl)-7-((1R)-1-((1R)-1-hydroxyethyl)-4-phenylbutyl)-5-methyl imidazo(5,1-f)(1,2,4)triazin-4 (3H)-one"}], "query": "bay 60-7550", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "beetroot", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 9816609, "formula": "C9H11BrN2S", "inchikey": "BKUKXOMYGPYFJJ-UHFFFAOYSA-N", "title": "Bemethyl"}], "query": "bemetil", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 9816609, "formula": "C9H11BrN2S", "inchikey": "BKUKXOMYGPYFJJ-UHFFFAOYSA-N", "title": "Bemethyl"}], "query": "bemitil", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4303793", "parent": "CHEMBL4303793", "pref_name": ".BETA.-HYDROXYISOVALERIC ACID"}, "cids": [{"cid": 69362, "formula": "C5H10O3", "inchikey": "AXFYFNCPONWUHW-UHFFFAOYSA-N", "title": "3-Hydroxyisovaleric acid"}], "query": "beta-hydroxy beta-methylbutyrate", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL24441", "parent": "CHEMBL24441", "pref_name": "BETAHISTINE"}, "cids": [{"cid": 2366, "formula": "C8H12N2", "inchikey": "UUQMNUMQCIQDMZ-UHFFFAOYSA-N", "title": "Betahistine"}], "query": "betahistine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 139487180, "formula": "C18H22F2N4O", "inchikey": "VOPRSHDHZUHPBT-UHFFFAOYSA-N", "title": "Opakalim"}], "query": "bhv-7000", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 10231864, "formula": "C30H54N6O5", "inchikey": "BYUQATUKPXLFLZ-UIOOFZCWSA-N", "title": "Palmitoyl Tripeptide-1"}], "query": "biopeptide cl", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 5462311, "formula": "B", "inchikey": "ZOXJGFHDIHLPTG-UHFFFAOYSA-N", "title": "Boron"}], "query": "boron", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "boswellia serrata", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "bpl-003", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4303520", "parent": "CHEMBL4303520", "pref_name": null}, "cids": [{"cid": 4660557, "formula": "C16H20BrN", "inchikey": "LWJALJDRFBXHKX-UHFFFAOYSA-N", "title": "Bromantan"}], "query": "bromantane", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL3246832", "parent": "CHEMBL3246832", "pref_name": null}, "cids": [{"cid": 12562546, "formula": "C17H13BrN4", "inchikey": "KCEIOBKDDQAYCM-UHFFFAOYSA-N", "title": "Bromazolam"}], "query": "bromazolam", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4203403", "parent": "CHEMBL4203403", "pref_name": null}, "cids": [{"cid": 145975294, "formula": "C20H22BrN3O", "inchikey": "CNOFBGYRMCBVLO-UHFFFAOYSA-N", "title": "Brorphine"}], "query": "brorphine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 156588955, "formula": "C24H32N4O3", "inchikey": "UZZPOLCDCVWLAZ-UHFFFAOYSA-N", "title": "Butonitazene"}], "query": "butonitazene", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 1285941, "formula": "C24H19N3O6", "inchikey": "HEKJYZZSCQBJGB-UNOMPAQXSA-N", "title": "4-[(4Z)-4-[[5-(4,5-dimethyl-2-nitrophenyl)furan-2-yl]methylidene]-3-methyl-5-oxopyrazol-1-yl]benzoic acid"}, {"cid": 2871948, "formula": "C24H19N3O6", "inchikey": "HEKJYZZSCQBJGB-UHFFFAOYSA-N", "title": "4-(4-((5-(4,5-Dimethyl-2-nitrophenyl)-2-furanyl)methylene)-4,5-dihydro-3-methyl-5-oxo-1H-pyrazol-1-yl)benzoic acid"}, {"cid": 1285940, "formula": "C24H19N3O6", "inchikey": "HEKJYZZSCQBJGB-XDHOZWIPSA-N", "title": "C646"}], "query": "c646", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "carphedon derivatives", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 87815447, "formula": "C12H19N3O8", "inchikey": "KXEVYGKATAMXJJ-ACZMJKKPSA-N", "title": "Alanyl-glutamyl-aspartic acid"}], "query": "cartalax", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "cartalax (ala-glu-asp)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "ceramides", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "cerebrolysin", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "cerebrolysin constituent peptides", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 959689, "formula": "C17H20ClNO", "inchikey": "VOHIYJJUKAUCCU-UHFFFAOYSA-N", "title": "Chlodantane"}], "query": "chlodantane", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "chlorodehydromethylandrostenediol", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 98521, "formula": "C20H27ClO2", "inchikey": "AGUNEISBPXQOPA-XMUHMHRVSA-N", "title": "Oral-Turinabol"}], "query": "chlorodehydromethyltestosterone", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "chondroitin", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "chondroitin (sulfate)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "cipionate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "citrus bergamot", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "citrus bergamot (bpf)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 91971820, "formula": "C165H269N47O46", "inchikey": "ZUQGTWKGESAQCD-ZGFIGYLBSA-N", "title": "Cjc 1295"}], "query": "cjc-1295", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "clobetasol propionate 0.05%", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "clobetasol propionate 0.05% (topical)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 12317881, "formula": "C17H12ClN5O2", "inchikey": "XJRGLCAWBRZUFC-UHFFFAOYSA-N", "title": "Clonazolam"}], "query": "clonazolam", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "cocoa flavanols", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4303178", "parent": "CHEMBL4303178", "pref_name": null}, "cids": [{"cid": 444029, "formula": "C27H43NO8", "inchikey": "RSOZZQTUMVBTMR-XGUNBQNXSA-N", "title": "N,N-Dimethyl-beta-alanine (3R,4aR,5S,6S,6aS,10S,10aR,10bS)-5-(acetyloxy)-3-ethenyldodecahydro-10,10b-dihydroxy-3,4a,7,7,10a-pentamethyl-1-oxo-1H-naphtho(2,1-b)pyran-6-yl ester"}], "query": "colforsin daropate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 90477169, "formula": "C119H206N32O35", "inchikey": "PTTAQOYOJJTWFD-IBAOLXMASA-N", "title": "Colivelin"}], "query": "colivelin", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1814493", "parent": "CHEMBL1814493", "pref_name": null}, "cids": [{"cid": 73587, "formula": "C14H24N6O4", "inchikey": "MVORZMQFXBLMHM-QWRGUYRKSA-N", "title": "glycyl-L-histidyl-L-lysine"}], "query": "copper peptide", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 18439621, "formula": "C17H26N4O9", "inchikey": "PLTRIMAUDDQYRV-NAKRPEOUSA-N", "title": "Cortagen"}], "query": "cortagen", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "cortexin", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL5275950", "parent": "CHEMBL283800", "pref_name": null}, "cids": [{"cid": 80116, "formula": "C4H11N3O3", "inchikey": "MEJYXFHCRXAUIL-UHFFFAOYSA-N", "title": "Creatine Monohydrate"}], "query": "creatine monohydrate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 25231507, "formula": "C4H10N4O5", "inchikey": "MBSCHHMCRIMBDZ-UHFFFAOYSA-N", "title": "Creatine Nitrate"}], "query": "creatine nitrate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 134818034, "formula": "C25H28N2O", "inchikey": "AWHWTKXMUJLSRM-UHFFFAOYSA-N", "title": "CUMYL-PeGACLONE"}], "query": "cumyl-pegaclone", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL140", "parent": "CHEMBL140", "pref_name": "CURCUMIN"}, "cids": [{"cid": 969516, "formula": "C21H20O6", "inchikey": "VFLDPWHFBUODDF-FCXRPNKRSA-N", "title": "Curcumin"}], "query": "curcumin phytosome", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL408867", "parent": "CHEMBL408867", "pref_name": "[11C]SA4503"}, "cids": [{"cid": 9907323, "formula": "C23H32N2O2", "inchikey": "UVSWWUWQVAQPJR-UHFFFAOYSA-N", "title": "Cutamesine"}], "query": "cutamesine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "cx-1942", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4877198", "parent": "CHEMBL65547", "pref_name": "DEUPSILOCIN"}, "cids": [{"cid": 117065176, "formula": "C12H16N2O", "inchikey": "SPCIYGNTAMCTRO-HXOHQZFQSA-N", "title": "Deupsilocin"}], "query": "cyb003", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "cysteamine 5% cream", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "cysteamine 5% cream (topical)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "dck", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "delta-10-tetrahydrocannabinol", "retrieved": "2026-10-01"}
+{"chembl": null, "cids": [], "query": "delta-10-thc", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 827322, "formula": "C17H16N4S", "inchikey": "JIOBORXCOGMHSV-UHFFFAOYSA-N", "title": "2-Ethyl-9-methyl-4-phenyl-6H-thieno(3,2-f)(1,2,4)triazolo(4,3-a)(1,4)diazepine"}], "query": "deschloroetizolam", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL2068808", "parent": "CHEMBL2068808", "pref_name": null}, "cids": [{"cid": 437168, "formula": "C13H17NO", "inchikey": "ZAGBSZSITDFFAF-UHFFFAOYSA-N", "title": "Deschloroketamine"}], "query": "deschloroketamine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 18651, "formula": "C20H32O", "inchikey": "FRVHJVATKMIOPQ-PAPWGAKMSA-N", "title": "Madol"}], "query": "desoxymethyltestosterone", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "desoxymethyltestosterone (madol)", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL268248", "parent": "CHEMBL268248", "pref_name": null}, "cids": [{"cid": 76168, "formula": "C16H12Cl2N2O", "inchikey": "VPAYQWRBBOGGPY-UHFFFAOYSA-N", "title": "Chlorodiazepam"}], "query": "diclazepam", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "didesoxymodafinil", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "dietary nitrate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "dietary nitrate (beetroot)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 129010512, "formula": "C27H44N4O5", "inchikey": "XEUVNVNAVKZSPT-JTJYXVOQSA-N", "title": "N-(1-Oxohexyl)-L-tyrosyl-N-(6-amino-6-oxohexyl)-L-isoleucinamide"}], "query": "dihexa", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "dihydroboldenone", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "dihydroboldenone (1-testosterone)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 67333747, "formula": "C31H50O3", "inchikey": "FVICENFBEMJOCE-RTFNQGFNSA-N", "title": "Dimethandrolone Undecanoate"}], "query": "dimethandrolone undecanoate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "dimethandrolone undecanoate (dmau)", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL2104416", "parent": "CHEMBL2104416", "pref_name": "MEBOLAZINE"}, "cids": [{"cid": 66847280, "formula": "C42H68N2O2", "inchikey": "POPWFGNRCCUJGU-RSSVFQIBSA-N", "title": "Mebolazine"}], "query": "dimethazine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "dimethazine (dmz)", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4303426", "parent": "CHEMBL4303426", "pref_name": null}, "cids": [{"cid": 206666, "formula": "C19H23N", "inchikey": "JQWJJJYHVHNXJH-UHFFFAOYSA-N", "title": "Diphenidine"}], "query": "diphenidine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "dlx-001", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "dlx-159", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 67333747, "formula": "C31H50O3", "inchikey": "FVICENFBEMJOCE-RTFNQGFNSA-N", "title": "Dimethandrolone Undecanoate"}], "query": "dmau", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "dmt", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 157010705, "formula": "C15H21NO", "inchikey": "WIMLPRYZJQNQLE-UHFFFAOYSA-N", "title": "Deoxymethoxetamine"}], "query": "dmxe", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL6616", "parent": "CHEMBL6616", "pref_name": null}, "cids": [{"cid": 1229, "formula": "C11H16INO2", "inchikey": "BGMZUEKZENQUJY-UHFFFAOYSA-N", "title": "2,5-Dimethoxy-4-iodoamphetamine"}], "query": "doi", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL8600", "parent": "CHEMBL8600", "pref_name": "DOM"}, "cids": [{"cid": 85875, "formula": "C12H19NO2", "inchikey": "NTJQREUGJKIARY-UHFFFAOYSA-N", "title": "2,5-Dimethoxy-4-Methylamphetamine"}], "query": "dom", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4297438", "parent": "CHEMBL4302089", "pref_name": "T-817 MALEATE"}, "cids": [{"cid": 11338749, "formula": "C20H25NO6S", "inchikey": "RLUCYBFCLXANSO-BTJKTKAUSA-N", "title": "T-817 maleate"}], "query": "edonerpic maleate", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL297453", "parent": "CHEMBL297453", "pref_name": "EPIGALOCATECHIN GALLATE"}, "cids": [{"cid": 65064, "formula": "C22H18O11", "inchikey": "WMBWREPUVVBILR-WIYYLYMNSA-N", "title": "Epigallocatechin Gallate"}], "query": "egcg", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 71449007, "formula": "C96H120N12Na6O21", "inchikey": "ZASXKEGREHRXDL-CAWNUZPDSA-H", "title": "Sacubitril Valsartan Sodium Hydrate"}], "query": "entresto", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "enx-102", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 110821, "formula": "C16H19N", "inchikey": "IGFZMQXEKIZPDR-UHFFFAOYSA-N", "title": "N-Ethyl-alpha-phenylbenzeneethanamine"}], "query": "ephenidine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 71752521, "formula": "C20H32OS", "inchikey": "UPLPHRJJTCUQAY-WIRWPRASSA-N", "title": "2,3-Thioepoxy madol"}], "query": "epistane", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "epistane (methylepitiostanol)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 219042, "formula": "C14H22N4O9", "inchikey": "HGHOBRRUMWJWCU-FXQIFTODSA-N", "title": "Epitalon"}], "query": "epitalon", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 219042, "formula": "C14H22N4O9", "inchikey": "HGHOBRRUMWJWCU-FXQIFTODSA-N", "title": "Epitalon"}], "query": "epithalon", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL5209630", "parent": "CHEMBL5209630", "pref_name": null}, "cids": [{"cid": 5351619, "formula": "C9H15N3O2S", "inchikey": "SSISHJJTAXXQAX-ZETCQYMHSA-N", "title": "Ergothioneine"}], "query": "ergothioneine", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1624784", "parent": "CHEMBL1624784", "pref_name": null}, "cids": [{"cid": 129250, "formula": "C11H14N2OS", "inchikey": "XFLUTXZJXVSDEZ-UHFFFAOYSA-N", "title": "5-Ethoxy-2-ethylmercaptobenzimidazole"}], "query": "ethomersol", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1187932", "parent": "CHEMBL1187932", "pref_name": null}, "cids": [{"cid": 3080846, "formula": "C15H21NO2", "inchikey": "AIVSIRYZIBXTMM-UHFFFAOYSA-N", "title": "Ethylphenidate"}], "query": "ethylphenidate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 155804760, "formula": "C22H26N4O3", "inchikey": "LQZWZCJCEPUKCJ-UHFFFAOYSA-N", "title": "Etonitazepyne"}], "query": "etonitazepyne", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "etx-155", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 57360686, "formula": "C13H17NO3", "inchikey": "YERSNXHEOIYEGX-UHFFFAOYSA-N", "title": "Eutylone"}], "query": "eutylone", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "fenugreek", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL3633556", "parent": "CHEMBL3633556", "pref_name": null}, "cids": [{"cid": 4068248, "formula": "C15H22N2O2", "inchikey": "UJHBVMHOBZBWMX-UHFFFAOYSA-N", "title": "Ferrostatin-1"}], "query": "ferrostatin-1", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "flaxseed oil", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1672359", "parent": "CHEMBL1672359", "pref_name": null}, "cids": [{"cid": 13271852, "formula": "C15H13F2NO2S", "inchikey": "YEAQNUMCWMRYMU-UHFFFAOYSA-N", "title": "2-((Bis(4-fluorophenyl)methyl)sulfinyl)acetamide"}], "query": "flmodafinil", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 10359044, "formula": "C17H12ClFN4", "inchikey": "MPZVLJCMGPYWQQ-UHFFFAOYSA-N", "title": "8-chloro-6-(2-fluorophenyl)-1-methyl-4H-(1,2,4)triazolo(4,3-a)(1,4)benzodiazepine"}], "query": "flualprazolam", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 21930924, "formula": "C17H12BrFN4", "inchikey": "VXGSZBZQCBNUIP-UHFFFAOYSA-N", "title": "Flubromazolam"}], "query": "flubromazolam", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 3044878, "formula": "C15H10BrFN4S", "inchikey": "VOZDBDBHBXLWCG-UHFFFAOYSA-N", "title": "Flubrotizolam"}], "query": "flubrotizolam", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 156588967, "formula": "C20H23FN4O2", "inchikey": "ZTWHIDCAGRMKTC-UHFFFAOYSA-N", "title": "Flunitazene"}], "query": "flunitazene", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "follistatin", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 167312269, "formula": "C228H388N86O64", "inchikey": "WVZCDZFJLXBWHG-XXZPGMBKSA-N", "title": "Foxo4-dri"}, {"cid": 168431240, "formula": "C228H388N86O64", "inchikey": "WVZCDZFJLXBWHG-QLCXAPFOSA-N", "title": "H-D-Leu-D-Thr-D-Leu-D-Arg-D-Lys-D-Glu-D-Pro-D-Ala-D-Ser-D-Glu-D-Ile-D-Ala-D-Gln-D-Ser-D-Ile-D-Leu-D-Glu-D-Ala-D-Tyr-D-Ser-D-Gln-D-Asn-Gly-D-Trp-D-Ala-D-Asn-D-Arg-D-Arg-D-Ser-Gly-Gly-Lys-Arg-Pro-DL-Pro-DL-Pro-Arg-Arg-Arg-Gln-Arg-Arg-Lys-Lys-Arg-Gly-OH"}], "query": "foxo4-dri", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "ftpp", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "fxe", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 139035031, "formula": "C14H21CuN6O4-", "inchikey": "LREZPQNYQZAPJC-ACMTZBLWSA-L", "title": "Copper tripeptide"}, {"cid": 9831891, "formula": "C28H46CuN12O8", "inchikey": "YINACRBQQGZRRM-XTQNZXNBSA-L", "title": "Bisprezatide copper"}, {"cid": 73587, "formula": "C14H24N6O4", "inchikey": "MVORZMQFXBLMHM-QWRGUYRKSA-N", "title": "glycyl-L-histidyl-L-lysine"}, {"cid": 71587328, "formula": "C14H23CuN6O4+", "inchikey": "NZWIFMYRRCMYMN-ACMTZBLWSA-M", "title": "Prezatide copper"}, {"cid": 133697840, "formula": "C28H48CuN12O8", "inchikey": "RIPDSRHLQNAZOH-XTQNZXNBSA-N", "title": "GHK-Cu"}, {"cid": 165429100, "formula": "C14H22CuN6O4", "inchikey": "QMIFIFIYYPUVNU-ACMTZBLWSA-L", "title": "N2-(N-glycyl-L-histidyl)-L-Lysine, copper complex"}], "query": "ghk-cu", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "ghk-cu (copper peptide)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 4345065, "formula": "C46H56N12O6", "inchikey": "WZHKXNSOCOQYQX-UHFFFAOYSA-N", "title": "Ghrp-6"}], "query": "ghrp-6", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 29976098, "formula": "C20H29ClO2", "inchikey": "ZHWBNJVZZYSUJZ-HADYEQCDSA-N", "title": "4-Chloro-17-methyl-androsta-1,4-diene-3,17-diol, (3beta,17beta)-"}], "query": "halodrol", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "halodrol (chlorodehydromethylandrostenediol)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "hcg (human chorionic gonadotropin)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "hericium erinaceus", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL449317", "parent": "CHEMBL449317", "pref_name": "HESPERIDIN"}, "cids": [{"cid": 10621, "formula": "C28H34O15", "inchikey": "QUQPHWDTPGMPEX-QJBIFVCTSA-N", "title": "Hesperidin"}], "query": "hesperidin", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 16050328, "formula": "C21H32O2", "inchikey": "XKRHRBJLCLXSGE-VNCLPFQGSA-N", "title": "Hexahydrocannabinol"}], "query": "hexahydrocannabinol", "retrieved": "2026-10-01"}
+{"chembl": null, "cids": [{"cid": 134822125, "formula": "C14H21NO", "inchikey": "CWNKMHIETKEBCA-UHFFFAOYSA-N", "title": "N-Ethylhexedrone"}], "query": "hexen", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "hhc", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 165412103, "formula": "C23H34O3", "inchikey": "ZAZIHGFBNRVMAI-JCNKGUCWSA-N", "title": "Hexahydrocannabinol O-acetate"}], "query": "hhc-o", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "hmb (beta-hydroxy beta-methylbutyrate)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "human chorionic gonadotropin", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4447799", "parent": "CHEMBL4447799", "pref_name": null}, "cids": [{"cid": 16131438, "formula": "C119H204N34O32S2", "inchikey": "DPEUWKZJZIPZKE-OFANTOPUSA-N", "title": "Humanin"}], "query": "humanin", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "hxe", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "hyaluronic acid filler", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 441298, "formula": "C35H52O4", "inchikey": "KGSZHKRKHXOAMG-HQKKAZOISA-N", "title": "Hyperforin"}], "query": "hyperforin", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL275084", "parent": "CHEMBL275084", "pref_name": "ISOBUTYLMETHYLXANTHINE"}, "cids": [{"cid": 3758, "formula": "C10H14N4O2", "inchikey": "APIXJSLKIYYUKG-UHFFFAOYSA-N", "title": "3-Isobutyl-1-methylxanthine"}], "query": "ibmx", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL275084", "parent": "CHEMBL275084", "pref_name": "ISOBUTYLMETHYLXANTHINE"}, "cids": [{"cid": 3758, "formula": "C10H14N4O2", "inchikey": "APIXJSLKIYYUKG-UHFFFAOYSA-N", "title": "3-Isobutyl-1-methylxanthine"}], "query": "ibmx (3-isobutyl-1-methylxanthine)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "igf-1 lr3", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "intravenous golimumab", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 68314762, "formula": "C16H23NO2", "inchikey": "AZVPADMEIMLODT-UHFFFAOYSA-N", "title": "Isopropylphenidate"}], "query": "isopropylphenidate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 145721979, "formula": "C23H30N4O3", "inchikey": "OIOQREYBGDAYGT-UHFFFAOYSA-N", "title": "N,N-Diethyl-2-((4-(1-methylethoxy)phenyl)methyl)-5-nitro-1H-benzimidazole-1-ethanamine"}], "query": "isotonitazene", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 1011240, "formula": "C22H24Cl2N2O4", "inchikey": "HJGMCDHQPXTGAV-UHFFFAOYSA-N", "title": "2-(4-chlorophenoxy)-N-(4-(2-(4-chlorophenoxy)acetamido)cyclohexyl)acetamide"}], "query": "isrib", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL561013", "parent": "CHEMBL561013", "pref_name": null}, "cids": [{"cid": 10382701, "formula": "C24H23NO", "inchikey": "JDNLPKCAXICMBW-UHFFFAOYSA-N", "title": "Jwh 018"}], "query": "jwh-018", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL2380416", "parent": "CHEMBL2380416", "pref_name": null}, "cids": [{"cid": 10471670, "formula": "C23H21NO", "inchikey": "VCHHHSMPMLNVGS-UHFFFAOYSA-N", "title": "(1-Butyl-1H-indol-3-yl)-1-naphthalenylmethanone"}], "query": "jwh-073", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "jzp441", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "ketoconazole 2% shampoo", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "ketoconazole 2% shampoo (topical scalp)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "known as 4c-d", "retrieved": "2026-10-01"}
+{"chembl": null, "cids": [], "query": "krill oil", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "kv7.2", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "kv7.3 research activators", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 50940514, "formula": "C21H15F5N4O2S", "inchikey": "CGRMNGGGSWLDDC-UHFFFAOYSA-N", "title": "Androgen receptor antagonist 2"}], "query": "kx-826", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 148959784, "formula": "C17H11Cl2N3O2", "inchikey": "TVZDUDDLASVAOM-JCMHNJIXSA-N", "title": "CID 148959784"}, {"cid": 137473598, "formula": "C17H11Cl2N3O2", "inchikey": "TVZDUDDLASVAOM-PXLXIMEGSA-N", "title": "5,6-dichloro-3-[(3E)-3-methoxyiminoindol-2-yl]-1H-indol-2-ol"}, {"cid": 164575812, "formula": "C17H11Cl2N3O2", "inchikey": "TVZDUDDLASVAOM-UHFFFAOYSA-N", "title": "5',6'-Dichloro-3-(methoxyimino)-[2,3'-biindolinylidene]-2'-one"}], "query": "ky19382", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "l-alpha-glycerylphosphorylcholine under the alias choline alfoscerate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "l-carnitine / alcar", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL446143", "parent": "CHEMBL446143", "pref_name": "ORNITHINE"}, "cids": [{"cid": 6262, "formula": "C5H12N2O2", "inchikey": "AHLPHDHHMVZTML-BYPYZUCNSA-N", "title": "L-(-)-Ornithine"}], "query": "l-ornithine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 10220941, "formula": "C9H19N3O6", "inchikey": "IXUZXIMQZIMPSQ-ZBRNBAAYSA-N", "title": "Ornithine aspartate"}], "query": "l-ornithine l-aspartate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "lavender oil, oral", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 10950057, "formula": "C27H42O4", "inchikey": "WOJKRRDDERNLBU-BOYSPROGSA-N", "title": "Laxogenin"}], "query": "laxogenin", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "levodopa / carbidopa", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "levodopa / carbidopa (sinemet)", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL5170697", "parent": "CHEMBL5170697", "pref_name": null}, "cids": [{"cid": 25195253, "formula": "C16H14ClF3N2O", "inchikey": "OMXGOGXEWUCLFI-UHFFFAOYSA-N", "title": "9-Chloro-2-ethyl-3,6-dihydro-1-methyl-3-(2,2,2-trifluoroethyl)-7H-pyrrolo(3,2-f)quinolin-7-one"}], "query": "lgd-3303", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "lion's mane", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "lion's mane (hericium erinaceus)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "lion’s mane standardized for erinacines", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL2094750", "parent": "CHEMBL2094750", "pref_name": null}, "cids": [{"cid": 135735917, "formula": "C19H21ClN4", "inchikey": "YAFQFNOUYXZVPZ-UHFFFAOYSA-N", "title": "Liproxstatin-1"}], "query": "liproxstatin-1", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 23686432, "formula": "C5H3LiN2O4", "inchikey": "IZJGDPULXXNWJP-UHFFFAOYSA-M", "title": "Lithium orotate"}], "query": "lithium orotate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 87919683, "formula": "C18H31N5O9", "inchikey": "IKVDKWACACMDLR-BJDJZHNGSA-N", "title": "Livagen"}], "query": "livagen", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL530345", "parent": "CHEMBL530345", "pref_name": "CATHELICIDIN"}, "cids": [{"cid": 16198951, "formula": "C205H340N60O53", "inchikey": "POIUWJQBRNEFGX-XAMSXPGMSA-N", "title": "LL-37"}], "query": "ll-37", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL6168351", "parent": "CHEMBL6168351", "pref_name": null}, "cids": [{"cid": 171074967, "formula": "C23H22ClFN8O2", "inchikey": "OYUCEQFRNJABJW-OAQYLSRUSA-N", "title": "Vepugratinib"}], "query": "loxo-435", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL263881", "parent": "CHEMBL263881", "pref_name": "LYSERGIDE"}, "cids": [{"cid": 5761, "formula": "C20H25N3O", "inchikey": "VAYOSLLFUXYJDT-RDTXWAMCSA-N", "title": "(+)-Lysergic acid diethylamide"}], "query": "lsd", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 168009866, "formula": "C17H15N", "inchikey": "MLVMQHOUVDMPCQ-UHFFFAOYSA-N", "title": "Lumbokinase capsules"}], "query": "lumbrokinase", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL365790", "parent": "CHEMBL365790", "pref_name": null}, "cids": [{"cid": 7010502, "formula": "C11H21N3O5", "inchikey": "UGTZHPSKYRIGRJ-YUMQZZPRSA-N", "title": "Lysylglutamic acid"}], "query": "lys-glu", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 87571363, "formula": "C15H26N4O8", "inchikey": "LLSUNJYOSCOOEB-GUBZILKMSA-N", "title": "Lysyl-glutamyl-aspartic acid"}], "query": "lys-glu-asp", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 18651, "formula": "C20H32O", "inchikey": "FRVHJVATKMIOPQ-PAPWGAKMSA-N", "title": "Madol"}], "query": "madol", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "madol (desoxymethyltestosterone)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 11703161, "formula": "C8H16MgN2O8S2", "inchikey": "MJFUUCZDSVHBDO-UHFFFAOYSA-L", "title": "Magnesium, bis(2-(acetylamino)ethanesulfonato-O1,O2)-, (T-4)-"}], "query": "magnesium acetyl taurate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 45489777, "formula": "C8H14MgO10", "inchikey": "YVJOHOWNFPQSPP-BALCVSAKSA-L", "title": "L-threonic acid magnesium salt"}], "query": "magnesium l-threonate", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL451881", "parent": "CHEMBL451881", "pref_name": null}, "cids": [{"cid": 9897237, "formula": "C39H75N7O10", "inchikey": "WSGCRSMLXFHGRM-DEVHWETNSA-N", "title": "Palmitoyl Pentapeptide-4"}], "query": "matrixyl", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "matrixyl (palmitoyl pentapeptide-4)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "mazindol extended-release", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 155804661, "formula": "C20H27N3O3", "inchikey": "LWOCBHBFWNGPGM-QGZVFWFLSA-N", "title": "MDMB-4en-PINACA"}], "query": "mdmb-4en-pinaca", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 119057580, "formula": "C17H23NO3", "inchikey": "OBLFRFGUZZRECT-UHFFFAOYSA-N", "title": "1-(1,3-Benzodioxol-5-yl)-2-(1-pyrrolidinyl)-1-hexanone"}], "query": "mdphp", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL430239", "parent": "CHEMBL430239", "pref_name": "MELATONAN"}, "cids": [{"cid": 92432, "formula": "C50H69N15O9", "inchikey": "JDKLPDJLXHXHNV-MFVUMRCOSA-N", "title": "melanotan-II"}], "query": "melanotan ii", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 237186, "formula": "C21H34O2", "inchikey": "QCWCXSMWLJFBNM-FOVYBZIDSA-N", "title": "Methasterone"}], "query": "methasterone", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 52911279, "formula": "C15H21NO2", "inchikey": "LPKTWLVEGBNOOX-UHFFFAOYSA-N", "title": "2-(3-Methoxyphenyl)-2-(ethylamino)cyclohexanone"}], "query": "methoxetamine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 67833251, "formula": "C20H25NO", "inchikey": "QXXCUXIRBHSITD-UHFFFAOYSA-N", "title": "1-(1-(2-Methoxyphenyl)-2-phenylethyl)piperidine"}], "query": "methoxphenidine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 7092657, "formula": "C20H30O2", "inchikey": "JRNSSSJKIGAFCT-YDSAWKJFSA-N", "title": "Methyl-1-testosterone"}], "query": "methyl-1-testosterone", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "methyl-1-testosterone (m1t)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 71752521, "formula": "C20H32OS", "inchikey": "UPLPHRJJTCUQAY-WIRWPRASSA-N", "title": "2,3-Thioepoxy madol"}], "query": "methylepitiostanol", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 15872156, "formula": "C9H12N4O3", "inchikey": "ZVQXCXPGLSBNCX-UHFFFAOYSA-N", "title": "Methylliberine"}], "query": "methylliberine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 252380, "formula": "C21H32O2", "inchikey": "TVTSDURKYARCML-IYRCEVNGSA-N", "title": "(5alpha,17beta)-17-Hydroxy-2,17-dimethylandrost-1-en-3-one"}], "query": "methylstenbolone", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 12434325, "formula": "C16H13ClN4S", "inchikey": "NQSSWDKQLVBUQN-UHFFFAOYSA-N", "title": "4-(2-chlorophenyl)-2-ethyl-6H-thieno(3,2-f)(1,2,4)triazolo(4,3-a)(1,4)diazepine"}], "query": "metizolam", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1999174", "parent": "CHEMBL1999174", "pref_name": null}, "cids": [{"cid": 26412, "formula": "C21H27N3O", "inchikey": "SFNKTTXBZXVGOH-UHFFFAOYSA-N", "title": "Metodesnitazene"}], "query": "metodesnitazene", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 53316366, "formula": "C21H26N4O3", "inchikey": "HNGZTLMRQTVPBH-UHFFFAOYSA-N", "title": "Metonitazene"}], "query": "metonitazene", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "micronized diosmin/hesperidin", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL299031", "parent": "CHEMBL299031", "pref_name": null}, "cids": [{"cid": 3034396, "formula": "C23H30N2O4", "inchikey": "LELBFTMXCIIKKX-QVRQZEMUSA-N", "title": "(-)-Mitragynine"}], "query": "mitragynine", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL58362", "parent": "CHEMBL58362", "pref_name": null}, "cids": [{"cid": 44301701, "formula": "C23H30N2O5", "inchikey": "BAEJBRCYKACTAA-WGUOAFTMSA-N", "title": "Mitragynine pseudoindoxyl"}], "query": "mitragynine pseudoindoxyl", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 146675088, "formula": "C101H152N28O22S2", "inchikey": "WYTHCOXVWRKRAH-LOKRTKBUSA-N", "title": "Mots-c"}], "query": "mots-c", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 52911279, "formula": "C15H21NO2", "inchikey": "LPKTWLVEGBNOOX-UHFFFAOYSA-N", "title": "2-(3-Methoxyphenyl)-2-(ethylamino)cyclohexanone"}], "query": "mxe", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "mxipr", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 155817932, "formula": "C16H23NO2", "inchikey": "AAVOSBAXDRASAH-UHFFFAOYSA-N", "title": "Methoxpropamine"}], "query": "mxpr", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 133082488, "formula": "C35H59N11O10", "inchikey": "MMPAGAHMLCPVEK-GSAYKZDLSA-N", "title": "N-Acetyl selank"}], "query": "n-acetyl selank", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "n-acetyl selank amidate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 172638603, "formula": "C39H54N10O10S", "inchikey": "QQOAKFVAEDCKGY-HPMAGDRPSA-N", "title": "N-acetyl semax amidate"}], "query": "n-acetyl semax", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 172638603, "formula": "C39H54N10O10S", "inchikey": "QQOAKFVAEDCKGY-HPMAGDRPSA-N", "title": "N-acetyl semax amidate"}], "query": "n-acetyl semax amidate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "n-acetyl-noopept", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL5435500", "parent": "CHEMBL5435500", "pref_name": null}, "cids": [{"cid": 148861, "formula": "C7H13NO3S", "inchikey": "MSMRAGNKRYVTCX-LURJTMIESA-N", "title": "L-Cysteine, N-acetyl-, ethyl ester"}], "query": "n-acetylcysteine ethyl ester", "retrieved": "2026-10-01"}
+{"chembl": null, "cids": [{"cid": 205593, "formula": "C13H19NO", "inchikey": "QQAHEGDXEXIQPR-UHFFFAOYSA-N", "title": "2-(Ethylamino)-1-phenyl-1-pentanone"}], "query": "n-ethylpentedrone", "retrieved": "2026-10-01"}
+{"chembl": null, "cids": [{"cid": 57359308, "formula": "C14H19NO3", "inchikey": "VERDHJIMZYXGIW-UHFFFAOYSA-N", "title": "N-Ethylpentylone"}], "query": "n-ethylpentylone", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "nacet", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL2106789", "parent": "CHEMBL2106789", "pref_name": "NANAFROCIN"}, "cids": [{"cid": 442757, "formula": "C16H14O6", "inchikey": "ZCJHPTKRISJQTN-JGVFFNPUSA-N", "title": "Nanaomycin A"}], "query": "nanaomycin a", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "nattokinase", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 118295270, "formula": "C19H30N4O2", "inchikey": "HEJAEKBVOZHTRA-UHFFFAOYSA-N", "title": "Direclidine"}], "query": "nbi-1117568", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL195008", "parent": "CHEMBL195008", "pref_name": "NECROSTATIN"}, "cids": [{"cid": 2828334, "formula": "C13H13N3OS", "inchikey": "TXUWMXQFNYDOEZ-UHFFFAOYSA-N", "title": "Necrostatin-1"}], "query": "necrostatin-1", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 162642078, "formula": "C29H31AsN4O5S2", "inchikey": "GNUHSLLRVGIPIB-UHFFFAOYSA-N", "title": "[2-[4-(3-aminopropanoylamino)phenyl]-1,3,2-dithiarsolan-4-yl]methyl N-(2-butyl-1,3-dioxobenzo[de]isoquinolin-6-yl)carbamate"}], "query": "nep", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL610238", "parent": "CHEMBL610238", "pref_name": "BETANMN"}, "cids": [{"cid": 14180, "formula": "C11H15N2O8P", "inchikey": "DAYLJWODMCOQEW-TURQNECASA-N", "title": "Nicotinamide Mononucleotide"}], "query": "nicotinamide mononucleotide", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 20317278, "formula": "C17H13N5O2", "inchikey": "OYRPNABWTHDOFK-UHFFFAOYSA-N", "title": "Nitrazolam"}], "query": "nitrazolam", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "nmn (nicotinamide mononucleotide)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 147523, "formula": "C11H12N2O6", "inchikey": "XFZGYOJFPGPYCS-QMMMGPOBSA-N", "title": "Nooglutil"}], "query": "nooglutil", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 147523, "formula": "C11H12N2O6", "inchikey": "XFZGYOJFPGPYCS-QMMMGPOBSA-N", "title": "Nooglutil"}], "query": "nooglutyl", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4303687", "parent": "CHEMBL4303687", "pref_name": null}, "cids": [{"cid": 180496, "formula": "C17H22N2O4", "inchikey": "PJNSMUBMSNAEEN-AWEZNQCLSA-N", "title": "1-(2-Phenylacetyl)-L-prolylglycine ethy ester"}], "query": "noopept", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL974", "parent": "CHEMBL974", "pref_name": "N-DESALKYL-2-OXOQUAZEPAM"}, "cids": [{"cid": 4540, "formula": "C15H10ClFN2O", "inchikey": "UVCOILFBWYKHHB-UHFFFAOYSA-N", "title": "Desalkylflurazepam"}], "query": "norflurazepam", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 132989542, "formula": "C14H19NO", "inchikey": "IDLSBAANXISGEI-UHFFFAOYSA-N", "title": "2'-Oxo-pce"}], "query": "o-pce", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "oral collagen peptides", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "oral minoxidil", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4303417", "parent": "CHEMBL4303417", "pref_name": null}, "cids": [{"cid": 13584912, "formula": "C11H12N2O2", "inchikey": "FIKUEZUFASUKAH-QMMMGPOBSA-N", "title": "Org-26576"}], "query": "org 26576", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 176507653, "formula": "C24H24F4N2O4S", "inchikey": "XGXKCWFIUAZZRS-PMACEKPBSA-N", "title": "Cleminorexton"}], "query": "orx750", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 20055236, "formula": "C18H26O3", "inchikey": "GXHBCWCMYVTJOW-YGRHGMIBSA-N", "title": "Oxabolone"}], "query": "oxabolone", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "oxabolone (cipionate)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 56599151, "formula": "C27H42N6O8", "inchikey": "LUJZBZPLIRWWGJ-ZKHAZHQOSA-N", "title": "Ac-dggl-adamatanylglycine-NH2"}], "query": "p021", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "p110", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL2442630", "parent": "CHEMBL2442630", "pref_name": null}, "cids": [{"cid": 2836187, "formula": "C21H18Br2N2O", "inchikey": "FZHHRERIIVOATI-UHFFFAOYSA-N", "title": "3,6-Dibromo-alpha-[(phenylamino)methyl]-9H-carbazole-9-ethanol"}], "query": "p7c3", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL2442625", "parent": "CHEMBL2442625", "pref_name": null}, "cids": [{"cid": 46853447, "formula": "C22H19Br2FN2O", "inchikey": "XNLTWMQBJFWQOU-UHFFFAOYSA-N", "title": "N-(3-(3,6-dibromo-9H-carbazol-9-yl)-2-fluoropropyl)-3-methoxyaniline"}], "query": "p7c3-a20", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL451881", "parent": "CHEMBL451881", "pref_name": null}, "cids": [{"cid": 9897237, "formula": "C39H75N7O10", "inchikey": "WSGCRSMLXFHGRM-DEVHWETNSA-N", "title": "Palmitoyl Pentapeptide-4"}], "query": "palmitoyl pentapeptide-4", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 10231864, "formula": "C30H54N6O5", "inchikey": "BYUQATUKPXLFLZ-UIOOFZCWSA-N", "title": "Palmitoyl Tripeptide-1"}], "query": "palmitoyl tripeptide-1", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "palmitoyl tripeptide-1 (biopeptide cl)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "peg-mgf", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "phenibut faa", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL348639", "parent": "CHEMBL348639", "pref_name": null}, "cids": [{"cid": 132441, "formula": "C12H14N2O2", "inchikey": "LYONXVJRBWWGQO-UHFFFAOYSA-N", "title": "Fonturacetam"}], "query": "phenotropil", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL348639", "parent": "CHEMBL348639", "pref_name": null}, "cids": [{"cid": 132441, "formula": "C12H14N2O2", "inchikey": "LYONXVJRBWWGQO-UHFFFAOYSA-N", "title": "Fonturacetam"}], "query": "phenylpiracetam", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "phenylpiracetam (phenotropil)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 4995664, "formula": "C12H15N3O2", "inchikey": "AXQUMNYYLGUJIZ-UHFFFAOYSA-N", "title": "Phenylpiracetam hydrazide"}], "query": "phenylpiracetam hydrazide", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 446066, "formula": "C35H69O8P", "inchikey": "PORPENFLTBBHSG-MGBGTMOVSA-N", "title": "PA(16:0/16:0)"}], "query": "phosphatidic acid", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 10273502, "formula": "C15H26N6O8", "inchikey": "QPRZKNOOOBWXSU-CIUDSAMLSA-N", "title": "Glu-Asp-Arg"}], "query": "pinealon", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL465843", "parent": "CHEMBL465843", "pref_name": "PIPLARTINE"}, "cids": [{"cid": 637858, "formula": "C17H19NO5", "inchikey": "VABYUUZNAVQNPG-BQYQJAHWSA-N", "title": "Piperlongumine"}], "query": "piperlongumine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "plant sterols / stanols", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "platelet-rich plasma", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "platelet-rich plasma (prp)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "polypodium leucotomos", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL305881", "parent": "CHEMBL305881", "pref_name": null}, "cids": [{"cid": 126402, "formula": "C19H27NO3", "inchikey": "RQHKZUBCUZVZEF-UHFFFAOYSA-N", "title": "2-(4-Morpholinyl)ethyl 1-phenylcyclohexanecarboxylate"}], "query": "pre-084", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL253363", "parent": "CHEMBL253363", "pref_name": "PREGNENOLONE"}, "cids": [{"cid": 8955, "formula": "C21H32O2", "inchikey": "ORNBQBCIOKFOEO-QGVNFLHTSA-N", "title": "Pregnenolone"}], "query": "pregnenolone", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 70700868, "formula": "C18H22ClNO2", "inchikey": "HLBBSWSJLPLPRU-UHFFFAOYSA-N", "title": "Prl-8-53"}], "query": "prl-8-53", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 56842253, "formula": "C25H38N2O2", "inchikey": "AGJAMJZFPDQSEW-KOTDIDPQSA-N", "title": "Prostanozol"}], "query": "prostanozol", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 156589001, "formula": "C23H30N4O3", "inchikey": "SJHUJFHOXYDSJY-UHFFFAOYSA-N", "title": "Protonitazene"}], "query": "protonitazene", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "pumpkin seed oil", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL3246831", "parent": "CHEMBL3246831", "pref_name": null}, "cids": [{"cid": 12562545, "formula": "C16H12BrN5", "inchikey": "BGRWSFIQQPVEML-UHFFFAOYSA-N", "title": "8-Bromo-1-methyl-6-(2-pyridinyl)-4H-(1,2,4)triazolo(4,3-a)(1,4)benzodiazepine"}], "query": "pyrazolam", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 50940514, "formula": "C21H15F5N4O2S", "inchikey": "CGRMNGGGSWLDDC-UHFFFAOYSA-N", "title": "Androgen receptor antagonist 2"}], "query": "pyrilutamide", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 50940514, "formula": "C21H15F5N4O2S", "inchikey": "CGRMNGGGSWLDDC-UHFFFAOYSA-N", "title": "Androgen receptor antagonist 2"}], "query": "pyrilutamide (kx-826)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "quilavonemad", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "quinupristin / dalfopristin", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "r-mdma", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 32771, "formula": "C16H25ClN2O", "inchikey": "PNBRULDYJXFJRD-UHFFFAOYSA-N", "title": "Rad 150"}], "query": "rad-150", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "rad-150 (tlb-150)", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL5425653", "parent": "CHEMBL5425653", "pref_name": null}, "cids": [{"cid": 162510634, "formula": "C21H30N2O4", "inchikey": "LSDOIAGGRBGDJJ-UHFFFAOYSA-N", "title": "Luvesilocin"}], "query": "re104", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "red yeast rice", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL81379", "parent": "CHEMBL81379", "pref_name": "RETINAL"}, "cids": [{"cid": 638015, "formula": "C20H28O", "inchikey": "NCYCYZXNIZJOKI-OVSJKPMPSA-N", "title": "Retinal"}], "query": "retinaldehyde", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL383475", "parent": "CHEMBL383475", "pref_name": null}, "cids": [{"cid": 344265, "formula": "C19H14N2O4", "inchikey": "HPTXLHAHLXOAKV-UHFFFAOYSA-N", "title": "RG108"}], "query": "rg108", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "rhodiola rosea", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "rosemary oil", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1910411", "parent": "CHEMBL1910411", "pref_name": null}, "cids": [{"cid": 57398987, "formula": "C15H23N3O3", "inchikey": "YNYAUBNZRZVNLX-KBPBESRZSA-N", "title": "S-40503"}], "query": "s-40503", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "s-47445", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "sacubitril/valsartan", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "sacubitril/valsartan (entresto)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 118548467, "formula": "C24H38N4O3", "inchikey": "QILSKKMYIGWGLH-YRTSKKSESA-N", "title": "(3alpha,5alpha)-3-Hydroxy-3-(methoxymethyl)-21-(5-methyl-2H-tetrazol-2-yl)-19-norpregnan-20-one"}, {"cid": 177841680, "formula": "C24H38N4O3", "inchikey": "QILSKKMYIGWGLH-ZYANIKMUSA-N", "title": "1-[(3S,5R,8S,9S,10R,13R,14R,17R)-3-hydroxy-3-(methoxymethyl)-13-methyl-2,4,5,6,7,8,9,10,11,12,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-17-yl]-2-(5-methyltetrazol-2-yl)ethanone"}], "query": "sage-324", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 11765600, "formula": "C33H57N11O9", "inchikey": "JTDTXGMXNXBGBZ-YVHUGQOKSA-N", "title": "Selank"}], "query": "selank", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 9811102, "formula": "C37H51N9O10S", "inchikey": "AFEHBIGDWIGTEH-AQRCPPRCSA-N", "title": "ACTH (4-7), Pro-Gly-Pro-"}], "query": "semax", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "shlp-2", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "silexan", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "silexan (lavender oil, oral)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "sinemet", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 1235, "formula": "C17H23NO", "inchikey": "LGQCVMYAEFTEFN-UHFFFAOYSA-N", "title": "Alazocine"}, {"cid": 3036246, "formula": "C17H23NO", "inchikey": "LGQCVMYAEFTEFN-JCURWCKSSA-N", "title": "(2R,6R,11R)-1,2,3,4,5,6-Hexahydro-6,11-dimethyl-3-(2-propen-1-yl)-2,6-methano-3-benzazocin-8-ol"}, {"cid": 16746587, "formula": "C17H24ClNO", "inchikey": "ZTGMHFIGNYXMJV-LQCMQXQBSA-N", "title": "N-Allylnormetazocine hydrochloride"}, {"cid": 67798260, "formula": "C17H24ClNO", "inchikey": "ZTGMHFIGNYXMJV-BZJVTDFFSA-N", "title": "(1S,9S,13R)-1,13-dimethyl-10-prop-2-enyl-10-azatricyclo[7.3.1.02,7]trideca-2(7),3,5-trien-4-ol;hydrochloride"}, {"cid": 3036222, "formula": "C17H23NO", "inchikey": "LGQCVMYAEFTEFN-DQYPLSBCSA-N", "title": "(+)-Skf 10047"}], "query": "skf-10047", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL5219130", "parent": "CHEMBL4303517", "pref_name": null}, "cids": [{"cid": 16679091, "formula": "C36H42BrO2P", "inchikey": "WYHFWTRUGAFNKW-UHFFFAOYSA-M", "title": "SKQ-1 bromide"}], "query": "skq1", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "skq1 (visomitin)", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4208749", "parent": "CHEMBL4208749", "pref_name": null}, "cids": [{"cid": 5338394, "formula": "C18H14N2O2", "inchikey": "RNZIMBFHRXYRLL-XDHOZWIPSA-N", "title": "Slu-PP-332"}], "query": "slu-pp-332", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 71587832, "formula": "C42H72N16O15S", "inchikey": "QGGBBQJHVCVVKM-XOBYPWAZSA-N", "title": "Acetyl octapeptide-3"}], "query": "snap-8", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "snap-8 (acetyl octapeptide-3)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 1117, "formula": "O4S-2", "inchikey": "QAOWNCQODCNURD-UHFFFAOYSA-L", "title": "Sulfate Ion"}], "query": "sulfate", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 237186, "formula": "C21H34O2", "inchikey": "QCWCXSMWLJFBNM-FOVYBZIDSA-N", "title": "Methasterone"}], "query": "superdrol", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "superdrol (methasterone)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "systemic lidocaine", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 146026994, "formula": "C14H18N2O", "inchikey": "FNGNYGCPNKZYOG-UHFFFAOYSA-N", "title": "Tabernanthalog"}], "query": "tabernanthalog", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 169492940, "formula": "C22H27F3N2O5S", "inchikey": "SREKDYRFNJBHMF-HLRBRJAUSA-N", "title": "N-[(2S,3S)-2-[[3-(3,5-difluorophenyl)-2-fluorophenyl]methyl]-1-(2-hydroxy-2-methylpropanoyl)pyrrolidin-3-yl]methanesulfonamide;hydrate"}], "query": "tak-994", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 62707662, "formula": "C38H68N10O14", "inchikey": "ADKDNDYYIZUVCZ-ZQNQAVPYSA-N", "title": "Unii-qhk6Z47gtg"}], "query": "tb-500", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "tb-500 (thymosin beta-4 fragment)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "tb-500 (thymosin beta-4)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 57348655, "formula": "C4H12Ge", "inchikey": "ZYTLADNCBYKKJS-UHFFFAOYSA-N", "title": "Tert-butylgermane"}], "query": "tbg", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL3140372", "parent": "CHEMBL3140372", "pref_name": null}, "cids": [{"cid": 9974162, "formula": "C21H34O3", "inchikey": "CYKYBWRSLLXBOW-DATPGIFZSA-N", "title": "Tetrahydrodeoxycorticosterone"}], "query": "tetrahydrodeoxycorticosterone", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1229684", "parent": "CHEMBL1229684", "pref_name": null}, "cids": [{"cid": 6857686, "formula": "C21H28O2", "inchikey": "OXHNQTSIKGHVBH-ANULTFPQSA-N", "title": "Tetrahydrogestrinone"}], "query": "tetrahydrogestrinone", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1229684", "parent": "CHEMBL1229684", "pref_name": null}, "cids": [{"cid": 6857686, "formula": "C21H28O2", "inchikey": "OXHNQTSIKGHVBH-ANULTFPQSA-N", "title": "Tetrahydrogestrinone"}], "query": "tetrahydrogestrinone (thg)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "thc-o acetate", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL5171161", "parent": "CHEMBL5171161", "pref_name": null}, "cids": [{"cid": 6453074, "formula": "C23H34O2", "inchikey": "OJTMRZHYTZMJKX-RTBURBONSA-N", "title": "3-Heptyl-delta(1)-tetrahydrocannabinol"}], "query": "thcp", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL143715", "parent": "CHEMBL143715", "pref_name": null}, "cids": [{"cid": 75324, "formula": "C9H12N4O3", "inchikey": "QGDOQULISIQFHQ-UHFFFAOYSA-N", "title": "Theacrine"}], "query": "theacrine", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL4743159", "parent": "CHEMBL4743159", "pref_name": null}, "cids": [{"cid": 71543007, "formula": "C13H14N2O3S", "inchikey": "WIDNAJNXDPHROL-UHFFFAOYSA-N", "title": "N-(4-(2,4-dihydroxyphenyl)-1,3-thiazol-2-yl)-2-methylpropanamide"}], "query": "thiamidol", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL2106455", "parent": "CHEMBL2106455", "pref_name": "NONATHYMULIN"}, "cids": [{"cid": 3085284, "formula": "C33H54N12O15", "inchikey": "LIFNDDBLJFPEAN-BPSSIEEOSA-N", "title": "Nonathymulin"}], "query": "thymalin", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL2103979", "parent": "CHEMBL2103979", "pref_name": "THYMALFASIN"}, "cids": [{"cid": 16130571, "formula": "C129H215N33O55", "inchikey": "NZVYCXVTEHPMHE-ZSUJOUNUSA-N", "title": "Thymalfasin"}], "query": "thymosin alpha-1", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 45382195, "formula": "C212H350N56O78S", "inchikey": "UGPMCIBIHRSCBV-UHFFFAOYSA-N", "title": "Thymosin Beta 4"}], "query": "thymosin beta-4", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "thymosin beta-4 fragment", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "tlb-150", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "topical", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "topical egf", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "topical finasteride", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "topical melatonin solution", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "topical metronidazole", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "topical scalp", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "topical spironolactone", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "trace-amine research agonists such as ro5256390 and ro5263397", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 10125785, "formula": "C10H21N3O9", "inchikey": "MUKYLHIZBOASDM-UHFFFAOYSA-N", "title": "Tribulus terrestris, ext."}], "query": "tribulus terrestris", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "tryptamine-derived psychoplastogens under coded development names", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1276826", "parent": "CHEMBL1276826", "pref_name": null}, "cids": [{"cid": 24857397, "formula": "C20H17FN4O3", "inchikey": "JHCFQXNWYDLBOG-UHFFFAOYSA-N", "title": "8-cyclopropyl-3-(2-(3-fluorophenyl)ethyl)-7,8-dihydro-3H-(1,3)oxazino(6,5-g)(1,2,3)benzotriazine-4,9-dione"}], "query": "tulrampator", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL519327", "parent": "CHEMBL519327", "pref_name": null}, "cids": [{"cid": 13327, "formula": "C21H29ClO3", "inchikey": "XYGMEFJSKQEBTO-KUJXMBTLSA-N", "title": "Clostebol acetate"}], "query": "turinabol", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "turinabol (chlorodehydromethyltestosterone)", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "ubx0101", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "unfractionated heparin", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL214393", "parent": "CHEMBL214393", "pref_name": null}, "cids": [{"cid": 6030, "formula": "C9H13N2O9P", "inchikey": "DJJCXFVJDGTHFX-XVFCMESISA-N", "title": "Uridine Monophosphate"}], "query": "uridine monophosphate", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1836264", "parent": "CHEMBL1836264", "pref_name": null}, "cids": [{"cid": 5488186, "formula": "C13H8O4", "inchikey": "RIUPLDUFZCXCHM-UHFFFAOYSA-N", "title": "Urolithin A"}], "query": "urolithin a", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "vesugen", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "vesugen (lys-glu-asp)", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL365790", "parent": "CHEMBL365790", "pref_name": null}, "cids": [{"cid": 7010502, "formula": "C11H21N3O5", "inchikey": "UGTZHPSKYRIGRJ-YUMQZZPRSA-N", "title": "Lysylglutamic acid"}], "query": "vilon", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "vilon (lys-glu)", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL5219130", "parent": "CHEMBL4303517", "pref_name": null}, "cids": [{"cid": 16679091, "formula": "C36H42BrO2P", "inchikey": "WYHFWTRUGAFNKW-UHFFFAOYSA-M", "title": "SKQ-1 bromide"}], "query": "visomitin", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "where chemically characterized", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [], "query": "xanomeline–trospium", "retrieved": "2026-09-27"}
+{"chembl": null, "cids": [{"cid": 119058028, "formula": "C25H34O6", "inchikey": "KCQHQCDHFVGNMK-PQUNLUOYSA-N", "title": "YK-11"}], "query": "yk-11", "retrieved": "2026-09-27"}
+{"chembl": {"id": "CHEMBL1201279", "parent": "CHEMBL1201279", "pref_name": null}, "cids": [{"cid": 23994, "formula": "Zn", "inchikey": "HCHKCACWOHOZIP-UHFFFAOYSA-N", "title": "Zinc"}], "query": "zinc", "retrieved": "2026-09-27"}

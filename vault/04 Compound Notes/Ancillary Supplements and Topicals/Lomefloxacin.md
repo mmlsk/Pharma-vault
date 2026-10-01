@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL561
+chembl-max-phase: 4
 half-life:
   value: 8.0
   value-max: null
@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Lomefloxacin
@@ -64,6 +65,36 @@ pk-source:
   revision: 1329437748
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL561
+  pref-name: LOMEFLOXACIN
+  molecule-type: Small molecule
+  first-approval: 1992
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J01MA07
+  - S01AE04
+  targets: []
+  properties:
+    full-mwt: 351.35
+    mw-freebase: 351.35
+    alogp: 1.8
+    psa: 74.57
+    hba: 5
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.88
+    full-molformula: C17H19F2N3O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Lomefloxacin
@@ -77,10 +108,22 @@ pk-source:
 - **Compound ID:** `lomefloxacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL561](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL561/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits bacterial DNA gyrase or topoisomerase IV; tendon, neurologic, cardiac, and resistance risks limit indiscriminate use.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1992
+- **ATC J01MA07:** ANTIINFECTIVES FOR SYSTEMIC USE › QUINOLONE ANTIBACTERIALS › Fluoroquinolones
+- **ATC S01AE04:** SENSORY ORGANS › ANTIINFECTIVES › Fluoroquinolones
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 351.35 | 1.8 | 74.57 | 2/5 | 0 | C17H19F2N3O3 |
 
 ## Evidence boundaries
 
@@ -96,6 +139,14 @@ Inhibits bacterial DNA gyrase or topoisomerase IV; tendon, neurologic, cardiac, 
 |---|---|---|
 | Elimination t½ | 8 h | 8 hours |
 | Protein binding | 10 % | 10% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Besifloxacin]], [[Ciprofloxacin]], [[Delafloxacin]], [[Gemifloxacin]], [[Moxifloxacin]], [[Norfloxacin]], [[Ofloxacin]], [[Prulifloxacin]]
 
 ## Safety routing
 

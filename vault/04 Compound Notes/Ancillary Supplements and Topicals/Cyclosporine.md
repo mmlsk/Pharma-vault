@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Cyclophilin A modulator
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL160
+chembl-max-phase: 4
 half-life:
   value: 24.0
   value-max: null
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Ciclosporin
@@ -68,6 +70,33 @@ pk-source:
   revision: 1371223778
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL160
+  pref-name: CYCLOSPORINE
+  molecule-type: Protein
+  first-approval: 1983
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L04AD01
+  - S01XA18
+  targets:
+  - id: CHEMBL1949
+    name: Peptidyl-prolyl cis-trans isomerase A
+    action: MODULATOR
+  properties:
+    full-mwt: 1202.63
+    mw-freebase: 1202.63
+    full-molformula: C62H111N11O12
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 5baaf78c-90f6-abcf-52c8-814490f3cf9f
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5baaf78c-90f6-abcf-52c8-814490f3cf9f
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Cyclosporine
@@ -81,10 +110,31 @@ pk-source:
 - **Compound ID:** `cyclosporine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL160](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL160/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Calcineurin inhibitor binding cyclophilin, the original transplant immunosuppressant; also a potent P-glycoprotein and CYP3A4 inhibitor.
+
+## Mechanism
+
+Cyclophilin A modulator _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1983
+- **Flags:** black-box warning
+- **ATC L04AD01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Calcineurin inhibitors
+- **ATC S01XA18:** SENSORY ORGANS › OTHER OPHTHALMOLOGICALS › Other ophthalmologicals
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1202.63 | - | - | -/- | - | C62H111N11O12 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Peptidyl-prolyl cis-trans isomerase A (CHEMBL1949)|Peptidyl-prolyl cis-trans isomerase A]] - modulator · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +153,17 @@ Calcineurin inhibitor binding cyclophilin, the original transplant immunosuppres
 | Metabolism | hepatic | Liver CYP3A4 |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | Bile duct |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 5baaf78c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5baaf78c-90f6-abcf-52c8-814490f3cf9f), label version 20260910. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 5, 8.4, 18)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alteplase]], [[Avacincaptad Pegol]], [[NAC (N-Acetylcysteine)]], [[Pegcetacoplan]], [[Potassium Iodide (SSKI-KI)|Potassium Iodide (SSKI/KI)]], [[Rapamycin (Sirolimus)]], [[Retinol]], [[Sirolimus (Rapamycin)]], [[Vitamin C (Ascorbic Acid)]], [[Voclosporin]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

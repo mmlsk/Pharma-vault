@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1200696
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1200696
+  pref-name: POTASSIUM PERCHLORATE
+  molecule-type: Small molecule
+  first-approval: 1974
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H03BC01
+  targets: []
+  properties:
+    full-mwt: 138.55
+    mw-freebase: 138.55
+    full-molformula: ClKO4
 ---
 
 # Potassium Perchlorate
@@ -67,10 +84,21 @@ tags:
 - **Compound ID:** `potassium-perchlorate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1200696](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200696/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Competitive NIS inhibitor used for amiodarone-induced thyrotoxicosis and in the perchlorate discharge test.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1974
+- **ATC H03BC01:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › ANTITHYROID PREPARATIONS › Perchlorates
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 138.55 | - | - | -/- | - | ClKO4 |
 
 ## Evidence boundaries
 

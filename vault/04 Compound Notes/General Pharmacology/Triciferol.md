@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1164992
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1164992
+  pref-name: TRICIFEROL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 429.6
+    mw-freebase: 429.6
+    alogp: 4.61
+    psa: 89.79
+    hba: 4
+    hbd: 4
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.22
+    full-molformula: C26H39NO4
 ---
 
 # Triciferol
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `triciferol-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1164992](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1164992/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Triciferol is a named HDAC research compound with a curated biochemical result against HDAC6. ChEMBL records IC50 580.0 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 429.6 | 4.61 | 89.79 | 4/4 | 0 | C26H39NO4 |
 
 ## Evidence boundaries
 

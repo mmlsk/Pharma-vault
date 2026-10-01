@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3414621
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3414621
+  pref-name: TAZEMETOSTAT
+  molecule-type: Small molecule
+  first-approval: 2020
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L01XX72
+  targets: []
+  properties:
+    full-mwt: 572.75
+    mw-freebase: 572.75
+    alogp: 4.73
+    psa: 86.9
+    hba: 6
+    hbd: 2
+    rtb: 9
+    num-ro5-violations: 1
+    qed-weighted: 0.39
+    full-molformula: C34H44N4O4
 ---
 
 # Tazemetostat
@@ -67,10 +90,21 @@ tags:
 - **Compound ID:** `tazemetostat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3414621](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3414621/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 EZH2 inhibitor approved for epithelioid sarcoma and follicular lymphoma.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2020
+- **ATC L01XX72:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › OTHER ANTINEOPLASTIC AGENTS › Other antineoplastic agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 572.75 | 4.73 | 86.9 | 2/6 | 1 | C34H44N4O4 |
 
 ## Evidence boundaries
 
@@ -80,6 +114,12 @@ EZH2 inhibitor approved for epithelioid sarcoma and follicular lymphoma.
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Anagrelide]], [[Celecoxib]], [[Hydroxyurea (hydroxycarbamide)]], [[Masoprocol]], [[Mitotane]], [[Navitoclax (ABT-263)]], [[Venetoclax]]
 
 ## Safety routing
 

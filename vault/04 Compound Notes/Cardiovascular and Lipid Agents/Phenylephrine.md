@@ -15,13 +15,13 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1215
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: 3.0
   unit: h
-  notes: 2–3hours
+  notes: 2–3 hours
 protein-binding:
   value: 95.0
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/cardio
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Phenylephrine
@@ -68,6 +69,43 @@ pk-source:
   revision: 1359707321
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1215
+  pref-name: PHENYLEPHRINE
+  molecule-type: Small molecule
+  first-approval: 1952
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01CA06
+  - C05AX06
+  - R01AA04
+  - R01AB01
+  - R01BA03
+  - R01BA53
+  - S01FB01
+  - S01GA05
+  - S01GA55
+  targets: []
+  properties:
+    full-mwt: 167.21
+    mw-freebase: 167.21
+    alogp: 0.65
+    psa: 52.49
+    hba: 3
+    hbd: 3
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.62
+    full-molformula: C9H13NO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Phenylephrine
@@ -81,10 +119,29 @@ pk-source:
 - **Compound ID:** `phenylephrine-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
+- **ChEMBL:** [CHEMBL1215](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1215/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Pure alpha-1 agonist used as a vasopressor, a mydriatic and a decongestant, though its oral decongestant efficacy is now doubted.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1952
+- **ATC C01CA06:** CARDIOVASCULAR SYSTEM › CARDIAC STIMULANTS EXCL. CARDIAC GLYCOSIDES › Adrenergic and dopaminergic agents
+- **ATC C05AX06:** CARDIOVASCULAR SYSTEM › AGENTS FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE › Other agents for treatment of hemorrhoids and anal fissures for topical use
+- **ATC R01AA04:** RESPIRATORY SYSTEM › DECONGESTANTS AND OTHER NASAL PREPARATIONS FOR TOPICAL USE › Sympathomimetics, plain
+- **ATC R01AB01:** RESPIRATORY SYSTEM › DECONGESTANTS AND OTHER NASAL PREPARATIONS FOR TOPICAL USE › Sympathomimetics, combinations excl. corticosteroids
+- **ATC R01BA03:** RESPIRATORY SYSTEM › NASAL DECONGESTANTS FOR SYSTEMIC USE › Sympathomimetics
+- **ATC R01BA53:** RESPIRATORY SYSTEM › NASAL DECONGESTANTS FOR SYSTEMIC USE › Sympathomimetics
+- **ATC S01FB01:** SENSORY ORGANS › MYDRIATICS AND CYCLOPLEGICS › Sympathomimetics excl. antiglaucoma preparations
+- **ATC S01GA05:** SENSORY ORGANS › DECONGESTANTS AND ANTIALLERGICS › Sympathomimetics used as decongestants
+- **ATC S01GA55:** SENSORY ORGANS › DECONGESTANTS AND ANTIALLERGICS › Sympathomimetics used as decongestants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 167.21 | 0.65 | 52.49 | 3/3 | 0 | C9H13NO2 |
 
 ## Evidence boundaries
 
@@ -98,12 +155,20 @@ Pure alpha-1 agonist used as a vasopressor, a mydriatic and a decongestant, thou
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 2–3 h | 2–3hours |
+| Elimination t½ | 2–3 h | 2–3 hours |
 | Protein binding | 95 % | 95% |
 | Bioavailability | 38 % | Oral: conflicting—38% or 0.003% |
 | Metabolism | hepatic | Liver and intestines (via oxidative deamination by MAO-A and MAO-B; sulfation; glucuronidation) |
 | Metabolites | - | • [https://pubchem.ncbi.nlm.nih.gov/compound/3-Hydroxymandelic-acid meta-Hydroxymandelic acid]; • Sulfate conjugates; • Glucuronide conjugates |
 | Excretion | mainly urinary · fe 0.16 | Urine: 86% (3–16% unchanged) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Adrenaline (Epinephrine)]], [[Brimonidine]], [[Dobutamine]], [[Dopamine (IV infusion)]], [[Ephedrine]], [[Noradrenaline (Norepinephrine, IV)]], [[p-Synephrine (Bitter Orange)]], [[Phenylpropanolamine]], [[Pseudoephedrine]]
 
 ## Safety routing
 

@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Indacaterol
@@ -68,6 +69,35 @@ pk-source:
   revision: 1354766271
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1095777
+  pref-name: INDACATEROL
+  molecule-type: Small molecule
+  first-approval: 2009
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R03AC18
+  targets: []
+  properties:
+    full-mwt: 392.5
+    mw-freebase: 392.5
+    alogp: 3.15
+    psa: 85.35
+    hba: 4
+    hbd: 4
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.52
+    full-molformula: C24H28N2O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Indacaterol
@@ -81,7 +111,7 @@ pk-source:
 - **Compound ID:** `indacaterol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1095777](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1095777/) · max phase 4
+- **ChEMBL:** [CHEMBL1095777](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1095777/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +120,16 @@ Beta-2 adrenergic receptor agonist; approved/marketed compound catalogued by ChE
 ## Mechanism
 
 Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2009
+- **ATC R03AC18:** RESPIRATORY SYSTEM › ADRENERGICS, INHALANTS › Selective beta-2-adrenoreceptor agonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 392.5 | 3.15 | 85.35 | 4/4 | 0 | C24H28N2O3 |
 
 ## Evidence boundaries
 
@@ -107,6 +147,15 @@ Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the 
 | Bioavailability | 43–45 % | 43-45 % (inhaled) |
 | Metabolism | hepatic | UGT1A1, CYP3A4 |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Albuterol]], [[Bitolterol]], [[Clenbuterol]], [[Fenoterol]], [[Formoterol]], [[Isoetharine]], [[Olodaterol]], [[Pirbuterol]], [[Procaterol]], [[Salbutamol (Albuterol)]], [[Salmeterol]], [[Terbutaline]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

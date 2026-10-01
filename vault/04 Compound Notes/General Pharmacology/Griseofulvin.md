@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Tubulin inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL562
+chembl-max-phase: 4
 half-life:
   value: 9.0
   value-max: 21.0
@@ -60,6 +60,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Griseofulvin
@@ -67,6 +68,40 @@ pk-source:
   revision: 1338049828
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL562
+  pref-name: GRISEOFULVIN
+  molecule-type: Small molecule
+  first-approval: 1962
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D01AA08
+  - D01BA01
+  targets:
+  - id: CHEMBL2364703
+    name: Tubulin
+    action: INHIBITOR
+  properties:
+    full-mwt: 352.77
+    mw-freebase: 352.77
+    alogp: 2.81
+    psa: 71.06
+    hba: 6
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.83
+    full-molformula: C17H17ClO6
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: efb8a660-802c-4ca6-bbff-ad7b48b91aef
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=efb8a660-802c-4ca6-bbff-ad7b48b91aef
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Griseofulvin
@@ -80,10 +115,30 @@ pk-source:
 - **Compound ID:** `griseofulvin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL562](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL562/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The original oral antifungal for dermatophytosis, concentrating in keratin so treatment lasts as long as the nail or hair takes to grow out.
+
+## Mechanism
+
+Tubulin inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1962
+- **ATC D01AA08:** DERMATOLOGICALS › ANTIFUNGALS FOR TOPICAL USE › Antibiotics
+- **ATC D01BA01:** DERMATOLOGICALS › ANTIFUNGALS FOR SYSTEMIC USE › Antifungals for systemic use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 352.77 | 2.81 | 71.06 | 0/6 | 0 | C17H17ClO6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tubulin (CHEMBL2364703)|Tubulin]] - inhibitor · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -100,6 +155,16 @@ The original oral antifungal for dermatophytosis, concentrating in keratin so tr
 | Elimination t½ | 9–21 h | 9–21 hours |
 | Bioavailability | 25–70 % | Highly variable (25 to 70%) |
 | Metabolism | hepatic | Liver (demethylation and glucuronidation) |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set efb8a660…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=efb8a660-802c-4ca6-bbff-ad7b48b91aef), label version 20251210. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Terbinafine (oral, Lamisil)]]
 
 ## Safety routing
 

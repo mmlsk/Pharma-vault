@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201196
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -60,6 +60,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Sertaconazole
@@ -67,6 +68,36 @@ pk-source:
   revision: 1370371824
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201196
+  pref-name: SERTACONAZOLE
+  molecule-type: Small molecule
+  first-approval: 2003
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D01AC14
+  - G01AF19
+  targets: []
+  properties:
+    full-mwt: 437.78
+    mw-freebase: 437.78
+    alogp: 7.02
+    psa: 27.05
+    hba: 4
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.32
+    full-molformula: C20H15Cl3N2OS
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Sertaconazole
@@ -80,10 +111,22 @@ pk-source:
 - **Compound ID:** `sertaconazole-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1201196](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201196/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Topical imidazole for tinea with an additional direct membrane action beyond ergosterol synthesis blockade.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2003
+- **ATC D01AC14:** DERMATOLOGICALS › ANTIFUNGALS FOR TOPICAL USE › Imidazole and triazole derivatives
+- **ATC G01AF19:** GENITO URINARY SYSTEM AND SEX HORMONES › ANTIINFECTIVES AND ANTISEPTICS, EXCL. COMBINATIONS WITH CORTICOSTEROIDS › Imidazole derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 437.78 | 7.02 | 27.05 | 0/4 | 1 | C20H15Cl3N2OS |
 
 ## Evidence boundaries
 
@@ -99,6 +142,14 @@ Topical imidazole for tinea with an additional direct membrane action beyond erg
 |---|---|---|
 | Protein binding | 99 % | >99% to plasma |
 | Bioavailability | - | Negligible |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Bifonazole]], [[Econazole]], [[Fluconazole]], [[Metronidazole]], [[Tioconazole]]
 
 ## Safety routing
 

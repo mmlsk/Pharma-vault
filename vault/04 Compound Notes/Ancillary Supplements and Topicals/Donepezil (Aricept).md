@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL502
+chembl-max-phase: 4
 half-life:
   value: 70.0
   value-max: null
@@ -65,6 +65,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Donepezil
@@ -72,6 +73,35 @@ pk-source:
   revision: 1356481650
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL502
+  pref-name: DONEPEZIL
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N06DA02
+  targets: []
+  properties:
+    full-mwt: 379.5
+    mw-freebase: 379.5
+    alogp: 4.36
+    psa: 38.77
+    hba: 4
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.75
+    full-molformula: C24H29NO3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Donepezil (Aricept)
@@ -86,10 +116,21 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Donepezil, Aricept
+- **ChEMBL:** [CHEMBL502](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL502/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Reversible, centrally selective acetylcholinesterase inhibitor; the most widely prescribed drug for Alzheimer's dementia.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **ATC N06DA02:** NERVOUS SYSTEM › ANTI-DEMENTIA DRUGS › Anticholinesterases
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 379.5 | 4.36 | 38.77 | 0/4 | 0 | C24H29NO3 |
 
 ## Evidence boundaries
 
@@ -109,6 +150,15 @@ Reversible, centrally selective acetylcholinesterase inhibitor; the most widely 
 | Metabolism | hepatic | CYP2D6, CYP3A4, and glucuronidation. Four major metabolites, two of which are active. |
 | CYP (metabolised by) | CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - · fe 0.17 | 0.11–0.13 (L/h/kg); excreted mostly by the kidneys. Around 17% is excreted unchanged in the urine. About 15% to 20% is excreted in feces. Steady-state clearance is similar at all ages. |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Galantamine (Reminyl - Razadyne)|Galantamine (Reminyl / Razadyne)]], [[Rivastigmine (Exelon)]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

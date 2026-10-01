@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL3916929
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3916929
+  pref-name: BALCINRENONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1994
+    name: Mineralocorticoid receptor
+    action: MODULATOR
+  properties:
+    full-mwt: 399.38
+    mw-freebase: 399.38
+    alogp: 1.7
+    psa: 96.97
+    hba: 5
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C20H18FN3O5
 ---
 
 # Balcinrenone
@@ -67,6 +92,7 @@ tags:
 - **Compound ID:** `balcinrenone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3916929](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3916929/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -76,6 +102,18 @@ Balcinrenone is a phase 3 compound catalogued by ChEMBL. Its curated mechanism i
 
 mineralocorticoid receptor modulator _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 399.38 | 1.7 | 96.97 | 2/5 | 0 | C20H18FN3O5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Mineralocorticoid receptor (CHEMBL1994)|Mineralocorticoid receptor]] - modulator · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +122,12 @@ mineralocorticoid receptor modulator _(ChEMBL curated mechanism, as quoted by th
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Apararenone]] (Mineralocorticoid receptor), [[Canrenone]] (Mineralocorticoid receptor), [[Desoxycorticosterone Acetate]] (Mineralocorticoid receptor), [[Desoxycorticosterone Pivalate]] (Mineralocorticoid receptor), [[Drospirenone]] (Mineralocorticoid receptor), [[Eplerenone]] (Mineralocorticoid receptor), [[Felodipine]] (Mineralocorticoid receptor), [[Finerenone (Kerendia)]] (Mineralocorticoid receptor), [[Fludrocortisone Acetate]] (Mineralocorticoid receptor), [[Nimodipine]] (Mineralocorticoid receptor), [[Spironolactone]] (Mineralocorticoid receptor), [[Vamorolone]] (Mineralocorticoid receptor)
 
 ## Safety routing
 

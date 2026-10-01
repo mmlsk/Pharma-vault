@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL52440
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: 4.0
@@ -64,6 +64,7 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Dextromethorphan
@@ -71,6 +72,36 @@ pk-source:
   revision: 1374989705
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL52440
+  pref-name: DEXTROMETHORPHAN
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N07XX59
+  - R05DA09
+  targets: []
+  properties:
+    full-mwt: 271.4
+    mw-freebase: 271.4
+    alogp: 3.38
+    psa: 12.47
+    hba: 2
+    hbd: 0
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.78
+    full-molformula: C18H25NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Dextromethorphan
@@ -84,10 +115,22 @@ pk-source:
 - **Compound ID:** `dextromethorphan-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL52440](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL52440/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Engages the sigma-1 chaperone at the ER-mitochondrial interface, modulating calcium handling and ER stress responses; sigma-1 agonist and NMDA antagonist.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC N07XX59:** NERVOUS SYSTEM › OTHER NERVOUS SYSTEM DRUGS › Other nervous system drugs
+- **ATC R05DA09:** RESPIRATORY SYSTEM › COUGH SUPPRESSANTS, EXCL. COMBINATIONS WITH EXPECTORANTS › Opium alkaloids and derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 271.4 | 3.38 | 12.47 | 0/2 | 0 | C18H25NO |
 
 ## Evidence boundaries
 
@@ -107,6 +150,15 @@ Engages the sigma-1 chaperone at the ER-mitochondrial interface, modulating calc
 | CYP (metabolised by) | CYP2D6, CYP3A4, CYP3A5 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Dextrorphan; 3-methoxymorphinan |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amifampridine (3,4-Diaminopyridine)]], [[Codeine]], [[Deutetrabenazine]], [[Edaravone]], [[Inotersen (Tegsedi)]], [[Patisiran (Onpattro)]], [[Pitolisant (Wakix)]], [[Riluzole (Rilutek)]], [[Tafamidis (Vyndaqel)]], [[Tetrabenazine]], [[Troriluzole]], [[Valbenazine]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others), CYP3A4 (+204 others), CYP3A5 (+13 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

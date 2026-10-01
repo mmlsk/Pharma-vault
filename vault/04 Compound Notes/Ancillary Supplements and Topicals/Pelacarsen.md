@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: LPA mRNA antisense inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4298202
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4298202
+  pref-name: PELACARSEN
+  molecule-type: Oligonucleotide
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4662965
+    name: LPA mRNA
+    action: ANTISENSE INHIBITOR
+  properties: {}
 ---
 
 # Pelacarsen
@@ -67,10 +83,23 @@ tags:
 - **Compound ID:** `pelacarsen-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4298202](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298202/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Investigational antisense therapy targeting apolipoprotein(a) to lower lipoprotein(a); outcomes benefit remains under study.
+
+## Mechanism
+
+LPA mRNA antisense inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Oligonucleotide
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[LPA mRNA (CHEMBL4662965)|LPA mRNA]] - antisense inhibitor · NUCLEIC-ACID
 
 ## Evidence boundaries
 

@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Loratadine
@@ -69,6 +70,38 @@ pk-source:
   revision: 1356896189
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL998
+  pref-name: LORATADINE
+  molecule-type: Small molecule
+  first-approval: 1993
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AX13
+  targets:
+  - id: CHEMBL231
+    name: Histamine H1 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 382.89
+    mw-freebase: 382.89
+    alogp: 4.89
+    psa: 42.43
+    hba: 3
+    hbd: 0
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.7
+    full-molformula: C22H23ClN2O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Loratadine
@@ -82,7 +115,7 @@ pk-source:
 - **Compound ID:** `loratadine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL998](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL998/) · max phase 4
+- **ChEMBL:** [CHEMBL998](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL998/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -91,6 +124,21 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1993
+- **Flags:** prodrug
+- **ATC R06AX13:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Other antihistamines for systemic use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 382.89 | 4.89 | 42.43 | 0/3 | 0 | C22H23ClN2O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Histamine H1 receptor (CHEMBL231)|Histamine H1 receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -110,6 +158,16 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Metabolism | hepatic | Liver (CYP2D6- and 3A4-mediated) |
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | - | 40% as conjugated metabolites into urine; Similar amount into the feces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acrivastine]] (Histamine H1 receptor), [[Alcaftadine]] (Histamine H1 receptor), [[Astemizole]] (Histamine H1 receptor), [[Betahistine]] (Histamine H1 receptor), [[Bilastine]] (Histamine H1 receptor), [[Chlorphenoxamine]] (Histamine H1 receptor), [[Cinnarizine]] (Histamine H1 receptor), [[Desloratadine]] (Histamine H1 receptor), [[Dibenzepin]] (Histamine H1 receptor), [[Dimenhydrinate]] (Histamine H1 receptor), [[Dimethindene]] (Histamine H1 receptor), [[Doxepin]] (Histamine H1 receptor)
+- **Same ATC subgroup:** [[Acrivastine]], [[Antazoline]], [[Astemizole]], [[Azatadine]], [[Azelastine]], [[Bilastine]], [[Cyproheptadine]], [[Desloratadine]], [[Ebastine]], [[Epinastine]], [[Fexofenadine]], [[Ketotifen]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

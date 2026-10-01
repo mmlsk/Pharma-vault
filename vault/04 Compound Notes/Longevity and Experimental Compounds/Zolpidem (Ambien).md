@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL911
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: 3.0
@@ -66,6 +66,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Zolpidem
@@ -73,6 +74,35 @@ pk-source:
   revision: 1369645518
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL911
+  pref-name: ZOLPIDEM
+  molecule-type: Small molecule
+  first-approval: 1992
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N05CF02
+  targets: []
+  properties:
+    full-mwt: 307.4
+    mw-freebase: 307.4
+    alogp: 3.25
+    psa: 37.61
+    hba: 3
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.74
+    full-molformula: C19H21N3O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Zolpidem (Ambien)
@@ -87,10 +117,22 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Zolpidem, Ambien
+- **ChEMBL:** [CHEMBL911](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL911/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Nonbenzodiazepine GABA-A hypnotic with next-day impairment, dependence, and boxed-warning complex sleep behaviors.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1992
+- **Flags:** black-box warning
+- **ATC N05CF02:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Benzodiazepine related drugs
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 307.4 | 3.25 | 37.61 | 0/3 | 0 | C19H21N3O |
 
 ## Evidence boundaries
 
@@ -111,6 +153,15 @@ Nonbenzodiazepine GABA-A hypnotic with next-day impairment, dependence, and boxe
 | CYP (metabolised by) | CYP1A2, CYP2C9, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | (ZCA) zolpidem 6-carboxylic acid; (ZPCA) zolpidem phenyl-4-carboxylic acid |
 | Excretion | mainly urinary | Kidney (56%); fecal (34%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Eszopiclone (Lunesta)]], [[Zaleplon (Sonata)]], [[Zopiclone]]
+- **Shared CYP substrate pool:** CYP1A2 (+42 others), CYP2C9 (+40 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

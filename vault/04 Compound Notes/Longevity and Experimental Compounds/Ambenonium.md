@@ -59,6 +59,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ambenonium chloride
@@ -66,6 +67,28 @@ pk-source:
   revision: 1354487190
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1652
+  pref-name: AMBENONIUM
+  molecule-type: Small molecule
+  first-approval: 1956
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N07AA30
+  targets: []
+  properties:
+    full-mwt: 537.58
+    mw-freebase: 537.58
+    alogp: 4.64
+    psa: 58.2
+    hba: 2
+    hbd: 2
+    rtb: 14
+    num-ro5-violations: 1
+    qed-weighted: 0.27
+    full-molformula: C28H42Cl2N4O2+2
 ---
 
 # Ambenonium
@@ -79,7 +102,7 @@ pk-source:
 - **Compound ID:** `ambenonium-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1652](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1652/) · max phase 4
+- **ChEMBL:** [CHEMBL1652](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1652/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -88,6 +111,16 @@ Acetylcholinesterase inhibitor; approved/marketed compound catalogued by ChEMBL 
 ## Mechanism
 
 Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1956
+- **ATC N07AA30:** NERVOUS SYSTEM › PARASYMPATHOMIMETICS › Anticholinesterases
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 537.58 | 4.64 | 58.2 | 2/2 | 1 | C28H42Cl2N4O2+2 |
 
 ## Evidence boundaries
 
@@ -102,6 +135,12 @@ Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the sour
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Bioavailability | - | Low |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Distigmine]], [[Neostigmine]], [[Pyridostigmine (Mestinon)]]
 
 ## Safety routing
 

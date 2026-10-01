@@ -54,6 +54,34 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2105458
+  pref-name: THENALIDINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - D04AA03
+  - R06AX03
+  - R06AX53
+  targets:
+  - id: CHEMBL231
+    name: Histamine H1 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 286.44
+    mw-freebase: 286.44
+    alogp: 3.85
+    psa: 6.48
+    hba: 3
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.84
+    full-molformula: C17H22N2S
 ---
 
 # Thenalidine
@@ -67,7 +95,7 @@ tags:
 - **Compound ID:** `thenalidine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2105458](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105458/) · max phase 4
+- **ChEMBL:** [CHEMBL2105458](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105458/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +105,22 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC D04AA03:** DERMATOLOGICALS › ANTIPRURITICS, INCL. ANTIHISTAMINES, ANESTHETICS, ETC. › Antihistamines for topical use
+- **ATC R06AX03:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Other antihistamines for systemic use
+- **ATC R06AX53:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Other antihistamines for systemic use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 286.44 | 3.85 | 6.48 | 0/3 | 0 | C17H22N2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Histamine H1 receptor (CHEMBL231)|Histamine H1 receptor]] - antagonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +129,13 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acrivastine]] (Histamine H1 receptor), [[Alcaftadine]] (Histamine H1 receptor), [[Astemizole]] (Histamine H1 receptor), [[Betahistine]] (Histamine H1 receptor), [[Bilastine]] (Histamine H1 receptor), [[Chlorphenoxamine]] (Histamine H1 receptor), [[Cinnarizine]] (Histamine H1 receptor), [[Desloratadine]] (Histamine H1 receptor), [[Dibenzepin]] (Histamine H1 receptor), [[Dimenhydrinate]] (Histamine H1 receptor), [[Dimethindene]] (Histamine H1 receptor), [[Doxepin]] (Histamine H1 receptor)
+- **Same ATC subgroup:** [[Acrivastine]], [[Antazoline]], [[Astemizole]], [[Azatadine]], [[Azelastine]], [[Bilastine]], [[Chlorphenoxamine]], [[Clemastine]], [[Cyproheptadine]], [[Desloratadine]], [[Dimethindene]], [[Diphenhydramine (Benadryl)]]
 
 ## Safety routing
 

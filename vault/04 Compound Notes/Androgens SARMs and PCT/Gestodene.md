@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1213583
 chembl-max-phase: 3
 half-life:
   value: 12.0
@@ -61,6 +61,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Gestodene
@@ -68,6 +69,37 @@ pk-source:
   revision: 1368678148
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1213583
+  pref-name: GESTODENE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL208
+    name: Progesterone receptor
+    action: AGONIST
+  properties:
+    full-mwt: 310.44
+    mw-freebase: 310.44
+    alogp: 3.66
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.59
+    full-molformula: C21H26O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Gestodene
@@ -81,6 +113,7 @@ pk-source:
 - **Compound ID:** `gestodene-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL1213583](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1213583/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -89,6 +122,18 @@ Gestodene is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is p
 ## Mechanism
 
 progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 310.44 | 3.66 | 37.3 | 1/2 | 0 | C21H26O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Progesterone receptor (CHEMBL208)|Progesterone receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -107,6 +152,14 @@ progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the sourc
 | Bioavailability | 96 % | 96% (87–111%) |
 | Metabolism | hepatic | Liver (reduction, hydroxylation) |
 | Excretion | mainly urinary | Urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Asoprisnil]] (Progesterone receptor), [[Chlormadinone Acetate]] (Progesterone receptor), [[Cyproterone Acetate]] (Progesterone receptor), [[Danazol]] (Progesterone receptor), [[Desogestrel]] (Progesterone receptor), [[Drospirenone]] (Progesterone receptor), [[Dydrogesterone]] (Progesterone receptor), [[Ethynodiol Diacetate]] (Progesterone receptor), [[Etonogestrel]] (Progesterone receptor), [[Hydroxyprogesterone Caproate]] (Progesterone receptor), [[Levonorgestrel]] (Progesterone receptor), [[Medroxyprogesterone Acetate]] (Progesterone receptor)
 
 ## Safety routing
 

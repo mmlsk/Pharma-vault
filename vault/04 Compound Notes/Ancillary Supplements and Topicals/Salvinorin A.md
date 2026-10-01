@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL445332
+chembl-max-phase: 1
 half-life:
   value: 50.0
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Salvinorin A
@@ -68,6 +69,34 @@ pk-source:
   revision: 1369393454
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL445332
+  pref-name: SALVINORIN A
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 432.47
+    mw-freebase: 432.47
+    alogp: 3.0
+    psa: 109.11
+    hba: 8
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.53
+    full-molformula: C23H28O8
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Salvinorin A
@@ -81,10 +110,19 @@ pk-source:
 - **Compound ID:** `salvinorin-a-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL445332](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL445332/) · max phase 1 · id via Wikipedia infobox
 
 ## Source summary
 
 Non-nitrogenous kappa agonist from Salvia divinorum — the most potent naturally occurring hallucinogen and pharmacologically unusual for lacking a basic nitrogen.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 432.47 | 3.0 | 109.11 | 0/8 | 0 | C23H28O8 |
 
 ## Evidence boundaries
 
@@ -104,6 +142,8 @@ Non-nitrogenous kappa agonist from Salvia divinorum — the most potent naturall
 | Metabolism | hepatic | Deacetylation (esterases, CYP450s), delactonation (lactonase), glucuronidation (UGT2B7) |
 | Metabolites | - | • Salvinorin B; • Salvinorin A glucuronide; • Others |
 | Excretion | - | Urine, bile |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

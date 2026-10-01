@@ -8,15 +8,15 @@ cluster: Nootropics
 group: neuropsych
 class: null
 subclass: null
-mechanism: null
+mechanism: Monoamine transporter inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL781
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: 13.0
@@ -61,6 +61,7 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Mazindol
@@ -68,6 +69,38 @@ pk-source:
   revision: 1376695515
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL781
+  pref-name: MAZINDOL
+  molecule-type: Small molecule
+  first-approval: 1973
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A08AA05
+  targets:
+  - id: CHEMBL2363064
+    name: Monoamine transporter
+    action: INHIBITOR
+  properties:
+    full-mwt: 284.75
+    mw-freebase: 284.75
+    alogp: 2.61
+    psa: 35.83
+    hba: 3
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.87
+    full-molformula: C16H13ClN2O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Mazindol
@@ -81,10 +114,29 @@ pk-source:
 - **Compound ID:** `mazindol-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL781](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL781/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 A tricyclic monoamine reuptake inhibitor formerly licensed as an anorectic and now in trials for narcolepsy and ADHD, with weaker reinforcing properties than the amphetamines.
+
+## Mechanism
+
+Monoamine transporter inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1973
+- **ATC A08AA05:** ALIMENTARY TRACT AND METABOLISM › ANTIOBESITY PREPARATIONS, EXCL. DIET PRODUCTS › Centrally acting antiobesity products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 284.75 | 2.61 | 35.83 | 1/3 | 0 | C16H13ClN2O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Monoamine transporter (CHEMBL2363064)|Monoamine transporter]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -102,6 +154,15 @@ A tricyclic monoamine reuptake inhibitor formerly licensed as an anorectic and n
 | Bioavailability | 93 % | 93% |
 | Metabolism | hepatic | Hepatic |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Bicifadine]] (Monoamine transporter), [[Tesofensine]] (Monoamine transporter)
+- **Same ATC subgroup:** [[Diethylpropion]], [[Ephedrine]], [[Fenfluramine]], [[Phentermine]], [[Setmelanotide (Imcivree)]], [[Sibutramine]]
 
 ## Safety routing
 

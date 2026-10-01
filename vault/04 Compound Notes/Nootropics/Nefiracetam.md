@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL260829
+chembl-max-phase: 2
 half-life:
   value: 3.0
   value-max: 5.0
@@ -57,6 +57,7 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Nefiracetam
@@ -64,6 +65,34 @@ pk-source:
   revision: 1328700226
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL260829
+  pref-name: NEFIRACETAM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 246.31
+    mw-freebase: 246.31
+    alogp: 1.86
+    psa: 49.41
+    hba: 2
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.88
+    full-molformula: C14H18N2O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Nefiracetam
@@ -77,10 +106,19 @@ pk-source:
 - **Compound ID:** `nefiracetam-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL260829](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL260829/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Investigational racetam studied for cognitive impairment, with proposed cholinergic and glutamatergic effects. It has no established healthy-user benefit or approved nootropic use.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 246.31 | 1.86 | 49.41 | 1/2 | 0 | C14H18N2O2 |
 
 ## Evidence boundaries
 
@@ -95,6 +133,8 @@ Investigational racetam studied for cognitive impairment, with proposed choliner
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 3–5 h | 3-5 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

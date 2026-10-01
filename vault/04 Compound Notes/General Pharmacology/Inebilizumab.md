@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: B-lymphocyte antigen CD19 binding agent
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2109334
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2109334
+  pref-name: INEBILIZUMAB
+  molecule-type: Antibody
+  first-approval: 2020
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AG10
+  targets:
+  - id: CHEMBL3390821
+    name: B-lymphocyte antigen CD19
+    action: BINDING AGENT
+  properties: {}
 ---
 
 # Inebilizumab
@@ -67,10 +84,25 @@ tags:
 - **Compound ID:** `inebilizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL2109334](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109334/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Anti-CD19 antibody depleting a broader B-cell range than CD20 agents, including plasmablasts, approved for neuromyelitis optica.
+
+## Mechanism
+
+B-lymphocyte antigen CD19 binding agent _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2020
+- **ATC L04AG10:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Monoclonal antibodies
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[B-lymphocyte antigen CD19 (CHEMBL3390821)|B-lymphocyte antigen CD19]] - binding agent · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +112,13 @@ Anti-CD19 antibody depleting a broader B-cell range than CD20 agents, including 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Blinatumomab]] (B-lymphocyte antigen CD19)
+- **Same ATC subgroup:** [[Alemtuzumab]], [[Anifrolumab]], [[Belimumab]], [[Natalizumab]], [[Ocrelizumab]], [[Ofatumumab]], [[Teprotumumab]], [[Vedolizumab]]
 
 ## Safety routing
 

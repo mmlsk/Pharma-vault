@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: 4-hydroxyphenylpyruvate dioxygenase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1337
+chembl-max-phase: 4
 half-life:
   value: 54.0
   value-max: null
@@ -48,7 +48,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -56,6 +56,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Nitisinone
@@ -63,6 +65,39 @@ pk-source:
   revision: 1329361321
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1337
+  pref-name: NITISINONE
+  molecule-type: Small molecule
+  first-approval: 2002
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A16AX04
+  targets:
+  - id: CHEMBL1861
+    name: 4-hydroxyphenylpyruvate dioxygenase
+    action: INHIBITOR
+  properties:
+    full-mwt: 329.23
+    mw-freebase: 329.23
+    alogp: 2.73
+    psa: 94.35
+    hba: 5
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.37
+    full-molformula: C14H10F3NO5
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 437868f5-1c9e-4b0f-8a03-77df8ac0900d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=437868f5-1c9e-4b0f-8a03-77df8ac0900d
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Nitisinone
@@ -76,10 +111,29 @@ pk-source:
 - **Compound ID:** `nitisinone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1337](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1337/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Enzyme inhibitor for hereditary tyrosinaemia type 1 that works by deliberately blocking a step upstream of the toxic metabolite.
+
+## Mechanism
+
+4-hydroxyphenylpyruvate dioxygenase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2002
+- **ATC A16AX04:** ALIMENTARY TRACT AND METABOLISM › OTHER ALIMENTARY TRACT AND METABOLISM PRODUCTS › Various alimentary tract and metabolism products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 329.23 | 2.73 | 94.35 | 0/5 | 0 | C14H10F3NO5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[4-hydroxyphenylpyruvate dioxygenase (CHEMBL1861)|4-hydroxyphenylpyruvate dioxygenase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -94,6 +148,16 @@ Enzyme inhibitor for hereditary tyrosinaemia type 1 that works by deliberately b
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 54 h | Approximately 54 h (Range: 39 to 86 hours) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 437868f5…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=437868f5-1c9e-4b0f-8a03-77df8ac0900d), label version 20260806. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 54)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alpha-Lipoic Acid (ALA)]], [[Eliglustat]], [[Glycerol Phenylbutyrate]], [[Lonafarnib (Zokinvy)]], [[Migalastat]], [[Miglustat]], [[Sodium Phenylbutyrate]], [[Teduglutide]], [[Trientine]]
 
 ## Safety routing
 

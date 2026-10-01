@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2109256
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2109256
+  pref-name: SGN-30
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2364161
+    name: Tumor necrosis factor receptor superfamily member 8
+    action: AGONIST
+  properties: {}
 ---
 
 # Sgn-30
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `sgn-30-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2109256](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109256/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +93,14 @@ Sgn-30 is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is tumo
 
 tumor necrosis factor receptor superfamily member 8 agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor receptor superfamily member 8 (CHEMBL2364161)|Tumor necrosis factor receptor superfamily member 8]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +109,12 @@ tumor necrosis factor receptor superfamily member 8 agonist _(ChEMBL curated mec
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Brentuximab Vedotin]] (Tumor necrosis factor receptor superfamily member 8), [[Iratumumab]] (Tumor necrosis factor receptor superfamily member 8)
 
 ## Safety routing
 

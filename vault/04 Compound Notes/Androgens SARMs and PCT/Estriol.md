@@ -54,6 +54,33 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL193482
+  pref-name: ESTRIOL
+  molecule-type: Small molecule
+  first-approval: 2000
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G03CA04
+  - G03CC06
+  targets:
+  - id: CHEMBL2093866
+    name: Estrogen receptor
+    action: MODULATOR
+  properties:
+    full-mwt: 288.39
+    mw-freebase: 288.39
+    alogp: 2.58
+    psa: 60.69
+    hba: 3
+    hbd: 3
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C18H24O3
 ---
 
 # Estriol
@@ -67,7 +94,7 @@ tags:
 - **Compound ID:** `estriol-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL193482](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL193482/) · max phase 4
+- **ChEMBL:** [CHEMBL193482](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL193482/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +104,21 @@ Estrogen receptor modulator; approved/marketed compound catalogued by ChEMBL (CH
 
 Estrogen receptor modulator _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2000
+- **ATC G03CA04:** GENITO URINARY SYSTEM AND SEX HORMONES › ESTROGENS › Natural and semisynthetic estrogens, plain
+- **ATC G03CC06:** GENITO URINARY SYSTEM AND SEX HORMONES › ESTROGENS › Estrogens, combinations with other drugs
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 288.39 | 2.58 | 60.69 | 3/3 | 0 | C18H24O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Estrogen receptor (CHEMBL2093866)|Estrogen receptor]] - modulator · PROTEIN FAMILY
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +127,13 @@ Estrogen receptor modulator _(ChEMBL curated mechanism, as quoted by the source)
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acolbifene]] (Estrogen receptor), [[Cyclofenil]] (Estrogen receptor), [[Diethylstilbestrol Diphosphate]] (Estrogen receptor), [[Droloxifene]] (Estrogen receptor), [[Estrogens, Conjugated]] (Estrogen receptor), [[Estrogens, Conjugated Synthetic A]] (Estrogen receptor), [[Estrogens, Esterified]] (Estrogen receptor), [[Lasofoxifene]] (Estrogen receptor), [[Ospemifene (Osphena)]] (Estrogen receptor), [[Quinestrol]] (Estrogen receptor), [[Synthetic Conjugated Estrogens, B]] (Estrogen receptor)
+- **Same ATC subgroup:** [[Chlorotrianisene]], [[Dienestrol]], [[Diethylstilbestrol]], [[Estradiol]], [[Estrogens, Conjugated]], [[Estrone]], [[Ethinyl Estradiol]]
 
 ## Safety routing
 

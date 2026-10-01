@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL455706
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,28 @@ tags:
 - source-derived
 - group/steroids
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL455706
+  pref-name: CALUSTERONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 316.49
+    mw-freebase: 316.49
+    alogp: 4.52
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.71
+    full-molformula: C21H32O2
 ---
 
 # Calusterone
@@ -68,10 +90,19 @@ tags:
 - **Compound ID:** `calusterone-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL455706](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL455706/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 17-alkylated oral anabolic androgenic steroid, historically used in breast cancer treatment; largely obsolete today.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 316.49 | 4.52 | 37.3 | 1/2 | 0 | C21H32O2 |
 
 ## Evidence boundaries
 

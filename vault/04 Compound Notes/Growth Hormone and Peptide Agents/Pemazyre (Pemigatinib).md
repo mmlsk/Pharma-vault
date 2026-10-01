@@ -10,15 +10,15 @@ cluster: Growth Hormone and Peptide Agents
 group: fgfr
 class: null
 subclass: null
-mechanism: null
+mechanism: Fibroblast growth factor receptor 1 inhibitor; Fibroblast growth factor receptor 2 inhibitor; Fibroblast growth factor receptor 3 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297522
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -57,6 +57,38 @@ tags:
 - source-derived
 - group/fgfr
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4297522
+  pref-name: PEMIGATINIB
+  molecule-type: Small molecule
+  first-approval: 2020
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L01EN02
+  targets:
+  - id: CHEMBL4142
+    name: Fibroblast growth factor receptor 2
+    action: INHIBITOR
+  - id: CHEMBL2742
+    name: Fibroblast growth factor receptor 3
+    action: INHIBITOR
+  - id: CHEMBL3650
+    name: Fibroblast growth factor receptor 1
+    action: INHIBITOR
+  properties:
+    full-mwt: 487.51
+    mw-freebase: 487.51
+    alogp: 3.66
+    psa: 83.16
+    hba: 6
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.57
+    full-molformula: C24H27F2N5O4
 ---
 
 # Pemazyre (Pemigatinib)
@@ -71,10 +103,31 @@ tags:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Pemazyre, Pemigatinib
+- **ChEMBL:** [CHEMBL4297522](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297522/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral FGFR1-3 inhibitor approved for FGFR2-fusion cholangiocarcinoma; FGFR3 activity is incidental to its approved use.
+
+## Mechanism
+
+Fibroblast growth factor receptor 1 inhibitor; Fibroblast growth factor receptor 2 inhibitor; Fibroblast growth factor receptor 3 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2020
+- **ATC L01EN02:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › PROTEIN KINASE INHIBITORS › Fibroblast growth factor receptor (FGFR) tyrosine kinase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 487.51 | 3.66 | 83.16 | 1/6 | 0 | C24H27F2N5O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Fibroblast growth factor receptor 2 (CHEMBL4142)|Fibroblast growth factor receptor 2]] - inhibitor · SINGLE PROTEIN
+- [[Fibroblast growth factor receptor 3 (CHEMBL2742)|Fibroblast growth factor receptor 3]] - inhibitor · SINGLE PROTEIN
+- [[Fibroblast growth factor receptor 1 (CHEMBL3650)|Fibroblast growth factor receptor 1]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -84,6 +137,13 @@ Oral FGFR1-3 inhibitor approved for FGFR2-fusion cholangiocarcinoma; FGFR3 activ
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dovitinib]] (Fibroblast growth factor receptor 3)
+- **Same ATC subgroup:** [[Balversa (Erdafitinib)]], [[Lytgobi (Futibatinib)]], [[Truseltiq (Infigratinib)]]
 
 ## Safety routing
 

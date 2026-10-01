@@ -1,14 +1,14 @@
 {
- "catalogue": 2351,
- "infobox_matched": 1767,
- "with_pk_fields": 1117,
+ "catalogue": 2537,
+ "infobox_matched": 1919,
+ "with_pk_fields": 1158,
  "rejected_chembl_mismatch": 26,
- "half_life_numeric": 1016,
- "protein_binding_numeric": 663,
- "bioavailability_numeric": 639,
- "renal_primary_set": 576,
- "fe_unchanged": 70,
- "hepatic_primary_set": 708,
- "cyp_substrates": 310,
- "chembl_confirmed": 235
+ "half_life_numeric": 1048,
+ "protein_binding_numeric": 669,
+ "bioavailability_numeric": 645,
+ "renal_primary_set": 591,
+ "fe_unchanged": 74,
+ "hepatic_primary_set": 728,
+ "cyp_substrates": 314,
+ "chembl_confirmed": 262
 }

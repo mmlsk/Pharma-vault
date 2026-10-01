@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL6068083
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,20 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL6068083
+  pref-name: NETAKIMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AC20
+  targets: []
+  properties: {}
 ---
 
 # Netakimab
@@ -67,10 +81,16 @@ tags:
 - **Compound ID:** `netakimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL6068083](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6068083/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Blocks IL-17 ligand or receptor signaling to reduce neutrophil-dominant inflammation.
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **ATC L04AC20:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Interleukin inhibitors
 
 ## Evidence boundaries
 
@@ -80,6 +100,12 @@ Blocks IL-17 ligand or receptor signaling to reduce neutrophil-dominant inflamma
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Anakinra]], [[Basiliximab]], [[Bimekizumab]], [[Briakinumab]], [[Brodalumab]], [[Canakinumab (Ilaris)]], [[Guselkumab]], [[Ixekizumab]], [[Mirikizumab]], [[Olokizumab]], [[Rilonacept]], [[Risankizumab]]
 
 ## Safety routing
 

@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL521589
 chembl-max-phase: 3
 half-life:
   value: 13.0
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Bambuterol
@@ -67,6 +68,38 @@ pk-source:
   revision: 1329472471
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL521589
+  pref-name: BAMBUTEROL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R03CC12
+  targets:
+  - id: CHEMBL210
+    name: Beta-2 adrenergic receptor
+    action: AGONIST
+  properties:
+    full-mwt: 367.45
+    mw-freebase: 367.45
+    alogp: 2.23
+    psa: 91.34
+    hba: 6
+    hbd: 2
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.83
+    full-molformula: C18H29N3O5
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Bambuterol
@@ -80,6 +113,7 @@ pk-source:
 - **Compound ID:** `bambuterol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL521589](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL521589/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -88,6 +122,20 @@ Bambuterol is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is 
 ## Mechanism
 
 beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** prodrug
+- **ATC R03CC12:** RESPIRATORY SYSTEM › ADRENERGICS FOR SYSTEMIC USE › Selective beta-2-adrenoreceptor agonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 367.45 | 2.23 | 91.34 | 2/6 | 0 | C18H29N3O5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Beta-2 adrenergic receptor (CHEMBL210)|Beta-2 adrenergic receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -105,6 +153,15 @@ beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the 
 | Bioavailability | 20 % | 20% |
 | Metabolism | hepatic | Extensive hepatic.; Further metabolized to terbutaline by plasma cholinesterase |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Albuterol]] (Beta-2 adrenergic receptor), [[Bucindolol]] (Beta-2 adrenergic receptor), [[Celiprolol]] (Beta-2 adrenergic receptor), [[Clenbuterol]] (Beta-2 adrenergic receptor), [[Fenoterol]] (Beta-2 adrenergic receptor), [[Nadolol]] (Beta-2 adrenergic receptor), [[Navafenterol]] (Beta-2 adrenergic receptor), [[Pf-00610355]] (Beta-2 adrenergic receptor), [[Pindolol]] (Beta-2 adrenergic receptor), [[Procaterol]] (Beta-2 adrenergic receptor), [[Pronetalol]] (Beta-2 adrenergic receptor), [[Salbutamol (Albuterol)]] (Beta-2 adrenergic receptor)
+- **Same ATC subgroup:** [[Albuterol]], [[Clenbuterol]], [[Fenoterol]], [[Formoterol]], [[Isoetharine]], [[Pirbuterol]], [[Procaterol]], [[Salbutamol (Albuterol)]], [[Terbutaline]], [[Tulobuterol]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL295124
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL295124
+  pref-name: BERBERINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 336.37
+    mw-freebase: 336.37
+    alogp: 3.1
+    psa: 40.8
+    hba: 4
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C20H18NO4+
 ---
 
 # Berberine
@@ -67,10 +90,20 @@ tags:
 - **Compound ID:** `berberine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL295124](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL295124/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Plant alkaloid studied as an AMPK activator ('nature's Ozempic' in popular framing), most robustly evidenced for improving glucose/lipid metabolism in fatty liver disease models.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 336.37 | 3.1 | 40.8 | 0/4 | 0 | C20H18NO4+ |
 
 ## Evidence boundaries
 

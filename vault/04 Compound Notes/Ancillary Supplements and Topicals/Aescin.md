@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4594473
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,19 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4594473
+  pref-name: ESCIN
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Aescin
@@ -67,10 +80,15 @@ tags:
 - **Compound ID:** `aescin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4594473](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594473/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Horse-chestnut triterpene mixture studied for edema and venous tone; renal and bleeding cautions apply.
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
 
 ## Evidence boundaries
 

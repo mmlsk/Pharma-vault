@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Phosphate sequestering agent
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201492
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -59,6 +59,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Sevelamer
@@ -66,6 +67,20 @@ pk-source:
   revision: 1347720565
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201492
+  pref-name: SEVELAMER HYDROCHLORIDE
+  molecule-type: Small molecule
+  first-approval: 1998
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2364184
+    name: Phosphate
+    action: SEQUESTERING AGENT
+  properties: {}
 ---
 
 # Sevelamer
@@ -79,10 +94,24 @@ pk-source:
 - **Compound ID:** `sevelamer-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201492](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201492/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Non-absorbed polymer phosphate binder for dialysis patients, avoiding the calcium and aluminium load of older binders.
+
+## Mechanism
+
+Phosphate sequestering agent _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1998
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Phosphate (CHEMBL2364184)|Phosphate]] - sequestering agent · SMALL MOLECULE
 
 ## Evidence boundaries
 
@@ -98,6 +127,12 @@ Non-absorbed polymer phosphate binder for dialysis patients, avoiding the calciu
 |---|---|---|
 | Bioavailability | 0 % | 0% |
 | Excretion | mainly non-renal | Feces 100% |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Lanthanum Carbonate]] (Phosphate)
 
 ## Safety routing
 

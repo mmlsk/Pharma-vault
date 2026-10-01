@@ -10,15 +10,15 @@ cluster: Growth Hormone and Peptide Agents
 group: fgfr
 class: null
 subclass: null
-mechanism: null
+mechanism: Fibroblast growth factor receptor inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3701238
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -57,6 +57,32 @@ tags:
 - source-derived
 - group/fgfr
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3701238
+  pref-name: FUTIBATINIB
+  molecule-type: Small molecule
+  first-approval: 2022
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L01EN04
+  targets:
+  - id: CHEMBL2095217
+    name: Fibroblast growth factor receptor
+    action: INHIBITOR
+  properties:
+    full-mwt: 418.46
+    mw-freebase: 418.46
+    alogp: 1.78
+    psa: 108.39
+    hba: 8
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.51
+    full-molformula: C22H22N6O3
 ---
 
 # Lytgobi (Futibatinib)
@@ -71,10 +97,29 @@ tags:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Lytgobi, Futibatinib
+- **ChEMBL:** [CHEMBL3701238](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3701238/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Irreversible covalent pan-FGFR1-4 inhibitor with sustained target suppression and no dose-tunable isoform selectivity.
+
+## Mechanism
+
+Fibroblast growth factor receptor inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2022
+- **ATC L01EN04:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › PROTEIN KINASE INHIBITORS › Fibroblast growth factor receptor (FGFR) tyrosine kinase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 418.46 | 1.78 | 108.39 | 1/8 | 0 | C22H22N6O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Fibroblast growth factor receptor (CHEMBL2095217)|Fibroblast growth factor receptor]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -84,6 +129,13 @@ Irreversible covalent pan-FGFR1-4 inhibitor with sustained target suppression an
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Balversa (Erdafitinib)]] (Fibroblast growth factor receptor), [[Truseltiq (Infigratinib)]] (Fibroblast growth factor receptor)
+- **Same ATC subgroup:** [[Balversa (Erdafitinib)]], [[Pemazyre (Pemigatinib)]], [[Truseltiq (Infigratinib)]]
 
 ## Safety routing
 

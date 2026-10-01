@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3544909
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,31 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1040
+  pref-name: CALCIFEDIOL
+  molecule-type: Small molecule
+  first-approval: 1980
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A11CC06
+  - H05BX05
+  targets: []
+  properties:
+    full-mwt: 400.65
+    mw-freebase: 400.65
+    alogp: 6.73
+    psa: 40.46
+    hba: 2
+    hbd: 2
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.52
+    full-molformula: C27H44O2
 ---
 
 # Calcifediol (25-hydroxyvitamin D3)
@@ -70,10 +95,22 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Calcifediol, 25-hydroxyvitamin D3
+- **ChEMBL:** [CHEMBL3544909](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3544909/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 The circulating vitamin D prohormone itself, marketed as a repletion therapy that skips the liver step.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1980
+- **ATC A11CC06:** ALIMENTARY TRACT AND METABOLISM › VITAMIN A AND D, INCL. COMBINATIONS OF THE TWO › Vitamin D and analogues
+- **ATC H05BX05:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › ANTI-PARATHYROID AGENTS › Other anti-parathyroid agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 400.65 | 6.73 | 40.46 | 2/2 | 1 | C27H44O2 |
 
 ## Evidence boundaries
 
@@ -83,6 +120,12 @@ The circulating vitamin D prohormone itself, marketed as a repletion therapy tha
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alfacalcidol (1-alpha-hydroxyvitamin D3)]], [[Calcitriol (1,25-dihydroxyvitamin D3)]], [[Cholecalciferol]], [[Cinacalcet]], [[Dihydrotachysterol]], [[Doxercalciferol]], [[Ergocalciferol]], [[Etelcalcetide]], [[Evocalcet]], [[Paricalcitol (Zemplar)]], [[Vitamin D]]
 
 ## Safety routing
 

@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201533
+  pref-name: THYROTROPIN ALFA
+  molecule-type: Protein
+  first-approval: 1998
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01AB01
+  targets:
+  - id: CHEMBL1963
+    name: Thyrotropin receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Thyrotropin Alfa
@@ -67,7 +83,7 @@ tags:
 - **Compound ID:** `thyrotropin-alfa-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1201533](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201533/) · max phase 4
+- **ChEMBL:** [CHEMBL1201533](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201533/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +93,16 @@ Thyroid stimulating hormone receptor agonist; approved/marketed compound catalog
 
 Thyroid stimulating hormone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1998
+- **ATC H01AB01:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › ANTERIOR PITUITARY LOBE HORMONES AND ANALOGUES › Thyrotropin
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Thyrotropin receptor (CHEMBL1963)|Thyrotropin receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +111,12 @@ Thyroid stimulating hormone receptor agonist _(ChEMBL curated mechanism, as quot
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Thyrotropin]] (Thyrotropin receptor)
 
 ## Safety routing
 

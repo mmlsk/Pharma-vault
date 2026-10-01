@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1200473
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/derm
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201338
+  pref-name: CYCLOPENTOLATE HYDROCHLORIDE
+  molecule-type: Small molecule
+  first-approval: 1974
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - S01FA04
+  - S01FA54
+  targets: []
+  properties:
+    full-mwt: 291.39
+    mw-freebase: 291.39
+    alogp: 2.18
+    psa: 49.77
+    hba: 4
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C17H25NO3
 ---
 
 # Cyclopentolate
@@ -67,10 +91,22 @@ tags:
 - **Compound ID:** `cyclopentolate-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1200473](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200473/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Short-acting antimuscarinic mydriatic and cycloplegic used for refraction, particularly in children.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1974
+- **ATC S01FA04:** SENSORY ORGANS › MYDRIATICS AND CYCLOPLEGICS › Anticholinergics
+- **ATC S01FA54:** SENSORY ORGANS › MYDRIATICS AND CYCLOPLEGICS › Anticholinergics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 291.39 | 2.18 | 49.77 | 1/4 | 0 | C17H25NO3 |
 
 ## Evidence boundaries
 
@@ -80,6 +116,12 @@ Short-acting antimuscarinic mydriatic and cycloplegic used for refraction, parti
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Atropine]], [[Hyoscine (Scopolamine)]], [[Tropicamide]]
 
 ## Safety routing
 

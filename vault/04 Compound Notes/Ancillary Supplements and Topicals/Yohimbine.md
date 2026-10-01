@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL15245
+chembl-max-phase: 3
 half-life:
   value: 0.25
   value-max: 2.5
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Yohimbine
@@ -67,6 +68,35 @@ pk-source:
   revision: 1373876958
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL15245
+  pref-name: YOHIMBINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04BE04
+  targets: []
+  properties:
+    full-mwt: 354.45
+    mw-freebase: 354.45
+    alogp: 2.65
+    psa: 65.56
+    hba: 4
+    hbd: 2
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.77
+    full-molformula: C21H26N2O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Yohimbine
@@ -80,10 +110,20 @@ pk-source:
 - **Compound ID:** `yohimbine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL15245](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL15245/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Alpha-2 adrenergic receptor antagonist that removes a natural brake on fat-cell lipolysis, indirectly potentiating adrenaline's fat-mobilizing effect rather than acting as a stimulant itself.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC G04BE04:** GENITO URINARY SYSTEM AND SEX HORMONES › UROLOGICALS › Drugs used in erectile dysfunction
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 354.45 | 2.65 | 65.56 | 2/4 | 0 | C21H26N2O3 |
 
 ## Evidence boundaries
 
@@ -100,6 +140,14 @@ Alpha-2 adrenergic receptor antagonist that removes a natural brake on fat-cell 
 | Elimination t½ | 0.25–2.5 h | 0.25–2.5 hours |
 | Bioavailability | 7–86 % | 7-86% (mean 33%) |
 | Excretion | mainly urinary | Urine (as metabolites) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alprostadil]], [[Apomorphine]], [[Avanafil (Stendra)]], [[Cialis (Tadalafil)]], [[Papaverine]], [[Sildenafil (Viagra)]], [[Udenafil]], [[Vardenafil (Levitra)]]
 
 ## Safety routing
 

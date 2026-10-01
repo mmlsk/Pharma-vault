@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Bacterial penicillin-binding protein inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3989974
+chembl-max-phase: 4
 half-life:
   value: 2.8
   value-max: null
@@ -57,6 +57,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Cefiderocol
@@ -64,6 +65,38 @@ pk-source:
   revision: 1366709885
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3989974
+  pref-name: CEFIDEROCOL
+  molecule-type: Small molecule
+  first-approval: 2019
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J01DI04
+  targets:
+  - id: CHEMBL2354204
+    name: Bacterial penicillin-binding protein
+    action: INHIBITOR
+  properties:
+    full-mwt: 752.23
+    mw-freebase: 752.23
+    alogp: -0.18
+    psa: 256.9
+    hba: 14
+    hbd: 6
+    rtb: 13
+    num-ro5-violations: 3
+    qed-weighted: 0.05
+    full-molformula: C30H34ClN7O10S2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Cefiderocol
@@ -77,10 +110,29 @@ pk-source:
 - **Compound ID:** `cefiderocol-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL3989974](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989974/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Siderophore cephalosporin that hijacks bacterial iron transport to cross the outer membrane, reserved for carbapenem-resistant gram-negative infection.
+
+## Mechanism
+
+Bacterial penicillin-binding protein inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2019
+- **ATC J01DI04:** ANTIINFECTIVES FOR SYSTEMIC USE › OTHER BETA-LACTAM ANTIBACTERIALS › Other cephalosporins and penems
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 752.23 | -0.18 | 256.9 | 6/14 | 3 | C30H34ClN7O10S2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Bacterial penicillin-binding protein (CHEMBL2354204)|Bacterial penicillin-binding protein]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -97,6 +149,15 @@ Siderophore cephalosporin that hijacks bacterial iron transport to cross the out
 | Elimination t½ | 2.8 h | 2.8 hours |
 | Protein binding | 56–58 % | 56–58% |
 | Excretion | - · fe 0.7 | mainly kidney (60–70% unchanged) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Amoxicillin]] (Bacterial penicillin-binding protein), [[Ampicillin]] (Bacterial penicillin-binding protein), [[Aztreonam]] (Bacterial penicillin-binding protein), [[Ceftaroline]] (Bacterial penicillin-binding protein), [[Ceftazidime]] (Bacterial penicillin-binding protein), [[Ertapenem]] (Bacterial penicillin-binding protein), [[Meropenem]] (Bacterial penicillin-binding protein)
+- **Same ATC subgroup:** [[Ceftaroline]]
 
 ## Safety routing
 

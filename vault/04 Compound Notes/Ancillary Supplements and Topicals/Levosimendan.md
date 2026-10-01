@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL313136
+chembl-max-phase: 2
 half-life:
   value: 1.0
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Levosimendan
@@ -68,6 +69,34 @@ pk-source:
   revision: 1365937324
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL313136
+  pref-name: SIMENDAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 280.29
+    mw-freebase: 280.29
+    alogp: 1.36
+    psa: 113.43
+    hba: 6
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.64
+    full-molformula: C14H12N6O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Levosimendan
@@ -81,10 +110,19 @@ pk-source:
 - **Compound ID:** `levosimendan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL313136](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL313136/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Calcium-sensitizing inodilator used for acute heart failure in some countries; hypotension and arrhythmia risk require monitored infusion.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 280.29 | 1.36 | 113.43 | 2/6 | 0 | C14H12N6O |
 
 ## Evidence boundaries
 
@@ -103,6 +141,8 @@ Calcium-sensitizing inodilator used for acute heart failure in some countries; h
 | Bioavailability | 85 % | 85% (oral) |
 | Metabolism | hepatic | Extensive hepatic |
 | Excretion | mainly urinary | urine (54%), feces (44%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

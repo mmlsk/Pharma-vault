@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL99946
+chembl-max-phase: 4
 half-life:
   value: 12.0
   value-max: null
@@ -62,6 +62,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Levomilnacipran
@@ -69,6 +71,35 @@ pk-source:
   revision: 1373241809
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL99946
+  pref-name: LEVOMILNACIPRAN
+  molecule-type: Small molecule
+  first-approval: 2013
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N06AX28
+  targets: []
+  properties:
+    full-mwt: 246.35
+    mw-freebase: 246.35
+    alogp: 1.77
+    psa: 46.33
+    hba: 2
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.86
+    full-molformula: C15H22N2O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Levomilnacipran
@@ -82,10 +113,22 @@ pk-source:
 - **Compound ID:** `levomilnacipran-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL99946](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL99946/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits norepinephrine reuptake, often alongside serotonin effects; blood pressure and discontinuation effects require attention.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2013
+- **Flags:** black-box warning
+- **ATC N06AX28:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Other antidepressants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 246.35 | 1.77 | 46.33 | 1/2 | 0 | C15H22N2O |
 
 ## Evidence boundaries
 
@@ -105,6 +148,15 @@ Inhibits norepinephrine reuptake, often alongside serotonin effects; blood press
 | Metabolism | hepatic | Liver (primarily by CYP3A4) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Agomelatine (Valdoxan)]], [[Brexanolone]], [[Bupropion (Wellbutrin)]], [[Desvenlafaxine]], [[Duloxetine (Cymbalta)]], [[Esketamine (Spravato)]], [[Minaprine]], [[Mirtazapine]], [[Nefazodone]], [[Tianeptine]], [[Trazodone (Desyrel)]], [[Venlafaxine (Effexor)]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

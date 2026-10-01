@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1893554
+chembl-max-phase: 2
 half-life:
   value: 4.0
   value-max: null
@@ -57,6 +57,7 @@ tags:
 - group/steroids
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Furazabol
@@ -64,6 +65,34 @@ pk-source:
   revision: 1329021124
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1893554
+  pref-name: FURAZABOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 330.47
+    mw-freebase: 330.47
+    alogp: 3.78
+    psa: 59.15
+    hba: 4
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.79
+    full-molformula: C20H30N2O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Furazabol
@@ -77,10 +106,19 @@ pk-source:
 - **Compound ID:** `furazabol-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL1893554](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1893554/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral anabolic steroid with an isoxazole ring structure, historically used in doping.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 330.47 | 3.78 | 59.15 | 1/4 | 0 | C20H30N2O2 |
 
 ## Evidence boundaries
 
@@ -96,6 +134,8 @@ Oral anabolic steroid with an isoxazole ring structure, historically used in dop
 |---|---|---|
 | Elimination t½ | 4 h | 4 hours |
 | Excretion | mainly urinary | Urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

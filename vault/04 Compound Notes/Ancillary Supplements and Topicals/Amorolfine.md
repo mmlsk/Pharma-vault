@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL489411
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL489411
+  pref-name: AMOROLFINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D01AE16
+  targets: []
+  properties:
+    full-mwt: 317.52
+    mw-freebase: 317.52
+    alogp: 4.66
+    psa: 12.47
+    hba: 2
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.76
+    full-molformula: C21H35NO
 ---
 
 # Amorolfine
@@ -67,10 +90,20 @@ tags:
 - **Compound ID:** `amorolfine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL489411](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL489411/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Disrupts fungal ergosterol synthesis or membrane function; interaction and organ-toxicity profiles differ substantially.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC D01AE16:** DERMATOLOGICALS › ANTIFUNGALS FOR TOPICAL USE › Other antifungals for topical use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 317.52 | 4.66 | 12.47 | 0/2 | 0 | C21H35NO |
 
 ## Evidence boundaries
 
@@ -80,6 +113,12 @@ Disrupts fungal ergosterol synthesis or membrane function; interaction and organ
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Butenafine]], [[Flucytosine]], [[Naftifine]], [[Salicylic Acid]], [[Tavaborole]], [[Terbinafine (oral, Lamisil)]], [[Undecylenic Acid]]
 
 ## Safety routing
 

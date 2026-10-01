@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Tyrosinase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL232202
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL232202
+  pref-name: ARBUTIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1973
+    name: Tyrosinase
+    action: INHIBITOR
+  properties:
+    full-mwt: 272.25
+    mw-freebase: 272.25
+    alogp: -1.43
+    psa: 119.61
+    hba: 7
+    hbd: 5
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.46
+    full-molformula: C12H16O7
 ---
 
 # Arbutin
@@ -67,10 +93,28 @@ tags:
 - **Compound ID:** `arbutin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL232202](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL232202/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Natural hydroquinone glycoside found in bearberry and other plants; competitively inhibits tyrosinase, giving hydroquinone-like skin-lightening effects with a gentler safety profile.
+
+## Mechanism
+
+Tyrosinase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 272.25 | -1.43 | 119.61 | 5/7 | 0 | C12H16O7 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tyrosinase (CHEMBL1973)|Tyrosinase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +124,12 @@ Natural hydroquinone glycoside found in bearberry and other plants; competitivel
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Mequinol]] (Tyrosinase), [[Monobenzone]] (Tyrosinase)
 
 ## Safety routing
 

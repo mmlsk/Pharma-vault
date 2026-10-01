@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Oxytocin receptor antagonist; Vasopressin V1a receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL419667
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,34 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL419667
+  pref-name: RELCOVAPTAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1889
+    name: Vasopressin V1a receptor
+    action: ANTAGONIST
+  - id: CHEMBL2049
+    name: Oxytocin receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 620.51
+    mw-freebase: 620.51
+    alogp: 3.3
+    psa: 139.47
+    hba: 7
+    hbd: 2
+    rtb: 7
+    num-ro5-violations: 1
+    qed-weighted: 0.41
+    full-molformula: C28H27Cl2N3O7S
 ---
 
 # Relcovaptan
@@ -67,10 +95,28 @@ tags:
 - **Compound ID:** `relcovaptan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL419667](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL419667/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Acts on vasopressin receptors to alter free-water handling or vascular tone; sodium shifts require monitoring; investigational.
+
+## Mechanism
+
+Oxytocin receptor antagonist; Vasopressin V1a receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 620.51 | 3.3 | 139.47 | 2/7 | 1 | C28H27Cl2N3O7S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Vasopressin V1a receptor (CHEMBL1889)|Vasopressin V1a receptor]] - antagonist · SINGLE PROTEIN
+- [[Oxytocin receptor (CHEMBL2049)|Oxytocin receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +126,12 @@ Acts on vasopressin receptors to alter free-water handling or vascular tone; sod
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Barusiban]] (Oxytocin receptor), [[Carbetocin]] (Oxytocin receptor), [[Epelsiban]] (Oxytocin receptor), [[Oxytocin]] (Oxytocin receptor), [[Retosiban]] (Oxytocin receptor)
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2106558
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2106558
+  pref-name: AMFLUTIZOLE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 288.25
+    mw-freebase: 288.25
+    alogp: 3.11
+    psa: 76.21
+    hba: 4
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.89
+    full-molformula: C11H7F3N2O2S
 ---
 
 # Amflutizole
@@ -67,10 +89,19 @@ tags:
 - **Compound ID:** `amflutizole-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL2106558](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106558/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits xanthine oxidoreductase to reduce urate production at its terminal synthetic step; investigational, development discontinued.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 288.25 | 3.11 | 76.21 | 2/4 | 0 | C11H7F3N2O2S |
 
 ## Evidence boundaries
 

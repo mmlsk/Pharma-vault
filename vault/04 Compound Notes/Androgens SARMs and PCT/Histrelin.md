@@ -61,6 +61,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Histrelin
@@ -68,6 +69,28 @@ pk-source:
   revision: 1329009764
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201255
+  pref-name: HISTRELIN
+  molecule-type: Protein
+  first-approval: 1991
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L02AE05
+  targets: []
+  properties:
+    full-mwt: 1323.53
+    mw-freebase: 1323.53
+    full-molformula: C66H86N18O12
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Histrelin
@@ -81,7 +104,7 @@ pk-source:
 - **Compound ID:** `histrelin-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1201255](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201255/) · max phase 4
+- **ChEMBL:** [CHEMBL1201255](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201255/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +113,16 @@ Gonadotropin-releasing hormone receptor agonist; approved/marketed compound cata
 ## Mechanism
 
 Gonadotropin-releasing hormone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1991
+- **ATC L02AE05:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › HORMONES AND RELATED AGENTS › Gonadotropin releasing hormone analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1323.53 | - | - | -/- | - | C66H86N18O12 |
 
 ## Evidence boundaries
 
@@ -107,6 +140,14 @@ Gonadotropin-releasing hormone receptor agonist _(ChEMBL curated mechanism, as q
 | Protein binding | 70 % | 70% |
 | Bioavailability | 92 % | 92% |
 | Metabolism | hepatic | Liver |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Buserelin]], [[Goserelin]], [[Leuprolide (Lupron)]], [[Triptorelin (Trelstar)]]
 
 ## Safety routing
 

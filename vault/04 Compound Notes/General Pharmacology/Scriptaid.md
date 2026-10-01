@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL96051
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL96051
+  pref-name: SCRIPTAID
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 326.35
+    mw-freebase: 326.35
+    alogp: 2.5
+    psa: 86.71
+    hba: 4
+    hbd: 2
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.37
+    full-molformula: C18H18N2O4
 ---
 
 # Scriptaid
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `scriptaid-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL96051](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL96051/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Scriptaid is a named HDAC research compound with a curated biochemical result against HDAC6. ChEMBL records Ki 0.25 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 326.35 | 2.5 | 86.71 | 2/4 | 0 | C18H18N2O4 |
 
 ## Evidence boundaries
 

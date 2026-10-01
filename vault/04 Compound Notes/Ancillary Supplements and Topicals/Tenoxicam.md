@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL302795
+chembl-max-phase: 2
 half-life:
   value: 30.0
   value-max: 140.0
@@ -57,6 +57,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Tenoxicam
@@ -64,6 +66,35 @@ pk-source:
   revision: 1318139775
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL302795
+  pref-name: TENOXICAM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M01AC02
+  targets: []
+  properties:
+    full-mwt: 337.38
+    mw-freebase: 337.38
+    alogp: 1.64
+    psa: 99.6
+    hba: 6
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.87
+    full-molformula: C13H11N3O4S2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tenoxicam
@@ -77,10 +108,20 @@ pk-source:
 - **Compound ID:** `tenoxicam-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL302795](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL302795/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Long-half-life oxicam NSAID allowing once-daily dosing.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC M01AC02:** MUSCULO-SKELETAL SYSTEM › ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS, NON-STEROIDS › Oxicams
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 337.38 | 1.64 | 99.6 | 2/6 | 0 | C13H11N3O4S2 |
 
 ## Evidence boundaries
 
@@ -96,6 +137,14 @@ Long-half-life oxicam NSAID allowing once-daily dosing.
 |---|---|---|
 | Elimination t½ | 30–140 h | 30–140 hours |
 | Protein binding | - | High |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Lornoxicam]], [[Meloxicam]], [[Piroxicam]]
 
 ## Safety routing
 

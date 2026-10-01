@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL287556
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL287556
+  pref-name: KOJIC ACID
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 142.11
+    mw-freebase: 142.11
+    alogp: -0.16
+    psa: 70.67
+    hba: 4
+    hbd: 2
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.57
+    full-molformula: C6H6O4
 ---
 
 # Kojic Acid
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `kojic-acid-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL287556](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL287556/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Fungal-derived skin-lightening ingredient that chelates the copper tyrosinase needs to function; commonly combined with other depigmenting agents like arbutin since it's real but comparatively modest as a standalone treatment.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 142.11 | -0.16 | 70.67 | 2/4 | 0 | C6H6O4 |
 
 ## Evidence boundaries
 

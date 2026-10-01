@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Cholinesterases; ACHE & BCHE inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL636
+chembl-max-phase: 4
 half-life:
   value: 1.5
   value-max: null
@@ -63,6 +63,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Rivastigmine
@@ -70,6 +72,40 @@ pk-source:
   revision: 1357081093
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL636
+  pref-name: RIVASTIGMINE
+  molecule-type: Small molecule
+  first-approval: 1998
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N06DA03
+  targets:
+  - id: CHEMBL2095233
+    name: Cholinesterases; ACHE & BCHE
+    action: INHIBITOR
+  properties:
+    full-mwt: 250.34
+    mw-freebase: 250.34
+    alogp: 2.76
+    psa: 32.78
+    hba: 3
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C14H22N2O2
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 8b809739-8381-4cc1-ab4a-5b17ab902a3d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8b809739-8381-4cc1-ab4a-5b17ab902a3d
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Rivastigmine (Exelon)
@@ -84,10 +120,29 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Rivastigmine, Exelon
+- **ChEMBL:** [CHEMBL636](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL636/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Pseudo-irreversible dual inhibitor of acetylcholinesterase and butyrylcholinesterase, available as a capsule and a transdermal patch.
+
+## Mechanism
+
+Cholinesterases; ACHE & BCHE inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1998
+- **ATC N06DA03:** NERVOUS SYSTEM › ANTI-DEMENTIA DRUGS › Anticholinesterases
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 250.34 | 2.76 | 32.78 | 0/3 | 0 | C14H22N2O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cholinesterases; ACHE & BCHE (CHEMBL2095233)|Cholinesterases; ACHE & BCHE]] - inhibitor · SELECTIVITY GROUP
 
 ## Evidence boundaries
 
@@ -106,6 +161,17 @@ Pseudo-irreversible dual inhibitor of acetylcholinesterase and butyrylcholineste
 | Bioavailability | 60–72 % | 60 to 72% |
 | Metabolism | hepatic | Liver, via pseudocholinesterase |
 | Excretion | mainly urinary | 97% in urine |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 8b809739…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8b809739-8381-4cc1-ab4a-5b17ab902a3d), label version 20251114. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 3)
+> - protein-binding: consistent (label values: 40)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Donepezil (Aricept)]], [[Galantamine (Reminyl - Razadyne)|Galantamine (Reminyl / Razadyne)]]
 
 ## Safety routing
 

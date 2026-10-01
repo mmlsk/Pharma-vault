@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Cytochrome P450 51 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL638
+chembl-max-phase: 4
 half-life:
   value: null
   value-max: null
@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Voriconazole
@@ -71,6 +73,39 @@ pk-source:
   revision: 1370056373
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL638
+  pref-name: VORICONAZOLE
+  molecule-type: Small molecule
+  first-approval: 2002
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J02AC03
+  targets:
+  - id: CHEMBL1780
+    name: Lanosterol 14-alpha demethylase
+    action: INHIBITOR
+  properties:
+    full-mwt: 349.32
+    mw-freebase: 349.32
+    alogp: 2.18
+    psa: 76.72
+    hba: 6
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.76
+    full-molformula: C16H14F3N5O
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: c620b2d7-3c2b-4252-8cfc-2f322d624435
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c620b2d7-3c2b-4252-8cfc-2f322d624435
+  checked: '2026-10-01'
+  fields:
+    protein-binding: consistent
 ---
 
 # Voriconazole
@@ -84,10 +119,29 @@ pk-source:
 - **Compound ID:** `voriconazole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL638](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL638/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Disrupts fungal ergosterol synthesis or membrane function; interaction and organ-toxicity profiles differ substantially.
+
+## Mechanism
+
+Cytochrome P450 51 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2002
+- **ATC J02AC03:** ANTIINFECTIVES FOR SYSTEMIC USE › ANTIMYCOTICS FOR SYSTEMIC USE › Triazole and tetrazole derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 349.32 | 2.18 | 76.72 | 1/6 | 0 | C16H14F3N5O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Lanosterol 14-alpha demethylase (CHEMBL1780)|Lanosterol 14-alpha demethylase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -108,6 +162,18 @@ Disrupts fungal ergosterol synthesis or membrane function; interaction and organ
 | CYP (metabolised by) | CYP2C19, CYP2C9, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Voriconazole N-oxide (major; minimal antifungal activity) |
 | Excretion | mainly urinary | Urine (80–83%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set c620b2d7…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c620b2d7-3c2b-4252-8cfc-2f322d624435), label version 20260827. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - protein-binding: consistent (label values: 58)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Fluconazole]] (Lanosterol 14-alpha demethylase), [[Posaconazole]] (Lanosterol 14-alpha demethylase), [[Tioconazole]] (Lanosterol 14-alpha demethylase)
+- **Same ATC subgroup:** [[Fluconazole]], [[Oteseconazole]], [[Posaconazole]]
+- **Shared CYP substrate pool:** CYP2C19 (+43 others), CYP2C9 (+40 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

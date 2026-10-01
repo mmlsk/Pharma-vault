@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Rotigotine
@@ -68,6 +69,38 @@ pk-source:
   revision: 1366385573
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1303
+  pref-name: ROTIGOTINE
+  molecule-type: Small molecule
+  first-approval: 2006
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N04BC09
+  targets:
+  - id: CHEMBL2331075
+    name: D2-like dopamine receptor
+    action: AGONIST
+  properties:
+    full-mwt: 315.48
+    mw-freebase: 315.48
+    alogp: 4.27
+    psa: 23.47
+    hba: 3
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.86
+    full-molformula: C19H25NOS
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Rotigotine
@@ -81,7 +114,7 @@ pk-source:
 - **Compound ID:** `rotigotine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1303](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1303/) · max phase 4
+- **ChEMBL:** [CHEMBL1303](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1303/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +123,20 @@ D2-like dopamine receptor agonist; approved/marketed compound catalogued by ChEM
 ## Mechanism
 
 D2-like dopamine receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2006
+- **ATC N04BC09:** NERVOUS SYSTEM › DOPAMINERGIC AGENTS › Dopamine agonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 315.48 | 4.27 | 23.47 | 1/3 | 0 | C19H25NOS |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[D2-like dopamine receptor (CHEMBL2331075)|D2-like dopamine receptor]] - agonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -108,6 +155,15 @@ D2-like dopamine receptor agonist _(ChEMBL curated mechanism, as quoted by the s
 | Bioavailability | 37 % | 37% (transdermal) |
 | Metabolism | hepatic | Liver (CYP-mediated) |
 | Excretion | mainly urinary | Urine (71%), Feces (23%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Chlorpromazine]] (D2-like dopamine receptor), [[Droperidol]] (D2-like dopamine receptor), [[Haloperidol]] (D2-like dopamine receptor), [[Haloperidol Decanoate]] (D2-like dopamine receptor), [[Levomepromazine]] (D2-like dopamine receptor), [[Loxapine]] (D2-like dopamine receptor), [[Olanzapine]] (D2-like dopamine receptor), [[Thioridazine]] (D2-like dopamine receptor)
+- **Same ATC subgroup:** [[Apomorphine]], [[Bromocriptine (Parlodel)]], [[Cabergoline (Dostinex)]], [[Pergolide]], [[Pramipexole (Mirapex)]], [[Ropinirole]]
 
 ## Safety routing
 

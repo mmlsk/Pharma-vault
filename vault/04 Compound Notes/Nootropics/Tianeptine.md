@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1289110
+chembl-max-phase: 3
 half-life:
   value: 2.5
   value-max: 3.0
@@ -62,6 +62,7 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tianeptine
@@ -69,6 +70,35 @@ pk-source:
   revision: 1367854425
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1289110
+  pref-name: TIANEPTINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N06AX14
+  targets: []
+  properties:
+    full-mwt: 436.96
+    mw-freebase: 436.96
+    alogp: 4.19
+    psa: 86.71
+    hba: 4
+    hbd: 2
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.61
+    full-molformula: C21H25ClN2O4S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tianeptine
@@ -82,10 +112,20 @@ pk-source:
 - **Compound ID:** `tianeptine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1289110](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1289110/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Prescribed as an atypical antidepressant in parts of Europe, and a full mu-opioid receptor agonist. Sold unregulated in the US as a supplement, where it produces opioid dependence and withdrawal.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC N06AX14:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Other antidepressants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 436.96 | 4.19 | 86.71 | 2/4 | 0 | C21H25ClN2O4S |
 
 ## Evidence boundaries
 
@@ -104,6 +144,14 @@ Prescribed as an atypical antidepressant in parts of Europe, and a full mu-opioi
 | Bioavailability | 99 % | 99% |
 | Metabolism | hepatic | Hepatic by β-oxidation |
 | Excretion | mainly urinary | Urine: 65%; Feces: 15% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Agomelatine (Valdoxan)]], [[Brexanolone]], [[Bupropion (Wellbutrin)]], [[Desvenlafaxine]], [[Duloxetine (Cymbalta)]], [[Esketamine (Spravato)]], [[Levomilnacipran]], [[Minaprine]], [[Mirtazapine]], [[Nefazodone]], [[Trazodone (Desyrel)]], [[Venlafaxine (Effexor)]]
 
 ## Safety routing
 

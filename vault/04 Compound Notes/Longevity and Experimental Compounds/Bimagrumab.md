@@ -8,15 +8,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Activin receptor type-2B antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3137353
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3137353
+  pref-name: BIMAGRUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL5466
+    name: Activin receptor type-2B
+    action: ANTAGONIST
+  properties: {}
 ---
 
 # Bimagrumab
@@ -67,10 +83,23 @@ tags:
 - **Compound ID:** `bimagrumab-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL3137353](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137353/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Antibody that blocks activin type II receptors to increase muscle mass while reducing fat mass.
+
+## Mechanism
+
+Activin receptor type-2B antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Activin receptor type-2B (CHEMBL5466)|Activin receptor type-2B]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +109,12 @@ Antibody that blocks activin type II receptors to increase muscle mass while red
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dibotermin Alfa]] (Activin receptor type-2B)
 
 ## Safety routing
 

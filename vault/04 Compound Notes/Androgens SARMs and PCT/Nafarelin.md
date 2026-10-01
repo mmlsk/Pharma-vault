@@ -61,6 +61,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Nafarelin
@@ -68,6 +69,28 @@ pk-source:
   revision: 1328743505
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201309
+  pref-name: NAFARELIN
+  molecule-type: Protein
+  first-approval: 1990
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01CA02
+  targets: []
+  properties:
+    full-mwt: 1322.5
+    mw-freebase: 1322.5
+    full-molformula: C66H83N17O13
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Nafarelin
@@ -81,7 +104,7 @@ pk-source:
 - **Compound ID:** `nafarelin-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1201309](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201309/) · max phase 4
+- **ChEMBL:** [CHEMBL1201309](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201309/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +113,16 @@ Gonadotropin-releasing hormone receptor agonist; approved/marketed compound cata
 ## Mechanism
 
 Gonadotropin-releasing hormone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1990
+- **ATC H01CA02:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › HYPOTHALAMIC HORMONES › Gonadotropin-releasing hormones
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1322.5 | - | - | -/- | - | C66H83N17O13 |
 
 ## Evidence boundaries
 
@@ -108,6 +141,14 @@ Gonadotropin-releasing hormone receptor agonist _(ChEMBL curated mechanism, as q
 | Bioavailability | 2.8 % | IN: 2.8% (1.2–5.6%) |
 | Metabolism | hepatic | Peptidases (not CYP450) |
 | Excretion | - | Urine: 44–55%; Feces: 19–44% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Gonadorelin]]
 
 ## Safety routing
 

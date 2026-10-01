@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1496
+chembl-max-phase: 4
 half-life:
   value: 19.0
   value-max: null
@@ -57,7 +57,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -65,6 +65,8 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Rosuvastatin
@@ -72,6 +74,37 @@ pk-source:
   revision: 1365389534
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1496
+  pref-name: ROSUVASTATIN
+  molecule-type: Small molecule
+  first-approval: 2003
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C10AA07
+  targets: []
+  properties:
+    full-mwt: 481.55
+    mw-freebase: 481.55
+    alogp: 2.4
+    psa: 140.92
+    hba: 7
+    hbd: 3
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.47
+    full-molformula: C22H28FN3O6S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: a370a6c2-b5cd-4aa0-b072-a5a8017a2d5b
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a370a6c2-b5cd-4aa0-b072-a5a8017a2d5b
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Rosuvastatin (Crestor)
@@ -86,10 +119,21 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Rosuvastatin, Crestor
+- **ChEMBL:** [CHEMBL1496](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1496/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 High-potency statin, effective at lowering LDL cholesterol and cardiovascular event risk even at low starting LDL levels.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2003
+- **ATC C10AA07:** CARDIOVASCULAR SYSTEM › LIPID MODIFYING AGENTS, PLAIN › HMG CoA reductase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 481.55 | 2.4 | 140.92 | 3/7 | 0 | C22H28FN3O6S |
 
 ## Evidence boundaries
 
@@ -110,6 +154,18 @@ High-potency statin, effective at lowering LDL cholesterol and cardiovascular ev
 | CYP (metabolised by) | CYP2C19, CYP2C9 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | N-desmethyl rosuvastatin (major; 1/6–1/9 of rosuvastatin activity) |
 | Excretion | mainly non-renal | Feces (90%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set a370a6c2…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a370a6c2-b5cd-4aa0-b072-a5a8017a2d5b), label version 20260904. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 19)
+> - protein-binding: consistent (label values: 88)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Atorvastatin (Lipitor)]], [[Cerivastatin]], [[Fluvastatin]], [[Lovastatin (Mevacor)]], [[Pitavastatin (Livalo)]], [[Pravastatin (Pravachol)]], [[Simvastatin (Zocor)]]
+- **Shared CYP substrate pool:** CYP2C19 (+43 others), CYP2C9 (+40 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

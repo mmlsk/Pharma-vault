@@ -63,6 +63,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Zopiclone
@@ -70,6 +71,38 @@ pk-source:
   revision: 1369948564
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL135400
+  pref-name: ZOPICLONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - N05CF01
+  targets:
+  - id: CHEMBL2109244
+    name: GABA-A receptor; agonist GABA site
+    action: POSITIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 388.82
+    mw-freebase: 388.82
+    alogp: 1.57
+    psa: 91.76
+    hba: 7
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.77
+    full-molformula: C17H17ClN6O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Zopiclone
@@ -83,7 +116,7 @@ pk-source:
 - **Compound ID:** `zopiclone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL135400](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL135400/) · max phase 4
+- **ChEMBL:** [CHEMBL135400](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL135400/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -92,6 +125,20 @@ GABA-A receptor; agonist GABA site positive allosteric modulator; approved/marke
 ## Mechanism
 
 GABA-A receptor; agonist GABA site positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC N05CF01:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Benzodiazepine related drugs
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 388.82 | 1.57 | 91.76 | 0/7 | 0 | C17H17ClN6O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-A receptor; agonist GABA site (CHEMBL2109244)|GABA-A receptor; agonist GABA site]] - positive allosteric modulator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -111,6 +158,15 @@ GABA-A receptor; agonist GABA site positive allosteric modulator _(ChEMBL curate
 | Metabolism | hepatic | Hepatic through CYP3A4 and CYP2E1 |
 | CYP (metabolised by) | CYP2E1, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Urine (80%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Eszopiclone (Lunesta)]], [[Zaleplon (Sonata)]], [[Zolpidem (Ambien)]]
+- **Shared CYP substrate pool:** CYP2E1 (+8 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

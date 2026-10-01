@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL25028
+chembl-max-phase: 1
 half-life:
   value: null
   unit: null
@@ -56,6 +56,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL25028
+  pref-name: DIMETHYL SULFONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 94.14
+    mw-freebase: 94.14
+    alogp: -0.34
+    psa: 34.14
+    hba: 2
+    hbd: 0
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.41
+    full-molformula: C2H6O2S
 ---
 
 # MSM (Methylsulfonylmethane)
@@ -70,10 +93,19 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** MSM, Methylsulfonylmethane
+- **ChEMBL:** [CHEMBL25028](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL25028/) · max phase 1 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Sulfur-containing compound studied for joint pain and as an anti-inflammatory/antioxidant, often stacked with glucosamine and chondroitin.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 94.14 | -0.34 | 34.14 | 0/2 | 0 | C2H6O2S |
 
 ## Evidence boundaries
 

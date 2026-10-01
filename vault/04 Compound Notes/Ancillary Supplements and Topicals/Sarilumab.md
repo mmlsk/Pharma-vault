@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin-6 receptor alpha subunit antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108730
+chembl-max-phase: 4
 half-life:
   value: 21.0
   value-max: null
@@ -60,6 +60,9 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Sarilumab
@@ -67,6 +70,29 @@ pk-source:
   revision: 1347461148
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108730
+  pref-name: SARILUMAB
+  molecule-type: Antibody
+  first-approval: 2017
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L04AC14
+  targets:
+  - id: CHEMBL2364155
+    name: Interleukin-6 receptor subunit alpha
+    action: ANTAGONIST
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 827bc01c-d379-4266-a18c-c7f904b76af3
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=827bc01c-d379-4266-a18c-c7f904b76af3
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
 ---
 
 # Sarilumab
@@ -80,10 +106,26 @@ pk-source:
 - **Compound ID:** `sarilumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2108730](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108730/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 IL-6 receptor antibody for rheumatoid arthritis.
+
+## Mechanism
+
+Interleukin-6 receptor alpha subunit antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2017
+- **Flags:** black-box warning
+- **ATC L04AC14:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Interleukin inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-6 receptor subunit alpha (CHEMBL2364155)|Interleukin-6 receptor subunit alpha]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -100,6 +142,17 @@ IL-6 receptor antibody for rheumatoid arthritis.
 | Elimination t½ | 21 d | 21 days (steady-state, estimated) |
 | Bioavailability | 80 % | 80% |
 | Metabolism | - | likely proteases |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 827bc01c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=827bc01c-d379-4266-a18c-c7f904b76af3), label version 20260227. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 192, 240)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Tocilizumab]] (Interleukin-6 receptor subunit alpha)
+- **Same ATC subgroup:** [[Anakinra]], [[Basiliximab]], [[Bimekizumab]], [[Briakinumab]], [[Brodalumab]], [[Canakinumab (Ilaris)]], [[Guselkumab]], [[Ixekizumab]], [[Mirikizumab]], [[Netakimab]], [[Olokizumab]], [[Rilonacept]]
 
 ## Safety routing
 

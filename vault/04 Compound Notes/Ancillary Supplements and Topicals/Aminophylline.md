@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Aminophylline
@@ -64,6 +65,15 @@ pk-source:
   revision: 1329963873
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 819207a2-0c37-b275-e053-2a91aa0afb36
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=819207a2-0c37-b275-e053-2a91aa0afb36
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: discrepant
 ---
 
 # Aminophylline
@@ -96,6 +106,11 @@ Inhibits PDE5 so nitric-oxide/cGMP vasodilation persists in corporal and pulmona
 |---|---|---|
 | Elimination t½ | 7–9 h | 7–9 hours |
 | Protein binding | 60 % | 60% |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 819207a2…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=819207a2-0c37-b275-e053-2a91aa0afb36), label version 20260619. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: discrepant (label values: 40)
 
 ## Safety routing
 

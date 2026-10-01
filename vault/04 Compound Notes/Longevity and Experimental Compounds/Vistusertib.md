@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2336325
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2336325
+  pref-name: VISTUSERTIB
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2842
+    name: Serine/threonine-protein kinase mTOR
+    action: INHIBITOR
+  properties:
+    full-mwt: 462.55
+    mw-freebase: 462.55
+    alogp: 2.5
+    psa: 92.71
+    hba: 8
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.63
+    full-molformula: C25H30N6O3
 ---
 
 # Vistusertib
@@ -67,6 +93,7 @@ tags:
 - **Compound ID:** `vistusertib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL2336325](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2336325/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +103,18 @@ Vistusertib is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is
 
 serine/threonine-protein kinase mTOR inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 462.55 | 2.5 | 92.71 | 1/8 | 0 | C25H30N6O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Serine-threonine-protein kinase mTOR (CHEMBL2842)|Serine/threonine-protein kinase mTOR]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +123,12 @@ serine/threonine-protein kinase mTOR inhibitor _(ChEMBL curated mechanism, as qu
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Sapanisertib]] (Serine/threonine-protein kinase mTOR)
 
 ## Safety routing
 

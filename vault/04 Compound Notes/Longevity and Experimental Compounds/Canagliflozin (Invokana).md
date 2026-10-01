@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2103841
+chembl-max-phase: 4
 half-life:
   value: null
   value-max: null
@@ -63,6 +63,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Canagliflozin
@@ -70,6 +71,35 @@ pk-source:
   revision: 1369651076
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2048484
+  pref-name: CANAGLIFLOZIN ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 2011
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 444.52
+    mw-freebase: 444.52
+    alogp: 2.97
+    psa: 90.15
+    hba: 6
+    hbd: 4
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.49
+    full-molformula: C24H25FO5S
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: b9057d3b-b104-4f09-8a61-c61ef9d4a3f3
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b9057d3b-b104-4f09-8a61-c61ef9d4a3f3
+  checked: '2026-10-01'
+  fields:
+    protein-binding: no-label-value
 ---
 
 # Canagliflozin (Invokana)
@@ -84,10 +114,21 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Canagliflozin, Invokana
+- **ChEMBL:** [CHEMBL2103841](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103841/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 SGLT2 inhibitor studied in the large CANVAS Program, which found real cardiovascular and renal benefit beyond blood sugar control -- alongside empagliflozin and dapagliflozin, one of the three major drugs in this class.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2011
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 444.52 | 2.97 | 90.15 | 4/6 | 0 | C24H25FO5S |
 
 ## Evidence boundaries
 
@@ -106,6 +147,10 @@ SGLT2 inhibitor studied in the large CANVAS Program, which found real cardiovasc
 | Bioavailability | 65 % | 65% |
 | Metabolism | hepatic | Liver glucuronidation |
 | Excretion | - | 53% faecal and 33% kidney |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set b9057d3b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b9057d3b-b104-4f09-8a61-c61ef9d4a3f3), label version 20260611. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - protein-binding: no-label-value (label values: -)
 
 ## Safety routing
 

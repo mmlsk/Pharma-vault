@@ -17,10 +17,10 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1115
+chembl-max-phase: 4
 half-life:
-  value: 0.24
+  value: 1.78
   value-max: null
   unit: h
   notes: 1.78 ± 0.24 hours
@@ -29,7 +29,7 @@ protein-binding:
   unit: percent
   notes: null
 bioavailability:
-  value: 2.4
+  value: 7.6
   value-max: null
   notes: 7.6 ± 2.4%
 active-metabolites: []
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Pyridostigmine
@@ -69,6 +70,35 @@ pk-source:
   revision: 1367130428
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1115
+  pref-name: PYRIDOSTIGMINE
+  molecule-type: Small molecule
+  first-approval: 1955
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N07AA02
+  targets: []
+  properties:
+    full-mwt: 181.22
+    mw-freebase: 181.22
+    alogp: 0.57
+    psa: 33.42
+    hba: 2
+    hbd: 0
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.59
+    full-molformula: C9H13N2O2+
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Pyridostigmine (Mestinon)
@@ -83,10 +113,22 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Pyridostigmine, Mestinon
+- **ChEMBL:** [CHEMBL1115](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1115/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Quaternary ammonium cholinesterase inhibitor that stays outside the brain by design; first-line symptomatic treatment for myasthenia gravis.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1955
+- **Flags:** black-box warning
+- **ATC N07AA02:** NERVOUS SYSTEM › PARASYMPATHOMIMETICS › Anticholinesterases
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 181.22 | 0.57 | 33.42 | 0/2 | 0 | C9H13N2O2+ |
 
 ## Evidence boundaries
 
@@ -100,9 +142,17 @@ Quaternary ammonium cholinesterase inhibitor that stays outside the brain by des
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 0.24 h | 1.78 ± 0.24 hours |
-| Bioavailability | 2.4 % | 7.6 ± 2.4% |
+| Elimination t½ | 1.78 h | 1.78 ± 0.24 hours |
+| Bioavailability | 7.6 % | 7.6 ± 2.4% |
 | Excretion | mainly urinary | kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Ambenonium]], [[Distigmine]], [[Neostigmine]]
 
 ## Safety routing
 

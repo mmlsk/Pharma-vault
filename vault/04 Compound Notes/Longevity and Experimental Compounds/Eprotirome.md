@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2035874
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2035874
+  pref-name: EPROTIROME
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1947
+    name: Thyroid hormone receptor beta
+    action: AGONIST
+  properties:
+    full-mwt: 487.14
+    mw-freebase: 487.14
+    alogp: 5.25
+    psa: 95.86
+    hba: 4
+    hbd: 3
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.48
+    full-molformula: C18H17Br2NO5
 ---
 
 # Eprotirome
@@ -67,6 +92,7 @@ tags:
 - **Compound ID:** `eprotirome-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL2035874](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2035874/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -76,6 +102,18 @@ Eprotirome is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is 
 
 thyroid hormone receptor beta-1 agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 487.14 | 5.25 | 95.86 | 3/4 | 1 | C18H17Br2NO5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Thyroid hormone receptor beta (CHEMBL1947)|Thyroid hormone receptor beta]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +122,12 @@ thyroid hormone receptor beta-1 agonist _(ChEMBL curated mechanism, as quoted by
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Resmetirom (Rezdiffra)]] (Thyroid hormone receptor beta), [[VK2809]] (Thyroid hormone receptor beta)
 
 ## Safety routing
 

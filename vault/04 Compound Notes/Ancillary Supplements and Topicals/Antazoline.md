@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1305
+  pref-name: ANTAZOLINE
+  molecule-type: Small molecule
+  first-approval: 1994
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R01AC04
+  - R06AX05
+  targets: []
+  properties:
+    full-mwt: 265.36
+    mw-freebase: 265.36
+    alogp: 2.69
+    psa: 27.63
+    hba: 3
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.9
+    full-molformula: C17H19N3
 ---
 
 # Antazoline
@@ -67,7 +91,7 @@ tags:
 - **Compound ID:** `antazoline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1305](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1305/) · max phase 4
+- **ChEMBL:** [CHEMBL1305](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1305/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +101,17 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1994
+- **ATC R01AC04:** RESPIRATORY SYSTEM › DECONGESTANTS AND OTHER NASAL PREPARATIONS FOR TOPICAL USE › Antiallergic agents, excl. corticosteroids
+- **ATC R06AX05:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Other antihistamines for systemic use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 265.36 | 2.69 | 27.63 | 1/3 | 0 | C17H19N3 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +120,12 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Acrivastine]], [[Astemizole]], [[Azatadine]], [[Azelastine]], [[Bilastine]], [[Cyproheptadine]], [[Desloratadine]], [[Ebastine]], [[Epinastine]], [[Fexofenadine]], [[Ketotifen]], [[Levocabastine]]
 
 ## Safety routing
 

@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Cyclizine
@@ -63,6 +64,36 @@ pk-source:
   revision: 1373292557
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL648
+  pref-name: CYCLIZINE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AE03
+  - R06AE53
+  targets: []
+  properties:
+    full-mwt: 266.39
+    mw-freebase: 266.39
+    alogp: 3.02
+    psa: 6.48
+    hba: 2
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.84
+    full-molformula: C18H22N2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Cyclizine
@@ -76,7 +107,7 @@ pk-source:
 - **Compound ID:** `cyclizine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL648](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL648/) · max phase 4
+- **ChEMBL:** [CHEMBL648](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL648/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +116,17 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC R06AE03:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Piperazine derivatives
+- **ATC R06AE53:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Piperazine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 266.39 | 3.02 | 6.48 | 0/2 | 0 | C18H22N2 |
 
 ## Evidence boundaries
 
@@ -100,6 +142,14 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 |---|---|---|
 | Elimination t½ | 20 h | 20 hours |
 | Metabolism | hepatic | N-demethylated to inactive norcyclizine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Buclizine]], [[Cetirizine]], [[Levocetirizine]], [[Meclizine]]
 
 ## Safety routing
 

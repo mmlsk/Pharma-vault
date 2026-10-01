@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4297625
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,34 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4297625
+  pref-name: LICOGLIFLOZIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4979
+    name: Sodium/glucose cotransporter 1
+    action: INHIBITOR
+  - id: CHEMBL3884
+    name: Sodium/glucose cotransporter 2
+    action: INHIBITOR
+  properties:
+    full-mwt: 416.47
+    mw-freebase: 416.47
+    alogp: 1.13
+    psa: 108.61
+    hba: 7
+    hbd: 4
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.58
+    full-molformula: C23H28O7
 ---
 
 # Licogliflozin
@@ -67,6 +95,7 @@ tags:
 - **Compound ID:** `licogliflozin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL4297625](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297625/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -76,6 +105,19 @@ Licogliflozin is a phase 2 compound catalogued by ChEMBL. Its curated mechanism 
 
 sodium/glucose cotransporter 1 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 416.47 | 1.13 | 108.61 | 4/7 | 0 | C23H28O7 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Sodium-glucose cotransporter 1 (CHEMBL4979)|Sodium/glucose cotransporter 1]] - inhibitor · SINGLE PROTEIN
+- [[Sodium-glucose cotransporter 2 (CHEMBL3884)|Sodium/glucose cotransporter 2]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +126,12 @@ sodium/glucose cotransporter 1 inhibitor _(ChEMBL curated mechanism, as quoted b
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Sotagliflozin (Inpefa)]] (Sodium/glucose cotransporter 1; Sodium/glucose cotransporter 2), [[Bexagliflozin]] (Sodium/glucose cotransporter 2), [[Dapagliflozin (Farxiga)]] (Sodium/glucose cotransporter 2), [[Empagliflozin (Jardiance)]] (Sodium/glucose cotransporter 2), [[Ertugliflozin]] (Sodium/glucose cotransporter 2), [[Henagliflozin]] (Sodium/glucose cotransporter 2), [[Ipragliflozin]] (Sodium/glucose cotransporter 2), [[Ipragliflozin L-Proline]] (Sodium/glucose cotransporter 2), [[Sergliflozin Etabonate]] (Sodium/glucose cotransporter 2)
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Acetyl-CoA carboxylase negative allosteric modulator
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3407547
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3407547
+  pref-name: FIRSOCOSTAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3885507
+    name: Acetyl-CoA carboxylase
+    action: NEGATIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 569.64
+    mw-freebase: 569.64
+    alogp: 3.95
+    psa: 135.02
+    hba: 11
+    hbd: 1
+    rtb: 9
+    num-ro5-violations: 2
+    qed-weighted: 0.32
+    full-molformula: C28H31N3O8S
 ---
 
 # Firsocostat
@@ -67,10 +93,27 @@ tags:
 - **Compound ID:** `firsocostat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL3407547](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3407547/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Liver-targeted ACC inhibitor for MASH; lowers hepatic fat but raises plasma triglycerides.
+
+## Mechanism
+
+Acetyl-CoA carboxylase negative allosteric modulator _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 569.64 | 3.95 | 135.02 | 1/11 | 2 | C28H31N3O8S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Acetyl-CoA carboxylase (CHEMBL3885507)|Acetyl-CoA carboxylase]] - negative allosteric modulator · PROTEIN FAMILY
 
 ## Evidence boundaries
 

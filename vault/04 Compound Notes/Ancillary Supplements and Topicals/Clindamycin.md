@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1753
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: 3.0
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Clindamycin
@@ -68,6 +70,39 @@ pk-source:
   revision: 1366744202
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1753
+  pref-name: CLINDAMYCIN
+  molecule-type: Small molecule
+  first-approval: 1970
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - D10AF01
+  - G01AA10
+  - J01FF01
+  targets: []
+  properties:
+    full-mwt: 424.99
+    mw-freebase: 424.99
+    alogp: 0.39
+    psa: 102.26
+    hba: 7
+    hbd: 4
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.44
+    full-molformula: C18H33ClN2O5S
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: f7b4e985-719a-4547-b624-94612d520991
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f7b4e985-719a-4547-b624-94612d520991
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Clindamycin
@@ -81,10 +116,24 @@ pk-source:
 - **Compound ID:** `clindamycin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1753](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1753/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits bacterial protein synthesis at the ribosome; spectrum, resistance, and toxicity are agent-specific.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1970
+- **Flags:** black-box warning
+- **ATC D10AF01:** DERMATOLOGICALS › ANTI-ACNE PREPARATIONS FOR TOPICAL USE › Antiinfectives for treatment of acne
+- **ATC G01AA10:** GENITO URINARY SYSTEM AND SEX HORMONES › ANTIINFECTIVES AND ANTISEPTICS, EXCL. COMBINATIONS WITH CORTICOSTEROIDS › Antibiotics
+- **ATC J01FF01:** ANTIINFECTIVES FOR SYSTEMIC USE › MACROLIDES, LINCOSAMIDES AND STREPTOGRAMINS › Lincosamides
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 424.99 | 0.39 | 102.26 | 4/7 | 0 | C18H33ClN2O5S |
 
 ## Evidence boundaries
 
@@ -103,6 +152,18 @@ Inhibits bacterial protein synthesis at the ribosome; spectrum, resistance, and 
 | Bioavailability | 90 % | 90% (by mouth); 4–5% (topical) |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly non-renal | Bile duct and kidney (around 20%) |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set f7b4e985…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f7b4e985-719a-4547-b624-94612d520991), label version 20200101. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Clindamycin (topical, 1% solution-gel)|Clindamycin (topical, 1% solution/gel)]]
+- **Same ATC subgroup:** [[Amphotericin B]], [[Chloramphenicol]], [[Clindamycin (topical, 1% solution-gel)|Clindamycin (topical, 1% solution/gel)]], [[Erythromycin]], [[Minocycline]]
 
 ## Safety routing
 

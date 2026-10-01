@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Soluble guanylate cyclase activator
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297214
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297214
+  pref-name: PRALICIGUAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2111348
+    name: Soluble guanylate cyclase
+    action: ACTIVATOR
+  properties:
+    full-mwt: 534.37
+    mw-freebase: 534.37
+    alogp: 4.59
+    psa: 101.89
+    hba: 8
+    hbd: 2
+    rtb: 7
+    num-ro5-violations: 1
+    qed-weighted: 0.33
+    full-molformula: C21H14F8N6O2
 ---
 
 # Praliciguat
@@ -67,10 +93,27 @@ tags:
 - **Compound ID:** `praliciguat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4297214](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297214/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Oral sGC stimulator studied in diabetic nephropathy, heart failure with preserved ejection fraction and peripheral artery disease. Stimulators need functional haem — they amplify NO rather than replacing it.
+
+## Mechanism
+
+Soluble guanylate cyclase activator _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 534.37 | 4.59 | 101.89 | 2/8 | 1 | C21H14F8N6O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Soluble guanylate cyclase (CHEMBL2111348)|Soluble guanylate cyclase]] - activator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -80,6 +123,12 @@ Oral sGC stimulator studied in diabetic nephropathy, heart failure with preserve
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ataciguat (HMR1766)]] (Soluble guanylate cyclase), [[Cinaciguat]] (Soluble guanylate cyclase), [[Isosorbide Dinitrate]] (Soluble guanylate cyclase), [[Isosorbide Mononitrate]] (Soluble guanylate cyclase), [[Nitric Oxide]] (Soluble guanylate cyclase), [[Nitroglycerin]] (Soluble guanylate cyclase), [[Olinciguat]] (Soluble guanylate cyclase), [[Pentaerythritol Tetranitrate]] (Soluble guanylate cyclase), [[Riociguat]] (Soluble guanylate cyclase), [[Runcaciguat]] (Soluble guanylate cyclase), [[Vericiguat (Verquvo)]] (Soluble guanylate cyclase)
 
 ## Safety routing
 

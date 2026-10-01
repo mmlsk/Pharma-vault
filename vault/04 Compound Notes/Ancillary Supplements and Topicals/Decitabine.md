@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: DNA (cytosine-5)-methyltransferase 1 inhibitor; DNA (cytosine-5)-methyltransferase 3A inhibitor; DNA inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201129
+chembl-max-phase: 4
 half-life:
   value: 30.0
   value-max: null
@@ -57,6 +57,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Decitabine
@@ -64,6 +66,46 @@ pk-source:
   revision: 1356899033
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201129
+  pref-name: DECITABINE
+  molecule-type: Small molecule
+  first-approval: 2006
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L01BC08
+  targets:
+  - id: CHEMBL1992
+    name: DNA (cytosine-5)-methyltransferase 3A
+    action: INHIBITOR
+  - id: CHEMBL1993
+    name: DNA (cytosine-5)-methyltransferase 1
+    action: INHIBITOR
+  - id: CHEMBL2311221
+    name: DNA
+    action: INHIBITOR
+  properties:
+    full-mwt: 228.21
+    mw-freebase: 228.21
+    alogp: -2.14
+    psa: 123.49
+    hba: 8
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.53
+    full-molformula: C8H12N4O4
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 5975fa81-1e29-4d56-e063-6394a90a9cd5
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5975fa81-1e29-4d56-e063-6394a90a9cd5
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: no-label-value
 ---
 
 # Decitabine
@@ -77,10 +119,31 @@ pk-source:
 - **Compound ID:** `decitabine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201129](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201129/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Deoxy analogue of azacitidine incorporating only into DNA.
+
+## Mechanism
+
+DNA (cytosine-5)-methyltransferase 1 inhibitor; DNA (cytosine-5)-methyltransferase 3A inhibitor; DNA inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2006
+- **ATC L01BC08:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › ANTIMETABOLITES › Pyrimidine analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 228.21 | -2.14 | 123.49 | 3/8 | 0 | C8H12N4O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[DNA (cytosine-5)-methyltransferase 3A (CHEMBL1992)|DNA (cytosine-5)-methyltransferase 3A]] - inhibitor · SINGLE PROTEIN
+- [[DNA (cytosine-5)-methyltransferase 1 (CHEMBL1993)|DNA (cytosine-5)-methyltransferase 1]] - inhibitor · SINGLE PROTEIN
+- [[DNA (CHEMBL2311221)|DNA]] - inhibitor · NUCLEIC-ACID
 
 ## Evidence boundaries
 
@@ -96,6 +159,18 @@ Deoxy analogue of azacitidine incorporating only into DNA.
 |---|---|---|
 | Elimination t½ | 30 min | 30 minutes |
 | Protein binding | 1 % | <1% |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 5975fa81…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5975fa81-1e29-4d56-e063-6394a90a9cd5), label version 20260820. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 8, 72, 120)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Azacitidine]] (DNA; DNA (cytosine-5)-methyltransferase 1; DNA (cytosine-5)-methyltransferase 3A), [[5-Fluorouracil]] (DNA), [[Azathioprine]] (DNA), [[Capecitabine (Xeloda)]] (DNA), [[Methoxsalen (8-MOP)]] (DNA)
+- **Same ATC subgroup:** [[5-Fluorouracil]], [[Azacitidine]], [[Capecitabine (Xeloda)]]
 
 ## Safety routing
 

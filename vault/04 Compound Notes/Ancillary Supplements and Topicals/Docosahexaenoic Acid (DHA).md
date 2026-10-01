@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL367149
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -56,6 +56,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL367149
+  pref-name: DOCONEXENT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 328.5
+    mw-freebase: 328.5
+    alogp: 6.55
+    psa: 37.3
+    hba: 1
+    hbd: 1
+    rtb: 14
+    num-ro5-violations: 1
+    qed-weighted: 0.37
+    full-molformula: C22H32O2
 ---
 
 # Docosahexaenoic Acid (DHA)
@@ -70,10 +93,19 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Docosahexaenoic Acid, DHA
+- **ChEMBL:** [CHEMBL367149](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL367149/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Long-chain omega-3 important to neural membranes; triglyceride lowering may accompany a rise in LDL.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 328.5 | 6.55 | 37.3 | 1/1 | 1 | C22H32O2 |
 
 ## Evidence boundaries
 

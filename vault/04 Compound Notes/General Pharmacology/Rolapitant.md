@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3707331
+chembl-max-phase: 4
 half-life:
   value: 169.0
   value-max: 183.0
@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,9 @@ tags:
 - group/gi
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Rolapitant
@@ -69,6 +72,37 @@ pk-source:
   revision: 1368522467
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3707331
+  pref-name: ROLAPITANT
+  molecule-type: Small molecule
+  first-approval: 2015
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A04AD14
+  targets: []
+  properties:
+    full-mwt: 500.48
+    mw-freebase: 500.48
+    alogp: 5.73
+    psa: 50.36
+    hba: 3
+    hbd: 2
+    rtb: 5
+    num-ro5-violations: 2
+    qed-weighted: 0.52
+    full-molformula: C25H26F6N2O2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 8670c3cf-82d9-466d-be49-de33d8c8742b
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8670c3cf-82d9-466d-be49-de33d8c8742b
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Rolapitant
@@ -82,10 +116,21 @@ pk-source:
 - **Compound ID:** `rolapitant-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL3707331](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707331/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Long-acting NK-1 antagonist with a half-life of about seven days, covering the whole delayed emesis window from one dose.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2015
+- **ATC A04AD14:** ALIMENTARY TRACT AND METABOLISM › ANTIEMETICS AND ANTINAUSEANTS › Other antiemetics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 500.48 | 5.73 | 50.36 | 2/3 | 2 | C25H26F6N2O2 |
 
 ## Evidence boundaries
 
@@ -106,6 +151,18 @@ Long-acting NK-1 antagonist with a half-life of about seven days, covering the w
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | C4-pyrrolidine-hydroxylated rolapitant (major) |
 | Excretion | mainly urinary | Feces (52–89%), urine (9–20%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 8670c3cf…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8670c3cf-82d9-466d-be49-de33d8c8742b), label version 20260908. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 41, 158, 168, 169, 176, 183)
+> - protein-binding: consistent (label values: 99.8)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Aprepitant]], [[Dronabinol]], [[Hyoscine (Scopolamine)]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

@@ -54,6 +54,21 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201549
+  pref-name: TERIPARATIDE ACETATE
+  molecule-type: Protein
+  first-approval: 1987
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1793
+    name: Parathyroid hormone/parathyroid hormone-related peptide receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Teriparatide Acetate
@@ -67,7 +82,7 @@ tags:
 - **Compound ID:** `teriparatide-acetate-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1201549](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201549/) · max phase 4
+- **ChEMBL:** [CHEMBL1201549](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201549/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +92,15 @@ Parathyroid hormone receptor agonist; approved/marketed compound catalogued by C
 
 Parathyroid hormone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1987
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Parathyroid hormone-parathyroid hormone-related peptide receptor (CHEMBL1793)|Parathyroid hormone/parathyroid hormone-related peptide receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +109,12 @@ Parathyroid hormone receptor agonist _(ChEMBL curated mechanism, as quoted by th
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abaloparatide]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Ostabolin-C]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Palopegteriparatide]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Parathyroid Hormone]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Teriparatide (Forteo)]] (Parathyroid hormone/parathyroid hormone-related peptide receptor)
 
 ## Safety routing
 

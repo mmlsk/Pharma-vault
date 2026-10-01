@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL5314864
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,19 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL5314864
+  pref-name: PETRELINTIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Petrelintide
@@ -68,10 +81,15 @@ tags:
 - **Compound ID:** `petrelintide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL5314864](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5314864/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Long-acting amylin analogue being tested as a GLP-1 alternative rather than an add-on.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
 
 ## Evidence boundaries
 

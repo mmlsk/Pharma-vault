@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Fexofenadine
@@ -68,6 +69,35 @@ pk-source:
   revision: 1370874050
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL914
+  pref-name: FEXOFENADINE
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AX26
+  targets: []
+  properties:
+    full-mwt: 501.67
+    mw-freebase: 501.67
+    alogp: 5.51
+    psa: 81.0
+    hba: 4
+    hbd: 3
+    rtb: 10
+    num-ro5-violations: 2
+    qed-weighted: 0.34
+    full-molformula: C32H39NO4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Fexofenadine
@@ -81,7 +111,7 @@ pk-source:
 - **Compound ID:** `fexofenadine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL914](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL914/) · max phase 4
+- **ChEMBL:** [CHEMBL914](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL914/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +120,16 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **ATC R06AX26:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Other antihistamines for systemic use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 501.67 | 5.51 | 81.0 | 3/4 | 2 | C32H39NO4 |
 
 ## Evidence boundaries
 
@@ -108,6 +148,14 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Bioavailability | 30–41 % | 30–41% |
 | Metabolism | hepatic | Hepatic (≤5% of dose) |
 | Excretion | mainly non-renal · fe 0.1 | Feces (~80%) and urine (~10%) as unchanged drug |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Acrivastine]], [[Antazoline]], [[Astemizole]], [[Azatadine]], [[Azelastine]], [[Bilastine]], [[Cyproheptadine]], [[Desloratadine]], [[Ebastine]], [[Epinastine]], [[Ketotifen]], [[Loratadine]]
 
 ## Safety routing
 

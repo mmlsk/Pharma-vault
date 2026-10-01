@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL609
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL609
+  pref-name: TRIENTINE
+  molecule-type: Small molecule
+  first-approval: 1985
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A16AX12
+  targets: []
+  properties:
+    full-mwt: 146.24
+    mw-freebase: 146.24
+    alogp: -1.92
+    psa: 76.1
+    hba: 4
+    hbd: 4
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.32
+    full-molformula: C6H18N4
 ---
 
 # Trientine
@@ -67,10 +91,21 @@ tags:
 - **Compound ID:** `trientine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL609](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL609/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Second-line copper chelator for Wilson disease, better tolerated than penicillamine with fewer autoimmune effects.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1985
+- **ATC A16AX12:** ALIMENTARY TRACT AND METABOLISM › OTHER ALIMENTARY TRACT AND METABOLISM PRODUCTS › Various alimentary tract and metabolism products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 146.24 | -1.92 | 76.1 | 4/4 | 0 | C6H18N4 |
 
 ## Evidence boundaries
 
@@ -80,6 +115,12 @@ Second-line copper chelator for Wilson disease, better tolerated than penicillam
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alpha-Lipoic Acid (ALA)]], [[Eliglustat]], [[Glycerol Phenylbutyrate]], [[Lonafarnib (Zokinvy)]], [[Migalastat]], [[Miglustat]], [[Nitisinone]], [[Sodium Phenylbutyrate]], [[Teduglutide]]
 
 ## Safety routing
 

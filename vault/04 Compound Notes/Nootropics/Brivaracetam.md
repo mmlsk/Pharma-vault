@@ -8,15 +8,15 @@ cluster: Nootropics
 group: neuropsych
 class: null
 subclass: null
-mechanism: null
+mechanism: Synaptic vesicle glycoprotein 2A modulator
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL607400
+chembl-max-phase: 4
 half-life:
   value: 9.0
   value-max: null
@@ -55,7 +55,7 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Brivaracetam
@@ -70,6 +72,40 @@ pk-source:
   revision: 1370095828
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL607400
+  pref-name: BRIVARACETAM
+  molecule-type: Small molecule
+  first-approval: 2016
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N03AX23
+  targets:
+  - id: CHEMBL1998
+    name: Synaptic vesicle glycoprotein 2A
+    action: MODULATOR
+  properties:
+    full-mwt: 212.29
+    mw-freebase: 212.29
+    alogp: 0.9
+    psa: 63.4
+    hba: 2
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.74
+    full-molformula: C11H20N2O2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 3cf2f439-0e97-443e-8e33-25ecef616f6c
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3cf2f439-0e97-443e-8e33-25ecef616f6c
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Brivaracetam
@@ -83,10 +119,29 @@ pk-source:
 - **Compound ID:** `brivaracetam-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL607400](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL607400/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Higher-affinity SV2A ligand developed from levetiracetam, with a better behavioural tolerability profile.
+
+## Mechanism
+
+Synaptic vesicle glycoprotein 2A modulator _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2016
+- **ATC N03AX23:** NERVOUS SYSTEM › ANTIEPILEPTICS › Other antiepileptics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 212.29 | 0.9 | 63.4 | 1/2 | 0 | C11H20N2O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Synaptic vesicle glycoprotein 2A (CHEMBL1998)|Synaptic vesicle glycoprotein 2A]] - modulator · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -107,6 +162,19 @@ Higher-affinity SV2A ligand developed from levetiracetam, with a better behaviou
 | CYP (metabolised by) | CYP2C19 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | 3 inactive metabolites |
 | Excretion | mainly urinary | Kidneys (>95%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 3cf2f439…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3cf2f439-0e97-443e-8e33-25ecef616f6c), label version 20260820. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 7.9, 9, 9.3)
+> - protein-binding: consistent (label values: 20)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Levetiracetam]] (Synaptic vesicle glycoprotein 2A)
+- **Same ATC subgroup:** [[Cannabidiol (Epidiolex)]], [[Cenobamate]], [[Felbamate]], [[Fenfluramine]], [[Ganaxolone]], [[Lacosamide]], [[Lamotrigine]], [[Levetiracetam]], [[Perampanel]], [[Pheneturide]], [[Retigabine (Ezogabine)]], [[Stiripentol]]
+- **Shared CYP substrate pool:** CYP2C19 (+43 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

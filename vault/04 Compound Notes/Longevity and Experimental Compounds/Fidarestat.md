@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL84446
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL84446
+  pref-name: FIDARESTAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 279.23
+    mw-freebase: 279.23
+    alogp: -0.5
+    psa: 110.52
+    hba: 4
+    hbd: 3
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.6
+    full-molformula: C12H10FN3O4
 ---
 
 # Fidarestat
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `fidarestat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL84446](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL84446/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits aldose reductase to limit polyol-pathway flux and the osmotic and oxidative stress it imposes during hyperglycaemia; investigational.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 279.23 | -0.5 | 110.52 | 3/4 | 0 | C12H10FN3O4 |
 
 ## Evidence boundaries
 

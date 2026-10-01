@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4650316
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4650316
+  pref-name: GIREDESTRANT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL206
+    name: Estrogen receptor
+    action: DEGRADER
+  properties:
+    full-mwt: 522.56
+    mw-freebase: 522.56
+    alogp: 4.87
+    psa: 54.53
+    hba: 4
+    hbd: 3
+    rtb: 9
+    num-ro5-violations: 1
+    qed-weighted: 0.35
+    full-molformula: C27H31F5N4O
 ---
 
 # Giredestrant
@@ -67,6 +92,7 @@ tags:
 - **Compound ID:** `giredestrant-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL4650316](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650316/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -76,6 +102,18 @@ Giredestrant is a phase 3 compound catalogued by ChEMBL. Its curated mechanism i
 
 estrogen receptor alpha degrader _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 522.56 | 4.87 | 54.53 | 3/4 | 1 | C27H31F5N4O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Estrogen receptor (CHEMBL206)|Estrogen receptor]] - degrader · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +122,12 @@ estrogen receptor alpha degrader _(ChEMBL curated mechanism, as quoted by the so
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dienestrol]] (Estrogen receptor), [[Diethylstilbestrol]] (Estrogen receptor), [[Elacestrant]] (Estrogen receptor), [[Enclomiphene]] (Estrogen receptor), [[Estradiol]] (Estrogen receptor), [[Estradiol Acetate]] (Estrogen receptor), [[Estradiol Cypionate]] (Estrogen receptor), [[Estradiol Valerate]] (Estrogen receptor), [[Estrone]] (Estrogen receptor), [[Ethinyl Estradiol]] (Estrogen receptor), [[Fulvestrant (Faslodex)]] (Estrogen receptor), [[Mestranol]] (Estrogen receptor)
 
 ## Safety routing
 

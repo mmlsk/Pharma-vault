@@ -8,15 +8,15 @@ cluster: Growth Hormone and Peptide Agents
 group: peptides
 class: null
 subclass: null
-mechanism: null
+mechanism: Growth/differentiation factor 8 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4594326
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -55,6 +55,22 @@ tags:
 - source-derived
 - group/peptides
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4594326
+  pref-name: APITEGROMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3407325
+    name: Growth/differentiation factor 8
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Apitegromab
@@ -68,10 +84,23 @@ tags:
 - **Compound ID:** `apitegromab-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL4594326](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594326/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Investigational antibody that selectively blocks activation of latent myostatin for spinal muscular atrophy.
+
+## Mechanism
+
+Growth/differentiation factor 8 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Growth-differentiation factor 8 (CHEMBL3407325)|Growth/differentiation factor 8]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -81,6 +110,12 @@ Investigational antibody that selectively blocks activation of latent myostatin 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[ACE-031]] (Growth/differentiation factor 8), [[ACE-031 (Ramatercept)]] (Growth/differentiation factor 8), [[Domagrozumab]] (Growth/differentiation factor 8), [[Landogrozumab (LY2495655)]] (Growth/differentiation factor 8), [[Stamulumab (MYO-029)]] (Growth/differentiation factor 8), [[Trevogrumab]] (Growth/differentiation factor 8)
 
 ## Safety routing
 

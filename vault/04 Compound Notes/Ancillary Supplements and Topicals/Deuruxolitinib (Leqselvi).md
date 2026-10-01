@@ -18,8 +18,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4594381
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -57,6 +57,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1789941
+  pref-name: DEURUXOLITINIB
+  molecule-type: Small molecule
+  first-approval: 2011
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - D11AH09
+  - L01EJ01
+  targets: []
+  properties:
+    full-mwt: 306.37
+    mw-freebase: 306.37
+    alogp: 3.47
+    psa: 83.18
+    hba: 5
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C17H18N6
 ---
 
 # Deuruxolitinib (Leqselvi)
@@ -71,10 +95,23 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** CTP-543, Deuruxolitinib, Leqselvi
+- **ChEMBL:** [CHEMBL4594381](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594381/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral deuterated ruxolitinib analogue developed for severe alopecia areata; a systemic JAK inhibitor with boxed-warning class risks.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2011
+- **Flags:** black-box warning
+- **ATC D11AH09:** DERMATOLOGICALS › OTHER DERMATOLOGICAL PREPARATIONS › Agents for dermatitis, excluding corticosteroids
+- **ATC L01EJ01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › PROTEIN KINASE INHIBITORS › Janus-associated kinase (JAK) inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 306.37 | 3.47 | 83.18 | 1/5 | 0 | C17H18N6 |
 
 ## Evidence boundaries
 
@@ -84,6 +121,12 @@ Oral deuterated ruxolitinib analogue developed for severe alopecia areata; a sys
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Abrocitinib (Cibinqo)]], [[Alitretinoin]], [[Alitretinoin (oral, Toctino)]], [[Crisaborole (topical 2% ointment, Eucrisa)]], [[Delgocitinib]], [[Dupilumab (Dupixent, subcutaneous)]], [[Fedratinib]], [[Lebrikizumab (Ebglyss)]], [[Momelotinib]], [[Nemolizumab]], [[Pacritinib]], [[Pimecrolimus]]
 
 ## Safety routing
 

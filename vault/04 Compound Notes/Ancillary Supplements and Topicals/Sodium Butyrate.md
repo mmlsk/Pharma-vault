@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL62381
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL62381
+  pref-name: SODIUM BUTYRATE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 110.09
+    mw-freebase: 110.09
+    full-molformula: C4H7NaO2
 ---
 
 # Sodium Butyrate
@@ -67,10 +83,19 @@ tags:
 - **Compound ID:** `sodium-butyrate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL62381](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL62381/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Short-chain fatty acid produced by colonic fermentation that is also a weak endogenous HDAC inhibitor and the colonocyte's preferred fuel.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 110.09 | - | - | -/- | - | C4H7NaO2 |
 
 ## Evidence boundaries
 

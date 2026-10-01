@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Secobarbital
@@ -68,6 +69,35 @@ pk-source:
   revision: 1376093252
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL447
+  pref-name: SECOBARBITAL
+  molecule-type: Small molecule
+  first-approval: 1950
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - N05CA06
+  targets: []
+  properties:
+    full-mwt: 238.29
+    mw-freebase: 238.29
+    alogp: 1.35
+    psa: 75.27
+    hba: 3
+    hbd: 2
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.56
+    full-molformula: C12H18N2O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Secobarbital
@@ -81,7 +111,7 @@ pk-source:
 - **Compound ID:** `secobarbital-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL447](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL447/) · max phase 4
+- **ChEMBL:** [CHEMBL447](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL447/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +120,17 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1950
+- **Flags:** withdrawn
+- **ATC N05CA06:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Barbiturates, plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 238.29 | 1.35 | 75.27 | 2/3 | 0 | C12H18N2O3 |
 
 ## Evidence boundaries
 
@@ -108,6 +149,14 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 | Bioavailability | - | ? |
 | Metabolism | hepatic | Hepatic |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Methohexital]], [[Pentobarbital]], [[Talbutal]], [[Thiopental]]
 
 ## Safety routing
 

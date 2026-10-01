@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1094982
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1094982
+  pref-name: INOSITOL NIACINATE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C04AC03
+  targets: []
+  properties:
+    full-mwt: 810.73
+    mw-freebase: 810.73
+    alogp: 3.72
+    psa: 235.14
+    hba: 18
+    hbd: 0
+    rtb: 12
+    num-ro5-violations: 2
+    qed-weighted: 0.13
+    full-molformula: C42H30N6O12
 ---
 
 # Inositol Hexanicotinate
@@ -67,10 +91,20 @@ tags:
 - **Compound ID:** `inositol-hexanicotinate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1094982](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1094982/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Flush-free niacin derivative with limited evidence that it reproduces prescription niacin's lipid effects.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C04AC03:** CARDIOVASCULAR SYSTEM › PERIPHERAL VASODILATORS › Nicotinic acid and derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 810.73 | 3.72 | 235.14 | 0/18 | 2 | C42H30N6O12 |
 
 ## Evidence boundaries
 
@@ -80,6 +114,12 @@ Flush-free niacin derivative with limited evidence that it reproduces prescripti
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Niacin (extended-release)]], [[Niacin (Nicotinic Acid)]]
 
 ## Safety routing
 

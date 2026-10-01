@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2221250
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2221250
+  pref-name: CAPREOMYCIN
+  molecule-type: Protein
+  first-approval: 1971
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J04AB30
+  targets: []
+  properties:
+    full-mwt: 1321.44
+    mw-freebase: 1321.44
+    full-molformula: C50H88N28O15
 ---
 
 # Capreomycin
@@ -67,10 +83,22 @@ tags:
 - **Compound ID:** `capreomycin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL2221250](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2221250/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Injectable cyclic peptide for resistant tuberculosis, sharing the aminoglycoside toxicity profile without being an aminoglycoside.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1971
+- **Flags:** black-box warning
+- **ATC J04AB30:** ANTIINFECTIVES FOR SYSTEMIC USE › DRUGS FOR TREATMENT OF TUBERCULOSIS › Antibiotics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1321.44 | - | - | -/- | - | C50H88N28O15 |
 
 ## Evidence boundaries
 
@@ -80,6 +108,12 @@ Injectable cyclic peptide for resistant tuberculosis, sharing the aminoglycoside
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Cycloserine]], [[Rifabutin]], [[Rifampicin]]
 
 ## Safety routing
 

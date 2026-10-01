@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1983350
+  pref-name: STIRIPENTOL
+  molecule-type: Small molecule
+  first-approval: 2007
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N03AX17
+  targets: []
+  properties:
+    full-mwt: 234.29
+    mw-freebase: 234.29
+    alogp: 2.84
+    psa: 38.69
+    hba: 3
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.85
+    full-molformula: C14H18O3
 ---
 
 # Stiripentol
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `stiripentol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1983350](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1983350/) · max phase 4
+- **ChEMBL:** [CHEMBL1983350](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1983350/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +100,16 @@ Unknown; approved/marketed compound catalogued by ChEMBL (CHEMBL1983350).
 
 Unknown _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2007
+- **ATC N03AX17:** NERVOUS SYSTEM › ANTIEPILEPTICS › Other antiepileptics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 234.29 | 2.84 | 38.69 | 1/3 | 0 | C14H18O3 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +118,12 @@ Unknown _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Brivaracetam]], [[Cannabidiol (Epidiolex)]], [[Cenobamate]], [[Felbamate]], [[Fenfluramine]], [[Ganaxolone]], [[Lacosamide]], [[Lamotrigine]], [[Levetiracetam]], [[Perampanel]], [[Pheneturide]], [[Retigabine (Ezogabine)]]
 
 ## Safety routing
 

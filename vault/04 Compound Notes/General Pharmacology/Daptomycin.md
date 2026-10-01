@@ -61,6 +61,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Daptomycin
@@ -68,6 +69,15 @@ pk-source:
   revision: 1369612979
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: e6fef9de-e357-4fa3-8839-f483edf1b4d0
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e6fef9de-e357-4fa3-8839-f483edf1b4d0
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Daptomycin
@@ -102,6 +112,11 @@ Cyclic lipopeptide that is rapidly bactericidal against gram-positive organisms 
 | Protein binding | 90–95 % | 90–95% |
 | Bioavailability | - | n/a |
 | Excretion | mainly urinary | Kidney (78%; primarily as unchanged drug); faeces (5.7%) |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set e6fef9de…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e6fef9de-e357-4fa3-8839-f483edf1b4d0), label version 20260826. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 0, 24)
+> - protein-binding: consistent (label values: 84, 86, 88)
 
 ## Safety routing
 

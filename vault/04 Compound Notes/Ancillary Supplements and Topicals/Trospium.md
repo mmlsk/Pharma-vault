@@ -49,7 +49,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Trospium chloride
@@ -64,6 +65,15 @@ pk-source:
   revision: 1369672636
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 7a2fea88-266d-4fc0-a476-66dc6effcff7
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7a2fea88-266d-4fc0-a476-66dc6effcff7
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Trospium
@@ -96,6 +106,11 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 |---|---|---|
 | Elimination t½ | 20 h | 20 hours |
 | Protein binding | 50–85 % | 50–85% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 7a2fea88…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7a2fea88-266d-4fc0-a476-66dc6effcff7), label version 20260903. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 18, 20, 33)
+> - protein-binding: consistent (label values: 50, 85)
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Cholesteryl ester transfer protein inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1800807
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1800807
+  pref-name: ANACETRAPIB
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3572
+    name: Cholesteryl ester transfer protein
+    action: INHIBITOR
+  properties:
+    full-mwt: 637.51
+    mw-freebase: 637.51
+    alogp: 9.76
+    psa: 38.77
+    hba: 3
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 2
+    qed-weighted: 0.25
+    full-molformula: C30H25F10NO3
 ---
 
 # Anacetrapib
@@ -67,10 +93,27 @@ tags:
 - **Compound ID:** `anacetrapib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1800807](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1800807/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 CETP inhibitor that won its outcomes trial and was still never filed, partly because it accumulates in adipose tissue.
+
+## Mechanism
+
+Cholesteryl ester transfer protein inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 637.51 | 9.76 | 38.77 | 0/3 | 2 | C30H25F10NO3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cholesteryl ester transfer protein (CHEMBL3572)|Cholesteryl ester transfer protein]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +123,12 @@ CETP inhibitor that won its outcomes trial and was still never filed, partly bec
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dalcetrapib]] (Cholesteryl ester transfer protein), [[Obicetrapib]] (Cholesteryl ester transfer protein), [[Torcetrapib]] (Cholesteryl ester transfer protein)
 
 ## Safety routing
 

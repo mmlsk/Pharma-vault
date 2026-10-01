@@ -10,15 +10,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Thyroid hormone receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL41632
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -57,6 +57,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tiratricol
@@ -64,6 +65,32 @@ pk-source:
   revision: 1329508838
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL41632
+  pref-name: TIRATRICOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D11AX08
+  - H03AA04
+  targets:
+  - id: CHEMBL2111462
+    name: Thyroid hormone receptor
+    action: AGONIST
+  properties:
+    full-mwt: 621.93
+    mw-freebase: 621.93
+    alogp: 4.63
+    psa: 66.76
+    hba: 3
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 1
+    qed-weighted: 0.49
+    full-molformula: C14H9I3O4
 ---
 
 # Tiratricol (TRIAC)
@@ -78,10 +105,29 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Tiratricol, TRIAC
+- **ChEMBL:** [CHEMBL41632](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL41632/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 T3 metabolite with THR-beta preference, used in MCT8 deficiency and misused as an unapproved weight-loss agent.
+
+## Mechanism
+
+Thyroid hormone receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC D11AX08:** DERMATOLOGICALS › OTHER DERMATOLOGICAL PREPARATIONS › Other dermatologicals
+- **ATC H03AA04:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › THYROID PREPARATIONS › Thyroid hormones
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 621.93 | 4.63 | 66.76 | 2/3 | 1 | C14H9I3O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Thyroid hormone receptor (CHEMBL2111462)|Thyroid hormone receptor]] - agonist · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -97,6 +143,13 @@ T3 metabolite with THR-beta preference, used in MCT8 deficiency and misused as a
 |---|---|---|
 | Metabolism | hepatic | Liver glucuronidation |
 | Excretion | mainly non-renal | Bile duct |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dextrothyroxine]] (Thyroid hormone receptor), [[Liothyronine (Cytomel)]] (Thyroid hormone receptor)
+- **Same ATC subgroup:** [[Brimonidine]], [[Caffeine]], [[Diclofenac]], [[Finasteride]], [[Finasteride (topical spray solution)]], [[Hydroquinone]], [[Mequinol]], [[Minoxidil]], [[Minoxidil (oral, low dose)]], [[Monobenzone]]
 
 ## Safety routing
 

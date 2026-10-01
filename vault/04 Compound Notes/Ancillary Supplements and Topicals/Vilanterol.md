@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1198857
+  pref-name: VILANTEROL
+  molecule-type: Small molecule
+  first-approval: 2013
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 486.44
+    mw-freebase: 486.44
+    alogp: 4.61
+    psa: 91.18
+    hba: 6
+    hbd: 4
+    rtb: 16
+    num-ro5-violations: 0
+    qed-weighted: 0.26
+    full-molformula: C24H33Cl2NO5
 ---
 
 # Vilanterol
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `vilanterol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1198857](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1198857/) · max phase 4
+- **ChEMBL:** [CHEMBL1198857](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1198857/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,15 @@ Beta-2 adrenergic receptor agonist; approved/marketed compound catalogued by ChE
 ## Mechanism
 
 Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2013
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 486.44 | 4.61 | 91.18 | 4/6 | 0 | C24H33Cl2NO5 |
 
 ## Evidence boundaries
 

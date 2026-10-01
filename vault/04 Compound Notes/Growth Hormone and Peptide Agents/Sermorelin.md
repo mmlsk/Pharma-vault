@@ -8,15 +8,15 @@ cluster: Growth Hormone and Peptide Agents
 group: gh
 class: null
 subclass: null
-mechanism: null
+mechanism: Growth hormone-releasing hormone receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201490
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,23 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201490
+  pref-name: SERMORELIN ACETATE
+  molecule-type: Protein
+  first-approval: 1990
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01AC04
+  - V04CD03
+  targets:
+  - id: CHEMBL2032
+    name: Growth hormone-releasing hormone receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Sermorelin
@@ -68,10 +85,26 @@ tags:
 - **Compound ID:** `sermorelin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL1201490](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201490/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 GHRH analog peptide that stimulates the pituitary's own natural, pulsatile growth hormone release.
+
+## Mechanism
+
+Growth hormone-releasing hormone receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1990
+- **ATC H01AC04:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › ANTERIOR PITUITARY LOBE HORMONES AND ANALOGUES › Somatropin and somatropin agonists
+- **ATC V04CD03:** VARIOUS › OTHER DIAGNOSTIC AGENTS › Tests for pituitary function
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Growth hormone-releasing hormone receptor (CHEMBL2032)|Growth hormone-releasing hormone receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -81,6 +114,12 @@ GHRH analog peptide that stimulates the pituitary's own natural, pulsatile growt
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Lonapegsomatropin]], [[Macimorelin (Macrilen)]], [[Mecasermin (Increlex)]], [[Mecasermin Rinfabate]], [[Metyrapone (Metopirone)]], [[MGF (Mechano Growth Factor)]], [[Somapacitan]], [[Somatrem]], [[Somatrogon]], [[Somatropin (Human Growth Hormone)]], [[Tesamorelin]]
 
 ## Safety routing
 

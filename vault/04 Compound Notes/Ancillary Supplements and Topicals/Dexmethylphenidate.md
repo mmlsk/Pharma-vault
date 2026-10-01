@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Dexmethylphenidate
@@ -68,6 +69,35 @@ pk-source:
   revision: 1373389587
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL827
+  pref-name: DEXMETHYLPHENIDATE
+  molecule-type: Small molecule
+  first-approval: 2001
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N06BA11
+  targets: []
+  properties:
+    full-mwt: 233.31
+    mw-freebase: 233.31
+    alogp: 2.09
+    psa: 38.33
+    hba: 3
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.81
+    full-molformula: C14H19NO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Dexmethylphenidate
@@ -81,7 +111,7 @@ pk-source:
 - **Compound ID:** `dexmethylphenidate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL827](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL827/) · max phase 4
+- **ChEMBL:** [CHEMBL827](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL827/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +120,17 @@ Norepinephrine transporter inhibitor; approved/marketed compound catalogued by C
 ## Mechanism
 
 Norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2001
+- **Flags:** black-box warning
+- **ATC N06BA11:** NERVOUS SYSTEM › PSYCHOSTIMULANTS, AGENTS USED FOR ADHD AND NOOTROPICS › Centrally acting sympathomimetics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 233.31 | 2.09 | 38.33 | 1/3 | 0 | C14H19NO2 |
 
 ## Evidence boundaries
 
@@ -108,6 +149,14 @@ Norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by th
 | Bioavailability | 11–52 % | 11–52% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amphetamine]], [[Armodafinil (Nuvigil)]], [[Atomoxetine (Strattera)]], [[Dextroamphetamine]], [[Lisdexamfetamine (Vyvanse)]], [[Methylphenidate (Ritalin - Concerta)|Methylphenidate (Ritalin / Concerta)]], [[Modafinil (Provigil)]], [[Solriamfetol (Sunosi)]]
 
 ## Safety routing
 

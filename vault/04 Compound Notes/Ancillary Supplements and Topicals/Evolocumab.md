@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Subtilisin/kexin type 9 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2364655
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2364655
+  pref-name: EVOLOCUMAB
+  molecule-type: Antibody
+  first-approval: 2015
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C10AX13
+  targets:
+  - id: CHEMBL2929
+    name: Proprotein convertase subtilisin/kexin type 9
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Evolocumab
@@ -67,10 +84,25 @@ tags:
 - **Compound ID:** `evolocumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2364655](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2364655/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Injectable PCSK9 monoclonal antibody; the largest LDL reduction available from any single agent.
+
+## Mechanism
+
+Subtilisin/kexin type 9 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2015
+- **ATC C10AX13:** CARDIOVASCULAR SYSTEM › LIPID MODIFYING AGENTS, PLAIN › Other lipid modifying agents
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Proprotein convertase subtilisin-kexin type 9 (CHEMBL2929)|Proprotein convertase subtilisin/kexin type 9]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +112,13 @@ Injectable PCSK9 monoclonal antibody; the largest LDL reduction available from a
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alirocumab (Praluent)]] (Proprotein convertase subtilisin/kexin type 9), [[Bococizumab]] (Proprotein convertase subtilisin/kexin type 9), [[Lerodalcibep]] (Proprotein convertase subtilisin/kexin type 9), [[Ongericimab]] (Proprotein convertase subtilisin/kexin type 9), [[Tafolecimab]] (Proprotein convertase subtilisin/kexin type 9)
+- **Same ATC subgroup:** [[Alirocumab (Praluent)]], [[Bempedoic acid]], [[Dextrothyroxine]], [[Evinacumab (Evkeeza)]], [[Ezetimibe]], [[Inclisiran (Leqvio)]], [[Lomitapide (Juxtapid)]], [[Mipomersen (Kynamro)]], [[Omega-3-Acid Ethyl Esters]], [[Policosanol]], [[Probucol]], [[Volanesorsen (Waylivra)]]
 
 ## Safety routing
 

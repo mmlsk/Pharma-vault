@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Human immunodeficiency virus type 1 reverse transcriptase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2107825
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,33 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2107825
+  pref-name: TENOFOVIR ALAFENAMIDE
+  molecule-type: Small molecule
+  first-approval: 2015
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J05AF13
+  targets:
+  - id: CHEMBL247
+    name: Human immunodeficiency virus type 1 reverse transcriptase
+    action: INHIBITOR
+  properties:
+    full-mwt: 476.47
+    mw-freebase: 476.47
+    alogp: 2.97
+    psa: 143.48
+    hba: 10
+    hbd: 2
+    rtb: 11
+    num-ro5-violations: 0
+    qed-weighted: 0.31
+    full-molformula: C21H29N6O5P
 ---
 
 # Tenofovir Alafenamide
@@ -67,10 +94,30 @@ tags:
 - **Compound ID:** `tenofovir-alafenamide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2107825](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107825/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits HIV reverse transcriptase and is used only as part of a resistance-aware antiretroviral regimen.
+
+## Mechanism
+
+Human immunodeficiency virus type 1 reverse transcriptase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2015
+- **Flags:** black-box warning, prodrug
+- **ATC J05AF13:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Nucleoside and nucleotide reverse transcriptase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 476.47 | 2.97 | 143.48 | 2/10 | 0 | C21H29N6O5P |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Human immunodeficiency virus type 1 reverse transcriptase (CHEMBL247)|Human immunodeficiency virus type 1 reverse transcriptase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +127,13 @@ Inhibits HIV reverse transcriptase and is used only as part of a resistance-awar
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Doravirine]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Efavirenz]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Emtricitabine]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Etravirine]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Islatravir]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Lamivudine]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Nevirapine]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Rilpivirine]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Zidovudine]] (Human immunodeficiency virus type 1 reverse transcriptase)
+- **Same ATC subgroup:** [[Abacavir]], [[Emtricitabine]], [[Lamivudine]], [[Telbivudine]], [[Tenofovir]], [[Tenofovir Disoproxil]], [[Zidovudine]]
 
 ## Safety routing
 

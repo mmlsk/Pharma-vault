@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Tissue-type plasminogen activator exogenous protein
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108791
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Tenecteplase
@@ -62,6 +64,21 @@ pk-source:
   revision: 1371761697
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108791
+  pref-name: TENECTEPLASE
+  molecule-type: Enzyme
+  first-approval: 2000
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B01AD11
+  targets:
+  - id: CHEMBL1873
+    name: Tissue-type plasminogen activator
+    action: EXOGENOUS PROTEIN
+  properties: {}
 ---
 
 # Tenecteplase
@@ -75,10 +92,25 @@ pk-source:
 - **Compound ID:** `tenecteplase-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2108791](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108791/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Engineered tPA variant with greater fibrin specificity and a half-life permitting single bolus dosing.
+
+## Mechanism
+
+Tissue-type plasminogen activator exogenous protein _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Enzyme
+- **First approval (ChEMBL):** 2000
+- **ATC B01AD11:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Enzymes
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tissue-type plasminogen activator (CHEMBL1873)|Tissue-type plasminogen activator]] - exogenous protein · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -93,6 +125,13 @@ Engineered tPA variant with greater fibrin specificity and a half-life permittin
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Excretion | - | Liver |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alteplase]] (Tissue-type plasminogen activator), [[Aminocaproic Acid]] (Tissue-type plasminogen activator), [[Reteplase]] (Tissue-type plasminogen activator)
+- **Same ATC subgroup:** [[Alteplase]], [[Reteplase]], [[Streptokinase]], [[Urokinase]]
 
 ## Safety routing
 

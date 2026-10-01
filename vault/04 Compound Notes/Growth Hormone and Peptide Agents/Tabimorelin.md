@@ -8,15 +8,15 @@ cluster: Growth Hormone and Peptide Agents
 group: gh
 class: null
 subclass: null
-mechanism: null
+mechanism: Cytochrome P450 3A4 inhibitor; Ghrelin receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL281764
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,35 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL281764
+  pref-name: TABIMORELIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4616
+    name: Growth hormone secretagogue receptor type 1
+    action: AGONIST
+  - id: CHEMBL340
+    name: Cytochrome P450 3A4
+    action: INHIBITOR
+  properties:
+    full-mwt: 528.7
+    mw-freebase: 528.7
+    alogp: 3.71
+    psa: 95.74
+    hba: 4
+    hbd: 2
+    rtb: 11
+    num-ro5-violations: 1
+    qed-weighted: 0.37
+    full-molformula: C32H40N4O3
 ---
 
 # Tabimorelin
@@ -68,10 +97,28 @@ tags:
 - **Compound ID:** `tabimorelin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL281764](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL281764/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Early oral GH secretagogue abandoned after liver enzyme elevations in longer dosing.
+
+## Mechanism
+
+Cytochrome P450 3A4 inhibitor; Ghrelin receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 528.7 | 3.71 | 95.74 | 2/4 | 1 | C32H40N4O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Growth hormone secretagogue receptor type 1 (CHEMBL4616)|Growth hormone secretagogue receptor type 1]] - agonist · SINGLE PROTEIN
+- [[Cytochrome P450 3A4 (CHEMBL340)|Cytochrome P450 3A4]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -81,6 +128,12 @@ Early oral GH secretagogue abandoned after liver enzyme elevations in longer dos
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Capromorelin]] (Growth hormone secretagogue receptor type 1), [[Macimorelin (Macrilen)]] (Growth hormone secretagogue receptor type 1), [[Pf-5190457]] (Growth hormone secretagogue receptor type 1), [[Relamorelin]] (Growth hormone secretagogue receptor type 1), [[Tzp-102]] (Growth hormone secretagogue receptor type 1)
 
 ## Safety routing
 

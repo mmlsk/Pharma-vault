@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL203266
+chembl-max-phase: 4
 half-life:
   value: 7.0
   value-max: 12.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Trimetazidine
@@ -68,6 +69,35 @@ pk-source:
   revision: 1370866766
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL203266
+  pref-name: TRIMETAZIDINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01EB15
+  targets: []
+  properties:
+    full-mwt: 266.34
+    mw-freebase: 266.34
+    alogp: 1.12
+    psa: 42.96
+    hba: 5
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.86
+    full-molformula: C14H22N2O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Trimetazidine
@@ -81,10 +111,20 @@ pk-source:
 - **Compound ID:** `trimetazidine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL203266](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL203266/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Metabolic antianginal that shifts myocardial fuel use; prohibited in sport and associated with movement disorders.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C01EB15:** CARDIOVASCULAR SYSTEM › OTHER CARDIAC PREPARATIONS › Other cardiac preparations
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 266.34 | 1.12 | 42.96 | 1/5 | 0 | C14H22N2O3 |
 
 ## Evidence boundaries
 
@@ -103,6 +143,14 @@ Metabolic antianginal that shifts myocardial fuel use; prohibited in sport and a
 | Bioavailability | - | completely absorbed at around 5 hours, steady state is reached by 60th hour |
 | Metabolism | - | minimal |
 | Excretion | - | mainly renal '(unchanged)', exposure is increased in renal impairment – on average by four-fold in subjects with severe renal impairment (CrCl <30 ml/min) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Adenosine (IV)]], [[Coenzyme Q10]], [[Ibuprofen]], [[Indomethacin]], [[Ivabradine (Corlanor)]], [[Mavacamten]], [[Meldonium]], [[Ranolazine (Ranexa)]]
 
 ## Safety routing
 

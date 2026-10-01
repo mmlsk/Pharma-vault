@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL895
+chembl-max-phase: 4
 half-life:
   value: 5.0
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Nalbuphine
@@ -68,6 +69,35 @@ pk-source:
   revision: 1362482151
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL895
+  pref-name: NALBUPHINE
+  molecule-type: Small molecule
+  first-approval: 1979
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N02AF02
+  targets: []
+  properties:
+    full-mwt: 357.45
+    mw-freebase: 357.45
+    alogp: 1.71
+    psa: 73.16
+    hba: 5
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.75
+    full-molformula: C21H27NO4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Nalbuphine
@@ -81,10 +111,22 @@ pk-source:
 - **Compound ID:** `nalbuphine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL895](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL895/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Mixed kappa agonist / mu antagonist with a ceiling on respiratory depression.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1979
+- **Flags:** black-box warning
+- **ATC N02AF02:** NERVOUS SYSTEM › OPIOIDS › Morphinan derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 357.45 | 1.71 | 73.16 | 3/5 | 0 | C21H27NO4 |
 
 ## Evidence boundaries
 
@@ -104,6 +146,14 @@ Mixed kappa agonist / mu antagonist with a ceiling on respiratory depression.
 | Metabolism | hepatic | Liver (glucuronidation) |
 | Metabolites | - | Glucuronide conjugates (inactive), others |
 | Excretion | - | Urine, bile, feces; 93% within 6 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Butorphanol]]
 
 ## Safety routing
 

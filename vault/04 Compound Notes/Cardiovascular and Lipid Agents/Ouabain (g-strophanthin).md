@@ -17,7 +17,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL222863
 chembl-max-phase: null
 half-life:
   value: null
@@ -56,6 +56,28 @@ tags:
 - source-derived
 - group/cardio
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL222863
+  pref-name: OUABAIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 584.66
+    mw-freebase: 584.66
+    alogp: -1.51
+    psa: 206.6
+    hba: 12
+    hbd: 8
+    rtb: 4
+    num-ro5-violations: 3
+    qed-weighted: 0.14
+    full-molformula: C29H44O12
 ---
 
 # Ouabain (g-strophanthin)
@@ -70,10 +92,19 @@ tags:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Ouabain, g-strophanthin
+- **ChEMBL:** [CHEMBL222863](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL222863/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 The prototypical Na+/K+-ATPase inhibitor and the standard pharmacological tool for the pump. Also detectable as an endogenous steroid-like compound, which remains a contested area of physiology.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 584.66 | -1.51 | 206.6 | 8/12 | 3 | C29H44O12 |
 
 ## Evidence boundaries
 

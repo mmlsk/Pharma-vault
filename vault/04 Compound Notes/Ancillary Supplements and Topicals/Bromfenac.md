@@ -58,6 +58,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Bromfenac
@@ -65,6 +66,37 @@ pk-source:
   revision: 1268659641
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1077
+  pref-name: BROMFENAC
+  molecule-type: Small molecule
+  first-approval: 1997
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - S01BC11
+  targets: []
+  properties:
+    full-mwt: 334.17
+    mw-freebase: 334.17
+    alogp: 2.89
+    psa: 80.39
+    hba: 3
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C15H12BrNO3
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 144a5072-341b-4591-8705-773b63044bcc
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=144a5072-341b-4591-8705-773b63044bcc
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Bromfenac
@@ -78,7 +110,7 @@ pk-source:
 - **Compound ID:** `bromfenac-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1077](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1077/) · max phase 4
+- **ChEMBL:** [CHEMBL1077](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1077/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -87,6 +119,17 @@ Cyclooxygenase inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMB
 ## Mechanism
 
 Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1997
+- **Flags:** withdrawn
+- **ATC S01BC11:** SENSORY ORGANS › ANTIINFLAMMATORY AGENTS › Antiinflammatory agents, non-steroids
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 334.17 | 2.89 | 80.39 | 2/3 | 0 | C15H12BrNO3 |
 
 ## Evidence boundaries
 
@@ -106,6 +149,18 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 | CYP (metabolised by) | CYP2C9 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Lactam, others |
 | Excretion | - | 82% urine, 13% faeces |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 144a5072…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=144a5072-341b-4591-8705-773b63044bcc), label version 20260108. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Diclofenac]], [[Flurbiprofen]], [[Indomethacin]], [[Ketorolac]], [[Nepafenac]], [[Piroxicam]], [[Salicylic Acid]]
+- **Shared CYP substrate pool:** CYP2C9 (+40 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

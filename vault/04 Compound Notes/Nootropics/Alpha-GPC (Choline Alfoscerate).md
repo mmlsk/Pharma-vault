@@ -17,7 +17,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1567463
 chembl-max-phase: null
 half-life:
   value: null
@@ -57,6 +57,28 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1567463
+  pref-name: null
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 257.22
+    mw-freebase: 257.22
+    alogp: -1.45
+    psa: 99.05
+    hba: 6
+    hbd: 2
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.41
+    full-molformula: C8H20NO6P
 ---
 
 # Alpha-GPC (Choline Alfoscerate)
@@ -71,10 +93,19 @@ tags:
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Alpha-GPC, Choline Alfoscerate
+- **ChEMBL:** [CHEMBL1567463](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1567463/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 A choline-donating phospholipid that crosses the blood-brain barrier and feeds acetylcholine synthesis. The clinical evidence sits in adult-onset cognitive impairment, not in healthy enhancement.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 257.22 | -1.45 | 99.05 | 2/6 | 0 | C8H20NO6P |
 
 ## Evidence boundaries
 

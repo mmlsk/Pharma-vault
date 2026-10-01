@@ -8,15 +8,15 @@ cluster: Nootropics
 group: neuropsych
 class: null
 subclass: null
-mechanism: null
+mechanism: Gamma-amino-N-butyrate transaminase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL89598
+chembl-max-phase: 4
 half-life:
   value: 5.0
   value-max: 8.0
@@ -54,7 +54,7 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Vigabatrin
@@ -69,6 +71,40 @@ pk-source:
   revision: 1374816235
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL89598
+  pref-name: VIGABATRIN
+  molecule-type: Small molecule
+  first-approval: 2009
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N03AG04
+  targets:
+  - id: CHEMBL2044
+    name: 4-aminobutyrate aminotransferase, mitochondrial
+    action: INHIBITOR
+  properties:
+    full-mwt: 129.16
+    mw-freebase: 129.16
+    alogp: 0.36
+    psa: 63.32
+    hba: 2
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.54
+    full-molformula: C6H11NO2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 93ba3894-fd97-4432-9f2d-e7050371e91f
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=93ba3894-fd97-4432-9f2d-e7050371e91f
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Vigabatrin
@@ -82,10 +118,30 @@ pk-source:
 - **Compound ID:** `vigabatrin-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL89598](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL89598/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Irreversible GABA transaminase inhibitor, uniquely effective in infantile spasms and causing permanent visual field loss in a third of patients.
+
+## Mechanism
+
+Gamma-amino-N-butyrate transaminase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2009
+- **Flags:** black-box warning
+- **ATC N03AG04:** NERVOUS SYSTEM › ANTIEPILEPTICS › Fatty acid derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 129.16 | 0.36 | 63.32 | 2/2 | 0 | C6H11NO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[4-aminobutyrate aminotransferase, mitochondrial (CHEMBL2044)|4-aminobutyrate aminotransferase, mitochondrial]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -104,6 +160,17 @@ Irreversible GABA transaminase inhibitor, uniquely effective in infantile spasms
 | Bioavailability | 80–90 % | 80–90% |
 | Metabolism | - | not metabolized |
 | Excretion | mainly urinary | Kidney |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 93ba3894…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=93ba3894-fd97-4432-9f2d-e7050371e91f), label version 20260812. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 5.7, 6.8, 8.1, 9.5, 10.5, 12.5)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Sodium Valproate]], [[Tiagabine]]
 
 ## Safety routing
 

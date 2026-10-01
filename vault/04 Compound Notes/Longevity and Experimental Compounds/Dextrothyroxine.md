@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL559
+  pref-name: DEXTROTHYROXINE
+  molecule-type: Small molecule
+  first-approval: 1967
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C10AX01
+  targets:
+  - id: CHEMBL2111462
+    name: Thyroid hormone receptor
+    action: AGONIST
+  properties:
+    full-mwt: 776.87
+    mw-freebase: 776.87
+    alogp: 4.56
+    psa: 92.78
+    hba: 4
+    hbd: 3
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.39
+    full-molformula: C15H11I4NO4
 ---
 
 # Dextrothyroxine
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `dextrothyroxine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL559](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL559/) · max phase 4
+- **ChEMBL:** [CHEMBL559](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL559/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +103,20 @@ Thyroid hormone receptor agonist; approved/marketed compound catalogued by ChEMB
 
 Thyroid hormone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1967
+- **ATC C10AX01:** CARDIOVASCULAR SYSTEM › LIPID MODIFYING AGENTS, PLAIN › Other lipid modifying agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 776.87 | 4.56 | 92.78 | 3/4 | 1 | C15H11I4NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Thyroid hormone receptor (CHEMBL2111462)|Thyroid hormone receptor]] - agonist · PROTEIN COMPLEX
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +125,13 @@ Thyroid hormone receptor agonist _(ChEMBL curated mechanism, as quoted by the so
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Liothyronine (Cytomel)]] (Thyroid hormone receptor), [[Tiratricol (TRIAC)]] (Thyroid hormone receptor)
+- **Same ATC subgroup:** [[Alirocumab (Praluent)]], [[Bempedoic acid]], [[Evinacumab (Evkeeza)]], [[Evolocumab]], [[Ezetimibe]], [[Inclisiran (Leqvio)]], [[Lomitapide (Juxtapid)]], [[Mipomersen (Kynamro)]], [[Omega-3-Acid Ethyl Esters]], [[Policosanol]], [[Probucol]], [[Volanesorsen (Waylivra)]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL250270
+chembl-max-phase: 3
 half-life:
   value: 8.0
   value-max: 10.0
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Lercanidipine
@@ -69,6 +70,35 @@ pk-source:
   revision: 1334409442
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL250270
+  pref-name: LERCANIDIPINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C08CA13
+  targets: []
+  properties:
+    full-mwt: 611.74
+    mw-freebase: 611.74
+    alogp: 6.48
+    psa: 111.01
+    hba: 8
+    hbd: 1
+    rtb: 12
+    num-ro5-violations: 2
+    qed-weighted: 0.14
+    full-molformula: C36H41N3O6
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Lercanidipine
@@ -82,10 +112,20 @@ pk-source:
 - **Compound ID:** `lercanidipine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL250270](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL250270/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Third-generation lipophilic dihydropyridine marketed on a lower rate of ankle oedema than amlodipine.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C08CA13:** CARDIOVASCULAR SYSTEM › SELECTIVE CALCIUM CHANNEL BLOCKERS WITH MAINLY VASCULAR EFFECTS › Dihydropyridine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 611.74 | 6.48 | 111.01 | 1/8 | 2 | C36H41N3O6 |
 
 ## Evidence boundaries
 
@@ -105,6 +145,15 @@ Third-generation lipophilic dihydropyridine marketed on a lower rate of ankle oe
 | Metabolism | hepatic | Mainly CYP3A4 |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Urine (50%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amlodipine]], [[Clevidipine]], [[Felodipine]], [[Nicardipine]], [[Nifedipine]], [[Nimodipine]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

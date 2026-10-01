@@ -10,15 +10,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: FK506-binding protein 1A inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL413
+chembl-max-phase: 4
 half-life:
   value: 57.0
   value-max: 63.0
@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,9 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Sirolimus
@@ -70,6 +73,42 @@ pk-source:
   revision: 1368796458
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL413
+  pref-name: SIROLIMUS
+  molecule-type: Small molecule
+  first-approval: 1999
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L01EG04
+  - L04AH01
+  - S01XA23
+  targets:
+  - id: CHEMBL1902
+    name: Peptidyl-prolyl cis-trans isomerase FKBP1A
+    action: INHIBITOR
+  properties:
+    full-mwt: 914.19
+    mw-freebase: 914.19
+    alogp: 6.18
+    psa: 195.43
+    hba: 13
+    hbd: 3
+    rtb: 6
+    num-ro5-violations: 3
+    qed-weighted: 0.16
+    full-molformula: C51H79NO13
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: fc81cb86-61e1-4622-b2ce-cde263143aa0
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=fc81cb86-61e1-4622-b2ce-cde263143aa0
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Rapamycin (Sirolimus)
@@ -84,10 +123,32 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Rapamycin, Sirolimus
+- **ChEMBL:** [CHEMBL413](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL413/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The namesake mTOR inhibitor, originally an immunosuppressant, studied extensively in longevity research for its ability to slow age-related decline via mTOR suppression.
+
+## Mechanism
+
+FK506-binding protein 1A inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1999
+- **Flags:** black-box warning
+- **ATC L01EG04:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › PROTEIN KINASE INHIBITORS › Mammalian target of rapamycin (mTOR) kinase inhibitors
+- **ATC L04AH01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Mammalian target of rapamycin (mTOR) kinase inhibitors
+- **ATC S01XA23:** SENSORY ORGANS › OTHER OPHTHALMOLOGICALS › Other ophthalmologicals
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 914.19 | 6.18 | 195.43 | 3/13 | 3 | C51H79NO13 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Peptidyl-prolyl cis-trans isomerase FKBP1A (CHEMBL1902)|Peptidyl-prolyl cis-trans isomerase FKBP1A]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -106,6 +167,19 @@ The namesake mTOR inhibitor, originally an immunosuppressant, studied extensivel
 | Bioavailability | 14 % | 14% (oral solution), lower with high-fat meals; 18% (tablet), higher with high-fat meals |
 | Metabolism | hepatic | Liver |
 | Excretion | - | Mostly fecal |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set fc81cb86…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=fc81cb86-61e1-4622-b2ce-cde263143aa0), label version 20260720. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 61.3, 62, 72.3)
+> - protein-binding: consistent (label values: 92, 97)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Sirolimus (Rapamycin)]]
+- **Shared target:** [[Everolimus]] (Peptidyl-prolyl cis-trans isomerase FKBP1A), [[Pimecrolimus]] (Peptidyl-prolyl cis-trans isomerase FKBP1A), [[Sirolimus (Rapamycin)]] (Peptidyl-prolyl cis-trans isomerase FKBP1A)
+- **Same ATC subgroup:** [[Alteplase]], [[Avacincaptad Pegol]], [[Cyclosporine]], [[Everolimus]], [[NAC (N-Acetylcysteine)]], [[Pegcetacoplan]], [[Potassium Iodide (SSKI-KI)|Potassium Iodide (SSKI/KI)]], [[Retinol]], [[Sirolimus (Rapamycin)]], [[Vitamin C (Ascorbic Acid)]]
 
 ## Safety routing
 

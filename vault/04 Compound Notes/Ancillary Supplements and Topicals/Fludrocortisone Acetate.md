@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201010
+  pref-name: FLUDROCORTISONE ACETATE
+  molecule-type: Small molecule
+  first-approval: 1955
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H02AA02
+  targets:
+  - id: CHEMBL1994
+    name: Mineralocorticoid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 422.49
+    mw-freebase: 422.49
+    alogp: 2.44
+    psa: 100.9
+    hba: 6
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.68
+    full-molformula: C23H31FO6
 ---
 
 # Fludrocortisone Acetate
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `fludrocortisone-acetate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201010](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201010/) · max phase 4
+- **ChEMBL:** [CHEMBL1201010](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201010/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +103,21 @@ Mineralocorticoid receptor agonist; approved/marketed compound catalogued by ChE
 
 Mineralocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1955
+- **Flags:** prodrug
+- **ATC H02AA02:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › CORTICOSTEROIDS FOR SYSTEMIC USE, PLAIN › Mineralocorticoids
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 422.49 | 2.44 | 100.9 | 2/6 | 0 | C23H31FO6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Mineralocorticoid receptor (CHEMBL1994)|Mineralocorticoid receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +126,13 @@ Mineralocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Apararenone]] (Mineralocorticoid receptor), [[Balcinrenone]] (Mineralocorticoid receptor), [[Canrenone]] (Mineralocorticoid receptor), [[Desoxycorticosterone Acetate]] (Mineralocorticoid receptor), [[Desoxycorticosterone Pivalate]] (Mineralocorticoid receptor), [[Drospirenone]] (Mineralocorticoid receptor), [[Eplerenone]] (Mineralocorticoid receptor), [[Felodipine]] (Mineralocorticoid receptor), [[Finerenone (Kerendia)]] (Mineralocorticoid receptor), [[Nimodipine]] (Mineralocorticoid receptor), [[Spironolactone]] (Mineralocorticoid receptor), [[Vamorolone]] (Mineralocorticoid receptor)
+- **Same ATC subgroup:** [[Desoxycorticosterone Acetate]]
 
 ## Safety routing
 

@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Hydroxocobalamin
@@ -64,6 +65,15 @@ pk-source:
   revision: 1372811243
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: d56fcc8d-bd64-46ab-b0c0-2124bd745a6b
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d56fcc8d-bd64-46ab-b0c0-2124bd745a6b
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: no-label-value
 ---
 
 # Hydroxocobalamin
@@ -97,6 +107,11 @@ Vitamin B12 form used as the first-line cyanide antidote, binding cyanide direct
 | Elimination t½ | 6 d | ~6 days |
 | Protein binding | 90 % | Very high (90%) |
 | Metabolism | hepatic | Primarily liver, cobalamins are absorbed in the ileum and stored in the liver. |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set d56fcc8d…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d56fcc8d-bd64-46ab-b0c0-2124bd745a6b), label version 20230427. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 26, 31)
+> - protein-binding: no-label-value (label values: -)
 
 ## Safety routing
 

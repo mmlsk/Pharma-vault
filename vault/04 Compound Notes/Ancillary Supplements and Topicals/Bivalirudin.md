@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Bivalirudin
@@ -67,6 +68,14 @@ pk-source:
   revision: 1329244447
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 42aa2630-83d6-433d-8277-0f672cf8d71d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=42aa2630-83d6-433d-8277-0f672cf8d71d
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Bivalirudin
@@ -100,6 +109,10 @@ Short-acting intravenous direct thrombin inhibitor used during coronary interven
 | Elimination t½ | 25 min | ~25 minutes in patients with normal renal function |
 | Bioavailability | - | N/A (IV application only) |
 | Metabolism | - | Angiomax is cleared from plasma by a combination of renal mechanisms and proteolytic cleavage |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 42aa2630…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=42aa2630-83d6-433d-8277-0f672cf8d71d), label version 20260820. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 0.417, 0.567, 0.95, 3.5)
 
 ## Safety routing
 

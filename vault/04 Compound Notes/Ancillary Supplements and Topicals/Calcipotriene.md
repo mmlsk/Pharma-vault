@@ -54,6 +54,33 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200666
+  pref-name: CALCIPOTRIENE
+  molecule-type: Small molecule
+  first-approval: 1993
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D05AX02
+  - D05AX52
+  targets:
+  - id: CHEMBL1977
+    name: Vitamin D3 receptor
+    action: AGONIST
+  properties:
+    full-mwt: 412.61
+    mw-freebase: 412.61
+    alogp: 5.09
+    psa: 60.69
+    hba: 3
+    hbd: 3
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.55
+    full-molformula: C27H40O3
 ---
 
 # Calcipotriene
@@ -67,7 +94,7 @@ tags:
 - **Compound ID:** `calcipotriene-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200666](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200666/) · max phase 4
+- **ChEMBL:** [CHEMBL1200666](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200666/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +104,21 @@ Vitamin D receptor agonist; approved/marketed compound catalogued by ChEMBL (CHE
 
 Vitamin D receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1993
+- **ATC D05AX02:** DERMATOLOGICALS › ANTIPSORIATICS FOR TOPICAL USE › Other antipsoriatics for topical use
+- **ATC D05AX52:** DERMATOLOGICALS › ANTIPSORIATICS FOR TOPICAL USE › Other antipsoriatics for topical use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 412.61 | 5.09 | 60.69 | 3/3 | 1 | C27H40O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Vitamin D3 receptor (CHEMBL1977)|Vitamin D3 receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +127,13 @@ Vitamin D receptor agonist _(ChEMBL curated mechanism, as quoted by the source).
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alfacalcidol (1-alpha-hydroxyvitamin D3)]] (Vitamin D3 receptor), [[Calcitriol (1,25-dihydroxyvitamin D3)]] (Vitamin D3 receptor), [[Cholecalciferol]] (Vitamin D3 receptor), [[Dihydrotachysterol]] (Vitamin D3 receptor), [[Doxercalciferol]] (Vitamin D3 receptor), [[Eldecalcitol (Edirol)]] (Vitamin D3 receptor), [[Ergocalciferol]] (Vitamin D3 receptor), [[Paricalcitol (Zemplar)]] (Vitamin D3 receptor), [[Pefcalcitol]] (Vitamin D3 receptor), [[Seocalcitol]] (Vitamin D3 receptor), [[Vitamin D]] (Vitamin D3 receptor)
+- **Same ATC subgroup:** [[Calcitriol (1,25-dihydroxyvitamin D3)]], [[Roflumilast]], [[Roflumilast (topical)]], [[Roflumilast Foam (Zoryve)]], [[Tapinarof]], [[Tazarotene (Tazorac)]]
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Voltage-activated calcium channel beta 1 subunit blocker; Voltage-activated calcium channel beta 2 subunit blocker
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL976
+chembl-max-phase: 4
 half-life:
   value: 0.8
   value-max: 1.5
@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Praziquantel
@@ -67,6 +69,42 @@ pk-source:
   revision: 1369381784
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL976
+  pref-name: PRAZIQUANTEL
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - P02BA01
+  targets:
+  - id: CHEMBL2363079
+    name: Voltage-activated calcium channel beta 1 subunit
+    action: BLOCKER
+  - id: CHEMBL2363080
+    name: Voltage-activated calcium channel beta 2 subunit
+    action: BLOCKER
+  properties:
+    full-mwt: 312.41
+    mw-freebase: 312.41
+    alogp: 2.53
+    psa: 40.62
+    hba: 2
+    hbd: 0
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C19H24N2O2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 16f2b9c4-a260-4a31-bd52-e5945913246c
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=16f2b9c4-a260-4a31-bd52-e5945913246c
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Praziquantel
@@ -80,10 +118,30 @@ pk-source:
 - **Compound ID:** `praziquantel-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL976](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL976/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The single drug behind schistosomiasis control worldwide, acting on a calcium channel subunit unique to flatworms.
+
+## Mechanism
+
+Voltage-activated calcium channel beta 1 subunit blocker; Voltage-activated calcium channel beta 2 subunit blocker _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC P02BA01:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › ANTITREMATODALS › Quinoline derivatives and related substances
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 312.41 | 2.53 | 40.62 | 0/2 | 0 | C19H24N2O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Voltage-activated calcium channel beta 1 subunit (CHEMBL2363079)|Voltage-activated calcium channel beta 1 subunit]] - blocker · SINGLE PROTEIN
+- [[Voltage-activated calcium channel beta 2 subunit (CHEMBL2363080)|Voltage-activated calcium channel beta 2 subunit]] - blocker · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -101,6 +159,10 @@ The single drug behind schistosomiasis control worldwide, acting on a calcium ch
 | Bioavailability | - | Relatively small |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney (mainly) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 16f2b9c4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=16f2b9c4-a260-4a31-bd52-e5945913246c), label version 20260812. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 0.8, 1.5)
 
 ## Safety routing
 

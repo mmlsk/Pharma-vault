@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Triamcinolone acetonide
@@ -62,6 +63,30 @@ pk-source:
   revision: 1349587310
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1504
+  pref-name: TRIAMCINOLONE ACETONIDE
+  molecule-type: Small molecule
+  first-approval: 1960
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2034
+    name: Glucocorticoid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 434.5
+    mw-freebase: 434.5
+    alogp: 2.42
+    psa: 93.06
+    hba: 6
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C24H31FO6
 ---
 
 # Triamcinolone Acetonide
@@ -75,7 +100,7 @@ pk-source:
 - **Compound ID:** `triamcinolone-acetonide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1504](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1504/) · max phase 4
+- **ChEMBL:** [CHEMBL1504](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1504/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -84,6 +109,19 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1960
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 434.5 | 2.42 | 93.06 | 2/6 | 0 | C24H31FO6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucocorticoid receptor (CHEMBL2034)|Glucocorticoid receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -99,6 +137,12 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 |---|---|---|
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Urine (75%) and feces (25%) |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor)
 
 ## Safety routing
 

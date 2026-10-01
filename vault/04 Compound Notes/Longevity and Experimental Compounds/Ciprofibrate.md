@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL557555
+  pref-name: CIPROFIBRATE
+  molecule-type: Small molecule
+  first-approval: 1985
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C10AB08
+  targets:
+  - id: CHEMBL239
+    name: Peroxisome proliferator-activated receptor alpha
+    action: AGONIST
+  properties:
+    full-mwt: 289.16
+    mw-freebase: 289.16
+    alogp: 3.59
+    psa: 46.53
+    hba: 2
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.86
+    full-molformula: C13H14Cl2O3
 ---
 
 # Ciprofibrate
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `ciprofibrate-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL557555](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL557555/) · max phase 4
+- **ChEMBL:** [CHEMBL557555](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL557555/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +103,20 @@ Peroxisome proliferator-activated receptor alpha agonist; approved/marketed comp
 
 Peroxisome proliferator-activated receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1985
+- **ATC C10AB08:** CARDIOVASCULAR SYSTEM › LIPID MODIFYING AGENTS, PLAIN › Fibrates
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 289.16 | 3.59 | 46.53 | 1/2 | 0 | C13H14Cl2O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Peroxisome proliferator-activated receptor alpha (CHEMBL239)|Peroxisome proliferator-activated receptor alpha]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +125,13 @@ Peroxisome proliferator-activated receptor alpha agonist _(ChEMBL curated mechan
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aleglitazar]] (Peroxisome proliferator-activated receptor alpha), [[Clofibrate]] (Peroxisome proliferator-activated receptor alpha), [[Elafibranor]] (Peroxisome proliferator-activated receptor alpha), [[Fenofibrate]] (Peroxisome proliferator-activated receptor alpha), [[Fenofibric Acid]] (Peroxisome proliferator-activated receptor alpha), [[Gemfibrozil (Lopid)]] (Peroxisome proliferator-activated receptor alpha), [[Imiglitazar]] (Peroxisome proliferator-activated receptor alpha), [[K-877]] (Peroxisome proliferator-activated receptor alpha), [[Mk-0767]] (Peroxisome proliferator-activated receptor alpha), [[Muraglitazar]] (Peroxisome proliferator-activated receptor alpha), [[Pemafibrate (Parmodia)]] (Peroxisome proliferator-activated receptor alpha), [[Saroglitazar]] (Peroxisome proliferator-activated receptor alpha)
+- **Same ATC subgroup:** [[Bezafibrate]], [[Clofibrate]], [[Fenofibrate]], [[Gemfibrozil (Lopid)]], [[Pemafibrate (Parmodia)]]
 
 ## Safety routing
 

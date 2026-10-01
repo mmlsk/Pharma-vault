@@ -54,6 +54,25 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2110824
+  pref-name: BUSERELIN
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L02AE01
+  targets:
+  - id: CHEMBL1855
+    name: Gonadotropin-releasing hormone receptor
+    action: AGONIST
+  properties:
+    full-mwt: 1239.45
+    mw-freebase: 1239.45
+    full-molformula: C60H86N16O13
 ---
 
 # Buserelin
@@ -67,7 +86,7 @@ tags:
 - **Compound ID:** `buserelin-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL2110824](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2110824/) · max phase 4
+- **ChEMBL:** [CHEMBL2110824](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2110824/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +96,19 @@ Gonadotropin-releasing hormone receptor agonist; approved/marketed compound cata
 
 Gonadotropin-releasing hormone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **ATC L02AE01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › HORMONES AND RELATED AGENTS › Gonadotropin releasing hormone analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1239.45 | - | - | -/- | - | C60H86N16O13 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Gonadotropin-releasing hormone receptor (CHEMBL1855)|Gonadotropin-releasing hormone receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +117,13 @@ Gonadotropin-releasing hormone receptor agonist _(ChEMBL curated mechanism, as q
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abarelix]] (Gonadotropin-releasing hormone receptor), [[Acyline]] (Gonadotropin-releasing hormone receptor), [[Elagolix]] (Gonadotropin-releasing hormone receptor), [[Ganirelix (Fyremadel-Orgalutran)|Ganirelix (Fyremadel/Orgalutran)]] (Gonadotropin-releasing hormone receptor), [[Linzagolix]] (Gonadotropin-releasing hormone receptor), [[Opigolix]] (Gonadotropin-releasing hormone receptor), [[Ozarelix]] (Gonadotropin-releasing hormone receptor), [[Relugolix (Orgovyx)]] (Gonadotropin-releasing hormone receptor), [[Zoptarelin Doxorubicin]] (Gonadotropin-releasing hormone receptor)
+- **Same ATC subgroup:** [[Goserelin]], [[Histrelin]], [[Leuprolide (Lupron)]], [[Triptorelin (Trelstar)]]
 
 ## Safety routing
 

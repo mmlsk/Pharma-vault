@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: DNA terminase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1241951
+chembl-max-phase: 4
 half-life:
   value: 12.0
   value-max: null
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Letermovir
@@ -68,6 +70,40 @@ pk-source:
   revision: 1335510246
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1241951
+  pref-name: LETERMOVIR
+  molecule-type: Small molecule
+  first-approval: 2017
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AX18
+  targets:
+  - id: CHEMBL3991482
+    name: DNA terminase
+    action: INHIBITOR
+  properties:
+    full-mwt: 572.56
+    mw-freebase: 572.56
+    alogp: 5.71
+    psa: 77.84
+    hba: 7
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 2
+    qed-weighted: 0.38
+    full-molformula: C29H28F4N4O4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 1b49df80-be4f-47e0-a0b7-123f3e69395b
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1b49df80-be4f-47e0-a0b7-123f3e69395b
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Letermovir
@@ -81,10 +117,29 @@ pk-source:
 - **Compound ID:** `letermovir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1241951](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1241951/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 CMV prophylactic with a target unique to that virus, avoiding the marrow toxicity that limited valganciclovir prophylaxis.
+
+## Mechanism
+
+DNA terminase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2017
+- **ATC J05AX18:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Other antivirals
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 572.56 | 5.71 | 77.84 | 1/7 | 2 | C29H28F4N4O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[DNA terminase (CHEMBL3991482)|DNA terminase]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -103,6 +158,17 @@ CMV prophylactic with a target unique to that virus, avoiding the marrow toxicit
 | Bioavailability | 37 % | 37% (estimate) |
 | Metabolism | hepatic | glucuronidation (UGT1A1/1A3) to a minor extent |
 | Excretion | - | 93.3% via feces, <2% via kidneys |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 1b49df80…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1b49df80-be4f-47e0-a0b7-123f3e69395b), label version 20260114. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 12)
+> - protein-binding: consistent (label values: 2, 70, 84.27, 93, 97, 99)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Baloxavir Marboxil]], [[Bulevirtide (Hepcludex)]], [[Enfuvirtide]], [[Favipiravir]], [[Fostemsavir]], [[Ibalizumab]], [[Lenacapavir]], [[Maribavir]], [[Tecovirimat]]
 
 ## Safety routing
 

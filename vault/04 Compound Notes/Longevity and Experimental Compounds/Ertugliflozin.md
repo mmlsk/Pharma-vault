@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Ertugliflozin
@@ -68,6 +70,40 @@ pk-source:
   revision: 1369665388
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1770248
+  pref-name: ERTUGLIFLOZIN
+  molecule-type: Small molecule
+  first-approval: 2017
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A10BK04
+  targets:
+  - id: CHEMBL3884
+    name: Sodium/glucose cotransporter 2
+    action: INHIBITOR
+  properties:
+    full-mwt: 436.89
+    mw-freebase: 436.89
+    alogp: 1.36
+    psa: 108.61
+    hba: 7
+    hbd: 4
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.54
+    full-molformula: C22H25ClO7
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: e6f3e718-bb99-48f1-ab94-b9f0af05fed6
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e6f3e718-bb99-48f1-ab94-b9f0af05fed6
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Ertugliflozin
@@ -81,7 +117,7 @@ pk-source:
 - **Compound ID:** `ertugliflozin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1770248](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1770248/) · max phase 4
+- **ChEMBL:** [CHEMBL1770248](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1770248/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +126,20 @@ Sodium/glucose cotransporter 2 inhibitor; approved/marketed compound catalogued 
 ## Mechanism
 
 Sodium/glucose cotransporter 2 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2017
+- **ATC A10BK04:** ALIMENTARY TRACT AND METABOLISM › BLOOD GLUCOSE LOWERING DRUGS, EXCL. INSULINS › Sodium-glucose co-transporter 2 (SGLT2) inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 436.89 | 1.36 | 108.61 | 4/7 | 0 | C22H25ClO7 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Sodium-glucose cotransporter 2 (CHEMBL3884)|Sodium/glucose cotransporter 2]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -109,6 +159,18 @@ Sodium/glucose cotransporter 2 inhibitor _(ChEMBL curated mechanism, as quoted b
 | Metabolism | hepatic | UGT1A9, UGT2B7 |
 | Metabolites | - | Glucuronides |
 | Excretion | mainly urinary | 41% faeces, 50% urine |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set e6f3e718…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e6f3e718-bb99-48f1-ab94-b9f0af05fed6), label version 20260603. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 16.6)
+> - protein-binding: consistent (label values: 93.6)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Bexagliflozin]] (Sodium/glucose cotransporter 2), [[Dapagliflozin (Farxiga)]] (Sodium/glucose cotransporter 2), [[Empagliflozin (Jardiance)]] (Sodium/glucose cotransporter 2), [[Henagliflozin]] (Sodium/glucose cotransporter 2), [[Ipragliflozin]] (Sodium/glucose cotransporter 2), [[Ipragliflozin L-Proline]] (Sodium/glucose cotransporter 2), [[Licogliflozin]] (Sodium/glucose cotransporter 2), [[Sergliflozin Etabonate]] (Sodium/glucose cotransporter 2), [[Sotagliflozin (Inpefa)]] (Sodium/glucose cotransporter 2)
+- **Same ATC subgroup:** [[Bexagliflozin]], [[Dapagliflozin (Farxiga)]], [[Empagliflozin (Jardiance)]], [[Ipragliflozin]], [[Sotagliflozin (Inpefa)]]
 
 ## Safety routing
 

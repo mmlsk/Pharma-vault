@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Retinoic acid receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL547
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: 20.0
@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Isotretinoin
@@ -70,6 +72,42 @@ pk-source:
   revision: 1375086416
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL547
+  pref-name: ISOTRETINOIN
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - D10AD04
+  - D10AD54
+  - D10BA01
+  targets:
+  - id: CHEMBL2363069
+    name: Retinoic acid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 300.44
+    mw-freebase: 300.44
+    alogp: 5.6
+    psa: 37.3
+    hba: 1
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.53
+    full-molformula: C20H28O2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 4e8516dc-a3c6-4d8f-aa14-2c37c6c8f6e6
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4e8516dc-a3c6-4d8f-aa14-2c37c6c8f6e6
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Isotretinoin, 13-cis-retinoic acid (oral, Accutane)
@@ -84,10 +122,32 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Isotretinoin, 13-cis-retinoic acid, Accutane
+- **ChEMBL:** [CHEMBL547](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL547/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral 13-cis-retinoic acid, the only retinoid with real sebostatic activity; teratogenic and pregnancy-programme controlled.
+
+## Mechanism
+
+Retinoic acid receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **Flags:** black-box warning
+- **ATC D10AD04:** DERMATOLOGICALS › ANTI-ACNE PREPARATIONS FOR TOPICAL USE › Retinoids for topical use in acne
+- **ATC D10AD54:** DERMATOLOGICALS › ANTI-ACNE PREPARATIONS FOR TOPICAL USE › Retinoids for topical use in acne
+- **ATC D10BA01:** DERMATOLOGICALS › ANTI-ACNE PREPARATIONS FOR SYSTEMIC USE › Retinoids for treatment of acne
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 300.44 | 5.6 | 37.3 | 1/1 | 1 | C20H28O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Retinoic acid receptor (CHEMBL2363069)|Retinoic acid receptor]] - agonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -106,6 +166,18 @@ Oral 13-cis-retinoic acid, the only retinoid with real sebostatic activity; tera
 | Bioavailability | - | Variable |
 | Metabolism | hepatic | Liver |
 | Excretion | - | Kidney and feces |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 4e8516dc…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4e8516dc-a3c6-4d8f-aa14-2c37c6c8f6e6), label version 20260907. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 18, 38)
+> - protein-binding: consistent (label values: 99.9)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Adapalene (Differin)]] (Retinoic acid receptor), [[Oral Tretinoin (ATRA)]] (Retinoic acid receptor), [[Tazarotene (Tazorac)]] (Retinoic acid receptor), [[Tretinoin]] (Retinoic acid receptor)
+- **Same ATC subgroup:** [[Adapalene (Differin)]], [[Oral Tretinoin (ATRA)]], [[Retinol]], [[Tretinoin]], [[Trifarotene (topical, Aklief)]]
 
 ## Safety routing
 

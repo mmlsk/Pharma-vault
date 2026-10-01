@@ -10,15 +10,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Calcitonin receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4594242
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,22 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4594242
+  pref-name: CALCITONIN
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes: []
+  targets:
+  - id: CHEMBL1832
+    name: Calcitonin receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Calcitonin (salmon)
@@ -70,10 +86,24 @@ tags:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Calcitonin, salmon
+- **ChEMBL:** [CHEMBL4594242](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594242/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Peptide hormone that directly switches off osteoclasts; largely displaced by better antiresorptives.
+
+## Mechanism
+
+Calcitonin receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **Flags:** withdrawn
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Calcitonin receptor (CHEMBL1832)|Calcitonin receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 

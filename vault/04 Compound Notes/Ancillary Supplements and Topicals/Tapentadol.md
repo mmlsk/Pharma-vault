@@ -64,6 +64,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tapentadol
@@ -71,6 +72,35 @@ pk-source:
   revision: 1373295674
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201776
+  pref-name: TAPENTADOL
+  molecule-type: Small molecule
+  first-approval: 2008
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N02AX06
+  targets: []
+  properties:
+    full-mwt: 221.34
+    mw-freebase: 221.34
+    alogp: 3.08
+    psa: 23.47
+    hba: 2
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.83
+    full-molformula: C14H23NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tapentadol
@@ -84,7 +114,7 @@ pk-source:
 - **Compound ID:** `tapentadol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201776](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201776/) · max phase 4
+- **ChEMBL:** [CHEMBL1201776](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201776/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -93,6 +123,17 @@ Norepinephrine transporter inhibitor; approved/marketed compound catalogued by C
 ## Mechanism
 
 Norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2008
+- **Flags:** black-box warning
+- **ATC N02AX06:** NERVOUS SYSTEM › OPIOIDS › Other opioids
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 221.34 | 3.08 | 23.47 | 1/2 | 0 | C14H23NO |
 
 ## Evidence boundaries
 
@@ -112,6 +153,15 @@ Norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by th
 | Metabolism | hepatic | Hepatic (mostly via glucuronidation but also by CYP2C9, CYP2C19, CYP2D6) |
 | CYP (metabolised by) | CYP2C19, CYP2C9, CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | - | Urine and faeces (1%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Dezocine]], [[Oliceridine]]
+- **Shared CYP substrate pool:** CYP2C19 (+43 others), CYP2C9 (+40 others), CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

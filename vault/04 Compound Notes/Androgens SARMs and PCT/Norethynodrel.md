@@ -57,6 +57,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Noretynodrel
@@ -64,6 +65,37 @@ pk-source:
   revision: 1367851360
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1387
+  pref-name: NORETHYNODREL
+  molecule-type: Small molecule
+  first-approval: 1961
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL208
+    name: Progesterone receptor
+    action: AGONIST
+  properties:
+    full-mwt: 298.43
+    mw-freebase: 298.43
+    alogp: 3.64
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C20H26O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Norethynodrel
@@ -77,7 +109,7 @@ pk-source:
 - **Compound ID:** `norethynodrel-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1387](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1387/) · max phase 4
+- **ChEMBL:** [CHEMBL1387](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1387/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +118,19 @@ Progesterone receptor agonist; approved/marketed compound catalogued by ChEMBL (
 ## Mechanism
 
 Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1961
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 298.43 | 3.64 | 37.3 | 1/2 | 0 | C20H26O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Progesterone receptor (CHEMBL208)|Progesterone receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -104,6 +149,14 @@ Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the sourc
 | Metabolism | hepatic | Liver, intestines (hydroxylation, isomerization, conjugation) |
 | Metabolites | - | • 3α-Hydroxynoretynodrel; • 3β-Hydroxynoretynodrel; • Norethisterone; • Ethinylestradiol• Conjugates |
 | Excretion | - | Breast milk: 1% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Asoprisnil]] (Progesterone receptor), [[Chlormadinone Acetate]] (Progesterone receptor), [[Cyproterone Acetate]] (Progesterone receptor), [[Danazol]] (Progesterone receptor), [[Desogestrel]] (Progesterone receptor), [[Drospirenone]] (Progesterone receptor), [[Dydrogesterone]] (Progesterone receptor), [[Ethynodiol Diacetate]] (Progesterone receptor), [[Etonogestrel]] (Progesterone receptor), [[Gestodene]] (Progesterone receptor), [[Hydroxyprogesterone Caproate]] (Progesterone receptor), [[Levonorgestrel]] (Progesterone receptor)
 
 ## Safety routing
 

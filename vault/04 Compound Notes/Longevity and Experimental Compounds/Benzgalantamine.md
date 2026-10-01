@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL5095056
+  pref-name: BENZGALANTAMINE
+  molecule-type: Small molecule
+  first-approval: 2024
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 391.47
+    mw-freebase: 391.47
+    alogp: 3.72
+    psa: 48.0
+    hba: 5
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.59
+    full-molformula: C24H25NO4
 ---
 
 # Benzgalantamine
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `benzgalantamine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL5095056](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095056/) · max phase 4
+- **ChEMBL:** [CHEMBL5095056](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095056/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,15 @@ Acetylcholinesterase inhibitor; approved/marketed compound catalogued by ChEMBL 
 ## Mechanism
 
 Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2024
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 391.47 | 3.72 | 48.0 | 0/5 | 0 | C24H25NO4 |
 
 ## Evidence boundaries
 

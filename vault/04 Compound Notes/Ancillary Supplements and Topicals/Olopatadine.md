@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Olopatadine
@@ -63,6 +64,36 @@ pk-source:
   revision: 1348787908
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1189432
+  pref-name: OLOPATADINE
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R01AC08
+  - S01GX09
+  targets: []
+  properties:
+    full-mwt: 337.42
+    mw-freebase: 337.42
+    alogp: 3.59
+    psa: 49.77
+    hba: 3
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.91
+    full-molformula: C21H23NO3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Olopatadine
@@ -76,7 +107,7 @@ pk-source:
 - **Compound ID:** `olopatadine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1189432](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1189432/) · max phase 4
+- **ChEMBL:** [CHEMBL1189432](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1189432/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +116,17 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **ATC R01AC08:** RESPIRATORY SYSTEM › DECONGESTANTS AND OTHER NASAL PREPARATIONS FOR TOPICAL USE › Antiallergic agents, excl. corticosteroids
+- **ATC S01GX09:** SENSORY ORGANS › DECONGESTANTS AND ANTIALLERGICS › Other antiallergics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 337.42 | 3.59 | 49.77 | 1/3 | 0 | C21H23NO3 |
 
 ## Evidence boundaries
 
@@ -99,6 +141,14 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 3 h | 3 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alcaftadine]], [[Antazoline]], [[Azelastine]], [[Bilastine]], [[Cetirizine]], [[Emedastine]], [[Epinastine]], [[Ketotifen]], [[Levocabastine]], [[Sodium Cromoglicate]]
 
 ## Safety routing
 

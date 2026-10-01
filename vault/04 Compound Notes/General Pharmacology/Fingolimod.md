@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL314854
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL314854
+  pref-name: FINGOLIMOD
+  molecule-type: Small molecule
+  first-approval: 2010
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AE01
+  targets: []
+  properties:
+    full-mwt: 307.48
+    mw-freebase: 307.48
+    alogp: 3.2
+    psa: 66.48
+    hba: 3
+    hbd: 3
+    rtb: 12
+    num-ro5-violations: 0
+    qed-weighted: 0.52
+    full-molformula: C19H33NO2
 ---
 
 # Fingolimod
@@ -67,10 +90,22 @@ tags:
 - **Compound ID:** `fingolimod-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL314854](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL314854/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 First oral disease-modifying therapy for multiple sclerosis, a sphingosine analogue that traps lymphocytes in lymph nodes.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2010
+- **Flags:** prodrug
+- **ATC L04AE01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Sphingosine-1-phosphate (S1P) receptor modulators
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 307.48 | 3.2 | 66.48 | 3/3 | 0 | C19H33NO2 |
 
 ## Evidence boundaries
 
@@ -80,6 +115,12 @@ First oral disease-modifying therapy for multiple sclerosis, a sphingosine analo
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Ozanimod]]
 
 ## Safety routing
 

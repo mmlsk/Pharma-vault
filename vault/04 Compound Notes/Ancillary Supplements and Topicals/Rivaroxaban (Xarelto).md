@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Coagulation factor X inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL198362
+chembl-max-phase: 4
 half-life:
   value: 5.0
   value-max: 9.0
@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Rivaroxaban
@@ -71,6 +73,39 @@ pk-source:
   revision: 1356485488
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL198362
+  pref-name: RIVAROXABAN
+  molecule-type: Small molecule
+  first-approval: 2008
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - B01AF01
+  targets:
+  - id: CHEMBL244
+    name: Coagulation factor X
+    action: INHIBITOR
+  properties:
+    full-mwt: 435.89
+    mw-freebase: 435.89
+    alogp: 2.52
+    psa: 88.18
+    hba: 6
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.78
+    full-molformula: C19H18ClN3O5S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 10db92f9-2300-4a80-836b-673e1ae91610
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=10db92f9-2300-4a80-836b-673e1ae91610
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Rivaroxaban (Xarelto)
@@ -85,10 +120,30 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Rivaroxaban, Xarelto
+- **ChEMBL:** [CHEMBL198362](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL198362/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral factor Xa inhibitor with once-daily regimens for several indications; renal function, food requirements, and bleeding interactions matter.
+
+## Mechanism
+
+Coagulation factor X inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2008
+- **Flags:** black-box warning
+- **ATC B01AF01:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Direct factor Xa inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 435.89 | 2.52 | 88.18 | 1/6 | 0 | C19H18ClN3O5S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Coagulation factor X (CHEMBL244)|Coagulation factor X]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -107,6 +162,18 @@ Oral factor Xa inhibitor with once-daily regimens for several indications; renal
 | Metabolism | hepatic | CYP3A4, CYP2J2 and CYP-independent mechanisms |
 | CYP (metabolised by) | CYP2J2, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - | metabolized in liver and eliminated unchanged |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 10db92f9…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=10db92f9-2300-4a80-836b-673e1ae91610), label version 20260910. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1.6, 1.9, 3, 4.2, 5, 9)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Antithrombin Alfa]] (Coagulation factor X), [[Apixaban (Eliquis)]] (Coagulation factor X), [[Betrixaban]] (Coagulation factor X), [[Darexaban]] (Coagulation factor X), [[Otamixaban]] (Coagulation factor X)
+- **Same ATC subgroup:** [[Apixaban (Eliquis)]], [[Betrixaban]], [[Edoxaban (Savaysa-Lixiana)|Edoxaban (Savaysa/Lixiana)]]
+- **Shared CYP substrate pool:** CYP2J2 (+3 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

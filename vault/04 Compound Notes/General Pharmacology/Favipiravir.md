@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: RNA-directed RNA polymerase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL221722
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL221722
+  pref-name: FAVIPIRAVIR
+  molecule-type: Small molecule
+  first-approval: 2014
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AX27
+  targets:
+  - id: CHEMBL4523676
+    name: RNA-directed RNA polymerase
+    action: INHIBITOR
+  properties:
+    full-mwt: 157.1
+    mw-freebase: 157.1
+    alogp: -0.58
+    psa: 89.1
+    hba: 4
+    hbd: 2
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.57
+    full-molformula: C5H4FN3O2
 ---
 
 # Favipiravir
@@ -67,10 +93,30 @@ tags:
 - **Compound ID:** `favipiravir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL221722](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL221722/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Broad-spectrum RNA polymerase inhibitor licensed in Japan for pandemic influenza, teratogenic and therefore restricted.
+
+## Mechanism
+
+RNA-directed RNA polymerase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2014
+- **Flags:** prodrug
+- **ATC J05AX27:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Other antivirals
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 157.1 | -0.58 | 89.1 | 2/4 | 0 | C5H4FN3O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[RNA-directed RNA polymerase (CHEMBL4523676)|RNA-directed RNA polymerase]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -80,6 +126,12 @@ Broad-spectrum RNA polymerase inhibitor licensed in Japan for pandemic influenza
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Baloxavir Marboxil]], [[Bulevirtide (Hepcludex)]], [[Enfuvirtide]], [[Fostemsavir]], [[Ibalizumab]], [[Lenacapavir]], [[Letermovir]], [[Maribavir]], [[Tecovirimat]]
 
 ## Safety routing
 

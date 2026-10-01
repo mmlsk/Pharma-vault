@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL159776
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,29 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL159776
+  pref-name: PRAMIRACETAM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N06BX16
+  targets: []
+  properties:
+    full-mwt: 269.39
+    mw-freebase: 269.39
+    alogp: 0.84
+    psa: 52.65
+    hba: 3
+    hbd: 1
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.75
+    full-molformula: C14H27N3O2
 ---
 
 # Pramiracetam
@@ -68,10 +91,20 @@ tags:
 - **Compound ID:** `pramiracetam-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL159776](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL159776/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 The most lipophilic and, by weight, most potent racetam, reported to enhance high-affinity choline uptake. Human evidence is limited to small trials in brain injury and dementia.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC N06BX16:** NERVOUS SYSTEM › PSYCHOSTIMULANTS, AGENTS USED FOR ADHD AND NOOTROPICS › Other psychostimulants and nootropics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 269.39 | 0.84 | 52.65 | 1/3 | 0 | C14H27N3O2 |
 
 ## Evidence boundaries
 
@@ -81,6 +114,12 @@ The most lipophilic and, by weight, most potent racetam, reported to enhance hig
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Aniracetam]], [[Idebenone]], [[Linopirdine]], [[Oxiracetam]], [[Phenibut]], [[Piracetam]], [[Vinpocetine]]
 
 ## Safety routing
 

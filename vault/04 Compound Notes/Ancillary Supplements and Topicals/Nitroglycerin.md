@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Soluble guanylate cyclase activator
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL730
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,35 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL730
+  pref-name: NITROGLYCERIN
+  molecule-type: Small molecule
+  first-approval: 1981
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C01DA02
+  - C01DA52
+  - C05AE01
+  targets:
+  - id: CHEMBL2111348
+    name: Soluble guanylate cyclase
+    action: ACTIVATOR
+  properties:
+    full-mwt: 227.08
+    mw-freebase: 227.08
+    alogp: -1.02
+    psa: 157.11
+    hba: 9
+    hbd: 0
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.37
+    full-molformula: C3H5N3O9
 ---
 
 # Nitroglycerin
@@ -67,10 +96,32 @@ tags:
 - **Compound ID:** `nitroglycerin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL730](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL730/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Rapid nitrate vasodilator for acute angina; severe hypotension can occur with PDE5 inhibitors or other vasodilators.
+
+## Mechanism
+
+Soluble guanylate cyclase activator _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1981
+- **Flags:** black-box warning, prodrug
+- **ATC C01DA02:** CARDIOVASCULAR SYSTEM › VASODILATORS USED IN CARDIAC DISEASES › Organic nitrates
+- **ATC C01DA52:** CARDIOVASCULAR SYSTEM › VASODILATORS USED IN CARDIAC DISEASES › Organic nitrates
+- **ATC C05AE01:** CARDIOVASCULAR SYSTEM › AGENTS FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE › Muscle relaxants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 227.08 | -1.02 | 157.11 | 0/9 | 0 | C3H5N3O9 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Soluble guanylate cyclase (CHEMBL2111348)|Soluble guanylate cyclase]] - activator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -80,6 +131,13 @@ Rapid nitrate vasodilator for acute angina; severe hypotension can occur with PD
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ataciguat (HMR1766)]] (Soluble guanylate cyclase), [[Cinaciguat]] (Soluble guanylate cyclase), [[Isosorbide Dinitrate]] (Soluble guanylate cyclase), [[Isosorbide Mononitrate]] (Soluble guanylate cyclase), [[Nitric Oxide]] (Soluble guanylate cyclase), [[Olinciguat]] (Soluble guanylate cyclase), [[Pentaerythritol Tetranitrate]] (Soluble guanylate cyclase), [[Praliciguat]] (Soluble guanylate cyclase), [[Riociguat]] (Soluble guanylate cyclase), [[Runcaciguat]] (Soluble guanylate cyclase), [[Vericiguat (Verquvo)]] (Soluble guanylate cyclase)
+- **Same ATC subgroup:** [[Diltiazem]], [[Isosorbide Dinitrate]], [[Isosorbide Mononitrate]], [[Pentaerythritol Tetranitrate]]
 
 ## Safety routing
 

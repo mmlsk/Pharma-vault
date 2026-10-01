@@ -8,17 +8,17 @@ cluster: General Pharmacology
 group: gi
 class: null
 subclass: null
-mechanism: null
+mechanism: Acetylcholinesterase inhibitor; Dopamine D2 receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2107457
+chembl-max-phase: 3
 half-life:
-  value: 0.3
+  value: 5.7
   value-max: null
   unit: h
   notes: 5.7±0.3 hours
@@ -61,6 +61,7 @@ tags:
 - group/gi
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Itopride
@@ -68,6 +69,41 @@ pk-source:
   revision: 1370506520
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2107457
+  pref-name: ITOPRIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A03FA07
+  targets:
+  - id: CHEMBL217
+    name: D(2) dopamine receptor
+    action: ANTAGONIST
+  - id: CHEMBL220
+    name: Acetylcholinesterase
+    action: INHIBITOR
+  properties:
+    full-mwt: 358.44
+    mw-freebase: 358.44
+    alogp: 2.57
+    psa: 60.03
+    hba: 5
+    hbd: 1
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.75
+    full-molformula: C20H26N2O4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Itopride
@@ -81,10 +117,29 @@ pk-source:
 - **Compound ID:** `itopride-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL2107457](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107457/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Prokinetic combining D2 antagonism with acetylcholinesterase inhibition, used in functional dyspepsia mainly in Asia.
+
+## Mechanism
+
+Acetylcholinesterase inhibitor; Dopamine D2 receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A03FA07:** ALIMENTARY TRACT AND METABOLISM › PROPULSIVES › Propulsives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 358.44 | 2.57 | 60.03 | 1/5 | 0 | C20H26N2O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[D(2) dopamine receptor (CHEMBL217)|D(2) dopamine receptor]] - antagonist · SINGLE PROTEIN
+- [[Acetylcholinesterase (CHEMBL220)|Acetylcholinesterase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -98,11 +153,20 @@ Prokinetic combining D2 antagonism with acetylcholinesterase inhibition, used in
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 0.3 h | 5.7±0.3 hours |
+| Elimination t½ | 5.7 h | 5.7±0.3 hours |
 | Protein binding | 96 % | 96% |
 | Bioavailability | 60 % | ~60% (Tmax = 35±5 min) |
 | Metabolism | hepatic | Extensive hepatic (FMO1 and FMO3), primarily N-oxidation |
 | Excretion | - · fe 0.041 | Renal (3.7–4.1% as unchanged itopride, 75.4–89.4% as itopride-N-oxide) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aripiprazole]] (D(2) dopamine receptor), [[Benperidol]] (D(2) dopamine receptor), [[Brexpiprazole]] (D(2) dopamine receptor), [[Cabergoline (Dostinex)]] (D(2) dopamine receptor), [[Clozapine]] (D(2) dopamine receptor), [[Distigmine]] (Acetylcholinesterase), [[Domperidone]] (D(2) dopamine receptor), [[Echothiophate]] (Acetylcholinesterase), [[Huperzine A]] (Acetylcholinesterase), [[Iloperidone]] (D(2) dopamine receptor), [[Isoflurophate]] (Acetylcholinesterase), [[Lumateperone]] (D(2) dopamine receptor)
+- **Same ATC subgroup:** [[Acotiamide]], [[Cisapride]], [[Domperidone]], [[Metoclopramide]]
 
 ## Safety routing
 

@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL499808
 chembl-max-phase: null
 half-life:
   value: 9.0
@@ -61,6 +61,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Caspofungin
@@ -68,6 +69,27 @@ pk-source:
   revision: 1369632479
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL499808
+  pref-name: null
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 1093.33
+    mw-freebase: 1093.33
+    full-molformula: C52H88N10O15
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Caspofungin
@@ -81,10 +103,19 @@ pk-source:
 - **Compound ID:** `caspofungin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL499808](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL499808/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 First echinocandin, fungicidal against Candida and fungistatic against Aspergillus, targeting a wall component humans do not have.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1093.33 | - | - | -/- | - | C52H88N10O15 |
 
 ## Evidence boundaries
 
@@ -103,6 +134,8 @@ First echinocandin, fungicidal against Candida and fungistatic against Aspergill
 | Bioavailability | 100 % | 100% (intravenous use only) |
 | Metabolism | - | Peptide hydrolysis, N-acetylation |
 | Excretion | - | Kidney (41%), feces (35%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

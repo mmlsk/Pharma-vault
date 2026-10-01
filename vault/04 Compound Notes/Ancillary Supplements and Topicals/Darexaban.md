@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Coagulation factor X inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1922235
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1922235
+  pref-name: DAREXABAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL244
+    name: Coagulation factor X
+    action: INHIBITOR
+  properties:
+    full-mwt: 474.56
+    mw-freebase: 474.56
+    alogp: 4.05
+    psa: 94.14
+    hba: 6
+    hbd: 3
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.47
+    full-molformula: C27H30N4O4
 ---
 
 # Darexaban
@@ -67,10 +93,27 @@ tags:
 - **Compound ID:** `darexaban-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1922235](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1922235/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Directly inhibits factor Xa to reduce thrombin generation; renal clearance and reversal-agent availability differ by agent; investigational, discontinued.
+
+## Mechanism
+
+Coagulation factor X inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 474.56 | 4.05 | 94.14 | 3/6 | 0 | C27H30N4O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Coagulation factor X (CHEMBL244)|Coagulation factor X]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +123,12 @@ Directly inhibits factor Xa to reduce thrombin generation; renal clearance and r
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Antithrombin Alfa]] (Coagulation factor X), [[Apixaban (Eliquis)]] (Coagulation factor X), [[Betrixaban]] (Coagulation factor X), [[Otamixaban]] (Coagulation factor X), [[Rivaroxaban (Xarelto)]] (Coagulation factor X)
 
 ## Safety routing
 

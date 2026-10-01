@@ -15,8 +15,11 @@ tags: [moc]
 | [[Longevity and Experimental Compounds]] | Longevity & Metabolic |
 | [[Ancillary Supplements and Topicals]] | Ancillaries & Support; Dermatology & Topicals |
 | [[General Pharmacology]] | Anti-infectives; Immunology & Biologics; Analgesia & Anaesthesia; GI & Hepatic; Oncology & Cytotoxics |
+| [[Novel Psychoactive Substances]] | Novel Psychoactive Substances (curated addition, v3.2) |
 
-The first seven clusters come from the original vault; *General Pharmacology* was added in v3 so that every catalogued group has a home.
+The first seven clusters come from the original vault; *General Pharmacology* was added in v3 so that every catalogued group has a home; *Novel Psychoactive Substances* was added in v3.2 for ChEMBL/PubChem-resolved designer-drug candidates from the expansion backlog.
+
+See also the generated target layer: [[Targets MOC]].
 
 ```dataview
 TABLE WITHOUT ID cluster AS Cluster, length(rows) AS Notes

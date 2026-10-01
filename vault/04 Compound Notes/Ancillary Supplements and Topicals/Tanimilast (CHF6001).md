@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Phosphodiesterase 4 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3113974
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -56,6 +56,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3113974
+  pref-name: TRANIMILAST
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2093863
+    name: Phosphodiesterase 4
+    action: INHIBITOR
+  properties:
+    full-mwt: 687.54
+    mw-freebase: 687.54
+    alogp: 6.32
+    psa: 127.1
+    hba: 8
+    hbd: 1
+    rtb: 15
+    num-ro5-violations: 2
+    qed-weighted: 0.11
+    full-molformula: C30H30Cl2F2N2O8S
 ---
 
 # Tanimilast (CHF6001)
@@ -70,10 +96,27 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Tanimilast, CHF6001
+- **ChEMBL:** [CHEMBL3113974](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3113974/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhaled PDE4 inhibitor in development for COPD and asthma. Inhaled route is the class's answer to the nausea and weight loss that limit oral PDE4 drugs.
+
+## Mechanism
+
+Phosphodiesterase 4 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 687.54 | 6.32 | 127.1 | 1/8 | 2 | C30H30Cl2F2N2O8S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Phosphodiesterase 4 (CHEMBL2093863)|Phosphodiesterase 4]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -83,6 +126,12 @@ Inhaled PDE4 inhibitor in development for COPD and asthma. Inhaled route is the 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Apremilast]] (Phosphodiesterase 4), [[Cilomilast]] (Phosphodiesterase 4), [[Crisaborole (topical 2% ointment, Eucrisa)]] (Phosphodiesterase 4), [[Difamilast]] (Phosphodiesterase 4), [[Ensifentrine (Ohtuvayre)]] (Phosphodiesterase 4), [[Ibudilast]] (Phosphodiesterase 4), [[Oglemilast]] (Phosphodiesterase 4), [[Roflumilast]] (Phosphodiesterase 4), [[Roflumilast (topical)]] (Phosphodiesterase 4), [[Roflumilast Foam (Zoryve)]] (Phosphodiesterase 4), [[Rolipram]] (Phosphodiesterase 4), [[Tetomilast]] (Phosphodiesterase 4)
 
 ## Safety routing
 

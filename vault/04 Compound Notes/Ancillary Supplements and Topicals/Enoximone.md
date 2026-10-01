@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Phosphodiesterase 3 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL249856
+chembl-max-phase: 4
 half-life:
   value: 4.0
   value-max: 10.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Enoximone
@@ -68,6 +69,38 @@ pk-source:
   revision: 1369030482
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL249856
+  pref-name: ENOXIMONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01CE03
+  targets:
+  - id: CHEMBL2094125
+    name: Phosphodiesterase 3
+    action: INHIBITOR
+  properties:
+    full-mwt: 248.31
+    mw-freebase: 248.31
+    alogp: 1.96
+    psa: 65.72
+    hba: 3
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.64
+    full-molformula: C12H12N2O2S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Enoximone
@@ -81,10 +114,28 @@ pk-source:
 - **Compound ID:** `enoximone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL249856](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL249856/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 PDE3 inhibitor inodilator, used mainly in Europe. Same class effects as milrinone with an oral formulation history.
+
+## Mechanism
+
+Phosphodiesterase 3 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C01CE03:** CARDIOVASCULAR SYSTEM › CARDIAC STIMULANTS EXCL. CARDIAC GLYCOSIDES › Phosphodiesterase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 248.31 | 1.96 | 65.72 | 2/3 | 0 | C12H12N2O2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Phosphodiesterase 3 (CHEMBL2094125)|Phosphodiesterase 3]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -103,6 +154,15 @@ PDE3 inhibitor inodilator, used mainly in Europe. Same class effects as milrinon
 | Bioavailability | 50 % | 50% (oral) |
 | Metabolism | hepatic | Liver (oxidation) |
 | Excretion | mainly urinary | Renal (60 to 70%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ensifentrine (Ohtuvayre)]] (Phosphodiesterase 3)
+- **Same ATC subgroup:** [[Bucladesine (Dibutyryl-cAMP)]], [[Milrinone]]
 
 ## Safety routing
 

@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Bilastine
@@ -68,6 +69,39 @@ pk-source:
   revision: 1309927359
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1742423
+  pref-name: BILASTINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AX29
+  - S01GX13
+  targets:
+  - id: CHEMBL231
+    name: Histamine H1 receptor
+    action: INVERSE AGONIST
+  properties:
+    full-mwt: 463.62
+    mw-freebase: 463.62
+    alogp: 4.86
+    psa: 67.59
+    hba: 5
+    hbd: 1
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.44
+    full-molformula: C28H37N3O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Bilastine
@@ -81,7 +115,7 @@ pk-source:
 - **Compound ID:** `bilastine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1742423](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742423/) · max phase 4
+- **ChEMBL:** [CHEMBL1742423](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742423/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +124,20 @@ Histamine H1 receptor inverse agonist; approved/marketed compound catalogued by 
 ## Mechanism
 
 Histamine H1 receptor inverse agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC R06AX29:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Other antihistamines for systemic use
+- **ATC S01GX13:** SENSORY ORGANS › DECONGESTANTS AND ANTIALLERGICS › Other antiallergics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 463.62 | 4.86 | 67.59 | 1/5 | 0 | C28H37N3O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Histamine H1 receptor (CHEMBL231)|Histamine H1 receptor]] - inverse agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -108,6 +156,15 @@ Histamine H1 receptor inverse agonist _(ChEMBL curated mechanism, as quoted by t
 | Bioavailability | 61 % | 61% |
 | Metabolism | - | Not significantly metabolised |
 | Excretion | mainly urinary | 95% in urine and faeces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acrivastine]] (Histamine H1 receptor), [[Alcaftadine]] (Histamine H1 receptor), [[Astemizole]] (Histamine H1 receptor), [[Betahistine]] (Histamine H1 receptor), [[Chlorphenoxamine]] (Histamine H1 receptor), [[Cinnarizine]] (Histamine H1 receptor), [[Desloratadine]] (Histamine H1 receptor), [[Dibenzepin]] (Histamine H1 receptor), [[Dimenhydrinate]] (Histamine H1 receptor), [[Dimethindene]] (Histamine H1 receptor), [[Doxepin]] (Histamine H1 receptor), [[Doxepin, low dose (Silenor)]] (Histamine H1 receptor)
+- **Same ATC subgroup:** [[Acrivastine]], [[Alcaftadine]], [[Antazoline]], [[Astemizole]], [[Azatadine]], [[Azelastine]], [[Cetirizine]], [[Cyproheptadine]], [[Desloratadine]], [[Ebastine]], [[Emedastine]], [[Epinastine]]
 
 ## Safety routing
 

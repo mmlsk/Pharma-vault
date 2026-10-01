@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL55643
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL55643
+  pref-name: COPPER
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 63.55
+    mw-freebase: 63.55
+    full-molformula: Cu+2
 ---
 
 # Copper
@@ -67,10 +83,20 @@ tags:
 - **Compound ID:** `copper-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL55643](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL55643/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Trace mineral required by lysyl oxidase, the enzyme that cross-links collagen and elastin fibers into strong connective tissue; deficiency measurably weakens tendon and bone.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 63.55 | - | - | -/- | - | Cu+2 |
 
 ## Evidence boundaries
 

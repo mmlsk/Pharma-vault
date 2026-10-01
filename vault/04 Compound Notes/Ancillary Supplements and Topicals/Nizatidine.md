@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Nizatidine
@@ -68,6 +69,15 @@ pk-source:
   revision: 1366288761
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: e9957997-8b85-48a0-9bb3-b878cb223236
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e9957997-8b85-48a0-9bb3-b878cb223236
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Nizatidine
@@ -103,6 +113,11 @@ Blocks parietal-cell H2 receptors to reduce stimulated gastric acid secretion.
 | Bioavailability | 70 % | >70% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set e9957997…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e9957997-8b85-48a0-9bb3-b878cb223236), label version 20250102. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1, 2, 3.5, 11)
+> - protein-binding: consistent (label values: 35)
 
 ## Safety routing
 

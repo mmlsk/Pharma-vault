@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Potassium channel, inwardly rectifying, subfamily J, member 11 opener; Potassium channel, inwardly rectifying, subfamily J, member 8 opener
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL181
+chembl-max-phase: 4
 half-life:
   value: 24.0
   value-max: 36.0
@@ -49,7 +49,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -57,6 +57,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Diazoxide
@@ -64,6 +66,44 @@ pk-source:
   revision: 1367332229
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL181
+  pref-name: DIAZOXIDE
+  molecule-type: Small molecule
+  first-approval: 1973
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C02DA01
+  - V03AH01
+  targets:
+  - id: CHEMBL1886
+    name: ATP-sensitive inward rectifier potassium channel 11
+    action: OPENER
+  - id: CHEMBL4770
+    name: ATP-sensitive inward rectifier potassium channel 8
+    action: OPENER
+  properties:
+    full-mwt: 230.68
+    mw-freebase: 230.68
+    alogp: 1.68
+    psa: 58.53
+    hba: 3
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.74
+    full-molformula: C8H7ClN2O2S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: abe317a5-6c63-469c-89c8-9fedfe859c3d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=abe317a5-6c63-469c-89c8-9fedfe859c3d
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Diazoxide
@@ -77,10 +117,31 @@ pk-source:
 - **Compound ID:** `diazoxide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL181](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL181/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Potassium-channel opener that suppresses insulin release and treats selected hypoglycemia disorders; causes fluid retention.
+
+## Mechanism
+
+Potassium channel, inwardly rectifying, subfamily J, member 11 opener; Potassium channel, inwardly rectifying, subfamily J, member 8 opener _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1973
+- **ATC C02DA01:** CARDIOVASCULAR SYSTEM › ARTERIOLAR SMOOTH MUSCLE, AGENTS ACTING ON › Thiazide derivatives
+- **ATC V03AH01:** VARIOUS › ALL OTHER THERAPEUTIC PRODUCTS › Drugs for treatment of hypoglycemia
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 230.68 | 1.68 | 58.53 | 1/3 | 0 | C8H7ClN2O2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[ATP-sensitive inward rectifier potassium channel 11 (CHEMBL1886)|ATP-sensitive inward rectifier potassium channel 11]] - opener · SINGLE PROTEIN
+- [[ATP-sensitive inward rectifier potassium channel 8 (CHEMBL4770)|ATP-sensitive inward rectifier potassium channel 8]] - opener · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -98,6 +159,11 @@ Potassium-channel opener that suppresses insulin release and treats selected hyp
 | Protein binding | 90 % | >90% |
 | Metabolism | hepatic | Liver oxidation and sulfate conjugation |
 | Excretion | mainly urinary | Kidney |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set abe317a5…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=abe317a5-6c63-469c-89c8-9fedfe859c3d), label version 20260807. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 9.5, 24, 28, 36)
+> - protein-binding: no-label-value (label values: -)
 
 ## Safety routing
 

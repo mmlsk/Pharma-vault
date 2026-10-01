@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200430
+  pref-name: ESTRADIOL ACETATE
+  molecule-type: Small molecule
+  first-approval: 2003
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL206
+    name: Estrogen receptor
+    action: AGONIST
+  properties:
+    full-mwt: 314.43
+    mw-freebase: 314.43
+    alogp: 3.83
+    psa: 46.53
+    hba: 3
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.63
+    full-molformula: C20H26O3
 ---
 
 # Estradiol Acetate
@@ -67,7 +92,7 @@ tags:
 - **Compound ID:** `estradiol-acetate-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1200430](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200430/) · max phase 4
+- **ChEMBL:** [CHEMBL1200430](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200430/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +102,20 @@ Estrogen receptor alpha agonist; approved/marketed compound catalogued by ChEMBL
 
 Estrogen receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2003
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 314.43 | 3.83 | 46.53 | 1/3 | 0 | C20H26O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Estrogen receptor (CHEMBL206)|Estrogen receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +124,12 @@ Estrogen receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dienestrol]] (Estrogen receptor), [[Diethylstilbestrol]] (Estrogen receptor), [[Elacestrant]] (Estrogen receptor), [[Enclomiphene]] (Estrogen receptor), [[Estradiol]] (Estrogen receptor), [[Estradiol Cypionate]] (Estrogen receptor), [[Estradiol Valerate]] (Estrogen receptor), [[Estrone]] (Estrogen receptor), [[Ethinyl Estradiol]] (Estrogen receptor), [[Fulvestrant (Faslodex)]] (Estrogen receptor), [[Giredestrant]] (Estrogen receptor), [[Mestranol]] (Estrogen receptor)
 
 ## Safety routing
 

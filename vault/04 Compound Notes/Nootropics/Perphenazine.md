@@ -8,15 +8,15 @@ cluster: Nootropics
 group: neuropsych
 class: null
 subclass: null
-mechanism: null
+mechanism: Dopamine D2 receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL567
+chembl-max-phase: 4
 half-life:
   value: null
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Perphenazine
@@ -68,6 +69,31 @@ pk-source:
   revision: 1315044627
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL567
+  pref-name: PERPHENAZINE
+  molecule-type: Small molecule
+  first-approval: 1957
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N05AB03
+  targets:
+  - id: CHEMBL217
+    name: D(2) dopamine receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 403.98
+    mw-freebase: 403.98
+    alogp: 3.94
+    psa: 29.95
+    hba: 5
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.79
+    full-molformula: C21H26ClN3OS
 ---
 
 # Perphenazine
@@ -81,10 +107,30 @@ pk-source:
 - **Compound ID:** `perphenazine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL567](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL567/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Mid-potency phenothiazine that performed as well as the second-generation drugs in the CATIE effectiveness trial.
+
+## Mechanism
+
+Dopamine D2 receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1957
+- **Flags:** black-box warning
+- **ATC N05AB03:** NERVOUS SYSTEM › ANTIPSYCHOTICS › Phenothiazines with piperazine structure
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 403.98 | 3.94 | 29.95 | 1/5 | 0 | C21H26ClN3OS |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[D(2) dopamine receptor (CHEMBL217)|D(2) dopamine receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -101,6 +147,13 @@ Mid-potency phenothiazine that performed as well as the second-generation drugs 
 | Elimination t½ | - | 8–12 (up to 20) hours |
 | Bioavailability | 40 % | 40% |
 | Metabolism | hepatic | hepatic |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aripiprazole]] (D(2) dopamine receptor), [[Benperidol]] (D(2) dopamine receptor), [[Brexpiprazole]] (D(2) dopamine receptor), [[Cabergoline (Dostinex)]] (D(2) dopamine receptor), [[Clozapine]] (D(2) dopamine receptor), [[Domperidone]] (D(2) dopamine receptor), [[Iloperidone]] (D(2) dopamine receptor), [[Itopride]] (D(2) dopamine receptor), [[Lumateperone]] (D(2) dopamine receptor), [[Paliperidone]] (D(2) dopamine receptor), [[Pridopidine]] (D(2) dopamine receptor), [[Remoxipride]] (D(2) dopamine receptor)
+- **Same ATC subgroup:** [[Fluphenazine]], [[Trifluoperazine]]
 
 ## Safety routing
 

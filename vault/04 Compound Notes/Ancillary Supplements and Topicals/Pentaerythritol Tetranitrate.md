@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL466659
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,34 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL466659
+  pref-name: PENTAERYTHRITOL TETRANITRATE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01DA05
+  - C01DA55
+  targets:
+  - id: CHEMBL2111348
+    name: Soluble guanylate cyclase
+    action: ACTIVATOR
+  properties:
+    full-mwt: 316.14
+    mw-freebase: 316.14
+    alogp: -1.19
+    psa: 209.48
+    hba: 12
+    hbd: 0
+    rtb: 12
+    num-ro5-violations: 1
+    qed-weighted: 0.31
+    full-molformula: C5H8N4O12
 ---
 
 # Pentaerythritol Tetranitrate
@@ -67,6 +95,7 @@ tags:
 - **Compound ID:** `pentaerythritol-tetranitrate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL466659](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL466659/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +105,20 @@ Pentaerythritol Tetranitrate is a phase 3 compound catalogued by ChEMBL. Its cur
 
 soluble guanylate cyclase activator _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C01DA05:** CARDIOVASCULAR SYSTEM › VASODILATORS USED IN CARDIAC DISEASES › Organic nitrates
+- **ATC C01DA55:** CARDIOVASCULAR SYSTEM › VASODILATORS USED IN CARDIAC DISEASES › Organic nitrates
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 316.14 | -1.19 | 209.48 | 0/12 | 1 | C5H8N4O12 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Soluble guanylate cyclase (CHEMBL2111348)|Soluble guanylate cyclase]] - activator · PROTEIN COMPLEX GROUP
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +127,13 @@ soluble guanylate cyclase activator _(ChEMBL curated mechanism, as quoted by the
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ataciguat (HMR1766)]] (Soluble guanylate cyclase), [[Cinaciguat]] (Soluble guanylate cyclase), [[Isosorbide Dinitrate]] (Soluble guanylate cyclase), [[Isosorbide Mononitrate]] (Soluble guanylate cyclase), [[Nitric Oxide]] (Soluble guanylate cyclase), [[Nitroglycerin]] (Soluble guanylate cyclase), [[Olinciguat]] (Soluble guanylate cyclase), [[Praliciguat]] (Soluble guanylate cyclase), [[Riociguat]] (Soluble guanylate cyclase), [[Runcaciguat]] (Soluble guanylate cyclase), [[Vericiguat (Verquvo)]] (Soluble guanylate cyclase)
+- **Same ATC subgroup:** [[Isosorbide Dinitrate]], [[Isosorbide Mononitrate]], [[Nitroglycerin]]
 
 ## Safety routing
 

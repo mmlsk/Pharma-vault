@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1254990
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1254990
+  pref-name: NORUCHOLIC ACID
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 378.55
+    mw-freebase: 378.55
+    alogp: 4.09
+    psa: 77.76
+    hba: 3
+    hbd: 3
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C23H38O4
 ---
 
 # Norursodeoxycholic Acid
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `norursodeoxycholic-acid-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL1254990](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1254990/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Investigational side-chain-shortened bile acid studied for cholestatic and metabolic liver disease.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 378.55 | 4.09 | 77.76 | 3/3 | 0 | C23H38O4 |
 
 ## Evidence boundaries
 

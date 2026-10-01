@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL16073
+  pref-name: PHENACETIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - N02BE03
+  - N02BE53
+  - N02BE73
+  targets: []
+  properties:
+    full-mwt: 179.22
+    mw-freebase: 179.22
+    alogp: 2.04
+    psa: 38.33
+    hba: 2
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.77
+    full-molformula: C10H13NO2
 ---
 
 # Phenacetin
@@ -67,7 +92,7 @@ tags:
 - **Compound ID:** `phenacetin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL16073](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL16073/) · max phase 4
+- **ChEMBL:** [CHEMBL16073](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL16073/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +102,18 @@ Unknown; approved/marketed compound catalogued by ChEMBL (CHEMBL16073).
 
 Unknown _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC N02BE03:** NERVOUS SYSTEM › OTHER ANALGESICS AND ANTIPYRETICS › Anilides
+- **ATC N02BE53:** NERVOUS SYSTEM › OTHER ANALGESICS AND ANTIPYRETICS › Anilides
+- **ATC N02BE73:** NERVOUS SYSTEM › OTHER ANALGESICS AND ANTIPYRETICS › Anilides
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 179.22 | 2.04 | 38.33 | 1/2 | 0 | C10H13NO2 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +122,12 @@ Unknown _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Acetaminophen]]
 
 ## Safety routing
 

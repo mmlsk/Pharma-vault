@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Neuraminidase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL222813
+chembl-max-phase: 4
 half-life:
   value: 2.5
   value-max: 5.1
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Zanamivir
@@ -68,6 +70,43 @@ pk-source:
   revision: 1363171383
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL222813
+  pref-name: ZANAMIVIR
+  molecule-type: Small molecule
+  first-approval: 1999
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AH01
+  targets:
+  - id: CHEMBL2051
+    name: Neuraminidase
+    action: INHIBITOR
+  - id: CHEMBL3377
+    name: Neuraminidase
+    action: INHIBITOR
+  properties:
+    full-mwt: 332.31
+    mw-freebase: 332.31
+    alogp: -3.58
+    psa: 198.22
+    hba: 7
+    hbd: 8
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.18
+    full-molformula: C12H20N4O7
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: b4e68930-4e6d-4d27-b1f0-abf60d12e28d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b4e68930-4e6d-4d27-b1f0-abf60d12e28d
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: consistent
 ---
 
 # Zanamivir
@@ -81,10 +120,30 @@ pk-source:
 - **Compound ID:** `zanamivir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL222813](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL222813/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhaled neuraminidase inhibitor with negligible oral bioavailability, delivered straight to the airway epithelium instead.
+
+## Mechanism
+
+Neuraminidase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1999
+- **ATC J05AH01:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Neuraminidase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 332.31 | -3.58 | 198.22 | 8/7 | 1 | C12H20N4O7 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Neuraminidase (CHEMBL2051)|Neuraminidase]] - inhibitor · SINGLE PROTEIN
+- [[Neuraminidase (CHEMBL3377)|Neuraminidase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +162,17 @@ Inhaled neuraminidase inhibitor with negligible oral bioavailability, delivered 
 | Bioavailability | 2 % | 2% (oral) |
 | Metabolism | - | Negligible |
 | Excretion | mainly urinary | Kidney |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set b4e68930…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b4e68930-4e6d-4d27-b1f0-abf60d12e28d), label version 20260723. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: consistent (label values: 10)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Oseltamivir]]
 
 ## Safety routing
 

@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL262747
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,25 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL262747
+  pref-name: ACYLINE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1855
+    name: Gonadotropin-releasing hormone receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 1533.24
+    mw-freebase: 1533.24
+    full-molformula: C80H102ClN15O14
 ---
 
 # Acyline
@@ -67,6 +86,7 @@ tags:
 - **Compound ID:** `acyline-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL262747](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL262747/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +96,18 @@ Acyline is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is gon
 
 gonadotropin-releasing hormone receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1533.24 | - | - | -/- | - | C80H102ClN15O14 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Gonadotropin-releasing hormone receptor (CHEMBL1855)|Gonadotropin-releasing hormone receptor]] - antagonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +116,12 @@ gonadotropin-releasing hormone receptor antagonist _(ChEMBL curated mechanism, a
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abarelix]] (Gonadotropin-releasing hormone receptor), [[Buserelin]] (Gonadotropin-releasing hormone receptor), [[Elagolix]] (Gonadotropin-releasing hormone receptor), [[Ganirelix (Fyremadel-Orgalutran)|Ganirelix (Fyremadel/Orgalutran)]] (Gonadotropin-releasing hormone receptor), [[Linzagolix]] (Gonadotropin-releasing hormone receptor), [[Opigolix]] (Gonadotropin-releasing hormone receptor), [[Ozarelix]] (Gonadotropin-releasing hormone receptor), [[Relugolix (Orgovyx)]] (Gonadotropin-releasing hormone receptor), [[Zoptarelin Doxorubicin]] (Gonadotropin-releasing hormone receptor)
 
 ## Safety routing
 

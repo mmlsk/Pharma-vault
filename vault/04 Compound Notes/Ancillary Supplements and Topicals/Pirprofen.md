@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL188952
+  pref-name: PIRPROFEN
+  molecule-type: Small molecule
+  first-approval: 1987
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - M01AE08
+  targets:
+  - id: CHEMBL2094253
+    name: Cyclooxygenase
+    action: INHIBITOR
+  properties:
+    full-mwt: 251.71
+    mw-freebase: 251.71
+    alogp: 2.9
+    psa: 40.54
+    hba: 2
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.84
+    full-molformula: C13H14ClNO2
 ---
 
 # Pirprofen
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `pirprofen-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL188952](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL188952/) · max phase 4
+- **ChEMBL:** [CHEMBL188952](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL188952/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +103,21 @@ Cyclooxygenase inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMB
 
 Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1987
+- **Flags:** withdrawn
+- **ATC M01AE08:** MUSCULO-SKELETAL SYSTEM › ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS, NON-STEROIDS › Propionic acid derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 251.71 | 2.9 | 40.54 | 1/2 | 0 | C13H14ClNO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cyclooxygenase (CHEMBL2094253)|Cyclooxygenase]] - inhibitor · PROTEIN FAMILY
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +126,13 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acemetacin]] (Cyclooxygenase), [[Acetaminophen]] (Cyclooxygenase), [[Aloxiprin]] (Cyclooxygenase), [[Aspirin]] (Cyclooxygenase), [[Benzydamine]] (Cyclooxygenase), [[Bismuth Subsalicylate]] (Cyclooxygenase), [[Clometacin]] (Cyclooxygenase), [[Dexibuprofen]] (Cyclooxygenase), [[Dexketoprofen]] (Cyclooxygenase), [[Diclofenac]] (Cyclooxygenase), [[Diflunisal]] (Cyclooxygenase), [[Esflurbiprofen]] (Cyclooxygenase)
+- **Same ATC subgroup:** [[Dexibuprofen]], [[Dexketoprofen]], [[Fenoprofen]], [[Flurbiprofen]], [[Ibuprofen]], [[Indoprofen]], [[Ketoprofen]], [[Loxoprofen]], [[Naproxcinod]], [[Naproxen]], [[Oxaprozin]], [[Suprofen]]
 
 ## Safety routing
 

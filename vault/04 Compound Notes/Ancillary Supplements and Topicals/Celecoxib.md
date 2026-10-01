@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Celecoxib
@@ -69,6 +71,41 @@ pk-source:
   revision: 1366925464
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL118
+  pref-name: CELECOXIB
+  molecule-type: Small molecule
+  first-approval: 1998
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L01XX33
+  - M01AH01
+  targets:
+  - id: CHEMBL230
+    name: Prostaglandin G/H synthase 2
+    action: INHIBITOR
+  properties:
+    full-mwt: 381.38
+    mw-freebase: 381.38
+    alogp: 3.51
+    psa: 77.98
+    hba: 4
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.75
+    full-molformula: C17H14F3N3O2S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 3a1eadd5-c0a7-473e-bde0-6b9450d11c95
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3a1eadd5-c0a7-473e-bde0-6b9450d11c95
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Celecoxib
@@ -82,7 +119,7 @@ pk-source:
 - **Compound ID:** `celecoxib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL118](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL118/) · max phase 4
+- **ChEMBL:** [CHEMBL118](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL118/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -91,6 +128,22 @@ Cyclooxygenase-2 inhibitor; approved/marketed compound catalogued by ChEMBL (CHE
 ## Mechanism
 
 Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1998
+- **Flags:** black-box warning
+- **ATC L01XX33:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › OTHER ANTINEOPLASTIC AGENTS › Other antineoplastic agents
+- **ATC M01AH01:** MUSCULO-SKELETAL SYSTEM › ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS, NON-STEROIDS › Coxibs
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 381.38 | 3.51 | 77.98 | 1/4 | 0 | C17H14F3N3O2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prostaglandin G-H synthase 2 (CHEMBL230)|Prostaglandin G/H synthase 2]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -110,6 +163,19 @@ Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 | Metabolism | hepatic | Liver (mainly CYP2C9) |
 | CYP (metabolised by) | CYP2C9 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | Faeces (57%), urine (27%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 3a1eadd5…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3a1eadd5-c0a7-473e-bde0-6b9450d11c95), label version 20260902. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1, 2, 11)
+> - protein-binding: consistent (label values: 97)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aceclofenac]] (Prostaglandin G/H synthase 2), [[Carprofen]] (Prostaglandin G/H synthase 2), [[Cimicoxib]] (Prostaglandin G/H synthase 2), [[Etodolac]] (Prostaglandin G/H synthase 2), [[Etoricoxib]] (Prostaglandin G/H synthase 2), [[Gw-406381]] (Prostaglandin G/H synthase 2), [[Iguratimod]] (Prostaglandin G/H synthase 2), [[Lumiracoxib]] (Prostaglandin G/H synthase 2), [[Meloxicam]] (Prostaglandin G/H synthase 2), [[Nabumetone]] (Prostaglandin G/H synthase 2), [[Parecoxib]] (Prostaglandin G/H synthase 2), [[Rofecoxib]] (Prostaglandin G/H synthase 2)
+- **Same ATC subgroup:** [[Anagrelide]], [[Etoricoxib]], [[Hydroxyurea (hydroxycarbamide)]], [[Lumiracoxib]], [[Masoprocol]], [[Mitotane]], [[Navitoclax (ABT-263)]], [[Parecoxib]], [[Rofecoxib]], [[Tazemetostat]], [[Valdecoxib]], [[Venetoclax]]
+- **Shared CYP substrate pool:** CYP2C9 (+40 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

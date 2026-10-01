@@ -9,3 +9,4 @@ data/processed/substances.xlsx
 __pycache__/
 .pytest_cache/
 .venv/
+data/processed/pharma-vault.db

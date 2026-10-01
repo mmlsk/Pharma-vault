@@ -8,15 +8,15 @@ cluster: Nootropics
 group: nootropic
 class: null
 subclass: null
-mechanism: null
+mechanism: Monoamine oxidase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201168
+chembl-max-phase: 4
 half-life:
   value: 1.5
   value-max: 4.0
@@ -61,6 +61,7 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Isocarboxazid
@@ -68,6 +69,39 @@ pk-source:
   revision: 1360629569
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201168
+  pref-name: ISOCARBOXAZID
+  molecule-type: Small molecule
+  first-approval: 1959
+  black-box-warning: true
+  withdrawn: true
+  atc-codes:
+  - N06AF01
+  targets:
+  - id: CHEMBL2095205
+    name: Monoamine oxidase
+    action: INHIBITOR
+  properties:
+    full-mwt: 231.25
+    mw-freebase: 231.25
+    alogp: 1.42
+    psa: 67.16
+    hba: 4
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.78
+    full-molformula: C12H13N3O2
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 95fde749-44ad-4668-86c4-0ff17bca0074
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=95fde749-44ad-4668-86c4-0ff17bca0074
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Isocarboxazid
@@ -81,10 +115,30 @@ pk-source:
 - **Compound ID:** `isocarboxazid-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1201168](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201168/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits monoamine oxidase to raise synaptic monoamines; selectivity and reversibility determine tyramine and serotonin-syndrome risk; irreversible non-selective, requires tyramine restriction.
+
+## Mechanism
+
+Monoamine oxidase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1959
+- **Flags:** black-box warning, withdrawn
+- **ATC N06AF01:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Monoamine oxidase inhibitors, non-selective
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 231.25 | 1.42 | 67.16 | 2/4 | 0 | C12H13N3O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Monoamine oxidase (CHEMBL2095205)|Monoamine oxidase]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -103,6 +157,16 @@ Inhibits monoamine oxidase to raise synaptic monoamines; selectivity and reversi
 | Metabolism | hepatic | Liver (Carboxylesterase) |
 | Metabolites | - | Hippuric acid |
 | Excretion | mainly urinary | Urine |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 95fde749…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=95fde749-44ad-4668-86c4-0ff17bca0074), label version 20260421. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Phenelzine]]
 
 ## Safety routing
 

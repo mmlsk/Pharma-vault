@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL423
+chembl-max-phase: 4
 half-life:
   value: 14.0
   value-max: 22.0
@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,8 @@ tags:
 - group/derm
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Betaxolol
@@ -67,6 +69,38 @@ pk-source:
   revision: 1358901661
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL423
+  pref-name: BETAXOLOL
+  molecule-type: Small molecule
+  first-approval: 1985
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C07AB05
+  - S01ED02
+  - S01ED52
+  targets: []
+  properties:
+    full-mwt: 307.43
+    mw-freebase: 307.43
+    alogp: 2.39
+    psa: 50.72
+    hba: 4
+    hbd: 2
+    rtb: 11
+    num-ro5-violations: 0
+    qed-weighted: 0.62
+    full-molformula: C18H29NO3
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: bf716efe-0a9f-43b1-9d8a-c69330b82e18
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=bf716efe-0a9f-43b1-9d8a-c69330b82e18
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Betaxolol
@@ -80,10 +114,23 @@ pk-source:
 - **Compound ID:** `betaxolol-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL423](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL423/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Cardioselective beta-1 blocker used as an eye drop, chosen over timolol where airway disease makes beta-2 blockade unsafe.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1985
+- **ATC C07AB05:** CARDIOVASCULAR SYSTEM › BETA BLOCKING AGENTS › Beta blocking agents, selective
+- **ATC S01ED02:** SENSORY ORGANS › ANTIGLAUCOMA PREPARATIONS AND MIOTICS › Beta blocking agents
+- **ATC S01ED52:** SENSORY ORGANS › ANTIGLAUCOMA PREPARATIONS AND MIOTICS › Beta blocking agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 307.43 | 2.39 | 50.72 | 2/4 | 0 | C18H29NO3 |
 
 ## Evidence boundaries
 
@@ -101,6 +148,16 @@ Cardioselective beta-1 blocker used as an eye drop, chosen over timolol where ai
 | Bioavailability | 89 % | 89% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney (20%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set bf716efe…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=bf716efe-0a9f-43b1-9d8a-c69330b82e18), label version 20231220. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 14, 22, 30)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Atenolol (Tenormin)]], [[Bisoprolol]], [[Celiprolol]], [[Esmolol]], [[Levobunolol]], [[Metipranolol]], [[Metoprolol]], [[Nebivolol]], [[Timolol]]
 
 ## Safety routing
 

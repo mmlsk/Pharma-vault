@@ -1,0 +1,18 @@
+{
+ "eligible_pk_records": 1079,
+ "checked": 1079,
+ "status": {
+  "consistent": 441,
+  "discrepant": 54,
+  "no-label": 512,
+  "no-label-value": 72
+ },
+ "per_field": {
+  "half-life:consistent": 416,
+  "half-life:discrepant": 47,
+  "half-life:no-label-value": 91,
+  "protein-binding:consistent": 286,
+  "protein-binding:discrepant": 7,
+  "protein-binding:no-label-value": 104
+ }
+}

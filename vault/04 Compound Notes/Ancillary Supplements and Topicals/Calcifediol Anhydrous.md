@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1040
+  pref-name: CALCIFEDIOL ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 1980
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 400.65
+    mw-freebase: 400.65
+    alogp: 6.73
+    psa: 40.46
+    hba: 2
+    hbd: 2
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.52
+    full-molformula: C27H44O2
 ---
 
 # Calcifediol Anhydrous
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `calcifediol-anhydrous-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1040](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1040/) · max phase 4
+- **ChEMBL:** [CHEMBL1040](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1040/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,15 @@ Vitamin D receptor agonist; approved/marketed compound catalogued by ChEMBL (CHE
 ## Mechanism
 
 Vitamin D receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1980
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 400.65 | 6.73 | 40.46 | 2/2 | 1 | C27H44O2 |
 
 ## Evidence boundaries
 

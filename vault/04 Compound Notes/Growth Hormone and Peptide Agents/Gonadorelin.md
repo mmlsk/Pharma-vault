@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1007
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: 40.0
@@ -57,6 +57,7 @@ tags:
 - group/peptides
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Gonadorelin
@@ -64,6 +65,29 @@ pk-source:
   revision: 1329009440
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1007
+  pref-name: GONADORELIN
+  molecule-type: Protein
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01CA01
+  - V04CM01
+  targets: []
+  properties:
+    full-mwt: 1182.31
+    mw-freebase: 1182.31
+    full-molformula: C55H75N17O13
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Gonadorelin
@@ -77,10 +101,22 @@ pk-source:
 - **Compound ID:** `gonadorelin-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL1007](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1007/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Synthetic GnRH itself; pulsatile delivery stimulates the axis, continuous delivery shuts it down.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1982
+- **ATC H01CA01:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › HYPOTHALAMIC HORMONES › Gonadotropin-releasing hormones
+- **ATC V04CM01:** VARIOUS › OTHER DIAGNOSTIC AGENTS › Tests for fertility disturbances
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1182.31 | - | - | -/- | - | C55H75N17O13 |
 
 ## Evidence boundaries
 
@@ -96,6 +132,14 @@ Synthetic GnRH itself; pulsatile delivery stimulates the axis, continuous delive
 |---|---|---|
 | Elimination t½ | 10–40 min | 10–40 minutes |
 | Metabolism | - | Hydrolysis |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Nafarelin]]
 
 ## Safety routing
 

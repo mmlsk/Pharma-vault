@@ -9,15 +9,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Releases active oxygen
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1200370
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1200370
+  pref-name: BENZOYL PEROXIDE
+  molecule-type: Small molecule
+  first-approval: 1984
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D10AE01
+  - D10AE51
+  targets: []
+  properties:
+    full-mwt: 242.23
+    mw-freebase: 242.23
+    alogp: 2.62
+    psa: 52.6
+    hba: 4
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.6
+    full-molformula: C14H10O4
 ---
 
 # Benzoyl Peroxide (topical)
@@ -69,10 +93,26 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Benzoyl Peroxide
+- **ChEMBL:** [CHEMBL1200370](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200370/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oxidising topical antimicrobial for acne that generates free radicals in the follicle and selects no resistance.
+
+## Mechanism
+
+Releases active oxygen _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1984
+- **ATC D10AE01:** DERMATOLOGICALS › ANTI-ACNE PREPARATIONS FOR TOPICAL USE › Peroxides
+- **ATC D10AE51:** DERMATOLOGICALS › ANTI-ACNE PREPARATIONS FOR TOPICAL USE › Peroxides
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 242.23 | 2.62 | 52.6 | 0/4 | 0 | C14H10O4 |
 
 ## Evidence boundaries
 

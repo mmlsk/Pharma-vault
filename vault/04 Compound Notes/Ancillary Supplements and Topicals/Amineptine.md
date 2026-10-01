@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Dopamine D1 and D2 receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL418995
+chembl-max-phase: 4
 half-life:
   value: 0.8
   value-max: 1.0
@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Amineptine
@@ -63,6 +64,38 @@ pk-source:
   revision: 1355513493
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL418995
+  pref-name: AMINEPTINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - N06AA19
+  targets:
+  - id: CHEMBL2111341
+    name: Dopamine D1 and D2 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 337.46
+    mw-freebase: 337.46
+    alogp: 4.5
+    psa: 49.33
+    hba: 2
+    hbd: 2
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.7
+    full-molformula: C22H27NO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Amineptine
@@ -76,10 +109,29 @@ pk-source:
 - **Compound ID:** `amineptine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL418995](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL418995/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits norepinephrine reuptake, often alongside serotonin effects; blood pressure and discontinuation effects require attention.
+
+## Mechanism
+
+Dopamine D1 and D2 receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC N06AA19:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Non-selective monoamine reuptake inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 337.46 | 4.5 | 49.33 | 2/2 | 0 | C22H27NO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Dopamine D1 and D2 receptor (CHEMBL2111341)|Dopamine D1 and D2 receptor]] - antagonist · SELECTIVITY GROUP
 
 ## Evidence boundaries
 
@@ -96,6 +148,15 @@ Inhibits norepinephrine reuptake, often alongside serotonin effects; blood press
 | Elimination t½ | 0.8–1 h | Amineptine: 0.8–1.0 hours; Metabolite: 1.5–2.5 hours |
 | Metabolism | hepatic | Hepatic |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Minaprine]] (Dopamine D1 and D2 receptor)
+- **Same ATC subgroup:** [[Amitriptyline]], [[Amoxapine]], [[Clomipramine]], [[Desipramine]], [[Dibenzepin]], [[Dothiepin]], [[Doxepin]], [[Doxepin, low dose (Silenor)]], [[Imipramine]], [[Maprotiline]], [[Nortriptyline]], [[Protriptyline]]
 
 ## Safety routing
 

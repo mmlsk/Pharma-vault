@@ -18,8 +18,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL659
+chembl-max-phase: 4
 half-life:
   value: 7.0
   value-max: null
@@ -57,7 +57,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -65,6 +65,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Galantamine
@@ -72,6 +74,37 @@ pk-source:
   revision: 1354799288
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL659
+  pref-name: GALANTAMINE
+  molecule-type: Small molecule
+  first-approval: 2001
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N06DA04
+  targets: []
+  properties:
+    full-mwt: 287.36
+    mw-freebase: 287.36
+    alogp: 1.85
+    psa: 41.93
+    hba: 4
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C17H21NO3
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 261889d3-41c8-4655-98f7-41317778e7a1
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=261889d3-41c8-4655-98f7-41317778e7a1
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Galantamine (Reminyl / Razadyne)
@@ -86,10 +119,21 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Galantamine, Reminyl, Razadyne
+- **ChEMBL:** [CHEMBL659](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL659/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Alkaloid cholinesterase inhibitor that is also a positive allosteric modulator of nicotinic acetylcholine receptors.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2001
+- **ATC N06DA04:** NERVOUS SYSTEM › ANTI-DEMENTIA DRUGS › Anticholinesterases
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 287.36 | 1.85 | 41.93 | 1/4 | 0 | C17H21NO3 |
 
 ## Evidence boundaries
 
@@ -109,6 +153,18 @@ Alkaloid cholinesterase inhibitor that is also a positive allosteric modulator o
 | Metabolism | hepatic | Liver partially CYP450:CYP2D6/3A4 substrate |
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary · fe 0.32 | Kidney (95%, of which 32% unchanged), fecal (5%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 261889d3…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=261889d3-41c8-4655-98f7-41317778e7a1), label version 20260702. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 7)
+> - protein-binding: consistent (label values: 18)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Donepezil (Aricept)]], [[Rivastigmine (Exelon)]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

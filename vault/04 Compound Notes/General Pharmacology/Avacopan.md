@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: C5a anaphylatoxin chemotactic receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3989871
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3989871
+  pref-name: AVACOPAN
+  molecule-type: Small molecule
+  first-approval: 2021
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AJ05
+  targets:
+  - id: CHEMBL2373
+    name: C5a anaphylatoxin chemotactic receptor 1
+    action: ANTAGONIST
+  properties:
+    full-mwt: 581.65
+    mw-freebase: 581.65
+    alogp: 8.05
+    psa: 61.44
+    hba: 3
+    hbd: 2
+    rtb: 6
+    num-ro5-violations: 2
+    qed-weighted: 0.29
+    full-molformula: C33H35F4N3O2
 ---
 
 # Avacopan
@@ -67,10 +93,29 @@ tags:
 - **Compound ID:** `avacopan-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL3989871](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989871/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral C5a receptor antagonist that allows glucocorticoid sparing in ANCA-associated vasculitis, a rare example of replacing steroids rather than adding to them.
+
+## Mechanism
+
+C5a anaphylatoxin chemotactic receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2021
+- **ATC L04AJ05:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Complement inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 581.65 | 8.05 | 61.44 | 2/3 | 2 | C33H35F4N3O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[C5a anaphylatoxin chemotactic receptor 1 (CHEMBL2373)|C5a anaphylatoxin chemotactic receptor 1]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +125,12 @@ Oral C5a receptor antagonist that allows glucocorticoid sparing in ANCA-associat
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Crovalimab]], [[Danicopan]], [[Eculizumab]], [[Iptacopan]], [[Pegcetacoplan]], [[Ravulizumab]], [[Sutimlimab]], [[Zilucoplan]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL52606
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL52606
+  pref-name: COLFORSIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 410.51
+    mw-freebase: 410.51
+    alogp: 1.52
+    psa: 113.29
+    hba: 7
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.47
+    full-molformula: C22H34O7
 ---
 
 # Forskolin
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `forskolin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL52606](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL52606/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Coleus-derived diterpene that directly activates adenylyl cyclase in laboratory systems; supplement-level fat-loss evidence is small and inconsistent.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 410.51 | 1.52 | 113.29 | 3/7 | 0 | C22H34O7 |
 
 ## Evidence boundaries
 

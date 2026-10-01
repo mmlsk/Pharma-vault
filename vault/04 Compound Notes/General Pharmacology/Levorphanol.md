@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL592
+chembl-max-phase: 4
 half-life:
   value: 11.0
   value-max: 16.0
@@ -61,6 +61,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Levorphanol
@@ -68,6 +69,34 @@ pk-source:
   revision: 1367552325
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL592
+  pref-name: LEVORPHANOL
+  molecule-type: Small molecule
+  first-approval: 1991
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 257.38
+    mw-freebase: 257.38
+    alogp: 3.08
+    psa: 23.47
+    hba: 2
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.77
+    full-molformula: C17H23NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Levorphanol
@@ -81,10 +110,21 @@ pk-source:
 - **Compound ID:** `levorphanol-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL592](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL592/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Long-acting morphinan opioid with NMDA antagonism and monoamine reuptake inhibition, sometimes described as an oral methadone alternative.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1991
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 257.38 | 3.08 | 23.47 | 1/2 | 0 | C17H23NO |
 
 ## Evidence boundaries
 
@@ -102,6 +142,8 @@ Long-acting morphinan opioid with NMDA antagonism and monoamine reuptake inhibit
 | Protein binding | 40 % | 40% |
 | Bioavailability | 70 % | 70% (oral); 100% (IV) |
 | Metabolism | hepatic | Hepatic |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

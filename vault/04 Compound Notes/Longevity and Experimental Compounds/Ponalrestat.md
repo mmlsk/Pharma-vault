@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL7679
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL7679
+  pref-name: PONALRESTAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 391.2
+    mw-freebase: 391.2
+    alogp: 2.97
+    psa: 72.19
+    hba: 4
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.74
+    full-molformula: C17H12BrFN2O3
 ---
 
 # Ponalrestat
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `ponalrestat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL7679](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL7679/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits aldose reductase to limit polyol-pathway flux and the osmotic and oxidative stress it imposes during hyperglycaemia; development discontinued.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 391.2 | 2.97 | 72.19 | 1/4 | 0 | C17H12BrFN2O3 |
 
 ## Evidence boundaries
 

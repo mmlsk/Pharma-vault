@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Hypoxia-inducible factor prolyl hydroxylase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2338329
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,33 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2338329
+  pref-name: ROXADUSTAT
+  molecule-type: Small molecule
+  first-approval: 2021
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B03XA05
+  targets:
+  - id: CHEMBL3831261
+    name: Hypoxia-inducible factor prolyl hydroxylase
+    action: INHIBITOR
+  properties:
+    full-mwt: 352.35
+    mw-freebase: 352.35
+    alogp: 2.86
+    psa: 108.75
+    hba: 5
+    hbd: 3
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.65
+    full-molformula: C19H16N2O5
 ---
 
 # Roxadustat
@@ -67,10 +94,29 @@ tags:
 - **Compound ID:** `roxadustat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2338329](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2338329/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 HIF prolyl hydroxylase inhibitor raising endogenous erythropoietin for renal anaemia.
+
+## Mechanism
+
+Hypoxia-inducible factor prolyl hydroxylase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2021
+- **ATC B03XA05:** BLOOD AND BLOOD FORMING ORGANS › OTHER ANTIANEMIC PREPARATIONS › Other antianemic preparations
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 352.35 | 2.86 | 108.75 | 3/5 | 0 | C19H16N2O5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Hypoxia-inducible factor prolyl hydroxylase (CHEMBL3831261)|Hypoxia-inducible factor prolyl hydroxylase]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -80,6 +126,13 @@ HIF prolyl hydroxylase inhibitor raising endogenous erythropoietin for renal ana
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Daprodustat]] (Hypoxia-inducible factor prolyl hydroxylase)
+- **Same ATC subgroup:** [[Daprodustat]], [[Darbepoetin Alfa]], [[Epoetin Beta]], [[Luspatercept]], [[Methoxy Polyethylene Glycol-Epoetin Beta]], [[Molidustat]], [[Peginesatide]], [[Vadadustat]]
 
 ## Safety routing
 

@@ -55,6 +55,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Physostigmine
@@ -62,6 +63,29 @@ pk-source:
   revision: 1368633509
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL94
+  pref-name: PHYSOSTIGMINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - S01EB05
+  - V03AB19
+  targets: []
+  properties:
+    full-mwt: 275.35
+    mw-freebase: 275.35
+    alogp: 1.77
+    psa: 44.81
+    hba: 4
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.85
+    full-molformula: C15H21N3O2
 ---
 
 # Physostigmine
@@ -75,7 +99,7 @@ pk-source:
 - **Compound ID:** `physostigmine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL94](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL94/) · max phase 4
+- **ChEMBL:** [CHEMBL94](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL94/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -84,6 +108,16 @@ Acetylcholinesterase inhibitor; approved/marketed compound catalogued by ChEMBL 
 ## Mechanism
 
 Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC S01EB05:** SENSORY ORGANS › ANTIGLAUCOMA PREPARATIONS AND MIOTICS › Parasympathomimetics
+- **ATC V03AB19:** VARIOUS › ALL OTHER THERAPEUTIC PRODUCTS › Antidotes
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 275.35 | 1.77 | 44.81 | 1/4 | 0 | C15H21N3O2 |
 
 ## Evidence boundaries
 
@@ -98,6 +132,12 @@ Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the sour
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Metabolism | - | Major metabolite: Eseroline |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Andexanet Alfa]], [[Demecarium]], [[Echothiophate]], [[Flumazenil]], [[Fomepizole]], [[Glutathione]], [[Idarucizumab]], [[Isoflurophate]], [[Methylene Blue]], [[NAC (N-Acetylcysteine)]], [[Naloxone]], [[Neostigmine]]
 
 ## Safety routing
 

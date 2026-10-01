@@ -10,15 +10,15 @@ cluster: Androgens SARMs and PCT
 group: steroids
 class: null
 subclass: null
-mechanism: null
+mechanism: Androgen Receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201048
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: null
@@ -64,6 +64,9 @@ tags:
 - group/steroids
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Drostanolone propionate
@@ -71,6 +74,37 @@ pk-source:
   revision: 1375487495
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1201048
+  pref-name: DROMOSTANOLONE PROPIONATE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1871
+    name: Androgen receptor
+    action: AGONIST
+  properties:
+    full-mwt: 360.54
+    mw-freebase: 360.54
+    alogp: 5.17
+    psa: 43.37
+    hba: 3
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 1
+    qed-weighted: 0.64
+    full-molformula: C23H36O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Masteron (Drostanolone)
@@ -85,10 +119,29 @@ pk-source:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Masteron, Drostanolone
+- **ChEMBL:** [CHEMBL1201048](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201048/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 DHT-derived steroid with anti-estrogenic properties, used mainly for a harder, drier physique.
+
+## Mechanism
+
+Androgen Receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **Flags:** prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 360.54 | 5.17 | 43.37 | 0/3 | 1 | C23H36O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Androgen receptor (CHEMBL1871)|Androgen receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -107,6 +160,15 @@ DHT-derived steroid with anti-estrogenic properties, used mainly for a harder, d
 | Bioavailability | 0–2 % | Oral: 0–2%; Intramuscular: 100% |
 | Metabolism | hepatic | Hepatic |
 | Excretion | mainly urinary | Urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Dromostanolone Propionate]]
+- **Shared target:** [[Anadrol (Oxymetholone)]] (Androgen receptor), [[Anavar (Oxandrolone)]] (Androgen receptor), [[Apalutamide (Erleada)]] (Androgen receptor), [[Apc-100]] (Androgen receptor), [[Bicalutamide (Casodex)]] (Androgen receptor), [[CB-03-01 (Clascoterone research formulation)]] (Androgen receptor), [[Clascoterone (Winlevi)]] (Androgen receptor), [[Cyproterone Acetate]] (Androgen receptor), [[Danazol]] (Androgen receptor), [[Darolutamide (Nubeqa)]] (Androgen receptor), [[Dianabol (Methandienone)]] (Androgen receptor), [[Dromostanolone Propionate]] (Androgen receptor)
 
 ## Safety routing
 

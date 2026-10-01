@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Clemastine
@@ -67,6 +68,37 @@ pk-source:
   revision: 1352982170
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1626
+  pref-name: CLEMASTINE
+  molecule-type: Small molecule
+  first-approval: 1977
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D04AA14
+  - R06AA04
+  - R06AA54
+  targets: []
+  properties:
+    full-mwt: 343.9
+    mw-freebase: 343.9
+    alogp: 5.1
+    psa: 12.47
+    hba: 2
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.72
+    full-molformula: C21H26ClNO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Clemastine
@@ -80,7 +112,7 @@ pk-source:
 - **Compound ID:** `clemastine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1626](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1626/) · max phase 4
+- **ChEMBL:** [CHEMBL1626](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1626/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +121,18 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1977
+- **ATC D04AA14:** DERMATOLOGICALS › ANTIPRURITICS, INCL. ANTIHISTAMINES, ANESTHETICS, ETC. › Antihistamines for topical use
+- **ATC R06AA04:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Aminoalkyl ethers
+- **ATC R06AA54:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Aminoalkyl ethers
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 343.9 | 5.1 | 12.47 | 0/2 | 1 | C21H26ClNO |
 
 ## Evidence boundaries
 
@@ -106,6 +150,14 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Bioavailability | 39.2 % | 39.2% |
 | Metabolism | hepatic | Hepatic |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Bromodiphenhydramine]], [[Carbinoxamine]], [[Chlorphenoxamine]], [[Dimenhydrinate]], [[Dimethindene]], [[Diphenhydramine (Benadryl)]], [[Diphenylpyraline]], [[Doxylamine]], [[Pheniramine]], [[Promethazine]], [[Pyrilamine]], [[Thenalidine]]
 
 ## Safety routing
 

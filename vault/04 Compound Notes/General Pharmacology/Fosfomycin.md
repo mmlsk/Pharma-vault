@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1757
+chembl-max-phase: 4
 half-life:
   value: 5.7
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Fosfomycin
@@ -68,6 +69,36 @@ pk-source:
   revision: 1358847915
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1757
+  pref-name: FOSFOMYCIN
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J01XX01
+  - S02AA17
+  targets: []
+  properties:
+    full-mwt: 138.06
+    mw-freebase: 138.06
+    alogp: -0.09
+    psa: 70.06
+    hba: 2
+    hbd: 2
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.39
+    full-molformula: C3H7O4P
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Fosfomycin
@@ -81,10 +112,22 @@ pk-source:
 - **Compound ID:** `fosfomycin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1757](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1757/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Single-dose oral agent for uncomplicated cystitis, and intravenously a partner drug for resistant gram-negative infection.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **ATC J01XX01:** ANTIINFECTIVES FOR SYSTEMIC USE › OTHER ANTIBACTERIALS › Other antibacterials
+- **ATC S02AA17:** SENSORY ORGANS › ANTIINFECTIVES › Antiinfectives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 138.06 | -0.09 | 70.06 | 2/2 | 0 | C3H7O4P |
 
 ## Evidence boundaries
 
@@ -103,6 +146,14 @@ Single-dose oral agent for uncomplicated cystitis, and intravenously a partner d
 | Bioavailability | 30–37 % | 30–37% (by mouth, fosfomycin tromethamine); varies with food intake |
 | Metabolism | - | Nil |
 | Excretion | mainly urinary | Kidney, unchanged |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Bacitracin]], [[Chloramphenicol]], [[Ciprofloxacin]], [[Gepotidacin]], [[Lefamulin]], [[Linezolid]], [[Ofloxacin]], [[Polymyxin B]], [[Tedizolid]], [[Tetracycline]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201290
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1201290
+  pref-name: POTASSIUM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 39.1
+    mw-freebase: 39.1
+    full-molformula: K
 ---
 
 # Potassium
@@ -67,10 +83,19 @@ tags:
 - **Compound ID:** `potassium-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201290](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201290/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Dietary mineral with a modest, well-replicated blood pressure effect -- and a genuine ceiling above which more does nothing.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 39.1 | - | - | -/- | - | K |
 
 ## Evidence boundaries
 

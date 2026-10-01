@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Phosphate sequestering agent
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2096647
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,26 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2096647
+  pref-name: LANTHANUM CARBONATE
+  molecule-type: Small molecule
+  first-approval: 2004
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - V03AE03
+  targets:
+  - id: CHEMBL2364184
+    name: Phosphate
+    action: SEQUESTERING AGENT
+  properties:
+    full-mwt: 457.84
+    mw-freebase: 457.84
+    full-molformula: C3La2O9
 ---
 
 # Lanthanum Carbonate
@@ -67,10 +87,29 @@ tags:
 - **Compound ID:** `lanthanum-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2096647](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2096647/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Phosphate binder using a rare earth metal, effective at low pill burden and minimally absorbed.
+
+## Mechanism
+
+Phosphate sequestering agent _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2004
+- **ATC V03AE03:** VARIOUS › ALL OTHER THERAPEUTIC PRODUCTS › Drugs for treatment of hyperkalemia and hyperphosphatemia
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 457.84 | - | - | -/- | - | C3La2O9 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Phosphate (CHEMBL2364184)|Phosphate]] - sequestering agent · SMALL MOLECULE
 
 ## Evidence boundaries
 
@@ -80,6 +119,12 @@ Phosphate binder using a rare earth metal, effective at low pill burden and mini
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Sevelamer]] (Phosphate)
 
 ## Safety routing
 

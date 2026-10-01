@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Methoxyflurane
@@ -62,6 +63,34 @@ pk-source:
   revision: 1368756976
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1341
+  pref-name: METHOXYFLURANE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - N02BG09
+  targets:
+  - id: CHEMBL2363052
+    name: Glycine receptor (alpha-1/beta)
+    action: AGONIST
+  - id: CHEMBL2093872
+    name: GABA-A receptor; anion channel
+    action: POSITIVE MODULATOR
+  properties:
+    full-mwt: 164.97
+    mw-freebase: 164.97
+    alogp: 2.03
+    psa: 9.23
+    hba: 1
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.57
+    full-molformula: C3H4Cl2F2O
 ---
 
 # Methoxyflurane
@@ -75,7 +104,7 @@ pk-source:
 - **Compound ID:** `methoxyflurane-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1341](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1341/) · max phase 4
+- **ChEMBL:** [CHEMBL1341](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1341/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -84,6 +113,21 @@ GABA-A receptor; anion channel positive modulator; approved/marketed compound ca
 ## Mechanism
 
 GABA-A receptor; anion channel positive modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC N02BG09:** NERVOUS SYSTEM › OTHER ANALGESICS AND ANTIPYRETICS › Other analgesics and antipyretics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 164.97 | 2.03 | 9.23 | 0/1 | 0 | C3H4Cl2F2O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glycine receptor (alpha-1-beta) (CHEMBL2363052)|Glycine receptor (alpha-1/beta)]] - agonist · PROTEIN COMPLEX
+- [[GABA-A receptor; anion channel (CHEMBL2093872)|GABA-A receptor; anion channel]] - positive modulator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -98,6 +142,13 @@ GABA-A receptor; anion channel positive modulator _(ChEMBL curated mechanism, as
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Metabolism | - | 70% |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Desflurane]] (GABA-A receptor; anion channel; Glycine receptor (alpha-1/beta)), [[Enflurane]] (GABA-A receptor; anion channel; Glycine receptor (alpha-1/beta)), [[Halothane]] (GABA-A receptor; anion channel; Glycine receptor (alpha-1/beta)), [[Isoflurane]] (GABA-A receptor; anion channel; Glycine receptor (alpha-1/beta)), [[Sevoflurane]] (GABA-A receptor; anion channel; Glycine receptor (alpha-1/beta)), [[Abp-700]] (GABA-A receptor; anion channel), [[Adipiplon]] (GABA-A receptor; anion channel), [[Alprazolam]] (GABA-A receptor; anion channel), [[Brexanolone]] (GABA-A receptor; anion channel), [[Butalbital]] (GABA-A receptor; anion channel), [[Cenobamate]] (GABA-A receptor; anion channel), [[Chlordiazepoxide]] (GABA-A receptor; anion channel)
+- **Same ATC subgroup:** [[Glafenine]]
 
 ## Safety routing
 

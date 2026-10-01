@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL27193
+  pref-name: DILEVALOL
+  molecule-type: Small molecule
+  first-approval: 1990
+  black-box-warning: false
+  withdrawn: true
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 328.41
+    mw-freebase: 328.41
+    alogp: 2.14
+    psa: 95.58
+    hba: 4
+    hbd: 4
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.6
+    full-molformula: C19H24N2O3
 ---
 
 # Dilevalol
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `dilevalol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL27193](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL27193/) · max phase 4
+- **ChEMBL:** [CHEMBL27193](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL27193/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,16 @@ Beta-2 adrenergic receptor agonist; approved/marketed compound catalogued by ChE
 ## Mechanism
 
 Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1990
+- **Flags:** withdrawn
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 328.41 | 2.14 | 95.58 | 4/4 | 0 | C19H24N2O3 |
 
 ## Evidence boundaries
 

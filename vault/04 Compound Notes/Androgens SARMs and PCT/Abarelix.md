@@ -56,6 +56,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Abarelix
@@ -63,6 +64,31 @@ pk-source:
   revision: 1362095780
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1252
+  pref-name: ABARELIX
+  molecule-type: Protein
+  first-approval: 2003
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L02BX01
+  targets:
+  - id: CHEMBL1855
+    name: Gonadotropin-releasing hormone receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 1416.09
+    mw-freebase: 1416.09
+    full-molformula: C72H95ClN14O14
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Abarelix
@@ -76,7 +102,7 @@ pk-source:
 - **Compound ID:** `abarelix-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1252](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1252/) · max phase 4
+- **ChEMBL:** [CHEMBL1252](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1252/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +111,21 @@ Gonadotropin-releasing hormone receptor antagonist; approved/marketed compound c
 ## Mechanism
 
 Gonadotropin-releasing hormone receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2003
+- **Flags:** black-box warning
+- **ATC L02BX01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › HORMONE ANTAGONISTS AND RELATED AGENTS › Other hormone antagonists and related agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1416.09 | - | - | -/- | - | C72H95ClN14O14 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Gonadotropin-releasing hormone receptor (CHEMBL1855)|Gonadotropin-releasing hormone receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -99,6 +140,15 @@ Gonadotropin-releasing hormone receptor antagonist _(ChEMBL curated mechanism, a
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Protein binding | 96–99 % | 96–99% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acyline]] (Gonadotropin-releasing hormone receptor), [[Buserelin]] (Gonadotropin-releasing hormone receptor), [[Elagolix]] (Gonadotropin-releasing hormone receptor), [[Ganirelix (Fyremadel-Orgalutran)|Ganirelix (Fyremadel/Orgalutran)]] (Gonadotropin-releasing hormone receptor), [[Linzagolix]] (Gonadotropin-releasing hormone receptor), [[Opigolix]] (Gonadotropin-releasing hormone receptor), [[Ozarelix]] (Gonadotropin-releasing hormone receptor), [[Relugolix (Orgovyx)]] (Gonadotropin-releasing hormone receptor), [[Zoptarelin Doxorubicin]] (Gonadotropin-releasing hormone receptor)
+- **Same ATC subgroup:** [[Relugolix (Orgovyx)]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1689063
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -60,6 +60,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Avibactam
@@ -67,6 +68,34 @@ pk-source:
   revision: 1363446635
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1689063
+  pref-name: AVIBACTAM
+  molecule-type: Small molecule
+  first-approval: 2015
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 265.25
+    mw-freebase: 265.25
+    alogp: -1.53
+    psa: 130.24
+    hba: 5
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.6
+    full-molformula: C7H11N3O6S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Avibactam
@@ -80,10 +109,20 @@ pk-source:
 - **Compound ID:** `avibactam-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1689063](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1689063/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Non-beta-lactam diazabicyclooctane inhibitor with a reversible covalent mechanism, extending ceftazidime to KPC and OXA-48 producers.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2015
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 265.25 | -1.53 | 130.24 | 2/5 | 0 | C7H11N3O6S |
 
 ## Evidence boundaries
 
@@ -101,6 +140,8 @@ Non-beta-lactam diazabicyclooctane inhibitor with a reversible covalent mechanis
 | Bioavailability | 100 % | 100% (intravenous) |
 | Metabolism | - | Nil |
 | Excretion | mainly urinary | Kidney (97%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

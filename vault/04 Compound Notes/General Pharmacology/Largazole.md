@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1173445
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1173445
+  pref-name: LARGAZOLE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 622.88
+    mw-freebase: 622.88
+    alogp: 5.03
+    psa: 126.82
+    hba: 10
+    hbd: 2
+    rtb: 11
+    num-ro5-violations: 2
+    qed-weighted: 0.2
+    full-molformula: C29H42N4O5S3
 ---
 
 # Largazole
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `largazole-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1173445](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1173445/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Largazole is a named HDAC research compound with a curated biochemical result against HDAC3. ChEMBL records IC50 9.09 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 622.88 | 5.03 | 126.82 | 2/10 | 2 | C29H42N4O5S3 |
 
 ## Evidence boundaries
 

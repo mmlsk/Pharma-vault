@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL83063
+  pref-name: RITODRINE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G02CA01
+  targets: []
+  properties:
+    full-mwt: 287.36
+    mw-freebase: 287.36
+    alogp: 2.35
+    psa: 72.72
+    hba: 4
+    hbd: 4
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.66
+    full-molformula: C17H21NO3
 ---
 
 # Ritodrine
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `ritodrine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL83063](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL83063/) · max phase 4
+- **ChEMBL:** [CHEMBL83063](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL83063/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +100,16 @@ Beta-2 adrenergic receptor agonist; approved/marketed compound catalogued by ChE
 
 Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC G02CA01:** GENITO URINARY SYSTEM AND SEX HORMONES › OTHER GYNECOLOGICALS › Sympathomimetics, labour repressants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 287.36 | 2.35 | 72.72 | 4/4 | 0 | C17H21NO3 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +118,12 @@ Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Fenoterol]]
 
 ## Safety routing
 

@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4298002
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4298002
+  pref-name: ICHORCUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL204
+    name: Prothrombin
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Ichorcumab
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `ichorcumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4298002](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298002/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +93,14 @@ Ichorcumab is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is 
 
 thrombin inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prothrombin (CHEMBL204)|Prothrombin]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +109,12 @@ thrombin inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Antithrombin Alfa]] (Prothrombin), [[Argatroban]] (Prothrombin), [[Dabigatran (Pradaxa)]] (Prothrombin), [[Desirudin]] (Prothrombin), [[Lepirudin]] (Prothrombin), [[Ximelagatran]] (Prothrombin)
 
 ## Safety routing
 

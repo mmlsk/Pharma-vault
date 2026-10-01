@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Thymidylate synthase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1463
+chembl-max-phase: 4
 half-life:
   value: 2.4
   value-max: 4.8
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Flucytosine
@@ -68,6 +70,44 @@ pk-source:
   revision: 1364374893
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1463
+  pref-name: FLUCYTOSINE
+  molecule-type: Small molecule
+  first-approval: 1971
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - D01AE21
+  - J02AX01
+  targets:
+  - id: CHEMBL4665
+    name: Thymidylate synthase
+    action: INHIBITOR
+  - id: CHEMBL2364680
+    name: Thymidylate synthase
+    action: INHIBITOR
+  properties:
+    full-mwt: 129.09
+    mw-freebase: 129.09
+    alogp: -0.51
+    psa: 71.77
+    hba: 3
+    hbd: 2
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.5
+    full-molformula: C4H4FN3O
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: bfc817db-ab65-5cd7-e053-2995a90a8ee8
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=bfc817db-ab65-5cd7-e053-2995a90a8ee8
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Flucytosine
@@ -81,10 +121,32 @@ pk-source:
 - **Compound ID:** `flucytosine-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1463](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1463/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Pyrimidine analogue used only in combination, because resistance develops rapidly when it is given alone. The partner in cryptococcal meningitis induction therapy.
+
+## Mechanism
+
+Thymidylate synthase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1971
+- **Flags:** black-box warning
+- **ATC D01AE21:** DERMATOLOGICALS › ANTIFUNGALS FOR TOPICAL USE › Other antifungals for topical use
+- **ATC J02AX01:** ANTIINFECTIVES FOR SYSTEMIC USE › ANTIMYCOTICS FOR SYSTEMIC USE › Other antimycotics for systemic use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 129.09 | -0.51 | 71.77 | 2/3 | 0 | C4H4FN3O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Thymidylate synthase (CHEMBL4665)|Thymidylate synthase]] - inhibitor · SINGLE PROTEIN
+- [[Thymidylate synthase (CHEMBL2364680)|Thymidylate synthase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +165,17 @@ Pyrimidine analogue used only in combination, because resistance develops rapidl
 | Bioavailability | 75–90 % | 75 to 90% (by mouth) |
 | Metabolism | - | minimal, in the GI tract |
 | Excretion | mainly urinary | kidney (90%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set bfc817db…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=bfc817db-ab65-5cd7-e053-2995a90a8ee8), label version 20260108. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2.4, 4.8, 7.4, 29.9, 85, 250)
+> - protein-binding: consistent (label values: 2.9, 4)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amorolfine]], [[Butenafine]], [[Naftifine]], [[Salicylic Acid]], [[Tavaborole]], [[Terbinafine (oral, Lamisil)]], [[Undecylenic Acid]]
 
 ## Safety routing
 

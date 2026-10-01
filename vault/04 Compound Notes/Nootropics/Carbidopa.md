@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201236
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: null
@@ -58,6 +58,7 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Carbidopa
@@ -65,6 +66,36 @@ pk-source:
   revision: 1373023885
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201236
+  pref-name: CARBIDOPA ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 1975
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 226.23
+    mw-freebase: 226.23
+    alogp: -0.05
+    psa: 115.81
+    hba: 5
+    hbd: 5
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.28
+    full-molformula: C10H14N2O4
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 55b99f22-9eb2-4df6-9979-bc4c3af5e454
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=55b99f22-9eb2-4df6-9979-bc4c3af5e454
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Carbidopa
@@ -78,10 +109,20 @@ pk-source:
 - **Compound ID:** `carbidopa-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1201236](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201236/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 A peripheral AADC inhibitor that does not cross the blood-brain barrier. It has no therapeutic effect alone; it exists to stop levodopa being decarboxylated in the gut and bloodstream, roughly quadrupling the fraction reaching the brain.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1975
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 226.23 | -0.05 | 115.81 | 5/5 | 0 | C10H14N2O4 |
 
 ## Evidence boundaries
 
@@ -98,6 +139,11 @@ A peripheral AADC inhibitor that does not cross the blood-brain barrier. It has 
 | Elimination t½ | 2 h | 2 hours |
 | Protein binding | 76 % | 76% |
 | Metabolism | - | 7 metabolites known, not metabolized extensively |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 55b99f22…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=55b99f22-9eb2-4df6-9979-bc4c3af5e454), label version 20251217. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
 
 ## Safety routing
 

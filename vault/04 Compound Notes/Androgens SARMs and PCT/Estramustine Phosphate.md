@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1756
+  pref-name: ESTRAMUSTINE PHOSPHATE
+  molecule-type: Small molecule
+  first-approval: 1981
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 520.39
+    mw-freebase: 520.39
+    alogp: 5.3
+    psa: 96.3
+    hba: 4
+    hbd: 2
+    rtb: 7
+    num-ro5-violations: 2
+    qed-weighted: 0.37
+    full-molformula: C23H32Cl2NO6P
 ---
 
 # Estramustine Phosphate
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `estramustine-phosphate-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1756](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1756/) · max phase 4
+- **ChEMBL:** [CHEMBL1756](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1756/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,16 @@ Estrogen receptor beta modulator; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Estrogen receptor beta modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1981
+- **Flags:** prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 520.39 | 5.3 | 96.3 | 2/4 | 2 | C23H32Cl2NO6P |
 
 ## Evidence boundaries
 

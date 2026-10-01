@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: analgesia
 class: null
 subclass: null
-mechanism: null
+mechanism: Sodium channel protein type IV alpha subunit blocker
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1098
+chembl-max-phase: 4
 half-life:
   value: 3.1
   value-max: null
@@ -61,6 +61,8 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Bupivacaine
@@ -68,6 +70,41 @@ pk-source:
   revision: 1366642920
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1098
+  pref-name: BUPIVACAINE
+  molecule-type: Small molecule
+  first-approval: 1972
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N01BB01
+  - N01BB51
+  targets:
+  - id: CHEMBL2072
+    name: Sodium channel protein type 4 subunit alpha
+    action: BLOCKER
+  properties:
+    full-mwt: 288.44
+    mw-freebase: 288.44
+    alogp: 3.9
+    psa: 32.34
+    hba: 2
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.89
+    full-molformula: C18H28N2O
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: bb5a9e59-0f51-11df-8a39-0800200c9a66
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=bb5a9e59-0f51-11df-8a39-0800200c9a66
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Bupivacaine
@@ -81,10 +118,31 @@ pk-source:
 - **Compound ID:** `bupivacaine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1098](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1098/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Long-acting amide local anaesthetic and the classic cardiotoxin of the class, which is why the levo-enantiomer was developed.
+
+## Mechanism
+
+Sodium channel protein type IV alpha subunit blocker _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1972
+- **Flags:** black-box warning
+- **ATC N01BB01:** NERVOUS SYSTEM › ANESTHETICS, LOCAL › Amides
+- **ATC N01BB51:** NERVOUS SYSTEM › ANESTHETICS, LOCAL › Amides
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 288.44 | 3.9 | 32.34 | 1/2 | 0 | C18H28N2O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Sodium channel protein type 4 subunit alpha (CHEMBL2072)|Sodium channel protein type 4 subunit alpha]] - blocker · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +161,18 @@ Long-acting amide local anaesthetic and the classic cardiotoxin of the class, wh
 | Bioavailability | - | N/A |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney, 4–10% |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set bb5a9e59…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=bb5a9e59-0f51-11df-8a39-0800200c9a66), label version 20251212. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 0, 40, 72, 96, 120, 168)
+> - protein-binding: consistent (label values: 95)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ranolazine (Ranexa)]] (Sodium channel protein type 4 subunit alpha)
+- **Same ATC subgroup:** [[Articaine]], [[Lidocaine]], [[Mepivacaine]], [[Prilocaine]], [[Ropivacaine]]
 
 ## Safety routing
 

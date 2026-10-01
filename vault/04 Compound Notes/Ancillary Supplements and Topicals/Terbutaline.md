@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Terbutaline
@@ -64,6 +65,37 @@ pk-source:
   revision: 1366688901
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1760
+  pref-name: TERBUTALINE
+  molecule-type: Small molecule
+  first-approval: 1974
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - R03AC03
+  - R03CC03
+  - R03CC53
+  targets: []
+  properties:
+    full-mwt: 225.29
+    mw-freebase: 225.29
+    alogp: 1.52
+    psa: 72.72
+    hba: 4
+    hbd: 4
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.63
+    full-molformula: C12H19NO3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Terbutaline
@@ -77,7 +109,7 @@ pk-source:
 - **Compound ID:** `terbutaline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1760](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1760/) · max phase 4
+- **ChEMBL:** [CHEMBL1760](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1760/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +118,19 @@ Beta-2 adrenergic receptor agonist; approved/marketed compound catalogued by ChE
 ## Mechanism
 
 Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1974
+- **Flags:** black-box warning
+- **ATC R03AC03:** RESPIRATORY SYSTEM › ADRENERGICS, INHALANTS › Selective beta-2-adrenoreceptor agonists
+- **ATC R03CC03:** RESPIRATORY SYSTEM › ADRENERGICS FOR SYSTEMIC USE › Selective beta-2-adrenoreceptor agonists
+- **ATC R03CC53:** RESPIRATORY SYSTEM › ADRENERGICS FOR SYSTEMIC USE › Selective beta-2-adrenoreceptor agonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 225.29 | 1.52 | 72.72 | 4/4 | 0 | C12H19NO3 |
 
 ## Evidence boundaries
 
@@ -103,6 +148,14 @@ Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the 
 | Protein binding | 25 % | 25% |
 | Metabolism | hepatic | GI tract (oral), liver; CYP450: unknown |
 | Excretion | mainly urinary · fe 0.6 | urine 90% (60% unchanged), bile/faeces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Albuterol]], [[Bambuterol]], [[Bitolterol]], [[Clenbuterol]], [[Fenoterol]], [[Formoterol]], [[Indacaterol]], [[Isoetharine]], [[Olodaterol]], [[Pirbuterol]], [[Procaterol]], [[Salbutamol (Albuterol)]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1485
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+- possible-duplicate
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1485
+  pref-name: ARGININE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 174.2
+    mw-freebase: 174.2
+    alogp: -1.34
+    psa: 125.22
+    hba: 3
+    hbd: 5
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.2
+    full-molformula: C6H14N4O2
 ---
 
 # L-Arginine
@@ -67,10 +91,19 @@ tags:
 - **Compound ID:** `arginine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1485](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1485/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Amino acid marketed as a post-workout growth hormone booster; a controlled trial found the opposite -- combined with resistance exercise, oral arginine actually blunted the natural exercise-induced GH pulse rather than enhancing it.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 174.2 | -1.34 | 125.22 | 5/3 | 0 | C6H14N4O2 |
 
 ## Evidence boundaries
 
@@ -80,6 +113,12 @@ Amino acid marketed as a post-workout growth hormone booster; a controlled trial
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[L-Arginine (l-arginine-compound)|L-Arginine]]
 
 ## Safety routing
 

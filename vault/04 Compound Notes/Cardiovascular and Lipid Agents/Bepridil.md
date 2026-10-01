@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1008
+chembl-max-phase: 4
 half-life:
   value: 42.0
   value-max: null
@@ -62,6 +62,7 @@ tags:
 - group/cardio
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Bepridil
@@ -69,6 +70,35 @@ pk-source:
   revision: 1330663760
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1008
+  pref-name: BEPRIDIL
+  molecule-type: Small molecule
+  first-approval: 1990
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C08EA02
+  targets: []
+  properties:
+    full-mwt: 366.55
+    mw-freebase: 366.55
+    alogp: 4.83
+    psa: 15.71
+    hba: 3
+    hbd: 0
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.6
+    full-molformula: C24H34N2O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Bepridil
@@ -82,10 +112,21 @@ pk-source:
 - **Compound ID:** `bepridil-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
+- **ChEMBL:** [CHEMBL1008](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1008/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Withdrawn calcium channel blocker with additional sodium and potassium channel activity, remembered for torsades de pointes.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1990
+- **ATC C08EA02:** CARDIOVASCULAR SYSTEM › NON-SELECTIVE CALCIUM CHANNEL BLOCKERS › Phenylalkylamine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 366.55 | 4.83 | 15.71 | 0/3 | 0 | C24H34N2O |
 
 ## Evidence boundaries
 
@@ -105,6 +146,14 @@ Withdrawn calcium channel blocker with additional sodium and potassium channel a
 | Metabolism | hepatic | Hepatic, CYP3A4-mediated |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

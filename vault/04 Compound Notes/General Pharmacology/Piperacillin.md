@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL702
+chembl-max-phase: 4
 half-life:
   value: 36.0
   value-max: 72.0
@@ -61,6 +61,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Piperacillin
@@ -68,6 +69,35 @@ pk-source:
   revision: 1289430734
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL702
+  pref-name: PIPERACILLIN
+  molecule-type: Small molecule
+  first-approval: 1981
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J01CA12
+  targets: []
+  properties:
+    full-mwt: 517.56
+    mw-freebase: 517.56
+    alogp: -0.24
+    psa: 156.43
+    hba: 7
+    hbd: 3
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.34
+    full-molformula: C23H27N5O7S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Piperacillin
@@ -81,10 +111,21 @@ pk-source:
 - **Compound ID:** `piperacillin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL702](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL702/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Ureidopenicillin with antipseudomonal activity, used almost exclusively combined with tazobactam. A mainstay of empirical therapy for hospital-acquired sepsis and neutropenic fever.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1981
+- **ATC J01CA12:** ANTIINFECTIVES FOR SYSTEMIC USE › BETA-LACTAM ANTIBACTERIALS, PENICILLINS › Penicillins with extended spectrum
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 517.56 | -0.24 | 156.43 | 3/7 | 1 | C23H27N5O7S |
 
 ## Evidence boundaries
 
@@ -103,6 +144,14 @@ Ureidopenicillin with antipseudomonal activity, used almost exclusively combined
 | Bioavailability | 0 % | 0% oral |
 | Metabolism | - | Largely not metabolized |
 | Excretion | mainly urinary · fe 0.8 | 20% in bile, 80% unchanged in urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amoxicillin]], [[Ampicillin]]
 
 ## Safety routing
 

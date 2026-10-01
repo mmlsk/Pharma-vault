@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Clomethiazole
@@ -63,6 +64,39 @@ pk-source:
   revision: 1353665186
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL315795
+  pref-name: CLOMETHIAZOLE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05CM02
+  - N05CX04
+  targets:
+  - id: CHEMBL2093872
+    name: GABA-A receptor; anion channel
+    action: POSITIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 161.66
+    mw-freebase: 161.66
+    alogp: 2.23
+    psa: 12.89
+    hba: 2
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.61
+    full-molformula: C6H8ClNS
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Clomethiazole
@@ -76,7 +110,7 @@ pk-source:
 - **Compound ID:** `clomethiazole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL315795](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL315795/) · max phase 4
+- **ChEMBL:** [CHEMBL315795](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL315795/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +119,20 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC N05CM02:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Other hypnotics and sedatives
+- **ATC N05CX04:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Hypnotics and sedatives in combination, excl. barbiturates
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 161.66 | 2.23 | 12.89 | 0/2 | 0 | C6H8ClNS |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-A receptor; anion channel (CHEMBL2093872)|GABA-A receptor; anion channel]] - positive allosteric modulator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -99,6 +147,15 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 3.6–5 h | 3.6–5 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abp-700]] (GABA-A receptor; anion channel), [[Adipiplon]] (GABA-A receptor; anion channel), [[Alprazolam]] (GABA-A receptor; anion channel), [[Brexanolone]] (GABA-A receptor; anion channel), [[Butalbital]] (GABA-A receptor; anion channel), [[Cenobamate]] (GABA-A receptor; anion channel), [[Chlordiazepoxide]] (GABA-A receptor; anion channel), [[Cipepofol]] (GABA-A receptor; anion channel), [[Clobazam]] (GABA-A receptor; anion channel), [[Clonazepam]] (GABA-A receptor; anion channel), [[Clotiazepam]] (GABA-A receptor; anion channel), [[Darigabat]] (GABA-A receptor; anion channel)
+- **Same ATC subgroup:** [[Dexmedetomidine]], [[Ethchlorvynol]], [[Hyoscine (Scopolamine)]], [[Meprobamate]], [[Methaqualone]], [[Propiomazine]], [[Triclofos]]
 
 ## Safety routing
 

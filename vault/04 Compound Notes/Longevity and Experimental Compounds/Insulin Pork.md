@@ -54,6 +54,21 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201539
+  pref-name: INSULIN PORK
+  molecule-type: Protein
+  first-approval: 1966
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1981
+    name: Insulin receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Insulin Pork
@@ -67,7 +82,7 @@ tags:
 - **Compound ID:** `insulin-pork-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1201539](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201539/) · max phase 4
+- **ChEMBL:** [CHEMBL1201539](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201539/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +92,15 @@ Insulin receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEMB
 
 Insulin receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1966
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Insulin receptor (CHEMBL1981)|Insulin receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +109,12 @@ Insulin receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Insulin Aspart]] (Insulin receptor), [[Insulin Aspart Protamine Recombinant]] (Insulin receptor), [[Insulin Degludec]] (Insulin receptor), [[Insulin Detemir]] (Insulin receptor), [[Insulin glargine (Lantus-Toujeo-Basaglar)|Insulin glargine (Lantus/Toujeo/Basaglar)]] (Insulin receptor), [[Insulin Glulisine]] (Insulin receptor), [[Insulin Human]] (Insulin receptor), [[Insulin Human Zinc]] (Insulin receptor), [[Insulin Human, Isophane]] (Insulin receptor), [[Insulin Icodec]] (Insulin receptor), [[Insulin Lispro]] (Insulin receptor), [[Insulin Lispro Protamine Recombinant]] (Insulin receptor)
 
 ## Safety routing
 

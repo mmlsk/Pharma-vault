@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL10372
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL10372
+  pref-name: ZOPOLRESTAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 419.38
+    mw-freebase: 419.38
+    alogp: 3.7
+    psa: 85.08
+    hba: 6
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C19H12F3N3O3S
 ---
 
 # Zopolrestat
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `zopolrestat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL10372](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL10372/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits aldose reductase to limit polyol-pathway flux and the osmotic and oxidative stress it imposes during hyperglycaemia; development discontinued.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 419.38 | 3.7 | 85.08 | 1/6 | 0 | C19H12F3N3O3S |
 
 ## Evidence boundaries
 

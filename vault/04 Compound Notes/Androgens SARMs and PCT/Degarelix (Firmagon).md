@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Degarelix
@@ -70,6 +71,15 @@ pk-source:
   revision: 1329009348
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: ab11dd8a-0fd9-4013-89ab-e114557c7e4b
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab11dd8a-0fd9-4013-89ab-e114557c7e4b
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Degarelix (Firmagon)
@@ -106,6 +116,11 @@ GnRH antagonist that drops testosterone in days without the testosterone surge a
 | Bioavailability | 30–40 % | 30–40% |
 | Metabolism | hepatic | Subject to common peptidic degradation during passage through the hepato-biliary system; not a substrate for the human CYP450 system |
 | Excretion | - | Feces: 70–80%; Urine: 20–30% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set ab11dd8a…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab11dd8a-0fd9-4013-89ab-e114557c7e4b), label version 20240130. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1272)
+> - protein-binding: consistent (label values: 90)
 
 ## Safety routing
 

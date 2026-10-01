@@ -15,13 +15,13 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1434
+chembl-max-phase: 4
 half-life:
   value: 15.5
   value-max: null
   unit: h
-  notes: 15.5h (11–26h)
+  notes: 15.5 h (11–26 h)
 protein-binding:
   value: 70.0
   value-max: 75.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Minocycline
@@ -68,6 +69,39 @@ pk-source:
   revision: 1363129899
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1434
+  pref-name: MINOCYCLINE
+  molecule-type: Small molecule
+  first-approval: 1971
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A01AB23
+  - D10AF07
+  - J01AA08
+  targets: []
+  properties:
+    full-mwt: 457.48
+    mw-freebase: 457.48
+    alogp: 0.19
+    psa: 164.63
+    hba: 9
+    hbd: 5
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.4
+    full-molformula: C23H27N3O7
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: cbffa96e-2446-43cf-ba5e-38c645302afd
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=cbffa96e-2446-43cf-ba5e-38c645302afd
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Minocycline
@@ -81,10 +115,23 @@ pk-source:
 - **Compound ID:** `minocycline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1434](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1434/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Tetracycline antibiotic used for inflammatory acne; vestibular effects, pigmentation, autoimmune reactions, and antimicrobial stewardship limit long-term casual use.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1971
+- **ATC A01AB23:** ALIMENTARY TRACT AND METABOLISM › STOMATOLOGICAL PREPARATIONS › Antiinfectives and antiseptics for local oral treatment
+- **ATC D10AF07:** DERMATOLOGICALS › ANTI-ACNE PREPARATIONS FOR TOPICAL USE › Antiinfectives for treatment of acne
+- **ATC J01AA08:** ANTIINFECTIVES FOR SYSTEMIC USE › TETRACYCLINES › Tetracyclines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 457.48 | 0.19 | 164.63 | 5/9 | 0 | C23H27N3O7 |
 
 ## Evidence boundaries
 
@@ -98,11 +145,22 @@ Tetracycline antibiotic used for inflammatory acne; vestibular effects, pigmenta
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 15.5 h | 15.5h (11–26h) |
+| Elimination t½ | 15.5 h | 15.5 h (11–26 h) |
 | Protein binding | 70–75 % | 70–75% |
 | Bioavailability | 90–100 % | 90–100% |
 | Metabolism | hepatic | Liver |
 | Excretion | - | Mostly fecal, 10–15% renal |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set cbffa96e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=cbffa96e-2446-43cf-ba5e-38c645302afd), label version 20240209. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amphotericin B]], [[Chloramphenicol]], [[Clindamycin]], [[Clindamycin (topical, 1% solution-gel)|Clindamycin (topical, 1% solution/gel)]], [[Eravacycline]], [[Erythromycin]], [[Metronidazole]], [[Omadacycline]], [[Sarecycline (oral, Seysara)]], [[Tetracycline]], [[Tigecycline]]
 
 ## Safety routing
 

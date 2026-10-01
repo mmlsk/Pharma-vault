@@ -54,6 +54,25 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL4298209
+  pref-name: BELANTAMAB MAFODOTIN
+  molecule-type: Antibody drug conjugate
+  first-approval: 2020
+  black-box-warning: true
+  withdrawn: true
+  atc-codes:
+  - L01FX15
+  targets:
+  - id: CHEMBL4523587
+    name: Tumor necrosis factor receptor superfamily member 17
+    action: BINDING AGENT
+  - id: CHEMBL2095182
+    name: Tubulin
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Belantamab Mafodotin
@@ -67,7 +86,7 @@ tags:
 - **Compound ID:** `belantamab-mafodotin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4298209](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298209/) · max phase 4
+- **ChEMBL:** [CHEMBL4298209](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298209/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +96,18 @@ Tumor necrosis factor receptor superfamily member 17 binding agent; approved/mar
 
 Tumor necrosis factor receptor superfamily member 17 binding agent _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Antibody drug conjugate
+- **First approval (ChEMBL):** 2020
+- **Flags:** black-box warning, withdrawn
+- **ATC L01FX15:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › MONOCLONAL ANTIBODIES AND ANTIBODY DRUG CONJUGATES › Other monoclonal antibodies and antibody drug conjugates
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor receptor superfamily member 17 (CHEMBL4523587)|Tumor necrosis factor receptor superfamily member 17]] - binding agent · SINGLE PROTEIN
+- [[Tubulin (CHEMBL2095182)|Tubulin]] - inhibitor · PROTEIN COMPLEX GROUP
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +116,13 @@ Tumor necrosis factor receptor superfamily member 17 binding agent _(ChEMBL cura
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Brentuximab Vedotin]] (Tubulin), [[Ciltacabtagene Autoleucel]] (Tumor necrosis factor receptor superfamily member 17), [[Colchicine]] (Tubulin), [[Davunetide]] (Tubulin), [[Elranatamab]] (Tumor necrosis factor receptor superfamily member 17), [[Idecabtagene Vicleucel]] (Tumor necrosis factor receptor superfamily member 17), [[Teclistamab]] (Tumor necrosis factor receptor superfamily member 17)
+- **Same ATC subgroup:** [[Blinatumomab]], [[Brentuximab Vedotin]], [[Elotuzumab]], [[Elranatamab]], [[Ipilimumab]], [[Teclistamab]], [[Tremelimumab]]
 
 ## Safety routing
 

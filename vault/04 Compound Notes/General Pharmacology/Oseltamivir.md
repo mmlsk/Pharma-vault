@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1229
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: 3.0
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Oseltamivir
@@ -68,6 +70,37 @@ pk-source:
   revision: 1368822991
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1229
+  pref-name: OSELTAMIVIR
+  molecule-type: Small molecule
+  first-approval: 1999
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AH02
+  targets: []
+  properties:
+    full-mwt: 312.41
+    mw-freebase: 312.41
+    alogp: 1.29
+    psa: 90.65
+    hba: 5
+    hbd: 2
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C16H28N2O4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: c61bb5af-558f-4b32-b34d-8fdae480443c
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c61bb5af-558f-4b32-b34d-8fdae480443c
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Oseltamivir
@@ -81,10 +114,22 @@ pk-source:
 - **Compound ID:** `oseltamivir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1229](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1229/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral neuraminidase inhibitor for influenza, effective only if started within roughly 48 hours because it caps ongoing replication rather than clearing infected cells.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1999
+- **Flags:** prodrug
+- **ATC J05AH02:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Neuraminidase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 312.41 | 1.29 | 90.65 | 2/5 | 0 | C16H28N2O4 |
 
 ## Evidence boundaries
 
@@ -103,6 +148,17 @@ Oral neuraminidase inhibitor for influenza, effective only if started within rou
 | Bioavailability | 80 % | >80% |
 | Metabolism | hepatic | Liver, to oseltamivir carboxylate |
 | Excretion | mainly urinary | Urine (>90% as oseltamivir carboxylate), faeces |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set c61bb5af…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c61bb5af-558f-4b32-b34d-8fdae480443c), label version 20260115. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1, 3, 6, 10)
+> - protein-binding: consistent (label values: 3, 42)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Zanamivir]]
 
 ## Safety routing
 

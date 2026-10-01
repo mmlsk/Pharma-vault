@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL742
+chembl-max-phase: 4
 half-life:
   value: 2.5
   value-max: 3.0
@@ -63,6 +63,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ketamine
@@ -70,6 +71,35 @@ pk-source:
   revision: 1376271887
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL742
+  pref-name: KETAMINE
+  molecule-type: Small molecule
+  first-approval: 1970
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N01AX03
+  targets: []
+  properties:
+    full-mwt: 237.73
+    mw-freebase: 237.73
+    alogp: 2.9
+    psa: 29.1
+    hba: 2
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.86
+    full-molformula: C13H16ClNO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ketamine
@@ -83,10 +113,21 @@ pk-source:
 - **Compound ID:** `ketamine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL742](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL742/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Dissociative anaesthetic that maintains airway reflexes and cardiovascular tone, now equally important as a rapid antidepressant and analgesic adjunct.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1970
+- **ATC N01AX03:** NERVOUS SYSTEM › ANESTHETICS, GENERAL › Other general anesthetics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 237.73 | 2.9 | 29.1 | 1/2 | 0 | C13H16ClNO |
 
 ## Evidence boundaries
 
@@ -107,6 +148,15 @@ Dissociative anaesthetic that maintains airway reflexes and cardiovascular tone,
 | CYP (metabolised by) | CYP2B6, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Norketamine; Dehydronorketamine; Hydroxynorketamine |
 | Excretion | mainly urinary | Urine: 91%; Feces: 3% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Esketamine (Spravato)]], [[Etomidate]], [[Nitrous Oxide]], [[Propanidid]], [[Propofol]]
+- **Shared CYP substrate pool:** CYP2B6 (+12 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Glutathione precursor; Mycolytic
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL600
+chembl-max-phase: 4
 half-life:
   value: 5.6
   value-max: null
@@ -63,6 +63,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Acetylcysteine
@@ -70,6 +71,39 @@ pk-source:
   revision: 1375254688
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL600
+  pref-name: ACETYLCYSTEINE
+  molecule-type: Small molecule
+  first-approval: 1963
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R05CB01
+  - S01XA08
+  - V03AB23
+  targets: []
+  properties:
+    full-mwt: 163.2
+    mw-freebase: 163.2
+    alogp: -0.49
+    psa: 66.4
+    hba: 3
+    hbd: 3
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.49
+    full-molformula: C5H9NO3S
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 5558a5f5-e821-473b-7d8a-5d33d09f0586
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5558a5f5-e821-473b-7d8a-5d33d09f0586
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # NAC (N-Acetylcysteine)
@@ -84,10 +118,27 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** NAC, N-Acetylcysteine
+- **ChEMBL:** [CHEMBL600](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL600/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Glutathione precursor and antioxidant, the clinical antidote for acetaminophen overdose; studied for broader hepatoprotection against drug-induced liver injury.
+
+## Mechanism
+
+Glutathione precursor; Mycolytic _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1963
+- **ATC R05CB01:** RESPIRATORY SYSTEM › EXPECTORANTS, EXCL. COMBINATIONS WITH COUGH SUPPRESSANTS › Mucolytics
+- **ATC S01XA08:** SENSORY ORGANS › OTHER OPHTHALMOLOGICALS › Other ophthalmologicals
+- **ATC V03AB23:** VARIOUS › ALL OTHER THERAPEUTIC PRODUCTS › Antidotes
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 163.2 | -0.49 | 66.4 | 3/3 | 0 | C5H9NO3S |
 
 ## Evidence boundaries
 
@@ -106,6 +157,17 @@ Glutathione precursor and antioxidant, the clinical antidote for acetaminophen o
 | Bioavailability | 6–10 % | 6–10% (Oral); nearly 100% (intravenous) |
 | Metabolism | hepatic | Liver |
 | Excretion | - | Kidney (30%), faecal (3%) |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 5558a5f5…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5558a5f5-e821-473b-7d8a-5d33d09f0586), label version 20260522. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alteplase]], [[Andexanet Alfa]], [[Avacincaptad Pegol]], [[Cyclosporine]], [[Flumazenil]], [[Fomepizole]], [[Glutathione]], [[Idarucizumab]], [[Methylene Blue]], [[Naloxone]], [[Pegcetacoplan]], [[Phentolamine]]
 
 ## Safety routing
 

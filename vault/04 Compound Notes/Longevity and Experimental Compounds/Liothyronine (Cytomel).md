@@ -10,15 +10,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Thyroid hormone receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1544
+chembl-max-phase: 4
 half-life:
   value: 2.5
   value-max: null
@@ -59,6 +59,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Liothyronine
@@ -66,6 +67,37 @@ pk-source:
   revision: 1356471391
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1544
+  pref-name: LIOTHYRONINE
+  molecule-type: Small molecule
+  first-approval: 1956
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2111462
+    name: Thyroid hormone receptor
+    action: AGONIST
+  properties:
+    full-mwt: 650.98
+    mw-freebase: 650.98
+    alogp: 3.95
+    psa: 92.78
+    hba: 4
+    hbd: 3
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.43
+    full-molformula: C15H12I3NO4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Liothyronine (Cytomel)
@@ -80,10 +112,29 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Liothyronine, Cytomel
+- **ChEMBL:** [CHEMBL1544](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1544/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Synthetic T3, the biologically active thyroid hormone; faster-acting than levothyroxine and sometimes misused for aggressive fat loss due to its direct metabolic effect.
+
+## Mechanism
+
+Thyroid hormone receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1956
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 650.98 | 3.95 | 92.78 | 3/4 | 1 | C15H12I3NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Thyroid hormone receptor (CHEMBL2111462)|Thyroid hormone receptor]] - agonist · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -99,6 +150,14 @@ Synthetic T3, the biologically active thyroid hormone; faster-acting than levoth
 |---|---|---|
 | Elimination t½ | 2.5 d | 2.5 days |
 | Protein binding | 99.7 % | 99.7% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dextrothyroxine]] (Thyroid hormone receptor), [[Tiratricol (TRIAC)]] (Thyroid hormone receptor)
 
 ## Safety routing
 

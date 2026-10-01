@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL76903
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL76903
+  pref-name: OLVANIL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 417.63
+    mw-freebase: 417.63
+    alogp: 7.05
+    psa: 58.56
+    hba: 3
+    hbd: 2
+    rtb: 18
+    num-ro5-violations: 1
+    qed-weighted: 0.2
+    full-molformula: C26H43NO3
 ---
 
 # Olvanil
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `olvanil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL76903](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL76903/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Activates TRPV1 on nociceptive afferents, where sustained exposure defunctionalises the nerve terminal and produces lasting analgesia; research compound.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 417.63 | 7.05 | 58.56 | 2/3 | 1 | C26H43NO3 |
 
 ## Evidence boundaries
 

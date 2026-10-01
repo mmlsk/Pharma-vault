@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Promethazine
@@ -68,6 +69,39 @@ pk-source:
   revision: 1375475864
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL643
+  pref-name: PROMETHAZINE
+  molecule-type: Small molecule
+  first-approval: 1951
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - D04AA10
+  - R06AD02
+  - R06AD52
+  targets: []
+  properties:
+    full-mwt: 284.43
+    mw-freebase: 284.43
+    alogp: 4.24
+    psa: 6.48
+    hba: 3
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.83
+    full-molformula: C17H20N2S
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 4f681538-7ac4-484c-9e6d-b571d73b9e0b
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4f681538-7ac4-484c-9e6d-b571d73b9e0b
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Promethazine
@@ -81,7 +115,7 @@ pk-source:
 - **Compound ID:** `promethazine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL643](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL643/) · max phase 4
+- **ChEMBL:** [CHEMBL643](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL643/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +124,19 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1951
+- **Flags:** black-box warning
+- **ATC D04AA10:** DERMATOLOGICALS › ANTIPRURITICS, INCL. ANTIHISTAMINES, ANESTHETICS, ETC. › Antihistamines for topical use
+- **ATC R06AD02:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Phenothiazine derivatives
+- **ATC R06AD52:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Phenothiazine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 284.43 | 4.24 | 6.48 | 0/3 | 0 | C17H20N2S |
 
 ## Evidence boundaries
 
@@ -109,6 +156,17 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Metabolism | hepatic | Liver glucuronidation and sulfoxidation |
 | Metabolites | - | Promethazine Sulphoxide, Desmethylpromethazine, Promethazine Hydroxy |
 | Excretion | - | Kidney and Bile duct |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 4f681538…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4f681538-7ac4-484c-9e6d-b571d73b9e0b), label version 20221008. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Chlorphenoxamine]], [[Clemastine]], [[Dimethindene]], [[Diphenhydramine (Benadryl)]], [[Mequitazine]], [[Methdilazine]], [[Methylpromazine]], [[Pheniramine]], [[Pyrilamine]], [[Thenalidine]], [[Tripelennamine]]
 
 ## Safety routing
 

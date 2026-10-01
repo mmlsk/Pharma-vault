@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2219418
+chembl-max-phase: 4
 half-life:
   value: 6.0
   value-max: 11.0
@@ -57,6 +57,8 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Naloxegol
@@ -64,6 +66,35 @@ pk-source:
   revision: 1322744851
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2219418
+  pref-name: NALOXEGOL
+  molecule-type: Small molecule
+  first-approval: 2014
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A06AH03
+  targets: []
+  properties:
+    full-mwt: 651.79
+    mw-freebase: 651.79
+    alogp: 1.86
+    psa: 126.77
+    hba: 12
+    hbd: 2
+    rtb: 24
+    num-ro5-violations: 2
+    qed-weighted: 0.13
+    full-molformula: C34H53NO11
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Naloxegol
@@ -77,10 +108,21 @@ pk-source:
 - **Compound ID:** `naloxegol-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL2219418](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2219418/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 PEGylated naloxone derivative for opioid-induced constipation, kept out of the brain by both its size and P-glycoprotein.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2014
+- **ATC A06AH03:** ALIMENTARY TRACT AND METABOLISM › DRUGS FOR CONSTIPATION › Peripheral opioid receptor antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 651.79 | 1.86 | 126.77 | 2/12 | 2 | C34H53NO11 |
 
 ## Evidence boundaries
 
@@ -98,6 +140,14 @@ PEGylated naloxone derivative for opioid-induced constipation, kept out of the b
 | Protein binding | 4.2 % | ~4.2% |
 | Metabolism | hepatic | Liver (CYP3A) |
 | Excretion | mainly non-renal | Feces (68%), urine (16%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Naloxone]]
 
 ## Safety routing
 

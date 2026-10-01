@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL185073
+chembl-max-phase: 4
 half-life:
   value: 1.5
   value-max: 2.7
@@ -61,6 +61,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Pancuronium bromide
@@ -68,6 +69,35 @@ pk-source:
   revision: 1374846632
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL185073
+  pref-name: PANCURONIUM
+  molecule-type: Small molecule
+  first-approval: 1972
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M03AC01
+  targets: []
+  properties:
+    full-mwt: 572.88
+    mw-freebase: 572.88
+    alogp: 6.11
+    psa: 52.6
+    hba: 4
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 2
+    qed-weighted: 0.3
+    full-molformula: C35H60N2O4+2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Pancuronium
@@ -81,10 +111,21 @@ pk-source:
 - **Compound ID:** `pancuronium-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL185073](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL185073/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Long-acting steroidal relaxant with vagolytic and sympathomimetic effects, now used mainly where cost matters most.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1972
+- **ATC M03AC01:** MUSCULO-SKELETAL SYSTEM › MUSCLE RELAXANTS, PERIPHERALLY ACTING AGENTS › Other quaternary ammonium compounds
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 572.88 | 6.11 | 52.6 | 0/4 | 2 | C35H60N2O4+2 |
 
 ## Evidence boundaries
 
@@ -103,6 +144,14 @@ Long-acting steroidal relaxant with vagolytic and sympathomimetic effects, now u
 | Bioavailability | - | N/A |
 | Metabolism | hepatic | Hepatic |
 | Excretion | - | Renal and biliary |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Atracurium]], [[Cisatracurium]], [[Hexafluorenium]], [[Vecuronium]]
 
 ## Safety routing
 

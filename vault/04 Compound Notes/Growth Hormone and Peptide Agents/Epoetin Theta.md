@@ -55,6 +55,21 @@ tags:
 - source-derived
 - group/peptides
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2108290
+  pref-name: EPOETIN THETA
+  molecule-type: Protein
+  first-approval: 2009
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1817
+    name: Erythropoietin receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Epoetin Theta
@@ -68,7 +83,7 @@ tags:
 - **Compound ID:** `epoetin-theta-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL2108290](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108290/) · max phase 4
+- **ChEMBL:** [CHEMBL2108290](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108290/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -78,6 +93,15 @@ Erythropoietin receptor agonist; approved/marketed compound catalogued by ChEMBL
 
 Erythropoietin receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2009
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Erythropoietin receptor (CHEMBL1817)|Erythropoietin receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -86,6 +110,12 @@ Erythropoietin receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Darbepoetin Alfa]] (Erythropoietin receptor), [[Epoetin Alfa]] (Erythropoietin receptor), [[Epoetin Beta]] (Erythropoietin receptor), [[Epoetin Delta]] (Erythropoietin receptor), [[Epoetin Zeta]] (Erythropoietin receptor), [[Methoxy Polyethylene Glycol-Epoetin Beta]] (Erythropoietin receptor), [[Peginesatide]] (Erythropoietin receptor)
 
 ## Safety routing
 

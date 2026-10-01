@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2104464
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,35 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2104464
+  pref-name: VEDAPROFEN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL5303565
+    name: Cyclooxygenase-1
+    action: INHIBITOR
+  - id: CHEMBL5303566
+    name: Prostaglandin G/H synthase 2
+    action: INHIBITOR
+  properties:
+    full-mwt: 282.38
+    mw-freebase: 282.38
+    alogp: 5.08
+    psa: 37.3
+    hba: 1
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 1
+    qed-weighted: 0.85
+    full-molformula: C19H22O2
 ---
 
 # Vedaprofen
@@ -67,6 +96,7 @@ tags:
 - **Compound ID:** `vedaprofen-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2104464](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2104464/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -75,6 +105,19 @@ Vedaprofen is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is 
 ## Mechanism
 
 cyclooxygenase-1 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 282.38 | 5.08 | 37.3 | 1/1 | 1 | C19H22O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cyclooxygenase-1 (CHEMBL5303565)|Cyclooxygenase-1]] - inhibitor · SINGLE PROTEIN
+- [[Prostaglandin G-H synthase 2 (CHEMBL5303566)|Prostaglandin G/H synthase 2]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

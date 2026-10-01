@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL425863
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -56,6 +56,7 @@ tags:
 - group/steroids
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Mibolerone
@@ -63,6 +64,27 @@ pk-source:
   revision: 1336144546
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL425863
+  pref-name: MIBOLERONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 302.46
+    mw-freebase: 302.46
+    alogp: 4.13
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C20H30O2
 ---
 
 # Mibolerone
@@ -76,10 +98,19 @@ pk-source:
 - **Compound ID:** `mibolerone-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL425863](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL425863/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Extremely potent veterinary anabolic steroid occasionally diverted for human doping use.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 302.46 | 4.13 | 37.3 | 1/2 | 0 | C20H30O2 |
 
 ## Evidence boundaries
 

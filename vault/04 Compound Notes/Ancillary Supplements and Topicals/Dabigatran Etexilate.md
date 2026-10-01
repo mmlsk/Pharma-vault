@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL539697
+  pref-name: DABIGATRAN ETEXILATE
+  molecule-type: Small molecule
+  first-approval: 2008
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - B01AE07
+  targets: []
+  properties:
+    full-mwt: 627.75
+    mw-freebase: 627.75
+    alogp: 5.81
+    psa: 151.53
+    hba: 10
+    hbd: 3
+    rtb: 15
+    num-ro5-violations: 2
+    qed-weighted: 0.06
+    full-molformula: C34H41N7O5
 ---
 
 # Dabigatran Etexilate
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `dabigatran-etexilate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL539697](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL539697/) · max phase 4
+- **ChEMBL:** [CHEMBL539697](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL539697/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +100,17 @@ Thrombin inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMBL53969
 
 Thrombin inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2008
+- **Flags:** black-box warning, prodrug
+- **ATC B01AE07:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Direct thrombin inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 627.75 | 5.81 | 151.53 | 3/10 | 2 | C34H41N7O5 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +119,12 @@ Thrombin inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Argatroban]], [[Desirudin]], [[Lepirudin]], [[Ximelagatran]]
 
 ## Safety routing
 

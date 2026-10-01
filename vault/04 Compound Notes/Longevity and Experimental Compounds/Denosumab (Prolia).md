@@ -10,15 +10,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Tumor necrosis factor ligand superfamily member 11 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1237023
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -61,6 +61,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Denosumab
@@ -68,6 +69,21 @@ pk-source:
   revision: 1375208958
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1237023
+  pref-name: DENOSUMAB
+  molecule-type: Antibody
+  first-approval: 2010
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - M05BX04
+  targets:
+  - id: CHEMBL2364162
+    name: Tumor necrosis factor ligand superfamily member 11
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Denosumab (Prolia)
@@ -82,10 +98,26 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Denosumab, Prolia
+- **ChEMBL:** [CHEMBL1237023](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237023/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Monoclonal antibody that directly blocks RANKL, preventing osteoclast formation and activity -- a different mechanism from bisphosphonates, same net effect of reduced bone resorption.
+
+## Mechanism
+
+Tumor necrosis factor ligand superfamily member 11 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2010
+- **Flags:** black-box warning
+- **ATC M05BX04:** MUSCULO-SKELETAL SYSTEM › DRUGS AFFECTING BONE STRUCTURE AND MINERALIZATION › Other drugs affecting bone structure and mineralization
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor ligand superfamily member 11 (CHEMBL2364162)|Tumor necrosis factor ligand superfamily member 11]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -101,6 +133,12 @@ Monoclonal antibody that directly blocks RANKL, preventing osteoclast formation 
 |---|---|---|
 | Bioavailability | - | N/A |
 | Metabolism | - | Proteolysis |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Romosozumab]], [[Strontium Ranelate (Protelos)]], [[Voxzogo (Vosoritide)]]
 
 ## Safety routing
 

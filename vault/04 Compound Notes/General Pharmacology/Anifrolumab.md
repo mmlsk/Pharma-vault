@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: Interferon-alpha/beta receptor alpha chain antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2364653
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2364653
+  pref-name: ANIFROLUMAB
+  molecule-type: Antibody
+  first-approval: 2021
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AG11
+  targets:
+  - id: CHEMBL1887
+    name: Interferon alpha/beta receptor 1
+    action: ANTAGONIST
+  properties: {}
 ---
 
 # Anifrolumab
@@ -67,10 +84,25 @@ tags:
 - **Compound ID:** `anifrolumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL2364653](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2364653/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Anti-type-I-interferon-receptor antibody for systemic lupus, targeting the interferon signature that dominates lupus transcriptomics.
+
+## Mechanism
+
+Interferon-alpha/beta receptor alpha chain antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2021
+- **ATC L04AG11:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Monoclonal antibodies
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interferon alpha-beta receptor 1 (CHEMBL1887)|Interferon alpha/beta receptor 1]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +112,12 @@ Anti-type-I-interferon-receptor antibody for systemic lupus, targeting the inter
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alemtuzumab]], [[Belimumab]], [[Inebilizumab]], [[Natalizumab]], [[Ocrelizumab]], [[Ofatumumab]], [[Teprotumumab]], [[Vedolizumab]]
 
 ## Safety routing
 

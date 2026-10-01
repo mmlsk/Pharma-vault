@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL69998
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL69998
+  pref-name: FIROCOXIB
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4033
+    name: Cyclooxygenase-2
+    action: INHIBITOR
+  properties:
+    full-mwt: 336.41
+    mw-freebase: 336.41
+    alogp: 2.56
+    psa: 69.67
+    hba: 5
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.77
+    full-molformula: C17H20O5S
 ---
 
 # Firocoxib
@@ -67,6 +92,7 @@ tags:
 - **Compound ID:** `firocoxib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL69998](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL69998/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -76,6 +102,18 @@ Firocoxib is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is c
 
 cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 336.41 | 2.56 | 69.67 | 0/5 | 0 | C17H20O5S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cyclooxygenase-2 (CHEMBL4033)|Cyclooxygenase-2]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +122,12 @@ cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Mavacoxib]] (Cyclooxygenase-2), [[Robenacoxib]] (Cyclooxygenase-2), [[Tepoxalin]] (Cyclooxygenase-2)
 
 ## Safety routing
 

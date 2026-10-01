@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: Sphingosine 1-phosphate receptor 5 modulator
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3707247
+chembl-max-phase: 4
 half-life:
   value: 19.0
   value-max: null
@@ -56,6 +56,7 @@ tags:
 - group/immunology
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ozanimod
@@ -63,6 +64,38 @@ pk-source:
   revision: 1329068113
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3707247
+  pref-name: OZANIMOD
+  molecule-type: Small molecule
+  first-approval: 2020
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AE02
+  targets:
+  - id: CHEMBL2274
+    name: Sphingosine 1-phosphate receptor 5
+    action: MODULATOR
+  properties:
+    full-mwt: 404.47
+    mw-freebase: 404.47
+    alogp: 3.63
+    psa: 104.2
+    hba: 7
+    hbd: 2
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.62
+    full-molformula: C23H24N4O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ozanimod
@@ -76,10 +109,29 @@ pk-source:
 - **Compound ID:** `ozanimod-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL3707247](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707247/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Selective S1P1 and S1P5 modulator for multiple sclerosis and ulcerative colitis, designed to avoid the S1P3-mediated cardiac effects of fingolimod.
+
+## Mechanism
+
+Sphingosine 1-phosphate receptor 5 modulator _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2020
+- **ATC L04AE02:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Sphingosine-1-phosphate (S1P) receptor modulators
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 404.47 | 3.63 | 104.2 | 2/7 | 0 | C23H24N4O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Sphingosine 1-phosphate receptor 5 (CHEMBL2274)|Sphingosine 1-phosphate receptor 5]] - modulator · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -94,6 +146,14 @@ Selective S1P1 and S1P5 modulator for multiple sclerosis and ulcerative colitis,
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 19 h | 19 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Fingolimod]]
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: TNF-alpha inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201580
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: 20.0
@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Adalimumab
@@ -67,6 +69,29 @@ pk-source:
   revision: 1376394101
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201580
+  pref-name: ADALIMUMAB
+  molecule-type: Antibody
+  first-approval: 2002
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L04AB04
+  targets:
+  - id: CHEMBL1825
+    name: Tumor necrosis factor
+    action: INHIBITOR
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 2488b0bc-7b8f-4cc8-91ea-48e7ea5e8915
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2488b0bc-7b8f-4cc8-91ea-48e7ea5e8915
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Adalimumab
@@ -80,10 +105,26 @@ pk-source:
 - **Compound ID:** `adalimumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201580](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201580/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Neutralizes TNF or its receptor signaling to suppress systemic inflammation, increasing susceptibility to selected infections.
+
+## Mechanism
+
+TNF-alpha inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2002
+- **Flags:** black-box warning
+- **ATC L04AB04:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Tumor necrosis factor alpha (TNF-alpha) inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor (CHEMBL1825)|Tumor necrosis factor]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -99,6 +140,17 @@ Neutralizes TNF or its receptor signaling to suppress systemic inflammation, inc
 |---|---|---|
 | Elimination t½ | 10–20 d | 10–20 days |
 | Bioavailability | 64 % | 64% (subcutaneous), 0% (by mouth) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 2488b0bc…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2488b0bc-7b8f-4cc8-91ea-48e7ea5e8915), label version 20260108. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 240, 480)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Afelimomab]] (Tumor necrosis factor), [[Certolizumab Pegol]] (Tumor necrosis factor), [[Certolizumab Pegol]] (Tumor necrosis factor), [[Etanercept]] (Tumor necrosis factor), [[Golimumab]] (Tumor necrosis factor), [[Infliximab]] (Tumor necrosis factor), [[Infliximab-abda]] (Tumor necrosis factor), [[Onercept]] (Tumor necrosis factor), [[Ozoralizumab]] (Tumor necrosis factor)
+- **Same ATC subgroup:** [[Afelimomab]], [[Certolizumab Pegol]], [[Certolizumab Pegol]], [[Etanercept]], [[Golimumab]], [[Infliximab]], [[Infliximab-abda]]
 
 ## Safety routing
 

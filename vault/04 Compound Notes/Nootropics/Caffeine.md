@@ -8,15 +8,15 @@ cluster: Nootropics
 group: nootropic
 class: null
 subclass: null
-mechanism: null
+mechanism: Adenosine receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL113
+chembl-max-phase: 4
 half-life:
   value: 3.0
   value-max: 7.0
@@ -67,6 +67,7 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Caffeine
@@ -74,6 +75,39 @@ pk-source:
   revision: 1375462795
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL113
+  pref-name: CAFFEINE
+  molecule-type: Small molecule
+  first-approval: 1948
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D11AX26
+  - N06BC01
+  targets:
+  - id: CHEMBL2111329
+    name: Adenosine receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 194.19
+    mw-freebase: 194.19
+    alogp: -1.03
+    psa: 61.82
+    hba: 6
+    hbd: 0
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.54
+    full-molformula: C8H10N4O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Caffeine
@@ -87,10 +121,30 @@ pk-source:
 - **Compound ID:** `caffeine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL113](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL113/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The most widely used psychoactive compound in the world. Blocks adenosine receptors rather than adding stimulation, so it masks accumulated sleep pressure without repaying it. Also studied topically on the scalp against androgen-driven follicle suppression.
+
+## Mechanism
+
+Adenosine receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1948
+- **ATC D11AX26:** DERMATOLOGICALS › OTHER DERMATOLOGICAL PREPARATIONS › Other dermatologicals
+- **ATC N06BC01:** NERVOUS SYSTEM › PSYCHOSTIMULANTS, AGENTS USED FOR ADHD AND NOOTROPICS › Xanthine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 194.19 | -1.03 | 61.82 | 0/6 | 0 | C8H10N4O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Adenosine receptor (CHEMBL2111329)|Adenosine receptor]] - antagonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -111,6 +165,16 @@ The most widely used psychoactive compound in the world. Blocks adenosine recept
 | CYP (metabolised by) | CYP1A2, CYP2C8, CYP2C9, CYP2E1, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Paraxanthine 84%; Theobromine 12%; Theophylline 4% |
 | Excretion | mainly urinary | Urine (100%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Adenosine (IV)]] (Adenosine receptor)
+- **Same ATC subgroup:** [[Brimonidine]], [[Diclofenac]], [[Finasteride]], [[Finasteride (topical spray solution)]], [[Hydroquinone]], [[Mequinol]], [[Minoxidil]], [[Minoxidil (oral, low dose)]], [[Monobenzone]], [[Propentofylline]], [[Tiratricol (TRIAC)]]
+- **Shared CYP substrate pool:** CYP1A2 (+42 others), CYP2C8 (+15 others), CYP2C9 (+40 others), CYP2E1 (+8 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

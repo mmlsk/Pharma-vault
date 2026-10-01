@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin-1 receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201570
+chembl-max-phase: 4
 half-life:
   value: 4.0
   value-max: 6.0
@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Anakinra
@@ -67,6 +69,29 @@ pk-source:
   revision: 1368834184
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201570
+  pref-name: ANAKINRA
+  molecule-type: Protein
+  first-approval: 2001
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AC03
+  targets:
+  - id: CHEMBL1959
+    name: Interleukin-1 receptor type 1
+    action: ANTAGONIST
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: d9d74915-6606-4570-9c52-c4001d3177de
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d9d74915-6606-4570-9c52-c4001d3177de
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Anakinra
@@ -80,10 +105,25 @@ pk-source:
 - **Compound ID:** `anakinra-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201570](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201570/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Recombinant IL-1 receptor antagonist with a very short half-life, requiring daily injection.
+
+## Mechanism
+
+Interleukin-1 receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2001
+- **ATC L04AC03:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Interleukin inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-1 receptor type 1 (CHEMBL1959)|Interleukin-1 receptor type 1]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -100,6 +140,16 @@ Recombinant IL-1 receptor antagonist with a very short half-life, requiring dail
 | Elimination t½ | 4–6 h | 4-6 hrs |
 | Bioavailability | 95 % | 95% |
 | Metabolism | - | predominantly kidney |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set d9d74915…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d9d74915-6606-4570-9c52-c4001d3177de), label version 20260403. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 3, 4, 6, 7)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Basiliximab]], [[Bimekizumab]], [[Briakinumab]], [[Brodalumab]], [[Canakinumab (Ilaris)]], [[Guselkumab]], [[Ixekizumab]], [[Mirikizumab]], [[Netakimab]], [[Olokizumab]], [[Rilonacept]], [[Risankizumab]]
 
 ## Safety routing
 

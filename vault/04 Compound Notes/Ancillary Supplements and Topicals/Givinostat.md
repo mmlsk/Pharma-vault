@@ -15,13 +15,13 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1213492
+chembl-max-phase: 4
 half-life:
   value: 6.0
   value-max: null
   unit: h
-  notes: ~6hours
+  notes: ~6 hours
 protein-binding:
   value: 96.0
   value-max: null
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Givinostat
@@ -68,6 +70,37 @@ pk-source:
   revision: 1370187447
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1213492
+  pref-name: GIVINOSTAT
+  molecule-type: Small molecule
+  first-approval: 2024
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M09AX14
+  targets: []
+  properties:
+    full-mwt: 421.5
+    mw-freebase: 421.5
+    alogp: 4.55
+    psa: 90.9
+    hba: 5
+    hbd: 3
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.37
+    full-molformula: C24H27N3O4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 1a28a3db-7880-4ac2-a2f2-2b4e362aafb6
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1a28a3db-7880-4ac2-a2f2-2b4e362aafb6
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Givinostat
@@ -81,10 +114,21 @@ pk-source:
 - **Compound ID:** `givinostat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1213492](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1213492/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 HDAC inhibitor approved for Duchenne muscular dystrophy — an unusual non-oncology indication for this class.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2024
+- **ATC M09AX14:** MUSCULO-SKELETAL SYSTEM › OTHER DRUGS FOR DISORDERS OF THE MUSCULO-SKELETAL SYSTEM › Other drugs for disorders of the musculo-skeletal system
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 421.5 | 4.55 | 90.9 | 3/5 | 0 | C24H27N3O4 |
 
 ## Evidence boundaries
 
@@ -98,11 +142,22 @@ HDAC inhibitor approved for Duchenne muscular dystrophy — an unusual non-oncol
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 6 h | ~6hours |
+| Elimination t½ | 6 h | ~6 hours |
 | Protein binding | 96 % | 96% |
 | Bioavailability | - | Unknown |
 | Metabolism | hepatic | Extensive (not CYP450 or UGT) |
 | Excretion | - · fe 0.03 | Urine: <3% unchanged |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 1a28a3db…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1a28a3db-7880-4ac2-a2f2-2b4e362aafb6), label version 20241121. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 6)
+> - protein-binding: consistent (label values: 96)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Nusinersen (Spinraza)]], [[Palovarotene]], [[Risdiplam (Evrysdi)]]
 
 ## Safety routing
 

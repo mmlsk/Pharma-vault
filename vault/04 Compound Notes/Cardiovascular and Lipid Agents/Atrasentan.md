@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL9194
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/cardio
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL9194
+  pref-name: ATRASENTAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 510.63
+    mw-freebase: 510.63
+    alogp: 4.69
+    psa: 88.54
+    hba: 6
+    hbd: 1
+    rtb: 12
+    num-ro5-violations: 1
+    qed-weighted: 0.44
+    full-molformula: C29H38N2O6
 ---
 
 # Atrasentan
@@ -67,10 +89,19 @@ tags:
 - **Compound ID:** `atrasentan-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
+- **ChEMBL:** [CHEMBL9194](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL9194/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 A selective endothelin A receptor antagonist developed for proteinuric kidney disease. Sparing the ETB receptor is what limits the fluid retention that ended earlier non-selective attempts.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 510.63 | 4.69 | 88.54 | 1/6 | 1 | C29H38N2O6 |
 
 ## Evidence boundaries
 

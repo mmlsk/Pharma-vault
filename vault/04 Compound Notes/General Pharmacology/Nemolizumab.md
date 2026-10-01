@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin-31 receptor subunit alpha inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297794
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,8 @@ tags:
 - group/immunology
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Nemolizumab
@@ -62,6 +64,21 @@ pk-source:
   revision: 1337495889
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297794
+  pref-name: NEMOLIZUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D11AH12
+  targets:
+  - id: CHEMBL4630894
+    name: Interleukin-31 receptor subunit alpha
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Nemolizumab
@@ -75,10 +92,24 @@ pk-source:
 - **Compound ID:** `nemolizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL4297794](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297794/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Anti-IL-31-receptor antibody targeting itch specifically, used in prurigo nodularis and atopic dermatitis.
+
+## Mechanism
+
+Interleukin-31 receptor subunit alpha inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **ATC D11AH12:** DERMATOLOGICALS › OTHER DERMATOLOGICAL PREPARATIONS › Agents for dermatitis, excluding corticosteroids
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-31 receptor subunit alpha (CHEMBL4630894)|Interleukin-31 receptor subunit alpha]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -93,6 +124,12 @@ Anti-IL-31-receptor antibody targeting itch specifically, used in prurigo nodula
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Metabolism | - | Proteolytic enzymes |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Abrocitinib (Cibinqo)]], [[Alitretinoin]], [[Alitretinoin (oral, Toctino)]], [[Crisaborole (topical 2% ointment, Eucrisa)]], [[Delgocitinib]], [[Deuruxolitinib (Leqselvi)]], [[Dupilumab (Dupixent, subcutaneous)]], [[Lebrikizumab (Ebglyss)]], [[Pimecrolimus]], [[Ruxolitinib]], [[Ruxolitinib (topical)]], [[Ruxolitinib cream 1.5% (Opzelura)]]
 
 ## Safety routing
 

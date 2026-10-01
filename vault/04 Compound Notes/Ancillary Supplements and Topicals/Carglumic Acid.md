@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Carbamoyl-phosphate synthase [ammonia], mitochondrial positive allosteric modulator
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201780
+chembl-max-phase: 4
 half-life:
   value: 4.3
   value-max: 9.5
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Carglumic acid
@@ -68,6 +69,39 @@ pk-source:
   revision: 1329245867
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201780
+  pref-name: CARGLUMIC ACID
+  molecule-type: Small molecule
+  first-approval: 2003
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A16AA05
+  targets:
+  - id: CHEMBL2362990
+    name: Carbamoyl-phosphate synthase [ammonia], mitochondrial
+    action: POSITIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 190.16
+    mw-freebase: 190.16
+    alogp: -1.03
+    psa: 129.72
+    hba: 3
+    hbd: 4
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.44
+    full-molformula: C6H10N2O5
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 591f95ca-3d99-4fb6-a402-e5a383a746d0
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=591f95ca-3d99-4fb6-a402-e5a383a746d0
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Carglumic Acid
@@ -81,10 +115,29 @@ pk-source:
 - **Compound ID:** `carglumic-acid-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201780](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201780/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 N-acetylglutamate analogue that activates carbamoyl-phosphate synthetase I in specific hyperammonemia disorders.
+
+## Mechanism
+
+Carbamoyl-phosphate synthase [ammonia], mitochondrial positive allosteric modulator _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2003
+- **ATC A16AA05:** ALIMENTARY TRACT AND METABOLISM › OTHER ALIMENTARY TRACT AND METABOLISM PRODUCTS › Amino acids and derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 190.16 | -1.03 | 129.72 | 4/3 | 0 | C6H10N2O5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Carbamoyl-phosphate synthase -ammonia-, mitochondrial (CHEMBL2362990)|Carbamoyl-phosphate synthase [ammonia], mitochondrial]] - positive allosteric modulator · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +156,16 @@ N-acetylglutamate analogue that activates carbamoyl-phosphate synthetase I in sp
 | Bioavailability | 30 % | 30% |
 | Metabolism | - | Partial |
 | Excretion | mainly non-renal · fe 0.09 | Fecal (60%) and kidney (9%, unchanged) |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 591f95ca…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=591f95ca-3d99-4fb6-a402-e5a383a746d0), label version 20260303. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Betaine (TMG)]], [[Betaine Anhydrous (TMG)]], [[Metreleptin]], [[SAMe (S-adenosylmethionine)]]
 
 ## Safety routing
 

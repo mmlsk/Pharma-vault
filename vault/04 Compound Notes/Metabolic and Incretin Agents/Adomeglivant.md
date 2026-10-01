@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL3707351
 chembl-max-phase: 2
 half-life:
   value: null
@@ -55,6 +55,32 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3707351
+  pref-name: ADOMEGLIVANT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1985
+    name: Glucagon receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 555.64
+    mw-freebase: 555.64
+    alogp: 7.94
+    psa: 75.63
+    hba: 3
+    hbd: 2
+    rtb: 10
+    num-ro5-violations: 2
+    qed-weighted: 0.27
+    full-molformula: C32H36F3NO4
 ---
 
 # Adomeglivant
@@ -68,6 +94,7 @@ tags:
 - **Compound ID:** `adomeglivant-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL3707351](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707351/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -77,6 +104,18 @@ Adomeglivant is a phase 2 compound catalogued by ChEMBL. Its curated mechanism i
 
 glucagon receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 555.64 | 7.94 | 75.63 | 2/3 | 2 | C32H36F3NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucagon receptor (CHEMBL1985)|Glucagon receptor]] - antagonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +124,12 @@ glucagon receptor antagonist _(ChEMBL curated mechanism, as quoted by the source
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Cotadutide]] (Glucagon receptor), [[Crotedumab]] (Glucagon receptor), [[Dasiglucagon Hydrochloride]] (Glucagon receptor), [[Efinopegdutide]] (Glucagon receptor), [[Glucagon]] (Glucagon receptor), [[Glucagon Hydrochloride]] (Glucagon receptor), [[Mk-3577]] (Glucagon receptor), [[Retatrutide]] (Glucagon receptor), [[Survodutide]] (Glucagon receptor)
 
 ## Safety routing
 

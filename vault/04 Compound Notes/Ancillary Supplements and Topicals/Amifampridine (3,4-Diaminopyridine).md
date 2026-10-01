@@ -11,15 +11,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Voltage-gated potassium channel blocker
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL354077
+chembl-max-phase: 4
 half-life:
   value: 2.5
   value-max: null
@@ -63,6 +63,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Amifampridine
@@ -70,6 +71,38 @@ pk-source:
   revision: 1337381039
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL354077
+  pref-name: AMIFAMPRIDINE
+  molecule-type: Small molecule
+  first-approval: 2009
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N07XX05
+  targets:
+  - id: CHEMBL2362996
+    name: Voltage-gated potassium channel
+    action: BLOCKER
+  properties:
+    full-mwt: 109.13
+    mw-freebase: 109.13
+    alogp: 0.25
+    psa: 64.93
+    hba: 3
+    hbd: 2
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.5
+    full-molformula: C5H7N3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Amifampridine (3,4-Diaminopyridine)
@@ -84,10 +117,29 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Amifampridine, 3, 4-Diaminopyridine
+- **ChEMBL:** [CHEMBL354077](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL354077/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Presynaptic voltage-gated potassium channel blocker; the approved symptomatic treatment for Lambert-Eaton myasthenic syndrome.
+
+## Mechanism
+
+Voltage-gated potassium channel blocker _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2009
+- **ATC N07XX05:** NERVOUS SYSTEM › OTHER NERVOUS SYSTEM DRUGS › Other nervous system drugs
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 109.13 | 0.25 | 64.93 | 2/3 | 0 | C5H7N3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Voltage-gated potassium channel (CHEMBL2362996)|Voltage-gated potassium channel]] - blocker · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -105,6 +157,15 @@ Presynaptic voltage-gated potassium channel blocker; the approved symptomatic tr
 | Bioavailability | 93–100 % | 93–100% |
 | Metabolism | - | Acetylation to 3-N-acetyl&shy;amifampridine |
 | Excretion | mainly urinary | Kidney (19% unmetabolized, 74–81% 3-N-acetyl&shy;amifampridine) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Tedisamil]] (Voltage-gated potassium channel)
+- **Same ATC subgroup:** [[Deutetrabenazine]], [[Dextromethorphan]], [[Edaravone]], [[Inotersen (Tegsedi)]], [[Patisiran (Onpattro)]], [[Pitolisant (Wakix)]], [[Riluzole (Rilutek)]], [[Tafamidis (Vyndaqel)]], [[Tetrabenazine]], [[Troriluzole]], [[Valbenazine]], [[Vutrisiran (Amvuttra)]]
 
 ## Safety routing
 

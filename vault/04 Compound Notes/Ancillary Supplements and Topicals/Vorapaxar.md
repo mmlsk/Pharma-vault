@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL493982
+chembl-max-phase: 4
 half-life:
   value: 5.0
   value-max: 13.0
@@ -63,6 +63,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Vorapaxar
@@ -70,6 +71,35 @@ pk-source:
   revision: 1328756248
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL493982
+  pref-name: VORAPAXAR
+  molecule-type: Small molecule
+  first-approval: 2014
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - B01AC26
+  targets: []
+  properties:
+    full-mwt: 492.59
+    mw-freebase: 492.59
+    alogp: 5.63
+    psa: 77.52
+    hba: 5
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.55
+    full-molformula: C29H33FN2O4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Vorapaxar
@@ -83,10 +113,22 @@ pk-source:
 - **Compound ID:** `vorapaxar-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL493982](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL493982/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 PAR-1 antiplatelet drug with a very long effect; contraindicated after stroke because of intracranial bleeding risk.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2014
+- **Flags:** black-box warning
+- **ATC B01AC26:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Platelet aggregation inhibitors excl. heparin
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 492.59 | 5.63 | 77.52 | 1/5 | 1 | C29H33FN2O4 |
 
 ## Evidence boundaries
 
@@ -106,6 +148,15 @@ PAR-1 antiplatelet drug with a very long effect; contraindicated after stroke be
 | Metabolism | hepatic | hepatic (CYP3A4 and CYP2J2) |
 | CYP (metabolised by) | CYP2J2, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | feces (58%), urine (25%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Abciximab]], [[Aloxiprin]], [[Aspirin]], [[Beraprost]], [[Cangrelor]], [[Cilostazol]], [[Clopidogrel (Plavix)]], [[Dipyridamole]], [[Epoprostenol]], [[Eptifibatide]], [[Prasugrel (Effient)]], [[Selexipag]]
+- **Shared CYP substrate pool:** CYP2J2 (+3 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

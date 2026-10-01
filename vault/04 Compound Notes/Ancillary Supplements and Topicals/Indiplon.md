@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL262075
 chembl-max-phase: 3
 half-life:
   value: 1.5
@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Indiplon
@@ -63,6 +64,37 @@ pk-source:
   revision: 1354198680
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL262075
+  pref-name: INDIPLON
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1962
+    name: Gamma-aminobutyric acid receptor subunit alpha-1
+    action: POSITIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 376.44
+    mw-freebase: 376.44
+    alogp: 3.67
+    psa: 67.57
+    hba: 6
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.51
+    full-molformula: C20H16N4O2S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Indiplon
@@ -76,6 +108,7 @@ pk-source:
 - **Compound ID:** `indiplon-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL262075](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL262075/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -84,6 +117,18 @@ Indiplon is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is gA
 ## Mechanism
 
 gABA receptor alpha-1 subunit positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 376.44 | 3.67 | 67.57 | 0/6 | 0 | C20H16N4O2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Gamma-aminobutyric acid receptor subunit alpha-1 (CHEMBL1962)|Gamma-aminobutyric acid receptor subunit alpha-1]] - positive allosteric modulator · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -98,6 +143,8 @@ gABA receptor alpha-1 subunit positive allosteric modulator _(ChEMBL curated mec
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 1.5–1.8 h | 1.5–1.8 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

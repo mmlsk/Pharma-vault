@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL5095115
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -57,6 +57,19 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL5095115
+  pref-name: ECNOGLUTIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Ecnoglutide (XW003)
@@ -71,10 +84,15 @@ tags:
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
 - **Aliases:** Ecnoglutide, XW003
+- **ChEMBL:** [CHEMBL5095115](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095115/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Weekly GLP-1 analogue in late-stage development, developed primarily in China.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
 
 ## Evidence boundaries
 

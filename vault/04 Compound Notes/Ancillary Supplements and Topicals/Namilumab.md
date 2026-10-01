@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Granulocyte-macrophage colony-stimulating factor inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1743044
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1743044
+  pref-name: NAMILUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3712955
+    name: Granulocyte-macrophage colony-stimulating factor
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Namilumab
@@ -67,10 +83,23 @@ tags:
 - **Compound ID:** `namilumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1743044](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743044/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Neutralizes IL-23 signaling to suppress pathogenic Th17 maintenance in immune-mediated disease.
+
+## Mechanism
+
+Granulocyte-macrophage colony-stimulating factor inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Granulocyte-macrophage colony-stimulating factor (CHEMBL3712955)|Granulocyte-macrophage colony-stimulating factor]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

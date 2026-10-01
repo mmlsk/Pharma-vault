@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL534
+chembl-max-phase: 4
 half-life:
   value: 3.0
   value-max: 22.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ketotifen
@@ -68,6 +69,36 @@ pk-source:
   revision: 1374301102
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL534
+  pref-name: KETOTIFEN
+  molecule-type: Small molecule
+  first-approval: 1999
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AX17
+  - S01GX08
+  targets: []
+  properties:
+    full-mwt: 309.43
+    mw-freebase: 309.43
+    alogp: 4.01
+    psa: 20.31
+    hba: 3
+    hbd: 0
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C19H19NOS
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ketotifen
@@ -81,10 +112,23 @@ pk-source:
 - **Compound ID:** `ketotifen-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL534](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL534/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 H1 antihistamine and mast-cell stabilizer used for allergic disease; sometimes misused in beta-agonist stacks despite sedation and limited evidence for that purpose.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1999
+- **Flags:** prodrug
+- **ATC R06AX17:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Other antihistamines for systemic use
+- **ATC S01GX08:** SENSORY ORGANS › DECONGESTANTS AND ANTIALLERGICS › Other antiallergics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 309.43 | 4.01 | 20.31 | 0/3 | 0 | C19H19NOS |
 
 ## Evidence boundaries
 
@@ -104,6 +148,14 @@ H1 antihistamine and mast-cell stabilizer used for allergic disease; sometimes m
 | Metabolism | hepatic | Liver |
 | Metabolites | - | Norketotifen |
 | Excretion | - · fe 0.01 | Urine: >60% (<1% unchanged) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Acrivastine]], [[Alcaftadine]], [[Antazoline]], [[Astemizole]], [[Azatadine]], [[Azelastine]], [[Bilastine]], [[Cetirizine]], [[Cyproheptadine]], [[Desloratadine]], [[Ebastine]], [[Emedastine]]
 
 ## Safety routing
 

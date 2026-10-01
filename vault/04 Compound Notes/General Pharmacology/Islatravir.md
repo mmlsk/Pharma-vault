@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Human immunodeficiency virus type 1 reverse transcriptase inhibitor; Reverse transcriptase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL517231
+chembl-max-phase: 3
 half-life:
   value: 50.0
   value-max: 60.0
@@ -56,6 +56,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Islatravir
@@ -63,6 +65,40 @@ pk-source:
   revision: 1362098777
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL517231
+  pref-name: ISLATRAVIR
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1681630
+    name: Reverse transcriptase
+    action: INHIBITOR
+  - id: CHEMBL247
+    name: Human immunodeficiency virus type 1 reverse transcriptase
+    action: INHIBITOR
+  properties:
+    full-mwt: 293.26
+    mw-freebase: 293.26
+    alogp: -0.81
+    psa: 119.31
+    hba: 8
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.49
+    full-molformula: C12H12FN5O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Islatravir
@@ -76,10 +112,28 @@ pk-source:
 - **Compound ID:** `islatravir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL517231](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL517231/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Nucleoside reverse transcriptase translocation inhibitor with an intracellular half-life long enough to support monthly or longer dosing.
+
+## Mechanism
+
+Human immunodeficiency virus type 1 reverse transcriptase inhibitor; Reverse transcriptase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 293.26 | -0.81 | 119.31 | 3/8 | 0 | C12H12FN5O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Reverse transcriptase (CHEMBL1681630)|Reverse transcriptase]] - inhibitor · SINGLE PROTEIN
+- [[Human immunodeficiency virus type 1 reverse transcriptase (CHEMBL247)|Human immunodeficiency virus type 1 reverse transcriptase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -96,6 +150,14 @@ Nucleoside reverse transcriptase translocation inhibitor with an intracellular h
 | Elimination t½ | 50–60 h | ~50–60 hours (parent drug) |
 | Metabolism | - | Limited; intracellular phosphorylation to active metabolite (ISL-TP) |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Doravirine]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Efavirenz]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Emtricitabine]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Etravirine]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Lamivudine]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Nevirapine]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Rilpivirine]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Tenofovir Alafenamide]] (Human immunodeficiency virus type 1 reverse transcriptase), [[Zidovudine]] (Human immunodeficiency virus type 1 reverse transcriptase)
 
 ## Safety routing
 

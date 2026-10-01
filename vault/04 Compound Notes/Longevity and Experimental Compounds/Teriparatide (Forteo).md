@@ -10,15 +10,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Parathyroid hormone receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL525610
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: null
@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Teriparatide
@@ -69,6 +71,32 @@ pk-source:
   revision: 1363759353
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL525610
+  pref-name: TERIPARATIDE
+  molecule-type: Protein
+  first-approval: 2002
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - H05AA02
+  targets:
+  - id: CHEMBL1793
+    name: Parathyroid hormone/parathyroid hormone-related peptide receptor
+    action: AGONIST
+  properties:
+    full-mwt: 4117.79
+    mw-freebase: 4117.79
+    full-molformula: C181H291N55O51S2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: aae667c5-381f-4f92-93df-2ed6158d07b0
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=aae667c5-381f-4f92-93df-2ed6158d07b0
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Teriparatide (Forteo)
@@ -83,10 +111,30 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Teriparatide, Forteo
+- **ChEMBL:** [CHEMBL525610](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL525610/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Recombinant PTH(1-34) fragment given as daily injections to directly stimulate new bone formation, unlike antiresorptive bone drugs.
+
+## Mechanism
+
+Parathyroid hormone receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2002
+- **Flags:** black-box warning
+- **ATC H05AA02:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › PARATHYROID HORMONES AND ANALOGUES › Parathyroid hormones and analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 4117.79 | - | - | -/- | - | C181H291N55O51S2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Parathyroid hormone-parathyroid hormone-related peptide receptor (CHEMBL1793)|Parathyroid hormone/parathyroid hormone-related peptide receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -104,6 +152,17 @@ Recombinant PTH(1-34) fragment given as daily injections to directly stimulate n
 | Bioavailability | 95 % | 95% |
 | Metabolism | hepatic | Liver (nonspecific proteolysis) |
 | Excretion | mainly urinary | Kidney (metabolites) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set aae667c5…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=aae667c5-381f-4f92-93df-2ed6158d07b0), label version 20260803. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abaloparatide]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Ostabolin-C]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Palopegteriparatide]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Parathyroid Hormone]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Teriparatide Acetate]] (Parathyroid hormone/parathyroid hormone-related peptide receptor)
+- **Same ATC subgroup:** [[Abaloparatide]], [[Palopegteriparatide]], [[Parathyroid Hormone]]
 
 ## Safety routing
 

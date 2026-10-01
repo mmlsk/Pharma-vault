@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL12318
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL12318
+  pref-name: CLODRONIC ACID
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M05BA02
+  targets: []
+  properties:
+    full-mwt: 244.89
+    mw-freebase: 244.89
+    alogp: 0.43
+    psa: 115.06
+    hba: 2
+    hbd: 4
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.41
+    full-molformula: CH4Cl2O6P2
 ---
 
 # Clodronate
@@ -67,10 +90,20 @@ tags:
 - **Compound ID:** `clodronate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL12318](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL12318/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Suppresses osteoclast-mediated bone resorption; jaw osteonecrosis and atypical femoral fracture are rare long-term class risks; non-nitrogen-containing.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC M05BA02:** MUSCULO-SKELETAL SYSTEM › DRUGS AFFECTING BONE STRUCTURE AND MINERALIZATION › Bisphosphonates
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 244.89 | 0.43 | 115.06 | 4/2 | 0 | CH4Cl2O6P2 |
 
 ## Evidence boundaries
 
@@ -80,6 +113,12 @@ Suppresses osteoclast-mediated bone resorption; jaw osteonecrosis and atypical f
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alendronate (Fosamax)]], [[Etidronate]], [[Ibandronate]], [[Pamidronate (Aredia)]], [[Risedronate]], [[Tiludronate]], [[Zoledronic Acid]]
 
 ## Safety routing
 

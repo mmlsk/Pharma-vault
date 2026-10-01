@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2103815
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -57,6 +57,29 @@ tags:
 - source-derived
 - group/peptides
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2105646
+  pref-name: LARAZOTIDE ACETATE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 725.85
+    mw-freebase: 725.85
+    alogp: -3.18
+    psa: 301.32
+    hba: 10
+    hbd: 9
+    rtb: 21
+    num-ro5-violations: 2
+    qed-weighted: 0.06
+    full-molformula: C32H55N9O10
 ---
 
 # Larazotide Acetate (AT1001)
@@ -71,10 +94,19 @@ tags:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Larazotide Acetate, AT1001
+- **ChEMBL:** [CHEMBL2103815](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103815/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Octapeptide zonulin antagonist that tightens intestinal junctions rather than acting systemically. Taken furthest in celiac disease; investigational everywhere.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 725.85 | -3.18 | 301.32 | 9/10 | 2 | C32H55N9O10 |
 
 ## Evidence boundaries
 

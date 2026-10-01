@@ -10,15 +10,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Thyroid peroxidase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1515
+chembl-max-phase: 4
 half-life:
   value: 5.0
   value-max: 6.0
@@ -63,6 +63,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Thiamazole
@@ -70,6 +71,40 @@ pk-source:
   revision: 1366300968
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1515
+  pref-name: METHIMAZOLE
+  molecule-type: Small molecule
+  first-approval: 1950
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H03BB02
+  - H03BB52
+  targets:
+  - id: CHEMBL1839
+    name: Thyroid peroxidase
+    action: INHIBITOR
+  properties:
+    full-mwt: 114.17
+    mw-freebase: 114.17
+    alogp: 0.71
+    psa: 17.82
+    hba: 3
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.49
+    full-molformula: C4H6N2S
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: f69edfa9-0efb-4fe8-aeab-50f7baeebb6a
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f69edfa9-0efb-4fe8-aeab-50f7baeebb6a
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Methimazole (Tapazole)
@@ -84,10 +119,30 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Methimazole, Tapazole
+- **ChEMBL:** [CHEMBL1515](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1515/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 First-line thionamide antithyroid drug; blocks thyroid peroxidase and so blocks hormone synthesis.
+
+## Mechanism
+
+Thyroid peroxidase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1950
+- **ATC H03BB02:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › ANTITHYROID PREPARATIONS › Sulfur-containing imidazole derivatives
+- **ATC H03BB52:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › ANTITHYROID PREPARATIONS › Sulfur-containing imidazole derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 114.17 | 0.71 | 17.82 | 1/3 | 0 | C4H6N2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Thyroid peroxidase (CHEMBL1839)|Thyroid peroxidase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -106,6 +161,16 @@ First-line thionamide antithyroid drug; blocks thyroid peroxidase and so blocks 
 | Bioavailability | 93 % | 93% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set f69edfa9…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f69edfa9-0efb-4fe8-aeab-50f7baeebb6a), label version 20260909. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Propylthiouracil (PTU)]] (Thyroid peroxidase)
 
 ## Safety routing
 

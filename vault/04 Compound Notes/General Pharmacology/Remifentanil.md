@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1005
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: 20.0
@@ -61,6 +61,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Remifentanil
@@ -68,6 +69,35 @@ pk-source:
   revision: 1376668131
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1005
+  pref-name: REMIFENTANIL
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N01AH06
+  targets: []
+  properties:
+    full-mwt: 376.45
+    mw-freebase: 376.45
+    alogp: 2.0
+    psa: 76.15
+    hba: 6
+    hbd: 0
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.68
+    full-molformula: C20H28N2O5
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Remifentanil
@@ -81,10 +111,22 @@ pk-source:
 - **Compound ID:** `remifentanil-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1005](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1005/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Ultra-short-acting opioid cleared by non-specific plasma esterases, so its context-sensitive half-time stays constant however long it is infused.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **Flags:** black-box warning
+- **ATC N01AH06:** NERVOUS SYSTEM › ANESTHETICS, GENERAL › Opioid anesthetics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 376.45 | 2.0 | 76.15 | 0/6 | 0 | C20H28N2O5 |
 
 ## Evidence boundaries
 
@@ -102,6 +144,14 @@ Ultra-short-acting opioid cleared by non-specific plasma esterases, so its conte
 | Protein binding | 70 % | 70% (bound to plasma proteins) |
 | Bioavailability | 100 % | IV/IM; 100% |
 | Metabolism | - | cleaved by non-specific plasma and tissue esterases |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alfentanil]], [[Fentanyl]], [[Sufentanil]]
 
 ## Safety routing
 

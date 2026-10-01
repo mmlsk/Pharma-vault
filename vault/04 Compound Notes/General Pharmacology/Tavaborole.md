@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Leucine-tRNA ligase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL443052
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,26 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL443052
+  pref-name: TAVABOROLE
+  molecule-type: Small molecule
+  first-approval: 2014
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D01AE24
+  targets:
+  - id: CHEMBL3307222
+    name: Leucine-tRNA ligase
+    action: INHIBITOR
+  properties:
+    full-mwt: 151.93
+    mw-freebase: 151.93
+    full-molformula: C7H6BFO2
 ---
 
 # Tavaborole
@@ -67,10 +87,29 @@ tags:
 - **Compound ID:** `tavaborole-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL443052](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL443052/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Topical benzoxaborole for onychomycosis, small enough to penetrate nail plate where the azoles cannot.
+
+## Mechanism
+
+Leucine-tRNA ligase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2014
+- **ATC D01AE24:** DERMATOLOGICALS › ANTIFUNGALS FOR TOPICAL USE › Other antifungals for topical use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 151.93 | - | - | -/- | - | C7H6BFO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Leucine-tRNA ligase (CHEMBL3307222)|Leucine-tRNA ligase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +119,12 @@ Topical benzoxaborole for onychomycosis, small enough to penetrate nail plate wh
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amorolfine]], [[Butenafine]], [[Flucytosine]], [[Naftifine]], [[Salicylic Acid]], [[Terbinafine (oral, Lamisil)]], [[Undecylenic Acid]]
 
 ## Safety routing
 

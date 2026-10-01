@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Phosphodiesterase 5A inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1963681
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1963681
+  pref-name: AVANAFIL
+  molecule-type: Small molecule
+  first-approval: 2011
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04BE10
+  targets:
+  - id: CHEMBL1827
+    name: cGMP-specific 3',5'-cyclic phosphodiesterase
+    action: INHIBITOR
+  properties:
+    full-mwt: 483.96
+    mw-freebase: 483.96
+    alogp: 2.43
+    psa: 125.39
+    hba: 9
+    hbd: 3
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.42
+    full-molformula: C23H26ClN7O3
 ---
 
 # Avanafil (Stendra)
@@ -70,10 +96,29 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Avanafil, Stendra
+- **ChEMBL:** [CHEMBL1963681](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1963681/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Fastest-onset PDE5 inhibitor, designed for higher selectivity against the off-target enzymes.
+
+## Mechanism
+
+Phosphodiesterase 5A inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2011
+- **ATC G04BE10:** GENITO URINARY SYSTEM AND SEX HORMONES › UROLOGICALS › Drugs used in erectile dysfunction
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 483.96 | 2.43 | 125.39 | 3/9 | 0 | C23H26ClN7O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[cGMP-specific 3',5'-cyclic phosphodiesterase (CHEMBL1827)|cGMP-specific 3',5'-cyclic phosphodiesterase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -83,6 +128,13 @@ Fastest-onset PDE5 inhibitor, designed for higher selectivity against the off-ta
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Cialis (Tadalafil)]] (cGMP-specific 3',5'-cyclic phosphodiesterase), [[Gisadenafil]] (cGMP-specific 3',5'-cyclic phosphodiesterase), [[Ibudilast]] (cGMP-specific 3',5'-cyclic phosphodiesterase), [[Pf-00489791]] (cGMP-specific 3',5'-cyclic phosphodiesterase), [[Udenafil]] (cGMP-specific 3',5'-cyclic phosphodiesterase)
+- **Same ATC subgroup:** [[Alprostadil]], [[Apomorphine]], [[Cialis (Tadalafil)]], [[Papaverine]], [[Sildenafil (Viagra)]], [[Udenafil]], [[Vardenafil (Levitra)]], [[Yohimbine]]
 
 ## Safety routing
 

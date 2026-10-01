@@ -56,6 +56,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Quinestrol
@@ -63,6 +64,37 @@ pk-source:
   revision: 1329013637
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201165
+  pref-name: QUINESTROL
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2093866
+    name: Estrogen receptor
+    action: AGONIST
+  properties:
+    full-mwt: 364.53
+    mw-freebase: 364.53
+    alogp: 5.23
+    psa: 29.46
+    hba: 2
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 1
+    qed-weighted: 0.73
+    full-molformula: C25H32O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Quinestrol
@@ -76,7 +108,7 @@ pk-source:
 - **Compound ID:** `quinestrol-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1201165](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201165/) · max phase 4
+- **ChEMBL:** [CHEMBL1201165](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201165/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +117,19 @@ Estrogen receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEM
 ## Mechanism
 
 Estrogen receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 364.53 | 5.23 | 29.46 | 1/2 | 1 | C25H32O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Estrogen receptor (CHEMBL2093866)|Estrogen receptor]] - agonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -99,6 +144,14 @@ Estrogen receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 120 h | >120 hours (>5 days) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acolbifene]] (Estrogen receptor), [[Cyclofenil]] (Estrogen receptor), [[Diethylstilbestrol Diphosphate]] (Estrogen receptor), [[Droloxifene]] (Estrogen receptor), [[Estriol]] (Estrogen receptor), [[Estrogens, Conjugated]] (Estrogen receptor), [[Estrogens, Conjugated Synthetic A]] (Estrogen receptor), [[Estrogens, Esterified]] (Estrogen receptor), [[Lasofoxifene]] (Estrogen receptor), [[Ospemifene (Osphena)]] (Estrogen receptor), [[Synthetic Conjugated Estrogens, B]] (Estrogen receptor)
 
 ## Safety routing
 

@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Trifluoperazine
@@ -63,6 +64,35 @@ pk-source:
   revision: 1325077324
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL422
+  pref-name: TRIFLUOPERAZINE
+  molecule-type: Small molecule
+  first-approval: 1959
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N05AB06
+  targets: []
+  properties:
+    full-mwt: 407.51
+    mw-freebase: 407.51
+    alogp: 4.95
+    psa: 9.72
+    hba: 4
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.71
+    full-molformula: C21H24F3N3S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Trifluoperazine
@@ -76,7 +106,7 @@ pk-source:
 - **Compound ID:** `trifluoperazine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL422](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL422/) · max phase 4
+- **ChEMBL:** [CHEMBL422](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL422/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +115,17 @@ D2-like dopamine receptor antagonist; approved/marketed compound catalogued by C
 ## Mechanism
 
 D2-like dopamine receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1959
+- **Flags:** black-box warning
+- **ATC N05AB06:** NERVOUS SYSTEM › ANTIPSYCHOTICS › Phenothiazines with piperazine structure
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 407.51 | 4.95 | 9.72 | 0/4 | 0 | C21H24F3N3S |
 
 ## Evidence boundaries
 
@@ -100,6 +141,14 @@ D2-like dopamine receptor antagonist _(ChEMBL curated mechanism, as quoted by th
 |---|---|---|
 | Elimination t½ | 10–20 h | 10–20 hours |
 | Metabolism | hepatic | Liver |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Fluphenazine]], [[Perphenazine]]
 
 ## Safety routing
 

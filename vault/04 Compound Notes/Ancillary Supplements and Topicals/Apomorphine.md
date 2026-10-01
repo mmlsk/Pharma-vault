@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Apomorphine
@@ -68,6 +69,36 @@ pk-source:
   revision: 1373477552
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL53
+  pref-name: APOMORPHINE
+  molecule-type: Small molecule
+  first-approval: 2001
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04BE07
+  - N04BC07
+  targets: []
+  properties:
+    full-mwt: 267.33
+    mw-freebase: 267.33
+    alogp: 2.85
+    psa: 43.7
+    hba: 3
+    hbd: 2
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.72
+    full-molformula: C17H17NO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Apomorphine
@@ -81,7 +112,7 @@ pk-source:
 - **Compound ID:** `apomorphine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL53](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL53/) · max phase 4
+- **ChEMBL:** [CHEMBL53](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL53/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +121,17 @@ D2-like dopamine receptor agonist; approved/marketed compound catalogued by ChEM
 ## Mechanism
 
 D2-like dopamine receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2001
+- **ATC G04BE07:** GENITO URINARY SYSTEM AND SEX HORMONES › UROLOGICALS › Drugs used in erectile dysfunction
+- **ATC N04BC07:** NERVOUS SYSTEM › DOPAMINERGIC AGENTS › Dopamine agonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 267.33 | 2.85 | 43.7 | 2/3 | 0 | C17H17NO2 |
 
 ## Evidence boundaries
 
@@ -108,6 +150,14 @@ D2-like dopamine receptor agonist _(ChEMBL curated mechanism, as quoted by the s
 | Bioavailability | 100 % | 100% following injection |
 | Metabolism | hepatic | Liver, phase II |
 | Excretion | - | Liver |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alprostadil]], [[Avanafil (Stendra)]], [[Bromocriptine (Parlodel)]], [[Cabergoline (Dostinex)]], [[Cialis (Tadalafil)]], [[Papaverine]], [[Pergolide]], [[Pramipexole (Mirapex)]], [[Ropinirole]], [[Rotigotine]], [[Sildenafil (Viagra)]], [[Udenafil]]
 
 ## Safety routing
 

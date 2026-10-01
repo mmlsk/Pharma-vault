@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL276832
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: 8.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Hydralazine
@@ -68,6 +69,35 @@ pk-source:
   revision: 1365125817
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL276832
+  pref-name: HYDRALAZINE
+  molecule-type: Small molecule
+  first-approval: 1953
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C02DB02
+  targets: []
+  properties:
+    full-mwt: 160.18
+    mw-freebase: 160.18
+    alogp: 0.92
+    psa: 63.83
+    hba: 4
+    hbd: 2
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.48
+    full-molformula: C8H8N4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Hydralazine
@@ -81,10 +111,21 @@ pk-source:
 - **Compound ID:** `hydralazine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL276832](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL276832/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Direct arterial vasodilator; causes reflex tachycardia and, at higher doses, a drug-induced lupus.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1953
+- **ATC C02DB02:** CARDIOVASCULAR SYSTEM › ARTERIOLAR SMOOTH MUSCLE, AGENTS ACTING ON › Hydrazinophthalazine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 160.18 | 0.92 | 63.83 | 2/4 | 0 | C8H8N4 |
 
 ## Evidence boundaries
 
@@ -103,6 +144,8 @@ Direct arterial vasodilator; causes reflex tachycardia and, at higher doses, a d
 | Bioavailability | 26–50 % | 26–50% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

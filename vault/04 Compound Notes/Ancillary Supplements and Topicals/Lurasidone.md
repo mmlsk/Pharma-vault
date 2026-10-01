@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1237021
+chembl-max-phase: 4
 half-life:
   value: 18.0
   value-max: 40.0
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Lurasidone
@@ -69,6 +70,35 @@ pk-source:
   revision: 1372134771
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1237021
+  pref-name: LURASIDONE
+  molecule-type: Small molecule
+  first-approval: 2010
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N05AE05
+  targets: []
+  properties:
+    full-mwt: 492.69
+    mw-freebase: 492.69
+    alogp: 4.26
+    psa: 56.75
+    hba: 6
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.58
+    full-molformula: C28H36N4O2S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Lurasidone
@@ -82,10 +112,22 @@ pk-source:
 - **Compound ID:** `lurasidone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1237021](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237021/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Antagonizes or partially agonizes dopamine D2 receptors; movement, metabolic, and prolactin effects depend on receptor profile.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2010
+- **Flags:** black-box warning
+- **ATC N05AE05:** NERVOUS SYSTEM › ANTIPSYCHOTICS › Indole derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 492.69 | 4.26 | 56.75 | 0/6 | 0 | C28H36N4O2S |
 
 ## Evidence boundaries
 
@@ -105,6 +147,15 @@ Antagonizes or partially agonizes dopamine D2 receptors; movement, metabolic, an
 | Metabolism | hepatic | Liver (CYP3A4-mediated) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - | Faecal (67–80%),; renal (9–19%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Molindone]], [[Sertindole]], [[Ziprasidone]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

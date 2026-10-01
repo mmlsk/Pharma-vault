@@ -72,6 +72,13 @@ pk-source:
   revision: 1374431947
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tropisetron
@@ -108,6 +115,14 @@ Prescription 5-HT3 receptor antagonist used for nausea and vomiting. Cognitive i
 | Metabolism | hepatic | Liver (CYP3A4, CYP1A2, CYP2D6) |
 | CYP (metabolised by) | CYP1A2, CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - | Kidney, Feces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared CYP substrate pool:** CYP1A2 (+42 others), CYP2D6 (+83 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

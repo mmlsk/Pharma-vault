@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Histamine H2 receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1742461
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,33 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1742461
+  pref-name: LAFUTIDINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A02BA08
+  targets:
+  - id: CHEMBL1941
+    name: Histamine H2 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 431.56
+    mw-freebase: 431.56
+    alogp: 2.66
+    psa: 90.66
+    hba: 6
+    hbd: 1
+    rtb: 11
+    num-ro5-violations: 0
+    qed-weighted: 0.43
+    full-molformula: C22H29N3O4S
 ---
 
 # Lafutidine
@@ -67,10 +94,28 @@ tags:
 - **Compound ID:** `lafutidine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1742461](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742461/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Blocks parietal-cell H2 receptors to reduce stimulated gastric acid secretion; approved in Japan.
+
+## Mechanism
+
+Histamine H2 receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A02BA08:** ALIMENTARY TRACT AND METABOLISM › DRUGS FOR PEPTIC ULCER AND GASTRO-OESOPHAGEAL REFLUX DISEASE (GORD) › H2-receptor antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 431.56 | 2.66 | 90.66 | 1/6 | 0 | C22H29N3O4S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Histamine H2 receptor (CHEMBL1941)|Histamine H2 receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +125,13 @@ Blocks parietal-cell H2 receptors to reduce stimulated gastric acid secretion; a
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Cimetidine]] (Histamine H2 receptor), [[Famotidine]] (Histamine H2 receptor), [[Ranitidine]] (Histamine H2 receptor)
+- **Same ATC subgroup:** [[Cimetidine]], [[Famotidine]], [[Niperotidine]], [[Ranitidine]]
 
 ## Safety routing
 

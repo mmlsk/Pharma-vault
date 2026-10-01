@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1089
+chembl-max-phase: 4
 half-life:
   value: 11.6
   value-max: null
@@ -57,6 +57,7 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Phenelzine
@@ -64,6 +65,35 @@ pk-source:
   revision: 1369799230
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1089
+  pref-name: PHENELZINE
+  molecule-type: Small molecule
+  first-approval: 1961
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N06AF03
+  targets: []
+  properties:
+    full-mwt: 136.2
+    mw-freebase: 136.2
+    alogp: 0.69
+    psa: 38.05
+    hba: 2
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.47
+    full-molformula: C8H12N2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Phenelzine
@@ -77,10 +107,22 @@ pk-source:
 - **Compound ID:** `phenelzine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1089](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1089/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits monoamine oxidase to raise synaptic monoamines; selectivity and reversibility determine tyramine and serotonin-syndrome risk; irreversible non-selective, requires tyramine restriction.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1961
+- **Flags:** black-box warning
+- **ATC N06AF03:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Monoamine oxidase inhibitors, non-selective
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 136.2 | 0.69 | 38.05 | 2/2 | 0 | C8H12N2 |
 
 ## Evidence boundaries
 
@@ -97,6 +139,14 @@ Inhibits monoamine oxidase to raise synaptic monoamines; selectivity and reversi
 | Elimination t½ | 11.6 h | 11.6 hours |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Isocarboxazid]]
 
 ## Safety routing
 

@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Trimipramine
@@ -68,6 +69,37 @@ pk-source:
   revision: 1365883663
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL644
+  pref-name: TRIMIPRAMINE
+  molecule-type: Small molecule
+  first-approval: 1979
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N06AA06
+  targets: []
+  properties:
+    full-mwt: 294.44
+    mw-freebase: 294.44
+    alogp: 4.12
+    psa: 6.48
+    hba: 2
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.84
+    full-molformula: C20H26N2
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 4f31df66-7dc2-1f04-e054-00144ff88e88
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4f31df66-7dc2-1f04-e054-00144ff88e88
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Trimipramine
@@ -81,7 +113,7 @@ pk-source:
 - **Compound ID:** `trimipramine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL644](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL644/) · max phase 4
+- **ChEMBL:** [CHEMBL644](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL644/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +122,17 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1979
+- **Flags:** black-box warning
+- **ATC N06AA06:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Non-selective monoamine reuptake inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 294.44 | 4.12 | 6.48 | 0/2 | 0 | C20H26N2 |
 
 ## Evidence boundaries
 
@@ -108,6 +151,17 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Bioavailability | 41 % | 41% |
 | Metabolism | hepatic | Hepatic |
 | Excretion | mainly urinary | Renal |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 4f31df66…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4f31df66-7dc2-1f04-e054-00144ff88e88), label version 20260317. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amineptine]], [[Amitriptyline]], [[Amoxapine]], [[Clomipramine]], [[Desipramine]], [[Dibenzepin]], [[Dothiepin]], [[Doxepin]], [[Doxepin, low dose (Silenor)]], [[Imipramine]], [[Maprotiline]], [[Nortriptyline]]
 
 ## Safety routing
 

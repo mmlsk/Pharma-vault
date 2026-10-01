@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1230314
+  pref-name: ESTETROL ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 2021
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 304.39
+    mw-freebase: 304.39
+    alogp: 1.55
+    psa: 80.92
+    hba: 4
+    hbd: 4
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.59
+    full-molformula: C18H24O4
 ---
 
 # Estetrol Anhydrous
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `estetrol-anhydrous-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1230314](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1230314/) · max phase 4
+- **ChEMBL:** [CHEMBL1230314](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1230314/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,15 @@ Estrogen receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEM
 ## Mechanism
 
 Estrogen receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2021
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 304.39 | 1.55 | 80.92 | 4/4 | 0 | C18H24O4 |
 
 ## Evidence boundaries
 

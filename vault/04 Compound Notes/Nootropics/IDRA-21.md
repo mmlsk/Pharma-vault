@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL77862
 chembl-max-phase: null
 half-life:
   value: null
@@ -55,6 +55,28 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL77862
+  pref-name: null
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 232.69
+    mw-freebase: 232.69
+    alogp: 1.39
+    psa: 58.2
+    hba: 3
+    hbd: 2
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.71
+    full-molformula: C8H9ClN2O2S
 ---
 
 # IDRA-21
@@ -68,10 +90,19 @@ tags:
 - **Compound ID:** `idra-21-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL77862](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL77862/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 Experimental ampakine studied as an AMPA-receptor positive allosteric modulator. Evidence is preclinical, with no established human safety or efficacy dataset.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 232.69 | 1.39 | 58.2 | 2/3 | 0 | C8H9ClN2O2S |
 
 ## Evidence boundaries
 

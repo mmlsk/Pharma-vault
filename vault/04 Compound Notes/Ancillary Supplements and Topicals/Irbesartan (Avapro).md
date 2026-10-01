@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Type-1 angiotensin II receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1513
+chembl-max-phase: 4
 half-life:
   value: 11.0
   value-max: null
@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Irbesartan
@@ -71,6 +73,40 @@ pk-source:
   revision: 1365409692
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1513
+  pref-name: IRBESARTAN
+  molecule-type: Small molecule
+  first-approval: 1997
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C09CA04
+  targets:
+  - id: CHEMBL227
+    name: Type-1 angiotensin II receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 428.54
+    mw-freebase: 428.54
+    alogp: 4.78
+    psa: 87.13
+    hba: 5
+    hbd: 1
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.59
+    full-molformula: C25H28N6O
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 7885b2a8-be4e-48ab-8113-4e6ab791eb98
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7885b2a8-be4e-48ab-8113-4e6ab791eb98
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Irbesartan (Avapro)
@@ -85,10 +121,30 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Irbesartan, Avapro
+- **ChEMBL:** [CHEMBL1513](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1513/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 ARB with a dedicated diabetic nephropathy indication.
+
+## Mechanism
+
+Type-1 angiotensin II receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1997
+- **Flags:** black-box warning
+- **ATC C09CA04:** CARDIOVASCULAR SYSTEM › ANGIOTENSIN II RECEPTOR BLOCKERS (ARBs), PLAIN › Angiotensin II receptor blockers (ARBs), plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 428.54 | 4.78 | 87.13 | 1/5 | 0 | C25H28N6O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Type-1 angiotensin II receptor (CHEMBL227)|Type-1 angiotensin II receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -108,6 +164,19 @@ ARB with a dedicated diabetic nephropathy indication.
 | Metabolism | hepatic | Liver (CYP2C9) |
 | CYP (metabolised by) | CYP2C9 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | Kidney 20%, feces 65% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 7885b2a8…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7885b2a8-be4e-48ab-8113-4e6ab791eb98), label version 20260824. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 11, 15)
+> - protein-binding: consistent (label values: 90)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Azilsartan medoxomil (Edarbi)]] (Type-1 angiotensin II receptor), [[Candesartan (Atacand)]] (Type-1 angiotensin II receptor), [[Candesartan Cilexetil]] (Type-1 angiotensin II receptor), [[Fimasartan]] (Type-1 angiotensin II receptor), [[Olmesartan (Benicar)]] (Type-1 angiotensin II receptor), [[Olmesartan Medoxomil]] (Type-1 angiotensin II receptor), [[Sparsentan]] (Type-1 angiotensin II receptor), [[Tasosartan]] (Type-1 angiotensin II receptor), [[Telmisartan]] (Type-1 angiotensin II receptor), [[Trv-120027]] (Type-1 angiotensin II receptor), [[Valsartan (Diovan)]] (Type-1 angiotensin II receptor)
+- **Same ATC subgroup:** [[Azilsartan Medoxomil]], [[Candesartan (Atacand)]], [[Eprosartan]], [[Fimasartan]], [[Losartan]], [[Olmesartan (Benicar)]], [[Olmesartan Medoxomil]], [[Tasosartan]], [[Telmisartan]], [[Valsartan (Diovan)]]
+- **Shared CYP substrate pool:** CYP2C9 (+40 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

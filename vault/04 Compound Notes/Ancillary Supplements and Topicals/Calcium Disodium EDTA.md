@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1200375
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1200375
+  pref-name: EDETATE CALCIUM DISODIUM ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 1953
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 374.27
+    mw-freebase: 374.27
+    full-molformula: C10H12CaN2Na2O8
 ---
 
 # Calcium Disodium EDTA
@@ -67,10 +83,21 @@ tags:
 - **Compound ID:** `edetate-calcium-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1200375](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200375/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Parenteral chelator for symptomatic lead poisoning, formulated as the calcium salt so it does not strip calcium itself.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1953
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 374.27 | - | - | -/- | - | C10H12CaN2Na2O8 |
 
 ## Evidence boundaries
 

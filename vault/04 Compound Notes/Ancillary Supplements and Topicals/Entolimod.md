@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2108683
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108683
+  pref-name: ENTOLIMOD
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2176839
+    name: Toll-like receptor 5
+    action: AGONIST
+  properties: {}
 ---
 
 # Entolimod
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `entolimod-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2108683](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108683/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -75,6 +92,14 @@ Entolimod is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is t
 ## Mechanism
 
 toll-like receptor 5 agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Toll-like receptor 5 (CHEMBL2176839)|Toll-like receptor 5]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 

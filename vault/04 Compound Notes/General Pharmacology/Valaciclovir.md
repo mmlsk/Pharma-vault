@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1349
+chembl-max-phase: 4
 half-life:
   value: 30.0
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Valaciclovir
@@ -68,6 +69,35 @@ pk-source:
   revision: 1356290223
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1349
+  pref-name: VALACYCLOVIR
+  molecule-type: Small molecule
+  first-approval: 1995
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AB11
+  targets: []
+  properties:
+    full-mwt: 324.34
+    mw-freebase: 324.34
+    alogp: -0.8
+    psa: 151.14
+    hba: 9
+    hbd: 3
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.44
+    full-molformula: C13H20N6O4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Valaciclovir
@@ -81,10 +111,22 @@ pk-source:
 - **Compound ID:** `valacyclovir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1349/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 L-valyl ester prodrug of aciclovir with three to five times the oral bioavailability, achieved by hijacking an intestinal peptide transporter.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1995
+- **Flags:** prodrug
+- **ATC J05AB11:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 324.34 | -0.8 | 151.14 | 3/9 | 0 | C13H20N6O4 |
 
 ## Evidence boundaries
 
@@ -103,6 +145,14 @@ L-valyl ester prodrug of aciclovir with three to five times the oral bioavailabi
 | Bioavailability | 55 % | 55% |
 | Metabolism | hepatic | Liver (to aciclovir) |
 | Excretion | - | Kidney 40–50% (aciclovir),; faecal 47% (aciclovir) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Aciclovir]], [[Ganciclovir]], [[Molnupiravir]], [[Remdesivir]], [[Valganciclovir]]
 
 ## Safety routing
 

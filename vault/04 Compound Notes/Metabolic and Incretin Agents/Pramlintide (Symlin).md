@@ -71,6 +71,13 @@ pk-source:
   revision: 1357844855
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Pramlintide (Symlin)
@@ -106,6 +113,8 @@ Synthetic amylin analog used alongside insulin in diabetes, slows gastric emptyi
 | Protein binding | 60 % | ~60% |
 | Bioavailability | 30–40 % | 30 to 40% |
 | Metabolism | - | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

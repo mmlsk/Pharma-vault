@@ -8,15 +8,15 @@ cluster: Nootropics
 group: neuropsych
 class: null
 subclass: null
-mechanism: null
+mechanism: Dopamine D3 receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1009
+chembl-max-phase: 4
 half-life:
   value: 0.75
   value-max: 1.5
@@ -61,6 +61,8 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Levodopa
@@ -68,6 +70,39 @@ pk-source:
   revision: 1375811327
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1009
+  pref-name: LEVODOPA
+  molecule-type: Small molecule
+  first-approval: 1970
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N04BA01
+  targets:
+  - id: CHEMBL234
+    name: D(3) dopamine receptor
+    action: AGONIST
+  properties:
+    full-mwt: 197.19
+    mw-freebase: 197.19
+    alogp: 0.05
+    psa: 103.78
+    hba: 4
+    hbd: 4
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.51
+    full-molformula: C9H11NO4
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 077c0f39-a3a2-4b2b-a184-09131889dcfb
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=077c0f39-a3a2-4b2b-a184-09131889dcfb
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
 ---
 
 # Levodopa
@@ -81,10 +116,30 @@ pk-source:
 - **Compound ID:** `levodopa-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1009](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1009/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The dopamine precursor that crosses the blood-brain barrier where dopamine itself cannot. Still the most effective symptomatic treatment for Parkinson disease more than fifty years on, and always co-formulated with a peripheral decarboxylase inhibitor.
+
+## Mechanism
+
+Dopamine D3 receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1970
+- **Flags:** prodrug
+- **ATC N04BA01:** NERVOUS SYSTEM › DOPAMINERGIC AGENTS › Dopa and dopa derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 197.19 | 0.05 | 103.78 | 4/4 | 0 | C9H11NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[D(3) dopamine receptor (CHEMBL234)|D(3) dopamine receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +158,10 @@ The dopamine precursor that crosses the blood-brain barrier where dopamine itsel
 | Metabolism | - | Aromatic--amino-acid decarboxylase |
 | Metabolites | - | • Dopamine |
 | Excretion | mainly urinary | Renal 70–80% |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 077c0f39…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=077c0f39-a3a2-4b2b-a184-09131889dcfb), label version 20260720. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 2.3)
 
 ## Safety routing
 

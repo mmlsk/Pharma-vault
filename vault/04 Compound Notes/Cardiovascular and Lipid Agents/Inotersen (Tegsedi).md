@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297770
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,20 @@ tags:
 - source-derived
 - group/cardio
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297770
+  pref-name: INOTERSEN
+  molecule-type: Oligonucleotide
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N07XX15
+  targets: []
+  properties: {}
 ---
 
 # Inotersen (Tegsedi)
@@ -70,10 +84,16 @@ tags:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Inotersen, Tegsedi
+- **ChEMBL:** [CHEMBL4297770](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297770/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 An antisense oligonucleotide lowering transthyretin through RNase H-mediated mRNA degradation. Thrombocytopenia and glomerulonephritis require weekly monitoring and have limited its use.
+
+## ChEMBL profile
+
+- **Molecule type:** Oligonucleotide
+- **ATC N07XX15:** NERVOUS SYSTEM › OTHER NERVOUS SYSTEM DRUGS › Other nervous system drugs
 
 ## Evidence boundaries
 
@@ -83,6 +103,12 @@ An antisense oligonucleotide lowering transthyretin through RNase H-mediated mRN
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amifampridine (3,4-Diaminopyridine)]], [[Deutetrabenazine]], [[Dextromethorphan]], [[Edaravone]], [[Patisiran (Onpattro)]], [[Pitolisant (Wakix)]], [[Riluzole (Rilutek)]], [[Tafamidis (Vyndaqel)]], [[Tetrabenazine]], [[Troriluzole]], [[Valbenazine]], [[Vutrisiran (Amvuttra)]]
 
 ## Safety routing
 

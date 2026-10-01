@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2109208
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,18 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2109208
+  pref-name: MARITIME PINE
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Pycnogenol
@@ -67,10 +79,15 @@ tags:
 - **Compound ID:** `pycnogenol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2109208](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2109208/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Standardized maritime pine-bark extract studied for endothelial and venous outcomes; effects are generally modest.
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
 
 ## Evidence boundaries
 

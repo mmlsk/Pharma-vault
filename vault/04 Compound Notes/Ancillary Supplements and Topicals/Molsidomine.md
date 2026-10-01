@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1256353
 chembl-max-phase: null
 half-life:
   value: 1.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Molsidomine
@@ -68,6 +69,34 @@ pk-source:
   revision: 1365345946
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1256353
+  pref-name: null
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 242.24
+    mw-freebase: 242.24
+    alogp: -1.45
+    psa: 82.25
+    hba: 5
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.59
+    full-molformula: C9H14N4O4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Molsidomine
@@ -81,10 +110,19 @@ pk-source:
 - **Compound ID:** `molsidomine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1256353](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1256353/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 NO-donor prodrug converted to linsidomine (SIN-1). Unlike organic nitrates it does not require enzymatic bioactivation, so classical nitrate tolerance is less of an issue.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 242.24 | -1.45 | 82.25 | 0/5 | 0 | C9H14N4O4 |
 
 ## Evidence boundaries
 
@@ -104,6 +142,8 @@ NO-donor prodrug converted to linsidomine (SIN-1). Unlike organic nitrates it do
 | Metabolism | - | Hydrolysis |
 | Metabolites | - | Linsidomine |
 | Excretion | mainly urinary | >90% renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

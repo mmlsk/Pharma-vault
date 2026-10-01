@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL269455
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL269455
+  pref-name: IMIRESTAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 286.24
+    mw-freebase: 286.24
+    alogp: 2.03
+    psa: 58.2
+    hba: 2
+    hbd: 2
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C15H8F2N2O2
 ---
 
 # Imirestat
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `imirestat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL269455](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL269455/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits aldose reductase to limit polyol-pathway flux and the osmotic and oxidative stress it imposes during hyperglycaemia; development discontinued.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 286.24 | 2.03 | 58.2 | 2/2 | 0 | C15H8F2N2O2 |
 
 ## Evidence boundaries
 

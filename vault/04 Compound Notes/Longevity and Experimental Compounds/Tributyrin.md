@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL118722
+chembl-max-phase: 1
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL118722
+  pref-name: TRIBUTYRIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 302.37
+    mw-freebase: 302.37
+    alogp: 2.38
+    psa: 78.9
+    hba: 6
+    hbd: 0
+    rtb: 11
+    num-ro5-violations: 0
+    qed-weighted: 0.43
+    full-molformula: C15H26O6
 ---
 
 # Tributyrin
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `tributyrin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL118722](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL118722/) · max phase 1 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 A triglyceride prodrug of butyrate that survives gastric passage and releases butyrate on lipase hydrolysis, solving the minutes-long half-life and unpleasant odour that make sodium butyrate itself impractical.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 302.37 | 2.38 | 78.9 | 0/6 | 0 | C15H26O6 |
 
 ## Evidence boundaries
 

@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3833370
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -56,6 +56,30 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+- possible-duplicate
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3833370
+  pref-name: ELAMIPRETIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 639.8
+    mw-freebase: 639.8
+    alogp: -0.55
+    psa: 264.56
+    hba: 8
+    hbd: 10
+    rtb: 19
+    num-ro5-violations: 2
+    qed-weighted: 0.05
+    full-molformula: C32H49N9O5
 ---
 
 # SS-31 (elamipretide analogue)
@@ -70,10 +94,19 @@ tags:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** SS-31, elamipretide analogue
+- **ChEMBL:** [CHEMBL3833370](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833370/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 A mitochondria-targeting tetrapeptide that binds cardiolipin in the inner membrane, stabilising cristae and improving supercomplex assembly. It reaches mitochondria without needing a membrane potential, unlike the older targeting strategies.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 639.8 | -0.55 | 264.56 | 10/8 | 2 | C32H49N9O5 |
 
 ## Evidence boundaries
 
@@ -83,6 +116,12 @@ A mitochondria-targeting tetrapeptide that binds cardiolipin in the inner membra
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Elamipretide (SS-31)]]
 
 ## Safety routing
 

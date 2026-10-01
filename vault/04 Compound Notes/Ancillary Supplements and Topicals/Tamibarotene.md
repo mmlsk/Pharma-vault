@@ -54,6 +54,34 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL25202
+  pref-name: TAMIBAROTENE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2008
+    name: Retinoic acid receptor beta
+    action: AGONIST
+  - id: CHEMBL2055
+    name: Retinoic acid receptor alpha
+    action: AGONIST
+  properties:
+    full-mwt: 351.45
+    mw-freebase: 351.45
+    alogp: 4.99
+    psa: 66.4
+    hba: 2
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C22H25NO3
 ---
 
 # Tamibarotene
@@ -67,7 +95,7 @@ tags:
 - **Compound ID:** `tamibarotene-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL25202](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL25202/) · max phase 4
+- **ChEMBL:** [CHEMBL25202](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL25202/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +104,19 @@ Retinoic acid receptor beta agonist; approved/marketed compound catalogued by Ch
 ## Mechanism
 
 Retinoic acid receptor beta agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 351.45 | 4.99 | 66.4 | 2/2 | 0 | C22H25NO3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Retinoic acid receptor beta (CHEMBL2008)|Retinoic acid receptor beta]] - agonist · SINGLE PROTEIN
+- [[Retinoic acid receptor alpha (CHEMBL2055)|Retinoic acid receptor alpha]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 

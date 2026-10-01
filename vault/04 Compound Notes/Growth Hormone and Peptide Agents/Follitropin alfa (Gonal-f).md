@@ -10,15 +10,15 @@ cluster: Growth Hormone and Peptide Agents
 group: peptides
 class: null
 subclass: null
-mechanism: null
+mechanism: Follicle stimulating hormone receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201692
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -57,6 +57,23 @@ tags:
 - source-derived
 - group/peptides
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1201692
+  pref-name: FOLLITROPIN ALFA
+  molecule-type: Protein
+  first-approval: 1995
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G03GA05
+  targets:
+  - id: CHEMBL2024
+    name: Follicle-stimulating hormone receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Follitropin alfa (Gonal-f)
@@ -71,10 +88,25 @@ tags:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Follitropin alfa, Gonal-f
+- **ChEMBL:** [CHEMBL1201692](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201692/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Recombinant human FSH produced in CHO cells; the reference gonadotrophin for follicle and Sertoli cell stimulation.
+
+## Mechanism
+
+Follicle stimulating hormone receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1995
+- **ATC G03GA05:** GENITO URINARY SYSTEM AND SEX HORMONES › GONADOTROPINS AND OTHER OVULATION STIMULANTS › Gonadotropins
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Follicle-stimulating hormone receptor (CHEMBL2024)|Follicle-stimulating hormone receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -84,6 +116,13 @@ Recombinant human FSH produced in CHO cells; the reference gonadotrophin for fol
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Corifollitropin Alfa]] (Follicle-stimulating hormone receptor), [[Follitropin]] (Follicle-stimulating hormone receptor), [[Follitropin Beta]] (Follicle-stimulating hormone receptor), [[Follitropin Delta]] (Follicle-stimulating hormone receptor), [[Menotropins (hMG, Menopur)]] (Follicle-stimulating hormone receptor), [[Urofollitropin (Bravelle-Fostimon)|Urofollitropin (Bravelle/Fostimon)]] (Follicle-stimulating hormone receptor)
+- **Same ATC subgroup:** [[Choriogonadotropin Alfa]], [[Corifollitropin Alfa]], [[Follitropin]], [[Follitropin Beta]], [[Gonadotropin, Chorionic]], [[Lutropin Alfa]], [[Urofollitropin (Bravelle-Fostimon)|Urofollitropin (Bravelle/Fostimon)]]
 
 ## Safety routing
 

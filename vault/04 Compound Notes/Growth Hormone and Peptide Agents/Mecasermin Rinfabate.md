@@ -55,6 +55,22 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201717
+  pref-name: MECASERMIN RINFABATE
+  molecule-type: Protein
+  first-approval: 2005
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01AC05
+  targets:
+  - id: CHEMBL1957
+    name: Insulin-like growth factor 1 receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Mecasermin Rinfabate
@@ -68,7 +84,7 @@ tags:
 - **Compound ID:** `mecasermin-rinfabate-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **ChEMBL:** [CHEMBL1201717](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201717/) · max phase 4
+- **ChEMBL:** [CHEMBL1201717](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201717/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -78,6 +94,16 @@ Insulin-like growth factor I receptor agonist; approved/marketed compound catalo
 
 Insulin-like growth factor I receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2005
+- **ATC H01AC05:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › ANTERIOR PITUITARY LOBE HORMONES AND ANALOGUES › Somatropin and somatropin agonists
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Insulin-like growth factor 1 receptor (CHEMBL1957)|Insulin-like growth factor 1 receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -86,6 +112,13 @@ Insulin-like growth factor I receptor agonist _(ChEMBL curated mechanism, as quo
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Figitumumab]] (Insulin-like growth factor 1 receptor), [[Ganitumab]] (Insulin-like growth factor 1 receptor), [[Istiratumab]] (Insulin-like growth factor 1 receptor), [[Linsitinib]] (Insulin-like growth factor 1 receptor), [[Masoprocol]] (Insulin-like growth factor 1 receptor), [[Mecasermin (Increlex)]] (Insulin-like growth factor 1 receptor), [[MGF (Mechano Growth Factor)]] (Insulin-like growth factor 1 receptor), [[Robatumumab]] (Insulin-like growth factor 1 receptor), [[Teprotumumab]] (Insulin-like growth factor 1 receptor), [[Veligrotug]] (Insulin-like growth factor 1 receptor)
+- **Same ATC subgroup:** [[Lonapegsomatropin]], [[Mecasermin (Increlex)]], [[MGF (Mechano Growth Factor)]], [[Sermorelin]], [[Somapacitan]], [[Somatrem]], [[Somatrogon]], [[Somatropin (Human Growth Hormone)]], [[Tesamorelin]]
 
 ## Safety routing
 

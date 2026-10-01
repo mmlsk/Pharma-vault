@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1419
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: null
@@ -63,6 +63,7 @@ tags:
 - group/glp1
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Sibutramine
@@ -70,6 +71,35 @@ pk-source:
   revision: 1374492573
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1419
+  pref-name: SIBUTRAMINE
+  molecule-type: Small molecule
+  first-approval: 1997
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - A08AA10
+  targets: []
+  properties:
+    full-mwt: 279.86
+    mw-freebase: 279.86
+    alogp: 4.74
+    psa: 3.24
+    hba: 1
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.75
+    full-molformula: C17H26ClN
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Sibutramine
@@ -83,10 +113,22 @@ pk-source:
 - **Compound ID:** `sibutramine-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL1419](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1419/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Withdrawn monoamine-reuptake appetite suppressant; cardiovascular-event risk makes it especially important to recognize in adulterated weight-loss products.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1997
+- **Flags:** withdrawn
+- **ATC A08AA10:** ALIMENTARY TRACT AND METABOLISM › ANTIOBESITY PREPARATIONS, EXCL. DIET PRODUCTS › Centrally acting antiobesity products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 279.86 | 4.74 | 3.24 | 0/1 | 0 | C17H26ClN |
 
 ## Evidence boundaries
 
@@ -106,6 +148,15 @@ Withdrawn monoamine-reuptake appetite suppressant; cardiovascular-event risk mak
 | Metabolism | hepatic | Hepatic (CYP3A4-mediated) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Urine (77%), feces (8%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Diethylpropion]], [[Ephedrine]], [[Fenfluramine]], [[Mazindol]], [[Phentermine]], [[Setmelanotide (Imcivree)]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

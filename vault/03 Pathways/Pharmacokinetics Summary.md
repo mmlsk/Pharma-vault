@@ -20,4 +20,28 @@ Key relations: t½ ≈ 0.693·Vd/CL; steady state after ~4–5 half-lives; clear
 
 Sources to prefer: SmPC/FDA label, DrugBank, ChEMBL, primary PK studies.
 
-Related: [[CYP450 Metabolism]] · [[Clearance Dashboard]]
+## Provenance levels (`source-status`)
+
+| Value | Meaning |
+|---|---|
+| `source-summary-only` | Only the catalogue description; no PK fields |
+| `auto-extracted` | PK parsed from a revision-pinned Wikipedia infobox (`pk-source`) |
+| `partially-verified` | Auto-extracted **and** consistent with the FDA label in an automated cross-check (`pk-verification.status = consistent`). Still not a human review |
+| `verified` | Human-reviewed against SmPC/label/primary literature (set by hand; then `review-status` ≠ `stub`) |
+
+## Auto-extracted PK (all)
+```dataview
+TABLE WITHOUT ID file.link AS Compound, cluster AS Cluster, half-life.value AS "t½", half-life.unit AS Unit,
+  protein-binding.value AS "PB %", bioavailability.value AS "F %", pk-verification.status AS "FDA check"
+FROM #pk-auto
+SORT file.name ASC
+```
+
+## Cross-checked against the FDA label
+```dataview
+TABLE WITHOUT ID file.link AS Compound, half-life.value AS "t½", half-life.unit AS Unit, pk-verification.fields AS Fields
+FROM #pk-fda-consistent
+SORT file.name ASC
+```
+
+Related: [[CYP450 Metabolism]] · [[Clearance Dashboard]] · [[Review Queue]]

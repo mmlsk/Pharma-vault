@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Histone deacetylase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL408513
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Belinostat
@@ -67,6 +68,39 @@ pk-source:
   revision: 1329528223
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL408513
+  pref-name: BELINOSTAT
+  molecule-type: Small molecule
+  first-approval: 2014
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L01XH04
+  targets:
+  - id: CHEMBL2093865
+    name: Histone deacetylase
+    action: INHIBITOR
+  properties:
+    full-mwt: 318.35
+    mw-freebase: 318.35
+    alogp: 2.01
+    psa: 95.5
+    hba: 4
+    hbd: 3
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.45
+    full-molformula: C15H14N2O4S
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 2e8ef36b-71fa-4492-a16f-577d5f7d111d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2e8ef36b-71fa-4492-a16f-577d5f7d111d
+  checked: '2026-10-01'
+  fields:
+    protein-binding: no-label-value
 ---
 
 # Belinostat
@@ -80,10 +114,29 @@ pk-source:
 - **Compound ID:** `belinostat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL408513](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL408513/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Intravenous pan-HDAC inhibitor for peripheral T-cell lymphoma.
+
+## Mechanism
+
+Histone deacetylase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2014
+- **ATC L01XH04:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › OTHER ANTINEOPLASTIC AGENTS › Histone deacetylase (HDAC) inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 318.35 | 2.01 | 95.5 | 3/4 | 0 | C15H14N2O4S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Histone deacetylase (CHEMBL2093865)|Histone deacetylase]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -101,6 +154,17 @@ Intravenous pan-HDAC inhibitor for peripheral T-cell lymphoma.
 | Bioavailability | 100 % | 100% (IV) |
 | Metabolism | hepatic | UGT1A1 |
 | Excretion | mainly urinary | Urine |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 2e8ef36b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2e8ef36b-71fa-4492-a16f-577d5f7d111d), label version 20250407. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abexinostat]] (Histone deacetylase), [[Cudc-101]] (Histone deacetylase), [[Entinostat]] (Histone deacetylase), [[Fimepinostat]] (Histone deacetylase), [[Quisinostat]] (Histone deacetylase), [[Tacedinaline]] (Histone deacetylase)
+- **Same ATC subgroup:** [[Entinostat]], [[Panobinostat]], [[Resminostat]], [[Tucidinostat (chidamide)]], [[Vorinostat]]
 
 ## Safety routing
 

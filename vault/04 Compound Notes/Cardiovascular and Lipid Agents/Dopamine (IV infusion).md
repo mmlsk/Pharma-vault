@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL59
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -57,6 +57,8 @@ tags:
 - group/cardio
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Dopamine
@@ -64,6 +66,28 @@ pk-source:
   revision: 1376384476
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL59
+  pref-name: DOPAMINE
+  molecule-type: Small molecule
+  first-approval: 1974
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01CA04
+  targets: []
+  properties:
+    full-mwt: 153.18
+    mw-freebase: 153.18
+    alogp: 0.6
+    psa: 66.48
+    hba: 3
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.54
+    full-molformula: C8H11NO2
 ---
 
 # Dopamine (IV infusion)
@@ -78,10 +102,21 @@ pk-source:
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
 - **Aliases:** Dopamine, IV infusion
+- **ChEMBL:** [CHEMBL59](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL59/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inotrope and vasopressor whose receptor profile changes with infusion rate, now largely displaced by noradrenaline in shock.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1974
+- **ATC C01CA04:** CARDIOVASCULAR SYSTEM › CARDIAC STIMULANTS EXCL. CARDIAC GLYCOSIDES › Adrenergic and dopaminergic agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 153.18 | 0.6 | 66.48 | 3/3 | 0 | C8H11NO2 |
 
 ## Evidence boundaries
 
@@ -96,6 +131,12 @@ Inotrope and vasopressor whose receptor profile changes with infusion rate, now 
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Metabolism | - | MAO, COMT |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Adrenaline (Epinephrine)]], [[Dobutamine]], [[Ephedrine]], [[Noradrenaline (Norepinephrine, IV)]], [[p-Synephrine (Bitter Orange)]], [[Phenylephrine]]
 
 ## Safety routing
 

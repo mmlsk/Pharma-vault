@@ -61,6 +61,8 @@ tags:
 - group/steroids
 - stub
 - pk-auto
+- chembl-profile
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Metandienone
@@ -68,6 +70,39 @@ pk-source:
   revision: 1330387503
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1418176
+  pref-name: METHANDROSTENOLONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - A14AA03
+  - D11AE01
+  targets:
+  - id: CHEMBL1871
+    name: Androgen receptor
+    action: AGONIST
+  properties:
+    full-mwt: 300.44
+    mw-freebase: 300.44
+    alogp: 4.05
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C20H28O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Methandrostenolone
@@ -81,7 +116,7 @@ pk-source:
 - **Compound ID:** `methandrostenolone-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1418176](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1418176/) · max phase 4
+- **ChEMBL:** [CHEMBL1418176](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1418176/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +125,21 @@ Androgen Receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEM
 ## Mechanism
 
 Androgen Receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC A14AA03:** ALIMENTARY TRACT AND METABOLISM › ANABOLIC STEROIDS › Androstan derivatives
+- **ATC D11AE01:** DERMATOLOGICALS › OTHER DERMATOLOGICAL PREPARATIONS › Androgens for topical use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 300.44 | 4.05 | 37.3 | 1/2 | 0 | C20H28O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Androgen receptor (CHEMBL1871)|Androgen receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -107,6 +157,16 @@ Androgen Receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 | Bioavailability | - | High |
 | Metabolism | hepatic | Hepatic |
 | Excretion | mainly urinary | Urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Dianabol (Methandienone)]]
+- **Shared target:** [[Anadrol (Oxymetholone)]] (Androgen receptor), [[Anavar (Oxandrolone)]] (Androgen receptor), [[Apalutamide (Erleada)]] (Androgen receptor), [[Apc-100]] (Androgen receptor), [[Bicalutamide (Casodex)]] (Androgen receptor), [[CB-03-01 (Clascoterone research formulation)]] (Androgen receptor), [[Clascoterone (Winlevi)]] (Androgen receptor), [[Cyproterone Acetate]] (Androgen receptor), [[Danazol]] (Androgen receptor), [[Darolutamide (Nubeqa)]] (Androgen receptor), [[Dianabol (Methandienone)]] (Androgen receptor), [[Dromostanolone Propionate]] (Androgen receptor)
+- **Same ATC subgroup:** [[Anadrol (Oxymetholone)]], [[Anavar (Oxandrolone)]], [[DHEA]], [[DHT (Dihydrotestosterone)]], [[Dianabol (Methandienone)]], [[Norethandrolone (Nilevar)]], [[Primobolan (Methenolone)]], [[Quinbolone (Anabolicum)]], [[Winstrol (Stanozolol)]]
 
 ## Safety routing
 

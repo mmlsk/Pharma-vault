@@ -10,15 +10,15 @@ cluster: Growth Hormone and Peptide Agents
 group: fgfr
 class: null
 subclass: null
-mechanism: null
+mechanism: Fibroblast growth factor receptor inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1834657
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -57,6 +57,33 @@ tags:
 - source-derived
 - group/fgfr
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1852688
+  pref-name: INFIGRATINIB PHOSPHATE
+  molecule-type: Small molecule
+  first-approval: 2021
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L01EN03
+  targets:
+  - id: CHEMBL2095217
+    name: Fibroblast growth factor receptor
+    action: INHIBITOR
+  properties:
+    full-mwt: 560.49
+    mw-freebase: 560.49
+    alogp: 5.35
+    psa: 95.09
+    hba: 8
+    hbd: 2
+    rtb: 8
+    num-ro5-violations: 2
+    qed-weighted: 0.38
+    full-molformula: C26H31Cl2N7O3
 ---
 
 # Truseltiq (Infigratinib)
@@ -71,10 +98,29 @@ tags:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Truseltiq, Infigratinib
+- **ChEMBL:** [CHEMBL1834657](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1834657/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Oral FGFR1-3 inhibitor repurposed at low dose for achondroplasia, where it increased growth velocity in children.
+
+## Mechanism
+
+Fibroblast growth factor receptor inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2021
+- **ATC L01EN03:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › PROTEIN KINASE INHIBITORS › Fibroblast growth factor receptor (FGFR) tyrosine kinase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 560.49 | 5.35 | 95.09 | 2/8 | 2 | C26H31Cl2N7O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Fibroblast growth factor receptor (CHEMBL2095217)|Fibroblast growth factor receptor]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -84,6 +130,13 @@ Oral FGFR1-3 inhibitor repurposed at low dose for achondroplasia, where it incre
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Balversa (Erdafitinib)]] (Fibroblast growth factor receptor), [[Lytgobi (Futibatinib)]] (Fibroblast growth factor receptor)
+- **Same ATC subgroup:** [[Balversa (Erdafitinib)]], [[Lytgobi (Futibatinib)]], [[Pemazyre (Pemigatinib)]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1801250
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1801250
+  pref-name: NANATINOSTAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 394.41
+    mw-freebase: 394.41
+    alogp: 1.51
+    psa: 103.27
+    hba: 7
+    hbd: 3
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.45
+    full-molformula: C20H19FN6O2
 ---
 
 # Nanatinostat
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `nanatinostat-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1801250](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1801250/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Nanatinostat is a named HDAC research compound with a curated biochemical result against HDAC2. ChEMBL records IC50 4.0 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 394.41 | 1.51 | 103.27 | 3/7 | 0 | C20H19FN6O2 |
 
 ## Evidence boundaries
 

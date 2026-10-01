@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Bosentan
@@ -68,6 +70,40 @@ pk-source:
   revision: 1338158265
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL957
+  pref-name: BOSENTAN
+  molecule-type: Small molecule
+  first-approval: 2001
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C02KX01
+  targets:
+  - id: CHEMBL2096678
+    name: Endothelin receptor, ET-A/ET-B
+    action: ANTAGONIST
+  properties:
+    full-mwt: 551.63
+    mw-freebase: 551.63
+    alogp: 4.2
+    psa: 145.65
+    hba: 10
+    hbd: 2
+    rtb: 10
+    num-ro5-violations: 1
+    qed-weighted: 0.29
+    full-molformula: C27H29N5O6S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 8444da17-6c31-492b-8842-93740f083d9d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8444da17-6c31-492b-8842-93740f083d9d
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Bosentan
@@ -81,7 +117,7 @@ pk-source:
 - **Compound ID:** `bosentan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL957](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL957/) · max phase 4
+- **ChEMBL:** [CHEMBL957](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL957/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +126,21 @@ Endothelin receptor, ET-A/ET-B antagonist; approved/marketed compound catalogued
 ## Mechanism
 
 Endothelin receptor, ET-A/ET-B antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2001
+- **Flags:** black-box warning
+- **ATC C02KX01:** CARDIOVASCULAR SYSTEM › OTHER ANTIHYPERTENSIVES › Antihypertensives for pulmonary arterial hypertension
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 551.63 | 4.2 | 145.65 | 2/10 | 1 | C27H29N5O6S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Endothelin receptor, ET-A-ET-B (CHEMBL2096678)|Endothelin receptor, ET-A/ET-B]] - antagonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -107,6 +158,18 @@ Endothelin receptor, ET-A/ET-B antagonist _(ChEMBL curated mechanism, as quoted 
 | Protein binding | 98 % | >98% |
 | Bioavailability | 50 % | 50% |
 | Metabolism | hepatic | Liver |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 8444da17…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8444da17-6c31-492b-8842-93740f083d9d), label version 20260602. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 3, 5)
+> - protein-binding: consistent (label values: 98)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ambrisentan]] (Endothelin receptor, ET-A/ET-B), [[Aprocitentan]] (Endothelin receptor, ET-A/ET-B), [[Macitentan]] (Endothelin receptor, ET-A/ET-B), [[Sitaxentan]] (Endothelin receptor, ET-A/ET-B)
+- **Same ATC subgroup:** [[Ambrisentan]], [[Macitentan]], [[Riociguat]], [[Sitaxentan]]
 
 ## Safety routing
 

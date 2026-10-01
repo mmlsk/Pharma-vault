@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL403
+chembl-max-phase: 4
 half-life:
   value: 0.65
   value-max: 1.2
@@ -57,6 +57,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Sulbactam
@@ -64,6 +65,35 @@ pk-source:
   revision: 1366237601
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL403
+  pref-name: SULBACTAM
+  molecule-type: Small molecule
+  first-approval: 1986
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J01CG01
+  targets: []
+  properties:
+    full-mwt: 233.24
+    mw-freebase: 233.24
+    alogp: -0.79
+    psa: 91.75
+    hba: 4
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.6
+    full-molformula: C8H11NO5S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Sulbactam
@@ -77,10 +107,21 @@ pk-source:
 - **Compound ID:** `sulbactam-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL403](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL403/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Beta-lactamase inhibitor that is also, uniquely in this group, a direct antibacterial against Acinetobacter baumannii.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1986
+- **ATC J01CG01:** ANTIINFECTIVES FOR SYSTEMIC USE › BETA-LACTAM ANTIBACTERIALS, PENICILLINS › Beta-lactamase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 233.24 | -0.79 | 91.75 | 1/4 | 0 | C8H11NO5S |
 
 ## Evidence boundaries
 
@@ -97,6 +138,14 @@ Beta-lactamase inhibitor that is also, uniquely in this group, a direct antibact
 | Elimination t½ | 0.65–1.2 h | 0.65–1.20 hrs |
 | Protein binding | 29 % | 29% |
 | Excretion | - | Mainly kidneys (41–66% within 8 hrs) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Tazobactam]]
 
 ## Safety routing
 

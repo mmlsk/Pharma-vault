@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1789843
+  pref-name: BELIMUMAB
+  molecule-type: Antibody
+  first-approval: 2011
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AG04
+  targets:
+  - id: CHEMBL2364158
+    name: Tumor necrosis factor ligand superfamily member 13B
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Belimumab
@@ -67,7 +83,7 @@ tags:
 - **Compound ID:** `belimumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1789843](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1789843/) · max phase 4
+- **ChEMBL:** [CHEMBL1789843](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1789843/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +93,16 @@ Tumor necrosis factor ligand superfamily member 13B inhibitor; approved/marketed
 
 Tumor necrosis factor ligand superfamily member 13B inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2011
+- **ATC L04AG04:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Monoclonal antibodies
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor ligand superfamily member 13B (CHEMBL2364158)|Tumor necrosis factor ligand superfamily member 13B]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +111,13 @@ Tumor necrosis factor ligand superfamily member 13B inhibitor _(ChEMBL curated m
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Atacicept]] (Tumor necrosis factor ligand superfamily member 13B), [[Tabalumab]] (Tumor necrosis factor ligand superfamily member 13B)
+- **Same ATC subgroup:** [[Alemtuzumab]], [[Anifrolumab]], [[Inebilizumab]], [[Natalizumab]], [[Ocrelizumab]], [[Ofatumumab]], [[Teprotumumab]], [[Vedolizumab]]
 
 ## Safety routing
 

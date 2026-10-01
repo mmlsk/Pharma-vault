@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Sodium channel protein type IV alpha subunit blocker; Sodium channel protein type V alpha subunit blocker
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1404
+chembl-max-phase: 4
 half-life:
   value: 1.4
   value-max: 1.9
@@ -64,6 +64,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Ranolazine
@@ -71,6 +73,43 @@ pk-source:
   revision: 1359319819
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1404
+  pref-name: RANOLAZINE
+  molecule-type: Small molecule
+  first-approval: 2006
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01EB18
+  targets:
+  - id: CHEMBL1980
+    name: Sodium channel protein type 5 subunit alpha
+    action: BLOCKER
+  - id: CHEMBL2072
+    name: Sodium channel protein type 4 subunit alpha
+    action: BLOCKER
+  properties:
+    full-mwt: 427.55
+    mw-freebase: 427.55
+    alogp: 2.31
+    psa: 74.27
+    hba: 6
+    hbd: 2
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.64
+    full-molformula: C24H33N3O4
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 90c5a0c2-542c-467e-9c0c-ef320534c560
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=90c5a0c2-542c-467e-9c0c-ef320534c560
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Ranolazine (Ranexa)
@@ -85,10 +124,30 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Ranolazine, Ranexa
+- **ChEMBL:** [CHEMBL1404](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1404/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Antianginal that inhibits the late sodium current, working without lowering heart rate or blood pressure.
+
+## Mechanism
+
+Sodium channel protein type IV alpha subunit blocker; Sodium channel protein type V alpha subunit blocker _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2006
+- **ATC C01EB18:** CARDIOVASCULAR SYSTEM › OTHER CARDIAC PREPARATIONS › Other cardiac preparations
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 427.55 | 2.31 | 74.27 | 2/6 | 0 | C24H33N3O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Sodium channel protein type 5 subunit alpha (CHEMBL1980)|Sodium channel protein type 5 subunit alpha]] - blocker · SINGLE PROTEIN
+- [[Sodium channel protein type 4 subunit alpha (CHEMBL2072)|Sodium channel protein type 4 subunit alpha]] - blocker · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -108,6 +167,19 @@ Antianginal that inhibits the late sodium current, working without lowering hear
 | Metabolism | hepatic | Extensive in liver (CYP3A, CYP2D6) and intestine |
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Kidney (75%) and fecal (25%) |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 90c5a0c2…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=90c5a0c2-542c-467e-9c0c-ef320534c560), label version 20260819. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 6, 7, 22)
+> - protein-binding: consistent (label values: 62)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Bupivacaine]] (Sodium channel protein type 4 subunit alpha)
+- **Same ATC subgroup:** [[Adenosine (IV)]], [[Coenzyme Q10]], [[Ibuprofen]], [[Indomethacin]], [[Ivabradine (Corlanor)]], [[Mavacamten]], [[Meldonium]], [[Trimetazidine]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

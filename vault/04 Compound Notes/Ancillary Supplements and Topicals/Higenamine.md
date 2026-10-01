@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL19344
+chembl-max-phase: 1
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL19344
+  pref-name: HIGENAMINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 271.32
+    mw-freebase: 271.32
+    alogp: 2.23
+    psa: 72.72
+    hba: 4
+    hbd: 4
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.63
+    full-molformula: C16H17NO3
 ---
 
 # Higenamine
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `higenamine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL19344](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL19344/) · max phase 1 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Plant-derived beta-2 agonist found in Nandina and other botanicals and sold in pre-workout supplements. WADA-prohibited at all times, and it turns up in foods, which makes inadvertent doping positives a real risk.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 271.32 | 2.23 | 72.72 | 4/4 | 0 | C16H17NO3 |
 
 ## Evidence boundaries
 

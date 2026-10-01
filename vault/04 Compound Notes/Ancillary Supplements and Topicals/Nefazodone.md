@@ -63,6 +63,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Nefazodone
@@ -70,6 +71,35 @@ pk-source:
   revision: 1358676122
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL623
+  pref-name: NEFAZODONE
+  molecule-type: Small molecule
+  first-approval: 1994
+  black-box-warning: true
+  withdrawn: true
+  atc-codes:
+  - N06AX06
+  targets: []
+  properties:
+    full-mwt: 470.02
+    mw-freebase: 470.02
+    alogp: 3.55
+    psa: 55.53
+    hba: 7
+    hbd: 0
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.45
+    full-molformula: C25H32ClN5O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Nefazodone
@@ -83,7 +113,7 @@ pk-source:
 - **Compound ID:** `nefazodone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL623](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL623/) · max phase 4
+- **ChEMBL:** [CHEMBL623](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL623/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -92,6 +122,17 @@ Serotonin transporter inhibitor; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Serotonin transporter inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1994
+- **Flags:** black-box warning, withdrawn
+- **ATC N06AX06:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Other antidepressants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 470.02 | 3.55 | 55.53 | 0/7 | 0 | C25H32ClN5O2 |
 
 ## Evidence boundaries
 
@@ -112,6 +153,15 @@ Serotonin transporter inhibitor _(ChEMBL curated mechanism, as quoted by the sou
 | CYP (metabolised by) | CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | • Hydroxynefazodone; • mCPP; • p-Hydroxynefazodone; • Triazoledione |
 | Excretion | mainly urinary | Urine: 55%; Feces: 20–30% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Agomelatine (Valdoxan)]], [[Brexanolone]], [[Bupropion (Wellbutrin)]], [[Desvenlafaxine]], [[Duloxetine (Cymbalta)]], [[Esketamine (Spravato)]], [[Levomilnacipran]], [[Minaprine]], [[Mirtazapine]], [[Tianeptine]], [[Trazodone (Desyrel)]], [[Venlafaxine (Effexor)]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

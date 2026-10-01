@@ -68,6 +68,13 @@ pk-source:
   revision: 1329023121
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # GHRP-6
@@ -100,6 +107,8 @@ Ghrelin-receptor GH secretagogue peptide notable for strongly stimulating appeti
 |---|---|---|
 | Elimination t½ | 2.5 h | 2.5 hours |
 | Bioavailability | 1 % | Oral: <1.0% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

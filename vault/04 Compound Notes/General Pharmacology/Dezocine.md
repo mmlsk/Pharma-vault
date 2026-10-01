@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: analgesia
 class: null
 subclass: null
-mechanism: null
+mechanism: Kappa opioid receptor antagonist; Mu opioid receptor partial agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1685
+chembl-max-phase: 4
 half-life:
   value: 2.2
   value-max: null
@@ -56,6 +56,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Dezocine
@@ -63,6 +64,41 @@ pk-source:
   revision: 1369637918
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1685
+  pref-name: DEZOCINE
+  molecule-type: Small molecule
+  first-approval: 1989
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N02AX03
+  targets:
+  - id: CHEMBL233
+    name: Mu-type opioid receptor
+    action: PARTIAL AGONIST
+  - id: CHEMBL237
+    name: Kappa-type opioid receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 245.37
+    mw-freebase: 245.37
+    alogp: 3.11
+    psa: 46.25
+    hba: 2
+    hbd: 2
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.74
+    full-molformula: C16H23NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Dezocine
@@ -76,10 +112,30 @@ pk-source:
 - **Compound ID:** `dezocine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1685](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1685/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Mixed agonist-antagonist opioid used widely in China, with additional monoamine reuptake inhibition.
+
+## Mechanism
+
+Kappa opioid receptor antagonist; Mu opioid receptor partial agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1989
+- **ATC N02AX03:** NERVOUS SYSTEM › OPIOIDS › Other opioids
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 245.37 | 3.11 | 46.25 | 2/2 | 0 | C16H23NO |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Mu-type opioid receptor (CHEMBL233)|Mu-type opioid receptor]] - partial agonist · SINGLE PROTEIN
+- [[Kappa-type opioid receptor (CHEMBL237)|Kappa-type opioid receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -95,6 +151,15 @@ Mixed agonist-antagonist opioid used widely in China, with additional monoamine 
 |---|---|---|
 | Elimination t½ | 2.2 h | 2.2 hours |
 | Metabolism | hepatic | Hepatic |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Buprenorphine]] (Kappa-type opioid receptor; Mu-type opioid receptor), [[Aticaprant]] (Kappa-type opioid receptor), [[Diamorphine (Heroin)]] (Mu-type opioid receptor), [[Difelikefalin]] (Kappa-type opioid receptor), [[Eluxadoline]] (Mu-type opioid receptor), [[Fentanyl]] (Mu-type opioid receptor), [[Oliceridine]] (Mu-type opioid receptor), [[Oxycodone]] (Mu-type opioid receptor), [[Samidorphan]] (Mu-type opioid receptor)
+- **Same ATC subgroup:** [[Oliceridine]], [[Tapentadol]]
 
 ## Safety routing
 

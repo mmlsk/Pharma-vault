@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1732
+chembl-max-phase: 4
 half-life:
   value: 9.0
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Dihydroergotamine
@@ -68,6 +69,36 @@ pk-source:
   revision: 1370481992
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1732
+  pref-name: DIHYDROERGOTAMINE
+  molecule-type: Small molecule
+  first-approval: 1946
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N02CA01
+  - N02CA51
+  targets: []
+  properties:
+    full-mwt: 583.69
+    mw-freebase: 583.69
+    alogp: 2.08
+    psa: 118.21
+    hba: 6
+    hbd: 3
+    rtb: 4
+    num-ro5-violations: 1
+    qed-weighted: 0.43
+    full-molformula: C33H37N5O5
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Dihydroergotamine
@@ -81,10 +112,23 @@ pk-source:
 - **Compound ID:** `dihydroergotamine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1732](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1732/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Ergot alkaloid for refractory and status migraine, a promiscuous agonist across serotonin, adrenergic and dopamine receptors.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1946
+- **Flags:** black-box warning
+- **ATC N02CA01:** NERVOUS SYSTEM › ANTIMIGRAINE PREPARATIONS › Ergot alkaloids
+- **ATC N02CA51:** NERVOUS SYSTEM › ANTIMIGRAINE PREPARATIONS › Ergot alkaloids
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 583.69 | 2.08 | 118.21 | 3/6 | 1 | C33H37N5O5 |
 
 ## Evidence boundaries
 
@@ -101,6 +145,14 @@ Ergot alkaloid for refractory and status migraine, a promiscuous agonist across 
 | Elimination t½ | 9 h | 9 hours |
 | Bioavailability | 32 % | 32% (nasal spray) |
 | Excretion | mainly non-renal | Bile duct |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Lisuride]]
 
 ## Safety routing
 

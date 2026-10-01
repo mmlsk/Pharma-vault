@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4298113
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4298113
+  pref-name: BAMOSIRAN
+  molecule-type: Oligonucleotide
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4630578
+    name: Beta-2 adrenergic receptor mRNA
+    action: RNAI INHIBITOR
+  properties: {}
 ---
 
 # Bamosiran
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `bamosiran-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4298113](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298113/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -75,6 +92,14 @@ Bamosiran is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is b
 ## Mechanism
 
 beta-2 adrenergic receptor mRNA RNAi inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Oligonucleotide
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Beta-2 adrenergic receptor mRNA (CHEMBL4630578)|Beta-2 adrenergic receptor mRNA]] - rnai inhibitor · NUCLEIC-ACID
 
 ## Evidence boundaries
 

@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Human immunodeficiency virus type 1 protease inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL114
+chembl-max-phase: 4
 half-life:
   value: 9.0
   value-max: 15.0
@@ -62,6 +62,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Saquinavir
@@ -69,6 +70,38 @@ pk-source:
   revision: 1335536263
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL114
+  pref-name: SAQUINAVIR
+  molecule-type: Small molecule
+  first-approval: 1995
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J05AE01
+  targets:
+  - id: CHEMBL243
+    name: Human immunodeficiency virus type 1 protease
+    action: INHIBITOR
+  properties:
+    full-mwt: 670.86
+    mw-freebase: 670.86
+    alogp: 3.09
+    psa: 166.75
+    hba: 7
+    hbd: 5
+    rtb: 12
+    num-ro5-violations: 1
+    qed-weighted: 0.2
+    full-molformula: C38H50N6O5
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Saquinavir
@@ -82,10 +115,30 @@ pk-source:
 - **Compound ID:** `saquinavir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL114](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL114/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The first HIV protease inhibitor licensed, in 1995, and the drug that made combination antiretroviral therapy work. Poor bioavailability and QT effects retired it.
+
+## Mechanism
+
+Human immunodeficiency virus type 1 protease inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1995
+- **Flags:** black-box warning
+- **ATC J05AE01:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Protease inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 670.86 | 3.09 | 166.75 | 5/7 | 1 | C38H50N6O5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Human immunodeficiency virus type 1 protease (CHEMBL243)|Human immunodeficiency virus type 1 protease]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -105,6 +158,16 @@ The first HIV protease inhibitor licensed, in 1995, and the drug that made combi
 | Metabolism | hepatic | Liver, mainly by CYP3A4 |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | feces (81%) and urine (3%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Darunavir]] (Human immunodeficiency virus type 1 protease), [[Lopinavir]] (Human immunodeficiency virus type 1 protease), [[Ritonavir]] (Human immunodeficiency virus type 1 protease)
+- **Same ATC subgroup:** [[Atazanavir]], [[Darunavir]], [[Ensitrelvir]], [[Fosamprenavir]], [[Ritonavir]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

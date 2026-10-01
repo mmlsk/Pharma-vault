@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL983
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -61,6 +61,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Suxamethonium chloride
@@ -68,6 +69,28 @@ pk-source:
   revision: 1368852794
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL703
+  pref-name: SUCCINYLCHOLINE CHLORIDE
+  molecule-type: Small molecule
+  first-approval: 1952
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - M03AB01
+  targets: []
+  properties:
+    full-mwt: 290.4
+    mw-freebase: 290.4
+    alogp: 0.27
+    psa: 52.6
+    hba: 4
+    hbd: 0
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.45
+    full-molformula: C14H30N2O4+2
 ---
 
 # Suxamethonium (Succinylcholine)
@@ -82,10 +105,22 @@ pk-source:
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Suxamethonium, Succinylcholine
+- **ChEMBL:** [CHEMBL983](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL983/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The only depolarising neuromuscular blocker in use, giving the fastest onset and offset of any relaxant and carrying several lethal idiosyncrasies.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1952
+- **Flags:** black-box warning
+- **ATC M03AB01:** MUSCULO-SKELETAL SYSTEM › MUSCLE RELAXANTS, PERIPHERALLY ACTING AGENTS › Choline derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 290.4 | 0.27 | 52.6 | 0/4 | 0 | C14H30N2O4+2 |
 
 ## Evidence boundaries
 

@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL301265
+chembl-max-phase: 4
 half-life:
   value: 8.0
   value-max: 12.0
@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Pramipexole
@@ -70,6 +72,37 @@ pk-source:
   revision: 1376132340
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL301265
+  pref-name: PRAMIPEXOLE
+  molecule-type: Small molecule
+  first-approval: 1997
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N04BC05
+  targets: []
+  properties:
+    full-mwt: 211.33
+    mw-freebase: 211.33
+    alogp: 1.58
+    psa: 50.94
+    hba: 4
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C10H17N3S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: a7405a56-de1c-4875-b57f-210c991474ba
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a7405a56-de1c-4875-b57f-210c991474ba
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Pramipexole (Mirapex)
@@ -84,10 +117,21 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Pramipexole, Mirapex
+- **ChEMBL:** [CHEMBL301265](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL301265/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Non-ergoline dopamine agonist with D3 receptor preference; used in Parkinson's disease and restless legs syndrome.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1997
+- **ATC N04BC05:** NERVOUS SYSTEM › DOPAMINERGIC AGENTS › Dopamine agonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 211.33 | 1.58 | 50.94 | 2/4 | 0 | C10H17N3S |
 
 ## Evidence boundaries
 
@@ -105,6 +149,17 @@ Non-ergoline dopamine agonist with D3 receptor preference; used in Parkinson's d
 | Protein binding | 15 % | 15% |
 | Bioavailability | 90 % | >90% |
 | Excretion | mainly urinary | Urine (90%), feces (2%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set a7405a56…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a7405a56-de1c-4875-b57f-210c991474ba), label version 20161013. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 8, 12)
+> - protein-binding: consistent (label values: 15)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Apomorphine]], [[Bromocriptine (Parlodel)]], [[Cabergoline (Dostinex)]], [[Pergolide]], [[Ropinirole]], [[Rotigotine]]
 
 ## Safety routing
 

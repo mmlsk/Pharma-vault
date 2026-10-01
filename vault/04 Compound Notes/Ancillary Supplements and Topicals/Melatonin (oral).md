@@ -9,15 +9,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Melatonin receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL45
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,33 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL45
+  pref-name: MELATONIN
+  molecule-type: Small molecule
+  first-approval: 2007
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05CH01
+  targets:
+  - id: CHEMBL2094268
+    name: Melatonin receptor
+    action: AGONIST
+  properties:
+    full-mwt: 232.28
+    mw-freebase: 232.28
+    alogp: 1.86
+    psa: 54.12
+    hba: 2
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.84
+    full-molformula: C13H16N2O2
 ---
 
 # Melatonin (oral)
@@ -69,10 +96,29 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Melatonin
+- **ChEMBL:** [CHEMBL45](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL45/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Pineal hormone sold as a supplement in the US and regulated as a prescription drug in much of Europe.
+
+## Mechanism
+
+Melatonin receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2007
+- **ATC N05CH01:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Melatonin receptor agonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 232.28 | 1.86 | 54.12 | 2/2 | 0 | C13H16N2O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Melatonin receptor (CHEMBL2094268)|Melatonin receptor]] - agonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -82,6 +128,13 @@ Pineal hormone sold as a supplement in the US and regulated as a prescription dr
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Agomelatine (Valdoxan)]] (Melatonin receptor), [[Piromelatine]] (Melatonin receptor), [[Tasimelteon (Hetlioz)]] (Melatonin receptor)
+- **Same ATC subgroup:** [[Tasimelteon (Hetlioz)]]
 
 ## Safety routing
 

@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4297431
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4297431
+  pref-name: HENAGLIFLOZIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3884
+    name: Sodium/glucose cotransporter 2
+    action: INHIBITOR
+  properties:
+    full-mwt: 454.88
+    mw-freebase: 454.88
+    alogp: 1.5
+    psa: 108.61
+    hba: 7
+    hbd: 4
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.52
+    full-molformula: C22H24ClFO7
 ---
 
 # Henagliflozin
@@ -67,6 +92,7 @@ tags:
 - **Compound ID:** `henagliflozin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL4297431](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297431/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -76,6 +102,18 @@ Henagliflozin is a phase 3 compound catalogued by ChEMBL. Its curated mechanism 
 
 sodium/glucose cotransporter 2 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 454.88 | 1.5 | 108.61 | 4/7 | 0 | C22H24ClFO7 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Sodium-glucose cotransporter 2 (CHEMBL3884)|Sodium/glucose cotransporter 2]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +122,12 @@ sodium/glucose cotransporter 2 inhibitor _(ChEMBL curated mechanism, as quoted b
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Bexagliflozin]] (Sodium/glucose cotransporter 2), [[Dapagliflozin (Farxiga)]] (Sodium/glucose cotransporter 2), [[Empagliflozin (Jardiance)]] (Sodium/glucose cotransporter 2), [[Ertugliflozin]] (Sodium/glucose cotransporter 2), [[Ipragliflozin]] (Sodium/glucose cotransporter 2), [[Ipragliflozin L-Proline]] (Sodium/glucose cotransporter 2), [[Licogliflozin]] (Sodium/glucose cotransporter 2), [[Sergliflozin Etabonate]] (Sodium/glucose cotransporter 2), [[Sotagliflozin (Inpefa)]] (Sodium/glucose cotransporter 2)
 
 ## Safety routing
 

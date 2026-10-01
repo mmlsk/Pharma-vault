@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201349
+  pref-name: HEXAFLUORENIUM
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M03AC05
+  targets: []
+  properties:
+    full-mwt: 502.75
+    mw-freebase: 502.75
+    alogp: 8.24
+    psa: 0.0
+    hba: 0
+    hbd: 0
+    rtb: 9
+    num-ro5-violations: 2
+    qed-weighted: 0.16
+    full-molformula: C36H42N2+2
 ---
 
 # Hexafluorenium
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `hexafluorenium-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1201349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201349/) · max phase 4
+- **ChEMBL:** [CHEMBL1201349](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201349/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +100,16 @@ Acetylcholinesterase inhibitor; approved/marketed compound catalogued by ChEMBL 
 
 Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC M03AC05:** MUSCULO-SKELETAL SYSTEM › MUSCLE RELAXANTS, PERIPHERALLY ACTING AGENTS › Other quaternary ammonium compounds
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 502.75 | 8.24 | 0.0 | 0/0 | 2 | C36H42N2+2 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +118,12 @@ Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the sour
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Atracurium]], [[Cisatracurium]], [[Pancuronium]], [[Vecuronium]]
 
 ## Safety routing
 

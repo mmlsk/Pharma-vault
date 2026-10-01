@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Benperidol
@@ -63,6 +64,38 @@ pk-source:
   revision: 1325885169
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL297302
+  pref-name: BENPERIDOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05AD07
+  targets:
+  - id: CHEMBL217
+    name: D(2) dopamine receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 381.45
+    mw-freebase: 381.45
+    alogp: 3.77
+    psa: 58.1
+    hba: 4
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.66
+    full-molformula: C22H24FN3O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Benperidol
@@ -76,7 +109,7 @@ pk-source:
 - **Compound ID:** `benperidol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL297302](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL297302/) · max phase 4
+- **ChEMBL:** [CHEMBL297302](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL297302/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +118,19 @@ Dopamine D2 receptor antagonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Dopamine D2 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC N05AD07:** NERVOUS SYSTEM › ANTIPSYCHOTICS › Butyrophenone derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 381.45 | 3.77 | 58.1 | 1/4 | 0 | C22H24FN3O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[D(2) dopamine receptor (CHEMBL217)|D(2) dopamine receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -99,6 +145,15 @@ Dopamine D2 receptor antagonist _(ChEMBL curated mechanism, as quoted by the sou
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 8 h | 8 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aripiprazole]] (D(2) dopamine receptor), [[Brexpiprazole]] (D(2) dopamine receptor), [[Cabergoline (Dostinex)]] (D(2) dopamine receptor), [[Clozapine]] (D(2) dopamine receptor), [[Domperidone]] (D(2) dopamine receptor), [[Iloperidone]] (D(2) dopamine receptor), [[Itopride]] (D(2) dopamine receptor), [[Lumateperone]] (D(2) dopamine receptor), [[Paliperidone]] (D(2) dopamine receptor), [[Perphenazine]] (D(2) dopamine receptor), [[Pridopidine]] (D(2) dopamine receptor), [[Remoxipride]] (D(2) dopamine receptor)
+- **Same ATC subgroup:** [[Droperidol]], [[Haloperidol]], [[Lumateperone]]
 
 ## Safety routing
 

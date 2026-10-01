@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: SLAM family member 7 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1743010
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -59,6 +59,8 @@ tags:
 - group/immunology
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Elotuzumab
@@ -66,6 +68,21 @@ pk-source:
   revision: 1347865846
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1743010
+  pref-name: ELOTUZUMAB
+  molecule-type: Antibody
+  first-approval: 2015
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L01FX08
+  targets:
+  - id: CHEMBL3559386
+    name: SLAM family member 7
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Elotuzumab
@@ -79,10 +96,25 @@ pk-source:
 - **Compound ID:** `elotuzumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1743010](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743010/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Anti-SLAMF7 antibody for myeloma that works partly by activating natural killer cells rather than only by tagging the tumour.
+
+## Mechanism
+
+SLAM family member 7 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2015
+- **ATC L01FX08:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › MONOCLONAL ANTIBODIES AND ANTIBODY DRUG CONJUGATES › Other monoclonal antibodies and antibody drug conjugates
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[SLAM family member 7 (CHEMBL3559386)|SLAM family member 7]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -97,6 +129,12 @@ Anti-SLAMF7 antibody for myeloma that works partly by activating natural killer 
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Bioavailability | 100 % | 100% (IV) |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Belantamab Mafodotin]], [[Blinatumomab]], [[Brentuximab Vedotin]], [[Elranatamab]], [[Ipilimumab]], [[Teclistamab]], [[Tremelimumab]]
 
 ## Safety routing
 

@@ -17,7 +17,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1201677
 chembl-max-phase: null
 half-life:
   value: null
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Colesevelam
@@ -69,6 +70,17 @@ pk-source:
   revision: 1329247337
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201677
+  pref-name: null
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Colesevelam (Welchol)
@@ -83,10 +95,15 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Colesevelam, Welchol
+- **ChEMBL:** [CHEMBL1201677](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201677/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 Modern bile acid sequestrant with far fewer interactions than cholestyramine, plus a glucose indication.
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
 
 ## Evidence boundaries
 

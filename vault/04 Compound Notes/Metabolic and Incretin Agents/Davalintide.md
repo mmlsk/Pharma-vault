@@ -8,15 +8,15 @@ cluster: Metabolic and Incretin Agents
 group: glp1
 class: null
 subclass: null
-mechanism: null
+mechanism: Amylin receptor AMY1, CALCR/RAMP1 agonist; Calcitonin gene-related peptide type 1 receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2105635
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,28 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2105635
+  pref-name: DAVALINTIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3798
+    name: Calcitonin gene-related peptide type 1 receptor
+    action: AGONIST
+  - id: CHEMBL2111189
+    name: Amylin receptor AMY1, CALCR/RAMP1
+    action: AGONIST
+  properties:
+    full-mwt: 3624.09
+    mw-freebase: 3624.09
+    full-molformula: C152H248N50O49S2
 ---
 
 # Davalintide
@@ -68,10 +90,28 @@ tags:
 - **Compound ID:** `davalintide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL2105635](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105635/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Amylin analogue studied for appetite suppression and weight loss; development did not establish routine clinical use.
+
+## Mechanism
+
+Amylin receptor AMY1, CALCR/RAMP1 agonist; Calcitonin gene-related peptide type 1 receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 3624.09 | - | - | -/- | - | C152H248N50O49S2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Calcitonin gene-related peptide type 1 receptor (CHEMBL3798)|Calcitonin gene-related peptide type 1 receptor]] - agonist · SINGLE PROTEIN
+- [[Amylin receptor AMY1, CALCR-RAMP1 (CHEMBL2111189)|Amylin receptor AMY1, CALCR/RAMP1]] - agonist · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -81,6 +121,12 @@ Amylin analogue studied for appetite suppression and weight loss; development di
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Atogepant]] (Calcitonin gene-related peptide type 1 receptor), [[Bi-44370]] (Calcitonin gene-related peptide type 1 receptor), [[Erenumab]] (Calcitonin gene-related peptide type 1 receptor), [[Rimegepant (Nurtec ODT)]] (Calcitonin gene-related peptide type 1 receptor), [[Ubrogepant]] (Calcitonin gene-related peptide type 1 receptor)
 
 ## Safety routing
 

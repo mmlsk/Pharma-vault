@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2134724
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: null
@@ -49,7 +49,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -57,6 +57,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Ipratropium bromide
@@ -64,6 +66,38 @@ pk-source:
   revision: 1363887579
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1621597
+  pref-name: IPRATROPIUM BROMIDE
+  molecule-type: Small molecule
+  first-approval: 1986
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R01AX03
+  - R03BB01
+  targets: []
+  properties:
+    full-mwt: 332.46
+    mw-freebase: 332.46
+    alogp: 2.85
+    psa: 46.53
+    hba: 3
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C20H30NO3+
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 6b730dd7-4d93-403a-bfd2-fa0efa298b75
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6b730dd7-4d93-403a-bfd2-fa0efa298b75
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Ipratropium
@@ -77,10 +111,22 @@ pk-source:
 - **Compound ID:** `ipratropium-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2134724](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2134724/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Antagonises muscarinic receptors; peripheral selectivity determines how much dry mouth, constipation and central anticholinergic burden an agent carries; inhaled, airway-restricted.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1986
+- **ATC R01AX03:** RESPIRATORY SYSTEM › DECONGESTANTS AND OTHER NASAL PREPARATIONS FOR TOPICAL USE › Other nasal preparations
+- **ATC R03BB01:** RESPIRATORY SYSTEM › OTHER DRUGS FOR OBSTRUCTIVE AIRWAY DISEASES, INHALANTS › Anticholinergics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 332.46 | 2.85 | 46.53 | 1/3 | 0 | C20H30NO3+ |
 
 ## Evidence boundaries
 
@@ -97,6 +143,17 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 | Elimination t½ | 2 h | 2 hours |
 | Protein binding | 0–9 % | 0–9% in vitro |
 | Metabolism | hepatic | Liver |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 6b730dd7…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6b730dd7-4d93-403a-bfd2-fa0efa298b75), label version 20260724. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1.6)
+> - protein-binding: consistent (label values: 0, 9)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Glycopyrrolate]], [[Mupirocin]], [[Retinol]]
 
 ## Safety routing
 

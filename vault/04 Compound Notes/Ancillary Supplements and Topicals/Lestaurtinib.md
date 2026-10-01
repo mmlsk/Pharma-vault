@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL603469
 chembl-max-phase: 3
 half-life:
   value: null
@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Lestaurtinib
@@ -63,6 +64,45 @@ pk-source:
   revision: 1329683050
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL603469
+  pref-name: LESTAURTINIB
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1974
+    name: Receptor-type tyrosine-protein kinase FLT3
+    action: INHIBITOR
+  - id: CHEMBL2971
+    name: Tyrosine-protein kinase JAK2
+    action: INHIBITOR
+  - id: CHEMBL2815
+    name: High affinity nerve growth factor receptor
+    action: INHIBITOR
+  - id: CHEMBL4898
+    name: BDNF/NT-3 growth factors receptor
+    action: INHIBITOR
+  - id: CHEMBL5608
+    name: NT-3 growth factor receptor
+    action: INHIBITOR
+  - id: CHEMBL2041
+    name: Proto-oncogene tyrosine-protein kinase receptor Ret
+    action: INHIBITOR
+  properties:
+    full-mwt: 439.47
+    mw-freebase: 439.47
+    alogp: 3.47
+    psa: 88.65
+    hba: 6
+    hbd: 3
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.37
+    full-molformula: C26H21N3O4
 ---
 
 # Lestaurtinib
@@ -76,6 +116,7 @@ pk-source:
 - **Compound ID:** `lestaurtinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL603469](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL603469/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -84,6 +125,23 @@ Lestaurtinib is a phase 3 compound catalogued by ChEMBL. Its curated mechanism i
 ## Mechanism
 
 tyrosine-protein kinase JAK2 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 439.47 | 3.47 | 88.65 | 3/6 | 0 | C26H21N3O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Receptor-type tyrosine-protein kinase FLT3 (CHEMBL1974)|Receptor-type tyrosine-protein kinase FLT3]] - inhibitor · SINGLE PROTEIN
+- [[Tyrosine-protein kinase JAK2 (CHEMBL2971)|Tyrosine-protein kinase JAK2]] - inhibitor · SINGLE PROTEIN
+- [[High affinity nerve growth factor receptor (CHEMBL2815)|High affinity nerve growth factor receptor]] - inhibitor · SINGLE PROTEIN
+- [[BDNF-NT-3 growth factors receptor (CHEMBL4898)|BDNF/NT-3 growth factors receptor]] - inhibitor · SINGLE PROTEIN
+- [[NT-3 growth factor receptor (CHEMBL5608)|NT-3 growth factor receptor]] - inhibitor · SINGLE PROTEIN
+- [[Proto-oncogene tyrosine-protein kinase receptor Ret (CHEMBL2041)|Proto-oncogene tyrosine-protein kinase receptor Ret]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -99,6 +157,12 @@ tyrosine-protein kinase JAK2 inhibitor _(ChEMBL curated mechanism, as quoted by 
 |---|---|---|
 | Protein binding | - | highly protein-bound, especially to α-1 acid glycoprotein |
 | Metabolism | hepatic | liver P450 (CYP34A) enzyme system |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Fedratinib]] (Receptor-type tyrosine-protein kinase FLT3; Tyrosine-protein kinase JAK2), [[Pacritinib]] (Receptor-type tyrosine-protein kinase FLT3; Tyrosine-protein kinase JAK2), [[Sunitinib]] (Proto-oncogene tyrosine-protein kinase receptor Ret; Receptor-type tyrosine-protein kinase FLT3), [[Baricitinib (oral, Olumiant)]] (Tyrosine-protein kinase JAK2), [[Dovitinib]] (Receptor-type tyrosine-protein kinase FLT3), [[Filgotinib]] (Tyrosine-protein kinase JAK2), [[Momelotinib]] (Tyrosine-protein kinase JAK2)
 
 ## Safety routing
 

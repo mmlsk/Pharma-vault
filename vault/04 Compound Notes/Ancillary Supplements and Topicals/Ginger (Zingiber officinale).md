@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108465
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -56,6 +56,19 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108465
+  pref-name: GINGER
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Ginger (Zingiber officinale)
@@ -70,10 +83,15 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Ginger, Zingiber officinale
+- **ChEMBL:** [CHEMBL2108465](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108465/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Common spice studied for reducing inflammatory markers (CRP, TNF-alpha, IL-6) across multiple randomized trials, alongside its more well-known use for nausea.
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
 
 ## Evidence boundaries
 

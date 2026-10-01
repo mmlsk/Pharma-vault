@@ -10,15 +10,15 @@ cluster: General Pharmacology
 group: oncology
 class: null
 subclass: null
-mechanism: null
+mechanism: DNA topoisomerase II inhibitor; Iron sequestering agent
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1738
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,35 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1738
+  pref-name: DEXRAZOXANE
+  molecule-type: Small molecule
+  first-approval: 1995
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - V03AF02
+  targets:
+  - id: CHEMBL2363058
+    name: Iron
+    action: SEQUESTERING AGENT
+  - id: CHEMBL2094255
+    name: DNA topoisomerase II
+    action: INHIBITOR
+  properties:
+    full-mwt: 268.27
+    mw-freebase: 268.27
+    alogp: -2.71
+    psa: 98.82
+    hba: 6
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.54
+    full-molformula: C11H16N4O4
 ---
 
 # Dexrazoxane (Zinecard)
@@ -70,10 +99,30 @@ tags:
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Dexrazoxane, Zinecard
+- **ChEMBL:** [CHEMBL1738](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1738/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 An EDTA analogue given to limit anthracycline cardiotoxicity. It chelates intracellular iron and also inhibits topoisomerase II beta, and which of the two matters more is still argued.
+
+## Mechanism
+
+DNA topoisomerase II inhibitor; Iron sequestering agent _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1995
+- **ATC V03AF02:** VARIOUS › ALL OTHER THERAPEUTIC PRODUCTS › Detoxifying agents for antineoplastic treatment
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 268.27 | -2.71 | 98.82 | 2/6 | 0 | C11H16N4O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Iron (CHEMBL2363058)|Iron]] - sequestering agent · METAL
+- [[DNA topoisomerase II (CHEMBL2094255)|DNA topoisomerase II]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -83,6 +132,13 @@ An EDTA analogue given to limit anthracycline cardiotoxicity. It chelates intrac
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Deferasirox]] (Iron), [[Etoposide]] (DNA topoisomerase II)
+- **Same ATC subgroup:** [[Glucarpidase]], [[Rasburicase]]
 
 ## Safety routing
 

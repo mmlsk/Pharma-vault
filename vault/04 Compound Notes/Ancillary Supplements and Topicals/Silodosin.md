@@ -8,17 +8,17 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Alpha-1a adrenergic receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL24778
+chembl-max-phase: 4
 half-life:
-  value: 8.0
+  value: 13.0
   value-max: null
   unit: h
   notes: 13±8 hours
@@ -62,6 +62,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Silodosin
@@ -69,6 +71,40 @@ pk-source:
   revision: 1370555904
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL24778
+  pref-name: SILODOSIN
+  molecule-type: Small molecule
+  first-approval: 2008
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04CA04
+  targets:
+  - id: CHEMBL229
+    name: Alpha-1A adrenergic receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 495.54
+    mw-freebase: 495.54
+    alogp: 3.07
+    psa: 97.05
+    hba: 6
+    hbd: 3
+    rtb: 13
+    num-ro5-violations: 0
+    qed-weighted: 0.37
+    full-molformula: C25H32F3N3O4
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: ee8d577e-948d-4164-9671-c876544ac83b
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ee8d577e-948d-4164-9671-c876544ac83b
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: no-label-value
 ---
 
 # Silodosin
@@ -82,10 +118,29 @@ pk-source:
 - **Compound ID:** `silodosin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL24778](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL24778/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Blocks alpha-1 adrenoceptors to relax vascular or prostatic smooth muscle; first-dose hypotension and floppy-iris syndrome are class effects; alpha-1A selective.
+
+## Mechanism
+
+Alpha-1a adrenergic receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2008
+- **ATC G04CA04:** GENITO URINARY SYSTEM AND SEX HORMONES › DRUGS USED IN BENIGN PROSTATIC HYPERTROPHY › Alpha-adrenoreceptor antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 495.54 | 3.07 | 97.05 | 3/6 | 0 | C25H32F3N3O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Alpha-1A adrenergic receptor (CHEMBL229)|Alpha-1A adrenergic receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -99,12 +154,24 @@ Blocks alpha-1 adrenoceptors to relax vascular or prostatic smooth muscle; first
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 8 h | 13±8 hours |
+| Elimination t½ | 13 h | 13±8 hours |
 | Protein binding | 96.6 % | 96.6% |
 | Bioavailability | 32 % | 32% |
 | Metabolism | hepatic | Liver glucuronidation (UGT2B7-mediated); also minor CYP3A4 involvement |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | 33.5% Kidney, 54.9% fecal |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set ee8d577e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ee8d577e-948d-4164-9671-c876544ac83b), label version 20260818. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 24)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alfuzosin]], [[Tamsulosin]], [[Terazosin]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

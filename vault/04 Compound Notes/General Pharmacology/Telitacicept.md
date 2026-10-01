@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL5095293
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,19 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL5095293
+  pref-name: TELITACICEPT
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Telitacicept
@@ -67,10 +80,15 @@ tags:
 - **Compound ID:** `telitacicept-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL5095293](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095293/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 TACI-Fc fusion protein blocking both BAFF and APRIL, approved in China for systemic lupus.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
 
 ## Evidence boundaries
 

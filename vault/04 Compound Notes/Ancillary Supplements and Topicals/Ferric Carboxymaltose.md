@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Supplement
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108597
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,19 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108597
+  pref-name: FERRIC CARBOXYMALTOSE
+  molecule-type: Unknown
+  first-approval: 2013
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Ferric Carboxymaltose
@@ -67,10 +80,20 @@ tags:
 - **Compound ID:** `ferric-carboxymaltose-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2108597](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108597/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Intravenous iron allowing large single doses; frequently causes transient hypophosphataemia through FGF23.
+
+## Mechanism
+
+Supplement _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+- **First approval (ChEMBL):** 2013
 
 ## Evidence boundaries
 

@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL435170
+chembl-max-phase: 2
 half-life:
   value: 10.0
   value-max: null
@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Deucravacitinib
@@ -71,6 +73,36 @@ pk-source:
   revision: 1358949490
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL435170
+  pref-name: ADAPROLOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 429.6
+    mw-freebase: 429.6
+    alogp: 4.12
+    psa: 67.79
+    hba: 5
+    hbd: 2
+    rtb: 11
+    num-ro5-violations: 0
+    qed-weighted: 0.52
+    full-molformula: C26H39NO4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: ff4d7258-5068-4cdf-9692-8cae04c3198e
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ff4d7258-5068-4cdf-9692-8cae04c3198e
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Deucravacitinib (Sotyktu)
@@ -85,10 +117,19 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Deucravacitinib, Sotyktu
+- **ChEMBL:** [CHEMBL435170](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL435170/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Allosteric TYK2 inhibitor for plaque psoriasis with greater kinase selectivity than broad JAK inhibitors.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 429.6 | 4.12 | 67.79 | 2/5 | 0 | C26H39NO4 |
 
 ## Evidence boundaries
 
@@ -109,6 +150,17 @@ Allosteric TYK2 inhibitor for plaque psoriasis with greater kinase selectivity t
 | CYP (metabolised by) | CYP1A2 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | BMT-153261 (active) |
 | Excretion | - | Feces, urine |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set ff4d7258…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ff4d7258-5068-4cdf-9692-8cae04c3198e), label version 20260630. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 10)
+> - protein-binding: consistent (label values: 82, 90)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared CYP substrate pool:** CYP1A2 (+42 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1027
+chembl-max-phase: 4
 half-life:
   value: 4.5
   value-max: 9.0
@@ -63,6 +63,7 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tiagabine
@@ -70,6 +71,35 @@ pk-source:
   revision: 1368825659
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1027
+  pref-name: TIAGABINE
+  molecule-type: Small molecule
+  first-approval: 1997
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N03AG06
+  targets: []
+  properties:
+    full-mwt: 375.56
+    mw-freebase: 375.56
+    alogp: 5.04
+    psa: 40.54
+    hba: 4
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.77
+    full-molformula: C20H25NO2S2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tiagabine
@@ -83,10 +113,21 @@ pk-source:
 - **Compound ID:** `tiagabine-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1027](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1027/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 GABA reuptake inhibitor for focal epilepsy, notable for provoking non-convulsive status in patients without epilepsy.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1997
+- **ATC N03AG06:** NERVOUS SYSTEM › ANTIEPILEPTICS › Fatty acid derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 375.56 | 5.04 | 40.54 | 1/4 | 1 | C20H25NO2S2 |
 
 ## Evidence boundaries
 
@@ -107,6 +148,15 @@ GABA reuptake inhibitor for focal epilepsy, notable for provoking non-convulsive
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | 5-Oxotiagabine, others |
 | Excretion | mainly non-renal · fe 0.03 | Feces: 63%; Urine: 25% (<3% unchanged) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Sodium Valproate]], [[Vigabatrin]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

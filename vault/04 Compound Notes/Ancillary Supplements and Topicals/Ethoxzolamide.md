@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Carbonic anhydrase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL18
+chembl-max-phase: 4
 half-life:
   value: 2.5
   value-max: 5.5
@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ethoxzolamide
@@ -64,6 +65,37 @@ pk-source:
   revision: 1330816894
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL18
+  pref-name: ETHOXZOLAMIDE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2095180
+    name: Carbonic anhydrase
+    action: INHIBITOR
+  properties:
+    full-mwt: 258.32
+    mw-freebase: 258.32
+    alogp: 1.34
+    psa: 82.28
+    hba: 5
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.9
+    full-molformula: C9H10N2O3S2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ethoxzolamide
@@ -77,10 +109,28 @@ pk-source:
 - **Compound ID:** `ethoxzolamide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL18](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL18/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits carbonic anhydrase, lowering bicarbonate-dependent fluid secretion; metabolic acidosis and paraesthesia are the usual class effects; largely superseded.
+
+## Mechanism
+
+Carbonic anhydrase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 258.32 | 1.34 | 82.28 | 1/5 | 0 | C9H10N2O3S2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Carbonic anhydrase (CHEMBL2095180)|Carbonic anhydrase]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -96,6 +146,14 @@ Inhibits carbonic anhydrase, lowering bicarbonate-dependent fluid secretion; met
 |---|---|---|
 | Elimination t½ | 2.5–5.5 h | 2.5–5.5 hours |
 | Protein binding | 89 % | ~89% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Sultiame]] (Carbonic anhydrase)
 
 ## Safety routing
 

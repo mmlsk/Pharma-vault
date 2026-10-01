@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Sulfonylurea receptor 1, Kir6.2 blocker
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL817
+chembl-max-phase: 4
 half-life:
   value: 7.0
   value-max: null
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tolazamide
@@ -67,6 +68,38 @@ pk-source:
   revision: 1332225999
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL817
+  pref-name: TOLAZAMIDE
+  molecule-type: Small molecule
+  first-approval: 1966
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A10BB05
+  targets:
+  - id: CHEMBL2096972
+    name: Sulfonylurea receptor 1, Kir6.2
+    action: BLOCKER
+  properties:
+    full-mwt: 311.41
+    mw-freebase: 311.41
+    alogp: 1.77
+    psa: 78.51
+    hba: 4
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.89
+    full-molformula: C14H21N3O3S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tolazamide
@@ -80,10 +113,29 @@ pk-source:
 - **Compound ID:** `tolazamide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL817](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL817/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Closes pancreatic beta-cell KATP channels to stimulate insulin release, with hypoglycemia as the central class risk.
+
+## Mechanism
+
+Sulfonylurea receptor 1, Kir6.2 blocker _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1966
+- **ATC A10BB05:** ALIMENTARY TRACT AND METABOLISM › BLOOD GLUCOSE LOWERING DRUGS, EXCL. INSULINS › Sulfonylureas
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 311.41 | 1.77 | 78.51 | 2/4 | 0 | C14H21N3O3S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Sulfonylurea receptor 1, Kir6.2 (CHEMBL2096972)|Sulfonylurea receptor 1, Kir6.2]] - blocker · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -101,6 +153,15 @@ Closes pancreatic beta-cell KATP channels to stimulate insulin release, with hyp
 | Bioavailability | - | ? |
 | Metabolism | hepatic | metabolized in the liver to active metabolites |
 | Excretion | mainly urinary | Renal (85%) and fecal (7%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acetohexamide]] (Sulfonylurea receptor 1, Kir6.2), [[Chlorpropamide]] (Sulfonylurea receptor 1, Kir6.2), [[Glibenclamide]] (Sulfonylurea receptor 1, Kir6.2), [[Gliclazide]] (Sulfonylurea receptor 1, Kir6.2), [[Glimepiride]] (Sulfonylurea receptor 1, Kir6.2), [[Glipizide]] (Sulfonylurea receptor 1, Kir6.2), [[Glyburide]] (Sulfonylurea receptor 1, Kir6.2), [[Tolbutamide]] (Sulfonylurea receptor 1, Kir6.2)
+- **Same ATC subgroup:** [[Acetohexamide]], [[Chlorpropamide]], [[Glibenclamide]], [[Gliclazide]], [[Glimepiride]], [[Glipizide]], [[Gliquidone]], [[Glyburide]], [[Tolbutamide]]
 
 ## Safety routing
 

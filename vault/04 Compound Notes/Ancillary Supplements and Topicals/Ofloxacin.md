@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Bacterial DNA gyrase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4
+chembl-max-phase: 4
 half-life:
   value: 8.0
   value-max: 9.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ofloxacin
@@ -68,6 +69,42 @@ pk-source:
   revision: 1368543095
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4
+  pref-name: OFLOXACIN
+  molecule-type: Small molecule
+  first-approval: 1990
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J01MA01
+  - S01AE01
+  - S02AA16
+  targets:
+  - id: CHEMBL2311224
+    name: Bacterial DNA gyrase
+    action: INHIBITOR
+  properties:
+    full-mwt: 361.37
+    mw-freebase: 361.37
+    alogp: 1.54
+    psa: 75.01
+    hba: 6
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.87
+    full-molformula: C18H20FN3O4
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 42366170-e536-46a1-9735-d76e5820a9de
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=42366170-e536-46a1-9735-d76e5820a9de
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Ofloxacin
@@ -81,10 +118,32 @@ pk-source:
 - **Compound ID:** `ofloxacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits bacterial DNA gyrase or topoisomerase IV; tendon, neurologic, cardiac, and resistance risks limit indiscriminate use.
+
+## Mechanism
+
+Bacterial DNA gyrase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1990
+- **Flags:** black-box warning
+- **ATC J01MA01:** ANTIINFECTIVES FOR SYSTEMIC USE › QUINOLONE ANTIBACTERIALS › Fluoroquinolones
+- **ATC S01AE01:** SENSORY ORGANS › ANTIINFECTIVES › Fluoroquinolones
+- **ATC S02AA16:** SENSORY ORGANS › ANTIINFECTIVES › Antiinfectives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 361.37 | 1.54 | 75.01 | 1/6 | 0 | C18H20FN3O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Bacterial DNA gyrase (CHEMBL2311224)|Bacterial DNA gyrase]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -101,6 +160,18 @@ Inhibits bacterial DNA gyrase or topoisomerase IV; tendon, neurologic, cardiac, 
 | Elimination t½ | 8–9 h | 8–9 hours |
 | Protein binding | 32 % | 32% |
 | Bioavailability | 85–95 % | 85–95% |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 42366170…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=42366170-e536-46a1-9735-d76e5820a9de), label version 20260831. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ciprofloxacin]] (Bacterial DNA gyrase), [[Gepotidacin]] (Bacterial DNA gyrase), [[Norfloxacin]] (Bacterial DNA gyrase), [[Prulifloxacin]] (Bacterial DNA gyrase)
+- **Same ATC subgroup:** [[Besifloxacin]], [[Chloramphenicol]], [[Ciprofloxacin]], [[Delafloxacin]], [[Fosfomycin]], [[Gemifloxacin]], [[Lomefloxacin]], [[Moxifloxacin]], [[Norfloxacin]], [[Polymyxin B]], [[Prulifloxacin]], [[Tetracycline]]
 
 ## Safety routing
 

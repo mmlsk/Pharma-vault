@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL430
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Gemifloxacin
@@ -67,6 +68,35 @@ pk-source:
   revision: 1367885335
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL430
+  pref-name: GEMIFLOXACIN
+  molecule-type: Small molecule
+  first-approval: 2003
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J01MA15
+  targets: []
+  properties:
+    full-mwt: 389.39
+    mw-freebase: 389.39
+    alogp: 0.97
+    psa: 123.04
+    hba: 8
+    hbd: 2
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C18H20FN5O4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Gemifloxacin
@@ -80,10 +110,22 @@ pk-source:
 - **Compound ID:** `gemifloxacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL430](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL430/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits bacterial DNA gyrase or topoisomerase IV; tendon, neurologic, cardiac, and resistance risks limit indiscriminate use.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2003
+- **Flags:** black-box warning
+- **ATC J01MA15:** ANTIINFECTIVES FOR SYSTEMIC USE › QUINOLONE ANTIBACTERIALS › Fluoroquinolones
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 389.39 | 0.97 | 123.04 | 2/8 | 0 | C18H20FN5O4 |
 
 ## Evidence boundaries
 
@@ -101,6 +143,14 @@ Inhibits bacterial DNA gyrase or topoisomerase IV; tendon, neurologic, cardiac, 
 | Bioavailability | 71 % | 71% |
 | Metabolism | hepatic | Limited metabolism by the liver to minor metabolites |
 | Excretion | mainly non-renal | Feces (61%); urine (36%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Ciprofloxacin]], [[Delafloxacin]], [[Lomefloxacin]], [[Moxifloxacin]], [[Norfloxacin]], [[Ofloxacin]], [[Prulifloxacin]]
 
 ## Safety routing
 

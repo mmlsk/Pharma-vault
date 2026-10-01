@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1201187
 chembl-max-phase: null
 half-life:
   value: 14.0
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Maraviroc
@@ -68,6 +70,36 @@ pk-source:
   revision: 1329260707
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201187
+  pref-name: null
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 513.68
+    mw-freebase: 513.68
+    alogp: 5.95
+    psa: 63.05
+    hba: 5
+    hbd: 1
+    rtb: 8
+    num-ro5-violations: 2
+    qed-weighted: 0.47
+    full-molformula: C29H41F2N5O
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 5c4a1da5-a8e1-4038-970d-fb15c189c35e
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5c4a1da5-a8e1-4038-970d-fb15c189c35e
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: consistent
 ---
 
 # Maraviroc
@@ -81,10 +113,19 @@ pk-source:
 - **Compound ID:** `maraviroc-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201187](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201187/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits HIV integrase strand transfer as a component of combination antiretroviral therapy.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 513.68 | 5.95 | 63.05 | 1/5 | 2 | C29H41F2N5O |
 
 ## Evidence boundaries
 
@@ -104,6 +145,11 @@ Inhibits HIV integrase strand transfer as a component of combination antiretrovi
 | Metabolism | hepatic | Liver (CYP, predominantly CYP3A) |
 | Metabolites | - | Secondary amine formed by N-dealkylation (major) |
 | Excretion | mainly non-renal | Feces (76%), urine (20%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 5c4a1da5…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5c4a1da5-a8e1-4038-970d-fb15c189c35e), label version 20260708. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: consistent (label values: 76)
 
 ## Safety routing
 

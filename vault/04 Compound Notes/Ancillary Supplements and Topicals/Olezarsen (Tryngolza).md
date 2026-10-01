@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Apolipoprotein C-III mRNA antisense inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4650438
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -56,6 +56,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4650438
+  pref-name: OLEZARSEN
+  molecule-type: Oligonucleotide
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4834388
+    name: Apolipoprotein C-III mRNA
+    action: ANTISENSE INHIBITOR
+  properties: {}
 ---
 
 # Olezarsen (Tryngolza)
@@ -70,10 +86,23 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Olezarsen, Tryngolza
+- **ChEMBL:** [CHEMBL4650438](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650438/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 GalNAc-conjugated antisense oligonucleotide against APOC3, approved for familial chylomicronaemia syndrome.
+
+## Mechanism
+
+Apolipoprotein C-III mRNA antisense inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Oligonucleotide
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Apolipoprotein C-III mRNA (CHEMBL4834388)|Apolipoprotein C-III mRNA]] - antisense inhibitor · NUCLEIC-ACID
 
 ## Evidence boundaries
 

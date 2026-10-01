@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2018302
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2018302
+  pref-name: TUBASTATIN A
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 335.41
+    mw-freebase: 335.41
+    alogp: 2.8
+    psa: 57.5
+    hba: 4
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.57
+    full-molformula: C20H21N3O2
 ---
 
 # Tubastatin A
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `tubastatin-a-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL2018302](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2018302/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 The standard research tool for selective HDAC6 inhibition, with roughly a thousand-fold selectivity over HDAC1. Widely used to show that a given effect is cytoplasmic and tubulin-dependent rather than transcriptional.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 335.41 | 2.8 | 57.5 | 2/4 | 0 | C20H21N3O2 |
 
 ## Evidence boundaries
 

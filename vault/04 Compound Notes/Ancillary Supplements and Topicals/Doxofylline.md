@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1527608
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1527608
+  pref-name: DOXOFYLLINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R03DA11
+  targets: []
+  properties:
+    full-mwt: 266.26
+    mw-freebase: 266.26
+    alogp: -1.19
+    psa: 80.28
+    hba: 8
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.68
+    full-molformula: C11H14N4O4
 ---
 
 # Doxofylline
@@ -67,10 +91,20 @@ tags:
 - **Compound ID:** `doxofylline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1527608](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1527608/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Xanthine bronchodilator with markedly less adenosine-receptor antagonism than theophylline, giving a wider therapeutic window and fewer cardiac and CNS effects.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC R03DA11:** RESPIRATORY SYSTEM › OTHER SYSTEMIC DRUGS FOR OBSTRUCTIVE AIRWAY DISEASES › Xanthines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 266.26 | -1.19 | 80.28 | 0/8 | 0 | C11H14N4O4 |
 
 ## Evidence boundaries
 
@@ -80,6 +114,12 @@ Xanthine bronchodilator with markedly less adenosine-receptor antagonism than th
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Theobromine]]
 
 ## Safety routing
 

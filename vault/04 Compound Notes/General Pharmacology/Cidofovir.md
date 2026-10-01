@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL152
+chembl-max-phase: 4
 half-life:
   value: 2.6
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Cidofovir
@@ -68,6 +69,34 @@ pk-source:
   revision: 1330098376
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL152
+  pref-name: CIDOFOVIR ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 279.19
+    mw-freebase: 279.19
+    alogp: -1.66
+    psa: 147.9
+    hba: 7
+    hbd: 4
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.45
+    full-molformula: C8H14N3O6P
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Cidofovir
@@ -81,10 +110,21 @@ pk-source:
 - **Compound ID:** `cidofovir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL152](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL152/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Acyclic nucleoside phosphonate already carrying one phosphate, active against CMV, adenovirus and polyomavirus, and severely nephrotoxic.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **Flags:** black-box warning, prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 279.19 | -1.66 | 147.9 | 4/7 | 0 | C8H14N3O6P |
 
 ## Evidence boundaries
 
@@ -102,6 +142,8 @@ Acyclic nucleoside phosphonate already carrying one phosphate, active against CM
 | Protein binding | 6 % | <6% |
 | Bioavailability | - | complete |
 | Excretion | mainly urinary | renal; The above pharmacokinetic parameters are measured for cidofovir used in conjunction with probenecid. |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

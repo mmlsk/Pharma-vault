@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Vasopressin V2 receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2107777
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2107777
+  pref-name: SATAVAPTAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1790
+    name: Vasopressin V2 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 627.8
+    mw-freebase: 627.8
+    alogp: 4.51
+    psa: 114.48
+    hba: 8
+    hbd: 1
+    rtb: 9
+    num-ro5-violations: 1
+    qed-weighted: 0.43
+    full-molformula: C33H45N3O7S
 ---
 
 # Satavaptan
@@ -67,10 +93,27 @@ tags:
 - **Compound ID:** `satavaptan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2107777](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107777/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Acts on vasopressin receptors to alter free-water handling or vascular tone; sodium shifts require monitoring; investigational, discontinued.
+
+## Mechanism
+
+Vasopressin V2 receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 627.8 | 4.51 | 114.48 | 1/8 | 1 | C33H45N3O7S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Vasopressin V2 receptor (CHEMBL1790)|Vasopressin V2 receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +123,12 @@ Acts on vasopressin receptors to alter free-water handling or vascular tone; sod
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Lixivaptan]] (Vasopressin V2 receptor), [[Mozavaptan]] (Vasopressin V2 receptor), [[Terlipressin]] (Vasopressin V2 receptor), [[Tolvaptan]] (Vasopressin V2 receptor)
 
 ## Safety routing
 

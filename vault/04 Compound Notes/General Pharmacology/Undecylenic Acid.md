@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1276010
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1276010
+  pref-name: UNDECYLENIC ACID
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D01AE04
+  - D01AE54
+  targets: []
+  properties:
+    full-mwt: 184.28
+    mw-freebase: 184.28
+    alogp: 3.38
+    psa: 37.3
+    hba: 1
+    hbd: 1
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.44
+    full-molformula: C11H20O2
 ---
 
 # Undecylenic Acid
@@ -67,10 +92,21 @@ tags:
 - **Compound ID:** `undecylenic-acid-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1276010](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1276010/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Fatty acid antifungal available over the counter for tinea pedis, one of the oldest topical antifungals still marketed.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC D01AE04:** DERMATOLOGICALS › ANTIFUNGALS FOR TOPICAL USE › Other antifungals for topical use
+- **ATC D01AE54:** DERMATOLOGICALS › ANTIFUNGALS FOR TOPICAL USE › Other antifungals for topical use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 184.28 | 3.38 | 37.3 | 1/1 | 0 | C11H20O2 |
 
 ## Evidence boundaries
 
@@ -80,6 +116,12 @@ Fatty acid antifungal available over the counter for tinea pedis, one of the old
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amorolfine]], [[Butenafine]], [[Flucytosine]], [[Naftifine]], [[Salicylic Acid]], [[Tavaborole]], [[Terbinafine (oral, Lamisil)]]
 
 ## Safety routing
 

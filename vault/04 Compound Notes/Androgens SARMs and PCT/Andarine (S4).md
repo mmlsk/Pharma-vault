@@ -17,7 +17,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL125236
 chembl-max-phase: null
 half-life:
   value: null
@@ -58,6 +58,28 @@ tags:
 - source-derived
 - group/sarms
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL125236
+  pref-name: null
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 441.36
+    mw-freebase: 441.36
+    alogp: 3.34
+    psa: 130.8
+    hba: 6
+    hbd: 3
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.45
+    full-molformula: C19H18F3N3O6
 ---
 
 # Andarine (S4)
@@ -72,10 +94,19 @@ tags:
 - **Source group:** SARMs (`sarms`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Andarine, S4
+- **ChEMBL:** [CHEMBL125236](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL125236/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 SARM studied for lean mass, known for a dose-dependent yellow-tinted vision side effect.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 441.36 | 3.34 | 130.8 | 3/6 | 0 | C19H18F3N3O6 |
 
 ## Evidence boundaries
 

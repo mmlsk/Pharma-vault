@@ -57,6 +57,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Olsalazine
@@ -64,6 +65,35 @@ pk-source:
   revision: 1329361849
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL425
+  pref-name: OLSALAZINE
+  molecule-type: Small molecule
+  first-approval: 1990
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A07EC03
+  targets: []
+  properties:
+    full-mwt: 302.24
+    mw-freebase: 302.24
+    alogp: 2.91
+    psa: 139.78
+    hba: 6
+    hbd: 4
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.64
+    full-molformula: C14H10N2O6
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Olsalazine
@@ -77,7 +107,7 @@ pk-source:
 - **Compound ID:** `olsalazine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL425](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL425/) · max phase 4
+- **ChEMBL:** [CHEMBL425](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL425/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +116,17 @@ Peroxisome proliferator-activated receptor gamma agonist; approved/marketed comp
 ## Mechanism
 
 Peroxisome proliferator-activated receptor gamma agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1990
+- **Flags:** prodrug
+- **ATC A07EC03:** ALIMENTARY TRACT AND METABOLISM › INTESTINAL ANTIINFLAMMATORY AGENTS › Aminosalicylic acid and similar agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 302.24 | 2.91 | 139.78 | 4/6 | 0 | C14H10N2O6 |
 
 ## Evidence boundaries
 
@@ -101,6 +142,14 @@ Peroxisome proliferator-activated receptor gamma agonist _(ChEMBL curated mechan
 |---|---|---|
 | Elimination t½ | 0.9 h | 0.9 hours |
 | Protein binding | 99 % | 99% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Balsalazide]], [[Mesalamine]], [[Mesalazine (5-ASA)]], [[Sulfasalazine]]
 
 ## Safety routing
 

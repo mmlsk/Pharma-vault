@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Lepirudin
@@ -67,6 +68,28 @@ pk-source:
   revision: 1329259409
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201666
+  pref-name: LEPIRUDIN
+  molecule-type: Protein
+  first-approval: 1997
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B01AE02
+  targets:
+  - id: CHEMBL204
+    name: Prothrombin
+    action: INHIBITOR
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Lepirudin
@@ -80,7 +103,7 @@ pk-source:
 - **Compound ID:** `lepirudin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201666](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201666/) · max phase 4
+- **ChEMBL:** [CHEMBL1201666](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201666/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +112,16 @@ Thrombin inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMBL12016
 ## Mechanism
 
 Thrombin inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1997
+- **ATC B01AE02:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Direct thrombin inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prothrombin (CHEMBL204)|Prothrombin]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -105,6 +138,15 @@ Thrombin inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 | Elimination t½ | 1.3 h | ~1.3 hours |
 | Bioavailability | - | 100 |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Antithrombin Alfa]] (Prothrombin), [[Argatroban]] (Prothrombin), [[Dabigatran (Pradaxa)]] (Prothrombin), [[Desirudin]] (Prothrombin), [[Ichorcumab]] (Prothrombin), [[Ximelagatran]] (Prothrombin)
+- **Same ATC subgroup:** [[Argatroban]], [[Dabigatran Etexilate]], [[Desirudin]], [[Ximelagatran]]
 
 ## Safety routing
 

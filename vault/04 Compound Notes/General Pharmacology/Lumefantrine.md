@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Ferriprotoporphyrin IX inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL38827
+chembl-max-phase: 4
 half-life:
   value: 3.0
   value-max: 6.0
@@ -57,6 +57,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Lumefantrine
@@ -64,6 +65,37 @@ pk-source:
   revision: 1343037699
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL38827
+  pref-name: LUMEFANTRINE
+  molecule-type: Small molecule
+  first-approval: 2009
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL613897
+    name: Ferriprotoporphyrin IX
+    action: INHIBITOR
+  properties:
+    full-mwt: 528.95
+    mw-freebase: 528.95
+    alogp: 9.15
+    psa: 23.47
+    hba: 2
+    hbd: 1
+    rtb: 10
+    num-ro5-violations: 2
+    qed-weighted: 0.22
+    full-molformula: C30H32Cl3NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Lumefantrine
@@ -77,10 +109,28 @@ pk-source:
 - **Compound ID:** `lumefantrine-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL38827](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL38827/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Long-acting partner drug to artemether, clearing residual parasites after the artemisinin has cleared the bulk.
+
+## Mechanism
+
+Ferriprotoporphyrin IX inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2009
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 528.95 | 9.15 | 23.47 | 1/2 | 2 | C30H32Cl3NO |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Ferriprotoporphyrin IX (CHEMBL613897)|Ferriprotoporphyrin IX]] - inhibitor · SMALL MOLECULE
 
 ## Evidence boundaries
 
@@ -97,6 +147,14 @@ Long-acting partner drug to artemether, clearing residual parasites after the ar
 | Elimination t½ | 3–6 d | 3-6 days |
 | Protein binding | 99.7 % | 99.7% |
 | Metabolites | - | desbutyl-lumefantrine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Artemether]] (Ferriprotoporphyrin IX), [[Piperaquine]] (Ferriprotoporphyrin IX)
 
 ## Safety routing
 

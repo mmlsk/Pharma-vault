@@ -1,0 +1,188 @@
+compound_id,name,aliases,group,chembl_id,identity_key,chembl_pref_name,pubchem_cid,match,origin,extra_triage
+2-bromo-lsd-compound,2-bromo-LSD,Bromolysergide,neuropsych,CHEMBL274384,CHEMBL274384,Bromolysergide,10171,PubChem name → CID → InChIKey → ChEMBL,backlog: Psychoplastogens / Development candidates,
+2-fdck-compound,2-FDCK,2-Fluoro Deschloroketamine hydrochloride,nps,,CID13771619,2-Fluoro Deschloroketamine hydrochloride,13771619,PubChem name → CID,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+2-fma-compound,2-FMA,2-Fluoromethamphetamine,nps,,CID24257263,2-Fluoromethamphetamine,24257263,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+2-mmc-compound,2-MMC,2-Methylmethcathinone,nps,,CID56603536,2-Methylmethcathinone,56603536,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+25b-nbome-compound,25B-NBOMe,Cimbi-36,neuropsych,CHEMBL3590188,CHEMBL3590188,Cimbi-36,9977044,PubChem name → CID → InChIKey → ChEMBL,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+25c-nbome-compound,25C-NBOMe,,neuropsych,,CID46856354,"2-(4-chloro-2,5-dimethoxyphenyl)-N-((2-methoxyphenyl)methyl)ethanamine",46856354,PubChem name → CID,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+25i-nbome-compound,25I-NBOMe,,neuropsych,CHEMBL1908863,CHEMBL1908863,25I-NBOMe,10251906,PubChem name → CID → InChIKey → ChEMBL,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+2c-b-compound,2C-B,"4-Bromo-2,5-Dimethoxyphenethylamine",neuropsych,CHEMBL292821,CHEMBL292821,"4-Bromo-2,5-Dimethoxyphenethylamine",98527,PubChem name → CID → InChIKey → ChEMBL,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+2c-e-compound,2C-E,"4-Ethyl-2,5-dimethoxy-beta-phenethylamine",neuropsych,CHEMBL124063,CHEMBL124063,"4-Ethyl-2,5-dimethoxy-beta-phenethylamine",24729233,PubChem name → CID → InChIKey → ChEMBL,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+2c-i-compound,2C-I,"2,5-Dimethoxy-4-iodophenethylamine",neuropsych,CHEMBL338297,CHEMBL338297,"2,5-Dimethoxy-4-iodophenethylamine",10267191,PubChem name → CID → InChIKey → ChEMBL,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+3-fma-compound,3-FMA,"3-Fluoro-N,alpha-dimethylbenzeneethanamine",nps,,CID58216164,"3-Fluoro-N,alpha-dimethylbenzeneethanamine",58216164,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+3-fpm-compound,3-FPM,2-(3-Fluorophenyl)-3-methylmorpholine,nps,,CID54673723,2-(3-Fluorophenyl)-3-methylmorpholine,54673723,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+3-ho-pce-compound,3-HO-PCE,3-(1-(Ethylamino)cyclohexyl)phenol,nps,,CID137332171,3-(1-(Ethylamino)cyclohexyl)phenol,137332171,PubChem name → CID,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+3-ho-pcp-compound,3-HO-PCP,3-(1-(1-Piperidinyl)cyclohexyl)phenol,nps,CHEMBL123708,CHEMBL123708,3-(1-(1-Piperidinyl)cyclohexyl)phenol,133277,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+3-meo-pce-compound,3-MeO-PCE,N-Ethyl-1-(3-methoxyphenyl)cyclohexanamine,nps,,CID57461569,N-Ethyl-1-(3-methoxyphenyl)cyclohexanamine,57461569,PubChem name → CID,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+3-meo-pcp-compound,3-MeO-PCP,1-(1-(3-Methoxyphenyl)cyclohexyl)piperidine,nps,,CID11778080,1-(1-(3-Methoxyphenyl)cyclohexyl)piperidine,11778080,PubChem name → CID,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+3-mmc-compound,3-MMC,3-Methylmethcathinone,nps,,CID71741532,3-Methylmethcathinone,71741532,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+4-fa-compound,4-FA,(+-)-p-Fluoroamphetamine,nps,CHEMBL2009392,CHEMBL2009392,(+-)-p-Fluoroamphetamine,9986,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+4-fma-compound,4-FMA,4-Fluoromethamphetamine,nps,,CID11745017,4-Fluoromethamphetamine,11745017,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+4f-mph-compound,4F-MPH,4-Fluoromethylphenidate,nps,CHEMBL1253289,CHEMBL1253289,4-Fluoromethylphenidate,52944002,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+4f-phenibut-compound,4F-Phenibut,4-Fluorophenibut,nootropic,,CID103611,4-Fluorophenibut,103611,PubChem name → CID,storefront: Nootropic-Zion-Pharma,
+5-meo-dmt-compound,5-MeO-DMT,Mebufotenin,neuropsych,CHEMBL7257,CHEMBL7257,MEBUFOTENIN,,synonym,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+5f-adb-compound,5F-ADB,,nps,,CID121491649,5F-Adb,121491649,PubChem name → CID,backlog: Designer-drug families / Synthetic cannabinoids,
+5f-mdmb-pica-compound,5F-MDMB-PICA,,nps,CHEMBL5575138,CHEMBL5575138,"L-Valine, N-((1-(5-fluoropentyl)-1H-indol-3-yl)carbonyl)-3-methyl-, methyl ester",129597835,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Synthetic cannabinoids,
+7-hydroxymitragynine-compound,7-hydroxymitragynine,,nps,CHEMBL61630,CHEMBL61630,7-Hydroxymitragynine,44301524,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+aaz-a-154-compound,AAZ-A-154,,neuropsych,,CID154694212,Aaz-A-154,154694212,PubChem name → CID,backlog: Psychoplastogens / Development candidates,
+ab-fubinaca-compound,AB-FUBINACA,,nps,CHEMBL4083220,CHEMBL4083220,N-((1S)-1-(Aminocarbonyl)-2-methylpropyl)-1-((4-fluorophenyl)methyl)-1H-indazole-3-carboxamide,58124325,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Synthetic cannabinoids,
+abt-089-compound,ABT-089,Pozanicline,nootropic,CHEMBL127071,CHEMBL127071,POZANICLINE,,synonym,backlog: Grey-market nootropics,
+abt-594-compound,ABT-594,Tebanicline Tosylate,nootropic,CHEMBL2104964,CHEMBL430497,TEBANICLINE TOSYLATE,,synonym,backlog: Grey-market nootropics,
+adb-butinaca-compound,ADB-BUTINACA,,nps,CHEMBL5169682,CHEMBL5169682,Adb-butinaca,155907792,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Synthetic cannabinoids,
+adb-fubinaca-compound,ADB-FUBINACA,,nps,,CID58124399,Adb-fubinaca,58124399,PubChem name → CID,backlog: Designer-drug families / Synthetic cannabinoids,
+alks-2680-compound,ALKS 2680,Alixorexton,neuropsych,,CID156417714,Alixorexton,156417714,PubChem name → CID,backlog: Emerging CNS agents / Orexin and wakefulness,
+alpha-phip-compound,Alpha-PHiP,4-Methyl-1-phenyl-2-(pyrrolidin-1-yl)pentan-1-one,nps,,CID59809191,4-Methyl-1-phenyl-2-(pyrrolidin-1-yl)pentan-1-one,59809191,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+alpha-php-compound,Alpha-PHP,,nps,,CID102107923,alpha-PHP,102107923,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+alpha-pvp-compound,Alpha-PVP,Alpha-Pyrrolidinopentiophenone,nps,CHEMBL205082,CHEMBL205082,Alpha-Pyrrolidinopentiophenone,11148955,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+am-2201-compound,AM-2201,,nps,CHEMBL3526578,CHEMBL3526578,AM 2201,53393997,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Synthetic cannabinoids,
+anavex3-71-compound,ANAVEX3-71,AF710B,neuropsych,,CID58516166,AF-710B,58516166,PubChem name → CID,backlog: Emerging CNS agents / Sigma-1 candidates,
+apimostinel-compound,Apimostinel,NRX-1074,neuropsych,CHEMBL3989872,CHEMBL3989872,APIMOSTINEL,,synonym,backlog: Emerging CNS agents / AMPA and glutamate,
+ariadne-compound,Ariadne,"known as 4C-D; 1-(2,5-Dimethoxy-4-methylphenyl)butan-2-amine",neuropsych,,CID169886,"1-(2,5-Dimethoxy-4-methylphenyl)butan-2-amine",169886,PubChem name → CID,backlog: Psychoplastogens / Development candidates,
+aticaprant-compound,Aticaprant,,nootropic,CHEMBL1921847,CHEMBL1921847,ATICAPRANT,,synonym,storefront: Nootropic-Zion-Pharma; Sklep-Nootropy-Zion-Pharma-2,
+baicalein-compound,Baicalein,,ancillary,CHEMBL8260,CHEMBL8260,BAICALEIN,,synonym,backlog: Supplements and nutraceuticals,
+baicalin-compound,Baicalin,,ancillary,CHEMBL485818,CHEMBL485818,BAICALIN,,pref_name,backlog: Supplements and nutraceuticals,
+bemitil-compound,Bemitil,bemetil; Bemethyl,nootropic,,CID9816609,Bemethyl,9816609,PubChem name → CID,backlog: Grey-market nootropics,
+bentazepam-compound,Bentazepam,,nps,CHEMBL1521495,CHEMBL1521495,BENTAZEPAM,,synonym,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+besipirdine-compound,Besipirdine,,nootropic,CHEMBL29835,CHEMBL29835,BESIPIRDINE,,synonym,backlog: Grey-market nootropics,
+beta-caryophyllene-compound,Beta-caryophyllene,,ancillary,CHEMBL445740,CHEMBL445740,BETA-CARYOPHYLLENE,,synonym,backlog: Supplements and nutraceuticals,
+bhv-7000-compound,BHV-7000,Opakalim,neuropsych,,CID139487180,Opakalim,139487180,PubChem name → CID,backlog: Emerging CNS agents / Ion-channel modulators,
+biib104-compound,BIIB104,PF-04958242; Pesampator,neuropsych,CHEMBL5095022,CHEMBL5095022,PESAMPATOR,,synonym,backlog: Emerging CNS agents / AMPA and glutamate,
+bitopertin-compound,Bitopertin,,neuropsych,CHEMBL1171829,CHEMBL1171829,BITOPERTIN,,synonym,backlog: Emerging CNS agents / AMPA and glutamate,
+brilaroxazine-compound,Brilaroxazine,,neuropsych,CHEMBL5095172,CHEMBL5095172,BRILAROXAZINE,,synonym,backlog: Emerging CNS agents / Muscarinic and TAAR1,
+bromazolam-compound,Bromazolam,,nps,CHEMBL3246832,CHEMBL3246832,Bromazolam,12562546,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+brorphine-compound,Brorphine,,nps,CHEMBL4203403,CHEMBL4203403,Brorphine,145975294,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+butonitazene-compound,Butonitazene,,nps,,CID156588955,Butonitazene,156588955,PubChem name → CID,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+chlodantane-compound,Chlodantane,,nootropic,,CID959689,Chlodantane,959689,PubChem name → CID,backlog: Grey-market nootropics,
+clonazolam-compound,Clonazolam,,nps,,CID12317881,Clonazolam,12317881,PubChem name → CID,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+cms121-compound,CMS121,,nootropic,CHEMBL1951865,CHEMBL1951865,CMS-121,,synonym,backlog: Grey-market nootropics,
+colivelin-compound,Colivelin,,peptides,,CID90477169,Colivelin,90477169,PubChem name → CID,backlog: Neuroactive peptides / Candidate additions,
+crocetin-compound,Crocetin,Transcrocetin,ancillary,CHEMBL464792,CHEMBL464792,TRANSCROCETIN,,synonym,backlog: Supplements and nutraceuticals,
+crocin-compound,Crocin,,ancillary,CHEMBL446785,CHEMBL446785,CROCIN,,synonym,backlog: Supplements and nutraceuticals,
+cumyl-pegaclone-compound,Cumyl-PEGACLONE,,nps,,CID134818034,CUMYL-PeGACLONE,134818034,PubChem name → CID,backlog: Designer-drug families / Synthetic cannabinoids,
+cvl-871-compound,CVL-871,Razpipadon,neuropsych,CHEMBL3697578,CHEMBL3697578,RAZPIPADON,,synonym,backlog: Emerging CNS agents / Muscarinic and TAAR1,
+cx-1739-compound,CX-1739,,neuropsych,CHEMBL3707399,CHEMBL3707399,CX1739,,synonym,backlog: Emerging CNS agents / AMPA and glutamate,
+cx-516-compound,CX-516,,neuropsych,CHEMBL136800,CHEMBL136800,CX516,,synonym,backlog: Emerging CNS agents / AMPA and glutamate,
+cx-717-compound,CX-717,,neuropsych,CHEMBL4791762,CHEMBL4791762,CX-717,,synonym,backlog: Emerging CNS agents / AMPA and glutamate,
+cyb003-compound,CYB003,Deupsilocin,neuropsych,CHEMBL4877198,CHEMBL4877198,DEUPSILOCIN,117065176,PubChem name → CID → InChIKey → ChEMBL,backlog: Psychoplastogens / Development candidates,
+d-serine-compound,D-serine,,nootropic,CHEMBL285123,CHEMBL285123,(D)-SERINE,,synonym,storefront: Sklep-Nootropy-Zion-Pharma-2,
+danavorexton-compound,Danavorexton,known as TAK-925,neuropsych,CHEMBL4650341,CHEMBL4650341,DANAVOREXTON,,synonym,backlog: Emerging CNS agents / Orexin and wakefulness,
+davunetide-compound,Davunetide,NAP,peptides,CHEMBL2103826,CHEMBL2103826,DAVUNETIDE,,synonym,backlog: Neuroactive peptides / Candidate additions,
+delta-8-thc-compound,Delta-8-THC,Delta-8-Tetrahydrocannabinol,nps,CHEMBL267227,CHEMBL267227,DELTA-8-TETRAHYDROCANNABINOL,,synonym,backlog: Designer-drug families / Synthetic cannabinoids,
+deoxymethoxetamine-compound,Deoxymethoxetamine,DMXE,nps,,CID157010705,Deoxymethoxetamine,157010705,PubChem name → CID,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+deschloroetizolam-compound,Deschloroetizolam,,nps,,CID827322,"2-Ethyl-9-methyl-4-phenyl-6H-thieno(3,2-f)(1,2,4)triazolo(4,3-a)(1,4)diazepine",827322,PubChem name → CID,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+deschloroketamine-compound,Deschloroketamine,DCK,nps,CHEMBL2068808,CHEMBL2068808,Deschloroketamine,437168,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+diclazepam-compound,Diclazepam,Chlorodiazepam,nps,CHEMBL268248,CHEMBL268248,Chlorodiazepam,76168,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+diphenidine-compound,Diphenidine,,nps,CHEMBL4303426,CHEMBL4303426,Diphenidine,206666,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+doi-compound,DOI,"2,5-Dimethoxy-4-iodoamphetamine",neuropsych,CHEMBL6616,CHEMBL6616,"2,5-Dimethoxy-4-iodoamphetamine",1229,PubChem name → CID → InChIKey → ChEMBL,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+dom-compound,DOM,,neuropsych,CHEMBL8600,CHEMBL8600,DOM,85875,PubChem name → CID → InChIKey → ChEMBL,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+edaravone-compound,Edaravone,,nootropic,CHEMBL290916,CHEMBL290916,EDARAVONE,,synonym,storefront: Nootropic-Zion-Pharma,
+edonerpic-maleate-compound,Edonerpic maleate,T-817 Maleate,neuropsych,CHEMBL4297438,CHEMBL4302089,T-817 MALEATE,11338749,PubChem name → CID → InChIKey → ChEMBL,backlog: Emerging CNS agents / Sigma-1 candidates,
+emraclidine-compound,Emraclidine,,neuropsych,CHEMBL5314557,CHEMBL5314557,EMRACLIDINE,,synonym,backlog: Emerging CNS agents / Muscarinic and TAAR1,
+ephenidine-compound,Ephenidine,N-Ethyl-alpha-phenylbenzeneethanamine,nps,,CID110821,N-Ethyl-alpha-phenylbenzeneethanamine,110821,PubChem name → CID,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+esmethadone-compound,Esmethadone,REL-1017,neuropsych,CHEMBL350719,CHEMBL350719,ESMETHADONE,,synonym,backlog: Emerging CNS agents / AMPA and glutamate,
+ethomersol-compound,Ethomersol,5-Ethoxy-2-ethylmercaptobenzimidazole,nootropic,CHEMBL1624784,CHEMBL1624784,5-Ethoxy-2-ethylmercaptobenzimidazole,129250,PubChem name → CID → InChIKey → ChEMBL,backlog: Grey-market nootropics,
+ethylphenidate-compound,Ethylphenidate,,nps,CHEMBL1187932,CHEMBL1187932,Ethylphenidate,3080846,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+etonitazepyne-compound,Etonitazepyne,,nps,,CID155804760,Etonitazepyne,155804760,PubChem name → CID,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+eutylone-compound,Eutylone,,nps,,CID57360686,Eutylone,57360686,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+evenamide-compound,Evenamide,,neuropsych,CHEMBL3678076,CHEMBL3678076,EVENAMIDE,,synonym,backlog: Emerging CNS agents / Muscarinic and TAAR1,
+evp-6124-compound,EVP-6124,encenicline,nootropic,CHEMBL2151572,CHEMBL2151572,ENCENICLINE,,synonym,backlog: Grey-market nootropics,
+flmodafinil-compound,Flmodafinil,2-((Bis(4-fluorophenyl)methyl)sulfinyl)acetamide,nootropic,CHEMBL1672359,CHEMBL1672359,2-((Bis(4-fluorophenyl)methyl)sulfinyl)acetamide,13271852,PubChem name → CID → InChIKey → ChEMBL,storefront: Nootropic-Zion-Pharma,
+flualprazolam-compound,Flualprazolam,,nps,,CID10359044,"8-chloro-6-(2-fluorophenyl)-1-methyl-4H-(1,2,4)triazolo(4,3-a)(1,4)benzodiazepine",10359044,PubChem name → CID,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+flubromazolam-compound,Flubromazolam,,nps,,CID21930924,Flubromazolam,21930924,PubChem name → CID,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+flubrotizolam-compound,Flubrotizolam,,nps,,CID3044878,Flubrotizolam,3044878,PubChem name → CID,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+flunitazene-compound,Flunitazene,,nps,,CID156588967,Flunitazene,156588967,PubChem name → CID,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+gastrodin-compound,Gastrodin,,ancillary,CHEMBL274739,CHEMBL274739,GASTRODIN,,pref_name,backlog: Supplements and nutraceuticals,
+gts-21-compound,GTS-21,,nootropic,CHEMBL134713,CHEMBL134713,GTS-21,,synonym,storefront: Nootropic-Zion-Pharma,
+hexahydrocannabinol-compound,Hexahydrocannabinol,HHC,nps,,CID16050328,Hexahydrocannabinol,16050328,PubChem name → CID,backlog: Designer-drug families / Synthetic cannabinoids,
+hexahydrocannabinol-o-acetate-compound,Hexahydrocannabinol O-acetate,HHC-O,nps,,CID165412103,Hexahydrocannabinol O-acetate,165412103,PubChem name → CID,backlog: Designer-drug families / Synthetic cannabinoids,
+hexen-compound,Hexen,N-Ethylhexedrone,nps,,CID134822125,N-Ethylhexedrone,134822125,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+homotaurine-compound,Homotaurine,Tramiprosate,nootropic,CHEMBL149082,CHEMBL149082,TRAMIPROSATE,,synonym,storefront: Nootropic-Zion-Pharma,
+honokiol-compound,Honokiol,,ancillary,CHEMBL16901,CHEMBL16901,HONOKIOL,,pref_name,backlog: Supplements and nutraceuticals,
+hyperforin-compound,Hyperforin,,nootropic,,CID441298,Hyperforin,441298,PubChem name → CID,storefront: Nootropic-Zion-Pharma,
+iclepertin-compound,Iclepertin,BI 425809,neuropsych,CHEMBL5314576,CHEMBL5314576,ICLEPERTIN,,synonym,backlog: Emerging CNS agents / AMPA and glutamate,
+isopropylphenidate-compound,Isopropylphenidate,,nps,,CID68314762,Isopropylphenidate,68314762,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+isotonitazene-compound,Isotonitazene,,nps,,CID145721979,"N,N-Diethyl-2-((4-(1-methylethoxy)phenyl)methyl)-5-nitro-1H-benzimidazole-1-ethanamine",145721979,PubChem name → CID,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+isrib-compound,ISRIB,,nootropic,,CID1011240,2-(4-chlorophenoxy)-N-(4-(2-(4-chlorophenoxy)acetamido)cyclohexyl)acetamide,1011240,PubChem name → CID,backlog: Grey-market nootropics,
+j147-compound,J147,,nootropic,CHEMBL2387144,CHEMBL2387144,J147,,synonym,backlog: Grey-market nootropics,
+jwh-018-compound,JWH-018,,nps,CHEMBL561013,CHEMBL561013,Jwh 018,10382701,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Synthetic cannabinoids,
+jwh-073-compound,JWH-073,(1-Butyl-1H-indol-3-yl)-1-naphthalenylmethanone,nps,CHEMBL2380416,CHEMBL2380416,(1-Butyl-1H-indol-3-yl)-1-naphthalenylmethanone,10471670,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Synthetic cannabinoids,
+latrepirdine-compound,Latrepirdine,dimebon,nootropic,CHEMBL589390,CHEMBL589390,LATREPIRDINE,,synonym,backlog: Grey-market nootropics,
+linopirdine-compound,Linopirdine,,nootropic,CHEMBL319111,CHEMBL319111,LINOPIRDINE,,synonym,backlog: Grey-market nootropics,
+lisuride-compound,Lisuride,,neuropsych,CHEMBL157138,CHEMBL157138,LISURIDE,,synonym,backlog: Psychoplastogens / Development candidates,
+luvadaxistat-compound,Luvadaxistat,TAK-831,neuropsych,CHEMBL2338801,CHEMBL2338801,LUVADAXISTAT,,synonym,backlog: Emerging CNS agents / AMPA and glutamate,
+lysergide-compound,Lysergide,LSD,neuropsych,CHEMBL263881,CHEMBL263881,LYSERGIDE,5761,PubChem name → CID → InChIKey → ChEMBL,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+magnesium-acetyl-taurate-compound,Magnesium acetyl taurate,,ancillary,,CID11703161,"Magnesium, bis(2-(acetylamino)ethanesulfonato-O1,O2)-, (T-4)-",11703161,PubChem name → CID,backlog: Supplements and nutraceuticals,
+magnolol-compound,Magnolol,,ancillary,CHEMBL180920,CHEMBL180920,MAGNOLOL,,pref_name,backlog: Supplements and nutraceuticals,
+mdmb-4en-pinaca-compound,MDMB-4en-PINACA,,nps,,CID155804661,MDMB-4en-PINACA,155804661,PubChem name → CID,backlog: Designer-drug families / Synthetic cannabinoids,
+mdphp-compound,MDPHP,"1-(1,3-Benzodioxol-5-yl)-2-(1-pyrrolidinyl)-1-hexanone",nps,,CID119057580,"1-(1,3-Benzodioxol-5-yl)-2-(1-pyrrolidinyl)-1-hexanone",119057580,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+meclonazepam-compound,Meclonazepam,,nps,CHEMBL1908326,CHEMBL1908326,MECLONAZEPAM,,synonym,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+mephedrone-compound,Mephedrone,4-MMC,nps,CHEMBL4094396,CHEMBL4094396,MEPHEDRONE,,synonym,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+mescaline-compound,Mescaline,,neuropsych,CHEMBL26687,CHEMBL26687,MESCALINE,,synonym,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+methoxetamine-compound,Methoxetamine,MXE; 2-(3-Methoxyphenyl)-2-(ethylamino)cyclohexanone,nps,,CID52911279,2-(3-Methoxyphenyl)-2-(ethylamino)cyclohexanone,52911279,PubChem name → CID,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+methoxphenidine-compound,Methoxphenidine,1-(1-(2-Methoxyphenyl)-2-phenylethyl)piperidine,nps,,CID67833251,1-(1-(2-Methoxyphenyl)-2-phenylethyl)piperidine,67833251,PubChem name → CID,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+methoxpropamine-compound,Methoxpropamine,MXPr,nps,,CID155817932,Methoxpropamine,155817932,PubChem name → CID,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+methylliberine-compound,Methylliberine,,ancillary,,CID15872156,Methylliberine,15872156,PubChem name → CID,backlog: Supplements and nutraceuticals,
+methylone-compound,Methylone,,nps,CHEMBL3604010,CHEMBL3604010,METHYLONE,,synonym,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+metizolam-compound,Metizolam,,nps,,CID12434325,"4-(2-chlorophenyl)-2-ethyl-6H-thieno(3,2-f)(1,2,4)triazolo(4,3-a)(1,4)diazepine",12434325,PubChem name → CID,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+metodesnitazene-compound,Metodesnitazene,,nps,CHEMBL1999174,CHEMBL1999174,Metodesnitazene,26412,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+metonitazene-compound,Metonitazene,,nps,,CID53316366,Metonitazene,53316366,PubChem name → CID,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+mitragynine-compound,Mitragynine,,nps,CHEMBL299031,CHEMBL299031,(-)-Mitragynine,3034396,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+mitragynine-pseudoindoxyl-compound,Mitragynine pseudoindoxyl,,nps,CHEMBL58362,CHEMBL58362,Mitragynine pseudoindoxyl,44301701,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+n-acetyl-selank-compound,N-acetyl Selank,,peptides,,CID133082488,N-Acetyl selank,133082488,PubChem name → CID,backlog: Neuroactive peptides / Candidate additions,
+n-acetyl-semax-x-compound,N-acetyl Semax,N-acetyl semax amidate,peptides,,CID172638603,N-acetyl semax amidate,172638603,PubChem name → CID,backlog: Neuroactive peptides / Candidate additions,
+n-acetylcysteine-ethyl-ester-compound,N-Acetylcysteine ethyl ester,"L-Cysteine, N-acetyl-, ethyl ester",nootropic,CHEMBL5435500,CHEMBL5435500,"L-Cysteine, N-acetyl-, ethyl ester",148861,PubChem name → CID → InChIKey → ChEMBL,storefront: Sklep-Strona-2-Nootropy-Zion-Pharma-3,
+n-ethylpentedrone-compound,N-Ethylpentedrone,NEP; 2-(Ethylamino)-1-phenyl-1-pentanone,nps,,CID205593,2-(Ethylamino)-1-phenyl-1-pentanone,205593,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+n-ethylpentylone-compound,N-ethylpentylone,,nps,,CID57359308,N-Ethylpentylone,57359308,PubChem name → CID,backlog: Designer-drug families / Synthetic stimulants,cardiovascular-load; serotonergic-or-dopaminergic-load
+n-n-dimethyltryptamine-compound,"N,N-Dimethyltryptamine",DMT,neuropsych,CHEMBL12420,CHEMBL12420,"N,N-DIMETHYLTRYPTAMINE",,synonym,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+nbi-1117568-compound,NBI-1117568,Direclidine,neuropsych,,CID118295270,Direclidine,118295270,PubChem name → CID,backlog: Emerging CNS agents / Muscarinic and TAAR1,
+neboglamine-compound,Neboglamine,,nootropic,CHEMBL1255840,CHEMBL1255840,NEBOGLAMINE,,synonym,backlog: Grey-market nootropics,
+nebracetam-compound,Nebracetam,,nootropic,CHEMBL2104682,CHEMBL2104682,NEBRACETAM,,synonym,backlog: Grey-market nootropics,
+nitrazolam-compound,Nitrazolam,,nps,,CID20317278,Nitrazolam,20317278,PubChem name → CID,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+nooglutil-compound,Nooglutil,,nootropic,,CID147523,Nooglutil,147523,PubChem name → CID,backlog: Grey-market nootropics,
+norflurazepam-compound,Norflurazepam,N-Desalkyl-2-Oxoquazepam,nps,CHEMBL974,CHEMBL974,N-DESALKYL-2-OXOQUAZEPAM,4540,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+noribogaine-compound,Noribogaine,,neuropsych,CHEMBL6068516,CHEMBL6068516,NORIBOGAINE,,synonym,backlog: Psychoplastogens / Development candidates,
+o-desmethyltramadol-compound,O-desmethyltramadol,O-DSMT; Desmetramadol,nps,CHEMBL4650315,CHEMBL4650315,DESMETRAMADOL,,synonym,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+o-pce-compound,O-PCE,2'-Oxo-pce,nps,,CID132989542,2'-Oxo-pce,132989542,PubChem name → CID,backlog: Designer-drug families / Dissociatives,sedation-respiratory-depression
+org-26576-compound,Org 26576,,neuropsych,CHEMBL4303417,CHEMBL4303417,Org-26576,13584912,PubChem name → CID → InChIKey → ChEMBL,backlog: Emerging CNS agents / AMPA and glutamate,
+oroxylin-a-compound,Oroxylin A,,nootropic,CHEMBL183513,CHEMBL183513,OROXYLIN A,,pref_name,storefront: Sklep-Strona-2-Nootropy-Zion-Pharma-3,
+orx750-compound,ORX750,Cleminorexton,neuropsych,,CID176507653,Cleminorexton,176507653,PubChem name → CID,backlog: Emerging CNS agents / Orexin and wakefulness,
+oveporexton-compound,Oveporexton,known as TAK-861,neuropsych,CHEMBL6068065,CHEMBL6068065,OVEPOREXTON,,synonym,backlog: Emerging CNS agents / Orexin and wakefulness,
+p021-compound,P021,Ac-dggl-adamatanylglycine-NH2,peptides,,CID56599151,Ac-dggl-adamatanylglycine-NH2,56599151,PubChem name → CID,backlog: Neuroactive peptides / Candidate additions,
+p7c3-a20-compound,P7C3-A20,,nootropic,CHEMBL2442625,CHEMBL2442625,"N-(3-(3,6-dibromo-9H-carbazol-9-yl)-2-fluoropropyl)-3-methoxyaniline",46853447,PubChem name → CID → InChIKey → ChEMBL,backlog: Grey-market nootropics,
+p7c3-compound,P7C3,,nootropic,CHEMBL2442630,CHEMBL2442630,"3,6-Dibromo-alpha-[(phenylamino)methyl]-9H-carbazole-9-ethanol",2836187,PubChem name → CID → InChIKey → ChEMBL,backlog: Grey-market nootropics,
+palmitoylethanolamide-compound,Palmitoylethanolamide,Palmidrol,ancillary,CHEMBL417675,CHEMBL417675,PALMIDROL,,synonym,backlog: Supplements and nutraceuticals,
+paraxanthine-compound,Paraxanthine,,ancillary,CHEMBL1158,CHEMBL1158,PARAXANTHINE,,synonym,backlog: Supplements and nutraceuticals,
+phenazepam-compound,Phenazepam,,nps,CHEMBL1709464,CHEMBL1709464,PHENAZEPAM,,pref_name,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+phenibut-compound,Phenibut,,nootropic,CHEMBL315818,CHEMBL315818,PHENIBUT,,synonym,storefront: Sklep-Nootropy-Zion-Pharma-2,
+phenylpiracetam-hydrazide-compound,Phenylpiracetam hydrazide,,nootropic,,CID4995664,Phenylpiracetam hydrazide,4995664,PubChem name → CID,backlog: Grey-market nootropics,
+pnu-282987-compound,PNU-282987,,nootropic,CHEMBL177611,CHEMBL177611,PNU-282987,,pref_name,backlog: Grey-market nootropics,
+pre-084-compound,PRE-084,2-(4-Morpholinyl)ethyl 1-phenylcyclohexanecarboxylate,neuropsych,CHEMBL305881,CHEMBL305881,2-(4-Morpholinyl)ethyl 1-phenylcyclohexanecarboxylate,126402,PubChem name → CID → InChIKey → ChEMBL,backlog: Emerging CNS agents / Sigma-1 candidates,
+pregnanolone-compound,Pregnanolone,Eltanolone,neuropsych,CHEMBL210952,CHEMBL210952,ELTANOLONE,,synonym,backlog: Emerging CNS agents / Neurosteroids and GABA,
+protonitazene-compound,Protonitazene,,nps,,CID156589001,Protonitazene,156589001,PubChem name → CID,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+psilocin-compound,Psilocin,,neuropsych,CHEMBL65547,CHEMBL65547,PSILOCIN,,synonym,backlog: Psychoplastogens / Reference psychedelics,serotonergic-or-dopaminergic-load
+pyrazolam-compound,Pyrazolam,,nps,CHEMBL3246831,CHEMBL3246831,"8-Bromo-1-methyl-6-(2-pyridinyl)-4H-(1,2,4)triazolo(4,3-a)(1,4)benzodiazepine",12562545,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+pyrroloquinoline-quinone-compound,Pyrroloquinoline quinone,PQQ,ancillary,CHEMBL1235421,CHEMBL1235421,PYRROLOQUINOLINE QUINONE,,pref_name,backlog: Supplements and nutraceuticals,
+ralmitaront-compound,Ralmitaront,RO6889450,neuropsych,CHEMBL4594376,CHEMBL4594376,RALMITARONT,,synonym,backlog: Emerging CNS agents / Muscarinic and TAAR1,
+rapastinel-compound,Rapastinel,GLYX-13,nootropic,CHEMBL3544917,CHEMBL3544917,RAPASTINEL,,synonym,storefront: Sklep-Strona-2-Nootropy-Zion-Pharma-3,
+re104-compound,RE104,Luvesilocin,neuropsych,CHEMBL5425653,CHEMBL5425653,Luvesilocin,162510634,PubChem name → CID → InChIKey → ChEMBL,backlog: Psychoplastogens / Development candidates,
+rilmazafone-compound,Rilmazafone,,nps,CHEMBL2107197,CHEMBL2107197,RILMAZAFONE,,synonym,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+roluperidone-compound,Roluperidone,,neuropsych,CHEMBL4297605,CHEMBL4297605,ROLUPERIDONE,,synonym,backlog: Emerging CNS agents / Muscarinic and TAAR1,
+sabeluzole-compound,Sabeluzole,,nootropic,CHEMBL549671,CHEMBL549671,SABELUZOLE,,synonym,backlog: Grey-market nootropics,
+salidroside-compound,Salidroside,,ancillary,CHEMBL465208,CHEMBL465208,SALIDROSIDE,,pref_name,backlog: Supplements and nutraceuticals,
+samelisant-compound,Samelisant,Suvn-G3031,neuropsych,CHEMBL4297328,CHEMBL4297328,SUVN-G3031,,synonym,backlog: Emerging CNS agents / Orexin and wakefulness,
+scyllo-inositol-compound,Scyllo-inositol,Scyllitol,nootropic,CHEMBL468154,CHEMBL468154,SCYLLITOL,,synonym,storefront: Sklep-Strona-2-Nootropy-Zion-Pharma-3,
+sepranolone-compound,Sepranolone,isoallopregnanolone,neuropsych,CHEMBL2057301,CHEMBL2057301,SEPRANOLONE,,synonym,backlog: Emerging CNS agents / Neurosteroids and GABA,
+sunifiram-compound,Sunifiram,,nootropic,CHEMBL309176,CHEMBL309176,SUNIFIRAM,,pref_name,storefront: Sklep-Strona-2-Nootropy-Zion-Pharma-3,
+tabernanthalog-compound,Tabernanthalog,TBG,neuropsych,,CID146026994,Tabernanthalog,146026994,PubChem name → CID,backlog: Psychoplastogens / Development candidates,
+tak-994-compound,TAK-994,,neuropsych,,CID169492940,"N-[(2S,3S)-2-[[3-(3,5-difluorophenyl)-2-fluorophenyl]methyl]-1-(2-hydroxy-2-methylpropanoyl)pyrrolidin-3-yl]methanesulfonamide;hydrate",169492940,PubChem name → CID,backlog: Emerging CNS agents / Orexin and wakefulness,
+talsaclidine-compound,Talsaclidine,,nootropic,CHEMBL2111051,CHEMBL2111051,TALSACLIDINE,,synonym,backlog: Grey-market nootropics,
+tenuifolin-compound,Tenuifolin,,ancillary,CHEMBL1077894,CHEMBL1077894,TENUIFOLIN,,pref_name,backlog: Supplements and nutraceuticals,
+tetrahydrodeoxycorticosterone-compound,Tetrahydrodeoxycorticosterone,,neuropsych,CHEMBL3140372,CHEMBL3140372,Tetrahydrodeoxycorticosterone,9974162,PubChem name → CID → InChIKey → ChEMBL,backlog: Emerging CNS agents / Neurosteroids and GABA,
+thcp-compound,THCP,3-Heptyl-delta(1)-tetrahydrocannabinol,nps,CHEMBL5171161,CHEMBL5171161,3-Heptyl-delta(1)-tetrahydrocannabinol,6453074,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Synthetic cannabinoids,
+troriluzole-compound,Troriluzole,,neuropsych,CHEMBL4297586,CHEMBL4297586,TRORILUZOLE,,synonym,backlog: Emerging CNS agents / AMPA and glutamate,
+tulrampator-compound,Tulrampator,S-47445,neuropsych,CHEMBL1276826,CHEMBL1276826,"8-cyclopropyl-3-(2-(3-fluorophenyl)ethyl)-7,8-dihydro-3H-(1,3)oxazino(6,5-g)(1,2,3)benzotriazine-4,9-dione",24857397,PubChem name → CID → InChIKey → ChEMBL,backlog: Emerging CNS agents / AMPA and glutamate,
+unifiram-compound,Unifiram,DM-232,neuropsych,CHEMBL140717,CHEMBL140717,UNIFIRAM,,pref_name,backlog: Emerging CNS agents / AMPA and glutamate,
+vixotrigine-compound,Vixotrigine,,neuropsych,CHEMBL3544913,CHEMBL3544913,VIXOTRIGINE,,synonym,backlog: Emerging CNS agents / Ion-channel modulators,
+xen1101-compound,XEN1101,Azetukalner,neuropsych,CHEMBL5095264,CHEMBL5095264,AZETUKALNER,,synonym,backlog: Emerging CNS agents / Ion-channel modulators,
+zelquistinel-compound,Zelquistinel,AGN-241751,neuropsych,CHEMBL5314944,CHEMBL5314944,ZELQUISTINEL,,synonym,backlog: Emerging CNS agents / AMPA and glutamate,
+zolunicant-compound,Zolunicant,18-MC,neuropsych,CHEMBL1195301,CHEMBL1195301,ZOLUNICANT,,synonym,backlog: Psychoplastogens / Development candidates,

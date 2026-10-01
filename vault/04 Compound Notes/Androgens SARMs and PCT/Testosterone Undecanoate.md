@@ -62,6 +62,7 @@ tags:
 - group/steroids
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Testosterone undecanoate
@@ -69,6 +70,38 @@ pk-source:
   revision: 1348065874
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2107067
+  pref-name: TESTOSTERONE UNDECANOATE
+  molecule-type: Small molecule
+  first-approval: 2014
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1871
+    name: Androgen receptor
+    action: AGONIST
+  properties:
+    full-mwt: 456.71
+    mw-freebase: 456.71
+    alogp: 7.96
+    psa: 43.37
+    hba: 3
+    hbd: 0
+    rtb: 10
+    num-ro5-violations: 1
+    qed-weighted: 0.25
+    full-molformula: C30H48O3
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 7f7167a7-2a25-47e2-acf5-33f499fce971
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7f7167a7-2a25-47e2-acf5-33f499fce971
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Testosterone Undecanoate
@@ -82,7 +115,7 @@ pk-source:
 - **Compound ID:** `testosterone-undecanoate-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL2107067](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107067/) · max phase 4
+- **ChEMBL:** [CHEMBL2107067](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107067/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -91,6 +124,20 @@ Androgen Receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEM
 ## Mechanism
 
 Androgen Receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2014
+- **Flags:** black-box warning, prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 456.71 | 7.96 | 43.37 | 0/3 | 1 | C30H48O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Androgen receptor (CHEMBL1871)|Androgen receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -110,6 +157,16 @@ Androgen Receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 | Metabolism | hepatic | Liver |
 | Metabolites | - | Testosterone, undecanoic acid, metabolites of testosterone |
 | Excretion | - | ~90% Urine, 6% feces |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 7f7167a7…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7f7167a7-2a25-47e2-acf5-33f499fce971), label version 20260826. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Anadrol (Oxymetholone)]] (Androgen receptor), [[Anavar (Oxandrolone)]] (Androgen receptor), [[Apalutamide (Erleada)]] (Androgen receptor), [[Apc-100]] (Androgen receptor), [[Bicalutamide (Casodex)]] (Androgen receptor), [[CB-03-01 (Clascoterone research formulation)]] (Androgen receptor), [[Clascoterone (Winlevi)]] (Androgen receptor), [[Cyproterone Acetate]] (Androgen receptor), [[Danazol]] (Androgen receptor), [[Darolutamide (Nubeqa)]] (Androgen receptor), [[Dianabol (Methandienone)]] (Androgen receptor), [[Dromostanolone Propionate]] (Androgen receptor)
 
 ## Safety routing
 

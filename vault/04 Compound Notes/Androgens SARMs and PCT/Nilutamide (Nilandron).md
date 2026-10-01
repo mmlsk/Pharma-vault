@@ -10,15 +10,15 @@ cluster: Androgens SARMs and PCT
 group: pct
 class: null
 subclass: null
-mechanism: null
+mechanism: Androgen Receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1274
+chembl-max-phase: 4
 half-life:
   value: 56.0
   value-max: null
@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Nilutamide
@@ -71,6 +73,40 @@ pk-source:
   revision: 1353660792
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1274
+  pref-name: NILUTAMIDE
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L02BB02
+  targets:
+  - id: CHEMBL1871
+    name: Androgen receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 317.22
+    mw-freebase: 317.22
+    alogp: 2.45
+    psa: 92.55
+    hba: 4
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.51
+    full-molformula: C12H10F3N3O4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: d5740b8f-fbb3-4023-9133-9e359a9ab980
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d5740b8f-fbb3-4023-9133-9e359a9ab980
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Nilutamide (Nilandron)
@@ -85,10 +121,30 @@ pk-source:
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Nilutamide, Nilandron
+- **ChEMBL:** [CHEMBL1274](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1274/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 First-generation androgen receptor antagonist with two side effects unique in its class.
+
+## Mechanism
+
+Androgen Receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **Flags:** black-box warning
+- **ATC L02BB02:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › HORMONE ANTAGONISTS AND RELATED AGENTS › Anti-androgens
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 317.22 | 2.45 | 92.55 | 1/4 | 0 | C12H10F3N3O4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Androgen receptor (CHEMBL1871)|Androgen receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -109,6 +165,19 @@ First-generation androgen receptor antagonist with two side effects unique in it
 | CYP (metabolised by) | CYP2C19 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | At least 5, some active |
 | Excretion | mainly urinary | Urine: 62%; Feces: <10% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set d5740b8f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d5740b8f-fbb3-4023-9133-9e359a9ab980), label version 20260626. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 38, 41, 49, 59.1)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Anadrol (Oxymetholone)]] (Androgen receptor), [[Anavar (Oxandrolone)]] (Androgen receptor), [[Apalutamide (Erleada)]] (Androgen receptor), [[Apc-100]] (Androgen receptor), [[Bicalutamide (Casodex)]] (Androgen receptor), [[CB-03-01 (Clascoterone research formulation)]] (Androgen receptor), [[Clascoterone (Winlevi)]] (Androgen receptor), [[Cyproterone Acetate]] (Androgen receptor), [[Danazol]] (Androgen receptor), [[Darolutamide (Nubeqa)]] (Androgen receptor), [[Dianabol (Methandienone)]] (Androgen receptor), [[Dromostanolone Propionate]] (Androgen receptor)
+- **Same ATC subgroup:** [[Apalutamide (Erleada)]], [[Bicalutamide (Casodex)]], [[Darolutamide (Nubeqa)]], [[Enzalutamide]], [[Flutamide]]
+- **Shared CYP substrate pool:** CYP2C19 (+43 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

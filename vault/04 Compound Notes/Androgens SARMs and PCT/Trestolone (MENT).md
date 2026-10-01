@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL452329
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -57,6 +57,29 @@ tags:
 - source-derived
 - group/steroids
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL452329
+  pref-name: TRESTOLONE ACETATE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 330.47
+    mw-freebase: 330.47
+    alogp: 4.31
+    psa: 43.37
+    hba: 3
+    hbd: 0
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C21H30O3
 ---
 
 # Trestolone (MENT)
@@ -71,10 +94,19 @@ tags:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Trestolone, MENT
+- **ChEMBL:** [CHEMBL452329](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL452329/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Experimental potent synthetic androgen resistant to 5-alpha-reduction, studied for male contraception/TRT; not FDA-approved, used mainly in research and by some biohackers/enhancement communities.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 330.47 | 4.31 | 43.37 | 0/3 | 0 | C21H30O3 |
 
 ## Evidence boundaries
 

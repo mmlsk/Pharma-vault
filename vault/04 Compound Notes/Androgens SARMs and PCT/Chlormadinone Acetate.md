@@ -61,6 +61,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Chlormadinone acetate
@@ -68,6 +69,38 @@ pk-source:
   revision: 1329002308
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL110691
+  pref-name: CHLORMADINONE ACETATE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - G03DB06
+  targets:
+  - id: CHEMBL208
+    name: Progesterone receptor
+    action: MODULATOR
+  properties:
+    full-mwt: 404.93
+    mw-freebase: 404.93
+    alogp: 4.75
+    psa: 60.44
+    hba: 4
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.62
+    full-molformula: C23H29ClO4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Chlormadinone Acetate
@@ -81,7 +114,7 @@ pk-source:
 - **Compound ID:** `chlormadinone-acetate-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL110691](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL110691/) · max phase 4
+- **ChEMBL:** [CHEMBL110691](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL110691/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +123,20 @@ Progesterone receptor modulator; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Progesterone receptor modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC G03DB06:** GENITO URINARY SYSTEM AND SEX HORMONES › PROGESTOGENS › Pregnadien derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 404.93 | 4.75 | 60.44 | 0/4 | 0 | C23H29ClO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Progesterone receptor (CHEMBL208)|Progesterone receptor]] - modulator · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -109,6 +156,15 @@ Progesterone receptor modulator _(ChEMBL curated mechanism, as quoted by the sou
 | Metabolism | hepatic | Liver (reduction, hydroxylation, deacetylation, conjugation) |
 | Metabolites | - | • 3α-Hydroxy-CMA; • 3β-Hydroxy-CMA; • Others |
 | Excretion | - | Urine: 33–45%; Feces: 24–41% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Asoprisnil]] (Progesterone receptor), [[Cyproterone Acetate]] (Progesterone receptor), [[Danazol]] (Progesterone receptor), [[Desogestrel]] (Progesterone receptor), [[Drospirenone]] (Progesterone receptor), [[Dydrogesterone]] (Progesterone receptor), [[Ethynodiol Diacetate]] (Progesterone receptor), [[Etonogestrel]] (Progesterone receptor), [[Gestodene]] (Progesterone receptor), [[Hydroxyprogesterone Caproate]] (Progesterone receptor), [[Levonorgestrel]] (Progesterone receptor), [[Medroxyprogesterone Acetate]] (Progesterone receptor)
+- **Same ATC subgroup:** [[Dydrogesterone]], [[Megestrol Acetate]]
 
 ## Safety routing
 

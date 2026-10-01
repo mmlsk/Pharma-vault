@@ -8,15 +8,15 @@ cluster: Nootropics
 group: neuropsych
 class: null
 subclass: null
-mechanism: null
+mechanism: Synaptic vesicle glycoprotein 2A modulator; Voltage-gated N-type calcium channel alpha-1B subunit blocker
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1286
+chembl-max-phase: 4
 half-life:
   value: 6.0
   value-max: 8.0
@@ -54,7 +54,7 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Levetiracetam
@@ -69,6 +71,43 @@ pk-source:
   revision: 1370710285
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1286
+  pref-name: LEVETIRACETAM
+  molecule-type: Small molecule
+  first-approval: 1999
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N03AX14
+  targets:
+  - id: CHEMBL1998
+    name: Synaptic vesicle glycoprotein 2A
+    action: MODULATOR
+  - id: CHEMBL4478
+    name: Voltage-dependent N-type calcium channel subunit alpha-1B
+    action: BLOCKER
+  properties:
+    full-mwt: 170.21
+    mw-freebase: 170.21
+    alogp: -0.13
+    psa: 63.4
+    hba: 2
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.64
+    full-molformula: C8H14N2O2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 0348fec4-d919-4307-ac90-35360819bc00
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0348fec4-d919-4307-ac90-35360819bc00
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Levetiracetam
@@ -82,10 +121,30 @@ pk-source:
 - **Compound ID:** `levetiracetam-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1286](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1286/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Broad-spectrum anticonvulsant with no significant drug interactions and a target no other class shares, offset by behavioural adverse effects.
+
+## Mechanism
+
+Synaptic vesicle glycoprotein 2A modulator; Voltage-gated N-type calcium channel alpha-1B subunit blocker _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1999
+- **ATC N03AX14:** NERVOUS SYSTEM › ANTIEPILEPTICS › Other antiepileptics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 170.21 | -0.13 | 63.4 | 1/2 | 0 | C8H14N2O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Synaptic vesicle glycoprotein 2A (CHEMBL1998)|Synaptic vesicle glycoprotein 2A]] - modulator · SINGLE PROTEIN
+- [[Voltage-dependent N-type calcium channel subunit alpha-1B (CHEMBL4478)|Voltage-dependent N-type calcium channel subunit alpha-1B]] - blocker · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -104,6 +163,18 @@ Broad-spectrum anticonvulsant with no significant drug interactions and a target
 | Bioavailability | 100 % | ≈100% |
 | Metabolism | - | Enzymatic hydrolysis of acetamide group |
 | Excretion | mainly urinary | Kidney |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 0348fec4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0348fec4-d919-4307-ac90-35360819bc00), label version 20260904. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1, 2.5, 5, 5.3, 7, 7.2)
+> - protein-binding: consistent (label values: 10)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Brivaracetam]] (Synaptic vesicle glycoprotein 2A), [[Ralfinamide]] (Voltage-dependent N-type calcium channel subunit alpha-1B)
+- **Same ATC subgroup:** [[Brivaracetam]], [[Cannabidiol (Epidiolex)]], [[Cenobamate]], [[Felbamate]], [[Fenfluramine]], [[Ganaxolone]], [[Lacosamide]], [[Lamotrigine]], [[Perampanel]], [[Pheneturide]], [[Retigabine (Ezogabine)]], [[Stiripentol]]
 
 ## Safety routing
 

@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2106227
 chembl-max-phase: 3
 half-life:
   value: 6.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Etifoxine
@@ -68,6 +69,38 @@ pk-source:
   revision: 1359023058
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2106227
+  pref-name: ETIFOXINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05BX03
+  targets:
+  - id: CHEMBL2093872
+    name: GABA-A receptor; anion channel
+    action: ANTAGONIST
+  properties:
+    full-mwt: 300.79
+    mw-freebase: 300.79
+    alogp: 4.23
+    psa: 33.62
+    hba: 3
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.9
+    full-molformula: C17H17ClN2O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Etifoxine
@@ -81,6 +114,7 @@ pk-source:
 - **Compound ID:** `etifoxine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2106227](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106227/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -89,6 +123,19 @@ Etifoxine is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is g
 ## Mechanism
 
 gABA-A receptor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC N05BX03:** NERVOUS SYSTEM › ANXIOLYTICS › Other anxiolytics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 300.79 | 4.23 | 33.62 | 1/3 | 0 | C17H17ClN2O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-A receptor; anion channel (CHEMBL2093872)|GABA-A receptor; anion channel]] - antagonist · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -108,6 +155,15 @@ gABA-A receptor _(ChEMBL curated mechanism, as quoted by the source)._
 | Metabolism | hepatic | Liver |
 | Metabolites | - | Several (including diethyletifoxine) |
 | Excretion | - | Mainly urine, also bile |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abp-700]] (GABA-A receptor; anion channel), [[Adipiplon]] (GABA-A receptor; anion channel), [[Alprazolam]] (GABA-A receptor; anion channel), [[Brexanolone]] (GABA-A receptor; anion channel), [[Butalbital]] (GABA-A receptor; anion channel), [[Cenobamate]] (GABA-A receptor; anion channel), [[Chlordiazepoxide]] (GABA-A receptor; anion channel), [[Cipepofol]] (GABA-A receptor; anion channel), [[Clobazam]] (GABA-A receptor; anion channel), [[Clomethiazole]] (GABA-A receptor; anion channel), [[Clonazepam]] (GABA-A receptor; anion channel), [[Clotiazepam]] (GABA-A receptor; anion channel)
+- **Same ATC subgroup:** [[Silexan (Lavender Oil, oral)]]
 
 ## Safety routing
 

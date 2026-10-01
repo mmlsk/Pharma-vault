@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Voltage-gated L-type calcium channel blocker
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL193
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: null
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Nifedipine
@@ -68,6 +70,41 @@ pk-source:
   revision: 1364311559
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL193
+  pref-name: NIFEDIPINE
+  molecule-type: Small molecule
+  first-approval: 1981
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C08CA05
+  - C08CA55
+  targets:
+  - id: CHEMBL2095229
+    name: Voltage-gated L-type calcium channel
+    action: BLOCKER
+  properties:
+    full-mwt: 346.34
+    mw-freebase: 346.34
+    alogp: 2.18
+    psa: 107.77
+    hba: 7
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.51
+    full-molformula: C17H18N2O6
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 4ee466dc-5a4e-4c77-8e94-8b510cafd61b
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4ee466dc-5a4e-4c77-8e94-8b510cafd61b
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: consistent
 ---
 
 # Nifedipine
@@ -81,10 +118,30 @@ pk-source:
 - **Compound ID:** `nifedipine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL193](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL193/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The prototype dihydropyridine calcium channel blocker; the modern extended-release form is a different drug in practice from the old capsules.
+
+## Mechanism
+
+Voltage-gated L-type calcium channel blocker _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1981
+- **ATC C08CA05:** CARDIOVASCULAR SYSTEM › SELECTIVE CALCIUM CHANNEL BLOCKERS WITH MAINLY VASCULAR EFFECTS › Dihydropyridine derivatives
+- **ATC C08CA55:** CARDIOVASCULAR SYSTEM › SELECTIVE CALCIUM CHANNEL BLOCKERS WITH MAINLY VASCULAR EFFECTS › Dihydropyridine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 346.34 | 2.18 | 107.77 | 1/7 | 0 | C17H18N2O6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Voltage-gated L-type calcium channel (CHEMBL2095229)|Voltage-gated L-type calcium channel]] - blocker · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -103,6 +160,18 @@ The prototype dihydropyridine calcium channel blocker; the modern extended-relea
 | Bioavailability | 45–56 % | 45-56% |
 | Metabolism | hepatic | Gastrointestinal, Liver |
 | Excretion | mainly urinary | Kidneys: >50%, bile duct: 5-15% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 4ee466dc…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4ee466dc-5a4e-4c77-8e94-8b510cafd61b), label version 20260804. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: consistent (label values: 92, 98)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Cinnarizine]] (Voltage-gated L-type calcium channel), [[Clevidipine]] (Voltage-gated L-type calcium channel), [[Felodipine]] (Voltage-gated L-type calcium channel), [[Nimodipine]] (Voltage-gated L-type calcium channel)
+- **Same ATC subgroup:** [[Amlodipine]], [[Clevidipine]], [[Felodipine]], [[Lercanidipine]], [[Nicardipine]], [[Nimodipine]]
 
 ## Safety routing
 

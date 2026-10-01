@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Unknown
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL227875
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL227875
+  pref-name: PRETOMANID
+  molecule-type: Small molecule
+  first-approval: 2019
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J04AK08
+  targets: []
+  properties:
+    full-mwt: 359.26
+    mw-freebase: 359.26
+    alogp: 2.67
+    psa: 88.65
+    hba: 7
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.6
+    full-molformula: C14H12F3N3O5
 ---
 
 # Pretomanid
@@ -67,10 +90,25 @@ tags:
 - **Compound ID:** `pretomanid-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL227875](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL227875/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Nitroimidazooxazine used in the six-month all-oral BPaL regimen for extensively drug-resistant tuberculosis.
+
+## Mechanism
+
+Unknown _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2019
+- **ATC J04AK08:** ANTIINFECTIVES FOR SYSTEMIC USE › DRUGS FOR TREATMENT OF TUBERCULOSIS › Other drugs for treatment of tuberculosis
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 359.26 | 2.67 | 88.65 | 0/7 | 0 | C14H12F3N3O5 |
 
 ## Evidence boundaries
 
@@ -80,6 +118,12 @@ Nitroimidazooxazine used in the six-month all-oral BPaL regimen for extensively 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Bedaquiline]], [[Delamanid]], [[Ethambutol]], [[Pyrazinamide]]
 
 ## Safety routing
 

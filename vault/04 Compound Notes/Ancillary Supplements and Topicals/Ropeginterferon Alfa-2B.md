@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL4297819
+  pref-name: ROPEGINTERFERON ALFA-2B
+  molecule-type: Protein
+  first-approval: 2019
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L03AB15
+  targets:
+  - id: CHEMBL2364170
+    name: Interferon alpha/beta receptor
+    action: POSITIVE MODULATOR
+  properties: {}
 ---
 
 # Ropeginterferon Alfa-2B
@@ -67,7 +83,7 @@ tags:
 - **Compound ID:** `ropeginterferon-alfa-2b-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4297819](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297819/) · max phase 4
+- **ChEMBL:** [CHEMBL4297819](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297819/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +92,16 @@ Interferon alpha/beta receptor positive modulator; approved/marketed compound ca
 ## Mechanism
 
 Interferon alpha/beta receptor positive modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2019
+- **ATC L03AB15:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSTIMULANTS › Interferons
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interferon alpha-beta receptor (CHEMBL2364170)|Interferon alpha/beta receptor]] - positive modulator · PROTEIN COMPLEX
 
 ## Evidence boundaries
 

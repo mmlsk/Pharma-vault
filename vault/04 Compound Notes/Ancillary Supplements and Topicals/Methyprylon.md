@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Methyprylon
@@ -64,6 +65,38 @@ pk-source:
   revision: 1365017206
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200790
+  pref-name: METHYPRYLON
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05CE02
+  targets:
+  - id: CHEMBL2093872
+    name: GABA-A receptor; anion channel
+    action: POSITIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 183.25
+    mw-freebase: 183.25
+    alogp: 1.13
+    psa: 46.17
+    hba: 2
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.65
+    full-molformula: C10H17NO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Methyprylon
@@ -77,7 +110,7 @@ pk-source:
 - **Compound ID:** `methyprylon-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200790](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200790/) · max phase 4
+- **ChEMBL:** [CHEMBL1200790](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200790/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +119,20 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC N05CE02:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Piperidinedione derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 183.25 | 1.13 | 46.17 | 1/2 | 0 | C10H17NO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-A receptor; anion channel (CHEMBL2093872)|GABA-A receptor; anion channel]] - positive allosteric modulator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -101,6 +148,15 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 |---|---|---|
 | Elimination t½ | 6–16 h | 6–16 hours |
 | Protein binding | 60 % | 60% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abp-700]] (GABA-A receptor; anion channel), [[Adipiplon]] (GABA-A receptor; anion channel), [[Alprazolam]] (GABA-A receptor; anion channel), [[Brexanolone]] (GABA-A receptor; anion channel), [[Butalbital]] (GABA-A receptor; anion channel), [[Cenobamate]] (GABA-A receptor; anion channel), [[Chlordiazepoxide]] (GABA-A receptor; anion channel), [[Cipepofol]] (GABA-A receptor; anion channel), [[Clobazam]] (GABA-A receptor; anion channel), [[Clomethiazole]] (GABA-A receptor; anion channel), [[Clonazepam]] (GABA-A receptor; anion channel), [[Clotiazepam]] (GABA-A receptor; anion channel)
+- **Same ATC subgroup:** [[Glutethimide]]
 
 ## Safety routing
 

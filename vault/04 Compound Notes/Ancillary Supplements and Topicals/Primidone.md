@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Primidone
@@ -68,6 +69,43 @@ pk-source:
   revision: 1314757574
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL856
+  pref-name: PRIMIDONE
+  molecule-type: Small molecule
+  first-approval: 1954
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N03AA03
+  targets:
+  - id: CHEMBL2093872
+    name: GABA-A receptor; anion channel
+    action: POSITIVE ALLOSTERIC MODULATOR
+  - id: CHEMBL2331043
+    name: Sodium channel alpha subunit
+    action: BLOCKER
+  properties:
+    full-mwt: 218.26
+    mw-freebase: 218.26
+    alogp: 0.54
+    psa: 58.2
+    hba: 2
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.71
+    full-molformula: C12H14N2O2
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 93b4b34c-6dba-4aec-b98e-b2b18feb86a9
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=93b4b34c-6dba-4aec-b98e-b2b18feb86a9
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Primidone
@@ -81,7 +119,7 @@ pk-source:
 - **Compound ID:** `primidone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL856](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL856/) · max phase 4
+- **ChEMBL:** [CHEMBL856](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL856/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +128,21 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1954
+- **ATC N03AA03:** NERVOUS SYSTEM › ANTIEPILEPTICS › Barbiturates and derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 218.26 | 0.54 | 58.2 | 2/2 | 0 | C12H14N2O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-A receptor; anion channel (CHEMBL2093872)|GABA-A receptor; anion channel]] - positive allosteric modulator · PROTEIN COMPLEX GROUP
+- [[Sodium channel alpha subunit (CHEMBL2331043)|Sodium channel alpha subunit]] - blocker · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -108,6 +161,18 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 | Bioavailability | 100 % | ~100% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 93b4b34c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=93b4b34c-6dba-4aec-b98e-b2b18feb86a9), label version 20260624. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Cenobamate]] (GABA-A receptor; anion channel; Sodium channel alpha subunit), [[Topiramate (Topamax)]] (GABA-A receptor; anion channel; Sodium channel alpha subunit), [[Abp-700]] (GABA-A receptor; anion channel), [[Adipiplon]] (GABA-A receptor; anion channel), [[Alprazolam]] (GABA-A receptor; anion channel), [[Brexanolone]] (GABA-A receptor; anion channel), [[Butalbital]] (GABA-A receptor; anion channel), [[Carbamazepine]] (Sodium channel alpha subunit), [[Chlordiazepoxide]] (GABA-A receptor; anion channel), [[Cipepofol]] (GABA-A receptor; anion channel), [[Clobazam]] (GABA-A receptor; anion channel), [[Clomethiazole]] (GABA-A receptor; anion channel)
+- **Same ATC subgroup:** [[Metharbital]], [[Phenobarbital]]
 
 ## Safety routing
 

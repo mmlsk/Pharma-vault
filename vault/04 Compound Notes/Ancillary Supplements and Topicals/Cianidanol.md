@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL311498
+  pref-name: CIANIDANOL
+  molecule-type: Small molecule
+  first-approval: 1977
+  black-box-warning: false
+  withdrawn: true
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 290.27
+    mw-freebase: 290.27
+    alogp: 1.55
+    psa: 110.38
+    hba: 6
+    hbd: 5
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.51
+    full-molformula: C15H14O6
 ---
 
 # Cianidanol
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `cianidanol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL311498](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL311498/) · max phase 4
+- **ChEMBL:** [CHEMBL311498](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL311498/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,16 @@ Unknown; approved/marketed compound catalogued by ChEMBL (CHEMBL311498).
 ## Mechanism
 
 Unknown _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1977
+- **Flags:** withdrawn
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 290.27 | 1.55 | 110.38 | 5/6 | 0 | C15H14O6 |
 
 ## Evidence boundaries
 

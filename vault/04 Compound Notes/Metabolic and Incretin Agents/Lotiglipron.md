@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL5314631
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,28 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL5314631
+  pref-name: LOTIGLIPRON
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 575.07
+    mw-freebase: 575.07
+    alogp: 5.6
+    psa: 98.94
+    hba: 8
+    hbd: 1
+    rtb: 7
+    num-ro5-violations: 2
+    qed-weighted: 0.3
+    full-molformula: C31H31ClN4O5
 ---
 
 # Lotiglipron
@@ -68,10 +90,19 @@ tags:
 - **Compound ID:** `lotiglipron-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL5314631](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5314631/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral small-molecule GLP-1 agonist discontinued after liver-enzyme concerns in development.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 575.07 | 5.6 | 98.94 | 1/8 | 2 | C31H31ClN4O5 |
 
 ## Evidence boundaries
 

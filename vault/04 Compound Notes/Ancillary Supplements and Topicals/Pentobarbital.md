@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Pentobarbital
@@ -68,6 +69,38 @@ pk-source:
   revision: 1376096069
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL448
+  pref-name: PENTOBARBITAL
+  molecule-type: Small molecule
+  first-approval: 1973
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - N05CA01
+  targets:
+  - id: CHEMBL2093872
+    name: GABA-A receptor; anion channel
+    action: POSITIVE ALLOSTERIC MODULATOR
+  properties:
+    full-mwt: 226.28
+    mw-freebase: 226.28
+    alogp: 1.18
+    psa: 75.27
+    hba: 3
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.71
+    full-molformula: C11H18N2O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Pentobarbital
@@ -81,7 +114,7 @@ pk-source:
 - **Compound ID:** `pentobarbital-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL448](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL448/) · max phase 4
+- **ChEMBL:** [CHEMBL448](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL448/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +123,21 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1973
+- **Flags:** withdrawn
+- **ATC N05CA01:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Barbiturates, plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 226.28 | 1.18 | 75.27 | 2/3 | 0 | C11H18N2O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[GABA-A receptor; anion channel (CHEMBL2093872)|GABA-A receptor; anion channel]] - positive allosteric modulator · PROTEIN COMPLEX GROUP
 
 ## Evidence boundaries
 
@@ -108,6 +156,15 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 | Bioavailability | 70–90 % | 70–90% (oral); 90% (rectal) |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abp-700]] (GABA-A receptor; anion channel), [[Adipiplon]] (GABA-A receptor; anion channel), [[Alprazolam]] (GABA-A receptor; anion channel), [[Brexanolone]] (GABA-A receptor; anion channel), [[Butalbital]] (GABA-A receptor; anion channel), [[Cenobamate]] (GABA-A receptor; anion channel), [[Chlordiazepoxide]] (GABA-A receptor; anion channel), [[Cipepofol]] (GABA-A receptor; anion channel), [[Clobazam]] (GABA-A receptor; anion channel), [[Clomethiazole]] (GABA-A receptor; anion channel), [[Clonazepam]] (GABA-A receptor; anion channel), [[Clotiazepam]] (GABA-A receptor; anion channel)
+- **Same ATC subgroup:** [[Methohexital]], [[Secobarbital]], [[Talbutal]], [[Thiopental]]
 
 ## Safety routing
 

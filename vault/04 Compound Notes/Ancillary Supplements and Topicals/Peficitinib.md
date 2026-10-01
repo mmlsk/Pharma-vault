@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL3137308
+  pref-name: PEFICITINIB
+  molecule-type: Small molecule
+  first-approval: 2019
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AF06
+  targets:
+  - id: CHEMBL2363062
+    name: Janus Kinase (JAK)
+    action: INHIBITOR
+  properties:
+    full-mwt: 326.4
+    mw-freebase: 326.4
+    alogp: 2.01
+    psa: 104.03
+    hba: 4
+    hbd: 4
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C18H22N4O2
 ---
 
 # Peficitinib
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `peficitinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3137308](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137308/) · max phase 4
+- **ChEMBL:** [CHEMBL3137308](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3137308/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +103,20 @@ Janus Kinase (JAK) inhibitor; approved/marketed compound catalogued by ChEMBL (C
 
 Janus Kinase (JAK) inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2019
+- **ATC L04AF06:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Janus-associated kinase (JAK) inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 326.4 | 2.01 | 104.03 | 4/4 | 0 | C18H22N4O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Janus Kinase (JAK) (CHEMBL2363062)|Janus Kinase (JAK)]] - inhibitor · PROTEIN FAMILY
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +125,13 @@ Janus Kinase (JAK) inhibitor _(ChEMBL curated mechanism, as quoted by the source
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Delgocitinib]] (Janus Kinase (JAK)), [[Gusacitinib]] (Janus Kinase (JAK)), [[Nezulcitinib]] (Janus Kinase (JAK))
+- **Same ATC subgroup:** [[Baricitinib (oral, Olumiant)]], [[Filgotinib]], [[Ritlecitinib (oral, Litfulo)]], [[Tofacitinib]], [[Upadacitinib (Rinvoq)]]
 
 ## Safety routing
 

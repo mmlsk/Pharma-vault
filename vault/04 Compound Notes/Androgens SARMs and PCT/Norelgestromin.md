@@ -57,6 +57,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Norelgestromin
@@ -64,6 +65,37 @@ pk-source:
   revision: 1374433236
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200807
+  pref-name: NORELGESTROMIN
+  molecule-type: Small molecule
+  first-approval: 2001
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL208
+    name: Progesterone receptor
+    action: AGONIST
+  properties:
+    full-mwt: 327.47
+    mw-freebase: 327.47
+    alogp: 4.14
+    psa: 52.82
+    hba: 3
+    hbd: 2
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.43
+    full-molformula: C21H29NO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Norelgestromin
@@ -77,7 +109,7 @@ pk-source:
 - **Compound ID:** `norelgestromin-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1200807](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200807/) · max phase 4
+- **ChEMBL:** [CHEMBL1200807](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200807/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +118,19 @@ Progesterone receptor agonist; approved/marketed compound catalogued by ChEMBL (
 ## Mechanism
 
 Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2001
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 327.47 | 4.14 | 52.82 | 2/3 | 0 | C21H29NO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Progesterone receptor (CHEMBL208)|Progesterone receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -104,6 +149,14 @@ Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the sourc
 | Metabolism | hepatic | Liver (oxime to ketone reaction, hydroxylation, conjugation) |
 | Metabolites | - | • Levonorgestrel |
 | Excretion | - | Urine and feces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Asoprisnil]] (Progesterone receptor), [[Chlormadinone Acetate]] (Progesterone receptor), [[Cyproterone Acetate]] (Progesterone receptor), [[Danazol]] (Progesterone receptor), [[Desogestrel]] (Progesterone receptor), [[Drospirenone]] (Progesterone receptor), [[Dydrogesterone]] (Progesterone receptor), [[Ethynodiol Diacetate]] (Progesterone receptor), [[Etonogestrel]] (Progesterone receptor), [[Gestodene]] (Progesterone receptor), [[Hydroxyprogesterone Caproate]] (Progesterone receptor), [[Levonorgestrel]] (Progesterone receptor)
 
 ## Safety routing
 

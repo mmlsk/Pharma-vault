@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1729
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: null
@@ -62,6 +62,7 @@ tags:
 - group/gi
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Cisapride
@@ -69,6 +70,35 @@ pk-source:
   revision: 1357376753
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1729
+  pref-name: CISAPRIDE
+  molecule-type: Small molecule
+  first-approval: 1993
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - A03FA02
+  targets: []
+  properties:
+    full-mwt: 465.95
+    mw-freebase: 465.95
+    alogp: 3.36
+    psa: 86.05
+    hba: 6
+    hbd: 2
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.44
+    full-molformula: C23H29ClFN3O4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Cisapride
@@ -82,10 +112,22 @@ pk-source:
 - **Compound ID:** `cisapride-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1729](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1729/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Withdrawn 5-HT4 agonist prokinetic, the drug whose torsades deaths established hERG screening as a regulatory requirement.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1993
+- **Flags:** withdrawn
+- **ATC A03FA02:** ALIMENTARY TRACT AND METABOLISM › PROPULSIVES › Propulsives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 465.95 | 3.36 | 86.05 | 2/6 | 0 | C23H29ClFN3O4 |
 
 ## Evidence boundaries
 
@@ -105,6 +147,15 @@ Withdrawn 5-HT4 agonist prokinetic, the drug whose torsades deaths established h
 | Metabolism | hepatic | liver CYP3A4, intestinal |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - | kidney, bile duct |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Acotiamide]], [[Domperidone]], [[Itopride]], [[Metoclopramide]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

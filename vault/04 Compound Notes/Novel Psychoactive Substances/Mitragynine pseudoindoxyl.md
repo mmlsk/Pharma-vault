@@ -1,0 +1,126 @@
+---
+type: compound
+schema-version: 2
+compound-id: mitragynine-pseudoindoxyl-compound
+name: Mitragynine pseudoindoxyl
+aliases: []
+cluster: Novel Psychoactive Substances
+group: nps
+class: null
+subclass: null
+mechanism: null
+pathways: []
+indications: []
+off-label-contexts: []
+regulatory-status: null
+evidence-level: null
+review-status: stub
+chembl-id: CHEMBL58362
+chembl-max-phase: null
+half-life:
+  value: null
+  unit: null
+  notes: null
+protein-binding:
+  value: null
+  unit: percent
+  notes: null
+active-metabolites: []
+renal-clearance:
+  primary-route: null
+  fraction-excreted-unchanged: null
+  notes: null
+hepatic-clearance:
+  primary-route: null
+  extraction-ratio: null
+  notes: null
+dosage-ranges: {}
+cyp-interactions:
+  substrates: []
+  inhibitors: []
+  inducers: []
+  transporters: []
+  notes: null
+contraindications: []
+major-interactions: []
+monitoring: []
+risk-domains: []
+group-risk-triage:
+- cns-activity
+- identity-contamination
+- evidence-limited
+- sedation-respiratory-depression
+source-status: source-summary-only
+last-reviewed: null
+tags:
+- compound
+- curated-addition
+- group/nps
+- stub
+- chembl-profile
+chembl:
+  identity-source: curated-addition
+  parent-id: CHEMBL58362
+  pref-name: null
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 414.5
+    mw-freebase: 414.5
+    alogp: 2.87
+    psa: 77.1
+    hba: 7
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.45
+    full-molformula: C23H30N2O5
+pubchem-cid: 44301701
+---
+
+# Mitragynine pseudoindoxyl
+
+> [!warning] Source-derived stub
+> Generated from the source catalogue. Not reviewed. Not medical advice; contains no dosing guidance.
+> Change `review-status` from `stub` once curated - the generator will then never overwrite this note.
+
+## Identity
+
+- **Compound ID:** `mitragynine-pseudoindoxyl-compound`
+- **Source group:** Novel Psychoactive Substances (forensic NPS, curated addition) (`nps`)
+- **Cluster:** [[Novel Psychoactive Substances]]
+- **ChEMBL:** [CHEMBL58362](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL58362/) · max phase n/a · id via curated addition, exact ChEMBL match
+- **PubChem:** [CID 44301701](https://pubchem.ncbi.nlm.nih.gov/compound/44301701)
+
+## Source summary
+
+Curated addition (backlog: Designer-drug families / Novel opioids). Identity resolved by exact name match (PubChem name → CID → InChIKey → ChEMBL) to ChEMBL CHEMBL58362 / PubChem CID 44301701 (Mitragynine pseudoindoxyl).
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 414.5 | 2.87 | 77.1 | 1/7 | 0 | C23H30N2O5 |
+
+## Evidence boundaries
+
+- Evidence tier: _not assigned_ - see [[Evidence Tiers]].
+- A catalogue or vendor listing is not evidence of efficacy, purity, legality or safety.
+
+## Pharmacokinetics
+
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Safety routing
+
+Group-level triage (not compound-specific): `cns-activity`, `identity-contamination`, `evidence-limited`, `sedation-respiratory-depression`
+
+- [[Stacking and Interaction Risks]]
+- [[Experimental and Evidence-Limited Compounds]]
+- [[Respiratory Depression and Fatal Overdose]]

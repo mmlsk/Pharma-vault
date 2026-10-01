@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin-6 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1743050
+chembl-max-phase: 3
 half-life:
   value: 31.0
   value-max: null
@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Olokizumab
@@ -63,6 +64,28 @@ pk-source:
   revision: 1300694775
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1743050
+  pref-name: OLOKIZUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AC23
+  targets:
+  - id: CHEMBL1795129
+    name: Interleukin-6
+    action: INHIBITOR
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Olokizumab
@@ -76,10 +99,24 @@ pk-source:
 - **Compound ID:** `olokizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1743050](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743050/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Blocks IL-17 ligand or receptor signaling to reduce neutrophil-dominant inflammation.
+
+## Mechanism
+
+Interleukin-6 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **ATC L04AC23:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Interleukin inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-6 (CHEMBL1795129)|Interleukin-6]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -94,6 +131,15 @@ Blocks IL-17 ligand or receptor signaling to reduce neutrophil-dominant inflamma
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 31 d | 31 days |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Siltuximab]] (Interleukin-6), [[Ziltivekimab]] (Interleukin-6)
+- **Same ATC subgroup:** [[Anakinra]], [[Basiliximab]], [[Bimekizumab]], [[Briakinumab]], [[Brodalumab]], [[Canakinumab (Ilaris)]], [[Guselkumab]], [[Ixekizumab]], [[Mirikizumab]], [[Netakimab]], [[Rilonacept]], [[Risankizumab]]
 
 ## Safety routing
 

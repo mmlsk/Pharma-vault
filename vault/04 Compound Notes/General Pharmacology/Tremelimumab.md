@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: Cytotoxic T-lymphocyte protein 4 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108658
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108658
+  pref-name: TREMELIMUMAB
+  molecule-type: Antibody
+  first-approval: 2022
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L01FX20
+  targets:
+  - id: CHEMBL2364164
+    name: Cytotoxic T-lymphocyte protein 4
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Tremelimumab
@@ -67,10 +84,25 @@ tags:
 - **Compound ID:** `tremelimumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL2108658](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108658/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Anti-CTLA-4 antibody used in combination regimens in hepatocellular and lung cancer.
+
+## Mechanism
+
+Cytotoxic T-lymphocyte protein 4 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2022
+- **ATC L01FX20:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › MONOCLONAL ANTIBODIES AND ANTIBODY DRUG CONJUGATES › Other monoclonal antibodies and antibody drug conjugates
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cytotoxic T-lymphocyte protein 4 (CHEMBL2364164)|Cytotoxic T-lymphocyte protein 4]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +112,13 @@ Anti-CTLA-4 antibody used in combination regimens in hepatocellular and lung can
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ipilimumab]] (Cytotoxic T-lymphocyte protein 4)
+- **Same ATC subgroup:** [[Belantamab Mafodotin]], [[Blinatumomab]], [[Brentuximab Vedotin]], [[Elotuzumab]], [[Elranatamab]], [[Ipilimumab]], [[Teclistamab]]
 
 ## Safety routing
 

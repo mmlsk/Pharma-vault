@@ -54,6 +54,25 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1742994
+  pref-name: BRENTUXIMAB VEDOTIN
+  molecule-type: Antibody drug conjugate
+  first-approval: 2011
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L01FX05
+  targets:
+  - id: CHEMBL2095182
+    name: Tubulin
+    action: INHIBITOR
+  - id: CHEMBL2364161
+    name: Tumor necrosis factor receptor superfamily member 8
+    action: BINDING AGENT
+  properties: {}
 ---
 
 # Brentuximab Vedotin
@@ -67,7 +86,7 @@ tags:
 - **Compound ID:** `brentuximab-vedotin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1742994](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742994/) · max phase 4
+- **ChEMBL:** [CHEMBL1742994](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742994/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +96,18 @@ Tumor necrosis factor receptor superfamily member 8 binding agent; approved/mark
 
 Tumor necrosis factor receptor superfamily member 8 binding agent _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Antibody drug conjugate
+- **First approval (ChEMBL):** 2011
+- **Flags:** black-box warning
+- **ATC L01FX05:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › MONOCLONAL ANTIBODIES AND ANTIBODY DRUG CONJUGATES › Other monoclonal antibodies and antibody drug conjugates
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tubulin (CHEMBL2095182)|Tubulin]] - inhibitor · PROTEIN COMPLEX GROUP
+- [[Tumor necrosis factor receptor superfamily member 8 (CHEMBL2364161)|Tumor necrosis factor receptor superfamily member 8]] - binding agent · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +116,13 @@ Tumor necrosis factor receptor superfamily member 8 binding agent _(ChEMBL curat
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Belantamab Mafodotin]] (Tubulin), [[Colchicine]] (Tubulin), [[Davunetide]] (Tubulin), [[Iratumumab]] (Tumor necrosis factor receptor superfamily member 8), [[Sgn-30]] (Tumor necrosis factor receptor superfamily member 8)
+- **Same ATC subgroup:** [[Belantamab Mafodotin]], [[Blinatumomab]], [[Elotuzumab]], [[Elranatamab]], [[Ipilimumab]], [[Teclistamab]], [[Tremelimumab]]
 
 ## Safety routing
 

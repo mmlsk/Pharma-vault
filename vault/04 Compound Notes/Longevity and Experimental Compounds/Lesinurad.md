@@ -8,15 +8,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Solute carrier family 22 member 12 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2105720
+chembl-max-phase: 4
 half-life:
   value: 5.0
   value-max: null
@@ -62,6 +62,8 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Lesinurad
@@ -69,6 +71,38 @@ pk-source:
   revision: 1360239693
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2105720
+  pref-name: LESINURAD
+  molecule-type: Small molecule
+  first-approval: 2015
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - M04AB05
+  targets:
+  - id: CHEMBL6120
+    name: Solute carrier family 22 member 12
+    action: INHIBITOR
+  properties:
+    full-mwt: 404.29
+    mw-freebase: 404.29
+    alogp: 4.24
+    psa: 68.01
+    hba: 5
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.64
+    full-molformula: C17H14BrN3O2S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Lesinurad
@@ -82,10 +116,30 @@ pk-source:
 - **Compound ID:** `lesinurad-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL2105720](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105720/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Blocks proximal-tubule urate reabsorption to raise fractional urate excretion; urine volume and stone risk need attention; withdrawn from marketing.
+
+## Mechanism
+
+Solute carrier family 22 member 12 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2015
+- **Flags:** black-box warning
+- **ATC M04AB05:** MUSCULO-SKELETAL SYSTEM › ANTIGOUT PREPARATIONS › Preparations increasing uric acid excretion
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 404.29 | 4.24 | 68.01 | 1/5 | 0 | C17H14BrN3O2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Solute carrier family 22 member 12 (CHEMBL6120)|Solute carrier family 22 member 12]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -105,6 +159,16 @@ Blocks proximal-tubule urate reabsorption to raise fractional urate excretion; u
 | Metabolism | hepatic | Hepatic (CYP2C9) |
 | CYP (metabolised by) | CYP2C9 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Urine (63%), feces (32%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Benzbromarone]] (Solute carrier family 22 member 12), [[Dotinurad]] (Solute carrier family 22 member 12), [[Sulfinpyrazone]] (Solute carrier family 22 member 12), [[Verinurad]] (Solute carrier family 22 member 12)
+- **Same ATC subgroup:** [[Benzbromarone]], [[Probenecid]], [[Sulfinpyrazone]]
+- **Shared CYP substrate pool:** CYP2C9 (+40 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Rupatadine
@@ -64,6 +65,41 @@ pk-source:
   revision: 1356513565
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL91397
+  pref-name: RUPATADINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AX28
+  targets:
+  - id: CHEMBL250
+    name: Platelet-activating factor receptor
+    action: ANTAGONIST
+  - id: CHEMBL231
+    name: Histamine H1 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 415.97
+    mw-freebase: 415.97
+    alogp: 5.63
+    psa: 29.02
+    hba: 3
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 1
+    qed-weighted: 0.54
+    full-molformula: C26H26ClN3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Rupatadine
@@ -77,7 +113,7 @@ pk-source:
 - **Compound ID:** `rupatadine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL91397](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL91397/) · max phase 4
+- **ChEMBL:** [CHEMBL91397](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL91397/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +122,20 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC R06AX28:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Other antihistamines for systemic use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 415.97 | 5.63 | 29.02 | 0/3 | 1 | C26H26ClN3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Platelet-activating factor receptor (CHEMBL250)|Platelet-activating factor receptor]] - antagonist · SINGLE PROTEIN
+- [[Histamine H1 receptor (CHEMBL231)|Histamine H1 receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +153,15 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Protein binding | 98–99 % | 98–99% |
 | Metabolism | hepatic | Liver, CYP-mediated |
 | Excretion | mainly urinary | 34.6% urine, 60.9% faeces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acrivastine]] (Histamine H1 receptor), [[Alcaftadine]] (Histamine H1 receptor), [[Astemizole]] (Histamine H1 receptor), [[Betahistine]] (Histamine H1 receptor), [[Bilastine]] (Histamine H1 receptor), [[Chlorphenoxamine]] (Histamine H1 receptor), [[Cinnarizine]] (Histamine H1 receptor), [[Desloratadine]] (Histamine H1 receptor), [[Dibenzepin]] (Histamine H1 receptor), [[Dimenhydrinate]] (Histamine H1 receptor), [[Dimethindene]] (Histamine H1 receptor), [[Doxepin]] (Histamine H1 receptor)
+- **Same ATC subgroup:** [[Acrivastine]], [[Antazoline]], [[Astemizole]], [[Azatadine]], [[Azelastine]], [[Bilastine]], [[Cyproheptadine]], [[Desloratadine]], [[Ebastine]], [[Epinastine]], [[Fexofenadine]], [[Ketotifen]]
 
 ## Safety routing
 

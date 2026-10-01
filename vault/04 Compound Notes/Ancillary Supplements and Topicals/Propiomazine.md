@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Propiomazine
@@ -68,6 +69,35 @@ pk-source:
   revision: 1358906079
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201210
+  pref-name: PROPIOMAZINE
+  molecule-type: Small molecule
+  first-approval: 1960
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05CM06
+  targets: []
+  properties:
+    full-mwt: 340.49
+    mw-freebase: 340.49
+    alogp: 4.83
+    psa: 23.55
+    hba: 4
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C20H24N2OS
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Propiomazine
@@ -81,7 +111,7 @@ pk-source:
 - **Compound ID:** `propiomazine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201210](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201210/) · max phase 4
+- **ChEMBL:** [CHEMBL1201210](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201210/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +120,16 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1960
+- **ATC N05CM06:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Other hypnotics and sedatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 340.49 | 4.83 | 23.55 | 0/4 | 0 | C20H24N2OS |
 
 ## Evidence boundaries
 
@@ -107,6 +147,14 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Protein binding | 81 % | 81% |
 | Bioavailability | 33 % | Oral: 33% |
 | Metabolism | hepatic | Hepatic like other phenothiazines |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Clomethiazole]], [[Dexmedetomidine]], [[Ethchlorvynol]], [[Hyoscine (Scopolamine)]], [[Methaqualone]], [[Triclofos]]
 
 ## Safety routing
 

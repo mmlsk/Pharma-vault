@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL36994
+chembl-max-phase: 2
 half-life:
   value: 0.5
   value-max: null
@@ -57,6 +57,7 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Aniracetam
@@ -64,6 +65,35 @@ pk-source:
   revision: 1283119473
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL36994
+  pref-name: ANIRACETAM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N06BX11
+  targets: []
+  properties:
+    full-mwt: 219.24
+    mw-freebase: 219.24
+    alogp: 1.46
+    psa: 46.61
+    hba: 3
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.71
+    full-molformula: C12H13NO3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Aniracetam
@@ -77,10 +107,20 @@ pk-source:
 - **Compound ID:** `aniracetam-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL36994](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL36994/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Fat-soluble racetam and a genuine positive allosteric modulator of the AMPA receptor in vitro. Human evidence is thin and mostly predates modern trial standards.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC N06BX11:** NERVOUS SYSTEM › PSYCHOSTIMULANTS, AGENTS USED FOR ADHD AND NOOTROPICS › Other psychostimulants and nootropics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 219.24 | 1.46 | 46.61 | 0/3 | 0 | C12H13NO3 |
 
 ## Evidence boundaries
 
@@ -95,6 +135,14 @@ Fat-soluble racetam and a genuine positive allosteric modulator of the AMPA rece
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 0.5 h | 0.5 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Idebenone]], [[Linopirdine]], [[Oxiracetam]], [[Phenibut]], [[Piracetam]], [[Pramiracetam]], [[Vinpocetine]]
 
 ## Safety routing
 

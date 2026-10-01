@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2107546
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,34 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL321582
+  pref-name: BUCINDOLOL HYDROCHLORIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL213
+    name: Beta-1 adrenergic receptor
+    action: ANTAGONIST
+  - id: CHEMBL210
+    name: Beta-2 adrenergic receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 363.46
+    mw-freebase: 363.46
+    alogp: 3.39
+    psa: 81.07
+    hba: 4
+    hbd: 3
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.57
+    full-molformula: C22H25N3O2
 ---
 
 # Bucindolol
@@ -67,6 +95,7 @@ tags:
 - **Compound ID:** `bucindolol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2107546](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107546/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -76,6 +105,19 @@ Bucindolol is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is 
 
 beta-2 adrenergic receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 363.46 | 3.39 | 81.07 | 3/4 | 0 | C22H25N3O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Beta-1 adrenergic receptor (CHEMBL213)|Beta-1 adrenergic receptor]] - antagonist · SINGLE PROTEIN
+- [[Beta-2 adrenergic receptor (CHEMBL210)|Beta-2 adrenergic receptor]] - antagonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +126,12 @@ beta-2 adrenergic receptor antagonist _(ChEMBL curated mechanism, as quoted by t
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Celiprolol]] (Beta-1 adrenergic receptor; Beta-2 adrenergic receptor), [[Nadolol]] (Beta-1 adrenergic receptor; Beta-2 adrenergic receptor), [[Pindolol]] (Beta-1 adrenergic receptor; Beta-2 adrenergic receptor), [[Pronetalol]] (Beta-1 adrenergic receptor; Beta-2 adrenergic receptor), [[Timolol]] (Beta-1 adrenergic receptor; Beta-2 adrenergic receptor), [[Albuterol]] (Beta-2 adrenergic receptor), [[Atenolol (Tenormin)]] (Beta-1 adrenergic receptor), [[Bambuterol]] (Beta-2 adrenergic receptor), [[Clenbuterol]] (Beta-2 adrenergic receptor), [[Fenoterol]] (Beta-2 adrenergic receptor), [[Navafenterol]] (Beta-2 adrenergic receptor), [[Pf-00610355]] (Beta-2 adrenergic receptor)
 
 ## Safety routing
 

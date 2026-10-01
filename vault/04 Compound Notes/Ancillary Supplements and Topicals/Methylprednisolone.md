@@ -58,6 +58,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Methylprednisolone
@@ -65,6 +66,43 @@ pk-source:
   revision: 1366837611
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL650
+  pref-name: METHYLPREDNISOLONE
+  molecule-type: Small molecule
+  first-approval: 1957
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D07AA01
+  - D10AA02
+  - H02AB04
+  - H02BX01
+  targets:
+  - id: CHEMBL2034
+    name: Glucocorticoid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 374.48
+    mw-freebase: 374.48
+    alogp: 1.8
+    psa: 94.83
+    hba: 5
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C22H30O5
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: d0d5fc54-69e1-4303-96be-3f97adec6074
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d0d5fc54-69e1-4303-96be-3f97adec6074
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Methylprednisolone
@@ -78,7 +116,7 @@ pk-source:
 - **Compound ID:** `methylprednisolone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL650](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL650/) · max phase 4
+- **ChEMBL:** [CHEMBL650](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL650/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -87,6 +125,23 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1957
+- **ATC D07AA01:** DERMATOLOGICALS › CORTICOSTEROIDS, PLAIN › Corticosteroids, weak (group I)
+- **ATC D10AA02:** DERMATOLOGICALS › ANTI-ACNE PREPARATIONS FOR TOPICAL USE › Corticosteroids, combinations for treatment of acne
+- **ATC H02AB04:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › CORTICOSTEROIDS FOR SYSTEMIC USE, PLAIN › Glucocorticoids
+- **ATC H02BX01:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › CORTICOSTEROIDS FOR SYSTEMIC USE, COMBINATIONS › Corticosteroids for systemic use, combinations
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 374.48 | 1.8 | 94.83 | 3/5 | 0 | C22H30O5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucocorticoid receptor (CHEMBL2034)|Glucocorticoid receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -105,6 +160,19 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 | Metabolism | hepatic | Liver primarily, kidney, tissues; CYP3A4 |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Urine |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set d0d5fc54…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d0d5fc54-69e1-4303-96be-3f97adec6074), label version 20260703. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor)
+- **Same ATC subgroup:** [[Betamethasone]], [[Cortisone Acetate]], [[Cortivazol]], [[Deflazacort]], [[Dexamethasone]], [[Fluorometholone]], [[Hydrocortisone (Cortef)]], [[Meprednisone]], [[Paramethasone Acetate]], [[Prednisolone]], [[Prednisone]], [[Rimexolone]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Carprofen
@@ -64,6 +65,37 @@ pk-source:
   revision: 1330318498
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1316
+  pref-name: CARPROFEN
+  molecule-type: Small molecule
+  first-approval: 1987
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL230
+    name: Prostaglandin G/H synthase 2
+    action: INHIBITOR
+  properties:
+    full-mwt: 273.72
+    mw-freebase: 273.72
+    alogp: 4.16
+    psa: 53.09
+    hba: 1
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.74
+    full-molformula: C15H12ClNO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Carprofen
@@ -77,7 +109,7 @@ pk-source:
 - **Compound ID:** `carprofen-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1316](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1316/) · max phase 4
+- **ChEMBL:** [CHEMBL1316](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1316/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +118,19 @@ Cyclooxygenase-2 inhibitor; approved/marketed compound catalogued by ChEMBL (CHE
 ## Mechanism
 
 Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1987
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 273.72 | 4.16 | 53.09 | 2/1 | 0 | C15H12ClNO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prostaglandin G-H synthase 2 (CHEMBL230)|Prostaglandin G/H synthase 2]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -101,6 +146,14 @@ Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 |---|---|---|
 | Elimination t½ | - | Approximately 8 h (range 4.5–9.8 h) in dogs [not stored as a number: non-human or sub-minute data] |
 | Protein binding | 99 % | High (99%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aceclofenac]] (Prostaglandin G/H synthase 2), [[Celecoxib]] (Prostaglandin G/H synthase 2), [[Cimicoxib]] (Prostaglandin G/H synthase 2), [[Etodolac]] (Prostaglandin G/H synthase 2), [[Etoricoxib]] (Prostaglandin G/H synthase 2), [[Gw-406381]] (Prostaglandin G/H synthase 2), [[Iguratimod]] (Prostaglandin G/H synthase 2), [[Lumiracoxib]] (Prostaglandin G/H synthase 2), [[Meloxicam]] (Prostaglandin G/H synthase 2), [[Nabumetone]] (Prostaglandin G/H synthase 2), [[Parecoxib]] (Prostaglandin G/H synthase 2), [[Rofecoxib]] (Prostaglandin G/H synthase 2)
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Unknown
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL125
+chembl-max-phase: 4
 half-life:
   value: 6.0
   value-max: 8.0
@@ -61,6 +61,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Miltefosine
@@ -68,6 +69,35 @@ pk-source:
   revision: 1374210502
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL125
+  pref-name: MILTEFOSINE
+  molecule-type: Small molecule
+  first-approval: 2014
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - P01CX04
+  targets: []
+  properties:
+    full-mwt: 407.58
+    mw-freebase: 407.58
+    alogp: 5.68
+    psa: 58.59
+    hba: 4
+    hbd: 0
+    rtb: 20
+    num-ro5-violations: 1
+    qed-weighted: 0.15
+    full-molformula: C21H46NO4P
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Miltefosine
@@ -81,10 +111,26 @@ pk-source:
 - **Compound ID:** `miltefosine-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL125](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL125/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The first oral treatment for visceral leishmaniasis, an alkylphosphocholine originally developed as an anticancer agent and strongly teratogenic.
+
+## Mechanism
+
+Unknown _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2014
+- **Flags:** black-box warning
+- **ATC P01CX04:** ANTIPARASITIC PRODUCTS, INSECTICIDES AND REPELLENTS › AGENTS AGAINST LEISHMANIASIS AND TRYPANOSOMIASIS › Other agents against leishmaniasis and trypanosomiasis
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 407.58 | 5.68 | 58.59 | 0/4 | 1 | C21H46NO4P |
 
 ## Evidence boundaries
 
@@ -103,6 +149,8 @@ The first oral treatment for visceral leishmaniasis, an alkylphosphocholine orig
 | Bioavailability | - | High |
 | Metabolism | hepatic | Slow hepatic (non-CYP-dependent) |
 | Excretion | - | Primarily fecal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

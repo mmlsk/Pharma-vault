@@ -70,6 +70,13 @@ pk-source:
   revision: 1329021477
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Superdrol (Methasterone)
@@ -105,6 +112,8 @@ Extremely potent oral steroid producing rapid mass/strength gains at low doses, 
 | Bioavailability | 50 % | ≈50% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

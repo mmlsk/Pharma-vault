@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1928262
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1928262
+  pref-name: GISADENAFIL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1827
+    name: cGMP-specific 3',5'-cyclic phosphodiesterase
+    action: INHIBITOR
+  properties:
+    full-mwt: 519.63
+    mw-freebase: 519.63
+    alogp: 1.12
+    psa: 135.54
+    hba: 10
+    hbd: 1
+    rtb: 10
+    num-ro5-violations: 1
+    qed-weighted: 0.42
+    full-molformula: C23H33N7O5S
 ---
 
 # Gisadenafil
@@ -67,6 +93,7 @@ tags:
 - **Compound ID:** `gisadenafil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1928262](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1928262/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +103,18 @@ Gisadenafil is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is
 
 phosphodiesterase 5A inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 519.63 | 1.12 | 135.54 | 1/10 | 1 | C23H33N7O5S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[cGMP-specific 3',5'-cyclic phosphodiesterase (CHEMBL1827)|cGMP-specific 3',5'-cyclic phosphodiesterase]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +123,12 @@ phosphodiesterase 5A inhibitor _(ChEMBL curated mechanism, as quoted by the sour
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Avanafil (Stendra)]] (cGMP-specific 3',5'-cyclic phosphodiesterase), [[Cialis (Tadalafil)]] (cGMP-specific 3',5'-cyclic phosphodiesterase), [[Ibudilast]] (cGMP-specific 3',5'-cyclic phosphodiesterase), [[Pf-00489791]] (cGMP-specific 3',5'-cyclic phosphodiesterase), [[Udenafil]] (cGMP-specific 3',5'-cyclic phosphodiesterase)
 
 ## Safety routing
 

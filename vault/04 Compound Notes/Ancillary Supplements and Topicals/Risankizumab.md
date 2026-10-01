@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin-23 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3990029
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3990029
+  pref-name: RISANKIZUMAB
+  molecule-type: Antibody
+  first-approval: 2019
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AC18
+  targets:
+  - id: CHEMBL2364154
+    name: Interleukin-23
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Risankizumab
@@ -67,10 +83,25 @@ tags:
 - **Compound ID:** `risankizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3990029](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990029/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Neutralizes IL-23 signaling to suppress pathogenic Th17 maintenance in immune-mediated disease.
+
+## Mechanism
+
+Interleukin-23 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2019
+- **ATC L04AC18:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Interleukin inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-23 (CHEMBL2364154)|Interleukin-23]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -80,6 +111,13 @@ Neutralizes IL-23 signaling to suppress pathogenic Th17 maintenance in immune-me
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Brazikumab]] (Interleukin-23), [[Briakinumab]] (Interleukin-23), [[Guselkumab]] (Interleukin-23), [[Mirikizumab]] (Interleukin-23), [[Tildrakizumab]] (Interleukin-23), [[Ustekinumab]] (Interleukin-23)
+- **Same ATC subgroup:** [[Anakinra]], [[Basiliximab]], [[Bimekizumab]], [[Briakinumab]], [[Brodalumab]], [[Canakinumab (Ilaris)]], [[Guselkumab]], [[Ixekizumab]], [[Mirikizumab]], [[Netakimab]], [[Olokizumab]], [[Rilonacept]]
 
 ## Safety routing
 

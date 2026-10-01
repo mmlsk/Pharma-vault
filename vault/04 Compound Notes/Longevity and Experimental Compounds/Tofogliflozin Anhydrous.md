@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2110731
+  pref-name: TOFOGLIFLOZIN ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 386.44
+    mw-freebase: 386.44
+    alogp: 1.0
+    psa: 99.38
+    hba: 6
+    hbd: 4
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.63
+    full-molformula: C22H26O6
 ---
 
 # Tofogliflozin Anhydrous
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `tofogliflozin-anhydrous-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL2110731](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2110731/) · max phase 4
+- **ChEMBL:** [CHEMBL2110731](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2110731/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,14 @@ Sodium/glucose cotransporter 2 inhibitor; approved/marketed compound catalogued 
 ## Mechanism
 
 Sodium/glucose cotransporter 2 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 386.44 | 1.0 | 99.38 | 4/6 | 0 | C22H26O6 |
 
 ## Evidence boundaries
 

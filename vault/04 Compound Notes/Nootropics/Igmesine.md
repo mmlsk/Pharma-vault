@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2110660
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,29 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2110660
+  pref-name: IGMESINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 319.49
+    mw-freebase: 319.49
+    alogp: 5.74
+    psa: 3.24
+    hba: 1
+    hbd: 0
+    rtb: 8
+    num-ro5-violations: 1
+    qed-weighted: 0.6
+    full-molformula: C23H29N
 ---
 
 # Igmesine
@@ -68,10 +91,19 @@ tags:
 - **Compound ID:** `igmesine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL2110660](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2110660/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Engages the sigma-1 chaperone at the ER-mitochondrial interface, modulating calcium handling and ER stress responses; development discontinued.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 319.49 | 5.74 | 3.24 | 0/1 | 1 | C23H29N |
 
 ## Evidence boundaries
 

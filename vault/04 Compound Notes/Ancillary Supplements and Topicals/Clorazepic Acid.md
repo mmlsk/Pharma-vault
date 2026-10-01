@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1213252
+  pref-name: CLORAZEPIC ACID
+  molecule-type: Small molecule
+  first-approval: 1972
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 314.73
+    mw-freebase: 314.73
+    alogp: 2.58
+    psa: 78.76
+    hba: 3
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.84
+    full-molformula: C16H11ClN2O3
 ---
 
 # Clorazepic Acid
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `clorazepic-acid-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1213252](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1213252/) · max phase 4
+- **ChEMBL:** [CHEMBL1213252](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1213252/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,16 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1972
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 314.73 | 2.58 | 78.76 | 2/3 | 0 | C16H11ClN2O3 |
 
 ## Evidence boundaries
 

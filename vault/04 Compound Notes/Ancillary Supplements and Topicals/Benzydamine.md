@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Benzydamine
@@ -64,6 +65,42 @@ pk-source:
   revision: 1368671470
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL12610
+  pref-name: BENZYDAMINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A01AD02
+  - G02CC03
+  - M01AX07
+  - M02AA05
+  - R02AX03
+  targets:
+  - id: CHEMBL2094253
+    name: Cyclooxygenase
+    action: INHIBITOR
+  properties:
+    full-mwt: 309.41
+    mw-freebase: 309.41
+    alogp: 3.42
+    psa: 30.29
+    hba: 4
+    hbd: 0
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.63
+    full-molformula: C19H23N3O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Benzydamine
@@ -77,7 +114,7 @@ pk-source:
 - **Compound ID:** `benzydamine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL12610](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL12610/) · max phase 4
+- **ChEMBL:** [CHEMBL12610](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL12610/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +123,23 @@ Cyclooxygenase inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMB
 ## Mechanism
 
 Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A01AD02:** ALIMENTARY TRACT AND METABOLISM › STOMATOLOGICAL PREPARATIONS › Other agents for local oral treatment
+- **ATC G02CC03:** GENITO URINARY SYSTEM AND SEX HORMONES › OTHER GYNECOLOGICALS › Antiinflammatory products for vaginal administration
+- **ATC M01AX07:** MUSCULO-SKELETAL SYSTEM › ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS, NON-STEROIDS › Other antiinflammatory and antirheumatic agents, non-steroids
+- **ATC M02AA05:** MUSCULO-SKELETAL SYSTEM › TOPICAL PRODUCTS FOR JOINT AND MUSCULAR PAIN › Antiinflammatory preparations, non-steroids for topical use
+- **ATC R02AX03:** RESPIRATORY SYSTEM › THROAT PREPARATIONS › Other throat preparations
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 309.41 | 3.42 | 30.29 | 0/4 | 0 | C19H23N3O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cyclooxygenase (CHEMBL2094253)|Cyclooxygenase]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -102,6 +156,15 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 | Elimination t½ | 13 h | 13 hours |
 | Protein binding | 20 % | <20% |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acemetacin]] (Cyclooxygenase), [[Acetaminophen]] (Cyclooxygenase), [[Aloxiprin]] (Cyclooxygenase), [[Aspirin]] (Cyclooxygenase), [[Bismuth Subsalicylate]] (Cyclooxygenase), [[Clometacin]] (Cyclooxygenase), [[Dexibuprofen]] (Cyclooxygenase), [[Dexketoprofen]] (Cyclooxygenase), [[Diclofenac]] (Cyclooxygenase), [[Diflunisal]] (Cyclooxygenase), [[Esflurbiprofen]] (Cyclooxygenase), [[Fenclofenac]] (Cyclooxygenase)
+- **Same ATC subgroup:** [[Aceclofenac]], [[Adrenaline (Epinephrine)]], [[Aspirin]], [[Dexketoprofen]], [[Diclofenac]], [[Esflurbiprofen]], [[Flurbiprofen]], [[Glucosamine]], [[Ibuprofen]], [[Indomethacin]], [[Ketoprofen]], [[Loxoprofen]]
 
 ## Safety routing
 

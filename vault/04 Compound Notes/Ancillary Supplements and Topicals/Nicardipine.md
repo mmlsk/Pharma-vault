@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1484
+chembl-max-phase: 4
 half-life:
   value: 8.6
   value-max: null
@@ -49,7 +49,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -57,6 +57,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Nicardipine
@@ -64,6 +66,37 @@ pk-source:
   revision: 1359023269
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1484
+  pref-name: NICARDIPINE
+  molecule-type: Small molecule
+  first-approval: 1988
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C08CA04
+  targets: []
+  properties:
+    full-mwt: 479.53
+    mw-freebase: 479.53
+    alogp: 3.68
+    psa: 111.01
+    hba: 8
+    hbd: 1
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.33
+    full-molformula: C26H29N3O6
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 79304b0f-53d3-4065-8c81-7031d1141694
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=79304b0f-53d3-4065-8c81-7031d1141694
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Nicardipine
@@ -77,10 +110,21 @@ pk-source:
 - **Compound ID:** `nicardipine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1484](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1484/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Dihydropyridine calcium-channel blocker used orally and intravenously for blood-pressure control.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1988
+- **ATC C08CA04:** CARDIOVASCULAR SYSTEM › SELECTIVE CALCIUM CHANNEL BLOCKERS WITH MAINLY VASCULAR EFFECTS › Dihydropyridine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 479.53 | 3.68 | 111.01 | 1/8 | 0 | C26H29N3O6 |
 
 ## Evidence boundaries
 
@@ -96,6 +140,17 @@ Dihydropyridine calcium-channel blocker used orally and intravenously for blood-
 |---|---|---|
 | Elimination t½ | 8.6 h | 8.6 hours |
 | Protein binding | 95 % | >95% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 79304b0f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=79304b0f-53d3-4065-8c81-7031d1141694), label version 20241003. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2, 4, 8, 8.6, 19)
+> - protein-binding: consistent (label values: 95)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amlodipine]], [[Clevidipine]], [[Felodipine]], [[Lercanidipine]], [[Nifedipine]], [[Nimodipine]]
 
 ## Safety routing
 

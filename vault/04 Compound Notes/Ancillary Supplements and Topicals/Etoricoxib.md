@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Etoricoxib
@@ -69,6 +70,38 @@ pk-source:
   revision: 1353779161
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL416146
+  pref-name: ETORICOXIB
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M01AH05
+  targets:
+  - id: CHEMBL230
+    name: Prostaglandin G/H synthase 2
+    action: INHIBITOR
+  properties:
+    full-mwt: 358.85
+    mw-freebase: 358.85
+    alogp: 4.18
+    psa: 59.92
+    hba: 4
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.7
+    full-molformula: C18H15ClN2O2S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Etoricoxib
@@ -82,7 +115,7 @@ pk-source:
 - **Compound ID:** `etoricoxib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL416146](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL416146/) · max phase 4
+- **ChEMBL:** [CHEMBL416146](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL416146/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -91,6 +124,19 @@ Cyclooxygenase-2 inhibitor; approved/marketed compound catalogued by ChEMBL (CHE
 ## Mechanism
 
 Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC M01AH05:** MUSCULO-SKELETAL SYSTEM › ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS, NON-STEROIDS › Coxibs
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 358.85 | 4.18 | 59.92 | 0/4 | 0 | C18H15ClN2O2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prostaglandin G-H synthase 2 (CHEMBL230)|Prostaglandin G/H synthase 2]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -110,6 +156,16 @@ Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 | Metabolism | hepatic | Liver, CYP extensively involved (mainly CYP3A4) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Kidney (70%) and fecal (20%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aceclofenac]] (Prostaglandin G/H synthase 2), [[Carprofen]] (Prostaglandin G/H synthase 2), [[Celecoxib]] (Prostaglandin G/H synthase 2), [[Cimicoxib]] (Prostaglandin G/H synthase 2), [[Etodolac]] (Prostaglandin G/H synthase 2), [[Gw-406381]] (Prostaglandin G/H synthase 2), [[Iguratimod]] (Prostaglandin G/H synthase 2), [[Lumiracoxib]] (Prostaglandin G/H synthase 2), [[Meloxicam]] (Prostaglandin G/H synthase 2), [[Nabumetone]] (Prostaglandin G/H synthase 2), [[Parecoxib]] (Prostaglandin G/H synthase 2), [[Rofecoxib]] (Prostaglandin G/H synthase 2)
+- **Same ATC subgroup:** [[Celecoxib]], [[Lumiracoxib]], [[Parecoxib]], [[Rofecoxib]], [[Valdecoxib]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

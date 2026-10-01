@@ -8,15 +8,15 @@ cluster: Metabolic and Incretin Agents
 group: glp1
 class: null
 subclass: null
-mechanism: null
+mechanism: Dipeptidyl peptidase IV inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4296719
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -55,6 +55,25 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4296719
+  pref-name: DUTOGLIPTIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL284
+    name: Dipeptidyl peptidase 4
+    action: INHIBITOR
+  properties:
+    full-mwt: 241.1
+    mw-freebase: 241.1
+    full-molformula: C10H20BN3O3
 ---
 
 # Dutogliptin
@@ -68,10 +87,27 @@ tags:
 - **Compound ID:** `dutogliptin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL4296719](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4296719/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits DPP-4 to prolong endogenous incretin signaling and glucose-dependent insulin release.
+
+## Mechanism
+
+Dipeptidyl peptidase IV inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 241.1 | - | - | -/- | - | C10H20BN3O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Dipeptidyl peptidase 4 (CHEMBL284)|Dipeptidyl peptidase 4]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -81,6 +117,12 @@ Inhibits DPP-4 to prolong endogenous incretin signaling and glucose-dependent in
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Anagliptin]] (Dipeptidyl peptidase 4), [[Bisegliptin]] (Dipeptidyl peptidase 4), [[Evogliptin]] (Dipeptidyl peptidase 4), [[Gemigliptin]] (Dipeptidyl peptidase 4), [[Gosogliptin]] (Dipeptidyl peptidase 4), [[Linagliptin (Tradjenta)]] (Dipeptidyl peptidase 4), [[Omarigliptin]] (Dipeptidyl peptidase 4), [[Teneligliptin]] (Dipeptidyl peptidase 4), [[Vildagliptin]] (Dipeptidyl peptidase 4)
 
 ## Safety routing
 

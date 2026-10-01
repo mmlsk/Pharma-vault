@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL896
+chembl-max-phase: 4
 half-life:
   value: 20.0
   value-max: null
@@ -63,6 +63,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Hydroxyzine
@@ -70,6 +71,37 @@ pk-source:
   revision: 1373263093
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL896
+  pref-name: HYDROXYZINE
+  molecule-type: Small molecule
+  first-approval: 1956
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05BB01
+  - N05BB51
+  targets: []
+  properties:
+    full-mwt: 374.91
+    mw-freebase: 374.91
+    alogp: 3.06
+    psa: 35.94
+    hba: 4
+    hbd: 1
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.72
+    full-molformula: C21H27ClN2O2
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 851e7439-bb0a-4a09-9279-e3c33bff8965
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=851e7439-bb0a-4a09-9279-e3c33bff8965
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Hydroxyzine
@@ -83,10 +115,22 @@ pk-source:
 - **Compound ID:** `hydroxyzine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL896](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL896/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Sedating first-generation antihistamine used for anxiety and pruritus; anticholinergic burden and QT prolongation make chronic sleep use unattractive.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1956
+- **ATC N05BB01:** NERVOUS SYSTEM › ANXIOLYTICS › Diphenylmethane derivatives
+- **ATC N05BB51:** NERVOUS SYSTEM › ANXIOLYTICS › Diphenylmethane derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 374.91 | 3.06 | 35.94 | 1/4 | 0 | C21H27ClN2O2 |
 
 ## Evidence boundaries
 
@@ -107,6 +151,16 @@ Sedating first-generation antihistamine used for anxiety and pruritus; anticholi
 | CYP (metabolised by) | CYP3A4, CYP3A5 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Cetirizine, others |
 | Excretion | - | Urine, feces |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 851e7439…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=851e7439-bb0a-4a09-9279-e3c33bff8965), label version 20251031. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared CYP substrate pool:** CYP3A4 (+204 others), CYP3A5 (+13 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

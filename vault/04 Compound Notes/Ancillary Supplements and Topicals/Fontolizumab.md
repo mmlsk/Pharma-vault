@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Interferon gamma inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108459
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108459
+  pref-name: FONTOLIZUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3286073
+    name: Interferon gamma
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Fontolizumab
@@ -67,10 +83,23 @@ tags:
 - **Compound ID:** `fontolizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2108459](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108459/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Neutralizes IL-23 signaling to suppress pathogenic Th17 maintenance in immune-mediated disease.
+
+## Mechanism
+
+Interferon gamma inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interferon gamma (CHEMBL3286073)|Interferon gamma]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

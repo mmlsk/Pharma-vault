@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1104
+  pref-name: EDROPHONIUM
+  molecule-type: Small molecule
+  first-approval: 1951
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - V04CX07
+  targets: []
+  properties:
+    full-mwt: 166.24
+    mw-freebase: 166.24
+    alogp: 1.98
+    psa: 20.23
+    hba: 1
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C10H16NO+
 ---
 
 # Edrophonium
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `edrophonium-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL1104](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1104/) · max phase 4
+- **ChEMBL:** [CHEMBL1104](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1104/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +99,16 @@ Acetylcholinesterase inhibitor; approved/marketed compound catalogued by ChEMBL 
 ## Mechanism
 
 Acetylcholinesterase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1951
+- **ATC V04CX07:** VARIOUS › OTHER DIAGNOSTIC AGENTS › Other diagnostic agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 166.24 | 1.98 | 20.23 | 1/1 | 0 | C10H16NO+ |
 
 ## Evidence boundaries
 

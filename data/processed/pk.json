@@ -1,5 +1,169 @@
 [
  {
+  "compound_id": "25b-nbome-compound",
+  "source-title": "25B-NBOMe",
+  "revid": 1373706306,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=25B-NBOMe&oldid=1373706306",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "metabolites-text": "5-DM-25B-NBOMe",
+  "onset": "45–75 minutes or 15–120 minutes",
+  "duration-of-action": "8–12 hours",
+  "routes-of-administration": "Sublingual, buccal, intranasal"
+ },
+ {
+  "compound_id": "25i-nbome-compound",
+  "source-title": "25I-NBOMe",
+  "revid": 1374586236,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=25I-NBOMe&oldid=1374586236",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "bioavailability": {
+   "value": null,
+   "value-max": null,
+   "notes": "Very low"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Extensive first-pass metabolism in the liver"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "Urine"
+  },
+  "onset": "15–120 min (0.25–2 hours)",
+  "duration-of-action": "Insufflation: 4–6 h; Sublingual: 6–10 h; Buccal: 6–10 h",
+  "routes-of-administration": "Mainly sublingual, buccal, and insufflation"
+ },
+ {
+  "compound_id": "2c-b-compound",
+  "source-title": "2C-B",
+  "revid": 1375574978,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=2C-B&oldid=1375574978",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 1.2,
+   "unit": "h",
+   "value-max": 2.5,
+   "notes": "1.2–2.5 hours"
+  },
+  "protein-binding": {
+   "value": null,
+   "value-max": null,
+   "unit": null,
+   "notes": "Unknown"
+  },
+  "bioavailability": {
+   "value": null,
+   "value-max": null,
+   "notes": "Low"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Liver (MAO and CYP450)"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "metabolites-text": "BDMPE, BDMPAA, BDMBA, and others",
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "Urine"
+  },
+  "onset": "Oral: 0.5–1.2 hours (range 0.3–1.5 hours)",
+  "duration-of-action": "Oral: 3–5 hours (range 2–8 hours)",
+  "routes-of-administration": "Oral, insufflation"
+ },
+ {
+  "compound_id": "3-mmc-compound",
+  "source-title": "3-Methylmethcathinone",
+  "revid": 1371269081,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=3-Methylmethcathinone&oldid=1371269081",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "half-life": {
+   "value": null,
+   "unit": null,
+   "value-max": null,
+   "notes": "50 min (in pigs) [not stored as a number: non-human or sub-minute data]"
+  },
+  "protein-binding": {
+   "value": null,
+   "value-max": null,
+   "unit": null,
+   "notes": "Low"
+  },
+  "bioavailability": {
+   "value": 5.0,
+   "value-max": 9.0,
+   "notes": "Oral: 5–9%"
+  },
+  "routes-of-administration": "Oral;; Insufflated (most common); Injected"
+ },
+ {
+  "compound_id": "5-meo-dmt-compound",
+  "source-title": "5-MeO-DMT",
+  "revid": 1376206730,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=5-MeO-DMT&oldid=1376206730",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 15.0,
+   "unit": "min",
+   "value-max": 26.0,
+   "notes": "Intranasal: 15–26 min; Sublingual: 28 min"
+  },
+  "bioavailability": {
+   "value": null,
+   "value-max": null,
+   "notes": "Oral: inactive (without an MAOI) or weak"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Oxidative deamination (MAO), O-demethylation (CYP2D6)"
+  },
+  "cyp-interactions": {
+   "substrates": [
+    "CYP2D6"
+   ],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": "Metabolised by CYP2D6 (from metabolism field); inhibitor/inducer roles not assessed"
+  },
+  "metabolites-text": "Bufotenin",
+  "onset": "Inhalation: seconds or 3–4 min (but up to 10–15 min); Intranasal: 3–15 min; Intramuscular: 1–6 min; Intravenous: ≤1 minute; Oral (with harmaline): 15–18 min",
+  "duration-of-action": "Inhalation: 5–30 min, but up to 1–2 hours; Intranasal: 45–70 min; Intramuscular: ≤60 min; Intravenous: 10 min; Oral (with harmaline) ≥3–4 hours",
+  "routes-of-administration": "Inhalation, insufflation, sublingual, rectal, intramuscular, intravenous, oral (with an MAOI like harmaline)"
+ },
+ {
+  "compound_id": "7-hydroxymitragynine-compound",
+  "source-title": "7-Hydroxymitragynine",
+  "revid": 1375314542,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=7-Hydroxymitragynine&oldid=1375314542",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "metabolites-text": "Mitragynine pseudoindoxyl",
+  "routes-of-administration": "Oral"
+ },
+ {
   "compound_id": "abacavir-compound",
   "source-title": "Abacavir",
   "revid": 1351008588,
@@ -7,7 +171,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 0.63,
+   "value": 1.54,
    "unit": "h",
    "value-max": null,
    "notes": "1.54 ± 0.63 h"
@@ -324,7 +488,7 @@
    "fraction-excreted-unchanged": null,
    "notes": "Kidney"
   },
-  "onset": "Oral: 37minutes; Intravenous: 8minutes",
+  "onset": "Oral: 37 minutes; Intravenous: 8 minutes",
   "routes-of-administration": "By mouth, intravenous, rectal"
  },
  {
@@ -1263,7 +1427,7 @@
    "notes": "Negligible"
   },
   "bioavailability": {
-   "value": 20.0,
+   "value": 78.0,
    "value-max": null,
    "notes": "78±20%"
   },
@@ -1437,6 +1601,28 @@
    "notes": "Kidney 73%, feces 24%"
   },
   "routes-of-administration": "By mouth"
+ },
+ {
+  "compound_id": "alpha-pvp-compound",
+  "source-title": "Α-Pyrrolidinopentiophenone",
+  "revid": 1373419792,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=%CE%91-Pyrrolidinopentiophenone&oldid=1373419792",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 2.1,
+   "unit": "h",
+   "value-max": null,
+   "notes": "~2.1 hours"
+  },
+  "metabolites-text": "α-PVP lactam, β-hydroxy α-PVP, and others",
+  "renal-clearance": {
+   "primary-route": null,
+   "fraction-excreted-unchanged": null,
+   "notes": "In urine, through the kidneys"
+  },
+  "duration-of-action": "3–5 hours",
+  "routes-of-administration": "By mouth, intranasal, inhalation, sublingual, intravenous"
  },
  {
   "compound_id": "alprazolam-compound",
@@ -2056,7 +2242,7 @@
    "value": 61.3,
    "unit": "min",
    "value-max": null,
-   "notes": "61.3minutes (~1hour)"
+   "notes": "61.3 minutes (~1 hour)"
   },
   "protein-binding": {
    "value": 17.0,
@@ -2085,9 +2271,9 @@
   "renal-clearance": {
    "primary-route": true,
    "fraction-excreted-unchanged": null,
-   "notes": "Urine: 70–78% (after 6hours)"
+   "notes": "Urine: 70–78% (after 6 hours)"
   },
-  "onset": "≤1.3–1.5hours (Tmax)",
+  "onset": "≤1.3–1.5 hours (Tmax)",
   "routes-of-administration": "By mouth, intravenous (bolus), intramuscular"
  },
  {
@@ -2356,6 +2542,21 @@
    "notes": "Urine (11%)"
   },
   "routes-of-administration": "By mouth"
+ },
+ {
+  "compound_id": "anavex3-71-compound",
+  "source-title": "ANAVEX 3-71",
+  "revid": 1372015654,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=ANAVEX_3-71&oldid=1372015654",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "half-life": {
+   "value": 3.56,
+   "unit": "h",
+   "value-max": null,
+   "notes": "3.56 hours; M8 metabolite: 6.59 hours"
+  },
+  "routes-of-administration": "Oral"
  },
  {
   "compound_id": "androstenedione-compound",
@@ -2765,7 +2966,7 @@
    "value": 10.0,
    "unit": "h",
    "value-max": 17.0,
-   "notes": "10–17hours"
+   "notes": "10–17 hours"
   },
   "protein-binding": {
    "value": null,
@@ -2798,8 +2999,8 @@
    "fraction-excreted-unchanged": null,
    "notes": "Unknown (but modafinil is excreted 80% in urine and 1.0% in feces)"
   },
-  "onset": "1.5–6.5h (range 0.5–11h) (peak)",
-  "duration-of-action": "Up to 13.5hours",
+  "onset": "1.5–6.5 h (range 0.5–11 h) (peak)",
+  "duration-of-action": "Up to 13.5 hours",
   "routes-of-administration": "Oral (tablets)"
  },
  {
@@ -2890,7 +3091,7 @@
    "value": 2.0,
    "unit": "h",
    "value-max": 3.0,
-   "notes": "Dose-dependent; 2–3h for low doses (100mg or less), 15–30h for larger doses."
+   "notes": "Dose-dependent; 2–3 h for low doses (100 mg or less), 15–30 h for larger doses."
   },
   "protein-binding": {
    "value": 80.0,
@@ -3056,6 +3257,26 @@
   "routes-of-administration": "Oral, intravenous"
  },
  {
+  "compound_id": "aticaprant-compound",
+  "source-title": "Aticaprant",
+  "revid": 1372074872,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Aticaprant&oldid=1372074872",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 30.0,
+   "unit": "h",
+   "value-max": 40.0,
+   "notes": "30–40 hours"
+  },
+  "bioavailability": {
+   "value": 25.0,
+   "value-max": null,
+   "notes": "25%"
+  },
+  "routes-of-administration": "Oral"
+ },
+ {
   "compound_id": "atomoxetine-compound",
   "source-title": "Atomoxetine",
   "revid": 1375538637,
@@ -3066,7 +3287,7 @@
    "value": 4.5,
    "unit": "h",
    "value-max": 5.3,
-   "notes": "2D6 EMs: 4.5–5.3h; 2D6 PMs: 19–22h"
+   "notes": "2D6 EMs: 4.5–5.3 h; 2D6 PMs: 19–22 h"
   },
   "protein-binding": {
    "value": 98.7,
@@ -3401,7 +3622,7 @@
    "notes": "20–30%"
   },
   "bioavailability": {
-   "value": 31.0,
+   "value": 60.0,
    "value-max": null,
    "notes": "60±31%"
   },
@@ -3543,7 +3764,7 @@
    "notes": "56%"
   },
   "bioavailability": {
-   "value": 100.0,
+   "value": null,
    "value-max": null,
    "notes": "100% (IM) 0.1% (by mouth in rats) Unknown (by mouth in humans)"
   },
@@ -3818,7 +4039,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 11.0,
+   "value": 21.0,
    "unit": "h",
    "value-max": null,
    "notes": "21±11 hrs"
@@ -3900,6 +4121,38 @@
    "notes": "8 hours"
   },
   "routes-of-administration": "Oral"
+ },
+ {
+  "compound_id": "bentazepam-compound",
+  "source-title": "Bentazepam",
+  "revid": 1330131964,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Bentazepam&oldid=1330131964",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 2.0,
+   "unit": "h",
+   "value-max": 4.0,
+   "notes": "2–4 hours"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Hepatic"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "Renal"
+  },
+  "routes-of-administration": "Oral (tablets)"
  },
  {
   "compound_id": "benzbromarone-compound",
@@ -4631,7 +4884,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 1.7,
+   "value": 22.5,
    "unit": "h",
    "value-max": null,
    "notes": "22.5±1.7 hours"
@@ -4880,6 +5133,47 @@
    "value-max": null,
    "notes": "N/A"
   }
+ },
+ {
+  "compound_id": "brilaroxazine-compound",
+  "source-title": "Brilaroxazine",
+  "revid": 1370373722,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Brilaroxazine&oldid=1370373722",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "half-life": {
+   "value": 55.0,
+   "unit": "h",
+   "value-max": null,
+   "notes": "55 hours"
+  },
+  "protein-binding": {
+   "value": 99.0,
+   "value-max": null,
+   "unit": "percent",
+   "notes": ">99%"
+  },
+  "bioavailability": {
+   "value": 80.0,
+   "value-max": null,
+   "notes": ">80%"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Liver (mostly via CYP3A4 (64%) and CYP2D6 (17%))"
+  },
+  "cyp-interactions": {
+   "substrates": [
+    "CYP2D6",
+    "CYP3A4"
+   ],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": "Metabolised by CYP2D6, CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed"
+  },
+  "routes-of-administration": "By mouth"
  },
  {
   "compound_id": "brimonidine-compound",
@@ -5196,7 +5490,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": true,
   "half-life": {
-   "value": 9.3,
+   "value": 24.9,
    "unit": "h",
    "value-max": null,
    "notes": "24.9 ± 9.3 hours"
@@ -5413,7 +5707,7 @@
    "value": 11.0,
    "unit": "h",
    "value-max": null,
-   "notes": "Bupropion:; *alpha: 0.5–1.04; *beta: 11h; Hydroxybupropion:20h; Threohydrobupropion:37h; Erythrohydrobupropion:33h"
+   "notes": "Bupropion:; *alpha: 0.5–1.04; *beta: 11 h; Hydroxybupropion: 20 h; Threohydrobupropion: 37 h; Erythrohydrobupropion: 33 h"
   },
   "bioavailability": {
    "value": null,
@@ -6172,7 +6466,7 @@
    "value": 40.0,
    "unit": "min",
    "value-max": 100.0,
-   "notes": "40–100min (0.7–1.7h)"
+   "notes": "40–100 min (0.7–1.7 h)"
   },
   "bioavailability": {
    "value": 80.0,
@@ -7165,7 +7459,7 @@
    "value": 40.0,
    "unit": "h",
    "value-max": null,
-   "notes": "40hours–5days"
+   "notes": "40 hours–5 days"
   },
   "routes-of-administration": "Oral"
  },
@@ -8585,6 +8879,20 @@
   "routes-of-administration": "Intravenous"
  },
  {
+  "compound_id": "cx-516-compound",
+  "source-title": "CX-516",
+  "revid": 1330097639,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=CX-516&oldid=1330097639",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 45.0,
+   "unit": "min",
+   "value-max": null,
+   "notes": "45 minutes"
+  }
+ },
+ {
   "compound_id": "cyclizine-compound",
   "source-title": "Cyclizine",
   "revid": 1373292557,
@@ -8942,6 +9250,21 @@
    "notes": "Kidney"
   },
   "routes-of-administration": "Subcutaneous"
+ },
+ {
+  "compound_id": "danavorexton-compound",
+  "source-title": "Danavorexton",
+  "revid": 1359039934,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Danavorexton&oldid=1359039934",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 3.3,
+   "unit": "h",
+   "value-max": 5.1,
+   "notes": "~3.3–5.1 hours"
+  },
+  "routes-of-administration": "Intravenous"
  },
  {
   "compound_id": "danazol-compound",
@@ -10116,7 +10439,7 @@
    "value": 1.8,
    "unit": "h",
    "value-max": 3.7,
-   "notes": "1.8–3.7hours"
+   "notes": "1.8–3.7 hours"
   },
   "protein-binding": {
    "value": 94.0,
@@ -10493,6 +10816,43 @@
    "unit": "percent",
    "notes": "55%"
   }
+ },
+ {
+  "compound_id": "diclazepam-compound",
+  "source-title": "Diclazepam",
+  "revid": 1375009734,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Diclazepam&oldid=1375009734",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "half-life": {
+   "value": 42.0,
+   "unit": "h",
+   "value-max": null,
+   "notes": "~42 hours"
+  },
+  "bioavailability": {
+   "value": null,
+   "value-max": null,
+   "notes": "?"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Hepatic"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "Renal"
+  },
+  "routes-of-administration": "Oral, sublingual"
  },
  {
   "compound_id": "diclofenac-compound",
@@ -10925,7 +11285,7 @@
    "value": 2.4,
    "unit": "h",
    "value-max": 13.5,
-   "notes": "Range: 2.4–13.5hours"
+   "notes": "Range: 2.4–13.5 hours"
   },
   "protein-binding": {
    "value": 78.0,
@@ -11065,6 +11425,32 @@
   "routes-of-administration": "Oral, intravenous"
  },
  {
+  "compound_id": "distigmine-compound",
+  "source-title": "Distigmine",
+  "revid": 1357565674,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Distigmine&oldid=1357565674",
+  "retrieved": "2026-09-26",
+  "chembl-confirmed": true,
+  "chembl-match": "parent",
+  "half-life": {
+   "value": 65.0,
+   "unit": "h",
+   "value-max": null,
+   "notes": "65 h"
+  },
+  "bioavailability": {
+   "value": 4.65,
+   "value-max": null,
+   "notes": "4.65%"
+  },
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "renal"
+  },
+  "routes-of-administration": "By mouth, i.m."
+ },
+ {
   "compound_id": "disulfiram-compound",
   "source-title": "Disulfiram",
   "revid": 1369701892,
@@ -11072,7 +11458,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 1.5,
+   "value": 7.3,
    "unit": "h",
    "value-max": null,
    "notes": "7.3 +/-1.5 hours"
@@ -12101,7 +12487,7 @@
    "value": 52.0,
    "unit": "h",
    "value-max": 76.0,
-   "notes": "Single-dose: 52–76h; Multi-dose: 40–55h"
+   "notes": "Single-dose: 52–76 h; Multi-dose: 40–55 h"
   },
   "protein-binding": {
    "value": 99.5,
@@ -12204,7 +12590,7 @@
    "notes": "80%"
   },
   "bioavailability": {
-   "value": 5.8,
+   "value": null,
    "value-max": null,
    "notes": "Low (5.8% in rats, 11% in monkeys; no human data)"
   },
@@ -12747,7 +13133,7 @@
    "value": 33.0,
    "unit": "h",
    "value-max": 150.0,
-   "notes": "33–150hours"
+   "notes": "33–150 hours"
   },
   "routes-of-administration": "Oral"
  },
@@ -12771,7 +13157,7 @@
    "notes": "Enzalutamide: 97–98% (primarily to albumin); NDME: 95%"
   },
   "bioavailability": {
-   "value": 89.7,
+   "value": null,
    "value-max": null,
    "notes": "Rats: 89.7%; Humans: unknown (but at least 84.6% based on recovery from excretion)"
   },
@@ -12809,7 +13195,7 @@
    "value": 6.0,
    "unit": "h",
    "value-max": null,
-   "notes": "6hours"
+   "notes": "6 hours"
   },
   "protein-binding": {
    "value": 24.0,
@@ -12841,7 +13227,7 @@
    "notes": "Mainly urine (60% unchanged)"
   },
   "onset": "Oral: 15–60 minutes; IM: 10–20 minutes; IV: Rapid",
-  "duration-of-action": "Oral: 2–4hours; IV/IM: 60minutes",
+  "duration-of-action": "Oral: 2–4 hours; IV/IM: 60 minutes",
   "routes-of-administration": "By mouth, intravenous (IV), intramuscular (IM), subcutaneous (SC)"
  },
  {
@@ -13734,6 +14120,43 @@
   }
  },
  {
+  "compound_id": "ethylphenidate-compound",
+  "source-title": "Ethylphenidate",
+  "revid": 1368518148,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Ethylphenidate&oldid=1368518148",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "protein-binding": {
+   "value": null,
+   "value-max": null,
+   "unit": null,
+   "notes": "Unknown"
+  },
+  "bioavailability": {
+   "value": null,
+   "value-max": null,
+   "notes": "Variable"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Hepatic transesterification of prodrugs methylphenidate and ethanol"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "Urine, sweat"
+  },
+  "routes-of-administration": "By mouth, insufflation, inhalation, sublingual, rectal, intramuscular, intravenous"
+ },
+ {
   "compound_id": "etidronate-compound",
   "source-title": "Etidronic acid",
   "revid": 1367568684,
@@ -13822,7 +14245,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": true,
   "half-life": {
-   "value": 4.0,
+   "value": 7.3,
    "unit": "h",
    "value-max": null,
    "notes": "7.3 ± 4.0 hours"
@@ -13995,7 +14418,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 20.0,
+   "value": 41.0,
    "unit": "h",
    "value-max": null,
    "notes": "41±20 hours"
@@ -14251,11 +14674,11 @@
    "value": 4.0,
    "unit": "h",
    "value-max": 6.5,
-   "notes": "4–6.5hours"
+   "notes": "4–6.5 hours"
   },
   "bioavailability": {
-   "value": 79.0,
-   "value-max": 97.0,
+   "value": null,
+   "value-max": null,
    "notes": "79–97% (animals)"
   },
   "routes-of-administration": "Oral"
@@ -14416,7 +14839,7 @@
    "value": 13.0,
    "unit": "h",
    "value-max": 30.0,
-   "notes": "13–30hours"
+   "notes": "13–30 hours"
   },
   "routes-of-administration": "By mouth"
  },
@@ -14518,7 +14941,7 @@
    "value": 6.0,
    "unit": "min",
    "value-max": null,
-   "notes": "IV: 6mins (T1/2 α); 1hours (T1/2 β); 16hours (T1/2 ɣ); Intranasal: 15–25hours; Transdermal: 20–27hours; Sublingual: 5–13.5hours; Buccal: 3.2–6.4hours"
+   "notes": "IV: 6 mins (T1/2 α); 1 hours (T1/2 β); 16 hours (T1/2 ɣ); Intranasal: 15–25 hours; Transdermal: 20–27 hours; Sublingual: 5–13.5 hours; Buccal: 3.2–6.4 hours"
   },
   "protein-binding": {
    "value": 80.0,
@@ -14548,10 +14971,10 @@
   "renal-clearance": {
    "primary-route": null,
    "fraction-excreted-unchanged": 0.1,
-   "notes": "Mostly urinary (metabolites, <10% unchanged drug)"
+   "notes": "Mostly urinary (metabolites, < 10% unchanged drug)"
   },
-  "onset": "5minutes",
-  "duration-of-action": "IV: 30–60minutes",
+  "onset": "5 minutes",
+  "duration-of-action": "IV: 30–60 minutes",
   "routes-of-administration": "Buccal, epidural, intramuscular, intrathecal, intravenous, sublingual, transdermal"
  },
  {
@@ -14650,7 +15073,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 4.8,
+   "value": 11.7,
    "unit": "h",
    "value-max": null,
    "notes": "11.7 ± 4.80 hours"
@@ -16146,7 +16569,7 @@
    "notes": "3.6 h (rat), 5.2 h (dog), 5.4 h (monkey) [not stored as a number: non-human or sub-minute data]"
   },
   "bioavailability": {
-   "value": 94.0,
+   "value": null,
    "value-max": null,
    "notes": "94% (rat), 73% (dog), 26% (monkey)"
   },
@@ -16256,7 +16679,7 @@
    "value": 6.0,
    "unit": "h",
    "value-max": null,
-   "notes": "~6hours"
+   "notes": "~6 hours"
   },
   "protein-binding": {
    "value": 96.0,
@@ -16934,6 +17357,26 @@
   "routes-of-administration": "Inhalation"
  },
  {
+  "compound_id": "hexen-compound",
+  "source-title": "N-Ethylhexedrone",
+  "revid": 1368683303,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=N-Ethylhexedrone&oldid=1368683303",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "hepatic-clearance": {
+   "primary-route": null,
+   "extraction-ratio": null,
+   "notes": "Neurometabolic"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  }
+ },
+ {
   "compound_id": "histrelin-compound",
   "source-title": "Histrelin",
   "revid": 1329009764,
@@ -17096,13 +17539,13 @@
    "notes": "1.2–2.0 hours"
   },
   "protein-binding": {
-   "value": 2.0,
+   "value": 92.0,
    "value-max": null,
    "unit": "percent",
    "notes": "92 ± 2% (92–93%)"
   },
   "bioavailability": {
-   "value": 20.0,
+   "value": 96.0,
    "value-max": null,
    "notes": "Oral: 96 ± 20%"
   },
@@ -17329,6 +17772,27 @@
   "routes-of-administration": "By mouth, intramuscular"
  },
  {
+  "compound_id": "hyperforin-compound",
+  "source-title": "Hyperforin",
+  "revid": 1361813859,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Hyperforin&oldid=1361813859",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Hepatic and CYP3A & CYP2B"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "routes-of-administration": "Oral"
+ },
+ {
   "compound_id": "ibandronate-compound",
   "source-title": "Ibandronic acid",
   "revid": 1347358015,
@@ -17382,11 +17846,11 @@
    "value": 7.0,
    "unit": "h",
    "value-max": null,
-   "notes": "Ibogaine: 7hours; Noribogaine: 24–50hours"
+   "notes": "Ibogaine: 7 hours; Noribogaine: 24–50 hours"
   },
   "metabolites-text": "Noribogaine (major active metabolite)",
   "onset": "1–3 hours",
-  "duration-of-action": "18–36 hours (but up to 96hours or more in total)",
+  "duration-of-action": "18–36 hours (but up to 96 hours or more in total)",
   "routes-of-administration": "Oral"
  },
  {
@@ -17495,7 +17959,7 @@
    "fraction-excreted-unchanged": null,
    "notes": "Urine (95%)"
   },
-  "onset": "30minutes",
+  "onset": "30 minutes",
   "routes-of-administration": "By mouth, rectal, topical, intravenous"
  },
  {
@@ -17929,7 +18393,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 0.4,
+   "value": 1.8,
    "unit": "h",
    "value-max": null,
    "notes": "1.8 ± 0.4 hours"
@@ -18164,7 +18628,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": true,
   "half-life": {
-   "value": 4.58,
+   "value": 14.97,
    "unit": "h",
    "value-max": null,
    "notes": "14.97±4.58 hours"
@@ -18490,6 +18954,20 @@
   "routes-of-administration": "By mouth, topical"
  },
  {
+  "compound_id": "isrib-compound",
+  "source-title": "ISRIB",
+  "revid": 1365843320,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=ISRIB&oldid=1365843320",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "half-life": {
+   "value": 8.0,
+   "unit": "h",
+   "value-max": null,
+   "notes": "8 h"
+  }
+ },
+ {
   "compound_id": "istradefylline-compound",
   "source-title": "Istradefylline",
   "revid": 1370506490,
@@ -18539,7 +19017,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 0.3,
+   "value": 5.7,
    "unit": "h",
    "value-max": null,
    "notes": "5.7±0.3 hours"
@@ -18711,7 +19189,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 20.8,
+   "value": 38.9,
    "unit": "h",
    "value-max": null,
    "notes": "38.9 ± 20.8 h"
@@ -18754,7 +19232,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 20.8,
+   "value": 38.9,
    "unit": "h",
    "value-max": null,
    "notes": "38.9 ± 20.8 h"
@@ -18820,6 +19298,21 @@
    "notes": null
   },
   "routes-of-administration": "Subcutaneous injection"
+ },
+ {
+  "compound_id": "jwh-018-compound",
+  "source-title": "JWH-018",
+  "revid": 1369378887,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=JWH-018&oldid=1369378887",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 1.69,
+   "unit": "h",
+   "value-max": null,
+   "notes": "Inhalation:; 1.69 hours"
+  },
+  "routes-of-administration": "Oral, inhalation"
  },
  {
   "compound_id": "ketamine-compound",
@@ -19028,7 +19521,7 @@
    "value": 6.0,
    "unit": "h",
    "value-max": 8.0,
-   "notes": "Oral: 6–8hours; IV: 5.52hours"
+   "notes": "Oral: 6–8 hours; IV: 5.52 hours"
   },
   "protein-binding": {
    "value": 50.0,
@@ -19057,9 +19550,9 @@
   "renal-clearance": {
    "primary-route": true,
    "fraction-excreted-unchanged": 0.6,
-   "notes": "Urine (55–60% as conjugates or unchanged within 24hours)"
+   "notes": "Urine (55–60% as conjugates or unchanged within 24 hours)"
   },
-  "duration-of-action": "8–12hours",
+  "duration-of-action": "8–12 hours",
   "routes-of-administration": "By mouth, intravenous"
  },
  {
@@ -19823,7 +20316,7 @@
    "notes": "6 hours"
   },
   "bioavailability": {
-   "value": 7.5,
+   "value": null,
    "value-max": null,
    "notes": "7.5% (rabbit eye)"
   },
@@ -20528,6 +21021,50 @@
   "routes-of-administration": "Oral"
  },
  {
+  "compound_id": "lisuride-compound",
+  "source-title": "Lisuride",
+  "revid": 1335709882,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Lisuride&oldid=1335709882",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 2.0,
+   "unit": "h",
+   "value-max": null,
+   "notes": "2 hours"
+  },
+  "protein-binding": {
+   "value": 60.0,
+   "value-max": 70.0,
+   "unit": "percent",
+   "notes": "60–70%"
+  },
+  "bioavailability": {
+   "value": 10.0,
+   "value-max": 20.0,
+   "notes": "10–20%"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Hepatic"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "metabolites-text": "More than 15 known",
+  "renal-clearance": {
+   "primary-route": null,
+   "fraction-excreted-unchanged": null,
+   "notes": "Renal and biliary in equal amounts"
+  },
+  "routes-of-administration": "Oral; Investigational: Subcutaneous implant, transdermal patch"
+ },
+ {
   "compound_id": "lobeglitazone-compound",
   "source-title": "Lobeglitazone",
   "revid": 1329160872,
@@ -20724,10 +21261,10 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": true,
   "half-life": {
-   "value": 1020.0,
+   "value": 10.0,
    "unit": "h",
-   "value-max": null,
-   "notes": "1020 hours"
+   "value-max": 20.0,
+   "notes": "10–20 hours"
   },
   "bioavailability": {
    "value": 85.0,
@@ -21242,6 +21779,52 @@
   "routes-of-administration": "By mouth"
  },
  {
+  "compound_id": "lysergide-compound",
+  "source-title": "LSD",
+  "revid": 1377722245,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=LSD&oldid=1377722245",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 3.0,
+   "unit": "h",
+   "value-max": 4.3,
+   "notes": "3.0–4.3 hours"
+  },
+  "protein-binding": {
+   "value": null,
+   "value-max": null,
+   "unit": null,
+   "notes": "Unknown (but 65–90% in guinea pigs)"
+  },
+  "bioavailability": {
+   "value": 80.0,
+   "value-max": null,
+   "notes": "80%"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Liver (CYP450)"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "metabolites-text": "• 2-Oxo-3-hydroxy-LSD; • 2-Oxo-LSD; • LAE; • LEO; • Nor-LSD; • 13-Hydroxy-LSD; • 14-Hydroxy-LSD; • Glucuronides",
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "Kidneys"
+  },
+  "onset": "Oral: 0.4–1.0 (range 0.1–1.8) hours; IM: 15–20 min; IV: 2.5 min; IT: <1 min",
+  "duration-of-action": "Oral: 7–12 (range 4–22) hours; IM, IV, IT: 8–10 hours",
+  "routes-of-administration": "Oral"
+ },
+ {
   "compound_id": "macimorelin-compound",
   "source-title": "Macimorelin",
   "revid": 1328964534,
@@ -21475,8 +22058,8 @@
    "fraction-excreted-unchanged": null,
    "notes": "Kidney"
   },
-  "onset": "Oral: 30–45min",
-  "duration-of-action": "3–6hours",
+  "onset": "Oral: 30–45 min",
+  "duration-of-action": "3–6 hours",
   "routes-of-administration": "Common: By mouth; Uncommon: Insufflation, inhalation, injection, rectal"
  },
  {
@@ -21851,6 +22434,16 @@
   "routes-of-administration": "By mouth, intravenous, intramuscular, intrathecal, subcutaneous, epidural"
  },
  {
+  "compound_id": "mephedrone-compound",
+  "source-title": "Mephedrone",
+  "revid": 1373982631,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Mephedrone&oldid=1373982631",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "metabolites-text": "4-Methylephedrine",
+  "routes-of-administration": "Oral, insufflation, IV, rectal"
+ },
+ {
   "compound_id": "mepolizumab-compound",
   "source-title": "Mepolizumab",
   "revid": 1332048535,
@@ -22019,6 +22612,52 @@
    "notes": null
   },
   "routes-of-administration": "By mouth, rectal"
+ },
+ {
+  "compound_id": "mescaline-compound",
+  "source-title": "Mescaline",
+  "revid": 1375914928,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Mescaline&oldid=1375914928",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 3.6,
+   "unit": "h",
+   "value-max": null,
+   "notes": "3.6 hours (range 2.6–5.3 hours)"
+  },
+  "protein-binding": {
+   "value": null,
+   "value-max": null,
+   "unit": null,
+   "notes": "Unknown (but appears minimal)"
+  },
+  "bioavailability": {
+   "value": 53.0,
+   "value-max": null,
+   "notes": "Unknown (but ≥53%)"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Oxidative deamination, N-acetylation, O-demethylation, conjugation, other pathways"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "metabolites-text": "• TMPA; • TMPAA; • TMPE; • Others",
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": 0.6,
+   "notes": "Urine (≥92%; 28–60% unchanged, ≥27–31% as TMPAA, 5% as N-Ac-3,4-DiMeO-5-OH-PEA, <0.1% as NAM)"
+  },
+  "onset": "Oral: 0.5–0.9 hours (range 0.1–2.7 hours); IV: <10 minutes",
+  "duration-of-action": "Oral: 6.4–14 hours (range 3.0–22 hours); IV: ~4–9 hours",
+  "routes-of-administration": "Oral, smoking, insufflation, intravenous"
  },
  {
   "compound_id": "mesterolone-compound",
@@ -22415,7 +23054,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": true,
   "half-life": {
-   "value": 2.7,
+   "value": 5.6,
    "unit": "min",
    "value-max": null,
    "notes": "5.6 ± 2.7 minutes"
@@ -22488,6 +23127,20 @@
   "routes-of-administration": "By mouth, intravenous, intramuscular, subcutaneous, intrathecal"
  },
  {
+  "compound_id": "methoxetamine-compound",
+  "source-title": "Methoxetamine",
+  "revid": 1355158862,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Methoxetamine&oldid=1355158862",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "half-life": {
+   "value": 3.0,
+   "unit": "h",
+   "value-max": 6.0,
+   "notes": "3–6 hours"
+  }
+ },
+ {
   "compound_id": "methoxsalen-compound",
   "source-title": "Methoxsalen",
   "revid": 1353659867,
@@ -22522,7 +23175,7 @@
    "notes": null
   },
   "onset": "Rapid after 6-10 breaths",
-  "duration-of-action": "Typically up to 3060 minutes depending on the frequency of breaths",
+  "duration-of-action": "Typically up to 30–60 minutes depending on the frequency of breaths",
   "routes-of-administration": "Inhalation"
  },
  {
@@ -22562,26 +23215,6 @@
   },
   "onset": "4–6 hours",
   "duration-of-action": "10–48 hours",
-  "routes-of-administration": "By mouth, intravenous"
- },
- {
-  "compound_id": "methylene-blue-cation-compound",
-  "source-title": "Methylene blue",
-  "revid": 1371817588,
-  "source-url": "https://en.wikipedia.org/w/index.php?title=Methylene_blue&oldid=1371817588",
-  "retrieved": "2026-09-26",
-  "chembl-confirmed": false,
-  "half-life": {
-   "value": 5.0,
-   "unit": "h",
-   "value-max": 24.0,
-   "notes": "5–24 hours (IV)"
-  },
-  "renal-clearance": {
-   "primary-route": true,
-   "fraction-excreted-unchanged": null,
-   "notes": "Renal; In rats: 18%(PO), 28% ()"
-  },
   "routes-of-administration": "By mouth, intravenous"
  },
  {
@@ -22641,6 +23274,41 @@
    "notes": "Urine (50%), faeces (50%)"
   },
   "routes-of-administration": "Oral, intravenous, subcutaneous"
+ },
+ {
+  "compound_id": "methylone-compound",
+  "source-title": "Methylone",
+  "revid": 1376760575,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Methylone&oldid=1376760575",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "half-life": {
+   "value": 5.8,
+   "unit": "h",
+   "value-max": 6.9,
+   "notes": "5.8–6.9 hours"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "CYP2D6, CYP1A2, CYP2B6, and CYP2C19, COMT. [https://www.researchgate.net/figure/Common-routes-of-metabolism-for-methylone-3-Hydroxy-4-methoxy-N-methylcathinone-and_fig3_326760071]"
+  },
+  "cyp-interactions": {
+   "substrates": [
+    "CYP1A2",
+    "CYP2B6",
+    "CYP2C19",
+    "CYP2D6"
+   ],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": "Metabolised by CYP1A2, CYP2B6, CYP2C19, CYP2D6 (from metabolism field); inhibitor/inducer roles not assessed"
+  },
+  "metabolites-text": "Dihydromethylone; 3,4-dihydroxy-N-methylcathinone; Methylenedioxycathinone; 4-hydroxy-3-methoxy-N-methylcathinone; 3-hydroxy-4-methoxy-N-methylcathinone",
+  "onset": "0.5 hours",
+  "duration-of-action": "2–3.5 hours",
+  "routes-of-administration": "Common: oral, insufflation; Uncommon: IV or IM injection, rectal"
  },
  {
   "compound_id": "methylphenidate-compound",
@@ -22820,7 +23488,7 @@
    "notes": "5–6 hours"
   },
   "bioavailability": {
-   "value": 15.0,
+   "value": 80.0,
    "value-max": null,
    "notes": "80 ± 15% (by mouth)"
   },
@@ -22978,7 +23646,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 0.7,
+   "value": 1.9,
    "unit": "h",
    "value-max": null,
    "notes": "1.9 ± 0.7 hours"
@@ -23448,7 +24116,7 @@
    "value": 15.5,
    "unit": "h",
    "value-max": null,
-   "notes": "15.5h (11–26h)"
+   "notes": "15.5 h (11–26 h)"
   },
   "protein-binding": {
    "value": 70.0,
@@ -23491,7 +24159,7 @@
    "value": 3.0,
    "unit": "h",
    "value-max": 4.0,
-   "notes": "Oral: 3–4 hours; Topical: 22hours"
+   "notes": "Oral: 3–4 hours; Topical: 22 hours"
   },
   "protein-binding": {
    "value": null,
@@ -23520,7 +24188,7 @@
   "renal-clearance": {
    "primary-route": true,
    "fraction-excreted-unchanged": 0.15,
-   "notes": "Urine: >97% (10–15% unchanged; within 12–20hours for oral and 4days for topical)"
+   "notes": "Urine: >97% (10–15% unchanged; within 12–20 hours for oral and 4 days for topical)"
   },
   "onset": "Oral: 30–60 minutes (peak); Sublingual: 30 minutes",
   "duration-of-action": "Oral: ~72 hours; Topical: 10–12 hours",
@@ -23537,7 +24205,7 @@
    "value": 3.0,
    "unit": "h",
    "value-max": 4.0,
-   "notes": "Oral: 3–4 hours; Topical: 22hours"
+   "notes": "Oral: 3–4 hours; Topical: 22 hours"
   },
   "protein-binding": {
    "value": null,
@@ -23566,7 +24234,7 @@
   "renal-clearance": {
    "primary-route": true,
    "fraction-excreted-unchanged": 0.15,
-   "notes": "Urine: >97% (10–15% unchanged; within 12–20hours for oral and 4days for topical)"
+   "notes": "Urine: >97% (10–15% unchanged; within 12–20 hours for oral and 4 days for topical)"
   },
   "onset": "Oral: 30–60 minutes (peak); Sublingual: 30 minutes",
   "duration-of-action": "Oral: ~72 hours; Topical: 10–12 hours",
@@ -23728,6 +24396,27 @@
   "routes-of-administration": "By mouth"
  },
  {
+  "compound_id": "mitragynine-compound",
+  "source-title": "Mitragynine",
+  "revid": 1373876768,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Mitragynine&oldid=1373876768",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 7.0,
+   "unit": "h",
+   "value-max": 39.0,
+   "notes": "7–39 hours"
+  },
+  "bioavailability": {
+   "value": 21.0,
+   "value-max": null,
+   "notes": "21%"
+  },
+  "metabolites-text": "7-Hydroxymitragynine",
+  "routes-of-administration": "By mouth"
+ },
+ {
   "compound_id": "moclobemide-compound",
   "source-title": "Moclobemide",
   "revid": 1371051334,
@@ -23834,7 +24523,7 @@
    "value": 2.0,
    "unit": "h",
    "value-max": null,
-   "notes": "2hours"
+   "notes": "2 hours"
   },
   "hepatic-clearance": {
    "primary-route": true,
@@ -23853,7 +24542,7 @@
    "fraction-excreted-unchanged": null,
    "notes": "Minor, renal and fecal"
   },
-  "duration-of-action": "24–36hours",
+  "duration-of-action": "24–36 hours",
   "routes-of-administration": "By mouth (tablets)"
  },
  {
@@ -23955,21 +24644,21 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 23.0,
+   "value": 2.0,
    "unit": "h",
-   "value-max": null,
-   "notes": "23 hours"
+   "value-max": 3.0,
+   "notes": "2–3 hours"
   },
   "protein-binding": {
-   "value": null,
-   "value-max": null,
-   "unit": null,
-   "notes": "3040%"
+   "value": 30.0,
+   "value-max": 40.0,
+   "unit": "percent",
+   "notes": "30–40%"
   },
   "bioavailability": {
    "value": 100.0,
    "value-max": null,
-   "notes": "IV/IM: 100%; Intranasal: 10%; PO: 2040%; Rectal: 3671%"
+   "notes": "IV/IM: 100%; Intranasal: 10%; PO: 20–40%; Rectal: 36–71%"
   },
   "hepatic-clearance": {
    "primary-route": true,
@@ -23990,7 +24679,7 @@
    "notes": "Kidney 90%, bile duct 10%"
   },
   "onset": "IV: 5 minutes,; IM: 15 minutes,; PO: 20 minutes",
-  "duration-of-action": "37 hours",
+  "duration-of-action": "3–7 hours",
   "routes-of-administration": "Inhalation, insufflation, by mouth, rectal, subcutaneous, intramuscular, intravenous, epidural, intrathecal"
  },
  {
@@ -24058,6 +24747,52 @@
   "routes-of-administration": "Topical"
  },
  {
+  "compound_id": "n-n-dimethyltryptamine-compound",
+  "source-title": "Dimethyltryptamine",
+  "revid": 1377666661,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Dimethyltryptamine&oldid=1377666661",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 5.0,
+   "unit": "min",
+   "value-max": 19.0,
+   "notes": "Alone: 5–19 min; With MAOI: 1–4 hours"
+  },
+  "protein-binding": {
+   "value": 30.0,
+   "value-max": null,
+   "unit": "percent",
+   "notes": "30%"
+  },
+  "bioavailability": {
+   "value": null,
+   "value-max": null,
+   "notes": "Very low and inactive (except with MAOI)"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Oxidative deamination (MAO-A), N-oxidation, N-demethylation, peroxidation"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "metabolites-text": "Indole-3-acetic acid (IAA, 3-IAA) (63–97%); DMT-N-oxide (DMT-NO) (3–28%); N-Methyltryptamine (NMT); Tryptamine; Others",
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "Urine"
+  },
+  "onset": "Inhalation: 10–15 seconds; Intravenous: ≤2–5 min; Intramuscular: 2–5 min; Oral with MAOI: ≤1 hour",
+  "duration-of-action": "Inhalation: ≤15 min; Intravenous: ≤30 min; Intramuscular: 30–60 min; Oral with MAOI: 4–6 hours",
+  "routes-of-administration": "Oral (with MAOI), inhalation (smoking or vaping), intramuscular, subcutaneous, intravenous (bolus or infusion)"
+ },
+ {
   "compound_id": "nabilone-compound",
   "source-title": "Nabilone",
   "revid": 1368778690,
@@ -24071,9 +24806,9 @@
    "notes": "2 hours, with metabolites around 35 hours"
   },
   "protein-binding": {
-   "value": 97.0,
+   "value": null,
    "value-max": null,
-   "unit": "percent",
+   "unit": null,
    "notes": "similar to THC (±97%)"
   },
   "bioavailability": {
@@ -24379,7 +25114,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 5.2,
+   "value": 10.8,
    "unit": "h",
    "value-max": null,
    "notes": "10.8 ± 5.2 hours"
@@ -24551,7 +25286,7 @@
    "notes": "• Nandrolone: <4.3 hours; • ND (IM): 6–12 days; • NPP: 2.7 days"
   },
   "bioavailability": {
-   "value": 3.0,
+   "value": null,
    "value-max": null,
    "notes": "• Oral: <3% (pigs); • Intramuscular: high"
   },
@@ -24666,7 +25401,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 4.0,
+   "value": 11.0,
    "unit": "d",
    "value-max": null,
    "notes": "11 ± 4 days"
@@ -24800,6 +25535,46 @@
    "notes": null
   },
   "routes-of-administration": "Subcutaneous injection"
+ },
+ {
+  "compound_id": "neostigmine-compound",
+  "source-title": "Neostigmine",
+  "revid": 1369821151,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Neostigmine&oldid=1369821151",
+  "retrieved": "2026-09-26",
+  "chembl-confirmed": true,
+  "chembl-match": "parent",
+  "half-life": {
+   "value": 50.0,
+   "unit": "min",
+   "value-max": 90.0,
+   "notes": "50–90 minutes"
+  },
+  "bioavailability": {
+   "value": 5.0,
+   "value-max": null,
+   "notes": "Unclear, probably less than 5%"
+  },
+  "hepatic-clearance": {
+   "primary-route": null,
+   "extraction-ratio": null,
+   "notes": "Slow hydrolysis by acetylcholinesterase and also by plasma esterases"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "renal-clearance": {
+   "primary-route": null,
+   "fraction-excreted-unchanged": 0.7,
+   "notes": "Unchanged drug (up to 70%) and alcoholic metabolite (30%) are excreted in the urine"
+  },
+  "onset": "Within 10-20 min (injection), with 4 hrs (by mouth)",
+  "duration-of-action": "up to 4 hrs",
+  "routes-of-administration": "Intramuscular, intravenous, subcutaneous, by mouth"
  },
  {
   "compound_id": "netarsudil-compound",
@@ -25075,7 +25850,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 1.19,
+   "value": 2.95,
    "unit": "h",
    "value-max": null,
    "notes": "2.95 ± 1.19 hours"
@@ -25343,7 +26118,7 @@
    "value": 0.33,
    "unit": "h",
    "value-max": 1.7,
-   "notes": "0.33–1.7hours"
+   "notes": "0.33–1.7 hours"
   },
   "protein-binding": {
    "value": 60.0,
@@ -25359,9 +26134,49 @@
   "renal-clearance": {
    "primary-route": null,
    "fraction-excreted-unchanged": 0.25,
-   "notes": "Almost exclusively urine (4–59% over 3–30hours; ~20–25% unchanged) and bile"
+   "notes": "Almost exclusively urine (4–59% over 3–30 hours; ~20–25% unchanged) and bile"
   },
   "routes-of-administration": "By mouth"
+ },
+ {
+  "compound_id": "nitroprusside-compound",
+  "source-title": "Sodium nitroprusside",
+  "revid": 1353452919,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Sodium_nitroprusside&oldid=1353452919",
+  "retrieved": "2026-09-26",
+  "chembl-confirmed": true,
+  "chembl-match": "parent",
+  "half-life": {
+   "value": 2.0,
+   "unit": "min",
+   "value-max": null,
+   "notes": "<2 minutes (3 days for thiocyanate metabolite)"
+  },
+  "bioavailability": {
+   "value": 100.0,
+   "value-max": null,
+   "notes": "100% (intravenous)"
+  },
+  "hepatic-clearance": {
+   "primary-route": null,
+   "extraction-ratio": null,
+   "notes": "By haemoglobin being converted to cyanmethaemoglobin and cyanide ions"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "kidney (100%; as thiocyanate)"
+  },
+  "onset": "nearly immediate",
+  "duration-of-action": "1 to 10 minutes",
+  "routes-of-administration": "Intravenous"
  },
  {
   "compound_id": "nivolumab-compound",
@@ -25601,6 +26416,43 @@
    "notes": "Renal and fecal"
   },
   "routes-of-administration": "Oral, ophthalmic"
+ },
+ {
+  "compound_id": "norflurazepam-compound",
+  "source-title": "N-Desalkylflurazepam",
+  "revid": 1342318937,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=N-Desalkylflurazepam&oldid=1342318937",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 47.0,
+   "unit": "h",
+   "value-max": 150.0,
+   "notes": "47-150 hours (~71hr avg);; 150-200 hours (under continuous administration)"
+  },
+  "bioavailability": {
+   "value": null,
+   "value-max": null,
+   "notes": "Peak plasma concentration achieved within 90-120 minutes"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Liver"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "Kidney"
+  },
+  "routes-of-administration": "By mouth"
  },
  {
   "compound_id": "norgestimate-compound",
@@ -26476,7 +27328,7 @@
    "notes": "14–24 hours"
   },
   "bioavailability": {
-   "value": 100.0,
+   "value": null,
    "value-max": null,
    "notes": "100% (rats)"
   },
@@ -26501,6 +27353,47 @@
    "notes": "Feces (70%), urine (21–25%) (rats)"
   },
   "routes-of-administration": "By mouth"
+ },
+ {
+  "compound_id": "oveporexton-compound",
+  "source-title": "Oveporexton",
+  "revid": 1376991519,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Oveporexton&oldid=1376991519",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 16.0,
+   "unit": "h",
+   "value-max": 24.0,
+   "notes": "16–24 hours"
+  },
+  "protein-binding": {
+   "value": 96.0,
+   "value-max": null,
+   "unit": "percent",
+   "notes": ">96%"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "CYP3A4"
+  },
+  "cyp-interactions": {
+   "substrates": [
+    "CYP3A4"
+   ],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": "Metabolised by CYP3A4 (from metabolism field); inhibitor/inducer roles not assessed"
+  },
+  "renal-clearance": {
+   "primary-route": false,
+   "fraction-excreted-unchanged": null,
+   "notes": "Feces: 80.5%; Urine: 11.0%"
+  },
+  "onset": "1–4 hours (Tmax)",
+  "routes-of-administration": "Oral"
  },
  {
   "compound_id": "oxandrolone-compound",
@@ -26961,7 +27854,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 7.0,
+   "value": 28.0,
    "unit": "h",
    "value-max": null,
    "notes": "28 ± 7 hours"
@@ -27389,7 +28282,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 4.0,
+   "value": 30.9,
    "unit": "h",
    "value-max": null,
    "notes": "30.9±4 hours"
@@ -27866,6 +28759,44 @@
   "routes-of-administration": "Oral and IM"
  },
  {
+  "compound_id": "phenazepam-compound",
+  "source-title": "Phenazepam",
+  "revid": 1375678391,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Phenazepam&oldid=1375678391",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 6.0,
+   "unit": "h",
+   "value-max": 18.0,
+   "notes": "6–18 hours (active metabolite unknown)"
+  },
+  "bioavailability": {
+   "value": null,
+   "value-max": null,
+   "notes": "16.7% (rat)"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Hepatic – aromatic oxidation and C3-hydroxylation"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "Renal"
+  },
+  "onset": "1.5–4 hours",
+  "routes-of-administration": "By mouth, intramuscular, intravenous"
+ },
+ {
   "compound_id": "phendimetrazine-compound",
   "source-title": "Phendimetrazine",
   "revid": 1365182914,
@@ -27928,6 +28859,46 @@
    "notes": "Urine"
   },
   "routes-of-administration": "By mouth"
+ },
+ {
+  "compound_id": "phenibut-compound",
+  "source-title": "Phenibut",
+  "revid": 1377083212,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Phenibut&oldid=1377083212",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 5.3,
+   "unit": "h",
+   "value-max": null,
+   "notes": "5.3 hours (250 mg)"
+  },
+  "bioavailability": {
+   "value": 63.0,
+   "value-max": null,
+   "notes": "≥63% (250 mg)"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Liver (minimal)"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "metabolites-text": "Inactive",
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": 0.63,
+   "notes": "Urine: 63% (unchanged)"
+  },
+  "onset": "Oral: 2–4 hours; Rectal: 20–30 minutes",
+  "duration-of-action": "15–24 hours (1–3 g)",
+  "routes-of-administration": "Common: Oral; Uncommon: Rectal"
  },
  {
   "compound_id": "phenindione-compound",
@@ -28122,7 +29093,7 @@
    "value": 20.0,
    "unit": "h",
    "value-max": 25.0,
-   "notes": "20–25hours, urinary pH-dependent"
+   "notes": "20–25 hours, urinary pH-dependent"
   },
   "protein-binding": {
    "value": 17.5,
@@ -28192,7 +29163,7 @@
    "value": 2.0,
    "unit": "h",
    "value-max": 3.0,
-   "notes": "2–3hours"
+   "notes": "2–3 hours"
   },
   "protein-binding": {
    "value": 95.0,
@@ -28223,8 +29194,8 @@
    "fraction-excreted-unchanged": 0.16,
    "notes": "Urine: 86% (3–16% unchanged)"
   },
-  "onset": "IV: Very rapid; Oral: 15–20min; Intranasal: <2min; Eye drop: <30min",
-  "duration-of-action": "IV: 20 min–5 h; Oral: 2–4h; Intranasal: 0.5–4h; Eye drop: 3–7h",
+  "onset": "IV: Very rapid; Oral: 15–20 min; Intranasal: <2 min; Eye drop: <30 min",
+  "duration-of-action": "IV: 20 min–5 h; Oral: 2–4 h; Intranasal: 0.5–4 h; Eye drop: 3–7 h",
   "routes-of-administration": "By mouth, intranasal, ophthalmic, intravenous, intramuscular, rectal"
  },
  {
@@ -28262,7 +29233,7 @@
    "fraction-excreted-unchanged": null,
    "notes": "Urine: ~40%; Bile, sweat: ~60%"
   },
-  "onset": "<1hour",
+  "onset": "<1 hour",
   "routes-of-administration": "By mouth"
  },
  {
@@ -28387,7 +29358,7 @@
    "value": 54.0,
    "unit": "h",
    "value-max": 57.0,
-   "notes": "Pimavanserin: 54–57h; N-Desmethyl-pimavanserin (active): 200h"
+   "notes": "Pimavanserin: 54–57 h; N-Desmethyl-pimavanserin (active): 200 h"
   },
   "protein-binding": {
    "value": 94.0,
@@ -29544,7 +30515,7 @@
    "value": 3.8,
    "unit": "h",
    "value-max": 4.3,
-   "notes": "3.8–4.3hours"
+   "notes": "3.8–4.3 hours"
   },
   "hepatic-clearance": {
    "primary-route": true,
@@ -29563,7 +30534,7 @@
    "fraction-excreted-unchanged": 0.2,
    "notes": "Urine: 70% (20% unchanged); Feces: 24% (21% unchanged)"
   },
-  "duration-of-action": "4–12hours",
+  "duration-of-action": "4–12 hours",
   "routes-of-administration": "Oral (tablets, syrup), inhalation (DPI)"
  },
  {
@@ -29793,7 +30764,7 @@
    "value": 4.0,
    "unit": "h",
    "value-max": null,
-   "notes": "~4hours (range 3–8hours)"
+   "notes": "~4 hours (range 3–8 hours)"
   },
   "protein-binding": {
    "value": 90.0,
@@ -29829,7 +30800,7 @@
    "fraction-excreted-unchanged": null,
    "notes": "Urine: 91%"
   },
-  "duration-of-action": "Up to 12hours",
+  "duration-of-action": "Up to 12 hours",
   "routes-of-administration": "Oral, sublingual, intranasal, rectal, intravenous"
  },
  {
@@ -29955,7 +30926,7 @@
    "value": 5.4,
    "unit": "h",
    "value-max": null,
-   "notes": "5.4hours (range 3–16hours dependent on urine pH)"
+   "notes": "5.4 hours (range 3–16 hours dependent on urine pH)"
   },
   "protein-binding": {
    "value": 21.0,
@@ -29986,9 +30957,49 @@
    "fraction-excreted-unchanged": 0.96,
    "notes": "Urine: 43–96% (unchanged)"
   },
-  "onset": "30minutes",
-  "duration-of-action": "4–12hours",
+  "onset": "30 minutes",
+  "duration-of-action": "4–12 hours",
   "routes-of-administration": "By mouth"
+ },
+ {
+  "compound_id": "psilocin-compound",
+  "source-title": "Psilocin",
+  "revid": 1368850101,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Psilocin&oldid=1368850101",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 2.3,
+   "unit": "h",
+   "value-max": 3.0,
+   "notes": "Oral psilocybin: 2.3–3 hours (as psilocin); IV psilocybin: 1.2 hours (as psilocin)"
+  },
+  "bioavailability": {
+   "value": 52.7,
+   "value-max": null,
+   "notes": "Oral psilocybin: 52.7 ± 20.4% (as psilocin)"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Liver, other tissues:; • Demethylation and deamination (MAO); • Oxidation (ALDH); • Glucuronidation (UGTs)"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "metabolites-text": "• Psilocin-O-glucuronide; • 4-Hydroxy-indole-3-acetaldehyde; • 4-Hydroxyindole-3-acetic acid (4-HIAA); • 4-Hydroxytryptophol",
+  "renal-clearance": {
+   "primary-route": null,
+   "fraction-excreted-unchanged": 0.04,
+   "notes": "Urine (mainly as psilocin-O-glucuronide, 2–4% unchanged)"
+  },
+  "onset": "15–40 minutes",
+  "duration-of-action": "3–6 hours",
+  "routes-of-administration": "Oral, intravenous"
  },
  {
   "compound_id": "psilocybin-compound",
@@ -30001,7 +31012,7 @@
    "value": 2.1,
    "unit": "h",
    "value-max": 4.7,
-   "notes": "Oral (as psilocin): 2.1–4.7h (range 1.2–18.6h); IV (as psilocin): 1.2h (range 1.8–4.5h)"
+   "notes": "Oral (as psilocin): 2.1–4.7 h (range 1.2–18.6 h); IV (as psilocin): 1.2 h (range 1.8–4.5 h)"
   },
   "protein-binding": {
    "value": 66.0,
@@ -30010,7 +31021,7 @@
    "notes": "66%"
   },
   "bioavailability": {
-   "value": 20.4,
+   "value": 52.7,
    "value-max": null,
    "notes": "Oral: 52.7 ± 20.4% (as psilocin) (n=3)"
   },
@@ -30033,7 +31044,7 @@
    "notes": "urine (mainly as psilocin-O-glucuronide, 2–4% as unchanged psilocin)"
   },
   "onset": "Oral: 0.5–0.8 (range 0.1–1.5) h; IV: immediate",
-  "duration-of-action": "Oral: 4–6h (range 3–12h); IV: 15–60min (1–2mg)",
+  "duration-of-action": "Oral: 4–6 h (range 3–12 h); IV: 15–60 min (1–2 mg)",
   "routes-of-administration": "Oral administration; By mouth,; intravenous administration; intravenous"
  },
  {
@@ -30131,6 +31142,21 @@
   "routes-of-administration": "By mouth"
  },
  {
+  "compound_id": "pyrazolam-compound",
+  "source-title": "Pyrazolam",
+  "revid": 1370249799,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Pyrazolam&oldid=1370249799",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 17.0,
+   "unit": "h",
+   "value-max": null,
+   "notes": "17 hours"
+  },
+  "routes-of-administration": "Oral, Sublingual, rectal"
+ },
+ {
   "compound_id": "pyridostigmine-compound",
   "source-title": "Pyridostigmine",
   "revid": 1367130428,
@@ -30138,13 +31164,13 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 0.24,
+   "value": 1.78,
    "unit": "h",
    "value-max": null,
    "notes": "1.78 ± 0.24 hours"
   },
   "bioavailability": {
-   "value": 2.4,
+   "value": 7.6,
    "value-max": null,
    "notes": "7.6 ± 2.4%"
   },
@@ -30861,7 +31887,7 @@
    "value": 3.0,
    "unit": "h",
    "value-max": null,
-   "notes": "3hours"
+   "notes": "3 hours"
   },
   "protein-binding": {
    "value": 88.0,
@@ -30936,6 +31962,24 @@
    "notes": null
   },
   "routes-of-administration": "Intravenous"
+ },
+ {
+  "compound_id": "re104-compound",
+  "source-title": "Luvesilocin",
+  "revid": 1375981042,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Luvesilocin&oldid=1375981042",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 0.43,
+   "unit": "h",
+   "value-max": 0.64,
+   "notes": "• Luvesilocin: 0.43–0.64 hours (s.c.); • 4-HO-DiPT: 2.7–4.1 hours (s.c.)"
+  },
+  "metabolites-text": "• 4-HO-DiPT",
+  "onset": "≤1 hour (s.c.)",
+  "duration-of-action": "3.6 hours (range ~3–4 hours) (s.c.)",
+  "routes-of-administration": "Oral, subcutaneous injection"
  },
  {
   "compound_id": "reboxetine-compound",
@@ -31349,6 +32393,38 @@
   "routes-of-administration": "Oral"
  },
  {
+  "compound_id": "rilmazafone-compound",
+  "source-title": "Rilmazafone",
+  "revid": 1362014458,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Rilmazafone&oldid=1362014458",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "half-life": {
+   "value": 10.5,
+   "unit": "h",
+   "value-max": null,
+   "notes": "10.5 h (M-4 metabolite)"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Aminopeptidase (intestinal); hepatic"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "Urine (44–68% within 24 h, primarily as M-4)"
+  },
+  "routes-of-administration": "Oral (tablets)"
+ },
+ {
   "compound_id": "rilpivirine-compound",
   "source-title": "Rilpivirine",
   "revid": 1367291504,
@@ -31408,7 +32484,7 @@
    "notes": "97%"
   },
   "bioavailability": {
-   "value": 18.0,
+   "value": 60.0,
    "value-max": null,
    "notes": "60±18%"
   },
@@ -32802,9 +33878,23 @@
    "fraction-excreted-unchanged": null,
    "notes": "Urine, bile"
   },
-  "onset": "Smoking: <30seconds; Buccal: 10–15minutes",
-  "duration-of-action": "Smoking: 20–30minutes; Buccal: ~1 hour",
+  "onset": "Smoking: <30 seconds; Buccal: 10–15 minutes",
+  "duration-of-action": "Smoking: 20–30 minutes; Buccal: ~1 hour",
   "routes-of-administration": "Inhalation (e.g., smoking), buccal, insufflation"
+ },
+ {
+  "compound_id": "samelisant-compound",
+  "source-title": "Samelisant",
+  "revid": 1374523663,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Samelisant&oldid=1374523663",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": true,
+  "half-life": {
+   "value": 23.0,
+   "unit": "h",
+   "value-max": 34.0,
+   "notes": "23-34 hours"
+  }
  },
  {
   "compound_id": "samidorphan-compound",
@@ -33078,7 +34168,7 @@
    "value": 1.2,
    "unit": "h",
    "value-max": 3.5,
-   "notes": "• S (single): 1.2–3.5h; • S (multi): 7.7–9.7h; • DMS (single): 2.2–3.8h; • DMS (multi): 9.5h; • L-MA: 14–21h; • L-A: 16–18h; ; • S (single): 1.3h; • S (multi): 10h; ; • S: 20h"
+   "notes": "• S (single): 1.2–3.5 h; • S (multi): 7.7–9.7 h; • DMS (single): 2.2–3.8 h; • DMS (multi): 9.5 h; • L-MA: 14–21 h; • L-A: 16–18 h; ; • S (single): 1.3 h; • S (multi): 10 h; ; • S: 20 h"
   },
   "protein-binding": {
    "value": 85.0,
@@ -33113,6 +34203,7 @@
    "notes": "Urine (87%):; • L-MA: 20–63%; • L-A: 9–26%; • DMS: 1%; • S: 0.01–0.03%; Feces: 15%"
   },
   "onset": "Oral: ≤1 hour",
+  "duration-of-action": "Prolonged use:; Oral: 2–3 days (Parkinson's disease relief)",
   "routes-of-administration": "Oral, buccal, transdermal"
  },
  {
@@ -33126,7 +34217,7 @@
    "value": 1.2,
    "unit": "h",
    "value-max": 3.5,
-   "notes": "• S (single): 1.2–3.5h; • S (multi): 7.7–9.7h; • DMS (single): 2.2–3.8h; • DMS (multi): 9.5h; • L-MA: 14–21h; • L-A: 16–18h; ; • S (single): 1.3h; • S (multi): 10h; ; • S: 20h"
+   "notes": "• S (single): 1.2–3.5 h; • S (multi): 7.7–9.7 h; • DMS (single): 2.2–3.8 h; • DMS (multi): 9.5 h; • L-MA: 14–21 h; • L-A: 16–18 h; ; • S (single): 1.3 h; • S (multi): 10 h; ; • S: 20 h"
   },
   "protein-binding": {
    "value": 85.0,
@@ -33161,6 +34252,7 @@
    "notes": "Urine (87%):; • L-MA: 20–63%; • L-A: 9–26%; • DMS: 1%; • S: 0.01–0.03%; Feces: 15%"
   },
   "onset": "Oral: ≤1 hour",
+  "duration-of-action": "Prolonged use:; Oral: 2–3 days (Parkinson's disease relief)",
   "routes-of-administration": "Oral, buccal, transdermal"
  },
  {
@@ -33555,7 +34647,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 8.0,
+   "value": 13.0,
    "unit": "h",
    "value-max": null,
    "notes": "13±8 hours"
@@ -34731,7 +35823,7 @@
    "value": 9.6,
    "unit": "h",
    "value-max": 14.0,
-   "notes": "9.6–14hours"
+   "notes": "9.6–14 hours"
   },
   "onset": "1–2 hours (Tmax)",
   "routes-of-administration": "Oral"
@@ -34911,6 +36003,30 @@
    "unit": "h",
    "value-max": 47.8,
    "notes": "33.1–47.8 hours"
+  }
+ },
+ {
+  "compound_id": "talsaclidine-compound",
+  "source-title": "Talsaclidine",
+  "revid": 1329171967,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Talsaclidine&oldid=1329171967",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "protein-binding": {
+   "value": 7.0,
+   "value-max": null,
+   "unit": "percent",
+   "notes": "7%"
+  },
+  "bioavailability": {
+   "value": 70.0,
+   "value-max": null,
+   "notes": "70%"
+  },
+  "renal-clearance": {
+   "primary-route": true,
+   "fraction-excreted-unchanged": null,
+   "notes": "Renal (86%)"
   }
  },
  {
@@ -35185,7 +36301,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 5.0,
+   "value": 11.0,
    "unit": "h",
    "value-max": null,
    "notes": "11 ± 5 hours"
@@ -36253,6 +37369,43 @@
   }
  },
  {
+  "compound_id": "thiopental-compound",
+  "source-title": "Sodium thiopental",
+  "revid": 1373838355,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Sodium_thiopental&oldid=1373838355",
+  "retrieved": "2026-09-26",
+  "chembl-confirmed": true,
+  "chembl-match": "parent",
+  "half-life": {
+   "value": 5.5,
+   "unit": "h",
+   "value-max": 26.0,
+   "notes": "5.5–26 hours"
+  },
+  "protein-binding": {
+   "value": 80.0,
+   "value-max": null,
+   "unit": "percent",
+   "notes": "80%"
+  },
+  "hepatic-clearance": {
+   "primary-route": true,
+   "extraction-ratio": null,
+   "notes": "Liver"
+  },
+  "cyp-interactions": {
+   "substrates": [],
+   "inhibitors": [],
+   "inducers": [],
+   "transporters": [],
+   "notes": null
+  },
+  "metabolites-text": "Pentobarbital, others",
+  "onset": "30–45 seconds",
+  "duration-of-action": "5–10 minutes",
+  "routes-of-administration": "Intravenous, by mouth, rectal"
+ },
+ {
   "compound_id": "thioridazine-compound",
   "source-title": "Thioridazine",
   "revid": 1358955507,
@@ -36372,7 +37525,7 @@
    "fraction-excreted-unchanged": 0.03,
    "notes": "Feces: 63%; Urine: 25% (<3% unchanged)"
   },
-  "onset": "1–1.5hours (45min fasted, 2.5hours with high-fat meal) (peak)",
+  "onset": "1–1.5 hours (45 min fasted, 2.5 hours with high-fat meal) (peak)",
   "routes-of-administration": "Oral"
  },
  {
@@ -37174,7 +38327,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 1.4,
+   "value": 6.3,
    "unit": "h",
    "value-max": null,
    "notes": "6.3 ± 1.4 h"
@@ -38689,19 +39842,19 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 2.0,
+   "value": 5.0,
    "unit": "h",
    "value-max": null,
    "notes": "5±2 h (parent compound for immediate release preparations), 15±6 h (parent compound for extended-release preparations), 11±2 h (active metabolite)"
   },
   "protein-binding": {
-   "value": 2.0,
+   "value": 27.0,
    "value-max": null,
    "unit": "percent",
    "notes": "27±2% (parent compound), 30±12% (active metabolite, desvenlafaxine)"
   },
   "bioavailability": {
-   "value": 15.0,
+   "value": 42.0,
    "value-max": null,
    "notes": "42±15%"
   },
@@ -38974,13 +40127,13 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 0.48,
+   "value": 2.54,
    "unit": "h",
    "value-max": null,
    "notes": "2.54 ± 0.48 hours"
   },
   "bioavailability": {
-   "value": 8.9,
+   "value": 56.6,
    "value-max": null,
    "notes": "56.6 ± 8.9%"
   },
@@ -39521,6 +40674,26 @@
   "routes-of-administration": "Inhalation, intravenous"
  },
  {
+  "compound_id": "zelquistinel-compound",
+  "source-title": "Zelquistinel",
+  "revid": 1372054537,
+  "source-url": "https://en.wikipedia.org/w/index.php?title=Zelquistinel&oldid=1372054537",
+  "retrieved": "2026-10-01",
+  "chembl-confirmed": false,
+  "half-life": {
+   "value": 1.2,
+   "unit": "h",
+   "value-max": 2.0,
+   "notes": "1.2–2 hours"
+  },
+  "bioavailability": {
+   "value": 100.0,
+   "value-max": null,
+   "notes": "~100%"
+  },
+  "routes-of-administration": "By mouth"
+ },
+ {
   "compound_id": "zidovudine-compound",
   "source-title": "Zidovudine",
   "revid": 1366106723,
@@ -39638,7 +40811,7 @@
   "retrieved": "2026-09-26",
   "chembl-confirmed": false,
   "half-life": {
-   "value": 2.0,
+   "value": 8.4,
    "unit": "h",
    "value-max": null,
    "notes": "8.4±2 hours (parent compound); 19.4±3.6 hours (norzimelidine)"
@@ -39731,7 +40904,7 @@
    "value": 3.0,
    "unit": "h",
    "value-max": null,
-   "notes": "Zolmitriptan: 3hours; N-Desmethylzolmitriptan: 3.5hours"
+   "notes": "Zolmitriptan: 3 hours; N-Desmethylzolmitriptan: 3.5 hours"
   },
   "protein-binding": {
    "value": 25.0,

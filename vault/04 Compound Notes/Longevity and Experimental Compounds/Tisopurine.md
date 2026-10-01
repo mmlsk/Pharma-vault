@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL119423
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL119423
+  pref-name: TISOPURINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M04AA02
+  targets: []
+  properties:
+    full-mwt: 152.18
+    mw-freebase: 152.18
+    alogp: 0.64
+    psa: 54.46
+    hba: 4
+    hbd: 2
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.43
+    full-molformula: C5H4N4S
 ---
 
 # Tisopurine
@@ -67,10 +91,20 @@ tags:
 - **Compound ID:** `tisopurine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL119423](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL119423/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits xanthine oxidoreductase to reduce urate production at its terminal synthetic step; also called thiopurinol.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC M04AA02:** MUSCULO-SKELETAL SYSTEM › ANTIGOUT PREPARATIONS › Preparations inhibiting uric acid production
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 152.18 | 0.64 | 54.46 | 2/4 | 0 | C5H4N4S |
 
 ## Evidence boundaries
 
@@ -80,6 +114,12 @@ Inhibits xanthine oxidoreductase to reduce urate production at its terminal synt
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Allopurinol]], [[Febuxostat (Uloric)]]
 
 ## Safety routing
 

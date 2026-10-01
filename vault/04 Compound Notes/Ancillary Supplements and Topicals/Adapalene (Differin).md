@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Retinoic acid receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1265
+chembl-max-phase: 4
 half-life:
   value: 51.0
   value-max: null
@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Adapalene
@@ -69,6 +71,40 @@ pk-source:
   revision: 1368544655
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1265
+  pref-name: ADAPALENE
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D10AD03
+  - D10AD53
+  targets:
+  - id: CHEMBL2363069
+    name: Retinoic acid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 412.53
+    mw-freebase: 412.53
+    alogp: 6.68
+    psa: 46.53
+    hba: 2
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 1
+    qed-weighted: 0.52
+    full-molformula: C28H28O3
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: ca37576a-09aa-4ee8-9dc4-8ad76b999fcf
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ca37576a-09aa-4ee8-9dc4-8ad76b999fcf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Adapalene (Differin)
@@ -83,10 +119,30 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Adapalene, Differin
+- **ChEMBL:** [CHEMBL1265](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1265/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Third-generation topical retinoid, receptor-selective for RAR, a first-line OTC acne treatment.
+
+## Mechanism
+
+Retinoic acid receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **ATC D10AD03:** DERMATOLOGICALS › ANTI-ACNE PREPARATIONS FOR TOPICAL USE › Retinoids for topical use in acne
+- **ATC D10AD53:** DERMATOLOGICALS › ANTI-ACNE PREPARATIONS FOR TOPICAL USE › Retinoids for topical use in acne
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 412.53 | 6.68 | 46.53 | 1/2 | 1 | C28H28O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Retinoic acid receptor (CHEMBL2363069)|Retinoic acid receptor]] - agonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -105,6 +161,17 @@ Third-generation topical retinoid, receptor-selective for RAR, a first-line OTC 
 | Metabolism | hepatic | Known to accumulate in the liver and GI-tract. In human, mouse, rat, rabbit, and dog cultured hepatocytes, metabolism appears to affect the methoxybenzene moiety but remains incompletely characterized. The major products of metabolism are glucuronides. Approximately 25% of the drug is metabolized; the rest is excreted as parent drug |
 | Metabolites | - | Glucuronides |
 | Excretion | mainly non-renal | Bile duct |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set ca37576a…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ca37576a-09aa-4ee8-9dc4-8ad76b999fcf), label version 20260603. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 7, 17.2, 51)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Isotretinoin, 13-cis-retinoic acid (oral, Accutane)]] (Retinoic acid receptor), [[Oral Tretinoin (ATRA)]] (Retinoic acid receptor), [[Tazarotene (Tazorac)]] (Retinoic acid receptor), [[Tretinoin]] (Retinoic acid receptor)
+- **Same ATC subgroup:** [[Isotretinoin, 13-cis-retinoic acid (oral, Accutane)]], [[Oral Tretinoin (ATRA)]], [[Retinol]], [[Tretinoin]], [[Trifarotene (topical, Aklief)]]
 
 ## Safety routing
 

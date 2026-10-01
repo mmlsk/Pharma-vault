@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL192
+chembl-max-phase: 4
 half-life:
   value: 3.0
   value-max: 4.0
@@ -57,7 +57,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -65,6 +65,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Sildenafil
@@ -72,6 +74,37 @@ pk-source:
   revision: 1376217569
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL192
+  pref-name: SILDENAFIL
+  molecule-type: Small molecule
+  first-approval: 1998
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04BE03
+  targets: []
+  properties:
+    full-mwt: 474.59
+    mw-freebase: 474.59
+    alogp: 1.61
+    psa: 113.42
+    hba: 8
+    hbd: 1
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C22H30N6O4S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 174ef537-e3e6-42bd-a478-47b930ddc761
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=174ef537-e3e6-42bd-a478-47b930ddc761
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Sildenafil (Viagra)
@@ -86,10 +119,21 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Sildenafil, Viagra
+- **ChEMBL:** [CHEMBL192](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL192/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The original PDE5 inhibitor; short-acting, and separately licensed for pulmonary hypertension.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1998
+- **ATC G04BE03:** GENITO URINARY SYSTEM AND SEX HORMONES › UROLOGICALS › Drugs used in erectile dysfunction
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 474.59 | 1.61 | 113.42 | 1/8 | 0 | C22H30N6O4S |
 
 ## Evidence boundaries
 
@@ -110,6 +154,18 @@ The original PDE5 inhibitor; short-acting, and separately licensed for pulmonary
 | CYP (metabolised by) | CYP2C9, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | N-desmethylsildenafil (~50% potency for PDE5) |
 | Excretion | mainly non-renal | Feces (~80%), urine (~13%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 174ef537…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=174ef537-e3e6-42bd-a478-47b930ddc761), label version 20260831. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 4)
+> - protein-binding: consistent (label values: 45, 57, 96)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alprostadil]], [[Apomorphine]], [[Avanafil (Stendra)]], [[Cialis (Tadalafil)]], [[Papaverine]], [[Udenafil]], [[Vardenafil (Levitra)]], [[Yohimbine]]
+- **Shared CYP substrate pool:** CYP2C9 (+40 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Loxoprofen
@@ -64,6 +65,39 @@ pk-source:
   revision: 1331526208
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL19299
+  pref-name: LOXOPROFEN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M01AE19
+  - M02AA31
+  targets:
+  - id: CHEMBL2094253
+    name: Cyclooxygenase
+    action: INHIBITOR
+  properties:
+    full-mwt: 246.31
+    mw-freebase: 246.31
+    alogp: 2.79
+    psa: 54.37
+    hba: 2
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.89
+    full-molformula: C15H18O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Loxoprofen
@@ -77,7 +111,7 @@ pk-source:
 - **Compound ID:** `loxoprofen-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL19299](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL19299/) · max phase 4
+- **ChEMBL:** [CHEMBL19299](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL19299/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +120,21 @@ Cyclooxygenase inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMB
 ## Mechanism
 
 Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** prodrug
+- **ATC M01AE19:** MUSCULO-SKELETAL SYSTEM › ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS, NON-STEROIDS › Propionic acid derivatives
+- **ATC M02AA31:** MUSCULO-SKELETAL SYSTEM › TOPICAL PRODUCTS FOR JOINT AND MUSCULAR PAIN › Antiinflammatory preparations, non-steroids for topical use
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 246.31 | 2.79 | 54.37 | 1/2 | 0 | C15H18O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cyclooxygenase (CHEMBL2094253)|Cyclooxygenase]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -103,6 +152,15 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 | Protein binding | 97 % | 97% |
 | Metabolism | hepatic | Liver glucuronidation |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acemetacin]] (Cyclooxygenase), [[Acetaminophen]] (Cyclooxygenase), [[Aloxiprin]] (Cyclooxygenase), [[Aspirin]] (Cyclooxygenase), [[Benzydamine]] (Cyclooxygenase), [[Bismuth Subsalicylate]] (Cyclooxygenase), [[Clometacin]] (Cyclooxygenase), [[Dexibuprofen]] (Cyclooxygenase), [[Dexketoprofen]] (Cyclooxygenase), [[Diclofenac]] (Cyclooxygenase), [[Diflunisal]] (Cyclooxygenase), [[Esflurbiprofen]] (Cyclooxygenase)
+- **Same ATC subgroup:** [[Aceclofenac]], [[Benzydamine]], [[Dexibuprofen]], [[Dexketoprofen]], [[Diclofenac]], [[Esflurbiprofen]], [[Fenoprofen]], [[Flurbiprofen]], [[Ibuprofen]], [[Indomethacin]], [[Indoprofen]], [[Ketoprofen]]
 
 ## Safety routing
 

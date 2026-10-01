@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1624
+chembl-max-phase: 4
 half-life:
   value: 7.0
   value-max: null
@@ -62,6 +62,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Levothyroxine
@@ -69,6 +70,34 @@ pk-source:
   revision: 1368685201
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1624
+  pref-name: LEVOTHYROXINE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 776.87
+    mw-freebase: 776.87
+    alogp: 4.56
+    psa: 92.78
+    hba: 4
+    hbd: 3
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.39
+    full-molformula: C15H11I4NO4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Levothyroxine (Synthroid)
@@ -83,10 +112,21 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Levothyroxine, Synthroid
+- **ChEMBL:** [CHEMBL1624](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1624/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Synthetic T4 thyroid hormone, the standard hypothyroidism replacement therapy and a component of some fat-loss protocols.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 776.87 | 4.56 | 92.78 | 3/4 | 1 | C15H11I4NO4 |
 
 ## Evidence boundaries
 
@@ -104,6 +144,8 @@ Synthetic T4 thyroid hormone, the standard hypothyroidism replacement therapy an
 | Bioavailability | 40–80 % | 40-80% |
 | Metabolism | hepatic | Mainly in the liver, kidneys, brain, and muscles |
 | Excretion | - | Feces and urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

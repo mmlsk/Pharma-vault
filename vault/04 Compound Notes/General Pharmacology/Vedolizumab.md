@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: Integrin alpha-4/beta-7 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1743087
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1743087
+  pref-name: VEDOLIZUMAB
+  molecule-type: Antibody
+  first-approval: 2014
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L04AG05
+  targets:
+  - id: CHEMBL2095184
+    name: Integrin alpha-4/beta-7
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Vedolizumab
@@ -67,10 +84,25 @@ tags:
 - **Compound ID:** `vedolizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1743087](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743087/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Gut-selective anti-alpha-4-beta-7 antibody for inflammatory bowel disease, whose selectivity is the reason it carries no PML signal.
+
+## Mechanism
+
+Integrin alpha-4/beta-7 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2014
+- **ATC L04AG05:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Monoclonal antibodies
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Integrin alpha-4-beta-7 (CHEMBL2095184)|Integrin alpha-4/beta-7]] - inhibitor · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -80,6 +112,13 @@ Gut-selective anti-alpha-4-beta-7 antibody for inflammatory bowel disease, whose
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Natalizumab]] (Integrin alpha-4/beta-7)
+- **Same ATC subgroup:** [[Alemtuzumab]], [[Anifrolumab]], [[Belimumab]], [[Inebilizumab]], [[Natalizumab]], [[Ocrelizumab]], [[Ofatumumab]], [[Teprotumumab]]
 
 ## Safety routing
 

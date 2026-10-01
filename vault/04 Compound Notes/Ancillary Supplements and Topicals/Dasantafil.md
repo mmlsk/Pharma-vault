@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2107326
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2107326
+  pref-name: DASANTAFIL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 522.4
+    mw-freebase: 522.4
+    alogp: 1.52
+    psa: 123.54
+    hba: 10
+    hbd: 3
+    rtb: 8
+    num-ro5-violations: 1
+    qed-weighted: 0.41
+    full-molformula: C22H28BrN5O5
 ---
 
 # Dasantafil
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `dasantafil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2107326](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107326/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits PDE5 so nitric-oxide/cGMP vasodilation persists in corporal and pulmonary vascular smooth muscle; investigational, development discontinued.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 522.4 | 1.52 | 123.54 | 3/10 | 1 | C22H28BrN5O5 |
 
 ## Evidence boundaries
 

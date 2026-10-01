@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL408194
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL408194
+  pref-name: OBATOCLAX
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 317.39
+    mw-freebase: 317.39
+    alogp: 4.49
+    psa: 53.17
+    hba: 2
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.73
+    full-molformula: C20H19N3O
 ---
 
 # Obatoclax
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `obatoclax-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL408194](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL408194/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Pan-BCL-2 family inhibitor; development stopped over neurotoxicity and unclear on-target activity.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 317.39 | 4.49 | 53.17 | 2/2 | 0 | C20H19N3O |
 
 ## Evidence boundaries
 

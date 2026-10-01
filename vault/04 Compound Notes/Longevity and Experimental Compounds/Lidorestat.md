@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL363387
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL363387
+  pref-name: LIDORESTAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 376.36
+    mw-freebase: 376.36
+    alogp: 4.34
+    psa: 55.12
+    hba: 4
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.54
+    full-molformula: C18H11F3N2O2S
 ---
 
 # Lidorestat
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `lidorestat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL363387](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL363387/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits aldose reductase to limit polyol-pathway flux and the osmotic and oxidative stress it imposes during hyperglycaemia; research compound.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 376.36 | 4.34 | 55.12 | 1/4 | 0 | C18H11F3N2O2S |
 
 ## Evidence boundaries
 

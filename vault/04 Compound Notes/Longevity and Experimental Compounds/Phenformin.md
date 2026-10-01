@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL170988
+  pref-name: PHENFORMIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - A10BA01
+  targets: []
+  properties:
+    full-mwt: 205.26
+    mw-freebase: 205.26
+    alogp: 0.24
+    psa: 97.78
+    hba: 2
+    hbd: 5
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.36
+    full-molformula: C10H15N5
 ---
 
 # Phenformin
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `phenformin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL170988](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL170988/) · max phase 4
+- **ChEMBL:** [CHEMBL170988](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL170988/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +100,16 @@ Unknown; approved/marketed compound catalogued by ChEMBL (CHEMBL170988).
 
 Unknown _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC A10BA01:** ALIMENTARY TRACT AND METABOLISM › BLOOD GLUCOSE LOWERING DRUGS, EXCL. INSULINS › Biguanides
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 205.26 | 0.24 | 97.78 | 5/2 | 0 | C10H15N5 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +118,12 @@ Unknown _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Metformin]]
 
 ## Safety routing
 

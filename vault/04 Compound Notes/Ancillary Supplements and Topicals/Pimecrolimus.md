@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: derm
 class: null
 subclass: null
-mechanism: null
+mechanism: FK506-binding protein 1A inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1200686
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -60,6 +60,8 @@ tags:
 - group/derm
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Pimecrolimus
@@ -67,6 +69,39 @@ pk-source:
   revision: 1371791182
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1200686
+  pref-name: PIMECROLIMUS
+  molecule-type: Small molecule
+  first-approval: 2001
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - D11AH02
+  targets:
+  - id: CHEMBL1902
+    name: Peptidyl-prolyl cis-trans isomerase FKBP1A
+    action: INHIBITOR
+  properties:
+    full-mwt: 810.47
+    mw-freebase: 810.47
+    alogp: 5.72
+    psa: 158.13
+    hba: 11
+    hbd: 2
+    rtb: 6
+    num-ro5-violations: 3
+    qed-weighted: 0.15
+    full-molformula: C43H68ClNO11
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 6601e43e-ce7d-446a-8568-8e7b24b86f06
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6601e43e-ce7d-446a-8568-8e7b24b86f06
+  checked: '2026-10-01'
+  fields:
+    protein-binding: discrepant
 ---
 
 # Pimecrolimus
@@ -80,10 +115,30 @@ pk-source:
 - **Compound ID:** `pimecrolimus-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1200686](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200686/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Topical calcineurin inhibitor for atopic dermatitis, used on face and flexures where steroid atrophy is a concern.
+
+## Mechanism
+
+FK506-binding protein 1A inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2001
+- **Flags:** black-box warning
+- **ATC D11AH02:** DERMATOLOGICALS › OTHER DERMATOLOGICAL PREPARATIONS › Agents for dermatitis, excluding corticosteroids
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 810.47 | 5.72 | 158.13 | 2/11 | 3 | C43H68ClNO11 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Peptidyl-prolyl cis-trans isomerase FKBP1A (CHEMBL1902)|Peptidyl-prolyl cis-trans isomerase FKBP1A]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -100,6 +155,17 @@ Topical calcineurin inhibitor for atopic dermatitis, used on face and flexures w
 | Protein binding | 74 % | 74%–87% |
 | Bioavailability | - | low systemic absorption |
 | Metabolism | hepatic | Hepatic CYP3A |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 6601e43e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6601e43e-ce7d-446a-8568-8e7b24b86f06), label version 20260430. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - protein-binding: discrepant (label values: 99.5)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Everolimus]] (Peptidyl-prolyl cis-trans isomerase FKBP1A), [[Rapamycin (Sirolimus)]] (Peptidyl-prolyl cis-trans isomerase FKBP1A), [[Sirolimus (Rapamycin)]] (Peptidyl-prolyl cis-trans isomerase FKBP1A)
+- **Same ATC subgroup:** [[Abrocitinib (Cibinqo)]], [[Alitretinoin]], [[Alitretinoin (oral, Toctino)]], [[Crisaborole (topical 2% ointment, Eucrisa)]], [[Delgocitinib]], [[Deuruxolitinib (Leqselvi)]], [[Dupilumab (Dupixent, subcutaneous)]], [[Lebrikizumab (Ebglyss)]], [[Nemolizumab]], [[Ruxolitinib]], [[Ruxolitinib (topical)]], [[Ruxolitinib cream 1.5% (Opzelura)]]
 
 ## Safety routing
 

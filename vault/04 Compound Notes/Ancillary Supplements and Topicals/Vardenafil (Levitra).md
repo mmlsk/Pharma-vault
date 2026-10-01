@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1520
+chembl-max-phase: 4
 half-life:
   value: 4.0
   value-max: 5.0
@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Vardenafil
@@ -71,6 +73,37 @@ pk-source:
   revision: 1365731239
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1520
+  pref-name: VARDENAFIL
+  molecule-type: Small molecule
+  first-approval: 2003
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04BE09
+  targets: []
+  properties:
+    full-mwt: 488.61
+    mw-freebase: 488.61
+    alogp: 2.07
+    psa: 112.9
+    hba: 8
+    hbd: 1
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.52
+    full-molformula: C23H32N6O4S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 5876e062-e604-42a7-99c3-5da30b8dac06
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5876e062-e604-42a7-99c3-5da30b8dac06
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Vardenafil (Levitra)
@@ -85,10 +118,21 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Vardenafil, Levitra
+- **ChEMBL:** [CHEMBL1520](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1520/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 PDE5 inhibitor structurally close to sildenafil, with more QT prolongation attached.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2003
+- **ATC G04BE09:** GENITO URINARY SYSTEM AND SEX HORMONES › UROLOGICALS › Drugs used in erectile dysfunction
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 488.61 | 2.07 | 112.9 | 1/8 | 0 | C23H32N6O4S |
 
 ## Evidence boundaries
 
@@ -108,6 +152,18 @@ PDE5 inhibitor structurally close to sildenafil, with more QT prolongation attac
 | Metabolism | hepatic | Liver (CYP3A4) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | Bile duct |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 5876e062…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5876e062-e604-42a7-99c3-5da30b8dac06), label version 20260105. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 4, 5)
+> - protein-binding: consistent (label values: 95)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alprostadil]], [[Apomorphine]], [[Avanafil (Stendra)]], [[Cialis (Tadalafil)]], [[Papaverine]], [[Sildenafil (Viagra)]], [[Udenafil]], [[Yohimbine]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

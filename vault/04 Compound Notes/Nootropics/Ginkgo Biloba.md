@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108466
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,20 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108466
+  pref-name: GINKGO
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - N06DX02
+  targets: []
+  properties: {}
 ---
 
 # Ginkgo Biloba
@@ -68,10 +82,17 @@ tags:
 - **Compound ID:** `ginkgo-biloba-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL2108466](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108466/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 One of the most-studied herbal cognitive agents, and among the most consistently negative in large trials. Also inhibits platelet-activating factor, which is a genuine bleeding interaction.
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+- **Flags:** withdrawn
+- **ATC N06DX02:** NERVOUS SYSTEM › ANTI-DEMENTIA DRUGS › Other anti-dementia drugs
 
 ## Evidence boundaries
 
@@ -81,6 +102,12 @@ One of the most-studied herbal cognitive agents, and among the most consistently
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Aducanumab (Aduhelm)]], [[Donanemab (Kisunla)]], [[Lecanemab (Leqembi)]], [[Memantine (Namenda)]]
 
 ## Safety routing
 

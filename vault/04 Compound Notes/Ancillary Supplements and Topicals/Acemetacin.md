@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Acemetacin
@@ -68,6 +69,38 @@ pk-source:
   revision: 1341436393
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL189171
+  pref-name: ACEMETACIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M01AB11
+  targets:
+  - id: CHEMBL2094253
+    name: Cyclooxygenase
+    action: INHIBITOR
+  properties:
+    full-mwt: 415.83
+    mw-freebase: 415.83
+    alogp: 3.47
+    psa: 94.83
+    hba: 6
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.62
+    full-molformula: C21H18ClNO6
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Acemetacin
@@ -81,7 +114,7 @@ pk-source:
 - **Compound ID:** `acemetacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL189171](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL189171/) · max phase 4
+- **ChEMBL:** [CHEMBL189171](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL189171/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +123,19 @@ Cyclooxygenase inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMB
 ## Mechanism
 
 Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC M01AB11:** MUSCULO-SKELETAL SYSTEM › ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS, NON-STEROIDS › Acetic acid derivatives and related substances
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 415.83 | 3.47 | 94.83 | 1/6 | 0 | C21H18ClNO6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cyclooxygenase (CHEMBL2094253)|Cyclooxygenase]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -108,6 +154,15 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 | Bioavailability | 100 % | ~100% |
 | Metabolism | hepatic | Hydrolysis, glucuronidation |
 | Excretion | mainly urinary | 40% renal, 50% biliary |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acetaminophen]] (Cyclooxygenase), [[Aloxiprin]] (Cyclooxygenase), [[Aspirin]] (Cyclooxygenase), [[Benzydamine]] (Cyclooxygenase), [[Bismuth Subsalicylate]] (Cyclooxygenase), [[Clometacin]] (Cyclooxygenase), [[Dexibuprofen]] (Cyclooxygenase), [[Dexketoprofen]] (Cyclooxygenase), [[Diclofenac]] (Cyclooxygenase), [[Diflunisal]] (Cyclooxygenase), [[Esflurbiprofen]] (Cyclooxygenase), [[Fenclofenac]] (Cyclooxygenase)
+- **Same ATC subgroup:** [[Aceclofenac]], [[Alclofenac]], [[Diclofenac]], [[Etodolac]], [[Indomethacin]], [[Ketorolac]], [[Sulindac]], [[Tolmetin]]
 
 ## Safety routing
 

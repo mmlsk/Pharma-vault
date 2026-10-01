@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin-6 receptor alpha subunit inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1237022
+chembl-max-phase: 4
 half-life:
   value: 8.0
   value-max: 14.0
@@ -48,7 +48,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -56,6 +56,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Tocilizumab
@@ -63,6 +65,29 @@ pk-source:
   revision: 1360662761
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1237022
+  pref-name: TOCILIZUMAB
+  molecule-type: Antibody
+  first-approval: 2005
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L04AC07
+  targets:
+  - id: CHEMBL2364155
+    name: Interleukin-6 receptor subunit alpha
+    action: INHIBITOR
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 581c288f-8015-40ef-a4c3-683c96db193d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=581c288f-8015-40ef-a4c3-683c96db193d
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Tocilizumab
@@ -76,10 +101,26 @@ pk-source:
 - **Compound ID:** `tocilizumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1237022](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237022/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 IL-6 receptor antibody used in rheumatoid arthritis, giant cell arteritis and cytokine release syndrome.
+
+## Mechanism
+
+Interleukin-6 receptor alpha subunit inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2005
+- **Flags:** black-box warning
+- **ATC L04AC07:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Interleukin inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-6 receptor subunit alpha (CHEMBL2364155)|Interleukin-6 receptor subunit alpha]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -94,6 +135,17 @@ IL-6 receptor antibody used in rheumatoid arthritis, giant cell arteritis and cy
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 8–14 d | 8–14 days during steady state (dependent on concentration) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 581c288f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=581c288f-8015-40ef-a4c3-683c96db193d), label version 20260727. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 48, 96, 100.8, 120, 189.6, 240)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Sarilumab]] (Interleukin-6 receptor subunit alpha)
+- **Same ATC subgroup:** [[Anakinra]], [[Basiliximab]], [[Bimekizumab]], [[Briakinumab]], [[Brodalumab]], [[Canakinumab (Ilaris)]], [[Guselkumab]], [[Ixekizumab]], [[Mirikizumab]], [[Netakimab]], [[Olokizumab]], [[Rilonacept]]
 
 ## Safety routing
 

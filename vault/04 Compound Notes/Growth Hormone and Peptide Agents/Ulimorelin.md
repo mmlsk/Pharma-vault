@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1963249
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -55,6 +55,29 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1963249
+  pref-name: ULIMORELIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 538.66
+    mw-freebase: 538.66
+    alogp: 2.6
+    psa: 99.77
+    hba: 5
+    hbd: 3
+    rtb: 3
+    num-ro5-violations: 1
+    qed-weighted: 0.56
+    full-molformula: C30H39FN4O4
 ---
 
 # Ulimorelin
@@ -68,10 +91,19 @@ tags:
 - **Compound ID:** `ulimorelin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL1963249](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1963249/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Intravenous ghrelin-receptor agonist studied for postoperative ileus; not an approved performance compound.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 538.66 | 2.6 | 99.77 | 3/5 | 1 | C30H39FN4O4 |
 
 ## Evidence boundaries
 

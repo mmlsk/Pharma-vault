@@ -2,6 +2,22 @@
 
 > **Status (2026-09-26, v3):** repozytorium zostało utworzone jako `mmlsk/Pharma-vault`, więc bramki **DISC-01** (dostęp do repo) i **DISC-02** (baseline commit) są spełnione. Zrealizowano: kanoniczny katalog w `data/processed/`, generator notatek, schemat JSON v2, walidację i CI (`Makefile`, `.github/workflows/ci.yml`). Backend/API pozostaje odroczony zgodnie z [ADR-0001](../adr/0001-canonical-source-of-truth.md). Poniższy tekst to oryginalny plan z wątku.
 
+> ## ✅ Kamienie milowe zrealizowane
+>
+> | Wersja | Zakres | Status |
+> |---|---|---|
+> | v3.0 | kanoniczny katalog, generator stubów, schemat v2, CI | ✅ |
+> | v3.1 | PK z Wikipedii (wersje przypięte), graf z `substances.json` | ✅ |
+> | v3.2 | +187 substancji (NPS), warstwa ChEMBL (tożsamość/mechanizmy/cele/ATC), automatyczne porównanie PK z FDA, `links.json`, notatki celów, eksport SQLite, histogram i krawędzie celów w grafie — [ADR-0002](../adr/0002-identity-tiers-and-automated-pk-crosscheck.md) | ✅ |
+>
+> ## 🔭 Proponowany v3.3
+>
+> 1. Kuracja 607 tożsamości `chembl-name-match` (kolejka w Review Queue) i 3 niejednoznacznych kandydatów.
+> 2. PK dla NPS z Wikipedii/literatury z wyraźnym poziomem dowodów (brak etykiet FDA).
+> 3. Drugie porównanie PK z ChPL/EMA (EPAR) dla leków spoza rynku USA.
+> 4. Warstwa interakcji bez DrugBank: role CYP inhibitor/induktor z etykiet FDA (sekcja 7) + tabela FDA „Drug Development and Drug Interactions”.
+> 5. Zaplanowane odświeżanie cache (GitHub Actions `schedule`) z PR zamiast bezpośredniego commita.
+
 > Źródło: wątek projektu Pharma-vault (tura 20), wyeksportowany 2026-09-26. Treść zachowana w oryginalnym brzmieniu; numerowane odwołania typu [1] odnoszą się do źródeł przywołanych w oryginalnym wątku (materiały w `data/raw/`).
 
 A repository-specific implementation plan cannot be completed honestly yet because **no repository snapshot, branch/commit, current schema, or completed capability description is available in this conversation**. The safest deliverable is therefore a gated development plan: Phase 0 verifies the codebase and requirements; later phases remain conditional until those gates pass.

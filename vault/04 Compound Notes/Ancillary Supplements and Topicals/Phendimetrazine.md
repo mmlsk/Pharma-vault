@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Phendimetrazine
@@ -63,6 +64,34 @@ pk-source:
   revision: 1365182914
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1615439
+  pref-name: PHENDIMETRAZINE
+  molecule-type: Small molecule
+  first-approval: 1976
+  black-box-warning: false
+  withdrawn: true
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 191.27
+    mw-freebase: 191.27
+    alogp: 2.08
+    psa: 12.47
+    hba: 2
+    hbd: 0
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C12H17NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Phendimetrazine
@@ -76,7 +105,7 @@ pk-source:
 - **Compound ID:** `phendimetrazine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1615439](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1615439/) · max phase 4
+- **ChEMBL:** [CHEMBL1615439](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1615439/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +114,16 @@ Norepinephrine transporter inhibitor; approved/marketed compound catalogued by C
 ## Mechanism
 
 Norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1976
+- **Flags:** withdrawn
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 191.27 | 2.08 | 12.47 | 0/2 | 0 | C12H17NO |
 
 ## Evidence boundaries
 
@@ -101,6 +140,8 @@ Norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by th
 | Elimination t½ | 19–24 h | 19–24 hours |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Urinary elimination |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

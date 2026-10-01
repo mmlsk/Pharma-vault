@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1743085
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1743085
+  pref-name: URELUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3712857
+    name: Tumor necrosis factor receptor superfamily member 9
+    action: AGONIST
+  properties: {}
 ---
 
 # Urelumab
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `urelumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1743085](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743085/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -75,6 +92,14 @@ Urelumab is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is tu
 ## Mechanism
 
 tumor necrosis factor receptor superfamily member 9 agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor receptor superfamily member 9 (CHEMBL3712857)|Tumor necrosis factor receptor superfamily member 9]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 

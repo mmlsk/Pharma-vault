@@ -18,7 +18,7 @@ review-status: stub
 chembl-id: CHEMBL622
 chembl-max-phase: 4
 half-life:
-  value: 4.0
+  value: 7.3
   value-max: null
   unit: h
   notes: 7.3 ± 4.0 hours
@@ -49,7 +49,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -57,6 +57,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Etodolac
@@ -64,6 +66,40 @@ pk-source:
   revision: 1316039301
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL622
+  pref-name: ETODOLAC
+  molecule-type: Small molecule
+  first-approval: 1991
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - M01AB08
+  targets:
+  - id: CHEMBL230
+    name: Prostaglandin G/H synthase 2
+    action: INHIBITOR
+  properties:
+    full-mwt: 287.36
+    mw-freebase: 287.36
+    alogp: 3.38
+    psa: 62.32
+    hba: 2
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.91
+    full-molformula: C17H21NO3
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 188cdd2e-4196-458c-9631-4fa9a0d309b8
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=188cdd2e-4196-458c-9631-4fa9a0d309b8
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Etodolac
@@ -77,7 +113,7 @@ pk-source:
 - **Compound ID:** `etodolac-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL622](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL622/) · max phase 4
+- **ChEMBL:** [CHEMBL622](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL622/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +122,21 @@ Cyclooxygenase-2 inhibitor; approved/marketed compound catalogued by ChEMBL (CHE
 ## Mechanism
 
 Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1991
+- **Flags:** black-box warning
+- **ATC M01AB08:** MUSCULO-SKELETAL SYSTEM › ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS, NON-STEROIDS › Acetic acid derivatives and related substances
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 287.36 | 3.38 | 62.32 | 2/2 | 0 | C17H21NO3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prostaglandin G-H synthase 2 (CHEMBL230)|Prostaglandin G/H synthase 2]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -99,10 +150,22 @@ Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 4 h | 7.3 ± 4.0 hours |
+| Elimination t½ | 7.3 h | 7.3 ± 4.0 hours |
 | Protein binding | 100 % | 100% |
 | Metabolism | hepatic | liver |
 | Excretion | mainly urinary | renal |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 188cdd2e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=188cdd2e-4196-458c-9631-4fa9a0d309b8), label version 20260903. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 6.4)
+> - protein-binding: consistent (label values: 99)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aceclofenac]] (Prostaglandin G/H synthase 2), [[Carprofen]] (Prostaglandin G/H synthase 2), [[Celecoxib]] (Prostaglandin G/H synthase 2), [[Cimicoxib]] (Prostaglandin G/H synthase 2), [[Etoricoxib]] (Prostaglandin G/H synthase 2), [[Gw-406381]] (Prostaglandin G/H synthase 2), [[Iguratimod]] (Prostaglandin G/H synthase 2), [[Lumiracoxib]] (Prostaglandin G/H synthase 2), [[Meloxicam]] (Prostaglandin G/H synthase 2), [[Nabumetone]] (Prostaglandin G/H synthase 2), [[Parecoxib]] (Prostaglandin G/H synthase 2), [[Rofecoxib]] (Prostaglandin G/H synthase 2)
+- **Same ATC subgroup:** [[Aceclofenac]], [[Acemetacin]], [[Alclofenac]], [[Diclofenac]], [[Indomethacin]], [[Ketorolac]], [[Sulindac]], [[Tolmetin]]
 
 ## Safety routing
 

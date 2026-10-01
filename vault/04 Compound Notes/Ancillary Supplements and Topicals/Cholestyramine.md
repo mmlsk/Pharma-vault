@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Bile acids sequestering agent
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201625
+chembl-max-phase: 4
 half-life:
   value: 1.0
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Colestyramine
@@ -68,6 +69,29 @@ pk-source:
   revision: 1339777528
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201625
+  pref-name: CHOLESTYRAMINE
+  molecule-type: Unknown
+  first-approval: 1973
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C10AC01
+  targets:
+  - id: CHEMBL2364175
+    name: Bile acids
+    action: SEQUESTERING AGENT
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 214ea05f-de81-4026-9df9-4ce3820668ee
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=214ea05f-de81-4026-9df9-4ce3820668ee
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Cholestyramine
@@ -81,10 +105,25 @@ pk-source:
 - **Compound ID:** `cholestyramine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201625](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201625/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Bile acid sequestrant; the oldest lipid drug class with hard outcome data behind it.
+
+## Mechanism
+
+Bile acids sequestering agent _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+- **First approval (ChEMBL):** 1973
+- **ATC C10AC01:** CARDIOVASCULAR SYSTEM › LIPID MODIFYING AGENTS, PLAIN › Bile acid sequestrants
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Bile acids (CHEMBL2364175)|Bile acids]] - sequestering agent · SMALL MOLECULE
 
 ## Evidence boundaries
 
@@ -103,6 +142,10 @@ Bile acid sequestrant; the oldest lipid drug class with hard outcome data behind
 | Bioavailability | - | low |
 | Metabolism | - | bile acids |
 | Excretion | mainly non-renal | Faecal |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 214ea05f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=214ea05f-de81-4026-9df9-4ce3820668ee), label version 20260820. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
 
 ## Safety routing
 

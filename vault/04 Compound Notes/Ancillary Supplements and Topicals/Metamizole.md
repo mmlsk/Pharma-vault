@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Metamizole
@@ -68,6 +69,34 @@ pk-source:
   revision: 1367392257
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL461522
+  pref-name: METAMIZOLE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 311.36
+    mw-freebase: 311.36
+    alogp: 0.77
+    psa: 84.54
+    hba: 6
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.84
+    full-molformula: C13H17N3O4S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Metamizole
@@ -81,7 +110,7 @@ pk-source:
 - **Compound ID:** `metamizole-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL461522](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL461522/) · max phase 4
+- **ChEMBL:** [CHEMBL461522](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL461522/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +119,15 @@ Cyclooxygenase inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMB
 ## Mechanism
 
 Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 311.36 | 0.77 | 84.54 | 1/6 | 0 | C13H17N3O4S |
 
 ## Evidence boundaries
 
@@ -108,6 +146,8 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 | Bioavailability | 90 % | Over 90% (active metabolites) |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Urine (96%, IV; 85%, oral), faeces (4%, IV). |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

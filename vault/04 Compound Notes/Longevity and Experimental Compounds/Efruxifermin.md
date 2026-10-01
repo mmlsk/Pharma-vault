@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4594389
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,18 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4594389
+  pref-name: EFRUXIFERMIN
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Efruxifermin
@@ -67,10 +79,15 @@ tags:
 - **Compound ID:** `efruxifermin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL4594389](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594389/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 An Fc-FGF21 fusion protein in trials for metabolic dysfunction-associated steatohepatitis, improving liver fat, fibrosis and lipids through FGF21 receptor complexes.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
 
 ## Evidence boundaries
 

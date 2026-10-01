@@ -15,13 +15,13 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL211456
+chembl-max-phase: 4
 half-life:
   value: 6.0
   value-max: null
   unit: h
-  notes: 6hours
+  notes: 6 hours
 protein-binding:
   value: 24.0
   value-max: 29.0
@@ -61,6 +61,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ephedrine
@@ -68,6 +69,39 @@ pk-source:
   revision: 1368687200
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL211456
+  pref-name: EPHEDRINE
+  molecule-type: Small molecule
+  first-approval: 2016
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - A08AA56
+  - C01CA26
+  - R01AA03
+  - R01AB05
+  - S01FB02
+  targets: []
+  properties:
+    full-mwt: 165.24
+    mw-freebase: 165.24
+    alogp: 1.33
+    psa: 32.26
+    hba: 2
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.71
+    full-molformula: C10H15NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ephedrine
@@ -81,10 +115,26 @@ pk-source:
 - **Compound ID:** `ephedrine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL211456](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL211456/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Sympathomimetic stimulant that raises energy expenditure substantially through beta-adrenoceptor activation; historically paired with caffeine as a fat-loss stack ('ECA'), now restricted in many countries.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2016
+- **Flags:** withdrawn
+- **ATC A08AA56:** ALIMENTARY TRACT AND METABOLISM › ANTIOBESITY PREPARATIONS, EXCL. DIET PRODUCTS › Centrally acting antiobesity products
+- **ATC C01CA26:** CARDIOVASCULAR SYSTEM › CARDIAC STIMULANTS EXCL. CARDIAC GLYCOSIDES › Adrenergic and dopaminergic agents
+- **ATC R01AA03:** RESPIRATORY SYSTEM › DECONGESTANTS AND OTHER NASAL PREPARATIONS FOR TOPICAL USE › Sympathomimetics, plain
+- **ATC R01AB05:** RESPIRATORY SYSTEM › DECONGESTANTS AND OTHER NASAL PREPARATIONS FOR TOPICAL USE › Sympathomimetics, combinations excl. corticosteroids
+- **ATC S01FB02:** SENSORY ORGANS › MYDRIATICS AND CYCLOPLEGICS › Sympathomimetics excl. antiglaucoma preparations
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 165.24 | 1.33 | 32.26 | 2/2 | 0 | C10H15NO |
 
 ## Evidence boundaries
 
@@ -98,12 +148,20 @@ Sympathomimetic stimulant that raises energy expenditure substantially through b
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 6 h | 6hours |
+| Elimination t½ | 6 h | 6 hours |
 | Protein binding | 24–29 % | ~24–29% (5–10% to albumin) |
 | Bioavailability | 88 % | 88% |
 | Metabolism | - | Largely unmetabolized |
 | Metabolites | - | • Norephedrine |
 | Excretion | mainly urinary · fe 0.6 | Mainly urine (60% unchanged) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Adrenaline (Epinephrine)]], [[Diethylpropion]], [[Dobutamine]], [[Dopamine (IV infusion)]], [[Fenfluramine]], [[Mazindol]], [[Noradrenaline (Norepinephrine, IV)]], [[p-Synephrine (Bitter Orange)]], [[Phentermine]], [[Phenylephrine]], [[Setmelanotide (Imcivree)]], [[Sibutramine]]
 
 ## Safety routing
 

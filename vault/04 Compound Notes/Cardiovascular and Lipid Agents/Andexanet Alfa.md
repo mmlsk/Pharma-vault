@@ -8,15 +8,15 @@ cluster: Cardiovascular and Lipid Agents
 group: cardio
 class: null
 subclass: null
-mechanism: null
+mechanism: Apixaban sequestering agent; Rivaroxaban sequestering agent; Tissue factor pathway inhibitor inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3301583
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/cardio
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3301583
+  pref-name: ANDEXANET ALFA
+  molecule-type: Protein
+  first-approval: 2019
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - V03AB38
+  targets:
+  - id: CHEMBL4495555
+    name: Rivaroxaban
+    action: SEQUESTERING AGENT
+  - id: CHEMBL4495556
+    name: Apixaban
+    action: SEQUESTERING AGENT
+  - id: CHEMBL3713062
+    name: Tissue factor pathway inhibitor
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Andexanet Alfa
@@ -67,10 +90,28 @@ tags:
 - **Compound ID:** `andexanet-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
+- **ChEMBL:** [CHEMBL3301583](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301583/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Recombinant decoy factor Xa that reverses apixaban and rivaroxaban by binding them, with a rebound once the infusion ends.
+
+## Mechanism
+
+Apixaban sequestering agent; Rivaroxaban sequestering agent; Tissue factor pathway inhibitor inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2019
+- **Flags:** black-box warning
+- **ATC V03AB38:** VARIOUS › ALL OTHER THERAPEUTIC PRODUCTS › Antidotes
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Rivaroxaban (CHEMBL4495555)|Rivaroxaban]] - sequestering agent · SMALL MOLECULE
+- [[Apixaban (CHEMBL4495556)|Apixaban]] - sequestering agent · SMALL MOLECULE
+- [[Tissue factor pathway inhibitor (CHEMBL3713062)|Tissue factor pathway inhibitor]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +121,12 @@ Recombinant decoy factor Xa that reverses apixaban and rivaroxaban by binding th
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Flumazenil]], [[Fomepizole]], [[Glutathione]], [[Idarucizumab]], [[Methylene Blue]], [[NAC (N-Acetylcysteine)]], [[Naloxone]], [[Phentolamine]], [[Physostigmine]], [[Potassium Iodide (SSKI-KI)|Potassium Iodide (SSKI/KI)]], [[Pralidoxime]], [[Protamine Sulfate]]
 
 ## Safety routing
 

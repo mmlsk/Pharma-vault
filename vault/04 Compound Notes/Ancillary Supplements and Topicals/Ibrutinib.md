@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Tyrosine-protein kinase BTK inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1873475
+chembl-max-phase: 4
 half-life:
   value: 4.0
   value-max: 6.0
@@ -50,7 +50,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -58,6 +58,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Ibrutinib
@@ -65,6 +67,40 @@ pk-source:
   revision: 1337884205
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1873475
+  pref-name: IBRUTINIB
+  molecule-type: Small molecule
+  first-approval: 2013
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L01EL01
+  targets:
+  - id: CHEMBL5251
+    name: Tyrosine-protein kinase BTK
+    action: INHIBITOR
+  properties:
+    full-mwt: 440.51
+    mw-freebase: 440.51
+    alogp: 4.22
+    psa: 99.16
+    hba: 7
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.47
+    full-molformula: C25H24N6O2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 0dfd0279-ff17-4ea9-89be-9803c71bab44
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0dfd0279-ff17-4ea9-89be-9803c71bab44
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Ibrutinib
@@ -78,10 +114,29 @@ pk-source:
 - **Compound ID:** `ibrutinib-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1873475](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1873475/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits BTK to interrupt B-cell receptor signalling; covalent and reversible agents differ in kinase selectivity, bleeding and atrial-fibrillation risk; first-generation covalent.
+
+## Mechanism
+
+Tyrosine-protein kinase BTK inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2013
+- **ATC L01EL01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › PROTEIN KINASE INHIBITORS › Bruton's tyrosine kinase (BTK) inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 440.51 | 4.22 | 99.16 | 1/7 | 0 | C25H24N6O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tyrosine-protein kinase BTK (CHEMBL5251)|Tyrosine-protein kinase BTK]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -100,6 +155,19 @@ Inhibits BTK to interrupt B-cell receptor signalling; covalent and reversible ag
 | Metabolism | hepatic | Hepatic (CYP3A & CYP2D6) |
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | Feces (80%), urine (10%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 0dfd0279…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0dfd0279-ff17-4ea9-89be-9803c71bab44), label version 20251021. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 4, 6)
+> - protein-binding: consistent (label values: 97.3)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acalabrutinib]] (Tyrosine-protein kinase BTK), [[Evobrutinib]] (Tyrosine-protein kinase BTK), [[Fenebrutinib]] (Tyrosine-protein kinase BTK), [[Orelabrutinib]] (Tyrosine-protein kinase BTK), [[Pirtobrutinib]] (Tyrosine-protein kinase BTK), [[Rilzabrutinib]] (Tyrosine-protein kinase BTK), [[Tirabrutinib]] (Tyrosine-protein kinase BTK), [[Zanubrutinib]] (Tyrosine-protein kinase BTK)
+- **Same ATC subgroup:** [[Acalabrutinib]], [[Orelabrutinib]], [[Pirtobrutinib]], [[Tirabrutinib]], [[Zanubrutinib]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

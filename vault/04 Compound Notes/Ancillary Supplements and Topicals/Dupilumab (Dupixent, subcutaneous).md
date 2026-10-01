@@ -11,15 +11,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin-4 receptor subunit alpha antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108675
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -57,6 +57,23 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108675
+  pref-name: DUPILUMAB
+  molecule-type: Antibody
+  first-approval: 2017
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D11AH05
+  targets:
+  - id: CHEMBL3580490
+    name: Interleukin-4 receptor subunit alpha
+    action: ANTAGONIST
+  properties: {}
 ---
 
 # Dupilumab (Dupixent, subcutaneous)
@@ -71,10 +88,25 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Dupilumab, Dupixent, subcutaneous
+- **ChEMBL:** [CHEMBL2108675](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108675/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Monoclonal antibody against the IL-4 receptor alpha subunit; the first biologic approved for atopic dermatitis.
+
+## Mechanism
+
+Interleukin-4 receptor subunit alpha antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2017
+- **ATC D11AH05:** DERMATOLOGICALS › OTHER DERMATOLOGICAL PREPARATIONS › Agents for dermatitis, excluding corticosteroids
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-4 receptor subunit alpha (CHEMBL3580490)|Interleukin-4 receptor subunit alpha]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -84,6 +116,12 @@ Monoclonal antibody against the IL-4 receptor alpha subunit; the first biologic 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Abrocitinib (Cibinqo)]], [[Alitretinoin]], [[Alitretinoin (oral, Toctino)]], [[Crisaborole (topical 2% ointment, Eucrisa)]], [[Delgocitinib]], [[Deuruxolitinib (Leqselvi)]], [[Lebrikizumab (Ebglyss)]], [[Nemolizumab]], [[Pimecrolimus]], [[Ruxolitinib]], [[Ruxolitinib (topical)]], [[Ruxolitinib cream 1.5% (Opzelura)]]
 
 ## Safety routing
 

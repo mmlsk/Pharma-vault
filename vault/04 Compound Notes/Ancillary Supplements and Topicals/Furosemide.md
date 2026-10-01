@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Sodium-(potassium)-chloride cotransporter 2 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL35
+chembl-max-phase: 4
 half-life:
   value: 100.0
   value-max: null
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Furosemide
@@ -68,6 +70,40 @@ pk-source:
   revision: 1372679847
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL35
+  pref-name: FUROSEMIDE
+  molecule-type: Small molecule
+  first-approval: 1966
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C03CA01
+  targets:
+  - id: CHEMBL1874
+    name: Solute carrier family 12 member 1
+    action: INHIBITOR
+  properties:
+    full-mwt: 330.75
+    mw-freebase: 330.75
+    alogp: 1.89
+    psa: 122.63
+    hba: 5
+    hbd: 3
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.77
+    full-molformula: C12H11ClN2O5S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: dba00759-87b4-4ecf-998e-ba03ed3d2f1a
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dba00759-87b4-4ecf-998e-ba03ed3d2f1a
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Furosemide
@@ -81,10 +117,30 @@ pk-source:
 - **Compound ID:** `furosemide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL35](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL35/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Loop diuretic for edema and heart failure; rapid fluid shifts and electrolyte loss make unsupervised use hazardous.
+
+## Mechanism
+
+Sodium-(potassium)-chloride cotransporter 2 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1966
+- **Flags:** black-box warning
+- **ATC C03CA01:** CARDIOVASCULAR SYSTEM › HIGH-CEILING DIURETICS › Sulfonamides, plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 330.75 | 1.89 | 122.63 | 3/5 | 0 | C12H11ClN2O5S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Solute carrier family 12 member 1 (CHEMBL1874)|Solute carrier family 12 member 1]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +159,18 @@ Loop diuretic for edema and heart failure; rapid fluid shifts and electrolyte lo
 | Bioavailability | 43–69 % | 43–69% |
 | Metabolism | hepatic | Liver and kidney glucuronidation |
 | Excretion | mainly urinary | Kidney (66%), bile duct (33%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set dba00759…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dba00759-87b4-4ecf-998e-ba03ed3d2f1a), label version 20260817. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Bumetanide]] (Solute carrier family 12 member 1), [[Ethacrynic Acid]] (Solute carrier family 12 member 1), [[Torsemide]] (Solute carrier family 12 member 1)
+- **Same ATC subgroup:** [[Bumetanide]], [[Torsemide]]
 
 ## Safety routing
 

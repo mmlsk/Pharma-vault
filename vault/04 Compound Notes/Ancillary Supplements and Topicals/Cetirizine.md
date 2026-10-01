@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Cetirizine
@@ -68,6 +70,38 @@ pk-source:
   revision: 1372254560
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1000
+  pref-name: CETIRIZINE
+  molecule-type: Small molecule
+  first-approval: 1995
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AE07
+  - S01GX12
+  targets: []
+  properties:
+    full-mwt: 388.9
+    mw-freebase: 388.9
+    alogp: 3.15
+    psa: 53.01
+    hba: 4
+    hbd: 1
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.7
+    full-molformula: C21H25ClN2O3
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 6fc5ef4e-4aea-4c34-8d51-0c07ab9aad59
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6fc5ef4e-4aea-4c34-8d51-0c07ab9aad59
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Cetirizine
@@ -81,7 +115,7 @@ pk-source:
 - **Compound ID:** `cetirizine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1000](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1000/) · max phase 4
+- **ChEMBL:** [CHEMBL1000](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1000/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +124,17 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1995
+- **ATC R06AE07:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Piperazine derivatives
+- **ATC S01GX12:** SENSORY ORGANS › DECONGESTANTS AND ANTIALLERGICS › Other antiallergics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 388.9 | 3.15 | 53.01 | 1/4 | 0 | C21H25ClN2O3 |
 
 ## Evidence boundaries
 
@@ -108,6 +153,17 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Bioavailability | 70 % | Well-absorbed (>70%) |
 | Metabolism | - | Minimal (non-cytochrome P450-mediated) |
 | Excretion | - | Urine: 70–85%; Feces: 10–13% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 6fc5ef4e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6fc5ef4e-4aea-4c34-8d51-0c07ab9aad59), label version 20260803. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 8.2, 8.6)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alcaftadine]], [[Azelastine]], [[Bilastine]], [[Buclizine]], [[Cyclizine]], [[Emedastine]], [[Epinastine]], [[Ketotifen]], [[Levocabastine]], [[Levocetirizine]], [[Meclizine]], [[Olopatadine]]
 
 ## Safety routing
 

@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2106999
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -58,6 +58,8 @@ tags:
 - group/steroids
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Quinbolone
@@ -65,6 +67,28 @@ pk-source:
   revision: 1367650149
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2106999
+  pref-name: QUINBOLONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A14AA06
+  targets: []
+  properties:
+    full-mwt: 352.52
+    mw-freebase: 352.52
+    alogp: 5.75
+    psa: 26.3
+    hba: 2
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 1
+    qed-weighted: 0.63
+    full-molformula: C24H32O2
 ---
 
 # Quinbolone (Anabolicum)
@@ -79,10 +103,20 @@ pk-source:
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Quinbolone, Anabolicum
+- **ChEMBL:** [CHEMBL2106999](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2106999/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Orally active boldenone enol ether from the 1960s, marketed in Italy and long discontinued. Notable for being non-17-alkylated, so it lacks the hepatotoxicity of oral steroids that are.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A14AA06:** ALIMENTARY TRACT AND METABOLISM › ANABOLIC STEROIDS › Androstan derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 352.52 | 5.75 | 26.3 | 0/2 | 1 | C24H32O2 |
 
 ## Evidence boundaries
 
@@ -98,6 +132,12 @@ Orally active boldenone enol ether from the 1960s, marketed in Italy and long di
 |---|---|---|
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Urine |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Anadrol (Oxymetholone)]], [[Anavar (Oxandrolone)]], [[DHEA]], [[DHT (Dihydrotestosterone)]], [[Dianabol (Methandienone)]], [[Methandrostenolone]], [[Norethandrolone (Nilevar)]], [[Primobolan (Methenolone)]], [[Winstrol (Stanozolol)]]
 
 ## Safety routing
 

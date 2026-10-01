@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL841
+chembl-max-phase: 4
 half-life:
   value: 9.0
   value-max: 14.0
@@ -61,6 +61,7 @@ tags:
 - group/gi
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Loperamide
@@ -68,6 +69,36 @@ pk-source:
   revision: 1373298035
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL841
+  pref-name: LOPERAMIDE
+  molecule-type: Small molecule
+  first-approval: 1976
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - A07DA03
+  - A07DA53
+  targets: []
+  properties:
+    full-mwt: 477.05
+    mw-freebase: 477.05
+    alogp: 5.09
+    psa: 43.78
+    hba: 3
+    hbd: 1
+    rtb: 7
+    num-ro5-violations: 1
+    qed-weighted: 0.52
+    full-molformula: C29H33ClN2O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Loperamide
@@ -81,10 +112,23 @@ pk-source:
 - **Compound ID:** `loperamide-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL841](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL841/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Over-the-counter antidiarrhoeal that is a potent mu agonist kept out of the brain by P-glycoprotein, and cardiotoxic when that is defeated.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1976
+- **Flags:** black-box warning
+- **ATC A07DA03:** ALIMENTARY TRACT AND METABOLISM › ANTIPROPULSIVES › Antipropulsives
+- **ATC A07DA53:** ALIMENTARY TRACT AND METABOLISM › ANTIPROPULSIVES › Antipropulsives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 477.05 | 5.09 | 43.78 | 1/3 | 1 | C29H33ClN2O2 |
 
 ## Evidence boundaries
 
@@ -104,6 +148,14 @@ Over-the-counter antidiarrhoeal that is a potent mu agonist kept out of the brai
 | Metabolism | hepatic | Liver (extensive) |
 | Metabolites | - | N-Desmethyloperamide, Loperamide-N-oxide, Loperamide carbinolamide metabolite |
 | Excretion | - | Feces (30–40%), urine (1%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Eluxadoline]], [[Morphine]]
 
 ## Safety routing
 

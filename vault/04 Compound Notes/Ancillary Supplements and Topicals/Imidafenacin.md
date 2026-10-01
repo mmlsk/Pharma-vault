@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Muscarinic acetylcholine receptor M3 antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL53366
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL53366
+  pref-name: IMIDAFENACIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04BD14
+  targets:
+  - id: CHEMBL245
+    name: Muscarinic acetylcholine receptor M3
+    action: ANTAGONIST
+  properties:
+    full-mwt: 319.41
+    mw-freebase: 319.41
+    alogp: 3.05
+    psa: 60.91
+    hba: 3
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.76
+    full-molformula: C20H21N3O
 ---
 
 # Imidafenacin
@@ -67,10 +93,28 @@ tags:
 - **Compound ID:** `imidafenacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL53366](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL53366/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Antagonises muscarinic receptors; peripheral selectivity determines how much dry mouth, constipation and central anticholinergic burden an agent carries; approved in Japan.
+
+## Mechanism
+
+Muscarinic acetylcholine receptor M3 antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC G04BD14:** GENITO URINARY SYSTEM AND SEX HORMONES › UROLOGICALS › Drugs for urinary frequency and incontinence
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 319.41 | 3.05 | 60.91 | 1/3 | 0 | C20H21N3O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Muscarinic acetylcholine receptor M3 (CHEMBL245)|Muscarinic acetylcholine receptor M3]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +124,13 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Atropine]] (Muscarinic acetylcholine receptor M3), [[Navafenterol]] (Muscarinic acetylcholine receptor M3), [[Oxybutynin]] (Muscarinic acetylcholine receptor M3), [[Pilocarpine]] (Muscarinic acetylcholine receptor M3), [[Talsaclidine]] (Muscarinic acetylcholine receptor M3), [[Tropicamide]] (Muscarinic acetylcholine receptor M3)
+- **Same ATC subgroup:** [[Darifenacin]], [[Fesoterodine]], [[Oxybutynin]], [[Propiverine]], [[Solifenacin]], [[Tolterodine]]
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL72
+chembl-max-phase: 4
 half-life:
   value: 12.0
   value-max: 30.0
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Desipramine
@@ -69,6 +70,35 @@ pk-source:
   revision: 1328703992
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL72
+  pref-name: DESIPRAMINE
+  molecule-type: Small molecule
+  first-approval: 1964
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N06AA01
+  targets: []
+  properties:
+    full-mwt: 266.39
+    mw-freebase: 266.39
+    alogp: 3.53
+    psa: 15.27
+    hba: 2
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.85
+    full-molformula: C18H22N2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Desipramine
@@ -82,10 +112,22 @@ pk-source:
 - **Compound ID:** `desipramine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL72](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL72/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits norepinephrine reuptake, often alongside serotonin effects; blood pressure and discontinuation effects require attention.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1964
+- **Flags:** black-box warning
+- **ATC N06AA01:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Non-selective monoamine reuptake inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 266.39 | 3.53 | 15.27 | 1/2 | 0 | C18H22N2 |
 
 ## Evidence boundaries
 
@@ -105,6 +147,15 @@ Inhibits norepinephrine reuptake, often alongside serotonin effects; blood press
 | Metabolism | hepatic | Liver (CYP2D6) |
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Urine (70%), feces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amineptine]], [[Amitriptyline]], [[Amoxapine]], [[Clomipramine]], [[Dibenzepin]], [[Dothiepin]], [[Doxepin]], [[Doxepin, low dose (Silenor)]], [[Imipramine]], [[Maprotiline]], [[Nortriptyline]], [[Protriptyline]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

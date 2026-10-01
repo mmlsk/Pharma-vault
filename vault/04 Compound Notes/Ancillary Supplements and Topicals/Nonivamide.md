@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL75124
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL75124
+  pref-name: NONIVAMIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 293.41
+    mw-freebase: 293.41
+    alogp: 3.77
+    psa: 58.56
+    hba: 3
+    hbd: 2
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.65
+    full-molformula: C17H27NO3
 ---
 
 # Nonivamide
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `nonivamide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL75124](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL75124/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Activates TRPV1 on nociceptive afferents, where sustained exposure defunctionalises the nerve terminal and produces lasting analgesia; synthetic capsaicin analogue.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 293.41 | 3.77 | 58.56 | 2/3 | 0 | C17H27NO3 |
 
 ## Evidence boundaries
 

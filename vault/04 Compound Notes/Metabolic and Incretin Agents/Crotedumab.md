@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL3707278
 chembl-max-phase: 2
 half-life:
   value: null
@@ -55,6 +55,22 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3707278
+  pref-name: CROTEDUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1985
+    name: Glucagon receptor
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Crotedumab
@@ -68,6 +84,7 @@ tags:
 - **Compound ID:** `crotedumab-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL3707278](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3707278/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -77,6 +94,14 @@ Crotedumab is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is 
 
 glucagon receptor inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucagon receptor (CHEMBL1985)|Glucagon receptor]] - inhibitor · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +110,12 @@ glucagon receptor inhibitor _(ChEMBL curated mechanism, as quoted by the source)
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Adomeglivant]] (Glucagon receptor), [[Cotadutide]] (Glucagon receptor), [[Dasiglucagon Hydrochloride]] (Glucagon receptor), [[Efinopegdutide]] (Glucagon receptor), [[Glucagon]] (Glucagon receptor), [[Glucagon Hydrochloride]] (Glucagon receptor), [[Mk-3577]] (Glucagon receptor), [[Retatrutide]] (Glucagon receptor), [[Survodutide]] (Glucagon receptor)
 
 ## Safety routing
 

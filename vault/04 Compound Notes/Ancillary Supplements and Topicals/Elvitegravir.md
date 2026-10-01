@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Human immunodeficiency virus type 1 integrase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL204656
+chembl-max-phase: 4
 half-life:
   value: null
   value-max: null
@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Elvitegravir
@@ -64,6 +65,38 @@ pk-source:
   revision: 1358931219
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL204656
+  pref-name: ELVITEGRAVIR
+  molecule-type: Small molecule
+  first-approval: 2012
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AJ02
+  targets:
+  - id: CHEMBL3471
+    name: Human immunodeficiency virus type 1 integrase
+    action: INHIBITOR
+  properties:
+    full-mwt: 447.89
+    mw-freebase: 447.89
+    alogp: 4.28
+    psa: 88.76
+    hba: 5
+    hbd: 2
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.56
+    full-molformula: C23H23ClFNO5
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Elvitegravir
@@ -77,10 +110,29 @@ pk-source:
 - **Compound ID:** `elvitegravir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL204656](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL204656/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits HIV integrase strand transfer as a component of combination antiretroviral therapy.
+
+## Mechanism
+
+Human immunodeficiency virus type 1 integrase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2012
+- **ATC J05AJ02:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Integrase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 447.89 | 4.28 | 88.76 | 2/5 | 0 | C23H23ClFNO5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Human immunodeficiency virus type 1 integrase (CHEMBL3471)|Human immunodeficiency virus type 1 integrase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -98,6 +150,15 @@ Inhibits HIV integrase strand transfer as a component of combination antiretrovi
 | Protein binding | 98 % | 98% |
 | Metabolism | hepatic | liver, via CYP3A |
 | Excretion | - | liver 93%, renal 7% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Bictegravir]] (Human immunodeficiency virus type 1 integrase), [[Cabotegravir]] (Human immunodeficiency virus type 1 integrase)
+- **Same ATC subgroup:** [[Cabotegravir]], [[Dolutegravir]], [[Raltegravir]]
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Potassium chelating agent
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2107875
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -59,6 +59,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Patiromer
@@ -66,6 +67,20 @@ pk-source:
   revision: 1329362585
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2107875
+  pref-name: PATIROMER
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3545434
+    name: Potassium
+    action: CHELATING AGENT
+  properties: {}
 ---
 
 # Patiromer
@@ -79,10 +94,23 @@ pk-source:
 - **Compound ID:** `patiromer-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2107875](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107875/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Potassium binding polymer that allows renin-angiotensin blockade to continue in patients who would otherwise become hyperkalaemic.
+
+## Mechanism
+
+Potassium chelating agent _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Potassium (CHEMBL3545434)|Potassium]] - chelating agent · METAL
 
 ## Evidence boundaries
 

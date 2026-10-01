@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL455136
 chembl-max-phase: 3
 half-life:
   value: 13.0
@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Almorexant
@@ -63,6 +64,37 @@ pk-source:
   revision: 1372578453
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL455136
+  pref-name: ALMOREXANT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3307226
+    name: Orexin receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 512.57
+    mw-freebase: 512.57
+    alogp: 5.74
+    psa: 50.8
+    hba: 4
+    hbd: 1
+    rtb: 8
+    num-ro5-violations: 2
+    qed-weighted: 0.42
+    full-molformula: C29H31F3N2O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Almorexant
@@ -76,6 +108,7 @@ pk-source:
 - **Compound ID:** `almorexant-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL455136](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL455136/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -84,6 +117,18 @@ Almorexant is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is 
 ## Mechanism
 
 orexin receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 512.57 | 5.74 | 50.8 | 1/4 | 2 | C29H31F3N2O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Orexin receptor (CHEMBL3307226)|Orexin receptor]] - antagonist · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -99,6 +144,14 @@ orexin receptor antagonist _(ChEMBL curated mechanism, as quoted by the source).
 |---|---|---|
 | Elimination t½ | 13–19 h | 13–19 hours |
 | Metabolism | hepatic | Hepatic |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Daridorexant (Quviviq)]] (Orexin receptor), [[Filorexant]] (Orexin receptor), [[Orn-0829 Hydrate]] (Orexin receptor), [[Suvorexant (Belsomra)]] (Orexin receptor)
 
 ## Safety routing
 

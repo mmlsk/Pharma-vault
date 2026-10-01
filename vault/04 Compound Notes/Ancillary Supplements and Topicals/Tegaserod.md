@@ -15,10 +15,10 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL76370
+chembl-max-phase: 4
 half-life:
-  value: 5.0
+  value: 11.0
   value-max: null
   unit: h
   notes: 11 ± 5 hours
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tegaserod
@@ -68,6 +69,35 @@ pk-source:
   revision: 1335304481
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL76370
+  pref-name: TEGASEROD
+  molecule-type: Small molecule
+  first-approval: 2002
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - A06AX06
+  targets: []
+  properties:
+    full-mwt: 301.39
+    mw-freebase: 301.39
+    alogp: 2.81
+    psa: 85.29
+    hba: 3
+    hbd: 4
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.27
+    full-molformula: C16H23N5O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tegaserod
@@ -81,10 +111,22 @@ pk-source:
 - **Compound ID:** `tegaserod-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL76370](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL76370/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 5-HT4 partial agonist withdrawn in 2007 for cardiovascular events, later reintroduced with restrictions.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2002
+- **Flags:** withdrawn
+- **ATC A06AX06:** ALIMENTARY TRACT AND METABOLISM › DRUGS FOR CONSTIPATION › Other drugs for constipation
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 301.39 | 2.81 | 85.29 | 4/3 | 0 | C16H23N5O |
 
 ## Evidence boundaries
 
@@ -98,11 +140,19 @@ pk-source:
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 5 h | 11 ± 5 hours |
+| Elimination t½ | 11 h | 11 ± 5 hours |
 | Protein binding | 98 % | 98% |
 | Bioavailability | 10 % | 10% |
 | Metabolism | hepatic | Gastric and hepatic |
 | Excretion | - | Fecal and renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Linaclotide]], [[Lubiprostone]], [[Plecanatide]], [[Prucalopride]], [[Tenapanor]]
 
 ## Safety routing
 

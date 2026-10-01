@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4298197
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,25 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4298197
+  pref-name: VUPANORSEN
+  molecule-type: Oligonucleotide
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4622825
+    name: Angiopoietin like 3 (ANGPTL3) mRNA
+    action: ANTISENSE INHIBITOR
+  - id: CHEMBL2084
+    name: Asialoglycoprotein receptor 1
+    action: BINDING AGENT
+  properties: {}
 ---
 
 # Vupanorsen
@@ -67,6 +86,7 @@ tags:
 - **Compound ID:** `vupanorsen-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL4298197](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4298197/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -75,6 +95,15 @@ Vupanorsen is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is 
 ## Mechanism
 
 angiopoietin like 3 (ANGPTL3) mRNA antisense inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Oligonucleotide
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Angiopoietin like 3 (ANGPTL3) mRNA (CHEMBL4622825)|Angiopoietin like 3 (ANGPTL3) mRNA]] - antisense inhibitor · NUCLEIC-ACID
+- [[Asialoglycoprotein receptor 1 (CHEMBL2084)|Asialoglycoprotein receptor 1]] - binding agent · SINGLE PROTEIN
 
 ## Evidence boundaries
 

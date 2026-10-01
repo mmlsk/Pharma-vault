@@ -1,9 +1,11 @@
 ---
 type: compound
 schema-version: 2
-compound-id: methylene-blue-compound
-name: Methylene Blue
-aliases: []
+compound-id: bemitil-compound
+name: Bemitil
+aliases:
+- bemetil
+- Bemethyl
 cluster: Nootropics
 group: nootropic
 class: null
@@ -18,19 +20,18 @@ review-status: stub
 chembl-id: null
 chembl-max-phase: null
 half-life:
-  value: 5.0
-  value-max: 24.0
-  unit: h
-  notes: 5–24 hours (IV)
+  value: null
+  unit: null
+  notes: null
 protein-binding:
   value: null
   unit: percent
   notes: null
 active-metabolites: []
 renal-clearance:
-  primary-route: true
+  primary-route: null
   fraction-excreted-unchanged: null
-  notes: 'Renal; In rats: 18%(PO), 28% ()'
+  notes: null
 hepatic-clearance:
   primary-route: null
   extraction-ratio: null
@@ -49,24 +50,17 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - evidence-limited
-source-status: auto-extracted
+source-status: source-summary-only
 last-reviewed: null
 tags:
 - compound
-- source-derived
+- curated-addition
 - group/nootropic
 - stub
-- pk-auto
-pk-source:
-  type: wikipedia-infobox
-  title: Methylene blue
-  url: https://en.wikipedia.org/w/index.php?title=Methylene_blue&oldid=1371817588
-  revision: 1371817588
-  retrieved: '2026-09-26'
-  chembl-confirmed: false
+pubchem-cid: 9816609
 ---
 
-# Methylene Blue
+# Bemitil
 
 > [!warning] Source-derived stub
 > Generated from the source catalogue. Not reviewed. Not medical advice; contains no dosing guidance.
@@ -74,13 +68,15 @@ pk-source:
 
 ## Identity
 
-- **Compound ID:** `methylene-blue-compound`
+- **Compound ID:** `bemitil-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **Aliases:** bemetil, Bemethyl
+- **PubChem:** [CID 9816609](https://pubchem.ncbi.nlm.nih.gov/compound/9816609)
 
 ## Source summary
 
-Redox dye acting as an alternative electron carrier at low dose; also a MAO-A inhibitor, so serotonin syndrome with serotonergic drugs is a real risk.
+Curated addition (backlog: Grey-market nootropics). Identity resolved by exact name match (PubChem name → CID) to PubChem CID 9816609 (Bemethyl). No ChEMBL record: structure-level identity only, no curated mechanism.
 
 ## Evidence boundaries
 
@@ -89,13 +85,7 @@ Redox dye acting as an alternative electron carrier at low dose; also a MAO-A in
 
 ## Pharmacokinetics
 
-> [!info] Auto-extracted - verify before use
-> Parsed from the [Wikipedia infobox of *Methylene blue*](https://en.wikipedia.org/w/index.php?title=Methylene_blue&oldid=1371817588) (revision 1371817588, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
-
-| Parameter | Parsed | Source text |
-|---|---|---|
-| Elimination t½ | 5–24 h | 5–24 hours (IV) |
-| Excretion | mainly urinary | Renal; In rats: 18%(PO), 28% () |
+_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
 
 ## Safety routing
 

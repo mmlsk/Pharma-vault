@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL485
+chembl-max-phase: 4
 half-life:
   value: 2.5
   value-max: 3.0
@@ -62,6 +62,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Codeine
@@ -69,6 +70,37 @@ pk-source:
   revision: 1374248804
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL485
+  pref-name: CODEINE
+  molecule-type: Small molecule
+  first-approval: 1952
+  black-box-warning: true
+  withdrawn: true
+  atc-codes:
+  - N02AA59
+  - N02AA79
+  - R05DA04
+  targets: []
+  properties:
+    full-mwt: 299.37
+    mw-freebase: 299.37
+    alogp: 1.5
+    psa: 41.93
+    hba: 4
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C18H21NO3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Codeine
@@ -82,10 +114,24 @@ pk-source:
 - **Compound ID:** `codeine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL485](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL485/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Prodrug opioid whose entire analgesic effect depends on CYP2D6 conversion to morphine, making it the textbook pharmacogenetic drug.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1952
+- **Flags:** black-box warning, withdrawn
+- **ATC N02AA59:** NERVOUS SYSTEM › OPIOIDS › Natural opium alkaloids
+- **ATC N02AA79:** NERVOUS SYSTEM › OPIOIDS › Natural opium alkaloids
+- **ATC R05DA04:** RESPIRATORY SYSTEM › COUGH SUPPRESSANTS, EXCL. COMBINATIONS WITH EXPECTORANTS › Opium alkaloids and derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 299.37 | 1.5 | 41.93 | 1/4 | 0 | C18H21NO3 |
 
 ## Evidence boundaries
 
@@ -104,6 +150,15 @@ Prodrug opioid whose entire analgesic effect depends on CYP2D6 conversion to mor
 | Metabolism | hepatic | Liver: CYP2D6 (to morphine), CYP3A4 (to norcodeine), UGT2B7 (to 3- and 6-glucuronides of codeine, norcodeine, and morphine) |
 | CYP (metabolised by) | CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Morphine; Norcodeine; Others (e.g., conjugates) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Dextromethorphan]], [[Hydromorphone]], [[Morphine]], [[Oxycodone]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

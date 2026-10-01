@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Loteprednol
@@ -68,6 +70,40 @@ pk-source:
   revision: 1343785671
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200865
+  pref-name: LOTEPREDNOL ETABONATE
+  molecule-type: Small molecule
+  first-approval: 1998
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - S01BA14
+  targets:
+  - id: CHEMBL2034
+    name: Glucocorticoid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 466.96
+    mw-freebase: 466.96
+    alogp: 3.92
+    psa: 99.13
+    hba: 7
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.49
+    full-molformula: C24H31ClO7
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 36cfd5b8-c892-44e1-aaed-fb32d7aeca7c
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=36cfd5b8-c892-44e1-aaed-fb32d7aeca7c
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Loteprednol Etabonate
@@ -81,7 +117,7 @@ pk-source:
 - **Compound ID:** `loteprednol-etabonate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200865](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200865/) · max phase 4
+- **ChEMBL:** [CHEMBL1200865](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200865/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +126,20 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1998
+- **ATC S01BA14:** SENSORY ORGANS › ANTIINFLAMMATORY AGENTS › Corticosteroids, plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 466.96 | 3.92 | 99.13 | 1/7 | 0 | C24H31ClO7 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucocorticoid receptor (CHEMBL2034)|Glucocorticoid receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -108,6 +158,19 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 | Bioavailability | - | None |
 | Metabolism | - | Ester hydrolysis |
 | Metabolites | - | Δ1-cortienic acid and its etabonate |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 36cfd5b8…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=36cfd5b8-c892-44e1-aaed-fb32d7aeca7c), label version 20260713. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Loteprednol Etabonate]]
+- **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor)
+- **Same ATC subgroup:** [[Alclometasone Dipropionate]], [[Betamethasone]], [[Cortisone Acetate]], [[Desonide]], [[Dexamethasone]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluorometholone]], [[Hydrocortisone (Cortef)]], [[Loteprednol Etabonate]], [[Medrysone]], [[Prednisolone]]
 
 ## Safety routing
 

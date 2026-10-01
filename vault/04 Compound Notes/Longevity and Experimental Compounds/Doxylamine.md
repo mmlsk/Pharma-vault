@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1004
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: 12.0
@@ -63,6 +63,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Doxylamine
@@ -70,6 +71,36 @@ pk-source:
   revision: 1374112637
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1004
+  pref-name: DOXYLAMINE
+  molecule-type: Small molecule
+  first-approval: 1948
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AA09
+  - R06AA59
+  targets: []
+  properties:
+    full-mwt: 270.38
+    mw-freebase: 270.38
+    alogp: 2.92
+    psa: 25.36
+    hba: 3
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.81
+    full-molformula: C17H22N2O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Doxylamine
@@ -83,10 +114,22 @@ pk-source:
 - **Compound ID:** `doxylamine-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL1004](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1004/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Sedating first-generation antihistamine used OTC for short-term insomnia and in pregnancy nausea combinations; tolerance and anticholinergic effects limit repeated use.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1948
+- **ATC R06AA09:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Aminoalkyl ethers
+- **ATC R06AA59:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Aminoalkyl ethers
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 270.38 | 2.92 | 25.36 | 0/3 | 0 | C17H22N2O |
 
 ## Evidence boundaries
 
@@ -105,6 +148,15 @@ Sedating first-generation antihistamine used OTC for short-term insomnia and in 
 | Metabolism | hepatic | Hepatic (CYP2D6, CYP1A2, CYP2C9) |
 | CYP (metabolised by) | CYP1A2, CYP2C9, CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Urine (60%), feces (40%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Bromodiphenhydramine]], [[Carbinoxamine]], [[Chlorphenoxamine]], [[Clemastine]], [[Dimenhydrinate]], [[Diphenhydramine (Benadryl)]], [[Diphenylpyraline]]
+- **Shared CYP substrate pool:** CYP1A2 (+42 others), CYP2C9 (+40 others), CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

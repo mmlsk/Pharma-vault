@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1186579
+chembl-max-phase: 4
 half-life:
   value: 8.0
   value-max: null
@@ -57,6 +57,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Methylnaltrexone
@@ -64,6 +65,34 @@ pk-source:
   revision: 1341889075
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1186579
+  pref-name: METHYLNALTREXONE
+  molecule-type: Small molecule
+  first-approval: 2008
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 356.44
+    mw-freebase: 356.44
+    alogp: 1.67
+    psa: 66.76
+    hba: 4
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.79
+    full-molformula: C21H26NO4+
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Methylnaltrexone
@@ -77,10 +106,20 @@ pk-source:
 - **Compound ID:** `methylnaltrexone-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1186579](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1186579/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Quaternary opioid antagonist that cannot cross the blood-brain barrier, so it reverses constipation without reversing analgesia.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2008
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 356.44 | 1.67 | 66.76 | 2/4 | 0 | C21H26NO4+ |
 
 ## Evidence boundaries
 
@@ -98,6 +137,8 @@ Quaternary opioid antagonist that cannot cross the blood-brain barrier, so it re
 | Protein binding | 11–15.3 % | 11–15.3% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Urine (50%), faeces (50%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

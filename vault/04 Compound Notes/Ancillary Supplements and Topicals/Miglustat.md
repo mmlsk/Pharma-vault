@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Ceramide glucosyltransferase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1029
+chembl-max-phase: 4
 half-life:
   value: 6.0
   value-max: 7.0
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Miglustat
@@ -68,6 +70,39 @@ pk-source:
   revision: 1364995192
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1029
+  pref-name: MIGLUSTAT
+  molecule-type: Small molecule
+  first-approval: 2002
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A16AX06
+  targets:
+  - id: CHEMBL2063
+    name: Ceramide glucosyltransferase
+    action: INHIBITOR
+  properties:
+    full-mwt: 219.28
+    mw-freebase: 219.28
+    alogp: -1.45
+    psa: 84.16
+    hba: 5
+    hbd: 4
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.46
+    full-molformula: C10H21NO4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: aa9a3ab6-2376-4b52-9e54-15dc87f25260
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=aa9a3ab6-2376-4b52-9e54-15dc87f25260
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Miglustat
@@ -81,10 +116,30 @@ pk-source:
 - **Compound ID:** `miglustat-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1029](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1029/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Iminosugar substrate reduction therapy for Gaucher and Niemann-Pick type C, small enough to cross into the brain.
+
+## Mechanism
+
+Ceramide glucosyltransferase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2002
+- **Flags:** prodrug
+- **ATC A16AX06:** ALIMENTARY TRACT AND METABOLISM › OTHER ALIMENTARY TRACT AND METABOLISM PRODUCTS › Various alimentary tract and metabolism products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 219.28 | -1.45 | 84.16 | 4/5 | 0 | C10H21NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Ceramide glucosyltransferase (CHEMBL2063)|Ceramide glucosyltransferase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +158,16 @@ Iminosugar substrate reduction therapy for Gaucher and Niemann-Pick type C, smal
 | Bioavailability | 97 % | 97% |
 | Metabolism | - | Nil |
 | Excretion | mainly urinary | Kidney, unchanged |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set aa9a3ab6…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=aa9a3ab6-2376-4b52-9e54-15dc87f25260), label version 20251231. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 6, 7, 36, 48, 150)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alpha-Lipoic Acid (ALA)]], [[Eliglustat]], [[Glycerol Phenylbutyrate]], [[Lonafarnib (Zokinvy)]], [[Migalastat]], [[Nitisinone]], [[Sodium Phenylbutyrate]], [[Teduglutide]], [[Trientine]]
 
 ## Safety routing
 

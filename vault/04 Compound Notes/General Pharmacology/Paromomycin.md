@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL370143
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -59,6 +59,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Paromomycin
@@ -66,6 +67,28 @@ pk-source:
   revision: 1374394030
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL370143
+  pref-name: PAROMOMYCIN
+  molecule-type: Small molecule
+  first-approval: 1969
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A07AA06
+  targets: []
+  properties:
+    full-mwt: 615.63
+    mw-freebase: 615.63
+    alogp: -8.86
+    psa: 347.32
+    hba: 19
+    hbd: 13
+    rtb: 9
+    num-ro5-violations: 3
+    qed-weighted: 0.11
+    full-molformula: C23H45N5O14
 ---
 
 # Paromomycin
@@ -79,10 +102,21 @@ pk-source:
 - **Compound ID:** `paromomycin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL370143](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL370143/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Aminoglycoside given orally for luminal amoebiasis and by injection for visceral leishmaniasis, exploiting its near-zero absorption.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1969
+- **ATC A07AA06:** ALIMENTARY TRACT AND METABOLISM › INTESTINAL ANTIINFECTIVES › Antibiotics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 615.63 | -8.86 | 347.32 | 13/19 | 3 | C23H45N5O14 |
 
 ## Evidence boundaries
 
@@ -99,6 +133,12 @@ Aminoglycoside given orally for luminal amoebiasis and by injection for visceral
 | Bioavailability | - | Poorly absorbed in the GI tract |
 | Metabolism | - | Not available |
 | Excretion | mainly non-renal | Fecal |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Amphotericin B]], [[Fidaxomicin]], [[Polymyxin B]], [[Rifaximin]], [[Vancomycin]]
 
 ## Safety routing
 

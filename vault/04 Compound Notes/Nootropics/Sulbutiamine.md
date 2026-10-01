@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1874002
+chembl-max-phase: 2
 half-life:
   value: 5.0
   value-max: null
@@ -57,6 +57,8 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Sulbutiamine
@@ -64,6 +66,35 @@ pk-source:
   revision: 1376302376
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1874002
+  pref-name: SULBUTIAMINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A11DA02
+  targets: []
+  properties:
+    full-mwt: 702.9
+    mw-freebase: 702.9
+    alogp: 4.69
+    psa: 196.82
+    hba: 14
+    hbd: 2
+    rtb: 19
+    num-ro5-violations: 2
+    qed-weighted: 0.12
+    full-molformula: C32H46N8O6S2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Sulbutiamine
@@ -77,10 +108,20 @@ pk-source:
 - **Compound ID:** `sulbutiamine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1874002](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1874002/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 A lipophilic thiamine dimer that crosses the blood-brain barrier where thiamine itself does not. Developed in Japan for asthenia; tolerance develops quickly.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A11DA02:** ALIMENTARY TRACT AND METABOLISM › VITAMIN B1, PLAIN AND IN COMBINATION WITH VITAMIN B6 AND B12 › Vitamin B1, plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 702.9 | 4.69 | 196.82 | 2/14 | 2 | C32H46N8O6S2 |
 
 ## Evidence boundaries
 
@@ -96,6 +137,8 @@ A lipophilic thiamine dimer that crosses the blood-brain barrier where thiamine 
 |---|---|---|
 | Elimination t½ | 5 h | 5 hours |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

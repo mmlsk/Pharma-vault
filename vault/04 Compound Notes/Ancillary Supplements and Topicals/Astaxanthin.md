@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Antioxidant, anti-inflammatory and antiapoptotic activities
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1255871
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1255871
+  pref-name: ASTAXANTHIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 596.85
+    mw-freebase: 596.85
+    alogp: 8.91
+    psa: 74.6
+    hba: 4
+    hbd: 2
+    rtb: 10
+    num-ro5-violations: 2
+    qed-weighted: 0.25
+    full-molformula: C40H52O4
 ---
 
 # Astaxanthin
@@ -67,10 +90,23 @@ tags:
 - **Compound ID:** `astaxanthin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1255871](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1255871/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Potent carotenoid antioxidant studied for protecting skin against UV-driven photoaging.
+
+## Mechanism
+
+Antioxidant, anti-inflammatory and antiapoptotic activities _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 596.85 | 8.91 | 74.6 | 2/4 | 2 | C40H52O4 |
 
 ## Evidence boundaries
 

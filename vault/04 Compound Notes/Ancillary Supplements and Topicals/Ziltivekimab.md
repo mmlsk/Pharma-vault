@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin-6 binding agent; Interleukin-6 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297732
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,25 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297732
+  pref-name: ZILTIVEKIMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1795129
+    name: Interleukin-6
+    action: INHIBITOR
+  - id: CHEMBL1795129
+    name: Interleukin-6
+    action: BINDING AGENT
+  properties: {}
 ---
 
 # Ziltivekimab
@@ -67,10 +86,24 @@ tags:
 - **Compound ID:** `ziltivekimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4297732](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297732/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Monoclonal antibody against the interleukin-6 ligand, developed specifically for residual inflammatory cardiovascular risk.
+
+## Mechanism
+
+Interleukin-6 binding agent; Interleukin-6 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-6 (CHEMBL1795129)|Interleukin-6]] - inhibitor · SINGLE PROTEIN
+- [[Interleukin-6 (CHEMBL1795129)|Interleukin-6]] - binding agent · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +113,12 @@ Monoclonal antibody against the interleukin-6 ligand, developed specifically for
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Olokizumab]] (Interleukin-6), [[Siltuximab]] (Interleukin-6)
 
 ## Safety routing
 

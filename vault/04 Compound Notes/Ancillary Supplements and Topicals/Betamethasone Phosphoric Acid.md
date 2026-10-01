@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201207
+  pref-name: BETAMETHASONE PHOSPHORIC ACID
+  molecule-type: Small molecule
+  first-approval: 1965
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 472.45
+    mw-freebase: 472.45
+    alogp: 2.01
+    psa: 141.36
+    hba: 6
+    hbd: 4
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.46
+    full-molformula: C22H30FO8P
 ---
 
 # Betamethasone Phosphoric Acid
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `betamethasone-phosphoric-acid-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201207](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201207/) · max phase 4
+- **ChEMBL:** [CHEMBL1201207](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201207/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,16 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1965
+- **Flags:** prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 472.45 | 2.01 | 141.36 | 4/6 | 0 | C22H30FO8P |
 
 ## Evidence boundaries
 

@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ketorolac
@@ -67,6 +68,36 @@ pk-source:
   revision: 1360663069
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL469
+  pref-name: KETOROLAC
+  molecule-type: Small molecule
+  first-approval: 1989
+  black-box-warning: true
+  withdrawn: true
+  atc-codes:
+  - M01AB15
+  - S01BC05
+  targets: []
+  properties:
+    full-mwt: 255.27
+    mw-freebase: 255.27
+    alogp: 2.29
+    psa: 59.3
+    hba: 3
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.86
+    full-molformula: C15H13NO3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ketorolac
@@ -80,7 +111,7 @@ pk-source:
 - **Compound ID:** `ketorolac-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL469](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL469/) · max phase 4
+- **ChEMBL:** [CHEMBL469](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL469/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +120,18 @@ Cyclooxygenase inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMB
 ## Mechanism
 
 Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1989
+- **Flags:** black-box warning, withdrawn
+- **ATC M01AB15:** MUSCULO-SKELETAL SYSTEM › ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS, NON-STEROIDS › Acetic acid derivatives and related substances
+- **ATC S01BC05:** SENSORY ORGANS › ANTIINFLAMMATORY AGENTS › Antiinflammatory agents, non-steroids
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 255.27 | 2.29 | 59.3 | 1/3 | 0 | C15H13NO3 |
 
 ## Evidence boundaries
 
@@ -106,6 +149,14 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 | Bioavailability | 80 % | 80% (oral); 100% IV/IM |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney: 90% (mean); Biliary: 6.1% (mean) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Aceclofenac]], [[Acemetacin]], [[Alclofenac]], [[Bromfenac]], [[Diclofenac]], [[Etodolac]], [[Flurbiprofen]], [[Indomethacin]], [[Nepafenac]], [[Piroxicam]], [[Salicylic Acid]], [[Sulindac]]
 
 ## Safety routing
 

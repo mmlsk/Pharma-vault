@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Butabarbital
@@ -63,6 +64,34 @@ pk-source:
   revision: 1362051009
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL449
+  pref-name: BUTABARBITAL
+  molecule-type: Small molecule
+  first-approval: 1939
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 212.25
+    mw-freebase: 212.25
+    alogp: 0.79
+    psa: 75.27
+    hba: 3
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.68
+    full-molformula: C10H16N2O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Butabarbital
@@ -76,7 +105,7 @@ pk-source:
 - **Compound ID:** `butabarbital-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL449](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL449/) · max phase 4
+- **ChEMBL:** [CHEMBL449](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL449/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +114,15 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1939
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 212.25 | 0.79 | 75.27 | 2/3 | 0 | C10H16N2O3 |
 
 ## Evidence boundaries
 
@@ -100,6 +138,8 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 |---|---|---|
 | Elimination t½ | 100 h | 100 hours |
 | Excretion | mainly urinary | Urine |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

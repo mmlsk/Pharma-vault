@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201317
+  pref-name: TRICLOFOS
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05CM07
+  targets: []
+  properties:
+    full-mwt: 229.38
+    mw-freebase: 229.38
+    alogp: 1.47
+    psa: 66.76
+    hba: 2
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.56
+    full-molformula: C2H4Cl3O4P
 ---
 
 # Triclofos
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `triclofos-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201317](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201317/) · max phase 4
+- **ChEMBL:** [CHEMBL1201317](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201317/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +100,16 @@ GABA-A receptor; anion channel positive modulator; approved/marketed compound ca
 
 GABA-A receptor; anion channel positive modulator _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC N05CM07:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Other hypnotics and sedatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 229.38 | 1.47 | 66.76 | 2/2 | 0 | C2H4Cl3O4P |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +118,12 @@ GABA-A receptor; anion channel positive modulator _(ChEMBL curated mechanism, as
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Clomethiazole]], [[Dexmedetomidine]], [[Ethchlorvynol]], [[Hyoscine (Scopolamine)]], [[Methaqualone]], [[Propiomazine]]
 
 ## Safety routing
 

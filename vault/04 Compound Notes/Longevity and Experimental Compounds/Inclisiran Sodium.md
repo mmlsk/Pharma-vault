@@ -54,6 +54,21 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL5095052
+  pref-name: INCLISIRAN SODIUM
+  molecule-type: Oligonucleotide
+  first-approval: 2020
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL4630662
+    name: PCSK9 mRNA
+    action: RNAI INHIBITOR
+  properties: {}
 ---
 
 # Inclisiran Sodium
@@ -67,7 +82,7 @@ tags:
 - **Compound ID:** `inclisiran-sodium-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL5095052](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095052/) · max phase 4
+- **ChEMBL:** [CHEMBL5095052](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095052/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +92,15 @@ PCSK9 mRNA rnai inhibitor; approved/marketed compound catalogued by ChEMBL (CHEM
 
 PCSK9 mRNA rnai inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Oligonucleotide
+- **First approval (ChEMBL):** 2020
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[PCSK9 mRNA (CHEMBL4630662)|PCSK9 mRNA]] - rnai inhibitor · NUCLEIC-ACID
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +109,12 @@ PCSK9 mRNA rnai inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Inclisiran (Leqvio)]] (PCSK9 mRNA)
 
 ## Safety routing
 

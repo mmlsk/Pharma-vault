@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3301572
+chembl-max-phase: 4
 half-life:
   value: 135.0
   value-max: 177.0
@@ -56,7 +56,7 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,9 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Nusinersen
@@ -71,6 +74,27 @@ pk-source:
   revision: 1339936485
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3301572
+  pref-name: NUSINERSEN
+  molecule-type: Oligonucleotide
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - M09AX07
+  targets: []
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: dd70cd5f-b0fc-4ba4-a5ea-89a34778bd94
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dd70cd5f-b0fc-4ba4-a5ea-89a34778bd94
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Nusinersen (Spinraza)
@@ -85,10 +109,16 @@ pk-source:
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Nusinersen, Spinraza
+- **ChEMBL:** [CHEMBL3301572](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301572/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 An intrathecal antisense oligonucleotide that blocks an intronic splice silencer, forcing SMN2 exon 7 inclusion. The first disease-modifying treatment for spinal muscular atrophy.
+
+## ChEMBL profile
+
+- **Molecule type:** Oligonucleotide
+- **ATC M09AX07:** MUSCULO-SKELETAL SYSTEM › OTHER DRUGS FOR DISORDERS OF THE MUSCULO-SKELETAL SYSTEM › Other drugs for disorders of the musculo-skeletal system
 
 ## Evidence boundaries
 
@@ -106,6 +136,17 @@ An intrathecal antisense oligonucleotide that blocks an intronic splice silencer
 | Protein binding | 94 % | 94% (in plasma) |
 | Bioavailability | 100 % | 100% (intrathecal) |
 | Metabolism | - | Exonuclease (3'- and 5')-mediated hydrolysis |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set dd70cd5f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=dd70cd5f-b0fc-4ba4-a5ea-89a34778bd94), label version 20260331. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1512, 2088, 3240, 4248)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Givinostat]], [[Palovarotene]], [[Risdiplam (Evrysdi)]]
 
 ## Safety routing
 

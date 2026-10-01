@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2218907
+chembl-max-phase: 2
 half-life:
   value: 11.9
   value-max: 13.2
@@ -56,6 +56,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Zilpaterol
@@ -63,6 +65,34 @@ pk-source:
   revision: 1346820811
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2218907
+  pref-name: ZILPATEROL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 261.32
+    mw-freebase: 261.32
+    alogp: 1.13
+    psa: 70.05
+    hba: 4
+    hbd: 3
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.76
+    full-molformula: C14H19N3O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Zilpaterol
@@ -76,10 +106,19 @@ pk-source:
 - **Compound ID:** `zilpaterol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2218907](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2218907/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Beta-2 agonist feed additive for cattle. Appears in human and equine anti-doping casework through feed contamination rather than intentional use.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 261.32 | 1.13 | 70.05 | 3/4 | 0 | C14H19N3O2 |
 
 ## Evidence boundaries
 
@@ -95,6 +134,8 @@ Beta-2 agonist feed additive for cattle. Appears in human and equine anti-doping
 |---|---|---|
 | Elimination t½ | 11.9–13.2 h | 11.9–13.2 hours (first phase) |
 | Excretion | mainly non-renal | Urine (88.2–84.3%) and feces (8.6–8.7%) (in cattle) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

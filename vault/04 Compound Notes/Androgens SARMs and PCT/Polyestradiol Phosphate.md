@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201477
+  pref-name: POLYESTRADIOL PHOSPHATE
+  molecule-type: Small molecule
+  first-approval: 1957
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L02AA02
+  targets:
+  - id: CHEMBL206
+    name: Estrogen receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Polyestradiol Phosphate
@@ -67,7 +83,7 @@ tags:
 - **Compound ID:** `polyestradiol-phosphate-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1201477](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201477/) · max phase 4
+- **ChEMBL:** [CHEMBL1201477](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201477/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +93,16 @@ Estrogen receptor alpha agonist; approved/marketed compound catalogued by ChEMBL
 
 Estrogen receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1957
+- **ATC L02AA02:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › HORMONES AND RELATED AGENTS › Estrogens
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Estrogen receptor (CHEMBL206)|Estrogen receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +111,13 @@ Estrogen receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dienestrol]] (Estrogen receptor), [[Diethylstilbestrol]] (Estrogen receptor), [[Elacestrant]] (Estrogen receptor), [[Enclomiphene]] (Estrogen receptor), [[Estradiol]] (Estrogen receptor), [[Estradiol Acetate]] (Estrogen receptor), [[Estradiol Cypionate]] (Estrogen receptor), [[Estradiol Valerate]] (Estrogen receptor), [[Estrone]] (Estrogen receptor), [[Ethinyl Estradiol]] (Estrogen receptor), [[Fulvestrant (Faslodex)]] (Estrogen receptor), [[Giredestrant]] (Estrogen receptor)
+- **Same ATC subgroup:** [[Diethylstilbestrol]], [[Diethylstilbestrol Diphosphate]], [[Ethinyl Estradiol]]
 
 ## Safety routing
 

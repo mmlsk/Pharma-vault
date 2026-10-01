@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1382
+chembl-max-phase: 4
 half-life:
   value: 1.9
   value-max: 3.7
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Tolterodine
@@ -68,6 +70,37 @@ pk-source:
   revision: 1374985017
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1382
+  pref-name: TOLTERODINE
+  molecule-type: Small molecule
+  first-approval: 1998
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04BD07
+  targets: []
+  properties:
+    full-mwt: 325.5
+    mw-freebase: 325.5
+    alogp: 5.34
+    psa: 23.47
+    hba: 2
+    hbd: 1
+    rtb: 7
+    num-ro5-violations: 1
+    qed-weighted: 0.74
+    full-molformula: C22H31NO
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: db6e0b6d-0ce5-41d7-881f-881c11f530a4
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=db6e0b6d-0ce5-41d7-881f-881c11f530a4
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: discrepant
 ---
 
 # Tolterodine
@@ -81,10 +114,21 @@ pk-source:
 - **Compound ID:** `tolterodine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1382](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1382/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Antagonises muscarinic receptors; peripheral selectivity determines how much dry mouth, constipation and central anticholinergic burden an agent carries.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1998
+- **ATC G04BD07:** GENITO URINARY SYSTEM AND SEX HORMONES › UROLOGICALS › Drugs for urinary frequency and incontinence
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 325.5 | 5.34 | 23.47 | 1/2 | 1 | C22H31NO |
 
 ## Evidence boundaries
 
@@ -101,6 +145,17 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 | Elimination t½ | 1.9–3.7 h | 1.9–3.7 hours |
 | Protein binding | 96.3 % | Approximately 96.3% |
 | Bioavailability | 77 % | 77% |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set db6e0b6d…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=db6e0b6d-0ce5-41d7-881f-881c11f530a4), label version 20260209. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: discrepant (label values: 3.7, 36)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Darifenacin]], [[Fesoterodine]], [[Imidafenacin]], [[Oxybutynin]], [[Propiverine]], [[Solifenacin]]
 
 ## Safety routing
 

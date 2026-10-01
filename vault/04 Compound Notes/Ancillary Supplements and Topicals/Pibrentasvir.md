@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Nonstructural protein 5A inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3545123
+chembl-max-phase: 4
 half-life:
   value: 13.0
   value-max: null
@@ -57,6 +57,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Pibrentasvir
@@ -64,6 +66,30 @@ pk-source:
   revision: 1360537432
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3545123
+  pref-name: PIBRENTASVIR
+  molecule-type: Small molecule
+  first-approval: 2017
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3307224
+    name: Nonstructural protein 5A
+    action: INHIBITOR
+  properties:
+    full-mwt: 1113.2
+    mw-freebase: 1113.2
+    full-molformula: C57H65F5N10O8
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Pibrentasvir
@@ -77,10 +103,28 @@ pk-source:
 - **Compound ID:** `pibrentasvir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3545123](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545123/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Blocks an HCV replication target and is combined with complementary direct-acting antivirals to prevent resistance.
+
+## Mechanism
+
+Nonstructural protein 5A inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2017
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1113.2 | - | - | -/- | - | C57H65F5N10O8 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Nonstructural protein 5A (CHEMBL3307224)|Nonstructural protein 5A]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -97,6 +141,14 @@ Blocks an HCV replication target and is combined with complementary direct-actin
 | Elimination t½ | 13 h | 13 hours |
 | Protein binding | 99.9 % | >99.9% |
 | Excretion | mainly non-renal | 96.6% in faeces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Elbasvir]] (Nonstructural protein 5A), [[Ledipasvir]] (Nonstructural protein 5A), [[Ombitasvir]] (Nonstructural protein 5A), [[Velpatasvir]] (Nonstructural protein 5A)
 
 ## Safety routing
 

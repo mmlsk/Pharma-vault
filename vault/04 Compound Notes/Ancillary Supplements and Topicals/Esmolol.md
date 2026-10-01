@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Esmolol
@@ -64,6 +65,35 @@ pk-source:
   revision: 1357212768
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL768
+  pref-name: ESMOLOL
+  molecule-type: Small molecule
+  first-approval: 1986
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - C07AB09
+  targets: []
+  properties:
+    full-mwt: 295.38
+    mw-freebase: 295.38
+    alogp: 1.53
+    psa: 67.79
+    hba: 5
+    hbd: 2
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.68
+    full-molformula: C16H25NO4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Esmolol
@@ -77,7 +107,7 @@ pk-source:
 - **Compound ID:** `esmolol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL768](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL768/) · max phase 4
+- **ChEMBL:** [CHEMBL768](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL768/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +116,17 @@ Beta-2 adrenergic receptor antagonist; approved/marketed compound catalogued by 
 ## Mechanism
 
 Beta-2 adrenergic receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1986
+- **Flags:** withdrawn
+- **ATC C07AB09:** CARDIOVASCULAR SYSTEM › BETA BLOCKING AGENTS › Beta blocking agents, selective
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 295.38 | 1.53 | 67.79 | 2/5 | 0 | C16H25NO4 |
 
 ## Evidence boundaries
 
@@ -103,6 +144,14 @@ Beta-2 adrenergic receptor antagonist _(ChEMBL curated mechanism, as quoted by t
 | Protein binding | 60 % | 60% |
 | Metabolism | - | Red blood cell (erythrocytic) |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Atenolol (Tenormin)]], [[Betaxolol]], [[Bisoprolol]], [[Celiprolol]], [[Metoprolol]], [[Nebivolol]]
 
 ## Safety routing
 

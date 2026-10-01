@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4594466
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,19 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4594466
+  pref-name: PEGOZAFERMIN
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Pegozafermin
@@ -67,10 +80,15 @@ tags:
 - **Compound ID:** `pegozafermin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL4594466](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594466/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 A glycopegylated FGF21 analogue engineered for a longer half-life, in late-stage trials for steatohepatitis and severe hypertriglyceridaemia.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
 
 ## Evidence boundaries
 

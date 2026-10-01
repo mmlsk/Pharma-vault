@@ -54,6 +54,33 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1676
+  pref-name: FLUTICASONE FUROATE
+  molecule-type: Small molecule
+  first-approval: 2007
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R01AD12
+  - R03BA09
+  targets:
+  - id: CHEMBL2034
+    name: Glucocorticoid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 538.58
+    mw-freebase: 538.58
+    alogp: 4.93
+    psa: 93.81
+    hba: 7
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 1
+    qed-weighted: 0.54
+    full-molformula: C27H29F3O6S
 ---
 
 # Fluticasone Furoate
@@ -67,7 +94,7 @@ tags:
 - **Compound ID:** `fluticasone-furoate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1676](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1676/) · max phase 4
+- **ChEMBL:** [CHEMBL1676](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1676/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +104,21 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2007
+- **ATC R01AD12:** RESPIRATORY SYSTEM › DECONGESTANTS AND OTHER NASAL PREPARATIONS FOR TOPICAL USE › Corticosteroids
+- **ATC R03BA09:** RESPIRATORY SYSTEM › OTHER DRUGS FOR OBSTRUCTIVE AIRWAY DISEASES, INHALANTS › Glucocorticoids
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 538.58 | 4.93 | 93.81 | 1/7 | 1 | C27H29F3O6S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Glucocorticoid receptor (CHEMBL2034)|Glucocorticoid receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +127,13 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor)
+- **Same ATC subgroup:** [[Beclomethasone Dipropionate]], [[Betamethasone]], [[Budesonide]], [[Ciclesonide]], [[Dexamethasone]], [[Flunisolide]], [[Fluticasone Propionate]], [[Hydrocortisone (Cortef)]], [[Mometasone Furoate]], [[Prednisolone]], [[Triamcinolone]]
 
 ## Safety routing
 

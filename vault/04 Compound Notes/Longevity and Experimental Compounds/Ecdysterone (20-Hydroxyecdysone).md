@@ -18,8 +18,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL224128
+chembl-max-phase: 2
 half-life:
   value: 4.0
   value-max: 9.0
@@ -59,6 +59,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: 20-Hydroxyecdysone
@@ -66,6 +67,34 @@ pk-source:
   revision: 1365729173
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL224128
+  pref-name: 20-HYDROXYECDYSONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 480.64
+    mw-freebase: 480.64
+    alogp: 1.85
+    psa: 138.45
+    hba: 7
+    hbd: 6
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.35
+    full-molformula: C27H44O7
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ecdysterone (20-Hydroxyecdysone)
@@ -80,10 +109,19 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** 20E, Ecdysterone, 20-Hydroxyecdysone
+- **ChEMBL:** [CHEMBL224128](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL224128/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Phytoecdysteroid marketed for muscle gain; limited human training data exist, while receptor pharmacology differs from anabolic-androgenic steroids.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 480.64 | 1.85 | 138.45 | 6/7 | 1 | C27H44O7 |
 
 ## Evidence boundaries
 
@@ -99,6 +137,8 @@ Phytoecdysteroid marketed for muscle gain; limited human training data exist, wh
 |---|---|---|
 | Elimination t½ | 4–9 h | 4-9 hours |
 | Metabolism | hepatic | Hepatic |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

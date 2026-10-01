@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Amfepramone
@@ -63,6 +64,35 @@ pk-source:
   revision: 1340859989
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1194666
+  pref-name: DIETHYLPROPION
+  molecule-type: Small molecule
+  first-approval: 1959
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - A08AA03
+  targets: []
+  properties:
+    full-mwt: 205.3
+    mw-freebase: 205.3
+    alogp: 2.6
+    psa: 20.31
+    hba: 2
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C13H19NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Diethylpropion
@@ -76,7 +106,7 @@ pk-source:
 - **Compound ID:** `diethylpropion-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1194666](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1194666/) · max phase 4
+- **ChEMBL:** [CHEMBL1194666](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1194666/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +115,17 @@ Norepinephrine transporter inhibitor; approved/marketed compound catalogued by C
 ## Mechanism
 
 Norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1959
+- **Flags:** withdrawn
+- **ATC A08AA03:** ALIMENTARY TRACT AND METABOLISM › ANTIOBESITY PREPARATIONS, EXCL. DIET PRODUCTS › Centrally acting antiobesity products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 205.3 | 2.6 | 20.31 | 0/2 | 0 | C13H19NO |
 
 ## Evidence boundaries
 
@@ -100,6 +141,14 @@ Norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by th
 |---|---|---|
 | Elimination t½ | 4–6 h | 4–6 hours (metabolites) |
 | Excretion | mainly urinary | Urine (>75%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Ephedrine]], [[Fenfluramine]], [[Mazindol]], [[Phentermine]], [[Setmelanotide (Imcivree)]], [[Sibutramine]]
 
 ## Safety routing
 

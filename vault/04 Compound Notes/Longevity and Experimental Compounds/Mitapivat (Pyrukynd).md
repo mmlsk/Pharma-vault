@@ -10,15 +10,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Pyruvate kinase isozymes R/L activator
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4299940
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,35 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4299940
+  pref-name: MITAPIVAT
+  molecule-type: Small molecule
+  first-approval: 2022
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B06AX04
+  targets:
+  - id: CHEMBL1075126
+    name: Pyruvate kinase PKLR
+    action: ACTIVATOR
+  - id: CHEMBL1075126
+    name: Pyruvate kinase PKLR
+    action: ACTIVATOR
+  properties:
+    full-mwt: 450.56
+    mw-freebase: 450.56
+    alogp: 3.2
+    psa: 82.61
+    hba: 5
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.62
+    full-molformula: C24H26N4O3S
 ---
 
 # Mitapivat (Pyrukynd)
@@ -70,10 +99,30 @@ tags:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Mitapivat, Pyrukynd
+- **ChEMBL:** [CHEMBL4299940](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4299940/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 An allosteric activator of erythrocyte pyruvate kinase that restores glycolytic ATP production. The first therapy for pyruvate kinase deficiency aimed at the enzyme defect itself.
+
+## Mechanism
+
+Pyruvate kinase isozymes R/L activator _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2022
+- **ATC B06AX04:** BLOOD AND BLOOD FORMING ORGANS › OTHER HEMATOLOGICAL AGENTS › Other hematological agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 450.56 | 3.2 | 82.61 | 1/5 | 0 | C24H26N4O3S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Pyruvate kinase PKLR (CHEMBL1075126)|Pyruvate kinase PKLR]] - activator · SINGLE PROTEIN
+- [[Pyruvate kinase PKLR (CHEMBL1075126)|Pyruvate kinase PKLR]] - activator · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -83,6 +132,12 @@ An allosteric activator of erythrocyte pyruvate kinase that restores glycolytic 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Crizanlizumab (Adakveo)]], [[Voxelotor (Oxbryta)]]
 
 ## Safety routing
 

@@ -10,17 +10,17 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Cytochrome P450 11B1, mitochondrial inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL934
+chembl-max-phase: 4
 half-life:
-  value: 0.7
+  value: 1.9
   value-max: null
   unit: h
   notes: 1.9 ± 0.7 hours
@@ -58,6 +58,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Metyrapone
@@ -65,6 +67,39 @@ pk-source:
   revision: 1356275720
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL934
+  pref-name: METYRAPONE
+  molecule-type: Small molecule
+  first-approval: 1961
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - V04CD01
+  targets:
+  - id: CHEMBL1908
+    name: Cytochrome P450 11B1, mitochondrial
+    action: INHIBITOR
+  properties:
+    full-mwt: 226.28
+    mw-freebase: 226.28
+    alogp: 2.64
+    psa: 42.85
+    hba: 3
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.76
+    full-molformula: C14H14N2O
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 4046b167-7a46-8f4a-e063-6394a90a147f
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4046b167-7a46-8f4a-e063-6394a90a147f
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
 ---
 
 # Metyrapone (Metopirone)
@@ -79,10 +114,29 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Metyrapone, Metopirone
+- **ChEMBL:** [CHEMBL934](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL934/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Steroidogenesis inhibitor that blocks 11-beta-hydroxylase, the last step of cortisol synthesis.
+
+## Mechanism
+
+Cytochrome P450 11B1, mitochondrial inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1961
+- **ATC V04CD01:** VARIOUS › OTHER DIAGNOSTIC AGENTS › Tests for pituitary function
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 226.28 | 2.64 | 42.85 | 0/3 | 0 | C14H14N2O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cytochrome P450 11B1, mitochondrial (CHEMBL1908)|Cytochrome P450 11B1, mitochondrial]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -96,7 +150,18 @@ Steroidogenesis inhibitor that blocks 11-beta-hydroxylase, the last step of cort
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 0.7 h | 1.9 ± 0.7 hours |
+| Elimination t½ | 1.9 h | 1.9 ± 0.7 hours |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 4046b167…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4046b167-7a46-8f4a-e063-6394a90a147f), label version 20260519. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 4)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Levoketoconazole]] (Cytochrome P450 11B1, mitochondrial), [[Mitotane]] (Cytochrome P450 11B1, mitochondrial)
+- **Same ATC subgroup:** [[Macimorelin (Macrilen)]], [[Sermorelin]]
 
 ## Safety routing
 

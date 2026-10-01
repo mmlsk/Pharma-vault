@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1179047
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/analgesia
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1179047
+  pref-name: CHLOROPROCAINE
+  molecule-type: Small molecule
+  first-approval: 1955
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N01BA04
+  - S01HA08
+  targets: []
+  properties:
+    full-mwt: 270.76
+    mw-freebase: 270.76
+    alogp: 2.42
+    psa: 55.56
+    hba: 4
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.64
+    full-molformula: C13H19ClN2O2
 ---
 
 # Chloroprocaine
@@ -67,10 +91,22 @@ tags:
 - **Compound ID:** `chloroprocaine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1179047](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1179047/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Ester local anaesthetic with the shortest duration in the class, cleared by plasma cholinesterase within minutes.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1955
+- **ATC N01BA04:** NERVOUS SYSTEM › ANESTHETICS, LOCAL › Esters of aminobenzoic acid
+- **ATC S01HA08:** SENSORY ORGANS › LOCAL ANESTHETICS › Local anesthetics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 270.76 | 2.42 | 55.56 | 1/4 | 0 | C13H19ClN2O2 |
 
 ## Evidence boundaries
 
@@ -80,6 +116,12 @@ Ester local anaesthetic with the shortest duration in the class, cleared by plas
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Benzocaine]], [[Lidocaine]], [[Procaine]], [[Tetracaine]]
 
 ## Safety routing
 

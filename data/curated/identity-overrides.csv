@@ -1,0 +1,12 @@
+candidate,action,value,reason
+Ademol,reject,,"ChEMBL synonym ADEMOL resolves to flumethiazide (a diuretic trade name), not the adamantane-derived nootropic of the backlog - identity conflict, needs manual structure"
+NEP,query,N-Ethylpentedrone,"3-letter abbreviation; PubChem 'NEP' resolves to an unrelated structure"
+DMT,query,"N,N-Dimethyltryptamine",3-letter abbreviation is ambiguous in PubChem
+NACET,query,N-Acetylcysteine ethyl ester,vendor abbreviation
+HHC,query,Hexahydrocannabinol,3-letter abbreviation
+Delta-10-THC,query,delta-10-Tetrahydrocannabinol,spelled-out name
+Mazindol extended-release,query,Mazindol,formulation of an existing molecule
+Phenibut FAA,alias-of,phenibut-compound,"FAA = free amino acid form of phenibut (same molecule, different vendor form)"
+"Zelquistinel, AV-101 or AGN-241751 depending on the specific development name",query,Zelquistinel; AGN-241751,"AV-101 is a different molecule (4-chlorokynurenine); keep only unambiguous names"
+Xanomeline–trospium,reject,,"fixed-dose combination product; components are separate molecules"
+L-alpha-glycerylphosphorylcholine under the alias choline alfoscerate,query,Choline alfoscerate,backlog phrasing

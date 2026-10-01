@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL43708
+chembl-max-phase: 4
 half-life:
   value: 38.0
   value-max: null
@@ -57,6 +57,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Imipenem
@@ -64,6 +65,34 @@ pk-source:
   revision: 1349475298
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL148
+  pref-name: IMIPENEM
+  molecule-type: Small molecule
+  first-approval: 1985
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 299.35
+    mw-freebase: 299.35
+    alogp: -0.18
+    psa: 113.72
+    hba: 5
+    hbd: 4
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.22
+    full-molformula: C12H17N3O4S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Imipenem
@@ -77,10 +106,20 @@ pk-source:
 - **Compound ID:** `imipenem-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL43708](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL43708/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The first carbapenem, co-formulated with cilastatin to block renal dehydropeptidase degradation. More epileptogenic than the later members of the class.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1985
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 299.35 | -0.18 | 113.72 | 4/5 | 0 | C12H17N3O4S |
 
 ## Evidence boundaries
 
@@ -98,6 +137,8 @@ The first carbapenem, co-formulated with cilastatin to block renal dehydropeptid
 | Protein binding | 20 % | 20% |
 | Metabolism | - | Kidney |
 | Excretion | mainly urinary | Urine (70%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

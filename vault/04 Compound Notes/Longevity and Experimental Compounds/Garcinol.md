@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL502489
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL502489
+  pref-name: GARCINOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 602.81
+    mw-freebase: 602.81
+    alogp: 8.91
+    psa: 111.9
+    hba: 6
+    hbd: 3
+    rtb: 11
+    num-ro5-violations: 2
+    qed-weighted: 0.08
+    full-molformula: C38H50O6
 ---
 
 # Garcinol
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `garcinol-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL502489](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL502489/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 A polyisoprenylated benzophenone from Garcinia indica that inhibits p300 and PCAF acetyltransferases in vitro. Like most polyphenol HAT inhibitors it is promiscuous and poorly bioavailable.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 602.81 | 8.91 | 111.9 | 3/6 | 2 | C38H50O6 |
 
 ## Evidence boundaries
 

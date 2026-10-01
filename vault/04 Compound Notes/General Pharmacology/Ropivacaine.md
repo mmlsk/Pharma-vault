@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1077896
+chembl-max-phase: 4
 half-life:
   value: 1.6
   value-max: 6.0
@@ -61,6 +61,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ropivacaine
@@ -68,6 +69,35 @@ pk-source:
   revision: 1359319839
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1077896
+  pref-name: ROPIVACAINE
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N01BB09
+  targets: []
+  properties:
+    full-mwt: 274.41
+    mw-freebase: 274.41
+    alogp: 3.51
+    psa: 32.34
+    hba: 2
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.91
+    full-molformula: C17H26N2O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ropivacaine
@@ -81,10 +111,21 @@ pk-source:
 - **Compound ID:** `ropivacaine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1077896](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1077896/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Single-enantiomer long-acting local anaesthetic developed to reduce bupivacaine's cardiotoxicity while preserving duration.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **ATC N01BB09:** NERVOUS SYSTEM › ANESTHETICS, LOCAL › Amides
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 274.41 | 3.51 | 32.34 | 1/2 | 0 | C17H26N2O |
 
 ## Evidence boundaries
 
@@ -103,6 +144,15 @@ Single-enantiomer long-acting local anaesthetic developed to reduce bupivacaine'
 | Metabolism | hepatic | Liver (CYP1A2-mediated) |
 | CYP (metabolised by) | CYP1A2 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Kidney 86% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Articaine]], [[Bupivacaine]], [[Lidocaine]], [[Mepivacaine]], [[Prilocaine]]
+- **Shared CYP substrate pool:** CYP1A2 (+42 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

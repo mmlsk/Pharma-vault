@@ -55,6 +55,7 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Chlorotrianisene
@@ -62,6 +63,31 @@ pk-source:
   revision: 1367639948
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200761
+  pref-name: CHLOROTRIANISENE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G03CA06
+  targets:
+  - id: CHEMBL242
+    name: Estrogen receptor beta
+    action: MODULATOR
+  properties:
+    full-mwt: 380.87
+    mw-freebase: 380.87
+    alogp: 5.87
+    psa: 27.69
+    hba: 3
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.5
+    full-molformula: C23H21ClO3
 ---
 
 # Chlorotrianisene
@@ -75,7 +101,7 @@ pk-source:
 - **Compound ID:** `chlorotrianisene-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1200761](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200761/) · max phase 4
+- **ChEMBL:** [CHEMBL1200761](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200761/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -84,6 +110,20 @@ Estrogen receptor beta modulator; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Estrogen receptor beta modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC G03CA06:** GENITO URINARY SYSTEM AND SEX HORMONES › ESTROGENS › Natural and semisynthetic estrogens, plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 380.87 | 5.87 | 27.69 | 0/3 | 1 | C23H21ClO3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Estrogen receptor beta (CHEMBL242)|Estrogen receptor beta]] - modulator · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -99,6 +139,13 @@ Estrogen receptor beta modulator _(ChEMBL curated mechanism, as quoted by the so
 |---|---|---|
 | Metabolism | hepatic | Mono-O-demethylation (liver CYP450) |
 | Metabolites | - | Desmethylchlorotrianisene |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Mf101]] (Estrogen receptor beta)
+- **Same ATC subgroup:** [[Estradiol]], [[Estriol]], [[Estrogens, Conjugated]], [[Estrone]], [[Ethinyl Estradiol]]
 
 ## Safety routing
 

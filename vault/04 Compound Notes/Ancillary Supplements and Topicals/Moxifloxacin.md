@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL32
+chembl-max-phase: 4
 half-life:
   value: 12.1
   value-max: null
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Moxifloxacin
@@ -68,6 +70,38 @@ pk-source:
   revision: 1366072182
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL32
+  pref-name: MOXIFLOXACIN
+  molecule-type: Small molecule
+  first-approval: 1999
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J01MA14
+  - S01AE07
+  targets: []
+  properties:
+    full-mwt: 401.44
+    mw-freebase: 401.44
+    alogp: 2.37
+    psa: 83.8
+    hba: 6
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C21H24FN3O4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 656f582c-ecba-4ec8-9420-9562114d889b
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=656f582c-ecba-4ec8-9420-9562114d889b
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Moxifloxacin
@@ -81,10 +115,23 @@ pk-source:
 - **Compound ID:** `moxifloxacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL32](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL32/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits bacterial DNA gyrase or topoisomerase IV; tendon, neurologic, cardiac, and resistance risks limit indiscriminate use.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1999
+- **Flags:** black-box warning
+- **ATC J01MA14:** ANTIINFECTIVES FOR SYSTEMIC USE › QUINOLONE ANTIBACTERIALS › Fluoroquinolones
+- **ATC S01AE07:** SENSORY ORGANS › ANTIINFECTIVES › Fluoroquinolones
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 401.44 | 2.37 | 83.8 | 2/6 | 0 | C21H24FN3O4 |
 
 ## Evidence boundaries
 
@@ -103,6 +150,17 @@ Inhibits bacterial DNA gyrase or topoisomerase IV; tendon, neurologic, cardiac, 
 | Bioavailability | 86 % | 86% |
 | Metabolism | hepatic | Glucuronide and sulfate conjugation; CYP450 system not involved |
 | Excretion | - | Urine, feces |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 656f582c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=656f582c-ecba-4ec8-9420-9562114d889b), label version 20260817. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1, 12, 14)
+> - protein-binding: consistent (label values: 30, 50)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Besifloxacin]], [[Ciprofloxacin]], [[Delafloxacin]], [[Gemifloxacin]], [[Lomefloxacin]], [[Norfloxacin]], [[Ofloxacin]], [[Prulifloxacin]]
 
 ## Safety routing
 

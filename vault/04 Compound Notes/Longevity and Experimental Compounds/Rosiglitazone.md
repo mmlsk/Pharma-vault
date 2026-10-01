@@ -62,6 +62,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Rosiglitazone
@@ -69,6 +70,38 @@ pk-source:
   revision: 1354915995
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL121
+  pref-name: ROSIGLITAZONE
+  molecule-type: Small molecule
+  first-approval: 1999
+  black-box-warning: true
+  withdrawn: true
+  atc-codes:
+  - A10BG02
+  targets:
+  - id: CHEMBL235
+    name: Peroxisome proliferator-activated receptor gamma
+    action: AGONIST
+  properties:
+    full-mwt: 357.44
+    mw-freebase: 357.44
+    alogp: 2.49
+    psa: 71.53
+    hba: 6
+    hbd: 1
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C18H19N3O3S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Rosiglitazone
@@ -82,7 +115,7 @@ pk-source:
 - **Compound ID:** `rosiglitazone-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL121](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL121/) · max phase 4
+- **ChEMBL:** [CHEMBL121](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL121/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -91,6 +124,21 @@ Peroxisome proliferator-activated receptor gamma agonist; approved/marketed comp
 ## Mechanism
 
 Peroxisome proliferator-activated receptor gamma agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1999
+- **Flags:** black-box warning, withdrawn
+- **ATC A10BG02:** ALIMENTARY TRACT AND METABOLISM › BLOOD GLUCOSE LOWERING DRUGS, EXCL. INSULINS › Thiazolidinediones
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 357.44 | 2.49 | 71.53 | 1/6 | 0 | C18H19N3O3S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Peroxisome proliferator-activated receptor gamma (CHEMBL235)|Peroxisome proliferator-activated receptor gamma]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -110,6 +158,16 @@ Peroxisome proliferator-activated receptor gamma agonist _(ChEMBL curated mechan
 | Metabolism | hepatic | Liver (CYP2C8-mediated) |
 | CYP (metabolised by) | CYP2C8 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Kidney (64%) and fecal (23%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aleglitazar]] (Peroxisome proliferator-activated receptor gamma), [[Balaglitazone]] (Peroxisome proliferator-activated receptor gamma), [[Bardoxolone Methyl]] (Peroxisome proliferator-activated receptor gamma), [[Db959]] (Peroxisome proliferator-activated receptor gamma), [[Imiglitazar]] (Peroxisome proliferator-activated receptor gamma), [[Mesalamine]] (Peroxisome proliferator-activated receptor gamma), [[Mesalazine (5-ASA)]] (Peroxisome proliferator-activated receptor gamma), [[Mk-0767]] (Peroxisome proliferator-activated receptor gamma), [[Muraglitazar]] (Peroxisome proliferator-activated receptor gamma), [[Rivoglitazone]] (Peroxisome proliferator-activated receptor gamma), [[Saroglitazar]] (Peroxisome proliferator-activated receptor gamma), [[Troglitazone]] (Peroxisome proliferator-activated receptor gamma)
+- **Same ATC subgroup:** [[Lobeglitazone]], [[Pioglitazone (Actos)]], [[Troglitazone]]
+- **Shared CYP substrate pool:** CYP2C8 (+15 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL408403
+  pref-name: ANGIOTENSIN II
+  molecule-type: Protein
+  first-approval: 2017
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01CX09
+  targets: []
+  properties:
+    full-mwt: 1046.2
+    mw-freebase: 1046.2
+    full-molformula: C50H71N13O12
 ---
 
 # Angiotensin Ii
@@ -67,7 +83,7 @@ tags:
 - **Compound ID:** `angiotensin-ii-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL408403](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL408403/) · max phase 4
+- **ChEMBL:** [CHEMBL408403](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL408403/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +93,16 @@ Type-1 angiotensin II receptor agonist; approved/marketed compound catalogued by
 
 Type-1 angiotensin II receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2017
+- **ATC C01CX09:** CARDIOVASCULAR SYSTEM › CARDIAC STIMULANTS EXCL. CARDIAC GLYCOSIDES › Other cardiac stimulants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1046.2 | - | - | -/- | - | C50H71N13O12 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +111,12 @@ Type-1 angiotensin II receptor agonist _(ChEMBL curated mechanism, as quoted by 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Omecamtiv Mecarbil]]
 
 ## Safety routing
 

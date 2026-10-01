@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL813
+chembl-max-phase: 4
 half-life:
   value: 5.0
   value-max: 9.0
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Eprosartan
@@ -67,6 +68,35 @@ pk-source:
   revision: 1330816283
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL813
+  pref-name: EPROSARTAN
+  molecule-type: Small molecule
+  first-approval: 1997
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C09CA02
+  targets: []
+  properties:
+    full-mwt: 424.52
+    mw-freebase: 424.52
+    alogp: 4.74
+    psa: 92.42
+    hba: 5
+    hbd: 2
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.46
+    full-molformula: C23H24N2O4S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Eprosartan
@@ -80,10 +110,22 @@ pk-source:
 - **Compound ID:** `eprosartan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL813](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL813/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Angiotensin II receptor blocker for hypertension with class risks of hyperkalemia and fetal toxicity.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1997
+- **Flags:** black-box warning
+- **ATC C09CA02:** CARDIOVASCULAR SYSTEM › ANGIOTENSIN II RECEPTOR BLOCKERS (ARBs), PLAIN › Angiotensin II receptor blockers (ARBs), plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 424.52 | 4.74 | 92.42 | 2/5 | 0 | C23H24N2O4S |
 
 ## Evidence boundaries
 
@@ -101,6 +143,14 @@ Angiotensin II receptor blocker for hypertension with class risks of hyperkalemi
 | Bioavailability | 15 % | 15% (Eprosartan mesylate) |
 | Metabolism | - | not metabolized |
 | Excretion | mainly non-renal | Kidney 10%, bile duct 90% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Azilsartan Medoxomil]], [[Candesartan (Atacand)]], [[Fimasartan]], [[Irbesartan (Avapro)]], [[Losartan]], [[Olmesartan (Benicar)]], [[Olmesartan Medoxomil]], [[Tasosartan]], [[Telmisartan]], [[Valsartan (Diovan)]]
 
 ## Safety routing
 

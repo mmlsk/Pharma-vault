@@ -10,15 +10,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Tyrosine-protein kinase JAK1 inhibitor; Tyrosine-protein kinase JAK2 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2105759
+chembl-max-phase: 4
 half-life:
   value: 12.5
   value-max: null
@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Baricitinib
@@ -71,6 +73,43 @@ pk-source:
   revision: 1352068579
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2105759
+  pref-name: BARICITINIB
+  molecule-type: Small molecule
+  first-approval: 2017
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L04AF02
+  targets:
+  - id: CHEMBL2835
+    name: Tyrosine-protein kinase JAK1
+    action: INHIBITOR
+  - id: CHEMBL2971
+    name: Tyrosine-protein kinase JAK2
+    action: INHIBITOR
+  properties:
+    full-mwt: 371.43
+    mw-freebase: 371.43
+    alogp: 1.1
+    psa: 120.56
+    hba: 7
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.72
+    full-molformula: C16H17N7O2S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 866e9f35-9035-4581-a4b1-75a621ab55cf
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=866e9f35-9035-4581-a4b1-75a621ab55cf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Baricitinib (oral, Olumiant)
@@ -85,10 +124,31 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Baricitinib, Olumiant
+- **ChEMBL:** [CHEMBL2105759](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105759/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral JAK1/JAK2 inhibitor, the first systemic drug approved anywhere for severe alopecia areata.
+
+## Mechanism
+
+Tyrosine-protein kinase JAK1 inhibitor; Tyrosine-protein kinase JAK2 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2017
+- **Flags:** black-box warning
+- **ATC L04AF02:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › IMMUNOSUPPRESSANTS › Janus-associated kinase (JAK) inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 371.43 | 1.1 | 120.56 | 1/7 | 0 | C16H17N7O2S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tyrosine-protein kinase JAK1 (CHEMBL2835)|Tyrosine-protein kinase JAK1]] - inhibitor · SINGLE PROTEIN
+- [[Tyrosine-protein kinase JAK2 (CHEMBL2971)|Tyrosine-protein kinase JAK2]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -108,6 +168,19 @@ Oral JAK1/JAK2 inhibitor, the first systemic drug approved anywhere for severe a
 | Metabolism | hepatic | CYP3A4 (<10%) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | - | 75% urine, 20% faeces |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 866e9f35…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=866e9f35-9035-4581-a4b1-75a621ab55cf), label version 20260630. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 10.8, 12, 16)
+> - protein-binding: consistent (label values: 45, 50)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Filgotinib]] (Tyrosine-protein kinase JAK1; Tyrosine-protein kinase JAK2), [[Momelotinib]] (Tyrosine-protein kinase JAK1; Tyrosine-protein kinase JAK2), [[Abrocitinib (Cibinqo)]] (Tyrosine-protein kinase JAK1), [[Brepocitinib]] (Tyrosine-protein kinase JAK1), [[Cerdulatinib]] (Tyrosine-protein kinase JAK1), [[Fedratinib]] (Tyrosine-protein kinase JAK2), [[Golidocitinib]] (Tyrosine-protein kinase JAK1), [[Lestaurtinib]] (Tyrosine-protein kinase JAK2), [[Pacritinib]] (Tyrosine-protein kinase JAK2)
+- **Same ATC subgroup:** [[Filgotinib]], [[Peficitinib]], [[Ritlecitinib (oral, Litfulo)]], [[Tofacitinib]], [[Upadacitinib (Rinvoq)]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

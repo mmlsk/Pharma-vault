@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2107154
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1473700
+  pref-name: PIROCTONE OLAMINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 237.34
+    mw-freebase: 237.34
+    alogp: 3.01
+    psa: 42.23
+    hba: 3
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C14H23NO2
 ---
 
 # Piroctone Olamine
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `piroctone-olamine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2107154](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107154/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Antifungal shampoo agent used where ketoconazole is unavailable or poorly tolerated.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 237.34 | 3.01 | 42.23 | 1/3 | 0 | C14H23NO2 |
 
 ## Evidence boundaries
 

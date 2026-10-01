@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Enoyl-[acyl-carrier-protein] reductase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL64
+chembl-max-phase: 4
 half-life:
   value: 0.5
   value-max: 1.6
@@ -57,6 +57,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Isoniazid
@@ -64,6 +65,41 @@ pk-source:
   revision: 1373328078
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL64
+  pref-name: ISONIAZID
+  molecule-type: Small molecule
+  first-approval: 1952
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J04AC01
+  - J04AC51
+  targets:
+  - id: CHEMBL1849
+    name: Enoyl-[acyl-carrier-protein] reductase [NADH]
+    action: INHIBITOR
+  properties:
+    full-mwt: 137.14
+    mw-freebase: 137.14
+    alogp: -0.31
+    psa: 68.01
+    hba: 3
+    hbd: 2
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.32
+    full-molformula: C6H7N3O
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 6dab7b7b-a3a9-47ef-b423-134bc6970d8b
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6dab7b7b-a3a9-47ef-b423-134bc6970d8b
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: no-label-value
 ---
 
 # Isoniazid
@@ -77,10 +113,31 @@ pk-source:
 - **Compound ID:** `isoniazid-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL64](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL64/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Cornerstone of tuberculosis therapy, a prodrug activated by the mycobacterial catalase KatG. Hepatotoxicity and neuropathy are its two defining adverse effects.
+
+## Mechanism
+
+Enoyl-[acyl-carrier-protein] reductase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1952
+- **Flags:** black-box warning
+- **ATC J04AC01:** ANTIINFECTIVES FOR SYSTEMIC USE › DRUGS FOR TREATMENT OF TUBERCULOSIS › Hydrazides
+- **ATC J04AC51:** ANTIINFECTIVES FOR SYSTEMIC USE › DRUGS FOR TREATMENT OF TUBERCULOSIS › Hydrazides
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 137.14 | -0.31 | 68.01 | 2/3 | 0 | C6H7N3O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Enoyl--acyl-carrier-protein- reductase -NADH- (CHEMBL1849)|Enoyl-[acyl-carrier-protein] reductase [NADH]]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -98,6 +155,17 @@ Cornerstone of tuberculosis therapy, a prodrug activated by the mycobacterial ca
 | Protein binding | 0–10 % | Very low (0–10%) |
 | Metabolism | hepatic | liver; CYP450: 2C19, 3A4 inhibitor |
 | Excretion | - | urine (primarily), feces |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 6dab7b7b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6dab7b7b-a3a9-47ef-b423-134bc6970d8b), label version 20260904. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ethionamide]] (Enoyl-[acyl-carrier-protein] reductase [NADH])
 
 ## Safety routing
 

@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3661754
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3661754
+  pref-name: DENIFANSTAT
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 439.56
+    mw-freebase: 439.56
+    alogp: 5.25
+    psa: 85.67
+    hba: 4
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 1
+    qed-weighted: 0.6
+    full-molformula: C27H29N5O
 ---
 
 # Denifanstat
@@ -67,10 +89,19 @@ tags:
 - **Compound ID:** `denifanstat-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL3661754](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3661754/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral fatty acid synthase inhibitor investigated in MASH and acne.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 439.56 | 5.25 | 85.67 | 1/4 | 1 | C27H29N5O |
 
 ## Evidence boundaries
 

@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1179
 chembl-max-phase: null
 half-life:
   value: 2.5
@@ -61,6 +61,7 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tranylcypromine
@@ -68,6 +69,35 @@ pk-source:
   revision: 1374868074
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1179
+  pref-name: null
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 133.19
+    mw-freebase: 133.19
+    alogp: 1.5
+    psa: 26.02
+    hba: 1
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.62
+    full-molformula: C9H11N
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: 83942f11-e10c-4c2d-ad78-880e1886064d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=83942f11-e10c-4c2d-ad78-880e1886064d
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Tranylcypromine
@@ -81,10 +111,19 @@ pk-source:
 - **Compound ID:** `tranylcypromine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1179](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1179/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits monoamine oxidase to raise synaptic monoamines; selectivity and reversibility determine tyramine and serotonin-syndrome risk; irreversible non-selective, requires tyramine restriction.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 133.19 | 1.5 | 26.02 | 1/1 | 0 | C9H11N |
 
 ## Evidence boundaries
 
@@ -102,6 +141,10 @@ Inhibits monoamine oxidase to raise synaptic monoamines; selectivity and reversi
 | Bioavailability | 50 % | 50% |
 | Metabolism | hepatic | Liver |
 | Excretion | - | Urine, Feces |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set 83942f11…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=83942f11-e10c-4c2d-ad78-880e1886064d), label version 20260722. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
 
 ## Safety routing
 

@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1363
+  pref-name: ARFORMOTEROL
+  molecule-type: Small molecule
+  first-approval: 2006
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 344.41
+    mw-freebase: 344.41
+    alogp: 2.22
+    psa: 90.82
+    hba: 5
+    hbd: 4
+    rtb: 9
+    num-ro5-violations: 0
+    qed-weighted: 0.41
+    full-molformula: C19H24N2O4
 ---
 
 # Arformoterol
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `arformoterol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1363](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1363/) · max phase 4
+- **ChEMBL:** [CHEMBL1363](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1363/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,15 @@ Beta-2 adrenergic receptor agonist; approved/marketed compound catalogued by ChE
 ## Mechanism
 
 Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2006
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 344.41 | 2.22 | 90.82 | 4/5 | 0 | C19H24N2O4 |
 
 ## Evidence boundaries
 

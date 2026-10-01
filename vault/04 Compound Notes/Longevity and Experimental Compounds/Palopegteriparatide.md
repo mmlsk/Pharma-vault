@@ -54,6 +54,25 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL5095475
+  pref-name: PALOPEGTERIPARATIDE
+  molecule-type: Protein
+  first-approval: 2023
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H05AA05
+  targets:
+  - id: CHEMBL1793
+    name: Parathyroid hormone/parathyroid hormone-related peptide receptor
+    action: AGONIST
+  - id: CHEMBL1793
+    name: Parathyroid hormone/parathyroid hormone-related peptide receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Palopegteriparatide
@@ -67,7 +86,7 @@ tags:
 - **Compound ID:** `palopegteriparatide-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL5095475](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095475/) · max phase 4
+- **ChEMBL:** [CHEMBL5095475](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095475/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +96,18 @@ Parathyroid hormone receptor agonist; approved/marketed compound catalogued by C
 
 Parathyroid hormone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2023
+- **Flags:** prodrug
+- **ATC H05AA05:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › PARATHYROID HORMONES AND ANALOGUES › Parathyroid hormones and analogues
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Parathyroid hormone-parathyroid hormone-related peptide receptor (CHEMBL1793)|Parathyroid hormone/parathyroid hormone-related peptide receptor]] - agonist · SINGLE PROTEIN
+- [[Parathyroid hormone-parathyroid hormone-related peptide receptor (CHEMBL1793)|Parathyroid hormone/parathyroid hormone-related peptide receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +116,13 @@ Parathyroid hormone receptor agonist _(ChEMBL curated mechanism, as quoted by th
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Abaloparatide]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Ostabolin-C]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Parathyroid Hormone]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Teriparatide (Forteo)]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Teriparatide Acetate]] (Parathyroid hormone/parathyroid hormone-related peptide receptor)
+- **Same ATC subgroup:** [[Abaloparatide]], [[Parathyroid Hormone]], [[Teriparatide (Forteo)]]
 
 ## Safety routing
 

@@ -21,7 +21,7 @@ half-life:
   value: 5.4
   value-max: null
   unit: h
-  notes: 5.4hours (range 3–16hours dependent on urine pH)
+  notes: 5.4 hours (range 3–16 hours dependent on urine pH)
 protein-binding:
   value: 21.0
   value-max: 29.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Pseudoephedrine
@@ -68,6 +69,36 @@ pk-source:
   revision: 1376385599
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1590
+  pref-name: PSEUDOEPHEDRINE
+  molecule-type: Small molecule
+  first-approval: 1963
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R01BA02
+  - R01BA52
+  targets: []
+  properties:
+    full-mwt: 165.24
+    mw-freebase: 165.24
+    alogp: 1.33
+    psa: 32.26
+    hba: 2
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.71
+    full-molformula: C10H15NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Pseudoephedrine
@@ -81,7 +112,7 @@ pk-source:
 - **Compound ID:** `pseudoephedrine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1590](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1590/) · max phase 4
+- **ChEMBL:** [CHEMBL1590](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1590/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +121,17 @@ Norepinephrine transporter releasing agent; approved/marketed compound catalogue
 ## Mechanism
 
 Norepinephrine transporter releasing agent _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1963
+- **ATC R01BA02:** RESPIRATORY SYSTEM › NASAL DECONGESTANTS FOR SYSTEMIC USE › Sympathomimetics
+- **ATC R01BA52:** RESPIRATORY SYSTEM › NASAL DECONGESTANTS FOR SYSTEMIC USE › Sympathomimetics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 165.24 | 1.33 | 32.26 | 2/2 | 0 | C10H15NO |
 
 ## Evidence boundaries
 
@@ -103,12 +145,20 @@ Norepinephrine transporter releasing agent _(ChEMBL curated mechanism, as quoted
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 5.4 h | 5.4hours (range 3–16hours dependent on urine pH) |
+| Elimination t½ | 5.4 h | 5.4 hours (range 3–16 hours dependent on urine pH) |
 | Protein binding | 21–29 % | 21–29% (AGP, HSA) |
 | Bioavailability | 100 % | ~100% |
 | Metabolism | - | Not extensively metabolized |
 | Metabolites | - | • Norpseudoephedrine |
 | Excretion | mainly urinary · fe 0.96 | Urine: 43–96% (unchanged) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Phenylephrine]], [[Phenylpropanolamine]]
 
 ## Safety routing
 

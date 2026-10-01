@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL673
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,7 @@ tags:
 - group/nootropic
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Pargyline
@@ -63,6 +64,28 @@ pk-source:
   revision: 1373332120
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL673
+  pref-name: PARGYLINE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C02KC01
+  targets: []
+  properties:
+    full-mwt: 159.23
+    mw-freebase: 159.23
+    alogp: 1.75
+    psa: 3.24
+    hba: 1
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.61
+    full-molformula: C11H13N
 ---
 
 # Pargyline
@@ -76,10 +99,21 @@ pk-source:
 - **Compound ID:** `pargyline-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL673](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL673/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits monoamine oxidase to raise synaptic monoamines; selectivity and reversibility determine tyramine and serotonin-syndrome risk; withdrawn from clinical use.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **ATC C02KC01:** CARDIOVASCULAR SYSTEM › OTHER ANTIHYPERTENSIVES › MAO inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 159.23 | 1.75 | 3.24 | 0/1 | 0 | C11H13N |
 
 ## Evidence boundaries
 

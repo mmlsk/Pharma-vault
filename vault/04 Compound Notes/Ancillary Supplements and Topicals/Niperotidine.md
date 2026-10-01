@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1909284
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,30 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1909284
+  pref-name: NIPEROTIDINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A02BA05
+  targets: []
+  properties:
+    full-mwt: 434.52
+    mw-freebase: 434.52
+    alogp: 2.76
+    psa: 102.04
+    hba: 9
+    hbd: 2
+    rtb: 12
+    num-ro5-violations: 0
+    qed-weighted: 0.3
+    full-molformula: C20H26N4O5S
 ---
 
 # Niperotidine
@@ -67,10 +91,20 @@ tags:
 - **Compound ID:** `niperotidine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1909284](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1909284/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Blocks parietal-cell H2 receptors to reduce stimulated gastric acid secretion; withdrawn over hepatotoxicity.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A02BA05:** ALIMENTARY TRACT AND METABOLISM › DRUGS FOR PEPTIC ULCER AND GASTRO-OESOPHAGEAL REFLUX DISEASE (GORD) › H2-receptor antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 434.52 | 2.76 | 102.04 | 2/9 | 0 | C20H26N4O5S |
 
 ## Evidence boundaries
 
@@ -80,6 +114,12 @@ Blocks parietal-cell H2 receptors to reduce stimulated gastric acid secretion; w
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Cimetidine]], [[Famotidine]], [[Lafutidine]], [[Ranitidine]]
 
 ## Safety routing
 

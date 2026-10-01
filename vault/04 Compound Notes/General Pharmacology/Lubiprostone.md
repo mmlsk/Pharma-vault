@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: gi
 class: null
 subclass: null
-mechanism: null
+mechanism: Chloride channel protein 2 opener
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201134
+chembl-max-phase: 4
 half-life:
   value: 0.9
   value-max: 1.4
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/gi
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Lubiprostone
@@ -68,6 +70,40 @@ pk-source:
   revision: 1329260443
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1201134
+  pref-name: LUBIPROSTONE
+  molecule-type: Small molecule
+  first-approval: 2006
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A06AX03
+  targets:
+  - id: CHEMBL1628478
+    name: Chloride channel protein 2
+    action: OPENER
+  properties:
+    full-mwt: 390.47
+    mw-freebase: 390.47
+    alogp: 4.31
+    psa: 83.83
+    hba: 4
+    hbd: 2
+    rtb: 11
+    num-ro5-violations: 0
+    qed-weighted: 0.51
+    full-molformula: C20H32F2O5
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: f4d506e0-1322-4fc4-e053-2995a90ac880
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f4d506e0-1322-4fc4-e053-2995a90ac880
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Lubiprostone
@@ -81,10 +117,29 @@ pk-source:
 - **Compound ID:** `lubiprostone-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1201134](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201134/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Prostone chloride channel activator for chronic constipation, working through a channel rather than a receptor.
+
+## Mechanism
+
+Chloride channel protein 2 opener _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2006
+- **ATC A06AX03:** ALIMENTARY TRACT AND METABOLISM › DRUGS FOR CONSTIPATION › Other drugs for constipation
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 390.47 | 4.31 | 83.83 | 2/4 | 0 | C20H32F2O5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Chloride channel protein 2 (CHEMBL1628478)|Chloride channel protein 2]] - opener · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -103,6 +158,17 @@ Prostone chloride channel activator for chronic constipation, working through a 
 | Bioavailability | - | Negligible |
 | Metabolism | hepatic | Extensive, CYP not involved |
 | Excretion | mainly urinary | Kidney (60%) and fecal (30%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set f4d506e0…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f4d506e0-1322-4fc4-e053-2995a90ac880), label version 20260728. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 0.9, 1.4)
+> - protein-binding: consistent (label values: 94)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Linaclotide]], [[Plecanatide]], [[Prucalopride]], [[Tegaserod]], [[Tenapanor]]
 
 ## Safety routing
 

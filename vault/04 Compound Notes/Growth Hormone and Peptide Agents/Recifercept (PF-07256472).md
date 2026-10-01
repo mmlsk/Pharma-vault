@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4650420
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -57,6 +57,19 @@ tags:
 - source-derived
 - group/fgfr
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4650420
+  pref-name: RECIFERCEPT
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Recifercept (PF-07256472)
@@ -71,10 +84,15 @@ tags:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Recifercept, PF-07256472
+- **ChEMBL:** [CHEMBL4650420](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4650420/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Soluble FGFR3 decoy that sequesters FGF ligands before they reach the receptor; a ligand trap rather than a kinase inhibitor.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
 
 ## Evidence boundaries
 

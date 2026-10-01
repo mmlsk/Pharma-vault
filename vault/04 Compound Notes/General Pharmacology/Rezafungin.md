@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3989945
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Rezafungin
@@ -62,6 +64,20 @@ pk-source:
   revision: 1357733502
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3989945
+  pref-name: REZAFUNGIN
+  molecule-type: Small molecule
+  first-approval: 2023
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 1226.41
+    mw-freebase: 1226.41
+    full-molformula: C63H85N8O17+
 ---
 
 # Rezafungin
@@ -75,10 +91,20 @@ pk-source:
 - **Compound ID:** `rezafungin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL3989945](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989945/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Long-acting echinocandin dosed once weekly, engineered for stability by replacing the metabolically labile part of the anidulafungin scaffold.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2023
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1226.41 | - | - | -/- | - | C63H85N8O17+ |
 
 ## Evidence boundaries
 

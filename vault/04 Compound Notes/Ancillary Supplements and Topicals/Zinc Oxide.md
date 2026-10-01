@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: derm
 class: null
 subclass: null
-mechanism: null
+mechanism: Sunscreen/skin protectant
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3988900
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/derm
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3988900
+  pref-name: ZINC OXIDE
+  molecule-type: Small molecule
+  first-approval: 2006
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 81.39
+    mw-freebase: 81.39
+    full-molformula: OZn
 ---
 
 # Zinc Oxide
@@ -67,10 +83,25 @@ tags:
 - **Compound ID:** `zinc-oxide-compound`
 - **Source group:** Dermatology & Topicals (`derm`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3988900](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3988900/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inorganic broad-spectrum UV filter that works by absorption and scattering, and the reference agent for sensitive and paediatric skin.
+
+## Mechanism
+
+Sunscreen/skin protectant _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2006
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 81.39 | - | - | -/- | - | OZn |
 
 ## Evidence boundaries
 

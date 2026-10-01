@@ -17,7 +17,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL133775
 chembl-max-phase: null
 half-life:
   value: 1.0
@@ -57,7 +57,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -65,6 +65,8 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Ramelteon
@@ -72,6 +74,36 @@ pk-source:
   revision: 1362641733
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL133775
+  pref-name: (R)-RAMELTEON
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 259.35
+    mw-freebase: 259.35
+    alogp: 2.57
+    psa: 38.33
+    hba: 2
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.9
+    full-molformula: C16H21NO2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 5a3cf917-3569-4fc1-8b81-ffecfd2de005
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5a3cf917-3569-4fc1-8b81-ffecfd2de005
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Ramelteon (Rozerem)
@@ -86,10 +118,19 @@ pk-source:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Ramelteon, Rozerem
+- **ChEMBL:** [CHEMBL133775](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL133775/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 MT1/MT2 melatonin-receptor agonist approved for sleep-onset insomnia, non-controlled and generally less impairing than GABAergic hypnotics.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 259.35 | 2.57 | 38.33 | 1/2 | 0 | C16H21NO2 |
 
 ## Evidence boundaries
 
@@ -110,6 +151,17 @@ MT1/MT2 melatonin-receptor agonist approved for sleep-onset insomnia, non-contro
 | CYP (metabolised by) | CYP1A2, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | M-II (active metabolite) |
 | Excretion | mainly urinary | Kidney: 84%; Feces: 4% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 5a3cf917…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5a3cf917-3569-4fc1-8b81-ffecfd2de005), label version 20260901. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2.6)
+> - protein-binding: consistent (label values: 82)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared CYP substrate pool:** CYP1A2 (+42 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

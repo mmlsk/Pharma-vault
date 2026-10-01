@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4802160
 chembl-max-phase: 3
 half-life:
   value: null
@@ -55,6 +55,32 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4802160
+  pref-name: DERSIMELAGON
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3795
+    name: Melanocyte-stimulating hormone receptor
+    action: AGONIST
+  properties:
+    full-mwt: 675.76
+    mw-freebase: 675.76
+    alogp: 5.95
+    psa: 82.55
+    hba: 6
+    hbd: 1
+    rtb: 9
+    num-ro5-violations: 2
+    qed-weighted: 0.33
+    full-molformula: C36H45F4N3O5
 ---
 
 # Dersimelagon
@@ -68,6 +94,7 @@ tags:
 - **Compound ID:** `dersimelagon-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL4802160](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802160/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -77,6 +104,18 @@ Dersimelagon is a phase 3 compound catalogued by ChEMBL. Its curated mechanism i
 
 melanocortin receptor 1 agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 675.76 | 5.95 | 82.55 | 1/6 | 2 | C36H45F4N3O5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Melanocyte-stimulating hormone receptor (CHEMBL3795)|Melanocyte-stimulating hormone receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +124,12 @@ melanocortin receptor 1 agonist _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Afamelanotide (Melanotan I)]] (Melanocyte-stimulating hormone receptor)
 
 ## Safety routing
 

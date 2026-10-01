@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201273
+  pref-name: PROTOKYLOL
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 331.37
+    mw-freebase: 331.37
+    alogp: 2.08
+    psa: 91.18
+    hba: 6
+    hbd: 4
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.61
+    full-molformula: C18H21NO5
 ---
 
 # Protokylol
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `protokylol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201273](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201273/) · max phase 4
+- **ChEMBL:** [CHEMBL1201273](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201273/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,15 @@ Beta-2 adrenergic receptor agonist; approved/marketed compound catalogued by ChE
 ## Mechanism
 
 Beta-2 adrenergic receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 331.37 | 2.08 | 91.18 | 4/6 | 0 | C18H21NO5 |
 
 ## Evidence boundaries
 

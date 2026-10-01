@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3585580
+chembl-max-phase: 3
 half-life:
   value: 7.8
   value-max: 9.8
@@ -59,6 +59,8 @@ tags:
 - group/glp1
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Lobeglitazone
@@ -66,6 +68,35 @@ pk-source:
   revision: 1329160872
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3585580
+  pref-name: LOBEGLITAZONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A10BG04
+  targets: []
+  properties:
+    full-mwt: 480.55
+    mw-freebase: 480.55
+    alogp: 3.69
+    psa: 102.88
+    hba: 9
+    hbd: 1
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.47
+    full-molformula: C24H24N4O5S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Lobeglitazone
@@ -79,10 +110,20 @@ pk-source:
 - **Compound ID:** `lobeglitazone-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL3585580](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3585580/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 PPAR-gamma agonist approved in South Korea, with a claimed lower dose than pioglitazone.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC A10BG04:** ALIMENTARY TRACT AND METABOLISM › BLOOD GLUCOSE LOWERING DRUGS, EXCL. INSULINS › Thiazolidinediones
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 480.55 | 3.69 | 102.88 | 1/9 | 0 | C24H24N4O5S |
 
 ## Evidence boundaries
 
@@ -100,6 +141,15 @@ PPAR-gamma agonist approved in South Korea, with a claimed lower dose than piogl
 | Protein binding | 99 % | &gt;99% |
 | Metabolism | hepatic | liver (CYP2C9, 2C19, and 1A2) |
 | CYP (metabolised by) | CYP2C9 | roles as inhibitor/inducer not assessed |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Pioglitazone (Actos)]], [[Rosiglitazone]], [[Troglitazone]]
+- **Shared CYP substrate pool:** CYP2C9 (+40 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

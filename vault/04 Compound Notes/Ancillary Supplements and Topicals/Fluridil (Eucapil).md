@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2107790
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -56,6 +56,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2107790
+  pref-name: TOPILUTAMIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 403.24
+    mw-freebase: 403.24
+    alogp: 1.98
+    psa: 121.57
+    hba: 5
+    hbd: 3
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.39
+    full-molformula: C13H11F6N3O5
 ---
 
 # Fluridil (Eucapil)
@@ -70,10 +93,19 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Fluridil, Eucapil
+- **ChEMBL:** [CHEMBL2107790](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107790/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Topical androgen-receptor antagonist marketed in parts of Europe for androgenetic alopecia; designed to degrade in water and limit systemic exposure.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 403.24 | 1.98 | 121.57 | 3/5 | 0 | C13H11F6N3O5 |
 
 ## Evidence boundaries
 

@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Flurazepam
@@ -67,6 +68,35 @@ pk-source:
   revision: 1314506564
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL968
+  pref-name: FLURAZEPAM
+  molecule-type: Small molecule
+  first-approval: 1970
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N05CD01
+  targets: []
+  properties:
+    full-mwt: 387.89
+    mw-freebase: 387.89
+    alogp: 4.0
+    psa: 35.91
+    hba: 3
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.75
+    full-molformula: C21H23ClFN3O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Flurazepam
@@ -80,7 +110,7 @@ pk-source:
 - **Compound ID:** `flurazepam-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL968](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL968/) · max phase 4
+- **ChEMBL:** [CHEMBL968](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL968/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +119,17 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1970
+- **Flags:** black-box warning
+- **ATC N05CD01:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Benzodiazepine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 387.89 | 4.0 | 35.91 | 0/3 | 0 | C21H23ClFN3O |
 
 ## Evidence boundaries
 
@@ -107,6 +148,14 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 | Metabolism | hepatic | Liver |
 | Metabolites | - | N-desalkylflurazepam (active metabolite) |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Estazolam]], [[Flunitrazepam]], [[Midazolam]], [[Quazepam]], [[Remimazolam]], [[Temazepam]], [[Triazolam]]
 
 ## Safety routing
 

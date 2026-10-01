@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL173929
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL173929
+  pref-name: LUTEIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 568.89
+    mw-freebase: 568.89
+    alogp: 10.4
+    psa: 40.46
+    hba: 2
+    hbd: 2
+    rtb: 10
+    num-ro5-violations: 2
+    qed-weighted: 0.2
+    full-molformula: C40H56O2
 ---
 
 # Lutein
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `lutein-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL173929](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL173929/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Dietary xanthophyll concentrated in the macula, studied with zeaxanthin for progression of age-related macular degeneration rather than general anti-aging.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 568.89 | 10.4 | 40.46 | 2/2 | 2 | C40H56O2 |
 
 ## Evidence boundaries
 

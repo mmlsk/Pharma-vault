@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL53463
+chembl-max-phase: 4
 half-life:
   value: 12.0
   value-max: null
@@ -63,6 +63,8 @@ tags:
 - group/oncology
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Doxorubicin
@@ -70,6 +72,37 @@ pk-source:
   revision: 1369613446
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL53463
+  pref-name: DOXORUBICIN
+  molecule-type: Small molecule
+  first-approval: 1974
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L01DB01
+  targets: []
+  properties:
+    full-mwt: 543.53
+    mw-freebase: 543.53
+    alogp: 0.0
+    psa: 206.07
+    hba: 12
+    hbd: 6
+    rtb: 5
+    num-ro5-violations: 3
+    qed-weighted: 0.24
+    full-molformula: C27H29NO11
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: d928625e-c1ef-4f25-8d25-764c8c6aab67
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d928625e-c1ef-4f25-8d25-764c8c6aab67
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Doxorubicin (Adriamycin)
@@ -84,10 +117,22 @@ pk-source:
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Doxorubicin, Adriamycin
+- **ChEMBL:** [CHEMBL53463](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL53463/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 An anthracycline that intercalates DNA, poisons topoisomerase II and generates iron-dependent free radicals. The last of those is why its cardiotoxicity is cumulative and dose-limited rather than reversible.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1974
+- **Flags:** black-box warning
+- **ATC L01DB01:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › CYTOTOXIC ANTIBIOTICS AND RELATED SUBSTANCES › Anthracyclines and related substances
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 543.53 | 0.0 | 206.07 | 6/12 | 3 | C27H29NO11 |
 
 ## Evidence boundaries
 
@@ -106,6 +151,11 @@ An anthracycline that intercalates DNA, poisons topoisomerase II and generates i
 | Bioavailability | 5 % | 5% (by mouth) |
 | Metabolism | hepatic | Liver |
 | Excretion | - | Urine (5–12%), faeces (40–50%) |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set d928625e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=d928625e-c1ef-4f25-8d25-764c8c6aab67), label version 20240529. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 0.083, 20, 35, 48)
+> - protein-binding: consistent (label values: 75)
 
 ## Safety routing
 

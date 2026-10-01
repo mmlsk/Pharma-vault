@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1201230
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1201230
+  pref-name: MAGNESIUM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 24.3
+    mw-freebase: 24.3
+    full-molformula: Mg
 ---
 
 # Magnesium
@@ -67,10 +83,19 @@ tags:
 - **Compound ID:** `magnesium-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1201230](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201230/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Essential mineral studied for raising free and total testosterone, plausibly via competing with testosterone for SHBG binding, on top of its many other roles in enzymatic function.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 24.3 | - | - | -/- | - | Mg |
 
 ## Evidence boundaries
 

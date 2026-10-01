@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Purinergic receptor P2Y12 antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2103828
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Elinogrel
@@ -62,6 +64,30 @@ pk-source:
   revision: 1371485863
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2103828
+  pref-name: ELINOGREL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2001
+    name: P2Y purinoceptor 12
+    action: ANTAGONIST
+  properties:
+    full-mwt: 523.96
+    mw-freebase: 523.96
+    alogp: 3.09
+    psa: 142.16
+    hba: 8
+    hbd: 4
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.32
+    full-molformula: C20H15ClFN5O5S2
 ---
 
 # Elinogrel
@@ -75,10 +101,27 @@ pk-source:
 - **Compound ID:** `elinogrel-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2103828](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103828/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits platelet P2Y12 ADP signalling to reduce aggregation, at the cost of bleeding risk; investigational, development discontinued.
+
+## Mechanism
+
+Purinergic receptor P2Y12 antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 523.96 | 3.09 | 142.16 | 4/8 | 1 | C20H15ClFN5O5S2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[P2Y purinoceptor 12 (CHEMBL2001)|P2Y purinoceptor 12]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -94,6 +137,12 @@ Inhibits platelet P2Y12 ADP signalling to reduce aggregation, at the cost of ble
 |---|---|---|
 | Metabolism | hepatic | Mainly unchanged, ~15% N-demethylation |
 | Excretion | - | Urine, faeces |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Cangrelor]] (P2Y purinoceptor 12), [[Ticagrelor (Brilinta)]] (P2Y purinoceptor 12)
 
 ## Safety routing
 

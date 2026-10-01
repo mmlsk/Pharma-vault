@@ -17,7 +17,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL5595500
 chembl-max-phase: null
 half-life:
   value: null
@@ -57,6 +57,28 @@ tags:
 - source-derived
 - group/fgfr
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL5595500
+  pref-name: null
+  molecule-type: null
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 559.48
+    mw-freebase: 559.48
+    alogp: 4.55
+    psa: 104.31
+    hba: 7
+    hbd: 1
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.37
+    full-molformula: C25H24Cl2N6O3S
 ---
 
 # TYRA-300 (Dabogratinib)
@@ -71,10 +93,19 @@ tags:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** TYRA-300, Dabogratinib
+- **ChEMBL:** [CHEMBL5595500](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5595500/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 Investigational FGFR3-selective inhibitor designed to avoid the hyperphosphatemia that dose-limits pan-FGFR drugs; animal growth data only.
+
+## ChEMBL profile
+
+- **Molecule type:** -
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 559.48 | 4.55 | 104.31 | 1/7 | 1 | C25H24Cl2N6O3S |
 
 ## Evidence boundaries
 

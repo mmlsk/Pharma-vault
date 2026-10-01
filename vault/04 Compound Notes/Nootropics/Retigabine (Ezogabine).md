@@ -10,15 +10,15 @@ cluster: Nootropics
 group: neuropsych
 class: null
 subclass: null
-mechanism: null
+mechanism: KCNQ (Kv7) potassium channel opener
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL41355
+chembl-max-phase: 4
 half-life:
   value: 8.0
   value-max: null
@@ -64,6 +64,7 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Retigabine
@@ -71,6 +72,38 @@ pk-source:
   revision: 1364201705
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL41355
+  pref-name: EZOGABINE
+  molecule-type: Small molecule
+  first-approval: 2011
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N03AX21
+  targets:
+  - id: CHEMBL2363063
+    name: KCNQ (Kv7) potassium channel
+    action: OPENER
+  properties:
+    full-mwt: 303.34
+    mw-freebase: 303.34
+    alogp: 3.59
+    psa: 76.38
+    hba: 4
+    hbd: 3
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.74
+    full-molformula: C16H18FN3O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Retigabine (Ezogabine)
@@ -85,10 +118,30 @@ pk-source:
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Retigabine, Ezogabine
+- **ChEMBL:** [CHEMBL41355](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL41355/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Withdrawn Kv7 channel opener, the first anticonvulsant with that mechanism, retired for blue skin and retinal pigment deposits.
+
+## Mechanism
+
+KCNQ (Kv7) potassium channel opener _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2011
+- **Flags:** black-box warning
+- **ATC N03AX21:** NERVOUS SYSTEM › ANTIEPILEPTICS › Other antiepileptics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 303.34 | 3.59 | 76.38 | 3/4 | 0 | C16H18FN3O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[KCNQ (Kv7) potassium channel (CHEMBL2363063)|KCNQ (Kv7) potassium channel]] - opener · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -107,6 +160,14 @@ Withdrawn Kv7 channel opener, the first anticonvulsant with that mechanism, reti
 | Bioavailability | 60 % | 60% |
 | Metabolism | hepatic | Liver glucuronidation and acetylation. CYP not involved |
 | Excretion | mainly urinary | Kidney (84%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Brivaracetam]], [[Cannabidiol (Epidiolex)]], [[Cenobamate]], [[Felbamate]], [[Fenfluramine]], [[Ganaxolone]], [[Lacosamide]], [[Lamotrigine]], [[Levetiracetam]], [[Perampanel]], [[Pheneturide]], [[Stiripentol]]
 
 ## Safety routing
 

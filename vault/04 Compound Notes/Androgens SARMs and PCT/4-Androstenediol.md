@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL195836
 chembl-max-phase: null
 half-life:
   value: null
@@ -55,6 +55,28 @@ tags:
 - source-derived
 - group/steroids
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL195836
+  pref-name: null
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 290.45
+    mw-freebase: 290.45
+    alogp: 3.67
+    psa: 40.46
+    hba: 2
+    hbd: 2
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C19H30O2
 ---
 
 # 4-Androstenediol
@@ -68,10 +90,19 @@ tags:
 - **Compound ID:** `androstenediol-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL195836](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL195836/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 Testosterone precursor one enzymatic step further out than androstenedione.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 290.45 | 3.67 | 40.46 | 2/2 | 0 | C19H30O2 |
 
 ## Evidence boundaries
 

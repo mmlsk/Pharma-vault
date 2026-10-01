@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Kappa opioid receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3989915
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: null
@@ -60,6 +60,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Difelikefalin
@@ -67,6 +69,39 @@ pk-source:
   revision: 1362480627
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3989915
+  pref-name: DIFELIKEFALIN
+  molecule-type: Protein
+  first-approval: 2021
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - V03AX04
+  targets:
+  - id: CHEMBL237
+    name: Kappa-type opioid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 679.86
+    mw-freebase: 679.86
+    alogp: 0.83
+    psa: 222.97
+    hba: 8
+    hbd: 7
+    rtb: 18
+    num-ro5-violations: 2
+    qed-weighted: 0.11
+    full-molformula: C36H53N7O6
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 0c7b81f2-0fd3-47cb-8b0f-185e07f19c87
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0c7b81f2-0fd3-47cb-8b0f-185e07f19c87
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
 ---
 
 # Difelikefalin
@@ -80,10 +115,29 @@ pk-source:
 - **Compound ID:** `difelikefalin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3989915](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989915/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Peripherally restricted kappa agonist for uraemic pruritus — analgesia and antipruritus without CNS dysphoria because it does not cross the blood-brain barrier.
+
+## Mechanism
+
+Kappa opioid receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2021
+- **ATC V03AX04:** VARIOUS › ALL OTHER THERAPEUTIC PRODUCTS › Other therapeutic products
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 679.86 | 0.83 | 222.97 | 7/8 | 2 | C36H53N7O6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Kappa-type opioid receptor (CHEMBL237)|Kappa-type opioid receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -101,6 +155,17 @@ Peripherally restricted kappa agonist for uraemic pruritus — analgesia and ant
 | Bioavailability | 100 % | 100% (IV) |
 | Metabolism | - | Not metabolized |
 | Excretion | - | Excreted as unchanged; drug via bile and urine |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 0c7b81f2…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0c7b81f2-0fd3-47cb-8b0f-185e07f19c87), label version 20250826. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 23, 31)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aticaprant]] (Kappa-type opioid receptor), [[Buprenorphine]] (Kappa-type opioid receptor), [[Dezocine]] (Kappa-type opioid receptor)
+- **Same ATC subgroup:** [[Nalfurafine]]
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: gi
 class: null
 subclass: null
-mechanism: null
+mechanism: Neurokinin 1 receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1471
+chembl-max-phase: 4
 half-life:
   value: 9.0
   value-max: 13.0
@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/gi
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Aprepitant
@@ -71,6 +73,40 @@ pk-source:
   revision: 1373784554
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1471
+  pref-name: APREPITANT
+  molecule-type: Small molecule
+  first-approval: 2003
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A04AD12
+  targets:
+  - id: CHEMBL249
+    name: Substance-P receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 534.43
+    mw-freebase: 534.43
+    alogp: 4.95
+    psa: 83.24
+    hba: 5
+    hbd: 2
+    rtb: 6
+    num-ro5-violations: 1
+    qed-weighted: 0.44
+    full-molformula: C23H21F7N4O3
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: af9b6086-4bf2-472c-8740-4134eaaebace
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=af9b6086-4bf2-472c-8740-4134eaaebace
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
+    protein-binding: consistent
 ---
 
 # Aprepitant
@@ -84,10 +120,29 @@ pk-source:
 - **Compound ID:** `aprepitant-compound`
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1471](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1471/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Neurokinin-1 antagonist that controls delayed chemotherapy-induced nausea, which the 5-HT3 antagonists do not reach.
+
+## Mechanism
+
+Neurokinin 1 receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2003
+- **ATC A04AD12:** ALIMENTARY TRACT AND METABOLISM › ANTIEMETICS AND ANTINAUSEANTS › Other antiemetics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 534.43 | 4.95 | 83.24 | 2/5 | 1 | C23H21F7N4O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Substance-P receptor (CHEMBL249)|Substance-P receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -107,6 +162,19 @@ Neurokinin-1 antagonist that controls delayed chemotherapy-induced nausea, which
 | Metabolism | hepatic | Liver (mostly CYP3A4- mediated; some contributions by CYP2C19 & CYP1A2) |
 | CYP (metabolised by) | CYP1A2, CYP2C19, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Kidney (57%), feces (45%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set af9b6086…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=af9b6086-4bf2-472c-8740-4134eaaebace), label version 20260611. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+> - protein-binding: consistent (label values: 21, 32, 95)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Netupitant]] (Substance-P receptor)
+- **Same ATC subgroup:** [[Dronabinol]], [[Hyoscine (Scopolamine)]], [[Rolapitant]]
+- **Shared CYP substrate pool:** CYP1A2 (+42 others), CYP2C19 (+43 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Prostanoid FP receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1963683
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tafluprost
@@ -62,6 +63,31 @@ pk-source:
   revision: 1330112631
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1963683
+  pref-name: TAFLUPROST
+  molecule-type: Small molecule
+  first-approval: 2012
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - S01EE05
+  targets:
+  - id: CHEMBL1987
+    name: Prostaglandin F2-alpha receptor
+    action: AGONIST
+  properties:
+    full-mwt: 452.54
+    mw-freebase: 452.54
+    alogp: 4.68
+    psa: 75.99
+    hba: 5
+    hbd: 2
+    rtb: 12
+    num-ro5-violations: 0
+    qed-weighted: 0.27
+    full-molformula: C25H34F2O5
 ---
 
 # Tafluprost
@@ -75,10 +101,30 @@ pk-source:
 - **Compound ID:** `tafluprost-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1963683](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1963683/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Preservative-free prostaglandin analogue for glaucoma.
+
+## Mechanism
+
+Prostanoid FP receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2012
+- **Flags:** prodrug
+- **ATC S01EE05:** SENSORY ORGANS › ANTIGLAUCOMA PREPARATIONS AND MIOTICS › Prostaglandin analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 452.54 | 4.68 | 75.99 | 2/5 | 0 | C25H34F2O5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Prostaglandin F2-alpha receptor (CHEMBL1987)|Prostaglandin F2-alpha receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -93,6 +139,13 @@ Preservative-free prostaglandin analogue for glaucoma.
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Metabolism | hepatic | Activation by ester hydrolysis, deactivation by beta oxidation |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Bimatoprost (Latisse)]] (Prostaglandin F2-alpha receptor), [[Bimatoprost (topical, Latisse)]] (Prostaglandin F2-alpha receptor), [[Latanoprost]] (Prostaglandin F2-alpha receptor), [[Latanoprostene Bunod]] (Prostaglandin F2-alpha receptor), [[Latanoprostene Bunod (latanoprostene-compound)|Latanoprostene Bunod]] (Prostaglandin F2-alpha receptor), [[Travoprost]] (Prostaglandin F2-alpha receptor)
+- **Same ATC subgroup:** [[Bimatoprost (Latisse)]], [[Bimatoprost (topical, Latisse)]], [[Latanoprost]], [[Latanoprostene Bunod]], [[Latanoprostene Bunod (latanoprostene-compound)|Latanoprostene Bunod]], [[Travoprost]]
 
 ## Safety routing
 

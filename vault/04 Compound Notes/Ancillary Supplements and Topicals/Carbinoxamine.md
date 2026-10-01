@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Carbinoxamine
@@ -63,6 +64,35 @@ pk-source:
   revision: 1275691876
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL864
+  pref-name: CARBINOXAMINE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - R06AA08
+  targets: []
+  properties:
+    full-mwt: 290.79
+    mw-freebase: 290.79
+    alogp: 3.4
+    psa: 25.36
+    hba: 3
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C16H19ClN2O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Carbinoxamine
@@ -76,7 +106,7 @@ pk-source:
 - **Compound ID:** `carbinoxamine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL864](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL864/) · max phase 4
+- **ChEMBL:** [CHEMBL864](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL864/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +115,17 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+- **Flags:** withdrawn
+- **ATC R06AA08:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Aminoalkyl ethers
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 290.79 | 3.4 | 25.36 | 0/3 | 0 | C16H19ClN2O |
 
 ## Evidence boundaries
 
@@ -99,6 +140,14 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 10–20 h | 10 to 20 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Bromodiphenhydramine]], [[Chlorphenoxamine]], [[Clemastine]], [[Dimenhydrinate]], [[Diphenhydramine (Benadryl)]], [[Diphenylpyraline]], [[Doxylamine]]
 
 ## Safety routing
 

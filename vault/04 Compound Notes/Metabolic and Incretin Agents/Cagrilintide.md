@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4802169
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -55,6 +55,19 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4802169
+  pref-name: CAGRILINTIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Cagrilintide
@@ -68,10 +81,15 @@ tags:
 - **Compound ID:** `cagrilintide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
+- **ChEMBL:** [CHEMBL4802169](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802169/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Long-acting amylin receptor agonist studied for weight management, often paired with semaglutide.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
 
 ## Evidence boundaries
 

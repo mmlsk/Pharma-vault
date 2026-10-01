@@ -57,6 +57,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Canrenone
@@ -64,6 +65,38 @@ pk-source:
   revision: 1351773744
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1463345
+  pref-name: CANRENONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - C03DA03
+  targets:
+  - id: CHEMBL1994
+    name: Mineralocorticoid receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 340.46
+    mw-freebase: 340.46
+    alogp: 4.37
+    psa: 43.37
+    hba: 3
+    hbd: 0
+    rtb: 0
+    num-ro5-violations: 0
+    qed-weighted: 0.62
+    full-molformula: C22H28O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Canrenone
@@ -77,7 +110,7 @@ pk-source:
 - **Compound ID:** `canrenone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1463345](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1463345/) · max phase 4
+- **ChEMBL:** [CHEMBL1463345](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1463345/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -86,6 +119,20 @@ Mineralocorticoid receptor antagonist; approved/marketed compound catalogued by 
 ## Mechanism
 
 Mineralocorticoid receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC C03DA03:** CARDIOVASCULAR SYSTEM › ALDOSTERONE ANTAGONISTS AND OTHER POTASSIUM-SPARING AGENTS › Aldosterone antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 340.46 | 4.37 | 43.37 | 0/3 | 0 | C22H28O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Mineralocorticoid receptor (CHEMBL1994)|Mineralocorticoid receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -101,6 +148,15 @@ Mineralocorticoid receptor antagonist _(ChEMBL curated mechanism, as quoted by t
 |---|---|---|
 | Elimination t½ | 16.5 h | 16.5 hours |
 | Protein binding | 95 % | 95% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Apararenone]] (Mineralocorticoid receptor), [[Balcinrenone]] (Mineralocorticoid receptor), [[Desoxycorticosterone Acetate]] (Mineralocorticoid receptor), [[Desoxycorticosterone Pivalate]] (Mineralocorticoid receptor), [[Drospirenone]] (Mineralocorticoid receptor), [[Eplerenone]] (Mineralocorticoid receptor), [[Felodipine]] (Mineralocorticoid receptor), [[Finerenone (Kerendia)]] (Mineralocorticoid receptor), [[Fludrocortisone Acetate]] (Mineralocorticoid receptor), [[Nimodipine]] (Mineralocorticoid receptor), [[Spironolactone]] (Mineralocorticoid receptor), [[Vamorolone]] (Mineralocorticoid receptor)
+- **Same ATC subgroup:** [[Eplerenone]], [[Finerenone (Kerendia)]], [[Spironolactone]]
 
 ## Safety routing
 

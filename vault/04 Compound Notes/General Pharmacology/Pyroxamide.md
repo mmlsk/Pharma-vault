@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL353581
+chembl-max-phase: 1
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/oncology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL353581
+  pref-name: PYROXAMIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 265.31
+    mw-freebase: 265.31
+    alogp: 1.87
+    psa: 91.32
+    hba: 4
+    hbd: 3
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.38
+    full-molformula: C13H19N3O3
 ---
 
 # Pyroxamide
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `pyroxamide-compound`
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL353581](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL353581/) · max phase 1 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Pyroxamide is a named HDAC research compound with a curated biochemical result against HDAC6. ChEMBL records Ki 4.8 nM in the selected assay; that describes target potency, not a proven clinical benefit.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 265.31 | 1.87 | 91.32 | 3/4 | 0 | C13H19N3O3 |
 
 ## Evidence boundaries
 

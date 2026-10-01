@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Dimenhydrinate
@@ -63,6 +64,31 @@ pk-source:
   revision: 1374681392
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1200406
+  pref-name: DIMENHYDRINATE
+  molecule-type: Small molecule
+  first-approval: 1972
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AA11
+  targets:
+  - id: CHEMBL231
+    name: Histamine H1 receptor
+    action: ANTAGONIST
+  properties:
+    full-mwt: 469.97
+    mw-freebase: 469.97
+    full-molformula: C24H28ClN5O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Dimenhydrinate
@@ -76,7 +102,7 @@ pk-source:
 - **Compound ID:** `dimenhydrinate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200406](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200406/) · max phase 4
+- **ChEMBL:** [CHEMBL1200406](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200406/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +111,20 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1972
+- **ATC R06AA11:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Aminoalkyl ethers
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 469.97 | - | - | -/- | - | C24H28ClN5O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Histamine H1 receptor (CHEMBL231)|Histamine H1 receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -100,6 +140,15 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 |---|---|---|
 | Elimination t½ | 5.5 h | 5.5 hours (diphenhydramine component) |
 | Metabolism | hepatic | Liver |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acrivastine]] (Histamine H1 receptor), [[Alcaftadine]] (Histamine H1 receptor), [[Astemizole]] (Histamine H1 receptor), [[Betahistine]] (Histamine H1 receptor), [[Bilastine]] (Histamine H1 receptor), [[Chlorphenoxamine]] (Histamine H1 receptor), [[Cinnarizine]] (Histamine H1 receptor), [[Desloratadine]] (Histamine H1 receptor), [[Dibenzepin]] (Histamine H1 receptor), [[Dimethindene]] (Histamine H1 receptor), [[Doxepin]] (Histamine H1 receptor), [[Doxepin, low dose (Silenor)]] (Histamine H1 receptor)
+- **Same ATC subgroup:** [[Bromodiphenhydramine]], [[Carbinoxamine]], [[Chlorphenoxamine]], [[Clemastine]], [[Diphenhydramine (Benadryl)]], [[Diphenylpyraline]], [[Doxylamine]]
 
 ## Safety routing
 

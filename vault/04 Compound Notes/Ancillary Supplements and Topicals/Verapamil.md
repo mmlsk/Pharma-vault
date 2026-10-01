@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL6966
+chembl-max-phase: 4
 half-life:
   value: 2.8
   value-max: 7.4
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Verapamil
@@ -67,6 +68,36 @@ pk-source:
   revision: 1370506845
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL6966
+  pref-name: VERAPAMIL
+  molecule-type: Small molecule
+  first-approval: 1981
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C08DA01
+  - C08DA51
+  targets: []
+  properties:
+    full-mwt: 454.61
+    mw-freebase: 454.61
+    alogp: 5.09
+    psa: 63.95
+    hba: 6
+    hbd: 0
+    rtb: 13
+    num-ro5-violations: 1
+    qed-weighted: 0.42
+    full-molformula: C27H38N2O4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Verapamil
@@ -80,10 +111,22 @@ pk-source:
 - **Compound ID:** `verapamil-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL6966](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL6966/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 The most cardiac-selective calcium channel blocker; constipation is the near-universal complaint.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1981
+- **ATC C08DA01:** CARDIOVASCULAR SYSTEM › SELECTIVE CALCIUM CHANNEL BLOCKERS WITH DIRECT CARDIAC EFFECTS › Phenylalkylamine derivatives
+- **ATC C08DA51:** CARDIOVASCULAR SYSTEM › SELECTIVE CALCIUM CHANNEL BLOCKERS WITH DIRECT CARDIAC EFFECTS › Phenylalkylamine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 454.61 | 5.09 | 63.95 | 0/6 | 1 | C27H38N2O4 |
 
 ## Evidence boundaries
 
@@ -101,6 +144,8 @@ The most cardiac-selective calcium channel blocker; constipation is the near-uni
 | Bioavailability | 35.1 % | 35.1% |
 | Metabolism | hepatic | Liver |
 | Excretion | mainly urinary | Kidney: 11% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

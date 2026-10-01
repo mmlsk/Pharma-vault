@@ -54,7 +54,7 @@ risk-domains: []
 group-risk-triage:
 - glucose-metabolism
 - gastrointestinal
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,9 @@ tags:
 - group/glp1
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Bremelanotide
@@ -69,6 +72,33 @@ pk-source:
   revision: 1376322571
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2070241
+  pref-name: BREMELANOTIDE
+  molecule-type: Protein
+  first-approval: 2019
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G02CX05
+  targets:
+  - id: CHEMBL259
+    name: Melanocortin receptor 4
+    action: AGONIST
+  properties:
+    full-mwt: 1025.18
+    mw-freebase: 1025.18
+    full-molformula: C50H68N14O10
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: f1d0c1b5-2f39-4bad-a6a4-0066e3ad5dcf
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f1d0c1b5-2f39-4bad-a6a4-0066e3ad5dcf
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Bremelanotide
@@ -82,7 +112,7 @@ pk-source:
 - **Compound ID:** `bremelanotide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL2070241](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2070241/) · max phase 4
+- **ChEMBL:** [CHEMBL2070241](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2070241/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -91,6 +121,20 @@ Melanocortin receptor 4 agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Melanocortin receptor 4 agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2019
+- **ATC G02CX05:** GENITO URINARY SYSTEM AND SEX HORMONES › OTHER GYNECOLOGICALS › Other gynecologicals
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1025.18 | - | - | -/- | - | C50H68N14O10 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Melanocortin receptor 4 (CHEMBL259)|Melanocortin receptor 4]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -109,6 +153,19 @@ Melanocortin receptor 4 agonist _(ChEMBL curated mechanism, as quoted by the sou
 | Bioavailability | 100 % | SC: ~100% |
 | Metabolism | - | Hydrolysis of peptide bonds |
 | Excretion | mainly urinary | Urine: 64.8%; Feces: 22.8% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set f1d0c1b5…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f1d0c1b5-2f39-4bad-a6a4-0066e3ad5dcf), label version 20251113. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1.9, 2.7, 4)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[PT-141 (Bremelanotide)]]
+- **Shared target:** [[PT-141 (Bremelanotide)]] (Melanocortin receptor 4), [[Setmelanotide (Imcivree)]] (Melanocortin receptor 4)
+- **Same ATC subgroup:** [[PT-141 (Bremelanotide)]]
 
 ## Safety routing
 

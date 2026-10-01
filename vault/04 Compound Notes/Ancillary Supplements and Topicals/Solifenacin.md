@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1734
+chembl-max-phase: 4
 half-life:
   value: 45.0
   value-max: 68.0
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Solifenacin
@@ -69,6 +70,35 @@ pk-source:
   revision: 1363792577
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1734
+  pref-name: SOLIFENACIN
+  molecule-type: Small molecule
+  first-approval: 2004
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04BD08
+  targets: []
+  properties:
+    full-mwt: 362.47
+    mw-freebase: 362.47
+    alogp: 3.86
+    psa: 32.78
+    hba: 3
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.81
+    full-molformula: C23H26N2O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Solifenacin
@@ -82,10 +112,21 @@ pk-source:
 - **Compound ID:** `solifenacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1734](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1734/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Antagonises muscarinic receptors; peripheral selectivity determines how much dry mouth, constipation and central anticholinergic burden an agent carries; M3-preferring.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2004
+- **ATC G04BD08:** GENITO URINARY SYSTEM AND SEX HORMONES › UROLOGICALS › Drugs for urinary frequency and incontinence
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 362.47 | 3.86 | 32.78 | 0/3 | 0 | C23H26N2O2 |
 
 ## Evidence boundaries
 
@@ -106,6 +147,15 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Glucuronide, N-oxide, others |
 | Excretion | mainly urinary | Kidney (69.2%) and fecal (22.5%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Darifenacin]], [[Fesoterodine]], [[Imidafenacin]], [[Oxybutynin]], [[Propiverine]], [[Tolterodine]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

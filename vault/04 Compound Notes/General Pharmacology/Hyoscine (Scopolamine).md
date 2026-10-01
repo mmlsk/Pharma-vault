@@ -10,15 +10,15 @@ cluster: General Pharmacology
 group: analgesia
 class: null
 subclass: null
-mechanism: null
+mechanism: Muscarinic acetylcholine receptor M1 antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL569713
+chembl-max-phase: 4
 half-life:
   value: 5.0
   value-max: null
@@ -63,6 +63,8 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Scopolamine
@@ -70,6 +72,42 @@ pk-source:
   revision: 1369150808
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL569713
+  pref-name: SCOPOLAMINE
+  molecule-type: Small molecule
+  first-approval: 1979
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A04AD01
+  - A04AD51
+  - N05CM05
+  - S01FA02
+  targets:
+  - id: CHEMBL216
+    name: Muscarinic acetylcholine receptor M1
+    action: ANTAGONIST
+  properties:
+    full-mwt: 303.36
+    mw-freebase: 303.36
+    alogp: 0.92
+    psa: 62.3
+    hba: 5
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.66
+    full-molformula: C17H21NO4
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 2a6f9aaf-a70a-481f-a82b-1dcaaadc185b
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2a6f9aaf-a70a-481f-a82b-1dcaaadc185b
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
 ---
 
 # Hyoscine (Scopolamine)
@@ -84,10 +122,32 @@ pk-source:
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Hyoscine, Scopolamine
+- **ChEMBL:** [CHEMBL569713](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL569713/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Tertiary antimuscarinic that crosses into the brain, used transdermally for motion sickness and historically as the standard amnesic model drug.
+
+## Mechanism
+
+Muscarinic acetylcholine receptor M1 antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1979
+- **ATC A04AD01:** ALIMENTARY TRACT AND METABOLISM › ANTIEMETICS AND ANTINAUSEANTS › Other antiemetics
+- **ATC A04AD51:** ALIMENTARY TRACT AND METABOLISM › ANTIEMETICS AND ANTINAUSEANTS › Other antiemetics
+- **ATC N05CM05:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Other hypnotics and sedatives
+- **ATC S01FA02:** SENSORY ORGANS › MYDRIATICS AND CYCLOPLEGICS › Anticholinergics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 303.36 | 0.92 | 62.3 | 1/5 | 0 | C17H21NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Muscarinic acetylcholine receptor M1 (CHEMBL216)|Muscarinic acetylcholine receptor M1]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -106,6 +166,18 @@ Tertiary antimuscarinic that crosses into the brain, used transdermally for moti
 | Metabolism | hepatic | Liver (CYP3A4) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Kidney |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 2a6f9aaf…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2a6f9aaf-a70a-481f-a82b-1dcaaadc185b), label version 20260909. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 9.5)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Atropine]] (Muscarinic acetylcholine receptor M1), [[Minaprine]] (Muscarinic acetylcholine receptor M1), [[Pilocarpine]] (Muscarinic acetylcholine receptor M1), [[Talsaclidine]] (Muscarinic acetylcholine receptor M1), [[Xanomeline]] (Muscarinic acetylcholine receptor M1)
+- **Same ATC subgroup:** [[Aprepitant]], [[Atropine]], [[Clomethiazole]], [[Cyclopentolate]], [[Dexmedetomidine]], [[Dronabinol]], [[Ethchlorvynol]], [[Methaqualone]], [[Propiomazine]], [[Rolapitant]], [[Triclofos]], [[Tropicamide]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

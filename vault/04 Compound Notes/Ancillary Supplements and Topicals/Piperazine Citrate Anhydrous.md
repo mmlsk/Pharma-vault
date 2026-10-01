@@ -54,6 +54,21 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL3990694
+  pref-name: PIPERAZINE CITRATE ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 1954
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 642.66
+    mw-freebase: 642.66
+    full-molformula: C24H46N6O14
 ---
 
 # Piperazine Citrate Anhydrous
@@ -67,7 +82,7 @@ tags:
 - **Compound ID:** `piperazine-citrate-anhydrous-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL3990694](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990694/) · max phase 4
+- **ChEMBL:** [CHEMBL3990694](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3990694/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +91,15 @@ Nematode GABA-A receptor positive modulator; approved/marketed compound catalogu
 ## Mechanism
 
 Nematode GABA-A receptor positive modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1954
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 642.66 | - | - | -/- | - | C24H46N6O14 |
 
 ## Evidence boundaries
 

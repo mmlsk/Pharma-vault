@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4594507
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -57,6 +57,19 @@ tags:
 - source-derived
 - group/fgfr
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4594507
+  pref-name: NAVEPEGRITIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Navepegritide (TransCon CNP)
@@ -71,10 +84,15 @@ tags:
 - **Source group:** FGFR3 & Growth Plate (`fgfr`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Navepegritide, TransCon CNP
+- **ChEMBL:** [CHEMBL4594507](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4594507/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Once-weekly prodrug of C-type natriuretic peptide for achondroplasia. Sustained-release design addresses CNP's very short native half-life, and it is being trialled alongside lonapegsomatropin.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
 
 ## Evidence boundaries
 

@@ -54,6 +54,21 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201468
+  pref-name: ESTROGENS, ESTERIFIED
+  molecule-type: Unknown
+  first-approval: 1977
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2093866
+    name: Estrogen receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Estrogens, Esterified
@@ -67,7 +82,7 @@ tags:
 - **Compound ID:** `estrogens-esterified-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1201468](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201468/) · max phase 4
+- **ChEMBL:** [CHEMBL1201468](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201468/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +92,16 @@ Estrogen receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEM
 
 Estrogen receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+- **First approval (ChEMBL):** 1977
+- **Flags:** black-box warning
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Estrogen receptor (CHEMBL2093866)|Estrogen receptor]] - agonist · PROTEIN FAMILY
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +110,12 @@ Estrogen receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acolbifene]] (Estrogen receptor), [[Cyclofenil]] (Estrogen receptor), [[Diethylstilbestrol Diphosphate]] (Estrogen receptor), [[Droloxifene]] (Estrogen receptor), [[Estriol]] (Estrogen receptor), [[Estrogens, Conjugated]] (Estrogen receptor), [[Estrogens, Conjugated Synthetic A]] (Estrogen receptor), [[Lasofoxifene]] (Estrogen receptor), [[Ospemifene (Osphena)]] (Estrogen receptor), [[Quinestrol]] (Estrogen receptor), [[Synthetic Conjugated Estrogens, B]] (Estrogen receptor)
 
 ## Safety routing
 

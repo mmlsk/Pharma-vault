@@ -10,15 +10,15 @@ cluster: Nootropics
 group: neuropsych
 class: null
 subclass: null
-mechanism: null
+mechanism: Amyloid-beta A4 protein binding agent
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3039540
+chembl-max-phase: 4
 half-life:
   value: 24.8
   value-max: null
@@ -59,6 +59,8 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Aducanumab
@@ -66,6 +68,28 @@ pk-source:
   revision: 1335569412
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3039540
+  pref-name: ADUCANUMAB
+  molecule-type: Antibody
+  first-approval: 2021
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N06DX03
+  targets:
+  - id: CHEMBL2487
+    name: Amyloid-beta precursor protein
+    action: BINDING AGENT
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Aducanumab (Aduhelm)
@@ -80,10 +104,26 @@ pk-source:
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Aducanumab, Aduhelm
+- **ChEMBL:** [CHEMBL3039540](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3039540/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 The first anti-amyloid antibody approved, on a surrogate endpoint after two trials that disagreed. Withdrawn in 2024. Its history is the reason plaque clearance alone is no longer accepted as sufficient evidence.
+
+## Mechanism
+
+Amyloid-beta A4 protein binding agent _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2021
+- **Flags:** black-box warning
+- **ATC N06DX03:** NERVOUS SYSTEM › ANTI-DEMENTIA DRUGS › Other anti-dementia drugs
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Amyloid-beta precursor protein (CHEMBL2487)|Amyloid-beta precursor protein]] - binding agent · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -98,6 +138,15 @@ The first anti-amyloid antibody approved, on a surrogate endpoint after two tria
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 24.8 d | 24.8 days |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Donanemab (Kisunla)]] (Amyloid-beta precursor protein), [[Homotaurine]] (Amyloid-beta precursor protein), [[Lecanemab (Leqembi)]] (Amyloid-beta precursor protein)
+- **Same ATC subgroup:** [[Donanemab (Kisunla)]], [[Ginkgo Biloba]], [[Lecanemab (Leqembi)]], [[Memantine (Namenda)]]
 
 ## Safety routing
 

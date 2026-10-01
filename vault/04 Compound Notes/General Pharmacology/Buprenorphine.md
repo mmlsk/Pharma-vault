@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: analgesia
 class: null
 subclass: null
-mechanism: null
+mechanism: Kappa opioid receptor agonist; Mu opioid receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL511142
+chembl-max-phase: 4
 half-life:
   value: 37.0
   value-max: null
@@ -63,6 +63,8 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-discrepant
 pk-source:
   type: wikipedia-infobox
   title: Buprenorphine
@@ -70,6 +72,45 @@ pk-source:
   revision: 1375171241
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL511142
+  pref-name: BUPRENORPHINE
+  molecule-type: Small molecule
+  first-approval: 1981
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N02AE01
+  - N07BC01
+  - N07BC51
+  targets:
+  - id: CHEMBL233
+    name: Mu-type opioid receptor
+    action: AGONIST
+  - id: CHEMBL237
+    name: Kappa-type opioid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 467.65
+    mw-freebase: 467.65
+    alogp: 4.41
+    psa: 62.16
+    hba: 5
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C29H41NO4
+pk-verification:
+  source: fda-label
+  status: discrepant
+  set-id: 6189fb21-9432-45f8-8481-0bfaf3ccde95
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6189fb21-9432-45f8-8481-0bfaf3ccde95
+  checked: '2026-10-01'
+  fields:
+    half-life: discrepant
+    protein-binding: consistent
 ---
 
 # Buprenorphine
@@ -83,10 +124,33 @@ pk-source:
 - **Compound ID:** `buprenorphine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL511142](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL511142/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 High-affinity partial mu agonist with a ceiling on respiratory depression, the safety property that makes it a first-line maintenance treatment.
+
+## Mechanism
+
+Kappa opioid receptor agonist; Mu opioid receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1981
+- **Flags:** black-box warning
+- **ATC N02AE01:** NERVOUS SYSTEM › OPIOIDS › Oripavine derivatives
+- **ATC N07BC01:** NERVOUS SYSTEM › DRUGS USED IN ADDICTIVE DISORDERS › Drugs used in opioid dependence
+- **ATC N07BC51:** NERVOUS SYSTEM › DRUGS USED IN ADDICTIVE DISORDERS › Drugs used in opioid dependence
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 467.65 | 4.41 | 62.16 | 2/5 | 0 | C29H41NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Mu-type opioid receptor (CHEMBL233)|Mu-type opioid receptor]] - agonist · SINGLE PROTEIN
+- [[Kappa-type opioid receptor (CHEMBL237)|Kappa-type opioid receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -107,6 +171,19 @@ High-affinity partial mu agonist with a ceiling on respiratory depression, the s
 | CYP (metabolised by) | CYP2C8, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Norbuprenorphine, Hydroxybuprenorphine, Hydroxynorbuprenorphine, Buprenorphine glucuronide |
 | Excretion | mainly non-renal | Bile duct and kidney |
+
+> [!danger] FDA label cross-check: **discrepant**
+> Automated comparison with the [US prescribing information (DailyMed set 6189fb21…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6189fb21-9432-45f8-8481-0bfaf3ccde95), label version 20260727. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: discrepant (label values: 1032, 1440)
+> - protein-binding: consistent (label values: 96)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Dezocine]] (Kappa-type opioid receptor; Mu-type opioid receptor), [[Aticaprant]] (Kappa-type opioid receptor), [[Diamorphine (Heroin)]] (Mu-type opioid receptor), [[Difelikefalin]] (Kappa-type opioid receptor), [[Eluxadoline]] (Mu-type opioid receptor), [[Fentanyl]] (Mu-type opioid receptor), [[Oliceridine]] (Mu-type opioid receptor), [[Oxycodone]] (Mu-type opioid receptor), [[Samidorphan]] (Mu-type opioid receptor)
+- **Same ATC subgroup:** [[Methadone]]
+- **Shared CYP substrate pool:** CYP2C8 (+15 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

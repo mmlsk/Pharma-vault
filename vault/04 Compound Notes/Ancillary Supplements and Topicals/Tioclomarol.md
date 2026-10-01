@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2105401
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2105401
+  pref-name: TIOCLOMAROL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B01AA11
+  targets: []
+  properties:
+    full-mwt: 447.34
+    mw-freebase: 447.34
+    alogp: 6.12
+    psa: 70.67
+    hba: 5
+    hbd: 2
+    rtb: 5
+    num-ro5-violations: 1
+    qed-weighted: 0.36
+    full-molformula: C22H16Cl2O4S
 ---
 
 # Tioclomarol
@@ -67,10 +90,20 @@ tags:
 - **Compound ID:** `tioclomarol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2105401](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105401/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits vitamin K epoxide reductase so clotting factors are undercarboxylated; effect is delayed, diet-sensitive and needs INR monitoring.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC B01AA11:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Vitamin K antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 447.34 | 6.12 | 70.67 | 2/5 | 1 | C22H16Cl2O4S |
 
 ## Evidence boundaries
 
@@ -80,6 +113,12 @@ Inhibits vitamin K epoxide reductase so clotting factors are undercarboxylated; 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Acenocoumarol]], [[Clorindione]], [[Dicoumarol]], [[Fluindione]], [[Phenindione]], [[Phenprocoumon]], [[Warfarin (Coumadin)]]
 
 ## Safety routing
 

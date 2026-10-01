@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL24646
+chembl-max-phase: 2
 half-life:
   value: 0.4
   value-max: null
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Pimobendan
@@ -67,6 +68,34 @@ pk-source:
   revision: 1376565658
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL24646
+  pref-name: PIMOBENDAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 334.38
+    mw-freebase: 334.38
+    alogp: 3.1
+    psa: 79.37
+    hba: 4
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.77
+    full-molformula: C19H18N4O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Pimobendan
@@ -80,10 +109,19 @@ pk-source:
 - **Compound ID:** `pimobendan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL24646](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL24646/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 PDE3 inhibitor that is also a calcium sensitiser, so it raises contractility at lower cAMP cost than pure PDE3 agents. Mostly veterinary cardiology now.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 334.38 | 3.1 | 79.37 | 2/4 | 0 | C19H18N4O2 |
 
 ## Evidence boundaries
 
@@ -100,6 +138,8 @@ PDE3 inhibitor that is also a calcium sensitiser, so it raises contractility at 
 | Elimination t½ | 0.4 h | 0.4 hours |
 | Bioavailability | 60–65 % | 60 to 65% |
 | Excretion | - | In feces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

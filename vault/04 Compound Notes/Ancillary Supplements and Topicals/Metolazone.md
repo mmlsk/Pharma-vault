@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Thiazide-sensitive sodium-chloride cotransporter inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL878
+chembl-max-phase: 4
 half-life:
   value: 14.0
   value-max: null
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Metolazone
@@ -67,6 +68,39 @@ pk-source:
   revision: 1375530392
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL878
+  pref-name: METOLAZONE
+  molecule-type: Small molecule
+  first-approval: 1973
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C03BA08
+  targets:
+  - id: CHEMBL1876
+    name: Solute carrier family 12 member 3
+    action: INHIBITOR
+  properties:
+    full-mwt: 365.84
+    mw-freebase: 365.84
+    alogp: 2.71
+    psa: 92.5
+    hba: 4
+    hbd: 2
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.86
+    full-molformula: C16H16ClN3O3S
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: efa8795e-2c89-4519-b49f-13146fb9ded1
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=efa8795e-2c89-4519-b49f-13146fb9ded1
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Metolazone
@@ -80,10 +114,30 @@ pk-source:
 - **Compound ID:** `metolazone-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL878](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL878/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Thiazide-like diuretic used for resistant edema; electrolyte depletion and kidney injury are key monitoring concerns.
+
+## Mechanism
+
+Thiazide-sensitive sodium-chloride cotransporter inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1973
+- **Flags:** black-box warning
+- **ATC C03BA08:** CARDIOVASCULAR SYSTEM › LOW-CEILING DIURETICS, EXCL. THIAZIDES › Sulfonamides, plain
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 365.84 | 2.71 | 92.5 | 2/4 | 0 | C16H16ClN3O3S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Solute carrier family 12 member 3 (CHEMBL1876)|Solute carrier family 12 member 3]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -101,6 +155,17 @@ Thiazide-like diuretic used for resistant edema; electrolyte depletion and kidne
 | Bioavailability | 65 % | ~65% |
 | Metabolism | - | kidney (minimal) |
 | Excretion | - | primarily urine |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set efa8795e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=efa8795e-2c89-4519-b49f-13146fb9ded1), label version 20260812. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Chlorthalidone]] (Solute carrier family 12 member 3), [[Hydrochlorothiazide (HCTZ)]] (Solute carrier family 12 member 3), [[Indapamide]] (Solute carrier family 12 member 3)
+- **Same ATC subgroup:** [[Chlorthalidone]], [[Indapamide]], [[Xipamide]]
 
 ## Safety routing
 

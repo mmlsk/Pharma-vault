@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL925
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -55,6 +55,29 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL925
+  pref-name: TYROSINE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 181.19
+    mw-freebase: 181.19
+    alogp: 0.35
+    psa: 83.55
+    hba: 3
+    hbd: 3
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.63
+    full-molformula: C9H11NO3
 ---
 
 # L-Tyrosine
@@ -68,10 +91,20 @@ tags:
 - **Compound ID:** `l-tyrosine-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL925](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL925/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Precursor amino acid for dopamine and noradrenaline. Only helps where synthesis has been depleted by acute stress, cold or sleep loss -- it does nothing measurable in rested, unstressed people.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 181.19 | 0.35 | 83.55 | 3/3 | 0 | C9H11NO3 |
 
 ## Evidence boundaries
 

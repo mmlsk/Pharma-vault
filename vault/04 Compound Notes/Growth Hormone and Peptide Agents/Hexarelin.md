@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL108335
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,29 @@ tags:
 - source-derived
 - group/gh
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL108335
+  pref-name: EXAMORELIN
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 887.06
+    mw-freebase: 887.06
+    alogp: 1.34
+    psa: 300.89
+    hba: 9
+    hbd: 11
+    rtb: 23
+    num-ro5-violations: 2
+    qed-weighted: 0.04
+    full-molformula: C47H58N12O6
 ---
 
 # Hexarelin
@@ -68,10 +91,19 @@ tags:
 - **Compound ID:** `hexarelin-compound`
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
+- **ChEMBL:** [CHEMBL108335](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL108335/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Potent ghrelin-mimetic GH secretagogue peptide, more potent than GHRP-6 but with faster receptor desensitization.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 887.06 | 1.34 | 300.89 | 11/9 | 2 | C47H58N12O6 |
 
 ## Evidence boundaries
 

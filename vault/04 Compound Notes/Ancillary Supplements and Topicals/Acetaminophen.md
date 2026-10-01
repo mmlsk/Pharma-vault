@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Paracetamol
@@ -68,6 +69,46 @@ pk-source:
   revision: 1376620920
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL112
+  pref-name: ACETAMINOPHEN
+  molecule-type: Small molecule
+  first-approval: 1968
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N02BE01
+  - N02BE51
+  - N02BE71
+  targets:
+  - id: CHEMBL2094253
+    name: Cyclooxygenase
+    action: INHIBITOR
+  - id: CHEMBL2243
+    name: Fatty-acid amide hydrolase 1
+    action: INHIBITOR
+  - id: CHEMBL4794
+    name: Transient receptor potential cation channel subfamily V member 1
+    action: OPENER
+  properties:
+    full-mwt: 151.16
+    mw-freebase: 151.16
+    alogp: 1.35
+    psa: 49.33
+    hba: 2
+    hbd: 2
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.6
+    full-molformula: C8H9NO2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Acetaminophen
@@ -81,7 +122,7 @@ pk-source:
 - **Compound ID:** `acetaminophen-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL112](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL112/) · max phase 4
+- **ChEMBL:** [CHEMBL112](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL112/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +131,25 @@ Cyclooxygenase inhibitor; approved/marketed compound catalogued by ChEMBL (CHEMB
 ## Mechanism
 
 Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1968
+- **Flags:** black-box warning
+- **ATC N02BE01:** NERVOUS SYSTEM › OTHER ANALGESICS AND ANTIPYRETICS › Anilides
+- **ATC N02BE51:** NERVOUS SYSTEM › OTHER ANALGESICS AND ANTIPYRETICS › Anilides
+- **ATC N02BE71:** NERVOUS SYSTEM › OTHER ANALGESICS AND ANTIPYRETICS › Anilides
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 151.16 | 1.35 | 49.33 | 2/2 | 0 | C8H9NO2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cyclooxygenase (CHEMBL2094253)|Cyclooxygenase]] - inhibitor · PROTEIN FAMILY
+- [[Fatty-acid amide hydrolase 1 (CHEMBL2243)|Fatty-acid amide hydrolase 1]] - inhibitor · SINGLE PROTEIN
+- [[Transient receptor potential cation channel subfamily V member 1 (CHEMBL4794)|Transient receptor potential cation channel subfamily V member 1]] - opener · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -109,6 +169,15 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 | Metabolism | hepatic | Predominantly in the liver |
 | Metabolites | - | APAP gluc, APAP sulfate, APAP GSH, APAP cys, AM404, NAPQI |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acemetacin]] (Cyclooxygenase), [[Aloxiprin]] (Cyclooxygenase), [[Aspirin]] (Cyclooxygenase), [[Benzydamine]] (Cyclooxygenase), [[Bismuth Subsalicylate]] (Cyclooxygenase), [[Capsaicin]] (Transient receptor potential cation channel subfamily V member 1), [[Civamide]] (Transient receptor potential cation channel subfamily V member 1), [[Clometacin]] (Cyclooxygenase), [[Dexibuprofen]] (Cyclooxygenase), [[Dexketoprofen]] (Cyclooxygenase), [[Diclofenac]] (Cyclooxygenase), [[Diflunisal]] (Cyclooxygenase)
+- **Same ATC subgroup:** [[Phenacetin]]
 
 ## Safety routing
 

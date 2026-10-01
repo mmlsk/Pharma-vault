@@ -10,15 +10,15 @@ cluster: Androgens SARMs and PCT
 group: pct
 class: null
 subclass: null
-mechanism: null
+mechanism: Cytochrome P450 19A1 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1444
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: null
@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - endocrine-feedback-disruption
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - group/pct
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Letrozole
@@ -70,6 +72,40 @@ pk-source:
   revision: 1356902222
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1444
+  pref-name: LETROZOLE
+  molecule-type: Small molecule
+  first-approval: 1997
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L02BG04
+  targets:
+  - id: CHEMBL1978
+    name: Aromatase
+    action: INHIBITOR
+  properties:
+    full-mwt: 285.31
+    mw-freebase: 285.31
+    alogp: 2.66
+    psa: 78.29
+    hba: 5
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.74
+    full-molformula: C17H11N5
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 3cc750a5-cc88-4b42-b4ab-a87e760f291d
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3cc750a5-cc88-4b42-b4ab-a87e760f291d
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Femara (Letrozole)
@@ -84,10 +120,29 @@ pk-source:
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** Femara, Letrozole
+- **ChEMBL:** [CHEMBL1444](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1444/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Highly potent non-steroidal aromatase inhibitor, more aggressive than anastrozole at suppressing estrogen.
+
+## Mechanism
+
+Cytochrome P450 19A1 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1997
+- **ATC L02BG04:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › HORMONE ANTAGONISTS AND RELATED AGENTS › Aromatase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 285.31 | 2.66 | 78.29 | 0/5 | 0 | C17H11N5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Aromatase (CHEMBL1978)|Aromatase]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -106,6 +161,18 @@ Highly potent non-steroidal aromatase inhibitor, more aggressive than anastrozol
 | Bioavailability | 99.9 % | 99.9% |
 | Metabolism | - | pharmacologically-inactive metabolites Bis(4-cyanophenyl)methanol and 4,4'-dicyanobenzophenone. |
 | Excretion | mainly urinary | Kidney |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 3cc750a5…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3cc750a5-cc88-4b42-b4ab-a87e760f291d), label version 20260820. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 48)
+> - protein-binding: no-label-value (label values: -)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aminoglutethimide]] (Aromatase), [[Arimidex (Anastrozole)]] (Aromatase), [[Aromasin (Exemestane)]] (Aromatase), [[Testolactone]] (Aromatase)
+- **Same ATC subgroup:** [[Aminoglutethimide]], [[Arimidex (Anastrozole)]], [[Aromasin (Exemestane)]], [[Formestane]]
 
 ## Safety routing
 

@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL3989862
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3989862
+  pref-name: PEFCALCITOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1977
+    name: Vitamin D3 receptor
+    action: AGONIST
+  properties:
+    full-mwt: 519.55
+    mw-freebase: 519.55
+    alogp: 4.77
+    psa: 78.79
+    hba: 4
+    hbd: 3
+    rtb: 7
+    num-ro5-violations: 1
+    qed-weighted: 0.33
+    full-molformula: C26H34F5NO4
 ---
 
 # Pefcalcitol
@@ -67,6 +93,7 @@ tags:
 - **Compound ID:** `pefcalcitol-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3989862](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3989862/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +103,18 @@ Pefcalcitol is a phase 3 compound catalogued by ChEMBL. Its curated mechanism is
 
 vitamin D receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 519.55 | 4.77 | 78.79 | 3/4 | 1 | C26H34F5NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Vitamin D3 receptor (CHEMBL1977)|Vitamin D3 receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +123,12 @@ vitamin D receptor agonist _(ChEMBL curated mechanism, as quoted by the source).
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Alfacalcidol (1-alpha-hydroxyvitamin D3)]] (Vitamin D3 receptor), [[Calcipotriene]] (Vitamin D3 receptor), [[Calcitriol (1,25-dihydroxyvitamin D3)]] (Vitamin D3 receptor), [[Cholecalciferol]] (Vitamin D3 receptor), [[Dihydrotachysterol]] (Vitamin D3 receptor), [[Doxercalciferol]] (Vitamin D3 receptor), [[Eldecalcitol (Edirol)]] (Vitamin D3 receptor), [[Ergocalciferol]] (Vitamin D3 receptor), [[Paricalcitol (Zemplar)]] (Vitamin D3 receptor), [[Seocalcitol]] (Vitamin D3 receptor), [[Vitamin D]] (Vitamin D3 receptor)
 
 ## Safety routing
 

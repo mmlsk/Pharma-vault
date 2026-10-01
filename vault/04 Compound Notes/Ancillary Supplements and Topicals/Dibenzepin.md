@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Dibenzepin
@@ -68,6 +69,41 @@ pk-source:
   revision: 1268909070
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1442422
+  pref-name: DIBENZEPIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - N06AA08
+  targets:
+  - id: CHEMBL231
+    name: Histamine H1 receptor
+    action: ANTAGONIST
+  - id: CHEMBL222
+    name: Sodium-dependent noradrenaline transporter
+    action: INHIBITOR
+  properties:
+    full-mwt: 295.39
+    mw-freebase: 295.39
+    alogp: 2.98
+    psa: 26.79
+    hba: 3
+    hbd: 0
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.87
+    full-molformula: C18H21N3O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Dibenzepin
@@ -81,7 +117,7 @@ pk-source:
 - **Compound ID:** `dibenzepin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1442422](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1442422/) · max phase 4
+- **ChEMBL:** [CHEMBL1442422](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1442422/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -90,6 +126,21 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **Flags:** withdrawn
+- **ATC N06AA08:** NERVOUS SYSTEM › ANTIDEPRESSANTS › Non-selective monoamine reuptake inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 295.39 | 2.98 | 26.79 | 0/3 | 0 | C18H21N3O |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Histamine H1 receptor (CHEMBL231)|Histamine H1 receptor]] - antagonist · SINGLE PROTEIN
+- [[Sodium-dependent noradrenaline transporter (CHEMBL222)|Sodium-dependent noradrenaline transporter]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -108,6 +159,15 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Bioavailability | 25 % | 25% |
 | Metabolism | hepatic | Hepatic |
 | Excretion | mainly urinary | Urine (80%), feces (20%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acrivastine]] (Histamine H1 receptor), [[Alcaftadine]] (Histamine H1 receptor), [[Amoxapine]] (Sodium-dependent noradrenaline transporter), [[Amphetamine]] (Sodium-dependent noradrenaline transporter), [[Ampreloxetine]] (Sodium-dependent noradrenaline transporter), [[Astemizole]] (Histamine H1 receptor), [[Betahistine]] (Histamine H1 receptor), [[Bilastine]] (Histamine H1 receptor), [[Chlorphenoxamine]] (Histamine H1 receptor), [[Cinnarizine]] (Histamine H1 receptor), [[Debrisoquin]] (Sodium-dependent noradrenaline transporter), [[Desloratadine]] (Histamine H1 receptor)
+- **Same ATC subgroup:** [[Amineptine]], [[Amitriptyline]], [[Amoxapine]], [[Clomipramine]], [[Desipramine]], [[Dothiepin]], [[Doxepin]], [[Doxepin, low dose (Silenor)]], [[Imipramine]], [[Maprotiline]], [[Nortriptyline]], [[Protriptyline]]
 
 ## Safety routing
 

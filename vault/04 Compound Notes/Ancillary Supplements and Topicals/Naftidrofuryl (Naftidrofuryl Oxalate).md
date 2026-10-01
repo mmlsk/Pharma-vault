@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1620794
+chembl-max-phase: 2
 half-life:
   value: 1.2
   value-max: 2.0
@@ -63,6 +63,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Naftidrofuryl
@@ -70,6 +71,35 @@ pk-source:
   revision: 1362588562
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1620794
+  pref-name: NAFRONYL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C04AX21
+  targets: []
+  properties:
+    full-mwt: 383.53
+    mw-freebase: 383.53
+    alogp: 4.45
+    psa: 38.77
+    hba: 4
+    hbd: 0
+    rtb: 10
+    num-ro5-violations: 0
+    qed-weighted: 0.57
+    full-molformula: C24H33NO3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Naftidrofuryl (Naftidrofuryl Oxalate)
@@ -84,10 +114,20 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Naftidrofuryl, Naftidrofuryl Oxalate
+- **ChEMBL:** [CHEMBL1620794](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1620794/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 5-HT2 antagonist and vasoactive drug used for intermittent claudication in some countries; improves walking distance but does not remove underlying vascular risk.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C04AX21:** CARDIOVASCULAR SYSTEM › PERIPHERAL VASODILATORS › Other peripheral vasodilators
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 383.53 | 4.45 | 38.77 | 0/4 | 0 | C24H33NO3 |
 
 ## Evidence boundaries
 
@@ -105,6 +145,14 @@ pk-source:
 | Protein binding | 80 % | 80% |
 | Bioavailability | 20–78 % | 20–78% (in different studies) |
 | Metabolism | hepatic | Hepatic |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Clazosentan]], [[Fasudil]], [[Phenoxybenzamine]]
 
 ## Safety routing
 

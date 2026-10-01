@@ -10,15 +10,15 @@ cluster: General Pharmacology
 group: analgesia
 class: null
 subclass: null
-mechanism: null
+mechanism: Mu opioid receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL459324
+chembl-max-phase: 3
 half-life:
   value: 2.0
   value-max: 3.0
@@ -63,6 +63,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Heroin
@@ -70,6 +71,37 @@ pk-source:
   revision: 1376264455
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL459324
+  pref-name: DIACETYLMORPHINE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL233
+    name: Mu-type opioid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 369.42
+    mw-freebase: 369.42
+    alogp: 1.99
+    psa: 65.07
+    hba: 6
+    hbd: 0
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.45
+    full-molformula: C21H23NO5
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Diamorphine (Heroin)
@@ -84,10 +116,27 @@ pk-source:
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Diamorphine, Heroin
+- **ChEMBL:** [CHEMBL459324](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL459324/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Diacetylmorphine, a prodrug of morphine used clinically in the United Kingdom for acute severe pain and in supervised injectable treatment programmes.
+
+## Mechanism
+
+Mu opioid receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 369.42 | 1.99 | 65.07 | 0/6 | 0 | C21H23NO5 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Mu-type opioid receptor (CHEMBL233)|Mu-type opioid receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -107,6 +156,14 @@ Diacetylmorphine, a prodrug of morphine used clinically in the United Kingdom fo
 | Metabolism | hepatic | Liver |
 | Metabolites | - | 6-Monoacetylmorphine, morphine |
 | Excretion | mainly urinary | 90% kidney as glucuronides, rest bile duct |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Buprenorphine]] (Mu-type opioid receptor), [[Dezocine]] (Mu-type opioid receptor), [[Eluxadoline]] (Mu-type opioid receptor), [[Fentanyl]] (Mu-type opioid receptor), [[Oliceridine]] (Mu-type opioid receptor), [[Oxycodone]] (Mu-type opioid receptor), [[Samidorphan]] (Mu-type opioid receptor)
 
 ## Safety routing
 

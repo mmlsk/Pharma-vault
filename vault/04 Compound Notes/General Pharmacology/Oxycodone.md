@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: analgesia
 class: null
 subclass: null
-mechanism: null
+mechanism: Mu opioid receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL656
+chembl-max-phase: 4
 half-life:
   value: 2.0
   value-max: 3.0
@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - sedation-respiratory-depression
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Oxycodone
@@ -69,6 +71,40 @@ pk-source:
   revision: 1373295533
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL656
+  pref-name: OXYCODONE
+  molecule-type: Small molecule
+  first-approval: 1950
+  black-box-warning: true
+  withdrawn: true
+  atc-codes:
+  - N02AA05
+  targets:
+  - id: CHEMBL233
+    name: Mu-type opioid receptor
+    action: AGONIST
+  properties:
+    full-mwt: 315.37
+    mw-freebase: 315.37
+    alogp: 1.05
+    psa: 59.0
+    hba: 5
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.84
+    full-molformula: C18H21NO4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 6b6db42b-9821-4aa6-8566-297037d84079
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6b6db42b-9821-4aa6-8566-297037d84079
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Oxycodone
@@ -82,10 +118,30 @@ pk-source:
 - **Compound ID:** `oxycodone-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL656](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL656/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Semi-synthetic opioid with high oral bioavailability, and the drug at the centre of the North American opioid epidemic.
+
+## Mechanism
+
+Mu opioid receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1950
+- **Flags:** black-box warning, withdrawn
+- **ATC N02AA05:** NERVOUS SYSTEM › OPIOIDS › Natural opium alkaloids
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 315.37 | 1.05 | 59.0 | 1/5 | 0 | C18H21NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Mu-type opioid receptor (CHEMBL233)|Mu-type opioid receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -106,6 +162,19 @@ Semi-synthetic opioid with high oral bioavailability, and the drug at the centre
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | • Noroxycodone (25%); • Noroxymorphone (15%, free and conjugated); • Oxymorphone (11%, conjugated); • Others (e.g., minor metabolites) |
 | Excretion | mainly urinary | Urine (83%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 6b6db42b…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6b6db42b-9821-4aa6-8566-297037d84079), label version 20260723. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 3.5, 4, 6)
+> - protein-binding: consistent (label values: 45)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Buprenorphine]] (Mu-type opioid receptor), [[Dezocine]] (Mu-type opioid receptor), [[Diamorphine (Heroin)]] (Mu-type opioid receptor), [[Eluxadoline]] (Mu-type opioid receptor), [[Fentanyl]] (Mu-type opioid receptor), [[Oliceridine]] (Mu-type opioid receptor), [[Samidorphan]] (Mu-type opioid receptor)
+- **Same ATC subgroup:** [[Codeine]], [[Hydromorphone]], [[Morphine]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

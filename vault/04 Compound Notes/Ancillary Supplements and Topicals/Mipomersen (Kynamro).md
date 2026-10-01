@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL502097
+chembl-max-phase: 4
 half-life:
   value: null
   value-max: null
@@ -59,6 +59,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Mipomersen
@@ -66,6 +67,28 @@ pk-source:
   revision: 1358381744
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2219536
+  pref-name: MIPOMERSEN SODIUM
+  molecule-type: Oligonucleotide
+  first-approval: 2013
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C10AX11
+  targets: []
+  properties:
+    full-mwt: 7177.25
+    mw-freebase: 7177.25
+    full-molformula: C230H324N67O122P19S19
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Mipomersen (Kynamro)
@@ -80,10 +103,22 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Mipomersen, Kynamro
+- **ChEMBL:** [CHEMBL502097](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL502097/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Antisense oligonucleotide against apolipoprotein B-100; approved in 2013 and later withdrawn from the market.
+
+## ChEMBL profile
+
+- **Molecule type:** Oligonucleotide
+- **First approval (ChEMBL):** 2013
+- **Flags:** black-box warning
+- **ATC C10AX11:** CARDIOVASCULAR SYSTEM › LIPID MODIFYING AGENTS, PLAIN › Other lipid modifying agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 7177.25 | - | - | -/- | - | C230H324N67O122P19S19 |
 
 ## Evidence boundaries
 
@@ -101,6 +136,14 @@ Antisense oligonucleotide against apolipoprotein B-100; approved in 2013 and lat
 | Protein binding | 90 % | ≥90% |
 | Metabolism | - | Nucleases |
 | Excretion | - | <4% in urine in 24 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Alirocumab (Praluent)]], [[Bempedoic acid]], [[Dextrothyroxine]], [[Evinacumab (Evkeeza)]], [[Evolocumab]], [[Ezetimibe]], [[Inclisiran (Leqvio)]], [[Lomitapide (Juxtapid)]], [[Omega-3-Acid Ethyl Esters]], [[Policosanol]], [[Probucol]], [[Volanesorsen (Waylivra)]]
 
 ## Safety routing
 

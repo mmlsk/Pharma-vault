@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Vitamin k epoxide reductase complex subunit 1 isoform 1 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1465
+chembl-max-phase: 4
 half-life:
   value: 6.0
   value-max: 7.0
@@ -63,6 +63,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Phenprocoumon
@@ -70,6 +71,38 @@ pk-source:
   revision: 1334264213
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1465
+  pref-name: PHENPROCOUMON
+  molecule-type: Small molecule
+  first-approval: 1957
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B01AA04
+  targets:
+  - id: CHEMBL1930
+    name: Vitamin K epoxide reductase complex subunit 1
+    action: INHIBITOR
+  properties:
+    full-mwt: 280.32
+    mw-freebase: 280.32
+    alogp: 4.04
+    psa: 50.44
+    hba: 3
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.74
+    full-molformula: C18H16O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Phenprocoumon
@@ -83,10 +116,29 @@ pk-source:
 - **Compound ID:** `phenprocoumon-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1465](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1465/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits vitamin K epoxide reductase so clotting factors are undercarboxylated; effect is delayed, diet-sensitive and needs INR monitoring; longer half-life, used in Europe.
+
+## Mechanism
+
+Vitamin k epoxide reductase complex subunit 1 isoform 1 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1957
+- **ATC B01AA04:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Vitamin K antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 280.32 | 4.04 | 50.44 | 1/3 | 0 | C18H16O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Vitamin K epoxide reductase complex subunit 1 (CHEMBL1930)|Vitamin K epoxide reductase complex subunit 1]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -107,6 +159,16 @@ Inhibits vitamin K epoxide reductase so clotting factors are undercarboxylated; 
 | CYP (metabolised by) | CYP2C9, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Hydroxyl derivatives, glucuronides |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Acenocoumarol]] (Vitamin K epoxide reductase complex subunit 1), [[Dicoumarol]] (Vitamin K epoxide reductase complex subunit 1), [[Phenindione]] (Vitamin K epoxide reductase complex subunit 1)
+- **Same ATC subgroup:** [[Acenocoumarol]], [[Clorindione]], [[Dicoumarol]], [[Fluindione]], [[Phenindione]], [[Tioclomarol]], [[Warfarin (Coumadin)]]
+- **Shared CYP substrate pool:** CYP2C9 (+40 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

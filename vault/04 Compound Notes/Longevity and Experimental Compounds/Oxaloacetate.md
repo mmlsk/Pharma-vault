@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1794791
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1794791
+  pref-name: OXALOACETATE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 132.07
+    mw-freebase: 132.07
+    alogp: -0.89
+    psa: 91.67
+    hba: 3
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.38
+    full-molformula: C4H4O5
 ---
 
 # Oxaloacetate
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `oxaloacetate-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL1794791](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1794791/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 TCA intermediate sold as a supplement for NAD+/NADH ratio and longevity claims that rest largely on invertebrate lifespan data.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 132.07 | -0.89 | 91.67 | 2/3 | 0 | C4H4O5 |
 
 ## Evidence boundaries
 

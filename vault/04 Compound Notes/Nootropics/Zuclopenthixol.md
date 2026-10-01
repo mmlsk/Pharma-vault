@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL53904
+chembl-max-phase: 3
 half-life:
   value: 20.0
   value-max: null
@@ -64,6 +64,7 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Zuclopenthixol
@@ -71,6 +72,35 @@ pk-source:
   revision: 1358444199
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL53904
+  pref-name: ZUCLOPENTHIXOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N05AF05
+  targets: []
+  properties:
+    full-mwt: 400.98
+    mw-freebase: 400.98
+    alogp: 4.24
+    psa: 26.71
+    hba: 4
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.69
+    full-molformula: C22H25ClN2OS
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Zuclopenthixol
@@ -84,10 +114,20 @@ pk-source:
 - **Compound ID:** `zuclopenthixol-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL53904](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL53904/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 Thioxanthene available as an acetate for rapid tranquillisation and as a decanoate for maintenance, widely used in acute psychiatry.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC N05AF05:** NERVOUS SYSTEM › ANTIPSYCHOTICS › Thioxanthene derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 400.98 | 4.24 | 26.71 | 1/4 | 0 | C22H25ClN2OS |
 
 ## Evidence boundaries
 
@@ -107,6 +147,15 @@ Thioxanthene available as an acetate for rapid tranquillisation and as a decanoa
 | Metabolism | hepatic | Liver (CYP2D6 and CYP3A4-mediated) |
 | CYP (metabolised by) | CYP2D6, CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | Feces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Thiothixene]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others), CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

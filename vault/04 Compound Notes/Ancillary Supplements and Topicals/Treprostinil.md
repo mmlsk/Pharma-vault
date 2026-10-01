@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Treprostinil
@@ -67,6 +68,14 @@ pk-source:
   revision: 1329070006
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 6c80bb38-e8db-4138-9f0d-dbbf9c673185
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6c80bb38-e8db-4138-9f0d-dbbf9c673185
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Treprostinil
@@ -101,6 +110,10 @@ Prostacyclin analogue stable enough for subcutaneous, inhaled and oral delivery,
 | Bioavailability | 100 % | ~100% |
 | Metabolism | hepatic | Substantially metabolized by the liver |
 | Excretion | - · fe 0.04 | Urine (79% of administered dose is excreted as 4% unchanged drug and 64% as identified metabolites); feces (13%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 6c80bb38…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6c80bb38-e8db-4138-9f0d-dbbf9c673185), label version 20260702. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 4)
 
 ## Safety routing
 

@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- possible-duplicate
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1237
+  pref-name: LISINOPRIL ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 1987
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 405.5
+    mw-freebase: 405.5
+    alogp: 1.24
+    psa: 132.96
+    hba: 5
+    hbd: 4
+    rtb: 12
+    num-ro5-violations: 0
+    qed-weighted: 0.38
+    full-molformula: C21H31N3O5
 ---
 
 # Lisinopril Anhydrous
@@ -67,7 +90,7 @@ tags:
 - **Compound ID:** `lisinopril-anhydrous-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1237](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237/) · max phase 4
+- **ChEMBL:** [CHEMBL1237](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +100,16 @@ Angiotensin-converting enzyme inhibitor; approved/marketed compound catalogued b
 
 Angiotensin-converting enzyme inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1987
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 405.5 | 1.24 | 132.96 | 4/5 | 0 | C21H31N3O5 |
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +118,12 @@ Angiotensin-converting enzyme inhibitor _(ChEMBL curated mechanism, as quoted by
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Lisinopril]]
 
 ## Safety routing
 

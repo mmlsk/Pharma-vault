@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL73962
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL73962
+  pref-name: BENZOLAMIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 320.38
+    mw-freebase: 320.38
+    alogp: -0.01
+    psa: 132.11
+    hba: 7
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.81
+    full-molformula: C8H8N4O4S3
 ---
 
 # Benzolamide
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `benzolamide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL73962](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL73962/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Inhibits carbonic anhydrase, lowering bicarbonate-dependent fluid secretion; metabolic acidosis and paraesthesia are the usual class effects; research tool compound.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 320.38 | -0.01 | 132.11 | 2/7 | 0 | C8H8N4O4S3 |
 
 ## Evidence boundaries
 

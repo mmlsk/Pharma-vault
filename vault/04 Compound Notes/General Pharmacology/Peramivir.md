@@ -67,6 +67,13 @@ pk-source:
   revision: 1369623481
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Peramivir
@@ -100,6 +107,8 @@ Single-dose intravenous neuraminidase inhibitor for patients who cannot take ora
 | Elimination t½ | 7.7–20.8 h | 7.7 to 20.8 hours (in patients with normal renal function) |
 | Bioavailability | 100 % | 100% (IV) |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

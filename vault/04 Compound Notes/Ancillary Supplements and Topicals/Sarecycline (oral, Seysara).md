@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2364632
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,29 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2364632
+  pref-name: SARECYCLINE
+  molecule-type: Small molecule
+  first-approval: 2018
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J01AA14
+  targets: []
+  properties:
+    full-mwt: 487.51
+    mw-freebase: 487.51
+    alogp: 0.11
+    psa: 173.86
+    hba: 10
+    hbd: 5
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.28
+    full-molformula: C24H29N3O8
 ---
 
 # Sarecycline (oral, Seysara)
@@ -70,10 +93,21 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Sarecycline, Seysara
+- **ChEMBL:** [CHEMBL2364632](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2364632/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Narrow-spectrum oral tetracycline designed specifically for acne, with reduced activity against enteric Gram-negatives.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2018
+- **ATC J01AA14:** ANTIINFECTIVES FOR SYSTEMIC USE › TETRACYCLINES › Tetracyclines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 487.51 | 0.11 | 173.86 | 5/10 | 0 | C24H29N3O8 |
 
 ## Evidence boundaries
 
@@ -83,6 +117,12 @@ Narrow-spectrum oral tetracycline designed specifically for acne, with reduced a
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Eravacycline]], [[Minocycline]], [[Omadacycline]], [[Tetracycline]], [[Tigecycline]]
 
 ## Safety routing
 

@@ -17,7 +17,7 @@
       --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
       --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-surface-2: #fbfbf9; --color-surface-offset: #f0ede8;
       --color-border: #d4d1ca; --color-text: #28251d; --color-text-muted: #6e6a63; --color-text-faint: #9e9b95;
-      --color-primary: #01696f; --color-warning: #964219; --color-error: #a12c7b; --color-success: #437a22;
+      --color-primary: #01696f; --color-warning: #964219; --color-error: #a12c7b; --color-success: #437a22; --color-accent2: #a8336a;
       --radius-md: .5rem; --radius-lg: .75rem; --radius-xl: 1rem;
       --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06); --shadow-md: 0 4px 14px oklch(0.2 0.01 80 / 0.08);
       --font-display: 'Boska', Georgia, serif; --font-body: 'General Sans', Inter, system-ui, sans-serif;
@@ -25,7 +25,7 @@
     [data-theme="dark"] {
       --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #201f1d; --color-surface-offset: #1d1c1a;
       --color-border: #393836; --color-text: #cdccca; --color-text-muted: #9c9892; --color-text-faint: #6f6b66;
-      --color-primary: #4f98a3; --color-warning: #bb653b; --color-error: #d163a7; --color-success: #6daa45;
+      --color-primary: #4f98a3; --color-warning: #bb653b; --color-error: #d163a7; --color-success: #6daa45; --color-accent2: #d06a9a;
       --shadow-sm: 0 1px 2px oklch(0 0 0 / .2); --shadow-md: 0 4px 14px oklch(0 0 0 / .3);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -74,6 +74,19 @@
     .muted { color: var(--color-text-muted); font-size: var(--text-sm); }
     .tags { display: flex; flex-wrap: wrap; gap: .35rem; margin: var(--space-2) 0; }
     .tag { font-size: var(--text-xs); padding: .15rem .5rem; border-radius: 999px; border: 1px solid var(--color-border); color: var(--color-text-muted); }
+    .tag.ok { color: var(--color-success); border-color: color-mix(in oklab, var(--color-success) 45%, transparent); }
+    .ver { margin-top: .6rem; font-size: var(--text-xs); color: var(--color-text-muted); padding: .45rem .6rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); }
+    .ver-consistent { border-color: color-mix(in oklab, var(--color-success) 50%, transparent); background: color-mix(in oklab, var(--color-success) 7%, transparent); }
+    .ver-discrepant { border-color: color-mix(in oklab, var(--color-error) 50%, transparent); background: color-mix(in oklab, var(--color-error) 7%, transparent); }
+    .ver a { color: var(--color-primary); }
+    .hist { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; align-items: end; }
+    .hist .bar { display: flex; flex-direction: column; align-items: center; gap: 2px; background: none; border: 0; padding: 2px 0; cursor: pointer; color: var(--color-text-muted); font: inherit; border-radius: 6px; }
+    .hist .bar span { width: 70%; background: color-mix(in oklab, var(--color-primary) 70%, transparent); border-radius: 3px 3px 0 0; }
+    .hist .bar.on span { background: var(--color-accent2); }
+    .hist .bar:hover span { filter: brightness(1.15); }
+    .hist .bar:focus-visible { outline: 2px solid var(--color-primary); }
+    .hist b { font-size: 10px; font-weight: 600; color: var(--color-text); }
+    .hist small { font-size: 9px; line-height: 1.1; text-align: center; white-space: nowrap; }
     .tag.warn { color: var(--color-warning); border-color: color-mix(in oklab, var(--color-warning) 45%, transparent); }
     table.pk { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
     table.pk th { text-align: left; font-weight: 500; color: var(--color-text-muted); padding: .35rem .5rem .35rem 0; vertical-align: top; width: 38%; }
@@ -109,7 +122,7 @@
 
     <div>
       <label class="label" for="q">Szukaj substancji</label>
-      <input id="q" class="search" type="search" placeholder="np. modafinil, CYP3A4, semaglutyd…" autocomplete="off" />
+      <input id="q" class="search" type="search" placeholder="np. modafinil, CYP3A4, receptor GABA, N06B…" autocomplete="off" />
       <div id="results" class="results" role="listbox"></div>
     </div>
 
@@ -125,14 +138,33 @@
 
     <label class="toggle"><input type="checkbox" id="pkOnly" /> Tylko z danymi PK</label>
     <label class="toggle"><input type="checkbox" id="cypOnly" /> Tylko substraty CYP</label>
+    <label class="toggle"><input type="checkbox" id="relOn" checked /> Pokaż powiązania przez wspólny cel</label>
+
+    <div>
+      <label class="label" for="ver">Weryfikacja / profil</label>
+      <select id="ver" class="search">
+        <option value="">— wszystkie —</option>
+        <option value="consistent">PK zgodne z etykietą FDA</option>
+        <option value="discrepant">PK rozbieżne z etykietą FDA (do przeglądu)</option>
+        <option value="no-label-value">Etykieta FDA bez wartości</option>
+        <option value="chembl">Z celem molekularnym ChEMBL</option>
+      </select>
+    </div>
+
+    <div>
+      <div class="label">Rozkład t½ (skala log, widoczne)</div>
+      <div id="hist" class="hist" role="group" aria-label="Histogram okresu półtrwania"></div>
+    </div>
 
     <div class="stats">
       <div class="stat"><b id="sAll">–</b><span>substancji</span></div>
       <div class="stat"><b id="sVis">–</b><span>widocznych</span></div>
       <div class="stat"><b id="sPk">–</b><span>z danymi PK</span></div>
       <div class="stat"><b id="sHl">–</b><span>z liczbowym t½</span></div>
+      <div class="stat"><b id="sTg">–</b><span>z celem ChEMBL</span></div>
+      <div class="stat"><b id="sFda">–</b><span>PK ✓ FDA</span></div>
     </div>
-    <p class="note">Dane generowane z <code>data/processed/substances.json</code> i <code>pk.json</code> przez <code>scripts/build_graph_data.py</code>.</p>
+    <p class="note">Dane generowane z <code>substances.json</code>, <code>pk.json</code>, <code>chembl.json</code>, <code>pk-verification.json</code> i <code>links.json</code> przez <code>scripts/build_graph_data.py</code>.</p>
   </aside>
 
   <main class="stage">
@@ -146,7 +178,7 @@
   </main>
 
   <aside class="detail" aria-live="polite">
-    <div class="warnbox">Materiał edukacyjny — nie jest poradą medyczną i nie zawiera dawkowania. Dane PK pochodzą automatycznie z Wikipedii (wersja przypięta) i wymagają weryfikacji w ChPL/etykiecie FDA.</div>
+    <div class="warnbox">Materiał edukacyjny — nie jest poradą medyczną i nie zawiera dawkowania. Dane PK pochodzą automatycznie z Wikipedii (wersja przypięta); część porównano automatycznie z etykietami FDA — to nadal nie jest weryfikacja ekspercka.</div>
     <div id="panel" class="card"><p class="empty">Wybierz substancję, grupę albo hub, aby zobaczyć szczegóły.</p></div>
   </aside>
 </div>

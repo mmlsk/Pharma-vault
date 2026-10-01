@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL556
+chembl-max-phase: 4
 half-life:
   value: 6.0
   value-max: null
@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Deferoxamine
@@ -63,6 +64,35 @@ pk-source:
   revision: 1340623774
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL556
+  pref-name: DEFEROXAMINE
+  molecule-type: Small molecule
+  first-approval: 1968
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - V03AC01
+  targets: []
+  properties:
+    full-mwt: 560.69
+    mw-freebase: 560.69
+    alogp: 0.92
+    psa: 205.84
+    hba: 9
+    hbd: 6
+    rtb: 23
+    num-ro5-violations: 2
+    qed-weighted: 0.06
+    full-molformula: C25H48N6O8
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Deferoxamine
@@ -76,10 +106,21 @@ pk-source:
 - **Compound ID:** `deferoxamine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL556](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL556/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Parenteral iron chelator requiring prolonged subcutaneous infusion.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1968
+- **ATC V03AC01:** VARIOUS › ALL OTHER THERAPEUTIC PRODUCTS › Iron chelating agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 560.69 | 0.92 | 205.84 | 6/9 | 2 | C25H48N6O8 |
 
 ## Evidence boundaries
 
@@ -94,6 +135,14 @@ Parenteral iron chelator requiring prolonged subcutaneous infusion.
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 6 h | 6 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Deferasirox]], [[Deferiprone]]
 
 ## Safety routing
 

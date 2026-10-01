@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Chlorphenamine
@@ -69,6 +70,36 @@ pk-source:
   revision: 1360097031
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL505
+  pref-name: CHLORPHENIRAMINE
+  molecule-type: Small molecule
+  first-approval: 1950
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R06AB04
+  - R06AB54
+  targets: []
+  properties:
+    full-mwt: 274.8
+    mw-freebase: 274.8
+    alogp: 3.82
+    psa: 16.13
+    hba: 2
+    hbd: 0
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C16H19ClN2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Chlorpheniramine
@@ -82,7 +113,7 @@ pk-source:
 - **Compound ID:** `chlorpheniramine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL505](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL505/) · max phase 4
+- **ChEMBL:** [CHEMBL505](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL505/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -91,6 +122,17 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1950
+- **ATC R06AB04:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Substituted alkylamines
+- **ATC R06AB54:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Substituted alkylamines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 274.8 | 3.82 | 16.13 | 0/2 | 0 | C16H19ClN2 |
 
 ## Evidence boundaries
 
@@ -110,6 +152,15 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Metabolism | hepatic | Liver (CYP2D6) |
 | CYP (metabolised by) | CYP2D6 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Brompheniramine]], [[Dexbrompheniramine]], [[Dexchlorpheniramine]], [[Dimethindene]], [[Pheniramine]]
+- **Shared CYP substrate pool:** CYP2D6 (+83 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

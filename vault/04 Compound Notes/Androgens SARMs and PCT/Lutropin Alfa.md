@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201419
+  pref-name: LUTROPIN ALFA
+  molecule-type: Protein
+  first-approval: 2000
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G03GA07
+  targets:
+  - id: CHEMBL1854
+    name: Lutropin-choriogonadotropic hormone receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Lutropin Alfa
@@ -67,7 +83,7 @@ tags:
 - **Compound ID:** `lutropin-alfa-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL1201419](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201419/) · max phase 4
+- **ChEMBL:** [CHEMBL1201419](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201419/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +93,16 @@ Luteinizing hormone/Choriogonadotropin receptor agonist; approved/marketed compo
 
 Luteinizing hormone/Choriogonadotropin receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2000
+- **ATC G03GA07:** GENITO URINARY SYSTEM AND SEX HORMONES › GONADOTROPINS AND OTHER OVULATION STIMULANTS › Gonadotropins
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Lutropin-choriogonadotropic hormone receptor (CHEMBL1854)|Lutropin-choriogonadotropic hormone receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +111,13 @@ Luteinizing hormone/Choriogonadotropin receptor agonist _(ChEMBL curated mechani
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Choriogonadotropin Alfa]] (Lutropin-choriogonadotropic hormone receptor), [[Gonadotropin, Chorionic]] (Lutropin-choriogonadotropic hormone receptor), [[Lh (Menotropins)]] (Lutropin-choriogonadotropic hormone receptor), [[Menotropins (hMG, Menopur)]] (Lutropin-choriogonadotropic hormone receptor)
+- **Same ATC subgroup:** [[Choriogonadotropin Alfa]], [[Corifollitropin Alfa]], [[Follitropin]], [[Follitropin alfa (Gonal-f)]], [[Follitropin Beta]], [[Gonadotropin, Chorionic]], [[Urofollitropin (Bravelle-Fostimon)|Urofollitropin (Bravelle/Fostimon)]]
 
 ## Safety routing
 

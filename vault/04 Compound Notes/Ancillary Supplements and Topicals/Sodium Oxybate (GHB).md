@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1342
+chembl-max-phase: 4
 half-life:
   value: 30.0
   value-max: 60.0
@@ -54,7 +54,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -62,6 +62,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Γ-Hydroxybutyric acid
@@ -69,6 +71,35 @@ pk-source:
   revision: 1375974367
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1342
+  pref-name: OXYBATE
+  molecule-type: Small molecule
+  first-approval: 2002
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 104.11
+    mw-freebase: 104.11
+    alogp: -0.16
+    psa: 57.53
+    hba: 2
+    hbd: 2
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.52
+    full-molformula: C4H8O3
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 5dcf9a5c-312b-420b-82f3-42177d8f9ee4
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5dcf9a5c-312b-420b-82f3-42177d8f9ee4
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Sodium Oxybate (GHB)
@@ -83,10 +114,21 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Sodium Oxybate, GHB
+- **ChEMBL:** [CHEMBL1342](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1342/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Sodium salt of GHB, approved for narcolepsy with cataplexy under restricted distribution; also a drug of misuse.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2002
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 104.11 | -0.16 | 57.53 | 2/2 | 0 | C4H8O3 |
 
 ## Evidence boundaries
 
@@ -105,6 +147,10 @@ Sodium salt of GHB, approved for narcolepsy with cataplexy under restricted dist
 | Metabolism | hepatic | 95–98%, mainly liver, also in blood and tissues |
 | Metabolites | - | Succinic semialdehyde, Succinic acid |
 | Excretion | - | 1–5%, kidney |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 5dcf9a5c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5dcf9a5c-312b-420b-82f3-42177d8f9ee4), label version 20260421. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 0.367, 0.5, 0.533, 0.983, 1)
 
 ## Safety routing
 

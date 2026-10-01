@@ -10,15 +10,15 @@ cluster: Nootropics
 group: neuropsych
 class: null
 subclass: null
-mechanism: null
+mechanism: Amyloid-beta A4 protein disrupting agent
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297245
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -57,6 +57,23 @@ tags:
 - source-derived
 - group/neuropsych
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297245
+  pref-name: DONANEMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N06DX05
+  targets:
+  - id: CHEMBL2487
+    name: Amyloid-beta precursor protein
+    action: DISRUPTING AGENT
+  properties: {}
 ---
 
 # Donanemab (Kisunla)
@@ -71,10 +88,24 @@ tags:
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** Donanemab, Kisunla
+- **ChEMBL:** [CHEMBL4297245](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297245/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 An antibody against the pyroglutamate-modified amyloid found only in established plaque. It clears plaque faster than lecanemab and is stopped once clearance is achieved, which is a genuinely different treatment paradigm.
+
+## Mechanism
+
+Amyloid-beta A4 protein disrupting agent _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **ATC N06DX05:** NERVOUS SYSTEM › ANTI-DEMENTIA DRUGS › Other anti-dementia drugs
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Amyloid-beta precursor protein (CHEMBL2487)|Amyloid-beta precursor protein]] - disrupting agent · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -84,6 +115,13 @@ An antibody against the pyroglutamate-modified amyloid found only in established
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Aducanumab (Aduhelm)]] (Amyloid-beta precursor protein), [[Homotaurine]] (Amyloid-beta precursor protein), [[Lecanemab (Leqembi)]] (Amyloid-beta precursor protein)
+- **Same ATC subgroup:** [[Aducanumab (Aduhelm)]], [[Ginkgo Biloba]], [[Lecanemab (Leqembi)]], [[Memantine (Namenda)]]
 
 ## Safety routing
 

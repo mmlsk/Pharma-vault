@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Thiamylal
@@ -63,6 +64,34 @@ pk-source:
   revision: 1301699611
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL440
+  pref-name: THIAMYLAL
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 254.35
+    mw-freebase: 254.35
+    alogp: 1.52
+    psa: 58.2
+    hba: 3
+    hbd: 2
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.44
+    full-molformula: C12H18N2O2S
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Thiamylal
@@ -76,7 +105,7 @@ pk-source:
 - **Compound ID:** `thiamylal-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL440](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL440/) · max phase 4
+- **ChEMBL:** [CHEMBL440](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL440/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +114,15 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 254.35 | 1.52 | 58.2 | 2/3 | 0 | C12H18N2O2S |
 
 ## Evidence boundaries
 
@@ -100,6 +138,8 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 |---|---|---|
 | Elimination t½ | 14.3 h | 14.3 h (cats) |
 | Metabolism | hepatic | Hepatic |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

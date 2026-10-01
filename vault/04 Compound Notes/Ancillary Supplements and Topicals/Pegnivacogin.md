@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2107870
 chembl-max-phase: 3
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2107870
+  pref-name: PEGNIVACOGIN
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL2016
+    name: Coagulation factor IX
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Pegnivacogin
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `pegnivacogin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2107870](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107870/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -75,6 +92,14 @@ Pegnivacogin is a phase 3 compound catalogued by ChEMBL. Its curated mechanism i
 ## Mechanism
 
 coagulation factor IX inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Coagulation factor IX (CHEMBL2016)|Coagulation factor IX]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

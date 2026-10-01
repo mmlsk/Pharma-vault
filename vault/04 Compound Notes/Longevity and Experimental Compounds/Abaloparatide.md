@@ -8,15 +8,15 @@ cluster: Longevity and Experimental Compounds
 group: longevity
 class: null
 subclass: null
-mechanism: null
+mechanism: Parathyroid hormone receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3301581
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3301581
+  pref-name: ABALOPARATIDE
+  molecule-type: Protein
+  first-approval: 2017
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - H05AA04
+  targets:
+  - id: CHEMBL1793
+    name: Parathyroid hormone/parathyroid hormone-related peptide receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Abaloparatide
@@ -67,10 +83,26 @@ tags:
 - **Compound ID:** `abaloparatide-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL3301581](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3301581/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 PTHrP-analog bone-building drug used for severe osteoporosis.
+
+## Mechanism
+
+Parathyroid hormone receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2017
+- **Flags:** black-box warning
+- **ATC H05AA04:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › PARATHYROID HORMONES AND ANALOGUES › Parathyroid hormones and analogues
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Parathyroid hormone-parathyroid hormone-related peptide receptor (CHEMBL1793)|Parathyroid hormone/parathyroid hormone-related peptide receptor]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +112,13 @@ PTHrP-analog bone-building drug used for severe osteoporosis.
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ostabolin-C]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Palopegteriparatide]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Parathyroid Hormone]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Teriparatide (Forteo)]] (Parathyroid hormone/parathyroid hormone-related peptide receptor), [[Teriparatide Acetate]] (Parathyroid hormone/parathyroid hormone-related peptide receptor)
+- **Same ATC subgroup:** [[Palopegteriparatide]], [[Parathyroid Hormone]], [[Teriparatide (Forteo)]]
 
 ## Safety routing
 

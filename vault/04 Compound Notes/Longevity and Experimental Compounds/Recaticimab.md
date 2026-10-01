@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL5095381
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,19 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL5095381
+  pref-name: RECATICIMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties: {}
 ---
 
 # Recaticimab
@@ -67,10 +80,15 @@ tags:
 - **Compound ID:** `recaticimab-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL5095381](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL5095381/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Blocks PCSK9 so hepatic LDL receptors recycle instead of being degraded, lowering LDL-C and ApoB; investigational.
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
 
 ## Evidence boundaries
 

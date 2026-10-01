@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL713
+chembl-max-phase: 4
 half-life:
   value: 128.0
   value-max: 149.0
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cyp-interactions
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Entecavir
@@ -68,6 +70,36 @@ pk-source:
   revision: 1339067882
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL713
+  pref-name: ENTECAVIR ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 2005
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 277.28
+    mw-freebase: 277.28
+    alogp: -0.83
+    psa: 130.05
+    hba: 7
+    hbd: 4
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.53
+    full-molformula: C12H15N5O3
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 73dea2a4-a596-477f-b66d-5a80dd019837
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=73dea2a4-a596-477f-b66d-5a80dd019837
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: no-label-value
 ---
 
 # Entecavir
@@ -81,10 +113,21 @@ pk-source:
 - **Compound ID:** `entecavir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL713](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL713/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Guanosine analogue for hepatitis B with a very high genetic barrier to resistance in treatment-naive patients.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2005
+- **Flags:** black-box warning, prodrug
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 277.28 | -0.83 | 130.05 | 4/7 | 0 | C12H15N5O3 |
 
 ## Evidence boundaries
 
@@ -103,6 +146,11 @@ Guanosine analogue for hepatitis B with a very high genetic barrier to resistanc
 | Bioavailability | - | n/a (≥70) |
 | Metabolism | - | negligible/nil |
 | Excretion | mainly urinary | Kidney 62–73% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 73dea2a4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=73dea2a4-a596-477f-b66d-5a80dd019837), label version 20260707. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 24, 128, 149)
+> - protein-binding: no-label-value (label values: -)
 
 ## Safety routing
 

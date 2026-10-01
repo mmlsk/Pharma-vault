@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL1743036
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1743036
+  pref-name: LEXATUMUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1075153
+    name: Tumor necrosis factor receptor superfamily member 10B
+    action: AGONIST
+  properties: {}
 ---
 
 # Lexatumumab
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `lexatumumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1743036](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743036/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -76,6 +93,14 @@ Lexatumumab is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is
 
 tumor necrosis factor receptor superfamily member 10B agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor receptor superfamily member 10B (CHEMBL1075153)|Tumor necrosis factor receptor superfamily member 10B]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -84,6 +109,12 @@ tumor necrosis factor receptor superfamily member 10B agonist _(ChEMBL curated m
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[LBY-135]] (Tumor necrosis factor receptor superfamily member 10B), [[Tigatuzumab]] (Tumor necrosis factor receptor superfamily member 10B)
 
 ## Safety routing
 

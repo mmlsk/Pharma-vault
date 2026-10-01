@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Sulfasalazine
@@ -67,6 +69,42 @@ pk-source:
   revision: 1314714428
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL421
+  pref-name: SULFASALAZINE
+  molecule-type: Small molecule
+  first-approval: 1950
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A07EC01
+  targets:
+  - id: CHEMBL215
+    name: Polyunsaturated fatty acid 5-lipoxygenase
+    action: INHIBITOR
+  - id: CHEMBL2094253
+    name: Cyclooxygenase
+    action: INHIBITOR
+  properties:
+    full-mwt: 398.4
+    mw-freebase: 398.4
+    alogp: 3.7
+    psa: 141.31
+    hba: 7
+    hbd: 3
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.54
+    full-molformula: C18H14N4O5S
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 257cee60-b68f-4c2b-b57d-8e4d73d17e09
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=257cee60-b68f-4c2b-b57d-8e4d73d17e09
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Sulfasalazine
@@ -80,7 +118,7 @@ pk-source:
 - **Compound ID:** `sulfasalazine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL421](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL421/) · max phase 4
+- **ChEMBL:** [CHEMBL421](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL421/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +127,21 @@ Arachidonate 5-lipoxygenase inhibitor; approved/marketed compound catalogued by 
 ## Mechanism
 
 Arachidonate 5-lipoxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1950
+- **ATC A07EC01:** ALIMENTARY TRACT AND METABOLISM › INTESTINAL ANTIINFLAMMATORY AGENTS › Aminosalicylic acid and similar agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 398.4 | 3.7 | 141.31 | 3/7 | 0 | C18H14N4O5S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Polyunsaturated fatty acid 5-lipoxygenase (CHEMBL215)|Polyunsaturated fatty acid 5-lipoxygenase]] - inhibitor · SINGLE PROTEIN
+- [[Cyclooxygenase (CHEMBL2094253)|Cyclooxygenase]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -105,6 +158,17 @@ Arachidonate 5-lipoxygenase inhibitor _(ChEMBL curated mechanism, as quoted by t
 | Elimination t½ | 5–10 h | 5-10 hours |
 | Bioavailability | 15 % | <15% |
 | Excretion | - | drug metabolites are excreted in urine and feces |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 257cee60…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=257cee60-b68f-4c2b-b57d-8e4d73d17e09), label version 20260825. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 7.6, 10.4, 14.8)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Mesalamine]] (Cyclooxygenase; Polyunsaturated fatty acid 5-lipoxygenase), [[Mesalazine (5-ASA)]] (Cyclooxygenase; Polyunsaturated fatty acid 5-lipoxygenase), [[Acemetacin]] (Cyclooxygenase), [[Acetaminophen]] (Cyclooxygenase), [[Aloxiprin]] (Cyclooxygenase), [[Aspirin]] (Cyclooxygenase), [[Benzydamine]] (Cyclooxygenase), [[Bismuth Subsalicylate]] (Cyclooxygenase), [[Clometacin]] (Cyclooxygenase), [[Dexibuprofen]] (Cyclooxygenase), [[Dexketoprofen]] (Cyclooxygenase), [[Diclofenac]] (Cyclooxygenase)
+- **Same ATC subgroup:** [[Balsalazide]], [[Mesalamine]], [[Mesalazine (5-ASA)]], [[Olsalazine]]
 
 ## Safety routing
 

@@ -10,15 +10,15 @@ cluster: General Pharmacology
 group: oncology
 class: null
 subclass: null
-mechanism: null
+mechanism: DNA inhibitor; RNA inhibitor; Thymidylate synthase inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1773
+chembl-max-phase: 4
 half-life:
   value: 38.0
   value-max: 45.0
@@ -55,7 +55,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - cytotoxicity
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - group/oncology
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Capecitabine
@@ -70,6 +72,46 @@ pk-source:
   revision: 1360414026
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1773
+  pref-name: CAPECITABINE
+  molecule-type: Small molecule
+  first-approval: 1998
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L01BC06
+  targets:
+  - id: CHEMBL1952
+    name: Thymidylate synthase
+    action: INHIBITOR
+  - id: CHEMBL2311221
+    name: DNA
+    action: INHIBITOR
+  - id: CHEMBL2311222
+    name: RNA
+    action: INHIBITOR
+  properties:
+    full-mwt: 359.35
+    mw-freebase: 359.35
+    alogp: 0.76
+    psa: 122.91
+    hba: 8
+    hbd: 3
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.64
+    full-molformula: C15H22FN3O6
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 0b59e98c-5b34-4b93-90f6-20526f4d4f88
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0b59e98c-5b34-4b93-90f6-20526f4d4f88
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Capecitabine (Xeloda)
@@ -84,10 +126,32 @@ pk-source:
 - **Source group:** Oncology & Cytotoxics (`oncology`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Capecitabine, Xeloda
+- **ChEMBL:** [CHEMBL1773](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1773/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 An oral prodrug converted to 5-fluorouracil in three enzymatic steps, the last by thymidine phosphorylase which is enriched in tumour tissue. That last step is the basis for its relative tumour selectivity.
+
+## Mechanism
+
+DNA inhibitor; RNA inhibitor; Thymidylate synthase inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1998
+- **Flags:** black-box warning, prodrug
+- **ATC L01BC06:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › ANTIMETABOLITES › Pyrimidine analogues
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 359.35 | 0.76 | 122.91 | 3/8 | 0 | C15H22FN3O6 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Thymidylate synthase (CHEMBL1952)|Thymidylate synthase]] - inhibitor · SINGLE PROTEIN
+- [[DNA (CHEMBL2311221)|DNA]] - inhibitor · NUCLEIC-ACID
+- [[RNA (CHEMBL2311222)|RNA]] - inhibitor · NUCLEIC-ACID
 
 ## Evidence boundaries
 
@@ -106,6 +170,18 @@ An oral prodrug converted to 5-fluorouracil in three enzymatic steps, the last b
 | Bioavailability | - | Extensive |
 | Metabolism | hepatic | liver, to 5'-DFCR, 5'-DFUR (inactive); neoplastic tissue, 5'-DFUR to active fluorouracil |
 | Excretion | mainly urinary | kidney (95.5%), faecal (2.6%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 0b59e98c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0b59e98c-5b34-4b93-90f6-20526f4d4f88), label version 20260721. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 0.75)
+> - protein-binding: consistent (label values: 60)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[5-Fluorouracil]] (DNA; RNA; Thymidylate synthase), [[Azacitidine]] (DNA; RNA), [[Azathioprine]] (DNA), [[Decitabine]] (DNA), [[Methoxsalen (8-MOP)]] (DNA), [[Pemetrexed (Alimta)]] (Thymidylate synthase)
+- **Same ATC subgroup:** [[5-Fluorouracil]], [[Azacitidine]], [[Decitabine]]
 
 ## Safety routing
 

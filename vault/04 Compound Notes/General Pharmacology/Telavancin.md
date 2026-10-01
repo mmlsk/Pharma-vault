@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL507870
+chembl-max-phase: 4
 half-life:
   value: 9.0
   value-max: null
@@ -61,6 +61,7 @@ tags:
 - group/antiinfective
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Telavancin
@@ -68,6 +69,28 @@ pk-source:
   revision: 1329507747
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL507870
+  pref-name: TELAVANCIN
+  molecule-type: Protein
+  first-approval: 2009
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - J01XA03
+  targets: []
+  properties:
+    full-mwt: 1755.66
+    mw-freebase: 1755.66
+    full-molformula: C80H106Cl2N11O27P
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Telavancin
@@ -81,10 +104,22 @@ pk-source:
 - **Compound ID:** `telavancin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL507870](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL507870/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Lipoglycopeptide with dual cell wall and membrane activity, limited in practice by nephrotoxicity and a fetal risk signal.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 2009
+- **Flags:** black-box warning
+- **ATC J01XA03:** ANTIINFECTIVES FOR SYSTEMIC USE › OTHER ANTIBACTERIALS › Glycopeptide antibacterials
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1755.66 | - | - | -/- | - | C80H106Cl2N11O27P |
 
 ## Evidence boundaries
 
@@ -102,6 +137,14 @@ Lipoglycopeptide with dual cell wall and membrane activity, limited in practice 
 | Protein binding | 90 % | 90%, mostly to albumin |
 | Bioavailability | - | N/A |
 | Excretion | - | 76% in urine, <1% in feces |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Dalbavancin]], [[Oritavancin]], [[Vancomycin]]
 
 ## Safety routing
 

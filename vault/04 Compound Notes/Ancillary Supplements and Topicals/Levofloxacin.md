@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL33
+chembl-max-phase: 4
 half-life:
   value: 6.0
   value-max: 8.8
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Levofloxacin
@@ -68,6 +70,36 @@ pk-source:
   revision: 1361375143
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL33
+  pref-name: LEVOFLOXACIN ANHYDROUS
+  molecule-type: Small molecule
+  first-approval: 1996
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 361.37
+    mw-freebase: 361.37
+    alogp: 1.54
+    psa: 75.01
+    hba: 6
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.87
+    full-molformula: C18H20FN3O4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 5a65b2bc-9edc-f193-e063-6394a90a0104
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5a65b2bc-9edc-f193-e063-6394a90a0104
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Levofloxacin
@@ -81,10 +113,21 @@ pk-source:
 - **Compound ID:** `levofloxacin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL33](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL33/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits bacterial DNA gyrase or topoisomerase IV; tendon, neurologic, cardiac, and resistance risks limit indiscriminate use.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1996
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 361.37 | 1.54 | 75.01 | 1/6 | 0 | C18H20FN3O4 |
 
 ## Evidence boundaries
 
@@ -104,6 +147,11 @@ Inhibits bacterial DNA gyrase or topoisomerase IV; tendon, neurologic, cardiac, 
 | Metabolism | - | Minimal (<5%) |
 | Metabolites | - | • Desmethyllevofloxacin; • Levofloxacin-N-oxide |
 | Excretion | mainly urinary · fe 0.87 | Urine: 87% unchanged, <5% metabolites; Feces: <4% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 5a65b2bc…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=5a65b2bc-9edc-f193-e063-6394a90a0104), label version 20260901. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 6, 6.1, 7.5, 7.6, 8, 24)
+> - protein-binding: consistent (label values: 24, 38)
 
 ## Safety routing
 

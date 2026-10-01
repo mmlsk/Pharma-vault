@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Remimazolam
@@ -63,6 +64,35 @@ pk-source:
   revision: 1362777558
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL4297526
+  pref-name: REMIMAZOLAM
+  molecule-type: Small molecule
+  first-approval: 2020
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N05CD14
+  targets: []
+  properties:
+    full-mwt: 439.31
+    mw-freebase: 439.31
+    alogp: 4.18
+    psa: 69.37
+    hba: 6
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.57
+    full-molformula: C21H19BrN4O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Remimazolam
@@ -76,7 +106,7 @@ pk-source:
 - **Compound ID:** `remimazolam-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL4297526](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297526/) · max phase 4
+- **ChEMBL:** [CHEMBL4297526](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297526/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +115,17 @@ GABA-A receptor; anion channel positive allosteric modulator; approved/marketed 
 ## Mechanism
 
 GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2020
+- **Flags:** black-box warning
+- **ATC N05CD14:** NERVOUS SYSTEM › HYPNOTICS AND SEDATIVES › Benzodiazepine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 439.31 | 4.18 | 69.37 | 0/6 | 0 | C21H19BrN4O2 |
 
 ## Evidence boundaries
 
@@ -99,6 +140,14 @@ GABA-A receptor; anion channel positive allosteric modulator _(ChEMBL curated me
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 45–70 min | 45–70 minutes |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Estazolam]], [[Flunitrazepam]], [[Flurazepam]], [[Midazolam]], [[Quazepam]], [[Temazepam]], [[Triazolam]]
 
 ## Safety routing
 

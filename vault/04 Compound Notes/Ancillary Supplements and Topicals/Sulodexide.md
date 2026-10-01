@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2108086
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,20 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2108086
+  pref-name: SULODEXIDE
+  molecule-type: Unknown
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - B01AB11
+  targets: []
+  properties: {}
 ---
 
 # Sulodexide
@@ -67,10 +81,16 @@ tags:
 - **Compound ID:** `sulodexide-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2108086](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2108086/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Mixture of glycosaminoglycans studied for venous disease and albuminuria; availability and evidence vary by country.
+
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+- **ATC B01AB11:** BLOOD AND BLOOD FORMING ORGANS › ANTITHROMBOTIC AGENTS › Heparin group
 
 ## Evidence boundaries
 
@@ -80,6 +100,12 @@ Mixture of glycosaminoglycans studied for venous disease and albuminuria; availa
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Dalteparin]], [[Nadroparin]], [[Tinzaparin]]
 
 ## Safety routing
 

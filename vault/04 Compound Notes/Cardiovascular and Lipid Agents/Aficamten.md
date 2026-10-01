@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4847050
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/cardio
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL4847050
+  pref-name: AFICAMTEN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 337.38
+    mw-freebase: 337.38
+    alogp: 2.45
+    psa: 85.84
+    hba: 6
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.79
+    full-molformula: C18H19N5O2
 ---
 
 # Aficamten
@@ -67,10 +89,19 @@ tags:
 - **Compound ID:** `aficamten-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
+- **ChEMBL:** [CHEMBL4847050](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4847050/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 A next-generation cardiac myosin inhibitor for obstructive hypertrophic cardiomyopathy, with a shorter half-life than mavacamten and no CYP2C19 genotype dependence.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 337.38 | 2.45 | 85.84 | 1/6 | 0 | C18H19N5O2 |
 
 ## Evidence boundaries
 

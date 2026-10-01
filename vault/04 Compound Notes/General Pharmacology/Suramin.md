@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL265502
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,21 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL265502
+  pref-name: SURAMIN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 1297.3
+    mw-freebase: 1297.3
+    full-molformula: C51H40N6O23S6
 ---
 
 # Suramin
@@ -67,10 +82,19 @@ tags:
 - **Compound ID:** `suramin-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL265502](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL265502/) · max phase 3 · id via Wikipedia infobox
 
 ## Source summary
 
 A century-old polysulfonated naphthylurea for early-stage African trypanosomiasis, with an enormous number of secondary molecular targets.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 1297.3 | - | - | -/- | - | C51H40N6O23S6 |
 
 ## Evidence boundaries
 

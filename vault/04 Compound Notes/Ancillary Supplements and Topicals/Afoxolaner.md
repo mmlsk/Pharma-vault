@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL2219412
 chembl-max-phase: 2
 half-life:
   value: 14.0
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Afoxolaner
@@ -67,6 +68,34 @@ pk-source:
   revision: 1365001897
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL2219412
+  pref-name: AFOXOLANER
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 625.88
+    mw-freebase: 625.88
+    alogp: 6.5
+    psa: 79.79
+    hba: 4
+    hbd: 2
+    rtb: 6
+    num-ro5-violations: 2
+    qed-weighted: 0.31
+    full-molformula: C26H17ClF9N3O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Afoxolaner
@@ -80,6 +109,7 @@ pk-source:
 - **Compound ID:** `afoxolaner-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL2219412](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2219412/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
@@ -88,6 +118,14 @@ Afoxolaner is a phase 2 compound catalogued by ChEMBL. Its curated mechanism is 
 ## Mechanism
 
 ectoparasiticide for systemic use _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 625.88 | 6.5 | 79.79 | 2/4 | 2 | C26H17ClF9N3O3 |
 
 ## Evidence boundaries
 
@@ -104,6 +142,8 @@ ectoparasiticide for systemic use _(ChEMBL curated mechanism, as quoted by the s
 | Elimination t½ | 14 d | 14 days |
 | Bioavailability | 74 % | 74% (Tmax = 2–4 hours) |
 | Excretion | mainly non-renal | Bile duct (major route) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

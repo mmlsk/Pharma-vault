@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: antiinfective
 class: null
 subclass: null
-mechanism: null
+mechanism: Polymerase acidic protein inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL4297503
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,36 @@ tags:
 - source-derived
 - group/antiinfective
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4297503
+  pref-name: BALOXAVIR MARBOXIL
+  molecule-type: Small molecule
+  first-approval: 2018
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AX25
+  targets:
+  - id: CHEMBL1169598
+    name: Polymerase acidic protein
+    action: INHIBITOR
+  - id: CHEMBL2028641
+    name: Polymerase acidic protein
+    action: INHIBITOR
+  properties:
+    full-mwt: 571.56
+    mw-freebase: 571.56
+    alogp: 3.39
+    psa: 99.54
+    hba: 10
+    hbd: 0
+    rtb: 4
+    num-ro5-violations: 1
+    qed-weighted: 0.34
+    full-molformula: C27H23F2N3O7S
 ---
 
 # Baloxavir Marboxil
@@ -67,10 +97,31 @@ tags:
 - **Compound ID:** `baloxavir-compound`
 - **Source group:** Anti-infectives (`antiinfective`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL4297503](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297503/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Single-dose influenza antiviral with a mechanism upstream of neuraminidase, blocking transcription rather than release.
+
+## Mechanism
+
+Polymerase acidic protein inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2018
+- **Flags:** prodrug
+- **ATC J05AX25:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Other antivirals
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 571.56 | 3.39 | 99.54 | 0/10 | 1 | C27H23F2N3O7S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Polymerase acidic protein (CHEMBL1169598)|Polymerase acidic protein]] - inhibitor · SINGLE PROTEIN
+- [[Polymerase acidic protein (CHEMBL2028641)|Polymerase acidic protein]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +131,12 @@ Single-dose influenza antiviral with a mechanism upstream of neuraminidase, bloc
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Bulevirtide (Hepcludex)]], [[Enfuvirtide]], [[Favipiravir]], [[Fostemsavir]], [[Ibalizumab]], [[Lenacapavir]], [[Letermovir]], [[Maribavir]], [[Tecovirimat]]
 
 ## Safety routing
 

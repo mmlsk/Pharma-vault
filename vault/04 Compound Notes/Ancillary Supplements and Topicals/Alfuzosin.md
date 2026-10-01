@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL709
+chembl-max-phase: 4
 half-life:
   value: 10.0
   value-max: null
@@ -62,6 +62,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Alfuzosin
@@ -69,6 +70,35 @@ pk-source:
   revision: 1358588137
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL709
+  pref-name: ALFUZOSIN
+  molecule-type: Small molecule
+  first-approval: 2003
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - G04CA01
+  targets: []
+  properties:
+    full-mwt: 389.46
+    mw-freebase: 389.46
+    alogp: 1.35
+    psa: 111.83
+    hba: 8
+    hbd: 2
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.65
+    full-molformula: C19H27N5O4
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Alfuzosin
@@ -82,10 +112,21 @@ pk-source:
 - **Compound ID:** `alfuzosin-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL709](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL709/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Blocks alpha-1 adrenoceptors to relax vascular or prostatic smooth muscle; first-dose hypotension and floppy-iris syndrome are class effects.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2003
+- **ATC G04CA01:** GENITO URINARY SYSTEM AND SEX HORMONES › DRUGS USED IN BENIGN PROSTATIC HYPERTROPHY › Alpha-adrenoreceptor antagonists
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 389.46 | 1.35 | 111.83 | 2/8 | 0 | C19H27N5O4 |
 
 ## Evidence boundaries
 
@@ -105,6 +146,15 @@ Blocks alpha-1 adrenoceptors to relax vascular or prostatic smooth muscle; first
 | Metabolism | hepatic | Liver (CYP3A4-mediated) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | Feces (69%) and Urine (24%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Silodosin]], [[Tamsulosin]], [[Terazosin]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

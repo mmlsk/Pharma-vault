@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: analgesia
 class: null
 subclass: null
-mechanism: null
+mechanism: Sodium channel alpha subunit blocker
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL698
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -56,6 +56,7 @@ tags:
 - group/analgesia
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tetracaine
@@ -63,6 +64,34 @@ pk-source:
   revision: 1314133385
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL698
+  pref-name: TETRACAINE
+  molecule-type: Small molecule
+  first-approval: 2005
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C05AD02
+  - D04AB06
+  - N01BA03
+  - S01HA03
+  targets:
+  - id: CHEMBL2331043
+    name: Sodium channel alpha subunit
+    action: BLOCKER
+  properties:
+    full-mwt: 264.37
+    mw-freebase: 264.37
+    alogp: 2.62
+    psa: 41.57
+    hba: 4
+    hbd: 1
+    rtb: 8
+    num-ro5-violations: 0
+    qed-weighted: 0.58
+    full-molformula: C15H24N2O2
 ---
 
 # Tetracaine
@@ -76,10 +105,32 @@ pk-source:
 - **Compound ID:** `tetracaine-compound`
 - **Source group:** Analgesia & Anaesthesia (`analgesia`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL698](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL698/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Long-acting ester local anaesthetic used topically on eye and skin and in spinal anaesthesia.
+
+## Mechanism
+
+Sodium channel alpha subunit blocker _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2005
+- **ATC C05AD02:** CARDIOVASCULAR SYSTEM › AGENTS FOR TREATMENT OF HEMORRHOIDS AND ANAL FISSURES FOR TOPICAL USE › Local anesthetics
+- **ATC D04AB06:** DERMATOLOGICALS › ANTIPRURITICS, INCL. ANTIHISTAMINES, ANESTHETICS, ETC. › Anesthetics for topical use
+- **ATC N01BA03:** NERVOUS SYSTEM › ANESTHETICS, LOCAL › Esters of aminobenzoic acid
+- **ATC S01HA03:** SENSORY ORGANS › LOCAL ANESTHETICS › Local anesthetics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 264.37 | 2.62 | 41.57 | 1/4 | 0 | C15H24N2O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Sodium channel alpha subunit (CHEMBL2331043)|Sodium channel alpha subunit]] - blocker · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -94,6 +145,13 @@ Long-acting ester local anaesthetic used topically on eye and skin and in spinal
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Protein binding | - | 75.6 |
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Carbamazepine]] (Sodium channel alpha subunit), [[Cenobamate]] (Sodium channel alpha subunit), [[Eslicarbazepine Acetate]] (Sodium channel alpha subunit), [[Evenamide]] (Sodium channel alpha subunit), [[Lacosamide]] (Sodium channel alpha subunit), [[Lamotrigine]] (Sodium channel alpha subunit), [[Lidocaine]] (Sodium channel alpha subunit), [[Oxcarbazepine]] (Sodium channel alpha subunit), [[Phenytoin]] (Sodium channel alpha subunit), [[Prilocaine]] (Sodium channel alpha subunit), [[Primidone]] (Sodium channel alpha subunit), [[Ralfinamide]] (Sodium channel alpha subunit)
+- **Same ATC subgroup:** [[Benzocaine]], [[Chloroprocaine]], [[Lidocaine]], [[Procaine]]
 
 ## Safety routing
 

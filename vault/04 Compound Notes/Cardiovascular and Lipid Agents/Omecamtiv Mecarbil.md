@@ -8,15 +8,15 @@ cluster: Cardiovascular and Lipid Agents
 group: cardio
 class: null
 subclass: null
-mechanism: null
+mechanism: Cardiac myosin activator
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1800955
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,33 @@ tags:
 - source-derived
 - group/cardio
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1800955
+  pref-name: OMECAMTIV MECARBIL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C01CX10
+  targets:
+  - id: CHEMBL3831286
+    name: Cardiac myosin
+    action: ACTIVATOR
+  properties:
+    full-mwt: 401.44
+    mw-freebase: 401.44
+    alogp: 3.06
+    psa: 86.8
+    hba: 5
+    hbd: 2
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.82
+    full-molformula: C20H24FN5O3
 ---
 
 # Omecamtiv Mecarbil
@@ -67,10 +94,28 @@ tags:
 - **Compound ID:** `omecamtiv-compound`
 - **Source group:** Cardiovascular (`cardio`)
 - **Cluster:** [[Cardiovascular and Lipid Agents]]
+- **ChEMBL:** [CHEMBL1800955](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1800955/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Cardiac myosin activator that raises stroke volume without raising intracellular calcium, tested in systolic heart failure.
+
+## Mechanism
+
+Cardiac myosin activator _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **ATC C01CX10:** CARDIOVASCULAR SYSTEM › CARDIAC STIMULANTS EXCL. CARDIAC GLYCOSIDES › Other cardiac stimulants
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 401.44 | 3.06 | 86.8 | 2/5 | 0 | C20H24FN5O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Cardiac myosin (CHEMBL3831286)|Cardiac myosin]] - activator · PROTEIN COMPLEX
 
 ## Evidence boundaries
 
@@ -80,6 +125,13 @@ Cardiac myosin activator that raises stroke volume without raising intracellular
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Mavacamten]] (Cardiac myosin)
+- **Same ATC subgroup:** [[Angiotensin Ii]]
 
 ## Safety routing
 

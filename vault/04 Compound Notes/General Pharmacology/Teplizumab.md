@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: T-cell surface glycoprotein CD3 epsilon chain other
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1743078
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1743078
+  pref-name: TEPLIZUMAB
+  molecule-type: Antibody
+  first-approval: 2022
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A10XX01
+  targets:
+  - id: CHEMBL1975
+    name: T-cell surface glycoprotein CD3 epsilon chain
+    action: OTHER
+  properties: {}
 ---
 
 # Teplizumab
@@ -67,10 +84,25 @@ tags:
 - **Compound ID:** `teplizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1743078](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1743078/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Anti-CD3 antibody that delays the onset of clinical type 1 diabetes in at-risk relatives, the first disease-modifying therapy in that disease.
+
+## Mechanism
+
+T-cell surface glycoprotein CD3 epsilon chain other _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2022
+- **ATC A10XX01:** ALIMENTARY TRACT AND METABOLISM › OTHER DRUGS USED IN DIABETES › Other drugs used in diabetes
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[T-cell surface glycoprotein CD3 epsilon chain (CHEMBL1975)|T-cell surface glycoprotein CD3 epsilon chain]] - other · SINGLE PROTEIN
 
 ## Evidence boundaries
 

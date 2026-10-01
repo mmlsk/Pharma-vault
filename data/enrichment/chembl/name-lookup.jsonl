@@ -1,0 +1,1260 @@
+{"hits": [], "how": null, "query": "1-alpha-hydroxyvitamin d3", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "1-testosterone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "17-alpha-estradiol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1195301", "max_phase": "2.0", "parent": "CHEMBL1195301", "pref_name": "ZOLUNICANT"}], "how": "synonym", "query": "18-mc", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "19-norandrostenedione", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL273386", "max_phase": "2.0", "parent": "CHEMBL273386", "pref_name": "2,4-DINITROPHENOL"}], "how": "synonym", "query": "2,4-dinitrophenol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "2,4-dinitrophenol (dnp)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "2-bromo-lsd", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "2-fdck", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "2-fma", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "2-mmc", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "2-oxoglutarate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "25-hydroxyvitamin d3", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "25b-nbome", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "25c-nbome", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "25i-nbome", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "3-fma", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "3-fpm", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "3-ho-pce", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "3-ho-pcp", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "3-isobutyl-1-methylxanthine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "3-meo-pce", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "3-meo-pcp", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "3-mmc", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "4-fluorophenibut", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "4-fma", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4094396", "max_phase": "1.0", "parent": "CHEMBL4094396", "pref_name": "MEPHEDRONE"}], "how": "synonym", "query": "4-mmc", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "4f-mph", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "4f-phenibut", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "5-amino-1mq", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL7257", "max_phase": "2.0", "parent": "CHEMBL7257", "pref_name": "MEBUFOTENIN"}], "how": "synonym", "query": "5-meo-dmt", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "5f-adb", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "5f-mdmb-pica", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "5α-hydroxy laxogenin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "7-hydroxymitragynine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "7-keto-dhea", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL326433", "max_phase": null, "parent": "CHEMBL326433", "pref_name": "8-MERCAPTO-OCTANOIC ACID PHENYLAMIDE"}], "how": "pref_name", "query": "8-mercapto-octanoic acid phenylamide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "9-me-bc", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "9-me-bc (9-methyl-β-carboline)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "9-methyl-β-carboline", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4282264", "max_phase": null, "parent": "CHEMBL4282264", "pref_name": "A-485"}], "how": "synonym", "query": "a-485", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "aaz-a-154", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ab-fubinaca", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103863", "max_phase": "3.0", "parent": "CHEMBL2103863", "pref_name": "ABEXINOSTAT"}], "how": "synonym", "query": "abexinostat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297255", "max_phase": "2.0", "parent": "CHEMBL4297255", "pref_name": "ABP-700"}], "how": "synonym", "query": "abp-700", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL127071", "max_phase": "2.0", "parent": "CHEMBL127071", "pref_name": "POZANICLINE"}], "how": "synonym", "query": "abt-089", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL443684", "max_phase": "3.0", "parent": "CHEMBL443684", "pref_name": "NAVITOCLAX"}], "how": "synonym", "query": "abt-263", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2104964", "max_phase": "2.0", "parent": "CHEMBL430497", "pref_name": "TEBANICLINE TOSYLATE"}], "how": "synonym", "query": "abt-594", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108674", "max_phase": "2.0", "parent": "CHEMBL2108674", "pref_name": "RAMATERCEPT"}], "how": "synonym", "query": "ace-031", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ace-031 (ramatercept)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297867", "max_phase": "2.0", "parent": "CHEMBL4297867", "pref_name": "EFMITERMANT ALFA"}], "how": "synonym", "query": "ace-083", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "acetyl hexapeptide-8", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "acetyl octapeptide-3", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3693786", "max_phase": "2.0", "parent": "CHEMBL3693786", "pref_name": "CITARINOSTAT"}], "how": "synonym", "query": "acy-241", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL262747", "max_phase": "2.0", "parent": "CHEMBL262747", "pref_name": "ACYLINE"}], "how": "synonym", "query": "acyline", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297734", "max_phase": "4.0", "parent": "CHEMBL4297734", "pref_name": "CRIZANLIZUMAB"}], "how": "synonym", "query": "adakveo", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "adamax", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "adb-butinaca", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "adb-fubinaca", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "adb-hexinaca", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743081", "max_phase": "4.0", "parent": "CHEMBL1743081", "pref_name": "TRALOKINUMAB"}], "how": "synonym", "query": "adbry", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2105128", "max_phase": "2.0", "parent": "CHEMBL2105128", "pref_name": "FLUMETHIAZIDE"}], "how": "synonym", "query": "ademol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "adipotide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "adipotide (ftpp)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "adma", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "adma (asymmetric dimethylarginine)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707351", "max_phase": "2.0", "parent": "CHEMBL3707351", "pref_name": "ADOMEGLIVANT"}], "how": "synonym", "query": "adomeglivant", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL679", "max_phase": "4.0", "parent": "CHEMBL679", "pref_name": "EPINEPHRINE"}], "how": "synonym", "query": "adrenaline", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "adrenaline (epinephrine)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL216885", "max_phase": null, "parent": "CHEMBL216885", "pref_name": null}], "how": "synonym", "query": "ads-100380", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL217716", "max_phase": null, "parent": "CHEMBL217716", "pref_name": null}], "how": "synonym", "query": "ads-102550", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3039540", "max_phase": "4.0", "parent": "CHEMBL3039540", "pref_name": "ADUCANUMAB"}], "how": "synonym", "query": "aducanumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "aducanumab (aduhelm)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3039540", "max_phase": "4.0", "parent": "CHEMBL3039540", "pref_name": "ADUCANUMAB"}], "how": "synonym", "query": "aduhelm", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "aed peptide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594473", "max_phase": "2.0", "parent": "CHEMBL4594473", "pref_name": "ESCIN"}], "how": "synonym", "query": "aescin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "af710b", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108887", "max_phase": "2.0", "parent": "CHEMBL2108887", "pref_name": "AFELIMOMAB"}], "how": "synonym", "query": "afelimomab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL58343", "max_phase": null, "parent": "CHEMBL58343", "pref_name": "AGMATINE"}], "how": "pref_name", "query": "agmatine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5314944", "max_phase": "2.0", "parent": "CHEMBL5314944", "pref_name": "ZELQUISTINEL"}], "how": "synonym", "query": "agn-241751", "retrieved": "2026-10-01"}
+{"hits": [], "how": null, "query": "agn-241751 depending on the specific development name", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "aicar", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ala-glu-asp", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107841", "max_phase": "4.0", "parent": "CHEMBL2107841", "pref_name": "ALBIGLUTIDE"}], "how": "synonym", "query": "albiglutide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "albiglutide (tanzeum)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL519504", "max_phase": "3.0", "parent": "CHEMBL519504", "pref_name": "ALEGLITAZAR"}], "how": "synonym", "query": "aleglitazar", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1601669", "max_phase": "4.0", "parent": "CHEMBL1601669", "pref_name": "ALFACALCIDOL"}], "how": "synonym", "query": "alfacalcidol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "alfacalcidol (1-alpha-hydroxyvitamin d3)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "algal dha", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109540", "max_phase": "4.0", "parent": "CHEMBL2109540", "pref_name": "ALIROCUMAB"}], "how": "synonym", "query": "alirocumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "alirocumab (praluent)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "alks 2680", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108222", "max_phase": "2.0", "parent": "CHEMBL2108222", "pref_name": "ALOXIPRIN"}], "how": "synonym", "query": "aloxiprin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "alpha-ketoglutarate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "alpha-linolenic acid", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "alpha-linolenic acid (ala)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL33864", "max_phase": "3.0", "parent": "CHEMBL33864", "pref_name": "LIPOIC ACID, ALPHA"}], "how": "synonym", "query": "alpha-lipoic acid", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "alpha-lipoic acid (ala)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "alpha-phip", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "alpha-php", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "alpha-pvp", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201593", "max_phase": "4.0", "parent": "CHEMBL1201593", "pref_name": "ALTEPLASE"}], "how": "synonym", "query": "alteplase", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "am-2201", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594569", "max_phase": "3.0", "parent": "CHEMBL4594569", "pref_name": "AMLITELIMAB"}], "how": "synonym", "query": "amlitelimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5095303", "max_phase": "4.0", "parent": "CHEMBL5095303", "pref_name": "VUTRISIRAN SODIUM"}], "how": "synonym", "query": "amvuttra", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "amycretin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "anabolicum", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL33778", "max_phase": null, "parent": "CHEMBL33778", "pref_name": "ANACARDIC ACID"}, {"id": "CHEMBL455368", "max_phase": null, "parent": "CHEMBL455368", "pref_name": "ANACARDIC ACID"}], "how": "pref_name", "query": "anacardic acid", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1800807", "max_phase": "3.0", "parent": "CHEMBL1800807", "pref_name": "ANACETRAPIB"}], "how": "synonym", "query": "anacetrapib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1929396", "max_phase": "4.0", "parent": "CHEMBL1929396", "pref_name": "ANAGLIPTIN"}], "how": "synonym", "query": "anagliptin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2110579", "max_phase": "3.0", "parent": "CHEMBL2110579", "pref_name": "ANAMORELIN"}], "how": "synonym", "query": "anamorelin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "anatrofin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "anavex3-71", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3301583", "max_phase": "4.0", "parent": "CHEMBL3301583", "pref_name": "ANDEXANET ALFA"}], "how": "synonym", "query": "andexanet alfa", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "androstatrienedione", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297694", "max_phase": "2.0", "parent": "CHEMBL4297694", "pref_name": "ANFIBATIDE"}], "how": "synonym", "query": "anfibatide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2364653", "max_phase": "4.0", "parent": "CHEMBL2364653", "pref_name": "ANIFROLUMAB"}], "how": "synonym", "query": "anifrolumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "anti-thymocyte globulin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL6068615", "max_phase": "2.0", "parent": "CHEMBL6068615", "pref_name": "LAT-8881"}], "how": "synonym", "query": "aod-9604", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL37676", "max_phase": "1.0", "parent": "CHEMBL37676", "pref_name": "APC-100"}], "how": "synonym", "query": "apc-100", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL430060", "max_phase": null, "parent": "CHEMBL430060", "pref_name": "APICIDIN"}], "how": "pref_name", "query": "apicidin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL28", "max_phase": null, "parent": "CHEMBL28", "pref_name": "APIGENIN"}], "how": "pref_name", "query": "apigenin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3989872", "max_phase": "2.0", "parent": "CHEMBL3989872", "pref_name": "APIMOSTINEL"}], "how": "synonym", "query": "apimostinel", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594326", "max_phase": "3.0", "parent": "CHEMBL4594326", "pref_name": "APITEGROMAB"}], "how": "synonym", "query": "apitegromab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL232202", "max_phase": "2.0", "parent": "CHEMBL232202", "pref_name": "ARBUTIN"}], "how": "synonym", "query": "arbutin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "argireline", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "argireline (acetyl hexapeptide-8)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ariadne", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "arimistane", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "arimistane (androstatrienedione)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL566534", "max_phase": "4.0", "parent": "CHEMBL566534", "pref_name": "ARTEMETHER"}], "how": "synonym", "query": "artemether", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4288984", "max_phase": "3.0", "parent": "CHEMBL4288984", "pref_name": "WITHANOLIDE D"}], "how": "synonym", "query": "ashwagandha", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ashwagandha (withania somnifera)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1255871", "max_phase": "3.0", "parent": "CHEMBL1255871", "pref_name": "ASTAXANTHIN"}], "how": "synonym", "query": "astaxanthin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297886", "max_phase": "3.0", "parent": "CHEMBL4297886", "pref_name": "ASUNERCEPT"}], "how": "synonym", "query": "asunercept", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "asymmetric dimethylarginine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "at1001", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1014", "max_phase": "4.0", "parent": "CHEMBL1014", "pref_name": "CANDESARTAN CILEXETIL"}], "how": "synonym", "query": "atacand", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1742986", "max_phase": "3.0", "parent": "CHEMBL1742986", "pref_name": "ATACICEPT"}], "how": "synonym", "query": "atacicept", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107729", "max_phase": "2.0", "parent": "CHEMBL2107729", "pref_name": "ATACIGUAT"}], "how": "synonym", "query": "ataciguat", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ataciguat (hmr1766)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707227", "max_phase": "4.0", "parent": "CHEMBL3707227", "pref_name": "ATEZOLIZUMAB"}], "how": "synonym", "query": "atezolizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1921847", "max_phase": "3.0", "parent": "CHEMBL1921847", "pref_name": "ATICAPRANT"}], "how": "synonym", "query": "aticaprant", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545351", "max_phase": "3.0", "parent": "CHEMBL3545351", "pref_name": "AV-101"}], "how": "synonym", "query": "av-101", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL6068573", "max_phase": "3.0", "parent": "CHEMBL6068573", "pref_name": "AVACINCAPTAD PEGOL"}], "how": "synonym", "query": "avacincaptad pegol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3833373", "max_phase": "4.0", "parent": "CHEMBL3833373", "pref_name": "AVELUMAB"}], "how": "synonym", "query": "avelumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1200522", "max_phase": "4.0", "parent": "CHEMBL1200522", "pref_name": "AVOBENZONE"}], "how": "synonym", "query": "avobenzone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4072756", "max_phase": "2.0", "parent": "CHEMBL4072756", "pref_name": "AZD-5423"}], "how": "synonym", "query": "azd-5423", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1238", "max_phase": "4.0", "parent": "CHEMBL1238", "pref_name": "AZELAIC ACID"}], "how": "synonym", "query": "azelaic acid", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL257972", "max_phase": null, "parent": "CHEMBL257972", "pref_name": "AZUMAMIDE C"}], "how": "pref_name", "query": "azumamide c", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL402363", "max_phase": null, "parent": "CHEMBL402363", "pref_name": "AZUMAMIDE E"}], "how": "pref_name", "query": "azumamide e", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "bacopa monnieri", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL206834", "max_phase": "2.0", "parent": "CHEMBL206834", "pref_name": "BAFETINIB"}], "how": "synonym", "query": "bafetinib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL8260", "max_phase": "2.0", "parent": "CHEMBL8260", "pref_name": "BAICALEIN"}], "how": "synonym", "query": "baicalein", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL485818", "max_phase": null, "parent": "CHEMBL485818", "pref_name": "BAICALIN"}], "how": "pref_name", "query": "baicalin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL262344", "max_phase": "1.0", "parent": "CHEMBL262344", "pref_name": "BAKUCHIOL"}], "how": "synonym", "query": "bakuchiol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103991", "max_phase": "3.0", "parent": "CHEMBL2103991", "pref_name": "BALAGLITAZONE"}], "how": "synonym", "query": "balaglitazone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297503", "max_phase": "4.0", "parent": "CHEMBL4297503", "pref_name": "BALOXAVIR MARBOXIL"}], "how": "synonym", "query": "baloxavir marboxil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "bam15", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4298113", "max_phase": "2.0", "parent": "CHEMBL4298113", "pref_name": "BAMOSIRAN"}], "how": "synonym", "query": "bamosiran", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1762621", "max_phase": "3.0", "parent": "CHEMBL1762621", "pref_name": "BARDOXOLONE METHYL"}], "how": "synonym", "query": "bardoxolone methyl", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2218898", "max_phase": "2.0", "parent": "CHEMBL2218898", "pref_name": "BARUSIBAN"}], "how": "synonym", "query": "barusiban", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "bay 60-7550", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "beetroot", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1742990", "max_phase": "4.0", "parent": "CHEMBL1742990", "pref_name": "BELATACEPT"}], "how": "synonym", "query": "belatacept", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "bemetil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "bemitil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1742991", "max_phase": "4.0", "parent": "CHEMBL1742991", "pref_name": "BENRALIZUMAB"}], "how": "synonym", "query": "benralizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1521495", "max_phase": "2.0", "parent": "CHEMBL1521495", "pref_name": "BENTAZEPAM"}], "how": "synonym", "query": "bentazepam", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL73962", "max_phase": null, "parent": "CHEMBL73962", "pref_name": "BENZOLAMIDE"}], "how": "pref_name", "query": "benzolamide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL295124", "max_phase": "4.0", "parent": "CHEMBL295124", "pref_name": "BERBERINE"}], "how": "synonym", "query": "berberine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL29835", "max_phase": "2.0", "parent": "CHEMBL29835", "pref_name": "BESIPIRDINE"}], "how": "synonym", "query": "besipirdine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL297569", "max_phase": null, "parent": "CHEMBL297569", "pref_name": "BETA-ALANINE"}], "how": "pref_name", "query": "beta-alanine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL445740", "max_phase": "1.0", "parent": "CHEMBL445740", "pref_name": "BETA-CARYOPHYLLENE"}], "how": "synonym", "query": "beta-caryophyllene", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "beta-hydroxy beta-methylbutyrate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL24441", "max_phase": "4.0", "parent": "CHEMBL24441", "pref_name": "BETAHISTINE"}, {"id": "CHEMBL4298035", "max_phase": "-1.0", "parent": "CHEMBL4298035", "pref_name": "BETAHISTINE MESILATE"}], "how": "synonym", "query": "betahistine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL95889", "max_phase": "4.0", "parent": "CHEMBL95889", "pref_name": "BETAINE"}], "how": "synonym", "query": "betaine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "betaine (tmg)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL95889", "max_phase": "4.0", "parent": "CHEMBL95889", "pref_name": "BETAINE"}], "how": "synonym", "query": "betaine anhydrous", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "betaine anhydrous (tmg)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "bhv-7000", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5314576", "max_phase": "3.0", "parent": "CHEMBL5314576", "pref_name": "ICLEPERTIN"}], "how": "synonym", "query": "bi 425809", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3334624", "max_phase": "2.0", "parent": "CHEMBL3334624", "pref_name": "BI-44370"}], "how": "synonym", "query": "bi-44370", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109598", "max_phase": "2.0", "parent": "CHEMBL2109598", "pref_name": "BIIB-023"}], "how": "synonym", "query": "biib-023", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5095022", "max_phase": "2.0", "parent": "CHEMBL5095022", "pref_name": "PESAMPATOR"}], "how": "synonym", "query": "biib104", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3137353", "max_phase": "3.0", "parent": "CHEMBL3137353", "pref_name": "BIMAGRUMAB"}], "how": "synonym", "query": "bimagrumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297700", "max_phase": "4.0", "parent": "CHEMBL4297700", "pref_name": "BIMEKIZUMAB"}], "how": "synonym", "query": "bimekizumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "biopeptide cl", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL857", "max_phase": "4.0", "parent": "CHEMBL857", "pref_name": "BIOTIN"}], "how": "synonym", "query": "biotin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297624", "max_phase": "2.0", "parent": "CHEMBL4297624", "pref_name": "BISEGLIPTIN"}], "how": "synonym", "query": "bisegliptin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3287255", "max_phase": "1.0", "parent": "CHEMBL3287255", "pref_name": "BISTHIANOSTAT"}], "how": "synonym", "query": "bisthianostat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1171829", "max_phase": "3.0", "parent": "CHEMBL1171829", "pref_name": "BITOPERTIN"}], "how": "synonym", "query": "bitopertin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "bitter orange", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3990028", "max_phase": "2.0", "parent": "CHEMBL3990028", "pref_name": "BLESELUMAB"}], "how": "synonym", "query": "bleselumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1742992", "max_phase": "4.0", "parent": "CHEMBL1742992", "pref_name": "BLINATUMOMAB"}], "how": "synonym", "query": "blinatumomab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL218394", "max_phase": "4.0", "parent": "CHEMBL218394", "pref_name": "BOCEPREVIR"}], "how": "synonym", "query": "boceprevir", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "boron", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "boswellia serrata", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201574", "max_phase": "4.0", "parent": "CHEMBL1201574", "pref_name": "ONABOTULINUMTOXINA"}], "how": "synonym", "query": "botulinum toxin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "bpl-003", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3833372", "max_phase": "3.0", "parent": "CHEMBL3833372", "pref_name": "BRAZIKUMAB"}], "how": "synonym", "query": "brazikumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1742995", "max_phase": "3.0", "parent": "CHEMBL1742995", "pref_name": "BRIAKINUMAB"}], "how": "synonym", "query": "briakinumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5095172", "max_phase": "3.0", "parent": "CHEMBL5095172", "pref_name": "BRILAROXAZINE"}], "how": "synonym", "query": "brilaroxazine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1742996", "max_phase": "4.0", "parent": "CHEMBL1742996", "pref_name": "BRODALUMAB"}], "how": "synonym", "query": "brodalumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "bromantane", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "bromazolam", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109027", "max_phase": "4.0", "parent": "CHEMBL2109027", "pref_name": "BROMELAINS"}], "how": "synonym", "query": "bromelain", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "brorphine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "butonitazene", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL414357", "max_phase": "4.0", "parent": "CHEMBL414357", "pref_name": "EXENATIDE"}], "how": "synonym", "query": "byetta", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "byetta/bydureon", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "c646", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ca-akg", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4802169", "max_phase": "3.0", "parent": "CHEMBL4802169", "pref_name": "CAGRILINTIDE"}], "how": "synonym", "query": "cagrilintide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3544909", "max_phase": "4.0", "parent": "CHEMBL1040", "pref_name": "CALCIFEDIOL"}], "how": "synonym", "query": "calcifediol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "calcifediol (25-hydroxyvitamin d3)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594242", "max_phase": "4.0", "parent": "CHEMBL4594242", "pref_name": "CALCITONIN"}], "how": "synonym", "query": "calcitonin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "calcitonin (salmon)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1200375", "max_phase": "4.0", "parent": "CHEMBL1200375", "pref_name": "EDETATE CALCIUM DISODIUM ANHYDROUS"}], "how": "synonym", "query": "calcium disodium edta", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1016", "max_phase": "3.0", "parent": "CHEMBL1016", "pref_name": "CANDESARTAN"}], "how": "synonym", "query": "candesartan", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "candesartan (atacand)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL190461", "max_phase": "4.0", "parent": "CHEMBL190461", "pref_name": "CANNABIDIOL"}], "how": "synonym", "query": "cannabidiol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cannabidiol (epidiolex)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1616951", "max_phase": "3.0", "parent": "CHEMBL1616951", "pref_name": "CANRENOATE"}], "how": "pref_name", "query": "canrenoate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL294199", "max_phase": "4.0", "parent": "CHEMBL294199", "pref_name": "CAPSAICIN"}], "how": "synonym", "query": "capsaicin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL391997", "max_phase": null, "parent": "CHEMBL391997", "pref_name": "CAPSAZEPINE"}], "how": "pref_name", "query": "capsazepine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2104386", "max_phase": "3.0", "parent": "CHEMBL2104386", "pref_name": "CARPERITIDE"}], "how": "synonym", "query": "carperitide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "carphedon derivatives", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cartalax", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cartalax (ala-glu-asp)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297718", "max_phase": "2.0", "parent": "CHEMBL4297718", "pref_name": "CD40 LIGAND"}], "how": "synonym", "query": "cd40 ligand", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297721", "max_phase": "2.0", "parent": "CHEMBL4297721", "pref_name": "CDX-1140"}], "how": "synonym", "query": "cdx-1140", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297723", "max_phase": "4.0", "parent": "CHEMBL4297723", "pref_name": "CEMIPLIMAB"}], "how": "synonym", "query": "cemiplimab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ceramides", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4116008", "max_phase": "2.0", "parent": "CHEMBL4116008", "pref_name": "CERDULATINIB"}], "how": "synonym", "query": "cerdulatinib", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cerebrolysin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cerebrolysin constituent peptides", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201831", "max_phase": "4.0", "parent": "CHEMBL1201831", "pref_name": "CERTOLIZUMAB PEGOL"}], "how": "synonym", "query": "certolizumab pegol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3113974", "max_phase": "2.0", "parent": "CHEMBL3113974", "pref_name": "TRANIMILAST"}], "how": "synonym", "query": "chf6001", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3621988", "max_phase": "3.0", "parent": "CHEMBL3621988", "pref_name": "TUCIDINOSTAT"}], "how": "synonym", "query": "chidamide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "chlodantane", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "chlorodehydromethylandrostenediol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "chlorodehydromethyltestosterone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL920", "max_phase": "4.0", "parent": "CHEMBL920", "pref_name": "CHOLINE"}], "how": "pref_name", "query": "choline", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL6067974", "max_phase": "3.0", "parent": "CHEMBL6067974", "pref_name": "CHOLINE ALFOSCERATE"}], "how": "synonym", "query": "choline alfoscerate", "retrieved": "2026-10-01"}
+{"hits": [], "how": null, "query": "chondroitin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "chondroitin (sulfate)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL87045", "max_phase": "2.0", "parent": "CHEMBL87045", "pref_name": "CIFENLINE"}], "how": "synonym", "query": "cibenzoline", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL515606", "max_phase": "4.0", "parent": "CHEMBL515606", "pref_name": "CILAZAPRIL"}], "how": "synonym", "query": "cilazapril", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL435381", "max_phase": "2.0", "parent": "CHEMBL435381", "pref_name": "CIMICOXIB"}], "how": "synonym", "query": "cimicoxib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1236936", "max_phase": "2.0", "parent": "CHEMBL1236936", "pref_name": "CINACIGUAT"}], "how": "synonym", "query": "cinaciguat", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cipionate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3693786", "max_phase": "2.0", "parent": "CHEMBL3693786", "pref_name": "CITARINOSTAT"}], "how": "synonym", "query": "citarinostat", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "citarinostat (acy-241)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297667", "max_phase": "0.5", "parent": "CHEMBL444814", "pref_name": "CITRULLINE MALATE"}], "how": "synonym", "query": "citrulline malate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "citrus bergamot", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "citrus bergamot (bpf)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cjc-1295", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL777", "max_phase": "4.0", "parent": "CHEMBL777", "pref_name": "CLAVULANIC ACID"}], "how": "synonym", "query": "clavulanic acid", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "clobetasol propionate 0.05%", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "clobetasol propionate 0.05% (topical)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "clonazolam", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1951865", "max_phase": "1.0", "parent": "CHEMBL1951865", "pref_name": "CMS-121"}], "how": "synonym", "query": "cms121", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cocoa flavanols", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL454801", "max_phase": "3.0", "parent": "CHEMBL454801", "pref_name": "UBIDECARENONE"}], "how": "synonym", "query": "coenzyme q10", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "colforsin daropate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "colivelin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL37935", "max_phase": "2.0", "parent": "CHEMBL37935", "pref_name": "COLURACETAM"}], "how": "synonym", "query": "coluracetam", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL55643", "max_phase": "4.0", "parent": "CHEMBL55643", "pref_name": "COPPER"}], "how": "synonym", "query": "copper", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "copper peptide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cortagen", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cortexin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297630", "max_phase": "2.0", "parent": "CHEMBL4297630", "pref_name": "COTADUTIDE"}], "how": "synonym", "query": "cotadutide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "creatine monohydrate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "creatine nitrate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297734", "max_phase": "4.0", "parent": "CHEMBL4297734", "pref_name": "CRIZANLIZUMAB"}], "how": "synonym", "query": "crizanlizumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "crizanlizumab (adakveo)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL464792", "max_phase": "3.0", "parent": "CHEMBL464792", "pref_name": "TRANSCROCETIN"}], "how": "synonym", "query": "crocetin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL446785", "max_phase": "3.0", "parent": "CHEMBL446785", "pref_name": "CROCIN"}], "how": "synonym", "query": "crocin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707278", "max_phase": "2.0", "parent": "CHEMBL3707278", "pref_name": "CROTEDUMAB"}], "how": "synonym", "query": "crotedumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594316", "max_phase": "4.0", "parent": "CHEMBL4594316", "pref_name": "CROVALIMAB"}], "how": "synonym", "query": "crovalimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL598797", "max_phase": "1.0", "parent": "CHEMBL598797", "pref_name": "CUDC-101"}], "how": "synonym", "query": "cudc-101", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cumyl-pegaclone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL140", "max_phase": "3.0", "parent": "CHEMBL140", "pref_name": "CURCUMIN"}], "how": "synonym", "query": "curcumin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "curcumin phytosome", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cutamesine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3697578", "max_phase": "2.0", "parent": "CHEMBL3697578", "pref_name": "RAZPIPADON"}], "how": "synonym", "query": "cvl-871", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707399", "max_phase": "2.0", "parent": "CHEMBL3707399", "pref_name": "CX1739"}], "how": "synonym", "query": "cx-1739", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cx-1942", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL136800", "max_phase": "2.0", "parent": "CHEMBL136800", "pref_name": "CX516"}], "how": "synonym", "query": "cx-516", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4791762", "max_phase": "2.0", "parent": "CHEMBL4791762", "pref_name": "CX-717"}], "how": "synonym", "query": "cx-717", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cyb003", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cysteamine 5% cream", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "cysteamine 5% cream (topical)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL285123", "max_phase": "3.0", "parent": "CHEMBL285123", "pref_name": "(D)-SERINE"}], "how": "synonym", "query": "d-serine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL356066", "max_phase": "2.0", "parent": "CHEMBL356066", "pref_name": "DACINOSTAT"}], "how": "synonym", "query": "dacinostat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2023898", "max_phase": "4.0", "parent": "CHEMBL2023898", "pref_name": "DACLATASVIR"}], "how": "synonym", "query": "daclatasvir", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL313006", "max_phase": "3.0", "parent": "CHEMBL313006", "pref_name": "DALCETRAPIB"}], "how": "synonym", "query": "dalcetrapib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201460", "max_phase": "4.0", "parent": "CHEMBL1201460", "pref_name": "DALTEPARIN SODIUM"}], "how": "synonym", "query": "dalteparin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4650341", "max_phase": "2.0", "parent": "CHEMBL4650341", "pref_name": "DANAVOREXTON"}], "how": "synonym", "query": "danavorexton", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3989943", "max_phase": "2.0", "parent": "CHEMBL3989943", "pref_name": "DAPANSUTRILE"}], "how": "synonym", "query": "dapansutrile", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1922235", "max_phase": "3.0", "parent": "CHEMBL1922235", "pref_name": "DAREXABAN"}], "how": "synonym", "query": "darexaban", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107326", "max_phase": "2.0", "parent": "CHEMBL2107326", "pref_name": "DASANTAFIL"}], "how": "synonym", "query": "dasantafil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5416410", "max_phase": "4.0", "parent": "CHEMBL1421", "pref_name": "DASATINIB"}], "how": "synonym", "query": "dasatinib", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dasatinib (sprycel)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2105635", "max_phase": "2.0", "parent": "CHEMBL2105635", "pref_name": "DAVALINTIDE"}], "how": "synonym", "query": "davalintide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103826", "max_phase": "2.0", "parent": "CHEMBL2103826", "pref_name": "DAVUNETIDE"}], "how": "synonym", "query": "davunetide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545176", "max_phase": "2.0", "parent": "CHEMBL3545176", "pref_name": "DB959"}], "how": "synonym", "query": "db959", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL589583", "max_phase": "3.0", "parent": "CHEMBL589583", "pref_name": "DELAPRIL"}], "how": "synonym", "query": "delapril", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297507", "max_phase": "3.0", "parent": "CHEMBL4297507", "pref_name": "DELGOCITINIB"}], "how": "synonym", "query": "delgocitinib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2104403", "max_phase": "2.0", "parent": "CHEMBL2104403", "pref_name": "EMIDELTIDE"}], "how": "synonym", "query": "delta sleep-inducing peptide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "delta-10-tetrahydrocannabinol", "retrieved": "2026-10-01"}
+{"hits": [], "how": null, "query": "delta-10-thc", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL267227", "max_phase": "2.0", "parent": "CHEMBL267227", "pref_name": "DELTA-8-TETRAHYDROCANNABINOL"}], "how": "synonym", "query": "delta-8-thc", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL435716", "max_phase": "2.0", "parent": "CHEMBL435716", "pref_name": "DEMOXYTOCIN"}], "how": "synonym", "query": "demoxytocin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4802160", "max_phase": "3.0", "parent": "CHEMBL4802160", "pref_name": "DERSIMELAGON"}], "how": "synonym", "query": "dersimelagon", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "deschloroetizolam", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "deschloroketamine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "desoxymethyltestosterone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "desoxymethyltestosterone (madol)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3137326", "max_phase": "4.0", "parent": "CHEMBL117785", "pref_name": "DEUTETRABENAZINE"}], "how": "synonym", "query": "deutetrabenazine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL90593", "max_phase": "4.0", "parent": "CHEMBL90593", "pref_name": "PRASTERONE"}], "how": "synonym", "query": "dhea", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dht (dihydrotestosterone)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL13960", "max_phase": "3.0", "parent": "CHEMBL13960", "pref_name": "DICHLOROACETIC ACID"}], "how": "synonym", "query": "dichloroacetate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "diclazepam", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "didesoxymodafinil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dietary nitrate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dietary nitrate (beetroot)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dihexa", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dihydroboldenone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dihydroboldenone (1-testosterone)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL27769", "max_phase": "2.0", "parent": "CHEMBL27769", "pref_name": "STANOLONE"}], "how": "synonym", "query": "dihydrotestosterone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL589390", "max_phase": "3.0", "parent": "CHEMBL589390", "pref_name": "LATREPIRDINE"}], "how": "synonym", "query": "dimebon", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dimethandrolone undecanoate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dimethandrolone undecanoate (dmau)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dimethazine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dimethazine (dmz)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1135", "max_phase": "2.0", "parent": "CHEMBL1135", "pref_name": "DIMETHYLAMINOETHANOL"}], "how": "synonym", "query": "dimethylaminoethanol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL231884", "max_phase": "4.0", "parent": "CHEMBL231884", "pref_name": "DIOSMIN"}], "how": "synonym", "query": "diosmin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "diphenidine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dlx-001", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dlx-159", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dm-232", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1135", "max_phase": "2.0", "parent": "CHEMBL1135", "pref_name": "DIMETHYLAMINOETHANOL"}], "how": "synonym", "query": "dmae", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dmae (dimethylaminoethanol)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dmau", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dmxe", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL367149", "max_phase": "3.0", "parent": "CHEMBL367149", "pref_name": "DOCONEXENT"}], "how": "synonym", "query": "docosahexaenoic acid", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "docosahexaenoic acid (dha)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3544991", "max_phase": "2.0", "parent": "CHEMBL3544991", "pref_name": "DOMAGROZUMAB"}], "how": "synonym", "query": "domagrozumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297245", "max_phase": "4.0", "parent": "CHEMBL4297245", "pref_name": "DONANEMAB"}], "how": "synonym", "query": "donanemab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "donanemab (kisunla)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL59", "max_phase": "4.0", "parent": "CHEMBL59", "pref_name": "DOPAMINE"}], "how": "synonym", "query": "dopamine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dopamine (iv infusion)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4298124", "max_phase": "4.0", "parent": "CHEMBL4298124", "pref_name": "DOSTARLIMAB"}], "how": "synonym", "query": "dostarlimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL522892", "max_phase": "3.0", "parent": "CHEMBL522892", "pref_name": "DOVITINIB"}], "how": "synonym", "query": "dovitinib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1527608", "max_phase": "3.0", "parent": "CHEMBL1527608", "pref_name": "DOXOFYLLINE"}], "how": "synonym", "query": "doxofylline", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1582", "max_phase": "-1.0", "parent": "CHEMBL1582", "pref_name": "DROMOSTANOLONE"}], "how": "synonym", "query": "drostanolone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2104403", "max_phase": "2.0", "parent": "CHEMBL2104403", "pref_name": "EMIDELTIDE"}], "how": "synonym", "query": "dsip", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dsip (delta sleep-inducing peptide)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108675", "max_phase": "4.0", "parent": "CHEMBL2108675", "pref_name": "DUPILUMAB"}], "how": "synonym", "query": "dupilumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dupilumab (dupixent, subcutaneous)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108675", "max_phase": "4.0", "parent": "CHEMBL2108675", "pref_name": "DUPILUMAB"}], "how": "synonym", "query": "dupixent", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "dupixent, subcutaneous", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3301587", "max_phase": "4.0", "parent": "CHEMBL3301587", "pref_name": "DURVALUMAB"}], "how": "synonym", "query": "durvalumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109355", "max_phase": "2.0", "parent": "CHEMBL2109355", "pref_name": "DUSIGITUMAB"}], "how": "synonym", "query": "dusigitumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4296719", "max_phase": "3.0", "parent": "CHEMBL4296719", "pref_name": "DUTOGLIPTIN"}], "how": "synonym", "query": "dutogliptin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743035", "max_phase": "4.0", "parent": "CHEMBL1743035", "pref_name": "LEBRIKIZUMAB"}], "how": "synonym", "query": "ebglyss", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5095115", "max_phase": "3.0", "parent": "CHEMBL5095115", "pref_name": "ECNOGLUTIDE"}], "how": "synonym", "query": "ecnoglutide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ecnoglutide (xw003)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL290916", "max_phase": "4.0", "parent": "CHEMBL290916", "pref_name": "EDARAVONE"}], "how": "synonym", "query": "edaravone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "edirol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "edonerpic maleate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1269025", "max_phase": "4.0", "parent": "CHEMBL1269025", "pref_name": "EDOXABAN"}], "how": "synonym", "query": "edoxaban", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "edoxaban (savaysa/lixiana)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297551", "max_phase": "4.0", "parent": "CHEMBL4297551", "pref_name": "EFGARTIGIMOD ALFA"}], "how": "synonym", "query": "efgartigimod", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "egcg", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL460026", "max_phase": "3.0", "parent": "CHEMBL460026", "pref_name": "ICOSAPENT"}], "how": "synonym", "query": "eicosapentaenoic acid", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "eicosapentaenoic acid (epa)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3833370", "max_phase": "3.0", "parent": "CHEMBL3833370", "pref_name": "ELAMIPRETIDE"}], "how": "synonym", "query": "elamipretide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "elamipretide (ss-31)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "elamipretide analogue", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3039514", "max_phase": "4.0", "parent": "CHEMBL3039514", "pref_name": "ELBASVIR"}], "how": "synonym", "query": "elbasvir", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297608", "max_phase": "3.0", "parent": "CHEMBL4297608", "pref_name": "ELDECALCITOL"}], "how": "synonym", "query": "eldecalcitol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "eldecalcitol (edirol)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103828", "max_phase": "2.0", "parent": "CHEMBL2103828", "pref_name": "ELINOGREL"}], "how": "synonym", "query": "elinogrel", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743010", "max_phase": "4.0", "parent": "CHEMBL1743010", "pref_name": "ELOTUZUMAB"}], "how": "synonym", "query": "elotuzumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2159122", "max_phase": "4.0", "parent": "CHEMBL2159122", "pref_name": "ELUXADOLINE"}], "how": "synonym", "query": "eluxadoline", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5314557", "max_phase": "2.0", "parent": "CHEMBL5314557", "pref_name": "EMRACLIDINE"}], "how": "synonym", "query": "emraclidine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL197672", "max_phase": "2.0", "parent": "CHEMBL197672", "pref_name": "EMRICASAN"}], "how": "synonym", "query": "emricasan", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1672973", "max_phase": "3.0", "parent": "CHEMBL1672973", "pref_name": "ENCALERET"}], "how": "synonym", "query": "encaleret", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2151572", "max_phase": "3.0", "parent": "CHEMBL2151572", "pref_name": "ENCENICLINE"}], "how": "synonym", "query": "encenicline", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594287", "max_phase": "4.0", "parent": "CHEMBL4594287", "pref_name": "ENSIFENTRINE"}], "how": "synonym", "query": "ensifentrine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ensifentrine (ohtuvayre)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5183847", "max_phase": "3.0", "parent": "CHEMBL5183847", "pref_name": "ENSITRELVIR"}], "how": "synonym", "query": "ensitrelvir", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108683", "max_phase": "2.0", "parent": "CHEMBL2108683", "pref_name": "ENTOLIMOD"}], "how": "synonym", "query": "entolimod", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "entresto", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "enx-102", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL56337", "max_phase": "4.0", "parent": "CHEMBL56337", "pref_name": "EPALRESTAT"}], "how": "synonym", "query": "epalrestat", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ephenidine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL190461", "max_phase": "4.0", "parent": "CHEMBL190461", "pref_name": "CANNABIDIOL"}], "how": "synonym", "query": "epidiolex", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL679", "max_phase": "4.0", "parent": "CHEMBL679", "pref_name": "EPINEPHRINE"}], "how": "synonym", "query": "epinephrine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "epistane", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "epistane (methylepitiostanol)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "epitalon", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "epithalon", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3833320", "max_phase": "4.0", "parent": "CHEMBL3833320", "pref_name": "EPTINEZUMAB"}], "how": "synonym", "query": "eptinezumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1951095", "max_phase": "4.0", "parent": "CHEMBL1951095", "pref_name": "ERAVACYCLINE"}], "how": "synonym", "query": "eravacycline", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ergothioneine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL87992", "max_phase": "4.0", "parent": "CHEMBL87992", "pref_name": "ESLICARBAZEPINE ACETATE"}], "how": "synonym", "query": "eslicarbazepine acetate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL350719", "max_phase": "3.0", "parent": "CHEMBL350719", "pref_name": "ESMETHADONE"}], "how": "synonym", "query": "esmethadone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL135", "max_phase": "4.0", "parent": "CHEMBL135", "pref_name": "ESTRADIOL"}], "how": "synonym", "query": "estradiol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545184", "max_phase": "4.0", "parent": "CHEMBL3545184", "pref_name": "ETELCALCETIDE"}], "how": "synonym", "query": "etelcalcetide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL456", "max_phase": "4.0", "parent": "CHEMBL456", "pref_name": "ETHACRYNIC ACID"}], "how": "synonym", "query": "ethacrynic acid", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL44884", "max_phase": "4.0", "parent": "CHEMBL44884", "pref_name": "ETHAMBUTOL"}], "how": "synonym", "query": "ethambutol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ethomersol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ethylphenidate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2051959", "max_phase": "2.0", "parent": "CHEMBL2051959", "pref_name": "ETOMOXIR"}], "how": "synonym", "query": "etomoxir", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "etonitazepyne", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "etx-155", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "eucapil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "eutylone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3678076", "max_phase": "2.0", "parent": "CHEMBL3678076", "pref_name": "EVENAMIDE"}], "how": "synonym", "query": "evenamide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545191", "max_phase": "4.0", "parent": "CHEMBL3545191", "pref_name": "EVINACUMAB"}], "how": "synonym", "query": "evinacumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "evinacumab (evkeeza)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545191", "max_phase": "4.0", "parent": "CHEMBL3545191", "pref_name": "EVINACUMAB"}], "how": "synonym", "query": "evkeeza", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297621", "max_phase": "3.0", "parent": "CHEMBL4297621", "pref_name": "EVOCALCET"}], "how": "synonym", "query": "evocalcet", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2364655", "max_phase": "4.0", "parent": "CHEMBL2364655", "pref_name": "EVOLOCUMAB"}], "how": "synonym", "query": "evolocumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2151572", "max_phase": "3.0", "parent": "CHEMBL2151572", "pref_name": "ENCENICLINE"}, {"id": "CHEMBL3137323", "max_phase": "3.0", "parent": "CHEMBL2151572", "pref_name": "ENCENICLINE HYDROCHLORIDE"}], "how": "synonym", "query": "evp-6124", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL414357", "max_phase": "4.0", "parent": "CHEMBL414357", "pref_name": "EXENATIDE"}], "how": "synonym", "query": "exenatide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "exenatide (byetta/bydureon)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "extended-release", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4065122", "max_phase": "3.0", "parent": "CHEMBL4065122", "pref_name": "FENEBRUTINIB"}], "how": "synonym", "query": "fenebrutinib", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "fenugreek", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108597", "max_phase": "4.0", "parent": "CHEMBL2108597", "pref_name": "FERRIC CARBOXYMALTOSE"}], "how": "synonym", "query": "ferric carboxymaltose", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ferrostatin-1", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743017", "max_phase": "2.0", "parent": "CHEMBL1743017", "pref_name": "FEZAKINUMAB"}], "how": "synonym", "query": "fezakinumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL84446", "max_phase": "2.0", "parent": "CHEMBL84446", "pref_name": "FIDARESTAT"}], "how": "synonym", "query": "fidarestat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743019", "max_phase": "3.0", "parent": "CHEMBL1743019", "pref_name": "FIGITUMUMAB"}], "how": "synonym", "query": "figitumumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107822", "max_phase": "2.0", "parent": "CHEMBL2107822", "pref_name": "FILOREXANT"}], "how": "synonym", "query": "filorexant", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3622533", "max_phase": "2.0", "parent": "CHEMBL3622533", "pref_name": "FIMEPINOSTAT"}], "how": "synonym", "query": "fimepinostat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3407547", "max_phase": "2.0", "parent": "CHEMBL3407547", "pref_name": "FIRSOCOSTAT"}], "how": "synonym", "query": "firsocostat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL31574", "max_phase": "2.0", "parent": "CHEMBL31574", "pref_name": "FISETIN"}], "how": "synonym", "query": "fisetin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3833369", "max_phase": "4.0", "parent": "CHEMBL3833369", "pref_name": "FISH OIL"}], "how": "synonym", "query": "fish oil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "flaxseed oil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "flmodafinil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "flualprazolam", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "flubromazolam", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "flubrotizolam", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL24924", "max_phase": "4.0", "parent": "CHEMBL24924", "pref_name": "FLUINDIONE"}], "how": "synonym", "query": "fluindione", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "flunitazene", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107790", "max_phase": "2.0", "parent": "CHEMBL2107790", "pref_name": "TOPILUTAMIDE"}], "how": "synonym", "query": "fluridil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "fluridil (eucapil)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "follistatin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201692", "max_phase": "4.0", "parent": "CHEMBL1201692", "pref_name": "FOLLITROPIN ALFA"}], "how": "synonym", "query": "follitropin alfa", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "follitropin alfa (gonal-f)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545186", "max_phase": "3.0", "parent": "CHEMBL3545186", "pref_name": "FONADELPAR"}], "how": "synonym", "query": "fonadelpar", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108459", "max_phase": "2.0", "parent": "CHEMBL2108459", "pref_name": "FONTOLIZUMAB"}], "how": "synonym", "query": "fontolizumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "formerly pf-04958242", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL52606", "max_phase": "2.0", "parent": "CHEMBL52606", "pref_name": "COLFORSIN"}], "how": "synonym", "query": "forskolin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3301594", "max_phase": "4.0", "parent": "CHEMBL3301594", "pref_name": "FOSTEMSAVIR"}], "how": "synonym", "query": "fostemsavir", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "foxo4-dri", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL146250", "max_phase": "-1.0", "parent": "CHEMBL146250", "pref_name": "FR-135313"}], "how": "synonym", "query": "fr-135313", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297756", "max_phase": "4.0", "parent": "CHEMBL4297756", "pref_name": "FREMANEZUMAB"}], "how": "synonym", "query": "fremanezumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ftpp", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707328", "max_phase": "4.0", "parent": "CHEMBL3707328", "pref_name": "GALCANEZUMAB"}], "how": "synonym", "query": "galcanezumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743024", "max_phase": "3.0", "parent": "CHEMBL1743024", "pref_name": "GANITUMAB"}], "how": "synonym", "query": "ganitumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL502489", "max_phase": null, "parent": "CHEMBL502489", "pref_name": "GARCINOL"}], "how": "pref_name", "query": "garcinol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108463", "max_phase": "3.0", "parent": "CHEMBL2108463", "pref_name": "GARLIC"}], "how": "synonym", "query": "garlic", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL274739", "max_phase": null, "parent": "CHEMBL274739", "pref_name": "GASTRODIN"}], "how": "pref_name", "query": "gastrodin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL44", "max_phase": "2.0", "parent": "CHEMBL44", "pref_name": "GENISTEIN"}], "how": "synonym", "query": "genistein", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3317856", "max_phase": "3.0", "parent": "CHEMBL3317856", "pref_name": "GEPOTIDACIN"}], "how": "synonym", "query": "gepotidacin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ghk-cu", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ghk-cu (copper peptide)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL500468", "max_phase": "3.0", "parent": "CHEMBL500468", "pref_name": "GHRELIN"}], "how": "synonym", "query": "ghrelin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL106593", "max_phase": "2.0", "parent": "CHEMBL106593", "pref_name": "PRALMORELIN"}], "how": "synonym", "query": "ghrp-2", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ghrp-6", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594517", "max_phase": "2.0", "parent": "CHEMBL4594517", "pref_name": "GILORALIMAB"}], "how": "synonym", "query": "giloralimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108465", "max_phase": "3.0", "parent": "CHEMBL2108465", "pref_name": "GINGER"}], "how": "synonym", "query": "ginger", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ginger (zingiber officinale)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108466", "max_phase": "4.0", "parent": "CHEMBL2108466", "pref_name": "GINKGO"}], "how": "synonym", "query": "ginkgo biloba", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1928262", "max_phase": "2.0", "parent": "CHEMBL1928262", "pref_name": "GISADENAFIL"}], "how": "synonym", "query": "gisadenafil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545363", "max_phase": "4.0", "parent": "CHEMBL3545363", "pref_name": "GLECAPREVIR"}], "how": "synonym", "query": "glecaprevir", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL493287", "max_phase": "4.0", "parent": "CHEMBL493287", "pref_name": "GLUCOSAMINE"}], "how": "synonym", "query": "glucosamine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1543", "max_phase": "3.0", "parent": "CHEMBL1543", "pref_name": "GLUTATHIONE"}], "how": "synonym", "query": "glutathione", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2105745", "max_phase": "4.0", "parent": "CHEMBL2105745", "pref_name": "GLYCEROL PHENYLBUTYRATE"}], "how": "synonym", "query": "glycerol phenylbutyrate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL773", "max_phase": "4.0", "parent": "CHEMBL773", "pref_name": "GLYCINE"}], "how": "synonym", "query": "glycine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3544917", "max_phase": "3.0", "parent": "CHEMBL3544917", "pref_name": "RAPASTINEL"}], "how": "synonym", "query": "glyx-13", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201692", "max_phase": "4.0", "parent": "CHEMBL1201692", "pref_name": "FOLLITROPIN ALFA"}], "how": "synonym", "query": "gonal-f", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3039533", "max_phase": "3.0", "parent": "CHEMBL2063090", "pref_name": "GRAZOPREVIR"}], "how": "synonym", "query": "grazoprevir", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297887", "max_phase": "2.0", "parent": "CHEMBL4297887", "pref_name": "GSK-2586881"}], "how": "synonym", "query": "gsk-2586881", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297968", "max_phase": "2.0", "parent": "CHEMBL4297968", "pref_name": "GSK-3174998"}], "how": "synonym", "query": "gsk-3174998", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545046", "max_phase": "1.0", "parent": "CHEMBL3545046", "pref_name": "GSK2849466"}], "how": "synonym", "query": "gsk2849466", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545174", "max_phase": "2.0", "parent": "CHEMBL3545174", "pref_name": "GSK2881078"}], "how": "synonym", "query": "gsk2881078", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL134713", "max_phase": "2.0", "parent": "CHEMBL134713", "pref_name": "GTS-21"}], "how": "synonym", "query": "gts-21", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3544916", "max_phase": "3.0", "parent": "CHEMBL3544916", "pref_name": "GUADECITABINE"}], "how": "synonym", "query": "guadecitabine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "guadecitabine (sgi-110)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL862", "max_phase": "4.0", "parent": "CHEMBL862", "pref_name": "GUANFACINE"}], "how": "synonym", "query": "guanfacine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2364648", "max_phase": "4.0", "parent": "CHEMBL2364648", "pref_name": "GUSELKUMAB"}], "how": "synonym", "query": "guselkumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL114551", "max_phase": "2.0", "parent": "CHEMBL114551", "pref_name": "GW-274150"}], "how": "synonym", "query": "gw-274150", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL364804", "max_phase": "3.0", "parent": "CHEMBL364804", "pref_name": "GW-406381"}], "how": "synonym", "query": "gw-406381", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL38508", "max_phase": null, "parent": "CHEMBL38508", "pref_name": null}], "how": "synonym", "query": "gw0742", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "halodrol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "halodrol (chlorodehydromethylandrostenediol)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "hcg (human chorionic gonadotropin)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545237", "max_phase": "1.0", "parent": "CHEMBL3545237", "pref_name": "HE3235"}], "how": "synonym", "query": "he3235", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "hericium erinaceus", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL231884", "max_phase": "4.0", "parent": "CHEMBL231884", "pref_name": "DIOSMIN"}, {"id": "CHEMBL449317", "max_phase": "3.0", "parent": "CHEMBL449317", "pref_name": "HESPERIDIN"}], "how": "synonym", "query": "hesperidin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103822", "max_phase": "4.0", "parent": "CHEMBL2103822", "pref_name": "TASIMELTEON"}], "how": "synonym", "query": "hetlioz", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "hexahydrocannabinol", "retrieved": "2026-10-01"}
+{"hits": [{"id": "CHEMBL108335", "max_phase": "2.0", "parent": "CHEMBL108335", "pref_name": "EXAMORELIN"}], "how": "synonym", "query": "hexarelin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "hexen", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "hhc-o", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL19344", "max_phase": "1.0", "parent": "CHEMBL19344", "pref_name": "HIGENAMINE"}], "how": "synonym", "query": "higenamine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL48310", "max_phase": null, "parent": "CHEMBL48310", "pref_name": "HINOKITIOL"}], "how": "pref_name", "query": "hinokitiol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "hmb (beta-hydroxy beta-methylbutyrate)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "hmg, menopur", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "hmr1766", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL149082", "max_phase": "3.0", "parent": "CHEMBL149082", "pref_name": "TRAMIPROSATE"}], "how": "synonym", "query": "homotaurine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL16901", "max_phase": null, "parent": "CHEMBL16901", "pref_name": "HONOKIOL"}], "how": "pref_name", "query": "honokiol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "human chorionic gonadotropin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201621", "max_phase": "4.0", "parent": "CHEMBL1201621", "pref_name": "SOMATROPIN"}], "how": "synonym", "query": "human growth hormone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "humanin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "hyaluronic acid filler", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2106309", "max_phase": "2.0", "parent": "CHEMBL2106309", "pref_name": "HYDROCORTISONE ACEPONATE"}], "how": "synonym", "query": "hydrocortisone aceponate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL537", "max_phase": "4.0", "parent": "CHEMBL537", "pref_name": "HYDROQUINONE"}], "how": "synonym", "query": "hydroquinone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1950045", "max_phase": "3.0", "parent": "CHEMBL1950045", "pref_name": "HYDROXYTYROSOL"}], "how": "synonym", "query": "hydroxytyrosol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "hyperforin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3781751", "max_phase": "2.0", "parent": "CHEMBL3781751", "pref_name": "IADADEMSTAT"}], "how": "synonym", "query": "iadademstat", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "iadademstat (ory-1001)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594357", "max_phase": "3.0", "parent": "CHEMBL4594357", "pref_name": "IANALUMAB"}], "how": "synonym", "query": "ianalumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ibmx", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ibmx (3-isobutyl-1-methylxanthine)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL553204", "max_phase": "3.0", "parent": "CHEMBL553204", "pref_name": "ICARIIN"}], "how": "synonym", "query": "icariin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4298002", "max_phase": "2.0", "parent": "CHEMBL4298002", "pref_name": "ICHORCUMAB"}], "how": "synonym", "query": "ichorcumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5314576", "max_phase": "3.0", "parent": "CHEMBL5314576", "pref_name": "ICLEPERTIN"}], "how": "synonym", "query": "iclepertin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3544996", "max_phase": "4.0", "parent": "CHEMBL3544996", "pref_name": "IDARUCIZUMAB"}], "how": "synonym", "query": "idarucizumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "igf-1 lr3", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2110660", "max_phase": "2.0", "parent": "CHEMBL2110660", "pref_name": "IGMESINE"}], "how": "synonym", "query": "igmesine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3187812", "max_phase": "2.0", "parent": "CHEMBL3187812", "pref_name": "ILEPATRIL"}], "how": "synonym", "query": "ilepatril", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3990145", "max_phase": "2.0", "parent": "CHEMBL3990145", "pref_name": "IMARIKIREN"}], "how": "synonym", "query": "imarikiren", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL592054", "max_phase": "3.0", "parent": "CHEMBL592054", "pref_name": "IMIGLITAZAR"}], "how": "synonym", "query": "imiglitazar", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL269455", "max_phase": "2.0", "parent": "CHEMBL269455", "pref_name": "IMIRESTAT"}], "how": "synonym", "query": "imirestat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3990033", "max_phase": "3.0", "parent": "CHEMBL3990033", "pref_name": "INCLISIRAN"}], "how": "synonym", "query": "inclisiran", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "inclisiran (leqvio)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109334", "max_phase": "4.0", "parent": "CHEMBL2109334", "pref_name": "INEBILIZUMAB"}], "how": "synonym", "query": "inebilizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1852688", "max_phase": "4.0", "parent": "CHEMBL1852688", "pref_name": "INFIGRATINIB"}], "how": "synonym", "query": "infigratinib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1094982", "max_phase": "2.0", "parent": "CHEMBL1094982", "pref_name": "INOSITOL NIACINATE"}], "how": "synonym", "query": "inositol hexanicotinate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297770", "max_phase": "4.0", "parent": "CHEMBL4297770", "pref_name": "INOTERSEN"}], "how": "synonym", "query": "inotersen", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "inotersen (tegsedi)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201497", "max_phase": "4.0", "parent": "CHEMBL1201497", "pref_name": "INSULIN GLARGINE"}], "how": "synonym", "query": "insulin glargine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "insulin glargine (lantus/toujeo/basaglar)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108569", "max_phase": "3.0", "parent": "CHEMBL2108569", "pref_name": "INSULIN PEGLISPRO"}], "how": "synonym", "query": "insulin peglispro", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108492", "max_phase": "2.0", "parent": "CHEMBL2108492", "pref_name": "INSULIN ZINC, EXTENDED"}], "how": "synonym", "query": "insulin zinc, extended", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108964", "max_phase": "3.0", "parent": "CHEMBL2108964", "pref_name": "INSULIN, ISOPHANE"}], "how": "synonym", "query": "insulin, isophane", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "intravenous golimumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL58547", "max_phase": "2.0", "parent": "CHEMBL58547", "pref_name": "IPAMORELIN"}], "how": "synonym", "query": "ipamorelin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297658", "max_phase": "3.0", "parent": "CHEMBL4297658", "pref_name": "IPRAGLIFLOZIN L-PROLINE"}], "how": "synonym", "query": "ipragliflozin l-proline", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108612", "max_phase": "2.0", "parent": "CHEMBL2108612", "pref_name": "IRATUMUMAB"}], "how": "synonym", "query": "iratumumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4298210", "max_phase": "2.0", "parent": "CHEMBL4298210", "pref_name": "ISCALIMAB"}], "how": "synonym", "query": "iscalimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL517231", "max_phase": "3.0", "parent": "CHEMBL517231", "pref_name": "ISLATRAVIR"}], "how": "synonym", "query": "islatravir", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2057301", "max_phase": "2.0", "parent": "CHEMBL2057301", "pref_name": "SEPRANOLONE"}], "how": "synonym", "query": "isoallopregnanolone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "isopropylphenidate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL6622", "max_phase": "4.0", "parent": "CHEMBL6622", "pref_name": "ISOSORBIDE DINITRATE"}], "how": "synonym", "query": "isosorbide dinitrate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "isotonitazene", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "isrib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3989990", "max_phase": "2.0", "parent": "CHEMBL3989990", "pref_name": "ISTIRATUMAB"}], "how": "synonym", "query": "istiratumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "iv infusion", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297883", "max_phase": "3.0", "parent": "CHEMBL4297883", "pref_name": "IVUXOLIMAB"}], "how": "synonym", "query": "ivuxolimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297686", "max_phase": "3.0", "parent": "CHEMBL4297686", "pref_name": "IZOKIBEP"}], "how": "synonym", "query": "izokibep", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2387144", "max_phase": "1.0", "parent": "CHEMBL2387144", "pref_name": "J147"}], "how": "synonym", "query": "j147", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "jwh-018", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "jwh-073", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "jzp441", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545412", "max_phase": "3.0", "parent": "CHEMBL3545412", "pref_name": "K-877"}], "how": "synonym", "query": "k-877", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ke peptide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ketoconazole 2% shampoo", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ketoconazole 2% shampoo (topical scalp)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL376756", "max_phase": "3.0", "parent": "CHEMBL376756", "pref_name": "KISSPEPTIN-10"}], "how": "synonym", "query": "kisspeptin-10", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297245", "max_phase": "4.0", "parent": "CHEMBL4297245", "pref_name": "DONANEMAB"}], "how": "synonym", "query": "kisunla", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "known as 4c-d", "retrieved": "2026-10-01"}
+{"hits": [], "how": null, "query": "known as tak-861", "retrieved": "2026-10-01"}
+{"hits": [], "how": null, "query": "known as tak-925", "retrieved": "2026-10-01"}
+{"hits": [{"id": "CHEMBL287556", "max_phase": null, "parent": "CHEMBL287556", "pref_name": "KOJIC ACID"}], "how": "pref_name", "query": "kojic acid", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "krill oil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "kv7.2", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "kv7.3 research activators", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "kx-826", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ky19382", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "l-alpha-glycerylphosphorylcholine under the alias choline alfoscerate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1485", "max_phase": "3.0", "parent": "CHEMBL1485", "pref_name": "ARGININE"}], "how": "synonym", "query": "l-arginine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "l-carnitine / alcar", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL444814", "max_phase": "3.0", "parent": "CHEMBL444814", "pref_name": "L-CITRULLINE"}], "how": "synonym", "query": "l-citrulline", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL256147", "max_phase": "3.0", "parent": "CHEMBL256147", "pref_name": "TILARGININE"}], "how": "synonym", "query": "l-nmma", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "l-nmma (tilarginine)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "l-ornithine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "l-ornithine l-aspartate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL925", "max_phase": "4.0", "parent": "CHEMBL925", "pref_name": "TYROSINE"}], "how": "synonym", "query": "l-tyrosine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1742461", "max_phase": "3.0", "parent": "CHEMBL1742461", "pref_name": "LAFUTIDINE"}], "how": "synonym", "query": "lafutidine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545072", "max_phase": "2.0", "parent": "CHEMBL3545072", "pref_name": "LANDOGROZUMAB"}], "how": "synonym", "query": "landogrozumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "landogrozumab (ly2495655)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2096647", "max_phase": "4.0", "parent": "CHEMBL2096647", "pref_name": "LANTHANUM CARBONATE"}], "how": "synonym", "query": "lanthanum carbonate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201497", "max_phase": "4.0", "parent": "CHEMBL1201497", "pref_name": "INSULIN GLARGINE"}], "how": "synonym", "query": "lantus", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "lantus/toujeo/basaglar", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103815", "max_phase": "3.0", "parent": "CHEMBL2105646", "pref_name": "LARAZOTIDE ACETATE"}], "how": "synonym", "query": "larazotide acetate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "larazotide acetate (at1001)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1173445", "max_phase": null, "parent": "CHEMBL1173445", "pref_name": "LARGAZOLE"}], "how": "pref_name", "query": "largazole", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1796689", "max_phase": null, "parent": "CHEMBL1796689", "pref_name": "LARGAZOLE THIOL"}], "how": "pref_name", "query": "largazole thiol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3039520", "max_phase": "4.0", "parent": "CHEMBL3039520", "pref_name": "LASMIDITAN"}], "how": "synonym", "query": "lasmiditan", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2364612", "max_phase": "4.0", "parent": "CHEMBL2364612", "pref_name": "LATANOPROSTENE BUNOD"}], "how": "synonym", "query": "latanoprostene bunod", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL589390", "max_phase": "3.0", "parent": "CHEMBL589390", "pref_name": "LATREPIRDINE"}], "how": "synonym", "query": "latrepirdine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108210", "max_phase": "3.0", "parent": "CHEMBL2108210", "pref_name": "LAVENDER OIL"}], "how": "synonym", "query": "lavender oil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "lavender oil, oral", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "laxogenin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109247", "max_phase": "1.0", "parent": "CHEMBL2109247", "pref_name": "LBY-135"}], "how": "synonym", "query": "lby-135", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743035", "max_phase": "4.0", "parent": "CHEMBL1743035", "pref_name": "LEBRIKIZUMAB"}], "how": "synonym", "query": "lebrikizumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "lebrikizumab (ebglyss)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3833321", "max_phase": "4.0", "parent": "CHEMBL3833321", "pref_name": "LECANEMAB"}], "how": "synonym", "query": "lecanemab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "lecanemab (leqembi)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2374220", "max_phase": "4.0", "parent": "CHEMBL2374220", "pref_name": "LEDIPASVIR"}], "how": "synonym", "query": "ledipasvir", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3833321", "max_phase": "4.0", "parent": "CHEMBL3833321", "pref_name": "LECANEMAB"}], "how": "synonym", "query": "leqembi", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3990033", "max_phase": "3.0", "parent": "CHEMBL3990033", "pref_name": "INCLISIRAN"}, {"id": "CHEMBL5095052", "max_phase": "4.0", "parent": "CHEMBL5095052", "pref_name": "INCLISIRAN SODIUM"}], "how": "synonym", "query": "leqvio", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4650405", "max_phase": "3.0", "parent": "CHEMBL4650405", "pref_name": "LERODALCIBEP"}], "how": "synonym", "query": "lerodalcibep", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2105720", "max_phase": "4.0", "parent": "CHEMBL2105720", "pref_name": "LESINURAD"}], "how": "synonym", "query": "lesinurad", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL291962", "max_phase": "3.0", "parent": "CHEMBL291962", "pref_name": "LEUCINE"}], "how": "synonym", "query": "leucine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "levodopa / carbidopa", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "levodopa / carbidopa (sinemet)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL99946", "max_phase": "4.0", "parent": "CHEMBL99946", "pref_name": "LEVOMILNACIPRAN"}], "how": "synonym", "query": "levomilnacipran", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743036", "max_phase": "2.0", "parent": "CHEMBL1743036", "pref_name": "LEXATUMUMAB"}], "how": "synonym", "query": "lexatumumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL436784", "max_phase": null, "parent": "CHEMBL436784", "pref_name": null}], "how": "synonym", "query": "lgd-2226", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "lgd-3303", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL363387", "max_phase": "2.0", "parent": "CHEMBL363387", "pref_name": "LIDORESTAT"}], "how": "synonym", "query": "lidorestat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3301675", "max_phase": "4.0", "parent": "CHEMBL3301675", "pref_name": "LINACLOTIDE"}], "how": "synonym", "query": "linaclotide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL319111", "max_phase": "2.0", "parent": "CHEMBL319111", "pref_name": "LINOPIRDINE"}], "how": "synonym", "query": "linopirdine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1189150", "max_phase": "2.0", "parent": "CHEMBL1189150", "pref_name": "LINSIDOMINE"}], "how": "synonym", "query": "linsidomine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "linsidomine (sin-1)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "lion's mane", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "lion's mane (hericium erinaceus)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "lion’s mane standardized for erinacines", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "liproxstatin-1", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4084119", "max_phase": "4.0", "parent": "CHEMBL4084119", "pref_name": "LIRAGLUTIDE"}], "how": "synonym", "query": "liraglutide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL157138", "max_phase": "3.0", "parent": "CHEMBL157138", "pref_name": "LISURIDE"}], "how": "synonym", "query": "lisuride", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1200826", "max_phase": "4.0", "parent": "CHEMBL1200826", "pref_name": "LITHIUM CARBONATE"}], "how": "synonym", "query": "lithium carbonate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "lithium orotate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "livagen", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ll-37", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3585580", "max_phase": "3.0", "parent": "CHEMBL3585580", "pref_name": "LOBEGLITAZONE"}], "how": "synonym", "query": "lobeglitazone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297515", "max_phase": "2.0", "parent": "CHEMBL4297515", "pref_name": "LODENAFIL CARBONATE"}], "how": "synonym", "query": "lodenafil carbonate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1569487", "max_phase": "3.0", "parent": "CHEMBL1569487", "pref_name": "LORNOXICAM"}], "how": "synonym", "query": "lornoxicam", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "loxo-435", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "lumbrokinase", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL173929", "max_phase": "3.0", "parent": "CHEMBL173929", "pref_name": "LUTEIN"}], "how": "synonym", "query": "lutein", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL151", "max_phase": "2.0", "parent": "CHEMBL151", "pref_name": "LUTEOLIN"}], "how": "synonym", "query": "luteolin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2338801", "max_phase": "2.0", "parent": "CHEMBL2338801", "pref_name": "LUVADAXISTAT"}], "how": "synonym", "query": "luvadaxistat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3542265", "max_phase": "2.0", "parent": "CHEMBL3542265", "pref_name": "LY2452473"}], "how": "synonym", "query": "ly2452473", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545072", "max_phase": "2.0", "parent": "CHEMBL3545072", "pref_name": "LANDOGROZUMAB"}], "how": "synonym", "query": "ly2495655", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL501174", "max_phase": "3.0", "parent": "CHEMBL501174", "pref_name": "LYCOPENE"}], "how": "synonym", "query": "lycopene", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "lys-glu", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "lys-glu-asp", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "madol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "madol (desoxymethyltestosterone)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201230", "max_phase": "3.0", "parent": "CHEMBL1201230", "pref_name": "MAGNESIUM"}], "how": "synonym", "query": "magnesium", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "magnesium acetyl taurate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "magnesium l-threonate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL180920", "max_phase": null, "parent": "CHEMBL180920", "pref_name": "MAGNOLOL"}], "how": "pref_name", "query": "magnolol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103876", "max_phase": "3.0", "parent": "CHEMBL2103876", "pref_name": "MAPRACORAT"}], "how": "synonym", "query": "mapracorat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201048", "max_phase": "4.0", "parent": "CHEMBL1201048", "pref_name": "DROMOSTANOLONE PROPIONATE"}], "how": "synonym", "query": "masteron", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "masteron (drostanolone)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "matrixyl", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "matrixyl (palmitoyl pentapeptide-4)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL28527", "max_phase": "2.0", "parent": "CHEMBL28527", "pref_name": "MAVACOXIB"}], "how": "synonym", "query": "mavacoxib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743039", "max_phase": "2.0", "parent": "CHEMBL1743039", "pref_name": "MAVRILIMUMAB"}], "how": "synonym", "query": "mavrilimumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5095358", "max_phase": "3.0", "parent": "CHEMBL5095358", "pref_name": "MAZDUTIDE"}], "how": "synonym", "query": "mazdutide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL781", "max_phase": "4.0", "parent": "CHEMBL781", "pref_name": "MAZINDOL"}], "how": "synonym", "query": "mazindol", "retrieved": "2026-10-01"}
+{"hits": [], "how": null, "query": "mazindol extended-release", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3183703", "max_phase": null, "parent": "CHEMBL3183703", "pref_name": null}], "how": "synonym", "query": "mcc950", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "mdmb-4en-pinaca", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "mdphp", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201716", "max_phase": "4.0", "parent": "CHEMBL1201716", "pref_name": "MECASERMIN"}], "how": "synonym", "query": "mechano growth factor", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1908326", "max_phase": "2.0", "parent": "CHEMBL1908326", "pref_name": "MECLONAZEPAM"}], "how": "synonym", "query": "meclonazepam", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109531", "max_phase": "2.0", "parent": "CHEMBL2109531", "pref_name": "MEDI-6469"}], "how": "synonym", "query": "medi-6469", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "melanotan ii", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL45", "max_phase": "4.0", "parent": "CHEMBL45", "pref_name": "MELATONIN"}], "how": "synonym", "query": "melatonin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "melatonin (oral)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2104708", "max_phase": "2.0", "parent": "CHEMBL2104708", "pref_name": "MELDONIUM"}], "how": "synonym", "query": "meldonium", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108427", "max_phase": "4.0", "parent": "CHEMBL2108427", "pref_name": "MENOTROPINS"}], "how": "synonym", "query": "menotropins", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "menotropins (hmg, menopur)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ment", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108429", "max_phase": "4.0", "parent": "CHEMBL2108429", "pref_name": "MEPOLIZUMAB"}], "how": "synonym", "query": "mepolizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL73451", "max_phase": "2.0", "parent": "CHEMBL73451", "pref_name": "MEQUITAZINE"}], "how": "synonym", "query": "mequitazine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL26687", "max_phase": "1.0", "parent": "CHEMBL26687", "pref_name": "MESCALINE"}], "how": "synonym", "query": "mescaline", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "methasterone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2106880", "max_phase": "2.0", "parent": "CHEMBL2106880", "pref_name": "METHENOLONE ACETATE"}], "how": "synonym", "query": "methenolone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "methoxetamine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "methoxphenidine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "methyl-1-testosterone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "methyl-1-testosterone (m1t)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "methylepitiostanol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "methylliberine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3604010", "max_phase": "2.0", "parent": "CHEMBL3604010", "pref_name": "METHYLONE"}], "how": "synonym", "query": "methylone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "methylstenbolone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL25028", "max_phase": "1.0", "parent": "CHEMBL25028", "pref_name": "DIMETHYL SULFONE"}], "how": "synonym", "query": "methylsulfonylmethane", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "metizolam", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "metodesnitazene", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "metonitazene", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545411", "max_phase": "3.0", "parent": "CHEMBL3545411", "pref_name": "MF101"}], "how": "synonym", "query": "mf101", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "mgf (mechano growth factor)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4650509", "max_phase": "2.0", "parent": "CHEMBL4650509", "pref_name": "MIBAVADEMAB"}], "how": "synonym", "query": "mibavademab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "micronised", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "micronized diosmin/hesperidin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3990014", "max_phase": "4.0", "parent": "CHEMBL3990014", "pref_name": "MIRIKIZUMAB"}], "how": "synonym", "query": "mirikizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297518", "max_phase": "2.0", "parent": "CHEMBL4297518", "pref_name": "MIRODENAFIL"}], "how": "synonym", "query": "mirodenafil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "mitragynine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "mitragynine pseudoindoxyl", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL245019", "max_phase": "3.0", "parent": "CHEMBL245019", "pref_name": "MIZORIBINE"}], "how": "synonym", "query": "mizoribine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297404", "max_phase": "3.0", "parent": "CHEMBL4297404", "pref_name": "MK-0767"}], "how": "synonym", "query": "mk-0767", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3221237", "max_phase": "2.0", "parent": "CHEMBL3221237", "pref_name": "MK-0773"}], "how": "synonym", "query": "mk-0773", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1933350", "max_phase": "2.0", "parent": "CHEMBL1933350", "pref_name": "MK-3577"}], "how": "synonym", "query": "mk-3577", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL272980", "max_phase": "2.0", "parent": "CHEMBL272980", "pref_name": "MOCETINOSTAT"}], "how": "synonym", "query": "mocetinostat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1165", "max_phase": "4.0", "parent": "CHEMBL1165", "pref_name": "MOEXIPRIL"}], "how": "synonym", "query": "moexipril", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL146506", "max_phase": "2.0", "parent": "CHEMBL146506", "pref_name": "MOFAROTENE"}], "how": "synonym", "query": "mofarotene", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "mots-c", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "msm (methylsulfonylmethane)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "mxipr", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "mxpr", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1456", "max_phase": "4.0", "parent": "CHEMBL1456", "pref_name": "MYCOPHENOLATE MOFETIL"}], "how": "synonym", "query": "mycophenolate mofetil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108051", "max_phase": "2.0", "parent": "CHEMBL2108051", "pref_name": "STAMULUMAB"}], "how": "synonym", "query": "myo-029", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL12420", "max_phase": "2.0", "parent": "CHEMBL12420", "pref_name": "N,N-DIMETHYLTRYPTAMINE"}], "how": "synonym", "query": "n,n-dimethyltryptamine", "retrieved": "2026-10-01"}
+{"hits": [], "how": null, "query": "n-acetyl selank", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "n-acetyl selank amidate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "n-acetyl semax", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "n-acetyl semax amidate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "n-acetyl-noopept", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "n-acetylcysteine ethyl ester", "retrieved": "2026-10-01"}
+{"hits": [], "how": null, "query": "n-ethylpentedrone", "retrieved": "2026-10-01"}
+{"hits": [], "how": null, "query": "n-ethylpentylone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "n-methylglycine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "nacet", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109204", "max_phase": "4.0", "parent": "CHEMBL2109204", "pref_name": "NADROPARIN CALCIUM"}], "how": "synonym", "query": "nadroparin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2219418", "max_phase": "4.0", "parent": "CHEMBL2219418", "pref_name": "NALOXEGOL"}], "how": "synonym", "query": "naloxegol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743044", "max_phase": "2.0", "parent": "CHEMBL1743044", "pref_name": "NAMILUMAB"}], "how": "synonym", "query": "namilumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "nanaomycin a", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1801250", "max_phase": "2.0", "parent": "CHEMBL1801250", "pref_name": "NANATINOSTAT"}], "how": "synonym", "query": "nanatinostat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1200412", "max_phase": "4.0", "parent": "CHEMBL1200412", "pref_name": "NANDROLONE PHENPROPIONATE"}], "how": "synonym", "query": "nandrolone phenylpropionate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103831", "max_phase": "3.0", "parent": "CHEMBL2103831", "pref_name": "NAPROXCINOD"}], "how": "synonym", "query": "naproxcinod", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4298195", "max_phase": "3.0", "parent": "CHEMBL4298195", "pref_name": "NARSOPLIMAB"}], "how": "synonym", "query": "narsoplimab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "nattokinase", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594507", "max_phase": "2.0", "parent": "CHEMBL4594507", "pref_name": "NAVEPEGRITIDE"}], "how": "synonym", "query": "navepegritide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "navepegritide (transcon cnp)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL443684", "max_phase": "3.0", "parent": "CHEMBL443684", "pref_name": "NAVITOCLAX"}], "how": "synonym", "query": "navitoclax", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "navitoclax (abt-263)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "nbi-1117568", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1255840", "max_phase": "2.0", "parent": "CHEMBL1255840", "pref_name": "NEBOGLAMINE"}], "how": "synonym", "query": "neboglamine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2104682", "max_phase": "2.0", "parent": "CHEMBL2104682", "pref_name": "NEBRACETAM"}], "how": "synonym", "query": "nebracetam", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "necrostatin-1", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297794", "max_phase": "4.0", "parent": "CHEMBL4297794", "pref_name": "NEMOLIZUMAB"}], "how": "synonym", "query": "nemolizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL6068083", "max_phase": "2.0", "parent": "CHEMBL6068083", "pref_name": "NETAKIMAB"}], "how": "synonym", "query": "netakimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594250", "max_phase": "4.0", "parent": "CHEMBL4594250", "pref_name": "NETARSUDIL"}], "how": "synonym", "query": "netarsudil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2179618", "max_phase": null, "parent": "CHEMBL2179618", "pref_name": "NEXTURASTAT A"}], "how": "pref_name", "query": "nexturastat a", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4802163", "max_phase": "2.0", "parent": "CHEMBL4802163", "pref_name": "NEZULCITINIB"}], "how": "synonym", "query": "nezulcitinib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL573", "max_phase": "4.0", "parent": "CHEMBL573", "pref_name": "NIACIN"}], "how": "synonym", "query": "niacin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "niacin (extended-release)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "niacin (nicotinic acid)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "nicotinamide mononucleotide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL438497", "max_phase": "3.0", "parent": "CHEMBL438497", "pref_name": "NICOTINAMIDE RIBOSIDE"}], "how": "synonym", "query": "nicotinamide riboside", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "nicotinamide riboside (nr)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL573", "max_phase": "4.0", "parent": "CHEMBL573", "pref_name": "NIACIN"}], "how": "synonym", "query": "nicotinic acid", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL360861", "max_phase": "3.0", "parent": "CHEMBL360861", "pref_name": "NIFEKALANT"}], "how": "synonym", "query": "nifekalant", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1697845", "max_phase": "3.0", "parent": "CHEMBL1697845", "pref_name": "NORETHANDROLONE"}], "how": "synonym", "query": "nilevar", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1213539", "max_phase": null, "parent": "CHEMBL1213539", "pref_name": "NILTUBACIN"}], "how": "pref_name", "query": "niltubacin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1909284", "max_phase": "2.0", "parent": "CHEMBL1909284", "pref_name": "NIPEROTIDINE"}], "how": "synonym", "query": "niperotidine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4802135", "max_phase": "4.0", "parent": "CHEMBL4802135", "pref_name": "NIRMATRELVIR"}], "how": "synonym", "query": "nirmatrelvir", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "nitrazolam", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL730", "max_phase": "4.0", "parent": "CHEMBL730", "pref_name": "NITROGLYCERIN"}], "how": "synonym", "query": "nitroglycerin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1234579", "max_phase": "4.0", "parent": "CHEMBL1234579", "pref_name": "NITROUS OXIDE"}], "how": "synonym", "query": "nitrous oxide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL469187", "max_phase": null, "parent": "CHEMBL469187", "pref_name": null}], "how": "synonym", "query": "nk-308", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "nmn (nicotinamide mononucleotide)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL75124", "max_phase": "3.0", "parent": "CHEMBL75124", "pref_name": "NONIVAMIDE"}], "how": "synonym", "query": "nonivamide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "nooglutil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "nooglutyl", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "noopept", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2105134", "max_phase": "2.0", "parent": "CHEMBL2105134", "pref_name": "NORBOLETHONE"}], "how": "synonym", "query": "norbolethone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1697845", "max_phase": "3.0", "parent": "CHEMBL1697845", "pref_name": "NORETHANDROLONE"}], "how": "synonym", "query": "norethandrolone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "norethandrolone (nilevar)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "norflurazepam", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL6068516", "max_phase": "1.0", "parent": "CHEMBL6068516", "pref_name": "NORIBOGAINE"}], "how": "synonym", "query": "noribogaine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1254990", "max_phase": "3.0", "parent": "CHEMBL1254990", "pref_name": "NORUCHOLIC ACID"}], "how": "synonym", "query": "norursodeoxycholic acid", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "npp (nandrolone phenylpropionate)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3989872", "max_phase": "2.0", "parent": "CHEMBL3989872", "pref_name": "APIMOSTINEL"}], "how": "synonym", "query": "nrx-1074", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3301572", "max_phase": "4.0", "parent": "CHEMBL3301572", "pref_name": "NUSINERSEN"}], "how": "synonym", "query": "nusinersen", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "nusinersen (spinraza)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4650315", "max_phase": "1.0", "parent": "CHEMBL4650315", "pref_name": "DESMETRAMADOL"}], "how": "synonym", "query": "o-desmethyltramadol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4650315", "max_phase": "1.0", "parent": "CHEMBL4650315", "pref_name": "DESMETRAMADOL"}], "how": "synonym", "query": "o-dsmt", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "o-pce", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL408194", "max_phase": "3.0", "parent": "CHEMBL408194", "pref_name": "OBATOCLAX"}], "how": "synonym", "query": "obatoclax", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743048", "max_phase": "4.0", "parent": "CHEMBL1743048", "pref_name": "OBINUTUZUMAB"}], "how": "synonym", "query": "obinutuzumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108041", "max_phase": "4.0", "parent": "CHEMBL2108041", "pref_name": "OCRELIZUMAB"}], "how": "synonym", "query": "ocrelizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201147", "max_phase": "4.0", "parent": "CHEMBL1201147", "pref_name": "OCTOCRYLENE"}], "how": "synonym", "query": "octocrylene", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297520", "max_phase": "2.0", "parent": "CHEMBL4297520", "pref_name": "OGLEMILAST"}], "how": "synonym", "query": "oglemilast", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594287", "max_phase": "4.0", "parent": "CHEMBL4594287", "pref_name": "ENSIFENTRINE"}], "how": "synonym", "query": "ohtuvayre", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1911053", "max_phase": null, "parent": "CHEMBL1911053", "pref_name": "OLEUROPEIN"}], "how": "pref_name", "query": "oleuropein", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4650438", "max_phase": "3.0", "parent": "CHEMBL4650438", "pref_name": "OLEZARSEN"}], "how": "synonym", "query": "olezarsen", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "olezarsen (tryngolza)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL34124", "max_phase": "2.0", "parent": "CHEMBL34124", "pref_name": "OLODANRIGAN"}], "how": "synonym", "query": "olodanrigan", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1474900", "max_phase": "2.0", "parent": "CHEMBL1474900", "pref_name": "OLPRINONE"}], "how": "synonym", "query": "olprinone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL76903", "max_phase": "2.0", "parent": "CHEMBL76903", "pref_name": "OLVANIL"}], "how": "synonym", "query": "olvanil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3127326", "max_phase": "4.0", "parent": "CHEMBL3127326", "pref_name": "OMBITASVIR"}], "how": "synonym", "query": "ombitasvir", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1800955", "max_phase": "3.0", "parent": "CHEMBL1800955", "pref_name": "OMECAMTIV MECARBIL"}], "how": "synonym", "query": "omecamtiv mecarbil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4298065", "max_phase": "3.0", "parent": "CHEMBL4298065", "pref_name": "OMEGA-3 FATTY ACIDS"}], "how": "synonym", "query": "omega-3 fatty acids", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "omega-3 fatty acids (fish oil)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107911", "max_phase": "3.0", "parent": "CHEMBL2107911", "pref_name": "ONERCEPT"}], "how": "synonym", "query": "onercept", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594566", "max_phase": "3.0", "parent": "CHEMBL4594566", "pref_name": "ONGERICIMAB"}], "how": "synonym", "query": "ongericimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297536", "max_phase": "4.0", "parent": "CHEMBL4297536", "pref_name": "PATISIRAN SODIUM"}], "how": "synonym", "query": "onpattro", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3989969", "max_phase": "2.0", "parent": "CHEMBL3989969", "pref_name": "OPIGOLIX"}], "how": "synonym", "query": "opigolix", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "oral", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "oral collagen peptides", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "oral minoxidil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "org 26576", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1688530", "max_phase": "4.0", "parent": "CHEMBL1688530", "pref_name": "ORITAVANCIN"}], "how": "synonym", "query": "oritavancin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4650522", "max_phase": "3.0", "parent": "CHEMBL4650522", "pref_name": "ORN-0829 HYDRATE"}], "how": "synonym", "query": "orn-0829 hydrate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL183513", "max_phase": null, "parent": "CHEMBL183513", "pref_name": "OROXYLIN A"}], "how": "pref_name", "query": "oroxylin a", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "orx750", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3781751", "max_phase": "2.0", "parent": "CHEMBL3781751", "pref_name": "IADADEMSTAT"}], "how": "synonym", "query": "ory-1001", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3353410", "max_phase": "4.0", "parent": "CHEMBL3353410", "pref_name": "OSIMERTINIB"}], "how": "synonym", "query": "osimertinib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4802222", "max_phase": "2.0", "parent": "CHEMBL4802222", "pref_name": "OSTABOLIN-C"}], "how": "synonym", "query": "ostabolin-c", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL6068065", "max_phase": "2.0", "parent": "CHEMBL6068065", "pref_name": "OVEPOREXTON"}], "how": "synonym", "query": "oveporexton", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "oxabolone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "oxabolone (cipionate)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1794791", "max_phase": "2.0", "parent": "CHEMBL1794791", "pref_name": "OXALOACETATE"}], "how": "synonym", "query": "oxaloacetate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL314389", "max_phase": null, "parent": "CHEMBL314389", "pref_name": "OXAMFLATIN"}], "how": "pref_name", "query": "oxamflatin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108720", "max_phase": "2.0", "parent": "CHEMBL2108720", "pref_name": "OXELUMAB"}], "how": "synonym", "query": "oxelumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1625", "max_phase": "4.0", "parent": "CHEMBL1625", "pref_name": "OXYBENZONE"}], "how": "synonym", "query": "oxybenzone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL859", "max_phase": "2.0", "parent": "CHEMBL859", "pref_name": "OXYPURINOL"}], "how": "synonym", "query": "oxypurinol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108312", "max_phase": "3.0", "parent": "CHEMBL2108312", "pref_name": "OZARELIX"}], "how": "synonym", "query": "ozarelix", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ozempic/wegovy", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ozempic/wegovy (semaglutide)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743054", "max_phase": "2.0", "parent": "CHEMBL1743054", "pref_name": "OZORALIZUMAB"}], "how": "synonym", "query": "ozoralizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL33720", "max_phase": "-1.0", "parent": "CHEMBL33720", "pref_name": "OXEDRINE"}], "how": "synonym", "query": "p-synephrine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "p-synephrine (bitter orange)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "p021", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "p110", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "p7c3", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "p7c3-a20", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "palmitoyl pentapeptide-4", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "palmitoyl tripeptide-1", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "palmitoyl tripeptide-1 (biopeptide cl)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL417675", "max_phase": "3.0", "parent": "CHEMBL417675", "pref_name": "PALMIDROL"}], "how": "synonym", "query": "palmitoylethanolamide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5267842", "max_phase": "3.0", "parent": "CHEMBL5267842", "pref_name": "PALTUSOTINE"}], "how": "synonym", "query": "paltusotine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL483254", "max_phase": "4.0", "parent": "CHEMBL483254", "pref_name": "PANOBINOSTAT"}], "how": "synonym", "query": "panobinostat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1371937", "max_phase": "3.0", "parent": "CHEMBL1371937", "pref_name": "PANTHENOL"}], "how": "synonym", "query": "panthenol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1158", "max_phase": "0.5", "parent": "CHEMBL1158", "pref_name": "PARAXANTHINE"}], "how": "synonym", "query": "paraxanthine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103832", "max_phase": "3.0", "parent": "CHEMBL2103832", "pref_name": "PARDOPRUNOX"}], "how": "synonym", "query": "pardoprunox", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3349607", "max_phase": "4.0", "parent": "CHEMBL3349607", "pref_name": "PASIREOTIDE"}], "how": "synonym", "query": "pasireotide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3989987", "max_phase": "3.0", "parent": "CHEMBL3989987", "pref_name": "PATISIRAN"}], "how": "synonym", "query": "patisiran", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "patisiran (onpattro)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3989862", "max_phase": "3.0", "parent": "CHEMBL3989862", "pref_name": "PEFCALCITOL"}], "how": "synonym", "query": "pefcalcitol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "peg-mgf", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107870", "max_phase": "3.0", "parent": "CHEMBL2107870", "pref_name": "PEGNIVACOGIN"}], "how": "synonym", "query": "pegnivacogin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594466", "max_phase": "3.0", "parent": "CHEMBL4594466", "pref_name": "PEGOZAFERMIN"}], "how": "synonym", "query": "pegozafermin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4298202", "max_phase": "3.0", "parent": "CHEMBL4298202", "pref_name": "PELACARSEN"}], "how": "synonym", "query": "pelacarsen", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5095142", "max_phase": "2.0", "parent": "CHEMBL5095142", "pref_name": "PEMVIDUTIDE"}], "how": "synonym", "query": "pemvidutide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL466659", "max_phase": "3.0", "parent": "CHEMBL466659", "pref_name": "PENTAERYTHRITOL TETRANITRATE"}], "how": "synonym", "query": "pentaerythritol tetranitrate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109470", "max_phase": "2.0", "parent": "CHEMBL2109470", "pref_name": "PERAKIZUMAB"}], "how": "synonym", "query": "perakizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5314864", "max_phase": "2.0", "parent": "CHEMBL5314864", "pref_name": "PETRELINTIDE"}], "how": "synonym", "query": "petrelintide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4210847", "max_phase": "2.0", "parent": "CHEMBL4210847", "pref_name": "PF-00489791"}], "how": "synonym", "query": "pf-00489791", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1240967", "max_phase": "2.0", "parent": "CHEMBL1240967", "pref_name": "PF-00610355"}], "how": "synonym", "query": "pf-00610355", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5095022", "max_phase": "2.0", "parent": "CHEMBL5095022", "pref_name": "PESAMPATOR"}], "how": "synonym", "query": "pf-04958242", "retrieved": "2026-10-01"}
+{"hits": [{"id": "CHEMBL4650420", "max_phase": "2.0", "parent": "CHEMBL4650420", "pref_name": "RECIFERCEPT"}], "how": "synonym", "query": "pf-07256472", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297416", "max_phase": "2.0", "parent": "CHEMBL4297416", "pref_name": "PF-4191834"}], "how": "synonym", "query": "pf-4191834", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3287218", "max_phase": "2.0", "parent": "CHEMBL3287218", "pref_name": "PF-5190457"}], "how": "synonym", "query": "pf-5190457", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1709464", "max_phase": null, "parent": "CHEMBL1709464", "pref_name": "PHENAZEPAM"}], "how": "pref_name", "query": "phenazepam", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107062", "max_phase": "2.0", "parent": "CHEMBL2107062", "pref_name": "PHENETURIDE"}], "how": "synonym", "query": "pheneturide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL315818", "max_phase": "-1.0", "parent": "CHEMBL315818", "pref_name": "PHENIBUT"}], "how": "synonym", "query": "phenibut", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "phenibut faa", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "phenotropil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL55895", "max_phase": null, "parent": "CHEMBL55895", "pref_name": "PHENYLBUTYRYLHYDROXAMIC ACID"}], "how": "pref_name", "query": "phenylbutyrylhydroxamic acid", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "phenylpiracetam", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "phenylpiracetam (phenotropil)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "phenylpiracetam hydrazide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "phosphatidic acid", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL503481", "max_phase": "3.0", "parent": "CHEMBL503481", "pref_name": "PHOSPHATIDYLCHOLINE"}], "how": "synonym", "query": "phosphatidylcholine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297669", "max_phase": "2.0", "parent": "CHEMBL4297669", "pref_name": "PHOSPHATIDYL SERINE"}], "how": "synonym", "query": "phosphatidylserine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545123", "max_phase": "4.0", "parent": "CHEMBL3545123", "pref_name": "PIBRENTASVIR"}], "how": "synonym", "query": "pibrentasvir", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "pinealon", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL43185", "max_phase": "2.0", "parent": "CHEMBL43185", "pref_name": "PIPERINE"}], "how": "synonym", "query": "piperine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "piperlongumine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107154", "max_phase": "-1.0", "parent": "CHEMBL1473700", "pref_name": "PIROCTONE OLAMINE"}], "how": "synonym", "query": "piroctone olamine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "plant sterols / stanols", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "platelet-rich plasma", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "platelet-rich plasma (prp)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL177611", "max_phase": null, "parent": "CHEMBL177611", "pref_name": "PNU-282987"}], "how": "pref_name", "query": "pnu-282987", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707352", "max_phase": "3.0", "parent": "CHEMBL3707352", "pref_name": "POLICOSANOL"}], "how": "synonym", "query": "policosanol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5314354", "max_phase": "4.0", "parent": "CHEMBL5314354", "pref_name": "POLYMYXIN B"}], "how": "synonym", "query": "polymyxin b", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "polypodium leucotomos", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL7679", "max_phase": "2.0", "parent": "CHEMBL7679", "pref_name": "PONALRESTAT"}], "how": "synonym", "query": "ponalrestat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201290", "max_phase": "3.0", "parent": "CHEMBL1201290", "pref_name": "POTASSIUM"}], "how": "synonym", "query": "potassium", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1200696", "max_phase": "4.0", "parent": "CHEMBL1200696", "pref_name": "POTASSIUM PERCHLORATE"}], "how": "synonym", "query": "potassium perchlorate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1851943", "max_phase": "3.0", "parent": "CHEMBL1851943", "pref_name": "PRACINOSTAT"}], "how": "synonym", "query": "pracinostat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297214", "max_phase": "2.0", "parent": "CHEMBL4297214", "pref_name": "PRALICIGUAT"}], "how": "synonym", "query": "praliciguat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109540", "max_phase": "4.0", "parent": "CHEMBL2109540", "pref_name": "ALIROCUMAB"}], "how": "synonym", "query": "praluent", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "pre-084", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL210952", "max_phase": "2.0", "parent": "CHEMBL210952", "pref_name": "ELTANOLONE"}], "how": "synonym", "query": "pregnanolone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL253363", "max_phase": "1.0", "parent": "CHEMBL253363", "pref_name": "PREGNENOLONE"}, {"id": "CHEMBL2105373", "max_phase": "3.0", "parent": "CHEMBL2105373", "pref_name": "PREGNENOLONE SUCCINATE"}], "how": "synonym", "query": "pregnenolone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2106880", "max_phase": "2.0", "parent": "CHEMBL2106880", "pref_name": "METHENOLONE ACETATE"}], "how": "synonym", "query": "primobolan", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "primobolan (methenolone)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "prl-8-53", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL103", "max_phase": "4.0", "parent": "CHEMBL103", "pref_name": "PROGESTERONE"}], "how": "synonym", "query": "progesterone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "progesterone (micronised)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1079905", "max_phase": "2.0", "parent": "CHEMBL1079905", "pref_name": "PROPENTOFYLLINE"}], "how": "synonym", "query": "propentofylline", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1078261", "max_phase": "4.0", "parent": "CHEMBL1078261", "pref_name": "PROPIVERINE"}], "how": "synonym", "query": "propiverine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "prostanozol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201651", "max_phase": "4.0", "parent": "CHEMBL1201651", "pref_name": "PROTAMINE SULFATE"}], "how": "synonym", "query": "protamine sulfate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707306", "max_phase": "4.0", "parent": "CHEMBL2107175", "pref_name": "STRONTIUM RANELATE"}], "how": "synonym", "query": "protelos", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "protonitazene", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594417", "max_phase": "3.0", "parent": "CHEMBL4594417", "pref_name": "PRUXELUTAMIDE"}], "how": "synonym", "query": "pruxelutamide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL65547", "max_phase": "2.0", "parent": "CHEMBL65547", "pref_name": "PSILOCIN"}], "how": "synonym", "query": "psilocin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108126", "max_phase": "3.0", "parent": "CHEMBL2108126", "pref_name": "PSYLLIUM HUSK"}], "how": "synonym", "query": "psyllium husk", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL83527", "max_phase": "2.0", "parent": "CHEMBL83527", "pref_name": "PTEROSTILBENE"}], "how": "synonym", "query": "pterostilbene", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "pumpkin seed oil", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "pyrazolam", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "pyrilutamide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "pyrilutamide (kx-826)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL353581", "max_phase": "1.0", "parent": "CHEMBL353581", "pref_name": "PYROXAMIDE"}], "how": "synonym", "query": "pyroxamide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1235421", "max_phase": null, "parent": "CHEMBL1235421", "pref_name": "PYRROLOQUINOLINE QUINONE"}], "how": "pref_name", "query": "pyrroloquinoline quinone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL50", "max_phase": "3.0", "parent": "CHEMBL50", "pref_name": "QUERCETIN"}], "how": "synonym", "query": "quercetin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "quilavonemad", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2106999", "max_phase": "2.0", "parent": "CHEMBL2106999", "pref_name": "QUINBOLONE"}], "how": "synonym", "query": "quinbolone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "quinbolone (anabolicum)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "quinupristin / dalfopristin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2105763", "max_phase": "2.0", "parent": "CHEMBL2105763", "pref_name": "QUISINOSTAT"}], "how": "synonym", "query": "quisinostat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4802198", "max_phase": "2.0", "parent": "CHEMBL4802198", "pref_name": "QUISOVALIMAB"}], "how": "synonym", "query": "quisovalimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL609583", "max_phase": "1.0", "parent": "CHEMBL609583", "pref_name": "R-306465"}], "how": "synonym", "query": "r-306465", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "r-mdma", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL509336", "max_phase": "2.0", "parent": "CHEMBL509336", "pref_name": "RACTOPAMINE"}], "how": "synonym", "query": "ractopamine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "rad-150", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "rad-150 (tlb-150)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297524", "max_phase": "3.0", "parent": "CHEMBL4297524", "pref_name": "RADOTINIB"}], "how": "synonym", "query": "radotinib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594558", "max_phase": "2.0", "parent": "CHEMBL4594558", "pref_name": "RAGIFILIMAB"}], "how": "synonym", "query": "ragifilimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594376", "max_phase": "2.0", "parent": "CHEMBL4594376", "pref_name": "RALMITARONT"}], "how": "synonym", "query": "ralmitaront", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108674", "max_phase": "2.0", "parent": "CHEMBL2108674", "pref_name": "RAMATERCEPT"}], "how": "synonym", "query": "ramatercept", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL334830", "max_phase": "3.0", "parent": "CHEMBL334830", "pref_name": "RANIRESTAT"}], "how": "synonym", "query": "ranirestat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3544917", "max_phase": "3.0", "parent": "CHEMBL3544917", "pref_name": "RAPASTINEL"}], "how": "synonym", "query": "rapastinel", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3989986", "max_phase": "4.0", "parent": "CHEMBL3989986", "pref_name": "RAVULIZUMAB"}], "how": "synonym", "query": "ravulizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3544913", "max_phase": "3.0", "parent": "CHEMBL3544913", "pref_name": "VIXOTRIGINE"}], "how": "synonym", "query": "raxatrigine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "re104", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1738757", "max_phase": "2.0", "parent": "CHEMBL1738757", "pref_name": "REBASTINIB"}], "how": "synonym", "query": "rebastinib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5095381", "max_phase": "3.0", "parent": "CHEMBL5095381", "pref_name": "RECATICIMAB"}], "how": "synonym", "query": "recaticimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4650420", "max_phase": "2.0", "parent": "CHEMBL4650420", "pref_name": "RECIFERCEPT"}], "how": "synonym", "query": "recifercept", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "recifercept (pf-07256472)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "red yeast rice", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL350719", "max_phase": "3.0", "parent": "CHEMBL350719", "pref_name": "ESMETHADONE"}], "how": "synonym", "query": "rel-1017", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4068611", "max_phase": "3.0", "parent": "CHEMBL4068611", "pref_name": "RELACORILANT"}], "how": "synonym", "query": "relacorilant", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297525", "max_phase": "3.0", "parent": "CHEMBL4297525", "pref_name": "RELAMORELIN"}], "how": "synonym", "query": "relamorelin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3990044", "max_phase": "4.0", "parent": "CHEMBL3990044", "pref_name": "RELATLIMAB"}], "how": "synonym", "query": "relatlimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3301605", "max_phase": "4.0", "parent": "CHEMBL3112741", "pref_name": "RELEBACTAM"}], "how": "synonym", "query": "relebactam", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107801", "max_phase": "2.0", "parent": "CHEMBL2107801", "pref_name": "RESEQUINIL"}], "how": "synonym", "query": "resequinil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL17976", "max_phase": "3.0", "parent": "CHEMBL17976", "pref_name": "RESINIFERATOXIN"}], "how": "synonym", "query": "resiniferatoxin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107884", "max_phase": "4.0", "parent": "CHEMBL2107884", "pref_name": "RESLIZUMAB"}], "how": "synonym", "query": "reslizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4296717", "max_phase": "2.0", "parent": "CHEMBL4296717", "pref_name": "RESMINOSTAT"}], "how": "synonym", "query": "resminostat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107186", "max_phase": "2.0", "parent": "CHEMBL2107186", "pref_name": "RESOCORTOL BUTYRATE"}], "how": "synonym", "query": "resocortol butyrate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL165", "max_phase": "3.0", "parent": "CHEMBL165", "pref_name": "RESVERATROL"}], "how": "synonym", "query": "resveratrol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107885", "max_phase": "4.0", "parent": "CHEMBL2107885", "pref_name": "RETEPLASE"}], "how": "synonym", "query": "reteplase", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "retinaldehyde", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL429736", "max_phase": "3.0", "parent": "CHEMBL429736", "pref_name": "RETOSIBAN"}], "how": "synonym", "query": "retosiban", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1618279", "max_phase": "2.0", "parent": "CHEMBL1618279", "pref_name": "REVAPRAZAN"}], "how": "synonym", "query": "revaprazan", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3989945", "max_phase": "4.0", "parent": "CHEMBL3989945", "pref_name": "REZAFUNGIN"}], "how": "synonym", "query": "rezafungin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4650276", "max_phase": "3.0", "parent": "CHEMBL4650276", "pref_name": "REZVILUTAMIDE"}], "how": "synonym", "query": "rezvilutamide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "rg108", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "rhodiola rosea", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107197", "max_phase": "2.0", "parent": "CHEMBL2107197", "pref_name": "RILMAZAFONE"}], "how": "synonym", "query": "rilmazafone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594376", "max_phase": "2.0", "parent": "CHEMBL4594376", "pref_name": "RALMITARONT"}], "how": "synonym", "query": "ro6889450", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743064", "max_phase": "2.0", "parent": "CHEMBL1743064", "pref_name": "ROBATUMUMAB"}], "how": "synonym", "query": "robatumumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594567", "max_phase": "3.0", "parent": "CHEMBL4594567", "pref_name": "ROCATINLIMAB"}], "how": "synonym", "query": "rocatinlimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707331", "max_phase": "4.0", "parent": "CHEMBL3707331", "pref_name": "ROLAPITANT"}], "how": "synonym", "query": "rolapitant", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297605", "max_phase": "3.0", "parent": "CHEMBL4297605", "pref_name": "ROLUPERIDONE"}], "how": "synonym", "query": "roluperidone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107874", "max_phase": "4.0", "parent": "CHEMBL2107874", "pref_name": "ROMOSOZUMAB"}], "how": "synonym", "query": "romosozumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "rosemary oil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2338329", "max_phase": "4.0", "parent": "CHEMBL2338329", "pref_name": "ROXADUSTAT"}], "how": "synonym", "query": "roxadustat", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "s-40503", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "s-47445", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1088977", "max_phase": "3.0", "parent": "CHEMBL1088977", "pref_name": "ADEMETIONINE"}], "how": "synonym", "query": "s-adenosylmethionine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL549671", "max_phase": "2.0", "parent": "CHEMBL549671", "pref_name": "SABELUZOLE"}], "how": "synonym", "query": "sabeluzole", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3137301", "max_phase": "4.0", "parent": "CHEMBL3137301", "pref_name": "SACUBITRIL"}], "how": "synonym", "query": "sacubitril", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "sacubitril/valsartan", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "sacubitril/valsartan (entresto)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "sage-324", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL424", "max_phase": "4.0", "parent": "CHEMBL424", "pref_name": "SALICYLIC ACID"}], "how": "synonym", "query": "salicylic acid", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL465208", "max_phase": null, "parent": "CHEMBL465208", "pref_name": "SALIDROSIDE"}], "how": "pref_name", "query": "salidroside", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "salmon", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL154111", "max_phase": "2.0", "parent": "CHEMBL154111", "pref_name": "SALSALATE"}], "how": "synonym", "query": "salsalate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1088977", "max_phase": "3.0", "parent": "CHEMBL1088977", "pref_name": "ADEMETIONINE"}], "how": "synonym", "query": "same", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "same (s-adenosylmethionine)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297328", "max_phase": "2.0", "parent": "CHEMBL4297328", "pref_name": "SUVN-G3031"}], "how": "synonym", "query": "samelisant", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL426084", "max_phase": "4.0", "parent": "CHEMBL426084", "pref_name": "SAMIDORPHAN"}], "how": "synonym", "query": "samidorphan", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL304383", "max_phase": "2.0", "parent": "CHEMBL304383", "pref_name": "SARCOSINE"}], "how": "synonym", "query": "sarcosine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "sarcosine (n-methylglycine)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108730", "max_phase": "4.0", "parent": "CHEMBL2108730", "pref_name": "SARILUMAB"}], "how": "synonym", "query": "sarilumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107777", "max_phase": "3.0", "parent": "CHEMBL2107777", "pref_name": "SATAVAPTAN"}], "how": "synonym", "query": "satavaptan", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3833307", "max_phase": "4.0", "parent": "CHEMBL3833307", "pref_name": "SATRALIZUMAB"}], "how": "synonym", "query": "satralizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2105682", "max_phase": "4.0", "parent": "CHEMBL1269025", "pref_name": "EDOXABAN TOSYLATE"}], "how": "synonym", "query": "savaysa", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "savaysa/lixiana", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108769", "max_phase": "3.0", "parent": "CHEMBL2108769", "pref_name": "SAW PALMETTO"}], "how": "synonym", "query": "saw palmetto", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "saxenda/victoza", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "saxenda/victoza (liraglutide)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL96051", "max_phase": null, "parent": "CHEMBL96051", "pref_name": "SCRIPTAID"}], "how": "pref_name", "query": "scriptaid", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL468154", "max_phase": "2.0", "parent": "CHEMBL468154", "pref_name": "SCYLLITOL"}], "how": "synonym", "query": "scyllo-inositol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743068", "max_phase": "4.0", "parent": "CHEMBL1743068", "pref_name": "SECUKINUMAB"}], "how": "synonym", "query": "secukinumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "selank", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL6068503", "max_phase": "3.0", "parent": "CHEMBL6068503", "pref_name": "SELENIUM"}], "how": "synonym", "query": "selenium", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109477", "max_phase": "2.0", "parent": "CHEMBL2109477", "pref_name": "SELICRELUMAB"}], "how": "synonym", "query": "selicrelumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3597971", "max_phase": "3.0", "parent": "CHEMBL3597971", "pref_name": "SELTOREXANT"}], "how": "synonym", "query": "seltorexant", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108724", "max_phase": "4.0", "parent": "CHEMBL2108724", "pref_name": "SEMAGLUTIDE"}], "how": "synonym", "query": "semaglutide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "semax", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108718", "max_phase": "3.0", "parent": "CHEMBL2108718", "pref_name": "SEMULOPARIN SODIUM"}], "how": "synonym", "query": "semuloparin sodium", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1908376", "max_phase": "3.0", "parent": "CHEMBL1908376", "pref_name": "SEOCALCITOL"}], "how": "synonym", "query": "seocalcitol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2057301", "max_phase": "2.0", "parent": "CHEMBL2057301", "pref_name": "SEPRANOLONE"}], "how": "synonym", "query": "sepranolone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL450044", "max_phase": "2.0", "parent": "CHEMBL450044", "pref_name": "SERGLIFLOZIN ETABONATE"}], "how": "synonym", "query": "sergliflozin etabonate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108880", "max_phase": "2.0", "parent": "CHEMBL2108880", "pref_name": "SERRAPEPTASE"}], "how": "synonym", "query": "serrapeptase", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "serrapeptase (serratiopeptidase)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108880", "max_phase": "2.0", "parent": "CHEMBL2108880", "pref_name": "SERRAPEPTASE"}], "how": "synonym", "query": "serratiopeptidase", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297918", "max_phase": "3.0", "parent": "CHEMBL4297918", "pref_name": "SETRUSUMAB"}], "how": "synonym", "query": "setrusumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3544916", "max_phase": "3.0", "parent": "CHEMBL3544916", "pref_name": "GUADECITABINE"}], "how": "synonym", "query": "sgi-110", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109256", "max_phase": "3.0", "parent": "CHEMBL2109256", "pref_name": "SGN-30"}], "how": "synonym", "query": "sgn-30", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "shlp-2", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "silexan", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "silexan (lavender oil, oral)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1189150", "max_phase": "2.0", "parent": "CHEMBL1189150", "pref_name": "LINSIDOMINE"}], "how": "synonym", "query": "sin-1", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "sinemet", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4110551", "max_phase": "3.0", "parent": "CHEMBL4110551", "pref_name": "SITOKIREN"}], "how": "synonym", "query": "sitokiren", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "skf-10047", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "skq1", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "skq1 (visomitin)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "slu-pp-332", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "snap-8", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "snap-8 (acetyl octapeptide-3)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL62381", "max_phase": "2.0", "parent": "CHEMBL62381", "pref_name": "SODIUM BUTYRATE"}], "how": "synonym", "query": "sodium butyrate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL74", "max_phase": "4.0", "parent": "CHEMBL428880", "pref_name": "CROMOLYN SODIUM"}], "how": "synonym", "query": "sodium cromoglicate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL93268", "max_phase": "4.0", "parent": "CHEMBL1161681", "pref_name": "SODIUM NITRITE"}], "how": "synonym", "query": "sodium nitrite", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1746", "max_phase": "4.0", "parent": "CHEMBL1469", "pref_name": "SODIUM PHENYLBUTYRATE"}], "how": "synonym", "query": "sodium phenylbutyrate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1823872", "max_phase": "3.0", "parent": "CHEMBL1823872", "pref_name": "SOMATOSTATIN"}], "how": "synonym", "query": "somatostatin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297830", "max_phase": "4.0", "parent": "CHEMBL4297830", "pref_name": "SOMATROGON"}], "how": "synonym", "query": "somatrogon", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1201621", "max_phase": "4.0", "parent": "CHEMBL1201621", "pref_name": "SOMATROPIN"}], "how": "synonym", "query": "somatropin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "somatropin (human growth hormone)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4298023", "max_phase": "3.0", "parent": "CHEMBL4298023", "pref_name": "M-1095"}], "how": "synonym", "query": "sonelokimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL266497", "max_phase": "3.0", "parent": "CHEMBL266497", "pref_name": "SORBINIL"}], "how": "synonym", "query": "sorbinil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297888", "max_phase": "2.0", "parent": "CHEMBL4297888", "pref_name": "SOTIGALIMAB"}], "how": "synonym", "query": "sotigalimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL19612", "max_phase": "3.0", "parent": "CHEMBL19612", "pref_name": "SPERMIDINE"}], "how": "synonym", "query": "spermidine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297911", "max_phase": "4.0", "parent": "CHEMBL4297911", "pref_name": "SPESOLIMAB"}], "how": "synonym", "query": "spesolimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3833342", "max_phase": "4.0", "parent": "CHEMBL3301572", "pref_name": "NUSINERSEN SODIUM"}], "how": "synonym", "query": "spinraza", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL431", "max_phase": "4.0", "parent": "CHEMBL431", "pref_name": "SPIRAPRIL"}], "how": "synonym", "query": "spirapril", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5416410", "max_phase": "4.0", "parent": "CHEMBL1421", "pref_name": "DASATINIB"}], "how": "synonym", "query": "sprycel", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3833370", "max_phase": "3.0", "parent": "CHEMBL3833370", "pref_name": "ELAMIPRETIDE"}], "how": "synonym", "query": "ss-31", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ss-31 (elamipretide analogue)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3833370", "max_phase": "3.0", "parent": "CHEMBL3833370", "pref_name": "ELAMIPRETIDE"}], "how": "synonym", "query": "ss31", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL564876", "max_phase": null, "parent": "CHEMBL564876", "pref_name": null}], "how": "synonym", "query": "st-2741", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL564382", "max_phase": null, "parent": "CHEMBL564382", "pref_name": null}], "how": "synonym", "query": "st-2887", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL471041", "max_phase": null, "parent": "CHEMBL471041", "pref_name": null}], "how": "synonym", "query": "st-2986", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL471042", "max_phase": null, "parent": "CHEMBL471042", "pref_name": null}], "how": "synonym", "query": "st-2987", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL472631", "max_phase": null, "parent": "CHEMBL472631", "pref_name": null}], "how": "synonym", "query": "st-3050", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL564916", "max_phase": null, "parent": "CHEMBL564916", "pref_name": null}], "how": "synonym", "query": "st-3071", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL561604", "max_phase": null, "parent": "CHEMBL561604", "pref_name": null}], "how": "synonym", "query": "st-5732", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108051", "max_phase": "2.0", "parent": "CHEMBL2108051", "pref_name": "STAMULUMAB"}], "how": "synonym", "query": "stamulumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "stamulumab (myo-029)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107251", "max_phase": "2.0", "parent": "CHEMBL2107251", "pref_name": "STENBOLONE ACETATE"}], "how": "synonym", "query": "stenbolone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "stenbolone (anatrofin)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108147", "max_phase": "4.0", "parent": "CHEMBL2108147", "pref_name": "STREPTOKINASE"}], "how": "synonym", "query": "streptokinase", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707306", "max_phase": "4.0", "parent": "CHEMBL2107175", "pref_name": "STRONTIUM RANELATE"}], "how": "synonym", "query": "strontium ranelate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "strontium ranelate (protelos)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL320497", "max_phase": null, "parent": "CHEMBL320497", "pref_name": "SUBEROHYDROXAMIC ACID"}], "how": "pref_name", "query": "suberohydroxamic acid", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1874002", "max_phase": "2.0", "parent": "CHEMBL1874002", "pref_name": "SULBUTIAMINE"}], "how": "synonym", "query": "sulbutiamine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "sulfate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL48802", "max_phase": "3.0", "parent": "CHEMBL48802", "pref_name": "SULFORAPHANE"}], "how": "synonym", "query": "sulforaphane", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108086", "max_phase": "3.0", "parent": "CHEMBL2108086", "pref_name": "SULODEXIDE"}], "how": "synonym", "query": "sulodexide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL309176", "max_phase": null, "parent": "CHEMBL309176", "pref_name": "SUNIFIRAM"}], "how": "pref_name", "query": "sunifiram", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "superdrol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "superdrol (methasterone)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5314776", "max_phase": "3.0", "parent": "CHEMBL5314776", "pref_name": "SURVODUTIDE"}], "how": "synonym", "query": "survodutide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297832", "max_phase": "4.0", "parent": "CHEMBL4297832", "pref_name": "SUTIMLIMAB"}], "how": "synonym", "query": "sutimlimab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "systemic lidocaine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743075", "max_phase": "3.0", "parent": "CHEMBL1743075", "pref_name": "TABALUMAB"}], "how": "synonym", "query": "tabalumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tabernanthalog", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL281764", "max_phase": "2.0", "parent": "CHEMBL281764", "pref_name": "TABIMORELIN"}], "how": "synonym", "query": "tabimorelin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594554", "max_phase": "3.0", "parent": "CHEMBL4594554", "pref_name": "TAFOLECIMAB"}], "how": "synonym", "query": "tafolecimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2338801", "max_phase": "2.0", "parent": "CHEMBL2338801", "pref_name": "LUVADAXISTAT"}], "how": "synonym", "query": "tak-831", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tak-861", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4650341", "max_phase": "2.0", "parent": "CHEMBL4650341", "pref_name": "DANAVOREXTON"}], "how": "synonym", "query": "tak-925", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tak-994", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297914", "max_phase": "3.0", "parent": "CHEMBL4297914", "pref_name": "TALDEFGROBEP ALFA"}], "how": "synonym", "query": "taldefgrobep alfa", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2111051", "max_phase": "2.0", "parent": "CHEMBL2111051", "pref_name": "TALSACLIDINE"}], "how": "synonym", "query": "talsaclidine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3113974", "max_phase": "2.0", "parent": "CHEMBL3113974", "pref_name": "TRANIMILAST"}], "how": "synonym", "query": "tanimilast", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tanimilast (chf6001)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107841", "max_phase": "4.0", "parent": "CHEMBL2107841", "pref_name": "ALBIGLUTIDE"}], "how": "synonym", "query": "tanzeum", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103822", "max_phase": "4.0", "parent": "CHEMBL2103822", "pref_name": "TASIMELTEON"}], "how": "synonym", "query": "tasimelteon", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tasimelteon (hetlioz)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL432162", "max_phase": "2.0", "parent": "CHEMBL432162", "pref_name": "TASOSARTAN"}], "how": "synonym", "query": "tasosartan", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL239243", "max_phase": "3.0", "parent": "CHEMBL239243", "pref_name": "TAURINE"}], "how": "synonym", "query": "taurine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL272427", "max_phase": "4.0", "parent": "CHEMBL272427", "pref_name": "TAURURSODIOL"}], "how": "synonym", "query": "tauroursodeoxycholic acid", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL443052", "max_phase": "4.0", "parent": "CHEMBL443052", "pref_name": "TAVABOROLE"}], "how": "synonym", "query": "tavaborole", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tb-500", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tb-500 (thymosin beta-4 fragment)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tb-500 (thymosin beta-4)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2104987", "max_phase": "4.0", "parent": "CHEMBL2104987", "pref_name": "TEDUGLUTIDE"}], "how": "synonym", "query": "teduglutide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297537", "max_phase": "4.0", "parent": "CHEMBL4297770", "pref_name": "INOTERSEN SODIUM"}], "how": "synonym", "query": "tegsedi", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL231813", "max_phase": "4.0", "parent": "CHEMBL231813", "pref_name": "TELAPREVIR"}], "how": "synonym", "query": "telaprevir", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594546", "max_phase": "2.0", "parent": "CHEMBL4594546", "pref_name": "TELAZORLIMAB"}], "how": "synonym", "query": "telazorlimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5095293", "max_phase": "3.0", "parent": "CHEMBL5095293", "pref_name": "TELITACICEPT"}], "how": "synonym", "query": "telitacicept", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2110627", "max_phase": "2.0", "parent": "CHEMBL2110627", "pref_name": "TEMOCAPRIL"}], "how": "synonym", "query": "temocapril", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1475252", "max_phase": "2.0", "parent": "CHEMBL1475252", "pref_name": "TENATOPRAZOLE"}], "how": "synonym", "query": "tenatoprazole", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108791", "max_phase": "4.0", "parent": "CHEMBL2108791", "pref_name": "TENECTEPLASE"}], "how": "synonym", "query": "tenecteplase", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2147777", "max_phase": "4.0", "parent": "CHEMBL2147777", "pref_name": "TENELIGLIPTIN"}], "how": "synonym", "query": "teneligliptin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108144", "max_phase": "2.0", "parent": "CHEMBL2108144", "pref_name": "TENELIXIMAB"}], "how": "synonym", "query": "teneliximab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2107825", "max_phase": "4.0", "parent": "CHEMBL2107825", "pref_name": "TENOFOVIR ALAFENAMIDE"}], "how": "synonym", "query": "tenofovir alafenamide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1538", "max_phase": "4.0", "parent": "CHEMBL1538", "pref_name": "TENOFOVIR DISOPROXIL"}], "how": "synonym", "query": "tenofovir disoproxil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL302795", "max_phase": "2.0", "parent": "CHEMBL302795", "pref_name": "TENOXICAM"}], "how": "synonym", "query": "tenoxicam", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1077894", "max_phase": null, "parent": "CHEMBL1077894", "pref_name": "TENUIFOLIN"}], "how": "pref_name", "query": "tenuifolin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743078", "max_phase": "4.0", "parent": "CHEMBL1743078", "pref_name": "TEPLIZUMAB"}], "how": "synonym", "query": "teplizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL316040", "max_phase": "2.0", "parent": "CHEMBL316040", "pref_name": "TEPOXALIN"}], "how": "synonym", "query": "tepoxalin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2135460", "max_phase": "4.0", "parent": "CHEMBL2135460", "pref_name": "TERLIPRESSIN"}], "how": "synonym", "query": "terlipressin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1237026", "max_phase": "4.0", "parent": "CHEMBL1237026", "pref_name": "TESAMORELIN"}], "how": "synonym", "query": "tesamorelin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3989690", "max_phase": "2.0", "parent": "CHEMBL3989690", "pref_name": "TESOFENSINE"}], "how": "synonym", "query": "tesofensine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL386630", "max_phase": "4.0", "parent": "CHEMBL386630", "pref_name": "TESTOSTERONE"}], "how": "synonym", "query": "testosterone", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL332750", "max_phase": "3.0", "parent": "CHEMBL332750", "pref_name": "TETOMILAST"}], "how": "synonym", "query": "tetomilast", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tetrahydrodeoxycorticosterone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tetrahydrogestrinone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tetrahydrogestrinone (thg)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3544914", "max_phase": "4.0", "parent": "CHEMBL3544914", "pref_name": "TEZACAFTOR"}], "how": "synonym", "query": "tezacaftor", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707229", "max_phase": "4.0", "parent": "CHEMBL3707229", "pref_name": "TEZEPELUMAB"}], "how": "synonym", "query": "tezepelumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "thc-o acetate", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "thcp", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "theacrine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "thiamidol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "thymalin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "thymosin alpha-1", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "thymosin beta-4", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "thymosin beta-4 fragment", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743080", "max_phase": "3.0", "parent": "CHEMBL1743080", "pref_name": "TIGATUZUMAB"}], "how": "synonym", "query": "tigatuzumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL256147", "max_phase": "3.0", "parent": "CHEMBL256147", "pref_name": "TILARGININE"}], "how": "synonym", "query": "tilarginine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5095198", "max_phase": "2.0", "parent": "CHEMBL5095198", "pref_name": "TILDACERFONT"}], "how": "synonym", "query": "tildacerfont", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108681", "max_phase": "4.0", "parent": "CHEMBL2108681", "pref_name": "TILDRAKIZUMAB"}], "how": "synonym", "query": "tildrakizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL119423", "max_phase": "4.0", "parent": "CHEMBL119423", "pref_name": "TISOPURINE"}], "how": "synonym", "query": "tisopurine", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tlb-150", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "topical", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "topical egf", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "topical finasteride", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "topical melatonin solution", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "topical metronidazole", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "topical scalp", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "topical spironolactone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "topical, 5% to 40%", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1078685", "max_phase": "2.0", "parent": "CHEMBL1078685", "pref_name": "TOPIROXOSTAT"}], "how": "synonym", "query": "topiroxostat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL479527", "max_phase": "3.0", "parent": "CHEMBL479527", "pref_name": "TORCETRAPIB"}], "how": "synonym", "query": "torcetrapib", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "trace-amine research agonists such as ro5256390 and ro5263397", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743081", "max_phase": "4.0", "parent": "CHEMBL1743081", "pref_name": "TRALOKINUMAB"}], "how": "synonym", "query": "tralokinumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tralokinumab (adbry)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594507", "max_phase": "2.0", "parent": "CHEMBL4594507", "pref_name": "NAVEPEGRITIDE"}], "how": "synonym", "query": "transcon cnp", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL274445", "max_phase": null, "parent": "CHEMBL274445", "pref_name": "TRAPOXIN A"}], "how": "pref_name", "query": "trapoxin a", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1650443", "max_phase": "4.0", "parent": "CHEMBL1650443", "pref_name": "TRELAGLIPTIN"}], "how": "synonym", "query": "trelagliptin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108658", "max_phase": "4.0", "parent": "CHEMBL2108658", "pref_name": "TREMELIMUMAB"}], "how": "synonym", "query": "tremelimumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL452329", "max_phase": "2.0", "parent": "CHEMBL452329", "pref_name": "TRESTOLONE ACETATE"}], "how": "synonym", "query": "trestolone", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "trestolone (ment)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545374", "max_phase": "2.0", "parent": "CHEMBL3545374", "pref_name": "TREVOGRUMAB"}], "how": "synonym", "query": "trevogrumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tribulus terrestris", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL118722", "max_phase": "1.0", "parent": "CHEMBL118722", "pref_name": "TRIBUTYRIN"}], "how": "synonym", "query": "tributyrin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1164992", "max_phase": null, "parent": "CHEMBL1164992", "pref_name": "TRICIFEROL"}], "how": "pref_name", "query": "triciferol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL609", "max_phase": "4.0", "parent": "CHEMBL609", "pref_name": "TRIENTINE"}], "how": "synonym", "query": "trientine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5315073", "max_phase": "3.0", "parent": "CHEMBL5315073", "pref_name": "TRIPTORELIN ACETATE"}], "how": "synonym", "query": "triptorelin acetate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4298169", "max_phase": "2.0", "parent": "CHEMBL4298169", "pref_name": "TROPIFEXOR"}], "how": "synonym", "query": "tropifexor", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297586", "max_phase": "3.0", "parent": "CHEMBL4297586", "pref_name": "TRORILUZOLE"}], "how": "synonym", "query": "troriluzole", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1834657", "max_phase": "4.0", "parent": "CHEMBL1852688", "pref_name": "INFIGRATINIB PHOSPHATE"}], "how": "synonym", "query": "truseltiq", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "truseltiq (infigratinib)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297447", "max_phase": "2.0", "parent": "CHEMBL4297447", "pref_name": "TRV-120027"}], "how": "synonym", "query": "trv-120027", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4650263", "max_phase": "4.0", "parent": "CHEMBL4650263", "pref_name": "OLEZARSEN SODIUM"}], "how": "synonym", "query": "tryngolza", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tryptamine-derived psychoplastogens under coded development names", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL356769", "max_phase": null, "parent": "CHEMBL356769", "pref_name": "TUBACIN"}], "how": "synonym", "query": "tubacin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2018302", "max_phase": null, "parent": "CHEMBL2018302", "pref_name": "TUBASTATIN A"}], "how": "synonym", "query": "tubastatin a", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3621988", "max_phase": "3.0", "parent": "CHEMBL3621988", "pref_name": "TUCIDINOSTAT"}], "how": "synonym", "query": "tucidinostat", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tucidinostat (chidamide)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tudca", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tudca (tauroursodeoxycholic acid)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "tulrampator", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "turinabol", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "turinabol (chlorodehydromethyltestosterone)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594424", "max_phase": "2.0", "parent": "CHEMBL4594424", "pref_name": "TZP-102"}], "how": "synonym", "query": "tzp-102", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ubx0101", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "udca", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103849", "max_phase": "3.0", "parent": "CHEMBL2103849", "pref_name": "UDENAFIL"}], "how": "synonym", "query": "udenafil", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103920", "max_phase": "3.0", "parent": "CHEMBL2103920", "pref_name": "ULARITIDE"}], "how": "synonym", "query": "ularitide", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ularitide (urodilatin)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1963249", "max_phase": "3.0", "parent": "CHEMBL1963249", "pref_name": "ULIMORELIN"}], "how": "synonym", "query": "ulimorelin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4650337", "max_phase": "3.0", "parent": "CHEMBL4650337", "pref_name": "ULOTARONT"}], "how": "synonym", "query": "ulotaront", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1276010", "max_phase": "-1.0", "parent": "CHEMBL1276010", "pref_name": "UNDECYLENIC ACID"}], "how": "synonym", "query": "undecylenic acid", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "unfractionated heparin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL140717", "max_phase": null, "parent": "CHEMBL140717", "pref_name": "UNIFIRAM"}], "how": "pref_name", "query": "unifiram", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL985", "max_phase": "4.0", "parent": "CHEMBL985", "pref_name": "UREA"}], "how": "synonym", "query": "urea", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "urea (topical, 5% to 40%)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743085", "max_phase": "2.0", "parent": "CHEMBL1743085", "pref_name": "URELUMAB"}], "how": "synonym", "query": "urelumab", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "uridine monophosphate", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2103920", "max_phase": "3.0", "parent": "CHEMBL2103920", "pref_name": "ULARITIDE"}], "how": "synonym", "query": "urodilatin", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "urolithin a", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1551", "max_phase": "4.0", "parent": "CHEMBL1551", "pref_name": "URSODIOL"}], "how": "synonym", "query": "ursodeoxycholic acid", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "ursodeoxycholic acid (udca)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL169", "max_phase": "2.0", "parent": "CHEMBL169", "pref_name": "URSOLIC ACID"}], "how": "synonym", "query": "ursolic acid", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3317857", "max_phase": "4.0", "parent": "CHEMBL3317857", "pref_name": "VABORBACTAM"}], "how": "synonym", "query": "vaborbactam", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3349523", "max_phase": "3.0", "parent": "CHEMBL3349523", "pref_name": "VAPREOTIDE"}], "how": "synonym", "query": "vapreotide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL525028", "max_phase": "3.0", "parent": "CHEMBL525028", "pref_name": "VASOACTIVE INTESTINAL PEPTIDE"}], "how": "synonym", "query": "vasoactive intestinal peptide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2104464", "max_phase": "2.0", "parent": "CHEMBL2104464", "pref_name": "VEDAPROFEN"}], "how": "synonym", "query": "vedaprofen", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1743087", "max_phase": "4.0", "parent": "CHEMBL1743087", "pref_name": "VEDOLIZUMAB"}], "how": "synonym", "query": "vedolizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL88712", "max_phase": "3.0", "parent": "CHEMBL88712", "pref_name": "VELIFLAPON"}], "how": "synonym", "query": "veliflapon", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2109357", "max_phase": "2.0", "parent": "CHEMBL2109357", "pref_name": "VELIGROTUG"}], "how": "synonym", "query": "veligrotug", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3545062", "max_phase": "4.0", "parent": "CHEMBL3545062", "pref_name": "VELPATASVIR"}], "how": "synonym", "query": "velpatasvir", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3666807", "max_phase": "2.0", "parent": "CHEMBL3666807", "pref_name": "VELSECORAT"}], "how": "synonym", "query": "velsecorat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2111112", "max_phase": "4.0", "parent": "CHEMBL2111112", "pref_name": "VERNAKALANT"}], "how": "synonym", "query": "vernakalant", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "vesugen", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "vesugen (lys-glu-asp)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "vezugen", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "vilon", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "vilon (lys-glu)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "vip (vasoactive intestinal peptide)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "visomitin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2336325", "max_phase": "2.0", "parent": "CHEMBL2336325", "pref_name": "VISTUSERTIB"}], "how": "synonym", "query": "vistusertib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1536", "max_phase": "4.0", "parent": "CHEMBL1536", "pref_name": "ERGOCALCIFEROL"}], "how": "synonym", "query": "vitamin d", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3989727", "max_phase": "4.0", "parent": "CHEMBL3989727", "pref_name": "VITAMIN E"}], "how": "synonym", "query": "vitamin e", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5314971", "max_phase": "2.0", "parent": "CHEMBL5314971", "pref_name": "MENAQUINONE 6"}], "how": "synonym", "query": "vitamin k2", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3544913", "max_phase": "3.0", "parent": "CHEMBL3544913", "pref_name": "VIXOTRIGINE"}], "how": "synonym", "query": "vixotrigine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL471897", "max_phase": "2.0", "parent": "CHEMBL471897", "pref_name": "MB07811"}], "how": "synonym", "query": "vk2809", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5314379", "max_phase": "4.0", "parent": "CHEMBL5314379", "pref_name": "VOCLOSPORIN"}], "how": "synonym", "query": "voclosporin", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4130229", "max_phase": "2.0", "parent": "CHEMBL4130229", "pref_name": "VODOBATINIB"}], "how": "synonym", "query": "vodobatinib", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707276", "max_phase": "4.0", "parent": "CHEMBL3707276", "pref_name": "VOSORITIDE"}], "how": "synonym", "query": "vosoritide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707372", "max_phase": "4.0", "parent": "CHEMBL3707372", "pref_name": "VOXILAPREVIR"}], "how": "synonym", "query": "voxilaprevir", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3707276", "max_phase": "4.0", "parent": "CHEMBL3707276", "pref_name": "VOSORITIDE"}], "how": "synonym", "query": "voxzogo", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "voxzogo (vosoritide)", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4298102", "max_phase": "3.0", "parent": "CHEMBL4298102", "pref_name": "VUNAKIZUMAB"}], "how": "synonym", "query": "vunakizumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4298197", "max_phase": "2.0", "parent": "CHEMBL4298197", "pref_name": "VUPANORSEN"}], "how": "synonym", "query": "vupanorsen", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4594511", "max_phase": "4.0", "parent": "CHEMBL4594511", "pref_name": "VUTRISIRAN"}], "how": "synonym", "query": "vutrisiran", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "vutrisiran (amvuttra)", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "where chemically characterized", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4288984", "max_phase": "3.0", "parent": "CHEMBL4288984", "pref_name": "WITHANOLIDE D"}], "how": "synonym", "query": "withania somnifera", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL511212", "max_phase": null, "parent": "CHEMBL511212", "pref_name": null}], "how": "synonym", "query": "wr301839", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL468595", "max_phase": null, "parent": "CHEMBL468595", "pref_name": null}], "how": "synonym", "query": "wr301849", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL511432", "max_phase": null, "parent": "CHEMBL511432", "pref_name": null}], "how": "synonym", "query": "wr301858", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "xanomeline–trospium", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5095264", "max_phase": "3.0", "parent": "CHEMBL5095264", "pref_name": "AZETUKALNER"}], "how": "synonym", "query": "xen1101", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297850", "max_phase": "2.0", "parent": "CHEMBL4297850", "pref_name": "XENTUZUMAB"}], "how": "synonym", "query": "xentuzumab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5095115", "max_phase": "3.0", "parent": "CHEMBL5095115", "pref_name": "ECNOGLUTIDE"}], "how": "synonym", "query": "xw003", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "yk-11", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL28079", "max_phase": "2.0", "parent": "CHEMBL28079", "pref_name": "ZAPRINAST"}], "how": "synonym", "query": "zaprinast", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL504567", "max_phase": null, "parent": "CHEMBL504567", "pref_name": "ZEBULARINE"}], "how": "pref_name", "query": "zebularine", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5314944", "max_phase": "2.0", "parent": "CHEMBL5314944", "pref_name": "ZELQUISTINEL"}], "how": "synonym", "query": "zelquistinel", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL10413", "max_phase": "2.0", "parent": "CHEMBL10413", "pref_name": "ZENARESTAT"}], "how": "synonym", "query": "zenarestat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL1628688", "max_phase": "3.0", "parent": "CHEMBL1628688", "pref_name": "ZIBOTENTAN"}], "how": "synonym", "query": "zibotentan", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2218907", "max_phase": "2.0", "parent": "CHEMBL2218907", "pref_name": "ZILPATEROL"}], "how": "synonym", "query": "zilpaterol", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4297732", "max_phase": "3.0", "parent": "CHEMBL4297732", "pref_name": "ZILTIVEKIMAB"}], "how": "synonym", "query": "ziltivekimab", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4298207", "max_phase": "3.0", "parent": "CHEMBL4298207", "pref_name": "ZILUCOPLAN"}], "how": "synonym", "query": "zilucoplan", "retrieved": "2026-09-27"}
+{"hits": [], "how": null, "query": "zinc", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3988900", "max_phase": "4.0", "parent": "CHEMBL3988900", "pref_name": "ZINC OXIDE"}], "how": "synonym", "query": "zinc oxide", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL2108465", "max_phase": "3.0", "parent": "CHEMBL2108465", "pref_name": "GINGER"}], "how": "synonym", "query": "zingiber officinale", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL5314648", "max_phase": "2.0", "parent": "CHEMBL5314648", "pref_name": "ZODASIRAN"}], "how": "synonym", "query": "zodasiran", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL4303669", "max_phase": "4.0", "parent": "CHEMBL924", "pref_name": "ZOLEDRONIC ACID"}], "how": "synonym", "query": "zoledronic acid", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL10372", "max_phase": "2.0", "parent": "CHEMBL10372", "pref_name": "ZOPOLRESTAT"}], "how": "synonym", "query": "zopolrestat", "retrieved": "2026-09-27"}
+{"hits": [{"id": "CHEMBL3544954", "max_phase": "3.0", "parent": "CHEMBL3544954", "pref_name": "ZOPTARELIN DOXORUBICIN"}], "how": "synonym", "query": "zoptarelin doxorubicin", "retrieved": "2026-09-27"}

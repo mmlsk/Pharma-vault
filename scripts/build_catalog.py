@@ -22,7 +22,9 @@ import re
 import sys
 from collections import Counter, defaultdict
 
-from pv_common import GROUP_RISK_TRIAGE, GROUP_TO_CLUSTER, PROCESSED, RAW_CATALOG, ROOT, normalize
+from pv_common import ADDED_GROUPS, CURATED, GROUP_RISK_TRIAGE, GROUP_TO_CLUSTER, PROCESSED, RAW_CATALOG, ROOT, normalize
+
+ADDITIONS = CURATED / "additions.csv"
 
 STR_FIELD = re.compile(r'(\w+):\s*"((?:[^"\\]|\\.)*)"')
 ARR_FIELD = re.compile(r'(\w+):\s*\[((?:[^\]"]|"(?:[^"\\]|\\.)*")*)\]')
@@ -39,7 +41,7 @@ MECH_APPROVED = re.compile(r"^(.+?); approved/marketed compound catalogued by Ch
 
 COLUMNS = [
     "compound_id", "name", "group", "group_label", "cluster", "aliases", "description",
-    "mechanism", "mechanism_source", "chembl_id", "chembl_max_phase", "class", "pathways",
+    "mechanism", "mechanism_source", "chembl_id", "chembl_max_phase", "pubchem_cid", "class", "pathways",
     "evidence_level", "review_status", "regulatory_status", "group_risk_triage",
     "risk_domains", "contraindications", "major_interactions", "monitoring", "tags", "source",
 ]
@@ -122,7 +124,7 @@ def build() -> tuple[list[dict], dict]:
             "cluster": GROUP_TO_CLUSTER[g],
             "aliases": derive_aliases(i["label"], i.get("aliases", [])),
             "description": i.get("desc", ""),
-            **chembl_fields(i.get("desc", "")),
+            **chembl_fields(i.get("desc", "")), "pubchem_cid": "",
             "class": "", "pathways": [], "evidence_level": "",
             "review_status": "stub", "regulatory_status": "",
             "group_risk_triage": GROUP_RISK_TRIAGE[g],
@@ -130,6 +132,10 @@ def build() -> tuple[list[dict], dict]:
             "tags": ["compound", "source-derived", f"group/{g}"],
             "source": "pharmapedia-source/CompoundCatalog",
         })
+
+    rows = apply_merges(rows)
+    rows += curated_additions(groups, {r["compound_id"] for r in rows})
+    rows.sort(key=lambda r: r["compound_id"])
 
     # Alias collisions: a normalised name (label or alias) pointing at >1 id.
     index = defaultdict(set)
@@ -147,9 +153,70 @@ def build() -> tuple[list[dict], dict]:
         "with_explicit_aliases": sum(1 for i in items if i.get("aliases")),
         "with_chembl_mechanism": sum(1 for r in rows if r["mechanism"]),
         "alias_collisions": len(collisions),
+        "merged_duplicates": len(list(csv.DictReader(open(CURATED / "merges.csv", encoding="utf-8")))) if (CURATED / "merges.csv").exists() else 0,
+        "curated_additions": sum(1 for r in rows if r["source"] == "curated-addition"),
+        "additions_input_sha256": hashlib.sha256(ADDITIONS.read_bytes()).hexdigest() if ADDITIONS.exists() else None,
         "per_group": dict(sorted(Counter(r["group"] for r in rows).items())),
     }
     return rows, {"manifest": manifest, "groups": groups, "collisions": collisions}
+
+
+def apply_merges(rows: list[dict]) -> list[dict]:
+    """data/curated/merges.csv: fold a duplicate source row into its canonical row (raw source untouched)."""
+    p = CURATED / "merges.csv"
+    if not p.exists():
+        return rows
+    by_id = {r["compound_id"]: r for r in rows}
+    drop = set()
+    for m in csv.DictReader(open(p, encoding="utf-8")):
+        dup, can = by_id.get(m["duplicate_id"]), by_id.get(m["canonical_id"])
+        if not dup or not can:
+            sys.exit(f"Integrity error in merges.csv: {m}")
+        for a in [dup["name"], *dup["aliases"]]:
+            if normalize(a) != normalize(can["name"]) and a not in can["aliases"]:
+                can["aliases"].append(a)
+        if dup["description"] and dup["description"] not in can["description"]:
+            can["description"] = (can["description"] + " | Merged duplicate (" + dup["compound_id"] + "): " + dup["description"]).strip(" |")
+        for k in ("mechanism", "chembl_id", "chembl_max_phase", "mechanism_source"):
+            can[k] = can[k] or dup[k]
+        can["tags"] = can["tags"] + ["merged-duplicate"]
+        drop.add(dup["compound_id"])
+    return [r for r in rows if r["compound_id"] not in drop]
+
+
+def curated_additions(groups: dict, existing: set) -> list[dict]:
+    """Rows from data/curated/additions.csv (ChEMBL-resolved backlog/storefront candidates).
+
+    The raw source stays untouched; every added row carries its origin and ChEMBL identity.
+    """
+    if not ADDITIONS.exists():
+        return []
+    groups.update({g: l for g, l in ADDED_GROUPS.items() if g not in groups})
+    out = []
+    for a in csv.DictReader(open(ADDITIONS, encoding="utf-8")):
+        if a["compound_id"] in existing or a["group"] not in GROUP_TO_CLUSTER:
+            sys.exit(f"Integrity error in additions.csv: {a['compound_id']} (duplicate id or unknown group)")
+        g = a["group"]
+        triage = list(dict.fromkeys(GROUP_RISK_TRIAGE[g] + [t for t in a["extra_triage"].split("; ") if t]))
+        out.append({
+            "compound_id": a["compound_id"], "name": a["name"], "group": g, "group_label": groups[g],
+            "cluster": GROUP_TO_CLUSTER[g],
+            "aliases": [x for x in a["aliases"].split("; ") if x],
+            "description": (f"Curated addition ({a['origin']}). Identity resolved by exact name match ({a['match']}) to "
+                            + (f"ChEMBL {a['chembl_id']}" if a["chembl_id"] else "")
+                            + (" / " if a["chembl_id"] and a["pubchem_cid"] else "")
+                            + (f"PubChem CID {a['pubchem_cid']}" if a["pubchem_cid"] else "")
+                            + f" ({a['chembl_pref_name'] or 'no preferred name'})."
+                            + ("" if a["chembl_id"] else " No ChEMBL record: structure-level identity only, no curated mechanism.")),
+            "mechanism": "", "mechanism_source": "",
+            "chembl_id": a["chembl_id"], "chembl_max_phase": "", "pubchem_cid": a["pubchem_cid"],
+            "class": "", "pathways": [], "evidence_level": "",
+            "review_status": "stub", "regulatory_status": "", "group_risk_triage": triage,
+            "risk_domains": [], "contraindications": [], "major_interactions": [], "monitoring": [],
+            "tags": ["compound", "curated-addition", f"group/{g}"],
+            "source": "curated-addition",
+        })
+    return out
 
 
 def flat(v):

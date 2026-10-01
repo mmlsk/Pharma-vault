@@ -70,6 +70,13 @@ pk-source:
   revision: 1364725280
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Phenylpiracetam (Phenotropil)
@@ -105,6 +112,8 @@ A phenylated racetam with stimulant character and reported dopamine transporter 
 | Bioavailability | 100 % | ~100% |
 | Metabolism | - | Not metabolized |
 | Excretion | mainly non-renal | Urine: ~40%; Bile, sweat: ~60% |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

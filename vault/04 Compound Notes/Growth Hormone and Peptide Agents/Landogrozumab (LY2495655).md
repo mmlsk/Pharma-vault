@@ -10,15 +10,15 @@ cluster: Growth Hormone and Peptide Agents
 group: peptides
 class: null
 subclass: null
-mechanism: null
+mechanism: Growth/differentiation factor 8 inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3545072
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -57,6 +57,22 @@ tags:
 - source-derived
 - group/peptides
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3545072
+  pref-name: LANDOGROZUMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3407325
+    name: Growth/differentiation factor 8
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Landogrozumab (LY2495655)
@@ -71,10 +87,23 @@ tags:
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Landogrozumab, LY2495655
+- **ChEMBL:** [CHEMBL3545072](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3545072/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Anti-myostatin antibody studied for sarcopenia and hip-fracture recovery with limited functional benefit.
+
+## Mechanism
+
+Growth/differentiation factor 8 inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Growth-differentiation factor 8 (CHEMBL3407325)|Growth/differentiation factor 8]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -84,6 +113,12 @@ Anti-myostatin antibody studied for sarcopenia and hip-fracture recovery with li
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[ACE-031]] (Growth/differentiation factor 8), [[ACE-031 (Ramatercept)]] (Growth/differentiation factor 8), [[Apitegromab]] (Growth/differentiation factor 8), [[Domagrozumab]] (Growth/differentiation factor 8), [[Stamulumab (MYO-029)]] (Growth/differentiation factor 8), [[Trevogrumab]] (Growth/differentiation factor 8)
 
 ## Safety routing
 

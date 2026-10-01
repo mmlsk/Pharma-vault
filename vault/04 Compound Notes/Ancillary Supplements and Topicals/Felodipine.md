@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Mineralocorticoid receptor antagonist; Voltage-gated L-type calcium channel blocker
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1480
+chembl-max-phase: 4
 half-life:
   value: 25.0
   value-max: null
@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Felodipine
@@ -67,6 +69,42 @@ pk-source:
   revision: 1370369992
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1480
+  pref-name: FELODIPINE
+  molecule-type: Small molecule
+  first-approval: 1991
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - C08CA02
+  targets:
+  - id: CHEMBL1994
+    name: Mineralocorticoid receptor
+    action: ANTAGONIST
+  - id: CHEMBL2095229
+    name: Voltage-gated L-type calcium channel
+    action: BLOCKER
+  properties:
+    full-mwt: 384.26
+    mw-freebase: 384.26
+    alogp: 3.96
+    psa: 64.63
+    hba: 5
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C18H19Cl2NO4
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 0bef7cf2-012b-4804-ac93-0a8b333035db
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0bef7cf2-012b-4804-ac93-0a8b333035db
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Felodipine
@@ -80,10 +118,30 @@ pk-source:
 - **Compound ID:** `felodipine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL1480](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1480/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Vascular-selective dihydropyridine used as the baseline drug in the HOT trial of blood pressure targets.
+
+## Mechanism
+
+Mineralocorticoid receptor antagonist; Voltage-gated L-type calcium channel blocker _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1991
+- **ATC C08CA02:** CARDIOVASCULAR SYSTEM › SELECTIVE CALCIUM CHANNEL BLOCKERS WITH MAINLY VASCULAR EFFECTS › Dihydropyridine derivatives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 384.26 | 3.96 | 64.63 | 1/5 | 0 | C18H19Cl2NO4 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Mineralocorticoid receptor (CHEMBL1994)|Mineralocorticoid receptor]] - antagonist · SINGLE PROTEIN
+- [[Voltage-gated L-type calcium channel (CHEMBL2095229)|Voltage-gated L-type calcium channel]] - blocker · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -101,6 +159,17 @@ Vascular-selective dihydropyridine used as the baseline drug in the HOT trial of
 | Bioavailability | 15 % | 15%; <!-- |
 | Metabolism | hepatic | Hepatic |
 | Excretion | mainly urinary | Renal |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 0bef7cf2…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0bef7cf2-012b-4804-ac93-0a8b333035db), label version 20260811. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 0.08, 1.5, 9.1, 11, 16)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Nimodipine]] (Mineralocorticoid receptor; Voltage-gated L-type calcium channel), [[Apararenone]] (Mineralocorticoid receptor), [[Balcinrenone]] (Mineralocorticoid receptor), [[Canrenone]] (Mineralocorticoid receptor), [[Cinnarizine]] (Voltage-gated L-type calcium channel), [[Clevidipine]] (Voltage-gated L-type calcium channel), [[Desoxycorticosterone Acetate]] (Mineralocorticoid receptor), [[Desoxycorticosterone Pivalate]] (Mineralocorticoid receptor), [[Drospirenone]] (Mineralocorticoid receptor), [[Eplerenone]] (Mineralocorticoid receptor), [[Finerenone (Kerendia)]] (Mineralocorticoid receptor), [[Fludrocortisone Acetate]] (Mineralocorticoid receptor)
+- **Same ATC subgroup:** [[Amlodipine]], [[Clevidipine]], [[Lercanidipine]], [[Nicardipine]], [[Nifedipine]], [[Nimodipine]]
 
 ## Safety routing
 

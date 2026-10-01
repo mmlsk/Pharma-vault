@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL430060
 chembl-max-phase: null
 half-life:
   value: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL430060
+  pref-name: APICIDIN
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 623.8
+    mw-freebase: 623.8
+    alogp: 3.07
+    psa: 138.84
+    hba: 7
+    hbd: 3
+    rtb: 12
+    num-ro5-violations: 1
+    qed-weighted: 0.31
+    full-molformula: C34H49N5O6
 ---
 
 # Apicidin
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `apicidin-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL430060](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL430060/) · max phase n/a · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 A cyclic tetrapeptide HDAC inhibitor discovered as an antiprotozoal against Apicomplexa, and one of the first demonstrations that parasite HDACs are a drug target in their own right.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 623.8 | 3.07 | 138.84 | 3/7 | 1 | C34H49N5O6 |
 
 ## Evidence boundaries
 

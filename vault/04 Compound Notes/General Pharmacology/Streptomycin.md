@@ -67,6 +67,14 @@ pk-source:
   revision: 1364906430
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: no-label-value
+  set-id: abd1f64e-4283-4370-aae8-3666316aa36e
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=abd1f64e-4283-4370-aae8-3666316aa36e
+  checked: '2026-10-01'
+  fields:
+    half-life: no-label-value
 ---
 
 # Streptomycin
@@ -100,6 +108,10 @@ The first aminoglycoside and the first effective antituberculous drug, now used 
 | Elimination t½ | 5–6 h | 5 to 6 hours |
 | Bioavailability | 84 % | 84% to 88% IM (est.) 0% by mouth |
 | Excretion | mainly urinary | Kidney |
+
+> [!note] FDA label cross-check: **no-label-value**
+> Automated comparison with the [US prescribing information (DailyMed set abd1f64e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=abd1f64e-4283-4370-aae8-3666316aa36e), label version 20260121. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: no-label-value (label values: -)
 
 ## Safety routing
 

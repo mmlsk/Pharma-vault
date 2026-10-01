@@ -8,15 +8,15 @@ cluster: Nootropics
 group: neuropsych
 class: null
 subclass: null
-mechanism: null
+mechanism: Dopamine D2 receptor partial agonist; Serotonin 1a (5-HT1a) receptor partial agonist; Serotonin 2a (5-HT2a) receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1112
+chembl-max-phase: 4
 half-life:
   value: 75.0
   value-max: null
@@ -55,7 +55,7 @@ risk-domains: []
 group-risk-triage:
 - cns-activity
 - serotonergic-or-dopaminergic-load
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -63,6 +63,8 @@ tags:
 - group/neuropsych
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Aripiprazole
@@ -70,6 +72,46 @@ pk-source:
   revision: 1375693144
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1112
+  pref-name: ARIPIPRAZOLE
+  molecule-type: Small molecule
+  first-approval: 2002
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - N05AX12
+  targets:
+  - id: CHEMBL217
+    name: D(2) dopamine receptor
+    action: PARTIAL AGONIST
+  - id: CHEMBL214
+    name: 5-hydroxytryptamine receptor 1A
+    action: PARTIAL AGONIST
+  - id: CHEMBL224
+    name: 5-hydroxytryptamine receptor 2A
+    action: ANTAGONIST
+  properties:
+    full-mwt: 448.39
+    mw-freebase: 448.39
+    alogp: 4.86
+    psa: 44.81
+    hba: 4
+    hbd: 1
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.61
+    full-molformula: C23H27Cl2N3O2
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: b72c0cff-9f4d-42e2-b884-d06dea3e6378
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b72c0cff-9f4d-42e2-b884-d06dea3e6378
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Aripiprazole
@@ -83,10 +125,32 @@ pk-source:
 - **Compound ID:** `aripiprazole-compound`
 - **Source group:** Neurology & Psychiatry (`neuropsych`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL1112](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1112/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Dopamine D2 partial agonist, the first of the third-generation antipsychotics, acting as a functional stabiliser rather than a blocker.
+
+## Mechanism
+
+Dopamine D2 receptor partial agonist; Serotonin 1a (5-HT1a) receptor partial agonist; Serotonin 2a (5-HT2a) receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2002
+- **Flags:** black-box warning
+- **ATC N05AX12:** NERVOUS SYSTEM › ANTIPSYCHOTICS › Other antipsychotics
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 448.39 | 4.86 | 44.81 | 1/4 | 0 | C23H27Cl2N3O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[D(2) dopamine receptor (CHEMBL217)|D(2) dopamine receptor]] - partial agonist · SINGLE PROTEIN
+- [[5-hydroxytryptamine receptor 1A (CHEMBL214)|5-hydroxytryptamine receptor 1A]] - partial agonist · SINGLE PROTEIN
+- [[5-hydroxytryptamine receptor 2A (CHEMBL224)|5-hydroxytryptamine receptor 2A]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -107,6 +171,19 @@ Dopamine D2 partial agonist, the first of the third-generation antipsychotics, a
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | Dehydroaripiprazole |
 | Excretion | mainly non-renal · fe 0.01 | Kidney (27%; <1% unchanged); feces (60%; 18% unchanged) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set b72c0cff…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b72c0cff-9f4d-42e2-b884-d06dea3e6378), label version 20260908. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 75, 94, 146)
+> - protein-binding: consistent (label values: 99)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Brexpiprazole]] (5-hydroxytryptamine receptor 1A; 5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Clozapine]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Iloperidone]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Lumateperone]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Paliperidone]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Risperidone]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Thiothixene]] (5-hydroxytryptamine receptor 2A; D(2) dopamine receptor), [[Benperidol]] (D(2) dopamine receptor), [[Cabergoline (Dostinex)]] (D(2) dopamine receptor), [[Chlorpromazine]] (5-hydroxytryptamine receptor 2A), [[Domperidone]] (D(2) dopamine receptor), [[Droperidol]] (5-hydroxytryptamine receptor 2A)
+- **Same ATC subgroup:** [[Brexpiprazole]], [[Cariprazine]], [[Iloperidone]], [[Paliperidone]], [[Pimavanserin]], [[Risperidone]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

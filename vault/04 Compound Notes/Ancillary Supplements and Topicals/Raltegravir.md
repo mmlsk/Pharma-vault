@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL254316
+chembl-max-phase: 4
 half-life:
   value: 9.0
   value-max: null
@@ -53,7 +53,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -61,6 +61,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Raltegravir
@@ -68,6 +70,37 @@ pk-source:
   revision: 1337657435
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL254316
+  pref-name: RALTEGRAVIR
+  molecule-type: Small molecule
+  first-approval: 2007
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - J05AJ01
+  targets: []
+  properties:
+    full-mwt: 444.42
+    mw-freebase: 444.42
+    alogp: 0.91
+    psa: 152.24
+    hba: 9
+    hbd: 3
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.51
+    full-molformula: C20H21FN6O5
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 46ef8e2e-ae63-6a3c-e054-00144ff8d46c
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=46ef8e2e-ae63-6a3c-e054-00144ff8d46c
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Raltegravir
@@ -81,10 +114,21 @@ pk-source:
 - **Compound ID:** `raltegravir-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL254316](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL254316/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits HIV integrase strand transfer as a component of combination antiretroviral therapy.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2007
+- **ATC J05AJ01:** ANTIINFECTIVES FOR SYSTEMIC USE › DIRECT ACTING ANTIVIRALS › Integrase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 444.42 | 0.91 | 152.24 | 3/9 | 0 | C20H21FN6O5 |
 
 ## Evidence boundaries
 
@@ -103,6 +147,17 @@ Inhibits HIV integrase strand transfer as a component of combination antiretrovi
 | Bioavailability | 60 % | 60% (FDA) |
 | Metabolism | hepatic | Liver (UGT1A1) |
 | Excretion | - | feces and urine |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 46ef8e2e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=46ef8e2e-ae63-6a3c-e054-00144ff8d46c), label version 20260713. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 1, 9)
+> - protein-binding: consistent (label values: 83)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Cabotegravir]], [[Dolutegravir]], [[Elvitegravir]]
 
 ## Safety routing
 

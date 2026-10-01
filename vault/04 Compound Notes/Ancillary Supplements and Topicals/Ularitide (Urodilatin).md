@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2103920
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -56,6 +56,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2103920
+  pref-name: ULARITIDE
+  molecule-type: Protein
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 3505.99
+    mw-freebase: 3505.99
+    full-molformula: C145H234N52O44S3
 ---
 
 # Ularitide (Urodilatin)
@@ -70,10 +86,19 @@ tags:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Ularitide, Urodilatin
+- **ChEMBL:** [CHEMBL2103920](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103920/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Synthetic urodilatin, the kidney-derived ANP variant. Failed to improve long-term outcomes in the TRUE-AHF trial despite favourable haemodynamics.
+
+## ChEMBL profile
+
+- **Molecule type:** Protein
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 3505.99 | - | - | -/- | - | C145H234N52O44S3 |
 
 ## Evidence boundaries
 

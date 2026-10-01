@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1672635
+chembl-max-phase: 2
 half-life:
   value: 45.0
   value-max: 60.0
@@ -60,6 +60,8 @@ tags:
 - group/sarms
 - stub
 - pk-auto
+- chembl-profile
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Vosilasarm
@@ -67,6 +69,34 @@ pk-source:
   revision: 1363831447
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1672635
+  pref-name: RAD-140
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 393.83
+    mw-freebase: 393.83
+    alogp: 3.98
+    psa: 118.76
+    hba: 7
+    hbd: 2
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C20H16ClN5O2
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # RAD-140 (Testolone)
@@ -81,10 +111,19 @@ pk-source:
 - **Source group:** SARMs (`sarms`)
 - **Cluster:** [[Androgens SARMs and PCT]]
 - **Aliases:** RAD-140, Testolone
+- **ChEMBL:** [CHEMBL1672635](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1672635/) · max phase 2 · id via Wikipedia infobox
 
 ## Source summary
 
 Investigational SARM with high androgen receptor affinity in muscle and bone tissue.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 393.83 | 3.98 | 118.76 | 2/7 | 0 | C20H16ClN5O2 |
 
 ## Evidence boundaries
 
@@ -99,6 +138,14 @@ Investigational SARM with high androgen receptor affinity in muscle and bone tis
 | Parameter | Parsed | Source text |
 |---|---|---|
 | Elimination t½ | 45–60 h | 45–60 hours |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Vosilasarm (RAD140)]]
 
 ## Safety routing
 

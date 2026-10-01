@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: Programmed cell death 1 ligand 1 other
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3833373
+chembl-max-phase: 4
 half-life:
   value: 6.1
   value-max: null
@@ -56,6 +56,8 @@ tags:
 - group/immunology
 - stub
 - pk-auto
+- chembl-profile
+- chembl-name-match
 pk-source:
   type: wikipedia-infobox
   title: Avelumab
@@ -63,6 +65,28 @@ pk-source:
   revision: 1292952219
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL3833373
+  pref-name: AVELUMAB
+  molecule-type: Antibody
+  first-approval: 2017
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - L01FF04
+  targets:
+  - id: CHEMBL3580522
+    name: Programmed cell death 1 ligand 1
+    action: OTHER
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Avelumab
@@ -76,10 +100,25 @@ pk-source:
 - **Compound ID:** `avelumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL3833373](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833373/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Anti-PD-L1 antibody retaining a wild-type Fc, so it can also mediate antibody-dependent killing of PD-L1-positive tumour cells.
+
+## Mechanism
+
+Programmed cell death 1 ligand 1 other _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2017
+- **ATC L01FF04:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › MONOCLONAL ANTIBODIES AND ANTIBODY DRUG CONJUGATES › PD-1/PD-L1 (Programmed cell death protein 1/death ligand 1) inhibitors
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Programmed cell death 1 ligand 1 (CHEMBL3580522)|Programmed cell death 1 ligand 1]] - other · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -95,6 +134,15 @@ Anti-PD-L1 antibody retaining a wild-type Fc, so it can also mediate antibody-de
 |---|---|---|
 | Elimination t½ | 6.1 d | 6.1 days |
 | Metabolism | - | Proteolysis |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Atezolizumab]] (Programmed cell death 1 ligand 1), [[Durvalumab]] (Programmed cell death 1 ligand 1)
+- **Same ATC subgroup:** [[Atezolizumab]], [[Cemiplimab]], [[Dostarlimab]], [[Durvalumab]], [[Nivolumab]], [[Pembrolizumab]]
 
 ## Safety routing
 

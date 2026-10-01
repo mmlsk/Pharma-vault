@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL4802198
 chembl-max-phase: 2
 half-life:
   value: null
@@ -54,6 +54,22 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL4802198
+  pref-name: QUISOVALIMAB
+  molecule-type: Antibody
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL3712914
+    name: Tumor necrosis factor ligand superfamily member 14
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Quisovalimab
@@ -67,6 +83,7 @@ tags:
 - **Compound ID:** `quisovalimab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL4802198](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4802198/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
@@ -75,6 +92,14 @@ Quisovalimab is a phase 2 compound catalogued by ChEMBL. Its curated mechanism i
 ## Mechanism
 
 tumor necrosis factor ligand superfamily member 14 inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Tumor necrosis factor ligand superfamily member 14 (CHEMBL3712914)|Tumor necrosis factor ligand superfamily member 14]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 

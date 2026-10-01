@@ -55,6 +55,21 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201609
+  pref-name: CORTICOTROPIN ZINC HYDROXIDE
+  molecule-type: Unknown
+  first-approval: 1955
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL1965
+    name: Adrenocorticotropic hormone receptor
+    action: AGONIST
+  properties: {}
 ---
 
 # Corticotropin Zinc Hydroxide
@@ -68,7 +83,7 @@ tags:
 - **Compound ID:** `corticotropin-zinc-hydroxide-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL1201609](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201609/) · max phase 4
+- **ChEMBL:** [CHEMBL1201609](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201609/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -78,6 +93,15 @@ Melanocortin receptor 2 agonist; approved/marketed compound catalogued by ChEMBL
 
 Melanocortin receptor 2 agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Unknown
+- **First approval (ChEMBL):** 1955
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Adrenocorticotropic hormone receptor (CHEMBL1965)|Adrenocorticotropic hormone receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -86,6 +110,12 @@ Melanocortin receptor 2 agonist _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Corticotropin]] (Adrenocorticotropic hormone receptor), [[Cosyntropin]] (Adrenocorticotropic hormone receptor), [[Seractide Acetate]] (Adrenocorticotropic hormone receptor)
 
 ## Safety routing
 

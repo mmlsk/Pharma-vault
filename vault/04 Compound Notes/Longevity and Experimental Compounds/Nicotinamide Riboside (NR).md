@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL438497
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -56,6 +56,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL438497
+  pref-name: NICOTINAMIDE RIBOSIDE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 255.25
+    mw-freebase: 255.25
+    alogp: -2.32
+    psa: 116.89
+    hba: 5
+    hbd: 4
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.45
+    full-molformula: C11H15N2O5+
 ---
 
 # Nicotinamide Riboside (NR)
@@ -70,10 +93,19 @@ tags:
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
 - **Aliases:** Nicotinamide Riboside, NR
+- **ChEMBL:** [CHEMBL438497](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL438497/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Another NAD+ precursor supplement, alternative to NMN, with human RCT data showing it safely raises NAD+ levels.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 255.25 | -2.32 | 116.89 | 4/5 | 0 | C11H15N2O5+ |
 
 ## Evidence boundaries
 

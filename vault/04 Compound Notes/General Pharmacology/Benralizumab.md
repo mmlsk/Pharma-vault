@@ -8,15 +8,15 @@ cluster: General Pharmacology
 group: immunology
 class: null
 subclass: null
-mechanism: null
+mechanism: Interleukin-5 receptor subunit alpha inhibitor
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1742991
+chembl-max-phase: 4
 half-life:
   value: null
   unit: null
@@ -54,6 +54,23 @@ tags:
 - source-derived
 - group/immunology
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1742991
+  pref-name: BENRALIZUMAB
+  molecule-type: Antibody
+  first-approval: 2017
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - R03DX10
+  targets:
+  - id: CHEMBL3580483
+    name: Interleukin-5 receptor subunit alpha
+    action: INHIBITOR
+  properties: {}
 ---
 
 # Benralizumab
@@ -67,10 +84,25 @@ tags:
 - **Compound ID:** `benralizumab-compound`
 - **Source group:** Immunology & Biologics (`immunology`)
 - **Cluster:** [[General Pharmacology]]
+- **ChEMBL:** [CHEMBL1742991](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1742991/) · max phase 4 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Anti-IL-5-receptor antibody that depletes eosinophils outright rather than starving them, through enhanced antibody-dependent killing.
+
+## Mechanism
+
+Interleukin-5 receptor subunit alpha inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2017
+- **ATC R03DX10:** RESPIRATORY SYSTEM › OTHER SYSTEMIC DRUGS FOR OBSTRUCTIVE AIRWAY DISEASES › Other systemic drugs for obstructive airway diseases
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Interleukin-5 receptor subunit alpha (CHEMBL3580483)|Interleukin-5 receptor subunit alpha]] - inhibitor · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -80,6 +112,12 @@ Anti-IL-5-receptor antibody that depletes eosinophils outright rather than starv
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Mepolizumab]], [[Omalizumab (Xolair)]], [[Reslizumab]], [[Roflumilast]], [[Roflumilast (topical)]], [[Roflumilast Foam (Zoryve)]], [[Tezepelumab]]
 
 ## Safety routing
 

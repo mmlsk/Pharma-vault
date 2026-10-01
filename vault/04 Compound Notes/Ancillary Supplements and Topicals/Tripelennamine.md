@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Tripelennamine
@@ -63,6 +64,36 @@ pk-source:
   revision: 1359017200
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1241
+  pref-name: TRIPELENNAMINE
+  molecule-type: Small molecule
+  first-approval: 1948
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - D04AA04
+  - R06AC04
+  targets: []
+  properties:
+    full-mwt: 255.37
+    mw-freebase: 255.37
+    alogp: 2.65
+    psa: 19.37
+    hba: 3
+    hbd: 0
+    rtb: 6
+    num-ro5-violations: 0
+    qed-weighted: 0.79
+    full-molformula: C16H21N3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Tripelennamine
@@ -76,7 +107,7 @@ pk-source:
 - **Compound ID:** `tripelennamine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1241](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1241/) · max phase 4
+- **ChEMBL:** [CHEMBL1241](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1241/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +116,17 @@ Histamine H1 receptor antagonist; approved/marketed compound catalogued by ChEMB
 ## Mechanism
 
 Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1948
+- **ATC D04AA04:** DERMATOLOGICALS › ANTIPRURITICS, INCL. ANTIHISTAMINES, ANESTHETICS, ETC. › Antihistamines for topical use
+- **ATC R06AC04:** RESPIRATORY SYSTEM › ANTIHISTAMINES FOR SYSTEMIC USE › Substituted ethylene diamines
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 255.37 | 2.65 | 19.37 | 0/3 | 0 | C16H21N3 |
 
 ## Evidence boundaries
 
@@ -101,6 +143,14 @@ Histamine H1 receptor antagonist _(ChEMBL curated mechanism, as quoted by the so
 | Elimination t½ | 4–6 h | 4–6 hours |
 | Metabolism | hepatic | Hepatic hydroxylation and glucuronidation |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Chlorphenoxamine]], [[Clemastine]], [[Dimethindene]], [[Diphenhydramine (Benadryl)]], [[Methapyrilene]], [[Pheniramine]], [[Promethazine]], [[Pyrilamine]], [[Thenalidine]]
 
 ## Safety routing
 

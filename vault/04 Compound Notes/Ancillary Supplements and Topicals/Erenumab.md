@@ -8,15 +8,15 @@ cluster: Ancillary Supplements and Topicals
 group: ancillary
 class: null
 subclass: null
-mechanism: null
+mechanism: Calcitonin gene-related peptide type 1 receptor antagonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL3833329
+chembl-max-phase: 4
 half-life:
   value: 28.0
   value-max: null
@@ -60,6 +60,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Erenumab
@@ -67,6 +68,28 @@ pk-source:
   revision: 1324570904
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL3833329
+  pref-name: ERENUMAB
+  molecule-type: Antibody
+  first-approval: 2018
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N02CD01
+  targets:
+  - id: CHEMBL3798
+    name: Calcitonin gene-related peptide type 1 receptor
+    action: ANTAGONIST
+  properties: {}
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Erenumab
@@ -80,10 +103,25 @@ pk-source:
 - **Compound ID:** `erenumab-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL3833329](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3833329/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Blocks CGRP ligand or receptor signalling in the trigeminovascular system for migraine prevention or acute treatment; receptor monoclonal antibody.
+
+## Mechanism
+
+Calcitonin gene-related peptide type 1 receptor antagonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Antibody
+- **First approval (ChEMBL):** 2018
+- **ATC N02CD01:** NERVOUS SYSTEM › ANTIMIGRAINE PREPARATIONS › Calcitonin gene-related peptide (CGRP) antagonists
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Calcitonin gene-related peptide type 1 receptor (CHEMBL3798)|Calcitonin gene-related peptide type 1 receptor]] - antagonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -100,6 +138,15 @@ Blocks CGRP ligand or receptor signalling in the trigeminovascular system for mi
 | Elimination t½ | 28 d | 28 days |
 | Bioavailability | 82 % | 82% (estimated) |
 | Metabolism | - | Proteolysis |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Atogepant]] (Calcitonin gene-related peptide type 1 receptor), [[Bi-44370]] (Calcitonin gene-related peptide type 1 receptor), [[Davalintide]] (Calcitonin gene-related peptide type 1 receptor), [[Rimegepant (Nurtec ODT)]] (Calcitonin gene-related peptide type 1 receptor), [[Ubrogepant]] (Calcitonin gene-related peptide type 1 receptor)
+- **Same ATC subgroup:** [[Atogepant]], [[Eptinezumab]], [[Fremanezumab]], [[Galcanezumab]], [[Rimegepant (Nurtec ODT)]], [[Ubrogepant]], [[Zavegepant]]
 
 ## Safety routing
 

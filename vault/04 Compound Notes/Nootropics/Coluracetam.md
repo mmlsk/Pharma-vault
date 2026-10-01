@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL37935
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,29 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL37935
+  pref-name: COLURACETAM
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 341.41
+    mw-freebase: 341.41
+    alogp: 2.88
+    psa: 75.44
+    hba: 4
+    hbd: 1
+    rtb: 3
+    num-ro5-violations: 0
+    qed-weighted: 0.93
+    full-molformula: C19H23N3O3
 ---
 
 # Coluracetam
@@ -68,10 +91,19 @@ tags:
 - **Compound ID:** `coluracetam-compound`
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
+- **ChEMBL:** [CHEMBL37935](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL37935/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Racetam claimed to act as a high-affinity choline uptake enhancer, a mechanism distinct from the rest of the family. Abandoned in clinical development.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 341.41 | 2.88 | 75.44 | 1/4 | 0 | C19H23N3O3 |
 
 ## Evidence boundaries
 

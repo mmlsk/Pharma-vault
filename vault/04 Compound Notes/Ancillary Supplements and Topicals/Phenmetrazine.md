@@ -56,6 +56,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Phenmetrazine
@@ -63,6 +64,34 @@ pk-source:
   revision: 1352010212
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201208
+  pref-name: PHENMETRAZINE
+  molecule-type: Small molecule
+  first-approval: 1982
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 177.25
+    mw-freebase: 177.25
+    alogp: 1.74
+    psa: 21.26
+    hba: 2
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.71
+    full-molformula: C11H15NO
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Phenmetrazine
@@ -76,7 +105,7 @@ pk-source:
 - **Compound ID:** `phenmetrazine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201208](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201208/) · max phase 4
+- **ChEMBL:** [CHEMBL1201208](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201208/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -85,6 +114,15 @@ Norepinephrine transporter inhibitor; approved/marketed compound catalogued by C
 ## Mechanism
 
 Norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1982
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 177.25 | 1.74 | 21.26 | 1/2 | 0 | C11H15NO |
 
 ## Evidence boundaries
 
@@ -100,6 +138,8 @@ Norepinephrine transporter inhibitor _(ChEMBL curated mechanism, as quoted by th
 |---|---|---|
 | Elimination t½ | 16–31 h | 16–31 hours |
 | Excretion | mainly urinary | Kidney |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

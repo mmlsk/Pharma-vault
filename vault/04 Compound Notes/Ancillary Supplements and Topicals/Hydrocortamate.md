@@ -55,6 +55,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Hydrocortamate
@@ -62,6 +63,27 @@ pk-source:
   revision: 1330825153
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL1201263
+  pref-name: HYDROCORTAMATE
+  molecule-type: Small molecule
+  first-approval: 1956
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 475.63
+    mw-freebase: 475.63
+    alogp: 2.67
+    psa: 104.14
+    hba: 7
+    hbd: 2
+    rtb: 7
+    num-ro5-violations: 0
+    qed-weighted: 0.55
+    full-molformula: C27H41NO6
 ---
 
 # Hydrocortamate
@@ -75,7 +97,7 @@ pk-source:
 - **Compound ID:** `hydrocortamate-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1201263](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201263/) · max phase 4
+- **ChEMBL:** [CHEMBL1201263](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201263/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -84,6 +106,15 @@ Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1956
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 475.63 | 2.67 | 104.14 | 2/7 | 0 | C27H41NO6 |
 
 ## Evidence boundaries
 

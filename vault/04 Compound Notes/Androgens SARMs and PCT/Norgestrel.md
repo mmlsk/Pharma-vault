@@ -54,6 +54,31 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2107797
+  pref-name: NORGESTREL
+  molecule-type: Small molecule
+  first-approval: 1968
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets:
+  - id: CHEMBL208
+    name: Progesterone receptor
+    action: AGONIST
+  properties:
+    full-mwt: 312.45
+    mw-freebase: 312.45
+    alogp: 3.88
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.75
+    full-molformula: C21H28O2
 ---
 
 # Norgestrel
@@ -67,7 +92,7 @@ tags:
 - **Compound ID:** `norgestrel-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL2107797](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107797/) · max phase 4
+- **ChEMBL:** [CHEMBL2107797](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107797/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +102,19 @@ Progesterone receptor agonist; approved/marketed compound catalogued by ChEMBL (
 
 Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1968
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 312.45 | 3.88 | 37.3 | 1/2 | 0 | C21H28O2 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Progesterone receptor (CHEMBL208)|Progesterone receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +123,12 @@ Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the sourc
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Asoprisnil]] (Progesterone receptor), [[Chlormadinone Acetate]] (Progesterone receptor), [[Cyproterone Acetate]] (Progesterone receptor), [[Danazol]] (Progesterone receptor), [[Desogestrel]] (Progesterone receptor), [[Drospirenone]] (Progesterone receptor), [[Dydrogesterone]] (Progesterone receptor), [[Ethynodiol Diacetate]] (Progesterone receptor), [[Etonogestrel]] (Progesterone receptor), [[Gestodene]] (Progesterone receptor), [[Hydroxyprogesterone Caproate]] (Progesterone receptor), [[Levonorgestrel]] (Progesterone receptor)
 
 ## Safety routing
 

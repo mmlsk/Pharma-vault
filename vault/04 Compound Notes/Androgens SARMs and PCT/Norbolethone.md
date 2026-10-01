@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL2105134
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -55,6 +55,29 @@ tags:
 - source-derived
 - group/steroids
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL2105134
+  pref-name: NORBOLETHONE
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 316.49
+    mw-freebase: 316.49
+    alogp: 4.66
+    psa: 37.3
+    hba: 2
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.8
+    full-molformula: C21H32O2
 ---
 
 # Norbolethone
@@ -68,10 +91,19 @@ tags:
 - **Compound ID:** `norbolethone-compound`
 - **Source group:** Anabolic Steroids (`steroids`)
 - **Cluster:** [[Androgens SARMs and PCT]]
+- **ChEMBL:** [CHEMBL2105134](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105134/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 Designer anabolic steroid first identified through doping-detection research.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 316.49 | 4.66 | 37.3 | 1/2 | 0 | C21H32O2 |
 
 ## Evidence boundaries
 

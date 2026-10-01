@@ -55,6 +55,25 @@ tags:
 - source-derived
 - group/glp1
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2103784
+  pref-name: COSYNTROPIN
+  molecule-type: Protein
+  first-approval: 1970
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - H01AA02
+  targets:
+  - id: CHEMBL1965
+    name: Adrenocorticotropic hormone receptor
+    action: AGONIST
+  properties:
+    full-mwt: 2933.49
+    mw-freebase: 2933.49
+    full-molformula: C136H210N40O31S
 ---
 
 # Cosyntropin
@@ -68,7 +87,7 @@ tags:
 - **Compound ID:** `cosyntropin-compound`
 - **Source group:** GLP-1 & Body (`glp1`)
 - **Cluster:** [[Metabolic and Incretin Agents]]
-- **ChEMBL:** [CHEMBL2103784](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103784/) · max phase 4
+- **ChEMBL:** [CHEMBL2103784](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103784/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -78,6 +97,20 @@ Melanocortin receptor 2 agonist; approved/marketed compound catalogued by ChEMBL
 
 Melanocortin receptor 2 agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Protein
+- **First approval (ChEMBL):** 1970
+- **ATC H01AA02:** SYSTEMIC HORMONAL PREPARATIONS, EXCL. SEX HORMONES AND INSULINS › ANTERIOR PITUITARY LOBE HORMONES AND ANALOGUES › ACTH
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 2933.49 | - | - | -/- | - | C136H210N40O31S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Adrenocorticotropic hormone receptor (CHEMBL1965)|Adrenocorticotropic hormone receptor]] - agonist · SINGLE PROTEIN
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -86,6 +119,13 @@ Melanocortin receptor 2 agonist _(ChEMBL curated mechanism, as quoted by the sou
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Corticotropin]] (Adrenocorticotropic hormone receptor), [[Corticotropin Zinc Hydroxide]] (Adrenocorticotropic hormone receptor), [[Seractide Acetate]] (Adrenocorticotropic hormone receptor)
+- **Same ATC subgroup:** [[Corticotropin]]
 
 ## Safety routing
 

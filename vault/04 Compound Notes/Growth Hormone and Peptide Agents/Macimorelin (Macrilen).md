@@ -10,15 +10,15 @@ cluster: Growth Hormone and Peptide Agents
 group: gh
 class: null
 subclass: null
-mechanism: null
+mechanism: Ghrelin receptor agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL278623
+chembl-max-phase: 4
 half-life:
   value: 4.1
   value-max: null
@@ -60,6 +60,7 @@ tags:
 - group/gh
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Macimorelin
@@ -67,6 +68,38 @@ pk-source:
   revision: 1328964534
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL278623
+  pref-name: MACIMORELIN
+  molecule-type: Small molecule
+  first-approval: 2017
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - V04CD06
+  targets:
+  - id: CHEMBL4616
+    name: Growth hormone secretagogue receptor type 1
+    action: AGONIST
+  properties:
+    full-mwt: 474.57
+    mw-freebase: 474.57
+    alogp: 1.84
+    psa: 144.9
+    hba: 4
+    hbd: 6
+    rtb: 10
+    num-ro5-violations: 1
+    qed-weighted: 0.15
+    full-molformula: C26H30N6O3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Macimorelin (Macrilen)
@@ -81,10 +114,29 @@ pk-source:
 - **Source group:** GH & Secretagogues (`gh`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 - **Aliases:** Macimorelin, Macrilen
+- **ChEMBL:** [CHEMBL278623](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL278623/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Oral ghrelin receptor agonist approved as a diagnostic test, not a treatment.
+
+## Mechanism
+
+Ghrelin receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2017
+- **ATC V04CD06:** VARIOUS › OTHER DIAGNOSTIC AGENTS › Tests for pituitary function
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 474.57 | 1.84 | 144.9 | 6/4 | 1 | C26H30N6O3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Growth hormone secretagogue receptor type 1 (CHEMBL4616)|Growth hormone secretagogue receptor type 1]] - agonist · SINGLE PROTEIN
 
 ## Evidence boundaries
 
@@ -101,6 +153,16 @@ Oral ghrelin receptor agonist approved as a diagnostic test, not a treatment.
 | Elimination t½ | 4.1 h | 4.1 hours |
 | Metabolism | hepatic | Hepatic (CYP3A4-mediated) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Capromorelin]] (Growth hormone secretagogue receptor type 1), [[Pf-5190457]] (Growth hormone secretagogue receptor type 1), [[Relamorelin]] (Growth hormone secretagogue receptor type 1), [[Tabimorelin]] (Growth hormone secretagogue receptor type 1), [[Tzp-102]] (Growth hormone secretagogue receptor type 1)
+- **Same ATC subgroup:** [[Metyrapone (Metopirone)]], [[Sermorelin]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

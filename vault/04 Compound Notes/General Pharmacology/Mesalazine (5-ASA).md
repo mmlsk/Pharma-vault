@@ -10,15 +10,15 @@ cluster: General Pharmacology
 group: gi
 class: null
 subclass: null
-mechanism: null
+mechanism: Arachidonate 5-lipoxygenase inhibitor; Cyclooxygenase inhibitor; Peroxisome proliferator-activated receptor gamma agonist
 pathways: []
 indications: []
 off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL704
+chembl-max-phase: 4
 half-life:
   value: 5.0
   value-max: null
@@ -62,6 +62,8 @@ tags:
 - group/gi
 - stub
 - pk-auto
+- chembl-profile
+- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Mesalazine
@@ -69,6 +71,44 @@ pk-source:
   revision: 1369100049
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL704
+  pref-name: MESALAMINE
+  molecule-type: Small molecule
+  first-approval: 1987
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - A07EC02
+  targets:
+  - id: CHEMBL215
+    name: Polyunsaturated fatty acid 5-lipoxygenase
+    action: INHIBITOR
+  - id: CHEMBL235
+    name: Peroxisome proliferator-activated receptor gamma
+    action: AGONIST
+  - id: CHEMBL2094253
+    name: Cyclooxygenase
+    action: INHIBITOR
+  properties:
+    full-mwt: 153.14
+    mw-freebase: 153.14
+    alogp: 0.67
+    psa: 83.55
+    hba: 3
+    hbd: 3
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.41
+    full-molformula: C7H7NO3
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Mesalazine (5-ASA)
@@ -83,10 +123,31 @@ pk-source:
 - **Source group:** Gastrointestinal & Hepatic (`gi`)
 - **Cluster:** [[General Pharmacology]]
 - **Aliases:** Mesalazine, 5-ASA
+- **ChEMBL:** [CHEMBL704](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL704/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Topically acting anti-inflammatory for ulcerative colitis, delivered by formulation rather than by systemic absorption.
+
+## Mechanism
+
+Arachidonate 5-lipoxygenase inhibitor; Cyclooxygenase inhibitor; Peroxisome proliferator-activated receptor gamma agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1987
+- **ATC A07EC02:** ALIMENTARY TRACT AND METABOLISM › INTESTINAL ANTIINFLAMMATORY AGENTS › Aminosalicylic acid and similar agents
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 153.14 | 0.67 | 83.55 | 3/3 | 0 | C7H7NO3 |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Polyunsaturated fatty acid 5-lipoxygenase (CHEMBL215)|Polyunsaturated fatty acid 5-lipoxygenase]] - inhibitor · SINGLE PROTEIN
+- [[Peroxisome proliferator-activated receptor gamma (CHEMBL235)|Peroxisome proliferator-activated receptor gamma]] - agonist · SINGLE PROTEIN
+- [[Cyclooxygenase (CHEMBL2094253)|Cyclooxygenase]] - inhibitor · PROTEIN FAMILY
 
 ## Evidence boundaries
 
@@ -103,6 +164,16 @@ Topically acting anti-inflammatory for ulcerative colitis, delivered by formulat
 | Elimination t½ | 5 h | 5 hours after initial dose.; At steady state 7 hours |
 | Bioavailability | 20–30 % | Oral: 20–30% ; Rectal: 10–35% |
 | Metabolism | hepatic | Rapidly and extensively metabolized intestinal mucosal wall and the liver |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Mesalamine]]
+- **Shared target:** [[Mesalamine]] (Cyclooxygenase; Peroxisome proliferator-activated receptor gamma; Polyunsaturated fatty acid 5-lipoxygenase), [[Sulfasalazine]] (Cyclooxygenase; Polyunsaturated fatty acid 5-lipoxygenase), [[Acemetacin]] (Cyclooxygenase), [[Acetaminophen]] (Cyclooxygenase), [[Aleglitazar]] (Peroxisome proliferator-activated receptor gamma), [[Aloxiprin]] (Cyclooxygenase), [[Aspirin]] (Cyclooxygenase), [[Balaglitazone]] (Peroxisome proliferator-activated receptor gamma), [[Bardoxolone Methyl]] (Peroxisome proliferator-activated receptor gamma), [[Benzydamine]] (Cyclooxygenase), [[Bismuth Subsalicylate]] (Cyclooxygenase), [[Clometacin]] (Cyclooxygenase)
+- **Same ATC subgroup:** [[Balsalazide]], [[Mesalamine]], [[Olsalazine]], [[Sulfasalazine]]
 
 ## Safety routing
 

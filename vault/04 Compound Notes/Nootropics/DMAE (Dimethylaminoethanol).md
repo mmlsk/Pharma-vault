@@ -17,8 +17,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1135
+chembl-max-phase: 2
 half-life:
   value: null
   unit: null
@@ -57,6 +57,29 @@ tags:
 - source-derived
 - group/nootropic
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL1135
+  pref-name: DIMETHYLAMINOETHANOL
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 89.14
+    mw-freebase: 89.14
+    alogp: -0.46
+    psa: 23.47
+    hba: 2
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.49
+    full-molformula: C4H11NO
 ---
 
 # DMAE (Dimethylaminoethanol)
@@ -71,10 +94,19 @@ tags:
 - **Source group:** Nootropics & Cognition (`nootropic`)
 - **Cluster:** [[Nootropics]]
 - **Aliases:** DMAE, Dimethylaminoethanol
+- **ChEMBL:** [CHEMBL1135](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1135/) · max phase 2 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 An older cholinergic-adjacent supplement whose proposed conversion to choline in the brain is poorly supported. Retained mainly because it still appears in stacks.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 89.14 | -0.46 | 23.47 | 1/2 | 0 | C4H11NO |
 
 ## Evidence boundaries
 

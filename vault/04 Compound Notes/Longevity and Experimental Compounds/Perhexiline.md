@@ -60,6 +60,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Perhexiline
@@ -67,6 +68,28 @@ pk-source:
   revision: 1329363061
   retrieved: '2026-09-26'
   chembl-confirmed: true
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL75880
+  pref-name: PERHEXILINE
+  molecule-type: Small molecule
+  first-approval: 1974
+  black-box-warning: false
+  withdrawn: true
+  atc-codes:
+  - C08EX02
+  targets: []
+  properties:
+    full-mwt: 277.5
+    mw-freebase: 277.5
+    alogp: 5.3
+    psa: 12.03
+    hba: 1
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 1
+    qed-weighted: 0.74
+    full-molformula: C19H35N
 ---
 
 # Perhexiline
@@ -80,7 +103,7 @@ pk-source:
 - **Compound ID:** `perhexiline-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL75880](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL75880/) · max phase 4
+- **ChEMBL:** [CHEMBL75880](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL75880/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -89,6 +112,17 @@ Carnitine O-palmitoyltransferase 1, muscle isoform inhibitor; approved/marketed 
 ## Mechanism
 
 Carnitine O-palmitoyltransferase 1, muscle isoform inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1974
+- **Flags:** withdrawn
+- **ATC C08EX02:** CARDIOVASCULAR SYSTEM › NON-SELECTIVE CALCIUM CHANNEL BLOCKERS › Other non-selective calcium channel blockers
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 277.5 | 5.3 | 12.03 | 1/1 | 1 | C19H35N |
 
 ## Evidence boundaries
 

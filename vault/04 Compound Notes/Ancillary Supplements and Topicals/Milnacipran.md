@@ -15,7 +15,7 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
+chembl-id: CHEMBL252923
 chembl-max-phase: null
 half-life:
   value: 6.0
@@ -61,6 +61,7 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Milnacipran
@@ -68,6 +69,34 @@ pk-source:
   revision: 1368194075
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL252923
+  pref-name: 1R,2S-MILNACIPRAN
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 246.35
+    mw-freebase: 246.35
+    alogp: 1.77
+    psa: 46.33
+    hba: 2
+    hbd: 1
+    rtb: 5
+    num-ro5-violations: 0
+    qed-weighted: 0.86
+    full-molformula: C15H22N2O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Milnacipran
@@ -81,10 +110,19 @@ pk-source:
 - **Compound ID:** `milnacipran-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
+- **ChEMBL:** [CHEMBL252923](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL252923/) · max phase n/a · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits norepinephrine reuptake, often alongside serotonin effects; blood pressure and discontinuation effects require attention.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 246.35 | 1.77 | 46.33 | 1/2 | 0 | C15H22N2O |
 
 ## Evidence boundaries
 
@@ -103,6 +141,8 @@ Inhibits norepinephrine reuptake, often alongside serotonin effects; blood press
 | Bioavailability | 85 % | 85% |
 | Metabolism | hepatic | Hepatic |
 | Excretion | mainly urinary | Renal |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
 
 ## Safety routing
 

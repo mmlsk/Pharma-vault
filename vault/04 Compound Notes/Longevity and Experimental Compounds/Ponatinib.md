@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL1171837
+chembl-max-phase: 4
 half-life:
   value: 12.0
   value-max: 66.0
@@ -62,6 +62,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- chembl-profile
 pk-source:
   type: wikipedia-infobox
   title: Ponatinib
@@ -69,6 +70,35 @@ pk-source:
   revision: 1371079761
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL1171837
+  pref-name: PONATINIB
+  molecule-type: Small molecule
+  first-approval: 2012
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - L01EA05
+  targets: []
+  properties:
+    full-mwt: 532.57
+    mw-freebase: 532.57
+    alogp: 4.46
+    psa: 65.77
+    hba: 6
+    hbd: 1
+    rtb: 4
+    num-ro5-violations: 1
+    qed-weighted: 0.39
+    full-molformula: C29H27F3N6O
+pk-verification:
+  source: fda-label
+  status: no-label
+  set-id: null
+  url: null
+  checked: '2026-10-01'
+  fields: {}
 ---
 
 # Ponatinib
@@ -82,10 +112,22 @@ pk-source:
 - **Compound ID:** `ponatinib-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL1171837](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1171837/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Inhibits BCR–ABL-family kinase signaling; mutation coverage and off-target cardiovascular risks differ by agent.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2012
+- **Flags:** black-box warning
+- **ATC L01EA05:** ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS › PROTEIN KINASE INHIBITORS › BCR-ABL tyrosine kinase inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 532.57 | 4.46 | 65.77 | 1/6 | 1 | C29H27F3N6O |
 
 ## Evidence boundaries
 
@@ -105,6 +147,15 @@ Inhibits BCR–ABL-family kinase signaling; mutation coverage and off-target car
 | Metabolism | hepatic | Liver (CYP3A4, 2C8, 2D6, 3A5) |
 | CYP (metabolised by) | CYP3A4 | roles as inhibitor/inducer not assessed |
 | Excretion | mainly non-renal | Feces (87%), urine (5%) |
+
+_No FDA label found for automated cross-check (not US-approved, or different name)._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Asciminib]], [[Bosutinib]], [[Dasatinib (Sprycel)]], [[Imatinib]], [[Nilotinib]]
+- **Shared CYP substrate pool:** CYP3A4 (+204 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 

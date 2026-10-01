@@ -54,6 +54,28 @@ tags:
 - source-derived
 - group/pct
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL494753
+  pref-name: ESTRONE SULFURIC ACID
+  molecule-type: Small molecule
+  first-approval: 1977
+  black-box-warning: true
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 350.44
+    mw-freebase: 350.44
+    alogp: 3.29
+    psa: 80.67
+    hba: 4
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.83
+    full-molformula: C18H22O5S
 ---
 
 # Estrone Sulfuric Acid
@@ -67,7 +89,7 @@ tags:
 - **Compound ID:** `estrone-sulfuric-acid-compound`
 - **Source group:** SERMs, AIs & Antiandrogens (`pct`)
 - **Cluster:** [[Androgens SARMs and PCT]]
-- **ChEMBL:** [CHEMBL494753](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL494753/) · max phase 4
+- **ChEMBL:** [CHEMBL494753](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL494753/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -76,6 +98,16 @@ Estrogen receptor alpha agonist; approved/marketed compound catalogued by ChEMBL
 ## Mechanism
 
 Estrogen receptor alpha agonist _(ChEMBL curated mechanism, as quoted by the source)._
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 1977
+- **Flags:** black-box warning
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 350.44 | 3.29 | 80.67 | 1/4 | 0 | C18H22O5S |
 
 ## Evidence boundaries
 

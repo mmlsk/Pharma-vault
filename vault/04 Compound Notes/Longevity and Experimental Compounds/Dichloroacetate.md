@@ -15,8 +15,8 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL13960
+chembl-max-phase: 3
 half-life:
   value: null
   unit: null
@@ -54,6 +54,29 @@ tags:
 - source-derived
 - group/longevity
 - stub
+- chembl-profile
+- chembl-name-match
+chembl:
+  identity-source: chembl-name-match
+  parent-id: CHEMBL13960
+  pref-name: DICHLOROACETIC ACID
+  molecule-type: Small molecule
+  first-approval: null
+  black-box-warning: false
+  withdrawn: false
+  atc-codes: []
+  targets: []
+  properties:
+    full-mwt: 128.94
+    mw-freebase: 128.94
+    alogp: 0.87
+    psa: 37.3
+    hba: 1
+    hbd: 1
+    rtb: 1
+    num-ro5-violations: 0
+    qed-weighted: 0.53
+    full-molformula: C2H2Cl2O2
 ---
 
 # Dichloroacetate
@@ -67,10 +90,19 @@ tags:
 - **Compound ID:** `dichloroacetate-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
+- **ChEMBL:** [CHEMBL13960](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL13960/) · max phase 3 · id via exact ChEMBL name match - confirm
 
 ## Source summary
 
 PDK inhibitor that forces pyruvate into oxidation; studied in congenital lactic acidosis and, speculatively, oncology. Peripheral neuropathy limits chronic use.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 128.94 | 0.87 | 37.3 | 1/1 | 0 | C2H2Cl2O2 |
 
 ## Evidence boundaries
 

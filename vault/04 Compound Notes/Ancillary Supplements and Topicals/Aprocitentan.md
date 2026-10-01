@@ -54,6 +54,32 @@ tags:
 - source-derived
 - group/ancillary
 - stub
+- chembl-profile
+chembl:
+  identity-source: catalogue
+  parent-id: CHEMBL2165326
+  pref-name: APROCITENTAN
+  molecule-type: Small molecule
+  first-approval: 2024
+  black-box-warning: true
+  withdrawn: false
+  atc-codes:
+  - C02KN01
+  targets:
+  - id: CHEMBL2096678
+    name: Endothelin receptor, ET-A/ET-B
+    action: ANTAGONIST
+  properties:
+    full-mwt: 546.2
+    mw-freebase: 546.2
+    alogp: 2.53
+    psa: 142.21
+    hba: 8
+    hbd: 2
+    rtb: 8
+    num-ro5-violations: 1
+    qed-weighted: 0.41
+    full-molformula: C16H14Br2N6O4S
 ---
 
 # Aprocitentan
@@ -67,7 +93,7 @@ tags:
 - **Compound ID:** `aprocitentan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2165326](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2165326/) · max phase 4
+- **ChEMBL:** [CHEMBL2165326](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2165326/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
@@ -77,6 +103,21 @@ Endothelin receptor, ET-A/ET-B antagonist; approved/marketed compound catalogued
 
 Endothelin receptor, ET-A/ET-B antagonist _(ChEMBL curated mechanism, as quoted by the source)._
 
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2024
+- **Flags:** black-box warning
+- **ATC C02KN01:** CARDIOVASCULAR SYSTEM › OTHER ANTIHYPERTENSIVES › Other antihypertensives
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 546.2 | 2.53 | 142.21 | 2/8 | 1 | C16H14Br2N6O4S |
+
+**Targets (ChEMBL curated mechanisms):**
+
+- [[Endothelin receptor, ET-A-ET-B (CHEMBL2096678)|Endothelin receptor, ET-A/ET-B]] - antagonist · PROTEIN FAMILY
+
 ## Evidence boundaries
 
 - Evidence tier: _not assigned_ - see [[Evidence Tiers]].
@@ -85,6 +126,12 @@ Endothelin receptor, ET-A/ET-B antagonist _(ChEMBL curated mechanism, as quoted 
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Shared target:** [[Ambrisentan]] (Endothelin receptor, ET-A/ET-B), [[Bosentan]] (Endothelin receptor, ET-A/ET-B), [[Macitentan]] (Endothelin receptor, ET-A/ET-B), [[Sitaxentan]] (Endothelin receptor, ET-A/ET-B)
 
 ## Safety routing
 

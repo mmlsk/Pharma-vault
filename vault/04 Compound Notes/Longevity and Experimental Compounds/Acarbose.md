@@ -52,7 +52,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - evidence-limited
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -60,6 +60,7 @@ tags:
 - group/longevity
 - stub
 - pk-auto
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Acarbose
@@ -67,6 +68,14 @@ pk-source:
   revision: 1369016458
   retrieved: '2026-09-26'
   chembl-confirmed: false
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 1ba7a072-03b0-41f2-be7a-101145bdef3a
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1ba7a072-03b0-41f2-be7a-101145bdef3a
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
 ---
 
 # Acarbose
@@ -101,6 +110,10 @@ Alpha-glucosidase inhibitor that slows carbohydrate digestion in the gut, blunti
 | Bioavailability | - | Extremely low |
 | Metabolism | - | Gastrointestinal tract |
 | Excretion | mainly urinary | Kidney (less than 2%) |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 1ba7a072…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1ba7a072-03b0-41f2-be7a-101145bdef3a), label version 20260811. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 2)
 
 ## Safety routing
 

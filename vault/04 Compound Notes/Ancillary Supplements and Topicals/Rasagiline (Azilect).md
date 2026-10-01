@@ -17,13 +17,13 @@ off-label-contexts: []
 regulatory-status: null
 evidence-level: null
 review-status: stub
-chembl-id: null
-chembl-max-phase: null
+chembl-id: CHEMBL887
+chembl-max-phase: 4
 half-life:
   value: 3.0
   value-max: null
   unit: h
-  notes: 3hours
+  notes: 3 hours
 protein-binding:
   value: 88.0
   value-max: 94.0
@@ -56,7 +56,7 @@ monitoring: []
 risk-domains: []
 group-risk-triage:
 - needs-compound-review
-source-status: auto-extracted
+source-status: partially-verified
 last-reviewed: null
 tags:
 - compound
@@ -64,6 +64,8 @@ tags:
 - group/ancillary
 - stub
 - pk-auto
+- chembl-profile
+- pk-fda-consistent
 pk-source:
   type: wikipedia-infobox
   title: Rasagiline
@@ -71,6 +73,37 @@ pk-source:
   revision: 1375491838
   retrieved: '2026-09-26'
   chembl-confirmed: false
+chembl:
+  identity-source: wikipedia-infobox
+  parent-id: CHEMBL887
+  pref-name: RASAGILINE
+  molecule-type: Small molecule
+  first-approval: 2005
+  black-box-warning: false
+  withdrawn: false
+  atc-codes:
+  - N04BD02
+  targets: []
+  properties:
+    full-mwt: 171.24
+    mw-freebase: 171.24
+    alogp: 1.9
+    psa: 12.03
+    hba: 1
+    hbd: 1
+    rtb: 2
+    num-ro5-violations: 0
+    qed-weighted: 0.67
+    full-molformula: C12H13N
+pk-verification:
+  source: fda-label
+  status: consistent
+  set-id: 9bf059f4-4da8-48fe-aacb-c50717d36606
+  url: https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9bf059f4-4da8-48fe-aacb-c50717d36606
+  checked: '2026-10-01'
+  fields:
+    half-life: consistent
+    protein-binding: consistent
 ---
 
 # Rasagiline (Azilect)
@@ -85,10 +118,21 @@ pk-source:
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **Aliases:** Rasagiline, Azilect
+- **ChEMBL:** [CHEMBL887](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL887/) · max phase 4 · id via Wikipedia infobox
 
 ## Source summary
 
 Selective irreversible MAO-B inhibitor of the propargylamine class, given once daily for Parkinson's disease.
+
+## ChEMBL profile
+
+- **Molecule type:** Small molecule
+- **First approval (ChEMBL):** 2005
+- **ATC N04BD02:** NERVOUS SYSTEM › DOPAMINERGIC AGENTS › Monoamine oxidase B inhibitors
+
+| MW (free base) | ALogP | PSA | HBD/HBA | Ro5 violations | Formula |
+|---|---|---|---|---|---|
+| 171.24 | 1.9 | 12.03 | 1/1 | 0 | C12H13N |
 
 ## Evidence boundaries
 
@@ -102,13 +146,25 @@ Selective irreversible MAO-B inhibitor of the propargylamine class, given once d
 
 | Parameter | Parsed | Source text |
 |---|---|---|
-| Elimination t½ | 3 h | 3hours |
+| Elimination t½ | 3 h | 3 hours |
 | Protein binding | 88–94 % | 88–94% |
 | Bioavailability | 36 % | 36% |
 | Metabolism | hepatic | Liver (CYP1A2) |
 | CYP (metabolised by) | CYP1A2 | roles as inhibitor/inducer not assessed |
 | Metabolites | - | • (R)-1-Aminoindan; • 3-OH-PAI; • 3-OH-AI |
 | Excretion | mainly urinary | Urine: 62%; Feces: 7% |
+
+> [!success] FDA label cross-check: **consistent**
+> Automated comparison with the [US prescribing information (DailyMed set 9bf059f4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9bf059f4-4da8-48fe-aacb-c50717d36606), label version 20260826. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
+> - half-life: consistent (label values: 3)
+> - protein-binding: consistent (label values: 61, 63, 88, 94)
+
+## Related compounds (auto)
+
+_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
+
+- **Same ATC subgroup:** [[Safinamide]], [[Selegiline (L-Deprenyl)]], [[Selegiline (oral)]]
+- **Shared CYP substrate pool:** CYP1A2 (+42 others) → [[CYP450 Metabolism]]
 
 ## Safety routing
 
