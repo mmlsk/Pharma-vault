@@ -64,7 +64,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
-- identity-confirmed
+- identity-conflict
 pk-source:
   type: wikipedia-infobox
   title: Lesinurad
@@ -97,7 +97,7 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.64
     full-molformula: C17H14BrN3O2S
-  identity-check: structure-confirmed
+  identity-check: conflict
 pk-verification:
   source: fda-label
   status: no-label
@@ -118,7 +118,7 @@ pk-verification:
 - **Compound ID:** `lesinurad-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL2105720](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105720/) · max phase 4 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
+- **ChEMBL:** [CHEMBL2105720](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105720/) · max phase 4 · id via exact ChEMBL name match · structure check: ❌ conflicts with PubChem - see Review Queue
 
 ## Source summary
 

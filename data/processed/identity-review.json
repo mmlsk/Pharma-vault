@@ -2229,27 +2229,6 @@
   "verdict": "connectivity-match"
  },
  {
-  "compound_id": "arginine-compound",
-  "name": "L-Arginine",
-  "tier": "chembl-name-match",
-  "chembl-id": "CHEMBL1485",
-  "pref-name": "ARGININE",
-  "matched-name": "L-Arginine",
-  "chembl-inchikeys": [
-   "ODKSFYDXXFIFQN-BYPYZUCNSA-N"
-  ],
-  "evidence": [
-   {
-    "via": "name-cid",
-    "cid": 6322,
-    "inchikey": "ODKSFYDXXFIFQN-BYPYZUCNSA-N",
-    "formula": "C6H14N4O2",
-    "title": "L-Arginine"
-   }
-  ],
-  "verdict": "structure-confirmed"
- },
- {
   "compound_id": "aripiprazole-compound",
   "name": "Aripiprazole",
   "tier": "wikipedia-infobox",
@@ -4323,27 +4302,6 @@
   "verdict": "structure-confirmed"
  },
  {
-  "compound_id": "bpc157-compound",
-  "name": "BPC-157",
-  "tier": "wikipedia-infobox",
-  "chembl-id": "CHEMBL4297358",
-  "pref-name": "BPC-157",
-  "matched-name": null,
-  "chembl-inchikeys": [
-   "HEEWEZGQMLZMFE-RKGINYAYSA-N"
-  ],
-  "evidence": [
-   {
-    "via": "infobox-cid",
-    "cid": 9941957,
-    "inchikey": "HEEWEZGQMLZMFE-RKGINYAYSA-N",
-    "formula": "C62H98N16O22",
-    "title": "Bpc-157"
-   }
-  ],
-  "verdict": "structure-confirmed"
- },
- {
   "compound_id": "brazikumab-compound",
   "name": "Brazikumab",
   "tier": "chembl-name-match",
@@ -5760,22 +5718,6 @@
   "verdict": "inn-match-ema"
  },
  {
-  "compound_id": "certolizumab-pegol-compound",
-  "name": "Certolizumab Pegol",
-  "tier": "chembl-name-match",
-  "chembl-id": "CHEMBL1201831",
-  "pref-name": "CERTOLIZUMAB PEGOL",
-  "matched-name": "Certolizumab Pegol",
-  "chembl-inchikeys": [],
-  "evidence": [
-   {
-    "via": "ema-inn",
-    "ema-number": "EMEA/H/C/001037"
-   }
-  ],
-  "verdict": "inn-match-ema"
- },
- {
   "compound_id": "cetilistat-compound",
   "name": "Cetilistat",
   "tier": "wikipedia-infobox",
@@ -6357,27 +6299,6 @@
     "inchikey": "VLIUIBXPEDFJRF-UHFFFAOYSA-N",
     "formula": "C24H26ClN5O3",
     "title": "Citarinostat"
-   }
-  ],
-  "verdict": "structure-confirmed"
- },
- {
-  "compound_id": "citrulline-compound",
-  "name": "L-Citrulline",
-  "tier": "chembl-name-match",
-  "chembl-id": "CHEMBL444814",
-  "pref-name": "L-CITRULLINE",
-  "matched-name": "L-Citrulline",
-  "chembl-inchikeys": [
-   "RHGKLRLOHDJJDR-BYPYZUCNSA-N"
-  ],
-  "evidence": [
-   {
-    "via": "name-cid",
-    "cid": 9750,
-    "inchikey": "RHGKLRLOHDJJDR-BYPYZUCNSA-N",
-    "formula": "C6H13N3O3",
-    "title": "Citrulline"
    }
   ],
   "verdict": "structure-confirmed"
@@ -13569,27 +13490,6 @@
   "verdict": "structure-confirmed"
  },
  {
-  "compound_id": "halobetasol-compound",
-  "name": "Halobetasol Propionate",
-  "tier": "wikipedia-infobox",
-  "chembl-id": "CHEMBL1200908",
-  "pref-name": "HALOBETASOL PROPIONATE",
-  "matched-name": null,
-  "chembl-inchikeys": [
-   "BDSYKGHYMJNPAB-LICBFIPMSA-N"
-  ],
-  "evidence": [
-   {
-    "via": "infobox-cid",
-    "cid": 6918178,
-    "inchikey": "BDSYKGHYMJNPAB-LICBFIPMSA-N",
-    "formula": "C25H31ClF2O5",
-    "title": "Halobetasol Propionate"
-   }
-  ],
-  "verdict": "structure-confirmed"
- },
- {
   "compound_id": "haloperidol-compound",
   "name": "Haloperidol",
   "tier": "wikipedia-infobox",
@@ -15360,27 +15260,6 @@
   "verdict": "structure-confirmed"
  },
  {
-  "compound_id": "kisspeptin10-compound",
-  "name": "Kisspeptin-10",
-  "tier": "chembl-name-match",
-  "chembl-id": "CHEMBL376756",
-  "pref-name": "KISSPEPTIN-10",
-  "matched-name": "Kisspeptin-10",
-  "chembl-inchikeys": [
-   "RITKWYDZSSQNJI-INXYWQKQSA-N"
-  ],
-  "evidence": [
-   {
-    "via": "name-cid",
-    "cid": 25240297,
-    "inchikey": "RITKWYDZSSQNJI-INXYWQKQSA-N",
-    "formula": "C63H83N17O14",
-    "title": "Kisspeptin-10"
-   }
-  ],
-  "verdict": "structure-confirmed"
- },
- {
   "compound_id": "kojic-acid-compound",
   "name": "Kojic Acid",
   "tier": "chembl-name-match",
@@ -15867,27 +15746,6 @@
   "verdict": "structure-confirmed"
  },
  {
-  "compound_id": "latanoprostene-compound",
-  "name": "Latanoprostene Bunod",
-  "tier": "chembl-name-match",
-  "chembl-id": "CHEMBL2364612",
-  "pref-name": "LATANOPROSTENE BUNOD",
-  "matched-name": "Latanoprostene Bunod",
-  "chembl-inchikeys": [
-   "LOVMMUBRQUFEAH-UIEAZXIASA-N"
-  ],
-  "evidence": [
-   {
-    "via": "name-cid",
-    "cid": 11156438,
-    "inchikey": "LOVMMUBRQUFEAH-UIEAZXIASA-N",
-    "formula": "C27H41NO8",
-    "title": "Latanoprostene Bunod"
-   }
-  ],
-  "verdict": "structure-confirmed"
- },
- {
   "compound_id": "lby-135-compound",
   "name": "LBY-135",
   "tier": "chembl-name-match",
@@ -16144,7 +16002,7 @@
     "title": "Lesinurad"
    }
   ],
-  "verdict": "structure-confirmed"
+  "verdict": "conflict"
  },
  {
   "compound_id": "lestaurtinib-compound",
@@ -17060,27 +16918,6 @@
     "inchikey": "PSIFNNKUMBGKDQ-UHFFFAOYSA-N",
     "formula": "C22H23ClN6O",
     "title": "Losartan"
-   }
-  ],
-  "verdict": "structure-confirmed"
- },
- {
-  "compound_id": "loteprednol-compound",
-  "name": "Loteprednol Etabonate",
-  "tier": "wikipedia-infobox",
-  "chembl-id": "CHEMBL1200865",
-  "pref-name": "LOTEPREDNOL ETABONATE",
-  "matched-name": null,
-  "chembl-inchikeys": [
-   "DMKSVUSAATWOCU-HROMYWEYSA-N"
-  ],
-  "evidence": [
-   {
-    "via": "infobox-cid",
-    "cid": 444025,
-    "inchikey": "DMKSVUSAATWOCU-HROMYWEYSA-N",
-    "formula": "C24H31ClO7",
-    "title": "Loteprednol Etabonate"
    }
   ],
   "verdict": "structure-confirmed"
@@ -22123,7 +21960,7 @@
     "title": "Pardoprunox"
    }
   ],
-  "verdict": "structure-confirmed"
+  "verdict": "conflict"
  },
  {
   "compound_id": "pargyline-compound",

@@ -182,7 +182,7 @@ Sodium channel alpha subunit blocker _(ChEMBL curated mechanism of the parent mo
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 75d68f19…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=75d68f19-4208-109e-e053-2991aa0ac857), label version 20260727. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 0.8, 12)
-> - protein-binding: consistent (label values: 9, 35, 55, 60, 96)
+> - protein-binding: consistent (label values: 9, 35, 55, 96)
 
 > [!success] EU SmPC cross-check: **consistent**
 > Automated comparison with section 5.2 of the [EU SmPC of *Rilutek*](https://www.ema.europa.eu/en/documents/product-information/rilutek-epar-product-information_en.pdf) (EMEA/H/C/000109). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.

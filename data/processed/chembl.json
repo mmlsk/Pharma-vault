@@ -8001,40 +8001,6 @@
   "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1166/"
  },
  {
-  "compound_id": "arginine-compound",
-  "identity": {
-   "chembl-id": "CHEMBL1485",
-   "parent-chembl-id": "CHEMBL1485",
-   "source": "chembl-name-match",
-   "dedupe-key": "CHEMBL1485",
-   "pref-name": "ARGININE",
-   "matched-name": "L-Arginine"
-  },
-  "molecule-type": "Small molecule",
-  "max-phase": 3.0,
-  "first-approval": null,
-  "black-box-warning": false,
-  "withdrawn": false,
-  "natural-product": true,
-  "prodrug": false,
-  "routes-flagged": [],
-  "atc": [],
-  "properties": {
-   "full-mwt": 174.2,
-   "mw-freebase": 174.2,
-   "alogp": -1.34,
-   "psa": 125.22,
-   "hba": 3,
-   "hbd": 5,
-   "rtb": 5,
-   "num-ro5-violations": 0,
-   "qed-weighted": 0.2,
-   "full-molformula": "C6H14N4O2"
-  },
-  "mechanisms": [],
-  "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1485/"
- },
- {
   "compound_id": "aripiprazole-compound",
   "identity": {
    "chembl-id": "CHEMBL1112",
@@ -15624,32 +15590,6 @@
   "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297358/"
  },
  {
-  "compound_id": "bpc157-compound",
-  "identity": {
-   "chembl-id": "CHEMBL4297358",
-   "parent-chembl-id": "CHEMBL4297358",
-   "source": "wikipedia-infobox",
-   "dedupe-key": "CHEMBL4297358",
-   "pref-name": "BPC-157"
-  },
-  "molecule-type": "Protein",
-  "max-phase": 1.0,
-  "first-approval": null,
-  "black-box-warning": false,
-  "withdrawn": false,
-  "natural-product": true,
-  "prodrug": false,
-  "routes-flagged": [],
-  "atc": [],
-  "properties": {
-   "full-mwt": 1419.56,
-   "mw-freebase": 1419.56,
-   "full-molformula": "C62H98N16O22"
-  },
-  "mechanisms": [],
-  "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL4297358/"
- },
- {
   "compound_id": "brazikumab-compound",
   "identity": {
    "chembl-id": "CHEMBL3833372",
@@ -20776,55 +20716,6 @@
   "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201831/"
  },
  {
-  "compound_id": "certolizumab-pegol-compound",
-  "identity": {
-   "chembl-id": "CHEMBL1201831",
-   "parent-chembl-id": "CHEMBL1201831",
-   "source": "chembl-name-match",
-   "dedupe-key": "CHEMBL1201831",
-   "pref-name": "CERTOLIZUMAB PEGOL",
-   "matched-name": "Certolizumab Pegol"
-  },
-  "molecule-type": "Antibody",
-  "max-phase": 4.0,
-  "first-approval": 2008,
-  "black-box-warning": true,
-  "withdrawn": false,
-  "natural-product": false,
-  "prodrug": false,
-  "routes-flagged": [
-   "parenteral"
-  ],
-  "atc": [
-   {
-    "code": "L04AB05",
-    "level1": "ANTINEOPLASTIC AND IMMUNOMODULATING AGENTS",
-    "level2": "IMMUNOSUPPRESSANTS",
-    "level3": "IMMUNOSUPPRESSANTS",
-    "level4": "Tumor necrosis factor alpha (TNF-alpha) inhibitors",
-    "name": "certolizumab pegol"
-   }
-  ],
-  "properties": {},
-  "mechanisms": [
-   {
-    "action": "INHIBITOR",
-    "text": "TNF-alpha inhibitor",
-    "target-chembl-id": "CHEMBL1825",
-    "target": "Tumor necrosis factor",
-    "target-type": "SINGLE PROTEIN",
-    "organism": "Homo sapiens",
-    "refs": [
-     {
-      "type": "DailyMed",
-      "url": "http://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b4c2c9dc-a0bb-4d64-a667-a67ebe88392d"
-     }
-    ]
-   }
-  ],
-  "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1201831/"
- },
- {
   "compound_id": "cetilistat-compound",
   "identity": {
    "chembl-id": "CHEMBL2103825",
@@ -23253,40 +23144,6 @@
   },
   "mechanisms": [],
   "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL3693786/"
- },
- {
-  "compound_id": "citrulline-compound",
-  "identity": {
-   "chembl-id": "CHEMBL444814",
-   "parent-chembl-id": "CHEMBL444814",
-   "source": "chembl-name-match",
-   "dedupe-key": "CHEMBL444814",
-   "pref-name": "L-CITRULLINE",
-   "matched-name": "L-Citrulline"
-  },
-  "molecule-type": "Small molecule",
-  "max-phase": 3.0,
-  "first-approval": null,
-  "black-box-warning": false,
-  "withdrawn": false,
-  "natural-product": true,
-  "prodrug": false,
-  "routes-flagged": [],
-  "atc": [],
-  "properties": {
-   "full-mwt": 175.19,
-   "mw-freebase": 175.19,
-   "alogp": -1.15,
-   "psa": 118.44,
-   "hba": 3,
-   "hbd": 4,
-   "rtb": 5,
-   "num-ro5-violations": 0,
-   "qed-weighted": 0.39,
-   "full-molformula": "C6H13N3O3"
-  },
-  "mechanisms": [],
-  "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL444814/"
  },
  {
   "compound_id": "citrulline-malate-compound",
@@ -52186,69 +52043,6 @@
   "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200845/"
  },
  {
-  "compound_id": "halobetasol-compound",
-  "identity": {
-   "chembl-id": "CHEMBL1200908",
-   "parent-chembl-id": "CHEMBL1200908",
-   "source": "wikipedia-infobox",
-   "dedupe-key": "CHEMBL1200908",
-   "pref-name": "HALOBETASOL PROPIONATE"
-  },
-  "molecule-type": "Small molecule",
-  "max-phase": 4.0,
-  "first-approval": 1990,
-  "black-box-warning": false,
-  "withdrawn": false,
-  "natural-product": false,
-  "prodrug": false,
-  "routes-flagged": [
-   "topical"
-  ],
-  "atc": [
-   {
-    "code": "D07AC21",
-    "level1": "DERMATOLOGICALS",
-    "level2": "CORTICOSTEROIDS, DERMATOLOGICAL PREPARATIONS",
-    "level3": "CORTICOSTEROIDS, PLAIN",
-    "level4": "Corticosteroids, potent (group III)",
-    "name": "ulobetasol"
-   }
-  ],
-  "properties": {
-   "full-mwt": 484.97,
-   "mw-freebase": 484.97,
-   "alogp": 4.05,
-   "psa": 80.67,
-   "hba": 5,
-   "hbd": 1,
-   "rtb": 4,
-   "num-ro5-violations": 0,
-   "qed-weighted": 0.48,
-   "full-molformula": "C25H31ClF2O5"
-  },
-  "mechanisms": [
-   {
-    "action": "AGONIST",
-    "text": "Glucocorticoid receptor agonist",
-    "target-chembl-id": "CHEMBL2034",
-    "target": "Glucocorticoid receptor",
-    "target-type": "SINGLE PROTEIN",
-    "organism": "Homo sapiens",
-    "refs": [
-     {
-      "type": "PubMed",
-      "url": "http://europepmc.org/abstract/MED/19293512"
-     },
-     {
-      "type": "PubMed",
-      "url": "http://europepmc.org/abstract/MED/9891987"
-     }
-    ]
-   }
-  ],
-  "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200908/"
- },
- {
   "compound_id": "halobetasol-propionate-compound",
   "identity": {
    "chembl-id": "CHEMBL1200908",
@@ -60213,33 +60007,6 @@
   "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL376756/"
  },
  {
-  "compound_id": "kisspeptin10-compound",
-  "identity": {
-   "chembl-id": "CHEMBL376756",
-   "parent-chembl-id": "CHEMBL376756",
-   "source": "chembl-name-match",
-   "dedupe-key": "CHEMBL376756",
-   "pref-name": "KISSPEPTIN-10",
-   "matched-name": "Kisspeptin-10"
-  },
-  "molecule-type": "Protein",
-  "max-phase": 3.0,
-  "first-approval": null,
-  "black-box-warning": false,
-  "withdrawn": false,
-  "natural-product": false,
-  "prodrug": false,
-  "routes-flagged": [],
-  "atc": [],
-  "properties": {
-   "full-mwt": 1302.46,
-   "mw-freebase": 1302.46,
-   "full-molformula": "C63H83N17O14"
-  },
-  "mechanisms": [],
-  "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL376756/"
- },
- {
   "compound_id": "kojic-acid-compound",
   "identity": {
    "chembl-id": "CHEMBL287556",
@@ -61470,74 +61237,6 @@
    "source": "catalogue",
    "dedupe-key": "CHEMBL2364612",
    "pref-name": "LATANOPROSTENE BUNOD"
-  },
-  "molecule-type": "Small molecule",
-  "max-phase": 4.0,
-  "first-approval": 2017,
-  "black-box-warning": false,
-  "withdrawn": false,
-  "natural-product": true,
-  "prodrug": false,
-  "routes-flagged": [
-   "topical"
-  ],
-  "atc": [
-   {
-    "code": "S01EE06",
-    "level1": "SENSORY ORGANS",
-    "level2": "OPHTHALMOLOGICALS",
-    "level3": "ANTIGLAUCOMA PREPARATIONS AND MIOTICS",
-    "level4": "Prostaglandin analogues",
-    "name": "latanoprostene bunod"
-   }
-  ],
-  "properties": {
-   "full-mwt": 507.62,
-   "mw-freebase": 507.62,
-   "alogp": 3.77,
-   "psa": 139.36,
-   "hba": 8,
-   "hbd": 3,
-   "rtb": 18,
-   "num-ro5-violations": 1,
-   "qed-weighted": 0.09,
-   "full-molformula": "C27H41NO8"
-  },
-  "mechanisms": [
-   {
-    "action": "AGONIST",
-    "text": "Prostanoid FP receptor agonist",
-    "target-chembl-id": "CHEMBL1987",
-    "target": "Prostaglandin F2-alpha receptor",
-    "target-type": "SINGLE PROTEIN",
-    "organism": "Homo sapiens",
-    "refs": [
-     {
-      "type": "Other",
-      "url": "http://www.nicox.com/rd/ophthalmic-pipeline/vesneo-latanoprostene-bunod-2/"
-     },
-     {
-      "type": "PubMed",
-      "url": "http://europepmc.org/abstract/MED/21396362"
-     },
-     {
-      "type": "PubMed",
-      "url": "http://europepmc.org/abstract/MED/25488946"
-     }
-    ]
-   }
-  ],
-  "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2364612/"
- },
- {
-  "compound_id": "latanoprostene-compound",
-  "identity": {
-   "chembl-id": "CHEMBL2364612",
-   "parent-chembl-id": "CHEMBL2364612",
-   "source": "chembl-name-match",
-   "dedupe-key": "CHEMBL2364612",
-   "pref-name": "LATANOPROSTENE BUNOD",
-   "matched-name": "Latanoprostene Bunod"
   },
   "molecule-type": "Small molecule",
   "max-phase": 4.0,
@@ -65411,73 +65110,6 @@
   },
   "mechanisms": [],
   "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL191/"
- },
- {
-  "compound_id": "loteprednol-compound",
-  "identity": {
-   "chembl-id": "CHEMBL1200865",
-   "parent-chembl-id": "CHEMBL1200865",
-   "source": "wikipedia-infobox",
-   "dedupe-key": "CHEMBL1200865",
-   "pref-name": "LOTEPREDNOL ETABONATE"
-  },
-  "molecule-type": "Small molecule",
-  "max-phase": 4.0,
-  "first-approval": 1998,
-  "black-box-warning": false,
-  "withdrawn": false,
-  "natural-product": true,
-  "prodrug": false,
-  "routes-flagged": [
-   "topical"
-  ],
-  "atc": [
-   {
-    "code": "S01BA14",
-    "level1": "SENSORY ORGANS",
-    "level2": "OPHTHALMOLOGICALS",
-    "level3": "ANTIINFLAMMATORY AGENTS",
-    "level4": "Corticosteroids, plain",
-    "name": "loteprednol"
-   }
-  ],
-  "properties": {
-   "full-mwt": 466.96,
-   "mw-freebase": 466.96,
-   "alogp": 3.92,
-   "psa": 99.13,
-   "hba": 7,
-   "hbd": 1,
-   "rtb": 4,
-   "num-ro5-violations": 0,
-   "qed-weighted": 0.49,
-   "full-molformula": "C24H31ClO7"
-  },
-  "mechanisms": [
-   {
-    "action": "AGONIST",
-    "text": "Glucocorticoid receptor agonist",
-    "target-chembl-id": "CHEMBL2034",
-    "target": "Glucocorticoid receptor",
-    "target-type": "SINGLE PROTEIN",
-    "organism": "Homo sapiens",
-    "refs": [
-     {
-      "type": "PubMed",
-      "url": "http://europepmc.org/abstract/MED/12861354"
-     },
-     {
-      "type": "PubMed",
-      "url": "http://europepmc.org/abstract/MED/15684812"
-     },
-     {
-      "type": "PubMed",
-      "url": "http://europepmc.org/abstract/MED/17020532"
-     }
-    ]
-   }
-  ],
-  "url": "https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200865/"
  },
  {
   "compound_id": "loteprednol-etabonate-compound",
@@ -70550,7 +70182,7 @@
    "chembl-id": "CHEMBL405110",
    "parent-chembl-id": "CHEMBL191083",
    "source": "wikipedia-infobox",
-   "dedupe-key": "CHEMBL405110",
+   "dedupe-key": "CHEMBL191083",
    "pref-name": "METHYLENE BLUE ANHYDROUS"
   },
   "molecule-type": "Small molecule",

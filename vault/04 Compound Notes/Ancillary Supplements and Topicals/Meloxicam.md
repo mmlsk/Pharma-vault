@@ -167,7 +167,7 @@ Cyclooxygenase-2 inhibitor _(ChEMBL curated mechanism, as quoted by the source).
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 385b7cf4…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=385b7cf4-976a-4a58-9ebc-def8b6e78b75), label version 20260819. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 12.5, 13, 15, 19.2, 19.5, 20)
-> - protein-binding: consistent (label values: 99, 99.4)
+> - protein-binding: consistent (label values: 99.4)
 
 ## Related compounds (auto)
 

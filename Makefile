@@ -24,6 +24,14 @@ chembl-fetch: ; cd scripts && $(PY) enrich_chembl.py fetch && $(PY) enrich_chemb
 verify-fetch: ; cd scripts && $(PY) verify_pk_fda.py fetch && $(PY) verify_pk_fda.py parse
 identity-fetch: ; cd scripts && $(PY) curate_identity.py fetch && $(PY) curate_identity.py parse
 ema-fetch:    ; cd scripts && $(PY) verify_pk_ema.py fetch && $(PY) verify_pk_ema.py parse
-refresh: chembl-fetch expand chembl-fetch identity-fetch enrich verify-fetch ema-fetch all
+refresh:
+	$(MAKE) chembl-fetch
+	$(MAKE) expand
+	$(MAKE) chembl-fetch
+	$(MAKE) identity-fetch
+	$(MAKE) enrich
+	$(MAKE) verify-fetch
+	$(MAKE) ema-fetch
+	$(MAKE) all
 
 clean:     ; rm -rf .pytest_cache scripts/__pycache__ tests/__pycache__ data/processed/substances.xlsx data/processed/pharma-vault.db

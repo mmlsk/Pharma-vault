@@ -53,9 +53,9 @@ tags:
 - compound
 - source-derived
 - group/ancillary
+- merged-duplicate
 - stub
 - chembl-profile
-- possible-duplicate
 chembl:
   identity-source: catalogue
   parent-id: CHEMBL2364612
@@ -98,7 +98,7 @@ chembl:
 
 ## Source summary
 
-Prostanoid FP receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEMBL2364612).
+Prostanoid FP receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEMBL2364612). | Merged duplicate (latanoprostene-compound): Nitric oxide donating prostaglandin analogue for glaucoma, lowering pressure through two outflow routes at once.
 
 ## Mechanism
 
@@ -131,9 +131,8 @@ _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for fiel
 
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
-- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Latanoprostene Bunod (latanoprostene-compound)|Latanoprostene Bunod]]
-- **Shared target:** [[Bimatoprost (Latisse)]] (Prostaglandin F2-alpha receptor), [[Bimatoprost (topical, Latisse)]] (Prostaglandin F2-alpha receptor), [[Latanoprost]] (Prostaglandin F2-alpha receptor), [[Latanoprostene Bunod (latanoprostene-compound)|Latanoprostene Bunod]] (Prostaglandin F2-alpha receptor), [[Tafluprost]] (Prostaglandin F2-alpha receptor), [[Travoprost]] (Prostaglandin F2-alpha receptor)
-- **Same ATC subgroup:** [[Bimatoprost (Latisse)]], [[Bimatoprost (topical, Latisse)]], [[Latanoprost]], [[Latanoprostene Bunod (latanoprostene-compound)|Latanoprostene Bunod]], [[Tafluprost]], [[Travoprost]]
+- **Shared target:** [[Bimatoprost (Latisse)]] (Prostaglandin F2-alpha receptor), [[Bimatoprost (topical, Latisse)]] (Prostaglandin F2-alpha receptor), [[Latanoprost]] (Prostaglandin F2-alpha receptor), [[Tafluprost]] (Prostaglandin F2-alpha receptor), [[Travoprost]] (Prostaglandin F2-alpha receptor)
+- **Same ATC subgroup:** [[Bimatoprost (Latisse)]], [[Bimatoprost (topical, Latisse)]], [[Latanoprost]], [[Tafluprost]], [[Travoprost]]
 
 ## Safety routing
 

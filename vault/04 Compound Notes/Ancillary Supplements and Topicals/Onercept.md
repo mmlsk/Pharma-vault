@@ -115,7 +115,7 @@ _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for fiel
 
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
-- **Shared target:** [[Adalimumab]] (Tumor necrosis factor), [[Afelimomab]] (Tumor necrosis factor), [[Certolizumab Pegol]] (Tumor necrosis factor), [[Certolizumab Pegol]] (Tumor necrosis factor), [[Etanercept]] (Tumor necrosis factor), [[Golimumab]] (Tumor necrosis factor), [[Infliximab]] (Tumor necrosis factor), [[Infliximab-abda]] (Tumor necrosis factor), [[Ozoralizumab]] (Tumor necrosis factor)
+- **Shared target:** [[Adalimumab]] (Tumor necrosis factor), [[Afelimomab]] (Tumor necrosis factor), [[Certolizumab Pegol]] (Tumor necrosis factor), [[Etanercept]] (Tumor necrosis factor), [[Golimumab]] (Tumor necrosis factor), [[Infliximab]] (Tumor necrosis factor), [[Infliximab-abda]] (Tumor necrosis factor), [[Ozoralizumab]] (Tumor necrosis factor)
 
 ## Safety routing
 

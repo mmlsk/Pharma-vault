@@ -1,11 +1,11 @@
 ---
 type: compound
 schema-version: 2
-compound-id: loteprednol-compound
+compound-id: loteprednol-etabonate-compound
 name: Loteprednol Etabonate
 aliases: []
 cluster: Ancillary Supplements and Topicals
-group: derm
+group: ancillary
 class: null
 subclass: null
 mechanism: Glucocorticoid receptor agonist
@@ -58,21 +58,20 @@ last-reviewed: null
 tags:
 - compound
 - source-derived
-- group/derm
+- group/ancillary
+- merged-duplicate
 - stub
 - pk-auto
 - chembl-profile
-- identity-confirmed
-- possible-duplicate
 pk-source:
   type: wikipedia-infobox
   title: Loteprednol
   url: https://en.wikipedia.org/w/index.php?title=Loteprednol&oldid=1343785671
   revision: 1343785671
   retrieved: '2026-09-26'
-  chembl-confirmed: false
+  chembl-confirmed: true
 chembl:
-  identity-source: wikipedia-infobox
+  identity-source: catalogue
   parent-id: CHEMBL1200865
   pref-name: LOTEPREDNOL ETABONATE
   molecule-type: Small molecule
@@ -96,7 +95,6 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.49
     full-molformula: C24H31ClO7
-  identity-check: structure-confirmed
 pk-verification:
   source: fda-label
   status: no-label-value
@@ -116,18 +114,18 @@ pk-verification:
 
 ## Identity
 
-- **Compound ID:** `loteprednol-compound`
-- **Source group:** Dermatology & Topicals (`derm`)
+- **Compound ID:** `loteprednol-etabonate-compound`
+- **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200865](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200865/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
+- **ChEMBL:** [CHEMBL1200865](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200865/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
-Ophthalmic ester corticosteroid designed to be inactivated rapidly in the eye, lowering the intraocular pressure risk.
+Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEMBL1200865). | Merged duplicate (loteprednol-compound): Ophthalmic ester corticosteroid designed to be inactivated rapidly in the eye, lowering the intraocular pressure risk.
 
 ## Mechanism
 
-Glucocorticoid receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## ChEMBL profile
 
@@ -151,7 +149,7 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism of the parent molecul
 ## Pharmacokinetics
 
 > [!info] Auto-extracted - verify before use
-> Parsed from the [Wikipedia infobox of *Loteprednol*](https://en.wikipedia.org/w/index.php?title=Loteprednol&oldid=1343785671) (revision 1343785671, retrieved 2026-09-26); identity matched by name. Confirm against the SmPC / FDA label before relying on it.
+> Parsed from the [Wikipedia infobox of *Loteprednol*](https://en.wikipedia.org/w/index.php?title=Loteprednol&oldid=1343785671) (revision 1343785671, retrieved 2026-09-26); ChEMBL id matches the catalogue. Confirm against the SmPC / FDA label before relying on it.
 
 | Parameter | Parsed | Source text |
 |---|---|---|
@@ -170,9 +168,8 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism of the parent molecul
 
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
-- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Loteprednol Etabonate (loteprednol-etabonate-compound)|Loteprednol Etabonate]]
 - **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor)
-- **Same ATC subgroup:** [[Alclometasone Dipropionate]], [[Betamethasone]], [[Cortisone Acetate]], [[Desonide]], [[Dexamethasone]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluorometholone]], [[Hydrocortisone (Cortef)]], [[Loteprednol Etabonate (loteprednol-etabonate-compound)|Loteprednol Etabonate]], [[Medrysone]], [[Prednisolone]]
+- **Same ATC subgroup:** [[Alclometasone Dipropionate]], [[Betamethasone]], [[Cortisone Acetate]], [[Desonide]], [[Dexamethasone]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluorometholone]], [[Hydrocortisone (Cortef)]], [[Medrysone]], [[Prednisolone]], [[Rimexolone]]
 
 ## Safety routing
 

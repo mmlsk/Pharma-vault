@@ -4,7 +4,7 @@ chembl-target-id: CHEMBL1825
 name: Tumor necrosis factor
 target-type: SINGLE PROTEIN
 organism: Homo sapiens
-compounds: 10
+compounds: 9
 tags:
 - target
 - generated
@@ -19,7 +19,6 @@ Catalogue compounds whose ChEMBL curated mechanism acts on this target:
 - [[Adalimumab]] - Ancillary Supplements and Topicals
 - [[Afelimomab]] - Ancillary Supplements and Topicals
 - [[Certolizumab Pegol]] - General Pharmacology
-- [[Certolizumab Pegol]] - Ancillary Supplements and Topicals
 - [[Etanercept]] - Ancillary Supplements and Topicals
 - [[Golimumab]] - Ancillary Supplements and Topicals
 - [[Infliximab-abda]] - Ancillary Supplements and Topicals

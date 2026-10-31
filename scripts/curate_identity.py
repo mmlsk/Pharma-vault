@@ -121,7 +121,7 @@ def fetch() -> None:
     # salts / mixtures: for evidence CIDs that still conflict, add the PubChem *parent* compound
     parse(write=False)
     rev = json.loads((PROCESSED / "identity-review.json").read_text(encoding="utf-8")) if (PROCESSED / "identity-review.json").exists() else []
-    need = sorted({e["cid"] for x in rev if x["verdict"] == "conflict" for e in x["evidence"]} - {k for k, v in cids.items() if "parent" in v})
+    need = sorted({e["cid"] for x in rev if x["verdict"] == "conflict" for e in x["evidence"] if "cid" in e} - {k for k, v in cids.items() if "parent" in v})
     for c in need:
         data = http_json(f"{PUBCHEM}/compound/cid/{c}/cids/JSON?cids_type=parent") or {}
         par = ((data.get("IdentifierList") or {}).get("CID") or [None])[0]
@@ -196,7 +196,7 @@ def parse(write: bool = True) -> None:
         # an infobox CID is page-specific -> it outranks a name lookup when both exist
         ibe = [e for e in ev if e["via"].startswith("infobox")]
         v1 = verdict({e["inchikey"] for e in ibe}, ref, {e["formula"] for e in ibe if e["formula"]}, rf) if ibe else None
-        v = v1 if v1 and v1 != "conflict" else verdict(keys, ref, forms, rf)
+        v = v1 if v1 and v1 not in ("no-evidence", "unresolved") else verdict(keys, ref, forms, rf)
         out.append({"compound_id": r["compound_id"], "name": cat[r["compound_id"]]["name"], "tier": i["source"],
                     "chembl-id": i["chembl-id"], "pref-name": i.get("pref-name"), "matched-name": i.get("matched-name"),
                     "chembl-inchikeys": sorted(ref), "evidence": ev, "verdict": v})

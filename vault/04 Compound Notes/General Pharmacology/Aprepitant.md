@@ -181,12 +181,12 @@ Neurokinin 1 receptor antagonist _(ChEMBL curated mechanism of the parent molecu
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set af9b6086…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=af9b6086-4bf2-472c-8740-4134eaaebace), label version 20260611. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
-> - protein-binding: consistent (label values: 21, 32, 95)
+> - protein-binding: consistent (label values: 95)
 
 > [!success] EU SmPC cross-check: **consistent**
 > Automated comparison with section 5.2 of the [EU SmPC of *Emend*](https://www.ema.europa.eu/en/documents/product-information/emend-epar-product-information_en.pdf) (EMEA/H/C/000527) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/emend-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 9, 13)
-> - protein-binding: consistent (SmPC values: 21, 32, 97)
+> - protein-binding: consistent (SmPC values: 97)
 
 ## Related compounds (auto)
 

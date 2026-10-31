@@ -39,6 +39,10 @@ HL_SENT = re.compile(r"half[- ]li(?:fe|ves)|\bt\s?(?:1/2|½)|\bt1/2\b|terminal (
 PB_SENT = re.compile(r"(protein[- ]bound|bound to (?:human )?(?:plasma|serum)|protein binding|plasma protein)", re.I)
 HL_VAL = re.compile(NUM + r"\s*(?:(?:to|-|–|and)\s*" + NUM + r")?\s*(hours?|hrs?|h|minutes?|min|days?)\b", re.I)
 PB_VAL = re.compile(NUM + r"\s*(?:(?:to|-|–|and)\s*" + NUM + r")?\s*%")
+PB_NOISE = re.compile(
+    r"\b(?:bioavailability|dose|excreted|recovered|urine|feces|faeces|clearance|impairment|reduction|increase[ds]?|decrease[ds]?|patients)\b",
+    re.I,
+)
 TO_H = {"h": 1, "hr": 1, "hrs": 1, "hour": 1, "hours": 1, "min": 1 / 60, "minute": 1 / 60, "minutes": 1 / 60, "day": 24, "days": 24}
 UNIT_H = {"min": 1 / 60, "h": 1, "d": 24, "wk": 168}
 
@@ -95,7 +99,7 @@ def fetch_one(item) -> dict:
 
 
 def load(p):
-    return {json.loads(l)["compound_id"]: json.loads(l) for l in p.read_text(encoding="utf-8").splitlines()} if p.exists() else {}
+    return {r["compound_id"]: r for l in p.read_text(encoding="utf-8").splitlines() if l.strip() for r in (json.loads(l),)} if p.exists() else {}
 
 
 def inputs():
@@ -139,8 +143,12 @@ def hl_values(sents: list[str]) -> list[float]:
 def pb_values(sents: list[str]) -> list[float]:
     vals = []
     for s in sents:
-        for m in PB_VAL.finditer(strip_sd(s)):
-            vals += [float(g) for g in m.groups() if g and float(g) <= 100]
+        for cl in re.split(r"[,;()]", strip_sd(s)):
+            for m in PB_VAL.finditer(cl):
+                ctx = cl[max(0, m.start() - 28):m.end() + 25]
+                if PB_NOISE.search(ctx) and not re.search(r"\b(?:bound|binding)\b", ctx, re.I):
+                    continue
+                vals += [float(g) for g in m.groups() if g and float(g) <= 100]
     return vals
 
 

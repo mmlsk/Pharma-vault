@@ -6,16 +6,16 @@
   "inn-match-ema": 48,
   "no-chembl-structure": 18,
   "no-evidence": 4,
-  "structure-confirmed": 895
+  "structure-confirmed": 892
  },
  "chembl-name-match": {
-  "conflict": 3,
+  "conflict": 5,
   "connectivity-match": 22,
   "formula-match": 5,
-  "inn-match-ema": 72,
+  "inn-match-ema": 71,
   "no-chembl-structure": 127,
   "no-evidence": 8,
-  "structure-confirmed": 367
+  "structure-confirmed": 361
  },
  "curated-identity": {
   "structure-confirmed": 3

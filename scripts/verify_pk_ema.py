@@ -33,18 +33,14 @@ from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
 
-from pv_common import PROCESSED, ROOT
-from verify_pk_fda import HL_SENT, PB_SENT, UNIT_H, compare, eligible, hl_values, inputs, load, pb_values
+from pv_common import PROCESSED, ROOT, SALT
+from verify_pk_fda import HL_SENT, PB_SENT, UNIT_H, compare, eligible, hl_values, inputs, load, pb_values, sentences
 
 OUT = ROOT / "data/enrichment/ema"
 MEDS, CACHE = OUT / "medicines.jsonl", OUT / "smpc-pk.jsonl"
 REPORT = "https://www.ema.europa.eu/en/documents/report/medicines-output-medicines_json-report_en.json"
 DOC = "https://www.ema.europa.eu/{lang}/documents/product-information/{slug}-epar-product-information_{lang}.pdf"
 UA = "Mozilla/5.0 (Pharma-vault/3.3; educational pharmacology research; https://github.com/mmlsk/Pharma-vault)"
-SALT = re.compile(r"\b(hydrochloride|dihydrochloride|hydrobromide|sodium|disodium|potassium|calcium|magnesium|mesilate|mesylate|"
-                  r"maleate|fumarate|hemifumarate|succinate|tartrate|citrate|phosphate|sulfate|sulphate|acetate|besilate|"
-                  r"besylate|tosilate|monohydrate|dihydrate|trihydrate|hemihydrate|anhydrous|bromide|chloride|hyclate|"
-                  r"embonate|pamoate|arginine|lysine|meglumine|tromethamine|dipropionate|propionate|furoate)\b", re.I)
 KEEP = ["name_of_medicine", "ema_product_number", "international_non_proprietary_name_common_name", "active_substance",
         "atc_code_human", "medicine_status", "generic", "biosimilar", "marketing_authorisation_date",
         "last_updated_date", "medicine_url", "revision_number"]
@@ -125,13 +121,13 @@ def match(pk: dict, ch: dict, cat: dict, meds: list[dict]) -> dict:
 
 
 def section_52(text: str) -> str:
-    """First 'Pharmacokinetic properties' section of the SmPC (Annex I) up to 5.3."""
-    m = re.search(r"\n\s*5\.2\.?\s+Pharmacokinetic properties\s*\n(.*?)\n\s*5\.3\.?\s+Preclinical", text, re.S | re.I)
-    return re.sub(r"\s+", " ", m.group(1)) if m else ""
-
-
-def sentences(text: str, rx) -> list[str]:
-    return [s.strip() for s in re.split(r"(?<=[.;])\s+(?=[A-Z(])", text) if rx.search(s)][:16]
+    """Largest 'Pharmacokinetic properties' section of the SmPC (Annex I) up to 5.3."""
+    ms = re.findall(
+        r"(?:^|\n)\s*5\.2\.?\s+Pharmacokinetic properties[^\n]*(.*?)\n\s*5\.3\.?\s+(?:Preclinical|Non-?clinical)",
+        text,
+        re.S | re.I,
+    )
+    return re.sub(r"\s+", " ", max(ms, key=len)).strip() if ms else ""
 
 
 def fetch_one(item) -> dict:

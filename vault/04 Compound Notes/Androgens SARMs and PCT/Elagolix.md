@@ -162,7 +162,7 @@ Gonadotropin-releasing hormone receptor antagonist _(ChEMBL curated mechanism, a
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set a86757b3…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a86757b3-09c5-fd3b-1223-244e94f50a66), label version 20251219. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
-> - protein-binding: discrepant (label values: 3, 4, 6, 24, 36)
+> - protein-binding: discrepant (label values: 24, 36)
 
 ## Related compounds (auto)
 

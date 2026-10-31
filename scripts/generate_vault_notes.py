@@ -16,26 +16,22 @@ import re
 
 import yaml
 
-from pv_common import COMPOUND_NOTES, PROCESSED, VAULT, safe_filename
+from pv_common import (
+    CHOLINERGIC,
+    COMPOUND_NOTES,
+    FRONTMATTER,
+    PROCESSED,
+    TRIAGE_TO_HUB,
+    TRIAGE_TO_PATHWAY,
+    VAULT,
+    assign_note_filenames,
+    existing_notes,
+    hubs_and_pathways,
+    load_jsonl,
+    safe_filename,
+)
 
 TARGET_NOTES = VAULT / "07 Targets"
-
-TRIAGE_TO_HUB = {
-    "endocrine-feedback-disruption": "Hormonal Axis Suppression",
-    "cardiovascular-load": "Stimulant and Cardiovascular Load",
-    "evidence-limited": "Experimental and Evidence-Limited Compounds",
-    "identity-contamination": "Experimental and Evidence-Limited Compounds",
-    "growth-plate": "Experimental and Evidence-Limited Compounds",
-    "serotonergic-or-dopaminergic-load": "Serotonin Toxicity",
-    "sedation-respiratory-depression": "Respiratory Depression and Fatal Overdose",
-}
-TRIAGE_TO_PATHWAY = {
-    "cyp-interactions": "CYP450 Metabolism",
-    "glucose-metabolism": "Glucose and Incretin Signaling",
-    "endocrine-feedback-disruption": "HPG and GH-IGF-1 Axes",
-}
-CHOLINERGIC = re.compile(r"cholin|acetylcholinesterase|muscarinic|nicotinic", re.I)
-FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
 
 def frontmatter(r: dict, pk: dict | None = None, ch: dict | None = None, ver: dict | None = None,
@@ -142,8 +138,6 @@ def apply_verification(fm: dict, v: dict) -> None:
     fm["pk-verification"] = {"source": "fda-label", "status": v["status"], "set-id": v.get("set-id"),
                              "url": v.get("url"), "checked": v["checked"],
                              "fields": {k: f["status"] for k, f in v.get("fields", {}).items()}}
-    if v["status"] == "consistent":
-        fm["source-status"] = "partially-verified"
     if v["status"] in ("consistent", "discrepant"):
         fm["tags"] = fm["tags"] + [f"pk-fda-{v['status']}"]
 
@@ -247,16 +241,7 @@ def pk_section(pk: dict | None, ver: dict | None = None, ema: dict | None = None
 
 def body(r: dict, pk: dict | None = None, ch: dict | None = None, ver: dict | None = None,
          rel: dict | None = None, link=None, ema: dict | None = None) -> str:
-    hubs = ["Stacking and Interaction Risks"]
-    for t in r["group_risk_triage"]:
-        if t in TRIAGE_TO_HUB and TRIAGE_TO_HUB[t] not in hubs:
-            hubs.append(TRIAGE_TO_HUB[t])
-    if CHOLINERGIC.search(r["description"] + " " + r["mechanism"]):
-        hubs.append("Cholinergic Load")
-    pathways = {TRIAGE_TO_PATHWAY[t] for t in r["group_risk_triage"] if t in TRIAGE_TO_PATHWAY}
-    if pk and (pk.get("cyp-interactions") or {}).get("substrates"):
-        pathways.add("CYP450 Metabolism")
-    pathways = sorted(pathways)
+    hubs, pathways = hubs_and_pathways(r, pk)
 
     lines = [
         f"# {r['name']}", "",
@@ -385,17 +370,6 @@ def write_target_notes(links: dict, cat: dict, link) -> int:
     return len(keep)
 
 
-def existing_notes() -> dict[str, tuple]:
-    found = {}
-    for p in COMPOUND_NOTES.rglob("*.md"):
-        m = FRONTMATTER.match(p.read_text(encoding="utf-8"))
-        if m:
-            fm = yaml.safe_load(m.group(1)) or {}
-            if fm.get("compound-id"):
-                found[fm["compound-id"]] = (p, fm.get("review-status"))
-    return found
-
-
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--prune", action="store_true", help="delete orphaned stubs")
@@ -415,15 +389,9 @@ def main() -> None:
     links = loadp("links.json") or {}
     rels = links.get("related", {})
     existing = existing_notes()
-    used, written, kept = set(), 0, 0
+    written, kept = 0, 0
     written_paths = set()
-    fnames = {}
-    for r in rows:
-        fname = safe_filename(r["name"])
-        if (r["cluster"], fname.lower()) in used:  # duplicate label -> disambiguate by id
-            fname = f"{fname} ({r['compound_id']})"
-        used.add((r["cluster"], fname.lower()))
-        fnames[r["compound_id"]] = fname
+    fnames = assign_note_filenames(rows, existing)
     cat = {r["compound_id"]: r for r in rows}
     link = lambda c: f"[[{fnames[c]}|{cat[c]['name']}]]" if fnames[c] != cat[c]["name"] else f"[[{fnames[c]}]]"
     for r in rows:

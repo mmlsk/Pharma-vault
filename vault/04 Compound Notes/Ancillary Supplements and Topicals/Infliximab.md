@@ -170,8 +170,8 @@ TNF-alpha inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMB
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
 - ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Infliximab-abda]]
-- **Shared target:** [[Adalimumab]] (Tumor necrosis factor), [[Afelimomab]] (Tumor necrosis factor), [[Certolizumab Pegol]] (Tumor necrosis factor), [[Certolizumab Pegol]] (Tumor necrosis factor), [[Etanercept]] (Tumor necrosis factor), [[Golimumab]] (Tumor necrosis factor), [[Infliximab-abda]] (Tumor necrosis factor), [[Onercept]] (Tumor necrosis factor), [[Ozoralizumab]] (Tumor necrosis factor)
-- **Same ATC subgroup:** [[Adalimumab]], [[Afelimomab]], [[Certolizumab Pegol]], [[Certolizumab Pegol]], [[Etanercept]], [[Golimumab]], [[Infliximab-abda]]
+- **Shared target:** [[Adalimumab]] (Tumor necrosis factor), [[Afelimomab]] (Tumor necrosis factor), [[Certolizumab Pegol]] (Tumor necrosis factor), [[Etanercept]] (Tumor necrosis factor), [[Golimumab]] (Tumor necrosis factor), [[Infliximab-abda]] (Tumor necrosis factor), [[Onercept]] (Tumor necrosis factor), [[Ozoralizumab]] (Tumor necrosis factor)
+- **Same ATC subgroup:** [[Adalimumab]], [[Afelimomab]], [[Certolizumab Pegol]], [[Etanercept]], [[Golimumab]], [[Infliximab-abda]]
 
 ## Safety routing
 

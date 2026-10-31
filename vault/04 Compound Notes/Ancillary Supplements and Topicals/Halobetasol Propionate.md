@@ -1,11 +1,11 @@
 ---
 type: compound
 schema-version: 2
-compound-id: halobetasol-compound
+compound-id: halobetasol-propionate-compound
 name: Halobetasol Propionate
 aliases: []
 cluster: Ancillary Supplements and Topicals
-group: derm
+group: ancillary
 class: null
 subclass: null
 mechanism: Glucocorticoid receptor agonist
@@ -52,13 +52,12 @@ last-reviewed: null
 tags:
 - compound
 - source-derived
-- group/derm
+- group/ancillary
+- merged-duplicate
 - stub
 - chembl-profile
-- identity-confirmed
-- possible-duplicate
 chembl:
-  identity-source: wikipedia-infobox
+  identity-source: catalogue
   parent-id: CHEMBL1200908
   pref-name: HALOBETASOL PROPIONATE
   molecule-type: Small molecule
@@ -82,7 +81,6 @@ chembl:
     num-ro5-violations: 0
     qed-weighted: 0.48
     full-molformula: C25H31ClF2O5
-  identity-check: structure-confirmed
 ---
 
 # Halobetasol Propionate
@@ -93,18 +91,18 @@ chembl:
 
 ## Identity
 
-- **Compound ID:** `halobetasol-compound`
-- **Source group:** Dermatology & Topicals (`derm`)
+- **Compound ID:** `halobetasol-propionate-compound`
+- **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL1200908](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200908/) · max phase 4 · id via Wikipedia infobox · structure check: ✅ InChIKey matches PubChem
+- **ChEMBL:** [CHEMBL1200908](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1200908/) · max phase 4 · id via source catalogue
 
 ## Source summary
 
-Superpotent class I topical corticosteroid, used in short courses and in fixed combination with tazarotene.
+Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEMBL1200908). | Merged duplicate (halobetasol-compound): Superpotent class I topical corticosteroid, used in short courses and in fixed combination with tazarotene.
 
 ## Mechanism
 
-Glucocorticoid receptor agonist _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)._
+Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 
 ## ChEMBL profile
 
@@ -133,9 +131,8 @@ _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for fiel
 
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
-- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Halobetasol Propionate (halobetasol-propionate-compound)|Halobetasol Propionate]]
 - **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor)
-- **Same ATC subgroup:** [[Amcinonide]], [[Beclomethasone Dipropionate]], [[Betamethasone]], [[Budesonide]], [[Desoximetasone]], [[Diflorasone Diacetate]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluocinonide]], [[Flurandrenolide]], [[Fluticasone Propionate]], [[Halobetasol Propionate (halobetasol-propionate-compound)|Halobetasol Propionate]]
+- **Same ATC subgroup:** [[Amcinonide]], [[Beclomethasone Dipropionate]], [[Betamethasone]], [[Budesonide]], [[Desoximetasone]], [[Diflorasone Diacetate]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluocinonide]], [[Flurandrenolide]], [[Fluticasone Propionate]], [[Hydrocortisone Aceponate]]
 
 ## Safety routing
 

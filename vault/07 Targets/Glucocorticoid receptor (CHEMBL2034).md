@@ -4,7 +4,7 @@ chembl-target-id: CHEMBL2034
 name: Glucocorticoid receptor
 target-type: SINGLE PROTEIN
 organism: Homo sapiens
-compounds: 65
+compounds: 63
 tags:
 - target
 - generated
@@ -52,7 +52,6 @@ Catalogue compounds whose ChEMBL curated mechanism acts on this target:
 - [[Fosdagrocorat]] - Ancillary Supplements and Topicals
 - [[Halcinonide]] - Ancillary Supplements and Topicals
 - [[Halobetasol Propionate]] - Ancillary Supplements and Topicals
-- [[Halobetasol Propionate (halobetasol-propionate-compound)|Halobetasol Propionate]] - Ancillary Supplements and Topicals
 - [[Hydrocortisone Acetate]] - Ancillary Supplements and Topicals
 - [[Hydrocortisone Butyrate]] - Ancillary Supplements and Topicals
 - [[Hydrocortisone (Cortef)]] - Ancillary Supplements and Topicals
@@ -60,7 +59,6 @@ Catalogue compounds whose ChEMBL curated mechanism acts on this target:
 - [[Hydrocortisone Probutate]] - Ancillary Supplements and Topicals
 - [[Hydrocortisone Valerate]] - Ancillary Supplements and Topicals
 - [[Loteprednol Etabonate]] - Ancillary Supplements and Topicals
-- [[Loteprednol Etabonate (loteprednol-etabonate-compound)|Loteprednol Etabonate]] - Ancillary Supplements and Topicals
 - [[Mapracorat]] - Ancillary Supplements and Topicals
 - [[Medrysone]] - Ancillary Supplements and Topicals
 - [[Meprednisone]] - Ancillary Supplements and Topicals

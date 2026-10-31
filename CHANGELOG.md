@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.4.0] — 2026-10-31 — deduplikacja katalogu i segmentowy panel grafu
+### Dodano
+- Graf (`apps/graph-viewer/app.js`, `index.html`):
+  - Segmentowy panel szczegółów karty substancji podzielony na 4 dedykowane zakładki: **Przegląd** (właściwości fizykochemiczne MW/ALogP/PSA/Ro5, ATC, identyfikacja, odnośniki), **PK & Etykiety** (parametry infoboksu, kafelki weryfikacji FDA i EMA/ChPL), **Cele & MoA** (mechanizm ChEMBL, cele molekularne i wspólne cele), **Ryzyka** (black box, wycofanie, niezgodność tożsamości, flagi ryzyka, huby bezpieczeństwa, interakcje CYP).
+  - Wskaźniki statusu i liczniki (badges) na zakładkach (`✓ FDA`, `✓ EMA`, `≠`, liczba celów, `⚠`).
+  - Przycisk zamykania karty (`✕`) we wszystkich widokach selekcji (substancja, grupa, cel, hub).
+  - Obsługa skrótów klawiszowych: `Esc` zamyka kartę/selekcję, klawisze `1`–`4` natychmiast przełączają zakładki.
+- `data/curated/merges.csv`: dodano 12 reguł scalania duplikatów między grupami/klastrami (m.in. 5-Amino-1MQ, SLU-PP-332, Certolizumab Pegol, GHK-Cu, BPC-157, Melanotan II, Kisspeptin-10, L-Arginine, L-Citrulline, Halobetasol, Loteprednol, Latanoprostene).
+- `scripts/pv_common.py`: funkcja `assign_note_filenames` automatycznie usuwa sztuczne sufiksy jednoznaczności `({compound_id})`, jeśli nie występuje kolizja nazw w katalogu.
+
+### Zmieniono
+- Kanoniczny katalog: **2525 substancji** (2351 źródłowych − 13 scalonych duplikatów + 187 kuratorowanych dodatków) / 19 grup / 9 klastrów.
+- Usunięto przestarzały plik `apps/graph-viewer/legacy-overview.html`.
+- Zaktualizowano asercje testowe w `tests/test_pipeline.py` pod zaktualizowaną liczbę substancji (wszystkie 36 testów przechodzi pomyślnie).
+- Zsynchronizowano pliki grafu `index.html`, `app.js` i `graph-data.js` w katalogu głównym repozytorium.
+
 ## [3.3.0] — 2026-10-01 — kuracja tożsamości i ChPL/EMA
 ### Dodano
 - `scripts/curate_identity.py` — strukturalne potwierdzenie tożsamości ChEMBL (InChIKey vs PubChem: CID z infoboksu, wyszukanie nazwy, parent CID dla soli) → `identity-review.json/.csv`. Dopasowania nazwy (604): **367 potwierdzonych strukturą + 72 przez INN produktu EMA**, 27 różnic stereo/tautomerów, 127 biologików bez struktury, 8 bez danych, 3 konflikty (2 rozstrzygnięte).

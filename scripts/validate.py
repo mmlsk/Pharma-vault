@@ -24,9 +24,8 @@ from datetime import date
 import yaml
 from jsonschema import Draft202012Validator, FormatChecker
 
-from pv_common import COMPOUND_NOTES, PROCESSED, SCHEMA, VAULT
+from pv_common import COMPOUND_NOTES, FRONTMATTER, PROCESSED, SCHEMA, VAULT
 
-FRONTMATTER = re.compile(r"^---\n(.*?)\n---\n", re.S)
 WIKILINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
 TEMPLATE = VAULT / "90 Templates/Compound Note Template.md"
 TEMPLATE_EXAMPLE = VAULT / "90 Templates/Compound Note Example.md"
@@ -67,12 +66,21 @@ def main() -> int:
     dup_ids = [k for k, v in ids.items() if v > 1]
     errors += [f"duplicate compound-id `{d}`" for d in dup_ids]
 
+    for p in sorted((VAULT / "07 Targets").glob("*.md")):
+        if p.name == "Targets MOC.md":
+            continue
+        fm = load_fm(p)
+        if not (fm and fm.get("type") == "target" and fm.get("chembl-target-id")):
+            errors.append(f"`{p.relative_to(VAULT)}`: invalid or missing target frontmatter")
+
     # Wikilinks: resolve by note basename (Obsidian default "shortest path").
-    names = {p.stem.lower() for p in VAULT.rglob("*.md")} | {p.name.lower() for p in VAULT.rglob("*.*")}
+    legacy = VAULT / "99 Resources — Pharma-vault v1 (legacy)"
+    active = lambda p: not p.is_relative_to(legacy)
+    names = {p.stem.lower() for p in VAULT.rglob("*.md") if active(p)} | {p.name.lower() for p in VAULT.rglob("*.*") if active(p)}
     names.add("schema validation report")  # written by this script
     broken = Counter()
     for p in VAULT.rglob("*.md"):
-        if p == TEMPLATE:
+        if p == TEMPLATE or not active(p):
             continue
         text = re.sub(r"```.*?```", "", p.read_text(encoding="utf-8"), flags=re.S)
         for target in WIKILINK.findall(text):

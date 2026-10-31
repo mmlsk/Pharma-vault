@@ -1,7 +1,7 @@
 ---
 type: compound
 schema-version: 2
-compound-id: arginine-compound
+compound-id: l-arginine-compound
 name: L-Arginine
 aliases: []
 cluster: Ancillary Supplements and Topicals
@@ -53,11 +53,11 @@ tags:
 - compound
 - source-derived
 - group/ancillary
+- merged-duplicate
 - stub
 - chembl-profile
 - chembl-name-match
 - identity-confirmed
-- possible-duplicate
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1485
@@ -90,14 +90,14 @@ chembl:
 
 ## Identity
 
-- **Compound ID:** `arginine-compound`
+- **Compound ID:** `l-arginine-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **ChEMBL:** [CHEMBL1485](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1485/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
-Amino acid marketed as a post-workout growth hormone booster; a controlled trial found the opposite -- combined with resistance exercise, oral arginine actually blunted the natural exercise-induced GH pulse rather than enhancing it.
+The substrate NOS uses to make nitric oxide. Heavily marketed for 'pump', but oral bioavailability is poor because intestinal and hepatic arginase degrade much of a dose before it reaches the endothelium. | Merged duplicate (arginine-compound): Amino acid marketed as a post-workout growth hormone booster; a controlled trial found the opposite -- combined with resistance exercise, oral arginine actually blunted the natural exercise-induced GH pulse rather than enhancing it.
 
 ## ChEMBL profile
 
@@ -115,12 +115,6 @@ Amino acid marketed as a post-workout growth hormone booster; a controlled trial
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
-
-## Related compounds (auto)
-
-_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
-
-- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[L-Arginine (l-arginine-compound)|L-Arginine]]
 
 ## Safety routing
 

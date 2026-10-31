@@ -803,7 +803,7 @@
   "group_label": "Longevity & Metabolic",
   "cluster": "Longevity and Experimental Compounds",
   "aliases": [],
-  "description": "A small-molecule NNMT inhibitor studied for raising cellular NAD and reducing adipocyte lipid storage. Rodent data only; sold as a supplement well ahead of any human evidence.",
+  "description": "A small-molecule NNMT inhibitor studied for raising cellular NAD and reducing adipocyte lipid storage. Rodent data only; sold as a supplement well ahead of any human evidence. | Merged duplicate (amino-1mq-compound): NNMT inhibitor with promising mouse adipose data and nothing at all in humans.",
   "chembl_id": "",
   "chembl_max_phase": "",
   "mechanism": "",
@@ -824,7 +824,8 @@
   "tags": [
    "compound",
    "source-derived",
-   "group/longevity"
+   "group/longevity",
+   "merged-duplicate"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },
@@ -4620,39 +4621,6 @@
   "source": "pharmapedia-source/CompoundCatalog"
  },
  {
-  "compound_id": "amino-1mq-compound",
-  "name": "5-Amino-1MQ",
-  "group": "peptides",
-  "group_label": "Peptides",
-  "cluster": "Growth Hormone and Peptide Agents",
-  "aliases": [],
-  "description": "NNMT inhibitor with promising mouse adipose data and nothing at all in humans.",
-  "chembl_id": "",
-  "chembl_max_phase": "",
-  "mechanism": "",
-  "mechanism_source": "",
-  "pubchem_cid": "",
-  "class": "",
-  "pathways": [],
-  "evidence_level": "",
-  "review_status": "stub",
-  "regulatory_status": "",
-  "group_risk_triage": [
-   "evidence-limited",
-   "identity-contamination"
-  ],
-  "risk_domains": [],
-  "contraindications": [],
-  "major_interactions": [],
-  "monitoring": [],
-  "tags": [
-   "compound",
-   "source-derived",
-   "group/peptides"
-  ],
-  "source": "pharmapedia-source/CompoundCatalog"
- },
- {
   "compound_id": "aminocaproic-acid-compound",
   "name": "Aminocaproic Acid",
   "group": "ancillary",
@@ -6390,38 +6358,6 @@
   "cluster": "Ancillary Supplements and Topicals",
   "aliases": [],
   "description": "Intravenous direct thrombin inhibitor used especially in heparin-induced thrombocytopenia.",
-  "chembl_id": "",
-  "chembl_max_phase": "",
-  "mechanism": "",
-  "mechanism_source": "",
-  "pubchem_cid": "",
-  "class": "",
-  "pathways": [],
-  "evidence_level": "",
-  "review_status": "stub",
-  "regulatory_status": "",
-  "group_risk_triage": [
-   "needs-compound-review"
-  ],
-  "risk_domains": [],
-  "contraindications": [],
-  "major_interactions": [],
-  "monitoring": [],
-  "tags": [
-   "compound",
-   "source-derived",
-   "group/ancillary"
-  ],
-  "source": "pharmapedia-source/CompoundCatalog"
- },
- {
-  "compound_id": "arginine-compound",
-  "name": "L-Arginine",
-  "group": "ancillary",
-  "group_label": "Ancillaries & Support",
-  "cluster": "Ancillary Supplements and Topicals",
-  "aliases": [],
-  "description": "Amino acid marketed as a post-workout growth hormone booster; a controlled trial found the opposite -- combined with resistance exercise, oral arginine actually blunted the natural exercise-induced GH pulse rather than enhancing it.",
   "chembl_id": "",
   "chembl_max_phase": "",
   "mechanism": "",
@@ -11490,7 +11426,7 @@
   "group_label": "Peptides",
   "cluster": "Growth Hormone and Peptide Agents",
   "aliases": [],
-  "description": "A synthetic pentadecapeptide from gastric juice, widely sold for tendon and gut healing. The animal literature is extensive and largely from one group; there are no controlled human trials, and it is not an approved drug anywhere.",
+  "description": "A synthetic pentadecapeptide from gastric juice, widely sold for tendon and gut healing. The animal literature is extensive and largely from one group; there are no controlled human trials, and it is not an approved drug anywhere. | Merged duplicate (bpc157-compound): Synthetic peptide fragment studied for tendon, ligament, and gut healing acceleration.",
   "chembl_id": "",
   "chembl_max_phase": "",
   "mechanism": "",
@@ -11512,40 +11448,8 @@
   "tags": [
    "compound",
    "source-derived",
-   "group/peptides"
-  ],
-  "source": "pharmapedia-source/CompoundCatalog"
- },
- {
-  "compound_id": "bpc157-compound",
-  "name": "BPC-157",
-  "group": "peptides",
-  "group_label": "Peptides",
-  "cluster": "Growth Hormone and Peptide Agents",
-  "aliases": [],
-  "description": "Synthetic peptide fragment studied for tendon, ligament, and gut healing acceleration.",
-  "chembl_id": "",
-  "chembl_max_phase": "",
-  "mechanism": "",
-  "mechanism_source": "",
-  "pubchem_cid": "",
-  "class": "",
-  "pathways": [],
-  "evidence_level": "",
-  "review_status": "stub",
-  "regulatory_status": "",
-  "group_risk_triage": [
-   "evidence-limited",
-   "identity-contamination"
-  ],
-  "risk_domains": [],
-  "contraindications": [],
-  "major_interactions": [],
-  "monitoring": [],
-  "tags": [
-   "compound",
-   "source-derived",
-   "group/peptides"
+   "group/peptides",
+   "merged-duplicate"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },
@@ -14843,7 +14747,7 @@
   "group_label": "Immunology & Biologics",
   "cluster": "General Pharmacology",
   "aliases": [],
-  "description": "PEGylated anti-TNF Fab fragment with no Fc region, which is why it does not cross the placenta by active transport.",
+  "description": "PEGylated anti-TNF Fab fragment with no Fc region, which is why it does not cross the placenta by active transport. | Merged duplicate (certolizumab-pegol-compound): Neutralizes TNF or its receptor signaling to suppress systemic inflammation, increasing susceptibility to selected infections.",
   "chembl_id": "",
   "chembl_max_phase": "",
   "mechanism": "",
@@ -14864,39 +14768,8 @@
   "tags": [
    "compound",
    "source-derived",
-   "group/immunology"
-  ],
-  "source": "pharmapedia-source/CompoundCatalog"
- },
- {
-  "compound_id": "certolizumab-pegol-compound",
-  "name": "Certolizumab Pegol",
-  "group": "ancillary",
-  "group_label": "Ancillaries & Support",
-  "cluster": "Ancillary Supplements and Topicals",
-  "aliases": [],
-  "description": "Neutralizes TNF or its receptor signaling to suppress systemic inflammation, increasing susceptibility to selected infections.",
-  "chembl_id": "",
-  "chembl_max_phase": "",
-  "mechanism": "",
-  "mechanism_source": "",
-  "pubchem_cid": "",
-  "class": "",
-  "pathways": [],
-  "evidence_level": "",
-  "review_status": "stub",
-  "regulatory_status": "",
-  "group_risk_triage": [
-   "needs-compound-review"
-  ],
-  "risk_domains": [],
-  "contraindications": [],
-  "major_interactions": [],
-  "monitoring": [],
-  "tags": [
-   "compound",
-   "source-derived",
-   "group/ancillary"
+   "group/immunology",
+   "merged-duplicate"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },
@@ -16360,38 +16233,6 @@
    "compound",
    "source-derived",
    "group/nootropic"
-  ],
-  "source": "pharmapedia-source/CompoundCatalog"
- },
- {
-  "compound_id": "citrulline-compound",
-  "name": "L-Citrulline",
-  "group": "ancillary",
-  "group_label": "Ancillaries & Support",
-  "cluster": "Ancillary Supplements and Topicals",
-  "aliases": [],
-  "description": "Urea-cycle amino acid that raises arginine and nitric-oxide availability more reliably than oral arginine; studied for blood flow and exercise performance.",
-  "chembl_id": "",
-  "chembl_max_phase": "",
-  "mechanism": "",
-  "mechanism_source": "",
-  "pubchem_cid": "",
-  "class": "",
-  "pathways": [],
-  "evidence_level": "",
-  "review_status": "stub",
-  "regulatory_status": "",
-  "group_risk_triage": [
-   "needs-compound-review"
-  ],
-  "risk_domains": [],
-  "contraindications": [],
-  "major_interactions": [],
-  "monitoring": [],
-  "tags": [
-   "compound",
-   "source-derived",
-   "group/ancillary"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },
@@ -33622,41 +33463,6 @@
   "source": "pharmapedia-source/CompoundCatalog"
  },
  {
-  "compound_id": "ghk-cu-compound",
-  "name": "GHK-Cu (copper peptide)",
-  "group": "derm",
-  "group_label": "Dermatology & Topicals",
-  "cluster": "Ancillary Supplements and Topicals",
-  "aliases": [
-   "GHK-Cu",
-   "copper peptide"
-  ],
-  "description": "A copper-binding tripeptide from plasma with in vitro effects on collagen synthesis and wound repair. Cosmetic topical trials are small and mostly industry-run, but the collagen biology behind it is genuine.",
-  "chembl_id": "",
-  "chembl_max_phase": "",
-  "mechanism": "",
-  "mechanism_source": "",
-  "pubchem_cid": "",
-  "class": "",
-  "pathways": [],
-  "evidence_level": "",
-  "review_status": "stub",
-  "regulatory_status": "",
-  "group_risk_triage": [
-   "needs-compound-review"
-  ],
-  "risk_domains": [],
-  "contraindications": [],
-  "major_interactions": [],
-  "monitoring": [],
-  "tags": [
-   "compound",
-   "source-derived",
-   "group/derm"
-  ],
-  "source": "pharmapedia-source/CompoundCatalog"
- },
- {
   "compound_id": "ghkcu-compound",
   "name": "GHK-Cu (Copper Peptide)",
   "group": "peptides",
@@ -33664,9 +33470,10 @@
   "cluster": "Growth Hormone and Peptide Agents",
   "aliases": [
    "GHK-Cu",
-   "Copper Peptide"
+   "Copper Peptide",
+   "copper peptide"
   ],
-  "description": "Copper-binding peptide studied for skin remodeling, collagen stimulation, and wound healing.",
+  "description": "Copper-binding peptide studied for skin remodeling, collagen stimulation, and wound healing. | Merged duplicate (ghk-cu-compound): A copper-binding tripeptide from plasma with in vitro effects on collagen synthesis and wound repair. Cosmetic topical trials are small and mostly industry-run, but the collagen biology behind it is genuine.",
   "chembl_id": "",
   "chembl_max_phase": "",
   "mechanism": "",
@@ -33688,7 +33495,8 @@
   "tags": [
    "compound",
    "source-derived",
-   "group/peptides"
+   "group/peptides",
+   "merged-duplicate"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },
@@ -35480,45 +35288,13 @@
   "source": "pharmapedia-source/CompoundCatalog"
  },
  {
-  "compound_id": "halobetasol-compound",
-  "name": "Halobetasol Propionate",
-  "group": "derm",
-  "group_label": "Dermatology & Topicals",
-  "cluster": "Ancillary Supplements and Topicals",
-  "aliases": [],
-  "description": "Superpotent class I topical corticosteroid, used in short courses and in fixed combination with tazarotene.",
-  "chembl_id": "",
-  "chembl_max_phase": "",
-  "mechanism": "",
-  "mechanism_source": "",
-  "pubchem_cid": "",
-  "class": "",
-  "pathways": [],
-  "evidence_level": "",
-  "review_status": "stub",
-  "regulatory_status": "",
-  "group_risk_triage": [
-   "needs-compound-review"
-  ],
-  "risk_domains": [],
-  "contraindications": [],
-  "major_interactions": [],
-  "monitoring": [],
-  "tags": [
-   "compound",
-   "source-derived",
-   "group/derm"
-  ],
-  "source": "pharmapedia-source/CompoundCatalog"
- },
- {
   "compound_id": "halobetasol-propionate-compound",
   "name": "Halobetasol Propionate",
   "group": "ancillary",
   "group_label": "Ancillaries & Support",
   "cluster": "Ancillary Supplements and Topicals",
   "aliases": [],
-  "description": "Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEMBL1200908).",
+  "description": "Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEMBL1200908). | Merged duplicate (halobetasol-compound): Superpotent class I topical corticosteroid, used in short courses and in fixed combination with tazarotene.",
   "chembl_id": "CHEMBL1200908",
   "chembl_max_phase": "4",
   "mechanism": "Glucocorticoid receptor agonist",
@@ -35539,7 +35315,8 @@
   "tags": [
    "compound",
    "source-derived",
-   "group/ancillary"
+   "group/ancillary",
+   "merged-duplicate"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },
@@ -41101,7 +40878,7 @@
   "group_label": "Peptides",
   "cluster": "Growth Hormone and Peptide Agents",
   "aliases": [],
-  "description": "The decapeptide fragment of kisspeptin that stimulates hypothalamic GnRH neurons. Used experimentally to probe the reproductive axis and explored as a more physiological alternative to hCG triggering.",
+  "description": "The decapeptide fragment of kisspeptin that stimulates hypothalamic GnRH neurons. Used experimentally to probe the reproductive axis and explored as a more physiological alternative to hCG triggering. | Merged duplicate (kisspeptin10-compound): Fragment of the reproductive hormone kisspeptin studied for stimulating the HPG axis.",
   "chembl_id": "",
   "chembl_max_phase": "",
   "mechanism": "",
@@ -41123,40 +40900,8 @@
   "tags": [
    "compound",
    "source-derived",
-   "group/peptides"
-  ],
-  "source": "pharmapedia-source/CompoundCatalog"
- },
- {
-  "compound_id": "kisspeptin10-compound",
-  "name": "Kisspeptin-10",
-  "group": "peptides",
-  "group_label": "Peptides",
-  "cluster": "Growth Hormone and Peptide Agents",
-  "aliases": [],
-  "description": "Fragment of the reproductive hormone kisspeptin studied for stimulating the HPG axis.",
-  "chembl_id": "",
-  "chembl_max_phase": "",
-  "mechanism": "",
-  "mechanism_source": "",
-  "pubchem_cid": "",
-  "class": "",
-  "pathways": [],
-  "evidence_level": "",
-  "review_status": "stub",
-  "regulatory_status": "",
-  "group_risk_triage": [
-   "evidence-limited",
-   "identity-contamination"
-  ],
-  "risk_domains": [],
-  "contraindications": [],
-  "major_interactions": [],
-  "monitoring": [],
-  "tags": [
-   "compound",
-   "source-derived",
-   "group/peptides"
+   "group/peptides",
+   "merged-duplicate"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },
@@ -41296,7 +41041,7 @@
   "group_label": "Ancillaries & Support",
   "cluster": "Ancillary Supplements and Topicals",
   "aliases": [],
-  "description": "The substrate NOS uses to make nitric oxide. Heavily marketed for 'pump', but oral bioavailability is poor because intestinal and hepatic arginase degrade much of a dose before it reaches the endothelium.",
+  "description": "The substrate NOS uses to make nitric oxide. Heavily marketed for 'pump', but oral bioavailability is poor because intestinal and hepatic arginase degrade much of a dose before it reaches the endothelium. | Merged duplicate (arginine-compound): Amino acid marketed as a post-workout growth hormone booster; a controlled trial found the opposite -- combined with resistance exercise, oral arginine actually blunted the natural exercise-induced GH pulse rather than enhancing it.",
   "chembl_id": "",
   "chembl_max_phase": "",
   "mechanism": "",
@@ -41317,7 +41062,8 @@
   "tags": [
    "compound",
    "source-derived",
-   "group/ancillary"
+   "group/ancillary",
+   "merged-duplicate"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },
@@ -41361,7 +41107,7 @@
   "group_label": "Ancillaries & Support",
   "cluster": "Ancillary Supplements and Topicals",
   "aliases": [],
-  "description": "Arginine precursor that bypasses first-pass arginase, so it raises plasma arginine more reliably than arginine itself does. The better-supported of the two NO-precursor supplements.",
+  "description": "Arginine precursor that bypasses first-pass arginase, so it raises plasma arginine more reliably than arginine itself does. The better-supported of the two NO-precursor supplements. | Merged duplicate (citrulline-compound): Urea-cycle amino acid that raises arginine and nitric-oxide availability more reliably than oral arginine; studied for blood flow and exercise performance.",
   "chembl_id": "",
   "chembl_max_phase": "",
   "mechanism": "",
@@ -41382,7 +41128,8 @@
   "tags": [
    "compound",
    "source-derived",
-   "group/ancillary"
+   "group/ancillary",
+   "merged-duplicate"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },
@@ -42050,7 +41797,7 @@
   "group_label": "Ancillaries & Support",
   "cluster": "Ancillary Supplements and Topicals",
   "aliases": [],
-  "description": "Prostanoid FP receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEMBL2364612).",
+  "description": "Prostanoid FP receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEMBL2364612). | Merged duplicate (latanoprostene-compound): Nitric oxide donating prostaglandin analogue for glaucoma, lowering pressure through two outflow routes at once.",
   "chembl_id": "CHEMBL2364612",
   "chembl_max_phase": "4",
   "mechanism": "Prostanoid FP receptor agonist",
@@ -42071,39 +41818,8 @@
   "tags": [
    "compound",
    "source-derived",
-   "group/ancillary"
-  ],
-  "source": "pharmapedia-source/CompoundCatalog"
- },
- {
-  "compound_id": "latanoprostene-compound",
-  "name": "Latanoprostene Bunod",
-  "group": "derm",
-  "group_label": "Dermatology & Topicals",
-  "cluster": "Ancillary Supplements and Topicals",
-  "aliases": [],
-  "description": "Nitric oxide donating prostaglandin analogue for glaucoma, lowering pressure through two outflow routes at once.",
-  "chembl_id": "",
-  "chembl_max_phase": "",
-  "mechanism": "",
-  "mechanism_source": "",
-  "pubchem_cid": "",
-  "class": "",
-  "pathways": [],
-  "evidence_level": "",
-  "review_status": "stub",
-  "regulatory_status": "",
-  "group_risk_triage": [
-   "needs-compound-review"
-  ],
-  "risk_domains": [],
-  "contraindications": [],
-  "major_interactions": [],
-  "monitoring": [],
-  "tags": [
-   "compound",
-   "source-derived",
-   "group/derm"
+   "group/ancillary",
+   "merged-duplicate"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },
@@ -44750,45 +44466,13 @@
   "source": "pharmapedia-source/CompoundCatalog"
  },
  {
-  "compound_id": "loteprednol-compound",
-  "name": "Loteprednol Etabonate",
-  "group": "derm",
-  "group_label": "Dermatology & Topicals",
-  "cluster": "Ancillary Supplements and Topicals",
-  "aliases": [],
-  "description": "Ophthalmic ester corticosteroid designed to be inactivated rapidly in the eye, lowering the intraocular pressure risk.",
-  "chembl_id": "",
-  "chembl_max_phase": "",
-  "mechanism": "",
-  "mechanism_source": "",
-  "pubchem_cid": "",
-  "class": "",
-  "pathways": [],
-  "evidence_level": "",
-  "review_status": "stub",
-  "regulatory_status": "",
-  "group_risk_triage": [
-   "needs-compound-review"
-  ],
-  "risk_domains": [],
-  "contraindications": [],
-  "major_interactions": [],
-  "monitoring": [],
-  "tags": [
-   "compound",
-   "source-derived",
-   "group/derm"
-  ],
-  "source": "pharmapedia-source/CompoundCatalog"
- },
- {
   "compound_id": "loteprednol-etabonate-compound",
   "name": "Loteprednol Etabonate",
   "group": "ancillary",
   "group_label": "Ancillaries & Support",
   "cluster": "Ancillary Supplements and Topicals",
   "aliases": [],
-  "description": "Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEMBL1200865).",
+  "description": "Glucocorticoid receptor agonist; approved/marketed compound catalogued by ChEMBL (CHEMBL1200865). | Merged duplicate (loteprednol-compound): Ophthalmic ester corticosteroid designed to be inactivated rapidly in the eye, lowering the intraocular pressure risk.",
   "chembl_id": "CHEMBL1200865",
   "chembl_max_phase": "4",
   "mechanism": "Glucocorticoid receptor agonist",
@@ -44809,7 +44493,8 @@
   "tags": [
    "compound",
    "source-derived",
-   "group/ancillary"
+   "group/ancillary",
+   "merged-duplicate"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },
@@ -46685,46 +46370,13 @@
   "source": "pharmapedia-source/CompoundCatalog"
  },
  {
-  "compound_id": "melanotan-compound",
-  "name": "Melanotan II",
-  "group": "peptides",
-  "group_label": "Peptides",
-  "cluster": "Growth Hormone and Peptide Agents",
-  "aliases": [],
-  "description": "Melanocortin receptor agonist peptide studied for UV-independent skin tanning via melanogenesis.",
-  "chembl_id": "",
-  "chembl_max_phase": "",
-  "mechanism": "",
-  "mechanism_source": "",
-  "pubchem_cid": "",
-  "class": "",
-  "pathways": [],
-  "evidence_level": "",
-  "review_status": "stub",
-  "regulatory_status": "",
-  "group_risk_triage": [
-   "evidence-limited",
-   "identity-contamination"
-  ],
-  "risk_domains": [],
-  "contraindications": [],
-  "major_interactions": [],
-  "monitoring": [],
-  "tags": [
-   "compound",
-   "source-derived",
-   "group/peptides"
-  ],
-  "source": "pharmapedia-source/CompoundCatalog"
- },
- {
   "compound_id": "melanotan-ii-compound",
   "name": "Melanotan II",
   "group": "peptides",
   "group_label": "Peptides",
   "cluster": "Growth Hormone and Peptide Agents",
   "aliases": [],
-  "description": "A non-selective melanocortin agonist used unlicensed for tanning. Because it hits MC1R, MC3R and MC4R together, the pigmentation comes with nausea, spontaneous erections and appetite suppression; bremelanotide is the licensed MC4R-selective descendant.",
+  "description": "A non-selective melanocortin agonist used unlicensed for tanning. Because it hits MC1R, MC3R and MC4R together, the pigmentation comes with nausea, spontaneous erections and appetite suppression; bremelanotide is the licensed MC4R-selective descendant. | Merged duplicate (melanotan-compound): Melanocortin receptor agonist peptide studied for UV-independent skin tanning via melanogenesis.",
   "chembl_id": "",
   "chembl_max_phase": "",
   "mechanism": "",
@@ -46746,7 +46398,8 @@
   "tags": [
    "compound",
    "source-derived",
-   "group/peptides"
+   "group/peptides",
+   "merged-duplicate"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },
@@ -70537,46 +70190,13 @@
   "source": "pharmapedia-source/CompoundCatalog"
  },
  {
-  "compound_id": "slu-pp-332-compound",
-  "name": "SLU-PP-332",
-  "group": "peptides",
-  "group_label": "Peptides",
-  "cluster": "Growth Hormone and Peptide Agents",
-  "aliases": [],
-  "description": "ERR agonist, the most recent compound to be marketed as exercise in a capsule; mouse data only.",
-  "chembl_id": "",
-  "chembl_max_phase": "",
-  "mechanism": "",
-  "mechanism_source": "",
-  "pubchem_cid": "",
-  "class": "",
-  "pathways": [],
-  "evidence_level": "",
-  "review_status": "stub",
-  "regulatory_status": "",
-  "group_risk_triage": [
-   "evidence-limited",
-   "identity-contamination"
-  ],
-  "risk_domains": [],
-  "contraindications": [],
-  "major_interactions": [],
-  "monitoring": [],
-  "tags": [
-   "compound",
-   "source-derived",
-   "group/peptides"
-  ],
-  "source": "pharmapedia-source/CompoundCatalog"
- },
- {
   "compound_id": "slupp332-compound",
   "name": "SLU-PP-332",
   "group": "longevity",
   "group_label": "Longevity & Metabolic",
   "cluster": "Longevity and Experimental Compounds",
   "aliases": [],
-  "description": "Pan-ERR agonist studied as an exercise mimetic. Genuinely interesting preclinical pharmacology, zero human data — treat the 'exercise in a pill' framing as marketing rather than evidence.",
+  "description": "Pan-ERR agonist studied as an exercise mimetic. Genuinely interesting preclinical pharmacology, zero human data — treat the 'exercise in a pill' framing as marketing rather than evidence. | Merged duplicate (slu-pp-332-compound): ERR agonist, the most recent compound to be marketed as exercise in a capsule; mouse data only.",
   "chembl_id": "",
   "chembl_max_phase": "",
   "mechanism": "",
@@ -70597,7 +70217,8 @@
   "tags": [
    "compound",
    "source-derived",
-   "group/longevity"
+   "group/longevity",
+   "merged-duplicate"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
  },

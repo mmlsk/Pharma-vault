@@ -154,7 +154,7 @@ Valyl ester prodrug of ganciclovir that made oral CMV prophylaxis after transpla
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 4db6dd63…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4db6dd63-e56b-45a4-86b2-ee125a1854a0), label version 20260624. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 0, 24, 624, 2400, 2976, 4800)
-> - protein-binding: consistent (label values: 1, 2, 10, 11)
+> - protein-binding: consistent (label values: 1, 2)
 
 ## Related compounds (auto)
 

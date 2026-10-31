@@ -145,7 +145,7 @@ Glucocorticoid receptor agonist _(ChEMBL curated mechanism, as quoted by the sou
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
 - **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor), [[Clocortolone Pivalate]] (Glucocorticoid receptor)
-- **Same ATC subgroup:** [[Beclomethasone Dipropionate]], [[Betamethasone]], [[Budesonide]], [[Desoximetasone]], [[Diflorasone Diacetate]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluocinonide]], [[Flurandrenolide]], [[Fluticasone Propionate]], [[Halobetasol Propionate]], [[Halobetasol Propionate (halobetasol-propionate-compound)|Halobetasol Propionate]]
+- **Same ATC subgroup:** [[Beclomethasone Dipropionate]], [[Betamethasone]], [[Budesonide]], [[Desoximetasone]], [[Diflorasone Diacetate]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluocinonide]], [[Flurandrenolide]], [[Fluticasone Propionate]], [[Halobetasol Propionate]], [[Hydrocortisone Aceponate]]
 
 ## Safety routing
 

@@ -53,6 +53,7 @@ tags:
 - compound
 - source-derived
 - group/longevity
+- merged-duplicate
 - stub
 ---
 
@@ -70,7 +71,7 @@ tags:
 
 ## Source summary
 
-Pan-ERR agonist studied as an exercise mimetic. Genuinely interesting preclinical pharmacology, zero human data — treat the 'exercise in a pill' framing as marketing rather than evidence.
+Pan-ERR agonist studied as an exercise mimetic. Genuinely interesting preclinical pharmacology, zero human data — treat the 'exercise in a pill' framing as marketing rather than evidence. | Merged duplicate (slu-pp-332-compound): ERR agonist, the most recent compound to be marketed as exercise in a capsule; mouse data only.
 
 ## Evidence boundaries
 

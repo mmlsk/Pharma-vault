@@ -53,11 +53,11 @@ tags:
 - compound
 - source-derived
 - group/immunology
+- merged-duplicate
 - stub
 - chembl-profile
 - chembl-name-match
 - identity-inn-ema
-- possible-duplicate
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL1201831
@@ -91,7 +91,7 @@ chembl:
 
 ## Source summary
 
-PEGylated anti-TNF Fab fragment with no Fc region, which is why it does not cross the placenta by active transport.
+PEGylated anti-TNF Fab fragment with no Fc region, which is why it does not cross the placenta by active transport. | Merged duplicate (certolizumab-pegol-compound): Neutralizes TNF or its receptor signaling to suppress systemic inflammation, increasing susceptibility to selected infections.
 
 ## Mechanism
 
@@ -121,9 +121,8 @@ _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for fiel
 
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
-- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Certolizumab Pegol]]
-- **Shared target:** [[Adalimumab]] (Tumor necrosis factor), [[Afelimomab]] (Tumor necrosis factor), [[Certolizumab Pegol]] (Tumor necrosis factor), [[Etanercept]] (Tumor necrosis factor), [[Golimumab]] (Tumor necrosis factor), [[Infliximab]] (Tumor necrosis factor), [[Infliximab-abda]] (Tumor necrosis factor), [[Onercept]] (Tumor necrosis factor), [[Ozoralizumab]] (Tumor necrosis factor)
-- **Same ATC subgroup:** [[Adalimumab]], [[Afelimomab]], [[Certolizumab Pegol]], [[Etanercept]], [[Golimumab]], [[Infliximab]], [[Infliximab-abda]]
+- **Shared target:** [[Adalimumab]] (Tumor necrosis factor), [[Afelimomab]] (Tumor necrosis factor), [[Etanercept]] (Tumor necrosis factor), [[Golimumab]] (Tumor necrosis factor), [[Infliximab]] (Tumor necrosis factor), [[Infliximab-abda]] (Tumor necrosis factor), [[Onercept]] (Tumor necrosis factor), [[Ozoralizumab]] (Tumor necrosis factor)
+- **Same ATC subgroup:** [[Adalimumab]], [[Afelimomab]], [[Etanercept]], [[Golimumab]], [[Infliximab]], [[Infliximab-abda]]
 
 ## Safety routing
 

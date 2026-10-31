@@ -154,7 +154,7 @@ The original antimalarial, still used for severe falciparum malaria and misused 
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set f567d5c7…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=f567d5c7-ea5d-49a7-a035-b47208135f73), label version 20241209. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 4, 4.6, 7.5, 8, 8.1, 8.2)
-> - protein-binding: consistent (label values: 69, 78, 92, 95)
+> - protein-binding: consistent (label values: 69, 92)
 
 ## Related compounds (auto)
 

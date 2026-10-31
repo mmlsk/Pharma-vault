@@ -12,7 +12,7 @@
     "Ancillary Supplements and Topicals": "Suplementy pomocnicze", "General Pharmacology": "Farmakologia ogólna",
     "Novel Psychoactive Substances": "NPS i dopalacze",
   };
-  const IDS_PL = { catalogue: "katalog źródłowy", "curated-addition": "dodatek kuratorowany", "wikipedia-infobox": "infoboks Wikipedii", "chembl-name-match": "dokładna nazwa w ChEMBL" };
+  const IDS_PL = { catalogue: "katalog źródłowy", "curated-addition": "dodatek kuratorowany", "curated-identity": "decyzja kuratorska", "wikipedia-infobox": "infoboks Wikipedii", "chembl-name-match": "dokładna nazwa w ChEMBL" };
   const VER_TEST = {
     consistent: (c) => c.v && c.v.s === "consistent", discrepant: (c) => c.v && c.v.s === "discrepant",
     "no-label-value": (c) => c.v && c.v.s === "no-label-value", chembl: (c) => c.tg,
@@ -31,8 +31,9 @@
   const byTarget = T.map(() => []);
   const KIND_PL = { hub: "Hub bezpieczeństwa", pathway: "Szlak", concept: "Koncepcja" };
   const C = G.compounds, GR = G.groups, CORE = G.core;
+  const byCore = CORE.map(() => []), byGroup = GR.map(() => []);
   C.forEach((c, i) => {
-    c.i = i; c.c = GR[c.g].c; (c.tg || []).forEach((t) => byTarget[t].push(i));
+    c.i = i; c.c = GR[c.g].c; byGroup[c.g].push(c); (c.tg || []).forEach((t) => byTarget[t].push(i)); (c.l || []).forEach((li) => byCore[li].push(c));
     c.hay = [c.n, c.id, ...(c.a || []), ...((c.pk && c.pk.cyp) || []), ...(c.tg || []).map((t) => T[t].n), ...(c.atc || []).map((a) => a[0])].join(" ").toLowerCase();
     if (c.pk && c.pk.hl) { const u = { min: 1 / 60, h: 1, d: 24, wk: 168 }[c.pk.hl[2]]; if (u) c.hlh = Math.sqrt(c.pk.hl[0] * (c.pk.hl[1] || c.pk.hl[0])) * u; }
   });
@@ -47,7 +48,7 @@
 
   const $ = (id) => document.getElementById(id);
   const cv = $("cv"), ctx = cv.getContext("2d"), tip = $("tip");
-  const state = { k: 1, tx: 0, ty: 0, sel: null, hover: null, clusters: new Set(G.clusters.map((_, i) => i)), pkOnly: false, cypOnly: false, hub: null, ver: "", rel: true, focus: null, hlBin: null };
+  const state = { k: 1, tx: 0, ty: 0, sel: null, hover: null, clusters: new Set(G.clusters.map((_, i) => i)), pkOnly: false, cypOnly: false, hub: null, ver: "", rel: true, hlBin: null, tab: "overview" };
   let W = 0, H = 0, dpr = 1, raf = 0;
 
   // ---------- filters
@@ -66,6 +67,7 @@
     $("sEma").textContent = (G.meta.pk_ema_consistent || 0).toLocaleString("pl");
     $("sId").textContent = (G.meta.identity_confirmed || 0).toLocaleString("pl");
     histogram();
+    if (state.sel && state.sel.type !== "compound") select(state.sel);
   }
   // ---------- t½ histogram (log scale, visible compounds)
   function histogram() {
@@ -108,7 +110,9 @@
   function draw() { cancelAnimationFrame(raf); raf = requestAnimationFrame(render); }
   function render() {
     const k = state.k, text = css("--color-text"), muted = css("--color-text-muted"), faint = css("--color-text-faint"),
-      primary = css("--color-primary"), warn = css("--color-warning"), bg = css("--color-bg");
+      primary = css("--color-primary"), warn = css("--color-warning"), bg = css("--color-bg"),
+      err = css("--color-error") || "#dd6974", accent2 = css("--color-accent2") || "#c2477e",
+      fBody = css("--font-body"), fDisp = css("--font-display");
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
     const sel = state.sel, hubSel = sel && sel.type === "core" ? sel.i : state.hub;
     const focus = sel && sel.type === "target" ? new Set(byTarget[sel.i]) : null;
@@ -132,7 +136,7 @@
 
     // edges of focused core node (only when the set is small enough to be legible)
     if (hubSel !== null && hubSel !== undefined) {
-      const linked = C.filter((c) => c.l.includes(hubSel) && visible(c));
+      const linked = byCore[hubSel].filter(visible);
       if (linked.length <= 700) {
         const [hx, hy] = toScreen(CORE[hubSel].x, CORE[hubSel].y);
         ctx.strokeStyle = primary + "22"; ctx.beginPath();
@@ -154,15 +158,18 @@
     const selC = sel && sel.type === "compound" ? C[sel.i] : null;
     if (state.rel && selC && selC.tg) {
       const [x, y] = toScreen(selC.x, selC.y), nb = neighbours(selC).slice(0, 60);
-      ctx.strokeStyle = css("--color-accent2") || "#c2477e"; ctx.lineWidth = 1.3; ctx.setLineDash([4, 3]); ctx.beginPath();
+      ctx.strokeStyle = accent2; ctx.lineWidth = 1.3; ctx.setLineDash([4, 3]); ctx.beginPath();
       nb.forEach(({ i }) => { const o = C[i]; if (!visible(o)) return; const [ox, oy] = toScreen(o.x, o.y); ctx.moveTo(x, y); ctx.quadraticCurveTo((x + ox) / 2 + (oy - y) * 0.15, (y + oy) / 2 - (ox - x) * 0.15, ox, oy); });
       ctx.stroke(); ctx.setLineDash([]);
     }
-    if (focus && focus.size > 1 && focus.size < 400) {
-      const pts = [...focus].map((i) => C[i]).filter(visible), cx = pts.reduce((a, c) => a + c.x, 0) / pts.length, cy = pts.reduce((a, c) => a + c.y, 0) / pts.length;
-      const [sx, sy] = toScreen(cx, cy); ctx.strokeStyle = (css("--color-accent2") || "#c2477e") + "99"; ctx.lineWidth = 1; ctx.beginPath();
-      pts.forEach((c) => { const [x, y] = toScreen(c.x, c.y); ctx.moveTo(sx, sy); ctx.lineTo(x, y); }); ctx.stroke();
-      ctx.beginPath(); ctx.arc(sx, sy, 7, 0, 7); ctx.fillStyle = css("--color-accent2") || "#c2477e"; ctx.fill();
+    if (focus && focus.size < 400) {
+      const pts = [...focus].map((i) => C[i]).filter(visible);
+      if (pts.length > 1) {
+        const cx = pts.reduce((a, c) => a + c.x, 0) / pts.length, cy = pts.reduce((a, c) => a + c.y, 0) / pts.length;
+        const [sx, sy] = toScreen(cx, cy); ctx.strokeStyle = accent2 + "99"; ctx.lineWidth = 1; ctx.beginPath();
+        pts.forEach((c) => { const [x, y] = toScreen(c.x, c.y); ctx.moveTo(sx, sy); ctx.lineTo(x, y); }); ctx.stroke();
+        ctx.beginPath(); ctx.arc(sx, sy, 7, 0, 7); ctx.fillStyle = accent2; ctx.fill();
+      }
     }
 
     // compounds
@@ -175,14 +182,14 @@
       ctx.fillStyle = CL_COLORS[c.c];
       ctx.beginPath(); ctx.arc(x, y, c.pk ? baseR : baseR * 0.7, 0, 7); ctx.fill();
       if (c.pk && c.pk.cyp && k > 0.9) { ctx.strokeStyle = warn; ctx.lineWidth = 1; ctx.stroke(); }
-      if (((c.v && c.v.s === "discrepant") || (c.ve && c.ve.s === "discrepant")) && k > 1.4) { ctx.strokeStyle = css("--color-error") || "#dd6974"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, baseR + 2, 0, 7); ctx.stroke(); }
+      if (((c.v && c.v.s === "discrepant") || (c.ve && c.ve.s === "discrepant")) && k > 1.4) { ctx.strokeStyle = err; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, baseR + 2, 0, 7); ctx.stroke(); }
     });
     ctx.globalAlpha = 1;
 
     // compound labels (level of detail)
     ctx.textBaseline = "middle"; ctx.textAlign = "left";
     if (k >= 2.6) {
-      ctx.font = `500 ${Math.min(13, 9 + k)}px ${css("--font-body")}`; ctx.fillStyle = muted;
+      ctx.font = `500 ${Math.min(13, 9 + k)}px ${fBody}`; ctx.fillStyle = muted;
       C.forEach((c) => {
         if (!visible(c)) return;
         const [x, y] = toScreen(c.x, c.y);
@@ -198,14 +205,14 @@
       GR.forEach((g) => {
         if (!state.clusters.has(g.c) || g.r * k < 18) return;
         const [x, y] = toScreen(g.x, g.y - g.r - 12 / k);
-        ctx.font = `600 ${Math.min(14, 10 + k * 2)}px ${css("--font-body")}`;
+        ctx.font = `600 ${Math.min(14, 10 + k * 2)}px ${fBody}`;
         halo(g.label, x, y, text, bg);
       });
     }
     if (k < 0.2) G.clusters.forEach((cl, ci) => {
       const ext = G.meta.radius + Math.max(...GR.filter((g) => g.c === ci).map((g) => g.r)) + 70;
       const [x, y] = toScreen(Math.cos(cl.angle) * ext, Math.sin(cl.angle) * ext);
-      ctx.font = `700 ${Math.max(12, Math.min(22, 26 * k))}px ${css("--font-display")}`;
+      ctx.font = `700 ${Math.max(12, Math.min(22, 26 * k))}px ${fDisp}`;
       ctx.globalAlpha = state.clusters.has(ci) ? 1 : 0.35;
       halo(CL_PL[cl.name] || cl.name, x, y, CL_COLORS[ci], bg); ctx.globalAlpha = 1;
     });
@@ -218,7 +225,7 @@
       else ctx.arc(x, y, n.kind === "concept" ? r * 0.75 : r * 0.9, 0, 7);
       ctx.fillStyle = n.kind === "hub" ? warn : n.kind === "pathway" ? primary : faint;
       ctx.fill(); if (active) { ctx.strokeStyle = text; ctx.lineWidth = 2; ctx.stroke(); }
-      ctx.font = `600 ${Math.max(10, Math.min(14, 13 * Math.sqrt(k)))}px ${css("--font-body")}`;
+      ctx.font = `600 ${Math.max(10, Math.min(14, 13 * Math.sqrt(k)))}px ${fBody}`;
       const words = n.name.split(" "), lines = [];
       words.forEach((w) => { const last = lines[lines.length - 1]; if (last && (last + " " + w).length <= 18) lines[lines.length - 1] = last + " " + w; else lines.push(w); });
       const lh = Math.max(11, Math.min(15, 14 * Math.sqrt(k)));
@@ -229,7 +236,7 @@
     if (sel && sel.type === "compound") {
       const c = C[sel.i], [x, y] = toScreen(c.x, c.y);
       ctx.beginPath(); ctx.arc(x, y, baseR + 4, 0, 7); ctx.strokeStyle = text; ctx.lineWidth = 2; ctx.stroke();
-      ctx.font = `600 13px ${css("--font-body")}`; ctx.textAlign = "left"; halo(c.n, x + baseR + 8, y, text, bg);
+      ctx.font = `600 13px ${fBody}`; ctx.textAlign = "left"; halo(c.n, x + baseR + 8, y, text, bg);
     }
   }
   function halo(t, x, y, color, bg) {
@@ -261,12 +268,12 @@
     document.querySelector(".hint").style.display = "none";
     cv.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, [e.offsetX, e.offsetY]); moved = false;
     if (ptrs.size === 1) drag = { x: e.offsetX, y: e.offsetY, tx: state.tx, ty: state.ty };
-    if (ptrs.size === 2) { const [a, b] = [...ptrs.values()]; pinch0 = { d: Math.hypot(a[0] - b[0], a[1] - b[1]), k: state.k, tx: state.tx, ty: state.ty, cx: (a[0] + b[0]) / 2, cy: (a[1] + b[1]) / 2 }; }
+    if (ptrs.size === 2) { drag = null; moved = true; const [a, b] = [...ptrs.values()]; pinch0 = { d: Math.hypot(a[0] - b[0], a[1] - b[1]), k: state.k, tx: state.tx, ty: state.ty, cx: (a[0] + b[0]) / 2, cy: (a[1] + b[1]) / 2 }; }
     cv.classList.add("drag");
   });
   cv.addEventListener("pointermove", (e) => {
     if (ptrs.has(e.pointerId)) ptrs.set(e.pointerId, [e.offsetX, e.offsetY]);
-    if (ptrs.size === 2 && pinch0) {
+    if (ptrs.size === 2 && pinch0 && pinch0.d > 0) {
       const [a, b] = [...ptrs.values()], f = Math.hypot(a[0] - b[0], a[1] - b[1]) / pinch0.d;
       zoomAt(pinch0.cx, pinch0.cy, clampK(pinch0.k * f) / state.k); moved = true; return;
     }
@@ -288,7 +295,10 @@
   const end = (e) => {
     ptrs.delete(e.pointerId);
     if (ptrs.size < 2) pinch0 = null;
-    if (ptrs.size === 0) {
+    if (ptrs.size === 1) {
+      const [[px, py]] = ptrs.values();
+      drag = { x: px, y: py, tx: state.tx, ty: state.ty };
+    } else if (ptrs.size === 0) {
       cv.classList.remove("drag");
       if (drag && !moved) select(hit(e.offsetX, e.offsetY));
       drag = null;
@@ -307,30 +317,35 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
   const rng = (a, u = "") => a ? `${a[0]}${a[1] ? "–" + a[1] : ""}${u ? " " + u : ""}` : null;
   function select(h, fly) {
-    state.sel = h; const p = $("panel");
-    if (!h) { p.innerHTML = '<p class="empty">Wybierz substancję, grupę albo hub, aby zobaczyć szczegóły.</p>'; history.replaceState(null, "", " "); draw(); return; }
+    state.sel = h; const p = $("panel"), noHash = location.pathname + location.search;
+    if (!h) { p.innerHTML = '<p class="empty">Wybierz substancję, grupę albo hub, aby zobaczyć szczegóły.</p>'; history.replaceState(null, "", noHash); draw(); return; }
     if (h.type === "compound") {
       const c = C[h.i]; p.innerHTML = compoundHtml(c); history.replaceState(null, "", "#" + c.id);
       if (fly) animateTo(c.x, c.y, Math.max(state.k, 3.2));
     } else if (h.type === "core") {
-      const n = CORE[h.i], linked = C.filter((c) => c.l.includes(h.i));
-      p.innerHTML = `<div class="label">${KIND_PL[n.kind]}</div><div class="title">${esc(n.name)}</div>
-        <p class="muted">${linked.length.toLocaleString("pl")} powiązanych substancji (${linked.filter(visible).length.toLocaleString("pl")} widocznych przy obecnych filtrach).</p>
-        <p class="note" style="margin:.5rem 0">Powiązania wynikają z reguł routingu w <code>generate_vault_notes.py</code> (triage grupy, regex cholinergiczny, substraty CYP) - nie są oceną ryzyka konkretnej substancji.</p>
-        ${listHtml(linked.filter(visible))}`;
+      const n = CORE[h.i], linked = byCore[h.i], vis = linked.filter(visible);
+      p.innerHTML = `<div class="card-head"><div class="label" style="margin-bottom:0">${KIND_PL[n.kind]}</div><button class="card-close" id="cardClose" title="Zamknij szczegóły (Esc)" aria-label="Zamknij">✕</button></div>
+        <div class="title">${esc(n.name)}</div>
+        <p class="muted">${linked.length.toLocaleString("pl")} powiązanych substancji (${vis.length.toLocaleString("pl")} widocznych przy obecnych filtrach).</p>
+        <p class="note" style="margin:.5rem 0">Powiązania wynikają z reguł routingu w <code>generate_vault_notes.py</code> (triage grupy, regex cholinergiczny, substraty CYP) — nie są oceną ryzyka konkretnej substancji.</p>
+        ${listHtml(vis)}`;
+      history.replaceState(null, "", noHash);
       if (fly) animateTo(n.x, n.y, Math.max(state.k, 0.9));
     } else if (h.type === "target") {
-      const t = T[h.i], m = byTarget[h.i].map((i) => C[i]);
-      p.innerHTML = `<div class="label">Cel molekularny (ChEMBL) · ${esc(t.ty || "")}</div><div class="title">${esc(t.n)}</div>
-        <p class="muted">${m.length} substancji z katalogu działa na ten cel wg kuratorowanych mechanizmów ChEMBL.</p>
-        <div class="links"><a href="https://www.ebi.ac.uk/chembl/target_report_card/${esc(t.id)}/" target="_blank" rel="noopener">ChEMBL ${esc(t.id)} ↗</a></div>
-        ${listHtml(m)}`;
+      const t = T[h.i], m = byTarget[h.i].map((i) => C[i]), vis = m.filter(visible);
+      p.innerHTML = `<div class="card-head"><div class="label" style="margin-bottom:0">Cel molekularny (ChEMBL) · ${esc(t.ty || "")}</div><button class="card-close" id="cardClose" title="Zamknij szczegóły (Esc)" aria-label="Zamknij">✕</button></div>
+        <div class="title">${esc(t.n)}</div>
+        <p class="muted">${m.length} substancji z katalogu działa na ten cel wg kuratorowanych mechanizmów ChEMBL (${vis.length} widocznych przy obecnych filtrach).</p>
+        <div class="links"><a href="https://www.ebi.ac.uk/chembl/target_report_card/${esc(t.id)}/" target="_blank" rel="noopener noreferrer">ChEMBL ${esc(t.id)} ↗</a></div>
+        ${listHtml(vis)}`;
       history.replaceState(null, "", "#target=" + t.id);
       if (fly && m.length) { const cx = m.reduce((a, c) => a + c.x, 0) / m.length, cy = m.reduce((a, c) => a + c.y, 0) / m.length; animateTo(cx * 0.3, cy * 0.3, fitK() * 1.1); }
     } else {
-      const g = GR[h.i], m = C.filter((c) => c.g === h.i);
-      p.innerHTML = `<div class="label">Grupa · ${esc(CL_PL[G.clusters[g.c].name])}</div><div class="title">${esc(g.label)}</div>
-        <p class="muted">${g.n} substancji · ${m.filter((c) => c.pk).length} z danymi PK</p>${listHtml(m.filter(visible))}`;
+      const g = GR[h.i], m = byGroup[h.i], vis = m.filter(visible);
+      p.innerHTML = `<div class="card-head"><div class="label" style="margin-bottom:0">Grupa · ${esc(CL_PL[G.clusters[g.c].name])}</div><button class="card-close" id="cardClose" title="Zamknij szczegóły (Esc)" aria-label="Zamknij">✕</button></div>
+        <div class="title">${esc(g.label)}</div>
+        <p class="muted">${g.n} substancji · ${m.filter((c) => c.pk).length} z danymi PK (${vis.length} widocznych przy obecnych filtrach)</p>${listHtml(vis)}`;
+      history.replaceState(null, "", noHash);
     }
     wire(p); draw();
   }
@@ -341,61 +356,200 @@
       ${list.length > 80 ? `<span class="note">… oraz ${list.length - 80} kolejnych - zawęź filtrami lub wyszukiwarką.</span>` : ""}</div>`;
   }
   function compoundHtml(c) {
-    const k = c.pk, g = GR[c.g];
-    const rows = [];
-    if (k) {
-      if (k.hl || k.hlt) rows.push(["Okres półtrwania (t½)", rng(k.hl && [k.hl[0], k.hl[1]], k.hl && k.hl[2]) || "—", k.hlt]);
-      if (k.pb || k.pbt) rows.push(["Wiązanie z białkami", rng(k.pb, "%") || "—", k.pbt]);
-      if (k.ba || k.bat) rows.push(["Biodostępność", rng(k.ba, "%") || "—", k.bat]);
-      if (k.met) rows.push(["Metabolizm", "", k.met]);
-      if (k.cyp) rows.push(["Substrat CYP", k.cyp.join(", "), "rola inhibitora/induktora nieoceniana"]);
-      if (k.ex !== undefined) rows.push(["Wydalanie", k.ren === true ? "głównie z moczem" : k.ren === false ? "głównie pozanerkowo" : "—", (k.fe !== undefined ? `fe (niezmieniona) ${k.fe}; ` : "") + (k.ex || "")]);
-    }
+    const k = c.pk, g = GR[c.g], v = c.v, e = c.ve;
+    const curTab = state.tab || "overview";
+
+    const hasPk = !!k;
+    let pkBadge = '<span class="tab-badge">—</span>';
+    if (v && v.s === "consistent" && e && e.s === "consistent") pkBadge = '<span class="tab-badge" style="color:var(--color-success)">✓✓</span>';
+    else if ((v && v.s === "discrepant") || (e && e.s === "discrepant")) pkBadge = '<span class="tab-badge" style="color:var(--color-warning)">≠</span>';
+    else if (v && v.s === "consistent") pkBadge = '<span class="tab-badge" style="color:var(--color-success)">✓ FDA</span>';
+    else if (e && e.s === "consistent") pkBadge = '<span class="tab-badge" style="color:var(--color-success)">✓ EMA</span>';
+    else if (hasPk) pkBadge = '<span class="tab-badge">✓</span>';
+
+    const tgCount = (c.tg || []).length;
+    const tgBadge = `<span class="tab-badge">${tgCount}</span>`;
+
+    const warnCount = (c.bb ? 1 : 0) + (c.wd ? 1 : 0) + (c.ic === "conflict" ? 1 : 0);
+    const safeCount = warnCount + (c.t ? c.t.length : 0);
+    let safeBadge = `<span class="tab-badge">${safeCount || "—"}</span>`;
+    if (warnCount > 0) safeBadge = '<span class="tab-badge" style="color:var(--color-warning)">⚠</span>';
+
     const obs = "obsidian://open?vault=vault&file=" + encodeURIComponent(c.f);
-    const v = c.v, vf = v && v.f ? Object.entries(v.f) : [];
-    const verHtml = v ? `<div class="ver ver-${esc(v.s)}"><b>Weryfikacja PK:</b> ${esc(VER_PL[v.s] || v.s)}${vf.length ? " — " + vf.map(([f, [st, vals]]) =>
-      `${f === "half-life" ? "t½" : "wiązanie z białkami"}: ${esc(VER_PL[st] || st)}${vals.length ? ` (etykieta: ${vals.map((x) => (+x).toLocaleString("pl")).join(", ")}${f === "half-life" ? " h" : " %"})` : ""}`).join("; ") : ""}
-      ${v.u ? `<br><a href="${esc(v.u)}" target="_blank" rel="noopener">Etykieta FDA (DailyMed, wersja ${esc(v.et)}) ↗</a>` : ""}</div>` : "";
-    const e = c.ve, ef = e && e.f ? Object.entries(e.f) : [];
-    const emaHtml = e ? `<div class="ver ver-${esc(e.s)}"><b>ChPL / SmPC (EMA):</b> ${esc(EMA_PL[e.s] || e.s)} — ` + ef.map(([f, [st, vals]]) =>
-      `${f === "half-life" ? "t½" : "wiązanie z białkami"}: ${esc(EMA_PL[st] || st)}${vals.length ? ` (ChPL: ${vals.map((x) => (+x).toLocaleString("pl")).join(", ")}${f === "half-life" ? " h" : " %"})` : ""}`).join("; ")
-      + `<br>${e.pl ? `<a href="${esc(e.pl)}" target="_blank" rel="noopener">ChPL ${esc(e.p)} (PL) ↗</a> · ` : ""}<a href="${esc(e.u)}" target="_blank" rel="noopener">SmPC ${esc(e.p)} (EN) ↗</a></div>` : "";
-    const facts = [];
-    if (c.mt) facts.push(["Typ cząsteczki", c.mt]);
-    if (c.fa) facts.push(["Pierwsza rejestracja", c.fa]);
-    if (c.atc) facts.push(["ATC", c.atc.map((a) => `${a[0]} ${a[1].toLowerCase()}`).join("; ")]);
-    if (c.pr) facts.push(["MW · ALogP · PSA · Ro5", c.pr.map((x) => x ?? "—").join(" · ")]);
-    if (c.ids) facts.push(["Identyfikacja ChEMBL", (IDS_PL[c.ids] || c.ids) + (c.ic ? " · " + (IC_PL[c.ic] || c.ic) : "")]);
-    const nb = neighbours(c).slice(0, 14);
-    const chemblHtml = (facts.length || c.tg) ? `<div class="label" style="margin-top:1rem">Profil ChEMBL</div>
-      ${c.bb || c.wd ? `<div class="tags">${c.bb ? '<span class="tag warn">ostrzeżenie w ramce (black box)</span>' : ""}${c.wd ? '<span class="tag warn">wycofany</span>' : ""}</div>` : ""}
-      ${facts.length ? `<table class="pk">${facts.map(([a, b]) => `<tr><th>${a}</th><td>${esc(b)}</td></tr>`).join("")}</table>` : ""}
-      ${c.tg ? `<div class="label" style="margin-top:.8rem">Cele molekularne</div><div class="links">${c.tg.map((t) => `<button data-t="${t}">◎ ${esc(T[t].n)} <small>(${byTarget[t].length})</small></button>`).join("")}</div>` : ""}
-      ${nb.length ? `<div class="label" style="margin-top:.8rem">Wspólny cel (${neighbours(c).length})</div><div class="links">${nb.map(({ i, n }) =>
-        `<button data-c="${i}"><span class="dot" style="background:${CL_COLORS[C[i].c]};width:8px;height:8px;margin-right:6px"></span>${esc(C[i].n)}${n > 1 ? ` <small>×${n}</small>` : ""}</button>`).join("")}</div>` : ""}` : "";
-    return `<div class="label">${esc(CL_PL[G.clusters[c.c].name])} · ${esc(g.label)}</div>
+
+    let tabContent = "";
+    if (curTab === "overview") {
+      const propBoxes = c.pr ? `
+        <div class="stat-grid">
+          <div class="stat-box"><small>Masa cząst. (MW)</small><b>${c.pr[0] != null ? c.pr[0] + " g/mol" : "—"}</b></div>
+          <div class="stat-box"><small>Lipofilowość (ALogP)</small><b>${c.pr[1] != null ? c.pr[1] : "—"}</b></div>
+          <div class="stat-box"><small>Pow. polarna (PSA)</small><b>${c.pr[2] != null ? c.pr[2] + " Å²" : "—"}</b></div>
+          <div class="stat-box"><small>Reguła Lipińskiego</small><b>${c.pr[3] != null ? (c.pr[3] === 0 ? "✓ 0 naruszeń" : c.pr[3] + " naruszeń") : "—"}</b></div>
+        </div>` : "";
+
+      const atcHtml = c.atc && c.atc.length ? `
+        <div class="label" style="margin-top:.8rem">Klasyfikacja ATC</div>
+        <div class="links">${c.atc.map(([code, desc]) => `<span style="font-size:var(--text-xs);color:var(--color-text)"><code style="font-weight:600;color:var(--color-primary)">${esc(code)}</code> · ${esc(desc)}</span>`).join("")}</div>` : "";
+
+      const idHtml = (c.ids || c.ic || c.ch || c.fa) ? `
+        <div class="label" style="margin-top:.8rem">Tożsamość i źródła</div>
+        <table class="pk">
+          ${c.fa ? `<tr><th>Pierwsza rejestracja</th><td>${esc(c.fa)}</td></tr>` : ""}
+          ${c.mt ? `<tr><th>Typ cząsteczki</th><td>${esc(c.mt)}</td></tr>` : ""}
+          ${c.ids ? `<tr><th>Identyfikacja ChEMBL</th><td>${esc(IDS_PL[c.ids] || c.ids)}${c.ic ? " · " + esc(IC_PL[c.ic] || c.ic) : ""}</td></tr>` : ""}
+        </table>` : "";
+
+      tabContent = `
+        <div class="tab-panel">
+          ${c.d ? `<p class="muted" style="line-height:1.45">${esc(c.d)}${c.d.length >= 420 ? "…" : ""}</p>` : '<p class="empty">Brak opisu podsumowującego.</p>'}
+          ${propBoxes}
+          ${atcHtml}
+          ${idHtml}
+          <div class="label" style="margin-top:.8rem">Otwórz i zbadaj</div>
+          <div class="links">
+            <a href="${obs}">Notatka w Obsidianie ↗</a>
+            ${c.ch ? `<a href="https://www.ebi.ac.uk/chembl/compound_report_card/${esc(c.ch)}/" target="_blank" rel="noopener noreferrer">ChEMBL ${esc(c.ch)} ↗</a>` : ""}
+            ${k && k.src ? `<a href="${esc(k.src)}" target="_blank" rel="noopener noreferrer">Wikipedia drug infobox ↗</a>` : ""}
+          </div>
+          ${c.a && c.a.length ? `<p class="note" style="margin-top:.4rem">Aliasy: ${esc(c.a.join(", "))}</p>` : ""}
+          <p class="note">ID: <code>${esc(c.id)}</code></p>
+        </div>`;
+    } else if (curTab === "pk") {
+      const rows = [];
+      if (k) {
+        if (k.hl || k.hlt) rows.push(["Okres półtrwania (t½)", rng(k.hl && [k.hl[0], k.hl[1]], k.hl && k.hl[2]) || "—", k.hlt]);
+        if (k.pb || k.pbt) rows.push(["Wiązanie z białkami", rng(k.pb, "%") || "—", k.pbt]);
+        if (k.ba || k.bat) rows.push(["Biodostępność", rng(k.ba, "%") || "—", k.bat]);
+        if (k.met) rows.push(["Metabolizm", "", k.met]);
+        if (k.cyp) rows.push(["Substrat CYP", k.cyp.join(", "), "rola inhibitora/induktora nieoceniana"]);
+        if (k.ex !== undefined) rows.push(["Wydalanie", k.ren === true ? "głównie z moczem" : k.ren === false ? "głównie pozanerkowo" : "—", (k.fe !== undefined ? `fe (niezmieniona) ${k.fe}; ` : "") + (k.ex || "")]);
+      }
+
+      const vf = v && v.f ? Object.entries(v.f) : [];
+      const verHtml = v ? `
+        <div class="ver-card">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <b>Weryfikacja FDA (DailyMed)</b>
+            <span class="tag ${v.s === 'consistent' ? 'ok' : v.s === 'discrepant' ? 'warn' : ''}">${esc(VER_PL[v.s] || v.s)}</span>
+          </div>
+          ${vf.length ? `<div style="margin-top:2px;color:var(--color-text-muted)">${vf.map(([f, [st, vals]]) =>
+            `• ${f === "half-life" ? "t½" : "wiązanie z białkami"}: <b>${esc(VER_PL[st] || st)}</b>${vals.length ? ` (etykieta: ${vals.map((x) => (+x).toLocaleString("pl")).join(", ")}${f === "half-life" ? " h" : " %"})` : ""}`).join("<br>")}</div>` : ""}
+          ${v.u ? `<div style="margin-top:4px"><a href="${esc(v.u)}" target="_blank" rel="noopener noreferrer">Otwórz etykietę DailyMed (wer. ${esc(v.et)}) ↗</a></div>` : ""}
+        </div>` : '<div class="ver-card" style="opacity:.75"><b>Weryfikacja FDA (DailyMed)</b><span class="muted">Brak powiązanej etykiety FDA w bazie cross-check.</span></div>';
+
+      const ef = e && e.f ? Object.entries(e.f) : [];
+      const emaHtml = e ? `
+        <div class="ver-card">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <b>ChPL / SmPC (EMA) · ${esc(e.p || "")}</b>
+            <span class="tag ${e.s === 'consistent' ? 'ok' : e.s === 'discrepant' ? 'warn' : ''}">${esc(EMA_PL[e.s] || e.s)}</span>
+          </div>
+          ${ef.length ? `<div style="margin-top:2px;color:var(--color-text-muted)">${ef.map(([f, [st, vals]]) =>
+            `• ${f === "half-life" ? "t½" : "wiązanie z białkami"}: <b>${esc(EMA_PL[st] || st)}</b>${vals.length ? ` (ChPL: ${vals.map((x) => (+x).toLocaleString("pl")).join(", ")}${f === "half-life" ? " h" : " %"})` : ""}`).join("<br>")}</div>` : ""}
+          <div style="margin-top:4px">
+            ${e.pl ? `<a href="${esc(e.pl)}" target="_blank" rel="noopener noreferrer">ChPL ${esc(e.p)} (PL PDF) ↗</a> · ` : ""}
+            <a href="${esc(e.u)}" target="_blank" rel="noopener noreferrer">SmPC ${esc(e.p)} (EN PDF) ↗</a>
+          </div>
+        </div>` : '<div class="ver-card" style="opacity:.75"><b>ChPL / SmPC (EMA)</b><span class="muted">Brak dokumentacji EPAR/ChPL w bazie EMA.</span></div>';
+
+      tabContent = `
+        <div class="tab-panel">
+          <div class="label">Parametry PK (Wikipedia)</div>
+          ${rows.length ? `
+            <table class="pk">${rows.map(([a, b, t]) => `<tr><th>${a}</th><td>${esc(b) || ""}${t ? `<span class="raw">${esc(t)}</span>` : ""}</td></tr>`).join("")}</table>
+            ${k.src ? `<p class="note" style="margin-top:.4rem">Źródło infoboksu: <a href="${esc(k.src)}" target="_blank" rel="noopener noreferrer">Wikipedia — ${esc(k.title)} ↗</a></p>` : ""}`
+            : '<p class="empty">Brak wyodrębnionych parametrów PK w infoboksie Wikipedii dla tej substancji.</p>'}
+          <div class="label" style="margin-top:.8rem">Oficjalne etykiety rejestracyjne</div>
+          ${verHtml}
+          ${emaHtml}
+        </div>`;
+    } else if (curTab === "targets") {
+      const nb = neighbours(c).slice(0, 16);
+      const targetsList = (c.tg && c.tg.length) ? `
+        <div class="label">Cele molekularne (${c.tg.length})</div>
+        <div class="links">${c.tg.map((t) => `<button data-t="${t}">◎ <b>${esc(T[t].n)}</b> <small style="color:var(--color-text-muted)">(${esc(T[t].ty || "target")} · ${byTarget[t].length} subst.)</small></button>`).join("")}</div>`
+        : '<p class="empty">Brak celów molekularnych przypisanych w kuratorowanym profilu ChEMBL.</p>';
+
+      const neighboursList = nb.length ? `
+        <div class="label" style="margin-top:.8rem">Wspólne cele molekularne (${neighbours(c).length} substancji)</div>
+        <div class="links">${nb.map(({ i, n }) =>
+          `<button data-c="${i}"><span class="dot" style="background:${CL_COLORS[C[i].c]};width:8px;height:8px;margin-right:6px"></span>${esc(C[i].n)}${n > 1 ? ` <small style="color:var(--color-text-muted)">×${n} celów</small>` : ""}</button>`).join("")}</div>`
+        : '<p class="note" style="margin-top:.6rem">Brak innych substancji w katalogu o nakładających się celach.</p>';
+
+      tabContent = `
+        <div class="tab-panel">
+          ${c.m ? `<div class="card" style="padding:.6rem .8rem;background:var(--color-surface-offset)"><b style="font-size:var(--text-xs);color:var(--color-text-muted);display:block;margin-bottom:2px">MECHANIZM DZIAŁANIA (ChEMBL)</b><span style="font-size:var(--text-sm)">${esc(c.m)}</span></div>` : ""}
+          ${targetsList}
+          ${neighboursList}
+        </div>`;
+    } else if (curTab === "safety") {
+      const warnBoxes = [];
+      if (c.bb) warnBoxes.push('<div class="warnbox" style="margin-bottom:.5rem"><b>⚠️ Czarna ramka (Black Box Warning):</b> Oficjalne ostrzeżenie najwyższego stopnia w etykiecie leku dotyczące ciężkich działań niepożądanych lub zgonu.</div>');
+      if (c.wd) warnBoxes.push('<div class="warnbox" style="margin-bottom:.5rem"><b>⚠️ Wycofany z obrotu:</b> Lek lub substancja wycofana z rynku z przyczyn toksyczności, braku skuteczności lub zagrożenia zdrowia.</div>');
+      if (c.ic === "conflict") warnBoxes.push('<div class="warnbox" style="margin-bottom:.5rem"><b>⚠️ Rozbieżność identyfikacji:</b> Niezgodność chemiczna (InChIKey) między bazami — wymaga manualnej weryfikacji tożsamości.</div>');
+
+      const tagsHtml = (c.t && c.t.length) ? `
+        <div class="label" style="margin-top:${warnBoxes.length ? '.8rem' : '0'}">Profile ryzyka i tagi</div>
+        <div class="tags">${c.t.map((t) => `<span class="tag warn">${esc(t)}</span>`).join("")}</div>`
+        : '<p class="note">Brak flag ryzyka farmakologicznego.</p>';
+
+      const hubsHtml = (c.l && c.l.length) ? `
+        <div class="label" style="margin-top:.8rem">Powiązane huby bezpieczeństwa i szlaki</div>
+        <div class="links">${c.l.map((li) => `<button data-core="${li}">${KIND_PL[CORE[li].kind]}: <b>${esc(CORE[li].name)}</b></button>`).join("")}</div>` : "";
+
+      const cypHtml = (k && k.cyp && k.cyp.length) ? `
+        <div class="label" style="margin-top:.8rem">Interakcje enzymatyczne CYP</div>
+        <div class="ver-card">
+          <div>Substrat izoenzymów: <b>${esc(k.cyp.join(", "))}</b></div>
+          <span style="color:var(--color-text-muted)">Stosowanie w połączeniu z inhibitorami lub induktorami tego izoenzymu może drastycznie zmieniać stężenie leku we krwi.</span>
+        </div>` : "";
+
+      tabContent = `
+        <div class="tab-panel">
+          ${warnBoxes.join("")}
+          ${tagsHtml}
+          ${cypHtml}
+          ${hubsHtml}
+        </div>`;
+    }
+
+    return `
+      <div class="card-head">
+        <div class="label" style="margin-bottom:0">${esc(CL_PL[G.clusters[c.c].name])} · ${esc(g.label)}</div>
+        <button class="card-close" id="cardClose" title="Zamknij szczegóły (Esc)" aria-label="Zamknij szczegóły">✕</button>
+      </div>
       <div class="title">${esc(c.n)}</div>
-      <div class="tags">${(c.t || []).map((t) => `<span class="tag warn">${esc(t)}</span>`).join("")}${c.ph ? `<span class="tag">ChEMBL faza ${c.ph}</span>` : ""}${k ? '<span class="tag">PK auto</span>' : ""}${v && v.s === "consistent" ? '<span class="tag ok">PK ✓ FDA</span>' : ""}${v && v.s === "discrepant" ? '<span class="tag warn">PK ≠ FDA</span>' : ""}${e && e.s === "consistent" ? '<span class="tag ok">PK ✓ ChPL</span>' : ""}${e && e.s === "discrepant" ? '<span class="tag warn">PK ≠ ChPL</span>' : ""}${c.ic === "conflict" ? '<span class="tag warn">tożsamość?</span>' : ""}</div>
-      ${c.d ? `<p class="muted" style="margin-bottom:.6rem">${esc(c.d)}${c.d.length >= 420 ? "…" : ""}</p>` : ""}
-      ${c.m ? `<p class="muted"><b>Mechanizm (ChEMBL):</b> ${esc(c.m)}</p>` : ""}
-      <div class="label" style="margin-top:1rem">Farmakokinetyka</div>
-      ${rows.length ? `<table class="pk">${rows.map(([a, b, t]) => `<tr><th>${a}</th><td>${esc(b) || ""}${t ? `<span class="raw">${esc(t)}</span>` : ""}</td></tr>`).join("")}</table>
-        <p class="note" style="margin-top:.4rem">Źródło: <a href="${esc(k.src)}" target="_blank" rel="noopener">Wikipedia - ${esc(k.title)} (wersja przypięta)</a></p>`
-        : '<p class="empty">Brak dopasowanych danych PK w infoboksie Wikipedii.</p>'}
-      ${verHtml}
-      ${emaHtml}
-      ${chemblHtml}
-      <div class="label" style="margin-top:1rem">Powiązania</div>
-      <div class="links">${c.l.map((li) => `<button data-core="${li}">${KIND_PL[CORE[li].kind]}: ${esc(CORE[li].name)}</button>`).join("")}</div>
-      <div class="label" style="margin-top:1rem">Otwórz</div>
-      <div class="links"><a href="${obs}">Notatka w Obsidianie ↗</a>${c.ch ? `<a href="https://www.ebi.ac.uk/chembl/compound_report_card/${esc(c.ch)}/" target="_blank" rel="noopener">ChEMBL ${esc(c.ch)} ↗</a>` : ""}</div>
-      ${c.a ? `<p class="note" style="margin-top:.6rem">Aliasy: ${esc(c.a.join(", "))}</p>` : ""}
-      <p class="note">ID: <code>${esc(c.id)}</code></p>`;
+      <div class="tags">
+        ${(c.t || []).map((t) => `<span class="tag warn">${esc(t)}</span>`).join("")}
+        ${c.ph ? `<span class="tag">ChEMBL faza ${c.ph}</span>` : ""}
+        ${k ? '<span class="tag">PK auto</span>' : ""}
+        ${v && v.s === "consistent" ? '<span class="tag ok">PK ✓ FDA</span>' : ""}
+        ${v && v.s === "discrepant" ? '<span class="tag warn">PK ≠ FDA</span>' : ""}
+        ${e && e.s === "consistent" ? '<span class="tag ok">PK ✓ ChPL</span>' : ""}
+        ${e && e.s === "discrepant" ? '<span class="tag warn">PK ≠ ChPL</span>' : ""}
+        ${c.ic === "conflict" ? '<span class="tag warn">tożsamość?</span>' : ""}
+      </div>
+      <div class="tab-bar" role="tablist" aria-label="Sekcje karty substancji">
+        <button class="tab-btn ${curTab === 'overview' ? 'active' : ''}" data-tab="overview" role="tab" aria-selected="${curTab === 'overview'}">Przegląd</button>
+        <button class="tab-btn ${curTab === 'pk' ? 'active' : ''} ${!hasPk ? 'dim' : ''}" data-tab="pk" role="tab" aria-selected="${curTab === 'pk'}">PK & Etykiety ${pkBadge}</button>
+        <button class="tab-btn ${curTab === 'targets' ? 'active' : ''} ${!tgCount ? 'dim' : ''}" data-tab="targets" role="tab" aria-selected="${curTab === 'targets'}">Cele & MoA ${tgBadge}</button>
+        <button class="tab-btn ${curTab === 'safety' ? 'active' : ''} ${!safeCount ? 'dim' : ''}" data-tab="safety" role="tab" aria-selected="${curTab === 'safety'}">Ryzyka ${safeBadge}</button>
+      </div>
+      ${tabContent}`;
   }
   function wire(p) {
     p.querySelectorAll("[data-c]").forEach((b) => b.onclick = () => select({ type: "compound", i: +b.dataset.c }, true));
     p.querySelectorAll("[data-core]").forEach((b) => b.onclick = () => select({ type: "core", i: +b.dataset.core }, true));
     p.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => select({ type: "target", i: +b.dataset.t }, true));
+    p.querySelectorAll("[data-tab]").forEach((b) => b.onclick = () => {
+      state.tab = b.dataset.tab;
+      if (state.sel && state.sel.type === "compound") {
+        p.innerHTML = compoundHtml(C[state.sel.i]);
+        wire(p);
+      }
+    });
+    const closeBtn = p.querySelector("#cardClose");
+    if (closeBtn) closeBtn.onclick = () => select(null);
   }
 
   // ---------- sidebar controls
@@ -420,8 +574,9 @@
     if (og.children.length) hubSel.appendChild(og);
   });
   hubSel.onchange = () => {
-    state.hub = hubSel.value === "" ? null : +hubSel.value; stats(); search();
-    if (state.hub !== null) select({ type: "core", i: state.hub }); else select(null);
+    state.hub = hubSel.value === "" ? null : +hubSel.value;
+    state.sel = null; stats(); search();
+    select(state.hub !== null ? { type: "core", i: state.hub } : null);
     fit();
   };
   $("pkOnly").onchange = (e) => { state.pkOnly = e.target.checked; stats(); search(); draw(); };
@@ -436,16 +591,33 @@
       .sort((a, b) => (b.n.toLowerCase().startsWith(s) - a.n.toLowerCase().startsWith(s)) || a.n.length - b.n.length).slice(0, 40);
     const th = s.length >= 3 ? T.map((t, i) => [t, i]).filter(([t]) => (t.n || "").toLowerCase().includes(s)).slice(0, 6) : [];
     res.innerHTML = th.map(([t, i]) => `<button role="option" data-t="${i}"><span class="dot" style="background:var(--color-accent2)"></span>◎ ${esc(t.n)}<small>${byTarget[i].length} subst.</small></button>`).join("") + (hits.length ? hits.map((c) => `<button role="option" data-c="${c.i}"><span class="dot" style="background:${CL_COLORS[c.c]}"></span>${esc(c.n)}<small>${c.pk ? "PK" : ""}</small></button>`).join("")
-      : (th.length ? "" : '<p class="empty" style="padding:.4rem">Brak wyników przy obecnych filtrach.</p>'));
-    res.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => select({ type: "target", i: +b.dataset.t }, true));
-    res.querySelectorAll("[data-c]").forEach((b) => b.onclick = () => select({ type: "compound", i: +b.dataset.c }, true));
+      : (th.length ? "" : '<div role="option" aria-disabled="true" class="empty" style="padding:.4rem">Brak wyników przy obecnych filtrach.</div>'));
+    res.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => { select({ type: "target", i: +b.dataset.t }, true); res.innerHTML = ""; q.blur(); });
+    res.querySelectorAll("[data-c]").forEach((b) => b.onclick = () => { select({ type: "compound", i: +b.dataset.c }, true); res.innerHTML = ""; q.blur(); });
   }
   q.addEventListener("input", search);
-  q.addEventListener("keydown", (e) => { if (e.key === "Enter") { const b = res.querySelector("[data-c]"); if (b) b.click(); } });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") select(null); if (e.key === "/" && document.activeElement !== q) { e.preventDefault(); q.focus(); } });
+  q.addEventListener("keydown", (e) => { if (e.key === "Enter") { const b = res.querySelector("[data-c], [data-t]"); if (b) b.click(); } });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { select(null); return; }
+    if (e.key === "/" && document.activeElement !== q) { e.preventDefault(); q.focus(); return; }
+    const tag = document.activeElement ? document.activeElement.tagName : "";
+    if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
+    if (state.sel && state.sel.type === "compound") {
+      const tabs = ["overview", "pk", "targets", "safety"];
+      if (e.key >= "1" && e.key <= "4") {
+        const nextTab = tabs[+e.key - 1];
+        if (nextTab && nextTab !== state.tab) {
+          state.tab = nextTab;
+          const p = $("panel");
+          p.innerHTML = compoundHtml(C[state.sel.i]);
+          wire(p);
+        }
+      }
+    }
+  });
   $("reset").onclick = () => fit();
-  $("theme").onclick = () => { const r = document.documentElement; r.dataset.theme = r.dataset.theme === "dark" ? "light" : "dark"; draw(); };
-  if (matchMedia("(prefers-color-scheme: light)").matches) document.documentElement.dataset.theme = "light";
+  $("theme").onclick = () => { const r = document.documentElement; r.dataset.theme = r.dataset.theme === "dark" ? "light" : "dark"; $("theme").setAttribute("aria-pressed", r.dataset.theme === "light"); draw(); };
+  if (matchMedia("(prefers-color-scheme: light)").matches) { document.documentElement.dataset.theme = "light"; $("theme").setAttribute("aria-pressed", "true"); }
 
   new ResizeObserver(resize).observe(cv);
   resize(); fit(); stats();

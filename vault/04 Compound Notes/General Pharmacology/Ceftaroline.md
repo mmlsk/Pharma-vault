@@ -180,7 +180,7 @@ Bacterial penicillin-binding protein inhibitor; Penicillin-binding protein 2a in
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 3cee3c08…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3cee3c08-ed60-06c5-ac49-103b7ad2ef5f), label version 20260529. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 0.083, 8, 12, 120, 336)
-> - protein-binding: consistent (label values: 14.5, 20, 28)
+> - protein-binding: consistent (label values: 14.5, 28)
 
 > [!success] EU SmPC cross-check: **consistent**
 > Automated comparison with section 5.2 of the [EU SmPC of *Zinforo*](https://www.ema.europa.eu/en/documents/product-information/zinforo-epar-product-information_en.pdf) (EMEA/H/C/002252) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/zinforo-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.

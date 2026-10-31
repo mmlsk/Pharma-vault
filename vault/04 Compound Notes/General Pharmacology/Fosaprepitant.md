@@ -160,7 +160,7 @@ Water-soluble phosphorylated prodrug of aprepitant for single-dose intravenous a
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 9b6d5ea3…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9b6d5ea3-2f7a-4501-9a4a-6fa1a7c2d50a), label version 20260815. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 9, 13)
-> - protein-binding: consistent (label values: 21, 32, 95)
+> - protein-binding: consistent (label values: 95)
 
 ## Safety routing
 

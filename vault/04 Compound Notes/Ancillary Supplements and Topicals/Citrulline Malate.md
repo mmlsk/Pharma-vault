@@ -120,7 +120,7 @@ _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for fiel
 
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
-- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[L-Citrulline]], [[L-Citrulline (l-citrulline-compound)|L-Citrulline]]
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[L-Citrulline]]
 
 ## Safety routing
 

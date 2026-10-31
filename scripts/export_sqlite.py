@@ -31,6 +31,7 @@ def main() -> None:
     con = sqlite3.connect(DB)
     cur = con.cursor()
     cur.executescript("""
+    PRAGMA foreign_keys = ON;
     CREATE TABLE substances (compound_id TEXT PRIMARY KEY, name TEXT, grp TEXT, group_label TEXT, cluster TEXT,
         aliases TEXT, description TEXT, mechanism TEXT, chembl_id TEXT, review_status TEXT, source TEXT, triage TEXT);
     CREATE TABLE pk (compound_id TEXT PRIMARY KEY REFERENCES substances, half_life REAL, half_life_max REAL, half_life_unit TEXT,
@@ -48,6 +49,11 @@ def main() -> None:
     CREATE TABLE pk_verification_ema_fields (compound_id TEXT, field TEXT, status TEXT, wikipedia TEXT, smpc_values TEXT);
     CREATE TABLE identity_review (compound_id TEXT PRIMARY KEY REFERENCES substances, tier TEXT, chembl_id TEXT, verdict TEXT,
                                   decision TEXT, reason TEXT, pubchem_cids TEXT);
+    CREATE INDEX idx_compound_targets_target ON compound_targets(target_id);
+    CREATE INDEX idx_compound_targets_compound ON compound_targets(compound_id);
+    CREATE INDEX idx_atc_compound ON atc(compound_id);
+    CREATE INDEX idx_atc_code ON atc(code);
+    CREATE INDEX idx_pk_ver_fields_compound ON pk_verification_fields(compound_id);
     """)
     for r in load("substances.json"):
         cur.execute("INSERT INTO substances VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", (

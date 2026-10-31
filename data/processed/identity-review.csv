@@ -111,7 +111,6 @@ aprepitant-compound,Aprepitant,wikipedia-infobox,CHEMBL1471,APREPITANT,,structur
 ara290-compound,ARA-290 (Cibinetide),wikipedia-infobox,CHEMBL3545305,CIBINETIDE,,structure-confirmed,WZTIQQBMSJTRBR-WYKNNRPVSA-N,91810664,Cibinetide
 arbutin-compound,Arbutin,chembl-name-match,CHEMBL232202,ARBUTIN,Arbutin,structure-confirmed,BJRNKVDFDLYUGJ-RMPHRYRLSA-N,440936,Arbutin
 argatroban-compound,Argatroban,wikipedia-infobox,CHEMBL1166,ARGATROBAN,,connectivity-match,KXNPVXPOPUZYGB-IOVMHBDKSA-N,440542,"(2R,4R)-1-[5-(diaminomethylideneamino)-2-[(3-methyl-1,2,3,4-tetrahydroquinolin-8-yl)sulfonylamino]pentanoyl]-4-methylpiperidine-2-carboxylic acid"
-arginine-compound,L-Arginine,chembl-name-match,CHEMBL1485,ARGININE,L-Arginine,structure-confirmed,ODKSFYDXXFIFQN-BYPYZUCNSA-N,6322,L-Arginine
 aripiprazole-compound,Aripiprazole,wikipedia-infobox,CHEMBL1112,ARIPIPRAZOLE,,structure-confirmed,CEUORZQYGODEFX-UHFFFAOYSA-N,60795,Aripiprazole
 armodafinil-compound,Armodafinil (Nuvigil),wikipedia-infobox,CHEMBL1201192,ARMODAFINIL,,structure-confirmed,YFGHCGITMMYXAQ-LJQANCHMSA-N,9690109,Armodafinil
 artemether-compound,Artemether,chembl-name-match,CHEMBL566534,ARTEMETHER,Artemether,structure-confirmed,SXYIRMFQILZOAM-HVNFFKDJSA-N,68911;68911,Artemether;Artemether
@@ -216,7 +215,6 @@ boldione-compound,Boldione (Androstadienedione),wikipedia-infobox,CHEMBL1078534,
 bosutinib-compound,Bosutinib,wikipedia-infobox,CHEMBL288441,BOSUTINIB,,structure-confirmed,UBPYILGKFZZVDX-UHFFFAOYSA-N,5328940,Bosutinib
 botulinum-toxin-compound,Botulinum toxin,chembl-name-match,CHEMBL1201574,ONABOTULINUMTOXINA,Botulinum toxin,no-chembl-structure,,,
 bpc-157-compound,BPC-157,wikipedia-infobox,CHEMBL4297358,BPC-157,,structure-confirmed,HEEWEZGQMLZMFE-RKGINYAYSA-N,9941957,Bpc-157
-bpc157-compound,BPC-157,wikipedia-infobox,CHEMBL4297358,BPC-157,,structure-confirmed,HEEWEZGQMLZMFE-RKGINYAYSA-N,9941957,Bpc-157
 brazikumab-compound,Brazikumab,chembl-name-match,CHEMBL3833372,BRAZIKUMAB,Brazikumab,no-chembl-structure,,,
 brepocitinib-compound,Brepocitinib,wikipedia-infobox,CHEMBL4297477,BREPOCITINIB,,structure-confirmed,BUWBRTXGQRBBHG-MJBXVCDLSA-N,118878093,Brepocitinib
 bretylium-compound,Bretylium,wikipedia-infobox,CHEMBL1199080,BRETYLIUM,,structure-confirmed,AAQOQKQBGPPFNS-UHFFFAOYSA-N,2431,Bretylium
@@ -286,7 +284,6 @@ cenobamate-compound,Cenobamate,wikipedia-infobox,CHEMBL3989949,CENOBAMATE,,struc
 cephalexin-compound,Cephalexin,wikipedia-infobox,CHEMBL1727,CEPHALEXIN ANHYDROUS,,connectivity-match,ZAIPMKNFIOOWCQ-UEKVPHQBSA-N,2666,7-(2-Amino(phenyl)acetamido)-3-methyl-8-oxo-5-thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid
 cerdulatinib-compound,Cerdulatinib,chembl-name-match,CHEMBL4116008,CERDULATINIB,Cerdulatinib,structure-confirmed,BGLPECHZZQDNCD-UHFFFAOYSA-N,44595079;44595079,Cerdulatinib;Cerdulatinib
 certolizumab-compound,Certolizumab Pegol,chembl-name-match,CHEMBL1201831,CERTOLIZUMAB PEGOL,Certolizumab Pegol,inn-match-ema,,EMEA/H/C/001037,
-certolizumab-pegol-compound,Certolizumab Pegol,chembl-name-match,CHEMBL1201831,CERTOLIZUMAB PEGOL,Certolizumab Pegol,inn-match-ema,,EMEA/H/C/001037,
 cetilistat-compound,Cetilistat,wikipedia-infobox,CHEMBL2103825,CETILISTAT,,structure-confirmed,MVCQKIKWYUURMU-UHFFFAOYSA-N,9952916,Cetilistat
 cetrorelix-compound,Cetrorelix (Cetrotide),wikipedia-infobox,CHEMBL1200490,CETRORELIX,,structure-confirmed,SBNPWPIBESPSIF-MHWMIDJBSA-N,16130924,
 chiglitazar-compound,Chiglitazar,wikipedia-infobox,CHEMBL4650349,CHIGLITAZAR,,structure-confirmed,QNLWMPLUWMWDMQ-YTTGMZPUSA-N,71402018,Chiglitazar
@@ -315,7 +312,6 @@ cisapride-compound,Cisapride,wikipedia-infobox,CHEMBL1729,CISAPRIDE,,structure-c
 cisatracurium-compound,Cisatracurium,wikipedia-infobox,CHEMBL1200641,CISATRACURIUM BESYLATE,,structure-confirmed,XXZSQOVSEBAPGS-DONVQRBFSA-L;YXSLJKQTIDHPOT-LJCJQEJUSA-N,62886,Cisatracurium Besylate
 citalopram-compound,Citalopram,wikipedia-infobox,CHEMBL549,CITALOPRAM,,structure-confirmed,WSEQXVZVJXJVFP-UHFFFAOYSA-N,2771,Citalopram
 citarinostat-compound,Citarinostat (ACY-241),chembl-name-match,CHEMBL3693786,CITARINOSTAT,Citarinostat,structure-confirmed,VLIUIBXPEDFJRF-UHFFFAOYSA-N,53340426,Citarinostat
-citrulline-compound,L-Citrulline,chembl-name-match,CHEMBL444814,L-CITRULLINE,L-Citrulline,structure-confirmed,RHGKLRLOHDJJDR-BYPYZUCNSA-N,9750,Citrulline
 citrulline-malate-compound,Citrulline Malate,chembl-name-match,CHEMBL4297667,CITRULLINE MALATE,Citrulline Malate,structure-confirmed,DROVUXYZTXCEBX-WCCKRBBISA-N;RHGKLRLOHDJJDR-BYPYZUCNSA-N,162762,Citrulline malate
 civamide-compound,Civamide,wikipedia-infobox,CHEMBL313971,ZUCAPSAICIN,,structure-confirmed,YKPUWZUDDOIDPM-VURMDHGXSA-N,1548942,Zucapsaicin
 clarithromycin-compound,Clarithromycin,wikipedia-infobox,CHEMBL1741,CLARITHROMYCIN,,structure-confirmed,AGOYDEPGAOXOCK-KCBOHYOISA-N,84029,Clarithromycin
@@ -666,7 +662,6 @@ gw-274150-compound,Gw-274150,chembl-name-match,CHEMBL114551,GW-274150,Gw-274150,
 gw-406381-compound,Gw-406381,chembl-name-match,CHEMBL364804,GW-406381,Gw-406381,structure-confirmed,NXMZBNYLCVTRGB-UHFFFAOYSA-N,9832687,"2-(4-Ethoxyphenyl)-3-(4-(methylsulfonyl)phenyl)pyrazolo(1,5-b)pyridazine"
 gw0742-compound,GW0742,chembl-name-match,CHEMBL38508,,GW0742,structure-confirmed,HWVNEWGKWRGSRK-UHFFFAOYSA-N,9934458,GW-0742
 gw501516-compound,GW501516 (cardarine),wikipedia-infobox,CHEMBL38943,GW501516,,structure-confirmed,YDBLKRPLXZNVNB-UHFFFAOYSA-N,9803963,GW 501516
-halobetasol-compound,Halobetasol Propionate,wikipedia-infobox,CHEMBL1200908,HALOBETASOL PROPIONATE,,structure-confirmed,BDSYKGHYMJNPAB-LICBFIPMSA-N,6918178,Halobetasol Propionate
 haloperidol-compound,Haloperidol,wikipedia-infobox,CHEMBL54,HALOPERIDOL,,structure-confirmed,LNEPOXFFQSENCJ-UHFFFAOYSA-N,3559,Haloperidol
 he3235-compound,He3235,chembl-name-match,CHEMBL3545237,HE3235,He3235,connectivity-match,CKAXZOYFIHQCBN-UQOAMHMYSA-N,42611099,"17alpha-Ethynyl-5alpha-androstane-3alpha,17beta-diol"
 henagliflozin-compound,Henagliflozin,wikipedia-infobox,CHEMBL4297431,HENAGLIFLOZIN,,structure-confirmed,HYTPDMFFHVZBOR-VNXMGFANSA-N,56832738,Henagliflozin
@@ -756,7 +751,6 @@ ketamine-compound,Ketamine,wikipedia-infobox,CHEMBL742,KETAMINE,,structure-confi
 ketoconazole-compound,Ketoconazole,wikipedia-infobox,CHEMBL75,,,connectivity-match,XMAYWYJOQHXEEK-OZXSUGGESA-N,3823,"1-(4-(4-((2-(2,4-Dichlorophenyl)-2-(1H-imidazol-1-ylmethyl)-1,3-dioxolan-4-yl)methoxy)phenyl)piperazin-1-yl)ethanone"
 ketotifen-compound,Ketotifen,wikipedia-infobox,CHEMBL534,KETOTIFEN,,structure-confirmed,ZCVMWBYGMWKGHF-UHFFFAOYSA-N,3827,Ketotifen
 kisspeptin-10-compound,Kisspeptin-10,chembl-name-match,CHEMBL376756,KISSPEPTIN-10,Kisspeptin-10,structure-confirmed,RITKWYDZSSQNJI-INXYWQKQSA-N,25240297,Kisspeptin-10
-kisspeptin10-compound,Kisspeptin-10,chembl-name-match,CHEMBL376756,KISSPEPTIN-10,Kisspeptin-10,structure-confirmed,RITKWYDZSSQNJI-INXYWQKQSA-N,25240297,Kisspeptin-10
 kojic-acid-compound,Kojic Acid,chembl-name-match,CHEMBL287556,KOJIC ACID,Kojic Acid,structure-confirmed,BEJNERDRQOWKJM-UHFFFAOYSA-N,3840,Kojic Acid
 l-arginine-compound,L-Arginine,chembl-name-match,CHEMBL1485,ARGININE,L-Arginine,structure-confirmed,ODKSFYDXXFIFQN-BYPYZUCNSA-N,6322,L-Arginine
 l-citrulline-compound,L-Citrulline,chembl-name-match,CHEMBL444814,L-CITRULLINE,L-Citrulline,structure-confirmed,RHGKLRLOHDJJDR-BYPYZUCNSA-N,9750,Citrulline
@@ -780,7 +774,6 @@ largazole-thiol-compound,Largazole Thiol,chembl-name-match,CHEMBL1796689,LARGAZO
 lasmiditan-compound,Lasmiditan,chembl-name-match,CHEMBL3039520,LASMIDITAN,Lasmiditan,structure-confirmed,XEDHVZKDSYZQBF-UHFFFAOYSA-N,11610526;11610526,Lasmiditan;Lasmiditan
 lasofoxifene-compound,Lasofoxifene,wikipedia-infobox,CHEMBL328190,LASOFOXIFENE,,structure-confirmed,GXESHMAMLJKROZ-IAPPQJPRSA-N,216416,Lasofoxifene
 latanoprost-compound,Latanoprost,wikipedia-infobox,CHEMBL1051,LATANOPROST,,structure-confirmed,GGXICVAJURFBLW-CEYXHVGTSA-N,5311221,Latanoprost
-latanoprostene-compound,Latanoprostene Bunod,chembl-name-match,CHEMBL2364612,LATANOPROSTENE BUNOD,Latanoprostene Bunod,structure-confirmed,LOVMMUBRQUFEAH-UIEAZXIASA-N,11156438,Latanoprostene Bunod
 lby-135-compound,LBY-135,chembl-name-match,CHEMBL2109247,LBY-135,LBY-135,no-chembl-structure,,,
 lebrikizumab-compound,Lebrikizumab (Ebglyss),chembl-name-match,CHEMBL1743035,LEBRIKIZUMAB,Lebrikizumab,inn-match-ema,,EMEA/H/C/005894,
 lecanemab-compound,Lecanemab (Leqembi),chembl-name-match,CHEMBL3833321,LECANEMAB,Lecanemab,inn-match-ema,,EMEA/H/C/005966,
@@ -793,7 +786,7 @@ lenalidomide-compound,Lenalidomide,wikipedia-infobox,CHEMBL848,LENALIDOMIDE,,str
 lenvatinib-compound,Lenvatinib,wikipedia-infobox,CHEMBL1289601,LENVATINIB,,structure-confirmed,WOSKHXYHFSIKNG-UHFFFAOYSA-N,9823820,Lenvatinib
 lercanidipine-compound,Lercanidipine,wikipedia-infobox,CHEMBL250270,LERCANIDIPINE,,structure-confirmed,ZDXUKAKRHYTAKV-UHFFFAOYSA-N,65866,Lercanidipine
 lerodalcibep-compound,Lerodalcibep,chembl-name-match,CHEMBL4650405,LERODALCIBEP,Lerodalcibep,inn-match-ema,,EMEA/H/C/006694,
-lesinurad-compound,Lesinurad,chembl-name-match,CHEMBL2105720,LESINURAD,Lesinurad,structure-confirmed,FGQFOYHRJSUHMR-UHFFFAOYSA-N,56928182;53465279,Lesinurad Sodium;Lesinurad
+lesinurad-compound,Lesinurad,chembl-name-match,CHEMBL2105720,LESINURAD,Lesinurad,conflict,FGQFOYHRJSUHMR-UHFFFAOYSA-N,56928182;53465279,Lesinurad Sodium;Lesinurad
 lestaurtinib-compound,Lestaurtinib,wikipedia-infobox,CHEMBL603469,LESTAURTINIB,,structure-confirmed,UIARLYUEJFELEN-LROUJFHJSA-N,126565,Lestaurtinib
 letermovir-compound,Letermovir,wikipedia-infobox,CHEMBL1241951,LETERMOVIR,,structure-confirmed,FWYSMLBETOMXAG-QHCPKHFHSA-N,45138674,Letermovir
 letrozole-compound,Femara (Letrozole),wikipedia-infobox,CHEMBL1444,LETROZOLE,,structure-confirmed,HPJKCIUCZWXJDR-UHFFFAOYSA-N,3902,Letrozole
@@ -836,7 +829,6 @@ lopinavir-compound,Lopinavir,wikipedia-infobox,CHEMBL729,LOPINAVIR,,structure-co
 lorediplon-compound,Lorediplon,wikipedia-infobox,CHEMBL4303403,LOREDIPLON,,structure-confirmed,NQPOCLFSADOXBR-UHFFFAOYSA-N,12004146,Lorediplon
 lornoxicam-compound,Lornoxicam,chembl-name-match,CHEMBL1569487,LORNOXICAM,Lornoxicam,formula-match,WLHQHAUOOXYABV-UHFFFAOYSA-N,5282204;54690031,;Lornoxicam
 losartan-compound,Losartan,wikipedia-infobox,CHEMBL191,LOSARTAN,,structure-confirmed,PSIFNNKUMBGKDQ-UHFFFAOYSA-N,3961,Losartan
-loteprednol-compound,Loteprednol Etabonate,wikipedia-infobox,CHEMBL1200865,LOTEPREDNOL ETABONATE,,structure-confirmed,DMKSVUSAATWOCU-HROMYWEYSA-N,444025,Loteprednol Etabonate
 lotiglipron-compound,Lotiglipron,wikipedia-infobox,CHEMBL5314631,LOTIGLIPRON,,structure-confirmed,SVPYZAJTWFQTSM-UGDMGKLASA-N,146609022,Lotiglipron
 lovastatin-compound,Lovastatin (Mevacor),wikipedia-infobox,CHEMBL503,LOVASTATIN,,structure-confirmed,PCZOHLXUXFIOCF-BXMDZJJMSA-N,53232,Lovastatin
 lubiprostone-compound,Lubiprostone,wikipedia-infobox,CHEMBL1201134,LUBIPROSTONE,,structure-confirmed,WGFOBBZOWHGYQH-MXHNKVEKSA-N,157920,Lubiprostone
@@ -1080,7 +1072,7 @@ panobinostat-compound,Panobinostat,chembl-name-match,CHEMBL483254,PANOBINOSTAT,P
 panthenol-compound,Panthenol,chembl-name-match,CHEMBL1371937,PANTHENOL,Panthenol,structure-confirmed,SNPLKNRPJHDVJA-UHFFFAOYSA-N,4678,DL-panthenol
 pantoprazole-compound,Pantoprazole,wikipedia-infobox,CHEMBL1502,PANTOPRAZOLE,,structure-confirmed,IQPSEEYGBUAQFF-UHFFFAOYSA-N,4679,Pantoprazole
 papaverine-compound,Papaverine,wikipedia-infobox,CHEMBL19224,PAPAVERINE,,structure-confirmed,XQYZDYMELSJDRZ-UHFFFAOYSA-N,4680,Papaverine
-pardoprunox-compound,Pardoprunox,chembl-name-match,CHEMBL2103832,PARDOPRUNOX,Pardoprunox,structure-confirmed,YVPUUUDAZYFFQT-UHFFFAOYSA-N,6918524;6918525,Pardoprunox hydrochloride;Pardoprunox
+pardoprunox-compound,Pardoprunox,chembl-name-match,CHEMBL2103832,PARDOPRUNOX,Pardoprunox,conflict,YVPUUUDAZYFFQT-UHFFFAOYSA-N,6918524;6918525,Pardoprunox hydrochloride;Pardoprunox
 pargyline-compound,Pargyline,wikipedia-infobox,CHEMBL673,PARGYLINE,,structure-confirmed,DPWPWRLQFGFJFI-UHFFFAOYSA-N,4688,Pargyline
 paricalcitol-compound,Paricalcitol (Zemplar),wikipedia-infobox,CHEMBL1200622,PARICALCITOL,,structure-confirmed,BPKAHTKRCLCHEA-UBFJEZKGSA-N,5281104,Paricalcitol
 paromomycin-compound,Paromomycin,wikipedia-infobox,CHEMBL370143,PAROMOMYCIN,,structure-confirmed,UOZODPSAJZTQNH-LSWIJEOBSA-N,441375;165580,Paromomycin Sulfate;Paromomycin

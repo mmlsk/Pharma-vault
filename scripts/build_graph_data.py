@@ -14,8 +14,7 @@ import json
 import math
 from collections import OrderedDict, defaultdict
 
-from generate_vault_notes import CHOLINERGIC, TRIAGE_TO_HUB, TRIAGE_TO_PATHWAY
-from pv_common import GROUP_TO_CLUSTER, PROCESSED, ROOT, safe_filename
+from pv_common import GROUP_TO_CLUSTER, PROCESSED, ROOT, assign_note_filenames, hubs_and_pathways, load_jsonl
 
 OUT = ROOT / "apps/graph-viewer/graph-data.js"
 HUBS = ["Stacking and Interaction Risks", "Cholinergic Load", "Stimulant and Cardiovascular Load",
@@ -95,6 +94,7 @@ def main() -> None:
     core_names = list(core)
     idx = {n: i for i, n in enumerate(core_names)}
 
+    fnames = assign_note_filenames(rows)
     compounds = []
     for g in groups:
         gx, gy, _ = gpos[g]
@@ -102,19 +102,10 @@ def main() -> None:
         for k, r in enumerate(members):
             rad = SPACING * math.sqrt(k + 0.5)
             x, y = gx + rad * math.cos(k * GOLDEN), gy + rad * math.sin(k * GOLDEN)
-            hubs = [idx["Stacking and Interaction Risks"]]
-            for t in r["group_risk_triage"]:
-                h = TRIAGE_TO_HUB.get(t)
-                if h and idx[h] not in hubs:
-                    hubs.append(idx[h])
-            if CHOLINERGIC.search(r["description"] + " " + r["mechanism"]):
-                hubs.append(idx["Cholinergic Load"])
-            pws = {idx[TRIAGE_TO_PATHWAY[t]] for t in r["group_risk_triage"] if t in TRIAGE_TO_PATHWAY}
             p = pk.get(r["compound_id"])
-            if p and (p.get("cyp-interactions") or {}).get("substrates"):
-                pws.add(idx["CYP450 Metabolism"])
+            hubs, pws = hubs_and_pathways(r, p)
             item = {"id": r["compound_id"], "n": r["name"], "g": groups.index(g),
-                    "x": r1(x), "y": r1(y), "l": sorted(hubs + list(pws))}
+                    "x": r1(x), "y": r1(y), "l": sorted({idx[n] for n in hubs + pws})}
             if r["aliases"]:
                 item["a"] = r["aliases"]
             if r["description"]:
@@ -127,8 +118,7 @@ def main() -> None:
                     item["ph"] = int(r["chembl_max_phase"])
             if r["group_risk_triage"]:
                 item["t"] = r["group_risk_triage"]
-            fname = safe_filename(r["name"])
-            item["f"] = f"04 Compound Notes/{r['cluster']}/{fname}"
+            item["f"] = f"04 Compound Notes/{r['cluster']}/{fnames[r['compound_id']]}"
             if p:
                 item["pk"] = compact_pk(p)
             c = ch.get(r["compound_id"])
@@ -169,13 +159,6 @@ def main() -> None:
             if x and c and x["chembl-id"] == c["identity"]["chembl-id"]:
                 item["ic"] = "curated" if (x.get("decision") or c["identity"]["source"] == "curated-identity") else x["verdict"]
             compounds.append(item)
-    # disambiguated filenames mirror generate_vault_notes.py
-    seen = set()
-    for c in compounds:
-        key = c["f"].lower()
-        if key in seen:
-            c["f"] = f"{c['f']} ({c['id']})"
-        seen.add(key)
 
     data = {
         "meta": {"substances": len(rows), "groups": len(groups), "clusters": len(CLUSTER_ORDER),

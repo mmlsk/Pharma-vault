@@ -54,11 +54,11 @@ tags:
 - compound
 - source-derived
 - group/peptides
+- merged-duplicate
 - stub
 - chembl-profile
 - chembl-name-match
 - identity-confirmed
-- possible-duplicate
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL376756
@@ -91,7 +91,7 @@ chembl:
 
 ## Source summary
 
-The decapeptide fragment of kisspeptin that stimulates hypothalamic GnRH neurons. Used experimentally to probe the reproductive axis and explored as a more physiological alternative to hCG triggering.
+The decapeptide fragment of kisspeptin that stimulates hypothalamic GnRH neurons. Used experimentally to probe the reproductive axis and explored as a more physiological alternative to hCG triggering. | Merged duplicate (kisspeptin10-compound): Fragment of the reproductive hormone kisspeptin studied for stimulating the HPG axis.
 
 ## ChEMBL profile
 
@@ -109,12 +109,6 @@ The decapeptide fragment of kisspeptin that stimulates hypothalamic GnRH neurons
 ## Pharmacokinetics
 
 _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._
-
-## Related compounds (auto)
-
-_Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
-
-- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Kisspeptin-10 (kisspeptin10-compound)|Kisspeptin-10]]
 
 ## Safety routing
 

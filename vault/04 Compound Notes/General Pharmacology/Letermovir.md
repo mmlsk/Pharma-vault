@@ -177,7 +177,7 @@ DNA terminase inhibitor _(ChEMBL curated mechanism of the parent molecule, via C
 > [!success] FDA label cross-check: **consistent**
 > Automated comparison with the [US prescribing information (DailyMed set 1b49df80…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=1b49df80-be4f-47e0-a0b7-123f3e69395b), label version 20260114. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 12)
-> - protein-binding: consistent (label values: 2, 70, 84.27, 93, 97, 99)
+> - protein-binding: consistent (label values: 84.27, 97, 99, 99.63)
 
 > [!success] EU SmPC cross-check: **consistent**
 > Automated comparison with section 5.2 of the [EU SmPC of *Prevymis*](https://www.ema.europa.eu/en/documents/product-information/prevymis-epar-product-information_en.pdf) (EMEA/H/C/004536). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.

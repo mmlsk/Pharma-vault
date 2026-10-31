@@ -2344,7 +2344,6 @@
     "fluticasone-propionate-compound",
     "fosdagrocorat-compound",
     "halcinonide-compound",
-    "halobetasol-compound",
     "halobetasol-propionate-compound",
     "hydrocortisone-acetate-compound",
     "hydrocortisone-butyrate-compound",
@@ -2352,7 +2351,6 @@
     "hydrocortisone-cypionate-compound",
     "hydrocortisone-probutate-compound",
     "hydrocortisone-valerate-compound",
-    "loteprednol-compound",
     "loteprednol-etabonate-compound",
     "mapracorat-compound",
     "medrysone-compound",
@@ -4334,7 +4332,6 @@
     "bimatoprost-topical-compound",
     "latanoprost-compound",
     "latanoprostene-bunod-compound",
-    "latanoprostene-compound",
     "tafluprost-compound",
     "travoprost-compound"
    ]
@@ -5491,7 +5488,6 @@
     "adalimumab-compound",
     "afelimomab-compound",
     "certolizumab-compound",
-    "certolizumab-pegol-compound",
     "etanercept-compound",
     "golimumab-compound",
     "infliximab-abda-compound",
@@ -6857,7 +6853,6 @@
    "fluocinonide-compound",
    "flurandrenolide-compound",
    "fluticasone-propionate-compound",
-   "halobetasol-compound",
    "halobetasol-propionate-compound",
    "hydrocortisone-aceponate-compound",
    "mometasone-furoate-compound",
@@ -7603,7 +7598,6 @@
    "adalimumab-compound",
    "afelimomab-compound",
    "certolizumab-compound",
-   "certolizumab-pegol-compound",
    "etanercept-compound",
    "golimumab-compound",
    "infliximab-abda-compound",
@@ -8584,7 +8578,6 @@
    "fluocinolone-acetonide-compound",
    "fluorometholone-compound",
    "hydrocortisone-compound",
-   "loteprednol-compound",
    "loteprednol-etabonate-compound",
    "medrysone-compound",
    "prednisolone-compound",
@@ -8639,7 +8632,6 @@
    "bimatoprost-topical-compound",
    "latanoprost-compound",
    "latanoprostene-bunod-compound",
-   "latanoprostene-compound",
    "tafluprost-compound",
    "travoprost-compound"
   ],
@@ -10144,13 +10136,6 @@
      ]
     ],
     [
-     "certolizumab-pegol-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
      "etanercept-compound",
      1,
      [
@@ -10196,7 +10181,6 @@
    "same-atc4": [
     "afelimomab-compound",
     "certolizumab-compound",
-    "certolizumab-pegol-compound",
     "etanercept-compound",
     "golimumab-compound",
     "infliximab-compound",
@@ -10517,13 +10501,6 @@
      ]
     ],
     [
-     "certolizumab-pegol-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
      "etanercept-compound",
      1,
      [
@@ -10569,7 +10546,6 @@
    "same-atc4": [
     "adalimumab-compound",
     "certolizumab-compound",
-    "certolizumab-pegol-compound",
     "etanercept-compound",
     "golimumab-compound",
     "infliximab-compound",
@@ -11105,8 +11081,8 @@
     "hydrocortisone-compound",
     "hydrocortisone-butyrate-compound",
     "hydrocortisone-probutate-compound",
-    "loteprednol-compound",
-    "loteprednol-etabonate-compound"
+    "loteprednol-etabonate-compound",
+    "medrysone-compound"
    ],
    "shared-cyp": {}
   },
@@ -12038,8 +12014,8 @@
     "fluocinonide-compound",
     "flurandrenolide-compound",
     "fluticasone-propionate-compound",
-    "halobetasol-compound",
-    "halobetasol-propionate-compound"
+    "halobetasol-propionate-compound",
+    "hydrocortisone-aceponate-compound"
    ],
    "shared-cyp": {}
   },
@@ -13736,14 +13712,6 @@
     "ximelagatran-compound"
    ],
    "shared-cyp": {}
-  },
-  "arginine-compound": {
-   "shared-target": [],
-   "same-atc4": [],
-   "shared-cyp": {},
-   "same-molecule": [
-    "l-arginine-compound"
-   ]
   },
   "aripiprazole-compound": {
    "shared-target": [
@@ -17666,13 +17634,6 @@
      ]
     ],
     [
-     "latanoprostene-compound",
-     1,
-     [
-      "Prostaglandin F2-alpha receptor"
-     ]
-    ],
-    [
      "tafluprost-compound",
      1,
      [
@@ -17691,7 +17652,6 @@
     "bimatoprost-topical-compound",
     "latanoprost-compound",
     "latanoprostene-bunod-compound",
-    "latanoprostene-compound",
     "tafluprost-compound",
     "travoprost-compound"
    ],
@@ -17724,13 +17684,6 @@
      ]
     ],
     [
-     "latanoprostene-compound",
-     1,
-     [
-      "Prostaglandin F2-alpha receptor"
-     ]
-    ],
-    [
      "tafluprost-compound",
      1,
      [
@@ -17749,7 +17702,6 @@
     "bimatoprost-compound",
     "latanoprost-compound",
     "latanoprostene-bunod-compound",
-    "latanoprostene-compound",
     "tafluprost-compound",
     "travoprost-compound"
    ],
@@ -18290,22 +18242,6 @@
    "shared-cyp": {
     "CYP3A4": 204
    }
-  },
-  "bpc-157-compound": {
-   "shared-target": [],
-   "same-atc4": [],
-   "shared-cyp": {},
-   "same-molecule": [
-    "bpc157-compound"
-   ]
-  },
-  "bpc157-compound": {
-   "shared-target": [],
-   "same-atc4": [],
-   "shared-cyp": {},
-   "same-molecule": [
-    "bpc-157-compound"
-   ]
   },
   "brazikumab-compound": {
    "shared-target": [
@@ -21608,13 +21544,6 @@
      ]
     ],
     [
-     "certolizumab-pegol-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
      "etanercept-compound",
      1,
      [
@@ -21660,96 +21589,12 @@
    "same-atc4": [
     "adalimumab-compound",
     "afelimomab-compound",
-    "certolizumab-pegol-compound",
     "etanercept-compound",
     "golimumab-compound",
     "infliximab-compound",
     "infliximab-abda-compound"
    ],
-   "shared-cyp": {},
-   "same-molecule": [
-    "certolizumab-pegol-compound"
-   ]
-  },
-  "certolizumab-pegol-compound": {
-   "shared-target": [
-    [
-     "adalimumab-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
-     "afelimomab-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
-     "certolizumab-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
-     "etanercept-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
-     "golimumab-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
-     "infliximab-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
-     "infliximab-abda-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
-     "onercept-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
-     "ozoralizumab-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ]
-   ],
-   "same-atc4": [
-    "adalimumab-compound",
-    "afelimomab-compound",
-    "certolizumab-compound",
-    "etanercept-compound",
-    "golimumab-compound",
-    "infliximab-compound",
-    "infliximab-abda-compound"
-   ],
-   "shared-cyp": {},
-   "same-molecule": [
-    "certolizumab-compound"
-   ]
+   "shared-cyp": {}
   },
   "cetilistat-compound": {
    "shared-target": [
@@ -23525,21 +23370,11 @@
     "CYP3A4": 204
    }
   },
-  "citrulline-compound": {
-   "shared-target": [],
-   "same-atc4": [],
-   "shared-cyp": {},
-   "same-molecule": [
-    "citrulline-malate-compound",
-    "l-citrulline-compound"
-   ]
-  },
   "citrulline-malate-compound": {
    "shared-target": [],
    "same-atc4": [],
    "shared-cyp": {},
    "same-molecule": [
-    "citrulline-compound",
     "l-citrulline-compound"
    ]
   },
@@ -25211,8 +25046,8 @@
     "fluocinolone-acetonide-compound",
     "fluorometholone-compound",
     "hydrocortisone-compound",
-    "loteprednol-compound",
-    "loteprednol-etabonate-compound"
+    "loteprednol-etabonate-compound",
+    "medrysone-compound"
    ],
    "shared-cyp": {}
   },
@@ -28236,8 +28071,8 @@
     "hydrocortisone-compound",
     "hydrocortisone-butyrate-compound",
     "hydrocortisone-probutate-compound",
-    "loteprednol-compound",
-    "loteprednol-etabonate-compound"
+    "loteprednol-etabonate-compound",
+    "medrysone-compound"
    ],
    "shared-cyp": {}
   },
@@ -28339,8 +28174,8 @@
     "fluocinonide-compound",
     "flurandrenolide-compound",
     "fluticasone-propionate-compound",
-    "halobetasol-compound",
-    "halobetasol-propionate-compound"
+    "halobetasol-propionate-compound",
+    "hydrocortisone-aceponate-compound"
    ],
    "shared-cyp": {}
   },
@@ -30464,8 +30299,8 @@
     "fluocinonide-compound",
     "flurandrenolide-compound",
     "fluticasone-propionate-compound",
-    "halobetasol-compound",
-    "halobetasol-propionate-compound"
+    "halobetasol-propionate-compound",
+    "hydrocortisone-aceponate-compound"
    ],
    "shared-cyp": {}
   },
@@ -37116,13 +36951,6 @@
      ]
     ],
     [
-     "certolizumab-pegol-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
      "golimumab-compound",
      1,
      [
@@ -37162,7 +36990,6 @@
     "adalimumab-compound",
     "afelimomab-compound",
     "certolizumab-compound",
-    "certolizumab-pegol-compound",
     "golimumab-compound",
     "infliximab-compound",
     "infliximab-abda-compound"
@@ -41148,7 +40975,7 @@
     "hydrocortisone-compound",
     "hydrocortisone-butyrate-compound",
     "hydrocortisone-probutate-compound",
-    "loteprednol-compound"
+    "loteprednol-etabonate-compound"
    ],
    "shared-cyp": {}
   },
@@ -41511,8 +41338,8 @@
     "fluocinolone-acetonide-compound",
     "fluocinonide-compound",
     "fluticasone-propionate-compound",
-    "halobetasol-compound",
-    "halobetasol-propionate-compound"
+    "halobetasol-propionate-compound",
+    "hydrocortisone-aceponate-compound"
    ],
    "shared-cyp": {}
   },
@@ -44372,13 +44199,6 @@
      ]
     ],
     [
-     "certolizumab-pegol-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
      "etanercept-compound",
      1,
      [
@@ -44418,7 +44238,6 @@
     "adalimumab-compound",
     "afelimomab-compound",
     "certolizumab-compound",
-    "certolizumab-pegol-compound",
     "etanercept-compound",
     "infliximab-compound",
     "infliximab-abda-compound"
@@ -45271,112 +45090,6 @@
    ],
    "shared-cyp": {}
   },
-  "halobetasol-compound": {
-   "shared-target": [
-    [
-     "alclometasone-dipropionate-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "amcinonide-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "azd-5423-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "beclomethasone-dipropionate-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "betamethasone-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "betamethasone-acetate-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "betamethasone-benzoate-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "betamethasone-dipropionate-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "betamethasone-valerate-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "budesonide-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "ciclesonide-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "clobetasol-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ]
-   ],
-   "same-atc4": [
-    "amcinonide-compound",
-    "beclomethasone-dipropionate-compound",
-    "betamethasone-compound",
-    "budesonide-compound",
-    "desoximetasone-compound",
-    "diflorasone-diacetate-compound",
-    "difluprednate-compound",
-    "fluocinolone-acetonide-compound",
-    "fluocinonide-compound",
-    "flurandrenolide-compound",
-    "fluticasone-propionate-compound",
-    "halobetasol-propionate-compound"
-   ],
-   "shared-cyp": {},
-   "same-molecule": [
-    "halobetasol-propionate-compound"
-   ]
-  },
   "halobetasol-propionate-compound": {
    "shared-target": [
     [
@@ -45476,12 +45189,9 @@
     "fluocinonide-compound",
     "flurandrenolide-compound",
     "fluticasone-propionate-compound",
-    "halobetasol-compound"
+    "hydrocortisone-aceponate-compound"
    ],
-   "shared-cyp": {},
-   "same-molecule": [
-    "halobetasol-compound"
-   ]
+   "shared-cyp": {}
   },
   "haloperidol-compound": {
    "shared-target": [
@@ -46088,7 +45798,7 @@
     "fluocinonide-compound",
     "flurandrenolide-compound",
     "fluticasone-propionate-compound",
-    "halobetasol-compound"
+    "halobetasol-propionate-compound"
    ],
    "shared-cyp": {}
   },
@@ -48328,13 +48038,6 @@
      ]
     ],
     [
-     "certolizumab-pegol-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
      "etanercept-compound",
      1,
      [
@@ -48374,7 +48077,6 @@
     "adalimumab-compound",
     "afelimomab-compound",
     "certolizumab-compound",
-    "certolizumab-pegol-compound",
     "etanercept-compound",
     "golimumab-compound",
     "infliximab-compound"
@@ -48402,13 +48104,6 @@
     ],
     [
      "certolizumab-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
-     "certolizumab-pegol-compound",
      1,
      [
       "Tumor necrosis factor"
@@ -48454,7 +48149,6 @@
     "adalimumab-compound",
     "afelimomab-compound",
     "certolizumab-compound",
-    "certolizumab-pegol-compound",
     "etanercept-compound",
     "golimumab-compound",
     "infliximab-abda-compound"
@@ -52293,36 +51987,11 @@
    ],
    "shared-cyp": {}
   },
-  "kisspeptin-10-compound": {
-   "shared-target": [],
-   "same-atc4": [],
-   "shared-cyp": {},
-   "same-molecule": [
-    "kisspeptin10-compound"
-   ]
-  },
-  "kisspeptin10-compound": {
-   "shared-target": [],
-   "same-atc4": [],
-   "shared-cyp": {},
-   "same-molecule": [
-    "kisspeptin-10-compound"
-   ]
-  },
-  "l-arginine-compound": {
-   "shared-target": [],
-   "same-atc4": [],
-   "shared-cyp": {},
-   "same-molecule": [
-    "arginine-compound"
-   ]
-  },
   "l-citrulline-compound": {
    "shared-target": [],
    "same-atc4": [],
    "shared-cyp": {},
    "same-molecule": [
-    "citrulline-compound",
     "citrulline-malate-compound"
    ]
   },
@@ -52929,13 +52598,6 @@
      ]
     ],
     [
-     "latanoprostene-compound",
-     1,
-     [
-      "Prostaglandin F2-alpha receptor"
-     ]
-    ],
-    [
      "tafluprost-compound",
      1,
      [
@@ -52954,7 +52616,6 @@
     "bimatoprost-compound",
     "bimatoprost-topical-compound",
     "latanoprostene-bunod-compound",
-    "latanoprostene-compound",
     "tafluprost-compound",
     "travoprost-compound"
    ],
@@ -52984,13 +52645,6 @@
      ]
     ],
     [
-     "latanoprostene-compound",
-     1,
-     [
-      "Prostaglandin F2-alpha receptor"
-     ]
-    ],
-    [
      "tafluprost-compound",
      1,
      [
@@ -53009,72 +52663,10 @@
     "bimatoprost-compound",
     "bimatoprost-topical-compound",
     "latanoprost-compound",
-    "latanoprostene-compound",
     "tafluprost-compound",
     "travoprost-compound"
    ],
-   "shared-cyp": {},
-   "same-molecule": [
-    "latanoprostene-compound"
-   ]
-  },
-  "latanoprostene-compound": {
-   "shared-target": [
-    [
-     "bimatoprost-compound",
-     1,
-     [
-      "Prostaglandin F2-alpha receptor"
-     ]
-    ],
-    [
-     "bimatoprost-topical-compound",
-     1,
-     [
-      "Prostaglandin F2-alpha receptor"
-     ]
-    ],
-    [
-     "latanoprost-compound",
-     1,
-     [
-      "Prostaglandin F2-alpha receptor"
-     ]
-    ],
-    [
-     "latanoprostene-bunod-compound",
-     1,
-     [
-      "Prostaglandin F2-alpha receptor"
-     ]
-    ],
-    [
-     "tafluprost-compound",
-     1,
-     [
-      "Prostaglandin F2-alpha receptor"
-     ]
-    ],
-    [
-     "travoprost-compound",
-     1,
-     [
-      "Prostaglandin F2-alpha receptor"
-     ]
-    ]
-   ],
-   "same-atc4": [
-    "bimatoprost-compound",
-    "bimatoprost-topical-compound",
-    "latanoprost-compound",
-    "latanoprostene-bunod-compound",
-    "tafluprost-compound",
-    "travoprost-compound"
-   ],
-   "shared-cyp": {},
-   "same-molecule": [
-    "latanoprostene-bunod-compound"
-   ]
+   "shared-cyp": {}
   },
   "lby-135-compound": {
    "shared-target": [
@@ -55350,112 +54942,6 @@
     "CYP3A4": 204
    }
   },
-  "loteprednol-compound": {
-   "shared-target": [
-    [
-     "alclometasone-dipropionate-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "amcinonide-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "azd-5423-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "beclomethasone-dipropionate-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "betamethasone-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "betamethasone-acetate-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "betamethasone-benzoate-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "betamethasone-dipropionate-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "betamethasone-valerate-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "budesonide-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "ciclesonide-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ],
-    [
-     "clobetasol-compound",
-     1,
-     [
-      "Glucocorticoid receptor"
-     ]
-    ]
-   ],
-   "same-atc4": [
-    "alclometasone-dipropionate-compound",
-    "betamethasone-compound",
-    "cortisone-acetate-compound",
-    "desonide-compound",
-    "dexamethasone-compound",
-    "difluprednate-compound",
-    "fluocinolone-acetonide-compound",
-    "fluorometholone-compound",
-    "hydrocortisone-compound",
-    "loteprednol-etabonate-compound",
-    "medrysone-compound",
-    "prednisolone-compound"
-   ],
-   "shared-cyp": {},
-   "same-molecule": [
-    "loteprednol-etabonate-compound"
-   ]
-  },
   "loteprednol-etabonate-compound": {
    "shared-target": [
     [
@@ -55553,14 +55039,11 @@
     "fluocinolone-acetonide-compound",
     "fluorometholone-compound",
     "hydrocortisone-compound",
-    "loteprednol-compound",
     "medrysone-compound",
-    "prednisolone-compound"
+    "prednisolone-compound",
+    "rimexolone-compound"
    ],
-   "shared-cyp": {},
-   "same-molecule": [
-    "loteprednol-compound"
-   ]
+   "shared-cyp": {}
   },
   "lovastatin-compound": {
    "shared-target": [
@@ -57159,9 +56642,9 @@
     "fluocinolone-acetonide-compound",
     "fluorometholone-compound",
     "hydrocortisone-compound",
-    "loteprednol-compound",
     "loteprednol-etabonate-compound",
-    "prednisolone-compound"
+    "prednisolone-compound",
+    "rimexolone-compound"
    ],
    "shared-cyp": {}
   },
@@ -65286,13 +64769,6 @@
      ]
     ],
     [
-     "certolizumab-pegol-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
      "etanercept-compound",
      1,
      [
@@ -66760,13 +66236,6 @@
     ],
     [
      "certolizumab-compound",
-     1,
-     [
-      "Tumor necrosis factor"
-     ]
-    ],
-    [
-     "certolizumab-pegol-compound",
      1,
      [
       "Tumor necrosis factor"
@@ -70550,7 +70019,7 @@
     "fluocinonide-compound",
     "flurandrenolide-compound",
     "fluticasone-propionate-compound",
-    "halobetasol-compound"
+    "halobetasol-propionate-compound"
    ],
    "shared-cyp": {}
   },
@@ -74435,7 +73904,7 @@
     "fluocinolone-acetonide-compound",
     "fluorometholone-compound",
     "hydrocortisone-compound",
-    "loteprednol-compound"
+    "loteprednol-etabonate-compound"
    ],
    "shared-cyp": {}
   },
@@ -80205,13 +79674,6 @@
      ]
     ],
     [
-     "latanoprostene-compound",
-     1,
-     [
-      "Prostaglandin F2-alpha receptor"
-     ]
-    ],
-    [
      "travoprost-compound",
      1,
      [
@@ -80224,7 +79686,6 @@
     "bimatoprost-topical-compound",
     "latanoprost-compound",
     "latanoprostene-bunod-compound",
-    "latanoprostene-compound",
     "travoprost-compound"
    ],
    "shared-cyp": {}
@@ -84695,13 +84156,6 @@
      ]
     ],
     [
-     "latanoprostene-compound",
-     1,
-     [
-      "Prostaglandin F2-alpha receptor"
-     ]
-    ],
-    [
      "tafluprost-compound",
      1,
      [
@@ -84714,7 +84168,6 @@
     "bimatoprost-topical-compound",
     "latanoprost-compound",
     "latanoprostene-bunod-compound",
-    "latanoprostene-compound",
     "tafluprost-compound"
    ],
    "shared-cyp": {}

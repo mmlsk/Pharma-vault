@@ -1,7 +1,7 @@
 ---
 type: compound
 schema-version: 2
-compound-id: melanotan-compound
+compound-id: melanotan-ii-compound
 name: Melanotan II
 aliases: []
 cluster: Growth Hormone and Peptide Agents
@@ -54,6 +54,7 @@ tags:
 - compound
 - source-derived
 - group/peptides
+- merged-duplicate
 - stub
 ---
 
@@ -65,13 +66,13 @@ tags:
 
 ## Identity
 
-- **Compound ID:** `melanotan-compound`
+- **Compound ID:** `melanotan-ii-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
 
 ## Source summary
 
-Melanocortin receptor agonist peptide studied for UV-independent skin tanning via melanogenesis.
+A non-selective melanocortin agonist used unlicensed for tanning. Because it hits MC1R, MC3R and MC4R together, the pigmentation comes with nausea, spontaneous erections and appetite suppression; bremelanotide is the licensed MC4R-selective descendant. | Merged duplicate (melanotan-compound): Melanocortin receptor agonist peptide studied for UV-independent skin tanning via melanogenesis.
 
 ## Evidence boundaries
 

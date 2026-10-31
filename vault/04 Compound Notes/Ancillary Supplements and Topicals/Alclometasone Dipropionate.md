@@ -133,7 +133,7 @@ _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for fiel
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
 - **Shared target:** [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor), [[Clocortolone Pivalate]] (Glucocorticoid receptor)
-- **Same ATC subgroup:** [[Betamethasone]], [[Cortisone Acetate]], [[Desonide]], [[Dexamethasone]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluorometholone]], [[Hydrocortisone (Cortef)]], [[Hydrocortisone Butyrate]], [[Hydrocortisone Probutate]], [[Loteprednol Etabonate]], [[Loteprednol Etabonate (loteprednol-etabonate-compound)|Loteprednol Etabonate]]
+- **Same ATC subgroup:** [[Betamethasone]], [[Cortisone Acetate]], [[Desonide]], [[Dexamethasone]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluorometholone]], [[Hydrocortisone (Cortef)]], [[Hydrocortisone Butyrate]], [[Hydrocortisone Probutate]], [[Loteprednol Etabonate]], [[Medrysone]]
 
 ## Safety routing
 

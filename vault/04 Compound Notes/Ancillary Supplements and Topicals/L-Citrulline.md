@@ -1,7 +1,7 @@
 ---
 type: compound
 schema-version: 2
-compound-id: citrulline-compound
+compound-id: l-citrulline-compound
 name: L-Citrulline
 aliases: []
 cluster: Ancillary Supplements and Topicals
@@ -53,6 +53,7 @@ tags:
 - compound
 - source-derived
 - group/ancillary
+- merged-duplicate
 - stub
 - chembl-profile
 - chembl-name-match
@@ -90,14 +91,14 @@ chembl:
 
 ## Identity
 
-- **Compound ID:** `citrulline-compound`
+- **Compound ID:** `l-citrulline-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
 - **ChEMBL:** [CHEMBL444814](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL444814/) · max phase 3 · id via exact ChEMBL name match · structure check: ✅ InChIKey matches PubChem
 
 ## Source summary
 
-Urea-cycle amino acid that raises arginine and nitric-oxide availability more reliably than oral arginine; studied for blood flow and exercise performance.
+Arginine precursor that bypasses first-pass arginase, so it raises plasma arginine more reliably than arginine itself does. The better-supported of the two NO-precursor supplements. | Merged duplicate (citrulline-compound): Urea-cycle amino acid that raises arginine and nitric-oxide availability more reliably than oral arginine; studied for blood flow and exercise performance.
 
 ## ChEMBL profile
 
@@ -120,7 +121,7 @@ _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for fiel
 
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
-- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Citrulline Malate]], [[L-Citrulline (l-citrulline-compound)|L-Citrulline]]
+- ⚠️ **Same molecule in ChEMBL (formulation variant or possible duplicate):** [[Citrulline Malate]]
 
 ## Safety routing
 

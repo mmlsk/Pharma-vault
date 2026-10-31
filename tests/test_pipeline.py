@@ -10,9 +10,7 @@ import pytest
 import yaml
 from jsonschema import Draft202012Validator
 
-from pv_common import GROUP_TO_CLUSTER, PROCESSED, ROOT, SCHEMA, VAULT
-
-FM = re.compile(r"^---\n(.*?)\n---\n", re.S)
+from pv_common import FRONTMATTER as FM, GROUP_TO_CLUSTER, PROCESSED, ROOT, SCHEMA, VAULT
 
 
 @pytest.fixture(scope="module")
@@ -31,7 +29,7 @@ def fm(path):
 
 def test_catalogue_counts(rows):
     ids = [r["compound_id"] for r in rows]
-    assert len(ids) == len(set(ids)) == 2537          # 2351 source - 1 merged duplicate + 187 curated additions
+    assert len(ids) == len(set(ids)) == 2525          # 2351 source - 13 merged duplicates + 187 curated additions
     assert sum(r["source"] == "curated-addition" for r in rows) == 187
     assert len({r["group"] for r in rows}) == 19
 
@@ -41,7 +39,7 @@ def test_every_group_mapped_to_cluster(rows):
     assert len(set(GROUP_TO_CLUSTER.values())) == 9
 
 
-def test_build_is_deterministic(tmp_path):
+def test_build_is_deterministic():
     before = hashlib.sha256((PROCESSED / "substances.csv").read_bytes()).hexdigest()
     subprocess.run([sys.executable, "build_catalog.py"], cwd=ROOT / "scripts", check=True, capture_output=True)
     after = hashlib.sha256((PROCESSED / "substances.csv").read_bytes()).hexdigest()
@@ -117,11 +115,10 @@ def test_pk_ranges_are_sane(pk):
         assert fe is None or 0 <= fe <= 1
 
 
-def test_enriched_notes_validate(validator, pk):
-    enriched = [p for p in VAULT.glob("04 Compound Notes/*/*.md") if "pk-auto" in p.read_text(encoding="utf-8")[:4000]]
+def test_enriched_notes_validate(validator, pk, parsed_notes):
+    enriched = [(p, data) for p, data, _ in parsed_notes if "pk-auto" in data.get("tags", [])]
     assert len(enriched) == len(pk)
-    for path in enriched[:300]:
-        data = fm(path)
+    for path, data in enriched:
         assert data["source-status"] in ("auto-extracted", "partially-verified") and data["review-status"] == "stub"
         assert not list(validator.iter_errors(data)), path.name
 
@@ -197,13 +194,13 @@ def test_animal_percentages_not_numeric():
     assert parse_percent("87% (in vitro)", allow_in_vitro=True) == (87, None)
 
 
-def test_pk_verification_consistency():
+def test_pk_verification_consistency(parsed_notes):
     ver = {v["compound_id"]: v for v in load("pk-verification.json")}
     assert ver and {v["status"] for v in ver.values()} <= {"consistent", "discrepant", "no-label-value", "no-label"}
     for v in ver.values():
         if v["status"] in ("consistent", "discrepant"):
             assert v["url"].startswith("https://dailymed.nlm.nih.gov/") and v["fields"]
-    notes = {fm(p)["compound-id"]: fm(p) for p in list(VAULT.glob("04 Compound Notes/*/*.md"))[:800]}
+    notes = {data["compound-id"]: data for _, data, _ in parsed_notes}
     for cid, n in notes.items():
         if n.get("source-status") == "partially-verified":
             sts = {x["status"] for x in (n.get("pk-verification"), n.get("pk-verification-ema")) if x}
@@ -213,7 +210,7 @@ def test_pk_verification_consistency():
 def test_links_symmetric_and_targets_have_notes():
     links = load("links.json")
     rel = links["related"]
-    for a, r in list(rel.items())[:400]:
+    for a, r in rel.items():
         for b, n, _ in r["shared-target"]:
             assert any(x[0] == a for x in rel[b]["shared-target"]) or len(rel[b]["shared-target"]) >= 12
     names = {p.stem for p in (VAULT / "07 Targets").glob("*.md")}
@@ -229,13 +226,18 @@ def test_graph_has_targets_and_verification():
     assert len(data["clusters"]) == 9
 
 
-def test_sqlite_export(tmp_path):
+@pytest.fixture(scope="module")
+def sqlite_con():
     import sqlite3
     subprocess.run([sys.executable, "export_sqlite.py"], cwd=ROOT / "scripts", check=True, capture_output=True)
     con = sqlite3.connect(PROCESSED / "pharma-vault.db")
-    assert con.execute("SELECT COUNT(*) FROM substances").fetchone()[0] == 2537
-    assert con.execute("SELECT COUNT(*) FROM compound_targets").fetchone()[0] > 1000
+    yield con
     con.close()
+
+
+def test_sqlite_export(sqlite_con):
+    assert sqlite_con.execute("SELECT COUNT(*) FROM substances").fetchone()[0] == 2525
+    assert sqlite_con.execute("SELECT COUNT(*) FROM compound_targets").fetchone()[0] > 1000
 
 
 # ---------- v3.3: identity curation + EU SmPC (ChPL) cross-check
@@ -270,9 +272,57 @@ def test_identity_review_shape():
 
 def test_section_52_extraction():
     from verify_pk_ema import section_52
-    text = "4.2 Posology\nx\n5.2 Pharmacokinetic properties\nThe mean half-life is 12 hours.\n5.3 Preclinical safety data\nrat t1/2 99 h"
+    text = (
+        "Table of Contents\n"
+        "5.2 Pharmacokinetic properties ................................ 10\n"
+        "5.3 Non-clinical safety data .................................. 12\n"
+        "4.2 Posology\nx\n"
+        "5.2 Pharmacokinetic properties\n"
+        "The mean half-life is 12 hours.\n"
+        "5.3 Non-clinical safety data\n"
+        "rat t1/2 99 h"
+    )
     sec = section_52(text)
     assert "12 hours" in sec and "rat" not in sec
+
+
+def test_pb_values_ignores_unrelated_percentages():
+    from verify_pk_fda import pb_values
+    sents = [
+        "The drug is 98% bound to plasma proteins (50% renal impairment) and bioavailability is 30%.",
+        "Plasma protein binding is 95%, with 20% excreted in urine.",
+    ]
+    assert pb_values(sents) == [98.0, 95.0]
+
+
+def test_infobox_conflict_outranks_name_lookup(monkeypatch, tmp_path):
+    import curate_identity as ci
+    ref_ik = "AAAAAAAAAAAAAA-UHFFFAOYSA-N"
+    bad_ik = "BBBBBBBBBBBBBB-UHFFFAOYSA-N"
+    monkeypatch.setattr(ci, "PROCESSED", tmp_path)
+    (tmp_path / "substances.json").write_text(json.dumps([{"compound_id": "x-compound", "name": "X"}]), encoding="utf-8")
+    monkeypatch.setattr(ci, "chembl_records", lambda: [{
+        "compound_id": "x-compound",
+        "identity": {"source": "chembl-name-match", "chembl-id": "CHEMBL1", "parent-chembl-id": "CHEMBL1", "matched-name": "X"},
+    }])
+    monkeypatch.setattr(ci, "infobox_cids", lambda: {"x-compound": 111})
+    monkeypatch.setattr(ci, "decisions", lambda: {})
+
+    def fake_cache(name, key):
+        if name == "molecules.jsonl":
+            return {"CHEMBL1": {"molecule_properties": {"full_molformula": "C10H12N2O"}}}
+        if name == ci.STRUCT:
+            return {"CHEMBL1": {"id": "CHEMBL1", "inchikey": ref_ik}}
+        if name == ci.PC_CID:
+            return {111: {"cid": 111, "inchikey": bad_ik, "formula": "C9H9N", "title": "Wrong"}}
+        if name == ci.PC_NAME:
+            return {"x": {"query": "x", "cids": [{"cid": 222, "inchikey": ref_ik, "formula": "C10H12N2O", "title": "X"}]}}
+        return {}
+
+    monkeypatch.setattr(ci, "load_cache", fake_cache)
+    ci.parse(write=False)
+    rev = json.loads((tmp_path / "identity-review.json").read_text(encoding="utf-8"))
+    assert rev[0]["verdict"] == "conflict"
 
 
 def test_ema_verification():
@@ -286,10 +336,6 @@ def test_ema_verification():
     assert sum(v["status"] == "consistent" for v in ema) > 100
 
 
-def test_sqlite_has_v33_tables():
-    import sqlite3
-    subprocess.run([sys.executable, "export_sqlite.py"], cwd=ROOT / "scripts", check=True, capture_output=True)
-    con = sqlite3.connect(PROCESSED / "pharma-vault.db")
-    assert con.execute("SELECT COUNT(*) FROM identity_review").fetchone()[0] > 1500
-    assert con.execute("SELECT COUNT(*) FROM pk_verification_ema").fetchone()[0] > 150
-    con.close()
+def test_sqlite_has_v33_tables(sqlite_con):
+    assert sqlite_con.execute("SELECT COUNT(*) FROM identity_review").fetchone()[0] > 1500
+    assert sqlite_con.execute("SELECT COUNT(*) FROM pk_verification_ema").fetchone()[0] > 150

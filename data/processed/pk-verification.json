@@ -1643,8 +1643,6 @@
      95.0
     ],
     "label-values-pct": [
-     21.0,
-     32.0,
      95.0
     ],
     "evidence": [
@@ -4068,7 +4066,6 @@
     ],
     "label-values-pct": [
      14.5,
-     20.0,
      28.0
     ],
     "evidence": [
@@ -7365,9 +7362,6 @@
      80.0
     ],
     "label-values-pct": [
-     3.0,
-     4.0,
-     6.0,
      24.0,
      36.0
     ],
@@ -9440,8 +9434,6 @@
      95.0
     ],
     "label-values-pct": [
-     21.0,
-     32.0,
      95.0
     ],
     "evidence": [
@@ -11897,10 +11889,7 @@
      98.2
     ],
     "label-values-pct": [
-     2.0,
-     70.0,
      84.27,
-     93.0,
      97.0,
      99.0,
      99.63
@@ -12480,36 +12469,6 @@
   "status": "discrepant"
  },
  {
-  "compound_id": "loteprednol-compound",
-  "source": "openFDA drug label (US SPL)",
-  "checked": "2026-10-01",
-  "set-id": "36cfd5b8-c892-44e1-aaed-fb32d7aeca7c",
-  "effective-time": "20260713",
-  "label-generic-name": "LOTEPREDNOL ETABONATE",
-  "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=36cfd5b8-c892-44e1-aaed-fb32d7aeca7c",
-  "fields": {
-   "half-life": {
-    "status": "no-label-value",
-    "wikipedia-h": [
-     2.8,
-     2.8
-    ],
-    "label-values-h": [],
-    "evidence": []
-   },
-   "protein-binding": {
-    "status": "no-label-value",
-    "wikipedia-pct": [
-     95.0,
-     95.0
-    ],
-    "label-values-pct": [],
-    "evidence": []
-   }
-  },
-  "status": "no-label-value"
- },
- {
   "compound_id": "loteprednol-etabonate-compound",
   "source": "openFDA drug label (US SPL)",
   "checked": "2026-10-01",
@@ -12978,7 +12937,6 @@
      99.4
     ],
     "label-values-pct": [
-     99.0,
      99.4
     ],
     "evidence": [
@@ -18053,9 +18011,7 @@
     ],
     "label-values-pct": [
      69.0,
-     78.0,
-     92.0,
-     95.0
+     92.0
     ],
     "evidence": [
      "Quinine is moderately protein-bound in blood in healthy subjects, ranging from 69% to 92%.",
@@ -18789,7 +18745,6 @@
      9.0,
      35.0,
      55.0,
-     60.0,
      96.0
     ],
     "evidence": [
@@ -22726,9 +22681,7 @@
     ],
     "label-values-pct": [
      1.0,
-     2.0,
-     10.0,
-     11.0
+     2.0
     ],
     "evidence": [
      "C max : 1.14 (0.95, 1.36) AUC: 1.30 (1.07, 1.51) T max : ↔ Distribution % Bound to human plasma proteins (ex vivo) Unknown 1 to 2% over 0.5 to 51 mcg/mL Cerebrospinal fluid penetration Unknown Yes Metabolism Hydrolyzed by intestinal and liver esterases No significant metabolism Elimination Dose proportionality AUC was dose proportional under fed conditions across a valganciclovir dose range of 450 to 2625 mg Major route of elimination Metabolism to ganciclovir Glomerular filtration and active tubular secretion t 1/2 (h) See Tables 10 and 11 % Of dose excreted in urine Unknown % Of dose excreted in feces Unknown Specific Populations: Renal Impairment: The pharmacokinetics of ganciclovir from a single oral dose of 900 mg valganciclovir tablets were evaluated in 24 otherwise healthy individuals with renal impairment."

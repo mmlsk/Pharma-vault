@@ -6,6 +6,7 @@ name: GHK-Cu (Copper Peptide)
 aliases:
 - GHK-Cu
 - Copper Peptide
+- copper peptide
 cluster: Growth Hormone and Peptide Agents
 group: peptides
 class: null
@@ -56,6 +57,7 @@ tags:
 - compound
 - source-derived
 - group/peptides
+- merged-duplicate
 - stub
 ---
 
@@ -70,11 +72,11 @@ tags:
 - **Compound ID:** `ghkcu-compound`
 - **Source group:** Peptides (`peptides`)
 - **Cluster:** [[Growth Hormone and Peptide Agents]]
-- **Aliases:** GHK-Cu, Copper Peptide
+- **Aliases:** GHK-Cu, Copper Peptide, copper peptide
 
 ## Source summary
 
-Copper-binding peptide studied for skin remodeling, collagen stimulation, and wound healing.
+Copper-binding peptide studied for skin remodeling, collagen stimulation, and wound healing. | Merged duplicate (ghk-cu-compound): A copper-binding tripeptide from plasma with in vitro effects on collagen synthesis and wound repair. Cosmetic topical trials are small and mostly industry-run, but the collagen biology behind it is genuine.
 
 ## Evidence boundaries
 

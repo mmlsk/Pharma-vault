@@ -146,8 +146,8 @@ Prostanoid FP receptor agonist _(ChEMBL curated mechanism of the parent molecule
 
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
-- **Shared target:** [[Bimatoprost (Latisse)]] (Prostaglandin F2-alpha receptor), [[Bimatoprost (topical, Latisse)]] (Prostaglandin F2-alpha receptor), [[Latanoprost]] (Prostaglandin F2-alpha receptor), [[Latanoprostene Bunod]] (Prostaglandin F2-alpha receptor), [[Latanoprostene Bunod (latanoprostene-compound)|Latanoprostene Bunod]] (Prostaglandin F2-alpha receptor), [[Travoprost]] (Prostaglandin F2-alpha receptor)
-- **Same ATC subgroup:** [[Bimatoprost (Latisse)]], [[Bimatoprost (topical, Latisse)]], [[Latanoprost]], [[Latanoprostene Bunod]], [[Latanoprostene Bunod (latanoprostene-compound)|Latanoprostene Bunod]], [[Travoprost]]
+- **Shared target:** [[Bimatoprost (Latisse)]] (Prostaglandin F2-alpha receptor), [[Bimatoprost (topical, Latisse)]] (Prostaglandin F2-alpha receptor), [[Latanoprost]] (Prostaglandin F2-alpha receptor), [[Latanoprostene Bunod]] (Prostaglandin F2-alpha receptor), [[Travoprost]] (Prostaglandin F2-alpha receptor)
+- **Same ATC subgroup:** [[Bimatoprost (Latisse)]], [[Bimatoprost (topical, Latisse)]], [[Latanoprost]], [[Latanoprostene Bunod]], [[Travoprost]]
 
 ## Safety routing
 

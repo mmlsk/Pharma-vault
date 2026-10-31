@@ -31,7 +31,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 
 from enrich_pk import candidates as name_candidates
-from pv_common import CURATED, PROCESSED, ROOT, normalize
+from pv_common import CURATED, PROCESSED, ROOT, SALT, normalize
 
 CH = ROOT / "data/enrichment/chembl"
 API = "https://www.ebi.ac.uk/chembl/api/data"
@@ -91,7 +91,7 @@ def load_cache(name: str, key: str) -> dict:
     p = CH / name
     if not p.exists():
         return {}
-    return {json.loads(l)[key]: json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()}
+    return {r[key]: r for l in p.read_text(encoding="utf-8").splitlines() if l.strip() for r in (json.loads(l),)}
 
 
 def save_cache(name: str, recs: dict) -> None:
@@ -215,12 +215,6 @@ def infobox_ids() -> dict:
 def source_rows() -> list[dict]:
     rows = json.loads((PROCESSED / "substances.json").read_text(encoding="utf-8"))
     return [r for r in rows if r["source"] != "curated-addition"]
-
-
-SALT = re.compile(r"\b(hydrochloride|dihydrochloride|hydrobromide|chloride|bromide|tosylate|maleate|mesylate|besylate|sulfate|"
-                  r"sulphate|acetate|citrate|fumarate|tartrate|succinate|phosphate|sodium|potassium|calcium|magnesium|"
-                  r"hemihydrate|hydrate|nitrate|lactate|gluconate|oxalate|malate|pamoate|dimesylate|decanoate|propionate|"
-                  r"enanthate|cypionate|undecanoate)\b", re.I)
 
 
 def dedupe_key(mol_id: str, parent: str, pref_name: str | None) -> str:

@@ -53,6 +53,7 @@ tags:
 - compound
 - source-derived
 - group/longevity
+- merged-duplicate
 - stub
 ---
 
@@ -70,7 +71,7 @@ tags:
 
 ## Source summary
 
-A small-molecule NNMT inhibitor studied for raising cellular NAD and reducing adipocyte lipid storage. Rodent data only; sold as a supplement well ahead of any human evidence.
+A small-molecule NNMT inhibitor studied for raising cellular NAD and reducing adipocyte lipid storage. Rodent data only; sold as a supplement well ahead of any human evidence. | Merged duplicate (amino-1mq-compound): NNMT inhibitor with promising mouse adipose data and nothing at all in humans.
 
 ## Evidence boundaries
 

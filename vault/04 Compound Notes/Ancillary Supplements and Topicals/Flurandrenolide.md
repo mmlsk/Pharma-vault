@@ -131,7 +131,7 @@ _No structured PK source matched yet - see [[Pharmacokinetics Summary]] for fiel
 _Navigational links derived from ChEMBL targets, ATC classes and CYP substrate lists - not interaction claims._
 
 - **Shared target:** [[Alclometasone Dipropionate]] (Glucocorticoid receptor), [[Amcinonide]] (Glucocorticoid receptor), [[Azd-5423]] (Glucocorticoid receptor), [[Beclomethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone]] (Glucocorticoid receptor), [[Betamethasone Acetate]] (Glucocorticoid receptor), [[Betamethasone Benzoate]] (Glucocorticoid receptor), [[Betamethasone Dipropionate]] (Glucocorticoid receptor), [[Betamethasone Valerate]] (Glucocorticoid receptor), [[Budesonide]] (Glucocorticoid receptor), [[Ciclesonide]] (Glucocorticoid receptor), [[Clobetasol Propionate]] (Glucocorticoid receptor)
-- **Same ATC subgroup:** [[Amcinonide]], [[Beclomethasone Dipropionate]], [[Betamethasone]], [[Budesonide]], [[Desoximetasone]], [[Diflorasone Diacetate]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluocinonide]], [[Fluticasone Propionate]], [[Halobetasol Propionate]], [[Halobetasol Propionate (halobetasol-propionate-compound)|Halobetasol Propionate]]
+- **Same ATC subgroup:** [[Amcinonide]], [[Beclomethasone Dipropionate]], [[Betamethasone]], [[Budesonide]], [[Desoximetasone]], [[Diflorasone Diacetate]], [[Difluprednate]], [[Fluocinolone Acetonide]], [[Fluocinonide]], [[Fluticasone Propionate]], [[Halobetasol Propionate]], [[Hydrocortisone Aceponate]]
 
 ## Safety routing
 

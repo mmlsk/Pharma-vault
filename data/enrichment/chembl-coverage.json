@@ -1,17 +1,17 @@
 {
- "substances": 2537,
- "with_chembl_identity": 2262,
+ "substances": 2525,
+ "with_chembl_identity": 2254,
  "identity_source": {
   "catalogue": 499,
-  "chembl-name-match": 604,
+  "chembl-name-match": 599,
   "curated-addition": 121,
   "curated-identity": 3,
-  "wikipedia-infobox": 1035
+  "wikipedia-infobox": 1032
  },
  "unresolved_ids": 0,
- "with_mechanism": 1366,
- "with_atc": 1412,
- "black_box": 450,
+ "with_mechanism": 1362,
+ "with_atc": 1408,
+ "black_box": 449,
  "withdrawn": 104,
  "distinct_targets": 546,
  "targets_shared_by_2plus": 268

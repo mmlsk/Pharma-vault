@@ -4932,21 +4932,6 @@
   "routes-of-administration": "IM, IV, IP (in animals), oral, subQ"
  },
  {
-  "compound_id": "bpc157-compound",
-  "source-title": "BPC-157",
-  "revid": 1366359640,
-  "source-url": "https://en.wikipedia.org/w/index.php?title=BPC-157&oldid=1366359640",
-  "retrieved": "2026-09-26",
-  "chembl-confirmed": false,
-  "half-life": {
-   "value": null,
-   "unit": null,
-   "value-max": null,
-   "notes": "7.9–30 minutes (rat, IV and IM) [not stored as a number: non-human or sub-minute data]"
-  },
-  "routes-of-administration": "IM, IV, IP (in animals), oral, subQ"
- },
- {
   "compound_id": "bremelanotide-compound",
   "source-title": "Bremelanotide",
   "revid": 1376322571,
@@ -21380,46 +21365,6 @@
    "notes": "Kidney 13–25%, bile duct 50–60%"
   },
   "routes-of-administration": "By mouth"
- },
- {
-  "compound_id": "loteprednol-compound",
-  "source-title": "Loteprednol",
-  "revid": 1343785671,
-  "source-url": "https://en.wikipedia.org/w/index.php?title=Loteprednol&oldid=1343785671",
-  "retrieved": "2026-09-26",
-  "chembl-confirmed": false,
-  "half-life": {
-   "value": 2.8,
-   "unit": "h",
-   "value-max": null,
-   "notes": "2.8 hrs"
-  },
-  "protein-binding": {
-   "value": 95.0,
-   "value-max": null,
-   "unit": "percent",
-   "notes": "95%"
-  },
-  "bioavailability": {
-   "value": null,
-   "value-max": null,
-   "notes": "None"
-  },
-  "hepatic-clearance": {
-   "primary-route": null,
-   "extraction-ratio": null,
-   "notes": "Ester hydrolysis"
-  },
-  "cyp-interactions": {
-   "substrates": [],
-   "inhibitors": [],
-   "inducers": [],
-   "transporters": [],
-   "notes": null
-  },
-  "metabolites-text": "Δ1-cortienic acid and its etabonate",
-  "onset": "≤2 hrs (allergic conjunctivitis)",
-  "routes-of-administration": "Eye drops"
  },
  {
   "compound_id": "loteprednol-etabonate-compound",
