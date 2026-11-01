@@ -64,6 +64,7 @@ tags:
 - chembl-profile
 - chembl-name-match
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Tesamorelin
@@ -92,6 +93,11 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: parser-artifact
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Egrifta podaje t1/2 po podaniu dożylnym 8 min (0.133 h); Wikipedia podaje eliminację po iniekcji podskórnej (26-38 min / 0.43-0.63 h).
 ---
 
 # Tesamorelin
@@ -137,6 +143,9 @@ GHRH analog peptide, FDA-approved for reducing visceral fat, notably in HIV-asso
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 3d783378…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=3d783378-b02d-4f19-99dd-0fc91a042224), label version 20260729. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 0.133)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (half-life): Etykieta FDA Egrifta podaje t1/2 po podaniu dożylnym 8 min (0.133 h); Wikipedia podaje eliminację po iniekcji podskórnej (26-38 min / 0.43-0.63 h).
 
 ## Related compounds (auto)
 

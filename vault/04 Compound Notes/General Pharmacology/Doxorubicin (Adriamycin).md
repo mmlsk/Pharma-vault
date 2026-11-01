@@ -67,6 +67,7 @@ tags:
 - identity-confirmed
 - pk-fda-discrepant
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Doxorubicin
@@ -117,6 +118,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: no-label-value
+pk-annotations:
+- category: pk-phase
+  field: half-life
+  regulator: both
+  explanation: Wikipedia podaje fazę dystrybucji alfa doksorubicyny (0.2 h); etykiety FDA i EMA podają terminalny okres półtrwania eliminacji (24-75 h).
 ---
 
 # Doxorubicin (Adriamycin)
@@ -175,6 +181,9 @@ An anthracycline that intercalates DNA, poisons topoisomerase II and generates i
 > Automated comparison with section 5.2 of the [EU SmPC of *Caelyx pegylated liposomal*](https://www.ema.europa.eu/en/documents/product-information/caelyx-pegylated-liposomal-epar-product-information_en.pdf) (EMEA/H/C/000089) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/caelyx-pegylated-liposomal-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 24, 36.1, 45.2, 71.5, 73.9, 75)
 > - protein-binding: no-label-value (SmPC values: -)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **pk-phase** (half-life): Wikipedia podaje fazę dystrybucji alfa doksorubicyny (0.2 h); etykiety FDA i EMA podają terminalny okres półtrwania eliminacji (24-75 h).
 
 ## Safety routing
 

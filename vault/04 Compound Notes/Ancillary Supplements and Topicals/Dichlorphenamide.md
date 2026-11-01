@@ -59,6 +59,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Diclofenamide
@@ -109,6 +110,11 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     protein-binding: discrepant
+pk-annotations:
+- category: parser-artifact
+  field: protein-binding
+  regulator: fda
+  explanation: Etykieta FDA Keveyis raportuje wysokie wiązanie z białkami i karboanhydrazą (88%); Wikipedia podaje starsze dane in vitro (55%).
 ---
 
 # Dichlorphenamide
@@ -166,6 +172,9 @@ Carbonic anhydrase I inhibitor; Carbonic anhydrase II inhibitor; Carbonic anhydr
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 64bf0c71…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=64bf0c71-2113-47dc-8ce5-7fe535e558dc), label version 20260305. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - protein-binding: discrepant (label values: 88)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (protein-binding): Etykieta FDA Keveyis raportuje wysokie wiązanie z białkami i karboanhydrazą (88%); Wikipedia podaje starsze dane in vitro (55%).
 
 ## Related compounds (auto)
 

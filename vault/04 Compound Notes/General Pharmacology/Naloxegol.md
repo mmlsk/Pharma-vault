@@ -61,6 +61,7 @@ tags:
 - chembl-name-match
 - identity-confirmed
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Naloxegol
@@ -109,6 +110,11 @@ pk-verification-ema:
   fields:
     half-life: consistent
     protein-binding: discrepant
+pk-annotations:
+- category: unbound-fraction
+  field: protein-binding
+  regulator: ema
+  explanation: SmPC Moventig podaje umiarkowane wiązanie z białkami; parser zinterpretował wartości odzysku jako procent związania.
 ---
 
 # Naloxegol
@@ -161,6 +167,9 @@ _No FDA label found for automated cross-check (not US-approved, or different nam
 > Automated comparison with section 5.2 of the [EU SmPC of *Moventig*](https://www.ema.europa.eu/en/documents/product-information/moventig-epar-product-information_en.pdf) (EMEA/H/C/002810) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/moventig-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 6, 11)
 > - protein-binding: discrepant (SmPC values: 80, 100)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **unbound-fraction** (protein-binding): SmPC Moventig podaje umiarkowane wiązanie z białkami; parser zinterpretował wartości odzysku jako procent związania.
 
 ## Related compounds (auto)
 

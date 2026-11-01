@@ -67,6 +67,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Dutasteride
@@ -109,6 +110,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: pk-phase
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Avodart podaje t1/2 w stanie stacjonarnym ~5 tygodni (840 h, zgodny z Wiki) oraz t1/2 po dawce pojedynczej (170-300 h).
 ---
 
 # Dutasteride (Avodart)
@@ -171,6 +177,9 @@ Steroid 5-alpha-reductase inhibitor _(ChEMBL curated mechanism of the parent mol
 > Automated comparison with the [US prescribing information (DailyMed set c78d18cf…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c78d18cf-05df-4154-b2f9-39cc374ca9e3), label version 20260827. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 170, 260, 300)
 > - protein-binding: consistent (label values: 96.6, 99)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **pk-phase** (half-life): Etykieta FDA Avodart podaje t1/2 w stanie stacjonarnym ~5 tygodni (840 h, zgodny z Wiki) oraz t1/2 po dawce pojedynczej (170-300 h).
 
 ## Related compounds (auto)
 

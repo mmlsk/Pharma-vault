@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.5.0] — 2026-11-01 — kuracja rozbieżności PK i zamknięcie konfliktów tożsamości
+### Dodano
+- `data/curated/pk-annotations.csv`: kuratorowany rejestr wyjaśnień dla 76 substancji z rozbieżnościami parametrów PK (FDA/EMA vs Wikipedia) podzielony na kategorie:
+  - `formulation`: formulacje o przedłużonym uwalnianiu, depoty, implanty, preparaty wziewne, liposomalne i plastry transdermalne (m.in. implant afamelanotydu 15 h vs roztwór 0.5 h, depot buprenorfiny Sublocade, liposomalna amikacyna Arikayce, zawiesina bupiwakainy Exparel).
+  - `metabolite`: aktywny metabolit o dłuższym okresie półtrwania vs lek macierzysty (m.in. bupropion/hydroksybupropion, amoksapina/8-hydroksyamoksapina, lisdeksamfetamina/dekstroamfetamina).
+  - `pk-phase`: faza redystrybucji alfa vs końcowa eliminacja beta/gamma (m.in. fentanyl 0.1 h vs 18-34 h, doksorubicyna 0.2 h vs 24-75 h, kannabidiol po dawce pojedynczej vs stan stacjonarny 56-61 h).
+  - `unbound-fraction`: frakcja wolna w etykiecie leku wyekstrahowana jako procent związania (m.in. tolterodyna 3.7% wolna = 96.3% związana, kwas zoledronowy 60-77% wolny = 23-40% związany).
+  - `population` / `parser-artifact`: specyficzne populacje (niewydolność nerek, noworodki) lub artefakty regexu (znaki ±, słowne liczebniki).
+- Obsidian Vault:
+  - Frontmatter notatek wzbogacony o `pk-annotations` oraz tag `pk-explained`.
+  - W notatkach generowany dedykowany callout `> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)` prezentujący przyczynę różnicy bez modyfikowania surowych danych.
+- Graf (`apps/graph-viewer/app.js`, `graph-data.js`):
+  - Wskaźnik wyjaśnionej rozbieżności (`≠ 💡`) na zakładce PK.
+  - Karta wyjaśnienia kuratorskiego w sekcji oficjalnych etykiet rejestracyjnych.
+- Baza SQLite (`scripts/export_sqlite.py`):
+  - Nowa tabela `pk_annotations` (77 wpisów).
+- Testy (`tests/test_pipeline.py`):
+  - Dodano `test_pk_annotations` oraz `test_identity_conflicts_fully_resolved` (38 testów, 100% green).
+
+### Poprawiono
+- `data/curated/identity-decisions.csv`: rozstrzygnięto ostatnie 3 konflikty tożsamości strukturalnej (`lesinurad-compound`, `pardoprunox-compound`, `satavaptan-compound`), doprowadzając liczbę nierozstrzygniętych konfliktów w `identity-review.json` do **0**.
+
 ## [3.4.0] — 2026-10-31 — deduplikacja katalogu i segmentowy panel grafu
 ### Dodano
 - Graf (`apps/graph-viewer/app.js`, `index.html`):

@@ -62,6 +62,7 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-discrepant
+- pk-explained
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -109,6 +110,11 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykiety FDA Asacol/Lialda dotyczą postaci o przedłużonym/dojelitowym uwalnianiu w przewodzie pokarmowym; Wikipedia podaje t1/2 wchłoniętej mezalazyny (5 h).
 ---
 
 # Mesalamine
@@ -167,6 +173,9 @@ Peroxisome proliferator-activated receptor gamma agonist _(ChEMBL curated mechan
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 7951139c…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=7951139c-b271-45a4-b523-34b23800917b), label version 20260827. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 9, 10, 12, 14, 96, 168)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykiety FDA Asacol/Lialda dotyczą postaci o przedłużonym/dojelitowym uwalnianiu w przewodzie pokarmowym; Wikipedia podaje t1/2 wchłoniętej mezalazyny (5 h).
 
 ## Related compounds (auto)
 

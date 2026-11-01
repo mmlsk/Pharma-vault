@@ -66,6 +66,7 @@ tags:
 - chembl-profile
 - identity-stereo-check
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Scopolamine
@@ -110,6 +111,11 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Transderm Scop dotyczy plastra przezskórnego (pozorny t1/2 po odklejeniu 9.5 h); Wikipedia podaje podanie dożylne/doustne (5 h).
 ---
 
 # Hyoscine (Scopolamine)
@@ -172,6 +178,9 @@ Muscarinic acetylcholine receptor M1 antagonist _(ChEMBL curated mechanism of th
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 2a6f9aaf…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2a6f9aaf-a70a-481f-a82b-1dcaaadc185b), label version 20260909. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 9.5)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA Transderm Scop dotyczy plastra przezskórnego (pozorny t1/2 po odklejeniu 9.5 h); Wikipedia podaje podanie dożylne/doustne (5 h).
 
 ## Related compounds (auto)
 

@@ -67,6 +67,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Octreotide
@@ -110,6 +111,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: ema
+  explanation: SmPC Sandostatin LAR dotyczy mikrosfer depot o miesięcznym profilu uwalniania; Wikipedia podaje t1/2 podskórnej postaci natychmiastowej (1.7-1.9 h).
 ---
 
 # Octreotide
@@ -166,6 +172,9 @@ Somatostatin analog that suppresses growth hormone (and other hormone) secretion
 > Automated comparison with section 5.2 of the [EU SmPC of *Oczyesa*](https://www.ema.europa.eu/en/documents/product-information/oczyesa-epar-product-information_en.pdf) (EMEA/H/C/006322). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 216, 217, 279, 288)
 > - protein-binding: consistent (SmPC values: 65)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): SmPC Sandostatin LAR dotyczy mikrosfer depot o miesięcznym profilu uwalniania; Wikipedia podaje t1/2 podskórnej postaci natychmiastowej (1.7-1.9 h).
 
 ## Related compounds (auto)
 

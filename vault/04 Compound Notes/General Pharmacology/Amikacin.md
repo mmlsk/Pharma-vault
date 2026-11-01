@@ -64,6 +64,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Amikacin
@@ -114,6 +115,11 @@ pk-verification-ema:
   chpl-url: null
   checked: '2026-10-01'
   fields: {}
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Wikipedia podaje t1/2 ogólnoustrojowej amikacyny IV (2-3 h); etykieta FDA Arikayce dotyczy zawiesiny liposomalnej do inhalacji (5.9-19.5 h).
 ---
 
 # Amikacin
@@ -168,6 +174,9 @@ Aminoglycoside resistant to most aminoglycoside-modifying enzymes, which makes i
 > Automated comparison with the [US prescribing information (DailyMed set 499ab990…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=499ab990-2b21-474f-aaba-d86388965f40), label version 20260804. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 5.9, 19.5)
 > - protein-binding: consistent (label values: 10)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Wikipedia podaje t1/2 ogólnoustrojowej amikacyny IV (2-3 h); etykieta FDA Arikayce dotyczy zawiesiny liposomalnej do inhalacji (5.9-19.5 h).
 
 ## Related compounds (auto)
 

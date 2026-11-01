@@ -61,6 +61,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Dalbavancin
@@ -102,6 +103,11 @@ pk-verification-ema:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: pk-phase
+  field: half-life
+  regulator: ema
+  explanation: SmPC Xydalba opisuje początkowy t1/2 eliminacji (120-168 h) oraz terminalny okres półtrwania wynoszący 346 h / 14 dni (zgodny z Wikipedią).
 ---
 
 # Dalbavancin
@@ -152,6 +158,9 @@ Long-acting lipoglycopeptide dosed once or twice per course, which turns a skin 
 > [!danger] EU SmPC cross-check: **discrepant**
 > Automated comparison with section 5.2 of the [EU SmPC of *Xydalba*](https://www.ema.europa.eu/en/documents/product-information/xydalba-epar-product-information_en.pdf) (EMEA/H/C/002840). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 120, 168)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **pk-phase** (half-life): SmPC Xydalba opisuje początkowy t1/2 eliminacji (120-168 h) oraz terminalny okres półtrwania wynoszący 346 h / 14 dni (zgodny z Wikipedią).
 
 ## Related compounds (auto)
 

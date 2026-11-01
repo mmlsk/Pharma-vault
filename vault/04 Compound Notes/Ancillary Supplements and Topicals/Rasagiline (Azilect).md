@@ -69,6 +69,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Rasagiline
@@ -119,6 +120,11 @@ pk-verification-ema:
   fields:
     half-life: consistent
     protein-binding: discrepant
+pk-annotations:
+- category: metabolite
+  field: protein-binding
+  regulator: ema
+  explanation: SmPC Azilect podaje wiązanie z białkami 60-70% dla metabolitu aminoindanu oraz 88-94% dla rasagiliny (zgodne z Wiki).
 ---
 
 # Rasagiline (Azilect)
@@ -178,6 +184,9 @@ Selective irreversible MAO-B inhibitor of the propargylamine class, given once d
 > Automated comparison with section 5.2 of the [EU SmPC of *Azilect*](https://www.ema.europa.eu/en/documents/product-information/azilect-epar-product-information_en.pdf) (EMEA/H/C/000574) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/azilect-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 0.6, 2)
 > - protein-binding: discrepant (SmPC values: 60, 70)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **metabolite** (protein-binding): SmPC Azilect podaje wiązanie z białkami 60-70% dla metabolitu aminoindanu oraz 88-94% dla rasagiliny (zgodne z Wiki).
 
 ## Related compounds (auto)
 

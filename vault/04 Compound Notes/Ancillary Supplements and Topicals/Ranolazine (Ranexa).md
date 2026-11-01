@@ -68,6 +68,7 @@ tags:
 - identity-confirmed
 - pk-fda-discrepant
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Ranolazine
@@ -124,6 +125,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: both
+  explanation: Etykiety Ranexa dotyczą tabletek o przedłużonym uwalnianiu (t1/2 6-7 h); Wikipedia podaje t1/2 czystej substancji (1.4-1.9 h).
 ---
 
 # Ranolazine (Ranexa)
@@ -191,6 +197,9 @@ Sodium channel protein type IV alpha subunit blocker; Sodium channel protein typ
 > Automated comparison with section 5.2 of the [EU SmPC of *Ranexa (previously Latixa)*](https://www.ema.europa.eu/en/documents/product-information/ranexa-epar-product-information_en.pdf) (EMEA/H/C/000805) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/ranexa-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 3, 7)
 > - protein-binding: consistent (SmPC values: 62)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykiety Ranexa dotyczą tabletek o przedłużonym uwalnianiu (t1/2 6-7 h); Wikipedia podaje t1/2 czystej substancji (1.4-1.9 h).
 
 ## Related compounds (auto)
 

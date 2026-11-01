@@ -68,6 +68,7 @@ tags:
 - pk-fda-discrepant
 - pk-ema-consistent
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Rivastigmine
@@ -121,6 +122,11 @@ pk-verification-ema:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Exelon dotyczy systemu transdermalnego (pozorny t1/2 eliminacji po usunięciu plastra ~3 h); Wikipedia podaje postać doustną (1.5 h).
 ---
 
 # Rivastigmine (Exelon)
@@ -186,6 +192,9 @@ Cholinesterases; ACHE & BCHE inhibitor _(ChEMBL curated mechanism of the parent 
 > Automated comparison with section 5.2 of the [EU SmPC of *Exelon*](https://www.ema.europa.eu/en/documents/product-information/exelon-epar-product-information_en.pdf) (EMEA/H/C/000169). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 1)
 > - protein-binding: consistent (SmPC values: 40)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA Exelon dotyczy systemu transdermalnego (pozorny t1/2 eliminacji po usunięciu plastra ~3 h); Wikipedia podaje postać doustną (1.5 h).
 
 ## Related compounds (auto)
 

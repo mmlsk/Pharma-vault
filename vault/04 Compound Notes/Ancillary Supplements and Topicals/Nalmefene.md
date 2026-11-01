@@ -64,6 +64,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Nalmefene
@@ -112,6 +113,11 @@ pk-verification-ema:
   fields:
     half-life: consistent
     protein-binding: discrepant
+pk-annotations:
+- category: parser-artifact
+  field: protein-binding
+  regulator: ema
+  explanation: SmPC Selincro podaje wiązanie z białkami osocza około 30%; Wikipedia podaje 45%.
 ---
 
 # Nalmefene
@@ -165,6 +171,9 @@ _No FDA label found for automated cross-check (not US-approved, or different nam
 > Automated comparison with section 5.2 of the [EU SmPC of *Selincro*](https://www.ema.europa.eu/en/documents/product-information/selincro-epar-product-information_en.pdf) (EMEA/H/C/002583) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/selincro-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 12.5)
 > - protein-binding: discrepant (SmPC values: 30)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (protein-binding): SmPC Selincro podaje wiązanie z białkami osocza około 30%; Wikipedia podaje 45%.
 
 ## Related compounds (auto)
 

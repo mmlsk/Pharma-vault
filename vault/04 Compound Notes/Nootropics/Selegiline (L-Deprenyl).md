@@ -69,6 +69,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -112,6 +113,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Emsam dotyczy plastra transdermalnego o przedłużonym uwalnianiu (t1/2 18-25 h); Wikipedia podaje podanie doustne (1.2-3.5 h).
 ---
 
 # Selegiline (L-Deprenyl)
@@ -175,6 +181,9 @@ Monoamine oxidase B inhibitor _(ChEMBL curated mechanism of the parent molecule,
 > Automated comparison with the [US prescribing information (DailyMed set b891bd9f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=b891bd9f-fdb8-4862-89c5-ecdd700398a3), label version 20200515. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 18, 25)
 > - protein-binding: consistent (label values: 90)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA Emsam dotyczy plastra transdermalnego o przedłużonym uwalnianiu (t1/2 18-25 h); Wikipedia podaje podanie doustne (1.2-3.5 h).
 
 ## Related compounds (auto)
 

@@ -68,6 +68,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -124,6 +125,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: no-label-value
+pk-annotations:
+- category: parser-artifact
+  field: half-life
+  regulator: ema
+  explanation: SmPC Rapamune podaje t1/2 w stabilnym przeszczepie nerki 62 h (zgodny z Wiki 57-63 h); znak ± w tekście uniemożliwił dopasowanie regexu.
 ---
 
 # Rapamycin (Sirolimus)
@@ -192,6 +198,9 @@ FK506-binding protein 1A inhibitor _(ChEMBL curated mechanism of the parent mole
 > Automated comparison with section 5.2 of the [EU SmPC of *Rapamune*](https://www.ema.europa.eu/en/documents/product-information/rapamune-epar-product-information_en.pdf) (EMEA/H/C/000273) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/rapamune-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 16, 120, 168)
 > - protein-binding: no-label-value (SmPC values: -)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (half-life): SmPC Rapamune podaje t1/2 w stabilnym przeszczepie nerki 62 h (zgodny z Wiki 57-63 h); znak ± w tekście uniemożliwił dopasowanie regexu.
 
 ## Related compounds (auto)
 

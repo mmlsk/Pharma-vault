@@ -62,6 +62,7 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Diclofenac
@@ -107,6 +108,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Flector dotyczy plastra przezskórnego o ciągłym uwalnianiu (do 168 h); Wikipedia podaje eliminację doustną diklofenaku (1.2-2 h).
 ---
 
 # Diclofenac
@@ -171,6 +177,9 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 > Automated comparison with the [US prescribing information (DailyMed set 937e9ba5…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=937e9ba5-cdad-4e72-a77a-bad699e1b236), label version 20260402. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 168)
 > - protein-binding: consistent (label values: 99)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA Flector dotyczy plastra przezskórnego o ciągłym uwalnianiu (do 168 h); Wikipedia podaje eliminację doustną diklofenaku (1.2-2 h).
 
 ## Related compounds (auto)
 

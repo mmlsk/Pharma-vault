@@ -64,6 +64,7 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Medroxyprogesterone acetate
@@ -107,6 +108,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Depo-Provera dotyczy zawiesiny domięśniowej o powolnym uwalnianiu depot (ok. 50 dni / 1200 h); Wikipedia podaje postać doustną (12-33 h).
 ---
 
 # Medroxyprogesterone Acetate
@@ -170,6 +176,9 @@ Progesterone receptor agonist _(ChEMBL curated mechanism, as quoted by the sourc
 > Automated comparison with the [US prescribing information (DailyMed set a0a92717…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a0a92717-c1cb-40eb-a95a-1c5dfd32cfc0), label version 20260904. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 1200)
 > - protein-binding: consistent (label values: 86)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA Depo-Provera dotyczy zawiesiny domięśniowej o powolnym uwalnianiu depot (ok. 50 dni / 1200 h); Wikipedia podaje postać doustną (12-33 h).
 
 ## Related compounds (auto)
 

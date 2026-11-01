@@ -63,6 +63,7 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Elagolix
@@ -104,6 +105,11 @@ pk-verification:
   fields:
     half-life: no-label-value
     protein-binding: discrepant
+pk-annotations:
+- category: parser-artifact
+  field: protein-binding
+  regulator: fda
+  explanation: Etykieta FDA Orilissa podaje frakcję wolną lub umiarkowane wiązanie in vitro (24-36%); Wikipedia podaje 80%.
 ---
 
 # Elagolix
@@ -163,6 +169,9 @@ Gonadotropin-releasing hormone receptor antagonist _(ChEMBL curated mechanism, a
 > Automated comparison with the [US prescribing information (DailyMed set a86757b3…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=a86757b3-09c5-fd3b-1223-244e94f50a66), label version 20251219. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
 > - protein-binding: discrepant (label values: 24, 36)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (protein-binding): Etykieta FDA Orilissa podaje frakcję wolną lub umiarkowane wiązanie in vitro (24-36%); Wikipedia podaje 80%.
 
 ## Related compounds (auto)
 

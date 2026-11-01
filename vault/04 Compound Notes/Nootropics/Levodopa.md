@@ -66,6 +66,7 @@ tags:
 - pk-fda-discrepant
 - pk-ema-consistent
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Levodopa
@@ -117,6 +118,11 @@ pk-verification-ema:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+pk-annotations:
+- category: metabolite
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA podaje t1/2 lewodopy w połączeniu z inhibitorem DDC (karbidopa) ~2.3 h; Wikipedia podaje t1/2 samej lewodopy (0.75-1.5 h).
 ---
 
 # Levodopa
@@ -180,6 +186,9 @@ Dopamine D3 receptor agonist _(ChEMBL curated mechanism of the parent molecule, 
 > [!success] EU SmPC cross-check: **consistent**
 > Automated comparison with section 5.2 of the [EU SmPC of *Inbrija*](https://www.ema.europa.eu/en/documents/product-information/inbrija-epar-product-information_en.pdf) (EMEA/H/C/004786). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 1.9, 2.3)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **metabolite** (half-life): Etykieta FDA podaje t1/2 lewodopy w połączeniu z inhibitorem DDC (karbidopa) ~2.3 h; Wikipedia podaje t1/2 samej lewodopy (0.75-1.5 h).
 
 ## Safety routing
 

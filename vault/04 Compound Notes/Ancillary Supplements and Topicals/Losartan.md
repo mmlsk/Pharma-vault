@@ -66,6 +66,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Losartan
@@ -105,6 +106,11 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: discrepant
+pk-annotations:
+- category: parser-artifact
+  field: protein-binding
+  regulator: fda
+  explanation: Etykieta FDA potwierdza wiązanie z białkami >98.7% (zgodne z Wiki 99.7%); liczby 0.2-1.3% wyekstrahowane przez parser oznaczają frakcję wolną.
 ---
 
 # Losartan
@@ -158,6 +164,9 @@ The reference ARB, with the largest hypertension outcome dataset in the class (L
 > Automated comparison with the [US prescribing information (DailyMed set 9501dfaa…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=9501dfaa-c8cf-46d6-8bec-936c4fd8fe03), label version 20260716. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 2, 6, 9, 168)
 > - protein-binding: discrepant (label values: 0.2, 1.3)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (protein-binding): Etykieta FDA potwierdza wiązanie z białkami >98.7% (zgodne z Wiki 99.7%); liczby 0.2-1.3% wyekstrahowane przez parser oznaczają frakcję wolną.
 
 ## Related compounds (auto)
 

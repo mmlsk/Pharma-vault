@@ -62,6 +62,7 @@ tags:
 - pk-fda-discrepant
 - pk-ema-consistent
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Ceftaroline fosamil
@@ -121,6 +122,11 @@ pk-verification-ema:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-annotations:
+- category: population
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA podaje t1/2 2.5 h u osób zdrowych (zgodny z Wiki) oraz 8-12 h u pacjentów z niewydolnością nerek poddawanych dializie.
 ---
 
 # Ceftaroline
@@ -186,6 +192,9 @@ Bacterial penicillin-binding protein inhibitor; Penicillin-binding protein 2a in
 > Automated comparison with section 5.2 of the [EU SmPC of *Zinforo*](https://www.ema.europa.eu/en/documents/product-information/zinforo-epar-product-information_en.pdf) (EMEA/H/C/002252) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/zinforo-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 2.5)
 > - protein-binding: consistent (SmPC values: 20)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **population** (half-life): Etykieta FDA podaje t1/2 2.5 h u osób zdrowych (zgodny z Wiki) oraz 8-12 h u pacjentów z niewydolnością nerek poddawanych dializie.
 
 ## Related compounds (auto)
 

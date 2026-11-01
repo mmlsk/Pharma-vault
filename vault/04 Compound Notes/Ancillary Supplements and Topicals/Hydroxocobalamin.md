@@ -59,6 +59,7 @@ tags:
 - pk-auto
 - pk-fda-discrepant
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Hydroxocobalamin
@@ -86,6 +87,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: no-label-value
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: both
+  explanation: Etykieta Cyanokit dotyczy megadawki IV jako odtrutki (eliminacja 26-31 h); Wikipedia podaje t1/2 fizjologicznego magazynowania wątrobowego (6 dni / 144 h).
 ---
 
 # Hydroxocobalamin
@@ -129,6 +135,9 @@ Vitamin B12 form used as the first-line cyanide antidote, binding cyanide direct
 > Automated comparison with section 5.2 of the [EU SmPC of *Cyanokit*](https://www.ema.europa.eu/en/documents/product-information/cyanokit-epar-product-information_en.pdf) (EMEA/H/C/000806) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/cyanokit-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 26, 31)
 > - protein-binding: no-label-value (SmPC values: -)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta Cyanokit dotyczy megadawki IV jako odtrutki (eliminacja 26-31 h); Wikipedia podaje t1/2 fizjologicznego magazynowania wątrobowego (6 dni / 144 h).
 
 ## Safety routing
 

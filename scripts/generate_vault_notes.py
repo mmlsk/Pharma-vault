@@ -28,6 +28,7 @@ from pv_common import (
     existing_notes,
     hubs_and_pathways,
     load_jsonl,
+    load_pk_annotations,
     safe_filename,
 )
 
@@ -35,7 +36,7 @@ TARGET_NOTES = VAULT / "07 Targets"
 
 
 def frontmatter(r: dict, pk: dict | None = None, ch: dict | None = None, ver: dict | None = None,
-                ema: dict | None = None) -> dict:
+                ema: dict | None = None, pka: list[dict] | None = None) -> dict:
     fm = {
         "type": "compound",
         "schema-version": 2,
@@ -85,6 +86,10 @@ def frontmatter(r: dict, pk: dict | None = None, ch: dict | None = None, ver: di
         fm["source-status"] = "partially-verified" if "consistent" in sts and "discrepant" not in sts else "auto-extracted"
         if "consistent" in sts and "discrepant" in sts:
             fm["tags"] = fm["tags"] + ["pk-sources-disagree"]
+    if pka:
+        fm["pk-annotations"] = [{"category": a["category"], "field": a["field"], "regulator": a["regulator"],
+                                 "explanation": a["explanation"]} for a in pka]
+        fm["tags"] = fm["tags"] + ["pk-explained"]
     return fm
 
 
@@ -182,7 +187,7 @@ def _rng(v, vmax, unit=""):
     return (f"{fmt(v)}–{fmt(vmax)}" if vmax else fmt(v)) + (f" {unit}" if unit else "")
 
 
-def pk_section(pk: dict | None, ver: dict | None = None, ema: dict | None = None) -> list[str]:
+def pk_section(pk: dict | None, ver: dict | None = None, ema: dict | None = None, pka: list[dict] | None = None) -> list[str]:
     if not pk:
         return ["## Pharmacokinetics", "",
                 "_No structured PK source matched yet - see [[Pharmacokinetics Summary]] for field conventions._", ""]
@@ -236,11 +241,16 @@ def pk_section(pk: dict | None, ver: dict | None = None, ema: dict | None = None
             got = f.get("smpc-values-h") or f.get("smpc-values-pct") or []
             lines.append(f"> - {k}: {f['status']} (SmPC values: {', '.join(f'{x:g}' for x in got[:6]) or '-'})")
         lines.append("")
+    if pka:
+        lines += ["> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)"]
+        for ann in pka:
+            lines.append(f"> - **{ann['category']}** ({ann['field']}): {ann['explanation']}")
+        lines.append("")
     return lines
 
 
 def body(r: dict, pk: dict | None = None, ch: dict | None = None, ver: dict | None = None,
-         rel: dict | None = None, link=None, ema: dict | None = None) -> str:
+         rel: dict | None = None, link=None, ema: dict | None = None, pka: list[dict] | None = None) -> str:
     hubs, pathways = hubs_and_pathways(r, pk)
 
     lines = [
@@ -283,7 +293,7 @@ def body(r: dict, pk: dict | None = None, ch: dict | None = None, ver: dict | No
         "## Evidence boundaries", "",
         "- Evidence tier: _not assigned_ - see [[Evidence Tiers]].",
         "- A catalogue or vendor listing is not evidence of efficacy, purity, legality or safety.", "",
-        *pk_section(pk, ver, ema),
+        *pk_section(pk, ver, ema, pka),
         *related_section(rel, link),
         "## Safety routing", "",
         "Group-level triage (not compound-specific): " + (", ".join(f"`{t}`" for t in r["group_risk_triage"]) or "-"),
@@ -382,6 +392,7 @@ def main() -> None:
     chs = {c["compound_id"]: c for c in loadp("chembl.json")}
     vers = {v["compound_id"]: v for v in loadp("pk-verification.json")}
     emas = {v["compound_id"]: v for v in loadp("pk-verification-ema.json")}
+    pka_all = load_pk_annotations()
     for x in loadp("identity-review.json"):
         c = chs.get(x["compound_id"])
         if c and c["identity"]["chembl-id"] == x["chembl-id"]:
@@ -407,14 +418,14 @@ def main() -> None:
             prev[0].unlink()
         folder.mkdir(parents=True, exist_ok=True)
         cid = r["compound_id"]
-        pk, ch, ver, ema = pks.get(cid), chs.get(cid), vers.get(cid), emas.get(cid)
-        fmd = frontmatter(r, pk, ch, ver, ema)
+        pk, ch, ver, ema, pka = pks.get(cid), chs.get(cid), vers.get(cid), emas.get(cid), pka_all.get(cid)
+        fmd = frontmatter(r, pk, ch, ver, ema, pka)
         if (rels.get(cid) or {}).get("same-molecule"):
             fmd["tags"] = fmd["tags"] + ["possible-duplicate"]
         if r.get("pubchem_cid"):
             fmd["pubchem-cid"] = int(r["pubchem_cid"])
         fm = yaml.safe_dump(fmd, sort_keys=False, allow_unicode=True, width=1000)
-        target.write_text(f"---\n{fm}---\n\n{body(r, pk, ch, ver, rels.get(cid), link, ema)}", encoding="utf-8")
+        target.write_text(f"---\n{fm}---\n\n{body(r, pk, ch, ver, rels.get(cid), link, ema, pka)}", encoding="utf-8")
         written_paths.add(target)
         written += 1
 

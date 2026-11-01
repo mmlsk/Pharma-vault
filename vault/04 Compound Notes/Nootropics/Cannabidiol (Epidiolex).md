@@ -68,6 +68,7 @@ tags:
 - identity-confirmed
 - pk-fda-discrepant
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Cannabidiol
@@ -119,6 +120,11 @@ pk-verification-ema:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: pk-phase
+  field: half-life
+  regulator: both
+  explanation: Wikipedia podaje eliminację po pojedynczej dawce (18-32 h); etykiety Epidiolex (FDA/EMA) podają t1/2 w stanie stacjonarnym po 7 dniach (56-61 h).
 ---
 
 # Cannabidiol (Epidiolex)
@@ -179,6 +185,9 @@ Cannabinoid CB1 receptor negative allosteric modulator _(ChEMBL curated mechanis
 > [!danger] EU SmPC cross-check: **discrepant**
 > Automated comparison with section 5.2 of the [EU SmPC of *Epidyolex*](https://www.ema.europa.eu/en/documents/product-information/epidyolex-epar-product-information_en.pdf) (EMEA/H/C/004675) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/epidyolex-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 56, 61, 168)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **pk-phase** (half-life): Wikipedia podaje eliminację po pojedynczej dawce (18-32 h); etykiety Epidiolex (FDA/EMA) podają t1/2 w stanie stacjonarnym po 7 dniach (56-61 h).
 
 ## Related compounds (auto)
 

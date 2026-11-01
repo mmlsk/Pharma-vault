@@ -64,6 +64,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Bumetanide
@@ -106,6 +107,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: population
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA podaje t1/2 u dorosłych 1.5-2.5 h oraz do 15 h u wcześniaków i noworodków; Wikipedia podaje 0.8 h.
 ---
 
 # Bumetanide
@@ -166,6 +172,9 @@ Sodium-(potassium)-chloride cotransporter 2 inhibitor _(ChEMBL curated mechanism
 > Automated comparison with the [US prescribing information (DailyMed set 0fb78afc…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=0fb78afc-d8bc-4ae8-8c0a-6d9c6f7a22c5), label version 20260909. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 1.5, 2.4, 2.5, 6, 15)
 > - protein-binding: consistent (label values: 94, 96, 97)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **population** (half-life): Etykieta FDA podaje t1/2 u dorosłych 1.5-2.5 h oraz do 15 h u wcześniaków i noworodków; Wikipedia podaje 0.8 h.
 
 ## Related compounds (auto)
 

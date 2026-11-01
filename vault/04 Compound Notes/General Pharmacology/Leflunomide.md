@@ -66,6 +66,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Leflunomide
@@ -119,6 +120,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: no-label-value
+pk-annotations:
+- category: metabolite
+  field: half-life
+  regulator: ema
+  explanation: SmPC Arava podaje t1/2 eliminacji aktywnego metabolitu teryflunomidu (A77 1726) wynoszący ok. 2-4 tygodnie (336-432 h); wartość 72 h dotyczy procedury wymuszonej eliminacji cholestyraminą.
 ---
 
 # Leflunomide
@@ -185,6 +191,9 @@ Dihydroorotate dehydrogenase inhibitor _(ChEMBL curated mechanism of the parent 
 > Automated comparison with section 5.2 of the [EU SmPC of *Arava*](https://www.ema.europa.eu/en/documents/product-information/arava-epar-product-information_en.pdf) (EMEA/H/C/000235). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 72)
 > - protein-binding: no-label-value (SmPC values: -)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **metabolite** (half-life): SmPC Arava podaje t1/2 eliminacji aktywnego metabolitu teryflunomidu (A77 1726) wynoszący ok. 2-4 tygodnie (336-432 h); wartość 72 h dotyczy procedury wymuszonej eliminacji cholestyraminą.
 
 ## Related compounds (auto)
 

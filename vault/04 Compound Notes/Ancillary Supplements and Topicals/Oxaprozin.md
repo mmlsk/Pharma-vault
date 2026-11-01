@@ -63,6 +63,7 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Oxaprozin
@@ -104,6 +105,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: population
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Daypro podaje t1/2 w nasyceniu wiązań albuminowych u osób starszych (22 h); Wikipedia podaje t1/2 w standardowych dawkach (54.9 h).
 ---
 
 # Oxaprozin
@@ -163,6 +169,9 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 > Automated comparison with the [US prescribing information (DailyMed set e881dca6…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=e881dca6-004e-1c3e-e053-2a95a90a02ab), label version 20260522. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 22)
 > - protein-binding: consistent (label values: 99)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **population** (half-life): Etykieta FDA Daypro podaje t1/2 w nasyceniu wiązań albuminowych u osób starszych (22 h); Wikipedia podaje t1/2 w standardowych dawkach (54.9 h).
 
 ## Related compounds (auto)
 

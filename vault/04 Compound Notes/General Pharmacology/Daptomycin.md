@@ -63,6 +63,7 @@ tags:
 - pk-auto
 - pk-fda-discrepant
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Daptomycin
@@ -90,6 +91,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: parser-artifact
+  field: half-life
+  regulator: both
+  explanation: Etykiety Cubicin podają standardowy t1/2 8-9 h (zgodny z Wiki 7-11 h); parser wyodrębnił wartości interwału dawkowania (24 h).
 ---
 
 # Daptomycin
@@ -134,6 +140,9 @@ Cyclic lipopeptide that is rapidly bactericidal against gram-positive organisms 
 > Automated comparison with section 5.2 of the [EU SmPC of *Cubicin*](https://www.ema.europa.eu/en/documents/product-information/cubicin-epar-product-information_en.pdf) (EMEA/H/C/000637) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/cubicin-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 0, 0.5, 1, 24)
 > - protein-binding: consistent (SmPC values: 90)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (half-life): Etykiety Cubicin podają standardowy t1/2 8-9 h (zgodny z Wiki 7-11 h); parser wyodrębnił wartości interwału dawkowania (24 h).
 
 ## Safety routing
 

@@ -64,6 +64,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Zoledronic acid
@@ -113,6 +114,11 @@ pk-verification-ema:
   fields:
     half-life: consistent
     protein-binding: discrepant
+pk-annotations:
+- category: unbound-fraction
+  field: protein-binding
+  regulator: ema
+  explanation: SmPC Aclasta podaje frakcję wolną w osoczu 60-77%, co oznacza niskie wiązanie z białkami 23-40% (zgodne z Wiki 22%).
 ---
 
 # Zoledronic Acid (Reclast)
@@ -168,6 +174,9 @@ Potent IV nitrogen-containing bisphosphonate given as an annual infusion, used f
 > Automated comparison with section 5.2 of the [EU SmPC of *Zometa*](https://www.ema.europa.eu/en/documents/product-information/zometa-epar-product-information_en.pdf) (EMEA/H/C/000336). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 1.87, 146)
 > - protein-binding: discrepant (SmPC values: 60, 77)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **unbound-fraction** (protein-binding): SmPC Aclasta podaje frakcję wolną w osoczu 60-77%, co oznacza niskie wiązanie z białkami 23-40% (zgodne z Wiki 22%).
 
 ## Safety routing
 

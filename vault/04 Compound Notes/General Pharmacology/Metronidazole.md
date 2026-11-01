@@ -64,6 +64,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Metronidazole
@@ -111,6 +112,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA MetroGel dotyczy podania dopochwowego/miejscowego o powolnym wchłanianiu; Wikipedia podaje eliminację doustną (8 h).
 ---
 
 # Metronidazole
@@ -177,6 +183,9 @@ DNA inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)
 > Automated comparison with the [US prescribing information (DailyMed set 4040db14…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4040db14-750f-6d20-e054-00144ff8d46c), label version 20260826. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 22.5, 72, 109)
 > - protein-binding: consistent (label values: 20)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA MetroGel dotyczy podania dopochwowego/miejscowego o powolnym wchłanianiu; Wikipedia podaje eliminację doustną (8 h).
 
 ## Related compounds (auto)
 

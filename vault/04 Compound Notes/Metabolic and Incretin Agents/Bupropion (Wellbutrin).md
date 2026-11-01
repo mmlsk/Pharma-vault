@@ -67,6 +67,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Bupropion
@@ -105,6 +106,11 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: metabolite
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA podaje t1/2 bupropionu 21 h oraz aktywnego metabolitu hydroksybupropionu 20 h; Wikipedia podaje dolny zakres formy IR (11 h).
 ---
 
 # Bupropion (Wellbutrin)
@@ -157,6 +163,9 @@ Norepinephrine/dopamine reuptake inhibitor used for depression and smoking cessa
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 8d937ca3…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=8d937ca3-3351-40f1-8192-348ba0c68162), label version 20240521. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 19, 21, 29, 32)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **metabolite** (half-life): Etykieta FDA podaje t1/2 bupropionu 21 h oraz aktywnego metabolitu hydroksybupropionu 20 h; Wikipedia podaje dolny zakres formy IR (11 h).
 
 ## Related compounds (auto)
 

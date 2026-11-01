@@ -59,6 +59,7 @@ tags:
 - chembl-profile
 - identity-stereo-check
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Clofazimine
@@ -100,6 +101,11 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: pk-phase
+  field: half-life
+  regulator: fda
+  explanation: Klofazymina kumuluje się w tkance tłuszczowej; etykieta FDA opisuje fazy eliminacji od 6.5 dnia (156 h) do okresu półtrwania eliminacji terminalnej ~70 dni (1680 h).
 ---
 
 # Clofazimine
@@ -154,6 +160,9 @@ DNA inhibitor _(ChEMBL curated mechanism of the parent molecule, via ChEMBL API)
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 2e07448f…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=2e07448f-f888-4747-80ab-570c1b621250), label version 20260817. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 156, 600, 3840)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **pk-phase** (half-life): Klofazymina kumuluje się w tkance tłuszczowej; etykieta FDA opisuje fazy eliminacji od 6.5 dnia (156 h) do okresu półtrwania eliminacji terminalnej ~70 dni (1680 h).
 
 ## Related compounds (auto)
 

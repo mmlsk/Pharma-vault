@@ -66,6 +66,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Lisdexamfetamine
@@ -105,6 +106,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: no-label-value
+pk-annotations:
+- category: metabolite
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Vyvanse podaje t1/2 aktywnej dekstroamfetaminy (8.6-11.3 h); Wikipedia podaje czas rozpadu proleku lisdeksamfetaminy (<1 h).
 ---
 
 # Lisdexamfetamine (Vyvanse)
@@ -159,6 +165,9 @@ Dextroamphetamine prodrug for ADHD and binge-eating disorder; controlled stimula
 > Automated comparison with the [US prescribing information (DailyMed set c11cb3b6…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=c11cb3b6-3dff-477b-a249-b4c3118edc5f), label version 20260811. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 8.6, 9.5, 10, 11.3)
 > - protein-binding: no-label-value (label values: -)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **metabolite** (half-life): Etykieta FDA Vyvanse podaje t1/2 aktywnej dekstroamfetaminy (8.6-11.3 h); Wikipedia podaje czas rozpadu proleku lisdeksamfetaminy (<1 h).
 
 ## Related compounds (auto)
 

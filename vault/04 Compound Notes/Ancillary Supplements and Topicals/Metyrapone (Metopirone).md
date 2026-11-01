@@ -61,6 +61,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Metyrapone
@@ -102,6 +103,11 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: metabolite
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Metopirone podaje t1/2 aktywnego metabolitu metyraponu (metyrapolu, ~4 h); Wikipedia podaje t1/2 związku macierzystego (1.9 h).
 ---
 
 # Metyrapone (Metopirone)
@@ -157,6 +163,9 @@ Cytochrome P450 11B1, mitochondrial inhibitor _(ChEMBL curated mechanism of the 
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 4046b167…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4046b167-7a46-8f4a-e063-6394a90a147f), label version 20260519. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 4)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **metabolite** (half-life): Etykieta FDA Metopirone podaje t1/2 aktywnego metabolitu metyraponu (metyrapolu, ~4 h); Wikipedia podaje t1/2 związku macierzystego (1.9 h).
 
 ## Related compounds (auto)
 

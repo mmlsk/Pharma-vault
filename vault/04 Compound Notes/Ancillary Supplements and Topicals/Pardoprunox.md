@@ -56,7 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
-- identity-conflict
+- identity-curated
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2103832
@@ -85,6 +85,10 @@ chembl:
     qed-weighted: 0.79
     full-molformula: C12H15N3O2
   identity-check: conflict
+  identity-decision:
+    decision: confirm
+    reviewer: agent-review 2026-11-01
+    reason: Wikipedia infobox stores hydrochloride salt (CID 6918524); ChEMBL CHEMBL2103832 and PubChem name-CID 6918525 match free base YVPUUUDAZYFFQT-UHFFFAOYSA-N
 ---
 
 # Pardoprunox
@@ -98,7 +102,7 @@ chembl:
 - **Compound ID:** `pardoprunox-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2103832](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103832/) · max phase 3 · id via exact ChEMBL name match · structure check: ❌ conflicts with PubChem - see Review Queue
+- **ChEMBL:** [CHEMBL2103832](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2103832/) · max phase 3 · id via exact ChEMBL name match · structure check: ❌ conflicts with PubChem - see Review Queue · decision: confirm (Wikipedia infobox stores hydrochloride salt (CID 6918524); ChEMBL CHEMBL2103832 and PubChem name-CID 6918525 match free base YVPUUUDAZYFFQT-UHFFFAOYSA-N)
 
 ## Source summary
 

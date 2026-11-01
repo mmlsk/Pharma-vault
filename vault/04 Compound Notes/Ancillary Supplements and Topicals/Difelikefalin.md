@@ -65,6 +65,7 @@ tags:
 - pk-fda-discrepant
 - pk-ema-consistent
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Difelikefalin
@@ -116,6 +117,11 @@ pk-verification-ema:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+pk-annotations:
+- category: population
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Korsuva dotyczy pacjentów z przewlekłą chorobą nerek na hemodializie (t1/2 23-31 h); Wikipedia podaje dane u osób zdrowych (2 h).
 ---
 
 # Difelikefalin
@@ -177,6 +183,9 @@ Kappa opioid receptor agonist _(ChEMBL curated mechanism of the parent molecule,
 > [!success] EU SmPC cross-check: **consistent**
 > Automated comparison with section 5.2 of the [EU SmPC of *Kapruvia*](https://www.ema.europa.eu/en/documents/product-information/kapruvia-epar-product-information_en.pdf) (EMEA/H/C/005612) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/kapruvia-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 2, 3, 23, 31)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **population** (half-life): Etykieta FDA Korsuva dotyczy pacjentów z przewlekłą chorobą nerek na hemodializie (t1/2 23-31 h); Wikipedia podaje dane u osób zdrowych (2 h).
 
 ## Related compounds (auto)
 

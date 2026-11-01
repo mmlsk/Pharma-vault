@@ -56,7 +56,7 @@ tags:
 - stub
 - chembl-profile
 - chembl-name-match
-- identity-conflict
+- identity-curated
 chembl:
   identity-source: chembl-name-match
   parent-id: CHEMBL2107777
@@ -82,6 +82,10 @@ chembl:
     qed-weighted: 0.43
     full-molformula: C33H45N3O7S
   identity-check: conflict
+  identity-decision:
+    decision: confirm
+    reviewer: agent-review 2026-11-01
+    reason: Wikipedia infobox stores phosphate prodrug SR-121463A (CID 9810773); ChEMBL CHEMBL2107777 is the stereospecific active moiety SR-121463B (CDSBFDCCJJDFCV-CKZSCMLPSA-N)
 ---
 
 # Satavaptan
@@ -95,7 +99,7 @@ chembl:
 - **Compound ID:** `satavaptan-compound`
 - **Source group:** Ancillaries & Support (`ancillary`)
 - **Cluster:** [[Ancillary Supplements and Topicals]]
-- **ChEMBL:** [CHEMBL2107777](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107777/) · max phase 3 · id via exact ChEMBL name match · structure check: ❌ conflicts with PubChem - see Review Queue
+- **ChEMBL:** [CHEMBL2107777](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2107777/) · max phase 3 · id via exact ChEMBL name match · structure check: ❌ conflicts with PubChem - see Review Queue · decision: confirm (Wikipedia infobox stores phosphate prodrug SR-121463A (CID 9810773); ChEMBL CHEMBL2107777 is the stereospecific active moiety SR-121463B (CDSBFDCCJJDFCV-CKZSCMLPSA-N))
 
 ## Source summary
 

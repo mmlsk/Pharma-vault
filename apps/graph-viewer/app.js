@@ -362,7 +362,7 @@
     const hasPk = !!k;
     let pkBadge = '<span class="tab-badge">—</span>';
     if (v && v.s === "consistent" && e && e.s === "consistent") pkBadge = '<span class="tab-badge" style="color:var(--color-success)">✓✓</span>';
-    else if ((v && v.s === "discrepant") || (e && e.s === "discrepant")) pkBadge = '<span class="tab-badge" style="color:var(--color-warning)">≠</span>';
+    else if ((v && v.s === "discrepant") || (e && e.s === "discrepant")) pkBadge = (c.pka && c.pka.length) ? '<span class="tab-badge" style="color:var(--accent-gold)">≠ 💡</span>' : '<span class="tab-badge" style="color:var(--color-warning)">≠</span>';
     else if (v && v.s === "consistent") pkBadge = '<span class="tab-badge" style="color:var(--color-success)">✓ FDA</span>';
     else if (e && e.s === "consistent") pkBadge = '<span class="tab-badge" style="color:var(--color-success)">✓ EMA</span>';
     else if (hasPk) pkBadge = '<span class="tab-badge">✓</span>';
@@ -452,6 +452,16 @@
           </div>
         </div>` : '<div class="ver-card" style="opacity:.75"><b>ChPL / SmPC (EMA)</b><span class="muted">Brak dokumentacji EPAR/ChPL w bazie EMA.</span></div>';
 
+      const pkaHtml = (c.pka && c.pka.length) ? `
+        <div class="ver-card" style="border-left:3px solid var(--accent-gold);margin-top:.6rem">
+          <div style="display:flex;align-items:center;gap:.4rem">
+            <b>💡 Wyjaśnienie rozbieżności PK (decyzja kuratorska)</b>
+          </div>
+          <ul style="margin:.4rem 0 0 1.1rem;padding:0;font-size:0.85rem;color:var(--color-text-muted)">
+            ${c.pka.map((a) => `<li style="margin-bottom:.2rem"><b style="color:var(--color-text)">${esc(a.c)}</b> (${esc(a.f)}): ${esc(a.e)}</li>`).join("")}
+          </ul>
+        </div>` : "";
+
       tabContent = `
         <div class="tab-panel">
           <div class="label">Parametry PK (Wikipedia)</div>
@@ -462,6 +472,7 @@
           <div class="label" style="margin-top:.8rem">Oficjalne etykiety rejestracyjne</div>
           ${verHtml}
           ${emaHtml}
+          ${pkaHtml}
         </div>`;
     } else if (curTab === "targets") {
       const nb = neighbours(c).slice(0, 16);

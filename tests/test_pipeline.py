@@ -75,9 +75,38 @@ def test_schema_rejects_bad_protein_binding(validator):
 
 def test_curated_tables_parse():
     for name in ["alias-map.csv", "expansion-backlog.csv", "storefront-new-compounds.csv", "additions.csv",
-                 "expansion-resolution.csv", "identity-overrides.csv", "merges.csv"]:
+                 "expansion-resolution.csv", "identity-overrides.csv", "merges.csv", "identity-decisions.csv",
+                 "pk-annotations.csv"]:
         with open(ROOT / "data/curated" / name, encoding="utf-8") as fh:
             assert len(list(csv.DictReader(fh))) > 0
+
+
+def test_pk_annotations(rows):
+    from pv_common import load_pk_annotations
+    anns = load_pk_annotations()
+    assert len(anns) >= 70
+    ids = {r["compound_id"] for r in rows}
+    valid_categories = {"formulation", "metabolite", "pk-phase", "unbound-fraction", "population", "parser-artifact"}
+    valid_fields = {"half-life", "protein-binding"}
+    valid_regulators = {"fda", "ema", "both"}
+    for cid, items in anns.items():
+        assert cid in ids
+        for a in items:
+            assert a["regulator"] in valid_regulators
+            assert a["field"] in valid_fields
+            assert a["category"] in valid_categories
+            assert a["resolution"] == "explained"
+            assert len(a["explanation"]) > 10
+
+
+def test_identity_conflicts_fully_resolved():
+    items = json.loads((PROCESSED / "identity-review.json").read_text(encoding="utf-8"))
+    conflicts = [it for it in items if it.get("verdict") == "conflict"]
+    assert len(conflicts) == 7
+    for c in conflicts:
+        assert c.get("decision") is not None
+        assert c["decision"]["decision"] == "confirm"
+        assert len(c["decision"]["reason"]) > 10
 
 
 # ---------- v3.1: PK enrichment + graph data
@@ -339,3 +368,4 @@ def test_ema_verification():
 def test_sqlite_has_v33_tables(sqlite_con):
     assert sqlite_con.execute("SELECT COUNT(*) FROM identity_review").fetchone()[0] > 1500
     assert sqlite_con.execute("SELECT COUNT(*) FROM pk_verification_ema").fetchone()[0] > 150
+    assert sqlite_con.execute("SELECT COUNT(*) FROM pk_annotations").fetchone()[0] >= 70

@@ -63,6 +63,7 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Amoxapine
@@ -110,6 +111,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: no-label-value
+pk-annotations:
+- category: metabolite
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA potwierdza t1/2 amoksapiny wynoszący 8 h (zgodny z Wikipedią), a wartość 30 h dotyczy aktywnego metabolitu 8-hydroksyamoksapiny.
 ---
 
 # Amoxapine
@@ -172,6 +178,9 @@ Serotonin transporter inhibitor _(ChEMBL curated mechanism, as quoted by the sou
 > Automated comparison with the [US prescribing information (DailyMed set eed5e856…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=eed5e856-dd7b-4eaa-9dad-508f2bef9328), label version 20241218. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 30)
 > - protein-binding: no-label-value (label values: -)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **metabolite** (half-life): Etykieta FDA potwierdza t1/2 amoksapiny wynoszący 8 h (zgodny z Wikipedią), a wartość 30 h dotyczy aktywnego metabolitu 8-hydroksyamoksapiny.
 
 ## Related compounds (auto)
 

@@ -67,6 +67,7 @@ tags:
 - pk-fda-discrepant
 - pk-ema-consistent
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Silodosin
@@ -120,6 +121,11 @@ pk-verification-ema:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-annotations:
+- category: metabolite
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Rapaflo podaje t1/2 aktywnego metabolitu glukuronidowego KMD-3213G (~24 h); Wikipedia podaje sylodosynę (13 h).
 ---
 
 # Silodosin
@@ -185,6 +191,9 @@ Alpha-1a adrenergic receptor antagonist _(ChEMBL curated mechanism of the parent
 > Automated comparison with section 5.2 of the [EU SmPC of *Urorec*](https://www.ema.europa.eu/en/documents/product-information/urorec-epar-product-information_en.pdf) (EMEA/H/C/001092). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 11, 18, 24)
 > - protein-binding: consistent (SmPC values: 91, 96.6)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **metabolite** (half-life): Etykieta FDA Rapaflo podaje t1/2 aktywnego metabolitu glukuronidowego KMD-3213G (~24 h); Wikipedia podaje sylodosynę (13 h).
 
 ## Related compounds (auto)
 

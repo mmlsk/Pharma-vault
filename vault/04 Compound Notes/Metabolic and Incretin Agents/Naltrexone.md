@@ -65,6 +65,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Naltrexone
@@ -107,6 +108,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Vivitrol dotyczy comiesięcznej iniekcji domięśniowej o przedłużonym uwalnianiu (5-10 dni / 120-240 h); Wikipedia podaje postać doustną (4 h).
 ---
 
 # Naltrexone
@@ -168,6 +174,9 @@ Opioid receptors; mu/kappa/delta antagonist _(ChEMBL curated mechanism of the pa
 > Automated comparison with the [US prescribing information (DailyMed set cd11c435…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=cd11c435-b0f0-4bb9-ae78-60f101f3703f), label version 20260531. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 120, 240)
 > - protein-binding: consistent (label values: 21)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA Vivitrol dotyczy comiesięcznej iniekcji domięśniowej o przedłużonym uwalnianiu (5-10 dni / 120-240 h); Wikipedia podaje postać doustną (4 h).
 
 ## Related compounds (auto)
 

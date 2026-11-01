@@ -64,6 +64,7 @@ tags:
 - pk-fda-discrepant
 - pk-ema-consistent
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Afamelanotide
@@ -108,6 +109,11 @@ pk-verification-ema:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Wikipedia podaje t1/2 wolnego peptydu w roztworze (0.5 h); etykieta FDA Scenesse dotyczy podskórnego implantu o kontrolowanym uwalnianiu (~15 h).
 ---
 
 # Afamelanotide (Melanotan I)
@@ -167,6 +173,9 @@ Melanocortin receptor 1 agonist _(ChEMBL curated mechanism of the parent molecul
 > [!success] EU SmPC cross-check: **consistent**
 > Automated comparison with section 5.2 of the [EU SmPC of *Scenesse*](https://www.ema.europa.eu/en/documents/product-information/scenesse-epar-product-information_en.pdf) (EMEA/H/C/002548) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/scenesse-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 0.5)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Wikipedia podaje t1/2 wolnego peptydu w roztworze (0.5 h); etykieta FDA Scenesse dotyczy podskórnego implantu o kontrolowanym uwalnianiu (~15 h).
 
 ## Related compounds (auto)
 

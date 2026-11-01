@@ -64,6 +64,7 @@ tags:
 - chembl-profile
 - identity-stereo-check
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Caspofungin
@@ -104,6 +105,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: no-label-value
+pk-annotations:
+- category: pk-phase
+  field: half-life
+  regulator: ema
+  explanation: 'SmPC Cancidas opisuje eliminację wielofazową: faza beta 9-11 h (zgodna z Wiki), faza gamma 45 h oraz końcowa faza radioaktywności 12-15 dni.'
 ---
 
 # Caspofungin
@@ -155,6 +161,9 @@ _No FDA label found for automated cross-check (not US-approved, or different nam
 > Automated comparison with section 5.2 of the [EU SmPC of *Cancidas (previously Caspofungin MSD)*](https://www.ema.europa.eu/en/documents/product-information/cancidas-epar-product-information_en.pdf) (EMEA/H/C/000379) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/cancidas-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 45, 288, 360)
 > - protein-binding: no-label-value (SmPC values: -)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **pk-phase** (half-life): SmPC Cancidas opisuje eliminację wielofazową: faza beta 9-11 h (zgodna z Wiki), faza gamma 45 h oraz końcowa faza radioaktywności 12-15 dni.
 
 ## Safety routing
 

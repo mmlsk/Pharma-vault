@@ -66,6 +66,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Pantoprazole
@@ -114,6 +115,11 @@ pk-verification-ema:
   chpl-url: null
   checked: '2026-10-01'
   fields: {}
+pk-annotations:
+- category: population
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Protonix podaje t1/2 u wolnych metabolizatorów CYP2C19 (3.5-10 h); Wikipedia podaje populację ekstensywnych metabolizatorów (1-2 h).
 ---
 
 # Pantoprazole
@@ -166,6 +172,9 @@ Inhibits the gastric proton pump to suppress acid secretion; long-term use affec
 > Automated comparison with the [US prescribing information (DailyMed set 59f50bcb…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=59f50bcb-85e5-e3f6-e063-6294a90a11ae), label version 20260826. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 7, 9)
 > - protein-binding: consistent (label values: 98)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **population** (half-life): Etykieta FDA Protonix podaje t1/2 u wolnych metabolizatorów CYP2C19 (3.5-10 h); Wikipedia podaje populację ekstensywnych metabolizatorów (1-2 h).
 
 ## Related compounds (auto)
 

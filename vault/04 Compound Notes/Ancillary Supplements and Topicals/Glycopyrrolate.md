@@ -60,6 +60,7 @@ tags:
 - identity-confirmed
 - pk-fda-discrepant
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Glycopyrronium bromide
@@ -110,6 +111,11 @@ pk-verification-ema:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: both
+  explanation: Wikipedia podaje t1/2 po podaniu dożylnym (0.6-1.2 h); etykiety Lonhala/Seebri dotyczą inhalacji lub roztworu doustnego o dłuższej eliminacji pozornej (3-6 h).
 ---
 
 # Glycopyrrolate
@@ -163,6 +169,9 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 > [!danger] EU SmPC cross-check: **discrepant**
 > Automated comparison with section 5.2 of the [EU SmPC of *Seebri Breezhaler*](https://www.ema.europa.eu/en/documents/product-information/seebri-breezhaler-epar-product-information_en.pdf) (EMEA/H/C/002430) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/seebri-breezhaler-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 2.8, 6.2, 33, 57)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Wikipedia podaje t1/2 po podaniu dożylnym (0.6-1.2 h); etykiety Lonhala/Seebri dotyczą inhalacji lub roztworu doustnego o dłuższej eliminacji pozornej (3-6 h).
 
 ## Related compounds (auto)
 

@@ -63,6 +63,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Cefepime
@@ -101,6 +102,11 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: population
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA podaje t1/2 2 h u osób zdrowych (zgodny z Wiki) oraz 8-12 h u pacjentów z ciężką niewydolnością nerek.
 ---
 
 # Cefepime
@@ -150,6 +156,9 @@ Fourth-generation cephalosporin combining antipseudomonal and gram-positive acti
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set be5f8ca6…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=be5f8ca6-7232-423a-a2d5-cccb7abe7921), label version 20260625. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 8, 12)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **population** (half-life): Etykieta FDA podaje t1/2 2 h u osób zdrowych (zgodny z Wiki) oraz 8-12 h u pacjentów z ciężką niewydolnością nerek.
 
 ## Safety routing
 

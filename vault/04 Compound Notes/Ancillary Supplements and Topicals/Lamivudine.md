@@ -65,6 +65,7 @@ tags:
 - identity-confirmed
 - pk-fda-discrepant
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Lamivudine
@@ -130,6 +131,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: metabolite
+  field: half-life
+  regulator: both
+  explanation: Wikipedia podaje eliminację lamiwudyny z osocza (5-7 h); etykiety FDA i EMA podają t1/2 wewnątrzkomórkowego czynnego trifosforanu (16-19 h).
 ---
 
 # Lamivudine
@@ -198,6 +204,9 @@ DNA inhibitor; DNA polymerase/reverse transcriptase inhibitor; Human immunodefic
 > Automated comparison with section 5.2 of the [EU SmPC of *Epivir*](https://www.ema.europa.eu/en/documents/product-information/epivir-epar-product-information_en.pdf) (EMEA/H/C/000107). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 16, 18, 19)
 > - protein-binding: consistent (SmPC values: 5, 10, 16, 36)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **metabolite** (half-life): Wikipedia podaje eliminację lamiwudyny z osocza (5-7 h); etykiety FDA i EMA podają t1/2 wewnątrzkomórkowego czynnego trifosforanu (16-19 h).
 
 ## Related compounds (auto)
 

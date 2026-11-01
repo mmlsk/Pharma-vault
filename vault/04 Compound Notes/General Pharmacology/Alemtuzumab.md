@@ -61,6 +61,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Alemtuzumab
@@ -102,6 +103,11 @@ pk-verification-ema:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: pk-phase
+  field: half-life
+  regulator: ema
+  explanation: SmPC Lemtrada podaje fazę dystrybucji alfa 4-5 dni (96-120 h) oraz fazę eliminacji beta (~30 dni / 720 h); Wikipedia podaje 12 dni (288 h).
 ---
 
 # Alemtuzumab
@@ -157,6 +163,9 @@ CAMPATH-1 antigen inhibitor _(ChEMBL curated mechanism of the parent molecule, v
 > [!danger] EU SmPC cross-check: **discrepant**
 > Automated comparison with section 5.2 of the [EU SmPC of *Lemtrada*](https://www.ema.europa.eu/en/documents/product-information/lemtrada-epar-product-information_en.pdf) (EMEA/H/C/003718) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/lemtrada-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 96, 120, 720)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **pk-phase** (half-life): SmPC Lemtrada podaje fazę dystrybucji alfa 4-5 dni (96-120 h) oraz fazę eliminacji beta (~30 dni / 720 h); Wikipedia podaje 12 dni (288 h).
 
 ## Related compounds (auto)
 

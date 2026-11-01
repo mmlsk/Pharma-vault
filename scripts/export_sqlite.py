@@ -16,7 +16,7 @@ from __future__ import annotations
 import json
 import sqlite3
 
-from pv_common import PROCESSED
+from pv_common import PROCESSED, load_pk_annotations
 
 DB = PROCESSED / "pharma-vault.db"
 
@@ -47,6 +47,8 @@ def main() -> None:
     CREATE TABLE pk_verification_ema (compound_id TEXT PRIMARY KEY REFERENCES substances, status TEXT, product TEXT, ema_number TEXT,
                                       smpc_url TEXT, chpl_url TEXT, ema_atc TEXT, atc_agrees_chembl INTEGER);
     CREATE TABLE pk_verification_ema_fields (compound_id TEXT, field TEXT, status TEXT, wikipedia TEXT, smpc_values TEXT);
+    CREATE TABLE pk_annotations (compound_id TEXT REFERENCES substances, regulator TEXT, field TEXT,
+                                 category TEXT, resolution TEXT, explanation TEXT, reviewer TEXT);
     CREATE TABLE identity_review (compound_id TEXT PRIMARY KEY REFERENCES substances, tier TEXT, chembl_id TEXT, verdict TEXT,
                                   decision TEXT, reason TEXT, pubchem_cids TEXT);
     CREATE INDEX idx_compound_targets_target ON compound_targets(target_id);
@@ -97,9 +99,14 @@ def main() -> None:
         cur.execute("INSERT INTO identity_review VALUES (?,?,?,?,?,?,?)", (
             x["compound_id"], x["tier"], x["chembl-id"], x["verdict"], d.get("decision"), d.get("reason"),
             ";".join(str(e.get("cid") or e.get("ema-number")) for e in x["evidence"])))
+    pka = load_pk_annotations()
+    for cid, anns in pka.items():
+        for a in anns:
+            cur.execute("INSERT INTO pk_annotations VALUES (?,?,?,?,?,?,?)", (
+                cid, a["regulator"], a["field"], a["category"], a["resolution"], a["explanation"], a["reviewer"]))
     con.commit()
     n = {t: cur.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0] for t in
-         ("substances", "pk", "chembl", "atc", "targets", "compound_targets", "pk_verification", "pk_verification_ema", "identity_review")}
+         ("substances", "pk", "chembl", "atc", "targets", "compound_targets", "pk_verification", "pk_verification_ema", "identity_review", "pk_annotations")}
     con.close()
     print("sqlite:", n, "->", DB.name)
 

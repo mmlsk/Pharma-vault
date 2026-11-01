@@ -58,6 +58,7 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Olopatadine
@@ -105,6 +106,11 @@ pk-verification-ema:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: ema
+  explanation: SmPC Opatanol dotyczy kropli do oczu o eliminacji miejscowej (12 h); Wikipedia podaje ogólnoustrojowy t1/2 olopatadyny (3 h).
 ---
 
 # Olopatadine
@@ -158,6 +164,9 @@ _No FDA label found for automated cross-check (not US-approved, or different nam
 > [!danger] EU SmPC cross-check: **discrepant**
 > Automated comparison with section 5.2 of the [EU SmPC of *Opatanol*](https://www.ema.europa.eu/en/documents/product-information/opatanol-epar-product-information_en.pdf) (EMEA/H/C/000407) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/opatanol-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 12)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): SmPC Opatanol dotyczy kropli do oczu o eliminacji miejscowej (12 h); Wikipedia podaje ogólnoustrojowy t1/2 olopatadyny (3 h).
 
 ## Related compounds (auto)
 

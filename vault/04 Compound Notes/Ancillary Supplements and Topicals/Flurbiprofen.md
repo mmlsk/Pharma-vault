@@ -60,6 +60,7 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Flurbiprofen
@@ -104,6 +105,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: no-label-value
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA podaje parametry formy o przedłużonym działaniu / kropli okulistycznych; Wikipedia podaje standardowy t1/2 doustny (4.7-5.7 h).
 ---
 
 # Flurbiprofen
@@ -167,6 +173,9 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 > Automated comparison with the [US prescribing information (DailyMed set 4670cf21…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4670cf21-eb0e-4f5a-ab22-41af85733525), label version 20260203. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 12)
 > - protein-binding: no-label-value (label values: -)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA podaje parametry formy o przedłużonym działaniu / kropli okulistycznych; Wikipedia podaje standardowy t1/2 doustny (4.7-5.7 h).
 
 ## Related compounds (auto)
 

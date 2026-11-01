@@ -62,6 +62,7 @@ tags:
 - pk-fda-discrepant
 - pk-ema-consistent
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Decitabine
@@ -121,6 +122,11 @@ pk-verification-ema:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-annotations:
+- category: parser-artifact
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA podaje t1/2 około 30 min (0.5 h, zgodny z Wiki); parser wyodrębnił godziny interwałów podawania leku z tabeli (8 h, 72 h).
 ---
 
 # Decitabine
@@ -184,6 +190,9 @@ DNA (cytosine-5)-methyltransferase 1 inhibitor; DNA (cytosine-5)-methyltransfera
 > Automated comparison with section 5.2 of the [EU SmPC of *Dacogen*](https://www.ema.europa.eu/en/documents/product-information/dacogen-epar-product-information_en.pdf) (EMEA/H/C/002221) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/dacogen-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 0.5, 120)
 > - protein-binding: consistent (SmPC values: 1)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (half-life): Etykieta FDA podaje t1/2 około 30 min (0.5 h, zgodny z Wiki); parser wyodrębnił godziny interwałów podawania leku z tabeli (8 h, 72 h).
 
 ## Related compounds (auto)
 

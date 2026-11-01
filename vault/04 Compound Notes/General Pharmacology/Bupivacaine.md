@@ -66,6 +66,7 @@ tags:
 - pk-fda-discrepant
 - pk-ema-consistent
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Bupivacaine
@@ -120,6 +121,11 @@ pk-verification-ema:
   fields:
     half-life: no-label-value
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Exparel dotyczy zawiesiny liposomalnej o przedłużonym uwalnianiu (badania do 168 h); Wikipedia podaje standardowy roztwór (3.1 h).
 ---
 
 # Bupivacaine
@@ -186,6 +192,9 @@ Sodium channel protein type IV alpha subunit blocker _(ChEMBL curated mechanism 
 > Automated comparison with section 5.2 of the [EU SmPC of *Exparel liposomal*](https://www.ema.europa.eu/en/documents/product-information/exparel-liposomal-epar-product-information_en.pdf) (EMEA/H/C/004586) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/exparel-liposomal-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (SmPC values: -)
 > - protein-binding: consistent (SmPC values: 95)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA Exparel dotyczy zawiesiny liposomalnej o przedłużonym uwalnianiu (badania do 168 h); Wikipedia podaje standardowy roztwór (3.1 h).
 
 ## Related compounds (auto)
 

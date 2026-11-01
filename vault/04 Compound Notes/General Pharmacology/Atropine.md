@@ -65,6 +65,7 @@ tags:
 - pk-fda-discrepant
 - pk-ema-consistent
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Atropine
@@ -123,6 +124,11 @@ pk-verification-ema:
   checked: '2026-10-01'
   fields:
     half-life: consistent
+pk-annotations:
+- category: parser-artifact
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA podaje t1/2 u dorosłych 3.0 h (zgodne z Wiki 2 h); wartość 20 min w etykiecie to różnica płciowa (20 min krótszy u kobiet).
 ---
 
 # Atropine
@@ -187,6 +193,9 @@ Muscarinic acetylcholine receptor M1 antagonist; Muscarinic acetylcholine recept
 > [!success] EU SmPC cross-check: **consistent**
 > Automated comparison with section 5.2 of the [EU SmPC of *Ryjunea*](https://www.ema.europa.eu/en/documents/product-information/ryjunea-epar-product-information_en.pdf) (EMEA/H/C/006324) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/ryjunea-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 2, 5)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (half-life): Etykieta FDA podaje t1/2 u dorosłych 3.0 h (zgodne z Wiki 2 h); wartość 20 min w etykiecie to różnica płciowa (20 min krótszy u kobiet).
 
 ## Related compounds (auto)
 

@@ -67,6 +67,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Cetrorelix
@@ -108,6 +109,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: no-label-value
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: ema
+  explanation: SmPC Cetrotide podaje fazę eliminacji po dawce 0.25 mg (12-30 h); Wikipedia podaje dawkę depot 3 mg (62.8 h).
 ---
 
 # Cetrorelix (Cetrotide)
@@ -161,6 +167,9 @@ _No FDA label found for automated cross-check (not US-approved, or different nam
 > Automated comparison with section 5.2 of the [EU SmPC of *Cetrotide*](https://www.ema.europa.eu/en/documents/product-information/cetrotide-epar-product-information_en.pdf) (EMEA/H/C/000233) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/cetrotide-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 12, 30)
 > - protein-binding: no-label-value (SmPC values: -)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): SmPC Cetrotide podaje fazę eliminacji po dawce 0.25 mg (12-30 h); Wikipedia podaje dawkę depot 3 mg (62.8 h).
 
 ## Related compounds (auto)
 

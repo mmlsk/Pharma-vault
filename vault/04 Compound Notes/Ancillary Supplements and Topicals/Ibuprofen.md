@@ -66,6 +66,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Ibuprofen
@@ -123,6 +124,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: parser-artifact
+  field: half-life
+  regulator: ema
+  explanation: SmPC Pedea dotyczy protokołu leczenia PDA u wcześniaków z oknem obserwacji 30 h; t1/2 ibuprofenu u dorosłych wynosi 2-4 h.
 ---
 
 # Ibuprofen
@@ -195,6 +201,9 @@ Cyclooxygenase inhibitor _(ChEMBL curated mechanism, as quoted by the source)._
 > Automated comparison with section 5.2 of the [EU SmPC of *Pedea*](https://www.ema.europa.eu/en/documents/product-information/pedea-epar-product-information_en.pdf) (EMEA/H/C/000549) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/pedea-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 30)
 > - protein-binding: consistent (SmPC values: 95, 99)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (half-life): SmPC Pedea dotyczy protokołu leczenia PDA u wcześniaków z oknem obserwacji 30 h; t1/2 ibuprofenu u dorosłych wynosi 2-4 h.
 
 ## Related compounds (auto)
 

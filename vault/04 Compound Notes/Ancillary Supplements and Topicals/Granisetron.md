@@ -64,6 +64,7 @@ tags:
 - pk-fda-discrepant
 - pk-ema-consistent
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Granisetron
@@ -91,6 +92,11 @@ pk-verification-ema:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Sancuso dotyczy systemu transdermalnego uwalniającego lek przez 7 dni (24 h t1/2 eliminacji po usunięciu); Wikipedia podaje formę IV (3-14 h).
 ---
 
 # Granisetron
@@ -136,6 +142,9 @@ Antagonises 5-HT3 receptors on vagal afferents and in the area postrema; QT effe
 > Automated comparison with section 5.2 of the [EU SmPC of *Sancuso*](https://www.ema.europa.eu/en/documents/product-information/sancuso-epar-product-information_en.pdf) (EMEA/H/C/002296). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 4, 6, 9, 12, 36)
 > - protein-binding: consistent (SmPC values: 65)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA Sancuso dotyczy systemu transdermalnego uwalniającego lek przez 7 dni (24 h t1/2 eliminacji po usunięciu); Wikipedia podaje formę IV (3-14 h).
 
 ## Safety routing
 

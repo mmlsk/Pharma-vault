@@ -61,6 +61,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Azacitidine
@@ -121,6 +122,11 @@ pk-verification-ema:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: pk-phase
+  field: half-life
+  regulator: ema
+  explanation: SmPC Vidaza podaje szybki t1/2 eliminacji osoczowej (0.4-0.7 h / 20-40 min); wartość 4 h w Wikipedii dotyczy całkowitej ekspozycji lub radioaktywności.
 ---
 
 # Azacitidine
@@ -183,6 +189,9 @@ DNA (cytosine-5)-methyltransferase 1 inhibitor; DNA (cytosine-5)-methyltransfera
 > [!danger] EU SmPC cross-check: **discrepant**
 > Automated comparison with section 5.2 of the [EU SmPC of *Vidaza*](https://www.ema.europa.eu/en/documents/product-information/vidaza-epar-product-information_en.pdf) (EMEA/H/C/000978) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/vidaza-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 0.09, 0.3, 0.38, 0.4, 0.683)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **pk-phase** (half-life): SmPC Vidaza podaje szybki t1/2 eliminacji osoczowej (0.4-0.7 h / 20-40 min); wartość 4 h w Wikipedii dotyczy całkowitej ekspozycji lub radioaktywności.
 
 ## Related compounds (auto)
 

@@ -69,6 +69,7 @@ tags:
 - pk-fda-discrepant
 - pk-ema-consistent
 - pk-sources-disagree
+- pk-explained
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -124,6 +125,11 @@ pk-verification-ema:
   fields:
     half-life: consistent
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Zoryve dotyczy kremu miejscowego o retencji skórnej (t1/2 86-120 h); Wikipedia podaje postać doustną roflumilastu (17 h).
 ---
 
 # Roflumilast (topical)
@@ -191,6 +197,9 @@ Phosphodiesterase 4 inhibitor _(ChEMBL curated mechanism of the parent molecule,
 > Automated comparison with section 5.2 of the [EU SmPC of *Daxas*](https://www.ema.europa.eu/en/documents/product-information/daxas-epar-product-information_en.pdf) (EMEA/H/C/001179). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 17, 30)
 > - protein-binding: consistent (SmPC values: 97, 99)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA Zoryve dotyczy kremu miejscowego o retencji skórnej (t1/2 86-120 h); Wikipedia podaje postać doustną roflumilastu (17 h).
 
 ## Related compounds (auto)
 

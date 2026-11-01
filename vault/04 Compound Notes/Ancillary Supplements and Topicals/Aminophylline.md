@@ -58,6 +58,7 @@ tags:
 - stub
 - pk-auto
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Aminophylline
@@ -74,6 +75,11 @@ pk-verification:
   fields:
     half-life: no-label-value
     protein-binding: discrepant
+pk-annotations:
+- category: population
+  field: protein-binding
+  regulator: fda
+  explanation: Etykieta FDA podaje wiązanie teofiliny z białkami u dorosłych (~40%); wartość 60% w Wikipedii odnosi się do populacji noworodków lub warunków niefizjologicznych.
 ---
 
 # Aminophylline
@@ -111,6 +117,9 @@ Inhibits PDE5 so nitric-oxide/cGMP vasodilation persists in corporal and pulmona
 > Automated comparison with the [US prescribing information (DailyMed set 819207a2…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=819207a2-0c37-b275-e053-2a91aa0afb36), label version 20260619. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
 > - protein-binding: discrepant (label values: 40)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **population** (protein-binding): Etykieta FDA podaje wiązanie teofiliny z białkami u dorosłych (~40%); wartość 60% w Wikipedii odnosi się do populacji noworodków lub warunków niefizjologicznych.
 
 ## Safety routing
 

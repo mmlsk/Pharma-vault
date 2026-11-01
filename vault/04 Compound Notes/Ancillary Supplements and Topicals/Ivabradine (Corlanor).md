@@ -69,6 +69,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Ivabradine
@@ -122,6 +123,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: pk-phase
+  field: half-life
+  regulator: ema
+  explanation: SmPC Procoralan podaje efektywny t1/2 2 h oraz główny okres półtrwania eliminacji 11 h; Wikipedia podaje uśredniony t1/2 (6 h).
 ---
 
 # Ivabradine (Corlanor)
@@ -188,6 +194,9 @@ Potassium/sodium hyperpolarization-activated cyclic nucleotide-gated channel 4 b
 > Automated comparison with section 5.2 of the [EU SmPC of *Procoralan*](https://www.ema.europa.eu/en/documents/product-information/procoralan-epar-product-information_en.pdf) (EMEA/H/C/000597). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 2, 11)
 > - protein-binding: consistent (SmPC values: 70)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **pk-phase** (half-life): SmPC Procoralan podaje efektywny t1/2 2 h oraz główny okres półtrwania eliminacji 11 h; Wikipedia podaje uśredniony t1/2 (6 h).
 
 ## Related compounds (auto)
 

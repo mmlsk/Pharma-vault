@@ -66,6 +66,7 @@ tags:
 - identity-confirmed
 - pk-fda-discrepant
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Fentanyl
@@ -121,6 +122,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: pk-phase
+  field: half-life
+  regulator: both
+  explanation: Wikipedia podaje czas redystrybucji redystrybucyjnej alfa (0.1 h); etykiety FDA i EMA podają terminalny t1/2 eliminacji (18-34 h).
 ---
 
 # Fentanyl
@@ -189,6 +195,9 @@ Mu opioid receptor agonist _(ChEMBL curated mechanism of the parent molecule, vi
 > Automated comparison with section 5.2 of the [EU SmPC of *Effentora*](https://www.ema.europa.eu/en/documents/product-information/effentora-epar-product-information_en.pdf) (EMEA/H/C/000833). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 18, 22)
 > - protein-binding: consistent (SmPC values: 80, 85)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **pk-phase** (half-life): Wikipedia podaje czas redystrybucji redystrybucyjnej alfa (0.1 h); etykiety FDA i EMA podają terminalny t1/2 eliminacji (18-34 h).
 
 ## Related compounds (auto)
 

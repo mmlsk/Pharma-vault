@@ -63,6 +63,7 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Amisulpride
@@ -107,6 +108,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Barhemsys dotyczy pojedynczej dawki dożylnej w PONV (4-5 h); Wikipedia podaje eliminację po podaniu doustnym (12 h).
 ---
 
 # Amisulpride
@@ -167,6 +173,9 @@ Dopamine receptors; D2 & D3 antagonist _(ChEMBL curated mechanism, as quoted by 
 > Automated comparison with the [US prescribing information (DailyMed set ab23bc6e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=ab23bc6e-b6a8-165f-e053-2a95a90ab144), label version 20260617. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 4, 5)
 > - protein-binding: consistent (label values: 25, 30)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA Barhemsys dotyczy pojedynczej dawki dożylnej w PONV (4-5 h); Wikipedia podaje eliminację po podaniu doustnym (12 h).
 
 ## Related compounds (auto)
 

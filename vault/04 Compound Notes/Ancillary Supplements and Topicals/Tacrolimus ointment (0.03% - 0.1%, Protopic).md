@@ -70,6 +70,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 - possible-duplicate
 pk-source:
   type: wikipedia-infobox
@@ -120,6 +121,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: ema
+  explanation: SmPC Protopic dotyczy maści miejscowej o powolnym wchłanianiu skórnym (t1/2 ~75 h); Wikipedia podaje takrolimus doustny (11.3 h).
 ---
 
 # Tacrolimus ointment (0.03% / 0.1%, Protopic)
@@ -178,6 +184,9 @@ Topical calcineurin inhibitor for eczema; the ointment, not the oral transplant 
 > Automated comparison with section 5.2 of the [EU SmPC of *Protopic*](https://www.ema.europa.eu/en/documents/product-information/protopic-epar-product-information_en.pdf) (EMEA/H/C/000374). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 65, 75)
 > - protein-binding: consistent (SmPC values: 98.8)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): SmPC Protopic dotyczy maści miejscowej o powolnym wchłanianiu skórnym (t1/2 ~75 h); Wikipedia podaje takrolimus doustny (11.3 h).
 
 ## Related compounds (auto)
 

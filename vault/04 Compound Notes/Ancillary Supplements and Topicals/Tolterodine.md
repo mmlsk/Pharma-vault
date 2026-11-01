@@ -64,6 +64,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Tolterodine
@@ -103,6 +104,11 @@ pk-verification:
   fields:
     half-life: no-label-value
     protein-binding: discrepant
+pk-annotations:
+- category: unbound-fraction
+  field: protein-binding
+  regulator: fda
+  explanation: Etykieta FDA Detrol podaje frakcję wolną 3.7%, co odpowiada 96.3% związania z białkami (dokładnie tyle podaje Wikipedia).
 ---
 
 # Tolterodine
@@ -152,6 +158,9 @@ Antagonises muscarinic receptors; peripheral selectivity determines how much dry
 > Automated comparison with the [US prescribing information (DailyMed set db6e0b6d…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=db6e0b6d-0ce5-41d7-881f-881c11f530a4), label version 20260209. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: no-label-value (label values: -)
 > - protein-binding: discrepant (label values: 3.7, 36)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **unbound-fraction** (protein-binding): Etykieta FDA Detrol podaje frakcję wolną 3.7%, co odpowiada 96.3% związania z białkami (dokładnie tyle podaje Wikipedia).
 
 ## Related compounds (auto)
 

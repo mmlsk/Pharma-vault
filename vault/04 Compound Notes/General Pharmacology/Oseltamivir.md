@@ -66,6 +66,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Oseltamivir
@@ -116,6 +117,15 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: discrepant
+pk-annotations:
+- category: metabolite
+  field: half-life
+  regulator: ema
+  explanation: SmPC Tamiflu podaje t1/2 aktywnego metabolitu karboksylanu oseltamiwiru (6-10 h); Wikipedia podaje prolek oseltamiwir (1-3 h).
+- category: unbound-fraction
+  field: protein-binding
+  regulator: ema
+  explanation: SmPC Tamiflu podaje wiązanie z białkami aktywnego karboksylanu (ok. 3%); Wikipedia podaje wiązanie proleku oseltamiwiru (42%).
 ---
 
 # Oseltamivir
@@ -173,6 +183,10 @@ Oral neuraminidase inhibitor for influenza, effective only if started within rou
 > Automated comparison with section 5.2 of the [EU SmPC of *Tamiflu*](https://www.ema.europa.eu/en/documents/product-information/tamiflu-epar-product-information_en.pdf) (EMEA/H/C/000402) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/tamiflu-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 6, 10)
 > - protein-binding: discrepant (SmPC values: 3)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **metabolite** (half-life): SmPC Tamiflu podaje t1/2 aktywnego metabolitu karboksylanu oseltamiwiru (6-10 h); Wikipedia podaje prolek oseltamiwir (1-3 h).
+> - **unbound-fraction** (protein-binding): SmPC Tamiflu podaje wiązanie z białkami aktywnego karboksylanu (ok. 3%); Wikipedia podaje wiązanie proleku oseltamiwiru (42%).
 
 ## Related compounds (auto)
 

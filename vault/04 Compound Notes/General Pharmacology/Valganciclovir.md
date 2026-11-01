@@ -64,6 +64,7 @@ tags:
 - chembl-profile
 - identity-confirmed
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Valganciclovir
@@ -103,6 +104,11 @@ pk-verification:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: parser-artifact
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA Valcyte podaje t1/2 walgancyklowiru po podaniu doustnym ok. 4 h (zgodny z Wiki); liczby wyekstrahowane przez parser to nagłówki tabeli AUC (24 h).
 ---
 
 # Valganciclovir
@@ -155,6 +161,9 @@ Valyl ester prodrug of ganciclovir that made oral CMV prophylaxis after transpla
 > Automated comparison with the [US prescribing information (DailyMed set 4db6dd63…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=4db6dd63-e56b-45a4-86b2-ee125a1854a0), label version 20260624. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 0, 24, 624, 2400, 2976, 4800)
 > - protein-binding: consistent (label values: 1, 2)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (half-life): Etykieta FDA Valcyte podaje t1/2 walgancyklowiru po podaniu doustnym ok. 4 h (zgodny z Wiki); liczby wyekstrahowane przez parser to nagłówki tabeli AUC (24 h).
 
 ## Related compounds (auto)
 

@@ -64,6 +64,7 @@ tags:
 - chembl-profile
 - identity-stereo-check
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Fosinopril
@@ -103,6 +104,11 @@ pk-verification:
   fields:
     half-life: consistent
     protein-binding: discrepant
+pk-annotations:
+- category: metabolite
+  field: protein-binding
+  regulator: fda
+  explanation: Etykieta FDA podaje wiązanie aktywnego metabolitu fosynoprylatu (>99.4%); Wikipedia podaje wiązanie proleku fosynoprylu (87%).
 ---
 
 # Fosinopril
@@ -155,6 +161,9 @@ ACE inhibitor cleared by liver and kidney; cough, angioedema, hyperkalemia, and 
 > Automated comparison with the [US prescribing information (DailyMed set fc38f1bb…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=fc38f1bb-f175-4a81-8ed9-c8701efdea35), label version 20231127. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (label values: 11, 11.5, 12, 13, 14)
 > - protein-binding: discrepant (label values: 99.4)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **metabolite** (protein-binding): Etykieta FDA podaje wiązanie aktywnego metabolitu fosynoprylatu (>99.4%); Wikipedia podaje wiązanie proleku fosynoprylu (87%).
 
 ## Related compounds (auto)
 

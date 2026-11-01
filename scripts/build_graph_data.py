@@ -14,7 +14,7 @@ import json
 import math
 from collections import OrderedDict, defaultdict
 
-from pv_common import GROUP_TO_CLUSTER, PROCESSED, ROOT, assign_note_filenames, hubs_and_pathways, load_jsonl
+from pv_common import GROUP_TO_CLUSTER, PROCESSED, ROOT, assign_note_filenames, hubs_and_pathways, load_jsonl, load_pk_annotations
 
 OUT = ROOT / "apps/graph-viewer/graph-data.js"
 HUBS = ["Stacking and Interaction Risks", "Cholinergic Load", "Stimulant and Cardiovascular Load",
@@ -53,6 +53,7 @@ def main() -> None:
     ch = {c["compound_id"]: c for c in loadp("chembl.json")}
     ver = {v["compound_id"]: v for v in loadp("pk-verification.json")}
     ema = {v["compound_id"]: v for v in loadp("pk-verification-ema.json")}
+    pka = load_pk_annotations()
     idr = {x["compound_id"]: x for x in loadp("identity-review.json")}
     links = loadp("links.json") or {"targets": []}
     t_index = {t["id"]: i for i, t in enumerate(links["targets"])}
@@ -155,6 +156,9 @@ def main() -> None:
             if e and e.get("fields"):
                 item["ve"] = {"s": e["status"], "u": e["smpc-url"], "pl": e.get("chpl-url"), "p": e["product"],
                               "f": {k: [f["status"], (f.get("smpc-values-h") or f.get("smpc-values-pct") or [])[:6]] for k, f in e["fields"].items()}}
+            pa = pka.get(r["compound_id"])
+            if pa:
+                item["pka"] = [{"c": a["category"], "f": a["field"], "r": a["regulator"], "e": a["explanation"]} for a in pa]
             x = idr.get(r["compound_id"])
             if x and c and x["chembl-id"] == c["identity"]["chembl-id"]:
                 item["ic"] = "curated" if (x.get("decision") or c["identity"]["source"] == "curated-identity") else x["verdict"]

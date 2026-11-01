@@ -67,6 +67,7 @@ tags:
 - identity-stereo-check
 - pk-fda-discrepant
 - pk-ema-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Buprenorphine
@@ -125,6 +126,11 @@ pk-verification-ema:
   fields:
     half-life: discrepant
     protein-binding: consistent
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: both
+  explanation: Wikipedia podaje t1/2 podjęzykowej buprenorfiny (37 h); etykiety FDA Sublocade i EMA Buvidal dotyczą comiesięcznych depotów podskórnych (72-1440 h).
 ---
 
 # Buprenorphine
@@ -195,6 +201,9 @@ Kappa opioid receptor agonist; Mu opioid receptor agonist _(ChEMBL curated mecha
 > Automated comparison with section 5.2 of the [EU SmPC of *Buvidal*](https://www.ema.europa.eu/en/documents/product-information/buvidal-epar-product-information_en.pdf) (EMEA/H/C/004651) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/buvidal-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (SmPC values: 72, 120)
 > - protein-binding: consistent (SmPC values: 96)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Wikipedia podaje t1/2 podjęzykowej buprenorfiny (37 h); etykiety FDA Sublocade i EMA Buvidal dotyczą comiesięcznych depotów podskórnych (72-1440 h).
 
 ## Related compounds (auto)
 

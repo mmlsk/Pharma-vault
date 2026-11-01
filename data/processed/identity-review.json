@@ -16002,7 +16002,12 @@
     "title": "Lesinurad"
    }
   ],
-  "verdict": "conflict"
+  "verdict": "conflict",
+  "decision": {
+   "decision": "confirm",
+   "reviewer": "agent-review 2026-11-01",
+   "reason": "Wikipedia infobox stores sodium salt (CID 56928182); ChEMBL CHEMBL2105720 and PubChem name-CID 53465279 match free acid FGQFOYHRJSUHMR-UHFFFAOYSA-N"
+  }
  },
  {
   "compound_id": "lestaurtinib-compound",
@@ -21960,7 +21965,12 @@
     "title": "Pardoprunox"
    }
   ],
-  "verdict": "conflict"
+  "verdict": "conflict",
+  "decision": {
+   "decision": "confirm",
+   "reviewer": "agent-review 2026-11-01",
+   "reason": "Wikipedia infobox stores hydrochloride salt (CID 6918524); ChEMBL CHEMBL2103832 and PubChem name-CID 6918525 match free base YVPUUUDAZYFFQT-UHFFFAOYSA-N"
+  }
  },
  {
   "compound_id": "pargyline-compound",
@@ -26663,7 +26673,12 @@
     "title": "Satavaptan"
    }
   ],
-  "verdict": "conflict"
+  "verdict": "conflict",
+  "decision": {
+   "decision": "confirm",
+   "reviewer": "agent-review 2026-11-01",
+   "reason": "Wikipedia infobox stores phosphate prodrug SR-121463A (CID 9810773); ChEMBL CHEMBL2107777 is the stereospecific active moiety SR-121463B (CDSBFDCCJJDFCV-CKZSCMLPSA-N)"
+  }
  },
  {
   "compound_id": "satralizumab-compound",

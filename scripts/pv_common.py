@@ -186,3 +186,18 @@ def normalize(name: str) -> str:
 def safe_filename(label: str) -> str:
     s = INVALID_FILENAME.sub("-", label).strip().strip(".")
     return re.sub(r"\s+", " ", s)[:120] or "unnamed"
+
+
+def load_pk_annotations() -> dict[str, list[dict]]:
+    """Loads curated PK discrepancy annotations (data/curated/pk-annotations.csv) by compound_id."""
+    p = CURATED / "pk-annotations.csv"
+    if not p.exists():
+        return {}
+    import csv
+    from collections import defaultdict
+    out = defaultdict(list)
+    with open(p, encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            out[r["compound_id"]].append(r)
+    return dict(out)
+

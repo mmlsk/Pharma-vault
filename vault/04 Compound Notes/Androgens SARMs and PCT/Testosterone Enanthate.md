@@ -63,6 +63,7 @@ tags:
 - pk-auto
 - chembl-profile
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Testosterone enanthate
@@ -102,6 +103,11 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     half-life: discrepant
+pk-annotations:
+- category: formulation
+  field: half-life
+  regulator: fda
+  explanation: Etykieta FDA podaje t1/2 wolnego endogennego testosteronu w osoczu (10-100 min); Wikipedia podaje uwalnianie estru enantanu depot z mięśnia (4-5 dni / 96-120 h).
 ---
 
 # Testosterone Enanthate
@@ -159,6 +165,9 @@ Androgen Receptor agonist _(ChEMBL curated mechanism, as quoted by the source)._
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 82a98132…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=82a98132-9d5f-40a5-8c4f-f52f2a5de60e), label version 20260612. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: discrepant (label values: 0.167, 1.667)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **formulation** (half-life): Etykieta FDA podaje t1/2 wolnego endogennego testosteronu w osoczu (10-100 min); Wikipedia podaje uwalnianie estru enantanu depot z mięśnia (4-5 dni / 96-120 h).
 
 ## Related compounds (auto)
 

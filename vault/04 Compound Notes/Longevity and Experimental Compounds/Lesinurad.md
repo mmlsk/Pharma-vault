@@ -64,7 +64,7 @@ tags:
 - pk-auto
 - chembl-profile
 - chembl-name-match
-- identity-conflict
+- identity-curated
 pk-source:
   type: wikipedia-infobox
   title: Lesinurad
@@ -98,6 +98,10 @@ chembl:
     qed-weighted: 0.64
     full-molformula: C17H14BrN3O2S
   identity-check: conflict
+  identity-decision:
+    decision: confirm
+    reviewer: agent-review 2026-11-01
+    reason: Wikipedia infobox stores sodium salt (CID 56928182); ChEMBL CHEMBL2105720 and PubChem name-CID 53465279 match free acid FGQFOYHRJSUHMR-UHFFFAOYSA-N
 pk-verification:
   source: fda-label
   status: no-label
@@ -118,7 +122,7 @@ pk-verification:
 - **Compound ID:** `lesinurad-compound`
 - **Source group:** Longevity & Metabolic (`longevity`)
 - **Cluster:** [[Longevity and Experimental Compounds]]
-- **ChEMBL:** [CHEMBL2105720](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105720/) · max phase 4 · id via exact ChEMBL name match · structure check: ❌ conflicts with PubChem - see Review Queue
+- **ChEMBL:** [CHEMBL2105720](https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2105720/) · max phase 4 · id via exact ChEMBL name match · structure check: ❌ conflicts with PubChem - see Review Queue · decision: confirm (Wikipedia infobox stores sodium salt (CID 56928182); ChEMBL CHEMBL2105720 and PubChem name-CID 53465279 match free acid FGQFOYHRJSUHMR-UHFFFAOYSA-N)
 
 ## Source summary
 

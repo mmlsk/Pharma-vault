@@ -66,6 +66,7 @@ tags:
 - pk-fda-consistent
 - pk-ema-discrepant
 - pk-sources-disagree
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Aztreonam
@@ -119,6 +120,11 @@ pk-verification-ema:
   fields:
     half-life: consistent
     protein-binding: discrepant
+pk-annotations:
+- category: parser-artifact
+  field: protein-binding
+  regulator: ema
+  explanation: SmPC Cayston podaje wiązanie z białkami 77% w stężeniach klinicznych; Wikipedia podaje 56% z badań wczesnych faz.
 ---
 
 # Aztreonam
@@ -183,6 +189,9 @@ Bacterial penicillin-binding protein inhibitor _(ChEMBL curated mechanism of the
 > Automated comparison with section 5.2 of the [EU SmPC of *Cayston*](https://www.ema.europa.eu/en/documents/product-information/cayston-epar-product-information_en.pdf) (EMEA/H/C/000996) · [ChPL po polsku](https://www.ema.europa.eu/pl/documents/product-information/cayston-epar-product-information_pl.pdf). Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - half-life: consistent (SmPC values: 1.7, 2.1)
 > - protein-binding: discrepant (SmPC values: 77)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (protein-binding): SmPC Cayston podaje wiązanie z białkami 77% w stężeniach klinicznych; Wikipedia podaje 56% z badań wczesnych faz.
 
 ## Related compounds (auto)
 

@@ -63,6 +63,7 @@ tags:
 - chembl-profile
 - identity-stereo-check
 - pk-fda-discrepant
+- pk-explained
 pk-source:
   type: wikipedia-infobox
   title: Pimecrolimus
@@ -104,6 +105,11 @@ pk-verification:
   checked: '2026-10-01'
   fields:
     protein-binding: discrepant
+pk-annotations:
+- category: parser-artifact
+  field: protein-binding
+  regulator: fda
+  explanation: Etykieta FDA Elidel podaje wiązanie z białkami osocza 99.5%; wartość 74% w Wikipedii dotyczy wczesnych badań in vitro.
 ---
 
 # Pimecrolimus
@@ -161,6 +167,9 @@ FK506-binding protein 1A inhibitor _(ChEMBL curated mechanism of the parent mole
 > [!danger] FDA label cross-check: **discrepant**
 > Automated comparison with the [US prescribing information (DailyMed set 6601e43e…)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=6601e43e-ce7d-446a-8568-8e7b24b86f06), label version 20260430. Tolerance: t½ ×0.5–1.5, protein binding ±10 pp.
 > - protein-binding: discrepant (label values: 99.5)
+
+> [!tip] Wyjaśnienie rozbieżności PK (kuratorskie)
+> - **parser-artifact** (protein-binding): Etykieta FDA Elidel podaje wiązanie z białkami osocza 99.5%; wartość 74% w Wikipedii dotyczy wczesnych badań in vitro.
 
 ## Related compounds (auto)
 
