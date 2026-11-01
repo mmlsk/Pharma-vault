@@ -46,15 +46,452 @@
     return c._nb;
   }
 
+  const HUB_SEROTONIN = CORE.findIndex((n) => n.name === "Serotonin Toxicity");
+  const HUB_RESPIRATORY = CORE.findIndex((n) => n.name === "Respiratory Depression and Fatal Overdose");
+  const HUB_CARDIO = CORE.findIndex((n) => n.name === "Stimulant and Cardiovascular Load");
+  const HUB_CHOLINERGIC = CORE.findIndex((n) => n.name === "Cholinergic Load");
+  const HUB_HORMONAL = CORE.findIndex((n) => n.name === "Hormonal Axis Suppression");
+
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
+
   const $ = (id) => document.getElementById(id);
   const cv = $("cv"), ctx = cv.getContext("2d"), tip = $("tip");
-  const state = { k: 1, tx: 0, ty: 0, sel: null, hover: null, clusters: new Set(G.clusters.map((_, i) => i)), pkOnly: false, cypOnly: false, hub: null, ver: "", rel: true, hlBin: null, tab: "overview" };
+  const state = {
+    k: 1, tx: 0, ty: 0, sel: null, hover: null,
+    clusters: new Set(G.clusters.map((_, i) => i)),
+    pkOnly: false, cypOnly: false, hub: null, ver: "",
+    rel: true, hlBin: null, tab: "overview",
+    stack: new Set(), stackOnly: false, stackDrawerOpen: false
+  };
   let W = 0, H = 0, dpr = 1, raf = 0;
+
+  // ---------- Stack Builder & Interaction Checker
+  function loadSavedStack() {
+    try {
+      const raw = localStorage.getItem("pv_stack");
+      if (raw) {
+        const ids = JSON.parse(raw);
+        if (Array.isArray(ids)) {
+          ids.forEach((id) => {
+            const idx = C.findIndex((c) => c.id === id);
+            if (idx >= 0) state.stack.add(idx);
+          });
+        }
+      }
+    } catch (_) {}
+  }
+
+  function saveStack() {
+    try {
+      const ids = [...state.stack].map((i) => C[i].id);
+      localStorage.setItem("pv_stack", JSON.stringify(ids));
+    } catch (_) {}
+  }
+
+  function toggleInStack(idx) {
+    if (state.stack.has(idx)) {
+      state.stack.delete(idx);
+    } else {
+      state.stack.add(idx);
+    }
+    saveStack();
+    updateStackUI();
+    if (state.sel && state.sel.type === "compound") select(state.sel);
+    draw();
+  }
+
+  function toggleStackDrawer(open) {
+    state.stackDrawerOpen = open !== undefined ? open : !state.stackDrawerOpen;
+    const drawer = $("stackDrawer");
+    if (drawer) {
+      drawer.classList.toggle("open", state.stackDrawerOpen);
+      const b = $("stackBtn");
+      if (b) b.setAttribute("aria-expanded", String(state.stackDrawerOpen));
+      if (state.stackDrawerOpen) updateStackUI();
+    }
+  }
+
+  function analyzeStack(indices) {
+    if (indices.length < 2) return { alerts: [], pairs: [], maxLevel: "ok" };
+    const alerts = [];
+    const pairs = [];
+    const stackCompounds = indices.map((i) => C[i]);
+
+    // 1. Serotonin Toxicity (Critical)
+    if (HUB_SEROTONIN >= 0) {
+      const hits = stackCompounds.filter((c) => c.l && c.l.includes(HUB_SEROTONIN));
+      if (hits.length >= 2) {
+        alerts.push({
+          level: "crit",
+          title: "🚨 Ryzyko zespołu serotoninowego",
+          desc: `Substancje <b>${hits.map((c) => esc(c.n)).join("</b> i <b>")}</b> nasilają transmisję serotoninergiczną. Jednoczesne stosowanie stwarza bezpośrednie zagrożenie zagrażającym życiu zespołem serotoninowym (hipertermia, sztywność mięśniowa, drgawki).`,
+          compounds: hits.map((c) => c.i),
+        });
+        for (let j = 0; j < hits.length; j++) {
+          for (let k = j + 1; k < hits.length; k++) {
+            pairs.push({ a: hits[j].i, b: hits[k].i, level: "crit" });
+          }
+        }
+      }
+    }
+
+    // 2. Respiratory Depression (Critical)
+    if (HUB_RESPIRATORY >= 0) {
+      const hits = stackCompounds.filter((c) => c.l && c.l.includes(HUB_RESPIRATORY));
+      if (hits.length >= 2) {
+        alerts.push({
+          level: "crit",
+          title: "🚨 Ryzyko ciężkiej depresji oddechowej",
+          desc: `Substancje <b>${hits.map((c) => esc(c.n)).join("</b> i <b>")}</b> wykazują hamujący wpływ na ośrodek oddechowy (np. opioidy, agonisty/modulatory GABA-A, sedatywy). Ich łączenie wielokrotnie zwiększa ryzyko śpiączki i zapaści oddechowej.`,
+          compounds: hits.map((c) => c.i),
+        });
+        for (let j = 0; j < hits.length; j++) {
+          for (let k = j + 1; k < hits.length; k++) {
+            pairs.push({ a: hits[j].i, b: hits[k].i, level: "crit" });
+          }
+        }
+      }
+    }
+
+    // 3. CYP Metabolism Overlaps (Moderate)
+    const cypMap = new Map();
+    stackCompounds.forEach((c) => {
+      const cyps = (c.pk && c.pk.cyp) || [];
+      cyps.forEach((enz) => {
+        if (!cypMap.has(enz)) cypMap.set(enz, []);
+        cypMap.get(enz).push(c);
+      });
+    });
+    cypMap.forEach((hits, enz) => {
+      if (hits.length >= 2) {
+        alerts.push({
+          level: "mod",
+          title: `⚠️ Wąskie gardło CYP: izoenzym ${esc(enz)}`,
+          desc: `Substancje <b>${hits.map((c) => esc(c.n)).join("</b> oraz <b>")}</b> są metabolizowane przez ten sam szlak enzymatyczny (${esc(enz)}). Może dojść do konkurencji metabolicznej, wydłużenia okresu półtrwania i nieprzewidywalnego wzrostu stężenia leku w surowicy.`,
+          compounds: hits.map((c) => c.i),
+        });
+        for (let j = 0; j < hits.length; j++) {
+          for (let k = j + 1; k < hits.length; k++) {
+            pairs.push({ a: hits[j].i, b: hits[k].i, level: "mod" });
+          }
+        }
+      }
+    });
+
+    // 4. Stimulant / Cardiovascular Load (Moderate)
+    if (HUB_CARDIO >= 0) {
+      const hits = stackCompounds.filter((c) => c.l && c.l.includes(HUB_CARDIO));
+      if (hits.length >= 2) {
+        alerts.push({
+          level: "mod",
+          title: "⚠️ Kumulacja obciążenia sercowo-naczyniowego",
+          desc: `Substancje <b>${hits.map((c) => esc(c.n)).join("</b> i <b>")}</b> wykazują działanie stymulujące lub sympatykomimetyczne. Łączenie może prowadzić do nadmiernej tachykardii, skoków ciśnienia i obciążenia mięśnia sercowego.`,
+          compounds: hits.map((c) => c.i),
+        });
+        for (let j = 0; j < hits.length; j++) {
+          for (let k = j + 1; k < hits.length; k++) {
+            pairs.push({ a: hits[j].i, b: hits[k].i, level: "mod" });
+          }
+        }
+      }
+    }
+
+    // 5. Cholinergic Load (Moderate)
+    if (HUB_CHOLINERGIC >= 0) {
+      const hits = stackCompounds.filter((c) => c.l && c.l.includes(HUB_CHOLINERGIC));
+      if (hits.length >= 2) {
+        alerts.push({
+          level: "mod",
+          title: "⚠️ Zwiększone obciążenie cholinergiczne",
+          desc: `Substancje <b>${hits.map((c) => esc(c.n)).join("</b> i <b>")}</b> nasilają transmisję acetylocholinową. Ryzyko objawów cholinergicznych (bóle brzucha, skurcze, bradykardia, zaburzenia nastroju).`,
+          compounds: hits.map((c) => c.i),
+        });
+        for (let j = 0; j < hits.length; j++) {
+          for (let k = j + 1; k < hits.length; k++) {
+            pairs.push({ a: hits[j].i, b: hits[k].i, level: "mod" });
+          }
+        }
+      }
+    }
+
+    // 6. Hormonal Suppression (Moderate)
+    if (HUB_HORMONAL >= 0) {
+      const hits = stackCompounds.filter((c) => c.l && c.l.includes(HUB_HORMONAL));
+      if (hits.length >= 2) {
+        alerts.push({
+          level: "mod",
+          title: "⚠️ Tłumienie osi podwzgórze-przysadka-gonady (HPG)",
+          desc: `Substancje <b>${hits.map((c) => esc(c.n)).join("</b> i <b>")}</b> wywierają ujemne sprzężenie zwrotne na wydzielanie hormonów endogennych (LH, FSH, testosteron). Wymagają protokołów odblokowujących (PCT) i kontroli laboratoryjnej.`,
+          compounds: hits.map((c) => c.i),
+        });
+        for (let j = 0; j < hits.length; j++) {
+          for (let k = j + 1; k < hits.length; k++) {
+            pairs.push({ a: hits[j].i, b: hits[k].i, level: "mod" });
+          }
+        }
+      }
+    }
+
+    // 7. Shared ChEMBL Target (Informational)
+    const targetMap = new Map();
+    stackCompounds.forEach((c) => {
+      (c.tg || []).forEach((t) => {
+        if (!targetMap.has(t)) targetMap.set(t, []);
+        targetMap.get(t).push(c);
+      });
+    });
+    targetMap.forEach((hits, t) => {
+      if (hits.length >= 2) {
+        alerts.push({
+          level: "info",
+          title: `ℹ️ Wspólny cel molekularny: ${esc(T[t].n)}`,
+          desc: `Substancje <b>${hits.map((c) => esc(c.n)).join("</b> oraz <b>")}</b> wiążą ten sam cel (${esc(T[t].n)}${T[t].ty ? " · " + esc(T[t].ty) : ""}). Wskazuje na redundancję mechanizmu lub sumowanie powinowactwa receptorowego.`,
+          compounds: hits.map((c) => c.i),
+        });
+        for (let j = 0; j < hits.length; j++) {
+          for (let k = j + 1; k < hits.length; k++) {
+            pairs.push({ a: hits[j].i, b: hits[k].i, level: "info" });
+          }
+        }
+      }
+    });
+
+    // 8. Shared ATC classification (Informational)
+    const atcMap = new Map();
+    stackCompounds.forEach((c) => {
+      (c.atc || []).forEach(([code, name]) => {
+        const code4 = code.slice(0, 4);
+        if (!atcMap.has(code4)) atcMap.set(code4, { name: name || code4, compounds: [] });
+        atcMap.get(code4).compounds.push(c);
+      });
+    });
+    atcMap.forEach(({ name, compounds: hits }, code4) => {
+      const uniqHits = [...new Set(hits)];
+      if (uniqHits.length >= 2) {
+        alerts.push({
+          level: "info",
+          title: `ℹ️ Ta sama klasa ATC (${esc(code4)})`,
+          desc: `Substancje <b>${uniqHits.map((c) => esc(c.n)).join("</b> i <b>")}</b> należą do tej samej grupy terapeutycznej (<i>${esc(name)}</i>).`,
+          compounds: uniqHits.map((c) => c.i),
+        });
+        for (let j = 0; j < uniqHits.length; j++) {
+          for (let k = j + 1; k < uniqHits.length; k++) {
+            pairs.push({ a: uniqHits[j].i, b: uniqHits[k].i, level: "info" });
+          }
+        }
+      }
+    });
+
+    const maxLevel = alerts.some((a) => a.level === "crit")
+      ? "crit"
+      : alerts.some((a) => a.level === "mod")
+      ? "mod"
+      : alerts.some((a) => a.level === "info")
+      ? "info"
+      : "ok";
+
+    return { alerts, pairs, maxLevel };
+  }
+
+  const PRESETS = {
+    nootropic: {
+      name: "Nootropowy klasyk",
+      ids: ["caffeine-compound", "theanine-compound"],
+    },
+    serotonin: {
+      name: "Ryzyko: Zespół serotoninowy",
+      ids: ["sertraline-compound", "tramadol-compound"],
+    },
+    respiratory: {
+      name: "Ryzyko: Depresja oddechowa",
+      ids: ["morphine-compound", "diazepam-compound"],
+    },
+    cyp: {
+      name: "Wąskie gardło CYP3A4",
+      ids: ["quetiapine-compound", "clarithromycin-compound"],
+    },
+  };
+
+  function loadPreset(key) {
+    const p = PRESETS[key];
+    if (!p) return;
+    state.stack.clear();
+    p.ids.forEach((id) => {
+      const idx = C.findIndex((c) => c.id === id);
+      if (idx >= 0) state.stack.add(idx);
+    });
+    saveStack();
+    updateStackUI();
+    if (state.sel && state.sel.type === "compound") select(state.sel);
+    draw();
+  }
+
+  function updateStackUI() {
+    const countBadge = $("stackCountBadge");
+    if (countBadge) countBadge.textContent = state.stack.size;
+    const pill = $("stackStatusPill");
+    const body = $("stackBody");
+    if (!body) return;
+
+    if (state.stack.size === 0) {
+      if (pill) { pill.className = "tag"; pill.textContent = "pusty"; }
+      body.innerHTML = `
+        <div style="text-align:center;padding:1.5rem 0.5rem;color:var(--color-text-muted)">
+          <div style="font-size:2rem;margin-bottom:.5rem">🧪</div>
+          <b style="color:var(--color-text);display:block;margin-bottom:.4rem">Twój stack jest pusty</b>
+          <p style="font-size:var(--text-xs);line-height:1.45">Dodaj substancje do zestawu klikając przycisk <b>+ Dodaj do stacka</b> na karcie dowolnego leku lub przetestuj gotowy zestaw demonstracyjny:</p>
+        </div>
+        <div class="label">Zestawy demonstracyjne (kliknij)</div>
+        <div style="display:grid;gap:6px">
+          <button class="preset-btn" data-preset="nootropic" style="text-align:left;padding:.5rem .7rem;border-radius:var(--radius-md)">
+            <b>Nootropowy klasyk</b> · Kofeina + L-Teanina<br>
+            <small style="color:var(--color-success)">✓ Synergia pro-poznawcza, brak kolizji</small>
+          </button>
+          <button class="preset-btn" data-preset="serotonin" style="text-align:left;padding:.5rem .7rem;border-radius:var(--radius-md)">
+            <b>🚨 Zespół serotoninowy</b> · Sertralina + Tramadol<br>
+            <small style="color:var(--color-error)">Krytyczne nasilenie transmisji 5-HT</small>
+          </button>
+          <button class="preset-btn" data-preset="respiratory" style="text-align:left;padding:.5rem .7rem;border-radius:var(--radius-md)">
+            <b>🚨 Depresja oddechowa</b> · Morfina + Diazepam<br>
+            <small style="color:var(--color-error)">Opioid + modulator GABA-A</small>
+          </button>
+          <button class="preset-btn" data-preset="cyp" style="text-align:left;padding:.5rem .7rem;border-radius:var(--radius-md)">
+            <b>⚠️ Wąskie gardło CYP3A4</b> · Kwetiapina + Klarytromycyna<br>
+            <small style="color:var(--color-warning)">Konkurencja metaboliczna o izoenzym</small>
+          </button>
+        </div>`;
+      wireStackBody();
+      return;
+    }
+
+    const res = analyzeStack([...state.stack]);
+    if (pill) {
+      if (res.maxLevel === "crit") { pill.className = "tag warn"; pill.textContent = "🚨 Ryzyko krytyczne"; }
+      else if (res.maxLevel === "mod") { pill.className = "tag warn"; pill.textContent = "⚠️ Umiarkowane ryzyko"; }
+      else if (res.maxLevel === "info") { pill.className = "tag"; pill.textContent = "ℹ️ Redundancja"; }
+      else { pill.className = "tag ok"; pill.textContent = "✓ Brak kolizji"; }
+    }
+
+    const chips = [...state.stack].map((i) => {
+      const c = C[i];
+      return `
+        <div class="stack-chip">
+          <div style="display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden">
+            <span class="dot" style="background:${CL_COLORS[c.c]};width:8px;height:8px"></span>
+            <button data-c="${c.i}" style="background:none;border:0;color:var(--color-text);font-weight:600;cursor:pointer;padding:0;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.n)}</button>
+            <small style="color:var(--color-text-muted);white-space:nowrap">(${esc(GR[c.g].label)})</small>
+          </div>
+          <button class="del" data-remove="${c.i}" title="Usuń ze stacka">✕</button>
+        </div>`;
+    }).join("");
+
+    let alertsHtml = "";
+    if (state.stack.size < 2) {
+      alertsHtml = '<p class="note" style="padding:.4rem 0">Dodaj przynajmniej drugą substancję, aby silnik przeanalizował możliwe interakcje.</p>';
+    } else if (res.alerts.length === 0) {
+      alertsHtml = '<div class="alert-box alert-ok"><b>✓ Brak wykrytych kolizji</b>Silnik nie znalazł w bazie danych bezpośrednich konfliktów (toksyczność serotoninowa, depresja oddechowa ani wspólne szlaki CYP) dla wybranego zestawu.</div>';
+    } else {
+      alertsHtml = `<div style="display:grid;gap:8px">${res.alerts.map((a) => `
+        <div class="alert-box alert-${a.level}">
+          <b>${esc(a.title)}</b>
+          <div>${a.desc}</div>
+        </div>`).join("")}</div>`;
+    }
+
+    body.innerHTML = `
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div class="label" style="margin-bottom:0">Substancje w stacku (${state.stack.size})</div>
+      </div>
+      <div style="display:grid;gap:5px">${chips}</div>
+      <div class="label" style="margin-top:.4rem">Raport analizy farmakodynamicznej i CYP</div>
+      ${alertsHtml}
+      <div class="label" style="margin-top:.6rem">Zestawy demonstracyjne</div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap">
+        <button class="preset-btn" data-preset="nootropic">Kofeina + Teanina</button>
+        <button class="preset-btn" data-preset="serotonin">Sertralina + Tramadol 🚨</button>
+        <button class="preset-btn" data-preset="respiratory">Morfina + Diazepam 🚨</button>
+        <button class="preset-btn" data-preset="cyp">CYP3A4 ⚠️</button>
+      </div>`;
+    wireStackBody();
+  }
+
+  function wireStackBody() {
+    const body = $("stackBody");
+    if (!body) return;
+    body.querySelectorAll("[data-c]").forEach((b) => {
+      b.onclick = () => select({ type: "compound", i: +b.dataset.c }, true);
+    });
+    body.querySelectorAll("[data-remove]").forEach((b) => {
+      b.onclick = () => toggleInStack(+b.dataset.remove);
+    });
+    body.querySelectorAll("[data-preset]").forEach((b) => {
+      b.onclick = () => loadPreset(b.dataset.preset);
+    });
+  }
+
+  function exportStackToObsidian() {
+    const list = [...state.stack].map((i) => C[i]);
+    if (!list.length) return;
+    const res = analyzeStack([...state.stack]);
+    const names = list.map((c) => c.n).join(" + ");
+    const lines = [
+      `# Raport analizy stacka: ${names}`,
+      "",
+      `> Data wygenerowania: ${new Date().toISOString().slice(0, 10)}`,
+      "> Narzędzie: Pharma-vault Stack Builder & Interaction Checker (v3.6)",
+      "",
+      "## 1. Wybrane substancje",
+      "",
+      ...list.map((c) => `- [[${c.f.split('/').pop().replace(/\.md$/, '')}|${c.n}]] (${GR[c.g].label})`),
+      "",
+      "## 2. Wyniki analizy interakcji",
+      "",
+    ];
+    if (!res.alerts.length) {
+      lines.push("> [!success] Brak bezpośrednich kolizji", "> Silnik Pharma-vault nie wykrył bezpośrednich nakładań krytycznych hubów bezpieczeństwa ani konkurencji enzymatycznej CYP dla wybranego zestawu.", "");
+    } else {
+      res.alerts.forEach((a) => {
+        const callout = a.level === "crit" ? "danger" : a.level === "mod" ? "warning" : "info";
+        lines.push(`> [!${callout}] ${a.title}`, `> ${a.desc.replace(/<[^>]+>/g, '')}`, "");
+      });
+    }
+    lines.push(
+      "## 3. Zastrzeżenie edukacyjne",
+      "",
+      "> [!warning] Materiał edukacyjny",
+      "> Niniejszy raport opiera się na wyekstrahowanych automatycznie danych mechanistycznych ChEMBL, substratach CYP i hubach bezpieczeństwa. Nie uwzględnia indywidualnego dawkowania, tolerancji ani chorób współistniejących. Nie stanowi porady lekarskiej.",
+      ""
+    );
+    const md = lines.join("\n");
+    const uri = `obsidian://new?vault=vault&name=${encodeURIComponent("Analiza stacka - " + names.slice(0, 50))}&content=${encodeURIComponent(md)}`;
+    navigator.clipboard?.writeText(md);
+    window.open(uri, "_blank");
+    const btn = $("stackObsidianBtn");
+    if (btn) {
+      const orig = btn.textContent;
+      btn.textContent = "✓ Otwarto!";
+      setTimeout(() => { btn.textContent = orig; }, 2000);
+    }
+  }
+
+  function shareStackLink() {
+    if (!state.stack.size) return;
+    const ids = [...state.stack].map((i) => C[i].id).join(",");
+    const url = `${location.origin}${location.pathname}#stack=${ids}`;
+    history.replaceState(null, "", `#stack=${ids}`);
+    navigator.clipboard?.writeText(url);
+    const btn = $("stackShareBtn");
+    if (btn) {
+      const orig = btn.textContent;
+      btn.textContent = "✓ Skopiowano!";
+      setTimeout(() => { btn.textContent = orig; }, 2000);
+    }
+  }
 
   // ---------- filters
   const HB = [-2, -1, 0, 1, 2, 3, 4]; // log10(hours) bin edges: 36 s … 10^4 h
   const binOf = (h) => Math.max(0, Math.min(HB.length - 2, Math.floor(Math.log10(h)) - HB[0]));
-  const visible = (c) => state.clusters.has(c.c) && (!state.pkOnly || c.pk) && (!state.cypOnly || (c.pk && c.pk.cyp)) && (state.hub === null || c.l.includes(state.hub))
+  const visible = (c) => (!state.stackOnly || state.stack.has(c.i)) && state.clusters.has(c.c) && (!state.pkOnly || c.pk) && (!state.cypOnly || (c.pk && c.pk.cyp)) && (state.hub === null || c.l.includes(state.hub))
     && (!state.ver || VER_TEST[state.ver](c)) && (state.hlBin === null || (c.hlh && binOf(c.hlh) === state.hlBin));
   function stats() {
     const vis = C.filter(visible).length;
@@ -172,6 +609,23 @@
       }
     }
 
+    // stack interaction curves
+    if (state.stack.size >= 2) {
+      const res = analyzeStack([...state.stack]);
+      res.pairs.forEach(({ a, b, level }) => {
+        const ca = C[a], cb = C[b];
+        if (!visible(ca) || !visible(cb)) return;
+        const [x1, y1] = toScreen(ca.x, ca.y), [x2, y2] = toScreen(cb.x, cb.y);
+        ctx.strokeStyle = level === "crit" ? "#dd4848" : level === "mod" ? "#bb653b" : "#a86fdf";
+        ctx.lineWidth = level === "crit" ? 2.6 : 1.8;
+        ctx.beginPath();
+        const mx = (x1 + x2) / 2 + (y2 - y1) * 0.22, my = (y1 + y2) / 2 - (x2 - x1) * 0.22;
+        ctx.moveTo(x1, y1);
+        ctx.quadraticCurveTo(mx, my, x2, y2);
+        ctx.stroke();
+      });
+    }
+
     // compounds
     const baseR = Math.max(1.4, Math.min(5.5, 4 * Math.sqrt(k)));
     C.forEach((c) => {
@@ -183,6 +637,13 @@
       ctx.beginPath(); ctx.arc(x, y, c.pk ? baseR : baseR * 0.7, 0, 7); ctx.fill();
       if (c.pk && c.pk.cyp && k > 0.9) { ctx.strokeStyle = warn; ctx.lineWidth = 1; ctx.stroke(); }
       if (((c.v && c.v.s === "discrepant") || (c.ve && c.ve.s === "discrepant")) && k > 1.4) { ctx.strokeStyle = err; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, baseR + 2, 0, 7); ctx.stroke(); }
+      if (state.stack.has(c.i)) {
+        ctx.strokeStyle = "#d19900";
+        ctx.lineWidth = 2.2;
+        ctx.beginPath();
+        ctx.arc(x, y, baseR + 4.5, 0, 7);
+        ctx.stroke();
+      }
     });
     ctx.globalAlpha = 1;
 
@@ -196,6 +657,15 @@
         if (x < 0 || y < 0 || x > W || y > H) return;
         const lab = c.n.length > 22 ? c.n.slice(0, 21) + "…" : c.n;
         ctx.fillText(lab, x + baseR + 3, y);
+      });
+    } else if (state.stack.size > 0) {
+      ctx.font = `600 12px ${fBody}`;
+      state.stack.forEach((i) => {
+        const sc = C[i];
+        if (!visible(sc)) return;
+        const [sx, sy] = toScreen(sc.x, sc.y);
+        if (sx < 0 || sy < 0 || sx > W || sy > H) return;
+        halo(sc.n, sx + baseR + 6, sy, "#d19900", bg);
       });
     }
 
@@ -314,7 +784,6 @@
   cv.addEventListener("wheel", (e) => { e.preventDefault(); zoomAt(e.offsetX, e.offsetY, Math.exp(-e.deltaY * 0.0015)); }, { passive: false });
 
   // ---------- selection & detail panel
-  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
   const rng = (a, u = "") => a ? `${a[0]}${a[1] ? "–" + a[1] : ""}${u ? " " + u : ""}` : null;
   function select(h, fly) {
     state.sel = h; const p = $("panel"), noHash = location.pathname + location.search;
@@ -524,6 +993,12 @@
         </div>`;
     }
 
+    const inStack = state.stack.has(c.i);
+    const stackBtnHtml = `
+      <button id="cardStackToggle" class="btn ${inStack ? 'btn-gold' : ''}" style="width:100%;margin:0.5rem 0;padding:6px 12px;font-size:var(--text-xs);display:flex;align-items:center;justify-content:center;gap:6px">
+        <span>${inStack ? "✓ W Twoim stacku" : "+ Dodaj do stacka"}</span>
+      </button>`;
+
     return `
       <div class="card-head">
         <div class="label" style="margin-bottom:0">${esc(CL_PL[G.clusters[c.c].name])} · ${esc(g.label)}</div>
@@ -540,6 +1015,7 @@
         ${e && e.s === "discrepant" ? '<span class="tag warn">PK ≠ ChPL</span>' : ""}
         ${c.ic === "conflict" ? '<span class="tag warn">tożsamość?</span>' : ""}
       </div>
+      ${stackBtnHtml}
       <div class="tab-bar" role="tablist" aria-label="Sekcje karty substancji">
         <button class="tab-btn ${curTab === 'overview' ? 'active' : ''}" data-tab="overview" role="tab" aria-selected="${curTab === 'overview'}">Przegląd</button>
         <button class="tab-btn ${curTab === 'pk' ? 'active' : ''} ${!hasPk ? 'dim' : ''}" data-tab="pk" role="tab" aria-selected="${curTab === 'pk'}">PK & Etykiety ${pkBadge}</button>
@@ -559,6 +1035,10 @@
         wire(p);
       }
     });
+    const stackToggle = p.querySelector("#cardStackToggle");
+    if (stackToggle && state.sel && state.sel.type === "compound") {
+      stackToggle.onclick = () => toggleInStack(state.sel.i);
+    }
     const closeBtn = p.querySelector("#cardClose");
     if (closeBtn) closeBtn.onclick = () => select(null);
   }
@@ -608,11 +1088,50 @@
   }
   q.addEventListener("input", search);
   q.addEventListener("keydown", (e) => { if (e.key === "Enter") { const b = res.querySelector("[data-c], [data-t]"); if (b) b.click(); } });
+
+  // ---------- stack drawer toolbar & controls
+  const stackBtn = $("stackBtn");
+  if (stackBtn) stackBtn.onclick = () => toggleStackDrawer();
+  const stackDrawerClose = $("stackDrawerClose");
+  if (stackDrawerClose) stackDrawerClose.onclick = () => toggleStackDrawer(false);
+  const stackFilterToggle = $("stackFilterToggle");
+  if (stackFilterToggle) {
+    stackFilterToggle.onclick = () => {
+      state.stackOnly = !state.stackOnly;
+      stackFilterToggle.setAttribute("aria-pressed", String(state.stackOnly));
+      stackFilterToggle.classList.toggle("btn-gold", state.stackOnly);
+      stats(); search(); draw();
+    };
+  }
+  const stackShareBtn = $("stackShareBtn");
+  if (stackShareBtn) stackShareBtn.onclick = shareStackLink;
+  const stackObsidianBtn = $("stackObsidianBtn");
+  if (stackObsidianBtn) stackObsidianBtn.onclick = exportStackToObsidian;
+  const stackClearBtn = $("stackClearBtn");
+  if (stackClearBtn) {
+    stackClearBtn.onclick = () => {
+      state.stack.clear();
+      saveStack();
+      updateStackUI();
+      if (state.sel && state.sel.type === "compound") select(state.sel);
+      draw();
+    };
+  }
+
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") { select(null); return; }
-    if (e.key === "/" && document.activeElement !== q) { e.preventDefault(); q.focus(); return; }
+    if (e.key === "Escape") {
+      if (state.stackDrawerOpen) { toggleStackDrawer(false); return; }
+      select(null);
+      return;
+    }
     const tag = document.activeElement ? document.activeElement.tagName : "";
     if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
+    if (e.key === "s" || e.key === "S") {
+      e.preventDefault();
+      toggleStackDrawer();
+      return;
+    }
+    if (e.key === "/") { e.preventDefault(); q.focus(); return; }
     if (state.sel && state.sel.type === "compound") {
       const tabs = ["overview", "pk", "targets", "safety"];
       if (e.key >= "1" && e.key <= "4") {
@@ -631,8 +1150,26 @@
   if (matchMedia("(prefers-color-scheme: light)").matches) { document.documentElement.dataset.theme = "light"; $("theme").setAttribute("aria-pressed", "true"); }
 
   new ResizeObserver(resize).observe(cv);
+  loadSavedStack();
   resize(); fit(); stats();
   const fromHash = decodeURIComponent(location.hash.slice(1));
-  if (fromHash.startsWith("target=")) { const ti = T.findIndex((t) => t.id === fromHash.slice(7)); if (ti >= 0) setTimeout(() => select({ type: "target", i: ti }, true), 50); }
-  else if (fromHash) { const c = C.find((x) => x.id === fromHash); if (c) setTimeout(() => select({ type: "compound", i: c.i }, true), 50); }
+  if (fromHash.startsWith("stack=")) {
+    const ids = fromHash.slice(6).split(",").filter(Boolean);
+    if (ids.length) {
+      state.stack.clear();
+      ids.forEach((id) => {
+        const idx = C.findIndex((c) => c.id === id);
+        if (idx >= 0) state.stack.add(idx);
+      });
+      saveStack();
+      toggleStackDrawer(true);
+    }
+  } else if (fromHash.startsWith("target=")) {
+    const ti = T.findIndex((t) => t.id === fromHash.slice(7));
+    if (ti >= 0) setTimeout(() => select({ type: "target", i: ti }, true), 50);
+  } else if (fromHash) {
+    const c = C.find((x) => x.id === fromHash);
+    if (c) setTimeout(() => select({ type: "compound", i: c.i }, true), 50);
+  }
+  updateStackUI();
 })();

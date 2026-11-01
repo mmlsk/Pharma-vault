@@ -1,5 +1,33 @@
 # Changelog
 
+## [3.6.0] — 2026-11-01 — interaktywny Stack Builder i Interaction Checker
+### Dodano
+- **Stack Builder & Interaction Checker** w przeglądarce grafu (`apps/graph-viewer/index.html`, `apps/graph-viewer/app.js` oraz pliki w katalogu głównym):
+  - **Wysuwany boczny panel (drawer)**:
+    - Przycisk w toolbarze `🧪 Mój Stack` z dynamicznym licznikiem substancji w zestawie oraz skrót klawiszowy `S` / `Esc`.
+    - Lista chipów substancji w stacku z kropką klastra, nazwą grupy i natychmiastowym usuwaniem (`✕`).
+    - 4 gotowe zestawy demonstracyjne (presets): *Nootropowy klasyk* (Kofeina + Teanina), *Zespół serotoninowy* (Sertralina + Tramadol 🚨), *Depresja oddechowa* (Morfina + Diazepam 🚨) oraz *Wąskie gardło CYP3A4* (Kwetiapina + Klarytromycyna ⚠️).
+    - Przyciski akcji: `🎯 Tylko stack na grafie` (zawężenie widoku), `🔗 Kopiuj link` (deep linking `#stack=id1,id2,...`), `📝 Obsidian` (eksport ustrukturyzowanego raportu markdown z calloutami via `obsidian://new`) oraz `Wyczyść`.
+  - **Silnik analizy interakcji farmakodynamicznych i metabolicznych (`analyzeStack`)**:
+    - Trzypoziomowa kategoryzacja ryzyka: Krytyczne (`crit`), Umiarkowane (`mod`), Informacyjne (`info`) oraz status bezpieczny (`ok`).
+    - Analiza toksyczności serotoninowej (kolizje w hubie *Serotonin Toxicity*).
+    - Analiza depresji oddechowej (kolizje w hubie *Respiratory Depression and Fatal Overdose*).
+    - Analiza wąskich gardeł metabolicznych CYP (nakładające się substraty izoenzymów m.in. CYP3A4, CYP2D6, CYP1A2).
+    - Analiza obciążenia stymulującego / sercowo-naczyniowego (*Stimulant and Cardiovascular Load*).
+    - Analiza obciążenia cholinergicznego (*Cholinergic Load*).
+    - Analiza tłumienia osi HPG (*Hormonal Axis Suppression*).
+    - Wykrywanie redundancji molekularnej: wspólne cele ChEMBL oraz ta sama podgrupa klasyfikacji terapeutycznej ATC.
+  - **Integracja z kartą substancji i płótnem Canvas**:
+    - Przycisk `+ Dodaj do stacka` / `✓ W Twoim stacku` (`#cardStackToggle`) na karcie każdej substancji.
+    - Złote obwódki (halo) wokół węzłów należących do aktywnego stacka.
+    - Dynamiczne, zakrzywione łuki interakcji między kolidującymi parami substancji na grafie (czerwone dla krytycznych, pomarańczowe dla umiarkowanych, fioletowe dla redundancji).
+    - Czytelne etykiety tekstowe dla substancji w stacku nawet przy niskim poziomie przybliżenia (`k < 2.6`).
+  - **Trwałość i udostępnianie**:
+    - Automatyczny zapis w `localStorage` (`pv_stack`).
+    - Parsowanie parametru `#stack=...` z URL na starcie aplikacji.
+- **Testy (`tests/test_pipeline.py`)**:
+  - Dodano `test_stack_presets_and_hubs` weryfikujący poprawność identyfikatorów substancji w presetach oraz format nazw izoenzymów CYP (39 testów, 100% green).
+
 ## [3.5.0] — 2026-11-01 — kuracja rozbieżności PK i zamknięcie konfliktów tożsamości
 ### Dodano
 - `data/curated/pk-annotations.csv`: kuratorowany rejestr wyjaśnień dla 76 substancji z rozbieżnościami parametrów PK (FDA/EMA vs Wikipedia) podzielony na kategorie:

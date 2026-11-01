@@ -115,6 +115,23 @@
     .note { font-size: var(--text-xs); color: var(--color-text-faint); }
     .warnbox { border-left: 3px solid var(--color-warning); padding: .5rem .75rem; background: color-mix(in oklab, var(--color-warning) 8%, transparent); border-radius: 0 var(--radius-md) var(--radius-md) 0; font-size: var(--text-xs); color: var(--color-text-muted); }
     .empty { color: var(--color-text-muted); font-size: var(--text-sm); }
+    .drawer { position: absolute; top: 0; right: 0; bottom: 0; width: 400px; max-width: 95vw; background: var(--color-surface); border-left: 1px solid var(--color-border); box-shadow: var(--shadow-md); z-index: 50; display: none; flex-direction: column; overflow: hidden; }
+    .drawer.open { display: flex; }
+    .drawer-head { display: flex; align-items: center; justify-content: space-between; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); background: var(--color-surface-2); }
+    .drawer-body { flex: 1; overflow-y: auto; padding: var(--space-4); display: grid; gap: var(--space-4); align-content: start; }
+    .drawer-foot { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); background: var(--color-surface-2); display: flex; gap: var(--space-2); flex-wrap: wrap; }
+    .stack-chip { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .4rem .6rem; border-radius: var(--radius-md); background: var(--color-surface-offset); border: 1px solid var(--color-border); font-size: var(--text-xs); }
+    .stack-chip button.del { background: none; border: 0; color: var(--color-text-muted); cursor: pointer; padding: 2px 6px; font-weight: bold; border-radius: 4px; font-size: 13px; }
+    .stack-chip button.del:hover { color: var(--color-error); background: color-mix(in oklab, var(--color-error) 15%, transparent); }
+    .alert-box { padding: .65rem .8rem; border-radius: var(--radius-md); font-size: var(--text-xs); line-height: 1.45; display: grid; gap: 4px; border-left: 4px solid; }
+    .alert-crit { border-color: var(--color-error); background: color-mix(in oklab, var(--color-error) 12%, transparent); }
+    .alert-mod { border-color: var(--color-warning); background: color-mix(in oklab, var(--color-warning) 12%, transparent); }
+    .alert-info { border-color: var(--color-primary); background: color-mix(in oklab, var(--color-primary) 10%, transparent); }
+    .alert-ok { border-color: var(--color-success); background: color-mix(in oklab, var(--color-success) 10%, transparent); }
+    .preset-btn { font-size: 11px; padding: .25rem .6rem; border-radius: 999px; border: 1px solid var(--color-border); background: var(--color-surface-offset); cursor: pointer; transition: border-color .15s, color .15s; }
+    .preset-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+    .btn-gold { border-color: color-mix(in oklab, var(--color-warning) 50%, transparent); font-weight: 600; }
+    .btn-gold:hover { border-color: var(--color-warning); color: var(--color-warning); }
     @media (max-width: 1100px) {
       body { overflow: auto; height: auto; }
       .app { grid-template-columns: 1fr; height: auto; }
@@ -193,8 +210,27 @@
   <main class="stage">
     <canvas id="cv" aria-label="Graf substancji"></canvas>
     <div class="toolbar">
+      <button class="btn btn-gold" id="stackBtn" aria-label="Mój Stack" aria-expanded="false">🧪 Mój Stack <span id="stackCountBadge" class="tab-badge" style="background:var(--color-primary);color:#fff">0</span></button>
       <button class="btn" id="theme" aria-label="Przełącz motyw" aria-pressed="false">Motyw</button>
       <button class="btn" id="reset">Widok całości</button>
+    </div>
+    <div id="stackDrawer" class="drawer" aria-label="Panel analizy stacka" role="region">
+      <div class="drawer-head">
+        <div style="display:flex;align-items:center;gap:.5rem">
+          <b style="font-size:var(--text-base);font-family:var(--font-display)">🧪 Mój Stack</b>
+          <span id="stackStatusPill" class="tag" style="font-size:10px">pusty</span>
+        </div>
+        <button class="card-close" id="stackDrawerClose" title="Zamknij panel stacka">✕</button>
+      </div>
+      <div class="drawer-body" id="stackBody">
+        <!-- Renderowane przez app.js -->
+      </div>
+      <div class="drawer-foot">
+        <button class="btn" id="stackFilterToggle" style="flex:1;font-size:var(--text-xs)">🎯 Tylko stack na grafie</button>
+        <button class="btn" id="stackShareBtn" style="font-size:var(--text-xs)" title="Kopiuj link do stacka">🔗 Kopiuj link</button>
+        <button class="btn" id="stackObsidianBtn" style="font-size:var(--text-xs)" title="Eksportuj raport do Obsidian">📝 Obsidian</button>
+        <button class="btn" id="stackClearBtn" style="font-size:var(--text-xs);color:var(--color-error)" title="Wyczyść cały stack">Wyczyść</button>
+      </div>
     </div>
     <div class="hint">Przeciągnij, aby przesunąć · kółko/gest, aby przybliżyć · kliknij kropkę, klaster lub hub. Etykiety substancji pojawiają się po przybliżeniu.</div>
     <div class="tip" id="tip"></div>

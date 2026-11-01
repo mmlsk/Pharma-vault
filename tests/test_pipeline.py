@@ -369,3 +369,27 @@ def test_sqlite_has_v33_tables(sqlite_con):
     assert sqlite_con.execute("SELECT COUNT(*) FROM identity_review").fetchone()[0] > 1500
     assert sqlite_con.execute("SELECT COUNT(*) FROM pk_verification_ema").fetchone()[0] > 150
     assert sqlite_con.execute("SELECT COUNT(*) FROM pk_annotations").fetchone()[0] >= 70
+
+
+def test_stack_presets_and_hubs(rows):
+    """Verify that substances referenced in graph-viewer stack presets and interaction hubs exist and are consistent."""
+    cids = {r["compound_id"] for r in rows}
+    presets = [
+        ("caffeine-compound", "theanine-compound"),
+        ("sertraline-compound", "tramadol-compound"),
+        ("morphine-compound", "diazepam-compound"),
+        ("quetiapine-compound", "clarithromycin-compound"),
+    ]
+    for pair in presets:
+        for cid in pair:
+            assert cid in cids, f"Preset compound {cid} not found in substances catalogue"
+
+    pk = json.loads((PROCESSED / "pk.json").read_text(encoding="utf-8"))
+    cyp_records = [r for r in pk if r.get("cyp-interactions") and r["cyp-interactions"].get("substrates")]
+    assert len(cyp_records) > 200
+    for r in cyp_records:
+        subs = r["cyp-interactions"]["substrates"]
+        assert isinstance(subs, list)
+        for enz in subs:
+            assert re.match(r"^CYP[0-9A-Z]+$", enz), f"Invalid CYP name {enz} for {r.get('compound_id')}"
+
