@@ -776,6 +776,65 @@ def test_chemical_similarity_and_analogs_explorer():
     assert d_mw < 1.0, f"Expected identical MW, got delta {d_mw}"
 
 
+def test_semantic_typed_edges_and_graph_filtering():
+    """Verify markup, style classes, and relation indexing for Semantic Pharmacological Typed Edges."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    for el_id in [
+        "edgesBtn", "edgesPopover", "closeEdgesPopover", "edgeFilterList",
+        "edgeGlobalModeCheck", "edgeFilterAllBtn", "edgeFilterNoneBtn"
+    ]:
+        assert f'id="{el_id}"' in html_src, f"Missing #{el_id} in index.html"
+
+    for css_cls in [
+        ".edges-popover", ".edge-filter-list", ".edge-filter-item",
+        ".edge-filter-label", ".edge-color-dot", ".edge-badge", ".edge-pill", ".edge-pill-tag"
+    ]:
+        assert css_cls in html_src, f"Missing CSS class '{css_cls}' in index.html"
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    for term in [
+        "TYPED_EDGE_CONFIG",
+        "PRODRUG_OF",
+        "CONTRAINDICATION",
+        "CYP_INTERACTION",
+        "TARGET_SYNERGY",
+        "TARGET_ANTAGONISM",
+        "CURATED_TYPED_EDGES",
+        "function getCompoundTypedEdges(",
+        "function drawSingleTypedEdge(",
+        "function toggleEdgesPopover(",
+        "data-edge-goto="
+    ]:
+        assert term in app_src, f"Missing '{term}' in app.js"
+
+    # Test presence of clinical pairs in graph data
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    prefix = "window.PV_GRAPH = "
+    start_idx = graph_js.index(prefix) + len(prefix)
+    end_idx = graph_js.rindex("};") + 1
+    graph = json.loads(graph_js[start_idx:end_idx])
+    compounds = graph["compounds"]
+    comp_ids = {c["id"] for c in compounds}
+
+    # Verify key clinical relationships pairs exist in dataset
+    key_pairs = [
+        ("lisdexamfetamine-compound", "dextroamphetamine-compound"),
+        ("codeine-compound", "morphine-compound"),
+        ("psilocybin-compound", "psilocin-compound"),
+        ("diamorphine-compound", "morphine-compound"),
+        ("enalapril-compound", "enalaprilat-anhydrous-compound"),
+        ("moclobemide-compound", "fluoxetine-compound"),
+        ("diazepam-compound", "morphine-compound"),
+        ("fluoxetine-compound", "codeine-compound"),
+        ("naloxone-compound", "morphine-compound"),
+        ("flumazenil-compound", "diazepam-compound")
+    ]
+    for p1, p2 in key_pairs:
+        assert p1 in comp_ids, f"Expected {p1} in graph compounds"
+        assert p2 in comp_ids, f"Expected {p2} in graph compounds"
+
+
+
 
 
 

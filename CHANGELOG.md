@@ -1,5 +1,31 @@
 # Changelog
 
+## [3.16.0] — 2026-11-02 — Semantyczne Krawędzie Farmakologiczne & Filtrowanie Grafu (Semantic Typed Edges & Graph Filtering)
+### Dodano
+- **Semantyczne Krawędzie Farmakologiczne (Semantic Typed Edges)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **Taksonomia i paleta 5 typów krawędzi (`TYPED_EDGE_CONFIG`)**:
+    - 🟢 `PRODRUG_OF` (`#10b981`, ciągła ze skierowanym grotem strzałki do aktywnego leku): biotransformacja proleków do czynnych farmakologicznie metabolitów (np. Lisdeksamfetamina → Deksamfetamina, Kodeina → Morfina, Psylocybina → Psylocyna, Enalapryl → Enalaprylat, L-DOPA → Dopamina).
+    - 🔴 `CONTRAINDICATION` (`#ef4444`, linia przerywana `[6, 4]`): bezwzględne przeciwwskazania i krytyczne interakcje lekowe (np. MAOI + SSRI z ryzykiem zespołu serotoninowego, opioidy + benzodiazepiny z depresją oddechową, PDE5i + azotany z zapaścią naczyniową, podwójne wydłużenie QTc).
+    - 🟡 `CYP_INTERACTION` (`#f59e0b`, kropka-kreska `[8, 3, 2, 3]` ze skierowaną strzałką): inhibicja enzymów cytochromu P450 zaburzająca klirens substratów (np. Fluoksetyna/Paroksetyna na CYP2D6, Ketokonazol na CYP3A4, Fluwoksamina na CYP1A2).
+    - 🟣 `TARGET_SYNERGY` (`#8b5cf6`, gęsto kropkowana `[3, 3]` krzywa łukowa): zbieżny wektor działania ligandów na ten sam cel molekularny ChEMBL (np. agoniści 5-HT2A, modulatory allosteryczne GABA-A, antagoniści NMDA).
+    - 🔵 `TARGET_ANTAGONISM` (`#06b6d4`, kreskowana `[5, 5]` z poprzeczką końcową): przeciwstawne działanie receptorowe i odtrutki (np. Morfina vs Nalokson, Benzodiazepina vs Flumazenil, Agonista D2 vs Haloperydol).
+  - **Hybrydowy silnik relacji (`initTypedEdgesIndex`, `getCompoundTypedEdges`)**:
+    - Słownik 55 zweryfikowanych klinicznych par proleków, ciężkich przeciwwskazań i interakcji CYP.
+    - Automatyczna dynamiczna inferencja synergii i antagonizmu celów w oparciu o mechanizm działania ChEMBL (`c.m`) oraz klasyfikację `classifyTargetAction(c, targetName)`.
+  - **Trzywarstwowy model renderowania w Canvas 2D**:
+    - **Warstwa Stacka**: ciągłe podświetlanie relacji pomiędzy substancjami w aktywnym koszyku Stacka ($\ge 2$ leki).
+    - **Warstwa Kontekstowa**: renderowanie skierowanych krawędzi dla aktualnie wybranej substancji i węzła w stanie hover.
+    - **Warstwa Globalna**: opcjonalny tryb globalnej sieci relacji z dynamicznym limitem gęstości (350 krawędzi) gwarantującym stałe 60 FPS.
+  - **Pływający popover filtrów w toolbarze (`#edgesPopover`)**:
+    - Przycisk `🕸️ Krawędzie` w toolbarze grafu otwierający menu z checkboxami i licznikami dla 5 typów relacji.
+    - Przełącznik `Pokaż sieć w całym grafie (z limitem)` oraz przyciski `Wszystkie` / `Wyczyść`.
+    - Skrót klawiszowy `E` / `e` do natychmiastowego otwierania/zamykania popovera; obsługa klawisza `Esc`.
+  - **Integracja z kartą substancji (`compoundHtml`)**:
+    - Dedykowana sekcja `🕸️ Relacje semantyczne` w zakładce Przegląd z interaktywnymi pigułkami relacji.
+    - Kliknięcie pigułki (`data-edge-goto`) natychmiast płynnie przenosi kamerę i zaznacza cząsteczkę partnera relacji na płótnie Canvas.
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_semantic_typed_edges_and_graph_filtering` weryfikujący obecność elementów DOM, klas CSS, silnika indeksowania relacji oraz istnienie kluczowych par klinicznych w grafie (49 testów, 100% green).
+
 ## [3.15.0] — 2026-11-02 — Wyszukiwarka Analogów Chemicznych & Podobieństwo Strukturalne (Chemical Similarity & Analogs Explorer)
 ### Dodano
 - **Wyszukiwarka Analogów Chemicznych i Bioizosterów (Chemical Similarity & Analogs Explorer)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):

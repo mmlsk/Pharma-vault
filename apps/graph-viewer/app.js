@@ -73,6 +73,11 @@
       horizon: "auto", // "auto", "24", "48", "168"
       compounds: {},   // { [idx]: { interval: 24, tHalf: 6.0, custom: false } }
       hoverT: null
+    },
+    edgeFilters: {
+      enabled: new Set(["PRODRUG_OF", "CONTRAINDICATION", "CYP_INTERACTION", "TARGET_SYNERGY", "TARGET_ANTAGONISM"]),
+      globalMode: false,
+      popoverOpen: false
     }
   };
   let W = 0, H = 0, dpr = 1, raf = 0;
@@ -877,6 +882,314 @@
         btn.classList.toggle("ok", inStack);
       };
     });
+  }
+
+  // ---------- Semantic Pharmacological Typed Edges
+  const TYPED_EDGE_CONFIG = {
+    PRODRUG_OF: {
+      label: "Prolek → Lek aktywny",
+      color: "#10b981",
+      dash: [],
+      lineWidth: 2.2,
+      directed: true,
+      desc: "Biotransformacja proleku do czynnego metabolitu",
+      shortLabel: "Prolek"
+    },
+    CONTRAINDICATION: {
+      label: "Przeciwwskazanie / Ciężkie ryzyko",
+      color: "#ef4444",
+      dash: [6, 4],
+      lineWidth: 2.4,
+      directed: false,
+      desc: "Krytyczne ryzyko powikłań zagrażających życiu",
+      shortLabel: "Przeciwwskazanie"
+    },
+    CYP_INTERACTION: {
+      label: "Hamowanie / Konkurencja CYP",
+      color: "#f59e0b",
+      dash: [8, 3, 2, 3],
+      lineWidth: 2.0,
+      directed: true,
+      desc: "Inhibitor zaburza klirens i eliminację substratu",
+      shortLabel: "Interakcja CYP"
+    },
+    TARGET_SYNERGY: {
+      label: "Synergia celów molekularnych",
+      color: "#8b5cf6",
+      dash: [3, 3],
+      lineWidth: 1.8,
+      directed: false,
+      desc: "Zgodny kierunek modulacji tego samego celu ChEMBL",
+      shortLabel: "Synergia"
+    },
+    TARGET_ANTAGONISM: {
+      label: "Antagonizm / Odtrutka",
+      color: "#06b6d4",
+      dash: [5, 5],
+      lineWidth: 2.0,
+      directed: false,
+      desc: "Przeciwstawne działanie (agonista vs bloker/antagonista)",
+      shortLabel: "Antagonizm"
+    }
+  };
+
+  const compById = new Map();
+  C.forEach((c) => compById.set(c.id, c.i));
+
+  const CURATED_TYPED_EDGES = [
+    // Prodrugs (from prodrug to active form)
+    ["lisdexamfetamine-compound", "dextroamphetamine-compound", "PRODRUG_OF", "Biotransformacja erytrocytarna do aktywnej d-amfetaminy"],
+    ["codeine-compound", "morphine-compound", "PRODRUG_OF", "O-demetylacja przez CYP2D6 do aktywnej morfiny"],
+    ["psilocybin-compound", "psilocin-compound", "PRODRUG_OF", "Defosforylacja przez fosfatazę alkaliczną do psylocyny"],
+    ["diamorphine-compound", "morphine-compound", "PRODRUG_OF", "Deacetylacja w OUN do 6-MAM i morfiny"],
+    ["tramadol-compound", "o-desmethyltramadol-compound", "PRODRUG_OF", "O-demetylacja CYP2D6 do aktywnego analgetyka O-DSMT"],
+    ["levodopa-compound", "dopamine-drug-compound", "PRODRUG_OF", "Dekarboksylacja przez AADC do dopaminy w prążkowiu"],
+    ["primidone-compound", "phenobarbital-compound", "PRODRUG_OF", "Oksydacja wątrobowa do fenobarbitalu"],
+    ["prednisone-compound", "prednisolone-compound", "PRODRUG_OF", "Redukcja 11-beta-HSD-1 do aktywnego prednizolonu"],
+    ["valacyclovir-compound", "acyclovir-compound", "PRODRUG_OF", "Hydroliza estrowa przez esterazę wątrobową do acyklowiru"],
+    ["enalapril-compound", "enalaprilat-anhydrous-compound", "PRODRUG_OF", "Deestryfikacja wątrobowa do aktywnego enalaprylatu"],
+    ["capecitabine-compound", "fluorouracil-compound", "PRODRUG_OF", "Kaskadowa aktywacja przez fosforylazę tymidynową do 5-FU"],
+    ["fosaprepitant-compound", "aprepitant-compound", "PRODRUG_OF", "Szybka hydroliza fosforanu do aprepitantu"],
+    ["valganciclovir-compound", "ganciclovir-compound", "PRODRUG_OF", "Hydroliza esterazowa do gancyklowiru"],
+    ["ethylestrenol-compound", "norethandrolone-compound", "PRODRUG_OF", "Metabolizm do aktywnego noretandrolonu"],
+
+    // Contraindications & Critical Interactions
+    ["moclobemide-compound", "fluoxetine-compound", "CONTRAINDICATION", "Inhibitor MAO-A + SSRI: ryzyko zagrażającego życiu zespołu serotoninowego"],
+    ["moclobemide-compound", "sertraline-compound", "CONTRAINDICATION", "Inhibitor MAO-A + SSRI: ryzyko zespołu serotoninowego"],
+    ["moclobemide-compound", "dextromethorphan-compound", "CONTRAINDICATION", "MAOI + bloker SERT: krytyczna toksyczność serotoninergiczna"],
+    ["phenelzine-compound", "fluoxetine-compound", "CONTRAINDICATION", "Nieodwracalny MAOI + SSRI: bezwzględne przeciwwskazanie"],
+    ["phenelzine-compound", "sertraline-compound", "CONTRAINDICATION", "Nieodwracalny MAOI + SSRI: bezwzględne przeciwwskazanie"],
+    ["tranylcypromine-compound", "fluoxetine-compound", "CONTRAINDICATION", "Nieodwracalny MAOI + SSRI: bezwzględne przeciwwskazanie"],
+    ["selegiline-compound", "fluoxetine-compound", "CONTRAINDICATION", "MAOI + SSRI: ryzyko przełomu serotoninowego"],
+    ["diazepam-compound", "morphine-compound", "CONTRAINDICATION", "GABA-A PAM + Opioid: synergistyczna depresja ośrodka oddechowego"],
+    ["alprazolam-compound", "oxycodone-compound", "CONTRAINDICATION", "GABA-A PAM + Silny opioid: krytyczna zapaść oddechowa"],
+    ["clonazepam-compound", "fentanyl-compound", "CONTRAINDICATION", "Benzodiazepina + Fentanyl: śmiertelne ryzyko bezdechu"],
+    ["sildenafil-compound", "nitroglycerin-compound", "CONTRAINDICATION", "Inhibitor PDE-5 + Azotan: zapaść naczyniowa i oporna hipotensja"],
+    ["tadalafil-compound", "nitroglycerin-compound", "CONTRAINDICATION", "Długodziałający PDE-5i + Azotan: niebezpieczny spadek ciśnienia tętniczego"],
+    ["sildenafil-compound", "isosorbide-mononitrate-compound", "CONTRAINDICATION", "Inhibitor PDE-5 + Donator NO: zapaść krążeniowa"],
+    ["haloperidol-compound", "citalopram-compound", "CONTRAINDICATION", "Podwójne wydłużenie repolaryzacji hERG/QTc: ryzyko Torsade de Pointes"],
+    ["methadone-compound", "citalopram-compound", "CONTRAINDICATION", "Substytut opioidu + SSRI: kumulacja ryzyka wydłużenia QTc"],
+    ["amiodarone-compound", "haloperidol-compound", "CONTRAINDICATION", "Lek antyarytmiczny + Neuroleptyk: skrajne ryzyko Torsade de Pointes"],
+
+    // CYP Interactions (Inhibitor -> Substrate)
+    ["fluoxetine-compound", "codeine-compound", "CYP_INTERACTION", "Blokada CYP2D6 uniemożliwia aktywację kodeiny do morfiny"],
+    ["fluoxetine-compound", "dextromethorphan-compound", "CYP_INTERACTION", "Inhibicja CYP2D6 drastycznie zwiększa stężenie DXM i ryzyko toksyczności OUN"],
+    ["fluoxetine-compound", "metoprolol-compound", "CYP_INTERACTION", "Inhibitor CYP2D6 podnosi AUC metoprololu (ciężka bradykardia)"],
+    ["fluoxetine-compound", "atomoxetine-compound", "CYP_INTERACTION", "Inhibicja CYP2D6 wielokrotnie wydłuża t1/2 atomoksetyny"],
+    ["paroxetine-compound", "tramadol-compound", "CYP_INTERACTION", "Inhibicja CYP2D6 osłabia syntezę O-DSMT i nasila obciążenie serotoninowe"],
+    ["paroxetine-compound", "risperidone-compound", "CYP_INTERACTION", "Inhibicja CYP2D6 podnosi stężenie risperidonu i ryzyko objawów EPS"],
+    ["ketoconazole-compound", "midazolam-compound", "CYP_INTERACTION", "Inhibitor CYP3A4 zwiększa AUC midazolamu 10-15-krotnie"],
+    ["ketoconazole-compound", "simvastatin-compound", "CYP_INTERACTION", "Blokada CYP3A4 drastycznie zwiększa stężenie statyny: ryzyko rabdomiolizy"],
+    ["clarithromycin-compound", "alprazolam-compound", "CYP_INTERACTION", "Makrolid hamuje CYP3A4, powodując przedłużoną sedację"],
+    ["fluvoxamine-compound", "clozapine-compound", "CYP_INTERACTION", "Inhibitor CYP1A2 podnosi stężenie klozapiny 5-10-krotnie (drgawki, agranulocytoza)"],
+    ["fluvoxamine-compound", "theophylline-compound", "CYP_INTERACTION", "Inhibicja CYP1A2 powoduje toksyczną kumulację teofiliny"],
+    ["bupropion-compound", "metoprolol-compound", "CYP_INTERACTION", "Metabolit hydroksybupropion silnie hamuje CYP2D6, potęgując bradykardię"],
+
+    // Target Antagonisms (Agonist vs Antagonist / Antidote)
+    ["naloxone-compound", "morphine-compound", "TARGET_ANTAGONISM", "Kompetycyjny antagonista receptora µ-opioidowego: odwraca depresję oddechową"],
+    ["naloxone-compound", "fentanyl-compound", "TARGET_ANTAGONISM", "Antagonista receptorów opioidowych MOR: natychmiastowe znoszenie narkozy"],
+    ["naloxone-compound", "oxycodone-compound", "TARGET_ANTAGONISM", "Odtrutka opioidowa na receptorach opioidowych MOR"],
+    ["naltrexone-compound", "morphine-compound", "TARGET_ANTAGONISM", "Bloker receptorów µ-opioidowych blokujący euforyzację"],
+    ["flumazenil-compound", "diazepam-compound", "TARGET_ANTAGONISM", "Kompetycyjny antagonista miejsca benzodiazepinowego GABA-A: znosi sedację"],
+    ["flumazenil-compound", "alprazolam-compound", "TARGET_ANTAGONISM", "Bloker allosterycznego miejsca benzodiazepinowego: odwraca działanie nasenne"],
+    ["flumazenil-compound", "midazolam-compound", "TARGET_ANTAGONISM", "Wybudzanie ze znieczulenia i sedacji wywołanej midazolamem"],
+    ["haloperidol-compound", "pramipexole-compound", "TARGET_ANTAGONISM", "Bloker receptorów dopaminowych D2 znosi działanie agonisty D2/D3"],
+    ["haloperidol-compound", "ropinirole-compound", "TARGET_ANTAGONISM", "Antagonizm dopaminergiczny na receptorach D2"],
+    ["atropine-compound", "donepezil-compound", "TARGET_ANTAGONISM", "Antagonista muskarynowy znosi efekty cholinomimetyczne"],
+
+    // Target Synergies
+    ["psilocin-compound", "n-n-dimethyltryptamine-compound", "TARGET_SYNERGY", "Synergia na receptorze 5-HT2A (psychomimetyki tryptaminowe)"],
+    ["ketamine-compound", "esketamine-compound", "TARGET_SYNERGY", "Zbieżna blokada kanału kompleksu receptora NMDA"],
+    ["entacapone-compound", "tolcapone-compound", "TARGET_SYNERGY", "Synergiczne hamowanie katecholo-O-metylotransferazy (COMT)"]
+  ];
+
+  const allTypedEdges = [];
+  const typedEdgesByComp = new Map();
+  const edgeCounts = {
+    PRODRUG_OF: 0,
+    CONTRAINDICATION: 0,
+    CYP_INTERACTION: 0,
+    TARGET_SYNERGY: 0,
+    TARGET_ANTAGONISM: 0
+  };
+
+  function addTypedEdge(fromIdx, toIdx, type, note) {
+    if (fromIdx == null || toIdx == null || fromIdx === toIdx) return;
+    const cfg = TYPED_EDGE_CONFIG[type];
+    if (!cfg) return;
+
+    const existing = (typedEdgesByComp.get(fromIdx) || []).find((e) => e.other === toIdx && e.type === type);
+    if (existing) return;
+
+    const edgeObj = { from: fromIdx, to: toIdx, type, note };
+    allTypedEdges.push(edgeObj);
+    edgeCounts[type] = (edgeCounts[type] || 0) + 1;
+
+    if (!typedEdgesByComp.has(fromIdx)) typedEdgesByComp.set(fromIdx, []);
+    typedEdgesByComp.get(fromIdx).push({
+      from: fromIdx, to: toIdx, other: toIdx, type, note, dir: cfg.directed ? "out" : "bi"
+    });
+
+    if (!typedEdgesByComp.has(toIdx)) typedEdgesByComp.set(toIdx, []);
+    typedEdgesByComp.get(toIdx).push({
+      from: fromIdx, to: toIdx, other: fromIdx, type, note, dir: cfg.directed ? "in" : "bi"
+    });
+  }
+
+  function initTypedEdgesIndex() {
+    CURATED_TYPED_EDGES.forEach(([fromId, toId, type, note]) => {
+      const fi = compById.get(fromId);
+      const ti = compById.get(toId);
+      if (fi != null && ti != null) {
+        addTypedEdge(fi, ti, type, note);
+      }
+    });
+
+    T.forEach((t, ti) => {
+      const ligands = byTarget[ti] || [];
+      if (ligands.length < 2 || ligands.length > 80) return;
+
+      const classified = ligands.map((ci) => ({
+        ci,
+        act: classifyTargetAction(C[ci], t.n)
+      }));
+
+      for (let i = 0; i < classified.length; i++) {
+        for (let j = i + 1; j < classified.length; j++) {
+          const a = classified[i], b = classified[j];
+          if (a.act === "other" && b.act === "other") continue;
+
+          if ((a.act === "agonist" && b.act === "antagonist") || (a.act === "antagonist" && b.act === "agonist")) {
+            addTypedEdge(a.ci, b.ci, "TARGET_ANTAGONISM", `Przeciwstawne działanie na celu: ${t.n}`);
+          } else if ((a.act === "agonist" && b.act === "agonist") || (a.act === "antagonist" && b.act === "antagonist") || (a.act === "inhibitor" && b.act === "inhibitor")) {
+            if (C[a.ci].c === C[b.ci].c || Math.hypot(C[a.ci].x - C[b.ci].x, C[a.ci].y - C[b.ci].y) < 1200) {
+              addTypedEdge(a.ci, b.ci, "TARGET_SYNERGY", `Zbieżny wektor działania na celu: ${t.n}`);
+            }
+          }
+        }
+      }
+    });
+  }
+
+  initTypedEdgesIndex();
+
+  function getCompoundTypedEdges(c) {
+    if (!c) return [];
+    return typedEdgesByComp.get(c.i) || [];
+  }
+
+  function drawSingleTypedEdge(ctx, type, x1, y1, x2, y2, strong = false) {
+    const cfg = TYPED_EDGE_CONFIG[type];
+    if (!cfg) return;
+    const color = cfg.color;
+    ctx.save();
+    ctx.strokeStyle = strong ? color : color + "bb";
+    ctx.lineWidth = strong ? cfg.lineWidth + 1.0 : cfg.lineWidth;
+    if (cfg.dash && cfg.dash.length > 0) {
+      ctx.setLineDash(cfg.dash);
+    } else {
+      ctx.setLineDash([]);
+    }
+
+    const dx = x2 - x1, dy = y2 - y1;
+    const dist = Math.hypot(dx, dy);
+    if (dist < 1) { ctx.restore(); return; }
+
+    const curv = type === "PRODRUG_OF" ? 0.08 : type === "TARGET_SYNERGY" ? 0.16 : type === "CONTRAINDICATION" ? -0.14 : 0.12;
+    const mx = (x1 + x2) / 2 + (y2 - y1) * curv;
+    const my = (y1 + y2) / 2 - (x2 - x1) * curv;
+
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.quadraticCurveTo(mx, my, x2, y2);
+    ctx.stroke();
+
+    if (cfg.directed) {
+      ctx.setLineDash([]);
+      const angle = Math.atan2(y2 - my, x2 - mx);
+      const size = strong ? 11 : 8.5;
+      const offset = 7;
+      const ax = x2 - offset * Math.cos(angle);
+      const ay = y2 - offset * Math.sin(angle);
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.moveTo(ax, ay);
+      ctx.lineTo(ax - size * Math.cos(angle - Math.PI / 6), ay - size * Math.sin(angle - Math.PI / 6));
+      ctx.lineTo(ax - size * Math.cos(angle + Math.PI / 6), ay - size * Math.sin(angle + Math.PI / 6));
+      ctx.closePath();
+      ctx.fill();
+    } else if (type === "TARGET_ANTAGONISM") {
+      ctx.setLineDash([]);
+      const angle = Math.atan2(y2 - my, x2 - mx);
+      const offset = 7;
+      const bx = x2 - offset * Math.cos(angle);
+      const by = y2 - offset * Math.sin(angle);
+      const pAngle = angle + Math.PI / 2;
+      const barLen = strong ? 13 : 9;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      ctx.moveTo(bx - (barLen / 2) * Math.cos(pAngle), by - (barLen / 2) * Math.sin(pAngle));
+      ctx.lineTo(bx + (barLen / 2) * Math.cos(pAngle), by + (barLen / 2) * Math.sin(pAngle));
+      ctx.stroke();
+    }
+
+    ctx.restore();
+  }
+
+  function toggleEdgesPopover(forceOpen) {
+    const popover = $("edgesPopover");
+    if (!popover) return;
+    const nextState = forceOpen !== undefined ? forceOpen : !state.edgeFilters.popoverOpen;
+    state.edgeFilters.popoverOpen = nextState;
+    popover.style.display = nextState ? "flex" : "none";
+    const btn = $("edgesBtn");
+    if (btn) btn.setAttribute("aria-expanded", String(nextState));
+    if (nextState) {
+      renderEdgeFilterList();
+    }
+  }
+
+  function renderEdgeFilterList() {
+    const listEl = $("edgeFilterList");
+    if (!listEl) return;
+    const types = Object.keys(TYPED_EDGE_CONFIG);
+    listEl.innerHTML = types.map((t) => {
+      const cfg = TYPED_EDGE_CONFIG[t];
+      const on = state.edgeFilters.enabled.has(t);
+      const count = edgeCounts[t] || 0;
+      return `
+        <div class="edge-filter-item">
+          <label class="edge-filter-label">
+            <input type="checkbox" data-edge-type="${t}" ${on ? "checked" : ""} />
+            <span class="edge-color-dot ${cfg.directed ? 'directed' : ''}" style="background:${cfg.color}"></span>
+            <span>${esc(cfg.label)}</span>
+          </label>
+          <span class="edge-badge">${count}</span>
+        </div>
+      `;
+    }).join("");
+
+    listEl.querySelectorAll("[data-edge-type]").forEach((cb) => {
+      cb.onchange = () => {
+        const type = cb.dataset.edgeType;
+        if (cb.checked) {
+          state.edgeFilters.enabled.add(type);
+        } else {
+          state.edgeFilters.enabled.delete(type);
+        }
+        draw();
+      };
+    });
+
+    const globalCheck = $("edgeGlobalModeCheck");
+    if (globalCheck) {
+      globalCheck.checked = state.edgeFilters.globalMode;
+      globalCheck.onchange = () => {
+        state.edgeFilters.globalMode = globalCheck.checked;
+        draw();
+      };
+    }
   }
 
   // ---------- Clinical Dossier & Monograph Generator
@@ -3185,6 +3498,57 @@
       });
     }
 
+    // semantic pharmacological typed edges
+    // 1. Stack network typed edges
+    if (state.stack.size >= 2) {
+      const stackArr = [...state.stack];
+      for (let i = 0; i < stackArr.length; i++) {
+        for (let j = i + 1; j < stackArr.length; j++) {
+          const a = stackArr[i], b = stackArr[j];
+          const ca = C[a], cb = C[b];
+          if (!visible(ca) || !visible(cb)) continue;
+          const edgesAB = getCompoundTypedEdges(ca).filter((e) => e.other === b && state.edgeFilters.enabled.has(e.type));
+          edgesAB.forEach((e) => {
+            const [x1, y1] = toScreen(ca.x, ca.y), [x2, y2] = toScreen(cb.x, cb.y);
+            const isOut = e.from === a;
+            drawSingleTypedEdge(ctx, e.type, isOut ? x1 : x2, isOut ? y1 : y2, isOut ? x2 : x1, isOut ? y2 : y1, true);
+          });
+        }
+      }
+    }
+
+    // 2. Contextual typed edges for selected / hovered compound
+    [selC, state.hover].forEach((c, n) => {
+      if (!c) return;
+      const isSel = (n === 0);
+      const edges = getCompoundTypedEdges(c).filter((e) => state.edgeFilters.enabled.has(e.type));
+      edges.forEach((e) => {
+        const otherC = C[e.other];
+        if (!visible(otherC)) return;
+        const [x1, y1] = toScreen(c.x, c.y);
+        const [x2, y2] = toScreen(otherC.x, otherC.y);
+        const isFromC = e.from === c.i;
+        drawSingleTypedEdge(ctx, e.type, isFromC ? x1 : x2, isFromC ? y1 : y2, isFromC ? x2 : x1, isFromC ? y2 : y1, isSel);
+      });
+    });
+
+    // 3. Global typed edges layer (when global mode is active, capped at 350)
+    if (state.edgeFilters.globalMode) {
+      let drawnCount = 0;
+      const cap = 350;
+      for (let i = 0; i < allTypedEdges.length && drawnCount < cap; i++) {
+        const e = allTypedEdges[i];
+        if (!state.edgeFilters.enabled.has(e.type)) continue;
+        const ca = C[e.from], cb = C[e.to];
+        if (!visible(ca) || !visible(cb)) continue;
+        const [x1, y1] = toScreen(ca.x, ca.y);
+        const [x2, y2] = toScreen(cb.x, cb.y);
+        if ((x1 < -20 && x2 < -20) || (x1 > W + 20 && x2 > W + 20) || (y1 < -20 && y2 < -20) || (y1 > H + 20 && y2 > H + 20)) continue;
+        drawSingleTypedEdge(ctx, e.type, x1, y1, x2, y2, false);
+        drawnCount++;
+      }
+    }
+
     // compounds
     const baseR = Math.max(1.4, Math.min(5.5, 4 * Math.sqrt(k)));
     C.forEach((c) => {
@@ -3447,6 +3811,29 @@
         </div>
       ` : "";
 
+      const cEdges = getCompoundTypedEdges(c);
+      const typedEdgesHtml = cEdges.length ? `
+        <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:11px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <b style="font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--color-text-muted)">🕸️ Relacje semantyczne (${cEdges.length})</b>
+            <button class="btn-copy" id="overviewOpenEdgesBtn" style="font-size:10px;padding:1px 6px">Filtry ↗</button>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:5px">
+            ${cEdges.slice(0, 10).map((e) => {
+              const cfg = TYPED_EDGE_CONFIG[e.type];
+              const o = C[e.other];
+              const pfx = e.dir === "out" ? "➔ " : e.dir === "in" ? "⬅ " : "↔ ";
+              return `<button class="edge-pill" data-edge-goto="${esc(o.id)}" title="${esc(e.note || cfg.desc)}">
+                <span class="edge-color-dot ${cfg.directed ? 'directed' : ''}" style="background:${cfg.color}"></span>
+                <span class="edge-pill-tag" style="background:${cfg.color}22;color:${cfg.color}">${esc(cfg.shortLabel)}</span>
+                <span>${pfx}<b>${esc(o.n)}</b></span>
+              </button>`;
+            }).join("")}
+          </div>
+          ${cEdges.length > 10 ? `<span class="note" style="display:block;margin-top:4px">…oraz ${cEdges.length - 10} kolejnych relacji.</span>` : ""}
+        </div>
+      ` : "";
+
       const propBoxes = c.pr ? `
         <div class="stat-grid">
           <div class="stat-box"><small>Masa cząst. (MW)</small><b>${c.pr[0] != null ? c.pr[0] + " g/mol" : "—"}</b></div>
@@ -3474,6 +3861,7 @@
           ${c.d ? `<p class="muted" style="line-height:1.45">${esc(c.d)}${c.d.length >= 420 ? "…" : ""}</p>` : '<p class="empty">Brak opisu podsumowującego.</p>'}
           ${chemHtml}
           ${analogsTeaserHtml}
+          ${typedEdgesHtml}
           ${propBoxes}
           ${atcHtml}
           ${idHtml}
@@ -3685,6 +4073,19 @@
     p.querySelectorAll("[data-open-analog]").forEach((btn) => {
       btn.onclick = () => select({ type: "compound", i: +btn.dataset.openAnalog }, true);
     });
+    p.querySelectorAll("[data-edge-goto]").forEach((btn) => {
+      btn.onclick = () => {
+        const targetId = btn.dataset.edgeGoto;
+        const targetIdx = compById.get(targetId);
+        if (targetIdx !== undefined) {
+          select({ type: "compound", i: targetIdx }, true);
+        }
+      };
+    });
+    const overviewOpenEdgesBtn = p.querySelector("#overviewOpenEdgesBtn");
+    if (overviewOpenEdgesBtn) {
+      overviewOpenEdgesBtn.onclick = () => toggleEdgesPopover(true);
+    }
     p.querySelectorAll("[data-zoom-chem]").forEach((el) => {
       el.onclick = () => openChemLightBox(+el.dataset.zoomChem);
     });
@@ -3802,6 +4203,28 @@
   }
   q.addEventListener("input", search);
   q.addEventListener("keydown", (e) => { if (e.key === "Enter") { const b = res.querySelector("[data-c], [data-t]"); if (b) b.click(); } });
+
+  // ---------- semantic edges toolbar & controls
+  const edgesBtn = $("edgesBtn");
+  if (edgesBtn) edgesBtn.onclick = () => toggleEdgesPopover();
+  const closeEdgesPopover = $("closeEdgesPopover");
+  if (closeEdgesPopover) closeEdgesPopover.onclick = () => toggleEdgesPopover(false);
+  const edgeFilterAllBtn = $("edgeFilterAllBtn");
+  if (edgeFilterAllBtn) {
+    edgeFilterAllBtn.onclick = () => {
+      Object.keys(TYPED_EDGE_CONFIG).forEach((t) => state.edgeFilters.enabled.add(t));
+      renderEdgeFilterList();
+      draw();
+    };
+  }
+  const edgeFilterNoneBtn = $("edgeFilterNoneBtn");
+  if (edgeFilterNoneBtn) {
+    edgeFilterNoneBtn.onclick = () => {
+      state.edgeFilters.enabled.clear();
+      renderEdgeFilterList();
+      draw();
+    };
+  }
 
   // ---------- stack drawer toolbar & controls
   const stackBtn = $("stackBtn");
@@ -3935,6 +4358,7 @@
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      if (state.edgeFilters.popoverOpen) { toggleEdgesPopover(false); return; }
       if (activeAnalogsQuery != null) { closeAnalogsModal(); return; }
       if (activeDossierMode) { closeDossierModal(); return; }
       if (activeModalTarget) { closeTargetModal(); return; }
@@ -3946,6 +4370,11 @@
     }
     const tag = document.activeElement ? document.activeElement.tagName : "";
     if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
+    if (e.key === "e" || e.key === "E") {
+      e.preventDefault();
+      toggleEdgesPopover();
+      return;
+    }
     if (e.key === "a" || e.key === "A") {
       if (state.sel && state.sel.type === "compound") {
         e.preventDefault();
