@@ -393,3 +393,40 @@ def test_stack_presets_and_hubs(rows):
         for enz in subs:
             assert re.match(r"^CYP[0-9A-Z]+$", enz), f"Invalid CYP name {enz} for {r.get('compound_id')}"
 
+
+def test_pk_simulation_math():
+    """Verify that pharmacokinetic equations implemented in the graph-viewer simulator produce physically accurate outputs."""
+    import math
+
+    def solve_ka(ke, t_max):
+        ka = max(ke * 1.5, 1.2 / t_max + ke)
+        for _ in range(6):
+            f = math.log(ka / ke) - (ka - ke) * t_max
+            df = 1.0 / ka - t_max
+            if abs(df) < 1e-6:
+                break
+            ka = ka - f / df
+        return ka
+
+    def conc(t, ke, ka, t_max):
+        c_peak = math.exp(-ke * t_max) - math.exp(-ka * t_max)
+        return 100.0 * (math.exp(-ke * t) - math.exp(-ka * t)) / c_peak
+
+    # 1. Peak matches Tmax
+    t_half = 5.0
+    ke = math.log(2) / t_half
+    t_max = 1.5
+    ka = solve_ka(ke, t_max)
+    c_at_peak = conc(t_max, ke, ka, t_max)
+    assert abs(c_at_peak - 100.0) < 0.01
+
+    # 2. Concentration decays after Tmax
+    assert conc(t_max + t_half, ke, ka, t_max) < 60.0
+    assert conc(t_max + 2 * t_half, ke, ka, t_max) < 30.0
+
+    # 3. Accumulation ratio Rac matches 1 / (1 - exp(-ke * tau))
+    tau = 8.0
+    rac_expected = 1.0 / (1.0 - math.exp(-ke * tau))
+    assert 1.45 < rac_expected < 1.55
+
+

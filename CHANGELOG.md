@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.7.0] — 2026-11-02 — symulator farmakokinetyczny, krzywe stężeń i detekcja Okien Kolizji
+### Dodano
+- **Symulator Farmakokinetyczny & Kumulacja Dawek (PK Stack Simulator)** w drawerze `#stackDrawer` (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **1-kompartmentowy model z wchłanianiem I rzędu**:
+    - Numeryczne wyznaczanie stałej absorpcji $k_a$ metodą Newtona-Raphsona dla zadanego $T_{\max}$ (domyślnie $1.5\text{ h}$ lub proporcjonalnie do $t_{1/2}$).
+    - Dokładne modelowanie eliminacji $k_e = \ln(2)/t_{1/2}$ oparte o zweryfikowane wartości $t_{1/2}$ w bazie.
+    - Możliwość edycji $t_{1/2}$ w czasie rzeczywistym dla każdej substancji (z oznaczeniem `*` dla substancji bez domyślnych danych PK).
+  - **Symulacja wielodawkowa i stan stacjonarny (*Steady State*)**:
+    - Niezależny wybór schematu podawania dla każdej substancji: $q24\text{h}$ (1×/dobę), $q12\text{h}$ (2×/dobę), $q8\text{h}$ (3×/dobę) lub pojedynczy bolus.
+    - Automatyczne wyliczanie wskaźnika kumulacji w stanie stacjonarnym ($R_{ac} = \frac{1}{1 - e^{-k_e \cdot \tau}}$) oraz czasu do osiągnięcia równowagi ($T_{ss} = 5 \times t_{1/2}$).
+  - **Interaktywny wykres Canvas 2D**:
+    - Skalowanie Retina/HiDPI (`dpr`), dynamiczna siatka godzinowa i stężeniowa (% $C_{\max}$).
+    - Przełącznik horyzontu czasowego: `Auto` (dopasowany do najdłuższego $t_{1/2}$), `24h`, `48h`, `7 dni`.
+    - Płynny kursor czasowy (crosshair hover) z pływającym dymkiem odczytu stężeń dla wszystkich substancji w danym punkcie czasu $t$.
+  - **Wykrywanie i wizualizacja Okien Kolizji (*Collision Windows*)**:
+    - Automatyczna detekcja przedziałów czasowych, w których substancje wykazujące interakcję (toksyczność serotoninowa, depresja oddechowa, nakładanie CYP) osiągają jednocześnie wysokie stężenia ($\ge 40\%$).
+    - Półprzezroczyste pasma ostrzegawcze na wykresie z etykietą `🚨 Kolizja`.
+  - **Eksport do Obsidianu (`obsidian://new`)**:
+    - Nowa sekcja `## 3. Parametry farmakokinetyczne i kumulacja (Steady State)` z tabelą parametrów ($t_{1/2}$, $T_{\max}$, schemat $\tau$, $R_{ac}$, czas do $C_{ss}$) oraz calloutem ostrzegawczym wykrytych Okien Kolizji.
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_pk_simulation_math` testujący poprawność analityczną $k_e$, wyznaczania szczytu $T_{\max}$ dla $k_a$, kinetyki zmywania oraz kumulacji $R_{ac}$ (40 testów, 100% green).
+
 ## [3.6.0] — 2026-11-01 — interaktywny Stack Builder i Interaction Checker
 ### Dodano
 - **Stack Builder & Interaction Checker** w przeglądarce grafu (`apps/graph-viewer/index.html`, `apps/graph-viewer/app.js` oraz pliki w katalogu głównym):

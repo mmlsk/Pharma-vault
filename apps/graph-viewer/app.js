@@ -61,7 +61,12 @@
     clusters: new Set(G.clusters.map((_, i) => i)),
     pkOnly: false, cypOnly: false, hub: null, ver: "",
     rel: true, hlBin: null, tab: "overview",
-    stack: new Set(), stackOnly: false, stackDrawerOpen: false
+    stack: new Set(), stackOnly: false, stackDrawerOpen: false,
+    sim: {
+      horizon: "auto", // "auto", "24", "48", "168"
+      compounds: {},   // { [idx]: { interval: 24, tHalf: 6.0, custom: false } }
+      hoverT: null
+    }
   };
   let W = 0, H = 0, dpr = 1, raf = 0;
 
@@ -293,6 +298,289 @@
     return { alerts, pairs, maxLevel };
   }
 
+  // ---------- Pharmacokinetic Simulator & Collision Window Engine
+  function getCompoundTh(c) {
+    if (state.sim.compounds[c.i] && state.sim.compounds[c.i].tHalf > 0) {
+      return state.sim.compounds[c.i].tHalf;
+    }
+    return c.hlh || 4.0;
+  }
+
+  function getCompoundInterval(c) {
+    if (state.sim.compounds[c.i] && state.sim.compounds[c.i].interval !== undefined) {
+      return state.sim.compounds[c.i].interval;
+    }
+    return 24; // default 1x/day
+  }
+
+  function getCompoundTmax(c, th) {
+    return Math.min(1.5, Math.max(0.4, th * 0.3));
+  }
+
+  function solveKa(ke, tMax) {
+    if (tMax <= 0.05) return null;
+    let ka = Math.max(ke * 1.5, 1.2 / tMax + ke);
+    for (let i = 0; i < 6; i++) {
+      const f = Math.log(ka / ke) - (ka - ke) * tMax;
+      const df = 1 / ka - tMax;
+      if (Math.abs(df) < 1e-6) break;
+      const n = ka - f / df;
+      ka = n <= ke ? (ka + ke) / 2 : n;
+    }
+    return Math.max(ka, ke * 1.05);
+  }
+
+  function singleDoseConc(t, ke, ka, tMax) {
+    if (t < 0) return 0;
+    if (!ka || tMax <= 0.05) return 100 * Math.exp(-ke * t);
+    const cPeak = Math.exp(-ke * tMax) - Math.exp(-ka * tMax);
+    if (cPeak <= 1e-5) return 100 * Math.exp(-ke * t);
+    const val = Math.exp(-ke * t) - Math.exp(-ka * t);
+    return Math.max(0, 100 * (val / cPeak));
+  }
+
+  function simulateCompoundCurve(ke, ka, tMax, interval, horizonHours, steps = 150) {
+    const dt = horizonHours / steps;
+    const curve = [];
+    const tau = interval > 0 ? interval : 0;
+    for (let s = 0; s <= steps; s++) {
+      const t = s * dt;
+      let totalC = 0;
+      if (tau === 0) {
+        totalC = singleDoseConc(t, ke, ka, tMax);
+      } else {
+        const numDoses = Math.floor(t / tau);
+        for (let d = 0; d <= numDoses; d++) {
+          totalC += singleDoseConc(t - d * tau, ke, ka, tMax);
+        }
+      }
+      curve.push({ t, c: totalC });
+    }
+    return curve;
+  }
+
+  function computeCollisionWindows(indices, simCurves, horizonHours, alerts) {
+    const relevantAlerts = (alerts || []).filter((a) => a.level === "crit" || a.level === "mod");
+    if (!relevantAlerts.length || indices.length < 2) return [];
+
+    const collidingPairs = new Map();
+    relevantAlerts.forEach((a) => {
+      for (let j = 0; j < a.compounds.length; j++) {
+        for (let k = j + 1; k < a.compounds.length; k++) {
+          const key = Math.min(a.compounds[j], a.compounds[k]) + "_" + Math.max(a.compounds[j], a.compounds[k]);
+          if (!collidingPairs.has(key) || a.level === "crit") {
+            collidingPairs.set(key, a.level);
+          }
+        }
+      }
+    });
+
+    if (!collidingPairs.size) return [];
+    const windows = [];
+    const steps = simCurves[indices[0]] ? simCurves[indices[0]].length : 0;
+    if (!steps) return [];
+
+    collidingPairs.forEach((level, key) => {
+      const [i1, i2] = key.split("_").map(Number);
+      const c1 = simCurves[i1], c2 = simCurves[i2];
+      if (!c1 || !c2) return;
+
+      let inWindow = false;
+      let startT = 0;
+      for (let s = 0; s < steps; s++) {
+        const t = c1[s].t;
+        const active = c1[s].c >= 40 && c2[s].c >= 40;
+        if (active && !inWindow) {
+          inWindow = true;
+          startT = t;
+        } else if (!active && inWindow) {
+          inWindow = false;
+          windows.push({ start: startT, end: t, level, pair: [i1, i2] });
+        }
+      }
+      if (inWindow) {
+        windows.push({ start: startT, end: horizonHours, level, pair: [i1, i2] });
+      }
+    });
+
+    windows.sort((a, b) => a.start - b.start);
+    const merged = [];
+    windows.forEach((w) => {
+      if (!merged.length) {
+        merged.push({ ...w });
+      } else {
+        const prev = merged[merged.length - 1];
+        if (w.start <= prev.end + 0.5) {
+          prev.end = Math.max(prev.end, w.end);
+          if (w.level === "crit") prev.level = "crit";
+        } else {
+          merged.push({ ...w });
+        }
+      }
+    });
+    return merged;
+  }
+
+  function renderPKChart() {
+    const cv = $("pkCv");
+    if (!cv) return;
+    const stackIndices = [...state.stack];
+    if (!stackIndices.length) return;
+
+    const stackCompounds = stackIndices.map((i) => C[i]);
+    const maxTh = Math.max(...stackCompounds.map((c) => getCompoundTh(c)));
+    let horizon = 24;
+    if (state.sim.horizon === "24") horizon = 24;
+    else if (state.sim.horizon === "48") horizon = 48;
+    else if (state.sim.horizon === "168") horizon = 168;
+    else {
+      horizon = Math.min(168, Math.max(24, Math.ceil((maxTh * 3.5) / 12) * 12));
+    }
+
+    const simCurves = {};
+    let maxC = 120;
+    stackCompounds.forEach((c) => {
+      const th = getCompoundTh(c);
+      const ke = Math.LN2 / th;
+      const tMax = getCompoundTmax(c, th);
+      const ka = solveKa(ke, tMax);
+      const interval = getCompoundInterval(c);
+      const curve = simulateCompoundCurve(ke, ka, tMax, interval, horizon);
+      simCurves[c.i] = curve;
+      curve.forEach((pt) => { if (pt.c > maxC) maxC = pt.c; });
+    });
+
+    const res = analyzeStack(stackIndices);
+    const windows = computeCollisionWindows(stackIndices, simCurves, horizon, res.alerts);
+
+    const rect = cv.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = rect.width || 360;
+    const h = rect.height || 180;
+    cv.width = w * dpr;
+    cv.height = h * dpr;
+    const ctx = cv.getContext("2d");
+    ctx.scale(dpr, dpr);
+
+    const padL = 34, padR = 12, padT = 16, padB = 22;
+    const pw = Math.max(10, w - padL - padR);
+    const ph = Math.max(10, h - padT - padB);
+    const yMax = maxC * 1.15;
+
+    const toX = (t) => padL + (t / horizon) * pw;
+    const toY = (cVal) => (padT + ph) - (cVal / yMax) * ph;
+
+    ctx.clearRect(0, 0, w, h);
+
+    // Horizontal grid lines
+    ctx.font = "10px sans-serif";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "middle";
+    const ySteps = yMax > 220 ? [0, 100, 200] : [0, 50, 100];
+    ySteps.forEach((yVal) => {
+      const y = toY(yVal);
+      ctx.strokeStyle = yVal === 100 ? "rgba(128,128,128,0.3)" : "rgba(128,128,128,0.12)";
+      ctx.setLineDash(yVal === 100 ? [3, 3] : [2, 4]);
+      ctx.beginPath();
+      ctx.moveTo(padL, y);
+      ctx.lineTo(padL + pw, y);
+      ctx.stroke();
+      ctx.fillStyle = "rgba(140,140,140,0.8)";
+      ctx.fillText(yVal + "%", padL - 4, y);
+    });
+
+    // Vertical time grid lines
+    ctx.setLineDash([2, 4]);
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+    const tInterval = horizon <= 24 ? 6 : horizon <= 48 ? 12 : 24;
+    for (let t = 0; t <= horizon; t += tInterval) {
+      const x = toX(t);
+      ctx.strokeStyle = "rgba(128,128,128,0.12)";
+      ctx.beginPath();
+      ctx.moveTo(x, padT);
+      ctx.lineTo(x, padT + ph);
+      ctx.stroke();
+      ctx.fillStyle = "rgba(140,140,140,0.8)";
+      ctx.fillText(t + "h", x, padT + ph + 4);
+    }
+    ctx.setLineDash([]);
+
+    // Collision windows shading
+    windows.forEach((win) => {
+      const x1 = Math.max(padL, toX(win.start));
+      const x2 = Math.min(padL + pw, toX(win.end));
+      if (x2 > x1) {
+        ctx.fillStyle = win.level === "crit" ? "rgba(221, 72, 72, 0.18)" : "rgba(187, 101, 59, 0.18)";
+        ctx.fillRect(x1, padT, x2 - x1, ph);
+        ctx.strokeStyle = win.level === "crit" ? "rgba(221, 72, 72, 0.6)" : "rgba(187, 101, 59, 0.6)";
+        ctx.lineWidth = 1;
+        ctx.strokeRect(x1, padT, x2 - x1, ph);
+
+        ctx.fillStyle = win.level === "crit" ? "#dd4848" : "#bb653b";
+        ctx.font = "bold 9px sans-serif";
+        ctx.textAlign = "left";
+        ctx.fillText("🚨 Kolizja", x1 + 3, padT + 3);
+      }
+    });
+
+    // Concentration curves
+    stackCompounds.forEach((c) => {
+      const curve = simCurves[c.i];
+      if (!curve || !curve.length) return;
+      ctx.strokeStyle = CL_COLORS[c.c] || "#4f98a3";
+      ctx.lineWidth = 2.0;
+      ctx.beginPath();
+      curve.forEach((pt, idx) => {
+        const x = toX(pt.t);
+        const y = toY(pt.c);
+        if (idx === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+    });
+
+    // Hover crosshair and tooltip
+    const hoverT = state.sim.hoverT;
+    const tt = $("pkTooltip");
+    if (hoverT !== null && hoverT >= 0 && hoverT <= horizon) {
+      const hx = toX(hoverT);
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.6)";
+      ctx.setLineDash([3, 3]);
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.moveTo(hx, padT);
+      ctx.lineTo(hx, padT + ph);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      const tooltipLines = [`<b>t = ${hoverT.toFixed(1)} h</b>`];
+      stackCompounds.forEach((c) => {
+        const curve = simCurves[c.i];
+        if (!curve) return;
+        const stepIdx = Math.min(curve.length - 1, Math.max(0, Math.round((hoverT / horizon) * (curve.length - 1))));
+        const pt = curve[stepIdx];
+        const hy = toY(pt.c);
+        ctx.fillStyle = CL_COLORS[c.c] || "#4f98a3";
+        ctx.beginPath();
+        ctx.arc(hx, hy, 4, 0, 7);
+        ctx.fill();
+        ctx.strokeStyle = "#fff";
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+
+        tooltipLines.push(`<span style="color:${CL_COLORS[c.c]}">●</span> ${esc(c.n.slice(0, 16))}: <b>${Math.round(pt.c)}%</b>`);
+      });
+
+      if (tt) {
+        tt.style.display = "block";
+        tt.innerHTML = tooltipLines.join("<br>");
+      }
+    } else if (tt) {
+      tt.style.display = "none";
+    }
+  }
+
   const PRESETS = {
     nootropic: {
       name: "Nootropowy klasyk",
@@ -398,6 +686,88 @@
         </div>`).join("")}</div>`;
     }
 
+    // PK Simulator Section
+    let pkSectionHtml = "";
+    if (state.stack.size >= 1) {
+      const curHorizon = state.sim.horizon || "auto";
+      const stackList = [...state.stack].map((i) => C[i]);
+      const simCurves = {};
+      const maxTh = Math.max(...stackList.map((c) => getCompoundTh(c)));
+      let horizonNum = 24;
+      if (curHorizon === "24") horizonNum = 24;
+      else if (curHorizon === "48") horizonNum = 48;
+      else if (curHorizon === "168") horizonNum = 168;
+      else horizonNum = Math.min(168, Math.max(24, Math.ceil((maxTh * 3.5) / 12) * 12));
+
+      stackList.forEach((c) => {
+        const th = getCompoundTh(c);
+        const ke = Math.LN2 / th;
+        const tMax = getCompoundTmax(c, th);
+        const ka = solveKa(ke, tMax);
+        const interval = getCompoundInterval(c);
+        simCurves[c.i] = simulateCompoundCurve(ke, ka, tMax, interval, horizonNum);
+      });
+
+      const winList = computeCollisionWindows([...state.stack], simCurves, horizonNum, res.alerts);
+      const winBanners = winList.map((w) => `
+        <div class="alert-box ${w.level === 'crit' ? 'alert-crit' : 'alert-mod'}" style="padding:4px 8px;font-size:11px">
+          <b>${w.level === 'crit' ? '🚨' : '⚠️'} Szczytowe Okno Kolizji: ${w.start.toFixed(1)} h – ${w.end.toFixed(1)} h</b>
+          <span>W tym przedziale stężenia obu kolidujących leków przekraczają 40% Cmax.</span>
+        </div>
+      `).join("");
+
+      const rowsHtml = stackList.map((c) => {
+        const th = getCompoundTh(c);
+        const ke = Math.LN2 / th;
+        const curInterval = getCompoundInterval(c);
+        const rac = curInterval > 0 ? (1 / (1 - Math.exp(-ke * curInterval))).toFixed(2) : "1.00";
+        const tss = Math.round(5 * th);
+        const hasDb = !!c.hlh;
+        return `
+          <div class="pk-row">
+            <div style="display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden">
+              <span class="dot" style="background:${CL_COLORS[c.c]};width:8px;height:8px"></span>
+              <span style="font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(c.n)}">${esc(c.n)}</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:4px">
+              <select data-interval-for="${c.i}" aria-label="Interwał dawkowania dla ${esc(c.n)}">
+                <option value="24" ${curInterval===24?'selected':''}>q24h (1x/d)</option>
+                <option value="12" ${curInterval===12?'selected':''}>q12h (2x/d)</option>
+                <option value="8" ${curInterval===8?'selected':''}>q8h (3x/d)</option>
+                <option value="0" ${curInterval===0?'selected':''}>1x (bolus)</option>
+              </select>
+              <div style="display:flex;align-items:center;gap:2px">
+                <input type="number" step="0.5" min="0.2" max="1000" data-thalf-for="${c.i}" value="${th.toFixed(1)}" aria-label="Okres półtrwania t1/2">
+                <small style="color:var(--color-text-muted)">h${hasDb ? '' : '*'}</small>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:4px">
+              <span class="pk-pill tag ok" title="Wskaźnik kumulacji w stanie stacjonarnym (Rac)">Rac: ${rac}×</span>
+              <span class="pk-pill tag" title="Czas do osiągnięcia 97% stanu stacjonarnego (5x t1/2)">Css: ~${tss}h</span>
+            </div>
+          </div>`;
+      }).join("");
+
+      pkSectionHtml = `
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:.4rem">
+          <div class="label" style="margin-bottom:0">Krzywe stężeń & kumulacja (PK)</div>
+          <div style="display:flex;gap:3px">
+            <button class="preset-btn ${curHorizon==='auto'?'active':''}" data-horizon="auto">Auto (${horizonNum}h)</button>
+            <button class="preset-btn ${curHorizon==='24'?'active':''}" data-horizon="24">24h</button>
+            <button class="preset-btn ${curHorizon==='48'?'active':''}" data-horizon="48">48h</button>
+            <button class="preset-btn ${curHorizon==='168'?'active':''}" data-horizon="168">7d</button>
+          </div>
+        </div>
+        <div class="pk-box">
+          <div class="pk-chart-wrap">
+            <canvas id="pkCv"></canvas>
+            <div id="pkTooltip" class="pk-tooltip" style="display:none"></div>
+          </div>
+          ${winBanners}
+          <div style="display:grid;gap:4px">${rowsHtml}</div>
+        </div>`;
+    }
+
     body.innerHTML = `
       <div style="display:flex;align-items:center;justify-content:space-between">
         <div class="label" style="margin-bottom:0">Substancje w stacku (${state.stack.size})</div>
@@ -405,6 +775,7 @@
       <div style="display:grid;gap:5px">${chips}</div>
       <div class="label" style="margin-top:.4rem">Raport analizy farmakodynamicznej i CYP</div>
       ${alertsHtml}
+      ${pkSectionHtml}
       <div class="label" style="margin-top:.6rem">Zestawy demonstracyjne</div>
       <div style="display:flex;gap:4px;flex-wrap:wrap">
         <button class="preset-btn" data-preset="nootropic">Kofeina + Teanina</button>
@@ -427,6 +798,58 @@
     body.querySelectorAll("[data-preset]").forEach((b) => {
       b.onclick = () => loadPreset(b.dataset.preset);
     });
+    body.querySelectorAll("[data-horizon]").forEach((b) => {
+      b.onclick = () => {
+        state.sim.horizon = b.dataset.horizon;
+        updateStackUI();
+      };
+    });
+    body.querySelectorAll("[data-interval-for]").forEach((sel) => {
+      sel.onchange = () => {
+        const idx = +sel.dataset.intervalFor;
+        if (!state.sim.compounds[idx]) state.sim.compounds[idx] = {};
+        state.sim.compounds[idx].interval = +sel.value;
+        updateStackUI();
+      };
+    });
+    body.querySelectorAll("[data-thalf-for]").forEach((inp) => {
+      inp.onchange = () => {
+        const idx = +inp.dataset.thalfFor;
+        const val = parseFloat(inp.value);
+        if (val > 0) {
+          if (!state.sim.compounds[idx]) state.sim.compounds[idx] = {};
+          state.sim.compounds[idx].tHalf = val;
+          updateStackUI();
+        }
+      };
+    });
+
+    const pkCv = $("pkCv");
+    if (pkCv) {
+      pkCv.onmousemove = (e) => {
+        const r = pkCv.getBoundingClientRect();
+        const padL = 34, padR = 12;
+        const pw = Math.max(10, r.width - padL - padR);
+        const x = e.clientX - r.left;
+        let horizon = 24;
+        const stackCompounds = [...state.stack].map((i) => C[i]);
+        const maxTh = Math.max(...stackCompounds.map((c) => getCompoundTh(c)));
+        if (state.sim.horizon === "24") horizon = 24;
+        else if (state.sim.horizon === "48") horizon = 48;
+        else if (state.sim.horizon === "168") horizon = 168;
+        else horizon = Math.min(168, Math.max(24, Math.ceil((maxTh * 3.5) / 12) * 12));
+
+        const t = Math.max(0, Math.min(horizon, ((x - padL) / pw) * horizon));
+        state.sim.hoverT = t;
+        renderPKChart();
+      };
+      pkCv.onmouseleave = () => {
+        state.sim.hoverT = null;
+        renderPKChart();
+      };
+    }
+
+    renderPKChart();
   }
 
   function exportStackToObsidian() {
@@ -434,17 +857,42 @@
     if (!list.length) return;
     const res = analyzeStack([...state.stack]);
     const names = list.map((c) => c.n).join(" + ");
+
+    const simCurves = {};
+    const maxTh = Math.max(...list.map((c) => getCompoundTh(c)));
+    const horizon = Math.min(168, Math.max(24, Math.ceil((maxTh * 3.5) / 12) * 12));
+    list.forEach((c) => {
+      const th = getCompoundTh(c);
+      const ke = Math.LN2 / th;
+      const tMax = getCompoundTmax(c, th);
+      const ka = solveKa(ke, tMax);
+      const interval = getCompoundInterval(c);
+      simCurves[c.i] = simulateCompoundCurve(ke, ka, tMax, interval, horizon);
+    });
+    const windows = computeCollisionWindows([...state.stack], simCurves, horizon, res.alerts);
+
+    const pkRows = list.map((c) => {
+      const th = getCompoundTh(c);
+      const ke = Math.LN2 / th;
+      const tMax = getCompoundTmax(c, th);
+      const interval = getCompoundInterval(c);
+      const rac = interval > 0 ? (1 / (1 - Math.exp(-ke * interval))).toFixed(2) : "1.00";
+      const tss = Math.round(5 * th);
+      const schedStr = interval === 0 ? "Pojedyncza dawka (bolus)" : `co ${interval} h (${24 / interval}x/d)`;
+      return `| ${c.n} | ${th.toFixed(1)} h | ${tMax.toFixed(1)} h | ${schedStr} | ${rac}× | ~${tss} h |`;
+    });
+
     const lines = [
       `# Raport analizy stacka: ${names}`,
       "",
       `> Data wygenerowania: ${new Date().toISOString().slice(0, 10)}`,
-      "> Narzędzie: Pharma-vault Stack Builder & Interaction Checker (v3.6)",
+      "> Narzędzie: Pharma-vault Stack Builder & PK Simulator (v3.7)",
       "",
       "## 1. Wybrane substancje",
       "",
       ...list.map((c) => `- [[${c.f.split('/').pop().replace(/\.md$/, '')}|${c.n}]] (${GR[c.g].label})`),
       "",
-      "## 2. Wyniki analizy interakcji",
+      "## 2. Wyniki analizy interakcji farmakodynamicznych i CYP",
       "",
     ];
     if (!res.alerts.length) {
@@ -455,11 +903,29 @@
         lines.push(`> [!${callout}] ${a.title}`, `> ${a.desc.replace(/<[^>]+>/g, '')}`, "");
       });
     }
+
     lines.push(
-      "## 3. Zastrzeżenie edukacyjne",
+      "## 3. Parametry farmakokinetyczne i kumulacja (Steady State)",
+      "",
+      "| Substancja | t½ (eliminacja) | Tmax (szczyt) | Schemat dawkowania | Wskaźnik kumulacji (Rac) | Czas do Css (5×t½) |",
+      "| :--- | :--- | :--- | :--- | :--- | :--- |",
+      ...pkRows,
+      ""
+    );
+
+    if (windows.length) {
+      lines.push(
+        "> [!danger] Wykryte Okna Kolizji (Collision Windows)",
+        ...windows.map((w) => `> • **${w.start.toFixed(1)} h – ${w.end.toFixed(1)} h**: jednoczesne stężenia osoczowe $\\ge 40\\%$ dla kolidującej pary leków (${w.level === 'crit' ? 'poziom krytyczny' : 'poziom umiarkowany'}).`),
+        ""
+      );
+    }
+
+    lines.push(
+      "## 4. Zastrzeżenie edukacyjne",
       "",
       "> [!warning] Materiał edukacyjny",
-      "> Niniejszy raport opiera się na wyekstrahowanych automatycznie danych mechanistycznych ChEMBL, substratach CYP i hubach bezpieczeństwa. Nie uwzględnia indywidualnego dawkowania, tolerancji ani chorób współistniejących. Nie stanowi porady lekarskiej.",
+      "> Niniejszy raport opiera się na wyekstrahowanych automatycznie danych mechanistycznych ChEMBL, substratach CYP, hubach bezpieczeństwa oraz 1-kompartmentowym modelu farmakokinetycznym. Nie uwzględnia indywidualnego dawkowania, tolerancji, zmienności genetycznej ani chorób współistniejących. Nie stanowi porady lekarskiej.",
       ""
     );
     const md = lines.join("\n");
