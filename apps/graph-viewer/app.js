@@ -1192,6 +1192,611 @@
     }
   }
 
+  // ---------- Metabolite Tree & Prodrug Biotransformation Navigator
+  let activeMetaboliteQuery = null;
+  let activeMetaboliteSelectedNode = null;
+
+  const METABOLITE_CASCADES = {
+    "codeine-compound": {
+      rootRole: "prodrug",
+      notes: "Prolek opioidowy wymagający O-demetylacji przez CYP2D6 do aktywnej morfiny (ok. 10% dawki). Reszta eliminowana przez glukuronidację (CYP3A4 / UGT2B7).",
+      phase1: [
+        { id: "morphine-compound", name: "Morfina", enzyme: "CYP2D6", reaction: "O-demetylacja (10%)", activity: "active", desc: "Główny czynny metabolit odpowiadający za działanie przeciwbólowe (silny agonista receptorów µ-opioidowych).", tHalf: "2 - 4 h" },
+        { id: null, name: "Norkodeina", enzyme: "CYP3A4", reaction: "N-demetylacja (10-20%)", activity: "inactive", desc: "Metabolit o znikomej aktywności opioidowej.", tHalf: "3 - 5 h" }
+      ],
+      phase2: [
+        { parentId: "morphine-compound", id: null, name: "Morfino-6-glukuronid (M6G)", enzyme: "UGT2B7", reaction: "Glukuronidacja (60%)", activity: "active", desc: "Silnie aktywny metabolit o silniejszym powinowactwie do receptora MOR niż sama morfina.", tHalf: "3 - 5 h" },
+        { parentId: "morphine-compound", id: null, name: "Morfino-3-glukuronid (M3G)", enzyme: "UGT2B7", reaction: "Glukuronidacja", activity: "inactive", desc: "Brak działania analgetycznego; metabolit neuroekscytotoksyczny przy kumulacji w niewydolności nerek.", tHalf: "3 - 5 h" },
+        { parentId: "codeine-compound", id: null, name: "Kodeino-6-glukuronid (C6G)", enzyme: "UGT2B7", reaction: "Glukuronidacja bezpośrednia (70-80%)", activity: "inactive", desc: "Główny szlak eliminacji kodeiny, metabolit o słabej aktywności analgetycznej.", tHalf: "3 - 4 h" }
+      ]
+    },
+    "diazepam-compound": {
+      rootRole: "active",
+      notes: "Długodziałająca benzodiazepina o złożonej wielopoziomowej kaskadzie metabolitów czynnych.",
+      phase1: [
+        { id: null, name: "Nordazepam (Demetylodiazepam)", enzyme: "CYP2C19 / CYP3A4", reaction: "N-demetylacja", activity: "active", desc: "Główny aktywny metabolit o bardzo długim okresie półtrwania (30 - 100 h), ulegający kumulacji.", tHalf: "30 - 100 h" },
+        { id: null, name: "Temazepam", enzyme: "CYP3A4", reaction: "C3-hydroksylacja", activity: "active", desc: "Aktywny metabolit o silnym profilu nasennym i krótszym t½ niż nordazepam.", tHalf: "8 - 15 h" }
+      ],
+      phase2: [
+        { parentId: "Nordazepam", id: "oxazepam-compound", name: "Oksazepam", enzyme: "CYP3A4", reaction: "Hydroksylacja", activity: "active", desc: "Końcowy czynny metabolit; eliminowany wyłącznie przez bezpośrednią glukuronidację bez udziału CYP.", tHalf: "4 - 15 h" },
+        { parentId: "oxazepam-compound", id: null, name: "Glukuronid oksazepamu", enzyme: "UGT2B15", reaction: "Glukuronidacja", activity: "inactive", desc: "Nieaktywny koniugat wydalany przez nerki z moczem.", tHalf: "6 h" }
+      ]
+    },
+    "tramadol-compound": {
+      rootRole: "active",
+      notes: "Racemat o podwójnym mechanizmie: prolek silnego agonisty MOR (O-DSMT) oraz inhibitor wychwytu zwrotnego 5-HT/NA.",
+      phase1: [
+        { id: "o-desmethyltramadol-compound", name: "O-Desmetylotramadol (O-DSMT)", enzyme: "CYP2D6", reaction: "O-demetylacja", activity: "active", desc: "Główny metabolit analgetyczny (200-krotnie wyższe powinowactwo do receptora µ-opioidowego niż tramadol).", tHalf: "7 - 9 h" },
+        { id: null, name: "N-Desmetylotramadol", enzyme: "CYP3A4 / CYP2B6", reaction: "N-demetylacja", activity: "inactive", desc: "Słabo aktywny metabolit, nie wykazuje istotnego działania opioidowego.", tHalf: "6 - 7 h" }
+      ],
+      phase2: [
+        { parentId: "o-desmethyltramadol-compound", id: null, name: "Glukuronid O-DSMT", enzyme: "UGT2B7", reaction: "Koniugacja glukuronidowa", activity: "inactive", desc: "Koniugat polarny wydalany z moczem.", tHalf: "8 h" }
+      ]
+    },
+    "lisdexamfetamine-compound": {
+      rootRole: "prodrug",
+      notes: "Prolek d-amfetaminy sprzężony z l-lizyną; profil 'rate-limited' zależny od pojemności hydrolitycznej krwinek czerwonych.",
+      phase1: [
+        { id: "dextroamphetamine-compound", name: "Deksamfetamina", enzyme: "Hydrolazy peptydowe (RBC)", reaction: "Hydroliza wiązania amidowego", activity: "active", desc: "Aktywny stymulant psychomotoryczny uwalniający dopaminę i noradrenalinę w OUN.", tHalf: "10 - 12 h" }
+      ],
+      phase2: [
+        { parentId: "dextroamphetamine-compound", id: null, name: "Kwas hipurowy & Kwas benzoesowy", enzyme: "CYP2D6 / Oksydaza", reaction: "Deaminacja i koniugacja glicynowa", activity: "inactive", desc: "Końcowe metabolity deaminacji wydalane z moczem.", tHalf: "—" }
+      ]
+    },
+    "psilocybin-compound": {
+      rootRole: "prodrug",
+      notes: "Naturalny fosforylowany prolek tryptaminowy; sam w sobie pozbawiony istotnego powinowactwa do 5-HT2A.",
+      phase1: [
+        { id: "psilocin-compound", name: "Psylocyna (4-OH-DMT)", enzyme: "Fosfataza alkaliczna (ALP)", reaction: "Defosforylacja w żołądku/wątrobie", activity: "active", desc: "Lipofilny, czynny psychomimetyczny agonista receptora 5-HT2A przenikający barierę krew-mózg.", tHalf: "2 - 3 h" }
+      ],
+      phase2: [
+        { parentId: "psilocin-compound", id: null, name: "O-glukuronid psylocyny", enzyme: "UGT1A10 / UGT1A9", reaction: "Glukuronidacja fenolowa (80%)", activity: "inactive", desc: "Główny krążący metabolit eliminowany drogą nerkową.", tHalf: "2 - 4 h" },
+        { parentId: "psilocin-compound", id: null, name: "Kwas 4-hydroksyindolo-3-octowy (4-HIAA)", enzyme: "MAO-A / ALDH", reaction: "Oksydacyjna deaminacja", activity: "inactive", desc: "Drobny metabolit deaminacji.", tHalf: "—" }
+      ]
+    },
+    "acetaminophen-compound": {
+      rootRole: "active",
+      notes: "Lek przeciwgorączkowy i przeciwbólowy; w dawkach terapeutycznych bezpieczny, w przedawkowaniu szlak CYP generuje toksyczny NAPQI.",
+      phase1: [
+        { id: null, name: "N-acetylo-p-benzochinoamina (NAPQI)", enzyme: "CYP2E1 / CYP1A2", reaction: "Oksydacja (5-10%)", activity: "toxic", desc: "Silnie reaktywny elektrofil wiążący białka hepatocytów; powoduje martwicę wątroby przy wyczerpaniu glutationu.", tHalf: "—" }
+      ],
+      phase2: [
+        { parentId: "NAPQI", id: null, name: "Kwas merkapturowy (detoksykacja GSH)", enzyme: "Glutation-S-transferaza (GST)", reaction: "Koniugacja z glutationem", activity: "inactive", desc: "Bezpieczny produkt neutralizacji NAPQI wydalany z moczem.", tHalf: "2 h" },
+        { parentId: "acetaminophen-compound", id: null, name: "Glukuronid paracetamolu", enzyme: "UGT1A1 / UGT1A6", reaction: "Glukuronidacja fenolowa (55-60%)", activity: "inactive", desc: "Główny nietoksyczny szlak eliminacji u dorosłych.", tHalf: "2 - 3 h" },
+        { parentId: "acetaminophen-compound", id: null, name: "Siarczan paracetamolu", enzyme: "SULT1A1", reaction: "Sulfatacja fenolowa (30%)", activity: "inactive", desc: "Główny nietoksyczny szlak eliminacji u dzieci.", tHalf: "2 - 3 h" }
+      ]
+    },
+    "enalapril-compound": {
+      rootRole: "prodrug",
+      notes: "Ester etylowy proleku; słaby inhibitor ACE, o biodostępności ok. 60%, aktywowany w wątrobie.",
+      phase1: [
+        { id: "enalaprilat-anhydrous-compound", name: "Enalaprylat", enzyme: "Karboksyloesteraza 1 (CES1)", reaction: "Deestryfikacja hydrolityczna", activity: "active", desc: "Właściwy, silny dikwasowy inhibitor enzymu konwertującego angiotensynę (ACE).", tHalf: "11 - 35 h" }
+      ],
+      phase2: [
+        { parentId: "enalaprilat-anhydrous-compound", id: null, name: "Wydalany w postaci niezmienionej", enzyme: "Filtracja kłębuszkowa", reaction: "Wydalanie nerkowe", activity: "inactive", desc: "Enalaprylat nie podlega dalszemu metabolizmowi i jest wydalany z moczem.", tHalf: "—" }
+      ]
+    },
+    "losartan-compound": {
+      rootRole: "active",
+      notes: "Antagonista receptora AT1; sam wykazuje aktywność, lecz jego metabolit karboksylowy jest wielokrotnie silniejszy.",
+      phase1: [
+        { id: null, name: "Kwas EXP3174 (Kwas losartanowy)", enzyme: "CYP2C9 / CYP3A4", reaction: "Oksydacja grupy alkoholowej do karboksylowej (14%)", activity: "active", desc: "Niekontrolowany, niekompetycyjny bloker receptora AT1 o 10-40 razy silniejszym i dłuższym działaniu niż losartan.", tHalf: "6 - 9 h" }
+      ],
+      phase2: [
+        { parentId: "Kwas EXP3174", id: null, name: "Glukuronid EXP3174", enzyme: "UGT2B7", reaction: "Glukuronidacja acylu", activity: "inactive", desc: "Eliminacja żółciowa i nerkowa.", tHalf: "—" }
+      ]
+    },
+    "diamorphine-compound": {
+      rootRole: "prodrug",
+      notes: "Diacetylomorfina; silnie lipofilny prolek gwałtownie penetrujący barierę krew-mózg w ciągu sekund.",
+      phase1: [
+        { id: null, name: "6-Monoacetylomorfina (6-MAM)", enzyme: "Esterazy surowicze i mózgowe", reaction: "Szybka deacetylacja (t½ 3-5 min)", activity: "active", desc: "Silny agonista receptora MOR o unikalnym profilu euforii w OUN.", tHalf: "15 - 30 min" },
+        { id: "morphine-compound", name: "Morfina", enzyme: "Esterazy tkankowe", reaction: "Druga deacetylacja", activity: "active", desc: "Stabilny metabolit zapewniający przedłużone działanie analgetyczne.", tHalf: "2 - 4 h" }
+      ],
+      phase2: [
+        { parentId: "morphine-compound", id: null, name: "Morfino-6-glukuronid (M6G)", enzyme: "UGT2B7", reaction: "Glukuronidacja", activity: "active", desc: "Aktywny analgetyk opioidowy.", tHalf: "3 - 5 h" }
+      ]
+    },
+    "amitriptyline-compound": {
+      rootRole: "active",
+      notes: "Trójpierścieniowy lek przeciwdepresyjny o dominującym komponencie serotoninergicznym i sedatywnym.",
+      phase1: [
+        { id: null, name: "Nortryptylina", enzyme: "CYP2C19 / CYP1A2", reaction: "N-demetylacja", activity: "active", desc: "Aktywny metabolit o silnym i selektywnym hamowaniu wychwytu zwrotnego noradrenaliny (NRI).", tHalf: "18 - 44 h" }
+      ],
+      phase2: [
+        { parentId: "Nortryptylina", id: null, name: "10-Hydroksynortryptylina", enzyme: "CYP2D6", reaction: "Hydroksylacja alicykliczna", activity: "active", desc: "Umiarkowanie aktywny metabolit; stężenie zależne od fenotypu CYP2D6.", tHalf: "—" }
+      ]
+    },
+    "risperidone-compound": {
+      rootRole: "active",
+      notes: "Atypowy neuroleptyk przeciwpsychotyczny (bloker 5-HT2A i D2).",
+      phase1: [
+        { id: null, name: "Paliperydon (9-Hydroksyrisperidon)", enzyme: "CYP2D6 / CYP3A4", reaction: "9-hydroksylacja", activity: "active", desc: "Główny czynny metabolit o tożsamym profilu farmakologicznym, zarejestrowany także jako odrębny lek.", tHalf: "23 h" }
+      ],
+      phase2: [
+        { parentId: "Paliperydon", id: null, name: "Glukuronid paliperydonu", enzyme: "UGT", reaction: "Wydalanie nerkowe", activity: "inactive", desc: "Eliminowany głównie przez nerki.", tHalf: "—" }
+      ]
+    },
+    "simvastatin-compound": {
+      rootRole: "prodrug",
+      notes: "Laktonowy prolek hipolipemizujący; forma laktonowa nie posiada aktywności hamującej reduktazę HMG-CoA.",
+      phase1: [
+        { id: null, name: "Hydroksykwas simwastatynowy (Beta-hydroksykwas)", enzyme: "Karboksyloesterazy wątrobowe / Spontaniczna hydroliza", reaction: "Otwarcie pierścienia laktonowego", activity: "active", desc: "Właściwa postać aktywna kompetencyjnie hamująca enzym HMG-CoA reduktazę.", tHalf: "2 - 3 h" }
+      ],
+      phase2: [
+        { parentId: "Hydroksykwas simwastatynowy", id: null, name: "Metabolity hydroksylowe & Glukuronidy", enzyme: "CYP3A4 / UGT1A1 / UGT1A3", reaction: "Oksydacja i glukuronidacja acylu", activity: "inactive", desc: "Eliminacja żółciowa z kałem (60%) i z moczem (13%).", tHalf: "—" }
+      ]
+    },
+    "clopidogrel-compound": {
+      rootRole: "prodrug",
+      notes: "Tienopirydynowy prolek przeciwpłytkowy; ok. 85% dawki jest inaktywowane przez esterazy (CES1), a tylko 15% podlega aktywacji przez CYP.",
+      phase1: [
+        { id: null, name: "2-Oksoklopidogrel", enzyme: "CYP2C19 / CYP1A2 / CYP2B6", reaction: "Pierwsza oksydacja (etap pośredni)", activity: "prodrug", desc: "Metabolit pośredni podlegający kolejnemu utlenieniu.", tHalf: "—" },
+        { id: null, name: "Kwas klopidogrelowy (nieaktywny)", enzyme: "CES1", reaction: "Hydroliza estrowa (85% dawki)", activity: "inactive", desc: "Główny krążący nieaktywny produkt eliminacji.", tHalf: "—" }
+      ],
+      phase2: [
+        { parentId: "2-Oksoklopidogrel", id: null, name: "Aktywny metabolit tiolowy (H4)", enzyme: "CYP2C19 / CYP2C9 / CYP3A4", reaction: "Druga oksydacja i otwarcie pierścienia", activity: "active", desc: "Nieodwracalny kowalencyjny bloker receptora płytkowego P2Y12 (antytrombotyczny).", tHalf: "0.5 - 1 h" }
+      ]
+    },
+    "prednisone-compound": {
+      rootRole: "prodrug",
+      notes: "Prolek syntetycznego glikokortykosteroidu; grupa 11-ketonowa nie wykazuje powinowactwa do receptora GR.",
+      phase1: [
+        { id: "prednisolone-compound", name: "Prednizolon", enzyme: "11-beta-hydroksysteroidowa dehydrogenaza typ 1 (11-beta-HSD1)", reaction: "Redukcja 11-ketonu do grupy hydroksylowej", activity: "active", desc: "Czynny farmakologicznie glikokortykosteroid o działaniu przeciwzapalnym i immunosupresyjnym.", tHalf: "2 - 4 h" }
+      ],
+      phase2: [
+        { parentId: "prednisolone-compound", id: null, name: "Siarczany i glukuronidy 20-dihydro", enzyme: "CYP3A4 / UGT / SULT", reaction: "Redukcja i koniugacja", activity: "inactive", desc: "Nieaktywne koniugaty eliminowane z moczem.", tHalf: "—" }
+      ]
+    },
+    "valacyclovir-compound": {
+      rootRole: "prodrug",
+      notes: "Ester L-walilowy acyklowiru; 3- do 5-krotnie większa biodostępność po podaniu doustnym niż acyklowir.",
+      phase1: [
+        { id: "acyclovir-compound", name: "Acyklowir", enzyme: "Karboksyloesteraza 1 (CES1) / Hydrolaza walacyklowirowa", reaction: "Szybka hydroliza estru walilowego", activity: "active", desc: "Aktywny analog nukleozydu hamujący polimerazę DNA wirusów HSV i VZV.", tHalf: "2.5 - 3.5 h" }
+      ],
+      phase2: [
+        { parentId: "acyclovir-compound", id: null, name: "9-Karboksymetoksymetyloguanina (CMMG)", enzyme: "Dehydrogenaza alkoholowa / Aldehydowa", reaction: "Oksydacja (10%)", activity: "inactive", desc: "Wydalany z moczem.", tHalf: "—" }
+      ]
+    },
+    "valganciclovir-compound": {
+      rootRole: "prodrug",
+      notes: "Ester L-walilowy gancyklowiru stosowany w profilaktyce i leczeniu zakażeń CMV.",
+      phase1: [
+        { id: "ganciclovir-compound", name: "Gancyklowir", enzyme: "Esterazy jelitowe i wątrobowe", reaction: "Hydroliza estrowa", activity: "active", desc: "Aktywny lek przeciwwirusowy fosforylowany przez kinazę wirusową UL97.", tHalf: "3 - 5 h" }
+      ],
+      phase2: [
+        { parentId: "ganciclovir-compound", id: null, name: "Wydalany z moczem w postaci niezmienionej", enzyme: "Filtracja kłębuszkowa (>90%)", reaction: "Eliminacja nerkowa", activity: "inactive", desc: "Konieczna modyfikacja dawkowania przy niewydolności nerek.", tHalf: "—" }
+      ]
+    },
+    "levodopa-compound": {
+      rootRole: "prodrug",
+      notes: "Prekursor dopaminy przenikający przez barierę krew-mózg za pośrednictwem transportera aminokwasów LAT1.",
+      phase1: [
+        { id: "dopamine-drug-compound", name: "Dopamina", enzyme: "Dekarboksylaza aromatycznych L-aminokwasów (AADC)", reaction: "Dekarboksylacja w neuronach prążkowia", activity: "active", desc: "Kluczowy neuroprzekaźnik znoszący objawy parkinsonizmu.", tHalf: "1 - 2 h" },
+        { id: null, name: "3-O-Metylodopa (3-OMD)", enzyme: "COMT", reaction: "O-metylacja obwodowa (10%)", activity: "inactive", desc: "Konkuruje z lewodopą o transport do mózgu.", tHalf: "15 h" }
+      ],
+      phase2: [
+        { parentId: "dopamine-drug-compound", id: null, name: "Kwas homowaniliowy (HVA) & DOPAC", enzyme: "MAO-B / COMT / ALDH", reaction: "Oksydacja i O-metylacja", activity: "inactive", desc: "Główne metabolity końcowe wydalane z moczem.", tHalf: "—" }
+      ]
+    },
+    "primidone-compound": {
+      rootRole: "prodrug",
+      notes: "Lek przeciwdrgawkowy z grupy pochodnych barbituranowych.",
+      phase1: [
+        { id: "phenobarbital-compound", name: "Fenobarbital", enzyme: "CYP450", reaction: "Oksydacja grupy metylenowej (15-25%)", activity: "active", desc: "Silny barbituranowy modulator receptorów GABA-A o długim t½ (75-120 h).", tHalf: "75 - 120 h" },
+        { id: null, name: "Fenyloetylomalonamid (PEMA)", enzyme: "Hydrolazy", reaction: "Otwarcie pierścienia (50%)", activity: "active", desc: "Aktywny metabolit przeciwdrgawkowy nasilający działanie fenobarbitalu.", tHalf: "24 - 48 h" }
+      ],
+      phase2: [
+        { parentId: "phenobarbital-compound", id: null, name: "p-Hydroksyfenobarbital & Glukuronidy", enzyme: "CYP2C9 / UGT", reaction: "Hydroksylacja aromatyczna i glukuronidacja", activity: "inactive", desc: "Wydalany z moczem.", tHalf: "—" }
+      ]
+    },
+    "aripiprazole-compound": {
+      rootRole: "active",
+      notes: "Atypowy lek przeciwpsychotyczny (częściowy agonista D2 i 5-HT1A). Główny szlak metaboliczny prowadzi do aktywnego dehydroarypiprazolu.",
+      phase1: [
+        { id: null, name: "Dehydroarypiprazol", enzyme: "CYP3A4 / CYP2D6", reaction: "Dehydrogenacja", activity: "active", desc: "Aktywny metabolit odpowiadający za ok. 40% ekspozycji leku, o powinowactwie do D2 zbliżonym do leku macierzystego.", tHalf: "94 h" }
+      ],
+      phase2: [
+        { parentId: "Dehydroarypiprazol", id: null, name: "Glukuronid dehydroarypiprazolu", enzyme: "UGT", reaction: "Koniugacja i eliminacja", activity: "inactive", desc: "Wydalany z kałem (55%) i moczem (25%).", tHalf: "—" }
+      ]
+    },
+    "fluoxetine-compound": {
+      rootRole: "active",
+      notes: "Selektywny inhibitor wychwytu zwrotnego serotoniny (SSRI) o bardzo długim okresie półtrwania.",
+      phase1: [
+        { id: null, name: "Norfluoksetyna", enzyme: "CYP2D6 / CYP2C9", reaction: "N-demetylacja", activity: "active", desc: "Równie silny inhibitor SERT jak fluoksetyna, o t½ wynoszącym 7 - 15 dni, wymagający długiego washoutu.", tHalf: "7 - 15 dni" }
+      ],
+      phase2: [
+        { parentId: "Norfluoksetyna", id: null, name: "Glukuronid norfluoksetyny", enzyme: "UGT", reaction: "Glukuronidacja", activity: "inactive", desc: "Końcowy metabolit wydalany przez nerki.", tHalf: "—" }
+      ]
+    },
+    "venlafaxine-compound": {
+      rootRole: "active",
+      notes: "Inhibitor wychwytu zwrotnego serotoniny i noradrenaliny (SNRI).",
+      phase1: [
+        { id: null, name: "Deswenlafaksyna (O-demetylowenlafaksyna)", enzyme: "CYP2D6", reaction: "O-demetylacja (70%)", activity: "active", desc: "Główny czynny metabolit odpowiadający za działanie przeciwdepresyjne SNRI.", tHalf: "11 h" }
+      ],
+      phase2: [
+        { parentId: "Deswenlafaksyna", id: null, name: "Glukuronid deswenlafaksyny", enzyme: "UGT", reaction: "Koniugacja glukuronidowa", activity: "inactive", desc: "Główny metabolit wydalany z moczem.", tHalf: "—" }
+      ]
+    }
+  };
+
+  function parseMetabolismText(c) {
+    if (!c || !c.pk) return null;
+    const metText = c.pk.met || "";
+    const cypList = c.pk.cyp || [];
+    if (!metText && cypList.length === 0) return null;
+
+    const foundCyps = new Set(cypList);
+    const cypRegex = /\bCYP[0-9][A-Z][0-9]+\b/gi;
+    let m;
+    while ((m = cypRegex.exec(metText)) !== null) {
+      foundCyps.add(m[0].toUpperCase());
+    }
+
+    const phase1 = [];
+    if (foundCyps.size > 0) {
+      foundCyps.forEach((cyp) => {
+        phase1.push({
+          id: null,
+          name: `Metabolit oksydacyjny (${cyp})`,
+          enzyme: cyp,
+          reaction: "Oksydacja / Hydroksylacja Fazy I",
+          activity: "active",
+          desc: `Produkt biotransformacji przez izoenzym ${cyp} w mikrosomach wątrobowych.`,
+          tHalf: "—"
+        });
+      });
+    } else {
+      phase1.push({
+        id: null,
+        name: "Metabolit wątrobowy Fazy I",
+        enzyme: "Enzymy wątrobowe",
+        reaction: "Modyfikacja funkcyjna",
+        activity: "inactive",
+        desc: metText || "Metabolizm wątrobowy pierwszego przejścia.",
+        tHalf: "—"
+      });
+    }
+
+    const phase2 = [];
+    const hasGluc = /glucuronid|ugt/i.test(metText);
+    const hasSulf = /sulfat|sult/i.test(metText);
+    if (hasGluc) {
+      phase2.push({
+        parentId: null,
+        id: null,
+        name: `Koniugat glukuronidowy (${esc(c.n)})`,
+        enzyme: "UGT (UDP-glukuronozylotransferaza)",
+        reaction: "Glukuronidacja Fazy II",
+        activity: "inactive",
+        desc: "Polarny koniugat przygotowany do wydalenia z moczem lub żółcią.",
+        tHalf: "—"
+      });
+    }
+    if (hasSulf) {
+      phase2.push({
+        parentId: null,
+        id: null,
+        name: `Koniugat siarczanowy (${esc(c.n)})`,
+        enzyme: "SULT (Sulfotransferaza)",
+        reaction: "Sulfatacja Fazy II",
+        activity: "inactive",
+        desc: "Rozpuszczalny w wodzie metabolit siarczanowy.",
+        tHalf: "—"
+      });
+    }
+    if (phase2.length === 0) {
+      phase2.push({
+        parentId: null,
+        id: null,
+        name: `Koniugaty polarne i wydalanie`,
+        enzyme: "Koniugacja / Nerki",
+        reaction: "Eliminacja Fazy II",
+        activity: "inactive",
+        desc: "Koniugacja i wydalanie nerkowe / żółciowe.",
+        tHalf: "—"
+      });
+    }
+
+    return {
+      rootRole: "active",
+      notes: metText || `Biotransformacja wątrobowa przez izoenzymy: ${[...foundCyps].join(", ") || "niespecyficzne"}.`,
+      phase1,
+      phase2
+    };
+  }
+
+  function getMetaboliteCascade(c) {
+    if (!c) return null;
+    let data = METABOLITE_CASCADES[c.id];
+    if (!data) {
+      data = parseMetabolismText(c);
+    }
+    if (!data) return null;
+
+    const rootNode = {
+      id: "root",
+      cid: c.id,
+      compound: c,
+      name: c.n,
+      phase: 0,
+      activity: data.rootRole || "active",
+      enzyme: "— (Związek macierzysty)",
+      reaction: "Podanie pierwotne",
+      desc: data.notes || c.d,
+      tHalf: c.pk && c.pk.hl ? `${c.pk.hl[0]}${c.pk.hl[1] ? ` - ${c.pk.hl[1]}` : ""} ${c.pk.hl[2] || "h"}` : (c.hlh ? `${c.hlh.toFixed(1)} h` : "—")
+    };
+
+    const phase1Nodes = (data.phase1 || []).map((p, idx) => {
+      const matchComp = p.id && compById.has(p.id) ? C[compById.get(p.id)] : null;
+      return {
+        id: `p1_${idx}`,
+        cid: p.id,
+        compound: matchComp,
+        name: p.name,
+        phase: 1,
+        activity: p.activity || "active",
+        enzyme: p.enzyme || "CYP450",
+        reaction: p.reaction || "Biotransformacja",
+        desc: p.desc || "",
+        tHalf: p.tHalf || (matchComp && matchComp.hlh ? `${matchComp.hlh.toFixed(1)} h` : "—")
+      };
+    });
+
+    const phase2Nodes = (data.phase2 || []).map((p, idx) => {
+      const matchComp = p.id && compById.has(p.id) ? C[compById.get(p.id)] : null;
+      return {
+        id: `p2_${idx}`,
+        cid: p.id,
+        parentId: p.parentId,
+        compound: matchComp,
+        name: p.name,
+        phase: 2,
+        activity: p.activity || "inactive",
+        enzyme: p.enzyme || "UGT / Transferaza",
+        reaction: p.reaction || "Koniugacja",
+        desc: p.desc || "",
+        tHalf: p.tHalf || "—"
+      };
+    });
+
+    return {
+      root: rootNode,
+      phase1: phase1Nodes,
+      phase2: phase2Nodes,
+      notes: data.notes
+    };
+  }
+
+  function renderMetaboliteTreeDOM(c, cascade) {
+    const treeEl = $("metaTreeContainer");
+    if (!treeEl) return;
+
+    const getActivityBadge = (act) => {
+      const cls = act === "active" ? "activity-active" : act === "prodrug" ? "activity-prodrug" : act === "toxic" ? "activity-toxic" : "activity-inactive";
+      const lbl = act === "active" ? "🔥 Aktywny" : act === "prodrug" ? "✨ Prolek" : act === "toxic" ? "⚠️ Toksyczny" : "💤 Nieaktywny";
+      return `<span class="meta-activity-badge ${cls}">${lbl}</span>`;
+    };
+
+    const renderCard = (node) => {
+      const isSel = (node.id === activeMetaboliteSelectedNode);
+      const isCatalog = !!node.compound;
+      return `
+        <div class="meta-node-card ${isSel ? 'selected' : ''}" data-meta-node="${esc(node.id)}">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px">
+            <b style="font-size:12px;color:var(--color-text)">${esc(node.name)}</b>
+            ${getActivityBadge(node.activity)}
+          </div>
+          ${node.enzyme && node.enzyme !== "—" ? `
+            <div class="meta-connector">
+              <span class="meta-enzyme-pill">⚡ ${esc(node.enzyme)}</span>
+              ${node.reaction ? `<span style="font-size:10px;color:var(--color-text-muted)">${esc(node.reaction)}</span>` : ""}
+            </div>` : ""}
+          <p style="font-size:11px;color:var(--color-text-muted);margin:0;line-height:1.35">${esc(node.desc || "Brak opisu.")}</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;font-size:10px">
+            <span style="color:var(--color-text-muted)">t½: <b>${esc(node.tHalf || "—")}</b></span>
+            ${isCatalog ? '<span class="tag ok" style="font-size:9px">W katalogu ✓</span>' : '<span class="tag" style="font-size:9px">Metabolit pośredni</span>'}
+          </div>
+        </div>
+      `;
+    };
+
+    treeEl.innerHTML = `
+      <div class="meta-phase-col">
+        <div class="meta-phase-head">
+          <span>Związek Macierzysty</span>
+          <span class="tag" style="font-size:9px">Faza 0</span>
+        </div>
+        ${renderCard(cascade.root)}
+      </div>
+
+      <div class="meta-phase-col">
+        <div class="meta-phase-head">
+          <span>Faza I: Modyfikacje Funkcyjne</span>
+          <span class="tag" style="font-size:9px">${cascade.phase1.length} szlaki</span>
+        </div>
+        ${cascade.phase1.length ? cascade.phase1.map(renderCard).join("") : '<div class="empty" style="padding:1rem">Brak szlaków Fazy I.</div>'}
+      </div>
+
+      <div class="meta-phase-col">
+        <div class="meta-phase-head">
+          <span>Faza II: Koniugacja & Eliminacja</span>
+          <span class="tag" style="font-size:9px">${cascade.phase2.length} koniugaty</span>
+        </div>
+        ${cascade.phase2.length ? cascade.phase2.map(renderCard).join("") : '<div class="empty" style="padding:1rem">Brak szlaków Fazy II.</div>'}
+      </div>
+    `;
+
+    treeEl.querySelectorAll("[data-meta-node]").forEach((card) => {
+      card.onclick = () => {
+        const nid = card.dataset.metaNode;
+        activeMetaboliteSelectedNode = nid;
+        treeEl.querySelectorAll(".meta-node-card").forEach((c) => c.classList.toggle("selected", c.dataset.metaNode === nid));
+        renderMetaboliteSidePanelDOM(c, cascade);
+      };
+    });
+  }
+
+  function renderMetaboliteSidePanelDOM(c, cascade) {
+    const sideEl = $("metaSidePanel");
+    if (!sideEl) return;
+
+    let selNode = cascade.root.id === activeMetaboliteSelectedNode ? cascade.root : null;
+    if (!selNode) selNode = cascade.phase1.find((n) => n.id === activeMetaboliteSelectedNode);
+    if (!selNode) selNode = cascade.phase2.find((n) => n.id === activeMetaboliteSelectedNode);
+    if (!selNode) selNode = cascade.root;
+
+    const mComp = selNode.compound;
+    const isRoot = (selNode === cascade.root);
+    const struct = mComp ? getChemStructure(mComp) : (isRoot ? getChemStructure(c) : null);
+
+    const getActivityBadge = (act) => {
+      const cls = act === "active" ? "activity-active" : act === "prodrug" ? "activity-prodrug" : act === "toxic" ? "activity-toxic" : "activity-inactive";
+      const lbl = act === "active" ? "🔥 Aktywny farmakologicznie" : act === "prodrug" ? "✨ Prekursor / Prolek" : act === "toxic" ? "⚠️ Toksyczny intermediat" : "💤 Nieaktywny metabolit";
+      return `<span class="meta-activity-badge ${cls}">${lbl}</span>`;
+    };
+
+    let compTableHtml = "";
+    if (mComp && !isRoot) {
+      const dMW = (mComp.pr && c.pr) ? (mComp.pr[0] - c.pr[0]).toFixed(1) : "—";
+      const dLogP = (mComp.pr && c.pr) ? (mComp.pr[1] - c.pr[1]).toFixed(2) : "—";
+      const dPSA = (mComp.pr && c.pr) ? (mComp.pr[2] - c.pr[2]).toFixed(1) : "—";
+      compTableHtml = `
+        <div style="font-size:11px;font-weight:700;margin-top:6px;text-transform:uppercase;color:var(--color-text-muted)">Porównanie ze związkiem macierzystym:</div>
+        <table class="meta-diff-table">
+          <tr><th>Cecha</th><td><b>${esc(c.n)}</b></td><td><b>${esc(mComp.n)}</b> (Δ)</td></tr>
+          <tr><th>Masa cząst.</th><td>${c.pr ? c.pr[0] : "—"}</td><td>${mComp.pr ? mComp.pr[0] : "—"} (${dMW > 0 ? "+" + dMW : dMW})</td></tr>
+          <tr><th>ALogP</th><td>${c.pr ? c.pr[1] : "—"}</td><td>${mComp.pr ? mComp.pr[1] : "—"} (${dLogP > 0 ? "+" + dLogP : dLogP})</td></tr>
+          <tr><th>PSA</th><td>${c.pr ? c.pr[2] + " Å²" : "—"}</td><td>${mComp.pr ? mComp.pr[2] + " Å²" : "—"} (${dPSA > 0 ? "+" + dPSA : dPSA})</td></tr>
+          <tr><th>t½</th><td>${cascade.root.tHalf}</td><td>${selNode.tHalf}</td></tr>
+        </table>
+      `;
+    }
+
+    let actionBtnsHtml = "";
+    if (mComp && !isRoot) {
+      const inStack = state.stack.has(mComp.i);
+      actionBtnsHtml = `
+        <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+          <button class="btn btn-gold" id="metaCompareBtn" style="font-size:11px;padding:6px 10px">⚖️ Porównaj z prolekiem (Comparator)</button>
+          <div style="display:flex;gap:6px">
+            <button class="btn ${inStack ? 'btn-gold' : ''}" id="metaStackBtn" style="flex:1;font-size:11px;padding:6px">
+              ${inStack ? "✓ W stacku" : "+ Dodaj do stacka"}
+            </button>
+            <button class="btn" id="metaGraphBtn" style="flex:1;font-size:11px;padding:6px">🎯 Na grafie</button>
+          </div>
+        </div>
+      `;
+    }
+
+    sideEl.innerHTML = `
+      <div style="border-bottom:1px solid var(--color-border);padding-bottom:8px">
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted)">Wybrany węzeł biotransformacji</div>
+        <b style="font-size:14px;display:block;margin:2px 0 6px 0">${esc(selNode.name)}</b>
+        ${getActivityBadge(selNode.activity)}
+      </div>
+
+      ${struct ? `
+        <div class="chem-card" style="margin:4px 0">
+          <div class="chem-card-preview" style="height:120px" data-zoom-chem="${mComp ? mComp.i : c.i}">
+            <img src="${struct.url}" alt="${esc(selNode.name)}" loading="lazy">
+          </div>
+          <div class="chem-meta" style="font-size:10px">
+            <span>${esc(mComp ? mComp.mf || "" : c.mf || "")}</span>
+            <a href="${struct.extUrl}" target="_blank" rel="noopener noreferrer">${struct.extLabel} ↗</a>
+          </div>
+        </div>
+      ` : ""}
+
+      <div style="font-size:11px">
+        <div style="color:var(--color-text-muted);font-size:10px;text-transform:uppercase">Enzym & Szlak:</div>
+        <b>${esc(selNode.enzyme)}</b> · <span>${esc(selNode.reaction)}</span>
+      </div>
+
+      <div style="font-size:11px">
+        <div style="color:var(--color-text-muted);font-size:10px;text-transform:uppercase">Znaczenie kliniczne:</div>
+        <p style="margin:2px 0;line-height:1.4">${esc(selNode.desc)}</p>
+      </div>
+
+      ${compTableHtml}
+      ${actionBtnsHtml}
+    `;
+
+    const metaCompareBtn = sideEl.querySelector("#metaCompareBtn");
+    if (metaCompareBtn && mComp) {
+      metaCompareBtn.onclick = () => {
+        closeMetaboliteModal();
+        openComparator([c.i, mComp.i]);
+      };
+    }
+    const metaStackBtn = sideEl.querySelector("#metaStackBtn");
+    if (metaStackBtn && mComp) {
+      metaStackBtn.onclick = () => {
+        toggleInStack(mComp.i);
+        const inStack = state.stack.has(mComp.i);
+        metaStackBtn.textContent = inStack ? "✓ W stacku" : "+ Dodaj do stacka";
+        metaStackBtn.classList.toggle("btn-gold", inStack);
+      };
+    }
+    const metaGraphBtn = sideEl.querySelector("#metaGraphBtn");
+    if (metaGraphBtn && mComp) {
+      metaGraphBtn.onclick = () => {
+        closeMetaboliteModal();
+        select({ type: "compound", i: mComp.i }, true);
+      };
+    }
+  }
+
+  function openMetaboliteModal(cIdx, selectedNodeId = null) {
+    const c = typeof cIdx === "number" ? C[cIdx] : cIdx;
+    if (!c) return;
+
+    const cascade = getMetaboliteCascade(c);
+    if (!cascade) return;
+
+    activeMetaboliteQuery = c.i;
+    if (!selectedNodeId) {
+      const firstActive = cascade.phase1.find((n) => n.activity === "active") || cascade.phase1[0] || cascade.root;
+      activeMetaboliteSelectedNode = firstActive ? firstActive.id : "root";
+    } else {
+      activeMetaboliteSelectedNode = selectedNodeId;
+    }
+
+    const modal = $("metaboliteModal");
+    if (!modal) return;
+
+    const subtitle = $("metaQuerySubtitle");
+    if (subtitle) {
+      const totalMet = cascade.phase1.length + cascade.phase2.length;
+      subtitle.textContent = `${c.n} · ${totalMet} metabolitów`;
+    }
+
+    renderMetaboliteTreeDOM(c, cascade);
+    renderMetaboliteSidePanelDOM(c, cascade);
+
+    wireMetaboliteModal();
+    modal.classList.add("open");
+  }
+
+  function closeMetaboliteModal() {
+    const modal = $("metaboliteModal");
+    if (modal) modal.classList.remove("open");
+    activeMetaboliteQuery = null;
+    activeMetaboliteSelectedNode = null;
+  }
+
+  function wireMetaboliteModal() {
+    const modal = $("metaboliteModal");
+    if (!modal) return;
+    const closeBtn = $("metaboliteModalClose");
+    if (closeBtn) closeBtn.onclick = closeMetaboliteModal;
+    modal.onclick = (e) => {
+      if (e.target === modal) closeMetaboliteModal();
+    };
+  }
+
   // ---------- Clinical Dossier & Monograph Generator
   let activeDossierMode = null;
   let activeDossierTarget = null;
@@ -3880,7 +4485,7 @@
         if (k.hl || k.hlt) rows.push(["Okres półtrwania (t½)", rng(k.hl && [k.hl[0], k.hl[1]], k.hl && k.hl[2]) || "—", k.hlt]);
         if (k.pb || k.pbt) rows.push(["Wiązanie z białkami", rng(k.pb, "%") || "—", k.pbt]);
         if (k.ba || k.bat) rows.push(["Biodostępność", rng(k.ba, "%") || "—", k.bat]);
-        if (k.met) rows.push(["Metabolizm", "", k.met]);
+        if (k.met) rows.push(["Metabolizm", `<button class="btn-copy" id="pkMetaboliteTreeBtn" style="font-size:10px;padding:1px 6px">🌿 Kaskada ↗</button>`, k.met]);
         if (k.cyp) rows.push(["Substrat CYP", k.cyp.join(", "), "rola inhibitora/induktora nieoceniana"]);
         if (k.ex !== undefined) rows.push(["Wydalanie", k.ren === true ? "głównie z moczem" : k.ren === false ? "głównie pozanerkowo" : "—", (k.fe !== undefined ? `fe (niezmieniona) ${k.fe}; ` : "") + (k.ex || "")]);
       }
@@ -3996,6 +4601,9 @@
         <button id="cardAnalogsBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Znajdź analogi chemiczne i bioizostery">
           🧬 Analogi
         </button>
+        <button id="cardMetaboliteBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Kaskada biotransformacji i metabolity (M)">
+          🌿 Metabolity
+        </button>
         <button id="cardDossierBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Kliniczna monografia substancji (A4 / PDF / Markdown)">
           📄 Monografia
         </button>
@@ -4065,6 +4673,14 @@
     const cardAnalogsBtn = p.querySelector("#cardAnalogsBtn");
     if (cardAnalogsBtn && state.sel && state.sel.type === "compound") {
       cardAnalogsBtn.onclick = () => openAnalogsModal(state.sel.i);
+    }
+    const cardMetaboliteBtn = p.querySelector("#cardMetaboliteBtn");
+    if (cardMetaboliteBtn && state.sel && state.sel.type === "compound") {
+      cardMetaboliteBtn.onclick = () => openMetaboliteModal(state.sel.i);
+    }
+    const pkMetaboliteTreeBtn = p.querySelector("#pkMetaboliteTreeBtn");
+    if (pkMetaboliteTreeBtn && state.sel && state.sel.type === "compound") {
+      pkMetaboliteTreeBtn.onclick = () => openMetaboliteModal(state.sel.i);
     }
     const overviewAllAnalogsBtn = p.querySelector("#overviewAllAnalogsBtn");
     if (overviewAllAnalogsBtn && state.sel && state.sel.type === "compound") {
@@ -4358,6 +4974,7 @@
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      if (activeMetaboliteQuery != null) { closeMetaboliteModal(); return; }
       if (state.edgeFilters.popoverOpen) { toggleEdgesPopover(false); return; }
       if (activeAnalogsQuery != null) { closeAnalogsModal(); return; }
       if (activeDossierMode) { closeDossierModal(); return; }
@@ -4380,6 +4997,14 @@
         e.preventDefault();
         if (activeAnalogsQuery != null) closeAnalogsModal();
         else openAnalogsModal(state.sel.i);
+        return;
+      }
+    }
+    if (e.key === "m" || e.key === "M") {
+      if (state.sel && state.sel.type === "compound") {
+        e.preventDefault();
+        if (activeMetaboliteQuery != null) closeMetaboliteModal();
+        else openMetaboliteModal(state.sel.i);
         return;
       }
     }

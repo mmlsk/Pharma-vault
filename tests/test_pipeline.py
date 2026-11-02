@@ -834,6 +834,49 @@ def test_semantic_typed_edges_and_graph_filtering():
         assert p2 in comp_ids, f"Expected {p2} in graph compounds"
 
 
+def test_metabolite_tree_and_prodrug_navigator():
+    """Verify markup, style classes, and cascade repository for Metabolite Tree & Prodrug Navigator."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    for el_id in [
+        "metaboliteModal", "metaQuerySubtitle", "metaboliteModalClose",
+        "metaTreeContainer", "metaSidePanel"
+    ]:
+        assert f'id="{el_id}"' in html_src, f"Missing #{el_id} in index.html"
+
+    for css_cls in [
+        ".metabolite-modal", ".meta-head", ".meta-body", ".meta-tree-container",
+        ".meta-phase-col", ".meta-phase-head", ".meta-node-card",
+        ".meta-enzyme-pill", ".meta-activity-badge", ".meta-side-panel", ".meta-diff-table"
+    ]:
+        assert css_cls in html_src, f"Missing CSS class '{css_cls}' in index.html"
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    for term in [
+        "METABOLITE_CASCADES",
+        "function parseMetabolismText(",
+        "function getMetaboliteCascade(",
+        "function openMetaboliteModal(",
+        "function closeMetaboliteModal(",
+        "cardMetaboliteBtn",
+        "pkMetaboliteTreeBtn"
+    ]:
+        assert term in app_src, f"Missing '{term}' in app.js"
+
+    # Verify curated pathways exist in app.js
+    assert '"codeine-compound"' in app_src
+    assert '"morphine-compound"' in app_src
+    assert '"CYP2D6"' in app_src
+    assert '"UGT2B7"' in app_src
+    assert '"diazepam-compound"' in app_src
+    assert '"oxazepam-compound"' in app_src
+    assert '"NAPQI"' in app_src
+    assert '"lisdexamfetamine-compound"' in app_src
+    assert '"dextroamphetamine-compound"' in app_src
+    assert '"enalapril-compound"' in app_src
+    assert '"enalaprilat-anhydrous-compound"' in app_src
+
+
+
 
 
 

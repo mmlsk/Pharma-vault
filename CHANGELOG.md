@@ -1,5 +1,30 @@
 # Changelog
 
+## [3.17.0] — 2026-11-02 — Nawigator Biotransformacji i Drzewo Metabolitów (Metabolite Tree & Prodrug Biotransformation Navigator)
+### Dodano
+- **Nawigator Biotransformacji i Drzewo Metabolitów (Metabolite Tree & Prodrug Navigator)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **Wielopoziomowe diagramy kaskad metabolicznych (`#metaboliteModal`)**:
+    - Trójkolumnowy układ drzewa biotransformacji: **Związek Macierzysty / Prolek (Faza 0)** ➔ **Faza I (Oksydacja / Hydroliza)** ➔ **Faza II (Koniugacja & Eliminacja)**.
+    - Złącza enzymatyczne z pigułkami enzymów (np. `CYP2D6`, `CYP3A4`, `CES1`, `UGT2B7`, `11-beta-HSD1`, `ALP`) oraz nazwami reakcji biochemicznych (np. O-demetylacja, deestryfikacja, glukuronidacja acylu).
+    - Odznaki aktywności farmakologicznej każdego metabolitu:
+      - 🟢 `🔥 Aktywny`: metabolit czynny farmakologicznie (np. Morfina z Kodeiny, O-DSMT z Tramadolu, Enalaprylat z Enalaprylu, Psylocyna z Psylocybiny, Deksamfetamina z Lisdeksamfetaminy).
+      - 🟣 `✨ Prolek`: nieaktywny lub słabo aktywny prekursor leku.
+      - ⚪ `💤 Nieaktywny`: polarny metabolit końcowy eliminowany z moczem lub żółcią.
+      - 🔴 `⚠️ Toksyczny`: reaktywny intermediat elektrofilowy (np. NAPQI z paracetamolu).
+  - **Hybrydowy silnik kaskad (`METABOLITE_CASCADES` & `parseMetabolismText`)**:
+    - Kuratorowane wielopoziomowe drzewa dla kluczowych klas: opioidy (Kodeina, Tramadol, Diamorfina), benzodiazepiny (Diazepam z kaskadą Nordazepam/Temazepam ➔ Oksazepam ➔ Glukuronid), psychostymulanty (Lisdeksamfetamina), psychodeliki (Psylocybina), leki kardiologiczne (Enalapryl, Losartan, Klopidogrel, Simwastatyna), przeciwbólowe (Paracetamol / Acetaminofen z szlakiem NAPQI i detoksykacją glutationem), przeciwdepresyjne (Amitryptylina, Fluoksetyna, Wenlafaksyna), przeciwpsychotyczne (Risperidon, Arypiprazol), przeciwwirusowe (Walacyklowir, Walgancyklowir) i steroidy (Prednizon).
+    - Automatyczny ekstraktor szlaków z opisów tekstowych `c.pk.met` oraz izoenzymów `c.pk.cyp` dla pozostałych 880 substancji katalogu.
+  - **Interaktywny panel boczny i porównanie Prolek vs Metabolit**:
+    - Dynamiczne podsumowanie wybranego węzła kaskady z podglądem struktury chemicznej 2D.
+    - Tabela różnicowa parametrów ($\Delta\text{MW}$, $\Delta\text{ALogP}$, $\Delta\text{PSA}$, $t_{1/2}$).
+    - Akcje szybkiej nawigacji: `⚖️ Porównaj z prolekiem (Comparator)`, `+ Dodaj do Stacka` oraz `🎯 Na grafie` (płynne centrowanie na metabolitach obecnych w bazie).
+  - **Integracja z kartą substancji i skróty klawiszowe**:
+    - Nowy przycisk akcji `🌿 Metabolity` na karcie wybranej substancji.
+    - Przycisk `🌿 Kaskada ↗` w wierszu metabolizmu w zakładce Farmakokinetyka (PK).
+    - Skrót klawiszowy `M` / `m` otwierający/zamykający nawigator metabolitów dla aktywnego leku; obsługa klawisza `Esc`.
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_metabolite_tree_and_prodrug_navigator` weryfikujący obecność elementów DOM, klas CSS, silnika kaskad oraz poprawności struktury kaskad dla Kodeiny, Diazepamu, Paracetamolu, Lisdeksamfetaminy i Enalaprylu (50 testów, 100% green).
+
 ## [3.16.0] — 2026-11-02 — Semantyczne Krawędzie Farmakologiczne & Filtrowanie Grafu (Semantic Typed Edges & Graph Filtering)
 ### Dodano
 - **Semantyczne Krawędzie Farmakologiczne (Semantic Typed Edges)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
