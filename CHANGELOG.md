@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.8.0] — 2026-11-02 — wizualizacja struktur chemicznych 2D, InChIKey i powiększenie LightBox
+### Dodano
+- **Wizualizator Struktur Chemicznych 2D (Chemical Structure Visualizer)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **Karta struktury 2D na karcie substancji** (zakładka "Przegląd"):
+    - Czysty laboratoryjny kafelek z wektorowym podglądem cząsteczki SVG renderowanym przez oficjalne API ChEMBL RDKit (`https://www.ebi.ac.uk/chembl/api/data/image/{ch}.svg`) dla ponad 2200 substancji.
+    - Fallback do PubChem PNG dla substancji posiadających PubChem CID bez rekordu ChEMBL.
+    - Dedykowany, elegancki placeholder dla makromolekuł biologicznych, peptydów i ekstraktów naturalnych bez płaskiego wzoru małocząsteczkowego.
+    - Bezpośredni przycisk `📋 InChIKey` kopiujący kanoniczny identyfikator InChIKey do schowka одним kliknięciem z wizualnym potwierdzeniem `✓ Skopiowano!`.
+    - Wyświetlanie wzoru sumarycznego (`c.mf`) oraz masy cząsteczkowej bezpośrednio pod wzorem.
+  - **Modal powiększenia (LightBox)**:
+    - Kliknięcie miniatury otwiera pełnoekranowy modal z powiększonym, ostrym wektorem cząsteczki, szczegółami tożsamości chemicznej oraz odnośnikiem zewnętrznym do karty ChEMBL/PubChem.
+    - Intuicyjne zamykanie klawiszem `Esc`, przyciskiem `✕` lub kliknięciem w przyciemnione tło (backdrop).
+  - **Miniatury struktur w stacku (`#stackDrawer`)**:
+    - Każdy chip substancji w drawerze stacka zawiera teraz miniaturowy podgląd struktury 2D (32×32 px), umożliwiając natychmiastowe rozpoznanie szkieletu cząsteczki i powiększenie w LightBoxie.
+- **Pipeline danych (`scripts/build_graph_data.py`, `graph-data.js`)**:
+  - Wzbogacono eksport `window.PV_GRAPH` o `c.ik` (InChIKey dla 1413 substancji), `c.mf` (wzór sumaryczny dla 1926 substancji) oraz `c.cid` (PubChem CID).
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_chemical_structures_and_inchikeys` weryfikujący zgodność formatu IUPAC wszystkich wyeksportowanych InChIKey (27 znaków, format `XXXXXXXXXXXXXX-YYYYYYYYYY-Z`) oraz pokrycie bazowe (41 testów, 100% green).
+
 ## [3.7.0] — 2026-11-02 — symulator farmakokinetyczny, krzywe stężeń i detekcja Okien Kolizji
 ### Dodano
 - **Symulator Farmakokinetyczny & Kumulacja Dawek (PK Stack Simulator)** w drawerze `#stackDrawer` (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):

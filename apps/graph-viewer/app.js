@@ -70,6 +70,92 @@
   };
   let W = 0, H = 0, dpr = 1, raf = 0;
 
+  // ---------- Chemical Structure Visualizer & LightBox
+  let activeModalCompound = null;
+
+  function getChemStructure(c) {
+    if (c.ch) {
+      return {
+        url: `https://www.ebi.ac.uk/chembl/api/data/image/${encodeURIComponent(c.ch)}.svg`,
+        type: "chembl",
+        extUrl: `https://www.ebi.ac.uk/chembl/compound_report_card/${encodeURIComponent(c.ch)}/`,
+        extLabel: `ChEMBL ${c.ch}`
+      };
+    }
+    if (c.cid) {
+      return {
+        url: `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${encodeURIComponent(c.cid)}/PNG`,
+        type: "pubchem",
+        extUrl: `https://pubchem.ncbi.nlm.nih.gov/compound/${encodeURIComponent(c.cid)}`,
+        extLabel: `PubChem CID ${c.cid}`
+      };
+    }
+    return null;
+  }
+
+  function openChemLightBox(idx) {
+    const c = C[idx];
+    if (!c) return;
+    activeModalCompound = c;
+    const struct = getChemStructure(c);
+    const box = $("chemLightBox");
+    if (!box) return;
+
+    $("chemModalTitle").textContent = `${c.n} — Wzór strukturalny 2D`;
+    const imgWrap = $("chemModalImgWrap");
+    if (struct) {
+      imgWrap.innerHTML = `<img id="chemModalImg" src="${struct.url}" alt="Wzór strukturalny ${esc(c.n)}">`;
+      const ext = $("chemModalExtLink");
+      if (ext) {
+        ext.href = struct.extUrl;
+        ext.textContent = `${struct.extLabel} ↗`;
+        ext.style.display = "inline-flex";
+      }
+    } else {
+      imgWrap.innerHTML = `
+        <div class="chem-placeholder">
+          <span style="font-size:2.2rem">🧬</span>
+          <b>Brak płaskiego wzoru małocząsteczkowego</b>
+          <span>Substancja sklasyfikowana jako makromolekuła biologiczna, polimer lub mieszanina naturalna.</span>
+        </div>`;
+      const ext = $("chemModalExtLink");
+      if (ext) ext.style.display = "none";
+    }
+
+    const details = $("chemModalDetails");
+    if (details) {
+      const rows = [];
+      if (c.mf) rows.push(`<div>Wzór sumaryczny: <b style="color:#000">${esc(c.mf)}</b></div>`);
+      if (c.pr && c.pr[0]) rows.push(`<div>Masa cząsteczkowa (MW): <b>${c.pr[0]} g/mol</b></div>`);
+      if (c.ik) rows.push(`<div>InChIKey: <code style="font-size:11px;background:#f5f5f5;padding:2px 4px;border-radius:3px">${esc(c.ik)}</code></div>`);
+      if (c.mt) rows.push(`<div>Typ cząsteczki: <b>${esc(c.mt)}</b></div>`);
+      details.innerHTML = rows.join("");
+    }
+
+    const copyBtn = $("chemModalCopyIk");
+    if (copyBtn) {
+      if (c.ik) {
+        copyBtn.style.display = "inline-flex";
+        copyBtn.textContent = "📋 Kopiuj InChIKey";
+        copyBtn.onclick = () => {
+          navigator.clipboard?.writeText(c.ik);
+          copyBtn.textContent = "✓ Skopiowano InChIKey!";
+          setTimeout(() => { copyBtn.textContent = "📋 Kopiuj InChIKey"; }, 2000);
+        };
+      } else {
+        copyBtn.style.display = "none";
+      }
+    }
+
+    box.classList.add("open");
+  }
+
+  function closeChemLightBox() {
+    const box = $("chemLightBox");
+    if (box) box.classList.remove("open");
+    activeModalCompound = null;
+  }
+
   // ---------- Stack Builder & Interaction Checker
   function loadSavedStack() {
     try {
@@ -662,12 +748,18 @@
 
     const chips = [...state.stack].map((i) => {
       const c = C[i];
+      const struct = getChemStructure(c);
+      const thumbHtml = struct
+        ? `<img class="chem-thumb" src="${struct.url}" alt="${esc(c.n)}" loading="lazy" data-zoom-chem="${c.i}" title="Powiększ wzór 2D">`
+        : `<span class="dot" style="background:${CL_COLORS[c.c]};width:10px;height:10px;flex-shrink:0"></span>`;
       return `
         <div class="stack-chip">
-          <div style="display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden">
-            <span class="dot" style="background:${CL_COLORS[c.c]};width:8px;height:8px"></span>
-            <button data-c="${c.i}" style="background:none;border:0;color:var(--color-text);font-weight:600;cursor:pointer;padding:0;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.n)}</button>
-            <small style="color:var(--color-text-muted);white-space:nowrap">(${esc(GR[c.g].label)})</small>
+          <div style="display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden">
+            ${thumbHtml}
+            <div style="min-width:0;overflow:hidden">
+              <button data-c="${c.i}" style="background:none;border:0;color:var(--color-text);font-weight:600;cursor:pointer;padding:0;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block">${esc(c.n)}</button>
+              <small style="color:var(--color-text-muted);white-space:nowrap">${esc(GR[c.g].label)}</small>
+            </div>
           </div>
           <button class="del" data-remove="${c.i}" title="Usuń ze stacka">✕</button>
         </div>`;
@@ -791,6 +883,9 @@
     if (!body) return;
     body.querySelectorAll("[data-c]").forEach((b) => {
       b.onclick = () => select({ type: "compound", i: +b.dataset.c }, true);
+    });
+    body.querySelectorAll("[data-zoom-chem]").forEach((el) => {
+      el.onclick = () => openChemLightBox(+el.dataset.zoomChem);
     });
     body.querySelectorAll("[data-remove]").forEach((b) => {
       b.onclick = () => toggleInStack(+b.dataset.remove);
@@ -1314,6 +1409,30 @@
 
     let tabContent = "";
     if (curTab === "overview") {
+      const struct = getChemStructure(c);
+      let chemHtml = "";
+      if (struct) {
+        chemHtml = `
+          <div class="chem-card">
+            <div class="chem-card-preview" data-zoom-chem="${c.i}" title="Kliknij, aby powiększyć wzór strukturalny 2D">
+              <img src="${struct.url}" alt="Wzór 2D ${esc(c.n)}" loading="lazy">
+            </div>
+            <div class="chem-meta">
+              <span><b>${esc(c.mf || (c.pr && c.pr[0] ? c.pr[0] + " g/mol" : "Struktura 2D"))}</b>${c.pr && c.pr[0] && c.mf ? ` · ${c.pr[0]} g/mol` : ""}</span>
+              ${c.ik ? `<button class="btn-copy" data-copy-ik="${esc(c.ik)}" title="Kopiuj InChIKey do schowka">📋 InChIKey</button>` : `<a href="${struct.extUrl}" target="_blank" rel="noopener noreferrer" style="font-size:11px">${struct.extLabel} ↗</a>`}
+            </div>
+          </div>`;
+      } else if (c.mt && c.mt !== "Small molecule") {
+        chemHtml = `
+          <div class="chem-card">
+            <div class="chem-placeholder">
+              <span style="font-size:1.8rem">🧬</span>
+              <b>${esc(c.mt)}</b>
+              <span>Cząsteczka biologiczna bez struktury małocząsteczkowej</span>
+            </div>
+          </div>`;
+      }
+
       const propBoxes = c.pr ? `
         <div class="stat-grid">
           <div class="stat-box"><small>Masa cząst. (MW)</small><b>${c.pr[0] != null ? c.pr[0] + " g/mol" : "—"}</b></div>
@@ -1326,17 +1445,20 @@
         <div class="label" style="margin-top:.8rem">Klasyfikacja ATC</div>
         <div class="links">${c.atc.map(([code, desc]) => `<span style="font-size:var(--text-xs);color:var(--color-text)"><code style="font-weight:600;color:var(--color-primary)">${esc(code)}</code> · ${esc(desc)}</span>`).join("")}</div>` : "";
 
-      const idHtml = (c.ids || c.ic || c.ch || c.fa) ? `
+      const idHtml = (c.ids || c.ic || c.ch || c.fa || c.ik || c.cid) ? `
         <div class="label" style="margin-top:.8rem">Tożsamość i źródła</div>
         <table class="pk">
           ${c.fa ? `<tr><th>Pierwsza rejestracja</th><td>${esc(c.fa)}</td></tr>` : ""}
           ${c.mt ? `<tr><th>Typ cząsteczki</th><td>${esc(c.mt)}</td></tr>` : ""}
           ${c.ids ? `<tr><th>Identyfikacja ChEMBL</th><td>${esc(IDS_PL[c.ids] || c.ids)}${c.ic ? " · " + esc(IC_PL[c.ic] || c.ic) : ""}</td></tr>` : ""}
+          ${c.ik ? `<tr><th>InChIKey</th><td><code style="font-size:11px">${esc(c.ik)}</code></td></tr>` : ""}
+          ${c.cid ? `<tr><th>PubChem CID</th><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/${esc(c.cid)}" target="_blank" rel="noopener noreferrer">${esc(c.cid)} ↗</a></td></tr>` : ""}
         </table>` : "";
 
       tabContent = `
         <div class="tab-panel">
           ${c.d ? `<p class="muted" style="line-height:1.45">${esc(c.d)}${c.d.length >= 420 ? "…" : ""}</p>` : '<p class="empty">Brak opisu podsumowującego.</p>'}
+          ${chemHtml}
           ${propBoxes}
           ${atcHtml}
           ${idHtml}
@@ -1505,6 +1627,18 @@
     if (stackToggle && state.sel && state.sel.type === "compound") {
       stackToggle.onclick = () => toggleInStack(state.sel.i);
     }
+    p.querySelectorAll("[data-zoom-chem]").forEach((el) => {
+      el.onclick = () => openChemLightBox(+el.dataset.zoomChem);
+    });
+    p.querySelectorAll("[data-copy-ik]").forEach((btn) => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        navigator.clipboard?.writeText(btn.dataset.copyIk);
+        const orig = btn.textContent;
+        btn.textContent = "✓ Skopiowano!";
+        setTimeout(() => { btn.textContent = orig; }, 1800);
+      };
+    });
     const closeBtn = p.querySelector("#cardClose");
     if (closeBtn) closeBtn.onclick = () => select(null);
   }
@@ -1584,8 +1718,19 @@
     };
   }
 
+  // ---------- chemical structure lightbox controls
+  const chemClose = $("chemModalClose");
+  if (chemClose) chemClose.onclick = closeChemLightBox;
+  const chemBox = $("chemLightBox");
+  if (chemBox) {
+    chemBox.onclick = (e) => {
+      if (e.target === chemBox) closeChemLightBox();
+    };
+  }
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      if (activeModalCompound) { closeChemLightBox(); return; }
       if (state.stackDrawerOpen) { toggleStackDrawer(false); return; }
       select(null);
       return;

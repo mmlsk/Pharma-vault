@@ -162,6 +162,27 @@ def main() -> None:
             x = idr.get(r["compound_id"])
             if x and c and x["chembl-id"] == c["identity"]["chembl-id"]:
                 item["ic"] = "curated" if (x.get("decision") or c["identity"]["source"] == "curated-identity") else x["verdict"]
+            if x:
+                iks = x.get("chembl-inchikeys") or []
+                if iks and iks[0]:
+                    item["ik"] = iks[0]
+                elif x.get("evidence"):
+                    for ev in x["evidence"]:
+                        if ev.get("inchikey"):
+                            item["ik"] = ev["inchikey"]
+                            break
+            cid = r.get("pubchem_cid")
+            if not cid and x and x.get("evidence"):
+                for ev in x["evidence"]:
+                    if ev.get("cid"):
+                        cid = ev["cid"]
+                        break
+            if cid:
+                item["cid"] = cid
+            if c:
+                pr = c.get("properties")
+                if pr and pr.get("full-molformula"):
+                    item["mf"] = pr["full-molformula"]
             compounds.append(item)
 
     data = {

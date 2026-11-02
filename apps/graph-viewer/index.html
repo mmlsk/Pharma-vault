@@ -140,6 +140,19 @@
     .pk-row select, .pk-row input { font-size: 11px; padding: 2px 4px; border-radius: 4px; border: 1px solid var(--color-border); background: var(--color-surface-offset); color: var(--color-text); }
     .pk-row input { width: 44px; text-align: right; }
     .pk-pill { font-size: 10px; padding: 1px 5px; border-radius: 4px; font-weight: 600; }
+    .chem-card { background: #ffffff; border-radius: var(--radius-md); border: 1px solid var(--color-border); padding: .65rem; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; margin: .6rem 0; box-shadow: var(--shadow-sm); }
+    .chem-card-preview { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; cursor: zoom-in; }
+    .chem-card-preview img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .chem-meta { width: 100%; margin-top: .4rem; display: flex; align-items: center; justify-content: space-between; font-size: var(--text-xs); color: #333; border-top: 1px solid #eee; padding-top: .4rem; }
+    .chem-placeholder { width: 100%; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--color-text-muted); font-size: var(--text-xs); text-align: center; gap: 6px; }
+    .btn-copy { font-size: 11px; padding: 2px 7px; border-radius: 4px; border: 1px solid var(--color-border); background: var(--color-surface-offset); color: var(--color-text); cursor: pointer; transition: all .15s; }
+    .btn-copy:hover { border-color: var(--color-primary); color: var(--color-primary); }
+    .chem-thumb { width: 34px; height: 34px; border-radius: 4px; background: #ffffff; border: 1px solid var(--color-border); object-fit: contain; flex-shrink: 0; padding: 1px; }
+    .lightbox-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); z-index: 100; display: none; align-items: center; justify-content: center; padding: 1rem; }
+    .lightbox-backdrop.open { display: flex; }
+    .lightbox-modal { background: #ffffff; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 480px; max-width: 95vw; padding: 1.25rem; display: flex; flex-direction: column; gap: .75rem; color: #111; position: relative; }
+    .lightbox-modal .chem-big-img { width: 100%; height: 280px; display: flex; align-items: center; justify-content: center; }
+    .lightbox-modal .chem-big-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
     @media (max-width: 1100px) {
       body { overflow: auto; height: auto; }
       .app { grid-template-columns: 1fr; height: auto; }
@@ -248,6 +261,24 @@
     <div class="warnbox">Materiał edukacyjny — nie jest poradą medyczną i nie zawiera dawkowania. Dane PK pochodzą automatycznie z Wikipedii (wersja przypięta); część porównano automatycznie z etykietami FDA i ChPL (EMA) — to nadal nie jest weryfikacja ekspercka.</div>
     <div id="panel" class="card" aria-live="polite"><p class="empty">Wybierz substancję, grupę albo hub, aby zobaczyć szczegóły.</p></div>
   </aside>
+</div>
+<div id="chemLightBox" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Powiększenie struktury chemicznej">
+  <div class="lightbox-modal">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <b id="chemModalTitle" style="font-size:var(--text-base);font-family:var(--font-display)">Struktura 2D</b>
+      <button class="card-close" id="chemModalClose" title="Zamknij (Esc)" aria-label="Zamknij podgląd">✕</button>
+    </div>
+    <div class="chem-big-img" id="chemModalImgWrap">
+      <img id="chemModalImg" src="" alt="Struktura cząsteczki">
+    </div>
+    <div id="chemModalDetails" style="font-size:var(--text-xs);color:#444;display:grid;gap:4px">
+      <!-- Wypełniane przez app.js -->
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:6px;margin-top:.4rem">
+      <button class="btn btn-copy" id="chemModalCopyIk">📋 Kopiuj InChIKey</button>
+      <a id="chemModalExtLink" href="#" target="_blank" rel="noopener noreferrer" class="btn" style="font-size:var(--text-xs)">Otwórz w bazie ↗</a>
+    </div>
+  </div>
 </div>
 <script src="graph-data.js"></script>
 <script src="app.js"></script>

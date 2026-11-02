@@ -430,3 +430,27 @@ def test_pk_simulation_math():
     assert 1.45 < rac_expected < 1.55
 
 
+def test_chemical_structures_and_inchikeys():
+    """Verify that graph-data.js contains canonical InChIKeys, molecular formulas, and ChEMBL IDs in valid IUPAC format."""
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    assert "window.PV_GRAPH = {" in graph_js
+    prefix = "window.PV_GRAPH = "
+    start_idx = graph_js.index(prefix) + len(prefix)
+    end_idx = graph_js.rindex("};") + 1
+    graph = json.loads(graph_js[start_idx:end_idx])
+    compounds = graph["compounds"]
+
+    with_ik = [c for c in compounds if c.get("ik")]
+    with_ch = [c for c in compounds if c.get("ch")]
+    with_mf = [c for c in compounds if c.get("mf")]
+
+    assert len(with_ik) >= 1400, f"Expected >= 1400 compounds with InChIKey, found {len(with_ik)}"
+    assert len(with_ch) >= 2200, f"Expected >= 2200 compounds with ChEMBL ID, found {len(with_ch)}"
+    assert len(with_mf) >= 1900, f"Expected >= 1900 compounds with molecular formula, found {len(with_mf)}"
+
+    ik_regex = re.compile(r"^[A-Z]{14}-[A-Z]{10}-[A-Z]$")
+    for c in with_ik:
+        assert ik_regex.match(c["ik"]), f"Invalid InChIKey format '{c['ik']}' for compound {c.get('id')}"
+
+
+
