@@ -494,5 +494,44 @@ def test_comparator_feature_extraction():
     assert isinstance(shared_cyp, set)
 
 
+def test_advanced_multi_filter():
+    """Verify markup and filter logic for Smart Multi-Filter (CYP, Ro5, Physicochemical, Clinical Phase)."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    for el_id in ["advFilterDetails", "advFilterBadge", "advCypSelect", "advRo5Select", "advPropSelect", "advPhaseSelect", "advFilterReset"]:
+        assert f'id="{el_id}"' in html_src, f"Missing element id '{el_id}' in index.html"
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    for term in ["state.adv", "passAdvCyp", "passAdvRo5", "passAdvProp", "passAdvPhase", "updateAdvFilterUI"]:
+        assert term in app_src, f"Missing '{term}' in app.js"
+
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    prefix = "window.PV_GRAPH = "
+    start_idx = graph_js.index(prefix) + len(prefix)
+    end_idx = graph_js.rindex("};") + 1
+    graph = json.loads(graph_js[start_idx:end_idx])
+    compounds = graph["compounds"]
+
+    # 1. CYP3A4 filtering
+    cyp3a4_hits = [c for c in compounds if c.get("pk") and "CYP3A4" in (c["pk"].get("cyp") or [])]
+    assert len(cyp3a4_hits) >= 100, f"Expected >= 100 CYP3A4 substrates, got {len(cyp3a4_hits)}"
+
+    # 2. Ro5 compliance (0 violations)
+    ro5_clean = [c for c in compounds if c.get("pr") and c["pr"][3] == 0]
+    assert len(ro5_clean) >= 1000, f"Expected >= 1000 Ro5-compliant compounds, got {len(ro5_clean)}"
+
+    # 3. CNS / BBB-friendly profile (MW <= 400 and 1 <= ALogP <= 3)
+    cns_hits = [c for c in compounds if c.get("pr") and c["pr"][0] is not None and c["pr"][1] is not None and c["pr"][0] <= 400 and 1.0 <= c["pr"][1] <= 3.0]
+    assert len(cns_hits) >= 200, f"Expected >= 200 CNS/BBB-friendly compounds, got {len(cns_hits)}"
+
+    # 4. Phase 4 approved drugs
+    phase4_hits = [c for c in compounds if c.get("ph") == 4]
+    assert len(phase4_hits) >= 1000, f"Expected >= 1000 Phase 4 approved compounds, got {len(phase4_hits)}"
+
+    # 5. Composite faceted search: Phase 4 + CYP3A4 + Ro5 compliant
+    composite = [c for c in cyp3a4_hits if c.get("ph") == 4 and c.get("pr") and c["pr"][3] == 0]
+    assert len(composite) >= 20, f"Expected >= 20 composite search hits, got {len(composite)}"
+
+
+
 
 

@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.10.0] — 2026-11-02 — Zaawansowany Filtr Wielokryterialny (Smart Multi-Filter & Faceted Search)
+### Dodano
+- **Zaawansowany Filtr Wielokryterialny (Smart Multi-Filter & Faceted Search)** w pasku bocznym przeglądarki grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **Zwijany akordeon fasetowy (`#advFilterDetails`)**:
+    - Nowa dedykowana sekcja w pasku bocznym z dynamicznym licznikiem aktywnych kryteriów (`#advFilterBadge`), reagująca płynnie na zmiany i nieprzesłaniająca widoku grafu.
+    - Przycisk szybkiego resetu `✕ Wyczyść filtry zaawansowane` (`#advFilterReset`) przywracający domyślny widok jednym kliknięciem.
+  - **4 fasetowe wymiary farmakologiczno-chemiczne**:
+    1. **Precyzyjny selektor izoenzymów CYP (`#advCypSelect`)**: filtrowanie po konkretnych szlakach metabolicznych (dowolny substrat CYP, CYP3A4, CYP2D6, CYP1A2, CYP2C9, CYP2C19, CYP2E1 oraz rzadkie izoenzymy) z pełną dwukierunkową synchronizacją z ogólnym checkboxem `#cypOnly`.
+    2. **Reguła Lipińskiego Ro5 (`#advRo5Select`)**: filtrowanie na związki w pełni zgodne z regułą pięciu (0 naruszeń — optymalna biodostępność doustna), dopuszczalne w chemii medycznej ($\le 1$ naruszenie — lead-like) oraz poza Ro5 ($> 1$ naruszeń — peptydy, makromolekuły i związki biologiczne).
+    3. **Profil fizykochemiczny MW & ALogP (`#advPropSelect`)**: dedykowane presety kliniczne:
+       - OUN / Bariera Krew-Mózg ($MW \le 400 \text{ g/mol} \land ALogP \in [1.0, 3.0]$)
+       - Lead-like ($MW \le 300 \text{ g/mol} \land ALogP \le 3.0$)
+       - Klasyczne drobnocząsteczkowe ($MW \in [300, 500] \text{ g/mol}$)
+       - Wysokocząsteczkowe ($MW > 500 \text{ g/mol}$)
+       - Hydrofilowe ($ALogP < 0$)
+       - Silnie lipofilowe ($ALogP > 4.0$)
+    4. **Faza rozwoju klinicznego ChEMBL (`#advPhaseSelect`)**: Faza 4 (leki zatwierdzone i w obrocie), Fazy 1–3 (kandydaci w badaniach klinicznych) oraz faza 0 / substancje badawcze i suplementy.
+  - **Reaktywne filtrowanie w czasie rzeczywistym**:
+    - Każda modyfikacja faset natychmiastowo przelicza pętlę `visible(c)` (< 1 ms), odświeża histogram $t_{1/2}$, wyniki wyszukiwania tekstowego oraz licznik widocznych cząsteczek.
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_advanced_multi_filter` sprawdzający obecność elementów DOM, kluczy stanu `state.adv`, funkcji predykatów oraz weryfikujący poprawność zapytań fasetowych i złożeń wielokryterialnych na bazie ponad 2200 substancji (43 testy, 100% green).
+
 ## [3.9.0] — 2026-11-02 — Porównywarka leków Head-to-Head i widok diff celów/PK
 ### Dodano
 - **Porównywarka Leków Head-to-Head (Drug Comparator & Diff View)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):

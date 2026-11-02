@@ -62,6 +62,12 @@
     pkOnly: false, cypOnly: false, hub: null, ver: "",
     rel: true, hlBin: null, tab: "overview",
     stack: new Set(), stackOnly: false, stackDrawerOpen: false,
+    adv: {
+      cyp: "",
+      ro5: "",
+      prop: "",
+      phase: ""
+    },
     sim: {
       horizon: "auto", // "auto", "24", "48", "168"
       compounds: {},   // { [idx]: { interval: 24, tHalf: 6.0, custom: false } }
@@ -1270,8 +1276,77 @@
   // ---------- filters
   const HB = [-2, -1, 0, 1, 2, 3, 4]; // log10(hours) bin edges: 36 s … 10^4 h
   const binOf = (h) => Math.max(0, Math.min(HB.length - 2, Math.floor(Math.log10(h)) - HB[0]));
+
+  const passAdvCyp = (c) => {
+    if (!state.adv.cyp) return true;
+    if (!c.pk || !c.pk.cyp) return false;
+    if (state.adv.cyp === "any") return c.pk.cyp.length > 0;
+    if (state.adv.cyp === "other") {
+      const mainCyps = ["CYP3A4", "CYP2D6", "CYP1A2", "CYP2C9", "CYP2C19", "CYP2E1"];
+      return c.pk.cyp.some((x) => !mainCyps.includes(x));
+    }
+    return c.pk.cyp.includes(state.adv.cyp);
+  };
+
+  const passAdvRo5 = (c) => {
+    if (!state.adv.ro5) return true;
+    if (!c.pr) return false;
+    const v = c.pr[3];
+    if (v == null) return false;
+    if (state.adv.ro5 === "0") return v === 0;
+    if (state.adv.ro5 === "1") return v <= 1;
+    if (state.adv.ro5 === "gt1") return v > 1;
+    return true;
+  };
+
+  const passAdvProp = (c) => {
+    if (!state.adv.prop) return true;
+    if (!c.pr) return false;
+    const mw = c.pr[0], alogp = c.pr[1];
+    switch (state.adv.prop) {
+      case "cns": return mw != null && alogp != null && mw <= 400 && alogp >= 1 && alogp <= 3;
+      case "lead": return mw != null && alogp != null && mw <= 300 && alogp <= 3;
+      case "druglike": return mw != null && mw >= 300 && mw <= 500;
+      case "high_mw": return mw != null && mw > 500;
+      case "hydrophilic": return alogp != null && alogp < 0;
+      case "lipophilic": return alogp != null && alogp > 4;
+      default: return true;
+    }
+  };
+
+  const passAdvPhase = (c) => {
+    if (!state.adv.phase) return true;
+    switch (state.adv.phase) {
+      case "4": return c.ph === 4;
+      case "1-3": return c.ph != null && c.ph >= 1 && c.ph <= 3;
+      case "preclinical": return !c.ph || c.ph === 0;
+      default: return true;
+    }
+  };
+
+  function updateAdvFilterUI() {
+    let count = 0;
+    if (state.adv.cyp) count++;
+    if (state.adv.ro5) count++;
+    if (state.adv.prop) count++;
+    if (state.adv.phase) count++;
+
+    const badge = $("advFilterBadge");
+    if (badge) {
+      if (count > 0) {
+        badge.textContent = `${count}`;
+        badge.style.display = "inline-block";
+        badge.classList.add("warn");
+      } else {
+        badge.style.display = "none";
+        badge.classList.remove("warn");
+      }
+    }
+  }
+
   const visible = (c) => (!state.stackOnly || state.stack.has(c.i)) && state.clusters.has(c.c) && (!state.pkOnly || c.pk) && (!state.cypOnly || (c.pk && c.pk.cyp)) && (state.hub === null || c.l.includes(state.hub))
-    && (!state.ver || VER_TEST[state.ver](c)) && (state.hlBin === null || (c.hlh && binOf(c.hlh) === state.hlBin));
+    && (!state.ver || VER_TEST[state.ver](c)) && (state.hlBin === null || (c.hlh && binOf(c.hlh) === state.hlBin))
+    && passAdvCyp(c) && passAdvRo5(c) && passAdvProp(c) && passAdvPhase(c);
   function stats() {
     const vis = C.filter(visible).length;
     $("sAll").textContent = G.meta.substances.toLocaleString("pl");
@@ -1907,9 +1982,65 @@
     fit();
   };
   $("pkOnly").onchange = (e) => { state.pkOnly = e.target.checked; stats(); search(); draw(); };
-  $("cypOnly").onchange = (e) => { state.cypOnly = e.target.checked; stats(); search(); draw(); };
+  $("cypOnly").onchange = (e) => {
+    state.cypOnly = e.target.checked;
+    if (state.cypOnly && advCyp && !state.adv.cyp) {
+      advCyp.value = "any";
+      state.adv.cyp = "any";
+      updateAdvFilterUI();
+    }
+    stats(); search(); draw();
+  };
   $("relOn").onchange = (e) => { state.rel = e.target.checked; draw(); };
   $("ver").onchange = (e) => { state.ver = e.target.value; stats(); search(); draw(); };
+
+  // ---------- advanced multi-filter controls
+  const advCyp = $("advCypSelect");
+  if (advCyp) {
+    advCyp.onchange = (e) => {
+      state.adv.cyp = e.target.value;
+      if ($("cypOnly")) $("cypOnly").checked = false;
+      state.cypOnly = false;
+      updateAdvFilterUI();
+      stats(); search(); draw();
+    };
+  }
+  const advRo5 = $("advRo5Select");
+  if (advRo5) {
+    advRo5.onchange = (e) => {
+      state.adv.ro5 = e.target.value;
+      updateAdvFilterUI();
+      stats(); search(); draw();
+    };
+  }
+  const advProp = $("advPropSelect");
+  if (advProp) {
+    advProp.onchange = (e) => {
+      state.adv.prop = e.target.value;
+      updateAdvFilterUI();
+      stats(); search(); draw();
+    };
+  }
+  const advPhase = $("advPhaseSelect");
+  if (advPhase) {
+    advPhase.onchange = (e) => {
+      state.adv.phase = e.target.value;
+      updateAdvFilterUI();
+      stats(); search(); draw();
+    };
+  }
+  const advReset = $("advFilterReset");
+  if (advReset) {
+    advReset.onclick = () => {
+      state.adv = { cyp: "", ro5: "", prop: "", phase: "" };
+      if (advCyp) advCyp.value = "";
+      if (advRo5) advRo5.value = "";
+      if (advProp) advProp.value = "";
+      if (advPhase) advPhase.value = "";
+      updateAdvFilterUI();
+      stats(); search(); draw();
+    };
+  }
   const q = $("q"), res = $("results");
   function search() {
     const s = q.value.trim().toLowerCase();
