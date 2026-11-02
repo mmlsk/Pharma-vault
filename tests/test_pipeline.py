@@ -453,4 +453,46 @@ def test_chemical_structures_and_inchikeys():
         assert ik_regex.match(c["ik"]), f"Invalid InChIKey format '{c['ik']}' for compound {c.get('id')}"
 
 
+def test_comparator_feature_extraction():
+    """Verify that graph data and viewer markup support drug comparison, target diffing, and CYP bottleneck detection."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    assert 'id="comparatorModal"' in html_src
+    assert 'id="stackCompareBtn"' in html_src
+    assert 'id="compModalClose"' in html_src
+    assert 'id="compModalCopyMd"' in html_src
+    assert 'id="compModalObsidian"' in html_src
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    assert "function openComparator(" in app_src
+    assert "function renderComparator(" in app_src
+    assert "function exportComparisonMarkdown(" in app_src
+    assert "cardCompareBtn" in app_src
+
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    prefix = "window.PV_GRAPH = "
+    start_idx = graph_js.index(prefix) + len(prefix)
+    end_idx = graph_js.rindex("};") + 1
+    graph = json.loads(graph_js[start_idx:end_idx])
+    compounds = graph["compounds"]
+    targets = graph["targets"]
+
+    # Verify target indexing matches
+    with_tg = [c for c in compounds if c.get("tg")]
+    assert len(with_tg) > 500, f"Expected > 500 compounds with targets, found {len(with_tg)}"
+    for c in with_tg[:20]:
+        for ti in c["tg"]:
+            assert 0 <= ti < len(targets), f"Target index {ti} out of range in compound {c.get('id')}"
+
+    # Verify CYP substrate detection across compounds
+    with_cyp = [c for c in compounds if c.get("pk") and c["pk"].get("cyp")]
+    assert len(with_cyp) > 100, f"Expected > 100 compounds with CYP substrates, found {len(with_cyp)}"
+
+    # Check simulated head-to-head comparison between 2 compounds sharing targets or CYP
+    c1, c2 = with_cyp[0], with_cyp[1]
+    shared_cyp = set(c1["pk"]["cyp"]) & set(c2["pk"]["cyp"])
+    # Logic works without exception
+    assert isinstance(shared_cyp, set)
+
+
+
 

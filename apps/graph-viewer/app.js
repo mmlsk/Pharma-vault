@@ -156,6 +156,224 @@
     activeModalCompound = null;
   }
 
+  // ---------- Drug Comparator (Head-to-Head Diff View)
+  let activeComparatorIndices = null;
+
+  function openComparator(indices) {
+    let list = (indices && indices.length) ? indices : [...state.stack];
+    if (!list.length) {
+      if (state.sel && state.sel.type === "compound") list = [state.sel.i];
+      else if (C.length >= 2) list = [0, 1];
+    }
+    if (list.length === 1) {
+      const nb = neighbours(C[list[0]]);
+      if (nb.length) list.push(nb[0].i);
+      else list.push((list[0] + 1) % C.length);
+    }
+    activeComparatorIndices = list.slice(0, 4);
+    const modal = $("comparatorModal");
+    if (!modal) return;
+
+    renderComparator(activeComparatorIndices);
+    $("compCountBadge").textContent = `${activeComparatorIndices.length} substancje`;
+    modal.classList.add("open");
+  }
+
+  function closeComparator() {
+    const modal = $("comparatorModal");
+    if (modal) modal.classList.remove("open");
+    activeComparatorIndices = null;
+  }
+
+  function renderComparator(indices) {
+    const body = $("comparatorBody");
+    if (!body) return;
+    const comps = indices.map((i) => C[i]);
+
+    const tgCounts = new Map();
+    comps.forEach((c) => {
+      (c.tg || []).forEach((t) => {
+        tgCounts.set(t, (tgCounts.get(t) || 0) + 1);
+      });
+    });
+
+    const cypCounts = new Map();
+    comps.forEach((c) => {
+      const cy = (c.pk && c.pk.cyp) || [];
+      cy.forEach((enz) => {
+        cypCounts.set(enz, (cypCounts.get(enz) || 0) + 1);
+      });
+    });
+
+    const atcCounts = new Map();
+    comps.forEach((c) => {
+      (c.atc || []).forEach(([code]) => {
+        const c4 = code.slice(0, 4);
+        atcCounts.set(c4, (atcCounts.get(c4) || 0) + 1);
+      });
+    });
+
+    const colHeaders = comps.map((c) => {
+      const struct = getChemStructure(c);
+      const thumb = struct
+        ? `<div style="height:110px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:6px;padding:4px;border:1px solid var(--color-border);cursor:zoom-in" data-zoom-chem="${c.i}" title="Powiększ wzór 2D"><img src="${struct.url}" style="max-height:100%;max-width:100%;object-fit:contain" alt="${esc(c.n)}"></div>`
+        : `<div style="height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--color-surface-offset);border-radius:6px;border:1px solid var(--color-border);font-size:11px;color:var(--color-text-muted)"><span style="font-size:1.5rem">🧬</span>${esc(c.mt || "Makromolekuła")}</div>`;
+      return `
+        <th class="comp-col-th">
+          ${thumb}
+          <div style="margin-top:6px;font-size:var(--text-sm);font-weight:700">${esc(c.n)}</div>
+          <div style="font-size:11px;color:var(--color-text-muted)">${esc(GR[c.g].label)} · <span style="color:${CL_COLORS[c.c]}">●</span> ${esc(CL_PL[G.clusters[c.c].name])}</div>
+          <div style="margin-top:4px;font-size:11px">${c.mf ? `<code>${esc(c.mf)}</code>` : ""}${c.pr && c.pr[0] ? ` · <b>${c.pr[0]} g/mol</b>` : ""}</div>
+          ${c.ik ? `<div style="margin-top:4px"><button class="btn-copy" data-copy-ik="${esc(c.ik)}" title="Kopiuj InChIKey">📋 InChIKey</button></div>` : ""}
+        </th>`;
+    }).join("");
+
+    const row = (label, fn, isSection = false) => {
+      if (isSection) {
+        return `<tr><th class="section-th" colspan="${comps.length + 1}">${esc(label)}</th></tr>`;
+      }
+      const cells = comps.map((c) => fn(c)).join("");
+      return `<tr><th style="background:var(--color-surface-2);font-weight:600;width:160px">${esc(label)}</th>${cells}</tr>`;
+    };
+
+    const html = `
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th style="background:var(--color-surface-offset);width:160px;vertical-align:bottom">Parametr</th>
+            ${colHeaders}
+          </tr>
+        </thead>
+        <tbody>
+          ${row("WŁAŚCIWOŚCI FIZYKOCHEMICZNE (Ro5)", null, true)}
+          ${row("Masa cząst. (MW)", (c) => `<td>${c.pr && c.pr[0] != null ? `<b>${c.pr[0]}</b> g/mol` : "—"}</td>`)}
+          ${row("Lipofilowość (ALogP)", (c) => `<td>${c.pr && c.pr[1] != null ? `<b>${c.pr[1]}</b>` : "—"}</td>`)}
+          ${row("Pow. polarna (PSA)", (c) => `<td>${c.pr && c.pr[2] != null ? `<b>${c.pr[2]}</b> Å²` : "—"}</td>`)}
+          ${row("Reguła Lipińskiego (Ro5)", (c) => {
+            const v = c.pr ? c.pr[3] : null;
+            if (v == null) return "<td>—</td>";
+            return `<td><span class="tag ${v === 0 ? 'ok' : 'warn'}">${v === 0 ? '✓ 0 naruszeń' : `${v} naruszeń`}</span></td>`;
+          })}
+
+          ${row("FARMAKOKINETYKA (PK)", null, true)}
+          ${row("Okres półtrwania (t½)", (c) => {
+            const k = c.pk;
+            const th = rng(k && k.hl && [k.hl[0], k.hl[1]], k && k.hl && k.hl[2]) || (c.hlh ? `${c.hlh.toFixed(1)} h` : "—");
+            return `<td><b>${esc(th)}</b>${k && k.hlt ? `<br><small class="raw">${esc(k.hlt)}</small>` : ""}</td>`;
+          })}
+          ${row("Wiązanie z białkami (PB)", (c) => `<td>${c.pk && c.pk.pb ? `<b>${rng(c.pk.pb, "%")}</b>` : "—"}</td>`)}
+          ${row("Biodostępność (BA)", (c) => `<td>${c.pk && c.pk.ba ? `<b>${rng(c.pk.ba, "%")}</b>` : "—"}</td>`)}
+          ${row("Metabolizm", (c) => `<td>${c.pk && c.pk.met ? esc(c.pk.met) : "—"}</td>`)}
+          ${row("Wydalanie", (c) => {
+            const k = c.pk;
+            if (!k) return "<td>—</td>";
+            const ren = k.ren === true ? "Głównie z moczem" : k.ren === false ? "Głównie pozanerkowo" : "—";
+            return `<td><b>${ren}</b>${k.ex ? `<br><small class="note">${esc(k.ex)}</small>` : ""}</td>`;
+          })}
+          ${row("Etykiety FDA & EMA", (c) => {
+            const v = c.v, e = c.ve;
+            const badges = [];
+            if (v && v.s === 'consistent') badges.push('<span class="tag ok">FDA ✓</span>');
+            else if (v && v.s === 'discrepant') badges.push('<span class="tag warn">FDA ≠</span>');
+            if (e && e.s === 'consistent') badges.push('<span class="tag ok">ChPL ✓</span>');
+            else if (e && e.s === 'discrepant') badges.push('<span class="tag warn">ChPL ≠</span>');
+            return `<td>${badges.join(" ") || '<span class="note">—</span>'}</td>`;
+          })}
+
+          ${row("ENZYMY METABOLICZNE (CYP)", null, true)}
+          ${row("Substrat izoenzymów", (c) => {
+            const cy = (c.pk && c.pk.cyp) || [];
+            if (!cy.length) return '<td><span class="note">Brak danych / nie metabolizowany</span></td>';
+            const items = cy.map((enz) => {
+              const shared = cypCounts.get(enz) >= 2;
+              return `<span class="comp-tag ${shared ? 'comp-diff-warn' : 'tag'}" title="${shared ? 'Wspólny enzym — wąskie gardło metaboliczne' : 'Izoenzym CYP'}">${shared ? '⚠️ ' : ''}${esc(enz)}</span>`;
+            }).join("");
+            return `<td>${items}</td>`;
+          })}
+
+          ${row("CELE MOLEKULARNE (ChEMBL)", null, true)}
+          ${row("Mechanizm działania", (c) => `<td><small style="line-height:1.4">${esc(c.m || "Brak opisu mechanizmu w ChEMBL")}</small></td>`)}
+          ${row("Wiązane cele", (c) => {
+            const tgs = c.tg || [];
+            if (!tgs.length) return '<td><span class="note">Brak celów ChEMBL</span></td>';
+            const items = tgs.map((t) => {
+              const shared = tgCounts.get(t) >= 2;
+              return `<span class="comp-tag ${shared ? 'comp-diff-same' : 'tag'}" style="${shared ? 'font-weight:700' : ''}">${shared ? '✓ ' : ''}◎ ${esc(T[t].n)}</span>`;
+            }).join(" ");
+            return `<td>${items}</td>`;
+          })}
+          ${row("Klasyfikacja ATC", (c) => {
+            const atcs = c.atc || [];
+            if (!atcs.length) return '<td><span class="note">—</span></td>';
+            const items = atcs.map(([code, name]) => {
+              const shared = atcCounts.get(code.slice(0, 4)) >= 2;
+              return `<div style="font-size:11px;margin-bottom:2px" class="${shared ? 'comp-diff-same' : ''}"><code>${esc(code)}</code> ${esc(name)}</div>`;
+            }).join("");
+            return `<td>${items}</td>`;
+          })}
+
+          ${row("BEZPIECZEŃSTWO & HUBY", null, true)}
+          ${row("Ostrzeżenia najwyższego stopnia", (c) => {
+            const list = [];
+            if (c.bb) list.push('<span class="tag warn">⚠️ Black Box Warning</span>');
+            if (c.wd) list.push('<span class="tag warn">⚠️ Wycofany z rynku</span>');
+            if (c.ic === 'conflict') list.push('<span class="tag warn">⚠️ Rozbieżność tożsamości</span>');
+            return `<td>${list.join("<br>") || '<span class="tag ok">Brak flag najwyższego ryzyka</span>'}</td>`;
+          })}
+          ${row("Krytyczne huby ryzyka", (c) => {
+            const hubs = (c.l || []).filter((li) => CORE[li].kind === "hub").map((li) => esc(CORE[li].name));
+            return `<td>${hubs.length ? hubs.map((h) => `<span class="tag warn" style="display:block;margin-bottom:2px">⚠️ ${h}</span>`).join("") : '<span class="note">—</span>'}</td>`;
+          })}
+        </tbody>
+      </table>`;
+
+    body.innerHTML = html;
+
+    body.querySelectorAll("[data-zoom-chem]").forEach((el) => {
+      el.onclick = () => openChemLightBox(+el.dataset.zoomChem);
+    });
+    body.querySelectorAll("[data-copy-ik]").forEach((btn) => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        navigator.clipboard?.writeText(btn.dataset.copyIk);
+        const orig = btn.textContent;
+        btn.textContent = "✓ Skopiowano!";
+        setTimeout(() => { btn.textContent = orig; }, 1800);
+      };
+    });
+  }
+
+  function exportComparisonMarkdown(indices) {
+    const list = (indices || activeComparatorIndices || [...state.stack]);
+    if (!list.length) return "";
+    const comps = list.map((i) => C[i]);
+    const names = comps.map((c) => c.n).join(" vs ");
+    const lines = [
+      `# Porównanie Head-to-Head: ${names}`,
+      "",
+      `> Data wygenerowania: ${new Date().toISOString().slice(0, 10)}`,
+      "> Narzędzie: Pharma-vault Drug Comparator (v3.9)",
+      "",
+      "| Parametr | " + comps.map((c) => `**${c.n}**`).join(" | ") + " |",
+      "| :--- | " + comps.map(() => ":---").join(" | ") + " |",
+      "| **Klaster** | " + comps.map((c) => CL_PL[G.clusters[c.c].name]).join(" | ") + " |",
+      "| **Wzór chemiczny** | " + comps.map((c) => c.mf || "—").join(" | ") + " |",
+      "| **Masa cząst. (MW)** | " + comps.map((c) => (c.pr && c.pr[0] ? `${c.pr[0]} g/mol` : "—")).join(" | ") + " |",
+      "| **Lipofilowość (ALogP)** | " + comps.map((c) => (c.pr && c.pr[1] != null ? c.pr[1] : "—")).join(" | ") + " |",
+      "| **Pow. polarna (PSA)** | " + comps.map((c) => (c.pr && c.pr[2] != null ? `${c.pr[2]} Å²` : "—")).join(" | ") + " |",
+      "| **Reguła Lipińskiego** | " + comps.map((c) => (c.pr ? `${c.pr[3]} naruszeń` : "—")).join(" | ") + " |",
+      "| **Okres półtrwania (t½)** | " + comps.map((c) => (c.pk && c.pk.hl ? `${c.pk.hl[0]}${c.pk.hl[1] ? '–' + c.pk.hl[1] : ''} ${c.pk.hl[2] || 'h'}` : c.hlh ? `${c.hlh.toFixed(1)} h` : "—")).join(" | ") + " |",
+      "| **Wiązanie z białkami** | " + comps.map((c) => (c.pk && c.pk.pb ? `${c.pk.pb[0]}%` : "—")).join(" | ") + " |",
+      "| **Substraty CYP** | " + comps.map((c) => ((c.pk && c.pk.cyp) ? c.pk.cyp.join(", ") : "—")).join(" | ") + " |",
+      "| **InChIKey** | " + comps.map((c) => (c.ik ? `\`${c.ik}\`` : "—")).join(" | ") + " |",
+      "| **Mechanizm (ChEMBL)** | " + comps.map((c) => (c.m ? c.m.replace(/\|/g, "/") : "—")).join(" | ") + " |",
+      "",
+      "> [!info] Raport wygenerowany automatycznie przez Pharma-vault Head-to-Head Comparator.",
+      ""
+    ];
+    return lines.join("\n");
+  }
+
   // ---------- Stack Builder & Interaction Checker
   function loadSavedStack() {
     try {
@@ -1583,9 +1801,14 @@
 
     const inStack = state.stack.has(c.i);
     const stackBtnHtml = `
-      <button id="cardStackToggle" class="btn ${inStack ? 'btn-gold' : ''}" style="width:100%;margin:0.5rem 0;padding:6px 12px;font-size:var(--text-xs);display:flex;align-items:center;justify-content:center;gap:6px">
-        <span>${inStack ? "✓ W Twoim stacku" : "+ Dodaj do stacka"}</span>
-      </button>`;
+      <div style="display:flex;gap:6px;margin:0.5rem 0">
+        <button id="cardStackToggle" class="btn ${inStack ? 'btn-gold' : ''}" style="flex:1;padding:6px 10px;font-size:var(--text-xs);display:flex;align-items:center;justify-content:center;gap:4px">
+          <span>${inStack ? "✓ W Twoim stacku" : "+ Dodaj do stacka"}</span>
+        </button>
+        <button id="cardCompareBtn" class="btn" style="padding:6px 10px;font-size:var(--text-xs)" title="Porównaj ze stackiem lub najbliższym analogiem">
+          ⚖️ Porównaj
+        </button>
+      </div>`;
 
     return `
       <div class="card-head">
@@ -1626,6 +1849,19 @@
     const stackToggle = p.querySelector("#cardStackToggle");
     if (stackToggle && state.sel && state.sel.type === "compound") {
       stackToggle.onclick = () => toggleInStack(state.sel.i);
+    }
+    const compBtn = p.querySelector("#cardCompareBtn");
+    if (compBtn && state.sel && state.sel.type === "compound") {
+      compBtn.onclick = () => {
+        const stackList = [...state.stack];
+        if (stackList.length && !stackList.includes(state.sel.i)) {
+          openComparator([state.sel.i, ...stackList]);
+        } else if (stackList.length >= 2) {
+          openComparator(stackList);
+        } else {
+          openComparator([state.sel.i]);
+        }
+      };
     }
     p.querySelectorAll("[data-zoom-chem]").forEach((el) => {
       el.onclick = () => openChemLightBox(+el.dataset.zoomChem);
@@ -1717,6 +1953,8 @@
       draw();
     };
   }
+  const stackCompareBtn = $("stackCompareBtn");
+  if (stackCompareBtn) stackCompareBtn.onclick = () => openComparator();
 
   // ---------- chemical structure lightbox controls
   const chemClose = $("chemModalClose");
@@ -1728,8 +1966,44 @@
     };
   }
 
+  // ---------- drug comparator controls
+  const compClose = $("compModalClose");
+  if (compClose) compClose.onclick = closeComparator;
+  const compModal = $("comparatorModal");
+  if (compModal) {
+    compModal.onclick = (e) => {
+      if (e.target === compModal) closeComparator();
+    };
+  }
+  const compCopyMd = $("compModalCopyMd");
+  if (compCopyMd) {
+    compCopyMd.onclick = () => {
+      const md = exportComparisonMarkdown();
+      navigator.clipboard?.writeText(md);
+      const orig = compCopyMd.textContent;
+      compCopyMd.textContent = "✓ Skopiowano Markdown!";
+      setTimeout(() => { compCopyMd.textContent = orig; }, 1800);
+    };
+  }
+  const compObsidian = $("compModalObsidian");
+  if (compObsidian) {
+    compObsidian.onclick = () => {
+      const md = exportComparisonMarkdown();
+      const list = (activeComparatorIndices && activeComparatorIndices.length) ? activeComparatorIndices : [...state.stack];
+      const names = list.map((i) => C[i]?.n || "").filter(Boolean).join(" vs ");
+      const noteName = `Porównanie ${names.slice(0, 50) || "Leków"}`;
+      const uri = `obsidian://new?vault=vault&name=${encodeURIComponent(noteName)}&content=${encodeURIComponent(md)}`;
+      navigator.clipboard?.writeText(md);
+      window.open(uri, "_blank");
+      const orig = compObsidian.textContent;
+      compObsidian.textContent = "✓ Otwarto!";
+      setTimeout(() => { compObsidian.textContent = orig; }, 1800);
+    };
+  }
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      if (activeComparatorIndices) { closeComparator(); return; }
       if (activeModalCompound) { closeChemLightBox(); return; }
       if (state.stackDrawerOpen) { toggleStackDrawer(false); return; }
       select(null);
@@ -1737,6 +2011,12 @@
     }
     const tag = document.activeElement ? document.activeElement.tagName : "";
     if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
+    if (e.key === "c" || e.key === "C") {
+      e.preventDefault();
+      if (activeComparatorIndices) closeComparator();
+      else openComparator();
+      return;
+    }
     if (e.key === "s" || e.key === "S") {
       e.preventDefault();
       toggleStackDrawer();

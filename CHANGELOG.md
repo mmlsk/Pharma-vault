@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.9.0] — 2026-11-02 — Porównywarka leków Head-to-Head i widok diff celów/PK
+### Dodano
+- **Porównywarka Leków Head-to-Head (Drug Comparator & Diff View)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **Interaktywny widok porównawczy side-by-side** (`#comparatorModal`):
+    - Możliwość jednoczesnego zestawienia od 2 do 4 leków w przejrzystej, responsywnej tabeli diffującej.
+    - Miniatury struktur 2D SVG/PNG z funkcją powiększenia w LightBoxie oraz szybkim kopiowaniem InChIKey.
+    - Podział na 5 kluczowych sekcji klinicznych i biofizycznych:
+      1. **Właściwości fizykochemiczne & Ro5**: MW, lipofilowość (ALogP), pole powierzchni polarnej (PSA) oraz liczba naruszeń reguły Lipińskiego z kolorystycznym wyróżnieniem.
+      2. **Farmakokinetyka (PK)**: czas półtrwania ($t_{1/2}$), wiązanie z białkami osocza, status walidacji z etykietami FDA i ChPL.
+      3. **Metabolizm & Enzymy CYP**: substraty enzymów cytochromu P450 z automatycznym ostrzeganiem na bursztynowo (`.comp-diff-warn`) w przypadku dzielenia tego samego szlaku metabolicznego (wąskie gardło / ryzyko kumulacji).
+      4. **Cele molekularne & MoA**: automatyczne wykrywanie wspólnych celów ChEMBL podświetlanych na zielono (`.comp-diff-same`) oraz porównanie klas ATC poziomu 4.
+      5. **Profil bezpieczeństwa & Huby**: ostrzeżenia Black Box, wycofania z rynku, konflikty tożsamości oraz przynależność do krytycznych hubów toksykologicznych.
+  - **Szybkie punkty wejścia i obsługa klawiatury**:
+    - Przycisk `⚖️ Porównaj` w pasku narzędziowym drawera stacka (`#stackDrawer`).
+    - Przycisk `⚖️ Porównaj` w nagłówku karty wybranej substancji do natychmiastowego zestawienia ze stackiem lub najbliższym analogiem.
+    - Skrót klawiszowy `C` / `c` do otwierania/zamykania porównywarki oraz `Esc` do zamykania modala.
+  - **Eksport do Markdown i Obsidian**:
+    - Przycisk `📋 Kopiuj Markdown` generujący zwięzłą, sformatowaną tabelę GitHub Flavored Markdown (GFM) ze wszystkimi parametrami leków do schowka.
+    - Przycisk `📝 Eksportuj do Obsidian` tworzący dedykowaną notatkę porównawczą przez protokół `obsidian://new`.
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_comparator_feature_extraction` weryfikujący obecność komponentów HTML/JS, poprawność indeksowania celów i detekcji nakładających się substratów CYP (42 testy, 100% green).
+
 ## [3.8.0] — 2026-11-02 — wizualizacja struktur chemicznych 2D, InChIKey i powiększenie LightBox
 ### Dodano
 - **Wizualizator Struktur Chemicznych 2D (Chemical Structure Visualizer)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):

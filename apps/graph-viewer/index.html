@@ -153,6 +153,17 @@
     .lightbox-modal { background: #ffffff; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 480px; max-width: 95vw; padding: 1.25rem; display: flex; flex-direction: column; gap: .75rem; color: #111; position: relative; }
     .lightbox-modal .chem-big-img { width: 100%; height: 280px; display: flex; align-items: center; justify-content: center; }
     .lightbox-modal .chem-big-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .comp-modal { background: var(--color-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 1040px; max-width: 96vw; max-height: 92vh; display: flex; flex-direction: column; overflow: hidden; color: var(--color-text); border: 1px solid var(--color-border); }
+    .comp-head { display: flex; align-items: center; justify-content: space-between; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); background: var(--color-surface-2); }
+    .comp-body { flex: 1; overflow-y: auto; overflow-x: auto; padding: var(--space-4); }
+    .comp-foot { padding: var(--space-3) var(--space-4); border-top: 1px solid var(--color-border); background: var(--color-surface-2); display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+    .comp-table { width: 100%; border-collapse: collapse; font-size: var(--text-xs); min-width: 600px; }
+    .comp-table th, .comp-table td { padding: 8px 12px; border: 1px solid var(--color-border); vertical-align: top; text-align: left; }
+    .comp-table th.section-th { background: var(--color-surface-offset); font-weight: 700; color: var(--color-primary); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .comp-col-th { background: var(--color-surface-2); text-align: center; }
+    .comp-diff-same { background: color-mix(in oklab, var(--color-success) 12%, transparent); border-left: 3px solid var(--color-success); }
+    .comp-diff-warn { background: color-mix(in oklab, var(--color-warning) 12%, transparent); border-left: 3px solid var(--color-warning); }
+    .comp-tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 10px; margin: 2px; font-weight: 600; }
     @media (max-width: 1100px) {
       body { overflow: auto; height: auto; }
       .app { grid-template-columns: 1fr; height: auto; }
@@ -247,8 +258,9 @@
         <!-- Renderowane przez app.js -->
       </div>
       <div class="drawer-foot">
-        <button class="btn" id="stackFilterToggle" style="flex:1;font-size:var(--text-xs)">🎯 Tylko stack na grafie</button>
-        <button class="btn" id="stackShareBtn" style="font-size:var(--text-xs)" title="Kopiuj link do stacka">🔗 Kopiuj link</button>
+        <button class="btn btn-gold" id="stackCompareBtn" style="font-size:var(--text-xs)" title="Porównaj substancje w stacku side-by-side">⚖️ Porównaj</button>
+        <button class="btn" id="stackFilterToggle" style="flex:1;font-size:var(--text-xs)">🎯 Tylko stack</button>
+        <button class="btn" id="stackShareBtn" style="font-size:var(--text-xs)" title="Kopiuj link do stacka">🔗 Link</button>
         <button class="btn" id="stackObsidianBtn" style="font-size:var(--text-xs)" title="Eksportuj raport do Obsidian">📝 Obsidian</button>
         <button class="btn" id="stackClearBtn" style="font-size:var(--text-xs);color:var(--color-error)" title="Wyczyść cały stack">Wyczyść</button>
       </div>
@@ -277,6 +289,29 @@
     <div style="display:flex;justify-content:flex-end;gap:6px;margin-top:.4rem">
       <button class="btn btn-copy" id="chemModalCopyIk">📋 Kopiuj InChIKey</button>
       <a id="chemModalExtLink" href="#" target="_blank" rel="noopener noreferrer" class="btn" style="font-size:var(--text-xs)">Otwórz w bazie ↗</a>
+    </div>
+  </div>
+</div>
+<div id="comparatorModal" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Porównywarka leków Head-to-Head">
+  <div class="comp-modal">
+    <div class="comp-head">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <b style="font-size:var(--text-base);font-family:var(--font-display)">⚖️ Porównywarka leków (Head-to-Head)</b>
+        <span id="compCountBadge" class="tag" style="font-size:10px">0 substancji</span>
+      </div>
+      <button class="card-close" id="compModalClose" title="Zamknij (Esc)" aria-label="Zamknij porównywarkę">✕</button>
+    </div>
+    <div class="comp-body" id="comparatorBody">
+      <!-- Generowane przez app.js -->
+    </div>
+    <div class="comp-foot">
+      <div style="font-size:11px;color:var(--color-text-muted)">
+        Zielony: wspólne cele ChEMBL · Bursztynowy: wąskie gardło CYP / ryzyko
+      </div>
+      <div style="display:flex;gap:6px">
+        <button class="btn btn-copy" id="compModalCopyMd">📋 Kopiuj Markdown</button>
+        <button class="btn" id="compModalObsidian" style="font-size:var(--text-xs)">📝 Eksportuj do Obsidian</button>
+      </div>
     </div>
   </div>
 </div>
