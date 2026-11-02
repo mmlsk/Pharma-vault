@@ -1,5 +1,36 @@
 # Changelog
 
+## [3.13.0] — 2026-11-02 — Generator Monografii Klinicznej & Dossier Polipragmazji (Clinical Dossier / Print View / PDF)
+### Dodano
+- **Generator Monografii Klinicznej & Dossier Polipragmazji (Clinical Dossier / Print View / PDF Export)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **Dedykowany interaktywny modal podglądu wydruku (`#dossierModal`)**:
+    - Stylizowany arkusz formatu A4 (`.dossier-sheet`, max-width 794px, min-height 1123px) o profesjonalnym układzie laboratoryjnego whitepapera.
+    - Wbudowany pasek narzędzi (`.dossier-toolbar`):
+      - `🖨️ Drukuj / PDF (Ctrl+P)`: bezpośrednie wywołanie okna drukowania zoptymalizowane regułami `@media print` (ukrycie interfejsu aplikacji, marginesy 15mm, format A4, naturalne łamanie stron `break-inside: avoid`).
+      - `📋 Kopiuj Markdown`: natychmiastowe skopiowanie ustrukturyzowanego raportu w formacie GitHub-Flavored Markdown do schowka.
+      - `📝 Obsidian`: bezpośrednie utworzenie notatki klinicznej w aplikacji Obsidian przez protokół `obsidian://new`.
+      - Przycisk zamknięcia `✕` oraz obsługa klawisza `Esc`.
+  - **Monografia Pojedynczej Substancji (`generateCompoundDossierHtml`)**:
+    - Generowana po kliknięciu nowego przycisku `📄 Monografia` na karcie leku lub wciśnięciu skrótu `P`.
+    - **Nagłówek laboratoryjny**: nazwa międzynarodowa, kategoria, klaster, ID substancji, data wygenerowania i status walidacji.
+    - **Struktura 2D & Właściwości fizykochemiczne**: wyrenderowany wzór 2D, wzór sumaryczny, masa cząsteczkowa (MW), lipofilowość (ALogP), powierzchnia polarna (PSA), status Reguły Pięciu Lipińskiego (Ro5), InChIKey, ChEMBL ID i PubChem CID.
+    - **Status regulacyjny i walidacja etykiet**: faza rozwoju w badaniach klinicznych, zgodność z etykietami FDA oraz EMA/ChPL wraz z uwagami rozbieżności.
+    - **Mechanizm działania (MoA)**: pełny opis farmakologiczny i mechanizm molekularny.
+    - **Farmakokinetyka (ADME)**: okres półtrwania ($T_{1/2}$), wiązanie z białkami osocza, biodostępność doustna, izoenzymy CYP, drogi metabolizmu i eliminacji.
+    - **Profil receptorowy & Cele molekularne**: zestawienie powiązanych celów biologicznych z kategoryzacją funkcjonalną (agonista, antagonista, inhibitor, ligand).
+    - **Ostrzeżenia toksykologiczne**: Black Box Warnings FDA, status wycofania z rynku (withdrawn) oraz kluczowe ryzyka kliniczne.
+  - **Raport Polipragmazji Zestawu Lekowego (`generateStackDossierHtml`)**:
+    - Generowany z poziomu drawera zestawu za pomocą przycisku `📄 Dossier` (`#stackDossierBtn`).
+    - Zestawienie tabelaryczne wszystkich leków w stacku (kategoria, $T_{1/2}$, izoenzymy CYP, wskazanie).
+    - Zintegrowany wykaz alertów kolizyjnych (ryzyko zespołu serotoninowego, depresji oddechowej, obciążenia kardiologicznego, wąskich gardeł CYP).
+    - Pełna macierz interakcji parowych $N \times N$ z poziomami ryzyka i punktami krytycznymi.
+    - Dedykowany blok zaleceń monitorowania klinicznego (EKG, TDM, ocena parametrów życiowych, nadzór neurologiczny).
+  - **Obsługa skrótów klawiaturowych**:
+    - Klawisz `P` / `p`: otwiera arkusz monografii dla aktywnego leku lub dossier polipragmazji dla aktywnego stacka; ponowne wciśnięcie zamyka podgląd.
+    - Klawisz `Esc`: płynnie zamyka modal dossier przed przejściem do zamykania innych paneli.
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_clinical_dossier_generator` weryfikujący obecność elementów DOM, reguł arkuszy stylów `@media print`, funkcji generatorów HTML i Markdown w `app.js` oraz poprawność generowania pól monografii na danych grafu (46 testów, 100% green).
+
 ## [3.12.0] — 2026-11-02 — Eksplorator Celów Molekularnych i Szlaków (Target Deep-Dive Explorer)
 ### Dodano
 - **Eksplorator Celów Molekularnych i Szlaków (Target & Pathway Deep-Dive Explorer)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):

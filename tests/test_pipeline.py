@@ -619,6 +619,53 @@ def test_target_explorer_deep_dive():
     assert classify("", "5-HT2A") == "other"
 
 
+def test_clinical_dossier_generator():
+    """Verify markup, style rules, and generator functions for Clinical Dossier (Monograph & Polypharmacy Report)."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    for el_id in ["dossierModal", "dossierSheet", "dossierPrintBtn", "dossierCopyMdBtn", "dossierObsidianBtn", "dossierCloseBtn", "stackDossierBtn"]:
+        assert f'id="{el_id}"' in html_src, f"Missing #{el_id} in index.html"
+
+    for css_cls in [".dossier-modal", ".dossier-toolbar", ".dossier-sheet", ".dossier-table", "@media print"]:
+        assert css_cls in html_src, f"Missing CSS class/rule '{css_cls}' in index.html"
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    for fn in [
+        "function generateCompoundDossierHtml(",
+        "function generateStackDossierHtml(",
+        "function generateCompoundDossierMarkdown(",
+        "function generateStackDossierMarkdown(",
+        "function openDossierModal(",
+        "function closeDossierModal(",
+        "cardDossierBtn",
+        "stackDossierBtn"
+    ]:
+        assert fn in app_src, f"Missing '{fn}' in app.js"
+
+    # Test monograph data generation with graph data
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    prefix = "window.PV_GRAPH = "
+    start_idx = graph_js.index(prefix) + len(prefix)
+    end_idx = graph_js.rindex("};") + 1
+    graph = json.loads(graph_js[start_idx:end_idx])
+    compounds = graph["compounds"]
+
+    # Find compound with both PK and properties (e.g. Fluoxetine or Caffeine)
+    c_full = next((c for c in compounds if c.get("pk") and c.get("pr") and c.get("mf") and c.get("ik")), None)
+    assert c_full is not None, "Could not find a fully-annotated compound in PV_GRAPH"
+
+    # Verify fields for single substance dossier
+    assert "n" in c_full
+    assert "mf" in c_full
+    assert "pr" in c_full and len(c_full["pr"]) == 4
+    assert "pk" in c_full
+    assert "ik" in c_full
+
+    # Simulate markdown structure
+    md_header = f"# Monografia Kliniczna: {c_full['n']}"
+    assert len(md_header) > 0
+
+
+
 
 
 

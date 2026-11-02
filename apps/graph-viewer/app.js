@@ -601,6 +601,423 @@
     });
   }
 
+  // ---------- Clinical Dossier & Monograph Generator
+  let activeDossierMode = null;
+  let activeDossierTarget = null;
+
+  function generateCompoundDossierHtml(c) {
+    if (!c) return '<div class="dossier-warn">Brak danych substancji.</div>';
+    const struct = getChemStructure(c);
+    const dateStr = new Date().toISOString().slice(0, 10);
+    const g = GR[c.g] || { label: "Nieznana" };
+    const cl = G.clusters[c.c] ? CL_PL[G.clusters[c.c].name] : "Inne";
+    const k = c.pk || {};
+    const pr = c.pr || [];
+
+    const targets = (c.tg || []).map((ti) => {
+      const t = T[ti];
+      const act = classifyTargetAction(c, t ? t.n : "");
+      return { t, act };
+    });
+
+    return `
+      <div class="dossier-head-brand">
+        <div>
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#777">Pharma-vault Clinical Intelligence · Monografia Kliniczna</div>
+          <h1 style="font-size:24px;font-weight:800;color:#111;margin-top:2px">${esc(c.n)}</h1>
+          <div style="font-size:12px;color:#555;margin-top:2px">${esc(cl)} · ${esc(g.label)}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:11px;font-weight:700;color:#111">ARCHIWUM MONOGRAFII</div>
+          <div style="font-size:10px;color:#666">ID: ${esc(c.id)} · Data: ${dateStr}</div>
+          <div style="font-size:10px;color:#0d47a1;font-weight:600">Status: Walidacja laboratoryjna</div>
+        </div>
+      </div>
+
+      <div class="dossier-section" style="display:grid;grid-template-columns:220px 1fr;gap:20px;align-items:start">
+        <div style="border:1px solid #e0e0e0;border-radius:4px;padding:12px;text-align:center;background:#fafafa">
+          ${struct ? `<img src="${struct.url}" alt="${esc(c.n)}" style="max-width:190px;max-height:190px;object-fit:contain;mix-blend-mode:multiply">` : `
+            <div style="height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#888;font-size:11px">
+              <span style="font-size:32px">🧬</span>
+              <span style="margin-top:6px">${esc(c.mt || "Struktura niedostępna")}</span>
+            </div>
+          `}
+          <div style="margin-top:8px;font-size:11px;font-weight:700;color:#333">${esc(c.mf || "—")}</div>
+          <div style="font-size:10px;color:#666">${pr[0] != null ? pr[0] + " g/mol" : ""}</div>
+        </div>
+        <div>
+          <div class="dossier-sec-title">Właściwości fizykochemiczne & Identyfikatory</div>
+          <table class="dossier-table">
+            <tbody>
+              <tr><th style="width:38%">Wzór sumaryczny</th><td><b>${esc(c.mf || "—")}</b></td></tr>
+              <tr><th>Masa cząsteczkowa (MW)</th><td>${pr[0] != null ? pr[0] + " g/mol" : "—"}</td></tr>
+              <tr><th>Lipofilowość (ALogP)</th><td>${pr[1] != null ? pr[1] : "—"}</td></tr>
+              <tr><th>Powierzchnia polarna (PSA)</th><td>${pr[2] != null ? pr[2] + " Å²" : "—"}</td></tr>
+              <tr><th>Reguła 5 Lipińskiego (Ro5)</th><td>${pr[3] != null ? (pr[3] === 0 ? "✓ 0 naruszeń (spełniona)" : `<span style="color:#d32f2f">⚠ ${pr[3]} naruszeń</span>`) : "—"}</td></tr>
+              <tr><th>InChIKey</th><td><code style="font-size:10px">${esc(c.ik || "—")}</code></td></tr>
+              <tr><th>ChEMBL ID / PubChem CID</th><td>${esc(c.id)}${c.cid ? ` / CID: ${c.cid}` : ""}</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="dossier-section">
+        <div class="dossier-sec-title">Status regulacyjny & Walidacja etykiet (FDA / EMA / ChPL)</div>
+        <table class="dossier-table">
+          <thead>
+            <tr>
+              <th style="width:25%">Źródło</th>
+              <th style="width:20%">Status</th>
+              <th>Szczegóły / Adnotacja kliniczna</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>ChEMBL Development</b></td>
+              <td>${c.ph ? `Faza ${c.ph}` : "Faza przedkliniczna"}</td>
+              <td>${c.ph === 4 ? "Lek zatwierdzony w obrocie (Approved)" : (c.ph ? "Faza badań klinicznych" : "Związek badawczy / ligand laboratoryjny")}</td>
+            </tr>
+            <tr>
+              <td><b>FDA Label Verification</b></td>
+              <td>${c.v ? (c.v.s === "consistent" ? '<span style="color:#2e7d32">✓ Spójny (Consistent)</span>' : '<span style="color:#c62828">≠ Rozbieżny</span>') : "—"}</td>
+              <td>${c.v && c.v.c ? esc(c.v.c) : "Brak zarejestrowanych rozbieżności z FDA"}</td>
+            </tr>
+            <tr>
+              <td><b>EMA / ChPL Verification</b></td>
+              <td>${c.ve ? (c.ve.s === "consistent" ? '<span style="color:#2e7d32">✓ Spójny (Consistent)</span>' : '<span style="color:#c62828">≠ Rozbieżny</span>') : "—"}</td>
+              <td>${c.ve && c.ve.c ? esc(c.ve.c) : "Brak zarejestrowanych rozbieżności z ChPL"}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dossier-section">
+        <div class="dossier-sec-title">Mechanizm Działania (Mechanism of Action)</div>
+        <div style="font-size:12px;line-height:1.6;color:#222;background:#fbfbfb;border:1px solid #e0e0e0;border-radius:4px;padding:10px 12px">
+          ${c.m ? esc(c.m.replace(/\|/g, " · ")) : "Brak formalnego opisu mechanizmu działania w bazie."}
+        </div>
+      </div>
+
+      <div class="dossier-section">
+        <div class="dossier-sec-title">Profil Farmakokinetyczny (ADME)</div>
+        <table class="dossier-table">
+          <tbody>
+            <tr><th style="width:28%">Okres półtrwania (T½)</th><td><b>${k.hl != null ? k.hl + " h" : "Brak danych"}</b></td></tr>
+            <tr><th>Wiązanie z białkami osocza</th><td>${k.pb != null ? k.pb + " %" : "Brak danych"}</td></tr>
+            <tr><th>Biodostępność doustna</th><td>${k.ba != null ? k.ba + " %" : "Brak danych"}</td></tr>
+            <tr><th>Izoenzymy CYP (Metabolizm)</th><td>${k.cyp && k.cyp.length ? `<b>${esc(k.cyp.join(", "))}</b>` : "Brak danych o izoenzymach CYP"}</td></tr>
+            <tr><th>Droga metabolizmu</th><td>${esc(k.met || "Brak szczegółów metabolizmu")}</td></tr>
+            <tr><th>Wydalanie / Eliminacja</th><td>${esc(k.ren || k.ex || "Brak danych o eliminacji")}</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dossier-section">
+        <div class="dossier-sec-title">Molekularne Punkty Uchwytu (Cele Biologiczne & Receptory)</div>
+        ${targets.length ? `
+          <table class="dossier-table">
+            <thead>
+              <tr>
+                <th style="width:45%">Nazwa celu molekularnego</th>
+                <th style="width:25%">Klasa celu</th>
+                <th style="width:30%">Typ oddziaływania</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${targets.slice(0, 12).map(({ t, act }) => {
+                const actBadge = act === "agonist" ? '<span style="color:#2e7d32">🟢 Agonista / Aktywator</span>'
+                  : act === "antagonist" ? '<span style="color:#c62828">🔴 Antagonista / Bloker</span>'
+                  : act === "inhibitor" ? '<span style="color:#f57f17">🟡 Inhibitor</span>'
+                  : '<span style="color:#666">⚪ Ligand</span>';
+                return `
+                  <tr>
+                    <td><b>${esc(t ? t.n : "Nieznany cel")}</b></td>
+                    <td>${esc(t ? t.k : "—")}</td>
+                    <td>${actBadge}</td>
+                  </tr>
+                `;
+              }).join("")}
+            </tbody>
+          </table>
+          ${targets.length > 12 ? `<div style="font-size:10px;color:#777;margin-top:4px;font-style:italic">… oraz ${targets.length - 12} dalszych celów molekularnych.</div>` : ""}
+        ` : '<div style="font-size:11px;color:#777;padding:6px 0">Brak powiązanych celów molekularnych w grafie.</div>'}
+      </div>
+
+      ${(c.bb || c.wd || (c.t && c.t.length)) ? `
+        <div class="dossier-section">
+          <div class="dossier-sec-title">Ostrzeżenia Bezpieczeństwa & Flagi Toksykologiczne</div>
+          ${c.bb ? `<div class="dossier-warn"><b>🚨 Black Box Warning (FDA / Boxed Warning):</b> Substancja objęta najwyższym ostrzeżeniem bezpieczeństwa.</div>` : ""}
+          ${c.wd ? `<div class="dossier-warn"><b>⚠️ Związek wycofany z rynku (Withdrawn):</b> Wycofany ze względów bezpieczeństwa lub toksyczności.</div>` : ""}
+          ${c.t && c.t.length ? `
+            <div style="margin-top:6px;font-size:11px">
+              <b>Kluczowe ryzyka i przeciwwskazania:</b> ${c.t.map((t) => `<span style="background:#fff3e0;color:#e65100;padding:2px 6px;border-radius:3px;margin:0 4px 4px 0;display:inline-block">${esc(t)}</span>`).join("")}
+            </div>
+          ` : ""}
+        </div>
+      ` : ""}
+
+      <div style="margin-top:30px;padding-top:12px;border-top:1px solid #ccc;display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#888">
+        <div>Pharma-vault Clinical Intelligence Engine v3.13.0 · Wygenerowano: ${dateStr}</div>
+        <div>Dokument informacyjno-badawczy · Nie stanowi porady lekarskiej</div>
+      </div>
+    `;
+  }
+
+  function generateStackDossierHtml(stackIndices) {
+    const list = (stackIndices || []).map((i) => C[i]).filter(Boolean);
+    const dateStr = new Date().toISOString().slice(0, 10);
+    if (!list.length) {
+      return '<div class="dossier-warn">Brak wybranych substancji w stacku. Dodaj leki do zestawu, aby wygenerować dossier polipragmazji.</div>';
+    }
+
+    const { alerts, maxLevel } = analyzeStack(list.map((c) => c.i));
+
+    return `
+      <div class="dossier-head-brand">
+        <div>
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#777">Pharma-vault Clinical Intelligence · Raport Polipragmazji</div>
+          <h1 style="font-size:24px;font-weight:800;color:#111;margin-top:2px">Dossier Terapii Złożonej (Stack ${list.length} leków)</h1>
+          <div style="font-size:12px;color:#555;margin-top:2px">Analiza interakcji farmakodynamicznych, farmakokinetycznych (CYP) i bezpieczeństwa</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:11px;font-weight:700;color:#111">ARCHIWUM POLIPRAGMAZJI</div>
+          <div style="font-size:10px;color:#666">Złożoność: ${list.length} substancji · Data: ${dateStr}</div>
+          <div style="font-size:10px;font-weight:700;color:${maxLevel === 'crit' ? '#c62828' : maxLevel === 'mod' ? '#f57f17' : '#2e7d32'}">
+            Alert: ${maxLevel === 'crit' ? '🚨 Krytyczny' : maxLevel === 'mod' ? '⚠️ Umiarkowany' : '✓ Zrównoważony'}
+          </div>
+        </div>
+      </div>
+
+      <div class="dossier-section">
+        <div class="dossier-sec-title">1. Skład Zestawu Terapeutycznego (${list.length} Substancji)</div>
+        <table class="dossier-table">
+          <thead>
+            <tr>
+              <th style="width:25%">Substancja</th>
+              <th style="width:20%">Kategoria</th>
+              <th style="width:12%">T½</th>
+              <th style="width:18%">CYP Substrat</th>
+              <th>Główny Mechanizm / Wskazanie</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${list.map((c) => {
+              const k = c.pk || {};
+              const g = GR[c.g] || { label: "—" };
+              return `
+                <tr>
+                  <td><b>${esc(c.n)}</b></td>
+                  <td>${esc(g.label)}</td>
+                  <td>${k.hl != null ? k.hl + " h" : "—"}</td>
+                  <td>${k.cyp && k.cyp.length ? `<b>${esc(k.cyp.join(", "))}</b>` : "—"}</td>
+                  <td style="font-size:10px;color:#444">${esc(c.m ? c.m.split("|")[0] : "—")}</td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dossier-section">
+        <div class="dossier-sec-title">2. Wykryte Kolizje Farmakodynamiczne & Farmakokinetyczne (${alerts.length})</div>
+        ${alerts.length ? alerts.map((a) => `
+          <div class="${a.level === 'crit' ? 'dossier-warn' : 'dossier-callout'}">
+            <div style="font-weight:700;font-size:12px;margin-bottom:2px">${a.title}</div>
+            <div style="font-size:11px;color:#333;line-height:1.4">${a.desc}</div>
+          </div>
+        `).join("") : `
+          <div class="dossier-callout" style="border-left-color:#2e7d32;background:#f1f8e9">
+            <b>✓ Brak zidentyfikowanych krytycznych kolizji wielolekowych</b> w standardowych regułach Pharma-vault.
+          </div>
+        `}
+      </div>
+
+      <div class="dossier-section">
+        <div class="dossier-sec-title">3. Pełna Macierz Interakcji Parowych (Pairwise Interactions N×N)</div>
+        <table class="dossier-table">
+          <thead>
+            <tr>
+              <th style="width:30%">Para substancji</th>
+              <th style="width:15%">Poziom</th>
+              <th>Istota interakcji / Wspólne szlaki</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${(() => {
+              const rows = [];
+              for (let i = 0; i < list.length; i++) {
+                for (let j = i + 1; j < list.length; j++) {
+                  const res = evaluatePairwiseInteraction(list[i], list[j]);
+                  const badge = res.level === "danger" ? '<span style="color:#c62828;font-weight:700">🔴 Krytyczna</span>'
+                    : res.level === "warn" ? '<span style="color:#f57f17;font-weight:700">🟡 Umiarkowana</span>'
+                    : res.level === "synergy" ? '<span style="color:#2e7d32;font-weight:700">🟢 Synergia</span>'
+                    : '<span style="color:#666">⚪ Brak kolizji</span>';
+                  rows.push(`
+                    <tr>
+                      <td><b>${esc(list[i].n)}</b> + <b>${esc(list[j].n)}</b></td>
+                      <td>${badge}</td>
+                      <td>
+                        <div style="font-weight:600">${esc(res.title)}</div>
+                        ${res.sharedCyps.length ? `<div style="font-size:10px;color:#555">Wspólne izoenzymy CYP: <b>${esc(res.sharedCyps.join(", "))}</b></div>` : ""}
+                        ${res.sharedHubs.length ? `<div style="font-size:10px;color:#c62828">Wspólne węzły ryzyka: ${esc(res.sharedHubs.join(", "))}</div>` : ""}
+                        ${res.sharedTargets.length ? `<div style="font-size:10px;color:#2e7d32">Wspólne cele molekularne: ${esc(res.sharedTargets.join(", "))}</div>` : ""}
+                      </td>
+                    </tr>
+                  `);
+                }
+              }
+              return rows.length ? rows.join("") : '<tr><td colspan="3" style="text-align:center;color:#777">Stack zawiera tylko 1 substancję — brak par do analizy.</td></tr>';
+            })()}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dossier-section">
+        <div class="dossier-sec-title">4. Zalecenia Monitorowania Klinicznego</div>
+        <ul style="margin:4px 0 0 18px;padding:0;font-size:11px;line-height:1.6;color:#333">
+          ${alerts.some((a) => a.title && a.title.includes("serotonin")) ? `<li><b>Nadzór neurologiczny:</b> Regularna ocena objawów zespołu serotoninowego (klonusy, wzmożenie odruchów, hipertermia, pobudzenie psychoruchowe).</li>` : ""}
+          ${alerts.some((a) => a.title && a.title.includes("oddech")) ? `<li><b>Monitorowanie parametrów życiowych:</b> Monitorowanie wysycenia hemoglobiny tlenem (SpO2) oraz częstości oddechów w przypadku jednoczesnej sedacji.</li>` : ""}
+          ${alerts.some((a) => a.title && a.title.includes("CYP")) ? `<li><b>Kontrola metaboliczna i TDM:</b> Rozważenie terapeutycznego monitorowania stężenia leków (TDM) przy konkurencji o wspólne izoenzymy cytochromu P450.</li>` : ""}
+          ${alerts.some((a) => a.title && a.title.includes("sercowo")) ? `<li><b>Kontrola kardiologiczna:</b> Okresowe pomiary ciśnienia tętniczego, tętna oraz badanie EKG (ocena odstępu QTc).</li>` : ""}
+          <li><b>Edukacja pacjenta:</b> Poinformowanie o konieczności natychmiastowego zgłaszania zawrotów głowy, niemiarowości serca, duszności lub nadmiernej senności.</li>
+        </ul>
+      </div>
+
+      <div style="margin-top:30px;padding-top:12px;border-top:1px solid #ccc;display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#888">
+        <div>Pharma-vault Clinical Intelligence Engine v3.13.0 · Wygenerowano: ${dateStr}</div>
+        <div>Dokument informacyjno-badawczy · Nie stanowi porady lekarskiej</div>
+      </div>
+    `;
+  }
+
+  function generateCompoundDossierMarkdown(c) {
+    if (!c) return "# Błąd: Brak danych substancji";
+    const dateStr = new Date().toISOString().slice(0, 10);
+    const g = GR[c.g] || { label: "Nieznana" };
+    const cl = G.clusters[c.c] ? CL_PL[G.clusters[c.c].name] : "Inne";
+    const k = c.pk || {};
+    const pr = c.pr || [];
+
+    const lines = [
+      `# Monografia Kliniczna: ${c.n}`,
+      "",
+      `> Dokument wygenerowany automatycznie przez Pharma-vault Clinical Intelligence Engine (${dateStr}).`,
+      "",
+      `**Klasyfikacja:** ${cl} · ${g.label}`,
+      `**ChEMBL ID:** \`${c.id}\`${c.cid ? ` · **PubChem CID:** \`${c.cid}\`` : ""}`,
+      c.ik ? `**InChIKey:** \`${c.ik}\`` : "",
+      "",
+      "## 1. Właściwości fizykochemiczne",
+      "| Parametr | Wartość |",
+      "| :--- | :--- |",
+      `| Wzór sumaryczny | ${c.mf || "—"} |`,
+      `| Masa cząsteczkowa (MW) | ${pr[0] != null ? pr[0] + " g/mol" : "—"} |`,
+      `| Lipofilowość (ALogP) | ${pr[1] != null ? pr[1] : "—"} |`,
+      `| Polar Surface Area (PSA) | ${pr[2] != null ? pr[2] + " Å²" : "—"} |`,
+      `| Reguła 5 Lipińskiego | ${pr[3] != null ? (pr[3] === 0 ? "Spełniona (0 naruszeń)" : `${pr[3]} naruszeń`) : "—"} |`,
+      "",
+      "## 2. Status regulacyjny i walidacja etykiet",
+      "| Rejestr | Status | Adnotacja kliniczna |",
+      "| :--- | :--- | :--- |",
+      `| ChEMBL Development | ${c.ph ? `Faza ${c.ph}` : "Przedkliniczna"} | ${c.ph === 4 ? "Approved" : "Investigational"} |`,
+      `| FDA Label | ${c.v ? (c.v.s === "consistent" ? "Zgodny" : "Rozbieżny") : "—"} | ${c.v && c.v.c ? c.v.c : "Brak uwag"} |`,
+      `| EMA / ChPL Label | ${c.ve ? (c.ve.s === "consistent" ? "Zgodny" : "Rozbieżny") : "—"} | ${c.ve && c.ve.c ? c.ve.c : "Brak uwag"} |`,
+      "",
+      "## 3. Farmakokinetyka (ADME)",
+      "| Parametr ADME | Wartość |",
+      "| :--- | :--- |",
+      `| Okres półtrwania (T½) | ${k.hl != null ? k.hl + " h" : "Brak danych"} |`,
+      `| Wiązanie z białkami osocza | ${k.pb != null ? k.pb + " %" : "Brak danych"} |`,
+      `| Biodostępność | ${k.ba != null ? k.ba + " %" : "Brak danych"} |`,
+      `| Izoenzymy CYP | ${k.cyp && k.cyp.length ? k.cyp.join(", ") : "—"} |`,
+      `| Droga metabolizmu | ${k.met || "Brak danych"} |`,
+      `| Eliminacja / Wydalanie | ${k.ren || k.ex || "Brak danych"} |`,
+      "",
+      "## 4. Mechanizm Działania (MoA)",
+      c.m ? c.m.replace(/\|/g, "\n- ") : "Brak zarejestrowanego mechanizmu.",
+      "",
+      "## 5. Cele Molekularne",
+      (c.tg || []).map((ti) => `- **${T[ti] ? T[ti].n : "Cel"}** (${T[ti] ? T[ti].k : "—"})`).join("\n") || "Brak bezpośrednich celów.",
+      "",
+      c.bb ? "> [!danger] **Black Box Warning:** Substancja objęta najwyższym ostrzeżeniem bezpieczeństwa FDA.\n" : "",
+      c.wd ? "> [!warning] **Withdrawn:** Związek wycofany z rynku.\n" : "",
+      "",
+      "---",
+      "*(Raport informacyjny wygenerowany przez Pharma-vault)*"
+    ];
+    return lines.filter((l) => l !== "").join("\n");
+  }
+
+  function generateStackDossierMarkdown(stackIndices) {
+    const list = (stackIndices || []).map((i) => C[i]).filter(Boolean);
+    const dateStr = new Date().toISOString().slice(0, 10);
+    const { alerts } = analyzeStack(list.map((c) => c.i));
+
+    const lines = [
+      `# Raport Polipragmazji: Stack ${list.length} Substancji`,
+      "",
+      `> Wygenerowano przez Pharma-vault Clinical Intelligence Engine (${dateStr}).`,
+      "",
+      "## 1. Skład Zestawu",
+      "| Lek | Grupa | T½ | CYP | Wskazanie / Mechanizm |",
+      "| :--- | :--- | :--- | :--- | :--- |",
+      ...list.map((c) => `| **${c.n}** | ${GR[c.g] ? GR[c.g].label : "—"} | ${c.pk && c.pk.hl != null ? c.pk.hl + " h" : "—"} | ${c.pk && c.pk.cyp ? c.pk.cyp.join(", ") : "—"} | ${c.m ? c.m.split("|")[0] : "—"} |`),
+      "",
+      "## 2. Wykryte Kolizje i Alerty",
+      ...(alerts.length ? alerts.map((a) => `### ${a.title}\n${a.desc}\n`) : ["*Brak zidentyfikowanych krytycznych kolizji wielolekowych.*"]),
+      "",
+      "## 3. Macierz Parowa",
+      "| Para leków | Poziom | Szczegóły |",
+      "| :--- | :--- | :--- |"
+    ];
+
+    for (let i = 0; i < list.length; i++) {
+      for (let j = i + 1; j < list.length; j++) {
+        const res = evaluatePairwiseInteraction(list[i], list[j]);
+        lines.push(`| ${list[i].n} + ${list[j].n} | ${res.level.toUpperCase()} | ${res.title} |`);
+      }
+    }
+
+    lines.push("", "---", "*(Dokument informacyjno-badawczy Pharma-vault)*");
+    return lines.join("\n");
+  }
+
+  function openDossierModal(mode, target) {
+    const modal = $("dossierModal");
+    const sheet = $("dossierSheet");
+    const subtitle = $("dossierSubtitle");
+    if (!modal || !sheet) return;
+
+    activeDossierMode = mode || "single";
+
+    if (activeDossierMode === "stack") {
+      const list = Array.isArray(target) ? target : [...state.stack];
+      activeDossierTarget = list;
+      if (subtitle) subtitle.textContent = `Raport Polipragmazji (${list.length} substancji)`;
+      sheet.innerHTML = generateStackDossierHtml(list);
+    } else {
+      let c = null;
+      if (typeof target === "number") c = C[target];
+      else if (target && target.n) c = target;
+      else if (state.sel && state.sel.type === "compound") c = C[state.sel.i];
+      else if (state.stack.size > 0) c = C[[...state.stack][0]];
+      else c = C[0];
+
+      activeDossierTarget = c ? c.i : 0;
+      if (subtitle) subtitle.textContent = `Monografia: ${c ? c.n : ""}`;
+      sheet.innerHTML = generateCompoundDossierHtml(c);
+    }
+
+    modal.classList.add("open");
+  }
+
+  function closeDossierModal() {
+    const modal = $("dossierModal");
+    if (modal) modal.classList.remove("open");
+    activeDossierMode = null;
+    activeDossierTarget = null;
+  }
+
   // ---------- Stack Builder & Interaction Checker
   function loadSavedStack() {
     try {
@@ -2351,6 +2768,9 @@
         <button id="cardCompareBtn" class="btn" style="padding:6px 10px;font-size:var(--text-xs)" title="Porównaj ze stackiem lub najbliższym analogiem">
           ⚖️ Porównaj
         </button>
+        <button id="cardDossierBtn" class="btn" style="padding:6px 10px;font-size:var(--text-xs)" title="Kliniczna monografia substancji (A4 / PDF / Markdown)">
+          📄 Monografia
+        </button>
       </div>`;
 
     return `
@@ -2409,6 +2829,10 @@
           openComparator([state.sel.i]);
         }
       };
+    }
+    const cardDossierBtn = p.querySelector("#cardDossierBtn");
+    if (cardDossierBtn && state.sel && state.sel.type === "compound") {
+      cardDossierBtn.onclick = () => openDossierModal("single", state.sel.i);
     }
     p.querySelectorAll("[data-zoom-chem]").forEach((el) => {
       el.onclick = () => openChemLightBox(+el.dataset.zoomChem);
@@ -2558,6 +2982,60 @@
   }
   const stackCompareBtn = $("stackCompareBtn");
   if (stackCompareBtn) stackCompareBtn.onclick = () => openComparator();
+  const stackDossierBtn = $("stackDossierBtn");
+  if (stackDossierBtn) {
+    stackDossierBtn.onclick = () => {
+      const list = [...state.stack];
+      if (list.length === 0 && state.sel && state.sel.type === "compound") {
+        openDossierModal("single", state.sel.i);
+      } else {
+        openDossierModal("stack", list);
+      }
+    };
+  }
+
+  // ---------- clinical dossier controls
+  const dossierClose = $("dossierCloseBtn");
+  if (dossierClose) dossierClose.onclick = closeDossierModal;
+  const dossierModal = $("dossierModal");
+  if (dossierModal) {
+    dossierModal.onclick = (e) => {
+      if (e.target === dossierModal) closeDossierModal();
+    };
+  }
+  const dossierPrint = $("dossierPrintBtn");
+  if (dossierPrint) dossierPrint.onclick = () => window.print();
+
+  const dossierCopyMd = $("dossierCopyMdBtn");
+  if (dossierCopyMd) {
+    dossierCopyMd.onclick = () => {
+      const md = activeDossierMode === "stack"
+        ? generateStackDossierMarkdown(activeDossierTarget)
+        : generateCompoundDossierMarkdown(C[activeDossierTarget]);
+      navigator.clipboard?.writeText(md);
+      const orig = dossierCopyMd.textContent;
+      dossierCopyMd.textContent = "✓ Skopiowano!";
+      setTimeout(() => { dossierCopyMd.textContent = orig; }, 1800);
+    };
+  }
+
+  const dossierObsidian = $("dossierObsidianBtn");
+  if (dossierObsidian) {
+    dossierObsidian.onclick = () => {
+      const md = activeDossierMode === "stack"
+        ? generateStackDossierMarkdown(activeDossierTarget)
+        : generateCompoundDossierMarkdown(C[activeDossierTarget]);
+      const noteName = activeDossierMode === "stack"
+        ? `Dossier Polipragmazji (${(activeDossierTarget || []).length} leków)`
+        : `Monografia ${C[activeDossierTarget]?.n || "Leku"}`;
+      const uri = `obsidian://new?vault=vault&name=${encodeURIComponent(noteName)}&content=${encodeURIComponent(md)}`;
+      navigator.clipboard?.writeText(md);
+      window.open(uri, "_blank");
+      const orig = dossierObsidian.textContent;
+      dossierObsidian.textContent = "✓ Otwarto!";
+      setTimeout(() => { dossierObsidian.textContent = orig; }, 1800);
+    };
+  }
 
   // ---------- chemical structure lightbox controls
   const chemClose = $("chemModalClose");
@@ -2606,6 +3084,7 @@
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      if (activeDossierMode) { closeDossierModal(); return; }
       if (activeModalTarget) { closeTargetModal(); return; }
       if (activeComparatorIndices) { closeComparator(); return; }
       if (activeModalCompound) { closeChemLightBox(); return; }
@@ -2619,6 +3098,21 @@
       e.preventDefault();
       if (activeComparatorIndices) closeComparator();
       else openComparator();
+      return;
+    }
+    if (e.key === "p" || e.key === "P") {
+      e.preventDefault();
+      if (activeDossierMode) {
+        closeDossierModal();
+      } else {
+        if (state.sel && state.sel.type === "compound") {
+          openDossierModal("single", state.sel.i);
+        } else if (state.stack.size > 0) {
+          openDossierModal("stack", [...state.stack]);
+        } else {
+          openDossierModal("single", 0);
+        }
+      }
       return;
     }
     if (e.key === "s" || e.key === "S") {
