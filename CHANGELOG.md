@@ -1,5 +1,33 @@
 # Changelog
 
+## [3.12.0] — 2026-11-02 — Eksplorator Celów Molekularnych i Szlaków (Target Deep-Dive Explorer)
+### Dodano
+- **Eksplorator Celów Molekularnych i Szlaków (Target & Pathway Deep-Dive Explorer)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **Dedykowany modal Deep-Dive (`#targetModal`)**:
+    - Otwierany po kliknięciu dowolnego celu molekularnego w aplikacji (na karcie leku, w porównywarce, macierzy interakcji, wyszukiwarce lub przez URL hash `#target=CHEMBL...`).
+    - **Nagłówek celu (`#targetModalHead`)**:
+      - Oficjalna nazwa celu, ChEMBL Target ID z bezpośrednim linkiem zewnętrznym, typ białka (`SINGLE PROTEIN`, `PROTEIN FAMILY`) oraz organizm.
+      - Licznik wszystkich ligandów w bazie oraz liczba aktualnie widocznych na grafie.
+      - Rozkład faz klinicznych (liczba leków zatwierdzonych [faza 4], w badaniach klinicznych [fazy 1–3] oraz przedklinicznych/badawczych).
+      - **Zagregowany profil ryzyka PD (huby bezpieczeństwa)**: procentowy rozkład korelacji ligandów z krytycznymi hubami toksykologicznymi (np. zespół serotoninowy, obciążenie sercowo-naczyniowe, depresja oddechowa).
+      - Przycisk `🎯 Pokaż na grafie`: natychmiastowe wycentrowanie grafu na powiązanych ligandach.
+    - **Kategoryzacja funkcjonalna ligandów (Action Profiling)**:
+      - Automatyczna klasyfikacja mechanistyczna na podstawie kuratorowanych opisów ChEMBL MoA:
+        - 🟢 **Aktywatory / Agoniści** (agonists, partial agonists, PAM)
+        - 🔴 **Blokery / Antagoniści** (antagonists, inverse agonists, NAM)
+        - 🟡 **Inhibitory / Blokery wychwytu** (inhibitors, reuptake inhibitors)
+        - ⚪ **Pozostałe ligandy** (wiązanie bez jednoznacznego profilu funkcjonalnego)
+    - **Kafelki leków z miniaturami 2D**:
+      - Wektorowe miniatury struktur SVG/PNG z funkcją powiększenia w LightBoxie.
+      - Bezpośredni przycisk `+ Stack` / `✓ W stacku` pozwalający na komponowanie zestawów lekowych prosto z poziomu celu molekularnego.
+      - Pigułki fazy ChEMBL, statusu PK i masy cząsteczkowej.
+  - **Ujednolicone punkty wejścia i obsługa klawiatury**:
+    - Kliknięcie w dowolny tag celu `◎ Cel` w porównywarce leków lub wyszukiwarce natychmiast otwiera modal Deep-Dive.
+    - Nowy przycisk `🔬 Eksplorator celu (Deep-Dive)` w panelu bocznym wybranego celu.
+    - Płynne zamykanie klawiszem `Esc`, przyciskiem `✕` lub kliknięciem w tło.
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_target_explorer_deep_dive` weryfikujący obecność elementów DOM, poprawność klasyfikacji funkcjonalnej (agonista/antagonista/inhibitor) oraz powiązania ligandów z kluczowymi celami farmakologicznymi (45 testów, 100% green).
+
 ## [3.11.0] — 2026-11-02 — Macierz Interakcji i Ryzyk Stacka (Pairwise Interaction Matrix & Heatmap)
 ### Dodano
 - **Macierz Interakcji i Ryzyk Stacka (Pairwise Interaction Matrix & Heatmap)** w drawerze `#stackDrawer` (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):

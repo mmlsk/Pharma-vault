@@ -305,7 +305,7 @@
             if (!tgs.length) return '<td><span class="note">Brak celów ChEMBL</span></td>';
             const items = tgs.map((t) => {
               const shared = tgCounts.get(t) >= 2;
-              return `<span class="comp-tag ${shared ? 'comp-diff-same' : 'tag'}" style="${shared ? 'font-weight:700' : ''}">${shared ? '✓ ' : ''}◎ ${esc(T[t].n)}</span>`;
+              return `<span class="comp-tag ${shared ? 'comp-diff-same' : 'tag'}" style="${shared ? 'font-weight:700' : ''};cursor:pointer" data-t="${t}" title="Otwórz Deep-Dive celu ChEMBL">${shared ? '✓ ' : ''}◎ ${esc(T[t].n)}</span>`;
             }).join(" ");
             return `<td>${items}</td>`;
           })}
@@ -338,6 +338,9 @@
 
     body.querySelectorAll("[data-zoom-chem]").forEach((el) => {
       el.onclick = () => openChemLightBox(+el.dataset.zoomChem);
+    });
+    body.querySelectorAll("[data-t]").forEach((el) => {
+      el.onclick = () => openTargetModal(+el.dataset.t);
     });
     body.querySelectorAll("[data-copy-ik]").forEach((btn) => {
       btn.onclick = (e) => {
@@ -379,6 +382,223 @@
       ""
     ];
     return lines.join("\n");
+  }
+
+  // ---------- Target & Pathway Deep-Dive Explorer
+  let activeModalTarget = null;
+
+  function classifyTargetAction(c, targetName) {
+    const m = (c.m || "").toLowerCase();
+    const tLower = (targetName || "").toLowerCase();
+
+    const tWords = tLower.split(/\s+/).filter((w) => w.length > 3);
+    const mechParts = m.split("|");
+    const relevantParts = mechParts.filter((part) =>
+      tWords.length === 0 || tWords.some((w) => part.includes(w))
+    );
+    const textToCheck = relevantParts.length ? relevantParts.join(" ") : m;
+
+    if (textToCheck.includes("antagonist") || textToCheck.includes("inverse agonist") || textToCheck.includes("blocker") || textToCheck.includes("negative allosteric")) {
+      return "antagonist";
+    }
+    if (textToCheck.includes("agonist") || textToCheck.includes("activator") || textToCheck.includes("positive allosteric") || textToCheck.includes("opener")) {
+      return "agonist";
+    }
+    if (textToCheck.includes("inhibitor") || textToCheck.includes("reuptake inhibitor") || textToCheck.includes("inactivator")) {
+      return "inhibitor";
+    }
+    return "other";
+  }
+
+  function openTargetModal(ti) {
+    const t = T[ti];
+    if (!t) return;
+    activeModalTarget = ti;
+    const modal = $("targetModal");
+    if (!modal) return;
+
+    const ligands = (byTarget[ti] || []).map((i) => C[i]);
+    const visLigands = ligands.filter(visible);
+
+    const groups = {
+      agonist: [],
+      antagonist: [],
+      inhibitor: [],
+      other: []
+    };
+
+    ligands.forEach((c) => {
+      const act = classifyTargetAction(c, t.n);
+      groups[act].push(c);
+    });
+
+    const phase4 = ligands.filter((c) => c.ph === 4).length;
+    const phase13 = ligands.filter((c) => c.ph != null && c.ph >= 1 && c.ph <= 3).length;
+    const phase0 = ligands.length - phase4 - phase13;
+
+    const hubCounts = new Map();
+    ligands.forEach((c) => {
+      (c.l || []).forEach((li) => {
+        if (CORE[li].kind === "hub") {
+          hubCounts.set(CORE[li].name, (hubCounts.get(CORE[li].name) || 0) + 1);
+        }
+      });
+    });
+
+    const topHubs = [...hubCounts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 4);
+
+    const hubBadges = topHubs.map(([hName, count]) => {
+      const pct = Math.round((count / ligands.length) * 100);
+      return `<span class="tag warn" title="${pct}% powiązanych leków należy do tego hubu">⚠️ ${esc(hName)} (${pct}%)</span>`;
+    }).join(" ");
+
+    const head = $("targetModalHead");
+    if (head) {
+      head.innerHTML = `
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem">
+          <div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--color-text-muted)">
+              <span>Cel molekularny ChEMBL</span>
+              <span>·</span>
+              <span class="tag" style="font-size:10px">${esc(t.ty || "Białko")}</span>
+              <span>·</span>
+              <a href="https://www.ebi.ac.uk/chembl/target_report_card/${esc(t.id)}/" target="_blank" rel="noopener noreferrer" style="color:var(--color-primary)">${esc(t.id)} ↗</a>
+            </div>
+            <div style="font-size:var(--text-lg);font-weight:700;font-family:var(--font-display);margin-top:2px">${esc(t.n)}</div>
+          </div>
+          <button class="card-close" id="targetModalClose" title="Zamknij (Esc)" aria-label="Zamknij eksplorator celu">✕</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:4px;padding-top:6px;border-top:1px solid var(--color-border);font-size:11px">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+            <span class="tag ok" style="font-weight:600">${ligands.length} substancji</span>
+            <span style="color:var(--color-text-muted)">(${visLigands.length} widocznych na grafie)</span>
+            <span style="color:var(--color-text-muted)">·</span>
+            <span><b>${phase4}</b> zatwierdzonych (faza 4)</span>
+            <span>·</span>
+            <span><b>${phase13}</b> w badaniach (fazy 1–3)</span>
+            ${phase0 ? `<span>· <b>${phase0}</b> badawczych</span>` : ""}
+          </div>
+          <button class="btn btn-gold" id="targetShowOnGraphBtn" style="font-size:var(--text-xs);padding:4px 10px">🎯 Pokaż na grafie</button>
+        </div>
+        ${topHubs.length ? `
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:4px">
+            <span style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Profil ryzyka PD (huby):</span>
+            ${hubBadges}
+          </div>` : ""}
+      `;
+    }
+
+    const renderCol = (title, icon, color, list, emptyMsg) => {
+      const cards = list.map((c) => {
+        const inStack = state.stack.has(c.i);
+        const struct = getChemStructure(c);
+        const thumbHtml = struct
+          ? `<img src="${struct.url}" style="width:36px;height:36px;object-fit:contain;background:#fff;border-radius:4px;border:1px solid var(--color-border);cursor:zoom-in" data-zoom-chem="${c.i}" title="Powiększ wzór 2D" alt="${esc(c.n)}">`
+          : `<span class="dot" style="background:${CL_COLORS[c.c]};width:12px;height:12px;flex-shrink:0"></span>`;
+
+        return `
+          <div class="target-drug-card">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:6px">
+              <div style="display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden">
+                ${thumbHtml}
+                <div style="min-width:0;overflow:hidden">
+                  <button data-c="${c.i}" style="background:none;border:0;color:var(--color-text);font-weight:700;font-size:12px;cursor:pointer;padding:0;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block" title="${esc(c.n)}">${esc(c.n)}</button>
+                  <small style="color:var(--color-text-muted);font-size:10px">${esc(GR[c.g].label)}</small>
+                </div>
+              </div>
+              <button class="btn-copy ${inStack ? 'ok' : ''}" data-target-stack-toggle="${c.i}" style="font-size:10px;padding:2px 6px;white-space:nowrap" title="${inStack ? 'Usuń ze stacka' : 'Dodaj do stacka'}">
+                ${inStack ? '✓ W stacku' : '+ Stack'}
+              </button>
+            </div>
+            <div style="display:flex;gap:4px;flex-wrap:wrap;font-size:10px;margin-top:2px">
+              ${c.ph ? `<span class="tag">Faza ${c.ph}</span>` : '<span class="tag">Badawczy</span>'}
+              ${c.pk ? '<span class="tag ok">PK</span>' : ''}
+              ${c.pr ? `<span class="tag">${c.pr[0]} g/mol</span>` : ''}
+            </div>
+            ${c.m ? `<div style="font-size:10px;color:var(--color-text-muted);font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(c.m)}">${esc(c.m.replace(/\|/g, ', '))}</div>` : ''}
+          </div>
+        `;
+      }).join("");
+
+      return `
+        <div class="target-action-col">
+          <div class="target-action-col-head" style="color:${color}">
+            <span>${icon} ${esc(title)}</span>
+            <span class="tag" style="font-size:10px">${list.length}</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            ${cards || `<span style="font-size:11px;color:var(--color-text-muted);padding:8px 4px">${emptyMsg}</span>`}
+          </div>
+        </div>
+      `;
+    };
+
+    const body = $("targetModalBody");
+    if (body) {
+      body.innerHTML = `
+        <div class="target-grid">
+          ${renderCol("Aktywatory / Agoniści", "🟢", "var(--color-success)", groups.agonist, "Brak zidentyfikowanych agonistów")}
+          ${renderCol("Blokery / Antagoniści", "🔴", "var(--color-error)", groups.antagonist, "Brak zidentyfikowanych antagonistów")}
+          ${renderCol("Inhibitory / Blokery wychwytu", "🟡", "var(--color-warning)", groups.inhibitor, "Brak zidentyfikowanych inhibitorów")}
+          ${renderCol("Pozostałe ligandy", "⚪", "var(--color-text-muted)", groups.other, "Brak innych ligandów")}
+        </div>
+      `;
+    }
+
+    wireTargetModal(ti);
+    modal.classList.add("open");
+  }
+
+  function closeTargetModal() {
+    const modal = $("targetModal");
+    if (modal) modal.classList.remove("open");
+    activeModalTarget = null;
+  }
+
+  function wireTargetModal(ti) {
+    const modal = $("targetModal");
+    if (!modal) return;
+
+    const closeBtn = $("targetModalClose");
+    if (closeBtn) closeBtn.onclick = closeTargetModal;
+    const footClose = $("targetModalCloseFoot");
+    if (footClose) footClose.onclick = closeTargetModal;
+
+    modal.onclick = (e) => {
+      if (e.target === modal) closeTargetModal();
+    };
+
+    const graphBtn = $("targetShowOnGraphBtn");
+    if (graphBtn) {
+      graphBtn.onclick = () => {
+        closeTargetModal();
+        select({ type: "target", i: ti }, true);
+      };
+    }
+
+    modal.querySelectorAll("[data-c]").forEach((b) => {
+      b.onclick = () => {
+        closeTargetModal();
+        select({ type: "compound", i: +b.dataset.c }, true);
+      };
+    });
+
+    modal.querySelectorAll("[data-zoom-chem]").forEach((el) => {
+      el.onclick = () => openChemLightBox(+el.dataset.zoomChem);
+    });
+
+    modal.querySelectorAll("[data-target-stack-toggle]").forEach((btn) => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const cIdx = +btn.dataset.targetStackToggle;
+        toggleInStack(cIdx);
+        const inStack = state.stack.has(cIdx);
+        btn.textContent = inStack ? "✓ W stacku" : "+ Stack";
+        btn.classList.toggle("ok", inStack);
+      };
+    });
   }
 
   // ---------- Stack Builder & Interaction Checker
@@ -1294,6 +1514,9 @@
     body.querySelectorAll("[data-zoom-chem]").forEach((el) => {
       el.onclick = () => openChemLightBox(+el.dataset.zoomChem);
     });
+    body.querySelectorAll("[data-t]").forEach((el) => {
+      el.onclick = () => openTargetModal(+el.dataset.t);
+    });
     body.querySelectorAll("[data-remove]").forEach((b) => {
       b.onclick = () => toggleInStack(+b.dataset.remove);
     });
@@ -1901,7 +2124,10 @@
       p.innerHTML = `<div class="card-head"><div class="label" style="margin-bottom:0">Cel molekularny (ChEMBL) · ${esc(t.ty || "")}</div><button class="card-close" id="cardClose" title="Zamknij szczegóły (Esc)" aria-label="Zamknij">✕</button></div>
         <div class="title">${esc(t.n)}</div>
         <p class="muted">${m.length} substancji z katalogu działa na ten cel wg kuratorowanych mechanizmów ChEMBL (${vis.length} widocznych przy obecnych filtrach).</p>
-        <div class="links"><a href="https://www.ebi.ac.uk/chembl/target_report_card/${esc(t.id)}/" target="_blank" rel="noopener noreferrer">ChEMBL ${esc(t.id)} ↗</a></div>
+        <div class="links" style="display:flex;gap:6px;margin:.5rem 0">
+          <button class="btn btn-gold" id="targetDeepDiveBtn" style="flex:1;font-size:var(--text-xs);padding:4px 8px">🔬 Eksplorator celu (Deep-Dive)</button>
+          <a href="https://www.ebi.ac.uk/chembl/target_report_card/${esc(t.id)}/" target="_blank" rel="noopener noreferrer" class="btn" style="font-size:var(--text-xs);padding:4px 8px">ChEMBL ↗</a>
+        </div>
         ${listHtml(vis)}`;
       history.replaceState(null, "", "#target=" + t.id);
       if (fly && m.length) { const cx = m.reduce((a, c) => a + c.x, 0) / m.length, cy = m.reduce((a, c) => a + c.y, 0) / m.length; animateTo(cx * 0.3, cy * 0.3, fitK() * 1.1); }
@@ -2155,7 +2381,11 @@
   function wire(p) {
     p.querySelectorAll("[data-c]").forEach((b) => b.onclick = () => select({ type: "compound", i: +b.dataset.c }, true));
     p.querySelectorAll("[data-core]").forEach((b) => b.onclick = () => select({ type: "core", i: +b.dataset.core }, true));
-    p.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => select({ type: "target", i: +b.dataset.t }, true));
+    p.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => openTargetModal(+b.dataset.t));
+    const targetDeepDive = p.querySelector("#targetDeepDiveBtn");
+    if (targetDeepDive && state.sel && state.sel.type === "target") {
+      targetDeepDive.onclick = () => openTargetModal(state.sel.i);
+    }
     p.querySelectorAll("[data-tab]").forEach((b) => b.onclick = () => {
       state.tab = b.dataset.tab;
       if (state.sel && state.sel.type === "compound") {
@@ -2292,7 +2522,7 @@
     const th = s.length >= 3 ? T.map((t, i) => [t, i]).filter(([t]) => (t.n || "").toLowerCase().includes(s)).slice(0, 6) : [];
     res.innerHTML = th.map(([t, i]) => `<button role="option" data-t="${i}"><span class="dot" style="background:var(--color-accent2)"></span>◎ ${esc(t.n)}<small>${byTarget[i].length} subst.</small></button>`).join("") + (hits.length ? hits.map((c) => `<button role="option" data-c="${c.i}"><span class="dot" style="background:${CL_COLORS[c.c]}"></span>${esc(c.n)}<small>${c.pk ? "PK" : ""}</small></button>`).join("")
       : (th.length ? "" : '<div role="option" aria-disabled="true" class="empty" style="padding:.4rem">Brak wyników przy obecnych filtrach.</div>'));
-    res.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => { select({ type: "target", i: +b.dataset.t }, true); res.innerHTML = ""; q.blur(); });
+    res.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => { openTargetModal(+b.dataset.t); res.innerHTML = ""; q.blur(); });
     res.querySelectorAll("[data-c]").forEach((b) => b.onclick = () => { select({ type: "compound", i: +b.dataset.c }, true); res.innerHTML = ""; q.blur(); });
   }
   q.addEventListener("input", search);
@@ -2376,6 +2606,7 @@
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      if (activeModalTarget) { closeTargetModal(); return; }
       if (activeComparatorIndices) { closeComparator(); return; }
       if (activeModalCompound) { closeChemLightBox(); return; }
       if (state.stackDrawerOpen) { toggleStackDrawer(false); return; }
@@ -2430,7 +2661,7 @@
     }
   } else if (fromHash.startsWith("target=")) {
     const ti = T.findIndex((t) => t.id === fromHash.slice(7));
-    if (ti >= 0) setTimeout(() => select({ type: "target", i: ti }, true), 50);
+    if (ti >= 0) setTimeout(() => openTargetModal(ti), 50);
   } else if (fromHash) {
     const c = C.find((x) => x.id === fromHash);
     if (c) setTimeout(() => select({ type: "compound", i: c.i }, true), 50);

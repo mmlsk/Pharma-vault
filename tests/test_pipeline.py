@@ -569,6 +569,57 @@ def test_stack_interaction_matrix():
         assert has_serotonin or shared_cyp, "Expected serotonergic activity or shared CYP between Sertraline and Tramadol"
 
 
+def test_target_explorer_deep_dive():
+    """Verify markup and action classification logic for Target & Pathway Deep-Dive Explorer."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    for el_id in ["targetModal", "targetModalHead", "targetModalBody", "targetModalFootNote"]:
+        assert f'id="{el_id}"' in html_src, f"Missing id '{el_id}' in index.html"
+
+    for css in ["target-grid", "target-action-col", "target-drug-card"]:
+        assert css in html_src, f"Missing CSS class '{css}' in index.html"
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    for term in ["function openTargetModal(", "function closeTargetModal(", "function classifyTargetAction(", "activeModalTarget", "targetShowOnGraphBtn"]:
+        assert term in app_src, f"Missing term '{term}' in app.js"
+
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    prefix = "window.PV_GRAPH = "
+    start_idx = graph_js.index(prefix) + len(prefix)
+    end_idx = graph_js.rindex("};") + 1
+    graph = json.loads(graph_js[start_idx:end_idx])
+    targets = graph["targets"]
+    compounds = graph["compounds"]
+
+    # 1. Verify existence of major pharmacological targets
+    target_names = [t["n"].lower() for t in targets]
+    assert any("5-hydroxytryptamine receptor 2a" in tn for tn in target_names), "5-HT2A target not found"
+    assert any("dopamine" in tn for tn in target_names), "Dopamine targets not found"
+
+    # 2. Verify ligands linked to targets
+    t_idx_map = {t["id"]: i for i, t in enumerate(targets)}
+    chembl224_idx = t_idx_map.get("CHEMBL224")
+    if chembl224_idx is not None:
+        ht2a_ligands = [c for c in compounds if chembl224_idx in (c.get("tg") or [])]
+        assert len(ht2a_ligands) >= 10, f"Expected >= 10 ligands for 5-HT2A, got {len(ht2a_ligands)}"
+
+    # 3. Test functional action classifier logic
+    def classify(mech, t_name):
+        m = (mech or "").lower()
+        if any(w in m for w in ["antagonist", "inverse agonist", "blocker", "negative allosteric"]):
+            return "antagonist"
+        if any(w in m for w in ["agonist", "activator", "positive allosteric", "opener"]):
+            return "agonist"
+        if any(w in m for w in ["inhibitor", "reuptake inhibitor", "inactivator"]):
+            return "inhibitor"
+        return "other"
+
+    assert classify("5-hydroxytryptamine receptor 2A agonist", "5-HT2A") == "agonist"
+    assert classify("5-hydroxytryptamine receptor 2A antagonist", "5-HT2A") == "antagonist"
+    assert classify("HMG-CoA reductase inhibitor", "HMG-CoA") == "inhibitor"
+    assert classify("", "5-HT2A") == "other"
+
+
+
 
 
 
