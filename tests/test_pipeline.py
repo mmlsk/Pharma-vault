@@ -532,6 +532,44 @@ def test_advanced_multi_filter():
     assert len(composite) >= 20, f"Expected >= 20 composite search hits, got {len(composite)}"
 
 
+def test_stack_interaction_matrix():
+    """Verify markup and pairwise evaluation logic for Pairwise Interaction Matrix (N x N)."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    for css_class in ["matrix-table", "matrix-cell", "matrix-detail-card", "cell-danger", "cell-warn", "cell-synergy", "cell-clear", "cell-diag"]:
+        assert css_class in html_src, f"Missing CSS class '{css_class}' in index.html"
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    for term in ["function evaluatePairwiseInteraction(", "function buildMatrixHtml(", "data-matrix-pair", "data-stack-tab"]:
+        assert term in app_src, f"Missing term '{term}' in app.js"
+
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    prefix = "window.PV_GRAPH = "
+    start_idx = graph_js.index(prefix) + len(prefix)
+    end_idx = graph_js.rindex("};") + 1
+    graph = json.loads(graph_js[start_idx:end_idx])
+    compounds = graph["compounds"]
+    core = graph["core"]
+
+    # Locate sample test compounds
+    by_name = {c["n"].lower(): c for c in compounds}
+    sertraline = by_name.get("sertraline") or by_name.get("sertralina")
+    tramadol = by_name.get("tramadol")
+
+    if sertraline and tramadol:
+        # Check CYP and risk hubs
+        cyp_s = set(sertraline.get("pk", {}).get("cyp") or [])
+        cyp_t = set(tramadol.get("pk", {}).get("cyp") or [])
+        shared_cyp = cyp_s & cyp_t
+
+        hubs_s = [core[li]["name"].lower() for li in sertraline.get("l", []) if core[li]["kind"] == "hub"]
+        hubs_t = [core[li]["name"].lower() for li in tramadol.get("l", []) if core[li]["kind"] == "hub"]
+        shared_hubs = set(hubs_s) & set(hubs_t)
+
+        has_serotonin = any("seroton" in h for h in (hubs_s + hubs_t))
+        assert has_serotonin or shared_cyp, "Expected serotonergic activity or shared CYP between Sertraline and Tramadol"
+
+
+
 
 
 

@@ -62,6 +62,7 @@
     pkOnly: false, cypOnly: false, hub: null, ver: "",
     rel: true, hlBin: null, tab: "overview",
     stack: new Set(), stackOnly: false, stackDrawerOpen: false,
+    stackTab: "pk", selectedMatrixPair: null,
     adv: {
       cyp: "",
       ro5: "",
@@ -924,6 +925,178 @@
     draw();
   }
 
+  // ---------- Pairwise Interaction Matrix (N x N)
+  function evaluatePairwiseInteraction(cA, cB) {
+    if (cA.i === cB.i) {
+      return {
+        isDiag: true,
+        level: "diag",
+        icon: "●",
+        title: cA.n,
+        desc: `Pojedyncza substancja: ${esc(cA.n)} (${esc(GR[cA.g].label)})`,
+        sharedCyps: (cA.pk && cA.pk.cyp) || [],
+        sharedHubs: (cA.l || []).filter((li) => CORE[li].kind === "hub").map((li) => CORE[li].name),
+        sharedTargets: (cA.tg || []).map((ti) => T[ti].n)
+      };
+    }
+
+    const cypsA = (cA.pk && cA.pk.cyp) || [];
+    const cypsB = (cB.pk && cB.pk.cyp) || [];
+    const sharedCyps = cypsA.filter((x) => cypsB.includes(x));
+
+    const hubsA = (cA.l || []).filter((li) => CORE[li].kind === "hub").map((li) => CORE[li].name);
+    const hubsB = (cB.l || []).filter((li) => CORE[li].kind === "hub").map((li) => CORE[li].name);
+    const sharedHubs = hubsA.filter((x) => hubsB.includes(x));
+
+    const tgA = cA.tg || [];
+    const tgB = cB.tg || [];
+    const sharedTargets = tgA.filter((ti) => tgB.includes(ti)).map((ti) => T[ti].n);
+
+    const critHubKeywords = ["seroton", "oddech", "cardio", "krążen", "sympath", "ciśnien", "drgaw", "qt"];
+    const hasCritHub = sharedHubs.some((h) => critHubKeywords.some((k) => h.toLowerCase().includes(k)));
+
+    let level = "clear";
+    let icon = "⚪";
+    let title = "Brak znanych bezpośrednich kolizji";
+
+    if (hasCritHub || sharedCyps.length >= 2) {
+      level = "danger";
+      icon = "🔴";
+      title = hasCritHub
+        ? `Krytyczna kumulacja ryzyka (${sharedHubs.join(", ")})`
+        : `Wielokrotne wąskie gardło CYP (${sharedCyps.join(", ")})`;
+    } else if (sharedCyps.length === 1 || sharedHubs.length >= 1) {
+      level = "warn";
+      icon = "🟡";
+      title = sharedCyps.length === 1
+        ? `Wspólny metabolizm przez ${sharedCyps[0]}`
+        : `Nakładanie hubu ryzyka: ${sharedHubs.join(", ")}`;
+    } else if (sharedTargets.length > 0) {
+      level = "synergy";
+      icon = "🟢";
+      title = `Wspólny cel molekularny: ${sharedTargets[0]}${sharedTargets.length > 1 ? ` (+${sharedTargets.length - 1})` : ''}`;
+    }
+
+    return {
+      isDiag: false,
+      level,
+      icon,
+      title,
+      sharedCyps,
+      sharedHubs,
+      sharedTargets
+    };
+  }
+
+  function buildMatrixHtml(stackList) {
+    if (stackList.length < 2) {
+      return `
+        <div class="pk-box" style="text-align:center;padding:1.5rem 0.5rem;color:var(--color-text-muted)">
+          <div style="font-size:1.6rem;margin-bottom:.3rem">🔲</div>
+          <b style="color:var(--color-text);font-size:var(--text-sm)">Macierz wymaga min. 2 substancji</b>
+          <p style="font-size:11px;margin-top:4px">Dodaj kolejny lek do stacka, aby przeanalizować wszystkie relacje parowe N×N.</p>
+        </div>`;
+    }
+
+    const n = stackList.length;
+    let selectedPair = state.selectedMatrixPair;
+    if (selectedPair) {
+      const hasA = stackList.some((c) => c.i === selectedPair[0]);
+      const hasB = stackList.some((c) => c.i === selectedPair[1]);
+      if (!hasA || !hasB) selectedPair = null;
+    }
+    if (!selectedPair) {
+      let bestPair = [stackList[0].i, stackList[1].i];
+      let bestScore = -1;
+      for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+          const evalRes = evaluatePairwiseInteraction(stackList[i], stackList[j]);
+          const score = evalRes.level === "danger" ? 3 : evalRes.level === "warn" ? 2 : evalRes.level === "synergy" ? 1 : 0;
+          if (score > bestScore) {
+            bestScore = score;
+            bestPair = [stackList[i].i, stackList[j].i];
+          }
+        }
+      }
+      selectedPair = bestPair;
+      state.selectedMatrixPair = selectedPair;
+    }
+
+    const colHeaders = stackList.map((c) => {
+      const shortName = c.n.length > 8 ? c.n.slice(0, 7) + "…" : c.n;
+      return `<th class="matrix-th" title="${esc(c.n)}"><span class="dot" style="background:${CL_COLORS[c.c]};display:inline-block;width:6px;height:6px;margin-right:2px"></span>${esc(shortName)}</th>`;
+    }).join("");
+
+    const rows = stackList.map((cA) => {
+      const shortName = cA.n.length > 8 ? cA.n.slice(0, 7) + "…" : cA.n;
+      const cells = stackList.map((cB) => {
+        const evalRes = evaluatePairwiseInteraction(cA, cB);
+        const isSel = selectedPair && ((selectedPair[0] === cA.i && selectedPair[1] === cB.i) || (selectedPair[0] === cB.i && selectedPair[1] === cA.i));
+        if (evalRes.isDiag) {
+          return `<td class="matrix-cell cell-diag" title="${esc(cA.n)}">●</td>`;
+        }
+        return `<td class="matrix-cell cell-${evalRes.level} ${isSel ? 'selected' : ''}" data-matrix-pair="${cA.i}-${cB.i}" title="${esc(cA.n)} ↔ ${esc(cB.n)}: ${esc(evalRes.title)}">${evalRes.icon}</td>`;
+      }).join("");
+
+      return `<tr><th class="matrix-th" style="text-align:right;padding-right:6px" title="${esc(cA.n)}">${esc(shortName)}</th>${cells}</tr>`;
+    }).join("");
+
+    const cA = C[selectedPair[0]];
+    const cB = C[selectedPair[1]];
+    const pairRes = evaluatePairwiseInteraction(cA, cB);
+
+    let detailContent = "";
+    if (pairRes.isDiag) {
+      detailContent = `<div><b>${esc(cA.n)}</b>: profil substancji pojedynczej.</div>`;
+    } else {
+      const cypsHtml = pairRes.sharedCyps.length
+        ? `<div><b style="color:var(--color-warning)">Wspólne enzymy CYP:</b> ${pairRes.sharedCyps.map((c) => `<span class="tag warn" style="font-weight:700">${esc(c)}</span>`).join(" ")} <small style="display:block;color:var(--color-text-muted);margin-top:2px">Konkurencja o metabolizm wątrobowy — ryzyko wzrostu stężeń.</small></div>`
+        : `<div style="color:var(--color-text-muted)">Brak wspólnych izoenzymów CYP.</div>`;
+
+      const hubsHtml = pairRes.sharedHubs.length
+        ? `<div><b style="color:var(--color-error)">Wspólne huby ryzyka:</b> ${pairRes.sharedHubs.map((h) => `<span class="tag warn">${esc(h)}</span>`).join(" ")} <small style="display:block;color:var(--color-text-muted);margin-top:2px">Sumowanie obciążenia farmakodynamicznego układu.</small></div>`
+        : `<div style="color:var(--color-text-muted)">Brak wspólnych krytycznych hubów ryzyka.</div>`;
+
+      const targetsHtml = pairRes.sharedTargets.length
+        ? `<div><b style="color:var(--color-success)">Wspólne cele molekularne:</b> ${pairRes.sharedTargets.map((t) => `<span class="tag ok">◎ ${esc(t)}</span>`).join(" ")}</div>`
+        : "";
+
+      detailContent = `
+        <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--color-border);padding-bottom:4px">
+          <b>${esc(cA.n)} <span style="color:var(--color-text-muted)">↔</span> ${esc(cB.n)}</b>
+          <span class="tag ${pairRes.level === 'danger' ? 'warn' : pairRes.level === 'warn' ? 'warn' : pairRes.level === 'synergy' ? 'ok' : ''}">${pairRes.icon} ${esc(pairRes.title)}</span>
+        </div>
+        ${cypsHtml}
+        ${hubsHtml}
+        ${targetsHtml}
+      `;
+    }
+
+    return `
+      <div class="matrix-wrap">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th class="matrix-th"></th>
+              ${colHeaders}
+            </tr>
+          </thead>
+          <tbody>
+            ${rows}
+          </tbody>
+        </table>
+      </div>
+      <div class="matrix-detail-card" id="matrixDetailCard">
+        ${detailContent}
+      </div>
+      <div style="font-size:10px;color:var(--color-text-muted);display:flex;gap:8px;justify-content:center;margin-top:6px">
+        <span>🔴 Kolizja wysoka</span>
+        <span>🟡 Ostrzeżenie</span>
+        <span>🟢 Synergia</span>
+        <span>⚪ Brak kolizji</span>
+      </div>`;
+  }
+
   function updateStackUI() {
     const countBadge = $("stackCountBadge");
     if (countBadge) countBadge.textContent = state.stack.size;
@@ -1004,9 +1177,12 @@
 
     // PK Simulator Section
     let pkSectionHtml = "";
+    const stackList = [...state.stack].map((i) => C[i]);
+    const matrixSectionHtml = buildMatrixHtml(stackList);
+    const curStackTab = state.stackTab || "pk";
+
     if (state.stack.size >= 1) {
       const curHorizon = state.sim.horizon || "auto";
-      const stackList = [...state.stack].map((i) => C[i]);
       const simCurves = {};
       const maxTh = Math.max(...stackList.map((c) => getCompoundTh(c)));
       let horizonNum = 24;
@@ -1091,7 +1267,14 @@
       <div style="display:grid;gap:5px">${chips}</div>
       <div class="label" style="margin-top:.4rem">Raport analizy farmakodynamicznej i CYP</div>
       ${alertsHtml}
-      ${pkSectionHtml}
+
+      <div class="tab-bar" style="margin:0.6rem 0 0.3rem 0" role="tablist" aria-label="Widoki analizy stacka">
+        <button class="tab-btn ${curStackTab === 'pk' ? 'active' : ''}" data-stack-tab="pk" role="tab" aria-selected="${curStackTab === 'pk'}">📈 Symulator PK</button>
+        <button class="tab-btn ${curStackTab === 'matrix' ? 'active' : ''}" data-stack-tab="matrix" role="tab" aria-selected="${curStackTab === 'matrix'}">🔲 Macierz interakcji (N×N)</button>
+      </div>
+
+      ${curStackTab === 'pk' ? pkSectionHtml : matrixSectionHtml}
+
       <div class="label" style="margin-top:.6rem">Zestawy demonstracyjne</div>
       <div style="display:flex;gap:4px;flex-wrap:wrap">
         <button class="preset-btn" data-preset="nootropic">Kofeina + Teanina</button>
@@ -1116,6 +1299,19 @@
     });
     body.querySelectorAll("[data-preset]").forEach((b) => {
       b.onclick = () => loadPreset(b.dataset.preset);
+    });
+    body.querySelectorAll("[data-stack-tab]").forEach((btn) => {
+      btn.onclick = () => {
+        state.stackTab = btn.dataset.stackTab;
+        updateStackUI();
+      };
+    });
+    body.querySelectorAll("[data-matrix-pair]").forEach((td) => {
+      td.onclick = () => {
+        const parts = td.dataset.matrixPair.split("-").map(Number);
+        state.selectedMatrixPair = [parts[0], parts[1]];
+        updateStackUI();
+      };
     });
     body.querySelectorAll("[data-horizon]").forEach((b) => {
       b.onclick = () => {
@@ -1240,8 +1436,54 @@
       );
     }
 
+    if (list.length >= 2) {
+      const matrixHeaders = "| Para | " + list.map((c) => esc(c.n)).join(" | ") + " |";
+      const matrixSep = "| :--- | " + list.map(() => ":---:").join(" | ") + " |";
+      const matrixRows = list.map((cA) => {
+        const cells = list.map((cB) => {
+          const evalRes = evaluatePairwiseInteraction(cA, cB);
+          return evalRes.isDiag ? "●" : evalRes.icon;
+        }).join(" | ");
+        return `| **${esc(cA.n)}** | ${cells} |`;
+      });
+
+      const pairwiseDetails = [];
+      for (let i = 0; i < list.length; i++) {
+        for (let j = i + 1; j < list.length; j++) {
+          const evalRes = evaluatePairwiseInteraction(list[i], list[j]);
+          if (evalRes.level !== "clear") {
+            const cyps = evalRes.sharedCyps.length ? `CYP: ${evalRes.sharedCyps.join(', ')}` : '';
+            const hubs = evalRes.sharedHubs.length ? `Huby: ${evalRes.sharedHubs.join(', ')}` : '';
+            const tgts = evalRes.sharedTargets.length ? `Cele: ${evalRes.sharedTargets.slice(0, 3).join(', ')}` : '';
+            const desc = [cyps, hubs, tgts].filter(Boolean).join(" · ");
+            pairwiseDetails.push(`- ${evalRes.icon} **${list[i].n} ↔ ${list[j].n}**: ${evalRes.title}${desc ? ` (${desc})` : ''}`);
+          }
+        }
+      }
+
+      lines.push(
+        "## 4. Macierz interakcji parowych (Pairwise Matrix N×N)",
+        "",
+        matrixHeaders,
+        matrixSep,
+        ...matrixRows,
+        "",
+        "> Legenda: 🔴 Ryzyko krytyczne · 🟡 Ostrzeżenie · 🟢 Synergia / Wspólny cel · ⚪ Brak kolizji",
+        ""
+      );
+
+      if (pairwiseDetails.length) {
+        lines.push(
+          "### Wykryte interakcje parowe",
+          "",
+          ...pairwiseDetails,
+          ""
+        );
+      }
+    }
+
     lines.push(
-      "## 4. Zastrzeżenie edukacyjne",
+      "## 5. Zastrzeżenie edukacyjne",
       "",
       "> [!warning] Materiał edukacyjny",
       "> Niniejszy raport opiera się na wyekstrahowanych automatycznie danych mechanistycznych ChEMBL, substratach CYP, hubach bezpieczeństwa oraz 1-kompartmentowym modelu farmakokinetycznym. Nie uwzględnia indywidualnego dawkowania, tolerancji, zmienności genetycznej ani chorób współistniejących. Nie stanowi porady lekarskiej.",

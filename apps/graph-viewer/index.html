@@ -170,6 +170,18 @@
     .filter-body { padding: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); }
     .filter-group { display: flex; flex-direction: column; gap: 3px; }
     .filter-group label { font-size: 11px; font-weight: 600; color: var(--color-text-muted); }
+    .matrix-wrap { width: 100%; overflow-x: auto; margin-top: .4rem; }
+    .matrix-table { border-collapse: separate; border-spacing: 3px; font-size: 11px; margin: 0 auto; }
+    .matrix-th { font-size: 10px; font-weight: 600; padding: 4px; text-align: center; max-width: 65px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-text-muted); }
+    .matrix-cell { width: 34px; height: 34px; text-align: center; vertical-align: middle; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 700; border: 1px solid transparent; transition: transform .12s, border-color .12s; user-select: none; }
+    .matrix-cell:hover { transform: scale(1.12); z-index: 2; border-color: var(--color-primary); }
+    .matrix-cell.selected { border-color: var(--color-primary); box-shadow: 0 0 0 2px var(--color-primary); transform: scale(1.08); }
+    .matrix-cell.cell-diag { background: var(--color-surface-offset); color: var(--color-text-muted); cursor: default; }
+    .matrix-cell.cell-danger { background: color-mix(in oklab, var(--color-error) 24%, transparent); color: var(--color-error); }
+    .matrix-cell.cell-warn { background: color-mix(in oklab, var(--color-warning) 24%, transparent); color: var(--color-warning); }
+    .matrix-cell.cell-synergy { background: color-mix(in oklab, var(--color-success) 22%, transparent); color: var(--color-success); }
+    .matrix-cell.cell-clear { background: var(--color-surface-2); color: var(--color-text-muted); }
+    .matrix-detail-card { margin-top: .5rem; padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-surface-2); font-size: var(--text-xs); display: flex; flex-direction: column; gap: 6px; }
     @media (max-width: 1100px) {
       body { overflow: auto; height: auto; }
       .app { grid-template-columns: 1fr; height: auto; }

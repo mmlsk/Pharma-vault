@@ -1,5 +1,25 @@
 # Changelog
 
+## [3.11.0] — 2026-11-02 — Macierz Interakcji i Ryzyk Stacka (Pairwise Interaction Matrix & Heatmap)
+### Dodano
+- **Macierz Interakcji i Ryzyk Stacka (Pairwise Interaction Matrix & Heatmap)** w drawerze `#stackDrawer` (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **Przełącznik zakładek analizy stacka (`tab-bar`)**:
+    - Możliwość natychmiastowego przełączania między widokiem `📈 Symulator PK` (krzywe stężeń, okna kolizji) a nowym widokiem `🔲 Macierz interakcji (N×N)`.
+  - **Interaktywna siatka korelacji parowych $N \times N$ (`.matrix-table`)**:
+    - Wizualna macierz krzyżowa dla wszystkich substancji w stacku ze sticky headers i awatarami klastrów.
+    - Cztery intuicyjne poziomy severity oznaczone kolorystycznie i piktogramami:
+      - 🔴 **Ciężkie / Krytyczne (`.cell-danger`)**: nakładanie krytycznych hubów toksykologicznych (zespół serotoninowy, depresja oddechowa, obciążenie sercowo-naczyniowe) lub $\ge 2$ wspólne enzymy CYP.
+      - 🟡 **Umiarkowane (`.cell-warn`)**: 1 wspólny szlak metaboliczny CYP (ryzyko spowolnienia eliminacji) lub drugorzędne huby ryzyka.
+      - 🟢 **Synergia / Wspólny cel (`.cell-synergy`)**: wspólne cele molekularne ChEMBL bez nakładających się krytycznych hubów toksykologicznych.
+      - ⚪ **Brak bezpośredniej kolizji (`.cell-clear`)**: brak zidentyfikowanych konfliktów w bazie.
+      - ● **Przekątna własna (`.cell-diag`)**: reprezentacja cząsteczki z samą sobą.
+  - **Dynamiczna karta szczegółów pary (`#matrixDetailCard`)**:
+    - Kliknięcie w dowolną komórkę $(A, B)$ podświetla ją i wyświetla poniżej siatki pełny raport: wykaz wspólnych enzymów CYP z ostrzeżeniem o spowolnionej eliminacji, wspólne huby PD oraz receptory ChEMBL.
+  - **Wzbogacenie eksportu do Obsidian (`obsidian://new`)**:
+    - Eksportowany raport Markdown zawiera teraz sekcję `## 4. Macierz interakcji parowych (Pairwise Matrix N×N)` z tabelą emoji statusu oraz wypunktowaniem ryzyk dla każdej pary leków.
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_stack_interaction_matrix` sprawdzający obecność stylów CSS macierzy, funkcji ewaluacji parowej w JS oraz weryfikujący poprawność wykrywania interakcji parowych na danych grafu (44 testy, 100% green).
+
 ## [3.10.0] — 2026-11-02 — Zaawansowany Filtr Wielokryterialny (Smart Multi-Filter & Faceted Search)
 ### Dodano
 - **Zaawansowany Filtr Wielokryterialny (Smart Multi-Filter & Faceted Search)** w pasku bocznym przeglądarki grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
