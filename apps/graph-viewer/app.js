@@ -384,6 +384,284 @@
     return lines.join("\n");
   }
 
+  // ---------- Chemical Similarity & Analogs Explorer
+  let activeAnalogsQuery = null;
+  let activeAnalogsMode = "hybrid";
+  let activeAnalogsSameCategory = false;
+
+  function findCompoundAnalogs(queryC, mode = "hybrid", sameCategoryOnly = false, limit = 10) {
+    if (!queryC) return [];
+    const qPr = queryC.pr || [];
+    const qIk = queryC.ik ? queryC.ik.slice(0, 14) : "";
+    const qTg = queryC.tg || [];
+    const qTgSet = new Set(qTg);
+    const qMf = queryC.mf || "";
+
+    const candidates = [];
+
+    for (let i = 0; i < C.length; i++) {
+      const cand = C[i];
+      if (cand.i === queryC.i) continue;
+      if (sameCategoryOnly && cand.g !== queryC.g) continue;
+
+      // 1. Physicochemical score (Ro5)
+      let sPhys = 25;
+      const cPr = cand.pr;
+      if (qPr.length >= 3 && cPr && cPr.length >= 3 && qPr[0] != null && cPr[0] != null) {
+        const dMw = Math.abs(qPr[0] - cPr[0]) / 150.0;
+        const dLogP = Math.abs((qPr[1] ?? 0) - (cPr[1] ?? 0)) / 1.5;
+        const dPsa = Math.abs((qPr[2] ?? 0) - (cPr[2] ?? 0)) / 40.0;
+        const dist = Math.sqrt(dMw * dMw + dLogP * dLogP + dPsa * dPsa);
+        sPhys = Math.max(0, Math.min(100, Math.round(100 * Math.exp(-dist / 2.0))));
+      }
+
+      // 2. Chemical & Scaffold score (InChIKey & formula)
+      let sChem = sPhys;
+      const cIk = cand.ik ? cand.ik.slice(0, 14) : "";
+      if (qIk && cIk) {
+        if (qIk === cIk) {
+          sChem = 100; // Exact scaffold match / stereoisomer / enantiomer
+        } else {
+          let match = 0;
+          for (let k = 0; k < 14; k++) {
+            if (qIk[k] === cIk[k]) match++;
+          }
+          const ikSim = Math.round((match / 14.0) * 100);
+          let mfSim = 0;
+          if (qMf && cand.mf) {
+            if (qMf === cand.mf) mfSim = 95;
+            else if (Math.abs(qMf.length - cand.mf.length) <= 2) mfSim = 50;
+          }
+          sChem = Math.max(ikSim, mfSim, Math.round(sPhys * 0.7));
+        }
+      } else if (qMf && cand.mf && qMf === cand.mf) {
+        sChem = 90;
+      }
+
+      // 3. Pharmacological Target score (Jaccard similarity)
+      let sTarget = 0;
+      const cTg = cand.tg || [];
+      const sharedTargets = cTg.filter((ti) => qTgSet.has(ti));
+      if (qTg.length > 0 && cTg.length > 0) {
+        const unionSize = new Set([...qTg, ...cTg]).size;
+        sTarget = unionSize > 0 ? Math.round((sharedTargets.length / unionSize) * 100) : 0;
+      } else if (queryC.m && cand.m) {
+        const wordsA = queryC.m.toLowerCase().split(/\W+/).filter((w) => w.length > 3);
+        const wordsB = cand.m.toLowerCase().split(/\W+/).filter((w) => w.length > 3);
+        const sharedW = wordsA.filter((w) => wordsB.includes(w));
+        if (sharedW.length > 0) sTarget = Math.min(60, sharedW.length * 20);
+      }
+
+      // 4. Mode-based Weighted Score
+      let score = 0;
+      if (mode === "structure") {
+        score = Math.round(0.60 * sChem + 0.40 * sPhys);
+      } else if (mode === "bioisostere") {
+        score = Math.round(0.65 * sTarget + 0.35 * sPhys);
+      } else {
+        // hybrid
+        score = Math.round(0.40 * sChem + 0.35 * sPhys + 0.25 * sTarget);
+      }
+      score = Math.min(100, Math.max(0, score));
+
+      candidates.push({
+        compound: cand,
+        score,
+        sChem,
+        sPhys,
+        sTarget,
+        sharedTargets
+      });
+    }
+
+    candidates.sort((a, b) => b.score - a.score);
+    return candidates.slice(0, limit);
+  }
+
+  function openAnalogsModal(cIdx, mode = "hybrid", sameCategory = false) {
+    const c = typeof cIdx === "number" ? C[cIdx] : cIdx;
+    if (!c) return;
+    activeAnalogsQuery = c.i;
+    activeAnalogsMode = mode;
+    activeAnalogsSameCategory = sameCategory;
+
+    const modal = $("analogsModal");
+    if (!modal) return;
+
+    const querySub = $("analogsQuerySubtitle");
+    if (querySub) querySub.textContent = `Analogi dla: ${c.n}`;
+
+    const modeGroup = $("analogModeGroup");
+    if (modeGroup) {
+      modeGroup.querySelectorAll("[data-analog-mode]").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.analogMode === activeAnalogsMode);
+      });
+    }
+
+    const check = $("analogsSameCategoryCheck");
+    if (check) check.checked = activeAnalogsSameCategory;
+
+    const qCol = $("analogsQueryCol");
+    if (qCol) {
+      const struct = getChemStructure(c);
+      const pr = c.pr || [];
+      const tgNames = (c.tg || []).slice(0, 4).map((ti) => T[ti]?.n).filter(Boolean);
+      qCol.innerHTML = `
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--color-text-muted);font-weight:700">Cząsteczka bazowa</div>
+        <div style="text-align:center;padding:6px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:4px">
+          ${struct ? `<img src="${struct.url}" alt="${esc(c.n)}" style="max-width:140px;max-height:140px;object-fit:contain" loading="lazy" data-zoom-chem="${c.i}">` : `
+            <div style="height:100px;display:flex;align-items:center;justify-content:center;color:var(--color-text-muted)">🧬 Brak 2D</div>
+          `}
+        </div>
+        <b style="font-size:14px;color:var(--color-text)">${esc(c.n)}</b>
+        <div style="font-size:11px;color:var(--color-text-muted)">${esc(CL_PL[G.clusters[c.c].name])} · ${esc(GR[c.g].label)}</div>
+        <div style="display:grid;gap:3px;font-size:11px;margin-top:4px">
+          <div>Wzór: <b>${esc(c.mf || "—")}</b></div>
+          <div>Masa (MW): <b>${pr[0] != null ? pr[0] + " g/mol" : "—"}</b></div>
+          <div>ALogP: <b>${pr[1] != null ? pr[1] : "—"}</b></div>
+          <div>PSA: <b>${pr[2] != null ? pr[2] + " Å²" : "—"}</b></div>
+          ${c.ik ? `<div>InChIKey: <code style="font-size:9px">${esc(c.ik.slice(0, 14))}…</code></div>` : ""}
+        </div>
+        ${tgNames.length ? `
+          <div style="margin-top:6px;font-size:10px">
+            <span style="color:var(--color-text-muted);font-weight:600">Główne cele:</span>
+            <div style="display:flex;gap:3px;flex-wrap:wrap;margin-top:2px">
+              ${tgNames.map((n) => `<span class="tag ok" style="font-size:9px">◎ ${esc(n)}</span>`).join("")}
+            </div>
+          </div>
+        ` : ""}
+      `;
+    }
+
+    const analogs = findCompoundAnalogs(c, activeAnalogsMode, activeAnalogsSameCategory, 12);
+    const grid = $("analogsResultsGrid");
+    if (grid) {
+      if (!analogs.length) {
+        grid.innerHTML = '<div style="color:var(--color-text-muted);padding:1rem">Nie znaleziono pasujących analogów w wybranych kryteriach.</div>';
+      } else {
+        grid.innerHTML = analogs.map((item) => {
+          const cand = item.compound;
+          const struct = getChemStructure(cand);
+          const pr = cand.pr || [];
+          const qPr = c.pr || [];
+          const dMw = qPr[0] != null && pr[0] != null ? (pr[0] - qPr[0]).toFixed(1) : null;
+          const dLogP = qPr[1] != null && pr[1] != null ? (pr[1] - qPr[1]).toFixed(2) : null;
+          const badgeCls = item.score >= 80 ? "similarity-high" : item.score >= 60 ? "similarity-mid" : "similarity-low";
+          const inStack = state.stack.has(cand.i);
+
+          const thumbHtml = struct
+            ? `<img src="${struct.url}" alt="${esc(cand.n)}" style="width:48px;height:48px;object-fit:contain;cursor:pointer;flex-shrink:0" loading="lazy" data-zoom-chem="${cand.i}" title="Powiększ wzór 2D">`
+            : `<span class="dot" style="background:${CL_COLORS[cand.c]};width:14px;height:14px;flex-shrink:0"></span>`;
+
+          return `
+            <div class="analog-card">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px">
+                <div style="display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden">
+                  ${thumbHtml}
+                  <div style="min-width:0;overflow:hidden">
+                    <button data-analog-select="${cand.i}" style="background:none;border:0;color:var(--color-text);font-weight:700;font-size:12px;cursor:pointer;padding:0;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block" title="${esc(cand.n)}">${esc(cand.n)}</button>
+                    <small style="color:var(--color-text-muted);font-size:10px">${esc(GR[cand.g].label)}</small>
+                  </div>
+                </div>
+                <span class="similarity-badge ${badgeCls}" title="Zgodność: ${item.score}% (Chemia: ${item.sChem}%, Ro5: ${item.sPhys}%, Cele: ${item.sTarget}%)">
+                  ${item.score}%
+                </span>
+              </div>
+              <div style="display:flex;gap:4px;flex-wrap:wrap;font-size:10px;margin-top:4px">
+                <span class="tag">${cand.mf || "Brak wzoru"}</span>
+                ${dMw != null ? `<span class="tag">ΔMW ${+dMw >= 0 ? '+' : ''}${dMw}</span>` : ""}
+                ${dLogP != null ? `<span class="tag">ΔLogP ${+dLogP >= 0 ? '+' : ''}${dLogP}</span>` : ""}
+                ${item.sharedTargets.length ? `<span class="tag ok">◎ ${item.sharedTargets.length} wsp. celów</span>` : ""}
+              </div>
+              <div style="display:flex;gap:4px;margin-top:6px">
+                <button class="btn btn-gold" data-analog-compare="${cand.i}" style="flex:1;font-size:10px;padding:3px 6px" title="Porównaj head-to-head">⚖️ Porównaj</button>
+                <button class="btn ${inStack ? 'btn-gold' : ''}" data-analog-stack="${cand.i}" style="font-size:10px;padding:3px 6px" title="${inStack ? 'Usuń ze stacka' : 'Dodaj do stacka'}">
+                  ${inStack ? '✓ W stacku' : '+ Stack'}
+                </button>
+                <button class="btn" data-analog-graph="${cand.i}" style="font-size:10px;padding:3px 6px" title="Pokaż w grafie">🎯 Graf</button>
+              </div>
+            </div>
+          `;
+        }).join("");
+      }
+    }
+
+    wireAnalogsModal(c.i);
+    modal.classList.add("open");
+  }
+
+  function closeAnalogsModal() {
+    const modal = $("analogsModal");
+    if (modal) modal.classList.remove("open");
+    activeAnalogsQuery = null;
+  }
+
+  function wireAnalogsModal(queryIdx) {
+    const modal = $("analogsModal");
+    if (!modal) return;
+
+    const closeBtn = $("analogsModalClose");
+    if (closeBtn) closeBtn.onclick = closeAnalogsModal;
+
+    modal.onclick = (e) => {
+      if (e.target === modal) closeAnalogsModal();
+    };
+
+    const modeGroup = $("analogModeGroup");
+    if (modeGroup) {
+      modeGroup.querySelectorAll("[data-analog-mode]").forEach((btn) => {
+        btn.onclick = () => {
+          openAnalogsModal(queryIdx, btn.dataset.analogMode, activeAnalogsSameCategory);
+        };
+      });
+    }
+
+    const check = $("analogsSameCategoryCheck");
+    if (check) {
+      check.onchange = () => {
+        openAnalogsModal(queryIdx, activeAnalogsMode, check.checked);
+      };
+    }
+
+    modal.querySelectorAll("[data-analog-select]").forEach((b) => {
+      b.onclick = () => {
+        closeAnalogsModal();
+        select({ type: "compound", i: +b.dataset.analogSelect }, true);
+      };
+    });
+
+    modal.querySelectorAll("[data-analog-compare]").forEach((b) => {
+      b.onclick = () => {
+        const candIdx = +b.dataset.analogCompare;
+        closeAnalogsModal();
+        openComparator([queryIdx, candIdx]);
+      };
+    });
+
+    modal.querySelectorAll("[data-analog-stack]").forEach((btn) => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const candIdx = +btn.dataset.analogStack;
+        toggleInStack(candIdx);
+        const inStack = state.stack.has(candIdx);
+        btn.textContent = inStack ? "✓ W stacku" : "+ Stack";
+        btn.classList.toggle("btn-gold", inStack);
+      };
+    });
+
+    modal.querySelectorAll("[data-analog-graph]").forEach((b) => {
+      b.onclick = () => {
+        const candIdx = +b.dataset.analogGraph;
+        closeAnalogsModal();
+        select({ type: "compound", i: candIdx }, true);
+      };
+    });
+
+    modal.querySelectorAll("[data-zoom-chem]").forEach((el) => {
+      el.onclick = () => openChemLightBox(+el.dataset.zoomChem);
+    });
+  }
+
   // ---------- Target & Pathway Deep-Dive Explorer
   let activeModalTarget = null;
 
@@ -3156,6 +3434,19 @@
           </div>`;
       }
 
+      const top3Analogs = findCompoundAnalogs(c, "hybrid", false, 3);
+      const analogsTeaserHtml = top3Analogs.length ? `
+        <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:6px 8px;margin-top:.4rem;font-size:11px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <b style="font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--color-text-muted)">🧬 Analogi strukturalne</b>
+            <button class="btn-copy" id="overviewAllAnalogsBtn" style="font-size:10px;padding:1px 6px">Więcej (10) ↗</button>
+          </div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            ${top3Analogs.map((a) => `<button class="tag ok" data-open-analog="${a.compound.i}" style="cursor:pointer;font-size:10px;background:none;border:1px solid var(--color-border)" title="Podobieństwo: ${a.score}%">${esc(a.compound.n)} · <b>${a.score}%</b></button>`).join("")}
+          </div>
+        </div>
+      ` : "";
+
       const propBoxes = c.pr ? `
         <div class="stat-grid">
           <div class="stat-box"><small>Masa cząst. (MW)</small><b>${c.pr[0] != null ? c.pr[0] + " g/mol" : "—"}</b></div>
@@ -3182,6 +3473,7 @@
         <div class="tab-panel">
           ${c.d ? `<p class="muted" style="line-height:1.45">${esc(c.d)}${c.d.length >= 420 ? "…" : ""}</p>` : '<p class="empty">Brak opisu podsumowującego.</p>'}
           ${chemHtml}
+          ${analogsTeaserHtml}
           ${propBoxes}
           ${atcHtml}
           ${idHtml}
@@ -3306,14 +3598,17 @@
 
     const inStack = state.stack.has(c.i);
     const stackBtnHtml = `
-      <div style="display:flex;gap:6px;margin:0.5rem 0">
-        <button id="cardStackToggle" class="btn ${inStack ? 'btn-gold' : ''}" style="flex:1;padding:6px 10px;font-size:var(--text-xs);display:flex;align-items:center;justify-content:center;gap:4px">
+      <div style="display:flex;gap:4px;margin:0.5rem 0;flex-wrap:wrap">
+        <button id="cardStackToggle" class="btn ${inStack ? 'btn-gold' : ''}" style="flex:1;padding:6px 8px;font-size:var(--text-xs);display:flex;align-items:center;justify-content:center;gap:4px">
           <span>${inStack ? "✓ W Twoim stacku" : "+ Dodaj do stacka"}</span>
         </button>
-        <button id="cardCompareBtn" class="btn" style="padding:6px 10px;font-size:var(--text-xs)" title="Porównaj ze stackiem lub najbliższym analogiem">
+        <button id="cardCompareBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Porównaj ze stackiem lub najbliższym analogiem">
           ⚖️ Porównaj
         </button>
-        <button id="cardDossierBtn" class="btn" style="padding:6px 10px;font-size:var(--text-xs)" title="Kliniczna monografia substancji (A4 / PDF / Markdown)">
+        <button id="cardAnalogsBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Znajdź analogi chemiczne i bioizostery">
+          🧬 Analogi
+        </button>
+        <button id="cardDossierBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Kliniczna monografia substancji (A4 / PDF / Markdown)">
           📄 Monografia
         </button>
       </div>`;
@@ -3379,6 +3674,17 @@
     if (cardDossierBtn && state.sel && state.sel.type === "compound") {
       cardDossierBtn.onclick = () => openDossierModal("single", state.sel.i);
     }
+    const cardAnalogsBtn = p.querySelector("#cardAnalogsBtn");
+    if (cardAnalogsBtn && state.sel && state.sel.type === "compound") {
+      cardAnalogsBtn.onclick = () => openAnalogsModal(state.sel.i);
+    }
+    const overviewAllAnalogsBtn = p.querySelector("#overviewAllAnalogsBtn");
+    if (overviewAllAnalogsBtn && state.sel && state.sel.type === "compound") {
+      overviewAllAnalogsBtn.onclick = () => openAnalogsModal(state.sel.i);
+    }
+    p.querySelectorAll("[data-open-analog]").forEach((btn) => {
+      btn.onclick = () => select({ type: "compound", i: +btn.dataset.openAnalog }, true);
+    });
     p.querySelectorAll("[data-zoom-chem]").forEach((el) => {
       el.onclick = () => openChemLightBox(+el.dataset.zoomChem);
     });
@@ -3629,6 +3935,7 @@
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      if (activeAnalogsQuery != null) { closeAnalogsModal(); return; }
       if (activeDossierMode) { closeDossierModal(); return; }
       if (activeModalTarget) { closeTargetModal(); return; }
       if (activeComparatorIndices) { closeComparator(); return; }
@@ -3639,6 +3946,14 @@
     }
     const tag = document.activeElement ? document.activeElement.tagName : "";
     if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
+    if (e.key === "a" || e.key === "A") {
+      if (state.sel && state.sel.type === "compound") {
+        e.preventDefault();
+        if (activeAnalogsQuery != null) closeAnalogsModal();
+        else openAnalogsModal(state.sel.i);
+        return;
+      }
+    }
     if (e.key === "c" || e.key === "C") {
       e.preventDefault();
       if (activeComparatorIndices) closeComparator();

@@ -726,6 +726,57 @@ def test_clinical_risk_engine_and_adr_heatmap():
     assert comb >= 75, f"Expected high/critical combined serotonin hazard, got {comb}"
 
 
+def test_chemical_similarity_and_analogs_explorer():
+    """Verify markup, style classes, and similarity computation for Chemical Similarity & Analogs Explorer."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    for el_id in ["analogsModal", "analogsQuerySubtitle", "analogsSameCategoryCheck", "analogsQueryCol", "analogsResultsGrid"]:
+        assert f'id="{el_id}"' in html_src, f"Missing #{el_id} in index.html"
+
+    for css_cls in [".analogs-modal", ".analogs-grid", ".analog-card", ".similarity-badge"]:
+        assert css_cls in html_src, f"Missing CSS class '{css_cls}' in index.html"
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    for term in [
+        "function findCompoundAnalogs(",
+        "function openAnalogsModal(",
+        "function closeAnalogsModal(",
+        "cardAnalogsBtn",
+        "data-analog-mode",
+        "data-analog-compare="
+    ]:
+        assert term in app_src, f"Missing '{term}' in app.js"
+
+    # Test similarity logic on real graph data
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    prefix = "window.PV_GRAPH = "
+    start_idx = graph_js.index(prefix) + len(prefix)
+    end_idx = graph_js.rindex("};") + 1
+    graph = json.loads(graph_js[start_idx:end_idx])
+    compounds = graph["compounds"]
+
+    # Locate Citalopram and Escitalopram
+    citalopram = next((c for c in compounds if "citalopram" in c.get("n", "").lower() and "es" not in c.get("n", "").lower()), None)
+    escitalopram = next((c for c in compounds if "escitalopram" in c.get("n", "").lower()), None)
+
+    assert citalopram is not None, "Citalopram not found in graph"
+    assert escitalopram is not None, "Escitalopram not found in graph"
+
+    # Both have InChIKey
+    assert citalopram.get("ik"), "Citalopram missing InChIKey"
+    assert escitalopram.get("ik"), "Escitalopram missing InChIKey"
+
+    # Skeletons match
+    ik_prefix_c = citalopram["ik"][:14]
+    ik_prefix_e = escitalopram["ik"][:14]
+    assert ik_prefix_c == ik_prefix_e, f"Expected matching scaffold InChIKey prefix, got {ik_prefix_c} vs {ik_prefix_e}"
+
+    # Verify high similarity calculation
+    # Delta MW is 0
+    d_mw = abs((citalopram.get("pr") or [0])[0] - (escitalopram.get("pr") or [0])[0])
+    assert d_mw < 1.0, f"Expected identical MW, got delta {d_mw}"
+
+
+
 
 
 

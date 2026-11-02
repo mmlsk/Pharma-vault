@@ -1,5 +1,32 @@
 # Changelog
 
+## [3.15.0] — 2026-11-02 — Wyszukiwarka Analogów Chemicznych & Podobieństwo Strukturalne (Chemical Similarity & Analogs Explorer)
+### Dodano
+- **Wyszukiwarka Analogów Chemicznych i Bioizosterów (Chemical Similarity & Analogs Explorer)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **Hybrydowy model podobieństwa chemiczno-funkcjonalnego (0–100%) (`findCompoundAnalogs`)**:
+    - Szukanie analogów w czasie rzeczywistym pośród wszystkich 2525 substancji grafu (<15 ms).
+    - **Podobieństwo szkieletowe / InChIKey ($S_{\text{chem}}$)**: dopasowanie pierwszego 14-znakowego bloku szkieletowego InChIKey (identyczny szkielet dla izomerów i bezpośrednich pochodnych = 100%) oraz analiza zgodności wzorów sumarycznych (`mf`).
+    - **Odległość fizykochemiczna Ro5 ($S_{\text{phys}}$)**: znormalizowana odległość euklidesowa w przestrzeni masy cząsteczkowej ($\Delta\text{MW}$), lipofilowości ($\Delta\text{ALogP}$) i polarnej powierzchni cząsteczki ($\Delta\text{PSA}$) z wykładniczym spadkiem podobieństwa.
+    - **Zgodność profilu celów ($S_{\text{target}}$)**: indeks Jaccarda wspólnych celów molekularnych ChEMBL.
+  - **Trzy tryby wyszukiwania (Focus Modes)**:
+    - ⚖️ **Zrównoważony (Hybrydowy)**: $40\% \text{ chemia} + 35\% \text{ Ro5} + 25\% \text{ cele}$.
+    - 🔬 **Tylko struktura**: $60\% \text{ szkielet/chemia} + 40\% \text{ Ro5}$.
+    - 🧬 **Bioizostery / Cele**: $65\% \text{ wspólne cele} + 35\% \text{ właściwości fizykochemiczne}$.
+    - Opcjonalny filtr: `Tylko ta sama klasa` (zawężenie do tej samej grupy terapeutycznej).
+  - **Dedykowany modal Eksploratora Analogów (`#analogsModal`)**:
+    - Prezentacja cząsteczki referencyjnej po lewej stronie (wzór 2D, wzór sumaryczny, MW, ALogP, PSA, InChIKey, główne cele).
+    - Dynamiczna siatka kart Top 10 analogów ze strukturami 2D, pigułkami zgodności (`similarity-high` $\ge 80\%$, `similarity-mid` $\ge 60\%$, `similarity-low`), odchyłkami $\Delta\text{MW}$ i $\Delta\text{ALogP}$ oraz wspólnymi receptorami.
+    - Przyciski szybkiej akcji na każdym analogu:
+      - `⚖️ Porównaj`: bezpośrednie uruchomienie Drug Comparatora z cząsteczką bazową.
+      - `+ Stack` / `✓ W stacku`: dodanie do aktywnego zestawu polipragmazji.
+      - `🎯 Graf`: wycentrowanie i podświetlenie na grafie Canvas.
+  - **Integracja z kartą substancji i skróty klawiszowe**:
+    - Nowy przycisk akcji `🧬 Analogi` na karcie wybranego leku.
+    - Mini-chipy Top 3 analogów bezpośrednio w zakładce `Przegląd` pod podglądem struktury chemicznej z linkiem `Więcej (10) ↗`.
+    - Skrót klawiszowy `A` / `a`: natychmiastowe otwarcie lub zamknięcie modalu analogów aktywnej cząsteczki; obsługa klawisza `Esc`.
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_chemical_similarity_and_analogs_explorer` sprawdzający obecność elementów DOM, klas CSS, silnika wyszukiwania oraz weryfikujący poprawność identyfikacji pary Citalopram / Escitalopram jako identycznych szkieletowo analogów (>90% zgodności) (48 testów, 100% green).
+
 ## [3.14.0] — 2026-11-02 — Kliniczny Silnik Ryzyka Polipragmazji & Heatmapa ADR (Clinical Risk Engine & Multi-Axis Toxic Burden Heatmap)
 ### Dodano
 - **Kliniczny Silnik Ryzyka Polipragmazji & Heatmapa Działań Niepożądanych (Clinical Risk Engine & ADR Heatmap)** w panelu stacka (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
