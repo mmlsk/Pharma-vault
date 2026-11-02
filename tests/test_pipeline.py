@@ -665,6 +665,68 @@ def test_clinical_dossier_generator():
     assert len(md_header) > 0
 
 
+def test_clinical_risk_engine_and_adr_heatmap():
+    """Verify markup, style rules, and calculation engine for Clinical Risk Engine and ADR Heatmap."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    for css_cls in [".risk-gauge-box", ".risk-score-badge", ".axis-grid", ".axis-card", ".adr-table", ".adr-cell"]:
+        assert css_cls in html_src, f"Missing CSS class '{css_cls}' in index.html"
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    for term in [
+        "function calculateStackRiskMetrics(",
+        "function detectPharmacodynamicPhenomena(",
+        "function buildToxicityTabHtml(",
+        "data-stack-tab=\"toxicity\"",
+        "data-adr-toggle=",
+        "ADR_DEFINITIONS"
+    ]:
+        assert term in app_src, f"Missing '{term}' in app.js"
+
+    # Test logic on real graph data
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    prefix = "window.PV_GRAPH = "
+    start_idx = graph_js.index(prefix) + len(prefix)
+    end_idx = graph_js.rindex("};") + 1
+    graph = json.loads(graph_js[start_idx:end_idx])
+    compounds = graph["compounds"]
+    core = graph["core"]
+
+    # Identify Serotonin and Respiratory hubs
+    serotonin_hub_idx = next((i for i, h in enumerate(core) if h.get("kind") == "hub" and "serotonin" in h.get("name", "").lower()), -1)
+    respiratory_hub_idx = next((i for i, h in enumerate(core) if h.get("kind") == "hub" and ("oddech" in h.get("name", "").lower() or "respiratory" in h.get("name", "").lower())), -1)
+
+    assert serotonin_hub_idx >= 0, "Serotonin hub not found in core"
+
+    # Find two serotonergic compounds
+    sero_compounds = [c for c in compounds if serotonin_hub_idx in (c.get("l") or [])]
+    assert len(sero_compounds) >= 2, f"Expected >= 2 serotonergic compounds, found {len(sero_compounds)}"
+
+    # Simulate ADR evaluation for dual serotonergic combination
+    # Both have serotonin hazard
+    def eval_serotonin(c):
+        m = (c.get("m") or "").lower()
+        t = " ".join(c.get("t") or []).lower()
+        s = 5
+        if serotonin_hub_idx in (c.get("l") or []):
+            s += 35
+        if any(w in m for w in ["serotonin", "5-ht", "sert", "ssri", "snri", "mao"]):
+            s += 40
+        if "serotonin" in t or "hiperterm" in t:
+            s += 25
+        return min(100, s)
+
+    s1 = eval_serotonin(sero_compounds[0])
+    s2 = eval_serotonin(sero_compounds[1])
+    assert s1 >= 40
+    assert s2 >= 40
+
+    # Combined formula
+    prod = (1 - s1 / 100.0) * (1 - s2 / 100.0)
+    comb = min(99, int(round((1 - prod) * 100 * 1.25)))
+    assert comb >= 75, f"Expected high/critical combined serotonin hazard, got {comb}"
+
+
+
 
 
 

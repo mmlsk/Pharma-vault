@@ -1,5 +1,40 @@
 # Changelog
 
+## [3.14.0] — 2026-11-02 — Kliniczny Silnik Ryzyka Polipragmazji & Heatmapa ADR (Clinical Risk Engine & Multi-Axis Toxic Burden Heatmap)
+### Dodano
+- **Kliniczny Silnik Ryzyka Polipragmazji & Heatmapa Działań Niepożądanych (Clinical Risk Engine & ADR Heatmap)** w panelu stacka (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **Trzecia dedykowana zakładka w drawerze stacka (`⚠️ Toksyczność & ADR`)**:
+    - Przełącznik zakładek (`tab-bar`) rozszerzony o pełnoprawny widok scoringu toksykologicznego i matrycy ADR.
+  - **Kliniczny wskaźnik kumulacji obciążenia (Stack Risk Score 0–100)**:
+    - Duży wskaźnik zegarowy (`.risk-score-badge`) z dynamiczną kolorystyką (zielony 0–24, żółty 25–49, pomarańczowy 50–74, karminowy 75–100) i etykietą stanu klinicznego.
+    - Hybrydowy model obliczeniowy: $70\% \times \text{MaxAxis} + 30\% \times \text{MeanAxis} + \text{MultiAxisPenalty}$, zapewniający natychmiastowe wejście w strefę krytyczną przy pojedynczym zagrażającym życiu powikłaniu oraz progresywną karę za obciążenie wielonarządowe.
+  - **Rozbicie na 4 Osie Narządowe (Organ Axes 0–100)**:
+    - 🫀 **Oś Sercowo-naczyniowa**: ryzyko wydłużenia repolaryzacji komorowej (hERG / QTc), tachyarytmie komorowe (TdP) oraz nadciśnienie tętnicze.
+    - 🧪 **Oś Wątrobowa / CYP**: zatorowość i konkurencja o metabolizm enzymatyczny cytochromu P450 (wąskie gardła eliminacji) oraz ryzyko skazy krwotocznej.
+    - 🧠 **Oś OUN / Mózgowa**: depresja pnia mózgu i ośrodka oddechowego (GABA-A + opioidy), zespół serotoninowy oraz obniżenie progu drgawkowego.
+    - ⚡ **Oś Autonomiczna**: Anticholinergic Cognitive Burden (ACB), blokada muskarynowa, retencja, tachykardia i suchość błon śluzowych.
+  - **Detekcja zjawisk farmakodynamicznych**:
+    - Automatyczna klasyfikacja relacji międzylekowych:
+      - ➕ **Sumacja homodynamiczna**: zbieżny wektor działania na ten sam cel lub szlak metaboliczny CYP.
+      - ⚡ **Synergia nadaddytywna / potencjalizacja**: katastrofalne nagromadzenie neurotransmiterów (np. MAOI + SSRI/SNRI) lub synergia depresji oddechowej (Opioid + GABA-A/BZD).
+      - ⚖️ **Antagonizm farmakologiczny i fizjologiczny**: jednoczesna aktywacja i blokada tego samego receptora (np. agonista vs antagonista D2) lub przeciwstawne wektory autonomiczne (stymulant vs lek uspokajający).
+  - **Wielowymiarowa Heatmapa Działań Niepożądanych (8 Powikłań ADR $\times$ Leki + Wypadkowa)**:
+    - Tabela ciepła ze wskaźnikami procentowymi (0–100%) dla 8 kanonicznych powikłań:
+      1. Arytmia & Wydłużenie QTc
+      2. Depresja OUN & Oddechowa
+      3. Zespół Serotoninowy
+      4. Wąskie Gardło CYP (Wątroba)
+      5. Obciążenie Antycholinergiczne
+      6. Przełom Adrenergiczny / Skoki RR
+      7. Ryzyko Drgawkowe (Prokonwulsyjne)
+      8. Zaburzenia Krzepnięcia & Krwawienia
+    - Interaktywne rozwijanie wierszy (akordeon) z dokładnym opisem mechanizmu patofizjologicznego i wskazaniem dominujących leków obciążających.
+  - **Wzbogacenie eksportu Markdown / Obsidian oraz wydruku Dossier A4**:
+    - Raport Obsidian (`obsidian://new`) zawiera nową sekcję `## 5. Indeks Toksyczności & Obciążenie Narządowe` z tabelą osi, wykazem synergii/antagonizmów oraz matrycą ADR.
+    - Raport polipragmazji w arkuszu laboratoryjnym A4 (`generateStackDossierHtml`) zawiera dedykowaną sekcję scoringu z obciążeniem narządowym.
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_clinical_risk_engine_and_adr_heatmap` weryfikujący klasy CSS, funkcje obliczeniowe, progi detekcji zespołu serotoninowego dla par leków oraz poprawne generowanie matrycy ADR (47 testów, 100% green).
+
 ## [3.13.0] — 2026-11-02 — Generator Monografii Klinicznej & Dossier Polipragmazji (Clinical Dossier / Print View / PDF)
 ### Dodano
 - **Generator Monografii Klinicznej & Dossier Polipragmazji (Clinical Dossier / Print View / PDF Export)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):

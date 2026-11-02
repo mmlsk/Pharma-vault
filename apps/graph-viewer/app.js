@@ -771,6 +771,7 @@
     }
 
     const { alerts, maxLevel } = analyzeStack(list.map((c) => c.i));
+    const risk = calculateStackRiskMetrics(list.map((c) => c.i));
 
     return `
       <div class="dossier-head-brand">
@@ -782,8 +783,8 @@
         <div style="text-align:right">
           <div style="font-size:11px;font-weight:700;color:#111">ARCHIWUM POLIPRAGMAZJI</div>
           <div style="font-size:10px;color:#666">Złożoność: ${list.length} substancji · Data: ${dateStr}</div>
-          <div style="font-size:10px;font-weight:700;color:${maxLevel === 'crit' ? '#c62828' : maxLevel === 'mod' ? '#f57f17' : '#2e7d32'}">
-            Alert: ${maxLevel === 'crit' ? '🚨 Krytyczny' : maxLevel === 'mod' ? '⚠️ Umiarkowany' : '✓ Zrównoważony'}
+          <div style="font-size:10px;font-weight:700;color:${risk.color}">
+            Indeks Toksyczności: ${risk.totalScore}/100 (${risk.label})
           </div>
         </div>
       </div>
@@ -819,7 +820,51 @@
       </div>
 
       <div class="dossier-section">
-        <div class="dossier-sec-title">2. Wykryte Kolizje Farmakodynamiczne & Farmakokinetyczne (${alerts.length})</div>
+        <div class="dossier-sec-title">2. Indeks Toksyczności & Obciążenie Narządowe (Stack Risk Score: ${risk.totalScore}/100)</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;background:#f9f9f9;border:1px solid #e0e0e0;border-radius:4px;padding:8px 12px;margin-bottom:8px">
+          <div>
+            <b>Ocena ogólna:</b> <span style="color:${risk.color};font-weight:700">${esc(risk.label)}</span>
+            <div style="font-size:10px;color:#666">Wieloosiowy wskaźnik kumulacji ryzyka z karą za obciążenie wielonarządowe</div>
+          </div>
+          <div style="font-size:18px;font-weight:800;color:${risk.color};padding:4px 10px;border:1px solid ${risk.color};border-radius:4px;background:#fff">
+            ${risk.totalScore} / 100
+          </div>
+        </div>
+        <table class="dossier-table">
+          <thead>
+            <tr>
+              <th style="width:25%">Układ / Oś narządowa</th>
+              <th style="width:18%">Wskaźnik (%)</th>
+              <th>Istota obciążenia klinicznego</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>🫀 Sercowo-naczyniowa</b></td>
+              <td><b>${risk.axes.cardio}%</b></td>
+              <td>Wydłużenie QTc / arytmie komorowe (hERG), skoki ciśnienia tętniczego</td>
+            </tr>
+            <tr>
+              <td><b>🧪 Wątrobowa / CYP</b></td>
+              <td><b>${risk.axes.hepatic}%</b></td>
+              <td>Wąskie gardła enzymów CYP, konkurencja metaboliczna, ryzyko krwawień</td>
+            </tr>
+            <tr>
+              <td><b>🧠 OUN / Mózgowa</b></td>
+              <td><b>${risk.axes.cns}%</b></td>
+              <td>Depresja oddechowa, zespół serotoninowy, obniżenie progu drgawkowego</td>
+            </tr>
+            <tr>
+              <td><b>⚡ Autonomiczna</b></td>
+              <td><b>${risk.axes.autonomic}%</b></td>
+              <td>Obciążenie antycholinergiczne (ACB), tachykardia, sedacja</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dossier-section">
+        <div class="dossier-sec-title">3. Wykryte Kolizje Farmakodynamiczne & Farmakokinetyczne (${alerts.length})</div>
         ${alerts.length ? alerts.map((a) => `
           <div class="${a.level === 'crit' ? 'dossier-warn' : 'dossier-callout'}">
             <div style="font-weight:700;font-size:12px;margin-bottom:2px">${a.title}</div>
@@ -833,7 +878,7 @@
       </div>
 
       <div class="dossier-section">
-        <div class="dossier-sec-title">3. Pełna Macierz Interakcji Parowych (Pairwise Interactions N×N)</div>
+        <div class="dossier-sec-title">4. Pełna Macierz Interakcji Parowych (Pairwise Interactions N×N)</div>
         <table class="dossier-table">
           <thead>
             <tr>
@@ -952,21 +997,32 @@
     const list = (stackIndices || []).map((i) => C[i]).filter(Boolean);
     const dateStr = new Date().toISOString().slice(0, 10);
     const { alerts } = analyzeStack(list.map((c) => c.i));
+    const risk = calculateStackRiskMetrics(list.map((c) => c.i));
 
     const lines = [
       `# Raport Polipragmazji: Stack ${list.length} Substancji`,
       "",
       `> Wygenerowano przez Pharma-vault Clinical Intelligence Engine (${dateStr}).`,
       "",
+      `**Stack Risk Score:** \`${risk.totalScore} / 100\` (${risk.label})`,
+      "",
       "## 1. Skład Zestawu",
       "| Lek | Grupa | T½ | CYP | Wskazanie / Mechanizm |",
       "| :--- | :--- | :--- | :--- | :--- |",
       ...list.map((c) => `| **${c.n}** | ${GR[c.g] ? GR[c.g].label : "—"} | ${c.pk && c.pk.hl != null ? c.pk.hl + " h" : "—"} | ${c.pk && c.pk.cyp ? c.pk.cyp.join(", ") : "—"} | ${c.m ? c.m.split("|")[0] : "—"} |`),
       "",
-      "## 2. Wykryte Kolizje i Alerty",
+      "## 2. Indeks Toksyczności & Osie Narządowe",
+      "| Oś narządowa | Wskaźnik obciążenia | Znaczenie kliniczne |",
+      "| :--- | :--- | :--- |",
+      `| 🫀 Sercowo-naczyniowa | **${risk.axes.cardio}%** | Arytmie (hERG / QTc), skoki ciśnienia, tachykardia |`,
+      `| 🧪 Wątrobowa / CYP | **${risk.axes.hepatic}%** | Konkurencja o enzymy CYP, retencja leków, ryzyko krwawień |`,
+      `| 🧠 OUN / Mózgowa | **${risk.axes.cns}%** | Depresja oddechowa, zespół serotoninowy, drgawki |`,
+      `| ⚡ Autonomiczna | **${risk.axes.autonomic}%** | Zespół antycholinergiczny (ACB), sedacja |`,
+      "",
+      "## 3. Wykryte Kolizje i Alerty",
       ...(alerts.length ? alerts.map((a) => `### ${a.title}\n${a.desc}\n`) : ["*Brak zidentyfikowanych krytycznych kolizji wielolekowych.*"]),
       "",
-      "## 3. Macierz Parowa",
+      "## 4. Macierz Parowa",
       "| Para leków | Poziom | Szczegóły |",
       "| :--- | :--- | :--- |"
     ];
@@ -1734,6 +1790,462 @@
       </div>`;
   }
 
+  // ---------- Clinical Risk Engine & Multi-Axis Toxic Burden Heatmap
+  let activeExpandedAdr = null;
+
+  const ADR_DEFINITIONS = [
+    {
+      key: "qtc",
+      name: "Arytmia & Wydłużenie QTc",
+      icon: "🫀",
+      axis: "cardio",
+      desc: "Blokada kanałów potasowych hERG i opóźnienie repolaryzacji komorowej sprzyjające tachyarytmiom komorowym (TdP).",
+      eval: (c) => {
+        const m = (c.m || "").toLowerCase();
+        const t = (c.t || []).join(" ").toLowerCase();
+        let s = 5;
+        if (c.l && c.l.includes(HUB_CARDIO)) s += 25;
+        if (m.includes("herg") || m.includes("potassium channel") || m.includes("antiarrhythmic")) s += 45;
+        if (t.includes("qt") || t.includes("arytm") || t.includes("torsade")) s += 30;
+        return Math.min(100, s);
+      }
+    },
+    {
+      key: "respiratory",
+      name: "Depresja OUN & Oddechowa",
+      icon: "🫁",
+      axis: "cns",
+      desc: "Hamowanie pnia mózgu i ośrodka oddechowego poprzez receptory mi-opioidowe oraz kompleksy GABA-A.",
+      eval: (c) => {
+        const m = (c.m || "").toLowerCase();
+        const t = (c.t || []).join(" ").toLowerCase();
+        let s = 5;
+        if (c.l && c.l.includes(HUB_RESPIRATORY)) s += 35;
+        if (m.includes("opioid") || m.includes("gaba-a") || m.includes("gabaa") || m.includes("sedat") || m.includes("hypnotic") || m.includes("anesthetic")) s += 40;
+        if (t.includes("oddech") || t.includes("senno") || t.includes("sedac")) s += 25;
+        return Math.min(100, s);
+      }
+    },
+    {
+      key: "serotonin",
+      name: "Zespół Serotoninowy",
+      icon: "⚡",
+      axis: "cns",
+      desc: "Nadmierna aktywacja ośrodkowych i obwodowych receptorów 5-HT (5-HT1A, 5-HT2A) prowadząca do hipertermii, klonusów i drgawek.",
+      eval: (c) => {
+        const m = (c.m || "").toLowerCase();
+        const t = (c.t || []).join(" ").toLowerCase();
+        let s = 5;
+        if (c.l && c.l.includes(HUB_SEROTONIN)) s += 35;
+        if (m.includes("serotonin") || m.includes("5-ht") || m.includes("sert") || m.includes("ssri") || m.includes("snri") || m.includes("mao")) s += 40;
+        if (t.includes("serotonin") || t.includes("hiperterm")) s += 25;
+        return Math.min(100, s);
+      }
+    },
+    {
+      key: "cyp",
+      name: "Wąskie Gardło CYP (Wątroba)",
+      icon: "🧪",
+      axis: "hepatic",
+      desc: "Nasycenie szlaków cytochromu P450, konkurencja enzymatyczna i spowolnienie eliminacji leków we krwi.",
+      eval: (c) => {
+        const cyps = (c.pk && c.pk.cyp) || [];
+        if (!cyps.length) return 10;
+        let s = cyps.length * 15;
+        if (cyps.includes("CYP3A4")) s += 20;
+        if (cyps.includes("CYP2D6")) s += 15;
+        return Math.min(100, s);
+      }
+    },
+    {
+      key: "anticholinergic",
+      name: "Obciążenie Antycholinergiczne",
+      icon: "👁️",
+      axis: "autonomic",
+      desc: "Ośrodkowa i obwodowa blokada muskarynowa wywołująca majaczenie, suchość błon, tachykardię i retencję moczu.",
+      eval: (c) => {
+        const m = (c.m || "").toLowerCase();
+        const t = (c.t || []).join(" ").toLowerCase();
+        let s = 5;
+        if (c.l && c.l.includes(HUB_CHOLINERGIC)) s += 30;
+        if (m.includes("muscarinic") || m.includes("anticholinergic") || m.includes("cholinolyt") || m.includes("atropin")) s += 45;
+        if (t.includes("antycholinerg") || t.includes("sucho")) s += 25;
+        return Math.min(100, s);
+      }
+    },
+    {
+      key: "hypertension",
+      name: "Przełom Adrenergiczny / Skoki RR",
+      icon: "📈",
+      axis: "cardio",
+      desc: "Stymulacja układu współczulnego, blokada NET/DAT lub aktywacja receptorów alfa/beta adrenergicznych.",
+      eval: (c) => {
+        const m = (c.m || "").toLowerCase();
+        const t = (c.t || []).join(" ").toLowerCase();
+        let s = 5;
+        if (m.includes("norepinephrine") || m.includes("adrenergic") || m.includes("sympath") || m.includes("stimulant") || m.includes("amphetamin")) s += 45;
+        if (t.includes("ciśnien") || t.includes("tachykard") || t.includes("nadciśnien")) s += 25;
+        return Math.min(100, s);
+      }
+    },
+    {
+      key: "seizure",
+      name: "Ryzyko Drgawkowe (Prokonwulsyjne)",
+      icon: "🧠",
+      axis: "cns",
+      desc: "Obniżenie progu drgawkowego, blokada neuroprzekaźnictwa hamującego GABA lub nadmierna stymulacja glutaminergiczna.",
+      eval: (c) => {
+        const m = (c.m || "").toLowerCase();
+        const t = (c.t || []).join(" ").toLowerCase();
+        let s = 5;
+        if (m.includes("proconvulsant") || (m.includes("antagonist") && m.includes("gaba"))) s += 45;
+        if (t.includes("drgawk") || t.includes("padaczk")) s += 30;
+        if (m.includes("bupropion") || m.includes("tramadol") || m.includes("clozapin")) s += 35;
+        return Math.min(100, s);
+      }
+    },
+    {
+      key: "bleeding",
+      name: "Zaburzenia Krzepnięcia & Krwawienia",
+      icon: "🩸",
+      axis: "hepatic",
+      desc: "Inhibicja COX-1/płytek krwi, deplecja płytkowej puli serotoniny przez SSRI lub bezpośrednia antykoagulacja.",
+      eval: (c) => {
+        const m = (c.m || "").toLowerCase();
+        const t = (c.t || []).join(" ").toLowerCase();
+        let s = 5;
+        if (m.includes("cyclooxygenase") || m.includes("cox") || m.includes("anticoagulant") || m.includes("platelet") || m.includes("thrombin") || m.includes("factor xa")) s += 50;
+        if (m.includes("ssri") || m.includes("snri")) s += 20;
+        if (t.includes("krwaw") || t.includes("wrzod") || t.includes("krzepliwo")) s += 30;
+        return Math.min(100, s);
+      }
+    }
+  ];
+
+  function detectPharmacodynamicPhenomena(stackIndices) {
+    const list = (stackIndices || []).map((i) => C[i]).filter(Boolean);
+    const phenomena = [];
+
+    for (let i = 0; i < list.length; i++) {
+      for (let j = i + 1; j < list.length; j++) {
+        const cA = list[i], cB = list[j];
+        const mA = (cA.m || "").toLowerCase(), mB = (cB.m || "").toLowerCase();
+        const tgA = cA.tg || [], tgB = cB.tg || [];
+        const sharedTg = tgA.filter((ti) => tgB.includes(ti));
+        const cypsA = (cA.pk && cA.pk.cyp) || [], cypsB = (cB.pk && cB.pk.cyp) || [];
+        const sharedCyps = cypsA.filter((x) => cypsB.includes(x));
+
+        // 1. Synergy: MAOI + Serotonergic
+        if ((mA.includes("mao") && (mB.includes("ssri") || mB.includes("snri") || mB.includes("serotonin"))) ||
+            (mB.includes("mao") && (mA.includes("ssri") || mA.includes("snri") || mA.includes("serotonin")))) {
+          phenomena.push({
+            type: "synergy",
+            badge: "⚡ Synergia katastrofalna",
+            color: "var(--color-error)",
+            title: `${cA.n} + ${cB.n}: Blokada MAO i wychwytu 5-HT`,
+            desc: "Nadaddytywne nagromadzenie serotoniny w szczelinie synaptycznej — natychmiastowe ryzyko zapaści."
+          });
+        }
+        // Synergy: Opioid + GABA-A/BZD
+        else if (((mA.includes("opioid") || (cA.l && cA.l.includes(HUB_RESPIRATORY))) && (mB.includes("gaba") || mB.includes("benzodiazepin") || mB.includes("sedat"))) ||
+                 ((mB.includes("opioid") || (cB.l && cB.l.includes(HUB_RESPIRATORY))) && (mA.includes("gaba") || mA.includes("benzodiazepin") || mA.includes("sedat")))) {
+          phenomena.push({
+            type: "synergy",
+            badge: "⚡ Synergia depresyjna",
+            color: "var(--color-error)",
+            title: `${cA.n} + ${cB.n}: Potencjalizacja sedacji i bezdechu`,
+            desc: "Równoczesne hamowanie ośrodka oddechowego przez odmienne szlaki receptorowe (Opioid + GABA-A)."
+          });
+        }
+        // Antagonism: Agonist + Antagonist on same target
+        else if (sharedTg.length > 0) {
+          const tName = T[sharedTg[0]]?.n || "Wspólny receptor";
+          const actA = classifyTargetAction(cA, tName);
+          const actB = classifyTargetAction(cB, tName);
+          if ((actA === "agonist" && actB === "antagonist") || (actA === "antagonist" && actB === "agonist")) {
+            phenomena.push({
+              type: "antagonism",
+              badge: "⚖️ Antagonizm receptorowy",
+              color: "var(--color-primary)",
+              title: `${cA.n} (Agonista) vs ${cB.n} (Antagonista)`,
+              desc: `Konkurencja o receptor ${esc(tName)} — wzajemne osłabienie lub zniesienie pożądanego efektu terapeutycznego.`
+            });
+          } else {
+            // Homodynamic summation
+            phenomena.push({
+              type: "summation",
+              badge: "➕ Sumacja addytywna",
+              color: "var(--color-warning)",
+              title: `${cA.n} + ${cB.n}: Wspólny cel ${esc(tName)}`,
+              desc: `Leki działają addytywnie na ten sam punkt uchwytu (${esc(tName)}).`
+            });
+          }
+        }
+        // Summation: Double CYP bottleneck
+        else if (sharedCyps.length >= 2) {
+          phenomena.push({
+            type: "summation",
+            badge: "➕ Sumacja metaboliczna",
+            color: "var(--color-warning)",
+            title: `${cA.n} + ${cB.n}: Wąskie gardło CYP (${sharedCyps.join(", ")})`,
+            desc: "Oba związki konkurują o ten sam kompleks enzymatyczny, wydłużając okres eliminacji."
+          });
+        }
+        // Antagonism: Stimulant + Depressant (Physiological antagonism)
+        else if (((mA.includes("stimulant") || mA.includes("sympath")) && (mB.includes("sedat") || mB.includes("beta-blocker") || mB.includes("gaba"))) ||
+                 ((mB.includes("stimulant") || mB.includes("sympath")) && (mA.includes("sedat") || mA.includes("beta-blocker") || mA.includes("gaba")))) {
+          phenomena.push({
+            type: "antagonism",
+            badge: "⚖️ Antagonizm fizjologiczny",
+            color: "var(--color-text-muted)",
+            title: `${cA.n} vs ${cB.n}: Przeciwstawny wektor autonomiczny`,
+            desc: "Jednoczesna próba stymulacji i wyciszenia układu autonomicznego lub krążenia."
+          });
+        }
+      }
+    }
+    return phenomena;
+  }
+
+  function calculateStackRiskMetrics(stackIndices) {
+    const list = (stackIndices || []).map((i) => C[i]).filter(Boolean);
+    if (!list.length) {
+      return {
+        totalScore: 0,
+        level: "ok",
+        label: "Zestaw pusty",
+        color: "var(--color-text-muted)",
+        axes: { cardio: 0, hepatic: 0, cns: 0, autonomic: 0 },
+        adrRows: [],
+        phenomena: []
+      };
+    }
+
+    // 1. Evaluate ADR Matrix
+    const adrRows = ADR_DEFINITIONS.map((def) => {
+      const perCompound = list.map((c) => def.eval(c));
+      const activeDrivers = list
+        .map((c, idx) => ({ name: c.n, score: perCompound[idx] }))
+        .filter((d) => d.score >= 20)
+        .sort((a, b) => b.score - a.score);
+
+      let combined = 0;
+      if (list.length === 1) {
+        combined = perCompound[0];
+      } else {
+        const hits = perCompound.filter((s) => s >= 20);
+        const prod = perCompound.reduce((acc, s) => acc * (1 - s / 100), 1);
+        let rawComb = Math.round((1 - prod) * 100);
+        if (hits.length >= 2) {
+          rawComb = Math.round(rawComb * 1.25);
+        }
+        combined = Math.min(99, Math.max(...perCompound, rawComb));
+      }
+
+      return {
+        key: def.key,
+        name: def.name,
+        icon: def.icon,
+        axis: def.axis,
+        desc: def.desc,
+        perCompound,
+        combined,
+        drivers: activeDrivers
+      };
+    });
+
+    const adrMap = Object.fromEntries(adrRows.map((r) => [r.key, r.combined]));
+
+    // 2. Compute 4 Organ Axes
+    const cardio = Math.min(100, Math.round(0.6 * adrMap.qtc + 0.4 * adrMap.hypertension));
+    const hepatic = Math.min(100, Math.round(0.7 * adrMap.cyp + 0.3 * adrMap.bleeding));
+    const cns = Math.min(100, Math.round(Math.max(adrMap.respiratory, adrMap.serotonin) * 0.85 + adrMap.seizure * 0.25));
+    const autonomic = Math.min(100, Math.round(0.75 * adrMap.anticholinergic + 0.25 * adrMap.hypertension));
+
+    // 3. Compute Global Stack Risk Score
+    const maxAxis = Math.max(cardio, hepatic, cns, autonomic);
+    const meanAxis = (cardio + hepatic + cns + autonomic) / 4;
+    const multiAxisPenalty = [cardio, hepatic, cns, autonomic].filter((v) => v >= 40).length * 5;
+    const rawScore = 0.7 * maxAxis + 0.3 * meanAxis + multiAxisPenalty;
+    const totalScore = Math.min(100, Math.max(0, Math.round(rawScore)));
+
+    let level = "ok";
+    let label = "Zrównoważony / Niski";
+    let color = "#2e7d32";
+
+    if (totalScore >= 75) {
+      level = "crit";
+      label = "🚨 Ryzyko Krytyczne";
+      color = "#c62828";
+    } else if (totalScore >= 50) {
+      level = "high";
+      label = "🟠 Wysokie Obciążenie";
+      color = "#e65100";
+    } else if (totalScore >= 25) {
+      level = "mod";
+      label = "⚠️ Umiarkowane Ryzyko";
+      color = "#f57f17";
+    }
+
+    const phenomena = detectPharmacodynamicPhenomena(list.map((c) => c.i));
+
+    return {
+      totalScore,
+      level,
+      label,
+      color,
+      axes: { cardio, hepatic, cns, autonomic },
+      adrRows,
+      phenomena
+    };
+  }
+
+  function buildToxicityTabHtml(stackList, riskData) {
+    if (!stackList.length) {
+      return '<div class="alert-box alert-ok">Dodaj substancje do stacka, aby wyświetlić scoring ryzyka i heatmapę ADR.</div>';
+    }
+
+    const { totalScore, level, label, color, axes, adrRows, phenomena } = riskData;
+
+    // 1. Gauge card
+    const gaugeHtml = `
+      <div class="risk-gauge-box">
+        <div style="flex:1">
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--color-text-muted);font-weight:700">Kliniczny Indeks Polipragmazji</div>
+          <div style="font-size:15px;font-weight:800;color:var(--color-text);margin-top:2px">Stack Risk Score: ${totalScore} / 100</div>
+          <div style="font-size:11px;font-weight:700;color:${color};margin-top:2px">${esc(label)}</div>
+          <div style="font-size:10px;color:var(--color-text-muted);margin-top:4px;line-height:1.4">
+            ${totalScore >= 75
+              ? "🚨 Wykryto zagrażające życiu kolizje wielolekowe. Wymagana pilna rewizja farmakoterapii."
+              : totalScore >= 50
+              ? "🟠 Istotne obciążenie narządowe i ryzyko powikłań. Zalecana ścisła kontrola parametrów."
+              : totalScore >= 25
+              ? "🟡 Umiarkowany poziom kolizji farmakokinetycznych lub metabolicznych."
+              : "✓ Niski wskaźnik obciążenia klinicznego w standardowych regułach."}
+          </div>
+        </div>
+        <div class="risk-score-badge" style="background:${color}">
+          ${totalScore}
+        </div>
+      </div>
+    `;
+
+    // 2. 4 Organ Axes
+    const axisLabels = [
+      { key: "cardio", name: "Sercowo-naczyniowa", val: axes.cardio, icon: "🫀" },
+      { key: "hepatic", name: "Wątrobowa / CYP", val: axes.hepatic, icon: "🧪" },
+      { key: "cns", name: "OUN / Mózgowa", val: axes.cns, icon: "🧠" },
+      { key: "autonomic", name: "Autonomiczna", val: axes.autonomic, icon: "⚡" }
+    ];
+
+    const axesHtml = `
+      <div class="axis-grid">
+        ${axisLabels.map((ax) => {
+          const col = ax.val >= 75 ? "var(--color-error)" : ax.val >= 50 ? "#e65100" : ax.val >= 25 ? "var(--color-warning)" : "var(--color-success)";
+          return `
+            <div class="axis-card">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <span>${ax.icon} <b>${ax.name}</b></span>
+                <b style="color:${col}">${ax.val} %</b>
+              </div>
+              <div class="axis-bar-wrap">
+                <div class="axis-bar-fill" style="width:${ax.val}%;background:${col}"></div>
+              </div>
+            </div>
+          `;
+        }).join("")}
+      </div>
+    `;
+
+    // 3. Phenomena
+    let phenHtml = "";
+    if (phenomena.length > 0) {
+      phenHtml = `
+        <div class="label" style="margin-top:.6rem">Zjawiska Farmakodynamiczne (${phenomena.length})</div>
+        <div class="phenomena-box">
+          ${phenomena.map((p) => `
+            <div class="phenomena-item">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <b>${esc(p.title)}</b>
+                <span class="tag" style="color:${p.color};font-weight:700;font-size:10px">${esc(p.badge)}</span>
+              </div>
+              <span style="font-size:10px;color:var(--color-text-muted);line-height:1.35">${esc(p.desc)}</span>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    // 4. ADR Heatmap Table
+    const colHeaders = stackList.map((c) => {
+      const shortName = c.n.length > 7 ? c.n.slice(0, 6) + "…" : c.n;
+      return `<th style="text-align:center" title="${esc(c.n)}">${esc(shortName)}</th>`;
+    }).join("");
+
+    const rowsHtml = adrRows.map((row) => {
+      const isExpanded = activeExpandedAdr === row.key;
+      const getCellCls = (v) => v >= 75 ? "adr-crit" : v >= 50 ? "adr-high" : v >= 25 ? "adr-mod" : v > 10 ? "adr-low" : "adr-none";
+      const combCls = getCellCls(row.combined);
+
+      const cells = row.perCompound.map((v) => {
+        const cls = getCellCls(v);
+        return `<td class="adr-cell ${cls}" title="${v}%">${v}%</td>`;
+      }).join("");
+
+      return `
+        <tr>
+          <td class="adr-row-title" data-adr-toggle="${row.key}" style="font-weight:600;font-size:10px;white-space:nowrap" title="Kliknij, aby poznać mechanizm">
+            ${row.icon} ${esc(row.name)} ${isExpanded ? '▴' : '▾'}
+          </td>
+          ${cells}
+          <td class="adr-cell ${combCls}" style="border-left:2px solid var(--color-border);font-weight:800" title="Wypadkowe ryzyko: ${row.combined}%">
+            ${row.combined}%
+          </td>
+        </tr>
+        ${isExpanded ? `
+          <tr>
+            <td colspan="${stackList.length + 2}" style="background:var(--color-surface-2);padding:8px;border-radius:4px;font-size:10px;color:var(--color-text-muted);line-height:1.4">
+              <b style="color:var(--color-text)">Mechanizm ADR:</b> ${esc(row.desc)}<br>
+              <b style="color:var(--color-text)">Dominujące źródła:</b> ${row.drivers.length ? row.drivers.map((d) => `<b>${esc(d.name)}</b> (${d.score}%)`).join(", ") : "Brak wyraźnego pojedynczego drivera."}
+            </td>
+          </tr>
+        ` : ""}
+      `;
+    }).join("");
+
+    const heatmapHtml = `
+      <div class="label" style="margin-top:.6rem">Heatmapa Działań Niepożądanych (ADRs)</div>
+      <div class="adr-heatmap-wrap">
+        <table class="adr-table">
+          <thead>
+            <tr>
+              <th style="min-width:130px">Powikłanie (ADR)</th>
+              ${colHeaders}
+              <th style="text-align:center;border-left:2px solid var(--color-border)">Wypadkowa</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rowsHtml}
+          </tbody>
+        </table>
+      </div>
+      <div style="font-size:9px;color:var(--color-text-muted);display:flex;gap:6px;justify-content:center;margin-top:4px">
+        <span>⚪ &lt;10%</span>
+        <span>🟢 10-24%</span>
+        <span>🟡 25-49%</span>
+        <span>🟠 50-74%</span>
+        <span>🔴 75-100%</span>
+      </div>
+    `;
+
+    return `
+      ${gaugeHtml}
+      ${axesHtml}
+      ${phenHtml}
+      ${heatmapHtml}
+    `;
+  }
+
   function updateStackUI() {
     const countBadge = $("stackCountBadge");
     if (countBadge) countBadge.textContent = state.stack.size;
@@ -1816,6 +2328,8 @@
     let pkSectionHtml = "";
     const stackList = [...state.stack].map((i) => C[i]);
     const matrixSectionHtml = buildMatrixHtml(stackList);
+    const riskData = calculateStackRiskMetrics([...state.stack]);
+    const toxicitySectionHtml = buildToxicityTabHtml(stackList, riskData);
     const curStackTab = state.stackTab || "pk";
 
     if (state.stack.size >= 1) {
@@ -1907,10 +2421,11 @@
 
       <div class="tab-bar" style="margin:0.6rem 0 0.3rem 0" role="tablist" aria-label="Widoki analizy stacka">
         <button class="tab-btn ${curStackTab === 'pk' ? 'active' : ''}" data-stack-tab="pk" role="tab" aria-selected="${curStackTab === 'pk'}">📈 Symulator PK</button>
-        <button class="tab-btn ${curStackTab === 'matrix' ? 'active' : ''}" data-stack-tab="matrix" role="tab" aria-selected="${curStackTab === 'matrix'}">🔲 Macierz interakcji (N×N)</button>
+        <button class="tab-btn ${curStackTab === 'matrix' ? 'active' : ''}" data-stack-tab="matrix" role="tab" aria-selected="${curStackTab === 'matrix'}">🔲 Macierz (N×N)</button>
+        <button class="tab-btn ${curStackTab === 'toxicity' ? 'active' : ''}" data-stack-tab="toxicity" role="tab" aria-selected="${curStackTab === 'toxicity'}">⚠️ Toksyczność & ADR</button>
       </div>
 
-      ${curStackTab === 'pk' ? pkSectionHtml : matrixSectionHtml}
+      ${curStackTab === 'pk' ? pkSectionHtml : curStackTab === 'matrix' ? matrixSectionHtml : toxicitySectionHtml}
 
       <div class="label" style="margin-top:.6rem">Zestawy demonstracyjne</div>
       <div style="display:flex;gap:4px;flex-wrap:wrap">
@@ -1950,6 +2465,13 @@
       td.onclick = () => {
         const parts = td.dataset.matrixPair.split("-").map(Number);
         state.selectedMatrixPair = [parts[0], parts[1]];
+        updateStackUI();
+      };
+    });
+    body.querySelectorAll("[data-adr-toggle]").forEach((td) => {
+      td.onclick = () => {
+        const k = td.dataset.adrToggle;
+        activeExpandedAdr = activeExpandedAdr === k ? null : k;
         updateStackUI();
       };
     });
@@ -2120,10 +2642,33 @@
           ""
         );
       }
+
+      const riskMetrics = calculateStackRiskMetrics(list.map((c) => c.i));
+      lines.push(
+        "## 5. Indeks Toksyczności & Obciążenie Narządowe",
+        "",
+        `**Stack Risk Score:** \`${riskMetrics.totalScore} / 100\` (${riskMetrics.label})`,
+        "",
+        "| Oś narządowa | Wskaźnik (%) | Znaczenie kliniczne |",
+        "| :--- | :--- | :--- |",
+        `| 🫀 Sercowo-naczyniowa | ${riskMetrics.axes.cardio}% | Wydłużenie QTc / tachyarytmie / nadciśnienie |`,
+        `| 🧪 Wątrobowa / CYP | ${riskMetrics.axes.hepatic}% | Konkurencja o metabolizm enzymatyczny CYP / klirens |`,
+        `| 🧠 OUN / Mózgowa | ${riskMetrics.axes.cns}% | Sedacja / depresja oddechowa / zespół serotoninowy |`,
+        `| ⚡ Autonomiczna | ${riskMetrics.axes.autonomic}% | Obciążenie antycholinergiczne / układ współczulny |`,
+        "",
+        "### Wykryte zjawiska farmakodynamiczne",
+        riskMetrics.phenomena.length ? riskMetrics.phenomena.map((p) => `- **${p.badge}**: ${p.title} — ${p.desc}`).join("\n") : "*Brak nietypowych synergii i antagonizmów.*",
+        "",
+        "### Profil Działań Niepożądanych (ADRs)",
+        "| Powikłanie | Wypadkowe ryzyko | Dominujące źródła |",
+        "| :--- | :--- | :--- |",
+        ...riskMetrics.adrRows.map((r) => `| ${r.icon} ${r.name} | **${r.combined}%** | ${r.drivers.map((d) => d.name + ' (' + d.score + '%)').join(', ') || '—'} |`),
+        ""
+      );
     }
 
     lines.push(
-      "## 5. Zastrzeżenie edukacyjne",
+      "## 6. Zastrzeżenie edukacyjne",
       "",
       "> [!warning] Materiał edukacyjny",
       "> Niniejszy raport opiera się na wyekstrahowanych automatycznie danych mechanistycznych ChEMBL, substratach CYP, hubach bezpieczeństwa oraz 1-kompartmentowym modelu farmakokinetycznym. Nie uwzględnia indywidualnego dawkowania, tolerancji, zmienności genetycznej ani chorób współistniejących. Nie stanowi porady lekarskiej.",
