@@ -186,3 +186,11 @@ vixotrigine-compound,Vixotrigine,,neuropsych,CHEMBL3544913,CHEMBL3544913,VIXOTRI
 xen1101-compound,XEN1101,Azetukalner,neuropsych,CHEMBL5095264,CHEMBL5095264,AZETUKALNER,,synonym,backlog: Emerging CNS agents / Ion-channel modulators,
 zelquistinel-compound,Zelquistinel,AGN-241751,neuropsych,CHEMBL5314944,CHEMBL5314944,ZELQUISTINEL,,synonym,backlog: Emerging CNS agents / AMPA and glutamate,
 zolunicant-compound,Zolunicant,18-MC,neuropsych,CHEMBL1195301,CHEMBL1195301,ZOLUNICANT,,synonym,backlog: Psychoplastogens / Development candidates,
+suzetrigine-compound,Suzetrigine,VX-548; Journavx,analgesia,CHEMBL5314487,CHEMBL5314487,SUZETRIGINE,156445116,PubChem name → CID → InChIKey → ChEMBL,backlog: Emerging CNS agents / Nav1.8 channel blockers,
+dihydroberberine-compound,Dihydroberberine,DHB,longevity,CHEMBL11848,CHEMBL11848,DIHYDROBERBERINE,10217,PubChem name → CID → InChIKey → ChEMBL,backlog: Longevity & Metabolic / AMPK modulators,
+desalkylgidazepam-compound,Desalkylgidazepam,Bromonordiazepam,nps,CHEMBL327679,CHEMBL327679,BROMONORDIAZEPAM,76167,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+n-desethylisotonitazene-compound,N-Desethylisotonitazene,Norisotonitazene,nps,,CID162623899,N-Desethylisotonitazene,162623899,PubChem name → CID,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression
+maridebart-cafraglutide-compound,Maridebart cafraglutide,AMG 133; MariTide,glp1,CHEMBL5314751,CHEMBL5314751,MARIDEBART CAFRAGLUTIDE,,ChEMBL pref_name,backlog: Next-gen incretins / Bispecific antibody-peptide conjugates,glucose-metabolism; gastrointestinal
+urolithin-b-compound,Urolithin B,,longevity,CHEMBL1526978,CHEMBL1526978,UROLITHIN B,5380406,PubChem name → CID → InChIKey → ChEMBL,backlog: Longevity & Metabolic / Ellagitannin metabolites,
+clobromazolam-compound,Clobromazolam,Phenazolam; DM-II-90,nps,CHEMBL1451229,CHEMBL1451229,Clobromazolam,1032830,PubChem name → CID → InChIKey → ChEMBL,backlog: Designer-drug families / Designer benzodiazepines,sedation-respiratory-depression
+protonitazepyne-compound,Protonitazepyne,N-pyrrolidino protonitazene,nps,,CID168322728,Protonitazepyne,168322728,PubChem name → CID,backlog: Designer-drug families / Novel opioids,sedation-respiratory-depression

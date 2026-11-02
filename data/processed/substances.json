@@ -16760,6 +16760,44 @@
   "source": "pharmapedia-source/CompoundCatalog"
  },
  {
+  "compound_id": "clobromazolam-compound",
+  "name": "Clobromazolam",
+  "group": "nps",
+  "group_label": "Novel Psychoactive Substances (forensic NPS, curated addition)",
+  "cluster": "Novel Psychoactive Substances",
+  "aliases": [
+   "Phenazolam",
+   "DM-II-90"
+  ],
+  "description": "Curated addition (backlog: Designer-drug families / Designer benzodiazepines). Identity resolved by exact name match (PubChem name → CID → InChIKey → ChEMBL) to ChEMBL CHEMBL1451229 / PubChem CID 1032830 (Clobromazolam).",
+  "mechanism": "",
+  "mechanism_source": "",
+  "chembl_id": "CHEMBL1451229",
+  "chembl_max_phase": "",
+  "pubchem_cid": "1032830",
+  "class": "",
+  "pathways": [],
+  "evidence_level": "",
+  "review_status": "stub",
+  "regulatory_status": "",
+  "group_risk_triage": [
+   "cns-activity",
+   "identity-contamination",
+   "evidence-limited",
+   "sedation-respiratory-depression"
+  ],
+  "risk_domains": [],
+  "contraindications": [],
+  "major_interactions": [],
+  "monitoring": [],
+  "tags": [
+   "compound",
+   "curated-addition",
+   "group/nps"
+  ],
+  "source": "curated-addition"
+ },
+ {
   "compound_id": "clocortolone-pivalate-compound",
   "name": "Clocortolone Pivalate",
   "group": "ancillary",
@@ -20764,6 +20802,43 @@
   "source": "pharmapedia-source/CompoundCatalog"
  },
  {
+  "compound_id": "desalkylgidazepam-compound",
+  "name": "Desalkylgidazepam",
+  "group": "nps",
+  "group_label": "Novel Psychoactive Substances (forensic NPS, curated addition)",
+  "cluster": "Novel Psychoactive Substances",
+  "aliases": [
+   "Bromonordiazepam"
+  ],
+  "description": "Curated addition (backlog: Designer-drug families / Designer benzodiazepines). Identity resolved by exact name match (PubChem name → CID → InChIKey → ChEMBL) to ChEMBL CHEMBL327679 / PubChem CID 76167 (BROMONORDIAZEPAM).",
+  "mechanism": "",
+  "mechanism_source": "",
+  "chembl_id": "CHEMBL327679",
+  "chembl_max_phase": "",
+  "pubchem_cid": "76167",
+  "class": "",
+  "pathways": [],
+  "evidence_level": "",
+  "review_status": "stub",
+  "regulatory_status": "",
+  "group_risk_triage": [
+   "cns-activity",
+   "identity-contamination",
+   "evidence-limited",
+   "sedation-respiratory-depression"
+  ],
+  "risk_domains": [],
+  "contraindications": [],
+  "major_interactions": [],
+  "monitoring": [],
+  "tags": [
+   "compound",
+   "curated-addition",
+   "group/nps"
+  ],
+  "source": "curated-addition"
+ },
+ {
   "compound_id": "deschloroetizolam-compound",
   "name": "Deschloroetizolam",
   "group": "nps",
@@ -22730,6 +22805,40 @@
    "group/peptides"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
+ },
+ {
+  "compound_id": "dihydroberberine-compound",
+  "name": "Dihydroberberine",
+  "group": "longevity",
+  "group_label": "Longevity & Metabolic",
+  "cluster": "Longevity and Experimental Compounds",
+  "aliases": [
+   "DHB"
+  ],
+  "description": "Curated addition (backlog: Longevity & Metabolic / AMPK modulators). Identity resolved by exact name match (PubChem name → CID → InChIKey → ChEMBL) to ChEMBL CHEMBL11848 / PubChem CID 10217 (DIHYDROBERBERINE).",
+  "mechanism": "",
+  "mechanism_source": "",
+  "chembl_id": "CHEMBL11848",
+  "chembl_max_phase": "",
+  "pubchem_cid": "10217",
+  "class": "",
+  "pathways": [],
+  "evidence_level": "",
+  "review_status": "stub",
+  "regulatory_status": "",
+  "group_risk_triage": [
+   "evidence-limited"
+  ],
+  "risk_domains": [],
+  "contraindications": [],
+  "major_interactions": [],
+  "monitoring": [],
+  "tags": [
+   "compound",
+   "curated-addition",
+   "group/longevity"
+  ],
+  "source": "curated-addition"
  },
  {
   "compound_id": "dihydroboldenone-compound",
@@ -45610,6 +45719,42 @@
   "source": "pharmapedia-source/CompoundCatalog"
  },
  {
+  "compound_id": "maridebart-cafraglutide-compound",
+  "name": "Maridebart cafraglutide",
+  "group": "glp1",
+  "group_label": "GLP-1 & Body",
+  "cluster": "Metabolic and Incretin Agents",
+  "aliases": [
+   "AMG 133",
+   "MariTide"
+  ],
+  "description": "Curated addition (backlog: Next-gen incretins / Bispecific antibody-peptide conjugates). Identity resolved by exact name match (ChEMBL pref_name) to ChEMBL CHEMBL5314751 (MARIDEBART CAFRAGLUTIDE).",
+  "mechanism": "",
+  "mechanism_source": "",
+  "chembl_id": "CHEMBL5314751",
+  "chembl_max_phase": "",
+  "pubchem_cid": "",
+  "class": "",
+  "pathways": [],
+  "evidence_level": "",
+  "review_status": "stub",
+  "regulatory_status": "",
+  "group_risk_triage": [
+   "glucose-metabolism",
+   "gastrointestinal"
+  ],
+  "risk_domains": [],
+  "contraindications": [],
+  "major_interactions": [],
+  "monitoring": [],
+  "tags": [
+   "compound",
+   "curated-addition",
+   "group/glp1"
+  ],
+  "source": "curated-addition"
+ },
+ {
   "compound_id": "masoprocol-compound",
   "name": "Masoprocol",
   "group": "gh",
@@ -50679,6 +50824,43 @@
    "compound",
    "curated-addition",
    "group/nootropic"
+  ],
+  "source": "curated-addition"
+ },
+ {
+  "compound_id": "n-desethylisotonitazene-compound",
+  "name": "N-Desethylisotonitazene",
+  "group": "nps",
+  "group_label": "Novel Psychoactive Substances (forensic NPS, curated addition)",
+  "cluster": "Novel Psychoactive Substances",
+  "aliases": [
+   "Norisotonitazene"
+  ],
+  "description": "Curated addition (backlog: Designer-drug families / Novel opioids). Identity resolved by exact name match (PubChem name → CID) to PubChem CID 162623899 (N-Desethylisotonitazene). No ChEMBL record: structure-level identity only, no curated mechanism.",
+  "mechanism": "",
+  "mechanism_source": "",
+  "chembl_id": "",
+  "chembl_max_phase": "",
+  "pubchem_cid": "162623899",
+  "class": "",
+  "pathways": [],
+  "evidence_level": "",
+  "review_status": "stub",
+  "regulatory_status": "",
+  "group_risk_triage": [
+   "cns-activity",
+   "identity-contamination",
+   "evidence-limited",
+   "sedation-respiratory-depression"
+  ],
+  "risk_domains": [],
+  "contraindications": [],
+  "major_interactions": [],
+  "monitoring": [],
+  "tags": [
+   "compound",
+   "curated-addition",
+   "group/nps"
   ],
   "source": "curated-addition"
  },
@@ -62811,6 +62993,43 @@
   "source": "curated-addition"
  },
  {
+  "compound_id": "protonitazepyne-compound",
+  "name": "Protonitazepyne",
+  "group": "nps",
+  "group_label": "Novel Psychoactive Substances (forensic NPS, curated addition)",
+  "cluster": "Novel Psychoactive Substances",
+  "aliases": [
+   "N-pyrrolidino protonitazene"
+  ],
+  "description": "Curated addition (backlog: Designer-drug families / Novel opioids). Identity resolved by exact name match (PubChem name → CID) to PubChem CID 168322728 (Protonitazepyne). No ChEMBL record: structure-level identity only, no curated mechanism.",
+  "mechanism": "",
+  "mechanism_source": "",
+  "chembl_id": "",
+  "chembl_max_phase": "",
+  "pubchem_cid": "168322728",
+  "class": "",
+  "pathways": [],
+  "evidence_level": "",
+  "review_status": "stub",
+  "regulatory_status": "",
+  "group_risk_triage": [
+   "cns-activity",
+   "identity-contamination",
+   "evidence-limited",
+   "sedation-respiratory-depression"
+  ],
+  "risk_domains": [],
+  "contraindications": [],
+  "major_interactions": [],
+  "monitoring": [],
+  "tags": [
+   "compound",
+   "curated-addition",
+   "group/nps"
+  ],
+  "source": "curated-addition"
+ },
+ {
   "compound_id": "protriptyline-compound",
   "name": "Protriptyline",
   "group": "ancillary",
@@ -72433,6 +72652,41 @@
   "source": "pharmapedia-source/CompoundCatalog"
  },
  {
+  "compound_id": "suzetrigine-compound",
+  "name": "Suzetrigine",
+  "group": "analgesia",
+  "group_label": "Analgesia & Anaesthesia",
+  "cluster": "General Pharmacology",
+  "aliases": [
+   "VX-548",
+   "Journavx"
+  ],
+  "description": "Curated addition (backlog: Emerging CNS agents / Nav1.8 channel blockers). Identity resolved by exact name match (PubChem name → CID → InChIKey → ChEMBL) to ChEMBL CHEMBL5314487 / PubChem CID 156445116 (SUZETRIGINE).",
+  "mechanism": "",
+  "mechanism_source": "",
+  "chembl_id": "CHEMBL5314487",
+  "chembl_max_phase": "",
+  "pubchem_cid": "156445116",
+  "class": "",
+  "pathways": [],
+  "evidence_level": "",
+  "review_status": "stub",
+  "regulatory_status": "",
+  "group_risk_triage": [
+   "sedation-respiratory-depression"
+  ],
+  "risk_domains": [],
+  "contraindications": [],
+  "major_interactions": [],
+  "monitoring": [],
+  "tags": [
+   "compound",
+   "curated-addition",
+   "group/analgesia"
+  ],
+  "source": "curated-addition"
+ },
+ {
   "compound_id": "synephrine-compound",
   "name": "p-Synephrine (Bitter Orange)",
   "group": "ancillary",
@@ -79534,6 +79788,38 @@
    "group/longevity"
   ],
   "source": "pharmapedia-source/CompoundCatalog"
+ },
+ {
+  "compound_id": "urolithin-b-compound",
+  "name": "Urolithin B",
+  "group": "longevity",
+  "group_label": "Longevity & Metabolic",
+  "cluster": "Longevity and Experimental Compounds",
+  "aliases": [],
+  "description": "Curated addition (backlog: Longevity & Metabolic / Ellagitannin metabolites). Identity resolved by exact name match (PubChem name → CID → InChIKey → ChEMBL) to ChEMBL CHEMBL1526978 / PubChem CID 5380406 (UROLITHIN B).",
+  "mechanism": "",
+  "mechanism_source": "",
+  "chembl_id": "CHEMBL1526978",
+  "chembl_max_phase": "",
+  "pubchem_cid": "5380406",
+  "class": "",
+  "pathways": [],
+  "evidence_level": "",
+  "review_status": "stub",
+  "regulatory_status": "",
+  "group_risk_triage": [
+   "evidence-limited"
+  ],
+  "risk_domains": [],
+  "contraindications": [],
+  "major_interactions": [],
+  "monitoring": [],
+  "tags": [
+   "compound",
+   "curated-addition",
+   "group/longevity"
+  ],
+  "source": "curated-addition"
  },
  {
   "compound_id": "ursodeoxycholic-acid-compound",

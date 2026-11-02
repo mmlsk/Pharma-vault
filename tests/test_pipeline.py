@@ -29,8 +29,8 @@ def fm(path):
 
 def test_catalogue_counts(rows):
     ids = [r["compound_id"] for r in rows]
-    assert len(ids) == len(set(ids)) == 2525          # 2351 source - 13 merged duplicates + 187 curated additions
-    assert sum(r["source"] == "curated-addition" for r in rows) == 187
+    assert len(ids) == len(set(ids)) == 2533          # 2351 source - 13 merged duplicates + 195 curated additions
+    assert sum(r["source"] == "curated-addition" for r in rows) == 195
     assert len({r["group"] for r in rows}) == 19
 
 
@@ -174,7 +174,7 @@ def test_raw_source_untouched():
 
 def test_additions_have_identity_and_provenance(rows):
     adds = list(csv.DictReader(open(ROOT / "data/curated/additions.csv", encoding="utf-8")))
-    assert len(adds) == 187
+    assert len(adds) == 195
     for a in adds:
         assert a["chembl_id"] or a["pubchem_cid"], a["compound_id"]
         assert a["origin"].startswith(("backlog:", "storefront:")) and a["match"]
@@ -265,7 +265,7 @@ def sqlite_con():
 
 
 def test_sqlite_export(sqlite_con):
-    assert sqlite_con.execute("SELECT COUNT(*) FROM substances").fetchone()[0] == 2525
+    assert sqlite_con.execute("SELECT COUNT(*) FROM substances").fetchone()[0] == 2533
     assert sqlite_con.execute("SELECT COUNT(*) FROM compound_targets").fetchone()[0] > 1000
 
 
