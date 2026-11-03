@@ -764,7 +764,10 @@
             <span><b>${phase13}</b> w badaniach (fazy 1–3)</span>
             ${phase0 ? `<span>· <b>${phase0}</b> badawczych</span>` : ""}
           </div>
-          <button class="btn btn-gold" id="targetShowOnGraphBtn" style="font-size:var(--text-xs);padding:4px 10px">🎯 Pokaż na grafie</button>
+          <div style="display:flex;gap:6px;align-items:center">
+            <button class="btn" id="targetOpen3DBtn" data-target-id="${esc(t.id)}" style="font-size:var(--text-xs);padding:4px 10px" title="Otwórz strukturę 3D i architekturę kieszeni wiążącej">🧊 Struktura 3D</button>
+            <button class="btn btn-gold" id="targetShowOnGraphBtn" style="font-size:var(--text-xs);padding:4px 10px">🎯 Pokaż na grafie</button>
+          </div>
         </div>
         ${topHubs.length ? `
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:4px">
@@ -859,6 +862,13 @@
       graphBtn.onclick = () => {
         closeTargetModal();
         select({ type: "target", i: ti }, true);
+      };
+    }
+    const open3DBtn = $("targetOpen3DBtn");
+    if (open3DBtn) {
+      open3DBtn.onclick = () => {
+        closeTargetModal();
+        openStruct3DModal(ti);
       };
     }
 
@@ -2344,6 +2354,1250 @@
         evidenceFilterState.withdrawn = !evidenceFilterState.withdrawn;
         evidenceRenderLimit = 60;
         updateEvidenceModalUI();
+      };
+    }
+  }
+
+  // =========================================================================
+  // ---------- 3D Molecular Pocket & Ligand-Receptor Complex Viewer (v3.19.0)
+  // =========================================================================
+
+  let activeStruct3DModalOpen = false;
+  let activeStruct3DTarget = null;
+  let struct3DRaf = null;
+
+  const struct3DState = {
+    targetId: "CHEMBL224",
+    style: "cartoon",      // "cartoon" | "surface" | "sticks"
+    showPocket: true,
+    showLigand: true,
+    rotX: 0.3,
+    rotY: -0.45,
+    rotZ: 0,
+    zoom: 1.0,
+    panX: 0,
+    panY: 0,
+    isDragging: false,
+    dragButton: 0,
+    lastMouseX: 0,
+    lastMouseY: 0,
+    autoRotate: true,
+    selectedResidue: null
+  };
+
+  const TARGET_3D_CATALOG = {
+    "CHEMBL224": {
+      id: "CHEMBL224",
+      name: "5-hydroxytryptamine receptor 2A",
+      gene: "HTR2A",
+      pdb: "6WGT",
+      res: "Cryo-EM 2.7 Å",
+      uniprot: "P28223",
+      ligand: "LSD",
+      affinity: "Ki = 1.1 nM (Silny agonista)",
+      class: "GPCR (Rodzina 5-HT2)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp155", pos: 155, role: "Mostek solny z naładowanym azotem dietyloamidu / piperydyny" },
+        { r: "Ser159", pos: 159, role: "Wiązanie wodorowe z grupą karbonylową liganda" },
+        { r: "Trp336", pos: 336, role: "Hydrofobowe oddziaływanie pi-pi z pierścieniem indolowym" },
+        { r: "Phe340", pos: 340, role: "Aromatyczna klatka kieszeni ortosterycznej (TM6)" },
+        { r: "Asn343", pos: 343, role: "Koordynacja polarna w rdzeniu wiążącym" },
+        { r: "Phe339", pos: 339, role: "Przełącznik konformacyjny mikro-przełącznika rotamerowego" }
+      ]
+    },
+    "CHEMBL214": {
+      id: "CHEMBL214",
+      name: "5-hydroxytryptamine receptor 1A",
+      gene: "HTR1A",
+      pdb: "7E2X",
+      res: "Cryo-EM 3.0 Å",
+      uniprot: "P08908",
+      ligand: "Aripiprazole",
+      affinity: "Ki = 5.6 nM (Częściowy agonista)",
+      class: "GPCR (Rodzina 5-HT1)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp116", pos: 116, role: "Kluczowy mostek solny z azotem piperazyny" },
+        { r: "Val117", pos: 117, role: "Kontakt hydrofobowy z pierścieniem dihydrochinolinonu" },
+        { r: "Tyr195", pos: 195, role: "Wiązanie wodorowe z tlenem grupy amidowej" },
+        { r: "Phe361", pos: 361, role: "Aromatyczne upakowanie pi-stacking w TM6" },
+        { r: "Asn386", pos: 386, role: "Wiązanie wodorowe w części wewnątrzkomórkowej" }
+      ]
+    },
+    "CHEMBL223": {
+      id: "CHEMBL223",
+      name: "5-hydroxytryptamine receptor 2C",
+      gene: "HTR2C",
+      pdb: "6BQG",
+      res: "Cryo-EM 3.0 Å",
+      uniprot: "P28335",
+      ligand: "Ergotamine",
+      affinity: "Ki = 0.9 nM (Agonista)",
+      class: "GPCR (Rodzina 5-HT2)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp134", pos: 134, role: "Wiązanie elektrostatyczne z aminą ergoliny" },
+        { r: "Ser138", pos: 138, role: "Wiązanie wodorowe z fragmentem peptydowym" },
+        { r: "Trp324", pos: 324, role: "Oddziaływanie pi-pi stabilizujące rdzeń ergolinowy" },
+        { r: "Phe328", pos: 328, role: "Hydrofobowa kieszeń boczna TM6" },
+        { r: "Leu350", pos: 350, role: "Stabilizacja łańcucha alkilowego" }
+      ]
+    },
+    "CHEMBL217": {
+      id: "CHEMBL217",
+      name: "Dopamine D2 receptor",
+      gene: "DRD2",
+      pdb: "6CM4",
+      res: "Krystalografia RTG 2.87 Å",
+      uniprot: "P14416",
+      ligand: "Risperidone",
+      affinity: "Ki = 3.8 nM (Silny antagonista)",
+      class: "GPCR (Dopaminowe D2-like)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp114", pos: 114, role: "Mostek solny z azotem zasadowym piperydyny" },
+        { r: "Val115", pos: 115, role: "Hydrofobowa ścianka kieszeni ortosterycznej" },
+        { r: "Ser193", pos: 193, role: "Oddziaływanie polarne z pierścieniem pirymidynonu" },
+        { r: "Phe389", pos: 389, role: "Kluczowy aromatyczny kontakt pi-pi w TM6" },
+        { r: "His393", pos: 393, role: "Koordynacja benzizoksazolu w kieszeni drugorzędowej" },
+        { r: "Tyr408", pos: 408, role: "Wiązanie wodorowe stabilizujące domenę zewnątrzkomórkową" }
+      ]
+    },
+    "CHEMBL2056": {
+      id: "CHEMBL2056",
+      name: "Dopamine D1 receptor",
+      gene: "DRD1",
+      pdb: "7CKZ",
+      res: "Cryo-EM 2.9 Å",
+      uniprot: "P21728",
+      ligand: "Apomorphine",
+      affinity: "Ki = 0.7 nM (Agonista)",
+      class: "GPCR (Dopaminowe D1-like)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp103", pos: 103, role: "Mostek solny z protonowanym azotem aminy" },
+        { r: "Ser198", pos: 198, role: "Podwójne wiązanie wodorowe z katecholowymi grupami OH" },
+        { r: "Ser202", pos: 202, role: "Kluczowa reszta rozpoznania katecholi w TM5" },
+        { r: "Trp285", pos: 285, role: "Oddziaływanie pi-pi z pierścieniem aporfiny" },
+        { r: "Phe288", pos: 288, role: "Aromatyczna klatka hydrofobowa" }
+      ]
+    },
+    "CHEMBL233": {
+      id: "CHEMBL233",
+      name: "Mu opioid receptor",
+      gene: "OPRM1",
+      pdb: "8EF5",
+      res: "Cryo-EM 2.5 Å",
+      uniprot: "P35372",
+      ligand: "Fentanyl",
+      affinity: "Ki = 1.3 nM (Pełny agonista)",
+      class: "GPCR (Opioidowe)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp147", pos: 147, role: "Kluczowy mostek solny z azotem pierścienia piperydynowego" },
+        { r: "Tyr148", pos: 148, role: "Wiązanie wodorowe z grupą karbonylową propanamidu" },
+        { r: "Met151", pos: 151, role: "Kontakt van der Waalsa z łańcuchem fenyloetylowym" },
+        { r: "Trp293", pos: 293, role: "Głębokie oddziaływanie pi-pi w kieszeni ortosterycznej" },
+        { r: "His297", pos: 297, role: "Koordynacja grupy anilinowej fentanylu" },
+        { r: "Ile322", pos: 322, role: "Hydrofobowa stabilizacja w TM7" }
+      ]
+    },
+    "CHEMBL237": {
+      id: "CHEMBL237",
+      name: "Kappa opioid receptor",
+      gene: "OPRK1",
+      pdb: "6B73",
+      res: "Krystalografia RTG 3.1 Å",
+      uniprot: "P41145",
+      ligand: "Nalfurafine",
+      affinity: "Ki = 0.16 nM (Selektywny agonista)",
+      class: "GPCR (Opioidowe)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp138", pos: 138, role: "Mostek solny z azotem morfinanu" },
+        { r: "Tyr139", pos: 139, role: "Wiązanie wodorowe fenolowego tlenu" },
+        { r: "Trp287", pos: 287, role: "Hydrofobowe upakowanie pierścienia furanowego" },
+        { r: "Ile294", pos: 294, role: "Kieszeń boczna selektywności KOR vs MOR" },
+        { r: "Tyr312", pos: 312, role: "Sieć wiązań wodorowych TM7" }
+      ]
+    },
+    "CHEMBL235": {
+      id: "CHEMBL235",
+      name: "Delta opioid receptor",
+      gene: "OPRD1",
+      pdb: "4EJ4",
+      res: "Krystalografia RTG 3.4 Å",
+      uniprot: "P41143",
+      ligand: "Naltrindole",
+      affinity: "Ki = 0.2 nM (Selektywny antagonista)",
+      class: "GPCR (Opioidowe)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp128", pos: 128, role: "Mostek solny z kationem aminowym" },
+        { r: "Tyr129", pos: 129, role: "Hydroksylowe wiązanie wodorowe" },
+        { r: "Trp274", pos: 274, role: "Oddziaływanie z indolową grupą naltrindolu" },
+        { r: "His278", pos: 278, role: "Selektywny element rozpoznania DOR" },
+        { r: "Leu300", pos: 300, role: "Hydrofobowa kieszeń apolarna" }
+      ]
+    },
+    "CHEMBL218": {
+      id: "CHEMBL218",
+      name: "Cannabinoid receptor 1",
+      gene: "CNR1",
+      pdb: "5U09",
+      res: "Krystalografia RTG 2.8 Å",
+      uniprot: "P21554",
+      ligand: "Rimonabant",
+      affinity: "Ki = 1.8 nM (Odwrotny agonista)",
+      class: "GPCR (Kannabinoidowe)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Phe170", pos: 170, role: "Aromatyczne klamry pi-pi z pierścieniami chlorofenylowymi" },
+        { r: "Phe177", pos: 177, role: "Hydrofobowy sufit kieszeni kannabinoidowej" },
+        { r: "Lys192", pos: 192, role: "Mostek solny / koordynacja karboksyamidu" },
+        { r: "Trp356", pos: 356, role: "Główny przełącznik aktywacji receptora CB1" },
+        { r: "Asp366", pos: 366, role: "Stabilizacja zewnątrzkomórkowa pętli ECL2" }
+      ]
+    },
+    "CHEMBL1834": {
+      id: "CHEMBL1834",
+      name: "Cannabinoid receptor 2",
+      gene: "CNR2",
+      pdb: "6KPF",
+      res: "Cryo-EM 3.2 Å",
+      uniprot: "P34972",
+      ligand: "AM12033",
+      affinity: "Ki = 2.1 nM (Agonista)",
+      class: "GPCR (Kannabinoidowe)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Phe87", pos: 87, role: "Hydrofobowa ścianka kieszeni lipidowej" },
+        { r: "Phe91", pos: 91, role: "Oddziaływanie aromatyczne z ligandem" },
+        { r: "Lys109", pos: 109, role: "Wiązanie polarne w TM3" },
+        { r: "Trp258", pos: 258, role: "Przełącznik rotamerowy aktywacji CB2" },
+        { r: "Ser285", pos: 285, role: "Koordynacja polarna w TM7" }
+      ]
+    },
+    "CHEMBL228": {
+      id: "CHEMBL228",
+      name: "GABA-A receptor alpha-1/beta-2/gamma-2",
+      gene: "GABRA1",
+      pdb: "6D6T",
+      res: "Cryo-EM 3.86 Å",
+      uniprot: "P14867",
+      ligand: "Diazepam",
+      affinity: "Ki = 12 nM (Modulator allosteryczny)",
+      class: "Cys-loop Ligand-Gated Ion Channel",
+      arch: "channel",
+      pocket: [
+        { r: "His102", pos: 102, role: "Kluczowa reszta wiązania benzodiazepin na granicy alfa/gamma" },
+        { r: "Tyr160", pos: 160, role: "Aromatyczne upakowanie pi-stacking z pierścieniem diazepamu" },
+        { r: "Thr206", pos: 206, role: "Wiązanie wodorowe z tlenem grupy laktamowej" },
+        { r: "Phe77", pos: 77, role: "Hydrofobowa kieszeń podjednostki gamma-2" },
+        { r: "Tyr210", pos: 210, role: "Stabilizacja pętli C miejsca allosterycznego" }
+      ]
+    },
+    "CHEMBL230": {
+      id: "CHEMBL230",
+      name: "NMDA receptor 1 / 2B",
+      gene: "GRIN1/GRIN2B",
+      pdb: "7EU8",
+      res: "Cryo-EM 3.5 Å",
+      uniprot: "Q05586",
+      ligand: "Ketamine",
+      affinity: "Ki = 500 nM (Bloker kanału)",
+      class: "Jonotropowy receptor glutaminianowy",
+      arch: "channel",
+      pocket: [
+        { r: "Arg523", pos: 523, role: "Wiązanie elektrostatyczne w kanale przepływu jonów" },
+        { r: "Glu413", pos: 413, role: "Sito selektywności jonowej (barierka wejścia)" },
+        { r: "Thr648", pos: 648, role: "Koordynacja pierścienia chlorofenylowego ketaminy" },
+        { r: "Trp563", pos: 563, role: "Hydrofobowe zakotwiczenie liganda w porze kanału" },
+        { r: "Val644", pos: 644, role: "Zwężenie kanału transbłonowego M3" }
+      ]
+    },
+    "CHEMBL225": {
+      id: "CHEMBL225",
+      name: "Serotonin transporter",
+      gene: "SLC6A4",
+      pdb: "5I6X",
+      res: "Krystalografia RTG 3.15 Å",
+      uniprot: "P31645",
+      ligand: "Paroxetine",
+      affinity: "Ki = 0.1 nM (Silny inhibitor wychwytu zwrotnego)",
+      class: "Transporter monoamin (SLC6)",
+      arch: "transporter",
+      pocket: [
+        { r: "Tyr95", pos: 95, role: "Zewnętrzna zasuwa zamykająca kieszeń substratową" },
+        { r: "Asp98", pos: 98, role: "Mostek solny z azotem piperydyny paroksetyny" },
+        { r: "Ile172", pos: 172, role: "Hydrofobowa kieszeń B dla fluorofenylu" },
+        { r: "Phe335", pos: 335, role: "Oddziaływanie pi-pi stabilizujące benzodioksol" },
+        { r: "Ser438", pos: 438, role: "Koordynacja polarna jonu Na+ i liganda" },
+        { r: "Gly442", pos: 442, role: "Wiązanie szkieletowe w rdzeniu transportowym" }
+      ]
+    },
+    "CHEMBL238": {
+      id: "CHEMBL238",
+      name: "Acetylcholinesterase",
+      gene: "ACHE",
+      pdb: "4EY7",
+      res: "Krystalografia RTG 2.35 Å",
+      uniprot: "P22303",
+      ligand: "Donepezil",
+      affinity: "Ki = 5.7 nM (Inhibitor odwracalny)",
+      class: "Hydrolaza estrowa (Gardełko katalityczne)",
+      arch: "enzyme",
+      pocket: [
+        { r: "Trp86", pos: 86, role: "Miejsce cholinowe (anionowe) na dnie gardełka" },
+        { r: "Tyr124", pos: 124, role: "Hydrofobowa ścianka gardzieli enzymu" },
+        { r: "Ser203", pos: 203, role: "Katalityczna triada estrowa (atak nukleofilowy)" },
+        { r: "Trp286", pos: 286, role: "Peryferyjne miejsce anionowe (PAS) przy wlocie" },
+        { r: "Tyr337", pos: 337, role: "Przewężenie gardełka katalitycznego" },
+        { r: "Phe338", pos: 338, role: "Upakowanie pi-stacking pierścienia indanonu" }
+      ]
+    },
+    "CHEMBL221": {
+      id: "CHEMBL221",
+      name: "Cyclooxygenase-2",
+      gene: "PTGS2",
+      pdb: "3LN1",
+      res: "Krystalografia RTG 2.4 Å",
+      uniprot: "P35354",
+      ligand: "Celecoxib",
+      affinity: "IC50 = 40 nM (Selektywny inhibitor COX-2)",
+      class: "Oksydoreduktaza / Syntaza prostaglandyn",
+      arch: "enzyme",
+      pocket: [
+        { r: "Arg120", pos: 120, role: "Wiązanie elektrostatyczne przy wlocie do kanału" },
+        { r: "Tyr355", pos: 355, role: "Bariera stereochemiczna kanału cyklooksygenazy" },
+        { r: "Val523", pos: 523, role: "Kluczowa reszta kieszeni bocznej (odpowiedzialna za selektywność COX-2 vs COX-1 Ile523)" },
+        { r: "Ser530", pos: 530, role: "Miejsce acetylacji przez aspirynę / blokada kwasu arachidonowego" },
+        { r: "Phe518", pos: 518, role: "Stabilizacja sulfonamidowej grupy celekoksybu" }
+      ]
+    },
+    "CHEMBL234": {
+      id: "CHEMBL234",
+      name: "Cyclooxygenase-1",
+      gene: "PTGS1",
+      pdb: "3N8Z",
+      res: "Krystalografia RTG 2.7 Å",
+      uniprot: "P23219",
+      ligand: "Ibuprofen",
+      affinity: "IC50 = 2.6 uM (Nieselektywny NLPZ)",
+      class: "Oksydoreduktaza / Syntaza prostaglandyn",
+      arch: "enzyme",
+      pocket: [
+        { r: "Arg120", pos: 120, role: "Mostek solny z karboksylanem ibuprofenu" },
+        { r: "Tyr355", pos: 355, role: "Wiązanie wodorowe domykające kanał" },
+        { r: "Ile523", pos: 523, role: "Obszerna reszta izoleucyny uniemożliwiająca wniknięcie inhibitorów COX-2" },
+        { r: "Ser530", pos: 530, role: "Głębokie dno kieszeni katalitycznej" },
+        { r: "Trp387", pos: 387, role: "Kontakt van der Waalsa z łańcuchem izobutylu" }
+      ]
+    },
+    "CHEMBL402": {
+      id: "CHEMBL402",
+      name: "3-hydroxy-3-methylglutaryl-coenzyme A reductase",
+      gene: "HMGCR",
+      pdb: "1HW9",
+      res: "Krystalografia RTG 2.22 Å",
+      uniprot: "P04035",
+      ligand: "Atorvastatin",
+      affinity: "Ki = 8 nM (Inhibitor reduktazy HMG-CoA)",
+      class: "Oksydoreduktaza / Biosynteza cholesterolu",
+      arch: "enzyme",
+      pocket: [
+        { r: "Lys691", pos: 691, role: "Wiązanie elektrostatyczne z grupą dioksyheptanową statyny" },
+        { r: "Lys735", pos: 735, role: "Koordynacja polarna mostka tlenowego" },
+        { r: "Arg590", pos: 590, role: "Wiązanie wodorowe z kwasem hydroksylowym" },
+        { r: "Asp690", pos: 690, role: "Katalityczna sieć transferu protonów" },
+        { r: "Glu559", pos: 559, role: "Stabilizacja konformacyjna kieszeni inhibitorowej" }
+      ]
+    },
+    "CHEMBL1862": {
+      id: "CHEMBL1862",
+      name: "Monoamine oxidase A",
+      gene: "MAOA",
+      pdb: "2Z5X",
+      res: "Krystalografia RTG 2.2 Å",
+      uniprot: "P21397",
+      ligand: "Clorgyline",
+      affinity: "Ki = 0.05 nM (Nieodwracalny inhibitor)",
+      class: "Flawoproteina mitochondrialna",
+      arch: "enzyme",
+      pocket: [
+        { r: "FAD", pos: 0, role: "Kofaktor flawinowy tworzący wiązanie kowalencyjne" },
+        { r: "Tyr407", pos: 407, role: "Aromatyczna klatka miejsca utleniania aminy" },
+        { r: "Tyr444", pos: 444, role: "Hydrofobowe oddziaływanie z pierścieniem dichlorofenylu" },
+        { r: "Phe208", pos: 208, role: "Zasuwa wejściowa do jamy katalitycznej MAO-A" },
+        { r: "Ile335", pos: 335, role: "Reszta selektywności MAO-A vs MAO-B (Tyr326 w MAO-B)" }
+      ]
+    },
+    "CHEMBL2035": {
+      id: "CHEMBL2035",
+      name: "Monoamine oxidase B",
+      gene: "MAOB",
+      pdb: "2V5Z",
+      res: "Krystalografia RTG 1.6 Å",
+      uniprot: "P27338",
+      ligand: "Safinamide",
+      affinity: "Ki = 9 nM (Odwracalny inhibitor)",
+      class: "Flawoproteina mitochondrialna",
+      arch: "enzyme",
+      pocket: [
+        { r: "FAD", pos: 0, role: "Kofaktor utleniający w kieszeni reakcyjnej" },
+        { r: "Tyr398", pos: 398, role: "Aromatyczna ścianka klatki flavinowej" },
+        { r: "Tyr435", pos: 435, role: "Stabilizacja pi-pi liganda safinamidu" },
+        { r: "Leu171", pos: 171, role: "Hydrofobowa komora wejściowa (kieszeń rozpoznania)" },
+        { r: "Ile199", pos: 199, role: "Bramka pomiędzy jamą wejściową a jamą katalityczną" }
+      ]
+    },
+    "CHEMBL209": {
+      id: "CHEMBL209",
+      name: "Beta-2 adrenergic receptor",
+      gene: "ADRB2",
+      pdb: "3P0G",
+      res: "Krystalografia RTG 2.84 Å",
+      uniprot: "P07550",
+      ligand: "BI-167107",
+      affinity: "Ki = 0.08 nM (Ultrasilny agonista)",
+      class: "GPCR (Adrenergiczne)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp113", pos: 113, role: "Kluczowy mostek solny z aminą beta-agonistów" },
+        { r: "Ser203", pos: 203, role: "Wiązanie wodorowe z katecholową grupą meta-OH" },
+        { r: "Ser207", pos: 207, role: "Wiązanie wodorowe z para-OH (odpowiedzialne za aktywację)" },
+        { r: "Asn312", pos: 312, role: "Wiązanie wodorowe z chiralną grupą beta-OH" },
+        { r: "Phe290", pos: 290, role: "Aromatyczna klatka w TM6 stabilizująca stan aktywny" }
+      ]
+    },
+    "CHEMBL210": {
+      id: "CHEMBL210",
+      name: "Beta-1 adrenergic receptor",
+      gene: "ADRB1",
+      pdb: "2VT4",
+      res: "Krystalografia RTG 2.7 Å",
+      uniprot: "P08588",
+      ligand: "Cyanopindolol",
+      affinity: "Ki = 0.04 nM (Antagonista)",
+      class: "GPCR (Adrenergiczne)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp121", pos: 121, role: "Wiązanie jonowe z azotem grupy izopropyloaminowej" },
+        { r: "Ser211", pos: 211, role: "Wiązanie wodorowe z grupami tlenowymi" },
+        { r: "Ser215", pos: 215, role: "Koordynacja pętli w TM5" },
+        { r: "Asn329", pos: 329, role: "Wiązanie wodorowe z grupą beta-alkoholową" },
+        { r: "Phe306", pos: 306, role: "Oddziaływanie pi-pi z pierścieniem indolowym" }
+      ]
+    },
+    "CHEMBL202": {
+      id: "CHEMBL202",
+      name: "Alpha-2A adrenergic receptor",
+      gene: "ADRA2A",
+      pdb: "6K42",
+      res: "Cryo-EM 2.8 Å",
+      uniprot: "P08913",
+      ligand: "Dexmedetomidine",
+      affinity: "Ki = 1.0 nM (Pełny agonista)",
+      class: "GPCR (Adrenergiczne)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp113", pos: 113, role: "Mostek solny z pierścieniem imidazolowym" },
+        { r: "Ser200", pos: 200, role: "Wiązanie wodorowe z resztami aktywacyjnymi" },
+        { r: "Ser204", pos: 204, role: "Sieć wiązań wodorowych TM5" },
+        { r: "Phe412", pos: 412, role: "Klatka hydrofobowa dla pierścienia dimetylofenylu" },
+        { r: "Tyr394", pos: 394, role: "Oddziaływanie pi-pi w dnie kieszeni" }
+      ]
+    },
+    "CHEMBL1824": {
+      id: "CHEMBL1824",
+      name: "Phosphodiesterase 5A",
+      gene: "PDE5A",
+      pdb: "1UDT",
+      res: "Krystalografia RTG 2.3 Å",
+      uniprot: "O76074",
+      ligand: "Sildenafil",
+      affinity: "IC50 = 3.5 nM (Selektywny inhibitor)",
+      class: "Fosfodiesteraza cGMP",
+      arch: "enzyme",
+      pocket: [
+        { r: "Gln817", pos: 817, role: "Bifunkcyjne wiązanie wodorowe z pierścieniem pirazolopirymidynonu" },
+        { r: "Phe820", pos: 820, role: "Hydrofobowy zacisk pi-stacking (klamerka fenyloalaninowa)" },
+        { r: "Val782", pos: 782, role: "Hydrofobowa kieszeń etoksyfenylu" },
+        { r: "Leu765", pos: 765, role: "Kontakt apolarny w kieszonce M" },
+        { r: "Tyr612", pos: 612, role: "Koordynacja kationów cynku Zn2+ i magnezu Mg2+" }
+      ]
+    },
+    "CHEMBL206": {
+      id: "CHEMBL206",
+      name: "Muscarinic acetylcholine receptor M1",
+      gene: "CHRM1",
+      pdb: "5CXV",
+      res: "Krystalografia RTG 2.7 Å",
+      uniprot: "P11229",
+      ligand: "Tiotropium",
+      affinity: "Ki = 0.2 nM (Silny antagonista)",
+      class: "GPCR (Cholinergiczne)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp105", pos: 105, role: "Mostek solny z czwartorzędowym azotem tiotropium" },
+        { r: "Tyr106", pos: 106, role: "Klatka tyrozynowa otaczająca czwartorzędową cholinę" },
+        { r: "Tyr381", pos: 381, role: "Oddziaływanie pi-kation z jonem amoniowym" },
+        { r: "Trp157", pos: 157, role: "Hydrofobowe dno kieszeni ortosterycznej" },
+        { r: "Tyr404", pos: 404, role: "Zewnętrzna pokrywa kieszeni wiążącej w TM7" }
+      ]
+    },
+    "CHEMBL211": {
+      id: "CHEMBL211",
+      name: "Muscarinic acetylcholine receptor M2",
+      gene: "CHRM2",
+      pdb: "3UON",
+      res: "Krystalografia RTG 3.0 Å",
+      uniprot: "P08172",
+      ligand: "QNB",
+      affinity: "Ki = 0.05 nM (Antagonista)",
+      class: "GPCR (Cholinergiczne)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp103", pos: 103, role: "Mostek solny z zasadowym azotem chinuklidyny" },
+        { r: "Tyr104", pos: 104, role: "Aromatyczna klatka cholinowa TM3" },
+        { r: "Trp400", pos: 400, role: "Oddziaływanie pi-pi z pierścieniami fenylowymi liganda" },
+        { r: "Tyr403", pos: 403, role: "Wiązanie wodorowe z grupą hydroksylową estru" },
+        { r: "Phe181", pos: 181, role: "Reszta pętli zewnątrzkomórkowej ECL2" }
+      ]
+    },
+    "CHEMBL219": {
+      id: "CHEMBL219",
+      name: "Glucagon-like peptide 1 receptor",
+      gene: "GLP1R",
+      pdb: "6X18",
+      res: "Cryo-EM 2.5 Å",
+      uniprot: "P43220",
+      ligand: "Semaglutide",
+      affinity: "Ki = 0.38 nM (Długo działający agonista)",
+      class: "GPCR Klasa B1 (Inkretynowe)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Tyr69", pos: 69, role: "Domenowe wiązanie z N-końcowym fragmentem peptydowym" },
+        { r: "Trp39", pos: 39, role: "Wiązanie hydrofobowe z resztą kwasu tłuszczowego" },
+        { r: "Arg190", pos: 190, role: "Wiązanie wodorowe z rdzeniem helisy liganda" },
+        { r: "Lys197", pos: 197, role: "Mostek solny z łańcuchem peptydowym" },
+        { r: "Leu32", pos: 32, role: "Hydrofobowa ścianka domeny ECD" }
+      ]
+    },
+    "CHEMBL1867": {
+      id: "CHEMBL1867",
+      name: "Androgen receptor",
+      gene: "AR",
+      pdb: "2AM9",
+      res: "Krystalografia RTG 1.64 Å",
+      uniprot: "P10275",
+      ligand: "Dihydrotestosterone",
+      affinity: "Kd = 0.5 nM (Endogenny androgen)",
+      class: "Receptor jądrowy / Czynnik transkrypcyjny",
+      arch: "enzyme",
+      pocket: [
+        { r: "Asn705", pos: 705, role: "Wiązanie wodorowe z 17-beta hydroksylem steroidu" },
+        { r: "Thr877", pos: 877, role: "Wiązanie wodorowe stabilizujące pierścień D steroidu" },
+        { r: "Gln711", pos: 711, role: "Sieć polarna kieszeni wiążącej" },
+        { r: "Arg752", pos: 752, role: "Mostek solny / koordynacja grupy 3-keto w pierścieniu A" },
+        { r: "Phe764", pos: 764, role: "Hydrofobowe upakowanie szkieletu cyklopentanoperhydrofenantrenu" }
+      ]
+    },
+    "CHEMBL1871": {
+      id: "CHEMBL1871",
+      name: "Angiotensin II type 1 receptor",
+      gene: "AGTR1",
+      pdb: "4YAY",
+      res: "Krystalografia RTG 2.8 Å",
+      uniprot: "P30556",
+      ligand: "Olmesartan",
+      affinity: "Ki = 7.7 nM (Antagonista AT1 / Sartan)",
+      class: "GPCR (Kardiologiczne)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Arg167", pos: 167, role: "Kluczowy mostek solny z pierścieniem tetrazolowym sartanu" },
+        { r: "Lys199", pos: 199, role: "Podwójne wiązanie jonowe stabilizujące ligand w TM5" },
+        { r: "Asp281", pos: 281, role: "Koordynacja grupy hydroksyalkilowej imidazolu" },
+        { r: "Tyr292", pos: 292, role: "Oddziaływanie pi-pi z pierścieniami dwufenylu" },
+        { r: "Trp84", pos: 84, role: "Hydrofobowe dno kieszeni receptora AT1" }
+      ]
+    },
+    "CHEMBL226": {
+      id: "CHEMBL226",
+      name: "Histamine H1 receptor",
+      gene: "HRH1",
+      pdb: "3RZE",
+      res: "Krystalografia RTG 3.1 Å",
+      uniprot: "P35367",
+      ligand: "Doxepin",
+      affinity: "Ki = 0.1 nM (Silny antagonista H1)",
+      class: "GPCR (Histaminowe)",
+      arch: "gpcr",
+      pocket: [
+        { r: "Asp107", pos: 107, role: "Kluczowy mostek solny z protonowaną aminą doksepiny" },
+        { r: "Tyr108", pos: 108, role: "Aromatyczna klatka w TM3" },
+        { r: "Trp428", pos: 428, role: "Oddziaływanie pi-pi z pierścieniem dibenzoksepinowym" },
+        { r: "Phe432", pos: 432, role: "Hydrofobowa ściana ortosteryczna w TM6" },
+        { r: "Asn198", pos: 198, role: "Wiązanie wodorowe pętli zewnątrzkomórkowej" }
+      ]
+    },
+    "CHEMBL240": {
+      id: "CHEMBL240",
+      name: "Dopamine transporter",
+      gene: "SLC6A3",
+      pdb: "4M48",
+      res: "Krystalografia RTG 2.95 Å",
+      uniprot: "Q01959",
+      ligand: "Nortriptyline",
+      affinity: "Ki = 18 nM (Inhibitor wychwytu zwrotnego)",
+      class: "Transporter monoamin (SLC6)",
+      arch: "transporter",
+      pocket: [
+        { r: "Asp79", pos: 79, role: "Mostek solny z azotem aminy wtórnej" },
+        { r: "Phe76", pos: 76, role: "Klatka pi-stacking z pierścieniem tricyklicznym" },
+        { r: "Val152", pos: 152, role: "Hydrofobowy kontakt w rdzeniu wiążącym" },
+        { r: "Phe320", pos: 320, role: "Aromatyczna ścianka kieszeni wychwytu dopaminy" },
+        { r: "Ser422", pos: 422, role: "Wiązanie wodorowe koordynujące z jonami sodu" }
+      ]
+    }
+  };
+
+  function resolveTarget3D(targetRef) {
+    if (targetRef == null) return TARGET_3D_CATALOG["CHEMBL224"];
+    if (typeof targetRef === "number") {
+      const t = T[targetRef];
+      if (!t) return TARGET_3D_CATALOG["CHEMBL224"];
+      if (TARGET_3D_CATALOG[t.id]) return TARGET_3D_CATALOG[t.id];
+      const byName = Object.values(TARGET_3D_CATALOG).find((x) => x.name.toLowerCase() === (t.n || "").toLowerCase());
+      if (byName) return byName;
+      // Synthesize fallback entry for AlphaFold DB
+      return {
+        id: t.id,
+        name: t.n || "Cel molekularny",
+        gene: (t.n || "Target").split(" ")[0].toUpperCase(),
+        pdb: "ALPHAFOLD",
+        res: "Model predykcyjny AlphaFold v4",
+        uniprot: t.id,
+        ligand: "Kieszeń katalityczna / wiążąca",
+        affinity: "Wiązanie ortosteryczne",
+        class: t.ty || "Białko",
+        arch: "gpcr",
+        pocket: [
+          { r: "Asp/Glu", pos: 120, role: "Kluczowa reszta kwasowa kieszeni wiążącej" },
+          { r: "Trp/Phe", pos: 280, role: "Aromatyczne oddziaływanie pi-pi z ligandem" },
+          { r: "Ser/Tyr", pos: 340, role: "Sieć wiązań wodorowych" }
+        ]
+      };
+    }
+    if (typeof targetRef === "string") {
+      if (TARGET_3D_CATALOG[targetRef]) return TARGET_3D_CATALOG[targetRef];
+      const byName = Object.values(TARGET_3D_CATALOG).find((x) =>
+        x.name.toLowerCase() === targetRef.toLowerCase() || x.gene.toLowerCase() === targetRef.toLowerCase() || x.pdb.toLowerCase() === targetRef.toLowerCase()
+      );
+      if (byName) return byName;
+    }
+    return TARGET_3D_CATALOG["CHEMBL224"];
+  }
+
+  function generate3DStructureGeometry(targetInfo) {
+    const arch = targetInfo.arch || "gpcr";
+    const helices = [];
+    const numHelices = arch === "gpcr" ? 7 : arch === "transporter" ? 8 : arch === "channel" ? 5 : 6;
+    const rBundle = arch === "channel" ? 32 : 22;
+
+    for (let i = 0; i < numHelices; i++) {
+      const angle = (i / numHelices) * Math.PI * 2;
+      const hx = Math.cos(angle) * rBundle;
+      const hy = Math.sin(angle) * rBundle;
+      const hue = (i * 45 + 160) % 360;
+      helices.push({
+        id: `Helix ${i + 1}`,
+        x1: hx + Math.sin(i) * 2,
+        y1: hy - 28,
+        z1: -26 + Math.cos(i) * 4,
+        x2: hx - Math.sin(i) * 2,
+        y2: hy + 28,
+        z2: 26 - Math.cos(i) * 4,
+        radius: 3.6,
+        color: `hsl(${hue}, 70%, 55%)`
+      });
+    }
+
+    const pocketAtoms = (targetInfo.pocket || []).map((p, idx) => {
+      const ang = (idx / targetInfo.pocket.length) * Math.PI * 2;
+      const px = Math.cos(ang) * 9.5;
+      const py = Math.sin(ang) * 9.5;
+      const pz = -2 + (idx % 3) * 3;
+      return {
+        r: p.r,
+        role: p.role,
+        x: px,
+        y: py,
+        z: pz,
+        color: "#fbbf24"
+      };
+    });
+
+    const ligandAtoms = [
+      { elem: "N", x: 0.0, y: -0.8, z: 0.5, c: "#3b82f6", r: 2.2 },
+      { elem: "C", x: 1.8, y: -0.2, z: 0.2, c: "#10b981", r: 2.4 },
+      { elem: "C", x: 2.6, y: 1.6, z: -0.1, c: "#10b981", r: 2.4 },
+      { elem: "C", x: 1.4, y: 2.8, z: -0.3, c: "#10b981", r: 2.4 },
+      { elem: "C", x: -0.4, y: 2.2, z: -0.1, c: "#10b981", r: 2.4 },
+      { elem: "C", x: -1.0, y: 0.4, z: 0.3, c: "#10b981", r: 2.4 },
+      { elem: "C", x: -2.8, y: -0.2, z: 0.6, c: "#10b981", r: 2.4 },
+      { elem: "O", x: -3.6, y: -1.8, z: 0.8, c: "#ef4444", r: 2.3 },
+      { elem: "C", x: 0.4, y: -2.6, z: 0.7, c: "#10b981", r: 2.4 },
+      { elem: "C", x: 2.2, y: -2.8, z: 0.6, c: "#10b981", r: 2.4 }
+    ];
+
+    const ligandBonds = [
+      [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0],
+      [5, 6], [6, 7], [0, 8], [8, 9]
+    ];
+
+    return { helices, pocketAtoms, ligandAtoms, ligandBonds };
+  }
+
+  function draw3DComplexCanvas() {
+    const cv = $("struct3DCanvas");
+    if (!cv) return;
+    const ctx = cv.getContext("2d");
+    if (!ctx) return;
+
+    const width = cv.clientWidth || 700;
+    const height = cv.clientHeight || 500;
+    const dpr = window.devicePixelRatio || 1;
+
+    if (cv.width !== width * dpr || cv.height !== height * dpr) {
+      cv.width = width * dpr;
+      cv.height = height * dpr;
+    }
+
+    ctx.save();
+    ctx.scale(dpr, dpr);
+
+    const grad = ctx.createRadialGradient(width * 0.5, height * 0.45, 20, width * 0.5, height * 0.5, width * 0.7);
+    grad.addColorStop(0, "#131b2e");
+    grad.addColorStop(1, "#070a12");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, width, height);
+
+    const targetInfo = resolveTarget3D(struct3DState.targetId);
+    const geom = generate3DStructureGeometry(targetInfo);
+
+    const cx = width * 0.5 + struct3DState.panX;
+    const cy = height * 0.5 + struct3DState.panY;
+    const scale = Math.min(width, height) * 0.016 * struct3DState.zoom;
+
+    const cosX = Math.cos(struct3DState.rotX), sinX = Math.sin(struct3DState.rotX);
+    const cosY = Math.cos(struct3DState.rotY), sinY = Math.sin(struct3DState.rotY);
+    const cosZ = Math.cos(struct3DState.rotZ), sinZ = Math.sin(struct3DState.rotZ);
+
+    function project(x, y, z) {
+      let x1 = x * cosY - z * sinY;
+      let z1 = x * sinY + z * cosY;
+      let y2 = y * cosX - z1 * sinX;
+      let z2 = y * sinX + z1 * cosX;
+      let x3 = x1 * cosZ - y2 * sinZ;
+      let y3 = x1 * sinZ + y2 * cosZ;
+      const fov = 350;
+      const pScale = fov / (fov + z2 * 1.5) * scale;
+      return {
+        px: cx + x3 * pScale,
+        py: cy + y3 * pScale,
+        pz: z2,
+        scale: pScale
+      };
+    }
+
+    const items = [];
+
+    if (struct3DState.style === "cartoon" || struct3DState.style === "sticks") {
+      geom.helices.forEach((h, hIdx) => {
+        const p1 = project(h.x1, h.y1, h.z1);
+        const p2 = project(h.x2, h.y2, h.z2);
+        const midZ = (p1.pz + p2.pz) * 0.5;
+
+        items.push({
+          type: "helix",
+          z: midZ,
+          draw: () => {
+            const hGrad = ctx.createLinearGradient(p1.px, p1.py, p2.px, p2.py);
+            hGrad.addColorStop(0, h.color);
+            hGrad.addColorStop(1, "color-mix(in oklab, " + h.color + " 40%, #000)");
+
+            ctx.beginPath();
+            ctx.moveTo(p1.px, p1.py);
+            ctx.lineTo(p2.px, p2.py);
+            ctx.lineWidth = Math.max(3, (p1.scale + p2.scale) * 0.5 * (struct3DState.style === "sticks" ? 0.35 : 0.85));
+            ctx.strokeStyle = hGrad;
+            ctx.lineCap = "round";
+            ctx.stroke();
+
+            if (struct3DState.style === "cartoon") {
+              const segs = 8;
+              for (let s = 1; s < segs; s++) {
+                const t = s / segs;
+                const sx = p1.px + (p2.px - p1.px) * t;
+                const sy = p1.py + (p2.py - p1.py) * t;
+                const ribAngle = Math.atan2(p2.py - p1.py, p2.px - p1.px) + Math.PI / 2;
+                const ribLen = Math.sin(t * Math.PI) * ctx.lineWidth * 0.6;
+                ctx.beginPath();
+                ctx.moveTo(sx - Math.cos(ribAngle) * ribLen, sy - Math.sin(ribAngle) * ribLen);
+                ctx.lineTo(sx + Math.cos(ribAngle) * ribLen, sy + Math.sin(ribAngle) * ribLen);
+                ctx.lineWidth = 1.5;
+                ctx.strokeStyle = "rgba(255, 255, 255, 0.4)";
+                ctx.stroke();
+              }
+            }
+          }
+        });
+      });
+    }
+
+    if (struct3DState.style === "surface") {
+      const surfPoints = geom.pocketAtoms.map((a) => project(a.x * 1.5, a.y * 1.5, a.z * 1.5));
+      const avgZ = surfPoints.reduce((acc, p) => acc + p.pz, 0) / (surfPoints.length || 1);
+
+      items.push({
+        type: "surface",
+        z: avgZ - 10,
+        draw: () => {
+          ctx.beginPath();
+          surfPoints.forEach((p, idx) => {
+            if (idx === 0) ctx.moveTo(p.px, p.py);
+            else ctx.lineTo(p.px, p.py);
+          });
+          ctx.closePath();
+          ctx.fillStyle = "rgba(14, 165, 233, 0.22)";
+          ctx.fill();
+          ctx.strokeStyle = "rgba(56, 189, 248, 0.6)";
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+        }
+      });
+    }
+
+    if (struct3DState.showPocket) {
+      geom.pocketAtoms.forEach((pa, pIdx) => {
+        const p = project(pa.x, pa.y, pa.z);
+        const isSelected = struct3DState.selectedResidue === pa.r;
+
+        items.push({
+          type: "pocket_atom",
+          z: p.pz + 5,
+          draw: () => {
+            ctx.beginPath();
+            ctx.arc(p.px, p.py, Math.max(3.5, p.scale * (isSelected ? 1.4 : 0.9)), 0, Math.PI * 2);
+            ctx.fillStyle = isSelected ? "#38bdf8" : "#f59e0b";
+            ctx.fill();
+            ctx.strokeStyle = "#fff";
+            ctx.lineWidth = isSelected ? 2 : 1;
+            ctx.stroke();
+
+            const lp = project(0, 0, 0);
+            ctx.beginPath();
+            ctx.setLineDash([3, 3]);
+            ctx.moveTo(p.px, p.py);
+            ctx.lineTo(lp.px, lp.py);
+            ctx.strokeStyle = isSelected ? "rgba(56, 189, 248, 0.9)" : "rgba(245, 158, 11, 0.4)";
+            ctx.lineWidth = isSelected ? 2 : 1;
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            ctx.font = "bold 10px monospace";
+            const textWidth = ctx.measureText(pa.r).width;
+            ctx.fillStyle = isSelected ? "rgba(14, 165, 233, 0.9)" : "rgba(15, 23, 42, 0.85)";
+            ctx.fillRect(p.px + 7, p.py - 12, textWidth + 8, 16);
+            ctx.strokeStyle = isSelected ? "#fff" : "rgba(255, 255, 255, 0.25)";
+            ctx.lineWidth = 1;
+            ctx.strokeRect(p.px + 7, p.py - 12, textWidth + 8, 16);
+
+            ctx.fillStyle = isSelected ? "#fff" : "#fbbf24";
+            ctx.fillText(pa.r, p.px + 11, p.py);
+          }
+        });
+      });
+    }
+
+    if (struct3DState.showLigand) {
+      geom.ligandBonds.forEach(([i, j]) => {
+        const a1 = geom.ligandAtoms[i];
+        const a2 = geom.ligandAtoms[j];
+        const p1 = project(a1.x, a1.y, a1.z);
+        const p2 = project(a2.x, a2.y, a2.z);
+        const midZ = (p1.pz + p2.pz) * 0.5 + 8;
+
+        items.push({
+          type: "bond",
+          z: midZ,
+          draw: () => {
+            ctx.beginPath();
+            ctx.moveTo(p1.px, p1.py);
+            ctx.lineTo(p2.px, p2.py);
+            ctx.lineWidth = Math.max(2, (p1.scale + p2.scale) * 0.45);
+            ctx.strokeStyle = "#cbd5e1";
+            ctx.lineCap = "round";
+            ctx.stroke();
+          }
+        });
+      });
+
+      geom.ligandAtoms.forEach((la) => {
+        const p = project(la.x, la.y, la.z);
+
+        items.push({
+          type: "ligand_atom",
+          z: p.pz + 10,
+          draw: () => {
+            const rad = Math.max(3.5, p.scale * (la.r * 0.38));
+            const aGrad = ctx.createRadialGradient(p.px - rad * 0.3, p.py - rad * 0.3, rad * 0.1, p.px, p.py, rad);
+            aGrad.addColorStop(0, "#ffffff");
+            aGrad.addColorStop(0.3, la.c);
+            aGrad.addColorStop(1, "color-mix(in oklab, " + la.c + " 50%, #000)");
+
+            ctx.beginPath();
+            ctx.arc(p.px, p.py, rad, 0, Math.PI * 2);
+            ctx.fillStyle = aGrad;
+            ctx.fill();
+            ctx.strokeStyle = "rgba(0, 0, 0, 0.4)";
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        });
+      });
+    }
+
+    items.sort((a, b) => a.z - b.z);
+    items.forEach((item) => item.draw());
+
+    ctx.restore();
+  }
+
+  function start3DAnimationLoop() {
+    if (struct3DRaf) return;
+    function loop() {
+      if (!activeStruct3DModalOpen) {
+        struct3DRaf = null;
+        return;
+      }
+      if (struct3DState.autoRotate && !struct3DState.isDragging) {
+        struct3DState.rotY += 0.0035;
+        draw3DComplexCanvas();
+      }
+      struct3DRaf = requestAnimationFrame(loop);
+    }
+    struct3DRaf = requestAnimationFrame(loop);
+  }
+
+  function populate3DTargetSelector() {
+    const sel = $("struct3DTargetSelect");
+    if (!sel) return;
+
+    const entries = Object.values(TARGET_3D_CATALOG);
+    const groups = {};
+    entries.forEach((e) => {
+      const cls = e.class || "Inne";
+      if (!groups[cls]) groups[cls] = [];
+      groups[cls].push(e);
+    });
+
+    sel.innerHTML = Object.entries(groups).map(([cls, items]) => `
+      <optgroup label="${esc(cls)}">
+        ${items.map((it) => `<option value="${esc(it.id)}" ${it.id === struct3DState.targetId ? "selected" : ""}>${esc(it.name)} (${esc(it.pdb)})</option>`).join("")}
+      </optgroup>
+    `).join("");
+
+    sel.onchange = () => {
+      struct3DState.targetId = sel.value;
+      struct3DState.selectedResidue = null;
+      render3DSidebarDOM();
+      draw3DComplexCanvas();
+    };
+  }
+
+  function render3DSidebarDOM() {
+    const sb = $("struct3DSidebar");
+    const sub = $("struct3DSubtitle");
+    if (!sb) return;
+
+    const tInfo = resolveTarget3D(struct3DState.targetId);
+    if (sub) {
+      sub.textContent = `${tInfo.name} · ${tInfo.pdb} (${tInfo.res})`;
+    }
+
+    const tIdx = T.findIndex((x) => x.id === tInfo.id || (x.n && x.n.toLowerCase() === tInfo.name.toLowerCase()));
+    const ligands = tIdx >= 0 ? (byTarget[tIdx] || []).map((i) => C[i]) : [];
+    const ligandsSlice = ligands.slice(0, 10);
+
+    const pocketHtml = (tInfo.pocket || []).map((p) => {
+      const isSelected = struct3DState.selectedResidue === p.r;
+      return `
+        <div class="struct-pocket-pill ${isSelected ? 'active' : ''}" data-pocket-r="${esc(p.r)}" style="display:flex;justify-content:space-between;align-items:flex-start;width:100%;margin-bottom:4px">
+          <div>
+            <b style="color:var(--color-primary)">${esc(p.r)}</b>
+            <div style="font-size:10px;color:var(--color-text-muted);line-height:1.3;margin-top:2px">${esc(p.role)}</div>
+          </div>
+          <span class="struct-pill-tag">Kieszeń</span>
+        </div>
+      `;
+    }).join("");
+
+    const ligandsHtml = ligandsSlice.length ? `
+      <div style="display:flex;flex-direction:column;gap:4px;margin-top:6px">
+        ${ligandsSlice.map((c) => {
+          const inStack = state.stack.has(c.i);
+          return `
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 6px;border-radius:4px;background:var(--color-surface);border:1px solid var(--color-border);font-size:11px">
+              <span style="font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px" title="${esc(c.n)}">${esc(c.n)}</span>
+              <div style="display:flex;gap:4px">
+                <button class="btn" data-struct-goto="${c.i}" style="font-size:9px;padding:2px 5px">🎯 Graf</button>
+                <button class="btn ${inStack ? 'btn-gold' : ''}" data-struct-stack="${c.i}" style="font-size:9px;padding:2px 5px">${inStack ? '✓' : '+'}</button>
+              </div>
+            </div>
+          `;
+        }).join("")}
+        ${ligands.length > 10 ? `<small style="font-size:10px;color:var(--color-text-muted);text-align:center">+ ${ligands.length - 10} dalszych substancji</small>` : ""}
+      </div>
+    ` : '<div style="font-size:11px;color:var(--color-text-muted)">Brak bezpośrednio powiązanych leków w katalogu.</div>';
+
+    sb.innerHTML = `
+      <div style="border-bottom:1px solid var(--color-border);padding-bottom:10px">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <b style="font-size:var(--text-base);font-family:var(--font-display)">${esc(tInfo.name)}</b>
+          <span class="tag ok" style="font-size:10px">${esc(tInfo.gene || "TARGET")}</span>
+        </div>
+        <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">${esc(tInfo.class)} · ${esc(tInfo.id)}</div>
+      </div>
+
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:8px 10px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <small style="font-weight:700;text-transform:uppercase;color:var(--color-text-muted)">Holo-Struktura PDB</small>
+          <a href="https://www.rcsb.org/structure/${esc(tInfo.pdb)}" target="_blank" rel="noopener noreferrer" style="font-size:10px;font-weight:700;color:var(--color-primary)">RCSB ${esc(tInfo.pdb)} ↗</a>
+        </div>
+        <div style="font-size:12px;font-weight:700;margin-top:2px;color:var(--color-text)">${esc(tInfo.res)}</div>
+        <div style="font-size:10px;color:var(--color-text-muted);margin-top:2px">
+          UniProt: <a href="https://www.uniprot.org/uniprotkb/${esc(tInfo.uniprot)}/entry" target="_blank" rel="noopener noreferrer">${esc(tInfo.uniprot)} ↗</a> · 
+          AlphaFold: <a href="https://alphafold.ebi.ac.uk/entry/${esc(tInfo.uniprot)}" target="_blank" rel="noopener noreferrer">AF-${esc(tInfo.uniprot)} ↗</a>
+        </div>
+      </div>
+
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:8px 10px">
+        <small style="font-weight:700;text-transform:uppercase;color:var(--color-text-muted)">Ligand Krystalograficzny</small>
+        <div style="font-size:13px;font-weight:800;color:var(--color-primary);margin-top:2px">💊 ${esc(tInfo.ligand)}</div>
+        <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">${esc(tInfo.affinity)}</div>
+      </div>
+
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <small style="font-weight:700;text-transform:uppercase;color:var(--color-text-muted)">Reszty Kieszeni Wiążącej (${tInfo.pocket ? tInfo.pocket.length : 0})</small>
+          <small style="font-size:10px;color:var(--color-text-muted)">Kliknij, aby wskazać</small>
+        </div>
+        <div style="max-height:160px;overflow-y:auto;padding-right:2px">
+          ${pocketHtml}
+        </div>
+      </div>
+
+      <div>
+        <small style="font-weight:700;text-transform:uppercase;color:var(--color-text-muted)">Ligandy w Pharma-vault (${ligands.length})</small>
+        ${ligandsHtml}
+      </div>
+
+      <div style="margin-top:auto;padding-top:8px;border-top:1px solid var(--color-border);display:flex;flex-direction:column;gap:6px">
+        <a href="sidecar://biomolecular-structure-viewer" class="btn btn-gold" id="sidecarDirectLink" style="font-size:11px;text-align:center;text-decoration:none;display:block">
+          🔬 Otwórz Mol* Sidecar (3D)
+        </a>
+        <small style="font-size:9px;color:var(--color-text-muted);text-align:center">Interaktywna eksploracja w panelu Mol* Biomolecular Viewer</small>
+      </div>
+    `;
+
+    sb.querySelectorAll("[data-pocket-r]").forEach((el) => {
+      el.onclick = () => {
+        const rName = el.dataset.pocketR;
+        struct3DState.selectedResidue = struct3DState.selectedResidue === rName ? null : rName;
+        render3DSidebarDOM();
+        draw3DComplexCanvas();
+      };
+    });
+
+    sb.querySelectorAll("[data-struct-goto]").forEach((btn) => {
+      btn.onclick = () => {
+        const idx = +btn.dataset.structGoto;
+        closeStruct3DModal();
+        select({ type: "compound", i: idx }, true);
+      };
+    });
+
+    sb.querySelectorAll("[data-struct-stack]").forEach((btn) => {
+      btn.onclick = () => {
+        const idx = +btn.dataset.structStack;
+        toggleInStack(idx);
+        render3DSidebarDOM();
+      };
+    });
+  }
+
+  function openStruct3DModal(targetRef = null, ligandRef = null) {
+    const modal = $("struct3DModal");
+    if (!modal) return;
+
+    if (targetRef != null) {
+      const resolved = resolveTarget3D(targetRef);
+      struct3DState.targetId = resolved.id;
+    }
+
+    activeStruct3DModalOpen = true;
+    populate3DTargetSelector();
+    render3DSidebarDOM();
+
+    wireStruct3DModal();
+    modal.classList.add("open");
+
+    const cv = $("struct3DCanvas");
+    if (cv) {
+      cv.width = cv.clientWidth || 700;
+      cv.height = cv.clientHeight || 500;
+    }
+    draw3DComplexCanvas();
+    start3DAnimationLoop();
+  }
+
+  function closeStruct3DModal() {
+    const modal = $("struct3DModal");
+    if (modal) modal.classList.remove("open");
+    activeStruct3DModalOpen = false;
+    if (struct3DRaf) {
+      cancelAnimationFrame(struct3DRaf);
+      struct3DRaf = null;
+    }
+  }
+
+  function wireStruct3DModal() {
+    const modal = $("struct3DModal");
+    if (!modal || modal._wired) return;
+    modal._wired = true;
+
+    const closeBtn = $("struct3DModalClose");
+    if (closeBtn) closeBtn.onclick = closeStruct3DModal;
+
+    modal.onclick = (e) => {
+      if (e.target === modal) closeStruct3DModal();
+    };
+
+    const sidecarBtn = $("struct3DSidecarBtn");
+    if (sidecarBtn) {
+      sidecarBtn.onclick = () => {
+        window.location.href = "sidecar://biomolecular-structure-viewer";
+      };
+    }
+
+    const cv = $("struct3DCanvas");
+    if (cv) {
+      cv.onmousedown = (e) => {
+        struct3DState.isDragging = true;
+        struct3DState.dragButton = e.button;
+        struct3DState.lastMouseX = e.clientX;
+        struct3DState.lastMouseY = e.clientY;
+        struct3DState.autoRotate = false;
+      };
+
+      window.addEventListener("mousemove", (e) => {
+        if (!struct3DState.isDragging || !activeStruct3DModalOpen) return;
+        const dx = e.clientX - struct3DState.lastMouseX;
+        const dy = e.clientY - struct3DState.lastMouseY;
+        struct3DState.lastMouseX = e.clientX;
+        struct3DState.lastMouseY = e.clientY;
+
+        if (struct3DState.dragButton === 0) {
+          struct3DState.rotY += dx * 0.009;
+          struct3DState.rotX += dy * 0.009;
+        } else if (struct3DState.dragButton === 2) {
+          struct3DState.panX += dx;
+          struct3DState.panY += dy;
+        }
+        draw3DComplexCanvas();
+      });
+
+      window.addEventListener("mouseup", () => {
+        struct3DState.isDragging = false;
+      });
+
+      cv.oncontextmenu = (e) => e.preventDefault();
+
+      cv.onwheel = (e) => {
+        e.preventDefault();
+        const factor = e.deltaY < 0 ? 1.09 : 0.91;
+        struct3DState.zoom = Math.max(0.35, Math.min(3.8, struct3DState.zoom * factor));
+        draw3DComplexCanvas();
+      };
+
+      // Touch events for mobile/tablet
+      let touchStartX = 0, touchStartY = 0;
+      cv.ontouchstart = (e) => {
+        if (e.touches.length === 1) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          struct3DState.isDragging = true;
+          struct3DState.autoRotate = false;
+        }
+      };
+      cv.ontouchmove = (e) => {
+        if (e.touches.length === 1 && struct3DState.isDragging) {
+          const dx = e.touches[0].clientX - touchStartX;
+          const dy = e.touches[0].clientY - touchStartY;
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          struct3DState.rotY += dx * 0.01;
+          struct3DState.rotX += dy * 0.01;
+          draw3DComplexCanvas();
+        }
+      };
+      cv.ontouchend = () => {
+        struct3DState.isDragging = false;
+      };
+    }
+
+    const styleBtns = modal.querySelectorAll("[data-struct-style]");
+    styleBtns.forEach((btn) => {
+      btn.onclick = () => {
+        styleBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        struct3DState.style = btn.dataset.structStyle;
+        draw3DComplexCanvas();
+      };
+    });
+
+    const togglePocketBtn = $("struct3DTogglePocket");
+    if (togglePocketBtn) {
+      togglePocketBtn.onclick = () => {
+        struct3DState.showPocket = !struct3DState.showPocket;
+        togglePocketBtn.classList.toggle("active", struct3DState.showPocket);
+        draw3DComplexCanvas();
+      };
+    }
+
+    const toggleLigandBtn = $("struct3DToggleLigand");
+    if (toggleLigandBtn) {
+      toggleLigandBtn.onclick = () => {
+        struct3DState.showLigand = !struct3DState.showLigand;
+        toggleLigandBtn.classList.toggle("active", struct3DState.showLigand);
+        draw3DComplexCanvas();
+      };
+    }
+
+    const resetCamBtn = $("struct3DResetCamera");
+    if (resetCamBtn) {
+      resetCamBtn.onclick = () => {
+        struct3DState.rotX = 0.3;
+        struct3DState.rotY = -0.45;
+        struct3DState.rotZ = 0;
+        struct3DState.zoom = 1.0;
+        struct3DState.panX = 0;
+        struct3DState.panY = 0;
+        struct3DState.autoRotate = true;
+        draw3DComplexCanvas();
       };
     }
   }
@@ -5096,7 +6350,12 @@
       const nb = neighbours(c).slice(0, 16);
       const targetsList = (c.tg && c.tg.length) ? `
         <div class="label">Cele molekularne (${c.tg.length})</div>
-        <div class="links">${c.tg.map((t) => `<button data-t="${t}">◎ <b>${esc(T[t].n)}</b> <small style="color:var(--color-text-muted)">(${esc(T[t].ty || "target")} · ${byTarget[t].length} subst.)</small></button>`).join("")}</div>`
+        <div class="links">${c.tg.map((t) => {
+          return `<div style="display:flex;gap:4px;align-items:center;width:100%">
+            <button data-t="${t}" style="flex:1;text-align:left">◎ <b>${esc(T[t].n)}</b> <small style="color:var(--color-text-muted)">(${esc(T[t].ty || "target")} · ${byTarget[t].length} subst.)</small></button>
+            <button class="btn-copy" data-open-3d="${t}" title="Otwórz strukturę 3D i architekturę kieszeni wiążącej" style="font-size:10px;padding:3px 6px">🧊 3D</button>
+          </div>`;
+        }).join("")}</div>`
         : '<p class="empty">Brak celów molekularnych przypisanych w kuratorowanym profilu ChEMBL.</p>';
 
       const neighboursList = nb.length ? `
@@ -5260,6 +6519,11 @@
     p.querySelectorAll("[data-open-evidence]").forEach((btn) => {
       btn.onclick = () => {
         openEvidenceModal(btn.dataset.openEvidence);
+      };
+    });
+    p.querySelectorAll("[data-open-3d]").forEach((btn) => {
+      btn.onclick = () => {
+        openStruct3DModal(+btn.dataset.open3d, state.sel ? state.sel.i : null);
       };
     });
     const cardAnalogsBtn = p.querySelector("#cardAnalogsBtn");
@@ -5566,6 +6830,7 @@
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      if (activeStruct3DModalOpen) { closeStruct3DModal(); return; }
       if (activeEvidenceModalOpen) { closeEvidenceModal(); return; }
       if (activeMetaboliteQuery != null) { closeMetaboliteModal(); return; }
       if (state.edgeFilters.popoverOpen) { toggleEdgesPopover(false); return; }
@@ -5584,6 +6849,18 @@
       e.preventDefault();
       if (activeEvidenceModalOpen) closeEvidenceModal();
       else openEvidenceModal();
+      return;
+    }
+    if (e.key === "v" || e.key === "V") {
+      e.preventDefault();
+      if (activeStruct3DModalOpen) closeStruct3DModal();
+      else openStruct3DModal();
+      return;
+    }
+    if (e.key === "3" && !e.ctrlKey && !e.metaKey && !e.altKey && (!state.sel || state.sel.type !== "compound")) {
+      e.preventDefault();
+      if (activeStruct3DModalOpen) closeStruct3DModal();
+      else openStruct3DModal();
       return;
     }
     if (e.key === "e" || e.key === "E") {
@@ -5650,6 +6927,8 @@
 
   const evidenceBtn = $("evidenceBtn");
   if (evidenceBtn) evidenceBtn.onclick = () => openEvidenceModal();
+  const struct3DBtn = $("struct3DBtn");
+  if (struct3DBtn) struct3DBtn.onclick = () => openStruct3DModal();
   const evidenceCohortResetBtn = $("evidenceCohortResetBtn");
   if (evidenceCohortResetBtn) {
     evidenceCohortResetBtn.onclick = () => {

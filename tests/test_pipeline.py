@@ -927,6 +927,65 @@ def test_clinical_trials_and_evidence_explorer():
     assert "activeEvidenceModalOpen" in root_app
 
 
+def test_molecular_3d_complex_viewer():
+    """Verify 3D Molecular Pocket & Ligand-Receptor Complex Viewer markup, styles, catalog and engine."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    for el_id in [
+        "struct3DModal", "struct3DBtn", "struct3DSubtitle", "struct3DTargetSelect",
+        "struct3DSidecarBtn", "struct3DModalClose", "struct3DViewport", "struct3DCanvas",
+        "struct3DLoading", "struct3DSidebar", "struct3DTogglePocket", "struct3DToggleLigand",
+        "struct3DResetCamera"
+    ]:
+        assert f'id="{el_id}"' in html_src, f"Missing #{el_id} in index.html"
+
+    for css_cls in [
+        ".struct-modal", ".struct-head", ".struct-body", ".struct-viewport-container",
+        ".struct-viewport", ".struct-toolbar-floating", ".struct-loading", ".struct-spinner",
+        ".struct-sidebar", ".struct-pocket-pill", ".struct-pill-tag"
+    ]:
+        assert css_cls in html_src, f"Missing CSS class '{css_cls}' in index.html"
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    for term in [
+        "TARGET_3D_CATALOG",
+        "activeStruct3DModalOpen",
+        "struct3DState",
+        "function resolveTarget3D(",
+        "function generate3DStructureGeometry(",
+        "function draw3DComplexCanvas(",
+        "function start3DAnimationLoop(",
+        "function populate3DTargetSelector(",
+        "function render3DSidebarDOM(",
+        "function openStruct3DModal(",
+        "function closeStruct3DModal(",
+        "function wireStruct3DModal(",
+        "data-open-3d",
+        "targetOpen3DBtn"
+    ]:
+        assert term in app_src, f"Missing '{term}' in app.js"
+
+    # Verify curated pharmacological complexes in catalog
+    for target_key in [
+        '"CHEMBL224"', '"6WGT"', '"LSD"', '"Asp155"',
+        '"CHEMBL217"', '"6CM4"', '"Risperidone"',
+        '"CHEMBL233"', '"8EF5"', '"Fentanyl"',
+        '"CHEMBL218"', '"5U09"', '"Rimonabant"',
+        '"CHEMBL228"', '"6D6T"', '"Diazepam"',
+        '"CHEMBL238"', '"4EY7"', '"Donepezil"',
+        '"CHEMBL221"', '"3LN1"', '"Celecoxib"'
+    ]:
+        assert target_key in app_src, f"Missing target key '{target_key}' in TARGET_3D_CATALOG"
+
+    # Verify root files are synchronized
+    root_html = (ROOT.parent / "index.html").read_text(encoding="utf-8")
+    root_app = (ROOT.parent / "app.js").read_text(encoding="utf-8")
+    assert 'id="struct3DModal"' in root_html
+    assert 'id="struct3DBtn"' in root_html
+    assert "function openStruct3DModal(" in root_app
+    assert "TARGET_3D_CATALOG" in root_app
+
+
+
 
 
 

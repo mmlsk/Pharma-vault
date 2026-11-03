@@ -1,5 +1,39 @@
 # Changelog
 
+## [3.19.0] — 2026-11-03 — Wizualizator Kompleksów 3D Receptor-Ligand i Kieszeni Wiążącej (3D Molecular Pocket & Ligand-Receptor Complex Viewer)
+### Dodano
+- **Wizualizator Kompleksów 3D Receptor-Ligand i Kieszeni Wiążącej (3D Molecular Pocket Viewer)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **Dedykowany modal przestrzenny (`#struct3DModal`) z płynnym silnikiem WebGL**:
+    - Interaktywny viewport z pełną kontrolą 3D: obrót myszką (lewy przycisk), panowanie (prawy przycisk), płynny zoom (kółko myszy / gest pinch) oraz delikatna auto-rotacja w stanie spoczynku.
+    - Pływający pasek narzędzi renderowania:
+      - `Cartoon`: przestrzenne wstęgi i helisy $\alpha$ z barwnym gradientem wtórnej struktury białka.
+      - `Powierzchnia`: półprzezroczysty elektrostatyczny/hydrofobowy płaszcz molekularny otaczający wnękę kieszeni.
+      - `Sticks`: pełna architektura atomowa ze szkieletem wiązań kowalencyjnych.
+      - `✨ Kieszeń`: przełącznik wyróżnienia kluczowych aminokwasów z etykietami 3D (np. `Asp155`, `Trp336`) i wektorami oddziaływań.
+      - `💊 Ligand`: przełącznik widoczności ko-skrystalizowanego leku z atomami w standardowej konwencji CPK (C = szmaragdowy, N = błękitny, O = czerwony, S = żółty).
+      - `↺ Kamera`: reset kąta i wycentrowanie rzutu na kieszeń katalityczną.
+  - **Kuratorowana biblioteka Top 30 celów farmakologicznych (`TARGET_3D_CATALOG`)**:
+    - Eksperymentalne struktury PDB o wysokiej rozdzielczości z ko-skrystalizowanymi ligandami:
+      - GPCR monoaminowe: 5-HT2A (PDB: `6WGT` z LSD, 2.7 Å), 5-HT1A (PDB: `7E2X` z arypiprazolem), 5-HT2C (PDB: `6BQG` z ergotaminą), D2 (PDB: `6CM4` z risperidonem), D1 (PDB: `7CKZ` z apomorfiną), Adrenergiczne $\beta_2$ (`3P0G`), $\beta_1$ (`2VT4`), $\alpha_{2A}$ (`6K42`), Histaminowe $H_1$ (`3RZE` z doksepiną).
+      - Receptory opioidowe i kannabinoidowe: $\mu$-opioidowy MOR (PDB: `8EF5` z fentanylem, 2.5 Å), $\kappa$-opioidowy KOR (`6B73` z nalfurafiną), $\delta$-opioidowy DOR (`4EJ4`), CB1 (`5U09` z rimonabantem), CB2 (`6KPF`).
+      - Kanały jonowe i transportery: GABA-A (PDB: `6D6T` z diazepamem, 3.86 Å), NMDA (`7EU8` z ketaminą), SERT (`5I6X` z paroksetyną), DAT (`4M48`), Transporter noradrenaliny NET.
+      - Kluczowe enzymy i receptory jądrowe: AChE (PDB: `4EY7` z donepezilem), COX-2 (PDB: `3LN1` z celekoksybem), COX-1 (`3N8Z` z ibuprofenem), HMG-CoA reduktaza (`1HW9` z atorwastatyną), MAO-A (`2Z5X`), MAO-B (`2V5Z`), PDE5A (`1UDT` z sildenafilem), Receptor androgenowy AR (`2AM9` z DHT), AT1 (`4YAY` z olmesartanem), GLP-1R (`6X18` z semaglutydem).
+    - Zmapowane kluczowe reszty kieszeni katalitycznej (Pocket Residues) z opisami ich funkcji biochemicznej (mostki solne, wiązania wodorowe, upakowanie $\pi$-$\pi$).
+    - Uniwersalny mechanizm fallback do bazy modeli predykcyjnych AlphaFold DB (v4) dla dowolnych celów UniProt.
+  - **Boczny panel analityczny (`#struct3DSidebar`)**:
+    - Metadane strukturalne: identyfikator PDB z bezpośrednim odnośnikiem do bazy RCSB, metoda eksperymentalna, rozdzielczość w Å, kod UniProt i model AlphaFold.
+    - Karta liganda krystalograficznego z powinowactwem wiązania ($K_i$ / $\text{IC}_{50}$).
+    - Interaktywna lista reszt kieszeni wiążącej: kliknięcie reszty (np. `Asp155`) podświetla i wskazuje dany aminokwas w widoku 3D.
+    - Zestawienie ligandów z Pharma-vault celujących w dany receptor z przyciskami szybkiej selekcji na grafie (`🎯 Graf`) i dodawania do stacka (`+`).
+    - Dedykowany przycisk i link do sidecara `sidecar://biomolecular-structure-viewer` (Mol*).
+  - **Wielopunktowa integracja z interfejsem**:
+    - Przycisk w toolbarze grafu `🧊 Kompleksy 3D` (`#struct3DBtn`).
+    - Pigułki akcji `🧊 3D` przy każdym celu molekularnym na karcie leku (zakładka `Cele & MoA`).
+    - Przycisk `🧊 Struktura 3D` w nagłówku Eksploratora Celu Molekularnego (`#targetModal`).
+    - Skróty klawiszowe: `V` / `v` oraz `3` (w widoku globalnym) otwierające/zamykające wizualizator 3D; obsługa klawisza `Esc`.
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_molecular_3d_complex_viewer` weryfikujący elementy DOM, style CSS, silnik renderowania, bazę `TARGET_3D_CATALOG` oraz synchronizację plików w repozytorium (52 testy, 100% green).
+
 ## [3.18.0] — 2026-11-03 — Eksplorator Badań Klinicznych i Poziomów Dowodów (Clinical Trials & Evidence Explorer)
 ### Dodano
 - **Eksplorator Badań Klinicznych i Poziomów Dowodów (Clinical Trials & Evidence Explorer)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):

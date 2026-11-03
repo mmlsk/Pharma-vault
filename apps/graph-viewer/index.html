@@ -293,6 +293,22 @@
     .phase-2 { background: color-mix(in oklab, #f59e0b 18%, transparent); color: #f59e0b; border: 1px solid #f59e0b; }
     .phase-1 { background: color-mix(in oklab, #8b5cf6 18%, transparent); color: #8b5cf6; border: 1px solid #8b5cf6; }
     .phase-0 { background: var(--color-surface-offset); color: var(--color-text-muted); border: 1px solid var(--color-border); }
+    .struct-modal { background: var(--color-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 1220px; max-width: 96vw; max-height: 92vh; display: flex; flex-direction: column; overflow: hidden; color: var(--color-text); border: 1px solid var(--color-border); }
+    .struct-head { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); background: var(--color-surface-2); display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+    .struct-body { flex: 1; overflow-y: auto; display: grid; grid-template-columns: 1fr 340px; min-height: 520px; align-items: stretch; }
+    @media (max-width: 960px) { .struct-body { grid-template-columns: 1fr; } }
+    .struct-viewport-container { position: relative; display: flex; flex-direction: column; background: #0b0f19; min-height: 480px; overflow: hidden; }
+    .struct-viewport { flex: 1; width: 100%; height: 100%; position: relative; display: flex; align-items: center; justify-content: center; }
+    #struct3DCanvas { width: 100%; height: 100%; display: block; cursor: grab; }
+    #struct3DCanvas:active { cursor: grabbing; }
+    .struct-toolbar-floating { position: absolute; bottom: 12px; left: 12px; display: flex; align-items: center; gap: 4px; background: color-mix(in oklab, var(--color-surface) 85%, transparent); backdrop-filter: blur(8px); padding: 4px 8px; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-md); z-index: 10; }
+    .struct-loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: rgba(11, 15, 25, 0.85); color: #fff; z-index: 20; font-size: 12px; font-weight: 600; }
+    .struct-spinner { width: 28px; height: 28px; border: 3px solid rgba(255,255,255,0.2); border-top-color: var(--color-primary); border-radius: 50%; animation: struct-spin 0.8s linear infinite; }
+    @keyframes struct-spin { to { transform: rotate(360deg); } }
+    .struct-sidebar { background: var(--color-surface-2); border-left: 1px solid var(--color-border); padding: var(--space-4); display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
+    .struct-pocket-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; padding: 3px 8px; border-radius: 6px; background: var(--color-surface); border: 1px solid var(--color-border); cursor: pointer; transition: all .12s; }
+    .struct-pocket-pill:hover, .struct-pocket-pill.active { border-color: var(--color-primary); background: color-mix(in oklab, var(--color-primary) 12%, var(--color-surface)); }
+    .struct-pill-tag { font-size: 9px; font-weight: 800; padding: 1px 4px; border-radius: 4px; background: color-mix(in oklab, var(--color-warning) 20%, transparent); color: var(--color-warning); }
     .dossier-table th { background: #f8f9fa; font-weight: 600; color: #333; }
     .dossier-warn { border-left: 3px solid #d32f2f; background: #fff5f5; padding: 8px 12px; margin: 6px 0; border-radius: 2px; }
     .dossier-callout { border-left: 3px solid #1976d2; background: #f0f7ff; padding: 8px 12px; margin: 6px 0; border-radius: 2px; }
@@ -449,6 +465,7 @@
       <button class="btn btn-gold" id="stackBtn" aria-label="Mój Stack" aria-expanded="false">🧪 Mój Stack <span id="stackCountBadge" class="tab-badge" style="background:var(--color-primary);color:#fff">0</span></button>
       <button class="btn" id="edgesBtn" aria-label="Krawędzie semantyczne" aria-expanded="false" title="Filtry krawędzi semantycznych (E)">🕸️ Krawędzie</button>
       <button class="btn" id="evidenceBtn" aria-label="Eksplorator badań klinicznych i dowodów" aria-expanded="false" title="Eksplorator badań i dowodów klinicznych (R)">📊 Badania & Dowody</button>
+      <button class="btn" id="struct3DBtn" aria-label="Wizualizator kompleksów 3D receptor-ligand" aria-expanded="false" title="Wizualizator struktur 3D i kieszeni wiążących (3)">🧊 Kompleksy 3D</button>
       <button class="btn btn-gold" id="evidenceCohortResetBtn" style="display:none" title="Wyczyść filtr kohorty badań klinicznych">🎯 Kohorta: <span id="evidenceCohortCountLabel">0</span> ✕</button>
       <button class="btn" id="theme" aria-label="Przełącz motyw" aria-pressed="false">Motyw</button>
       <button class="btn" id="reset">Widok całości</button>
@@ -690,6 +707,46 @@
         <div id="evidenceGrid" class="evidence-grid">
           <!-- Renderowane przez app.js -->
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="struct3DModal" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Wizualizator Kompleksów 3D Receptor-Ligand i Kieszeni Wiążącej">
+  <div class="struct-modal">
+    <div class="struct-head">
+      <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap">
+        <b style="font-size:var(--text-base);font-family:var(--font-display)">🧊 Wizualizator Kompleksów 3D & Kieszeni Wiążącej</b>
+        <span id="struct3DSubtitle" class="tag" style="font-size:11px">PDB Holo-kompleks & Architektura Kieszeni</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <select id="struct3DTargetSelect" style="font-size:11px;padding:4px 8px;border-radius:6px;border:1px solid var(--color-border);background:var(--color-surface);color:var(--color-text);max-width:240px">
+          <!-- Opcje generowane przez app.js -->
+        </select>
+        <button class="btn btn-gold" id="struct3DSidecarBtn" style="font-size:11px;padding:4px 10px" title="Otwórz pełny widok w Mol* Viewer (Sidecar)">🔬 Mol* Sidecar</button>
+        <button class="card-close" id="struct3DModalClose" title="Zamknij (Esc)" aria-label="Zamknij wizualizator 3D">✕</button>
+      </div>
+    </div>
+    <div class="struct-body">
+      <div class="struct-viewport-container">
+        <div id="struct3DViewport" class="struct-viewport">
+          <canvas id="struct3DCanvas"></canvas>
+          <div id="struct3DLoading" class="struct-loading" style="display:none">
+            <span class="struct-spinner"></span>
+            <span id="struct3DLoadingText">Ładowanie struktury 3D...</span>
+          </div>
+        </div>
+        <div class="struct-toolbar-floating">
+          <button class="preset-btn active" data-struct-style="cartoon" title="Wstęgi i helisy (Cartoon)">Cartoon</button>
+          <button class="preset-btn" data-struct-style="surface" title="Powierzchnia molekularna">Powierzchnia</button>
+          <button class="preset-btn" data-struct-style="sticks" title="Wszystkie wiązania atomowe (Sticks)">Sticks</button>
+          <div style="width:1px;height:16px;background:var(--color-border);margin:0 2px"></div>
+          <button class="preset-btn active" id="struct3DTogglePocket" title="Podświetl reszty kieszeni wiążącej">✨ Kieszeń</button>
+          <button class="preset-btn active" id="struct3DToggleLigand" title="Pokaż/Ukryj ligand">💊 Ligand</button>
+          <button class="preset-btn" id="struct3DResetCamera" title="Wyśrodkuj kamerę">↺ Kamera</button>
+        </div>
+      </div>
+      <div class="struct-sidebar" id="struct3DSidebar">
+        <!-- Renderowane przez app.js -->
       </div>
     </div>
   </div>
