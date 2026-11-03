@@ -268,6 +268,31 @@
     .dossier-sec-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #666; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-bottom: 8px; }
     .dossier-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 4px; }
     .dossier-table th, .dossier-table td { padding: 6px 8px; border: 1px solid #e0e0e0; text-align: left; vertical-align: top; }
+    .evidence-modal { background: var(--color-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 1180px; max-width: 96vw; max-height: 92vh; display: flex; flex-direction: column; overflow: hidden; color: var(--color-text); border: 1px solid var(--color-border); }
+    .evidence-head { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); background: var(--color-surface-2); display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+    .evidence-body { flex: 1; overflow-y: auto; padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); }
+    .evidence-kpi-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+    .evidence-kpi-item { background: var(--color-surface-2); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 8px 12px; display: flex; flex-direction: column; }
+    .evidence-kpi-item small { font-size: 10px; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+    .evidence-kpi-item b { font-size: var(--text-lg); font-variant-numeric: tabular-nums; color: var(--color-primary); }
+    .evidence-funnel { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+    @media (max-width: 800px) { .evidence-funnel { grid-template-columns: repeat(2, 1fr); } }
+    .evidence-funnel-card { background: var(--color-surface-2); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px; cursor: pointer; transition: all .15s; display: flex; flex-direction: column; gap: 4px; position: relative; }
+    .evidence-funnel-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+    .evidence-funnel-card.active { border-color: var(--color-primary); background: color-mix(in oklab, var(--color-primary) 10%, var(--color-surface-2)); box-shadow: 0 0 0 2px var(--color-primary); }
+    .evidence-funnel-card .badge { align-self: flex-start; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
+    .evidence-timeline-bar { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; flex-wrap: wrap; }
+    .evidence-timeline-pill { font-size: 11px; padding: 3px 8px; border-radius: 6px; background: var(--color-surface-2); border: 1px solid var(--color-border); cursor: pointer; color: var(--color-text-muted); transition: all .12s; }
+    .evidence-timeline-pill:hover, .evidence-timeline-pill.active { background: color-mix(in oklab, var(--color-primary) 12%, var(--color-surface)); color: var(--color-primary); border-color: var(--color-primary); font-weight: 700; }
+    .evidence-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 12px; }
+    .evidence-drug-card { background: var(--color-surface-2); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; transition: border-color .15s; }
+    .evidence-drug-card:hover { border-color: var(--color-primary); }
+    .evidence-badge-phase { font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 4px; }
+    .phase-4 { background: color-mix(in oklab, var(--color-success) 18%, transparent); color: var(--color-success); border: 1px solid var(--color-success); }
+    .phase-3 { background: color-mix(in oklab, #0284c7 18%, transparent); color: #0284c7; border: 1px solid #0284c7; }
+    .phase-2 { background: color-mix(in oklab, #f59e0b 18%, transparent); color: #f59e0b; border: 1px solid #f59e0b; }
+    .phase-1 { background: color-mix(in oklab, #8b5cf6 18%, transparent); color: #8b5cf6; border: 1px solid #8b5cf6; }
+    .phase-0 { background: var(--color-surface-offset); color: var(--color-text-muted); border: 1px solid var(--color-border); }
     .dossier-table th { background: #f8f9fa; font-weight: 600; color: #333; }
     .dossier-warn { border-left: 3px solid #d32f2f; background: #fff5f5; padding: 8px 12px; margin: 6px 0; border-radius: 2px; }
     .dossier-callout { border-left: 3px solid #1976d2; background: #f0f7ff; padding: 8px 12px; margin: 6px 0; border-radius: 2px; }
@@ -423,6 +448,8 @@
     <div class="toolbar">
       <button class="btn btn-gold" id="stackBtn" aria-label="Mój Stack" aria-expanded="false">🧪 Mój Stack <span id="stackCountBadge" class="tab-badge" style="background:var(--color-primary);color:#fff">0</span></button>
       <button class="btn" id="edgesBtn" aria-label="Krawędzie semantyczne" aria-expanded="false" title="Filtry krawędzi semantycznych (E)">🕸️ Krawędzie</button>
+      <button class="btn" id="evidenceBtn" aria-label="Eksplorator badań klinicznych i dowodów" aria-expanded="false" title="Eksplorator badań i dowodów klinicznych (R)">📊 Badania & Dowody</button>
+      <button class="btn btn-gold" id="evidenceCohortResetBtn" style="display:none" title="Wyczyść filtr kohorty badań klinicznych">🎯 Kohorta: <span id="evidenceCohortCountLabel">0</span> ✕</button>
       <button class="btn" id="theme" aria-label="Przełącz motyw" aria-pressed="false">Motyw</button>
       <button class="btn" id="reset">Widok całości</button>
     </div>
@@ -607,6 +634,62 @@
     <div class="dossier-body">
       <div class="dossier-sheet" id="dossierSheet">
         <!-- Renderowane przez app.js -->
+      </div>
+    </div>
+  </div>
+</div>
+<div id="evidenceModal" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Eksplorator Badań Klinicznych i Poziomów Dowodów">
+  <div class="evidence-modal">
+    <div class="evidence-head">
+      <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap">
+        <b style="font-size:var(--text-base);font-family:var(--font-display)">📊 Eksplorator Badań Klinicznych & Dowodów</b>
+        <span id="evidenceSubtitle" class="tag" style="font-size:11px">Faza kliniczna, audyt DailyMed / SmPC & timeline</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button class="btn btn-gold" id="evidenceApplyGraphBtn" style="font-size:11px;padding:4px 10px">🎯 Zastosuj do Grafu</button>
+        <button class="card-close" id="evidenceModalClose" title="Zamknij (Esc)" aria-label="Zamknij eksplorator badań">✕</button>
+      </div>
+    </div>
+    <div class="evidence-body">
+      <!-- KPI bar -->
+      <div class="evidence-kpi-bar" id="evidenceKpiBar"></div>
+      <!-- Funnel Phases -->
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <small class="muted" style="font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Ścieżka Rozwoju Klinicznego (Funnel)</small>
+          <small id="evidenceFilterHint" class="muted">Kliknij fazę, aby przefiltrować</small>
+        </div>
+        <div class="evidence-funnel" id="evidenceFunnel"></div>
+      </div>
+      <!-- Regulatory & Timeline Filters -->
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;background:var(--color-surface-offset);padding:10px;border-radius:var(--radius-md);border:1px solid var(--color-border)">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <span style="font-size:11px;font-weight:700;color:var(--color-text-muted)">Audyt & Nadzór:</span>
+          <button class="evidence-timeline-pill" id="evFilterFdaBtn">🇺🇸 FDA DailyMed</button>
+          <button class="evidence-timeline-pill" id="evFilterEmaBtn">🇪🇺 EMA SmPC</button>
+          <button class="evidence-timeline-pill" id="evFilterDiscBtn">⚠️ Niespójności FDA/EMA</button>
+          <button class="evidence-timeline-pill" id="evFilterBlackBoxBtn">⬛ Black Box</button>
+          <button class="evidence-timeline-pill" id="evFilterWithdrawnBtn">🚫 Wycofane</button>
+        </div>
+        <div style="display:flex;gap:6px;align-items:center">
+          <input type="text" id="evidenceSearchInput" placeholder="Szukaj w kohorcie..." style="font-size:11px;padding:4px 8px;border-radius:6px;border:1px solid var(--color-border);background:var(--color-surface);color:var(--color-text);min-width:180px" />
+          <button class="btn" id="evidenceResetFiltersBtn" style="font-size:11px;padding:4px 8px">Resetuj filtry</button>
+        </div>
+      </div>
+      <!-- Approval Timeline -->
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <small class="muted" style="font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Dekada Pierwszej Rejestracji (First Approval Timeline)</small>
+        <div class="evidence-timeline-bar" id="evidenceTimelineBar"></div>
+      </div>
+      <!-- Cohort Results -->
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div class="label" style="margin-bottom:0" id="evidenceCohortCount">Substancje w wybranej kohorcie</div>
+          <small class="muted" id="evidenceCohortSummary"></small>
+        </div>
+        <div id="evidenceGrid" class="evidence-grid">
+          <!-- Renderowane przez app.js -->
+        </div>
       </div>
     </div>
   </div>

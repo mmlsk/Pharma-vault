@@ -876,6 +876,58 @@ def test_metabolite_tree_and_prodrug_navigator():
     assert '"enalaprilat-anhydrous-compound"' in app_src
 
 
+def test_clinical_trials_and_evidence_explorer():
+    """Verify Clinical Trials & Evidence Explorer markup, styles, engine, and UI integrations."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    for el_id in [
+        "evidenceModal", "evidenceBtn", "evidenceSubtitle", "evidenceApplyGraphBtn",
+        "evidenceModalClose", "evidenceKpiBar", "evidenceFunnel", "evidenceTimelineBar",
+        "evidenceGrid", "evFilterFdaBtn", "evFilterEmaBtn", "evFilterDiscBtn",
+        "evFilterBlackBoxBtn", "evFilterWithdrawnBtn", "evidenceSearchInput",
+        "evidenceResetFiltersBtn", "evidenceCohortResetBtn"
+    ]:
+        assert f'id="{el_id}"' in html_src, f"Missing #{el_id} in index.html"
+
+    for css_cls in [
+        ".evidence-modal", ".evidence-head", ".evidence-body", ".evidence-kpi-bar",
+        ".evidence-funnel", ".evidence-funnel-card", ".evidence-timeline-bar",
+        ".evidence-timeline-pill", ".evidence-grid", ".evidence-drug-card",
+        ".phase-4", ".phase-3", ".phase-2", ".phase-1", ".phase-0"
+    ]:
+        assert css_cls in html_src, f"Missing CSS class '{css_cls}' in index.html"
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    for term in [
+        "activeEvidenceModalOpen",
+        "evidenceFilterState",
+        "function getCompoundApprovalDecade(",
+        "function computeEvidenceStats(",
+        "function filterEvidenceCohort(",
+        "function updateEvidenceCohortIndicator(",
+        "function renderEvidenceKPIs(",
+        "function renderEvidenceFunnel(",
+        "function renderEvidenceTimelineBar(",
+        "function renderEvidenceDrugCards(",
+        "function openEvidenceModal(",
+        "function closeEvidenceModal(",
+        "function resetEvidenceFilters(",
+        "evidenceCohort",
+        "cardEvidenceBtn",
+        "safetyEvidenceBtn",
+        "data-open-evidence"
+    ]:
+        assert term in app_src, f"Missing '{term}' in app.js"
+
+    # Verify root files are synchronized
+    root_html = (ROOT.parent / "index.html").read_text(encoding="utf-8")
+    root_app = (ROOT.parent / "app.js").read_text(encoding="utf-8")
+    assert 'id="evidenceModal"' in root_html
+    assert 'id="evidenceBtn"' in root_html
+    assert "function openEvidenceModal(" in root_app
+    assert "activeEvidenceModalOpen" in root_app
+
+
+
 
 
 

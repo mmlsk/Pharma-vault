@@ -78,7 +78,8 @@
       enabled: new Set(["PRODRUG_OF", "CONTRAINDICATION", "CYP_INTERACTION", "TARGET_SYNERGY", "TARGET_ANTAGONISM"]),
       globalMode: false,
       popoverOpen: false
-    }
+    },
+    evidenceCohort: null
   };
   let W = 0, H = 0, dpr = 1, raf = 0;
 
@@ -1795,6 +1796,556 @@
     modal.onclick = (e) => {
       if (e.target === modal) closeMetaboliteModal();
     };
+  }
+
+  // =========================================================================
+  // ---------- Clinical Trials & Evidence Explorer (v3.18.0)
+  // =========================================================================
+
+  let activeEvidenceModalOpen = false;
+  let evidenceFilterState = {
+    phase: null,           // null | 4 | 3 | 2 | 1 | 0
+    fda: null,             // null | 'consistent' | 'discrepant' | 'any'
+    ema: null,             // null | 'consistent' | 'discrepant' | 'any'
+    discrepantOnly: false, // boolean
+    blackBox: false,       // boolean
+    withdrawn: false,      // boolean
+    decade: null,          // null | '<1960' | '1960s' | '1970s' | '1980s' | '1990s' | '2000s' | '2010s' | '2020+'
+    query: ""              // string
+  };
+  let evidenceRenderLimit = 60;
+
+  const EVIDENCE_DECADES = [
+    { id: "<1960", label: "Do 1959" },
+    { id: "1960s", label: "Lata 60." },
+    { id: "1970s", label: "Lata 70." },
+    { id: "1980s", label: "Lata 80." },
+    { id: "1990s", label: "Lata 90." },
+    { id: "2000s", label: "2000–2009" },
+    { id: "2010s", label: "2010–2019" },
+    { id: "2020+", label: "Od 2020" }
+  ];
+
+  function getCompoundApprovalDecade(year) {
+    if (!year || typeof year !== "number") return null;
+    if (year < 1960) return "<1960";
+    if (year < 1970) return "1960s";
+    if (year < 1980) return "1970s";
+    if (year < 1990) return "1980s";
+    if (year < 2000) return "1990s";
+    if (year < 2010) return "2000s";
+    if (year < 2020) return "2010s";
+    return "2020+";
+  }
+
+  function computeEvidenceStats() {
+    let p4 = 0, p3 = 0, p2 = 0, p1 = 0, p0 = 0;
+    let fdaTotal = 0, fdaCons = 0, fdaDisc = 0;
+    let emaTotal = 0, emaCons = 0, emaDisc = 0;
+    let bbCount = 0, wdCount = 0;
+    const decadeCounts = {};
+    EVIDENCE_DECADES.forEach((d) => { decadeCounts[d.id] = 0; });
+
+    for (let i = 0; i < C.length; i++) {
+      const c = C[i];
+      if (c.ph === 4) p4++;
+      else if (c.ph === 3) p3++;
+      else if (c.ph === 2) p2++;
+      else if (c.ph === 1) p1++;
+      else p0++;
+
+      if (c.v) {
+        fdaTotal++;
+        if (c.v.s === "consistent") fdaCons++;
+        else if (c.v.s === "discrepant") fdaDisc++;
+      }
+      if (c.ve) {
+        emaTotal++;
+        if (c.ve.s === "consistent") emaCons++;
+        else if (c.ve.s === "discrepant") emaDisc++;
+      }
+      if (c.bb) bbCount++;
+      if (c.wd) wdCount++;
+
+      const dec = getCompoundApprovalDecade(c.fa);
+      if (dec && decadeCounts[dec] !== undefined) {
+        decadeCounts[dec]++;
+      }
+    }
+
+    return {
+      total: C.length,
+      funnel: { p4, p3, p2, p1, p0 },
+      regulatory: { fdaTotal, fdaCons, fdaDisc, emaTotal, emaCons, emaDisc, bbCount, wdCount },
+      decades: decadeCounts
+    };
+  }
+
+  function filterEvidenceCohort() {
+    const q = evidenceFilterState.query.trim().toLowerCase();
+    const res = [];
+
+    for (let i = 0; i < C.length; i++) {
+      const c = C[i];
+
+      // Phase filter
+      if (evidenceFilterState.phase !== null) {
+        if (evidenceFilterState.phase === 0) {
+          if (c.ph && c.ph >= 1) continue;
+        } else {
+          if (c.ph !== evidenceFilterState.phase) continue;
+        }
+      }
+
+      // FDA filter
+      if (evidenceFilterState.fda) {
+        if (!c.v) continue;
+        if (evidenceFilterState.fda !== "any" && c.v.s !== evidenceFilterState.fda) continue;
+      }
+
+      // EMA filter
+      if (evidenceFilterState.ema) {
+        if (!c.ve) continue;
+        if (evidenceFilterState.ema !== "any" && c.ve.s !== evidenceFilterState.ema) continue;
+      }
+
+      // Discrepant only
+      if (evidenceFilterState.discrepantOnly) {
+        const isDisc = (c.v && c.v.s === "discrepant") || (c.ve && c.ve.s === "discrepant");
+        if (!isDisc) continue;
+      }
+
+      // Black box
+      if (evidenceFilterState.blackBox && !c.bb) continue;
+
+      // Withdrawn
+      if (evidenceFilterState.withdrawn && !c.wd) continue;
+
+      // Decade
+      if (evidenceFilterState.decade !== null) {
+        const dec = getCompoundApprovalDecade(c.fa);
+        if (dec !== evidenceFilterState.decade) continue;
+      }
+
+      // Search query
+      if (q) {
+        const matchName = c.n && c.n.toLowerCase().includes(q);
+        const matchId = c.id && c.id.toLowerCase().includes(q);
+        const matchHay = c.hay && c.hay.includes(q);
+        const matchDesc = c.d && c.d.toLowerCase().includes(q);
+        if (!matchName && !matchId && !matchHay && !matchDesc) continue;
+      }
+
+      res.push(c);
+    }
+
+    return res;
+  }
+
+  function updateEvidenceCohortIndicator() {
+    const btn = $("evidenceCohortResetBtn");
+    const lbl = $("evidenceCohortCountLabel");
+    if (!btn || !lbl) return;
+    if (state.evidenceCohort) {
+      btn.style.display = "inline-flex";
+      lbl.textContent = state.evidenceCohort.size.toLocaleString("pl");
+    } else {
+      btn.style.display = "none";
+    }
+  }
+
+  function renderEvidenceKPIs(stats) {
+    const kpiBar = $("evidenceKpiBar");
+    if (!kpiBar) return;
+    const fdaPct = Math.round((stats.regulatory.fdaCons / (stats.regulatory.fdaTotal || 1)) * 100);
+    const emaPct = Math.round((stats.regulatory.emaCons / (stats.regulatory.emaTotal || 1)) * 100);
+    const p4Pct = Math.round((stats.funnel.p4 / stats.total) * 100);
+
+    kpiBar.innerHTML = `
+      <div class="evidence-kpi-item">
+        <small>Zatwierdzone (Faza 4)</small>
+        <b>${stats.funnel.p4.toLocaleString("pl")} <span style="font-size:11px;color:var(--color-text-muted);font-weight:normal">(${p4Pct}%)</span></b>
+      </div>
+      <div class="evidence-kpi-item">
+        <small>Etykiety DailyMed FDA</small>
+        <b>${stats.regulatory.fdaTotal.toLocaleString("pl")} <span style="font-size:11px;color:var(--color-success);font-weight:normal">(${fdaPct}% ✓)</span></b>
+      </div>
+      <div class="evidence-kpi-item">
+        <small>Dokumentacja SmPC EMA</small>
+        <b>${stats.regulatory.emaTotal.toLocaleString("pl")} <span style="font-size:11px;color:var(--color-success);font-weight:normal">(${emaPct}% ✓)</span></b>
+      </div>
+      <div class="evidence-kpi-item">
+        <small>Black Box Warning</small>
+        <b style="color:var(--color-warning)">${stats.regulatory.bbCount.toLocaleString("pl")}</b>
+      </div>
+      <div class="evidence-kpi-item">
+        <small>Leki wycofane</small>
+        <b style="color:var(--color-error)">${stats.regulatory.wdCount.toLocaleString("pl")}</b>
+      </div>
+    `;
+  }
+
+  function renderEvidenceFunnel(stats) {
+    const funnelEl = $("evidenceFunnel");
+    if (!funnelEl) return;
+    const stages = [
+      { phase: 4, badge: "Faza 4", cls: "phase-4", name: "Zatwierdzone (Approved)", count: stats.funnel.p4, desc: "Leki w obrocie z pełną dokumentacją" },
+      { phase: 3, badge: "Faza 3", cls: "phase-3", name: "Zaawansowane Badania", count: stats.funnel.p3, desc: "Duże próby kliniczne, faza rejestracyjna" },
+      { phase: 2, badge: "Faza 2", cls: "phase-2", name: "Skuteczność (POC)", count: stats.funnel.p2, desc: "Dowód koncepcji & dawkowanie w chorych" },
+      { phase: 1, badge: "Faza 1", cls: "phase-1", name: "Bezpieczeństwo & PK", count: stats.funnel.p1, desc: "Pierwsze podanie u ludzi, farmakokinetyka" },
+      { phase: 0, badge: "Faza 0", cls: "phase-0", name: "Prekliniczne / Odkrycie", count: stats.funnel.p0, desc: "Ligandy eksperymentalne i badawcze" }
+    ];
+
+    funnelEl.innerHTML = stages.map((s) => {
+      const active = evidenceFilterState.phase === s.phase;
+      const pct = ((s.count / stats.total) * 100).toFixed(1);
+      return `
+        <div class="evidence-funnel-card ${active ? 'active' : ''}" data-ev-phase="${s.phase}">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="badge ${s.cls}">${s.badge}</span>
+            <small style="font-size:10px;color:var(--color-text-muted)">${pct}%</small>
+          </div>
+          <div style="font-weight:700;font-size:12px;margin-top:2px">${s.name}</div>
+          <div style="font-size:18px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--color-primary)">${s.count.toLocaleString("pl")}</div>
+          <div style="font-size:10px;color:var(--color-text-muted);line-height:1.3">${s.desc}</div>
+        </div>
+      `;
+    }).join("");
+
+    funnelEl.querySelectorAll("[data-ev-phase]").forEach((el) => {
+      el.onclick = () => {
+        const ph = +el.dataset.evPhase;
+        evidenceFilterState.phase = (evidenceFilterState.phase === ph) ? null : ph;
+        evidenceRenderLimit = 60;
+        updateEvidenceModalUI();
+      };
+    });
+  }
+
+  function renderEvidenceTimelineBar(stats) {
+    const bar = $("evidenceTimelineBar");
+    if (!bar) return;
+
+    bar.innerHTML = EVIDENCE_DECADES.map((d) => {
+      const cnt = stats.decades[d.id] || 0;
+      const active = evidenceFilterState.decade === d.id;
+      return `
+        <button class="evidence-timeline-pill ${active ? 'active' : ''}" data-ev-decade="${d.id}">
+          ${d.label} <small style="opacity:.8;font-weight:normal">(${cnt})</small>
+        </button>
+      `;
+    }).join("");
+
+    bar.querySelectorAll("[data-ev-decade]").forEach((el) => {
+      el.onclick = () => {
+        const dec = el.dataset.evDecade;
+        evidenceFilterState.decade = (evidenceFilterState.decade === dec) ? null : dec;
+        evidenceRenderLimit = 60;
+        updateEvidenceModalUI();
+      };
+    });
+  }
+
+  function updateEvidenceAuditFilterButtons() {
+    const fdaBtn = $("evFilterFdaBtn");
+    if (fdaBtn) fdaBtn.classList.toggle("active", evidenceFilterState.fda !== null);
+    const emaBtn = $("evFilterEmaBtn");
+    if (emaBtn) emaBtn.classList.toggle("active", evidenceFilterState.ema !== null);
+    const discBtn = $("evFilterDiscBtn");
+    if (discBtn) discBtn.classList.toggle("active", evidenceFilterState.discrepantOnly);
+    const bbBtn = $("evFilterBlackBoxBtn");
+    if (bbBtn) bbBtn.classList.toggle("active", evidenceFilterState.blackBox);
+    const wdBtn = $("evFilterWithdrawnBtn");
+    if (wdBtn) wdBtn.classList.toggle("active", evidenceFilterState.withdrawn);
+  }
+
+  function renderEvidenceDrugCards(cohort) {
+    const grid = $("evidenceGrid");
+    const countEl = $("evidenceCohortCount");
+    const summaryEl = $("evidenceCohortSummary");
+    if (!grid) return;
+
+    if (countEl) countEl.textContent = `Substancje w wybranej kohorcie (${cohort.length.toLocaleString("pl")})`;
+    if (summaryEl) {
+      const parts = [];
+      if (evidenceFilterState.phase !== null) parts.push(evidenceFilterState.phase === 0 ? "Faza 0 (Prekliniczne)" : `Faza ${evidenceFilterState.phase}`);
+      if (evidenceFilterState.fda) parts.push(`FDA: ${evidenceFilterState.fda}`);
+      if (evidenceFilterState.ema) parts.push(`EMA: ${evidenceFilterState.ema}`);
+      if (evidenceFilterState.discrepantOnly) parts.push("Rozbieżności etykiet");
+      if (evidenceFilterState.blackBox) parts.push("Black Box");
+      if (evidenceFilterState.withdrawn) parts.push("Wycofane");
+      if (evidenceFilterState.decade) parts.push(`Dekada: ${evidenceFilterState.decade}`);
+      if (evidenceFilterState.query) parts.push(`"${evidenceFilterState.query}"`);
+      summaryEl.textContent = parts.length ? `Aktywne filtry: ${parts.join(" · ")}` : "Wszystkie substancje";
+    }
+
+    if (!cohort.length) {
+      grid.innerHTML = '<p class="empty" style="grid-column:1/-1;padding:2rem;text-align:center">Brak substancji spełniających wybrane kryteria dowodowe.</p>';
+      return;
+    }
+
+    const visibleItems = cohort.slice(0, evidenceRenderLimit);
+    grid.innerHTML = visibleItems.map((c) => {
+      const struct = getChemStructure(c);
+      let phaseBadge = '<span class="evidence-badge-phase phase-0">Faza 0 / Badawcza</span>';
+      if (c.ph === 4) phaseBadge = '<span class="evidence-badge-phase phase-4">Faza 4 · Approved</span>';
+      else if (c.ph === 3) phaseBadge = '<span class="evidence-badge-phase phase-3">Faza 3 · Trial</span>';
+      else if (c.ph === 2) phaseBadge = '<span class="evidence-badge-phase phase-2">Faza 2 · POC</span>';
+      else if (c.ph === 1) phaseBadge = '<span class="evidence-badge-phase phase-1">Faza 1 · PK/Tox</span>';
+
+      const regBadges = [];
+      if (c.v) {
+        if (c.v.s === "consistent") regBadges.push('<span class="tag ok" style="font-size:10px">✓ FDA</span>');
+        else if (c.v.s === "discrepant") regBadges.push('<span class="tag warn" style="font-size:10px">≠ FDA</span>');
+        else regBadges.push('<span class="tag" style="font-size:10px">FDA</span>');
+      }
+      if (c.ve) {
+        if (c.ve.s === "consistent") regBadges.push('<span class="tag ok" style="font-size:10px">✓ EMA</span>');
+        else if (c.ve.s === "discrepant") regBadges.push('<span class="tag warn" style="font-size:10px">≠ EMA</span>');
+        else regBadges.push('<span class="tag" style="font-size:10px">EMA</span>');
+      }
+      if (c.bb) regBadges.push('<span class="tag warn" style="font-size:10px;font-weight:700">⬛ Black Box</span>');
+      if (c.wd) regBadges.push('<span class="tag warn" style="font-size:10px;font-weight:700">🚫 Wycofany</span>');
+
+      const inStack = state.stack.has(c.i);
+      const g = GR[c.g] || { label: "" };
+
+      return `
+        <div class="evidence-drug-card">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:2px">
+                ${phaseBadge}
+                ${c.fa ? `<span class="muted" style="font-size:10px;font-weight:600">Rej. ${c.fa}</span>` : ""}
+              </div>
+              <b style="font-size:var(--text-sm);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${esc(c.n)}">${esc(c.n)}</b>
+              <small class="muted" style="font-size:10px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(g.label || "")}</small>
+            </div>
+            ${struct ? `
+              <div style="width:48px;height:48px;flex-shrink:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden" data-zoom-chem="${c.i}" title="Powiększ strukturę 2D">
+                <img src="${struct.url}" alt="${esc(c.n)}" style="max-width:44px;max-height:44px;object-fit:contain" loading="lazy">
+              </div>` : ""}
+          </div>
+          ${regBadges.length ? `<div style="display:flex;flex-wrap:wrap;gap:4px">${regBadges.join("")}</div>` : ""}
+          <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:auto;padding-top:6px;border-top:1px solid var(--color-border)">
+            <button class="btn" data-ev-goto="${c.i}" style="font-size:10px;padding:3px 6px" title="Zaznacz substancję na grafie">🎯 Graf</button>
+            <button class="btn ${inStack ? 'btn-gold' : ''}" data-ev-stack="${c.i}" style="font-size:10px;padding:3px 6px">${inStack ? '✓ Stack' : '+ Stack'}</button>
+            <button class="btn" data-ev-compare="${c.i}" style="font-size:10px;padding:3px 6px" title="Porównaj">⚖️</button>
+            <button class="btn" data-ev-meta="${c.i}" style="font-size:10px;padding:3px 6px" title="Kaskada metabolitów">🌿</button>
+            <button class="btn" data-ev-dossier="${c.i}" style="font-size:10px;padding:3px 6px" title="Kliniczna monografia (Dossier)">📄</button>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    if (cohort.length > evidenceRenderLimit) {
+      const moreBtn = document.createElement("button");
+      moreBtn.className = "btn";
+      moreBtn.style.gridColumn = "1/-1";
+      moreBtn.style.margin = "12px auto";
+      moreBtn.style.padding = "8px 24px";
+      moreBtn.style.fontWeight = "600";
+      moreBtn.textContent = `Pokaż kolejne 60 z ${cohort.length.toLocaleString("pl")} substancji...`;
+      moreBtn.onclick = () => {
+        evidenceRenderLimit += 60;
+        renderEvidenceDrugCards(cohort);
+      };
+      grid.appendChild(moreBtn);
+    }
+
+    grid.querySelectorAll("[data-ev-goto]").forEach((btn) => {
+      btn.onclick = () => {
+        const idx = +btn.dataset.evGoto;
+        closeEvidenceModal();
+        select({ type: "compound", i: idx }, true);
+      };
+    });
+    grid.querySelectorAll("[data-ev-stack]").forEach((btn) => {
+      btn.onclick = () => {
+        const idx = +btn.dataset.evStack;
+        toggleInStack(idx);
+        renderEvidenceDrugCards(cohort);
+      };
+    });
+    grid.querySelectorAll("[data-ev-compare]").forEach((btn) => {
+      btn.onclick = () => {
+        const idx = +btn.dataset.evCompare;
+        const stackList = [...state.stack];
+        if (stackList.length && !stackList.includes(idx)) {
+          openComparator([idx, ...stackList]);
+        } else {
+          openComparator([idx]);
+        }
+      };
+    });
+    grid.querySelectorAll("[data-ev-meta]").forEach((btn) => {
+      btn.onclick = () => {
+        const idx = +btn.dataset.evMeta;
+        openMetaboliteModal(idx);
+      };
+    });
+    grid.querySelectorAll("[data-ev-dossier]").forEach((btn) => {
+      btn.onclick = () => {
+        const idx = +btn.dataset.evDossier;
+        openDossierModal("single", idx);
+      };
+    });
+    grid.querySelectorAll("[data-zoom-chem]").forEach((el) => {
+      el.onclick = () => openChemLightBox(+el.dataset.zoomChem);
+    });
+  }
+
+  function updateEvidenceModalUI() {
+    const stats = computeEvidenceStats();
+    renderEvidenceKPIs(stats);
+    renderEvidenceFunnel(stats);
+    renderEvidenceTimelineBar(stats);
+    updateEvidenceAuditFilterButtons();
+    const cohort = filterEvidenceCohort();
+    renderEvidenceDrugCards(cohort);
+  }
+
+  function openEvidenceModal(initialFilter = null) {
+    const modal = $("evidenceModal");
+    if (!modal) return;
+
+    if (initialFilter) {
+      if (initialFilter.startsWith("phase:")) {
+        const p = +initialFilter.slice(6);
+        evidenceFilterState.phase = p;
+      } else if (initialFilter === "fda:consistent") {
+        evidenceFilterState.fda = "consistent";
+      } else if (initialFilter === "fda:discrepant") {
+        evidenceFilterState.fda = "discrepant";
+      } else if (initialFilter === "ema:consistent") {
+        evidenceFilterState.ema = "consistent";
+      } else if (initialFilter === "ema:discrepant") {
+        evidenceFilterState.ema = "discrepant";
+      } else if (initialFilter === "blackbox") {
+        evidenceFilterState.blackBox = true;
+      } else if (initialFilter === "withdrawn") {
+        evidenceFilterState.withdrawn = true;
+      }
+    }
+
+    activeEvidenceModalOpen = true;
+    evidenceRenderLimit = 60;
+    updateEvidenceModalUI();
+    wireEvidenceModal();
+    modal.classList.add("open");
+  }
+
+  function closeEvidenceModal() {
+    const modal = $("evidenceModal");
+    if (modal) modal.classList.remove("open");
+    activeEvidenceModalOpen = false;
+  }
+
+  function resetEvidenceFilters() {
+    evidenceFilterState = {
+      phase: null,
+      fda: null,
+      ema: null,
+      discrepantOnly: false,
+      blackBox: false,
+      withdrawn: false,
+      decade: null,
+      query: ""
+    };
+    const sInput = $("evidenceSearchInput");
+    if (sInput) sInput.value = "";
+    evidenceRenderLimit = 60;
+    updateEvidenceModalUI();
+  }
+
+  function wireEvidenceModal() {
+    const modal = $("evidenceModal");
+    if (!modal) return;
+
+    const closeBtn = $("evidenceModalClose");
+    if (closeBtn) closeBtn.onclick = closeEvidenceModal;
+
+    modal.onclick = (e) => {
+      if (e.target === modal) closeEvidenceModal();
+    };
+
+    const applyGraphBtn = $("evidenceApplyGraphBtn");
+    if (applyGraphBtn) {
+      applyGraphBtn.onclick = () => {
+        const cohort = filterEvidenceCohort();
+        if (cohort.length) {
+          state.evidenceCohort = new Set(cohort.map((c) => c.i));
+          closeEvidenceModal();
+          stats();
+          search();
+          draw();
+        }
+      };
+    }
+
+    const resetBtn = $("evidenceResetFiltersBtn");
+    if (resetBtn) resetBtn.onclick = resetEvidenceFilters;
+
+    const sInput = $("evidenceSearchInput");
+    if (sInput && !sInput._wired) {
+      sInput._wired = true;
+      sInput.oninput = () => {
+        evidenceFilterState.query = sInput.value;
+        evidenceRenderLimit = 60;
+        const cohort = filterEvidenceCohort();
+        renderEvidenceDrugCards(cohort);
+      };
+    }
+
+    const fdaBtn = $("evFilterFdaBtn");
+    if (fdaBtn && !fdaBtn._wired) {
+      fdaBtn._wired = true;
+      fdaBtn.onclick = () => {
+        evidenceFilterState.fda = evidenceFilterState.fda ? null : "any";
+        evidenceRenderLimit = 60;
+        updateEvidenceModalUI();
+      };
+    }
+
+    const emaBtn = $("evFilterEmaBtn");
+    if (emaBtn && !emaBtn._wired) {
+      emaBtn._wired = true;
+      emaBtn.onclick = () => {
+        evidenceFilterState.ema = evidenceFilterState.ema ? null : "any";
+        evidenceRenderLimit = 60;
+        updateEvidenceModalUI();
+      };
+    }
+
+    const discBtn = $("evFilterDiscBtn");
+    if (discBtn && !discBtn._wired) {
+      discBtn._wired = true;
+      discBtn.onclick = () => {
+        evidenceFilterState.discrepantOnly = !evidenceFilterState.discrepantOnly;
+        evidenceRenderLimit = 60;
+        updateEvidenceModalUI();
+      };
+    }
+
+    const bbBtn = $("evFilterBlackBoxBtn");
+    if (bbBtn && !bbBtn._wired) {
+      bbBtn._wired = true;
+      bbBtn.onclick = () => {
+        evidenceFilterState.blackBox = !evidenceFilterState.blackBox;
+        evidenceRenderLimit = 60;
+        updateEvidenceModalUI();
+      };
+    }
+
+    const wdBtn = $("evFilterWithdrawnBtn");
+    if (wdBtn && !wdBtn._wired) {
+      wdBtn._wired = true;
+      wdBtn.onclick = () => {
+        evidenceFilterState.withdrawn = !evidenceFilterState.withdrawn;
+        evidenceRenderLimit = 60;
+        updateEvidenceModalUI();
+      };
+    }
   }
 
   // ---------- Clinical Dossier & Monograph Generator
@@ -3969,9 +4520,11 @@
 
   const visible = (c) => (!state.stackOnly || state.stack.has(c.i)) && state.clusters.has(c.c) && (!state.pkOnly || c.pk) && (!state.cypOnly || (c.pk && c.pk.cyp)) && (state.hub === null || c.l.includes(state.hub))
     && (!state.ver || VER_TEST[state.ver](c)) && (state.hlBin === null || (c.hlh && binOf(c.hlh) === state.hlBin))
-    && passAdvCyp(c) && passAdvRo5(c) && passAdvProp(c) && passAdvPhase(c);
+    && passAdvCyp(c) && passAdvRo5(c) && passAdvProp(c) && passAdvPhase(c)
+    && (!state.evidenceCohort || state.evidenceCohort.has(c.i));
   function stats() {
     const vis = C.filter(visible).length;
+    updateEvidenceCohortIndicator();
     $("sAll").textContent = G.meta.substances.toLocaleString("pl");
     $("sVis").textContent = vis.toLocaleString("pl");
     $("sPk").textContent = G.meta.with_pk.toLocaleString("pl");
@@ -4580,9 +5133,26 @@
           <span style="color:var(--color-text-muted)">Stosowanie w połączeniu z inhibitorami lub induktorami tego izoenzymu może drastycznie zmieniać stężenie leku we krwi.</span>
         </div>` : "";
 
+      const evidencePathHtml = `
+        <div class="label" style="margin-top:.8rem">Ścieżka Rejestracyjna & Poziom Dowodów</div>
+        <div class="ver-card">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <b>Status: ${c.ph ? `Faza kliniczna ${c.ph}` : 'Odkrywcza / Prekliniczna'}</b>
+            <button class="btn-copy" id="safetyEvidenceBtn" style="font-size:10px;padding:2px 7px">📊 Eksplorator ↗</button>
+          </div>
+          <div style="margin-top:4px;font-size:11px;color:var(--color-text-muted)">
+            ${c.fa ? `• Pierwsza rejestracja: <b>${esc(c.fa)} r.</b><br>` : ''}
+            • Etykieta FDA (DailyMed): <b>${v ? (VER_PL[v.s] || v.s) : 'Brak w cross-check'}</b><br>
+            • Dokumentacja EMA (SmPC): <b>${e ? (EMA_PL[e.s] || e.s) : 'Brak w bazie EMA'}</b>
+            ${c.bb ? '<br>• <b style="color:var(--color-error)">Czarna ramka (Black Box Warning)</b>' : ''}
+            ${c.wd ? '<br>• <b style="color:var(--color-error)">Wycofany z obrotu (Withdrawn)</b>' : ''}
+          </div>
+        </div>`;
+
       tabContent = `
         <div class="tab-panel">
           ${warnBoxes.join("")}
+          ${evidencePathHtml}
           ${tagsHtml}
           ${cypHtml}
           ${hubsHtml}
@@ -4607,6 +5177,9 @@
         <button id="cardDossierBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Kliniczna monografia substancji (A4 / PDF / Markdown)">
           📄 Monografia
         </button>
+        <button id="cardEvidenceBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Poziom dowodów klinicznych & ścieżka regulacyjna (R)">
+          📊 Dowody
+        </button>
       </div>`;
 
     return `
@@ -4617,12 +5190,12 @@
       <div class="title">${esc(c.n)}</div>
       <div class="tags">
         ${(c.t || []).map((t) => `<span class="tag warn">${esc(t)}</span>`).join("")}
-        ${c.ph ? `<span class="tag">ChEMBL faza ${c.ph}</span>` : ""}
+        ${c.ph ? `<button class="tag" data-open-evidence="phase:${c.ph}" title="Zobacz w eksploratorze badań klinicznych" style="cursor:pointer;background:none">ChEMBL faza ${c.ph}</button>` : ""}
         ${k ? '<span class="tag">PK auto</span>' : ""}
-        ${v && v.s === "consistent" ? '<span class="tag ok">PK ✓ FDA</span>' : ""}
-        ${v && v.s === "discrepant" ? '<span class="tag warn">PK ≠ FDA</span>' : ""}
-        ${e && e.s === "consistent" ? '<span class="tag ok">PK ✓ ChPL</span>' : ""}
-        ${e && e.s === "discrepant" ? '<span class="tag warn">PK ≠ ChPL</span>' : ""}
+        ${v && v.s === "consistent" ? `<button class="tag ok" data-open-evidence="fda:consistent" title="Zobacz spójne z FDA w eksploratorze" style="cursor:pointer;background:none">PK ✓ FDA</button>` : ""}
+        ${v && v.s === "discrepant" ? `<button class="tag warn" data-open-evidence="fda:discrepant" title="Zobacz rozbieżne z FDA w eksploratorze" style="cursor:pointer;background:none">PK ≠ FDA</button>` : ""}
+        ${e && e.s === "consistent" ? `<button class="tag ok" data-open-evidence="ema:consistent" title="Zobacz spójne z ChPL w eksploratorze" style="cursor:pointer;background:none">PK ✓ ChPL</button>` : ""}
+        ${e && e.s === "discrepant" ? `<button class="tag warn" data-open-evidence="ema:discrepant" title="Zobacz rozbieżne z ChPL w eksploratorze" style="cursor:pointer;background:none">PK ≠ ChPL</button>` : ""}
         ${c.ic === "conflict" ? '<span class="tag warn">tożsamość?</span>' : ""}
       </div>
       ${stackBtnHtml}
@@ -4670,6 +5243,25 @@
     if (cardDossierBtn && state.sel && state.sel.type === "compound") {
       cardDossierBtn.onclick = () => openDossierModal("single", state.sel.i);
     }
+    const cardEvidenceBtn = p.querySelector("#cardEvidenceBtn");
+    if (cardEvidenceBtn && state.sel && state.sel.type === "compound") {
+      cardEvidenceBtn.onclick = () => {
+        const comp = C[state.sel.i];
+        openEvidenceModal(comp.ph ? `phase:${comp.ph}` : 'phase:0');
+      };
+    }
+    const safetyEvidenceBtn = p.querySelector("#safetyEvidenceBtn");
+    if (safetyEvidenceBtn && state.sel && state.sel.type === "compound") {
+      safetyEvidenceBtn.onclick = () => {
+        const comp = C[state.sel.i];
+        openEvidenceModal(comp.ph ? `phase:${comp.ph}` : 'phase:0');
+      };
+    }
+    p.querySelectorAll("[data-open-evidence]").forEach((btn) => {
+      btn.onclick = () => {
+        openEvidenceModal(btn.dataset.openEvidence);
+      };
+    });
     const cardAnalogsBtn = p.querySelector("#cardAnalogsBtn");
     if (cardAnalogsBtn && state.sel && state.sel.type === "compound") {
       cardAnalogsBtn.onclick = () => openAnalogsModal(state.sel.i);
@@ -4974,6 +5566,7 @@
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
+      if (activeEvidenceModalOpen) { closeEvidenceModal(); return; }
       if (activeMetaboliteQuery != null) { closeMetaboliteModal(); return; }
       if (state.edgeFilters.popoverOpen) { toggleEdgesPopover(false); return; }
       if (activeAnalogsQuery != null) { closeAnalogsModal(); return; }
@@ -4987,6 +5580,12 @@
     }
     const tag = document.activeElement ? document.activeElement.tagName : "";
     if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
+    if (e.key === "r" || e.key === "R") {
+      e.preventDefault();
+      if (activeEvidenceModalOpen) closeEvidenceModal();
+      else openEvidenceModal();
+      return;
+    }
     if (e.key === "e" || e.key === "E") {
       e.preventDefault();
       toggleEdgesPopover();
@@ -5048,7 +5647,47 @@
       }
     }
   });
-  $("reset").onclick = () => fit();
+
+  const evidenceBtn = $("evidenceBtn");
+  if (evidenceBtn) evidenceBtn.onclick = () => openEvidenceModal();
+  const evidenceCohortResetBtn = $("evidenceCohortResetBtn");
+  if (evidenceCohortResetBtn) {
+    evidenceCohortResetBtn.onclick = () => {
+      state.evidenceCohort = null;
+      updateEvidenceCohortIndicator();
+      stats();
+      search();
+      draw();
+    };
+  }
+  const sFdaEl = $("sFda");
+  if (sFdaEl && sFdaEl.parentElement) {
+    sFdaEl.parentElement.style.cursor = "pointer";
+    sFdaEl.parentElement.title = "Otwórz badania kliniczne i etykiety FDA (R)";
+    sFdaEl.parentElement.onclick = () => openEvidenceModal("fda:consistent");
+  }
+  const sEmaEl = $("sEma");
+  if (sEmaEl && sEmaEl.parentElement) {
+    sEmaEl.parentElement.style.cursor = "pointer";
+    sEmaEl.parentElement.title = "Otwórz badania kliniczne i etykiety EMA (R)";
+    sEmaEl.parentElement.onclick = () => openEvidenceModal("ema:consistent");
+  }
+  const sIdEl = $("sId");
+  if (sIdEl && sIdEl.parentElement) {
+    sIdEl.parentElement.style.cursor = "pointer";
+    sIdEl.parentElement.title = "Otwórz eksplorator badań klinicznych (R)";
+    sIdEl.parentElement.onclick = () => openEvidenceModal();
+  }
+
+  $("reset").onclick = () => {
+    if (state.evidenceCohort) {
+      state.evidenceCohort = null;
+      updateEvidenceCohortIndicator();
+      stats();
+      search();
+    }
+    fit();
+  };
   $("theme").onclick = () => { const r = document.documentElement; r.dataset.theme = r.dataset.theme === "dark" ? "light" : "dark"; $("theme").setAttribute("aria-pressed", r.dataset.theme === "light"); draw(); };
   if (matchMedia("(prefers-color-scheme: light)").matches) { document.documentElement.dataset.theme = "light"; $("theme").setAttribute("aria-pressed", "true"); }
 

@@ -1,5 +1,43 @@
 # Changelog
 
+## [3.18.0] — 2026-11-03 — Eksplorator Badań Klinicznych i Poziomów Dowodów (Clinical Trials & Evidence Explorer)
+### Dodano
+- **Eksplorator Badań Klinicznych i Poziomów Dowodów (Clinical Trials & Evidence Explorer)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
+  - **Dedykowany modal analityczny (`#evidenceModal`)**:
+    - Pasek wskaźników KPI (Global Evidence KPIs):
+      - Substancje zarejestrowane (Faza 4): 1 501 (59% bazy).
+      - Cross-check z etykietami FDA DailyMed: 1 078 substancji (91% spójnych).
+      - Weryfikacja ze SmPC/ChPL Europejskiej Agencji Leków (EMA): 281 substancji (87% spójnych).
+      - Ostrzeżenia najwyższego stopnia (Black Box Warnings): 56 substancji.
+      - Substancje wycofane z rynku (Withdrawn): 32 substancje.
+    - **Ścieżka rozwoju klinicznego (Funnel)** z 5 interaktywnymi etapami:
+      - 🟢 **Faza 4**: Leki dopuszczone do obrotu (Approved, 1 501 subst.).
+      - 🔵 **Faza 3**: Zaawansowane badania kliniczne i faza rejestracyjna (284 subst.).
+      - 🟡 **Faza 2**: Badania skuteczności i dowodu koncepcji (POC, 306 subst.).
+      - 🟣 **Faza 1**: Bezpieczeństwo u ludzi i farmakokinetyka (22 subst.).
+      - ⚪ **Prekliniczne / Odkrycie**: Ligandy badawcze i eksperymentalne (420 subst.).
+    - **Pasek filtrów regulacyjnych i audytowych**:
+      - Szybkie przełączniki dla bazy FDA DailyMed (`c.v`), EMA SmPC (`c.ve`), rozbieżności danych PK (`v.s === 'discrepant' || ve.s === 'discrepant'`), czarnej ramki (`c.bb`) oraz leków wycofanych (`c.wd`).
+      - Wyszukiwanie pełnotekstowe wewnątrz wybranej kohorty badawczej.
+    - **Oś czasu dekady pierwszej rejestracji (First Approval Timeline)**:
+      - Pigułki filtracyjne dla 8 przedziałów historycznych: `Do 1959`, `Lata 60.`, `Lata 70.`, `Lata 80.`, `Lata 90.`, `2000–2009`, `2010–2019`, `Od 2020`.
+    - **Siatka kart leków w kohorcie (`#evidenceGrid`)**:
+      - Karty substancji z miniaturyzowanym podglądem struktury 2D (powiększenie w lightboxie), rokiem pierwszej rejestracji, odznakami faz klinicznych i weryfikacji FDA/EMA.
+      - Akcje szybkiej nawigacji: `🎯 Graf` (centrowanie na węźle), `+ Stack` / `✓ Stack`, `⚖️ Porównaj`, `📄 Monografia (Dossier)`, `🌿 Metabolity`.
+    - **Integracja kohorty z grafem 2D Canvas (`🎯 Zastosuj do Grafu`)**:
+      - Przycisk przenoszący przefiltrowaną kohortę bezpośrednio do grafu (`state.evidenceCohort`), izolujący wybrane substancje na płótnie 2D.
+      - Pigułka w toolbarze (`#evidenceCohortResetBtn`) informująca o liczbie substancji w aktywnej kohorcie z możliwością natychmiastowego resetu jednym kliknięciem.
+  - **Dwukierunkowa integracja z kartą substancji i paskiem bocznym**:
+    - Klikalne odznaki faz klinicznych (`data-open-evidence="phase:..."`) i etykiet FDA/EMA w nagłówku karty leku.
+    - Nowy przycisk akcji `📊 Dowody` na karcie wybranej substancji otwierający eksplorator w kontekście danego leku.
+    - Nowa sekcja w zakładce `Ryzyka` (Safety): *Ścieżka Rejestracyjna & Poziom Dowodów* z podsumowaniem statusu EMA/FDA/Black Box i przyciskiem `📊 Eksplorator ↗`.
+    - Klikalne liczniki weryfikacji w panelu bocznym (`sFda`, `sEma`, `sId`).
+  - **Dostępność i nawigacja**:
+    - Nowy przycisk w głównym toolbarze grafu: `📊 Badania & Dowody` (`#evidenceBtn`).
+    - Skrót klawiszowy `R` / `r` otwierający/zamykający eksplorator dowodów klinicznych; obsługa klawisza `Esc`.
+- **Testy automatyczne (`tests/test_pipeline.py`)**:
+  - Dodano `test_clinical_trials_and_evidence_explorer` weryfikujący obecność elementów DOM, stylów CSS, silnika analitycznego i synchronizacji plików głównych (51 testów, 100% green).
+
 ## [3.17.0] — 2026-11-02 — Nawigator Biotransformacji i Drzewo Metabolitów (Metabolite Tree & Prodrug Biotransformation Navigator)
 ### Dodano
 - **Nawigator Biotransformacji i Drzewo Metabolitów (Metabolite Tree & Prodrug Navigator)** w przeglądarce grafu (`apps/graph-viewer/app.js`, `apps/graph-viewer/index.html` oraz pliki w katalogu głównym):
