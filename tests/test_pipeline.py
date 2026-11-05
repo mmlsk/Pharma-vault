@@ -369,6 +369,10 @@ def test_sqlite_has_v33_tables(sqlite_con):
     assert sqlite_con.execute("SELECT COUNT(*) FROM identity_review").fetchone()[0] > 1500
     assert sqlite_con.execute("SELECT COUNT(*) FROM pk_verification_ema").fetchone()[0] > 150
     assert sqlite_con.execute("SELECT COUNT(*) FROM pk_annotations").fetchone()[0] >= 70
+    assert sqlite_con.execute("SELECT COUNT(*) FROM curated_typed_edges").fetchone()[0] >= 50
+    assert sqlite_con.execute("SELECT COUNT(*) FROM metabolite_cascades").fetchone()[0] >= 20
+    assert sqlite_con.execute("SELECT COUNT(*) FROM target_3d_catalog").fetchone()[0] >= 30
+    assert sqlite_con.execute("SELECT COUNT(*) FROM adr_definitions").fetchone()[0] == 8
 
 
 def test_stack_presets_and_hubs(rows):
@@ -862,18 +866,19 @@ def test_metabolite_tree_and_prodrug_navigator():
     ]:
         assert term in app_src, f"Missing '{term}' in app.js"
 
-    # Verify curated pathways exist in app.js
-    assert '"codeine-compound"' in app_src
-    assert '"morphine-compound"' in app_src
-    assert '"CYP2D6"' in app_src
-    assert '"UGT2B7"' in app_src
-    assert '"diazepam-compound"' in app_src
-    assert '"oxazepam-compound"' in app_src
-    assert '"NAPQI"' in app_src
-    assert '"lisdexamfetamine-compound"' in app_src
-    assert '"dextroamphetamine-compound"' in app_src
-    assert '"enalapril-compound"' in app_src
-    assert '"enalaprilat-anhydrous-compound"' in app_src
+    # Verify curated pathways exist in graph-data.js / curated data
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    assert '"codeine-compound"' in graph_js
+    assert '"morphine-compound"' in graph_js
+    assert '"CYP2D6"' in graph_js
+    assert '"UGT2B7"' in graph_js
+    assert '"diazepam-compound"' in graph_js
+    assert '"oxazepam-compound"' in graph_js
+    assert '"NAPQI"' in graph_js
+    assert '"lisdexamfetamine-compound"' in graph_js
+    assert '"dextroamphetamine-compound"' in graph_js
+    assert '"enalapril-compound"' in graph_js
+    assert '"enalaprilat-anhydrous-compound"' in graph_js
 
 
 def test_clinical_trials_and_evidence_explorer():
@@ -964,7 +969,8 @@ def test_molecular_3d_complex_viewer():
     ]:
         assert term in app_src, f"Missing '{term}' in app.js"
 
-    # Verify curated pharmacological complexes in catalog
+    # Verify curated pharmacological complexes in catalog (via graph-data.js)
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
     for target_key in [
         '"CHEMBL224"', '"6WGT"', '"LSD"', '"Asp155"',
         '"CHEMBL217"', '"6CM4"', '"Risperidone"',
@@ -974,7 +980,7 @@ def test_molecular_3d_complex_viewer():
         '"CHEMBL238"', '"4EY7"', '"Donepezil"',
         '"CHEMBL221"', '"3LN1"', '"Celecoxib"'
     ]:
-        assert target_key in app_src, f"Missing target key '{target_key}' in TARGET_3D_CATALOG"
+        assert target_key in graph_js, f"Missing target key '{target_key}' in TARGET_3D_CATALOG"
 
     # Verify root files are synchronized
     root_html = (ROOT.parent / "index.html").read_text(encoding="utf-8")
@@ -985,13 +991,482 @@ def test_molecular_3d_complex_viewer():
     assert "TARGET_3D_CATALOG" in root_app
 
 
+def test_decoupled_curated_data_structures():
+    """Verify that curated data structures are extracted into data/curated/ and attached to PV_GRAPH."""
+    curated_dir = ROOT / "data/curated"
+    cascades_file = curated_dir / "metabolite_cascades.json"
+    targets_file = curated_dir / "target_3d_catalog.json"
+    edges_file = curated_dir / "curated_typed_edges.json"
+    adr_file = curated_dir / "adr_definitions.json"
+
+    for f in [cascades_file, targets_file, edges_file, adr_file]:
+        assert f.exists(), f"Missing canonical curated data file: {f.name}"
+
+    cascades = json.loads(cascades_file.read_text(encoding="utf-8"))
+    targets = json.loads(targets_file.read_text(encoding="utf-8"))
+    edges = json.loads(edges_file.read_text(encoding="utf-8"))
+    adr = json.loads(adr_file.read_text(encoding="utf-8"))
+
+    assert len(cascades) >= 20, f"Expected >= 20 cascades, found {len(cascades)}"
+    assert len(targets) >= 30, f"Expected >= 30 3D targets, found {len(targets)}"
+    assert len(edges) >= 50, f"Expected >= 50 curated edges, found {len(edges)}"
+    assert len(adr) == 8, f"Expected 8 ADR definitions, found {len(adr)}"
+
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    prefix = "window.PV_GRAPH = "
+    start_idx = graph_js.index(prefix) + len(prefix)
+    end_idx = graph_js.rindex("};") + 1
+    graph = json.loads(graph_js[start_idx:end_idx])
+
+    assert "metaboliteCascades" in graph
+    assert "target3DCatalog" in graph
+    assert "curatedTypedEdges" in graph
+    assert "adrDefinitions" in graph
+    assert len(graph["metaboliteCascades"]) == len(cascades)
+    assert len(graph["target3DCatalog"]) == len(targets)
+    assert len(graph["curatedTypedEdges"]) == len(edges)
+    assert len(graph["adrDefinitions"]) == len(adr)
 
 
+def test_viewer_spatial_grid_and_label_culling():
+    """Verify that spatial grid indexing and label budget culling are present in app.js."""
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    assert "GRID_CELL" in app_src, "Missing GRID_CELL spatial index parameter in app.js"
+    assert "spatialGrid" in app_src, "Missing spatialGrid Map in app.js"
+    assert "MAX_LABELS" in app_src, "Missing MAX_LABELS budget limit in app.js"
+    assert "spatial grid lookup" in app_src, "Missing spatial grid lookup comment in hit function"
 
 
+def test_polish_rpl_pipeline_and_sqlite(sqlite_con):
+    """Verify that Polish RPL products pipeline processes correctly and is exported to SQLite."""
+    rpl_json = ROOT / "data/processed/rpl-products.json"
+    assert rpl_json.exists(), "Missing data/processed/rpl-products.json"
+    data = json.loads(rpl_json.read_text(encoding="utf-8"))
+    assert len(data) >= 10, f"Expected >= 10 mapped compounds with RPL products, got {len(data)}"
+    assert "donepezil-compound" in data
+    assert any(p["trade_name"] == "Donecept" for p in data["donepezil-compound"])
+
+    rpl_count = sqlite_con.execute("SELECT COUNT(*) FROM rpl_products").fetchone()[0]
+    assert rpl_count >= 15, f"Expected >= 15 RPL products in SQLite, got {rpl_count}"
 
 
+def test_psychonautwiki_pipeline_and_sqlite(sqlite_con):
+    """Verify that PsychonautWiki pipeline processes harm-reduction profiles correctly."""
+    psy_json = ROOT / "data/processed/psychonaut.json"
+    assert psy_json.exists(), "Missing data/processed/psychonaut.json"
+    data = json.loads(psy_json.read_text(encoding="utf-8"))
+    assert len(data) >= 10, f"Expected >= 10 mapped compounds with PsychonautWiki data, got {len(data)}"
+    assert "modafinil-compound" in data
+    assert data["modafinil-compound"]["evidence_tier"] == "Tier D (Harm Reduction)"
+    assert "onset" in data["modafinil-compound"]["duration"]
 
+    psy_count = sqlite_con.execute("SELECT COUNT(*) FROM psychonaut_profiles").fetchone()[0]
+    assert psy_count >= 10, f"Expected >= 10 psychonaut profiles in SQLite, got {psy_count}"
+
+
+def test_hybrid_workspace_and_hash_router():
+    """Verify that Hybrid Workspace elements, split-pane and hash router are present and properly wired."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    for el_id in ["modeGraphBtn", "modeStackBtn", "modeEvidenceBtn", "modeIndicationsBtn", "contextSplitPane", "splitPaneCloseBtn", "globalThemeBtn", "indicationsModal"]:
+        assert f'id="{el_id}"' in html_src, f"Missing #{el_id} in index.html"
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    for pattern in ["setWorkspaceMode", "openSplitPane", "handleHashRouting", "hashchange", "Tier D (Harm Reduction)", "openIndicationsModal", "renderIndicationsTree"]:
+        assert pattern in app_src, f"Missing '{pattern}' in app.js"
+
+
+def test_indications_pipeline_and_tree_ui(sqlite_con):
+    """Verify that ICD-10/ICD-11 indications pipeline processes correctly and is exported to SQLite and UI."""
+    ind_json = ROOT / "data/processed/indications.json"
+    assert ind_json.exists(), "Missing data/processed/indications.json"
+    data = json.loads(ind_json.read_text(encoding="utf-8"))
+    assert "by_compound" in data and "by_disease" in data
+    assert len(data["by_compound"]) >= 10, f"Expected >= 10 mapped compounds with indications, got {len(data['by_compound'])}"
+    assert len(data["by_disease"]) >= 10, f"Expected >= 10 disease entries in by_disease, got {len(data['by_disease'])}"
+    assert "donepezil-compound" in data["by_compound"]
+
+    ind_count = sqlite_con.execute("SELECT COUNT(*) FROM compound_indications").fetchone()[0]
+    assert ind_count >= 20, f"Expected >= 20 compound indications in SQLite, got {ind_count}"
+
+
+def test_ebm_literature_pipeline_and_ui(sqlite_con):
+    """Verify that EBM literature & clinical evidence pipeline processes correctly and is exported to SQLite and UI."""
+    lit_json = ROOT / "data/processed/literature.json"
+    assert lit_json.exists(), "Missing data/processed/literature.json"
+    data = json.loads(lit_json.read_text(encoding="utf-8"))
+    assert "by_compound" in data and "meta" in data
+    assert len(data["by_compound"]) >= 10, f"Expected >= 10 mapped compounds with EBM literature, got {len(data['by_compound'])}"
+    assert data["meta"]["cochrane_reviews"] >= 3, "Expected >= 3 Cochrane reviews"
+    assert "donepezil-compound" in data["by_compound"]
+
+    first_study = data["by_compound"]["donepezil-compound"][0]
+    assert first_study["pmid"] and first_study["title"]
+    assert "abstract" in first_study and "conclusion" in first_study
+
+    lit_count = sqlite_con.execute("SELECT COUNT(*) FROM clinical_evidence").fetchone()[0]
+    assert lit_count >= 15, f"Expected >= 15 clinical evidence records in SQLite, got {lit_count}"
+
+    cochrane_count = sqlite_con.execute("SELECT COUNT(*) FROM clinical_evidence WHERE cochrane = 1").fetchone()[0]
+    assert cochrane_count >= 3, f"Expected >= 3 Cochrane reviews in SQLite, got {cochrane_count}"
+
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    assert 'id="evFilterEbmBtn"' in html_src, "Missing #evFilterEbmBtn in index.html"
+
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    assert "Kluczowe Badania Kliniczne & EBM" in app_src
+    assert "data-open-ebm-idx" in app_src
+    assert "evFilterEbmBtn" in app_src
+def test_pathway_subgraph_systems_and_dock():
+    """Verify that Pathway Systems ontology (v3.22.0) is configured, built into graph-data, and wired in UI."""
+    curated_pathways = ROOT / "data/curated/pathway_systems.json"
+    assert curated_pathways.exists(), "Missing data/curated/pathway_systems.json"
+    pw_data = json.loads(curated_pathways.read_text(encoding="utf-8"))
+    assert len(pw_data) >= 10, f"Expected >= 10 pathway systems, got {len(pw_data)}"
+
+    pw_ids = {p["id"] for p in pw_data}
+    assert "serotonergic" in pw_ids
+    assert "dopaminergic" in pw_ids
+    assert "gabaergic" in pw_ids
+    assert "glutamatergic" in pw_ids
+
+    for p in pw_data:
+        assert p.get("name") and p.get("icon")
+        assert "target_ids" in p and len(p["target_ids"]) > 0
+        assert "subtypes" in p and len(p["subtypes"]) > 0
+
+    # Verify presence in graph-data.js
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    assert "pathwaySystems" in graph_js, "pathwaySystems missing in apps/graph-viewer/graph-data.js"
+
+    # Verify index.html UI dock
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    assert 'id="pathwayDock"' in html_src, "Missing #pathwayDock in index.html"
+    assert 'id="pathwayModeSpotlight"' in html_src
+    assert 'id="pathwayModeSolo"' in html_src
+    assert 'id="pathwayResetBtn"' in html_src
+    assert 'id="pathwayChipsContainer"' in html_src
+
+    # Verify app.js logic
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    assert "computePathwayRadialPositions" in app_src
+    assert "drawMoAVector" in app_src
+    assert "selectPathway" in app_src
+    assert "resetPathwayIsolation" in app_src
+    assert "wirePathwayDock" in app_src
+    assert "/pathway/" in app_src
+
+
+def test_polypharmacy_ddi_engine_and_presets(sqlite_con):
+    """Verify that Polypharmacy & DDI Risk Engine (v3.23.0) is configured, exported to SQLite and wired in UI."""
+    curated_ddi = ROOT / "data/curated/ddi_rules.json"
+    assert curated_ddi.exists(), "Missing data/curated/ddi_rules.json"
+    ddi_data = json.loads(curated_ddi.read_text(encoding="utf-8"))
+    assert "enzyme_profiles" in ddi_data and "pd_profiles" in ddi_data
+    assert "specific_pair_rules" in ddi_data and len(ddi_data["specific_pair_rules"]) >= 8
+    assert "case_presets" in ddi_data and len(ddi_data["case_presets"]) >= 5
+
+    # Check case presets
+    presets = ddi_data["case_presets"]
+    assert "triple_whammy" in presets
+    assert "serotonin_storm" in presets
+    assert "qt_cocktail" in presets
+    assert "sedative_overload" in presets
+    assert "geriatric_polypharmacy" in presets
+
+    # Verify SQLite export
+    ddi_count = sqlite_con.execute("SELECT COUNT(*) FROM ddi_rules").fetchone()[0]
+    assert ddi_count >= 8, f"Expected >= 8 DDI rules in SQLite, got {ddi_count}"
+    vectors = {row[0] for row in sqlite_con.execute("SELECT DISTINCT vector FROM ddi_rules").fetchall()}
+    assert "cyp" in vectors
+    assert "qtc" in vectors
+    assert "serotonin" in vectors
+
+    # Verify index.html UI components
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    assert 'id="polypharmacyShield"' in html_src
+    assert 'id="shieldScore"' in html_src
+    assert 'id="shieldGauge"' in html_src
+    assert 'id="shieldAuditBtn"' in html_src
+    assert 'id="shieldPresetsBtn"' in html_src
+
+    # Verify app.js logic
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    assert "computePolypharmacyScore" in app_src
+    assert "updatePolypharmacyShieldUI" in app_src
+    assert "drawDdiCollisionEdges" in app_src
+    assert "openDdiAuditInSplitPane" in app_src
+    assert "loadDdiPreset" in app_src
+    assert "/ddi" in app_src
+
+
+def test_neuropharmacology_receptor_affinities_and_radar(sqlite_con):
+    """Verify Neuropharmacology & Receptor Affinity Engine (v3.24.0) data, SQLite schema, and UI radar integration."""
+    aff_file = ROOT / "data/curated/receptor_affinities.json"
+    assert aff_file.exists(), "Missing data/curated/receptor_affinities.json"
+    aff_data = json.loads(aff_file.read_text(encoding="utf-8"))
+    assert len(aff_data) >= 25, f"Expected >= 25 compounds in receptor_affinities.json, got {len(aff_data)}"
+
+    # 1. Verify coverage of 5 neuropharmacological classes
+    classes = {v.get("class") for v in aff_data.values() if "class" in v}
+    assert "antipsychotic" in classes
+    assert "antidepressant" in classes
+    assert "psychedelic" in classes
+    assert "anxiolytic" in classes or "hypnotic" in classes
+    assert "opioid" in classes
+
+    # 2. Check representative compounds & kinetic classes
+    halo = aff_data.get("haloperidol-compound")
+    assert halo is not None
+    assert halo["kinetic_class"] == "slow-off"
+    assert halo["d2_occupancy_therapeutic_pct"] >= 70
+
+    cloz = aff_data.get("clozapine-compound")
+    assert cloz is not None
+    assert cloz["kinetic_class"] == "fast-off"
+
+    arip = aff_data.get("aripiprazole-compound")
+    assert arip is not None
+    assert arip["kinetic_class"] == "partial-agonist"
+
+    lsd = aff_data.get("lysergide-compound")
+    assert lsd is not None
+    assert lsd["class"] == "psychedelic"
+
+    morph = aff_data.get("morphine-compound")
+    assert morph is not None
+    assert morph["class"] == "opioid"
+
+    # 3. Verify SQLite table and index
+    rows = sqlite_con.execute("SELECT COUNT(*) FROM receptor_affinities").fetchone()[0]
+    assert rows >= 100, f"Expected >= 100 affinity records in SQLite, got {rows}"
+
+    halo_d2 = sqlite_con.execute(
+        "SELECT ki_nm, pki, action, kinetic_class FROM receptor_affinities WHERE compound_id = 'haloperidol-compound' AND target_name = 'D2'"
+    ).fetchone()
+    assert halo_d2 is not None
+    assert halo_d2[0] < 2.0  # Ki < 2 nM
+    assert halo_d2[1] > 8.5  # pKi > 8.5
+    assert halo_d2[2] == "antagonist"
+    assert halo_d2[3] == "slow-off"
+
+    # Check targets variety in SQLite
+    targets = {r[0] for r in sqlite_con.execute("SELECT DISTINCT target_name FROM receptor_affinities").fetchall()}
+    for req_target in ["D2", "5-HT2A", "5-HT1A", "SERT", "H1", "M1", "MOR", "GABA-A"]:
+        assert req_target in targets, f"Missing target {req_target} in SQLite receptor_affinities"
+
+    # 4. Verify graph-viewer integration
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    assert "RECEPTOR_AFFINITIES" in app_src
+    assert "renderReceptorRadarSvg" in app_src
+    assert "openReceptorRadarSplitPane" in app_src
+    assert "CANONICAL_CNS_AXES" in app_src
+    assert "data-open-receptor-radar" in app_src
+    assert "/receptor-radar/" in app_src
+    assert "Wskaźnik Atypowości Meltzera" in app_src
+    assert "kiD2 > 0 && Number.isFinite(ki5ht2a)" in app_src
+
+    # Ensure root app.js stays in sync with apps/graph-viewer/app.js
+    root_app_path = ROOT.parent / "app.js"
+    if root_app_path.exists():
+        assert root_app_path.read_text(encoding="utf-8") == app_src, "Root app.js is out of sync with apps/graph-viewer/app.js"
+
+
+def test_pk_compartment_simulator_and_curves(sqlite_con):
+    """Verify curated 2-compartment pharmacokinetic models, SQLite tables, graph-data export, and UI simulator engine."""
+    # 1. Curated dataset validation
+    curated_path = ROOT / "data/curated/pk_compartment_models.json"
+    assert curated_path.exists(), "Missing data/curated/pk_compartment_models.json"
+    models = json.loads(curated_path.read_text(encoding="utf-8"))
+    assert len(models) >= 20, f"Expected >= 20 curated PK models, got {len(models)}"
+
+    for cid, m in models.items():
+        assert m["vc_l_kg"] > 0, f"{cid}: vc_l_kg must be > 0"
+        assert m["vp_l_kg"] > 0, f"{cid}: vp_l_kg must be > 0"
+        assert m["k12_h"] > 0, f"{cid}: k12_h must be > 0"
+        assert m["k21_h"] > 0, f"{cid}: k21_h must be > 0"
+        assert m["k10_h"] > 0, f"{cid}: k10_h must be > 0"
+        assert m["alpha_h"] > 0, f"{cid}: alpha_h must be > 0"
+        assert m["beta_h"] > 0, f"{cid}: beta_h must be > 0"
+        assert m["t_half_alpha_h"] > 0, f"{cid}: t_half_alpha_h must be > 0"
+        assert m["t_half_beta_h"] > 0, f"{cid}: t_half_beta_h must be > 0"
+        assert m["alpha_h"] > m["beta_h"], f"{cid}: distribution rate constant alpha must exceed elimination constant beta"
+
+    # Specific clinical drug verification
+    fentanyl = models.get("fentanyl-compound")
+    assert fentanyl is not None
+    assert fentanyl["t_half_alpha_h"] < 0.5  # rapid distribution ~0.33 h (20 min)
+    assert fentanyl["t_half_beta_h"] >= 3.0  # long terminal elimination
+
+    morphine = models.get("morphine-compound")
+    assert morphine is not None
+    assert morphine["vc_l_kg"] > 0
+
+    digoxin = models.get("digoxin-compound")
+    assert digoxin is not None
+    assert digoxin["fe"] >= 0.7  # renal excretion dominant
+
+    metoprolol = models.get("metoprolol-compound")
+    assert metoprolol is not None
+    assert metoprolol["primary_cyp"] == "CYP2D6"
+
+    # 2. SQLite storage & index validation
+    row_count = sqlite_con.execute("SELECT COUNT(*) FROM pk_compartment_models").fetchone()[0]
+    assert row_count >= 20, f"Expected >= 20 rows in pk_compartment_models SQLite table, got {row_count}"
+
+    fent_row = sqlite_con.execute(
+        "SELECT vc_l_kg, vp_l_kg, alpha_h, beta_h, primary_cyp FROM pk_compartment_models WHERE compound_id = 'fentanyl-compound'"
+    ).fetchone()
+    assert fent_row is not None
+    assert fent_row[0] > 0
+    assert fent_row[2] > fent_row[3]
+
+    indices = {r[1] for r in sqlite_con.execute("PRAGMA index_list('pk_compartment_models')").fetchall()}
+    assert "idx_pk_models_compound" in indices
+
+    # 3. graph-data.js export validation
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    assert '"pkCompartmentModels"' in graph_js, "pkCompartmentModels missing in graph-data.js"
+    assert '"fentanyl-compound"' in graph_js
+    assert '"morphine-compound"' in graph_js
+
+    # 4. app.js logic & UI simulator validation
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    assert "PK_COMPARTMENT_MODELS" in app_src
+    assert "getCompoundCompartmentParams" in app_src
+    assert "compute2CompartmentSimulation" in app_src
+    assert "renderPkCurveSvg" in app_src
+    assert "wirePkChartCrosshair" in app_src
+    assert "openPkSimulatorSplitPane" in app_src
+    assert "PK_SIM_PRESETS" in app_src
+    assert "fentanyl_morphine" in app_src
+    assert "metoprolol_cyp2d6" in app_src
+    assert "digoxin_renal" in app_src
+    assert "diazepam_midazolam" in app_src
+    assert "data-open-pk-simulator" in app_src
+    assert "/pk-simulator/" in app_src
+
+    # Ensure root app.js stays in sync with apps/graph-viewer/app.js
+    root_app_path = ROOT.parent / "app.js"
+    if root_app_path.exists():
+        assert root_app_path.read_text(encoding="utf-8") == app_src, "Root app.js is out of sync with apps/graph-viewer/app.js"
+
+
+def test_molecular_toxicology_and_safety_engine(sqlite_con):
+    """Verify curated toxicology profiles, DILIrank, eDISH, hERG Redfern, ToxAlerts, PLLR, SQLite export, and UI integration."""
+    # 1. Curated toxicology dataset validation
+    tox_path = ROOT / "data/curated/toxicology_profiles.json"
+    assert tox_path.exists(), "Missing data/curated/toxicology_profiles.json"
+    profiles = json.loads(tox_path.read_text(encoding="utf-8"))
+    assert len(profiles) >= 30, f"Expected >= 30 curated toxicology profiles, got {len(profiles)}"
+
+    for cid, prof in profiles.items():
+        assert "dili" in prof, f"{cid}: missing dili section"
+        assert "cardiotox" in prof, f"{cid}: missing cardiotox section"
+        assert "pregnancy_lactation" in prof, f"{cid}: missing pregnancy_lactation section"
+        dili = prof["dili"]
+        assert dili["dilirank"] in ["Most-DILI-concern", "Less-DILI-concern", "No-DILI-concern", "Ambiguous"]
+        cardio = prof["cardiotox"]
+        assert cardio["redfern_margin"] >= 0
+        preg = prof["pregnancy_lactation"]
+        assert preg["fda_category"] in ["A", "B", "C", "D", "X"]
+
+    # Key clinical records checks
+    apap = profiles.get("acetaminophen-compound")
+    assert apap is not None
+    assert apap["dili"]["dilirank"] == "Most-DILI-concern"
+    assert apap["dili"]["phenotype"] == "hepatocellular"
+    assert apap["dili"]["toxic_alt_fold"] > 15.0
+    assert any("NAPQI" in a.get("description_pl", "") or "chinonoiminy" in a.get("name_pl", "") for a in apap.get("structural_alerts", []))
+    assert apap["pregnancy_lactation"]["fda_category"] == "B"
+
+    terf = profiles.get("terfenadine-compound")
+    assert terf is not None
+    assert terf["cardiotox"]["redfern_margin"] < 1.0
+    assert "Class 1" in terf["cardiotox"]["redfern_class"]
+    assert terf["cardiotox"]["crediblemeds"] == "Known risk"
+
+    fexo = profiles.get("fexofenadine-compound")
+    assert fexo is not None
+    assert fexo["cardiotox"]["redfern_margin"] > 30.0
+    assert fexo["dili"]["dilirank"] == "No-DILI-concern"
+
+    valp = profiles.get("valproate-compound")
+    assert valp is not None
+    assert valp["pregnancy_lactation"]["fda_category"] == "X"
+    assert valp["pregnancy_lactation"]["black_box_teratogen"] is True
+    assert valp["dili"]["dilirank"] == "Most-DILI-concern"
+
+    vera = profiles.get("verapamil-compound")
+    assert vera is not None
+    assert vera["cardiotox"]["cipa_compensation"] == "cav12_blockade"
+    assert "Class 5" in vera["cardiotox"]["redfern_class"]
+
+    clav = profiles.get("clavulanate-compound")
+    assert clav is not None
+    assert clav["dili"]["phenotype"] == "cholestatic"
+    assert clav["dili"]["alp_elevation"] is True
+
+    # 2. SQLite table, indices, and query validation
+    row_count = sqlite_con.execute("SELECT COUNT(*) FROM toxicology_profiles").fetchone()[0]
+    assert row_count >= 30, f"Expected >= 30 rows in toxicology_profiles SQLite table, got {row_count}"
+
+    apap_row = sqlite_con.execute(
+        "SELECT dilirank, dili_phenotype, hy_law_risk, fda_category FROM toxicology_profiles WHERE compound_id = 'acetaminophen-compound'"
+    ).fetchone()
+    assert apap_row is not None
+    assert apap_row[0] == "Most-DILI-concern"
+    assert apap_row[1] == "hepatocellular"
+    assert apap_row[3] == "B"
+
+    valp_row = sqlite_con.execute(
+        "SELECT fda_category, black_box_teratogen, teratogenic_risk FROM toxicology_profiles WHERE compound_id = 'valproate-compound'"
+    ).fetchone()
+    assert valp_row is not None
+    assert valp_row[0] == "X"
+    assert valp_row[1] == 1  # SQLite boolean
+
+    terf_row = sqlite_con.execute(
+        "SELECT redfern_margin, redfern_class, crediblemeds FROM toxicology_profiles WHERE compound_id = 'terfenadine-compound'"
+    ).fetchone()
+    assert terf_row is not None
+    assert terf_row[0] < 1.0
+    assert "Class 1" in terf_row[1]
+
+    indices = {r[1] for r in sqlite_con.execute("PRAGMA index_list('toxicology_profiles')").fetchall()}
+    assert "idx_tox_dilirank" in indices
+    assert "idx_tox_redfern" in indices
+    assert "idx_tox_pregnancy" in indices
+
+    # 3. graph-data.js export validation
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    assert '"toxicologyProfiles"' in graph_js, "toxicologyProfiles missing in graph-data.js"
+    assert '"acetaminophen-compound"' in graph_js
+    assert '"terfenadine-compound"' in graph_js
+    assert '"valproate-compound"' in graph_js
+
+    # 4. app.js logic, UI simulator, and Polypharmacy Shield integration
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    assert "TOXICOLOGY_PROFILES" in app_src
+    assert "TOX_PRESETS" in app_src
+    assert "paracetamol_napqi" in app_src
+    assert "terfenadine_herg" in app_src
+    assert "valproate_teratogen" in app_src
+    assert "isotretinoin_ipledge" in app_src
+    assert "verapamil_cipa" in app_src
+    assert "augmentin_cholestasis" in app_src
+    assert "getCompoundToxicologyProfile" in app_src
+    assert "renderEdishChartSvg" in app_src
+    assert "renderRedfernMarginSvg" in app_src
+    assert "openToxicologySplitPane" in app_src
+    assert "data-open-toxicology" in app_src
+    assert "/toxicology/" in app_src
+    assert "dili_stack_overload" in app_src
+    assert "teratogen_stack_alert" in app_src
+
+    # Ensure root app.js stays in sync with apps/graph-viewer/app.js
+    root_app_path = ROOT.parent / "app.js"
+    if root_app_path.exists():
+        assert root_app_path.read_text(encoding="utf-8") == app_src, "Root app.js is out of sync with apps/graph-viewer/app.js"
 
 
 

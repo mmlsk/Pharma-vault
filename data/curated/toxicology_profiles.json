@@ -1,0 +1,1218 @@
+{
+  "acetaminophen-compound": {
+    "compound_id": "acetaminophen-compound",
+    "dili": {
+      "dilirank": "Most-DILI-concern",
+      "phenotype": "hepatocellular",
+      "mechanism_pl": "Utlenianie przez CYP2E1/3A4 do elektrofilowej N-acetylo-p-benzochinonoiminy (NAPQI); po wyczerpaniu zmagazynowanego glutationu (GSH < 30%) NAPQI wiąże się kowalencyjnie z białkami mitochondriów, powodując martwicę centrozrazikową.",
+      "baseline_alt_fold": 1.1,
+      "toxic_alt_fold": 22.0,
+      "baseline_bili_fold": 0.8,
+      "toxic_bili_fold": 3.6,
+      "alp_elevation": false,
+      "hy_law_risk": "high_overdose"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 420.0,
+      "cmax_therapeutic_um": 120.0,
+      "redfern_margin": 3.5,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Znikome powinowactwo do kanału hERG; brak wpływu na repolaryzację komorową w dawkach terapeutycznych."
+    },
+    "structural_alerts": [
+      {
+        "id": "quinoid_precursor",
+        "name_pl": "Prekursor chinonoiminy (p-aminofenol)",
+        "smarts_pattern": "c1cc(O)ccc1NC(=O)C",
+        "hazard_type": "reactive_metabolite",
+        "description_pl": "Ugrupowanie 4-aminofenolowe podatne na bioaktywację do elektrofilowej chinonoiminy (NAPQI) tworzącej kowalencyjne addukty białkowe."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "B",
+      "pllr_pregnancy_pl": "Lek przeciwbólowy i przeciwgorączkowy I wyboru w ciąży. Brak dowodów na teratogenność w I trymestrze.",
+      "pllr_lactation_pl": "Zgodny z karmieniem piersią. Bardzo niskie przenikanie do mleka matki.",
+      "rid_pct": 2.2,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "terfenadine-compound": {
+    "compound_id": "terfenadine-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "mixed",
+      "mechanism_pl": "Intensywny metabolizm pierwszego przejścia przez CYP3A4; przy zahamowaniu enzymu dochodzi do masywnej kumulacji leku macierzystego.",
+      "baseline_alt_fold": 1.0,
+      "toxic_alt_fold": 2.2,
+      "baseline_bili_fold": 0.7,
+      "toxic_bili_fold": 1.1,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 0.056,
+      "cmax_therapeutic_um": 0.08,
+      "redfern_margin": 0.7,
+      "redfern_class": "Class 1 (High TdP risk)",
+      "crediblemeds": "Known risk",
+      "cipa_compensation": "none",
+      "mechanism_pl": "Potężny bloker kanałów hERG (IC50 = 56 nM). Zablokowanie CYP3A4 wywołuje załamanie marginesu Redferna (<1.0), wydłużenie QTc, Torsades de Pointes i migotanie komór. Wycofana z rynku."
+    },
+    "structural_alerts": [
+      {
+        "id": "diphenylmethyl_piperidine",
+        "name_pl": "Podstawnik difenylometylopiperydynowy",
+        "smarts_pattern": "C(c1ccccc1)(c2ccccc2)N3CCC(CC3)",
+        "hazard_type": "reactive_metabolite",
+        "description_pl": "Hydrofobowa zasadowa struktura o skrajnym powinowactwie do wnęki Tyr652/Phe656 pora kanału hERG."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Wycofana z obrotu ze względu na śmiertelną kardiotoksyczność; brak współczesnych wskazań w ciąży.",
+      "pllr_lactation_pl": "Przeciwwskazana podczas laktacji.",
+      "rid_pct": 8.5,
+      "rid_safe": true,
+      "teratogenic_risk": "moderate",
+      "black_box_teratogen": true
+    }
+  },
+  "fexofenadine-compound": {
+    "compound_id": "fexofenadine-compound",
+    "dili": {
+      "dilirank": "No-DILI-concern",
+      "phenotype": "none",
+      "mechanism_pl": "Aktywny metabolit kwasowy terfenadyny; wydalany w postaci niezmienionej przez nerki i z żółcią bez bioaktywacji fazy I.",
+      "baseline_alt_fold": 0.9,
+      "toxic_alt_fold": 1.1,
+      "baseline_bili_fold": 0.6,
+      "toxic_bili_fold": 0.8,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 23.0,
+      "cmax_therapeutic_um": 0.42,
+      "redfern_margin": 54.8,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Zjonizowana grupa karboksylowa uniemożliwia penetrację do hydrofobowej kieszeni kanału hERG. Margines Redferna > 50x; brak ryzyka arytmii."
+    },
+    "structural_alerts": [],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Stosować w ciąży jedynie w przypadku zdecydowanej konieczności klinicznej, gdy cetyryzyna lub loratadyna są nieskuteczne.",
+      "pllr_lactation_pl": "Zgodna z laktacją; niska penetracja do mleka.",
+      "rid_pct": 1.8,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "valproate-compound": {
+    "compound_id": "valproate-compound",
+    "dili": {
+      "dilirank": "Most-DILI-concern",
+      "phenotype": "hepatocellular",
+      "mechanism_pl": "Hamowanie mitochondrialnej beta-oksydacji kwasów tłuszczowych oraz enzymów cyklu mocznikowego (syntetazy karbamoilofosforanowej I); metabolit 4-en-VPA powoduje mikro-stłuszczenie, hiperamonemię i ostrą martwicę wątroby u dzieci z mutacją POLG.",
+      "baseline_alt_fold": 1.4,
+      "toxic_alt_fold": 8.5,
+      "baseline_bili_fold": 0.9,
+      "toxic_bili_fold": 2.8,
+      "alp_elevation": false,
+      "hy_law_risk": "high_idiosyncratic"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 1000.0,
+      "cmax_therapeutic_um": 500.0,
+      "redfern_margin": 2.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Brak powinowactwa do kanału hERG; kardiotoksyczność nie występuje."
+    },
+    "structural_alerts": [
+      {
+        "id": "branched_carboxylic_acid",
+        "name_pl": "Rozgałęziony kwas karboksylowy (prekursor 4-en-VPA)",
+        "smarts_pattern": "CCCC(CCC)C(=O)O",
+        "hazard_type": "reactive_metabolite",
+        "description_pl": "Generuje reaktywny intermediat 4-en-VPA ulegający kumulacji w mitochondriach hepatocytów."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "X",
+      "pllr_pregnancy_pl": "BEZWZGLĘDNIE PRZECIWWSKAZANY W CIĄŻY. Ciężki teratogen: 10-krotny wzrost wad cewy nerwowej (spina bifida ~1-2%), dysmorfia twarzy, wady serca oraz obniżenie ilorazu inteligencji (IQ) u dzieci o 8-10 punktów.",
+      "pllr_lactation_pl": "Wydalany do mleka matki w niewielkich ilościach; zaleca się ostrożność i monitorowanie niemowlęcia.",
+      "rid_pct": 3.1,
+      "rid_safe": true,
+      "teratogenic_risk": "contraindicated",
+      "black_box_teratogen": true
+    }
+  },
+  "isotretinoin-compound": {
+    "compound_id": "isotretinoin-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "mixed",
+      "mechanism_pl": "Stymulacja lipogenezy wątrobowej, hipertriglicerydemia, przemijający wzrost aminotransferaz u 15% pacjentów; rzadko ostre zapalenie wątroby.",
+      "baseline_alt_fold": 1.3,
+      "toxic_alt_fold": 3.1,
+      "baseline_bili_fold": 0.8,
+      "toxic_bili_fold": 1.2,
+      "alp_elevation": true,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 50.0,
+      "cmax_therapeutic_um": 1.5,
+      "redfern_margin": 33.3,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Brak istotnego blokowania hERG w stężeniach terapeutycznych."
+    },
+    "structural_alerts": [
+      {
+        "id": "retinoid_polyene",
+        "name_pl": "Układ polienowy retinoidu",
+        "smarts_pattern": "CC1=C(C(CCC1)(C)C)C=CC(=CC=CC(=CC(=O)O)C)C",
+        "hazard_type": "teratogen",
+        "description_pl": "Masywna aktywacja receptorów jądrowych RAR/RXR zaburzająca migrację komórek grzebienia nerwowego w embriogenezie."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "X",
+      "pllr_pregnancy_pl": "SKRAJNY TERATOGEN (KATEGORIA X). Nawet pojedyncza dawka może wywołać ciężką embriopatię retinoidową: wady twarzoczaszki (mikrocja, brak przewodu słuchowego), wady OUN (wodogłowie), wady układu sercowo-naczyniowego. Obowiązkowy program zapobiegania ciąży (iPLEDGE).",
+      "pllr_lactation_pl": "BEZWZGLĘDNIE PRZECIWWSKAZANA PODCZAS LAKTACJI ze względu na lipofilność i potencjał toksyczny u niemowląt.",
+      "rid_pct": 14.5,
+      "rid_safe": false,
+      "teratogenic_risk": "contraindicated",
+      "black_box_teratogen": true
+    }
+  },
+  "verapamil-compound": {
+    "compound_id": "verapamil-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "hepatocellular",
+      "mechanism_pl": "Idiosynkratyczne uszkodzenie wątrobowokomórkowe o charakterze immunologicznym; rzadkie, ustępujące po odstawieniu.",
+      "baseline_alt_fold": 1.1,
+      "toxic_alt_fold": 3.8,
+      "baseline_bili_fold": 0.7,
+      "toxic_bili_fold": 1.4,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 0.143,
+      "cmax_therapeutic_um": 0.05,
+      "redfern_margin": 2.86,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "cav12_blockade",
+      "mechanism_pl": "WZORZEC KOMPENSACJI CiPA: Silna blokada hERG (IC50 = 143 nM) jest fizjologicznie neutralizowana przez równoległą blokadę kanałów wapniowych typu L (Cav1.2, IC50 = 100 nM). Skrócenie fazy plateau potencjału czynnościowego zapobiega wydłużeniu QTc i zjawisku wczesnych depolaryzacji następczych (EAD). Brak ryzyka TdP!"
+    },
+    "structural_alerts": [],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Przechodzi przez łożysko; stosować wyłącznie w zaburzeniach rytmu serca matki lub płodu w przypadku braku bezpieczniejszych alternatyw.",
+      "pllr_lactation_pl": "Wydalany z mlekiem matki w minimalnym stopniu; dopuszczony z monitorowaniem tętna niemowlęcia.",
+      "rid_pct": 0.8,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "haloperidol-compound": {
+    "compound_id": "haloperidol-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "cholestatic",
+      "mechanism_pl": "Cholestaza wewnątrzwątrobowa i łagodne zapalenie przewodzików żółciowych w mechanizmie nadwrażliwości.",
+      "baseline_alt_fold": 1.2,
+      "toxic_alt_fold": 2.8,
+      "baseline_bili_fold": 0.9,
+      "toxic_bili_fold": 2.1,
+      "alp_elevation": true,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 0.027,
+      "cmax_therapeutic_um": 0.008,
+      "redfern_margin": 3.38,
+      "redfern_class": "Class 2 (High TdP risk)",
+      "crediblemeds": "Known risk",
+      "cipa_compensation": "none",
+      "mechanism_pl": "Czysta i silna blokada kanału hERG (IC50 = 27 nM) bez kompensacji wapniowej. Wysokie ryzyko wydłużenia QTc i Torsades de Pointes, szczególnie przy podaniu dożylnym (i.v.) lub hipokaliemii."
+    },
+    "structural_alerts": [
+      {
+        "id": "halophenyl_piperidine",
+        "name_pl": "Układ 4-(4-chlorofenylo)piperidin-4-olu",
+        "smarts_pattern": "OC1(CCNCC1)c2ccc(Cl)cc2",
+        "hazard_type": "reactive_metabolite",
+        "description_pl": "Metabolizowany do neurotoksycznego analogu pirydyniowego HPP+ (strukturalnego odpowiednika MPP+)."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Stosowanie w III trymestrze wiąże się z ryzykiem objawów pozapiramidowych i zespołu odstawiennego u noworodka.",
+      "pllr_lactation_pl": "Wydalany z mlekiem; zalecana ostrożność ze względu na ryzyko sedacji i zaburzeń napięcia u dziecka.",
+      "rid_pct": 2.8,
+      "rid_safe": true,
+      "teratogenic_risk": "moderate",
+      "black_box_teratogen": false
+    }
+  },
+  "amoxicillin-compound": {
+    "compound_id": "amoxicillin-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "hepatocellular",
+      "mechanism_pl": "Sama amoksycylina rzadko powoduje uszkodzenie wątroby; łagodny, przejściowy wzrost enzymów wątrobowych u <1% pacjentów.",
+      "baseline_alt_fold": 1.0,
+      "toxic_alt_fold": 1.8,
+      "baseline_bili_fold": 0.6,
+      "toxic_bili_fold": 0.9,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 300.0,
+      "cmax_therapeutic_um": 25.0,
+      "redfern_margin": 12.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Brak wpływu na kanały potasowe serca."
+    },
+    "structural_alerts": [
+      {
+        "id": "beta_lactam",
+        "name_pl": "Pierścień beta-laktamowy",
+        "smarts_pattern": "C1C(=O)NC1",
+        "hazard_type": "idiosyncratic_hapten",
+        "description_pl": "Reaktywny pierścień laktamowy acylujący reszty lizynowe białek osocza i tworzący antygeny penicylilowe wywołujące reakcje anafilaktyczne."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "B",
+      "pllr_pregnancy_pl": "Antybiotyk I wyboru w ciąży. Szerokie dane kliniczne potwierdzają brak teratogenności.",
+      "pllr_lactation_pl": "Zgodna z karmieniem piersią; możliwe zaburzenia flory jelitowej niemowlęcia.",
+      "rid_pct": 0.5,
+      "rid_safe": true,
+      "teratogenic_risk": "none",
+      "black_box_teratogen": false
+    }
+  },
+  "clavulanate-compound": {
+    "compound_id": "clavulanate-compound",
+    "dili": {
+      "dilirank": "Most-DILI-concern",
+      "phenotype": "cholestatic",
+      "mechanism_pl": "Główny sprawca uszkodzenia wątroby w preparacie Augmentin (Amoxicillin/Clavulanate) - najczęstszej przyczyny polekowej cholestazy. Mechanizm immuno-alergiczny sprzężony z haplotypem HLA-DRB1*15:01; selektywne uszkodzenie nabłonka małych przewodzików żółciowych (ductopenia).",
+      "baseline_alt_fold": 1.5,
+      "toxic_alt_fold": 4.5,
+      "baseline_bili_fold": 1.1,
+      "toxic_bili_fold": 4.8,
+      "alp_elevation": true,
+      "hy_law_risk": "high_idiosyncratic"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 500.0,
+      "cmax_therapeutic_um": 12.0,
+      "redfern_margin": 41.6,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Brak kardiotoksyczności."
+    },
+    "structural_alerts": [
+      {
+        "id": "oxapenam",
+        "name_pl": "Układ oksapenamu",
+        "smarts_pattern": "O1C2CC(=O)N2C1",
+        "hazard_type": "idiosyncratic_hapten",
+        "description_pl": "Samobójczy inhibitor beta-laktamaz tworzący kowalencyjne addukty białkowe w przewodzikach żółciowych."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "B",
+      "pllr_pregnancy_pl": "Bezpieczny w ciąży, aczkolwiek w badaniach u kobiet z przedwczesnym pęknięciem pęcherza płodowego notowano zwiększone ryzyko martwiczego zapalenia jelit (NEC) u noworodków.",
+      "pllr_lactation_pl": "Zgodny z karmieniem piersią.",
+      "rid_pct": 1.1,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "methotrexate-compound": {
+    "compound_id": "methotrexate-compound",
+    "dili": {
+      "dilirank": "Most-DILI-concern",
+      "phenotype": "hepatocellular",
+      "mechanism_pl": "Poliglutamylacja w hepatocytach prowadzi do kumulacji wewnątrzkomórkowej, deplecji kwasu foliowego, stłuszczenia i postępującego włóknienia/marskości wątroby przy terapii przewlekłej.",
+      "baseline_alt_fold": 1.6,
+      "toxic_alt_fold": 6.8,
+      "baseline_bili_fold": 0.9,
+      "toxic_bili_fold": 2.2,
+      "alp_elevation": false,
+      "hy_law_risk": "moderate"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 300.0,
+      "cmax_therapeutic_um": 1.0,
+      "redfern_margin": 300.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Brak bezpośredniej kardiotoksyczności elektrofizjologicznej."
+    },
+    "structural_alerts": [
+      {
+        "id": "pteridine_antifolate",
+        "name_pl": "Układ pterydynowy (antymetabolit kwasu foliowego)",
+        "smarts_pattern": "c1nc2nc(N)nc(N)c2nc1",
+        "hazard_type": "teratogen",
+        "description_pl": "Silne hamowanie reduktazy dihydrofoliowej (DHFR) uniemożliwiające syntezę tymidylanów i replikację DNA w szybko dzielących się komórkach zarodka."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "X",
+      "pllr_pregnancy_pl": "BEZWZGLĘDNIE PRZECIWWSKAZANY W CIĄŻY. Ciężki teratogen i poronny. Zespół aminopterynowy/metotreksatowy: wady czaszki, rozszczep podniebienia, zrośnięcie palców (syndaktylia), wady serca i opóźnienie rozwoju.",
+      "pllr_lactation_pl": "PRZECIWWSKAZANY podczas karmienia piersią ze względu na kumulację w tkankach i hamowanie układu krwiotwórczego noworodka.",
+      "rid_pct": 5.8,
+      "rid_safe": false,
+      "teratogenic_risk": "contraindicated",
+      "black_box_teratogen": true
+    }
+  },
+  "thalidomide-compound": {
+    "compound_id": "thalidomide-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "mixed",
+      "mechanism_pl": "Sporadyczny wzrost aminotransferaz; główny metabolizm odbywa się na drodze nieenzymatycznej hydrolizy spontanicznej.",
+      "baseline_alt_fold": 1.1,
+      "toxic_alt_fold": 2.1,
+      "baseline_bili_fold": 0.7,
+      "toxic_bili_fold": 1.0,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 250.0,
+      "cmax_therapeutic_um": 5.0,
+      "redfern_margin": 50.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "Possible risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Ryzyko bradykardii zatokowej, brak wydłużenia QTc."
+    },
+    "structural_alerts": [
+      {
+        "id": "glutarimide_phthaloyl",
+        "name_pl": "Pierścień ftaloilo-glutarimidowy",
+        "smarts_pattern": "O=C1CCC(NC(=O)c2ccccc21)C(=O)N",
+        "hazard_type": "teratogen",
+        "description_pl": "Wiązanie z białkiem cereblon (CRBN) składowej ligazy ubikwityny E3 powodujące proteasomalną degradację czynników transkrypcyjnych SALL4 w zarodku."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "X",
+      "pllr_pregnancy_pl": "HISTORYCZNY MODEL CIĘŻKIEGO TERATOGENU (KATEGORIA X). Ekspozycja w dniach 20-36 od zapłodnienia powoduje fokomelię (skrócenie/brak kończyn), amelię, wady uszu, oczu i serca u 50% płodów. Obowiązkowy program kontroli dystrybucji (REMS).",
+      "pllr_lactation_pl": "BEZWZGLĘDNIE PRZECIWWSKAZANY podczas karmienia piersią.",
+      "rid_pct": 12.0,
+      "rid_safe": false,
+      "teratogenic_risk": "contraindicated",
+      "black_box_teratogen": true
+    }
+  },
+  "amiodarone-compound": {
+    "compound_id": "amiodarone-compound",
+    "dili": {
+      "dilirank": "Most-DILI-concern",
+      "phenotype": "mixed",
+      "mechanism_pl": "Inhibicja fosfolipaz lizosomalnych powodująca fosfolipidozę wątrobową i akumulację ciał blaszkowatych; tworzenie ciałek Malloryego-Denka przypominających alkoholowe stłuszczeniowe zapalenie wątroby (MASH) z włóknieniem.",
+      "baseline_alt_fold": 1.8,
+      "toxic_alt_fold": 5.2,
+      "baseline_bili_fold": 1.0,
+      "toxic_bili_fold": 2.5,
+      "alp_elevation": true,
+      "hy_law_risk": "moderate"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 0.1,
+      "cmax_therapeutic_um": 1.5,
+      "redfern_margin": 0.07,
+      "redfern_class": "Class 3 (Moderate TdP risk)",
+      "crediblemeds": "Known risk",
+      "cipa_compensation": "cav12_blockade",
+      "mechanism_pl": "Wielokanałowy lek przeciwarytmiczny klasy III (blokuje hERG, Nav1.5, Cav1.2 oraz receptory alfa/beta). Pomimo potężnego wydłużenia QTc, ryzyko Torsades de Pointes jest zaskakująco niskie (<1%) dzięki jednoczesnej blokadzie dokomorowych prądów wapniowych i sodowych."
+    },
+    "structural_alerts": [
+      {
+        "id": "diiodo_benzofuran",
+        "name_pl": "Pierścień dijodobenzofuranowy",
+        "smarts_pattern": "c1c(I)c(O)c(I)cc1",
+        "hazard_type": "reactive_metabolite",
+        "description_pl": "Wysoka zawartość jodu (37% masy cząsteczkowej) i lipofilność prowadząca do kumulacji w tkankach (t1/2 do 60 dni) oraz tyreotoksyczności."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "D",
+      "pllr_pregnancy_pl": "Przechodzi przez łożysko; wywołuje wole tarczycowe, bradykardię i wady u płodu. Stosować wyłącznie w zagrażających życiu arytmiach matki.",
+      "pllr_lactation_pl": "PRZECIWWSKAZANY podczas karmienia piersią ze względu na uwalnianie jodu i hamowanie tarczycy niemowlęcia.",
+      "rid_pct": 18.0,
+      "rid_safe": false,
+      "teratogenic_risk": "high",
+      "black_box_teratogen": true
+    }
+  },
+  "ketoconazole-compound": {
+    "compound_id": "ketoconazole-compound",
+    "dili": {
+      "dilirank": "Most-DILI-concern",
+      "phenotype": "hepatocellular",
+      "mechanism_pl": "Zahamowanie CYP51 oraz szlaków syntezy kwasów żółciowych, uszkodzenie mitochondriów i martwica hepatocytów; wycofany doustnie w UE z powodu piorunującej niewydolności wątroby.",
+      "baseline_alt_fold": 1.6,
+      "toxic_alt_fold": 12.0,
+      "baseline_bili_fold": 1.0,
+      "toxic_bili_fold": 3.8,
+      "alp_elevation": false,
+      "hy_law_risk": "high_idiosyncratic"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 2.5,
+      "cmax_therapeutic_um": 5.0,
+      "redfern_margin": 0.5,
+      "redfern_class": "Class 2 (High TdP risk)",
+      "crediblemeds": "Possible risk",
+      "cipa_compensation": "none",
+      "mechanism_pl": "Umiarkowana bezpośrednia blokada hERG, lecz ekstremalna inhibicja CYP3A4 wywołuje katastrofalne interakcje farmakokinetyczne (np. z terfenadyną/cyzaprydem)."
+    },
+    "structural_alerts": [
+      {
+        "id": "imidazole_dioxolane",
+        "name_pl": "Pierścień imidazolowy połączony z dioksolanem",
+        "smarts_pattern": "n1cc[nH]1",
+        "hazard_type": "reactive_metabolite",
+        "description_pl": "Koordynacja żelaza hemu cytochromu P450 wywołująca nieodwracalną inhibicję enzymów mikrosomalnych."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Teratogenny u zwierząt (syndaktylia, oligodaktylia); przeciwwskazany w ciąży doustnie.",
+      "pllr_lactation_pl": "Wydalany z mlekiem; unikać karmienia piersią.",
+      "rid_pct": 4.2,
+      "rid_safe": true,
+      "teratogenic_risk": "high",
+      "black_box_teratogen": true
+    }
+  },
+  "troglitazone-compound": {
+    "compound_id": "troglitazone-compound",
+    "dili": {
+      "dilirank": "Most-DILI-concern",
+      "phenotype": "hepatocellular",
+      "mechanism_pl": "Bioaktywacja do elektrofilowych chinonów, zahamowanie pompy eksportowej kwasów żółciowych (BSEP) oraz wywołanie stresu retikulum endoplazmatycznego; wycofany z rynku z powodu zgonów z martwicy wątroby.",
+      "baseline_alt_fold": 2.1,
+      "toxic_alt_fold": 25.0,
+      "baseline_bili_fold": 1.2,
+      "toxic_bili_fold": 6.5,
+      "alp_elevation": false,
+      "hy_law_risk": "high_idiosyncratic"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 15.0,
+      "cmax_therapeutic_um": 3.0,
+      "redfern_margin": 5.0,
+      "redfern_class": "Class 4 (Low TdP risk)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Niewielkie ryzyko arytmii komorowej; dominowała piorunująca hepatotoksyczność."
+    },
+    "structural_alerts": [
+      {
+        "id": "chroman_thiazolidinedione",
+        "name_pl": "Ugrupowanie chromanolowo-tiazolidynodionowe",
+        "smarts_pattern": "O=C1NC(=O)SC1",
+        "hazard_type": "reactive_metabolite",
+        "description_pl": "Generuje reaktywne chinony chromanolowe uszkadzające mitochondria hepatocytów."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Lek wycofany z rynku światowego ze względów bezpieczeństwa narządowego.",
+      "pllr_lactation_pl": "Przeciwwskazany.",
+      "rid_pct": 5.0,
+      "rid_safe": true,
+      "teratogenic_risk": "moderate",
+      "black_box_teratogen": true
+    }
+  },
+  "isoniazid-compound": {
+    "compound_id": "isoniazid-compound",
+    "dili": {
+      "dilirank": "Most-DILI-concern",
+      "phenotype": "hepatocellular",
+      "mechanism_pl": "Metabolizowany przez NAT2 do acetylohydrazyny, a następnie przez CYP2E1 do reaktywnych elektrofilów acetylujących makromolekuły wątroby; wolni acetylatorzy (NAT2 slow) są szczególnie narażeni na ostrą martwicę.",
+      "baseline_alt_fold": 1.5,
+      "toxic_alt_fold": 14.0,
+      "baseline_bili_fold": 0.9,
+      "toxic_bili_fold": 3.2,
+      "alp_elevation": false,
+      "hy_law_risk": "high_idiosyncratic"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 500.0,
+      "cmax_therapeutic_um": 30.0,
+      "redfern_margin": 16.6,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Brak powinowactwa do hERG."
+    },
+    "structural_alerts": [
+      {
+        "id": "hydrazine_acyl",
+        "name_pl": "Ugrupowanie hydrazydowe",
+        "smarts_pattern": "c1ccncc1C(=O)NN",
+        "hazard_type": "reactive_metabolite",
+        "description_pl": "Uwalnia wolną hydrazynę i rodniki acetylowe powodujące uszkodzenie DNA i białek hepatocytów."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Stosowany w ciąży w leczeniu gruźlicy ze względu na korzyść kliniczną przewyższającą ryzyko; wymaga suplementacji pirydoksyny (wit. B6).",
+      "pllr_lactation_pl": "Zgodny z karmieniem piersią; zaleca się podawanie witaminy B6 matce i niemowlęciu.",
+      "rid_pct": 1.2,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "atorvastatin-compound": {
+    "compound_id": "atorvastatin-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "hepatocellular",
+      "mechanism_pl": "Przemijający, bezobjawowy wzrost aminotransferaz u 1-2% pacjentów; rzadkie autoimmunologiczne zapalenie wątroby indukowane statynami (z przeciwciałami anty-HMGCR).",
+      "baseline_alt_fold": 1.2,
+      "toxic_alt_fold": 3.4,
+      "baseline_bili_fold": 0.7,
+      "toxic_bili_fold": 1.2,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 12.0,
+      "cmax_therapeutic_um": 0.05,
+      "redfern_margin": 240.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Szeroki margines bezpieczeństwa elektrofizjologicznego."
+    },
+    "structural_alerts": [],
+    "pregnancy_lactation": {
+      "fda_category": "X",
+      "pllr_pregnancy_pl": "PRZECIWWSKAZANA W CIĄŻY. Hamowanie syntezy cholesterolu zaburza rozwój błon komórkowych i syntezę hormonów steroidowych płodu.",
+      "pllr_lactation_pl": "Przeciwwskazana podczas laktacji.",
+      "rid_pct": 0.5,
+      "rid_safe": true,
+      "teratogenic_risk": "high",
+      "black_box_teratogen": true
+    }
+  },
+  "warfarin-compound": {
+    "compound_id": "warfarin-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "cholestatic",
+      "mechanism_pl": "Rzadkie uszkodzenie wątroby; sporadyczne reakcje cholestatyczne i martwica skóry wywołana deplecją białka C.",
+      "baseline_alt_fold": 1.1,
+      "toxic_alt_fold": 2.2,
+      "baseline_bili_fold": 0.8,
+      "toxic_bili_fold": 1.3,
+      "alp_elevation": true,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 150.0,
+      "cmax_therapeutic_um": 3.0,
+      "redfern_margin": 50.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Brak bezpośredniego wpływu na kanał hERG."
+    },
+    "structural_alerts": [
+      {
+        "id": "coumarin_derivative",
+        "name_pl": "Pochodna 4-hydroksykumaryny",
+        "smarts_pattern": "c1ccc2c(c1)c(O)c(=O)o2",
+        "hazard_type": "teratogen",
+        "description_pl": "Zaburza karboksylację osteokalcyny i białek macierzy kostnej płodu."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "X",
+      "pllr_pregnancy_pl": "CIĘŻKI TERATOGEN (KATEGORIA X). Płodowy zespół warfarynowy (FWS): hipoplazja nosa, punktowe zwapnienia nasad kości (chondrodysplasia punctata), wady wzroku i OUN. W ciąży zastępowana heparyną drobnocząsteczkową.",
+      "pllr_lactation_pl": "Zgodna z laktacją; nie przenika do mleka w postaci aktywnej ze względu na silne wiązanie z albuminami.",
+      "rid_pct": 0.1,
+      "rid_safe": true,
+      "teratogenic_risk": "contraindicated",
+      "black_box_teratogen": true
+    }
+  },
+  "ibuprofen-compound": {
+    "compound_id": "ibuprofen-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "mixed",
+      "mechanism_pl": "Tworzenie acylglukuronidów podatnych na transestryfikację z białkami komórkowymi; łagodny i rzadki odczyn wątrobowy.",
+      "baseline_alt_fold": 1.0,
+      "toxic_alt_fold": 2.5,
+      "baseline_bili_fold": 0.7,
+      "toxic_bili_fold": 1.1,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 100.0,
+      "cmax_therapeutic_um": 150.0,
+      "redfern_margin": 0.67,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Brak kardiotoksyczności arytmicznej; ryzyko sercowo-naczyniowe wynika z retencji sodu i hamowania COX-2."
+    },
+    "structural_alerts": [
+      {
+        "id": "arylpropionic_acid",
+        "name_pl": "Kwas 2-arylopropionowy (profenn)",
+        "smarts_pattern": "CC(C(=O)O)c1ccc(cc1)",
+        "hazard_type": "acyl_glucuronide",
+        "description_pl": "Tworzy reaktywne 1-O-acylglukuronidy ulegające migracji wewnątrzcząsteczkowej i kowalencyjnemu wiązaniu z albuminami."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "D",
+      "pllr_pregnancy_pl": "PRZECIWWSKAZANY OD 20. TYGODNIA CIĄŻY. Ryzyko przedwczesnego zamknięcia przewodu tętniczego Botalla (PDA), nadciśnienia płucnego noworodka oraz małowodzia (oligohydramnios) w wyniku dysfunkcji nerek płodu.",
+      "pllr_lactation_pl": "Zgodny z karmieniem piersią; lek I wyboru u matek karmiących (bardzo niski RID).",
+      "rid_pct": 0.4,
+      "rid_safe": true,
+      "teratogenic_risk": "high",
+      "black_box_teratogen": false
+    }
+  },
+  "metformin-compound": {
+    "compound_id": "metformin-compound",
+    "dili": {
+      "dilirank": "No-DILI-concern",
+      "phenotype": "none",
+      "mechanism_pl": "Brak metabolizmu wątrobowego; wydalana w 100% niezmieniona przez nerki. Brak hepatotoksyczności (ryzykiem jest kwasica mleczanowa w niewydolności nerek).",
+      "baseline_alt_fold": 0.9,
+      "toxic_alt_fold": 1.1,
+      "baseline_bili_fold": 0.6,
+      "toxic_bili_fold": 0.8,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 1000.0,
+      "cmax_therapeutic_um": 10.0,
+      "redfern_margin": 100.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Całkowity brak blokady hERG."
+    },
+    "structural_alerts": [],
+    "pregnancy_lactation": {
+      "fda_category": "B",
+      "pllr_pregnancy_pl": "Stosowana w cukrzycy ciążowej i zespole policystycznych jajników (PCOS); liczne badania nie wykazały wzrostu wad wrodzonych.",
+      "pllr_lactation_pl": "Przenika do mleka w niewielkich ilościach; uważana za zgodną z laktacją pod nadzorem glikemii niemowlęcia.",
+      "rid_pct": 0.6,
+      "rid_safe": true,
+      "teratogenic_risk": "none",
+      "black_box_teratogen": false
+    }
+  },
+  "clozapine-compound": {
+    "compound_id": "clozapine-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "hepatocellular",
+      "mechanism_pl": "Tworzenie reaktywnego jonu nitrenowego utlenianego przez mieloperoksydazę i CYP3A4, wywołującego rzadkie piorunujące zapalenie wątroby.",
+      "baseline_alt_fold": 1.4,
+      "toxic_alt_fold": 4.2,
+      "baseline_bili_fold": 0.8,
+      "toxic_bili_fold": 1.8,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 0.34,
+      "cmax_therapeutic_um": 1.1,
+      "redfern_margin": 0.31,
+      "redfern_class": "Class 3 (Moderate TdP risk)",
+      "crediblemeds": "Conditional risk",
+      "cipa_compensation": "none",
+      "mechanism_pl": "Umiarkowane wydłużenie QTc, lecz główną kardiotoksycznością jest ostre zapalenie mięśnia sercowego (myocarditis) o podłożu immunologicznym w pierwszych 2 miesiącach terapii."
+    },
+    "structural_alerts": [
+      {
+        "id": "dibenzodiazepine_nitrenium",
+        "name_pl": "Prekursor jonu nitrenowego",
+        "smarts_pattern": "c1ccc2c(c1)Nc3ccccc3N=C2N4CCNCC4",
+        "hazard_type": "reactive_metabolite",
+        "description_pl": "Utleniany do elektrofilowego jonu nitrenowego odpowiedzialnego za agranulocytozę i uszkodzenie hepatocytów."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "B",
+      "pllr_pregnancy_pl": "Brak dowodów na teratogenność; ryzyko sedacji i objawów pozapiramidowych u noworodka przy stosowaniu okołoporodowym.",
+      "pllr_lactation_pl": "PRZECIWWSKAZANA PODCZAS LAKTACJI ze względu na ryzyko agranulocytozy i zapaści krążeniowej u niemowlęcia.",
+      "rid_pct": 4.1,
+      "rid_safe": false,
+      "teratogenic_risk": "moderate",
+      "black_box_teratogen": false
+    }
+  },
+  "digoxin-compound": {
+    "compound_id": "digoxin-compound",
+    "dili": {
+      "dilirank": "No-DILI-concern",
+      "phenotype": "none",
+      "mechanism_pl": "Główny klirens nerkowy (75%); brak toksyczności wątrobowej.",
+      "baseline_alt_fold": 0.9,
+      "toxic_alt_fold": 1.1,
+      "baseline_bili_fold": 0.6,
+      "toxic_bili_fold": 0.8,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 50.0,
+      "cmax_therapeutic_um": 0.002,
+      "redfern_margin": 25000.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "Known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Nie blokuje kanału hERG. Kardiotoksyczność arytmogenna (częstoskurcz komorowy, blok AV) wynika wyłącznie z inhibicji pompy Na+/K+-ATPazy i przeładowania komórek wapniem (DADs)."
+    },
+    "structural_alerts": [
+      {
+        "id": "cardenolide_lactone",
+        "name_pl": "Pierścień nienasyconego laktonu kardenolidowego",
+        "smarts_pattern": "C1=CC(=O)OC1",
+        "hazard_type": "reactive_metabolite",
+        "description_pl": "Odpowiedzialny za specyficzne i nieodwracalne wiązanie z podjednostką alfa Na+/K+-ATPazy."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Lek z wyboru w leczeniu częstoskurczu nadkomorowego u płodu. Wymaga ścisłego monitorowania stężeń w osoczu.",
+      "pllr_lactation_pl": "Wydalany z mlekiem w znikomych ilościach; zgodny z karmieniem piersią.",
+      "rid_pct": 1.5,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "fentanyl-compound": {
+    "compound_id": "fentanyl-compound",
+    "dili": {
+      "dilirank": "No-DILI-concern",
+      "phenotype": "none",
+      "mechanism_pl": "Metabolizm przez CYP3A4 do nieaktywnego norfentanylu; brak hepatotoksyczności.",
+      "baseline_alt_fold": 1.0,
+      "toxic_alt_fold": 1.2,
+      "baseline_bili_fold": 0.7,
+      "toxic_bili_fold": 0.9,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 0.44,
+      "cmax_therapeutic_um": 0.005,
+      "redfern_margin": 88.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Umiarkowane powinowactwo do hERG, lecz skrajnie niskie stężenia terapeutyczne zapewniają bezpieczny margines."
+    },
+    "structural_alerts": [],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Przechodzi przez łożysko; przy stosowaniu porodowym ryzyko depresji oddechowej noworodka (konieczność naloksonu).",
+      "pllr_lactation_pl": "Zgodny z laktacją przy jednorazowym podaniu w znieczuleniu; odczekać 4-6h przed pierwszym karmieniem.",
+      "rid_pct": 2.9,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "morphine-compound": {
+    "compound_id": "morphine-compound",
+    "dili": {
+      "dilirank": "No-DILI-concern",
+      "phenotype": "none",
+      "mechanism_pl": "Glukuronidacja przez UGT2B7 do M3G i M6G; brak uszkodzenia wątroby.",
+      "baseline_alt_fold": 1.0,
+      "toxic_alt_fold": 1.2,
+      "baseline_bili_fold": 0.6,
+      "toxic_bili_fold": 0.9,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 100.0,
+      "cmax_therapeutic_um": 0.2,
+      "redfern_margin": 500.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Brak wpływu na repolaryzację komorową."
+    },
+    "structural_alerts": [],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Przewlekłe stosowanie w ciąży prowadzi do noworodkowego zespołu odstawiennego (NAS); bezpieczna doraźnie w bólu ostrym.",
+      "pllr_lactation_pl": "Zgodna z karmieniem piersią przy dawkach terapeutycznych; unikać dawek powtarzanych u wcześniaków.",
+      "rid_pct": 5.4,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "metoprolol-compound": {
+    "compound_id": "metoprolol-compound",
+    "dili": {
+      "dilirank": "No-DILI-concern",
+      "phenotype": "none",
+      "mechanism_pl": "Wątrobowa eliminacja przez CYP2D6; brak uszkodzenia hepatocytów.",
+      "baseline_alt_fold": 0.9,
+      "toxic_alt_fold": 1.2,
+      "baseline_bili_fold": 0.6,
+      "toxic_bili_fold": 0.8,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 10.0,
+      "cmax_therapeutic_um": 0.4,
+      "redfern_margin": 25.0,
+      "redfern_class": "Class 4 (Low TdP risk)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Beta-bloker o właściwościach przeciwtachyarytmicznych; rzadko powoduje wydłużenie QTc."
+    },
+    "structural_alerts": [],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Beta-blokery mogą wywołać bradykardię, hipoglikemię i ograniczenie wewnątrzmacicznego wzrostu płodu (IUGR). Preferowany labetalol.",
+      "pllr_lactation_pl": "Zgodny z laktacją; niska dawka przyjmowana przez niemowlę.",
+      "rid_pct": 1.5,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "diazepam-compound": {
+    "compound_id": "diazepam-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "mixed",
+      "mechanism_pl": "Rzadkie cholestatyczne uszkodzenie wątroby.",
+      "baseline_alt_fold": 1.1,
+      "toxic_alt_fold": 2.2,
+      "baseline_bili_fold": 0.8,
+      "toxic_bili_fold": 1.3,
+      "alp_elevation": true,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 30.0,
+      "cmax_therapeutic_um": 1.0,
+      "redfern_margin": 30.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Brak kardiotoksyczności arytmicznej."
+    },
+    "structural_alerts": [],
+    "pregnancy_lactation": {
+      "fda_category": "D",
+      "pllr_pregnancy_pl": "Przechodzi przez łożysko; stosowany w III trymestrze wywołuje zespół wiotkiego dziecka (floppy infant syndrome) i hipotermię.",
+      "pllr_lactation_pl": "Aktywny metabolit nordazepam kumuluje się u niemowlęcia; niezalecany podczas laktacji.",
+      "rid_pct": 8.8,
+      "rid_safe": true,
+      "teratogenic_risk": "moderate",
+      "black_box_teratogen": false
+    }
+  },
+  "midazolam-compound": {
+    "compound_id": "midazolam-compound",
+    "dili": {
+      "dilirank": "No-DILI-concern",
+      "phenotype": "none",
+      "mechanism_pl": "Hydroksylacja przez CYP3A4; bezpieczny profil wątrobowy.",
+      "baseline_alt_fold": 1.0,
+      "toxic_alt_fold": 1.1,
+      "baseline_bili_fold": 0.6,
+      "toxic_bili_fold": 0.8,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 50.0,
+      "cmax_therapeutic_um": 0.3,
+      "redfern_margin": 166.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Brak istotnego blokowania hERG."
+    },
+    "structural_alerts": [],
+    "pregnancy_lactation": {
+      "fda_category": "D",
+      "pllr_pregnancy_pl": "Depresja OUN i oddechowa u noworodka przy stosowaniu okołoporodowym.",
+      "pllr_lactation_pl": "Krótki okres półtrwania; dopuszczony przy zachowaniu 4h przerwy po znieczuleniu.",
+      "rid_pct": 1.2,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "sertraline-compound": {
+    "compound_id": "sertraline-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "mixed",
+      "mechanism_pl": "Idiosynkratyczne uszkodzenie wątrobowokomórkowe lub cholestatyczne u 1/100 000 pacjentów.",
+      "baseline_alt_fold": 1.2,
+      "toxic_alt_fold": 3.2,
+      "baseline_bili_fold": 0.7,
+      "toxic_bili_fold": 1.4,
+      "alp_elevation": true,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 0.35,
+      "cmax_therapeutic_um": 0.15,
+      "redfern_margin": 2.33,
+      "redfern_class": "Class 4 (Low TdP risk)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Umiarkowane powinowactwo do hERG, lecz rzadko daje kliniczne wydłużenie QTc w dawkach terapeutycznych."
+    },
+    "structural_alerts": [],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "SSRI I wyboru w ciąży i połogu. Najbogatsze dane kliniczne potwierdzające bezpieczeństwo embriologiczne.",
+      "pllr_lactation_pl": "Lek I wyboru u matek karmiących piersią (skrajnie niski transfer do mleka).",
+      "rid_pct": 0.5,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "fluoxetine-compound": {
+    "compound_id": "fluoxetine-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "hepatocellular",
+      "mechanism_pl": "Przejściowy wzrost enzymów wątrobowych; rzadko ostre zapalenie wątroby.",
+      "baseline_alt_fold": 1.1,
+      "toxic_alt_fold": 2.9,
+      "baseline_bili_fold": 0.7,
+      "toxic_bili_fold": 1.3,
+      "alp_elevation": false,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 1.5,
+      "cmax_therapeutic_um": 0.5,
+      "redfern_margin": 3.0,
+      "redfern_class": "Class 4 (Low TdP risk)",
+      "crediblemeds": "Conditional risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "W dawkach toksycznych lub u osób z wolnym metabolizmem CYP2D6 może wydłużać odstęp QTc."
+    },
+    "structural_alerts": [],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Stosowana w ciąży, aczkolwiek opisywano niewielki wzrost ryzyka przetrwałego nadciśnienia płucnego noworodków (PPHN) w III trymestrze.",
+      "pllr_lactation_pl": "Długi okres półtrwania metabolitu norfluoksetyny; preferowana sertralina w okresie laktacji.",
+      "rid_pct": 6.8,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "risperidone-compound": {
+    "compound_id": "risperidone-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "cholestatic",
+      "mechanism_pl": "Cholestatyczne uszkodzenie wątroby, wzrost ALP i bilirubiny o charakterze łagodnym.",
+      "baseline_alt_fold": 1.2,
+      "toxic_alt_fold": 2.6,
+      "baseline_bili_fold": 0.8,
+      "toxic_bili_fold": 1.8,
+      "alp_elevation": true,
+      "hy_law_risk": "low"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 0.16,
+      "cmax_therapeutic_um": 0.03,
+      "redfern_margin": 5.3,
+      "redfern_class": "Class 4 (Low TdP risk)",
+      "crediblemeds": "Possible risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Blokada kanału hERG wywołuje umiarkowane wydłużenie odstępu QTc; rzadko opisywano TdP bez innych czynników ryzyka."
+    },
+    "structural_alerts": [],
+    "pregnancy_lactation": {
+      "fda_category": "C",
+      "pllr_pregnancy_pl": "Ryzyko objawów pozapiramidowych i pobudzenia u noworodka przy ekspozycji w III trymestrze.",
+      "pllr_lactation_pl": "Wydalany z mlekiem; monitorować sedację i przyrost masy ciała niemowlęcia.",
+      "rid_pct": 3.8,
+      "rid_safe": true,
+      "teratogenic_risk": "low",
+      "black_box_teratogen": false
+    }
+  },
+  "carbamazepine-compound": {
+    "compound_id": "carbamazepine-compound",
+    "dili": {
+      "dilirank": "Most-DILI-concern",
+      "phenotype": "mixed",
+      "mechanism_pl": "Bioaktywacja do elektrofilowego 2-hydroksy-karbamazepiny i chinonodiimin; silna reakcja immuno-alergiczna (DRESS - Drug Reaction with Eosinophilia and Systemic Symptoms) sprzężona z allelem HLA-B*15:02.",
+      "baseline_alt_fold": 1.7,
+      "toxic_alt_fold": 9.2,
+      "baseline_bili_fold": 1.0,
+      "toxic_bili_fold": 3.4,
+      "alp_elevation": true,
+      "hy_law_risk": "high_idiosyncratic"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 120.0,
+      "cmax_therapeutic_um": 30.0,
+      "redfern_margin": 4.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "nav15_blockade",
+      "mechanism_pl": "Lek blokujący kanały sodowe Nav1.5; może wywołać blok przedsionkowo-komorowy i bradykardię, lecz nie wydłuża repolaryzacji hERG."
+    },
+    "structural_alerts": [
+      {
+        "id": "iminostilbene_arene_oxide",
+        "name_pl": "Układ iminostilbenu (prekursor areno-tlenku)",
+        "smarts_pattern": "c1ccc2c(c1)C=Cc3ccccc3N2C(=O)N",
+        "hazard_type": "reactive_metabolite",
+        "description_pl": "Utleniany przez CYP3A4 do reaktywnego epoksydu karbamazepiny tworzącego hapteny alergiczne."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "D",
+      "pllr_pregnancy_pl": "TERATOGEN (KATEGORIA D). Zespół karbamazepinowy: wady cewy nerwowej (rozszczep kręgosłupa ~1%), wady twarzoczaszki (hipoplazja części środkowej twarzy) i opóźnienie rozwoju.",
+      "pllr_lactation_pl": "Zgodna z karmieniem piersią przy ścisłym monitorowaniu wątroby i sedacji u dziecka.",
+      "rid_pct": 5.9,
+      "rid_safe": true,
+      "teratogenic_risk": "high",
+      "black_box_teratogen": true
+    }
+  },
+  "phenytoin-compound": {
+    "compound_id": "phenytoin-compound",
+    "dili": {
+      "dilirank": "Most-DILI-concern",
+      "phenotype": "mixed",
+      "mechanism_pl": "Areno-tlenki fenytoiny wywołują zespół nadwrażliwości polekowej (DRESS) z zapaleniem wątroby i nekrozą; nasycalna kinetyka Michaelisa-Menten sprzyja nagłemu skokowi stężeń toksycznych.",
+      "baseline_alt_fold": 1.6,
+      "toxic_alt_fold": 11.0,
+      "baseline_bili_fold": 0.9,
+      "toxic_bili_fold": 3.1,
+      "alp_elevation": true,
+      "hy_law_risk": "high_idiosyncratic"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 50.0,
+      "cmax_therapeutic_um": 40.0,
+      "redfern_margin": 1.25,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "nav15_blockade",
+      "mechanism_pl": "Bloker kanałów sodowych; dożylne wstrzyknięcie może wywołać zapaść krążeniową i asystolię, lecz nie wywołuje TdP."
+    },
+    "structural_alerts": [
+      {
+        "id": "hydantoin_arene_oxide",
+        "name_pl": "Pierścień hydantoinowy",
+        "smarts_pattern": "O=C1NC(=O)NC1(c2ccccc2)c3ccccc3",
+        "hazard_type": "teratogen",
+        "description_pl": "Metabolizowany do wolnych rodników arenowych uszkadzających tkanki płodowe."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "D",
+      "pllr_pregnancy_pl": "CIĘŻKI TERATOGEN (Płodowy Zespół Hydantoinowy — FHS): wady czaszkowo-twarzowe, rozszczep wargi/podniebienia, hipoplazja palców i paznokci, mikrocefalia.",
+      "pllr_lactation_pl": "Przenika do mleka; dopuszczona przy monitorowaniu stężenia u niemowlęcia.",
+      "rid_pct": 3.2,
+      "rid_safe": true,
+      "teratogenic_risk": "high",
+      "black_box_teratogen": true
+    }
+  },
+  "aspirin-compound": {
+    "compound_id": "aspirin-compound",
+    "dili": {
+      "dilirank": "Less-DILI-concern",
+      "phenotype": "hepatocellular",
+      "mechanism_pl": "Bezpośrednia toksyczność mitochondrialna w zespole Reye'a u dzieci z infekcją wirusową (mikrostłuszczenie i obrzęk mózgu); łagodny odczyn u dorosłych.",
+      "baseline_alt_fold": 1.2,
+      "toxic_alt_fold": 4.5,
+      "baseline_bili_fold": 0.7,
+      "toxic_bili_fold": 1.5,
+      "alp_elevation": false,
+      "hy_law_risk": "moderate"
+    },
+    "cardiotox": {
+      "herg_ic50_um": 1000.0,
+      "cmax_therapeutic_um": 50.0,
+      "redfern_margin": 20.0,
+      "redfern_class": "Class 5 (No TdP reported)",
+      "crediblemeds": "No known risk",
+      "cipa_compensation": "none_needed",
+      "mechanism_pl": "Brak powinowactwa do kanału hERG."
+    },
+    "structural_alerts": [
+      {
+        "id": "acetylsalicylate",
+        "name_pl": "Ester acetylosalicylowy",
+        "smarts_pattern": "CC(=O)Oc1ccccc1C(=O)O",
+        "hazard_type": "acyl_glucuronide",
+        "description_pl": "Kowalencyjna acetylacja reszt serynowych cyklooksygenazy (Ser529 w COX-1) oraz białek komórkowych."
+      }
+    ],
+    "pregnancy_lactation": {
+      "fda_category": "D",
+      "pllr_pregnancy_pl": "Niskie dawki (75-150 mg) są bezpieczne i zalecane w profilaktyce stanu przedrzucawkowego. Dawki przeciwbólowe (>500 mg) w III trymestrze są przeciwwskazane (ryzyko krwawień i przedwczesnego zamknięcia przewodu Botalla).",
+      "pllr_lactation_pl": "Niskie dawki są zgodne z laktacją; dawki wysokie mogą wywołać zespół Reye'a u niemowlęcia.",
+      "rid_pct": 2.5,
+      "rid_safe": true,
+      "teratogenic_risk": "moderate",
+      "black_box_teratogen": false
+    }
+  }
+}

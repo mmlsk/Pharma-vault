@@ -1,29 +1,37 @@
 PY ?= python3
-.PHONY: all catalog xlsx enrich pk chembl identity links verify ema vault graph export validate test clean \
-        expand chembl-fetch identity-fetch verify-fetch ema-fetch refresh
+.PHONY: all catalog xlsx enrich pk chembl identity links verify ema rpl psychonaut indications literature vault graph export validate test clean \
+        expand chembl-fetch identity-fetch verify-fetch ema-fetch rpl-fetch psychonaut-fetch indications-fetch literature-fetch refresh
 # offline, deterministic (this is what CI runs)
-all: catalog pk chembl identity verify ema links vault graph export validate test
-catalog:   ; cd scripts && $(PY) build_catalog.py
-xlsx:      ; cd scripts && $(PY) build_catalog.py --xlsx
-pk:        ; cd scripts && $(PY) enrich_pk.py parse
-chembl:    ; cd scripts && $(PY) enrich_chembl.py parse
-verify:    ; cd scripts && $(PY) verify_pk_fda.py parse
-identity:  ; cd scripts && $(PY) curate_identity.py parse
-ema:       ; cd scripts && $(PY) verify_pk_ema.py parse
-links:     ; cd scripts && $(PY) build_links.py
-vault:     ; cd scripts && $(PY) generate_vault_notes.py --prune
-graph:     ; cd scripts && $(PY) build_graph_data.py
-export:    ; cd scripts && $(PY) export_sqlite.py
-validate:  ; cd scripts && $(PY) validate.py
-test:      ; $(PY) -m pytest -q
+all: catalog pk chembl identity verify ema rpl psychonaut indications literature links vault graph export validate test
+catalog:   ; cd scripts && "$(PY)" build_catalog.py
+xlsx:      ; cd scripts && "$(PY)" build_catalog.py --xlsx
+pk:        ; cd scripts && "$(PY)" enrich_pk.py parse
+chembl:    ; cd scripts && "$(PY)" enrich_chembl.py parse
+verify:    ; cd scripts && "$(PY)" verify_pk_fda.py parse
+identity:  ; cd scripts && "$(PY)" curate_identity.py parse
+ema:       ; cd scripts && "$(PY)" verify_pk_ema.py parse
+rpl:       ; cd scripts && "$(PY)" enrich_rpl.py parse
+psychonaut:; cd scripts && "$(PY)" enrich_psychonaut.py parse
+indications:; cd scripts && "$(PY)" enrich_indications.py parse
+literature:; cd scripts && "$(PY)" enrich_literature.py parse
+links:     ; cd scripts && "$(PY)" build_links.py
+vault:     ; cd scripts && "$(PY)" generate_vault_notes.py --prune
+graph:     ; cd scripts && "$(PY)" build_graph_data.py
+export:    ; cd scripts && "$(PY)" export_sqlite.py
+validate:  ; cd scripts && "$(PY)" validate.py
+test:      ; "$(PY)" -m pytest -q
 
 # network stages - refresh the committed caches under data/enrichment/
-enrich:       ; cd scripts && $(PY) enrich_pk.py fetch && $(PY) enrich_pk.py parse
-expand:       ; cd scripts && $(PY) enrich_chembl.py resolve && $(PY) build_catalog.py
-chembl-fetch: ; cd scripts && $(PY) enrich_chembl.py fetch && $(PY) enrich_chembl.py parse
-verify-fetch: ; cd scripts && $(PY) verify_pk_fda.py fetch && $(PY) verify_pk_fda.py parse
-identity-fetch: ; cd scripts && $(PY) curate_identity.py fetch && $(PY) curate_identity.py parse
-ema-fetch:    ; cd scripts && $(PY) verify_pk_ema.py fetch && $(PY) verify_pk_ema.py parse
+enrich:       ; cd scripts && "$(PY)" enrich_pk.py fetch && "$(PY)" enrich_pk.py parse
+expand:       ; cd scripts && "$(PY)" enrich_chembl.py resolve && "$(PY)" build_catalog.py
+chembl-fetch: ; cd scripts && "$(PY)" enrich_chembl.py fetch && "$(PY)" enrich_chembl.py parse
+verify-fetch: ; cd scripts && "$(PY)" verify_pk_fda.py fetch && "$(PY)" verify_pk_fda.py parse
+identity-fetch: ; cd scripts && "$(PY)" curate_identity.py fetch && "$(PY)" curate_identity.py parse
+ema-fetch:    ; cd scripts && "$(PY)" verify_pk_ema.py fetch && "$(PY)" verify_pk_ema.py parse
+rpl-fetch:    ; cd scripts && "$(PY)" enrich_rpl.py fetch
+psychonaut-fetch: ; cd scripts && "$(PY)" enrich_psychonaut.py fetch
+indications-fetch: ; cd scripts && "$(PY)" enrich_indications.py fetch
+literature-fetch: ; cd scripts && "$(PY)" enrich_literature.py fetch
 refresh:
 	$(MAKE) chembl-fetch
 	$(MAKE) expand

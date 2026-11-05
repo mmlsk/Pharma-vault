@@ -1,0 +1,332 @@
+[
+  [
+    "lisdexamfetamine-compound",
+    "dextroamphetamine-compound",
+    "PRODRUG_OF",
+    "Biotransformacja erytrocytarna do aktywnej d-amfetaminy"
+  ],
+  [
+    "codeine-compound",
+    "morphine-compound",
+    "PRODRUG_OF",
+    "O-demetylacja przez CYP2D6 do aktywnej morfiny"
+  ],
+  [
+    "psilocybin-compound",
+    "psilocin-compound",
+    "PRODRUG_OF",
+    "Defosforylacja przez fosfatazę alkaliczną do psylocyny"
+  ],
+  [
+    "diamorphine-compound",
+    "morphine-compound",
+    "PRODRUG_OF",
+    "Deacetylacja w OUN do 6-MAM i morfiny"
+  ],
+  [
+    "tramadol-compound",
+    "o-desmethyltramadol-compound",
+    "PRODRUG_OF",
+    "O-demetylacja CYP2D6 do aktywnego analgetyka O-DSMT"
+  ],
+  [
+    "levodopa-compound",
+    "dopamine-drug-compound",
+    "PRODRUG_OF",
+    "Dekarboksylacja przez AADC do dopaminy w prążkowiu"
+  ],
+  [
+    "primidone-compound",
+    "phenobarbital-compound",
+    "PRODRUG_OF",
+    "Oksydacja wątrobowa do fenobarbitalu"
+  ],
+  [
+    "prednisone-compound",
+    "prednisolone-compound",
+    "PRODRUG_OF",
+    "Redukcja 11-beta-HSD-1 do aktywnego prednizolonu"
+  ],
+  [
+    "valacyclovir-compound",
+    "acyclovir-compound",
+    "PRODRUG_OF",
+    "Hydroliza estrowa przez esterazę wątrobową do acyklowiru"
+  ],
+  [
+    "enalapril-compound",
+    "enalaprilat-anhydrous-compound",
+    "PRODRUG_OF",
+    "Deestryfikacja wątrobowa do aktywnego enalaprylatu"
+  ],
+  [
+    "capecitabine-compound",
+    "fluorouracil-compound",
+    "PRODRUG_OF",
+    "Kaskadowa aktywacja przez fosforylazę tymidynową do 5-FU"
+  ],
+  [
+    "fosaprepitant-compound",
+    "aprepitant-compound",
+    "PRODRUG_OF",
+    "Szybka hydroliza fosforanu do aprepitantu"
+  ],
+  [
+    "valganciclovir-compound",
+    "ganciclovir-compound",
+    "PRODRUG_OF",
+    "Hydroliza esterazowa do gancyklowiru"
+  ],
+  [
+    "ethylestrenol-compound",
+    "norethandrolone-compound",
+    "PRODRUG_OF",
+    "Metabolizm do aktywnego noretandrolonu"
+  ],
+  [
+    "moclobemide-compound",
+    "fluoxetine-compound",
+    "CONTRAINDICATION",
+    "Inhibitor MAO-A + SSRI: ryzyko zagrażającego życiu zespołu serotoninowego"
+  ],
+  [
+    "moclobemide-compound",
+    "sertraline-compound",
+    "CONTRAINDICATION",
+    "Inhibitor MAO-A + SSRI: ryzyko zespołu serotoninowego"
+  ],
+  [
+    "moclobemide-compound",
+    "dextromethorphan-compound",
+    "CONTRAINDICATION",
+    "MAOI + bloker SERT: krytyczna toksyczność serotoninergiczna"
+  ],
+  [
+    "phenelzine-compound",
+    "fluoxetine-compound",
+    "CONTRAINDICATION",
+    "Nieodwracalny MAOI + SSRI: bezwzględne przeciwwskazanie"
+  ],
+  [
+    "phenelzine-compound",
+    "sertraline-compound",
+    "CONTRAINDICATION",
+    "Nieodwracalny MAOI + SSRI: bezwzględne przeciwwskazanie"
+  ],
+  [
+    "tranylcypromine-compound",
+    "fluoxetine-compound",
+    "CONTRAINDICATION",
+    "Nieodwracalny MAOI + SSRI: bezwzględne przeciwwskazanie"
+  ],
+  [
+    "selegiline-compound",
+    "fluoxetine-compound",
+    "CONTRAINDICATION",
+    "MAOI + SSRI: ryzyko przełomu serotoninowego"
+  ],
+  [
+    "diazepam-compound",
+    "morphine-compound",
+    "CONTRAINDICATION",
+    "GABA-A PAM + Opioid: synergistyczna depresja ośrodka oddechowego"
+  ],
+  [
+    "alprazolam-compound",
+    "oxycodone-compound",
+    "CONTRAINDICATION",
+    "GABA-A PAM + Silny opioid: krytyczna zapaść oddechowa"
+  ],
+  [
+    "clonazepam-compound",
+    "fentanyl-compound",
+    "CONTRAINDICATION",
+    "Benzodiazepina + Fentanyl: śmiertelne ryzyko bezdechu"
+  ],
+  [
+    "sildenafil-compound",
+    "nitroglycerin-compound",
+    "CONTRAINDICATION",
+    "Inhibitor PDE-5 + Azotan: zapaść naczyniowa i oporna hipotensja"
+  ],
+  [
+    "tadalafil-compound",
+    "nitroglycerin-compound",
+    "CONTRAINDICATION",
+    "Długodziałający PDE-5i + Azotan: niebezpieczny spadek ciśnienia tętniczego"
+  ],
+  [
+    "sildenafil-compound",
+    "isosorbide-mononitrate-compound",
+    "CONTRAINDICATION",
+    "Inhibitor PDE-5 + Donator NO: zapaść krążeniowa"
+  ],
+  [
+    "haloperidol-compound",
+    "citalopram-compound",
+    "CONTRAINDICATION",
+    "Podwójne wydłużenie repolaryzacji hERG/QTc: ryzyko Torsade de Pointes"
+  ],
+  [
+    "methadone-compound",
+    "citalopram-compound",
+    "CONTRAINDICATION",
+    "Substytut opioidu + SSRI: kumulacja ryzyka wydłużenia QTc"
+  ],
+  [
+    "amiodarone-compound",
+    "haloperidol-compound",
+    "CONTRAINDICATION",
+    "Lek antyarytmiczny + Neuroleptyk: skrajne ryzyko Torsade de Pointes"
+  ],
+  [
+    "fluoxetine-compound",
+    "codeine-compound",
+    "CYP_INTERACTION",
+    "Blokada CYP2D6 uniemożliwia aktywację kodeiny do morfiny"
+  ],
+  [
+    "fluoxetine-compound",
+    "dextromethorphan-compound",
+    "CYP_INTERACTION",
+    "Inhibicja CYP2D6 drastycznie zwiększa stężenie DXM i ryzyko toksyczności OUN"
+  ],
+  [
+    "fluoxetine-compound",
+    "metoprolol-compound",
+    "CYP_INTERACTION",
+    "Inhibitor CYP2D6 podnosi AUC metoprololu (ciężka bradykardia)"
+  ],
+  [
+    "fluoxetine-compound",
+    "atomoxetine-compound",
+    "CYP_INTERACTION",
+    "Inhibicja CYP2D6 wielokrotnie wydłuża t1/2 atomoksetyny"
+  ],
+  [
+    "paroxetine-compound",
+    "tramadol-compound",
+    "CYP_INTERACTION",
+    "Inhibicja CYP2D6 osłabia syntezę O-DSMT i nasila obciążenie serotoninowe"
+  ],
+  [
+    "paroxetine-compound",
+    "risperidone-compound",
+    "CYP_INTERACTION",
+    "Inhibicja CYP2D6 podnosi stężenie risperidonu i ryzyko objawów EPS"
+  ],
+  [
+    "ketoconazole-compound",
+    "midazolam-compound",
+    "CYP_INTERACTION",
+    "Inhibitor CYP3A4 zwiększa AUC midazolamu 10-15-krotnie"
+  ],
+  [
+    "ketoconazole-compound",
+    "simvastatin-compound",
+    "CYP_INTERACTION",
+    "Blokada CYP3A4 drastycznie zwiększa stężenie statyny: ryzyko rabdomiolizy"
+  ],
+  [
+    "clarithromycin-compound",
+    "alprazolam-compound",
+    "CYP_INTERACTION",
+    "Makrolid hamuje CYP3A4, powodując przedłużoną sedację"
+  ],
+  [
+    "fluvoxamine-compound",
+    "clozapine-compound",
+    "CYP_INTERACTION",
+    "Inhibitor CYP1A2 podnosi stężenie klozapiny 5-10-krotnie (drgawki, agranulocytoza)"
+  ],
+  [
+    "fluvoxamine-compound",
+    "theophylline-compound",
+    "CYP_INTERACTION",
+    "Inhibicja CYP1A2 powoduje toksyczną kumulację teofiliny"
+  ],
+  [
+    "bupropion-compound",
+    "metoprolol-compound",
+    "CYP_INTERACTION",
+    "Metabolit hydroksybupropion silnie hamuje CYP2D6, potęgując bradykardię"
+  ],
+  [
+    "naloxone-compound",
+    "morphine-compound",
+    "TARGET_ANTAGONISM",
+    "Kompetycyjny antagonista receptora µ-opioidowego: odwraca depresję oddechową"
+  ],
+  [
+    "naloxone-compound",
+    "fentanyl-compound",
+    "TARGET_ANTAGONISM",
+    "Antagonista receptorów opioidowych MOR: natychmiastowe znoszenie narkozy"
+  ],
+  [
+    "naloxone-compound",
+    "oxycodone-compound",
+    "TARGET_ANTAGONISM",
+    "Odtrutka opioidowa na receptorach opioidowych MOR"
+  ],
+  [
+    "naltrexone-compound",
+    "morphine-compound",
+    "TARGET_ANTAGONISM",
+    "Bloker receptorów µ-opioidowych blokujący euforyzację"
+  ],
+  [
+    "flumazenil-compound",
+    "diazepam-compound",
+    "TARGET_ANTAGONISM",
+    "Kompetycyjny antagonista miejsca benzodiazepinowego GABA-A: znosi sedację"
+  ],
+  [
+    "flumazenil-compound",
+    "alprazolam-compound",
+    "TARGET_ANTAGONISM",
+    "Bloker allosterycznego miejsca benzodiazepinowego: odwraca działanie nasenne"
+  ],
+  [
+    "flumazenil-compound",
+    "midazolam-compound",
+    "TARGET_ANTAGONISM",
+    "Wybudzanie ze znieczulenia i sedacji wywołanej midazolamem"
+  ],
+  [
+    "haloperidol-compound",
+    "pramipexole-compound",
+    "TARGET_ANTAGONISM",
+    "Bloker receptorów dopaminowych D2 znosi działanie agonisty D2/D3"
+  ],
+  [
+    "haloperidol-compound",
+    "ropinirole-compound",
+    "TARGET_ANTAGONISM",
+    "Antagonizm dopaminergiczny na receptorach D2"
+  ],
+  [
+    "atropine-compound",
+    "donepezil-compound",
+    "TARGET_ANTAGONISM",
+    "Antagonista muskarynowy znosi efekty cholinomimetyczne"
+  ],
+  [
+    "psilocin-compound",
+    "n-n-dimethyltryptamine-compound",
+    "TARGET_SYNERGY",
+    "Synergia na receptorze 5-HT2A (psychomimetyki tryptaminowe)"
+  ],
+  [
+    "ketamine-compound",
+    "esketamine-compound",
+    "TARGET_SYNERGY",
+    "Zbieżna blokada kanału kompleksu receptora NMDA"
+  ],
+  [
+    "entacapone-compound",
+    "tolcapone-compound",
+    "TARGET_SYNERGY",
+    "Synergiczne hamowanie katecholo-O-metylotransferazy (COMT)"
+  ]
+]

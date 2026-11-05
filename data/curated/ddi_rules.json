@@ -1,0 +1,418 @@
+{
+  "enzyme_profiles": {
+    "fluoxetine-compound": {
+      "inhibits": [{ "enzyme": "CYP2D6", "potency": "strong" }, { "enzyme": "CYP2C19", "potency": "moderate" }],
+      "induces": [],
+      "substrate_of": ["CYP2D6", "CYP2C9", "CYP3A4"]
+    },
+    "paroxetine-compound": {
+      "inhibits": [{ "enzyme": "CYP2D6", "potency": "strong" }],
+      "induces": [],
+      "substrate_of": ["CYP2D6"]
+    },
+    "sertraline-compound": {
+      "inhibits": [{ "enzyme": "CYP2D6", "potency": "weak" }],
+      "induces": [],
+      "substrate_of": ["CYP2B6", "CYP2C19", "CYP3A4"]
+    },
+    "citalopram-compound": {
+      "inhibits": [],
+      "induces": [],
+      "substrate_of": ["CYP2C19", "CYP3A4", "CYP2D6"]
+    },
+    "escitalopram-compound": {
+      "inhibits": [],
+      "induces": [],
+      "substrate_of": ["CYP2C19", "CYP3A4"]
+    },
+    "venlafaxine-compound": {
+      "inhibits": [],
+      "induces": [],
+      "substrate_of": ["CYP2D6", "CYP3A4"]
+    },
+    "duloxetine-compound": {
+      "inhibits": [{ "enzyme": "CYP2D6", "potency": "moderate" }],
+      "induces": [],
+      "substrate_of": ["CYP1A2", "CYP2D6"]
+    },
+    "dextromethorphan-compound": {
+      "inhibits": [],
+      "induces": [],
+      "substrate_of": ["CYP2D6", "CYP3A4"]
+    },
+    "tramadol-compound": {
+      "inhibits": [],
+      "induces": [],
+      "substrate_of": ["CYP2D6", "CYP3A4"]
+    },
+    "codeine-compound": {
+      "inhibits": [],
+      "induces": [],
+      "substrate_of": ["CYP2D6", "CYP3A4"]
+    },
+    "haloperidol-compound": {
+      "inhibits": [],
+      "induces": [],
+      "substrate_of": ["CYP3A4", "CYP2D6"]
+    },
+    "amiodarone-compound": {
+      "inhibits": [{ "enzyme": "CYP2C9", "potency": "moderate" }, { "enzyme": "CYP2D6", "potency": "moderate" }, { "enzyme": "CYP3A4", "potency": "moderate" }],
+      "induces": [],
+      "substrate_of": ["CYP3A4", "CYP2C8"]
+    },
+    "ketoconazole-compound": {
+      "inhibits": [{ "enzyme": "CYP3A4", "potency": "strong" }, { "enzyme": "CYP2C9", "potency": "moderate" }],
+      "induces": [],
+      "substrate_of": ["CYP3A4"]
+    },
+    "omeprazole-compound": {
+      "inhibits": [{ "enzyme": "CYP2C19", "potency": "strong" }],
+      "induces": [{ "enzyme": "CYP1A2", "potency": "moderate" }],
+      "substrate_of": ["CYP2C19", "CYP3A4"]
+    },
+    "diazepam-compound": {
+      "inhibits": [],
+      "induces": [],
+      "substrate_of": ["CYP2C19", "CYP3A4"]
+    },
+    "alprazolam-compound": {
+      "inhibits": [],
+      "induces": [],
+      "substrate_of": ["CYP3A4"]
+    },
+    "warfarin-compound": {
+      "inhibits": [],
+      "induces": [],
+      "substrate_of": ["CYP2C9", "CYP3A4", "CYP1A2"]
+    },
+    "amitriptyline-compound": {
+      "inhibits": [],
+      "induces": [],
+      "substrate_of": ["CYP2D6", "CYP2C19"]
+    }
+  },
+  "pd_profiles": {
+    "escitalopram-compound": {
+      "qtc_risk": "high",
+      "serotonergic_potency": "high",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": true
+    },
+    "citalopram-compound": {
+      "qtc_risk": "high",
+      "serotonergic_potency": "high",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": true
+    },
+    "haloperidol-compound": {
+      "qtc_risk": "high",
+      "serotonergic_potency": "none",
+      "sedative_potency": "moderate",
+      "acb_score": 1,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "hydroxyzine-compound": {
+      "qtc_risk": "high",
+      "serotonergic_potency": "none",
+      "sedative_potency": "high",
+      "acb_score": 2,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "amiodarone-compound": {
+      "qtc_risk": "high",
+      "serotonergic_potency": "none",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "fluoxetine-compound": {
+      "qtc_risk": "moderate",
+      "serotonergic_potency": "high",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": true
+    },
+    "paroxetine-compound": {
+      "qtc_risk": "moderate",
+      "serotonergic_potency": "high",
+      "sedative_potency": "moderate",
+      "acb_score": 1,
+      "nephrotoxic": false,
+      "bleeding_risk": true
+    },
+    "sertraline-compound": {
+      "qtc_risk": "moderate",
+      "serotonergic_potency": "high",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": true
+    },
+    "tramadol-compound": {
+      "qtc_risk": "moderate",
+      "serotonergic_potency": "high",
+      "sedative_potency": "moderate",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "moclobemide-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "high",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "dextromethorphan-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "high",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "diazepam-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "none",
+      "sedative_potency": "high",
+      "acb_score": 1,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "alprazolam-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "none",
+      "sedative_potency": "high",
+      "acb_score": 1,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "morphine-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "none",
+      "sedative_potency": "high",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "fentanyl-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "moderate",
+      "sedative_potency": "high",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "zolpidem-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "none",
+      "sedative_potency": "high",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "diphenhydramine-compound": {
+      "qtc_risk": "moderate",
+      "serotonergic_potency": "none",
+      "sedative_potency": "high",
+      "acb_score": 3,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "amitriptyline-compound": {
+      "qtc_risk": "high",
+      "serotonergic_potency": "moderate",
+      "sedative_potency": "high",
+      "acb_score": 3,
+      "nephrotoxic": false,
+      "bleeding_risk": false
+    },
+    "ibuprofen-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "none",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": true,
+      "bleeding_risk": true
+    },
+    "enalapril-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "none",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": true,
+      "bleeding_risk": false
+    },
+    "hydrochlorothiazide-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "none",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": true,
+      "bleeding_risk": false
+    },
+    "furosemide-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "none",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": true,
+      "bleeding_risk": false
+    },
+    "aspirin-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "none",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": true
+    },
+    "warfarin-compound": {
+      "qtc_risk": "none",
+      "serotonergic_potency": "none",
+      "sedative_potency": "none",
+      "acb_score": 0,
+      "nephrotoxic": false,
+      "bleeding_risk": true
+    }
+  },
+  "specific_pair_rules": [
+    {
+      "id": "paroxetine_dextromethorphan",
+      "vector": "cyp",
+      "severity": "critical",
+      "compound_a": "paroxetine-compound",
+      "compound_b": "dextromethorphan-compound",
+      "enzyme": "CYP2D6",
+      "title_pl": "Blokada CYP2D6 i Zespół Serotoninowy",
+      "description_pl": "Paroksetyna jest silnym inhibitorem CYP2D6 (głównego szlaku eliminacji dekstrometorfanu do dekstrorfanu). Powoduje kilkukrotny wzrost stężenia DXM w osoczu i gwałtowny wzrost ryzyka zespołu serotoninowego oraz dysocjacji toksycznej.",
+      "clinical_consequence": "Zagrożenie przełomem serotoninowym, hipertermią, drgawkami i psychozą.",
+      "monitoring_recommendation": "Bezwzględne przeciwwskazanie łączenia; zalecana zmiana leku przeciwkaszlowego."
+    },
+    {
+      "id": "fluoxetine_tramadol",
+      "vector": "serotonin",
+      "severity": "critical",
+      "compound_a": "fluoxetine-compound",
+      "compound_b": "tramadol-compound",
+      "enzyme": "CYP2D6",
+      "title_pl": "Podwójne Ryzyko: Zespół Serotoninowy & Obniżenie Progu Drgawkowego",
+      "description_pl": "Fluoksetyna hamuje bioaktywację tramadolu do silniejszego analgetycznie metabolitu M1 przez CYP2D6, jednocześnie kumulując macierzysty tramadol o silnych właściwościach serotoninergicznych i hamujących wychwyt NA.",
+      "clinical_consequence": "Zmniejszenie efektu przeciwbólowego przy jednoczesnym drastycznym wzroście ryzyka drgawek i zespołu serotoninowego.",
+      "monitoring_recommendation": "Unikać skojarzenia; monitorować objawy autonomiczne i neurologiczne."
+    },
+    {
+      "id": "sertraline_moclobemide",
+      "vector": "serotonin",
+      "severity": "critical",
+      "compound_a": "sertraline-compound",
+      "compound_b": "moclobemide-compound",
+      "title_pl": "Krytyczny Zespół Serotoninowy (SSRI + MAOI)",
+      "description_pl": "Połączenie inhibitora wychwytu zwrotnego serotoniny z inhibitorem monoaminooksydazy prowadzi do gwałtownej, potencjalnie śmiertelnej kumulacji serotoniny w synapsach OUN.",
+      "clinical_consequence": "Hipertermia złośliwa, sztywność mięśniowa, mioklonie, niestabilność wegetatywna, zgon.",
+      "monitoring_recommendation": "Przeciwwskazanie bezwzględne; wymagany 2-tygodniowy okres wypłukiwania (washout)."
+    },
+    {
+      "id": "escitalopram_hydroxyzine",
+      "vector": "qtc",
+      "severity": "critical",
+      "compound_a": "escitalopram-compound",
+      "compound_b": "hydroxyzine-compound",
+      "title_pl": "Addytywne Wydłużenie Odstępu QTc (Torsades de Pointes)",
+      "description_pl": "Zarówno escytalopram jak i hydroksyzyna blokują kanał potasowy hERG w kardiomiocytach w sposób zależny od stężenia. Ich łączenie sumuje elektrokardiograficzny odstęp QTc.",
+      "clinical_consequence": "Groźne dla życia komorowe zaburzenia rytmu serca typu Torsades de Pointes.",
+      "monitoring_recommendation": "Zalecane seryjne EKG (pomiar QTc); unikać u pacjentów z bradykardią i hipokaliemią."
+    },
+    {
+      "id": "amiodarone_haloperidol",
+      "vector": "qtc",
+      "severity": "critical",
+      "compound_a": "amiodarone-compound",
+      "compound_b": "haloperidol-compound",
+      "title_pl": "Ekstremalna Kardiotoksyczność i Blokada hERG",
+      "description_pl": "Amiodaron wydłuża repolaryzację komorową i dodatkowo hamuje metabolizm haloperydolu przez CYP3A4 i CYP2D6, wywołując potężny synergizm kardiotoksyczny.",
+      "clinical_consequence": "Częstoskurcz komorowy, zatrzymanie krążenia.",
+      "monitoring_recommendation": "Ciągły kardiomonitoring EKG, monitorowanie stężenia potasu i magnezu."
+    },
+    {
+      "id": "diazepam_morphine",
+      "vector": "sedation",
+      "severity": "critical",
+      "compound_a": "diazepam-compound",
+      "compound_b": "morphine-compound",
+      "title_pl": "Zapaść Oddechowa (Black Box FDA: BZD + Opioid)",
+      "description_pl": "Równoległa stymulacja receptorów GABA-A i opioidowych mi w pniu mózgu powoduje zniesienie fizjologicznej odpowiedzi ośrodka oddechowego na hiperkapnię.",
+      "clinical_consequence": "Głęboka sedacja, bezdech, śpiączka, zgon z niedotlenienia mózgu.",
+      "monitoring_recommendation": "Unikać jednoczesnego stosowania; dostępność naloksonu i flumazenilu."
+    },
+    {
+      "id": "amitriptyline_diphenhydramine",
+      "vector": "anticholinergic",
+      "severity": "major",
+      "compound_a": "amitriptyline-compound",
+      "compound_b": "diphenhydramine-compound",
+      "title_pl": "Zapaść Cholinergiczna & Majaczenie (ACB Score: 6)",
+      "description_pl": "Kumulacja dwóch silnych antagonistów muskarynowych (oba ACB = 3). Powoduje zablokowanie układu przywspółczulnego i przewodnictwa acetylocholinowego w hipokampie.",
+      "clinical_consequence": "Ostre majaczenie (delirium), tachykardia zatokowa, retencja moczu, niedrożność porażenna jelit.",
+      "monitoring_recommendation": "Szczególnie niebezpieczne u osób starszych; redukcja dawki lub odstawienie leku przeciwhistaminowego."
+    },
+    {
+      "id": "triple_whammy_ibu_ena",
+      "vector": "triple_whammy",
+      "severity": "critical",
+      "compound_a": "ibuprofen-compound",
+      "compound_b": "enalapril-compound",
+      "title_pl": "Załamanie Hemodynamiki Kłębuszkowej (Triple Whammy)",
+      "description_pl": "NLPZ hamują prostaglandynowe rozszerzenie tętniczki doprowadzającej, a ACEI/ARB znoszą skurcz tętniczki odprowadzającej. Prowadzi to do gwałtownego spadku ciśnienia filtracji w kłębuszkach nerkowych.",
+      "clinical_consequence": "Ostra niewydolność nerek (AKI), retencja potasu i hiperkaliemia.",
+      "monitoring_recommendation": "Kontrola kreatyniny, eGFR i potasu po 3-5 dniach; unikać NLPZ przy terapii hipotensyjnej."
+    },
+    {
+      "id": "warfarin_ibuprofen",
+      "vector": "bleeding",
+      "severity": "critical",
+      "compound_a": "warfarin-compound",
+      "compound_b": "ibuprofen-compound",
+      "title_pl": "Masywne Krwawienie z Przewodu Pokarmowego",
+      "description_pl": "NLPZ uszkadzają barierę śluzówkową żołądka i hamują agregację płytek krwi, podczas gdy warfaryna blokuje kaskadę krzepnięcia zależną od witaminy K.",
+      "clinical_consequence": "Krwotok z przewodu pokarmowego, udar krwotoczny.",
+      "monitoring_recommendation": "Przeciwwskazane stosowanie ogólne NLPZ; w razie bólu paracetamol pod kontrolą INR."
+    }
+  ],
+  "case_presets": {
+    "triple_whammy": {
+      "title": "Triple Whammy (Niewydolność Nerek)",
+      "description": "Zabójcze dla nerek połączenie NLPZ + inhibitora ACE + diuretyku pętlowego/tiazydowego.",
+      "compounds": ["ibuprofen-compound", "enalapril-compound", "hydrochlorothiazide-compound"]
+    },
+    "serotonin_storm": {
+      "title": "Zagrożenie Zespołem Serotoninowym",
+      "description": "Skojarzenie SSRI z lekiem opioidowym o działaniu serotoninergicznym i inhibitorem MAO.",
+      "compounds": ["sertraline-compound", "tramadol-compound", "moclobemide-compound"]
+    },
+    "qt_cocktail": {
+      "title": "Koktajl Wydłużający Odstęp QTc",
+      "description": "Jednoczesna kumulacja 3 leków blokujących kanał hERG: przeciwdepresyjnego, przeciwhistaminowego i neuroleptyku.",
+      "compounds": ["escitalopram-compound", "hydroxyzine-compound", "haloperidol-compound"]
+    },
+    "sedative_overload": {
+      "title": "Głęboka Depresja OUN & Ośrodka Oddechowego",
+      "description": "Czarna ramka FDA: niebezpieczna synergia benzodiazepiny, agonisty GABA-A (z-drug) oraz silnego opioidu.",
+      "compounds": ["diazepam-compound", "morphine-compound", "zolpidem-compound"]
+    },
+    "geriatric_polypharmacy": {
+      "title": "Polipragmazja Geriatryczna & Antycholinergiczna",
+      "description": "Klasyczny zestaw wielolekowy u seniora: ryzyko majaczenia (ACB 6), upadków, zaburzeń enzymatycznych CYP.",
+      "compounds": ["amitriptyline-compound", "diphenhydramine-compound", "omeprazole-compound", "diazepam-compound"]
+    }
+  }
+}

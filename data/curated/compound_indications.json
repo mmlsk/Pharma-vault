@@ -1,0 +1,245 @@
+[
+  {
+    "compound_id": "donepezil-compound",
+    "icd10_code": "F00",
+    "icd10_name_pl": "Otępienie w chorobie Alzheimera",
+    "icd11_code": "8A20",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "memantine-compound",
+    "icd10_code": "F00",
+    "icd10_name_pl": "Otępienie w chorobie Alzheimera",
+    "icd11_code": "8A20",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "methylphenidate-compound",
+    "icd10_code": "F90",
+    "icd10_name_pl": "Zespoły nadpobudliwości psychoruchowej (ADHD)",
+    "icd11_code": "6A05",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "methylphenidate-compound",
+    "icd10_code": "G47.4",
+    "icd10_name_pl": "Narkolepsja i katapleksja",
+    "icd11_code": "7A20",
+    "icd_chapter": "Choroby układu nerwowego (G00-G99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "modafinil-compound",
+    "icd10_code": "G47.4",
+    "icd10_name_pl": "Narkolepsja i katapleksja",
+    "icd11_code": "7A20",
+    "icd_chapter": "Choroby układu nerwowego (G00-G99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "modafinil-compound",
+    "icd10_code": "F90",
+    "icd10_name_pl": "Zespoły nadpobudliwości psychoruchowej (ADHD)",
+    "icd11_code": "6A05",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "off-label",
+    "evidence_tier": "Tier B (Clinical trials / Meta-analyses)"
+  },
+  {
+    "compound_id": "bupropion-compound",
+    "icd10_code": "F32",
+    "icd10_name_pl": "Epizod depresyjny (duża depresja)",
+    "icd11_code": "6A70",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "bupropion-compound",
+    "icd10_code": "F17.2",
+    "icd10_name_pl": "Zespół uzależnienia od tytoniu (nikotynizm)",
+    "icd11_code": "6C45.2",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "bupropion-compound",
+    "icd10_code": "F90",
+    "icd10_name_pl": "Zespoły nadpobudliwości psychoruchowej (ADHD)",
+    "icd11_code": "6A05",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "off-label",
+    "evidence_tier": "Tier B (Clinical trials / Meta-analyses)"
+  },
+  {
+    "compound_id": "pregabalin-compound",
+    "icd10_code": "G40",
+    "icd10_name_pl": "Padaczka (napady częściowe)",
+    "icd11_code": "8A60",
+    "icd_chapter": "Choroby układu nerwowego (G00-G99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "pregabalin-compound",
+    "icd10_code": "F41.1",
+    "icd10_name_pl": "Zaburzenia lękowe uogólnione (GAD)",
+    "icd11_code": "6B00",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "pregabalin-compound",
+    "icd10_code": "M79.2",
+    "icd10_name_pl": "Obwodowy ból neuropatyczny",
+    "icd11_code": "8E43",
+    "icd_chapter": "Choroby układu mięśniowo-szkieletowego i tkanki łącznej (M00-M99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "escitalopram-compound",
+    "icd10_code": "F32",
+    "icd10_name_pl": "Epizod depresyjny (duża depresja)",
+    "icd11_code": "6A70",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "escitalopram-compound",
+    "icd10_code": "F41.0",
+    "icd10_name_pl": "Zaburzenie lękowe z napadami lęku (lęk paniczny)",
+    "icd11_code": "6B01",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "venlafaxine-compound",
+    "icd10_code": "F32",
+    "icd10_name_pl": "Epizod depresyjny (duża depresja)",
+    "icd11_code": "6A70",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "venlafaxine-compound",
+    "icd10_code": "F41.1",
+    "icd10_name_pl": "Zaburzenia lękowe uogólnione (GAD)",
+    "icd11_code": "6B00",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "tianeptine-compound",
+    "icd10_code": "F32",
+    "icd10_name_pl": "Epizod depresyjny (duża depresja)",
+    "icd11_code": "6A70",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "baclofen-compound",
+    "icd10_code": "G24.1",
+    "icd10_name_pl": "Spastyczność mięśniowa pochodzenia rdzeniowego / mózgowego",
+    "icd11_code": "8A03",
+    "icd_chapter": "Choroby układu nerwowego (G00-G99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "baclofen-compound",
+    "icd10_code": "F10.2",
+    "icd10_name_pl": "Zespół uzależnienia od alkoholu (redukcja głodu)",
+    "icd11_code": "6C40.2",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "off-label",
+    "evidence_tier": "Tier B (Clinical trials / Meta-analyses)"
+  },
+  {
+    "compound_id": "semaglutide-compound",
+    "icd10_code": "E11",
+    "icd10_name_pl": "Cukrzyca typu 2 (insulinoniezależna)",
+    "icd11_code": "5A11",
+    "icd_chapter": "Choroby gruczołów dokrewnych, odżywiania i przemiany materii (E00-E90)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "semaglutide-compound",
+    "icd10_code": "E66",
+    "icd10_name_pl": "Otyłość i redukcja masy ciała",
+    "icd11_code": "5B81",
+    "icd_chapter": "Choroby gruczołów dokrewnych, odżywiania i przemiany materii (E00-E90)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "zolpidem-compound",
+    "icd10_code": "G47.0",
+    "icd10_name_pl": "Bezsenność (krótkotrwałe leczenie)",
+    "icd11_code": "7A00",
+    "icd_chapter": "Choroby układu nerwowego (G00-G99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "alprazolam-compound",
+    "icd10_code": "F41.0",
+    "icd10_name_pl": "Zaburzenie lękowe z napadami lęku (lęk paniczny)",
+    "icd11_code": "6B01",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "diazepam-compound",
+    "icd10_code": "F41.1",
+    "icd10_name_pl": "Zaburzenia lękowe uogólnione (ostry stan lękowy)",
+    "icd11_code": "6B00",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "diazepam-compound",
+    "icd10_code": "G40.3",
+    "icd10_name_pl": "Stan padaczkowy (leczenie doraźne)",
+    "icd11_code": "8A60",
+    "icd_chapter": "Choroby układu nerwowego (G00-G99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "piracetam-compound",
+    "icd10_code": "G25.3",
+    "icd10_name_pl": "Mioklonie pochodzenia korowego",
+    "icd11_code": "8A04",
+    "icd_chapter": "Choroby układu nerwowego (G00-G99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  },
+  {
+    "compound_id": "piracetam-compound",
+    "icd10_code": "F06.7",
+    "icd10_name_pl": "Łagodne zaburzenia poznawcze (zaburzenia pamięci)",
+    "icd11_code": "6D71",
+    "icd_chapter": "Zaburzenia psychiczne i zaburzenia zachowania (F00-F99)",
+    "status": "registered",
+    "evidence_tier": "Tier A (EMA/FDA approved)"
+  }
+]

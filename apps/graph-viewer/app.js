@@ -4,7 +4,8 @@
   const G = window.PV_GRAPH;
   if (!G) { document.getElementById("panel").textContent = "Brak graph-data.js - uruchom: make graph"; return; }
 
-  const CL_COLORS = ["#4f98a3", "#6daa45", "#bb653b", "#a86fdf", "#dd6974", "#d19900", "#5591c7", "#9aa2b4", "#c2477e"];
+  const CL_COLOR_FALLBACKS = ["#4f98a3", "#6daa45", "#bb653b", "#a86fdf", "#dd6974", "#d19900", "#5591c7", "#9aa2b4", "#c2477e"];
+  const clusterColor = (i) => getComputedStyle(document.documentElement).getPropertyValue(`--color-cluster-${i}`).trim() || CL_COLOR_FALLBACKS[i] || CL_COLOR_FALLBACKS[0];
   const CL_PL = {
     "Nootropics": "Nootropiki", "Metabolic and Incretin Agents": "Metabolizm i inkretyny",
     "Growth Hormone and Peptide Agents": "GH i peptydy", "Androgens SARMs and PCT": "Androgeny, SARM, PCT",
@@ -32,11 +33,56 @@
   const KIND_PL = { hub: "Hub bezpieczeństwa", pathway: "Szlak", concept: "Koncepcja" };
   const C = G.compounds, GR = G.groups, CORE = G.core;
   const byCore = CORE.map(() => []), byGroup = GR.map(() => []);
+
+  // Pathway systems ontology (v3.22.0)
+  const PATHWAY_SYSTEMS = G.pathwaySystems || [];
+  const pathwayById = new Map();
+  const targetIdxById = new Map();
+  T.forEach((t, i) => targetIdxById.set(t.id, i));
+
+  // spatial grid index for ultra-fast hit testing O(1)
+  const GRID_CELL = 75;
+  const spatialGrid = new Map();
   C.forEach((c, i) => {
     c.i = i; c.c = GR[c.g].c; byGroup[c.g].push(c); (c.tg || []).forEach((t) => byTarget[t].push(i)); (c.l || []).forEach((li) => byCore[li].push(c));
     c.hay = [c.n, c.id, ...(c.a || []), ...((c.pk && c.pk.cyp) || []), ...(c.tg || []).map((t) => T[t].n), ...(c.atc || []).map((a) => a[0])].join(" ").toLowerCase();
     if (c.pk && c.pk.hl) { const u = { min: 1 / 60, h: 1, d: 24, wk: 168 }[c.pk.hl[2]]; if (u) c.hlh = Math.sqrt(c.pk.hl[0] * (c.pk.hl[1] || c.pk.hl[0])) * u; }
+    const gx = Math.floor(c.x / GRID_CELL), gy = Math.floor(c.y / GRID_CELL);
+    const gk = `${gx},${gy}`;
+    let cell = spatialGrid.get(gk);
+    if (!cell) { cell = []; spatialGrid.set(gk, cell); }
+    cell.push(c);
   });
+
+  PATHWAY_SYSTEMS.forEach((pw) => {
+    pathwayById.set(pw.id, pw);
+    pw.targetIndices = new Set();
+    (pw.target_ids || []).forEach((tid) => {
+      const ti = targetIdxById.get(tid);
+      if (ti !== undefined) pw.targetIndices.add(ti);
+    });
+    pw.compoundIndices = new Set();
+    pw.targetIndices.forEach((ti) => {
+      (byTarget[ti] || []).forEach((ci) => pw.compoundIndices.add(ci));
+    });
+  });
+
+  // DDI & Polypharmacy Risk Engine (v3.23.0)
+  const DDI_RULES = G.ddiRules || {};
+  const DDI_SPECIFIC_PAIRS = new Map();
+  (DDI_RULES.specific_pair_rules || []).forEach((rule) => {
+    if (rule.compound_a && rule.compound_b) {
+      DDI_SPECIFIC_PAIRS.set(`${rule.compound_a}::${rule.compound_b}`, rule);
+      DDI_SPECIFIC_PAIRS.set(`${rule.compound_b}::${rule.compound_a}`, rule);
+    }
+  });
+
+  // Neuropharmacology & Receptor Affinity Engine (v3.24.0)
+  const RECEPTOR_AFFINITIES = G.receptorAffinities || {};
+  // Pharmacokinetics 2-Compartment Simulation Engine (v3.25.0)
+  const PK_COMPARTMENT_MODELS = G.pkCompartmentModels || {};
+  // Molecular Toxicology & Safety Engine (v3.26.0)
+  const TOXICOLOGY_PROFILES = G.toxicologyProfiles || {};
   // shared-target neighbours (computed once on demand)
   function neighbours(c) {
     if (c._nb) return c._nb;
@@ -55,6 +101,44 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
 
   const $ = (id) => document.getElementById(id);
+  const modalReturnFocus = new WeakMap();
+  const modalParent = new WeakMap();
+  let activeDialog = null;
+  function openDialog(dialog) {
+    if (!dialog) return;
+    if (!dialog.classList.contains("open")) modalReturnFocus.set(dialog, document.activeElement);
+    if (activeDialog && activeDialog !== dialog && activeDialog.classList.contains("open")) modalParent.set(dialog, activeDialog);
+    dialog.classList.add("open");
+    activeDialog = dialog;
+    if (!dialog.hasAttribute("tabindex")) dialog.setAttribute("tabindex", "-1");
+    requestAnimationFrame(() => {
+      if (activeDialog !== dialog) return;
+      const focusable = [...dialog.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+        .find((el) => el.getClientRects().length > 0);
+      (focusable || dialog).focus();
+    });
+  }
+  function closeDialog(dialog) {
+    if (!dialog) return;
+    dialog.classList.remove("open");
+    if (activeDialog !== dialog) return;
+    const parent = modalParent.get(dialog);
+    activeDialog = parent && parent.classList.contains("open") ? parent : null;
+    const returnFocus = modalReturnFocus.get(dialog);
+    if (returnFocus && returnFocus.isConnected && typeof returnFocus.focus === "function") returnFocus.focus();
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab" || !activeDialog || !activeDialog.classList.contains("open")) return;
+    const items = [...activeDialog.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+      .filter((el) => el.getClientRects().length > 0);
+    if (!items.length) { e.preventDefault(); activeDialog.focus(); return; }
+    const first = items[0], last = items[items.length - 1];
+    if (e.shiftKey && (document.activeElement === first || !activeDialog.contains(document.activeElement))) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && (document.activeElement === last || !activeDialog.contains(document.activeElement))) {
+      e.preventDefault(); first.focus();
+    }
+  }, true);
   const cv = $("cv"), ctx = cv.getContext("2d"), tip = $("tip");
   const state = {
     k: 1, tx: 0, ty: 0, sel: null, hover: null,
@@ -79,7 +163,11 @@
       globalMode: false,
       popoverOpen: false
     },
-    evidenceCohort: null
+    evidenceCohort: null,
+    pathway: {
+      id: null,
+      mode: "spotlight" // "spotlight" | "solo"
+    }
   };
   let W = 0, H = 0, dpr = 1, raf = 0;
 
@@ -160,12 +248,12 @@
       }
     }
 
-    box.classList.add("open");
+    openDialog(box);
   }
 
   function closeChemLightBox() {
     const box = $("chemLightBox");
-    if (box) box.classList.remove("open");
+    if (box) closeDialog(box);
     activeModalCompound = null;
   }
 
@@ -189,12 +277,12 @@
 
     renderComparator(activeComparatorIndices);
     $("compCountBadge").textContent = `${activeComparatorIndices.length} substancje`;
-    modal.classList.add("open");
+    openDialog(modal);
   }
 
   function closeComparator() {
     const modal = $("comparatorModal");
-    if (modal) modal.classList.remove("open");
+    if (modal) closeDialog(modal);
     activeComparatorIndices = null;
   }
 
@@ -235,7 +323,7 @@
         <th class="comp-col-th">
           ${thumb}
           <div style="margin-top:6px;font-size:var(--text-sm);font-weight:700">${esc(c.n)}</div>
-          <div style="font-size:11px;color:var(--color-text-muted)">${esc(GR[c.g].label)} · <span style="color:${CL_COLORS[c.c]}">●</span> ${esc(CL_PL[G.clusters[c.c].name])}</div>
+          <div style="font-size:11px;color:var(--color-text-muted)">${esc(GR[c.g].label)} · <span style="color:var(--color-cluster-${c.c})">●</span> ${esc(CL_PL[G.clusters[c.c].name])}</div>
           <div style="margin-top:4px;font-size:11px">${c.mf ? `<code>${esc(c.mf)}</code>` : ""}${c.pr && c.pr[0] ? ` · <b>${c.pr[0]} g/mol</b>` : ""}</div>
           ${c.ik ? `<div style="margin-top:4px"><button class="btn-copy" data-copy-ik="${esc(c.ik)}" title="Kopiuj InChIKey">📋 InChIKey</button></div>` : ""}
         </th>`;
@@ -557,7 +645,7 @@
 
           const thumbHtml = struct
             ? `<img src="${struct.url}" alt="${esc(cand.n)}" style="width:48px;height:48px;object-fit:contain;cursor:pointer;flex-shrink:0" loading="lazy" data-zoom-chem="${cand.i}" title="Powiększ wzór 2D">`
-            : `<span class="dot" style="background:${CL_COLORS[cand.c]};width:14px;height:14px;flex-shrink:0"></span>`;
+            : `<span class="dot" style="background:var(--color-cluster-${cand.c});width:14px;height:14px;flex-shrink:0"></span>`;
 
           return `
             <div class="analog-card">
@@ -593,12 +681,12 @@
     }
 
     wireAnalogsModal(c.i);
-    modal.classList.add("open");
+    openDialog(modal);
   }
 
   function closeAnalogsModal() {
     const modal = $("analogsModal");
-    if (modal) modal.classList.remove("open");
+    if (modal) closeDialog(modal);
     activeAnalogsQuery = null;
   }
 
@@ -783,7 +871,7 @@
         const struct = getChemStructure(c);
         const thumbHtml = struct
           ? `<img src="${struct.url}" style="width:36px;height:36px;object-fit:contain;background:#fff;border-radius:4px;border:1px solid var(--color-border);cursor:zoom-in" data-zoom-chem="${c.i}" title="Powiększ wzór 2D" alt="${esc(c.n)}">`
-          : `<span class="dot" style="background:${CL_COLORS[c.c]};width:12px;height:12px;flex-shrink:0"></span>`;
+          : `<span class="dot" style="background:var(--color-cluster-${c.c});width:12px;height:12px;flex-shrink:0"></span>`;
 
         return `
           <div class="target-drug-card">
@@ -835,12 +923,12 @@
     }
 
     wireTargetModal(ti);
-    modal.classList.add("open");
+    openDialog(modal);
   }
 
   function closeTargetModal() {
     const modal = $("targetModal");
-    if (modal) modal.classList.remove("open");
+    if (modal) closeDialog(modal);
     activeModalTarget = null;
   }
 
@@ -947,71 +1035,9 @@
   const compById = new Map();
   C.forEach((c) => compById.set(c.id, c.i));
 
-  const CURATED_TYPED_EDGES = [
-    // Prodrugs (from prodrug to active form)
+  const CURATED_TYPED_EDGES = (G.curatedTypedEdges && G.curatedTypedEdges.length) ? G.curatedTypedEdges : [
     ["lisdexamfetamine-compound", "dextroamphetamine-compound", "PRODRUG_OF", "Biotransformacja erytrocytarna do aktywnej d-amfetaminy"],
-    ["codeine-compound", "morphine-compound", "PRODRUG_OF", "O-demetylacja przez CYP2D6 do aktywnej morfiny"],
-    ["psilocybin-compound", "psilocin-compound", "PRODRUG_OF", "Defosforylacja przez fosfatazę alkaliczną do psylocyny"],
-    ["diamorphine-compound", "morphine-compound", "PRODRUG_OF", "Deacetylacja w OUN do 6-MAM i morfiny"],
-    ["tramadol-compound", "o-desmethyltramadol-compound", "PRODRUG_OF", "O-demetylacja CYP2D6 do aktywnego analgetyka O-DSMT"],
-    ["levodopa-compound", "dopamine-drug-compound", "PRODRUG_OF", "Dekarboksylacja przez AADC do dopaminy w prążkowiu"],
-    ["primidone-compound", "phenobarbital-compound", "PRODRUG_OF", "Oksydacja wątrobowa do fenobarbitalu"],
-    ["prednisone-compound", "prednisolone-compound", "PRODRUG_OF", "Redukcja 11-beta-HSD-1 do aktywnego prednizolonu"],
-    ["valacyclovir-compound", "acyclovir-compound", "PRODRUG_OF", "Hydroliza estrowa przez esterazę wątrobową do acyklowiru"],
-    ["enalapril-compound", "enalaprilat-anhydrous-compound", "PRODRUG_OF", "Deestryfikacja wątrobowa do aktywnego enalaprylatu"],
-    ["capecitabine-compound", "fluorouracil-compound", "PRODRUG_OF", "Kaskadowa aktywacja przez fosforylazę tymidynową do 5-FU"],
-    ["fosaprepitant-compound", "aprepitant-compound", "PRODRUG_OF", "Szybka hydroliza fosforanu do aprepitantu"],
-    ["valganciclovir-compound", "ganciclovir-compound", "PRODRUG_OF", "Hydroliza esterazowa do gancyklowiru"],
-    ["ethylestrenol-compound", "norethandrolone-compound", "PRODRUG_OF", "Metabolizm do aktywnego noretandrolonu"],
-
-    // Contraindications & Critical Interactions
-    ["moclobemide-compound", "fluoxetine-compound", "CONTRAINDICATION", "Inhibitor MAO-A + SSRI: ryzyko zagrażającego życiu zespołu serotoninowego"],
-    ["moclobemide-compound", "sertraline-compound", "CONTRAINDICATION", "Inhibitor MAO-A + SSRI: ryzyko zespołu serotoninowego"],
-    ["moclobemide-compound", "dextromethorphan-compound", "CONTRAINDICATION", "MAOI + bloker SERT: krytyczna toksyczność serotoninergiczna"],
-    ["phenelzine-compound", "fluoxetine-compound", "CONTRAINDICATION", "Nieodwracalny MAOI + SSRI: bezwzględne przeciwwskazanie"],
-    ["phenelzine-compound", "sertraline-compound", "CONTRAINDICATION", "Nieodwracalny MAOI + SSRI: bezwzględne przeciwwskazanie"],
-    ["tranylcypromine-compound", "fluoxetine-compound", "CONTRAINDICATION", "Nieodwracalny MAOI + SSRI: bezwzględne przeciwwskazanie"],
-    ["selegiline-compound", "fluoxetine-compound", "CONTRAINDICATION", "MAOI + SSRI: ryzyko przełomu serotoninowego"],
-    ["diazepam-compound", "morphine-compound", "CONTRAINDICATION", "GABA-A PAM + Opioid: synergistyczna depresja ośrodka oddechowego"],
-    ["alprazolam-compound", "oxycodone-compound", "CONTRAINDICATION", "GABA-A PAM + Silny opioid: krytyczna zapaść oddechowa"],
-    ["clonazepam-compound", "fentanyl-compound", "CONTRAINDICATION", "Benzodiazepina + Fentanyl: śmiertelne ryzyko bezdechu"],
-    ["sildenafil-compound", "nitroglycerin-compound", "CONTRAINDICATION", "Inhibitor PDE-5 + Azotan: zapaść naczyniowa i oporna hipotensja"],
-    ["tadalafil-compound", "nitroglycerin-compound", "CONTRAINDICATION", "Długodziałający PDE-5i + Azotan: niebezpieczny spadek ciśnienia tętniczego"],
-    ["sildenafil-compound", "isosorbide-mononitrate-compound", "CONTRAINDICATION", "Inhibitor PDE-5 + Donator NO: zapaść krążeniowa"],
-    ["haloperidol-compound", "citalopram-compound", "CONTRAINDICATION", "Podwójne wydłużenie repolaryzacji hERG/QTc: ryzyko Torsade de Pointes"],
-    ["methadone-compound", "citalopram-compound", "CONTRAINDICATION", "Substytut opioidu + SSRI: kumulacja ryzyka wydłużenia QTc"],
-    ["amiodarone-compound", "haloperidol-compound", "CONTRAINDICATION", "Lek antyarytmiczny + Neuroleptyk: skrajne ryzyko Torsade de Pointes"],
-
-    // CYP Interactions (Inhibitor -> Substrate)
-    ["fluoxetine-compound", "codeine-compound", "CYP_INTERACTION", "Blokada CYP2D6 uniemożliwia aktywację kodeiny do morfiny"],
-    ["fluoxetine-compound", "dextromethorphan-compound", "CYP_INTERACTION", "Inhibicja CYP2D6 drastycznie zwiększa stężenie DXM i ryzyko toksyczności OUN"],
-    ["fluoxetine-compound", "metoprolol-compound", "CYP_INTERACTION", "Inhibitor CYP2D6 podnosi AUC metoprololu (ciężka bradykardia)"],
-    ["fluoxetine-compound", "atomoxetine-compound", "CYP_INTERACTION", "Inhibicja CYP2D6 wielokrotnie wydłuża t1/2 atomoksetyny"],
-    ["paroxetine-compound", "tramadol-compound", "CYP_INTERACTION", "Inhibicja CYP2D6 osłabia syntezę O-DSMT i nasila obciążenie serotoninowe"],
-    ["paroxetine-compound", "risperidone-compound", "CYP_INTERACTION", "Inhibicja CYP2D6 podnosi stężenie risperidonu i ryzyko objawów EPS"],
-    ["ketoconazole-compound", "midazolam-compound", "CYP_INTERACTION", "Inhibitor CYP3A4 zwiększa AUC midazolamu 10-15-krotnie"],
-    ["ketoconazole-compound", "simvastatin-compound", "CYP_INTERACTION", "Blokada CYP3A4 drastycznie zwiększa stężenie statyny: ryzyko rabdomiolizy"],
-    ["clarithromycin-compound", "alprazolam-compound", "CYP_INTERACTION", "Makrolid hamuje CYP3A4, powodując przedłużoną sedację"],
-    ["fluvoxamine-compound", "clozapine-compound", "CYP_INTERACTION", "Inhibitor CYP1A2 podnosi stężenie klozapiny 5-10-krotnie (drgawki, agranulocytoza)"],
-    ["fluvoxamine-compound", "theophylline-compound", "CYP_INTERACTION", "Inhibicja CYP1A2 powoduje toksyczną kumulację teofiliny"],
-    ["bupropion-compound", "metoprolol-compound", "CYP_INTERACTION", "Metabolit hydroksybupropion silnie hamuje CYP2D6, potęgując bradykardię"],
-
-    // Target Antagonisms (Agonist vs Antagonist / Antidote)
-    ["naloxone-compound", "morphine-compound", "TARGET_ANTAGONISM", "Kompetycyjny antagonista receptora µ-opioidowego: odwraca depresję oddechową"],
-    ["naloxone-compound", "fentanyl-compound", "TARGET_ANTAGONISM", "Antagonista receptorów opioidowych MOR: natychmiastowe znoszenie narkozy"],
-    ["naloxone-compound", "oxycodone-compound", "TARGET_ANTAGONISM", "Odtrutka opioidowa na receptorach opioidowych MOR"],
-    ["naltrexone-compound", "morphine-compound", "TARGET_ANTAGONISM", "Bloker receptorów µ-opioidowych blokujący euforyzację"],
-    ["flumazenil-compound", "diazepam-compound", "TARGET_ANTAGONISM", "Kompetycyjny antagonista miejsca benzodiazepinowego GABA-A: znosi sedację"],
-    ["flumazenil-compound", "alprazolam-compound", "TARGET_ANTAGONISM", "Bloker allosterycznego miejsca benzodiazepinowego: odwraca działanie nasenne"],
-    ["flumazenil-compound", "midazolam-compound", "TARGET_ANTAGONISM", "Wybudzanie ze znieczulenia i sedacji wywołanej midazolamem"],
-    ["haloperidol-compound", "pramipexole-compound", "TARGET_ANTAGONISM", "Bloker receptorów dopaminowych D2 znosi działanie agonisty D2/D3"],
-    ["haloperidol-compound", "ropinirole-compound", "TARGET_ANTAGONISM", "Antagonizm dopaminergiczny na receptorach D2"],
-    ["atropine-compound", "donepezil-compound", "TARGET_ANTAGONISM", "Antagonista muskarynowy znosi efekty cholinomimetyczne"],
-
-    // Target Synergies
-    ["psilocin-compound", "n-n-dimethyltryptamine-compound", "TARGET_SYNERGY", "Synergia na receptorze 5-HT2A (psychomimetyki tryptaminowe)"],
-    ["ketamine-compound", "esketamine-compound", "TARGET_SYNERGY", "Zbieżna blokada kanału kompleksu receptora NMDA"],
-    ["entacapone-compound", "tolcapone-compound", "TARGET_SYNERGY", "Synergiczne hamowanie katecholo-O-metylotransferazy (COMT)"]
+    ["codeine-compound", "morphine-compound", "PRODRUG_OF", "O-demetylacja przez CYP2D6 do aktywnej morfiny"]
   ];
 
   const allTypedEdges = [];
@@ -1092,7 +1118,7 @@
   function drawSingleTypedEdge(ctx, type, x1, y1, x2, y2, strong = false) {
     const cfg = TYPED_EDGE_CONFIG[type];
     if (!cfg) return;
-    const color = cfg.color;
+    const color = semanticEdgeColor(type);
     ctx.save();
     ctx.strokeStyle = strong ? color : color + "bb";
     ctx.lineWidth = strong ? cfg.lineWidth + 1.0 : cfg.lineWidth;
@@ -1173,7 +1199,7 @@
         <div class="edge-filter-item">
           <label class="edge-filter-label">
             <input type="checkbox" data-edge-type="${t}" ${on ? "checked" : ""} />
-            <span class="edge-color-dot ${cfg.directed ? 'directed' : ''}" style="background:${cfg.color}"></span>
+            <span class="edge-color-dot ${cfg.directed ? 'directed' : ''}" style="background:${semanticEdgeColor(t)}"></span>
             <span>${esc(cfg.label)}</span>
           </label>
           <span class="edge-badge">${count}</span>
@@ -1207,7 +1233,7 @@
   let activeMetaboliteQuery = null;
   let activeMetaboliteSelectedNode = null;
 
-  const METABOLITE_CASCADES = {
+  const METABOLITE_CASCADES = (G.metaboliteCascades && Object.keys(G.metaboliteCascades).length) ? G.metaboliteCascades : {
     "codeine-compound": {
       rootRole: "prodrug",
       notes: "Prolek opioidowy wymagający O-demetylacji przez CYP2D6 do aktywnej morfiny (ok. 10% dawki). Reszta eliminowana przez glukuronidację (CYP3A4 / UGT2B7).",
@@ -1216,219 +1242,7 @@
         { id: null, name: "Norkodeina", enzyme: "CYP3A4", reaction: "N-demetylacja (10-20%)", activity: "inactive", desc: "Metabolit o znikomej aktywności opioidowej.", tHalf: "3 - 5 h" }
       ],
       phase2: [
-        { parentId: "morphine-compound", id: null, name: "Morfino-6-glukuronid (M6G)", enzyme: "UGT2B7", reaction: "Glukuronidacja (60%)", activity: "active", desc: "Silnie aktywny metabolit o silniejszym powinowactwie do receptora MOR niż sama morfina.", tHalf: "3 - 5 h" },
-        { parentId: "morphine-compound", id: null, name: "Morfino-3-glukuronid (M3G)", enzyme: "UGT2B7", reaction: "Glukuronidacja", activity: "inactive", desc: "Brak działania analgetycznego; metabolit neuroekscytotoksyczny przy kumulacji w niewydolności nerek.", tHalf: "3 - 5 h" },
-        { parentId: "codeine-compound", id: null, name: "Kodeino-6-glukuronid (C6G)", enzyme: "UGT2B7", reaction: "Glukuronidacja bezpośrednia (70-80%)", activity: "inactive", desc: "Główny szlak eliminacji kodeiny, metabolit o słabej aktywności analgetycznej.", tHalf: "3 - 4 h" }
-      ]
-    },
-    "diazepam-compound": {
-      rootRole: "active",
-      notes: "Długodziałająca benzodiazepina o złożonej wielopoziomowej kaskadzie metabolitów czynnych.",
-      phase1: [
-        { id: null, name: "Nordazepam (Demetylodiazepam)", enzyme: "CYP2C19 / CYP3A4", reaction: "N-demetylacja", activity: "active", desc: "Główny aktywny metabolit o bardzo długim okresie półtrwania (30 - 100 h), ulegający kumulacji.", tHalf: "30 - 100 h" },
-        { id: null, name: "Temazepam", enzyme: "CYP3A4", reaction: "C3-hydroksylacja", activity: "active", desc: "Aktywny metabolit o silnym profilu nasennym i krótszym t½ niż nordazepam.", tHalf: "8 - 15 h" }
-      ],
-      phase2: [
-        { parentId: "Nordazepam", id: "oxazepam-compound", name: "Oksazepam", enzyme: "CYP3A4", reaction: "Hydroksylacja", activity: "active", desc: "Końcowy czynny metabolit; eliminowany wyłącznie przez bezpośrednią glukuronidację bez udziału CYP.", tHalf: "4 - 15 h" },
-        { parentId: "oxazepam-compound", id: null, name: "Glukuronid oksazepamu", enzyme: "UGT2B15", reaction: "Glukuronidacja", activity: "inactive", desc: "Nieaktywny koniugat wydalany przez nerki z moczem.", tHalf: "6 h" }
-      ]
-    },
-    "tramadol-compound": {
-      rootRole: "active",
-      notes: "Racemat o podwójnym mechanizmie: prolek silnego agonisty MOR (O-DSMT) oraz inhibitor wychwytu zwrotnego 5-HT/NA.",
-      phase1: [
-        { id: "o-desmethyltramadol-compound", name: "O-Desmetylotramadol (O-DSMT)", enzyme: "CYP2D6", reaction: "O-demetylacja", activity: "active", desc: "Główny metabolit analgetyczny (200-krotnie wyższe powinowactwo do receptora µ-opioidowego niż tramadol).", tHalf: "7 - 9 h" },
-        { id: null, name: "N-Desmetylotramadol", enzyme: "CYP3A4 / CYP2B6", reaction: "N-demetylacja", activity: "inactive", desc: "Słabo aktywny metabolit, nie wykazuje istotnego działania opioidowego.", tHalf: "6 - 7 h" }
-      ],
-      phase2: [
-        { parentId: "o-desmethyltramadol-compound", id: null, name: "Glukuronid O-DSMT", enzyme: "UGT2B7", reaction: "Koniugacja glukuronidowa", activity: "inactive", desc: "Koniugat polarny wydalany z moczem.", tHalf: "8 h" }
-      ]
-    },
-    "lisdexamfetamine-compound": {
-      rootRole: "prodrug",
-      notes: "Prolek d-amfetaminy sprzężony z l-lizyną; profil 'rate-limited' zależny od pojemności hydrolitycznej krwinek czerwonych.",
-      phase1: [
-        { id: "dextroamphetamine-compound", name: "Deksamfetamina", enzyme: "Hydrolazy peptydowe (RBC)", reaction: "Hydroliza wiązania amidowego", activity: "active", desc: "Aktywny stymulant psychomotoryczny uwalniający dopaminę i noradrenalinę w OUN.", tHalf: "10 - 12 h" }
-      ],
-      phase2: [
-        { parentId: "dextroamphetamine-compound", id: null, name: "Kwas hipurowy & Kwas benzoesowy", enzyme: "CYP2D6 / Oksydaza", reaction: "Deaminacja i koniugacja glicynowa", activity: "inactive", desc: "Końcowe metabolity deaminacji wydalane z moczem.", tHalf: "—" }
-      ]
-    },
-    "psilocybin-compound": {
-      rootRole: "prodrug",
-      notes: "Naturalny fosforylowany prolek tryptaminowy; sam w sobie pozbawiony istotnego powinowactwa do 5-HT2A.",
-      phase1: [
-        { id: "psilocin-compound", name: "Psylocyna (4-OH-DMT)", enzyme: "Fosfataza alkaliczna (ALP)", reaction: "Defosforylacja w żołądku/wątrobie", activity: "active", desc: "Lipofilny, czynny psychomimetyczny agonista receptora 5-HT2A przenikający barierę krew-mózg.", tHalf: "2 - 3 h" }
-      ],
-      phase2: [
-        { parentId: "psilocin-compound", id: null, name: "O-glukuronid psylocyny", enzyme: "UGT1A10 / UGT1A9", reaction: "Glukuronidacja fenolowa (80%)", activity: "inactive", desc: "Główny krążący metabolit eliminowany drogą nerkową.", tHalf: "2 - 4 h" },
-        { parentId: "psilocin-compound", id: null, name: "Kwas 4-hydroksyindolo-3-octowy (4-HIAA)", enzyme: "MAO-A / ALDH", reaction: "Oksydacyjna deaminacja", activity: "inactive", desc: "Drobny metabolit deaminacji.", tHalf: "—" }
-      ]
-    },
-    "acetaminophen-compound": {
-      rootRole: "active",
-      notes: "Lek przeciwgorączkowy i przeciwbólowy; w dawkach terapeutycznych bezpieczny, w przedawkowaniu szlak CYP generuje toksyczny NAPQI.",
-      phase1: [
-        { id: null, name: "N-acetylo-p-benzochinoamina (NAPQI)", enzyme: "CYP2E1 / CYP1A2", reaction: "Oksydacja (5-10%)", activity: "toxic", desc: "Silnie reaktywny elektrofil wiążący białka hepatocytów; powoduje martwicę wątroby przy wyczerpaniu glutationu.", tHalf: "—" }
-      ],
-      phase2: [
-        { parentId: "NAPQI", id: null, name: "Kwas merkapturowy (detoksykacja GSH)", enzyme: "Glutation-S-transferaza (GST)", reaction: "Koniugacja z glutationem", activity: "inactive", desc: "Bezpieczny produkt neutralizacji NAPQI wydalany z moczem.", tHalf: "2 h" },
-        { parentId: "acetaminophen-compound", id: null, name: "Glukuronid paracetamolu", enzyme: "UGT1A1 / UGT1A6", reaction: "Glukuronidacja fenolowa (55-60%)", activity: "inactive", desc: "Główny nietoksyczny szlak eliminacji u dorosłych.", tHalf: "2 - 3 h" },
-        { parentId: "acetaminophen-compound", id: null, name: "Siarczan paracetamolu", enzyme: "SULT1A1", reaction: "Sulfatacja fenolowa (30%)", activity: "inactive", desc: "Główny nietoksyczny szlak eliminacji u dzieci.", tHalf: "2 - 3 h" }
-      ]
-    },
-    "enalapril-compound": {
-      rootRole: "prodrug",
-      notes: "Ester etylowy proleku; słaby inhibitor ACE, o biodostępności ok. 60%, aktywowany w wątrobie.",
-      phase1: [
-        { id: "enalaprilat-anhydrous-compound", name: "Enalaprylat", enzyme: "Karboksyloesteraza 1 (CES1)", reaction: "Deestryfikacja hydrolityczna", activity: "active", desc: "Właściwy, silny dikwasowy inhibitor enzymu konwertującego angiotensynę (ACE).", tHalf: "11 - 35 h" }
-      ],
-      phase2: [
-        { parentId: "enalaprilat-anhydrous-compound", id: null, name: "Wydalany w postaci niezmienionej", enzyme: "Filtracja kłębuszkowa", reaction: "Wydalanie nerkowe", activity: "inactive", desc: "Enalaprylat nie podlega dalszemu metabolizmowi i jest wydalany z moczem.", tHalf: "—" }
-      ]
-    },
-    "losartan-compound": {
-      rootRole: "active",
-      notes: "Antagonista receptora AT1; sam wykazuje aktywność, lecz jego metabolit karboksylowy jest wielokrotnie silniejszy.",
-      phase1: [
-        { id: null, name: "Kwas EXP3174 (Kwas losartanowy)", enzyme: "CYP2C9 / CYP3A4", reaction: "Oksydacja grupy alkoholowej do karboksylowej (14%)", activity: "active", desc: "Niekontrolowany, niekompetycyjny bloker receptora AT1 o 10-40 razy silniejszym i dłuższym działaniu niż losartan.", tHalf: "6 - 9 h" }
-      ],
-      phase2: [
-        { parentId: "Kwas EXP3174", id: null, name: "Glukuronid EXP3174", enzyme: "UGT2B7", reaction: "Glukuronidacja acylu", activity: "inactive", desc: "Eliminacja żółciowa i nerkowa.", tHalf: "—" }
-      ]
-    },
-    "diamorphine-compound": {
-      rootRole: "prodrug",
-      notes: "Diacetylomorfina; silnie lipofilny prolek gwałtownie penetrujący barierę krew-mózg w ciągu sekund.",
-      phase1: [
-        { id: null, name: "6-Monoacetylomorfina (6-MAM)", enzyme: "Esterazy surowicze i mózgowe", reaction: "Szybka deacetylacja (t½ 3-5 min)", activity: "active", desc: "Silny agonista receptora MOR o unikalnym profilu euforii w OUN.", tHalf: "15 - 30 min" },
-        { id: "morphine-compound", name: "Morfina", enzyme: "Esterazy tkankowe", reaction: "Druga deacetylacja", activity: "active", desc: "Stabilny metabolit zapewniający przedłużone działanie analgetyczne.", tHalf: "2 - 4 h" }
-      ],
-      phase2: [
-        { parentId: "morphine-compound", id: null, name: "Morfino-6-glukuronid (M6G)", enzyme: "UGT2B7", reaction: "Glukuronidacja", activity: "active", desc: "Aktywny analgetyk opioidowy.", tHalf: "3 - 5 h" }
-      ]
-    },
-    "amitriptyline-compound": {
-      rootRole: "active",
-      notes: "Trójpierścieniowy lek przeciwdepresyjny o dominującym komponencie serotoninergicznym i sedatywnym.",
-      phase1: [
-        { id: null, name: "Nortryptylina", enzyme: "CYP2C19 / CYP1A2", reaction: "N-demetylacja", activity: "active", desc: "Aktywny metabolit o silnym i selektywnym hamowaniu wychwytu zwrotnego noradrenaliny (NRI).", tHalf: "18 - 44 h" }
-      ],
-      phase2: [
-        { parentId: "Nortryptylina", id: null, name: "10-Hydroksynortryptylina", enzyme: "CYP2D6", reaction: "Hydroksylacja alicykliczna", activity: "active", desc: "Umiarkowanie aktywny metabolit; stężenie zależne od fenotypu CYP2D6.", tHalf: "—" }
-      ]
-    },
-    "risperidone-compound": {
-      rootRole: "active",
-      notes: "Atypowy neuroleptyk przeciwpsychotyczny (bloker 5-HT2A i D2).",
-      phase1: [
-        { id: null, name: "Paliperydon (9-Hydroksyrisperidon)", enzyme: "CYP2D6 / CYP3A4", reaction: "9-hydroksylacja", activity: "active", desc: "Główny czynny metabolit o tożsamym profilu farmakologicznym, zarejestrowany także jako odrębny lek.", tHalf: "23 h" }
-      ],
-      phase2: [
-        { parentId: "Paliperydon", id: null, name: "Glukuronid paliperydonu", enzyme: "UGT", reaction: "Wydalanie nerkowe", activity: "inactive", desc: "Eliminowany głównie przez nerki.", tHalf: "—" }
-      ]
-    },
-    "simvastatin-compound": {
-      rootRole: "prodrug",
-      notes: "Laktonowy prolek hipolipemizujący; forma laktonowa nie posiada aktywności hamującej reduktazę HMG-CoA.",
-      phase1: [
-        { id: null, name: "Hydroksykwas simwastatynowy (Beta-hydroksykwas)", enzyme: "Karboksyloesterazy wątrobowe / Spontaniczna hydroliza", reaction: "Otwarcie pierścienia laktonowego", activity: "active", desc: "Właściwa postać aktywna kompetencyjnie hamująca enzym HMG-CoA reduktazę.", tHalf: "2 - 3 h" }
-      ],
-      phase2: [
-        { parentId: "Hydroksykwas simwastatynowy", id: null, name: "Metabolity hydroksylowe & Glukuronidy", enzyme: "CYP3A4 / UGT1A1 / UGT1A3", reaction: "Oksydacja i glukuronidacja acylu", activity: "inactive", desc: "Eliminacja żółciowa z kałem (60%) i z moczem (13%).", tHalf: "—" }
-      ]
-    },
-    "clopidogrel-compound": {
-      rootRole: "prodrug",
-      notes: "Tienopirydynowy prolek przeciwpłytkowy; ok. 85% dawki jest inaktywowane przez esterazy (CES1), a tylko 15% podlega aktywacji przez CYP.",
-      phase1: [
-        { id: null, name: "2-Oksoklopidogrel", enzyme: "CYP2C19 / CYP1A2 / CYP2B6", reaction: "Pierwsza oksydacja (etap pośredni)", activity: "prodrug", desc: "Metabolit pośredni podlegający kolejnemu utlenieniu.", tHalf: "—" },
-        { id: null, name: "Kwas klopidogrelowy (nieaktywny)", enzyme: "CES1", reaction: "Hydroliza estrowa (85% dawki)", activity: "inactive", desc: "Główny krążący nieaktywny produkt eliminacji.", tHalf: "—" }
-      ],
-      phase2: [
-        { parentId: "2-Oksoklopidogrel", id: null, name: "Aktywny metabolit tiolowy (H4)", enzyme: "CYP2C19 / CYP2C9 / CYP3A4", reaction: "Druga oksydacja i otwarcie pierścienia", activity: "active", desc: "Nieodwracalny kowalencyjny bloker receptora płytkowego P2Y12 (antytrombotyczny).", tHalf: "0.5 - 1 h" }
-      ]
-    },
-    "prednisone-compound": {
-      rootRole: "prodrug",
-      notes: "Prolek syntetycznego glikokortykosteroidu; grupa 11-ketonowa nie wykazuje powinowactwa do receptora GR.",
-      phase1: [
-        { id: "prednisolone-compound", name: "Prednizolon", enzyme: "11-beta-hydroksysteroidowa dehydrogenaza typ 1 (11-beta-HSD1)", reaction: "Redukcja 11-ketonu do grupy hydroksylowej", activity: "active", desc: "Czynny farmakologicznie glikokortykosteroid o działaniu przeciwzapalnym i immunosupresyjnym.", tHalf: "2 - 4 h" }
-      ],
-      phase2: [
-        { parentId: "prednisolone-compound", id: null, name: "Siarczany i glukuronidy 20-dihydro", enzyme: "CYP3A4 / UGT / SULT", reaction: "Redukcja i koniugacja", activity: "inactive", desc: "Nieaktywne koniugaty eliminowane z moczem.", tHalf: "—" }
-      ]
-    },
-    "valacyclovir-compound": {
-      rootRole: "prodrug",
-      notes: "Ester L-walilowy acyklowiru; 3- do 5-krotnie większa biodostępność po podaniu doustnym niż acyklowir.",
-      phase1: [
-        { id: "acyclovir-compound", name: "Acyklowir", enzyme: "Karboksyloesteraza 1 (CES1) / Hydrolaza walacyklowirowa", reaction: "Szybka hydroliza estru walilowego", activity: "active", desc: "Aktywny analog nukleozydu hamujący polimerazę DNA wirusów HSV i VZV.", tHalf: "2.5 - 3.5 h" }
-      ],
-      phase2: [
-        { parentId: "acyclovir-compound", id: null, name: "9-Karboksymetoksymetyloguanina (CMMG)", enzyme: "Dehydrogenaza alkoholowa / Aldehydowa", reaction: "Oksydacja (10%)", activity: "inactive", desc: "Wydalany z moczem.", tHalf: "—" }
-      ]
-    },
-    "valganciclovir-compound": {
-      rootRole: "prodrug",
-      notes: "Ester L-walilowy gancyklowiru stosowany w profilaktyce i leczeniu zakażeń CMV.",
-      phase1: [
-        { id: "ganciclovir-compound", name: "Gancyklowir", enzyme: "Esterazy jelitowe i wątrobowe", reaction: "Hydroliza estrowa", activity: "active", desc: "Aktywny lek przeciwwirusowy fosforylowany przez kinazę wirusową UL97.", tHalf: "3 - 5 h" }
-      ],
-      phase2: [
-        { parentId: "ganciclovir-compound", id: null, name: "Wydalany z moczem w postaci niezmienionej", enzyme: "Filtracja kłębuszkowa (>90%)", reaction: "Eliminacja nerkowa", activity: "inactive", desc: "Konieczna modyfikacja dawkowania przy niewydolności nerek.", tHalf: "—" }
-      ]
-    },
-    "levodopa-compound": {
-      rootRole: "prodrug",
-      notes: "Prekursor dopaminy przenikający przez barierę krew-mózg za pośrednictwem transportera aminokwasów LAT1.",
-      phase1: [
-        { id: "dopamine-drug-compound", name: "Dopamina", enzyme: "Dekarboksylaza aromatycznych L-aminokwasów (AADC)", reaction: "Dekarboksylacja w neuronach prążkowia", activity: "active", desc: "Kluczowy neuroprzekaźnik znoszący objawy parkinsonizmu.", tHalf: "1 - 2 h" },
-        { id: null, name: "3-O-Metylodopa (3-OMD)", enzyme: "COMT", reaction: "O-metylacja obwodowa (10%)", activity: "inactive", desc: "Konkuruje z lewodopą o transport do mózgu.", tHalf: "15 h" }
-      ],
-      phase2: [
-        { parentId: "dopamine-drug-compound", id: null, name: "Kwas homowaniliowy (HVA) & DOPAC", enzyme: "MAO-B / COMT / ALDH", reaction: "Oksydacja i O-metylacja", activity: "inactive", desc: "Główne metabolity końcowe wydalane z moczem.", tHalf: "—" }
-      ]
-    },
-    "primidone-compound": {
-      rootRole: "prodrug",
-      notes: "Lek przeciwdrgawkowy z grupy pochodnych barbituranowych.",
-      phase1: [
-        { id: "phenobarbital-compound", name: "Fenobarbital", enzyme: "CYP450", reaction: "Oksydacja grupy metylenowej (15-25%)", activity: "active", desc: "Silny barbituranowy modulator receptorów GABA-A o długim t½ (75-120 h).", tHalf: "75 - 120 h" },
-        { id: null, name: "Fenyloetylomalonamid (PEMA)", enzyme: "Hydrolazy", reaction: "Otwarcie pierścienia (50%)", activity: "active", desc: "Aktywny metabolit przeciwdrgawkowy nasilający działanie fenobarbitalu.", tHalf: "24 - 48 h" }
-      ],
-      phase2: [
-        { parentId: "phenobarbital-compound", id: null, name: "p-Hydroksyfenobarbital & Glukuronidy", enzyme: "CYP2C9 / UGT", reaction: "Hydroksylacja aromatyczna i glukuronidacja", activity: "inactive", desc: "Wydalany z moczem.", tHalf: "—" }
-      ]
-    },
-    "aripiprazole-compound": {
-      rootRole: "active",
-      notes: "Atypowy lek przeciwpsychotyczny (częściowy agonista D2 i 5-HT1A). Główny szlak metaboliczny prowadzi do aktywnego dehydroarypiprazolu.",
-      phase1: [
-        { id: null, name: "Dehydroarypiprazol", enzyme: "CYP3A4 / CYP2D6", reaction: "Dehydrogenacja", activity: "active", desc: "Aktywny metabolit odpowiadający za ok. 40% ekspozycji leku, o powinowactwie do D2 zbliżonym do leku macierzystego.", tHalf: "94 h" }
-      ],
-      phase2: [
-        { parentId: "Dehydroarypiprazol", id: null, name: "Glukuronid dehydroarypiprazolu", enzyme: "UGT", reaction: "Koniugacja i eliminacja", activity: "inactive", desc: "Wydalany z kałem (55%) i moczem (25%).", tHalf: "—" }
-      ]
-    },
-    "fluoxetine-compound": {
-      rootRole: "active",
-      notes: "Selektywny inhibitor wychwytu zwrotnego serotoniny (SSRI) o bardzo długim okresie półtrwania.",
-      phase1: [
-        { id: null, name: "Norfluoksetyna", enzyme: "CYP2D6 / CYP2C9", reaction: "N-demetylacja", activity: "active", desc: "Równie silny inhibitor SERT jak fluoksetyna, o t½ wynoszącym 7 - 15 dni, wymagający długiego washoutu.", tHalf: "7 - 15 dni" }
-      ],
-      phase2: [
-        { parentId: "Norfluoksetyna", id: null, name: "Glukuronid norfluoksetyny", enzyme: "UGT", reaction: "Glukuronidacja", activity: "inactive", desc: "Końcowy metabolit wydalany przez nerki.", tHalf: "—" }
-      ]
-    },
-    "venlafaxine-compound": {
-      rootRole: "active",
-      notes: "Inhibitor wychwytu zwrotnego serotoniny i noradrenaliny (SNRI).",
-      phase1: [
-        { id: null, name: "Deswenlafaksyna (O-demetylowenlafaksyna)", enzyme: "CYP2D6", reaction: "O-demetylacja (70%)", activity: "active", desc: "Główny czynny metabolit odpowiadający za działanie przeciwdepresyjne SNRI.", tHalf: "11 h" }
-      ],
-      phase2: [
-        { parentId: "Deswenlafaksyna", id: null, name: "Glukuronid deswenlafaksyny", enzyme: "UGT", reaction: "Koniugacja glukuronidowa", activity: "inactive", desc: "Główny metabolit wydalany z moczem.", tHalf: "—" }
+        { parentId: "morphine-compound", id: null, name: "Morfino-6-glukuronid (M6G)", enzyme: "UGT2B7", reaction: "Glukuronidacja (60%)", activity: "active", desc: "Silnie aktywny metabolit o silniejszym powinowactwie do receptora MOR niż sama morfina.", tHalf: "3 - 5 h" }
       ]
     }
   };
@@ -1788,14 +1602,15 @@
     renderMetaboliteSidePanelDOM(c, cascade);
 
     wireMetaboliteModal();
-    modal.classList.add("open");
+    openDialog(modal);
   }
 
   function closeMetaboliteModal() {
     const modal = $("metaboliteModal");
-    if (modal) modal.classList.remove("open");
+    if (modal) closeDialog(modal);
     activeMetaboliteQuery = null;
     activeMetaboliteSelectedNode = null;
+    if (typeof syncWorkspaceModeToOpenModals === "function") syncWorkspaceModeToOpenModals();
   }
 
   function wireMetaboliteModal() {
@@ -1820,6 +1635,7 @@
     discrepantOnly: false, // boolean
     blackBox: false,       // boolean
     withdrawn: false,      // boolean
+    ebmOnly: false,        // boolean
     decade: null,          // null | '<1960' | '1960s' | '1970s' | '1980s' | '1990s' | '2000s' | '2010s' | '2020+'
     query: ""              // string
   };
@@ -1930,6 +1746,9 @@
 
       // Withdrawn
       if (evidenceFilterState.withdrawn && !c.wd) continue;
+
+      // EBM only
+      if (evidenceFilterState.ebmOnly && (!c.ebm || !c.ebm.length)) continue;
 
       // Decade
       if (evidenceFilterState.decade !== null) {
@@ -2067,6 +1886,8 @@
     if (bbBtn) bbBtn.classList.toggle("active", evidenceFilterState.blackBox);
     const wdBtn = $("evFilterWithdrawnBtn");
     if (wdBtn) wdBtn.classList.toggle("active", evidenceFilterState.withdrawn);
+    const ebmBtn = $("evFilterEbmBtn");
+    if (ebmBtn) ebmBtn.classList.toggle("active", evidenceFilterState.ebmOnly);
   }
 
   function renderEvidenceDrugCards(cohort) {
@@ -2084,6 +1905,7 @@
       if (evidenceFilterState.discrepantOnly) parts.push("Rozbieżności etykiet");
       if (evidenceFilterState.blackBox) parts.push("Black Box");
       if (evidenceFilterState.withdrawn) parts.push("Wycofane");
+      if (evidenceFilterState.ebmOnly) parts.push("Kluczowe Badania EBM");
       if (evidenceFilterState.decade) parts.push(`Dekada: ${evidenceFilterState.decade}`);
       if (evidenceFilterState.query) parts.push(`"${evidenceFilterState.query}"`);
       summaryEl.textContent = parts.length ? `Aktywne filtry: ${parts.join(" · ")}` : "Wszystkie substancje";
@@ -2116,6 +1938,7 @@
       }
       if (c.bb) regBadges.push('<span class="tag warn" style="font-size:10px;font-weight:700">⬛ Black Box</span>');
       if (c.wd) regBadges.push('<span class="tag warn" style="font-size:10px;font-weight:700">🚫 Wycofany</span>');
+      if (c.ebm && c.ebm.length) regBadges.push(`<span class="tag ok" style="font-size:10px;font-weight:600">🔬 EBM (${c.ebm.length})</span>`);
 
       const inStack = state.stack.has(c.i);
       const g = GR[c.g] || { label: "" };
@@ -2235,6 +2058,8 @@
         evidenceFilterState.blackBox = true;
       } else if (initialFilter === "withdrawn") {
         evidenceFilterState.withdrawn = true;
+      } else if (initialFilter === "ebm") {
+        evidenceFilterState.ebmOnly = true;
       }
     }
 
@@ -2242,13 +2067,14 @@
     evidenceRenderLimit = 60;
     updateEvidenceModalUI();
     wireEvidenceModal();
-    modal.classList.add("open");
+    openDialog(modal);
   }
 
   function closeEvidenceModal() {
     const modal = $("evidenceModal");
-    if (modal) modal.classList.remove("open");
+    if (modal) closeDialog(modal);
     activeEvidenceModalOpen = false;
+    if (typeof syncWorkspaceModeToOpenModals === "function") syncWorkspaceModeToOpenModals();
   }
 
   function resetEvidenceFilters() {
@@ -2259,6 +2085,7 @@
       discrepantOnly: false,
       blackBox: false,
       withdrawn: false,
+      ebmOnly: false,
       decade: null,
       query: ""
     };
@@ -2356,6 +2183,220 @@
         updateEvidenceModalUI();
       };
     }
+
+    const ebmBtn = $("evFilterEbmBtn");
+    if (ebmBtn && !ebmBtn._wired) {
+      ebmBtn._wired = true;
+      ebmBtn.onclick = () => {
+        evidenceFilterState.ebmOnly = !evidenceFilterState.ebmOnly;
+        evidenceRenderLimit = 60;
+        updateEvidenceModalUI();
+      };
+    }
+  }
+
+  // =========================================================================
+  // ---------- Wskazania Kliniczne & Hierarchia ICD-10 / ICD-11
+  // =========================================================================
+
+  let activeIndicationsModalOpen = false;
+  let activeIndicationsCode = null;
+
+  function openIndicationsModal(initialCode = null) {
+    const modal = $("indicationsModal");
+    if (!modal) return;
+    activeIndicationsModalOpen = true;
+    activeIndicationsCode = initialCode || null;
+    const sInput = $("indicationsSearchInput");
+    if (sInput) {
+      sInput.value = initialCode || "";
+    }
+    renderIndicationsTree(sInput ? sInput.value : "", activeIndicationsCode);
+    wireIndicationsModal();
+    openDialog(modal);
+    if (initialCode) {
+      setTimeout(() => {
+        const el = $("ind-card-" + initialCode);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 100);
+    }
+  }
+
+  function closeIndicationsModal() {
+    const modal = $("indicationsModal");
+    if (modal) closeDialog(modal);
+    activeIndicationsModalOpen = false;
+    activeIndicationsCode = null;
+    if (location.hash.startsWith("#/indications")) {
+      location.hash = "#/graph";
+    }
+    if (typeof syncWorkspaceModeToOpenModals === "function") syncWorkspaceModeToOpenModals();
+  }
+
+  function renderIndicationsTree(query = "", highlightCode = null) {
+    const container = $("indicationsTreeContainer");
+    if (!container) return;
+
+    const catalog = G.indicationsCatalog || {};
+    const q = (query || "").trim().toLowerCase();
+
+    // Group disease entries by chapter
+    const chapters = new Map();
+    let totalDiseases = 0;
+    let totalRefs = 0;
+
+    Object.values(catalog).forEach((disease) => {
+      const dCode = (disease.icd10_code || "").toLowerCase();
+      const dName = (disease.icd10_name_pl || "").toLowerCase();
+      const d11 = (disease.icd11_code || "").toLowerCase();
+      const cList = disease.compounds || [];
+
+      let matches = false;
+      if (!q) {
+        matches = true;
+      } else if (dCode.includes(q) || dName.includes(q) || d11.includes(q)) {
+        matches = true;
+      } else {
+        matches = cList.some((c) => {
+          const comp = compById.has(c.compound_id) ? C[compById.get(c.compound_id)] : null;
+          return comp && (comp.n.toLowerCase().includes(q) || comp.id.toLowerCase().includes(q));
+        });
+      }
+
+      if (matches) {
+        const ch = disease.icd_chapter || "Inne wskazania";
+        if (!chapters.has(ch)) chapters.set(ch, []);
+        chapters.get(ch).push(disease);
+        totalDiseases++;
+        totalRefs += cList.length;
+      }
+    });
+
+    if (totalDiseases === 0) {
+      container.innerHTML = `
+        <div style="text-align:center;padding:2rem;color:var(--color-text-muted)">
+          <div style="font-size:24px;margin-bottom:8px">🔍</div>
+          <b>Nie znaleziono wskazań dla zapytania "${esc(query)}"</b>
+          <p style="font-size:11px;margin-top:4px">Wpisz inną nazwę jednostki chorobowej, kod ICD-10 (np. F00, F90, G47) lub nazwę leku.</p>
+        </div>`;
+      return;
+    }
+
+    let html = `
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 8px;background:var(--color-surface-2);border-radius:6px;font-size:11px;color:var(--color-text-muted)">
+        <span>Hierarchia jednostek: <b>${totalDiseases}</b> wskazań w <b>${chapters.size}</b> rozdziałach (powiązanych substancji: <b>${totalRefs}</b>)</span>
+        <span>Standard: ICD-10 (CeZ PL) & ICD-11 (WHO)</span>
+      </div>`;
+
+    chapters.forEach((diseases, chapterName) => {
+      html += `
+        <div class="indications-chapter" style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);overflow:hidden">
+          <div style="padding:8px 12px;background:var(--color-surface-2);border-bottom:1px solid var(--color-border);display:flex;justify-content:space-between;align-items:center">
+            <b style="font-size:11px;color:var(--color-text);text-transform:uppercase;letter-spacing:.5px">📂 ${esc(chapterName)}</b>
+            <span class="tag" style="font-size:10px">${diseases.length} wskazań</span>
+          </div>
+          <div style="padding:10px;display:grid;gap:8px">
+            ${diseases.map((d) => {
+              const isHighlight = highlightCode && d.icd10_code === highlightCode;
+              return `
+                <div class="disease-entry" id="ind-card-${esc(d.icd10_code)}" style="border:1px solid ${isHighlight ? 'var(--color-primary)' : 'var(--color-border)'};border-radius:6px;padding:8px 10px;background:${isHighlight ? 'color-mix(in oklab, var(--color-primary) 8%, var(--color-surface))' : 'var(--color-surface)'}">
+                  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
+                    <div>
+                      <code style="font-weight:700;font-size:12px;color:var(--color-primary)">[ICD-10: ${esc(d.icd10_code)}]</code>
+                      <b style="font-size:12px;color:var(--color-text);margin-left:6px">${esc(d.icd10_name_pl)}</b>
+                      <span style="font-size:11px;color:var(--color-text-muted);margin-left:6px">· WHO ICD-11: <code>${esc(d.icd11_code || "—")}</code></span>
+                    </div>
+                    <button class="btn" data-ind-filter="${esc(d.icd10_code)}" style="font-size:10px;padding:2px 8px;background:var(--color-primary);color:#fff" title="Wyróżnij substancje dla tego wskazania na grafie 2D">🎯 Filtruj graf (${d.compounds.length})</button>
+                  </div>
+                  <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px">
+                    ${(d.compounds || []).map((c) => {
+                      const comp = compById.has(c.compound_id) ? C[compById.get(c.compound_id)] : null;
+                      const cName = comp ? comp.n : c.compound_id;
+                      const statusTag = c.status === "registered"
+                        ? '<span class="tag ok" style="font-size:9px;padding:1px 5px">✓ ChPL</span>'
+                        : c.status === "off-label"
+                          ? '<span class="tag" style="font-size:9px;padding:1px 5px;color:var(--color-warning)">⚡ Off-label</span>'
+                          : '<span class="tag" style="font-size:9px;padding:1px 5px">🔬 Badania</span>';
+                      return `
+                        <div style="display:flex;align-items:center;gap:4px;background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:4px;padding:3px 6px">
+                          ${comp ? `<span class="dot" style="background:var(--color-cluster-${comp.c});width:8px;height:8px;border-radius:50%;display:inline-block"></span>` : ""}
+                          <a href="javascript:void(0)" data-ind-compound="${comp ? comp.i : ''}" style="font-size:11px;font-weight:600;color:var(--color-text);text-decoration:none">${esc(cName)}</a>
+                          ${statusTag}
+                          ${comp ? `<button class="btn-copy" data-ind-stack="${comp.i}" title="Dodaj do stacku" style="font-size:9px;padding:0 4px">+</button>` : ""}
+                        </div>
+                      `;
+                    }).join("")}
+                  </div>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = html;
+
+    // Wire actions inside container
+    container.querySelectorAll("[data-ind-compound]").forEach((btn) => {
+      btn.onclick = () => {
+        const idx = +btn.dataset.indCompound;
+        if (!isNaN(idx)) {
+          closeIndicationsModal();
+          select({ type: "compound", i: idx }, true);
+        }
+      };
+    });
+
+    container.querySelectorAll("[data-ind-stack]").forEach((btn) => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const idx = +btn.dataset.indStack;
+        if (!isNaN(idx)) {
+          toggleInStack(idx);
+          btn.textContent = "✓";
+          setTimeout(() => { btn.textContent = "+"; }, 1500);
+        }
+      };
+    });
+
+    container.querySelectorAll("[data-ind-filter]").forEach((btn) => {
+      btn.onclick = () => {
+        const code = btn.dataset.indFilter;
+        const entry = catalog[code];
+        if (entry && entry.compounds) {
+          const indices = entry.compounds.map((c) => compById.get(c.compound_id)).filter((i) => i != null);
+          if (indices.length) {
+            state.evidenceCohort = new Set(indices);
+            closeIndicationsModal();
+            updateEvidenceCohortIndicator();
+            stats();
+            search();
+            draw();
+          }
+        }
+      };
+    });
+  }
+
+  function wireIndicationsModal() {
+    const modal = $("indicationsModal");
+    if (!modal || modal._wired) return;
+    modal._wired = true;
+
+    const closeBtn = $("indicationsModalClose");
+    if (closeBtn) closeBtn.onclick = closeIndicationsModal;
+
+    modal.onclick = (e) => {
+      if (e.target === modal) closeIndicationsModal();
+    };
+
+    const sInput = $("indicationsSearchInput");
+    if (sInput) {
+      sInput.oninput = (e) => {
+        renderIndicationsTree(e.target.value);
+      };
+    }
   }
 
   // =========================================================================
@@ -2381,11 +2422,11 @@
     dragButton: 0,
     lastMouseX: 0,
     lastMouseY: 0,
-    autoRotate: true,
+    autoRotate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     selectedResidue: null
   };
 
-  const TARGET_3D_CATALOG = {
+  const TARGET_3D_CATALOG = (G.target3DCatalog && Object.keys(G.target3DCatalog).length) ? G.target3DCatalog : {
     "CHEMBL224": {
       id: "CHEMBL224",
       name: "5-hydroxytryptamine receptor 2A",
@@ -2398,567 +2439,7 @@
       class: "GPCR (Rodzina 5-HT2)",
       arch: "gpcr",
       pocket: [
-        { r: "Asp155", pos: 155, role: "Mostek solny z naładowanym azotem dietyloamidu / piperydyny" },
-        { r: "Ser159", pos: 159, role: "Wiązanie wodorowe z grupą karbonylową liganda" },
-        { r: "Trp336", pos: 336, role: "Hydrofobowe oddziaływanie pi-pi z pierścieniem indolowym" },
-        { r: "Phe340", pos: 340, role: "Aromatyczna klatka kieszeni ortosterycznej (TM6)" },
-        { r: "Asn343", pos: 343, role: "Koordynacja polarna w rdzeniu wiążącym" },
-        { r: "Phe339", pos: 339, role: "Przełącznik konformacyjny mikro-przełącznika rotamerowego" }
-      ]
-    },
-    "CHEMBL214": {
-      id: "CHEMBL214",
-      name: "5-hydroxytryptamine receptor 1A",
-      gene: "HTR1A",
-      pdb: "7E2X",
-      res: "Cryo-EM 3.0 Å",
-      uniprot: "P08908",
-      ligand: "Aripiprazole",
-      affinity: "Ki = 5.6 nM (Częściowy agonista)",
-      class: "GPCR (Rodzina 5-HT1)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp116", pos: 116, role: "Kluczowy mostek solny z azotem piperazyny" },
-        { r: "Val117", pos: 117, role: "Kontakt hydrofobowy z pierścieniem dihydrochinolinonu" },
-        { r: "Tyr195", pos: 195, role: "Wiązanie wodorowe z tlenem grupy amidowej" },
-        { r: "Phe361", pos: 361, role: "Aromatyczne upakowanie pi-stacking w TM6" },
-        { r: "Asn386", pos: 386, role: "Wiązanie wodorowe w części wewnątrzkomórkowej" }
-      ]
-    },
-    "CHEMBL223": {
-      id: "CHEMBL223",
-      name: "5-hydroxytryptamine receptor 2C",
-      gene: "HTR2C",
-      pdb: "6BQG",
-      res: "Cryo-EM 3.0 Å",
-      uniprot: "P28335",
-      ligand: "Ergotamine",
-      affinity: "Ki = 0.9 nM (Agonista)",
-      class: "GPCR (Rodzina 5-HT2)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp134", pos: 134, role: "Wiązanie elektrostatyczne z aminą ergoliny" },
-        { r: "Ser138", pos: 138, role: "Wiązanie wodorowe z fragmentem peptydowym" },
-        { r: "Trp324", pos: 324, role: "Oddziaływanie pi-pi stabilizujące rdzeń ergolinowy" },
-        { r: "Phe328", pos: 328, role: "Hydrofobowa kieszeń boczna TM6" },
-        { r: "Leu350", pos: 350, role: "Stabilizacja łańcucha alkilowego" }
-      ]
-    },
-    "CHEMBL217": {
-      id: "CHEMBL217",
-      name: "Dopamine D2 receptor",
-      gene: "DRD2",
-      pdb: "6CM4",
-      res: "Krystalografia RTG 2.87 Å",
-      uniprot: "P14416",
-      ligand: "Risperidone",
-      affinity: "Ki = 3.8 nM (Silny antagonista)",
-      class: "GPCR (Dopaminowe D2-like)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp114", pos: 114, role: "Mostek solny z azotem zasadowym piperydyny" },
-        { r: "Val115", pos: 115, role: "Hydrofobowa ścianka kieszeni ortosterycznej" },
-        { r: "Ser193", pos: 193, role: "Oddziaływanie polarne z pierścieniem pirymidynonu" },
-        { r: "Phe389", pos: 389, role: "Kluczowy aromatyczny kontakt pi-pi w TM6" },
-        { r: "His393", pos: 393, role: "Koordynacja benzizoksazolu w kieszeni drugorzędowej" },
-        { r: "Tyr408", pos: 408, role: "Wiązanie wodorowe stabilizujące domenę zewnątrzkomórkową" }
-      ]
-    },
-    "CHEMBL2056": {
-      id: "CHEMBL2056",
-      name: "Dopamine D1 receptor",
-      gene: "DRD1",
-      pdb: "7CKZ",
-      res: "Cryo-EM 2.9 Å",
-      uniprot: "P21728",
-      ligand: "Apomorphine",
-      affinity: "Ki = 0.7 nM (Agonista)",
-      class: "GPCR (Dopaminowe D1-like)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp103", pos: 103, role: "Mostek solny z protonowanym azotem aminy" },
-        { r: "Ser198", pos: 198, role: "Podwójne wiązanie wodorowe z katecholowymi grupami OH" },
-        { r: "Ser202", pos: 202, role: "Kluczowa reszta rozpoznania katecholi w TM5" },
-        { r: "Trp285", pos: 285, role: "Oddziaływanie pi-pi z pierścieniem aporfiny" },
-        { r: "Phe288", pos: 288, role: "Aromatyczna klatka hydrofobowa" }
-      ]
-    },
-    "CHEMBL233": {
-      id: "CHEMBL233",
-      name: "Mu opioid receptor",
-      gene: "OPRM1",
-      pdb: "8EF5",
-      res: "Cryo-EM 2.5 Å",
-      uniprot: "P35372",
-      ligand: "Fentanyl",
-      affinity: "Ki = 1.3 nM (Pełny agonista)",
-      class: "GPCR (Opioidowe)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp147", pos: 147, role: "Kluczowy mostek solny z azotem pierścienia piperydynowego" },
-        { r: "Tyr148", pos: 148, role: "Wiązanie wodorowe z grupą karbonylową propanamidu" },
-        { r: "Met151", pos: 151, role: "Kontakt van der Waalsa z łańcuchem fenyloetylowym" },
-        { r: "Trp293", pos: 293, role: "Głębokie oddziaływanie pi-pi w kieszeni ortosterycznej" },
-        { r: "His297", pos: 297, role: "Koordynacja grupy anilinowej fentanylu" },
-        { r: "Ile322", pos: 322, role: "Hydrofobowa stabilizacja w TM7" }
-      ]
-    },
-    "CHEMBL237": {
-      id: "CHEMBL237",
-      name: "Kappa opioid receptor",
-      gene: "OPRK1",
-      pdb: "6B73",
-      res: "Krystalografia RTG 3.1 Å",
-      uniprot: "P41145",
-      ligand: "Nalfurafine",
-      affinity: "Ki = 0.16 nM (Selektywny agonista)",
-      class: "GPCR (Opioidowe)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp138", pos: 138, role: "Mostek solny z azotem morfinanu" },
-        { r: "Tyr139", pos: 139, role: "Wiązanie wodorowe fenolowego tlenu" },
-        { r: "Trp287", pos: 287, role: "Hydrofobowe upakowanie pierścienia furanowego" },
-        { r: "Ile294", pos: 294, role: "Kieszeń boczna selektywności KOR vs MOR" },
-        { r: "Tyr312", pos: 312, role: "Sieć wiązań wodorowych TM7" }
-      ]
-    },
-    "CHEMBL235": {
-      id: "CHEMBL235",
-      name: "Delta opioid receptor",
-      gene: "OPRD1",
-      pdb: "4EJ4",
-      res: "Krystalografia RTG 3.4 Å",
-      uniprot: "P41143",
-      ligand: "Naltrindole",
-      affinity: "Ki = 0.2 nM (Selektywny antagonista)",
-      class: "GPCR (Opioidowe)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp128", pos: 128, role: "Mostek solny z kationem aminowym" },
-        { r: "Tyr129", pos: 129, role: "Hydroksylowe wiązanie wodorowe" },
-        { r: "Trp274", pos: 274, role: "Oddziaływanie z indolową grupą naltrindolu" },
-        { r: "His278", pos: 278, role: "Selektywny element rozpoznania DOR" },
-        { r: "Leu300", pos: 300, role: "Hydrofobowa kieszeń apolarna" }
-      ]
-    },
-    "CHEMBL218": {
-      id: "CHEMBL218",
-      name: "Cannabinoid receptor 1",
-      gene: "CNR1",
-      pdb: "5U09",
-      res: "Krystalografia RTG 2.8 Å",
-      uniprot: "P21554",
-      ligand: "Rimonabant",
-      affinity: "Ki = 1.8 nM (Odwrotny agonista)",
-      class: "GPCR (Kannabinoidowe)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Phe170", pos: 170, role: "Aromatyczne klamry pi-pi z pierścieniami chlorofenylowymi" },
-        { r: "Phe177", pos: 177, role: "Hydrofobowy sufit kieszeni kannabinoidowej" },
-        { r: "Lys192", pos: 192, role: "Mostek solny / koordynacja karboksyamidu" },
-        { r: "Trp356", pos: 356, role: "Główny przełącznik aktywacji receptora CB1" },
-        { r: "Asp366", pos: 366, role: "Stabilizacja zewnątrzkomórkowa pętli ECL2" }
-      ]
-    },
-    "CHEMBL1834": {
-      id: "CHEMBL1834",
-      name: "Cannabinoid receptor 2",
-      gene: "CNR2",
-      pdb: "6KPF",
-      res: "Cryo-EM 3.2 Å",
-      uniprot: "P34972",
-      ligand: "AM12033",
-      affinity: "Ki = 2.1 nM (Agonista)",
-      class: "GPCR (Kannabinoidowe)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Phe87", pos: 87, role: "Hydrofobowa ścianka kieszeni lipidowej" },
-        { r: "Phe91", pos: 91, role: "Oddziaływanie aromatyczne z ligandem" },
-        { r: "Lys109", pos: 109, role: "Wiązanie polarne w TM3" },
-        { r: "Trp258", pos: 258, role: "Przełącznik rotamerowy aktywacji CB2" },
-        { r: "Ser285", pos: 285, role: "Koordynacja polarna w TM7" }
-      ]
-    },
-    "CHEMBL228": {
-      id: "CHEMBL228",
-      name: "GABA-A receptor alpha-1/beta-2/gamma-2",
-      gene: "GABRA1",
-      pdb: "6D6T",
-      res: "Cryo-EM 3.86 Å",
-      uniprot: "P14867",
-      ligand: "Diazepam",
-      affinity: "Ki = 12 nM (Modulator allosteryczny)",
-      class: "Cys-loop Ligand-Gated Ion Channel",
-      arch: "channel",
-      pocket: [
-        { r: "His102", pos: 102, role: "Kluczowa reszta wiązania benzodiazepin na granicy alfa/gamma" },
-        { r: "Tyr160", pos: 160, role: "Aromatyczne upakowanie pi-stacking z pierścieniem diazepamu" },
-        { r: "Thr206", pos: 206, role: "Wiązanie wodorowe z tlenem grupy laktamowej" },
-        { r: "Phe77", pos: 77, role: "Hydrofobowa kieszeń podjednostki gamma-2" },
-        { r: "Tyr210", pos: 210, role: "Stabilizacja pętli C miejsca allosterycznego" }
-      ]
-    },
-    "CHEMBL230": {
-      id: "CHEMBL230",
-      name: "NMDA receptor 1 / 2B",
-      gene: "GRIN1/GRIN2B",
-      pdb: "7EU8",
-      res: "Cryo-EM 3.5 Å",
-      uniprot: "Q05586",
-      ligand: "Ketamine",
-      affinity: "Ki = 500 nM (Bloker kanału)",
-      class: "Jonotropowy receptor glutaminianowy",
-      arch: "channel",
-      pocket: [
-        { r: "Arg523", pos: 523, role: "Wiązanie elektrostatyczne w kanale przepływu jonów" },
-        { r: "Glu413", pos: 413, role: "Sito selektywności jonowej (barierka wejścia)" },
-        { r: "Thr648", pos: 648, role: "Koordynacja pierścienia chlorofenylowego ketaminy" },
-        { r: "Trp563", pos: 563, role: "Hydrofobowe zakotwiczenie liganda w porze kanału" },
-        { r: "Val644", pos: 644, role: "Zwężenie kanału transbłonowego M3" }
-      ]
-    },
-    "CHEMBL225": {
-      id: "CHEMBL225",
-      name: "Serotonin transporter",
-      gene: "SLC6A4",
-      pdb: "5I6X",
-      res: "Krystalografia RTG 3.15 Å",
-      uniprot: "P31645",
-      ligand: "Paroxetine",
-      affinity: "Ki = 0.1 nM (Silny inhibitor wychwytu zwrotnego)",
-      class: "Transporter monoamin (SLC6)",
-      arch: "transporter",
-      pocket: [
-        { r: "Tyr95", pos: 95, role: "Zewnętrzna zasuwa zamykająca kieszeń substratową" },
-        { r: "Asp98", pos: 98, role: "Mostek solny z azotem piperydyny paroksetyny" },
-        { r: "Ile172", pos: 172, role: "Hydrofobowa kieszeń B dla fluorofenylu" },
-        { r: "Phe335", pos: 335, role: "Oddziaływanie pi-pi stabilizujące benzodioksol" },
-        { r: "Ser438", pos: 438, role: "Koordynacja polarna jonu Na+ i liganda" },
-        { r: "Gly442", pos: 442, role: "Wiązanie szkieletowe w rdzeniu transportowym" }
-      ]
-    },
-    "CHEMBL238": {
-      id: "CHEMBL238",
-      name: "Acetylcholinesterase",
-      gene: "ACHE",
-      pdb: "4EY7",
-      res: "Krystalografia RTG 2.35 Å",
-      uniprot: "P22303",
-      ligand: "Donepezil",
-      affinity: "Ki = 5.7 nM (Inhibitor odwracalny)",
-      class: "Hydrolaza estrowa (Gardełko katalityczne)",
-      arch: "enzyme",
-      pocket: [
-        { r: "Trp86", pos: 86, role: "Miejsce cholinowe (anionowe) na dnie gardełka" },
-        { r: "Tyr124", pos: 124, role: "Hydrofobowa ścianka gardzieli enzymu" },
-        { r: "Ser203", pos: 203, role: "Katalityczna triada estrowa (atak nukleofilowy)" },
-        { r: "Trp286", pos: 286, role: "Peryferyjne miejsce anionowe (PAS) przy wlocie" },
-        { r: "Tyr337", pos: 337, role: "Przewężenie gardełka katalitycznego" },
-        { r: "Phe338", pos: 338, role: "Upakowanie pi-stacking pierścienia indanonu" }
-      ]
-    },
-    "CHEMBL221": {
-      id: "CHEMBL221",
-      name: "Cyclooxygenase-2",
-      gene: "PTGS2",
-      pdb: "3LN1",
-      res: "Krystalografia RTG 2.4 Å",
-      uniprot: "P35354",
-      ligand: "Celecoxib",
-      affinity: "IC50 = 40 nM (Selektywny inhibitor COX-2)",
-      class: "Oksydoreduktaza / Syntaza prostaglandyn",
-      arch: "enzyme",
-      pocket: [
-        { r: "Arg120", pos: 120, role: "Wiązanie elektrostatyczne przy wlocie do kanału" },
-        { r: "Tyr355", pos: 355, role: "Bariera stereochemiczna kanału cyklooksygenazy" },
-        { r: "Val523", pos: 523, role: "Kluczowa reszta kieszeni bocznej (odpowiedzialna za selektywność COX-2 vs COX-1 Ile523)" },
-        { r: "Ser530", pos: 530, role: "Miejsce acetylacji przez aspirynę / blokada kwasu arachidonowego" },
-        { r: "Phe518", pos: 518, role: "Stabilizacja sulfonamidowej grupy celekoksybu" }
-      ]
-    },
-    "CHEMBL234": {
-      id: "CHEMBL234",
-      name: "Cyclooxygenase-1",
-      gene: "PTGS1",
-      pdb: "3N8Z",
-      res: "Krystalografia RTG 2.7 Å",
-      uniprot: "P23219",
-      ligand: "Ibuprofen",
-      affinity: "IC50 = 2.6 uM (Nieselektywny NLPZ)",
-      class: "Oksydoreduktaza / Syntaza prostaglandyn",
-      arch: "enzyme",
-      pocket: [
-        { r: "Arg120", pos: 120, role: "Mostek solny z karboksylanem ibuprofenu" },
-        { r: "Tyr355", pos: 355, role: "Wiązanie wodorowe domykające kanał" },
-        { r: "Ile523", pos: 523, role: "Obszerna reszta izoleucyny uniemożliwiająca wniknięcie inhibitorów COX-2" },
-        { r: "Ser530", pos: 530, role: "Głębokie dno kieszeni katalitycznej" },
-        { r: "Trp387", pos: 387, role: "Kontakt van der Waalsa z łańcuchem izobutylu" }
-      ]
-    },
-    "CHEMBL402": {
-      id: "CHEMBL402",
-      name: "3-hydroxy-3-methylglutaryl-coenzyme A reductase",
-      gene: "HMGCR",
-      pdb: "1HW9",
-      res: "Krystalografia RTG 2.22 Å",
-      uniprot: "P04035",
-      ligand: "Atorvastatin",
-      affinity: "Ki = 8 nM (Inhibitor reduktazy HMG-CoA)",
-      class: "Oksydoreduktaza / Biosynteza cholesterolu",
-      arch: "enzyme",
-      pocket: [
-        { r: "Lys691", pos: 691, role: "Wiązanie elektrostatyczne z grupą dioksyheptanową statyny" },
-        { r: "Lys735", pos: 735, role: "Koordynacja polarna mostka tlenowego" },
-        { r: "Arg590", pos: 590, role: "Wiązanie wodorowe z kwasem hydroksylowym" },
-        { r: "Asp690", pos: 690, role: "Katalityczna sieć transferu protonów" },
-        { r: "Glu559", pos: 559, role: "Stabilizacja konformacyjna kieszeni inhibitorowej" }
-      ]
-    },
-    "CHEMBL1862": {
-      id: "CHEMBL1862",
-      name: "Monoamine oxidase A",
-      gene: "MAOA",
-      pdb: "2Z5X",
-      res: "Krystalografia RTG 2.2 Å",
-      uniprot: "P21397",
-      ligand: "Clorgyline",
-      affinity: "Ki = 0.05 nM (Nieodwracalny inhibitor)",
-      class: "Flawoproteina mitochondrialna",
-      arch: "enzyme",
-      pocket: [
-        { r: "FAD", pos: 0, role: "Kofaktor flawinowy tworzący wiązanie kowalencyjne" },
-        { r: "Tyr407", pos: 407, role: "Aromatyczna klatka miejsca utleniania aminy" },
-        { r: "Tyr444", pos: 444, role: "Hydrofobowe oddziaływanie z pierścieniem dichlorofenylu" },
-        { r: "Phe208", pos: 208, role: "Zasuwa wejściowa do jamy katalitycznej MAO-A" },
-        { r: "Ile335", pos: 335, role: "Reszta selektywności MAO-A vs MAO-B (Tyr326 w MAO-B)" }
-      ]
-    },
-    "CHEMBL2035": {
-      id: "CHEMBL2035",
-      name: "Monoamine oxidase B",
-      gene: "MAOB",
-      pdb: "2V5Z",
-      res: "Krystalografia RTG 1.6 Å",
-      uniprot: "P27338",
-      ligand: "Safinamide",
-      affinity: "Ki = 9 nM (Odwracalny inhibitor)",
-      class: "Flawoproteina mitochondrialna",
-      arch: "enzyme",
-      pocket: [
-        { r: "FAD", pos: 0, role: "Kofaktor utleniający w kieszeni reakcyjnej" },
-        { r: "Tyr398", pos: 398, role: "Aromatyczna ścianka klatki flavinowej" },
-        { r: "Tyr435", pos: 435, role: "Stabilizacja pi-pi liganda safinamidu" },
-        { r: "Leu171", pos: 171, role: "Hydrofobowa komora wejściowa (kieszeń rozpoznania)" },
-        { r: "Ile199", pos: 199, role: "Bramka pomiędzy jamą wejściową a jamą katalityczną" }
-      ]
-    },
-    "CHEMBL209": {
-      id: "CHEMBL209",
-      name: "Beta-2 adrenergic receptor",
-      gene: "ADRB2",
-      pdb: "3P0G",
-      res: "Krystalografia RTG 2.84 Å",
-      uniprot: "P07550",
-      ligand: "BI-167107",
-      affinity: "Ki = 0.08 nM (Ultrasilny agonista)",
-      class: "GPCR (Adrenergiczne)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp113", pos: 113, role: "Kluczowy mostek solny z aminą beta-agonistów" },
-        { r: "Ser203", pos: 203, role: "Wiązanie wodorowe z katecholową grupą meta-OH" },
-        { r: "Ser207", pos: 207, role: "Wiązanie wodorowe z para-OH (odpowiedzialne za aktywację)" },
-        { r: "Asn312", pos: 312, role: "Wiązanie wodorowe z chiralną grupą beta-OH" },
-        { r: "Phe290", pos: 290, role: "Aromatyczna klatka w TM6 stabilizująca stan aktywny" }
-      ]
-    },
-    "CHEMBL210": {
-      id: "CHEMBL210",
-      name: "Beta-1 adrenergic receptor",
-      gene: "ADRB1",
-      pdb: "2VT4",
-      res: "Krystalografia RTG 2.7 Å",
-      uniprot: "P08588",
-      ligand: "Cyanopindolol",
-      affinity: "Ki = 0.04 nM (Antagonista)",
-      class: "GPCR (Adrenergiczne)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp121", pos: 121, role: "Wiązanie jonowe z azotem grupy izopropyloaminowej" },
-        { r: "Ser211", pos: 211, role: "Wiązanie wodorowe z grupami tlenowymi" },
-        { r: "Ser215", pos: 215, role: "Koordynacja pętli w TM5" },
-        { r: "Asn329", pos: 329, role: "Wiązanie wodorowe z grupą beta-alkoholową" },
-        { r: "Phe306", pos: 306, role: "Oddziaływanie pi-pi z pierścieniem indolowym" }
-      ]
-    },
-    "CHEMBL202": {
-      id: "CHEMBL202",
-      name: "Alpha-2A adrenergic receptor",
-      gene: "ADRA2A",
-      pdb: "6K42",
-      res: "Cryo-EM 2.8 Å",
-      uniprot: "P08913",
-      ligand: "Dexmedetomidine",
-      affinity: "Ki = 1.0 nM (Pełny agonista)",
-      class: "GPCR (Adrenergiczne)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp113", pos: 113, role: "Mostek solny z pierścieniem imidazolowym" },
-        { r: "Ser200", pos: 200, role: "Wiązanie wodorowe z resztami aktywacyjnymi" },
-        { r: "Ser204", pos: 204, role: "Sieć wiązań wodorowych TM5" },
-        { r: "Phe412", pos: 412, role: "Klatka hydrofobowa dla pierścienia dimetylofenylu" },
-        { r: "Tyr394", pos: 394, role: "Oddziaływanie pi-pi w dnie kieszeni" }
-      ]
-    },
-    "CHEMBL1824": {
-      id: "CHEMBL1824",
-      name: "Phosphodiesterase 5A",
-      gene: "PDE5A",
-      pdb: "1UDT",
-      res: "Krystalografia RTG 2.3 Å",
-      uniprot: "O76074",
-      ligand: "Sildenafil",
-      affinity: "IC50 = 3.5 nM (Selektywny inhibitor)",
-      class: "Fosfodiesteraza cGMP",
-      arch: "enzyme",
-      pocket: [
-        { r: "Gln817", pos: 817, role: "Bifunkcyjne wiązanie wodorowe z pierścieniem pirazolopirymidynonu" },
-        { r: "Phe820", pos: 820, role: "Hydrofobowy zacisk pi-stacking (klamerka fenyloalaninowa)" },
-        { r: "Val782", pos: 782, role: "Hydrofobowa kieszeń etoksyfenylu" },
-        { r: "Leu765", pos: 765, role: "Kontakt apolarny w kieszonce M" },
-        { r: "Tyr612", pos: 612, role: "Koordynacja kationów cynku Zn2+ i magnezu Mg2+" }
-      ]
-    },
-    "CHEMBL206": {
-      id: "CHEMBL206",
-      name: "Muscarinic acetylcholine receptor M1",
-      gene: "CHRM1",
-      pdb: "5CXV",
-      res: "Krystalografia RTG 2.7 Å",
-      uniprot: "P11229",
-      ligand: "Tiotropium",
-      affinity: "Ki = 0.2 nM (Silny antagonista)",
-      class: "GPCR (Cholinergiczne)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp105", pos: 105, role: "Mostek solny z czwartorzędowym azotem tiotropium" },
-        { r: "Tyr106", pos: 106, role: "Klatka tyrozynowa otaczająca czwartorzędową cholinę" },
-        { r: "Tyr381", pos: 381, role: "Oddziaływanie pi-kation z jonem amoniowym" },
-        { r: "Trp157", pos: 157, role: "Hydrofobowe dno kieszeni ortosterycznej" },
-        { r: "Tyr404", pos: 404, role: "Zewnętrzna pokrywa kieszeni wiążącej w TM7" }
-      ]
-    },
-    "CHEMBL211": {
-      id: "CHEMBL211",
-      name: "Muscarinic acetylcholine receptor M2",
-      gene: "CHRM2",
-      pdb: "3UON",
-      res: "Krystalografia RTG 3.0 Å",
-      uniprot: "P08172",
-      ligand: "QNB",
-      affinity: "Ki = 0.05 nM (Antagonista)",
-      class: "GPCR (Cholinergiczne)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp103", pos: 103, role: "Mostek solny z zasadowym azotem chinuklidyny" },
-        { r: "Tyr104", pos: 104, role: "Aromatyczna klatka cholinowa TM3" },
-        { r: "Trp400", pos: 400, role: "Oddziaływanie pi-pi z pierścieniami fenylowymi liganda" },
-        { r: "Tyr403", pos: 403, role: "Wiązanie wodorowe z grupą hydroksylową estru" },
-        { r: "Phe181", pos: 181, role: "Reszta pętli zewnątrzkomórkowej ECL2" }
-      ]
-    },
-    "CHEMBL219": {
-      id: "CHEMBL219",
-      name: "Glucagon-like peptide 1 receptor",
-      gene: "GLP1R",
-      pdb: "6X18",
-      res: "Cryo-EM 2.5 Å",
-      uniprot: "P43220",
-      ligand: "Semaglutide",
-      affinity: "Ki = 0.38 nM (Długo działający agonista)",
-      class: "GPCR Klasa B1 (Inkretynowe)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Tyr69", pos: 69, role: "Domenowe wiązanie z N-końcowym fragmentem peptydowym" },
-        { r: "Trp39", pos: 39, role: "Wiązanie hydrofobowe z resztą kwasu tłuszczowego" },
-        { r: "Arg190", pos: 190, role: "Wiązanie wodorowe z rdzeniem helisy liganda" },
-        { r: "Lys197", pos: 197, role: "Mostek solny z łańcuchem peptydowym" },
-        { r: "Leu32", pos: 32, role: "Hydrofobowa ścianka domeny ECD" }
-      ]
-    },
-    "CHEMBL1867": {
-      id: "CHEMBL1867",
-      name: "Androgen receptor",
-      gene: "AR",
-      pdb: "2AM9",
-      res: "Krystalografia RTG 1.64 Å",
-      uniprot: "P10275",
-      ligand: "Dihydrotestosterone",
-      affinity: "Kd = 0.5 nM (Endogenny androgen)",
-      class: "Receptor jądrowy / Czynnik transkrypcyjny",
-      arch: "enzyme",
-      pocket: [
-        { r: "Asn705", pos: 705, role: "Wiązanie wodorowe z 17-beta hydroksylem steroidu" },
-        { r: "Thr877", pos: 877, role: "Wiązanie wodorowe stabilizujące pierścień D steroidu" },
-        { r: "Gln711", pos: 711, role: "Sieć polarna kieszeni wiążącej" },
-        { r: "Arg752", pos: 752, role: "Mostek solny / koordynacja grupy 3-keto w pierścieniu A" },
-        { r: "Phe764", pos: 764, role: "Hydrofobowe upakowanie szkieletu cyklopentanoperhydrofenantrenu" }
-      ]
-    },
-    "CHEMBL1871": {
-      id: "CHEMBL1871",
-      name: "Angiotensin II type 1 receptor",
-      gene: "AGTR1",
-      pdb: "4YAY",
-      res: "Krystalografia RTG 2.8 Å",
-      uniprot: "P30556",
-      ligand: "Olmesartan",
-      affinity: "Ki = 7.7 nM (Antagonista AT1 / Sartan)",
-      class: "GPCR (Kardiologiczne)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Arg167", pos: 167, role: "Kluczowy mostek solny z pierścieniem tetrazolowym sartanu" },
-        { r: "Lys199", pos: 199, role: "Podwójne wiązanie jonowe stabilizujące ligand w TM5" },
-        { r: "Asp281", pos: 281, role: "Koordynacja grupy hydroksyalkilowej imidazolu" },
-        { r: "Tyr292", pos: 292, role: "Oddziaływanie pi-pi z pierścieniami dwufenylu" },
-        { r: "Trp84", pos: 84, role: "Hydrofobowe dno kieszeni receptora AT1" }
-      ]
-    },
-    "CHEMBL226": {
-      id: "CHEMBL226",
-      name: "Histamine H1 receptor",
-      gene: "HRH1",
-      pdb: "3RZE",
-      res: "Krystalografia RTG 3.1 Å",
-      uniprot: "P35367",
-      ligand: "Doxepin",
-      affinity: "Ki = 0.1 nM (Silny antagonista H1)",
-      class: "GPCR (Histaminowe)",
-      arch: "gpcr",
-      pocket: [
-        { r: "Asp107", pos: 107, role: "Kluczowy mostek solny z protonowaną aminą doksepiny" },
-        { r: "Tyr108", pos: 108, role: "Aromatyczna klatka w TM3" },
-        { r: "Trp428", pos: 428, role: "Oddziaływanie pi-pi z pierścieniem dibenzoksepinowym" },
-        { r: "Phe432", pos: 432, role: "Hydrofobowa ściana ortosteryczna w TM6" },
-        { r: "Asn198", pos: 198, role: "Wiązanie wodorowe pętli zewnątrzkomórkowej" }
-      ]
-    },
-    "CHEMBL240": {
-      id: "CHEMBL240",
-      name: "Dopamine transporter",
-      gene: "SLC6A3",
-      pdb: "4M48",
-      res: "Krystalografia RTG 2.95 Å",
-      uniprot: "Q01959",
-      ligand: "Nortriptyline",
-      affinity: "Ki = 18 nM (Inhibitor wychwytu zwrotnego)",
-      class: "Transporter monoamin (SLC6)",
-      arch: "transporter",
-      pocket: [
-        { r: "Asp79", pos: 79, role: "Mostek solny z azotem aminy wtórnej" },
-        { r: "Phe76", pos: 76, role: "Klatka pi-stacking z pierścieniem tricyklicznym" },
-        { r: "Val152", pos: 152, role: "Hydrofobowy kontakt w rdzeniu wiążącym" },
-        { r: "Phe320", pos: 320, role: "Aromatyczna ścianka kieszeni wychwytu dopaminy" },
-        { r: "Ser422", pos: 422, role: "Wiązanie wodorowe koordynujące z jonami sodu" }
+        { r: "Asp155", pos: 155, role: "Mostek solny z naładowanym azotem dietyloamidu / piperydyny" }
       ]
     }
   };
@@ -3277,16 +2758,14 @@
   }
 
   function start3DAnimationLoop() {
-    if (struct3DRaf) return;
+    if (struct3DRaf || !struct3DState.autoRotate) return;
     function loop() {
-      if (!activeStruct3DModalOpen) {
+      if (!activeStruct3DModalOpen || !struct3DState.autoRotate || struct3DState.isDragging) {
         struct3DRaf = null;
         return;
       }
-      if (struct3DState.autoRotate && !struct3DState.isDragging) {
-        struct3DState.rotY += 0.0035;
-        draw3DComplexCanvas();
-      }
+      struct3DState.rotY += 0.0035;
+      draw3DComplexCanvas();
       struct3DRaf = requestAnimationFrame(loop);
     }
     struct3DRaf = requestAnimationFrame(loop);
@@ -3453,7 +2932,7 @@
     render3DSidebarDOM();
 
     wireStruct3DModal();
-    modal.classList.add("open");
+    openDialog(modal);
 
     const cv = $("struct3DCanvas");
     if (cv) {
@@ -3466,12 +2945,13 @@
 
   function closeStruct3DModal() {
     const modal = $("struct3DModal");
-    if (modal) modal.classList.remove("open");
+    if (modal) closeDialog(modal);
     activeStruct3DModalOpen = false;
     if (struct3DRaf) {
       cancelAnimationFrame(struct3DRaf);
       struct3DRaf = null;
     }
+    if (typeof syncWorkspaceModeToOpenModals === "function") syncWorkspaceModeToOpenModals();
   }
 
   function wireStruct3DModal() {
@@ -3596,8 +3076,9 @@
         struct3DState.zoom = 1.0;
         struct3DState.panX = 0;
         struct3DState.panY = 0;
-        struct3DState.autoRotate = true;
+        struct3DState.autoRotate = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         draw3DComplexCanvas();
+        start3DAnimationLoop();
       };
     }
   }
@@ -4065,14 +3546,15 @@
       sheet.innerHTML = generateCompoundDossierHtml(c);
     }
 
-    modal.classList.add("open");
+    openDialog(modal);
   }
 
   function closeDossierModal() {
     const modal = $("dossierModal");
-    if (modal) modal.classList.remove("open");
+    if (modal) closeDialog(modal);
     activeDossierMode = null;
     activeDossierTarget = null;
+    if (typeof syncWorkspaceModeToOpenModals === "function") syncWorkspaceModeToOpenModals();
   }
 
   // ---------- Stack Builder & Interaction Checker
@@ -4099,14 +3581,18 @@
   }
 
   function toggleInStack(idx) {
+    const c = C[idx];
     if (state.stack.has(idx)) {
       state.stack.delete(idx);
+      if (typeof showToast === "function" && c) showToast(`Usunięto ${c.n} ze stacka`, "info");
     } else {
       state.stack.add(idx);
+      if (typeof showToast === "function" && c) showToast(`Dodano ${c.n} do stacka (${state.stack.size} leków)`, "success");
     }
     saveStack();
     updateStackUI();
     if (state.sel && state.sel.type === "compound") select(state.sel);
+    if (typeof updateBreadcrumbs === "function") updateBreadcrumbs(state.sel);
     draw();
   }
 
@@ -4119,6 +3605,7 @@
       if (b) b.setAttribute("aria-expanded", String(state.stackDrawerOpen));
       if (state.stackDrawerOpen) updateStackUI();
     }
+    if (typeof syncWorkspaceModeToOpenModals === "function") syncWorkspaceModeToOpenModals();
   }
 
   function analyzeStack(indices) {
@@ -4484,13 +3971,13 @@
     const ySteps = yMax > 220 ? [0, 100, 200] : [0, 50, 100];
     ySteps.forEach((yVal) => {
       const y = toY(yVal);
-      ctx.strokeStyle = yVal === 100 ? "rgba(128,128,128,0.3)" : "rgba(128,128,128,0.12)";
+      ctx.strokeStyle = yVal === 100 ? css("--color-chart-gridline") : `${css("--color-chart-gridline")}80`;
       ctx.setLineDash(yVal === 100 ? [3, 3] : [2, 4]);
       ctx.beginPath();
       ctx.moveTo(padL, y);
       ctx.lineTo(padL + pw, y);
       ctx.stroke();
-      ctx.fillStyle = "rgba(140,140,140,0.8)";
+      ctx.fillStyle = css("--color-chart-label");
       ctx.fillText(yVal + "%", padL - 4, y);
     });
 
@@ -4501,12 +3988,12 @@
     const tInterval = horizon <= 24 ? 6 : horizon <= 48 ? 12 : 24;
     for (let t = 0; t <= horizon; t += tInterval) {
       const x = toX(t);
-      ctx.strokeStyle = "rgba(128,128,128,0.12)";
+      ctx.strokeStyle = `${css("--color-chart-gridline")}80`;
       ctx.beginPath();
       ctx.moveTo(x, padT);
       ctx.lineTo(x, padT + ph);
       ctx.stroke();
-      ctx.fillStyle = "rgba(140,140,140,0.8)";
+      ctx.fillStyle = css("--color-chart-label");
       ctx.fillText(t + "h", x, padT + ph + 4);
     }
     ctx.setLineDash([]);
@@ -4516,13 +4003,14 @@
       const x1 = Math.max(padL, toX(win.start));
       const x2 = Math.min(padL + pw, toX(win.end));
       if (x2 > x1) {
-        ctx.fillStyle = win.level === "crit" ? "rgba(221, 72, 72, 0.18)" : "rgba(187, 101, 59, 0.18)";
+        const riskColor = css(win.level === "crit" ? "--color-risk-critical" : "--color-risk-moderate");
+        ctx.fillStyle = `${riskColor}2e`;
         ctx.fillRect(x1, padT, x2 - x1, ph);
-        ctx.strokeStyle = win.level === "crit" ? "rgba(221, 72, 72, 0.6)" : "rgba(187, 101, 59, 0.6)";
+        ctx.strokeStyle = `${riskColor}99`;
         ctx.lineWidth = 1;
         ctx.strokeRect(x1, padT, x2 - x1, ph);
 
-        ctx.fillStyle = win.level === "crit" ? "#dd4848" : "#bb653b";
+        ctx.fillStyle = riskColor;
         ctx.font = "bold 9px sans-serif";
         ctx.textAlign = "left";
         ctx.fillText("🚨 Kolizja", x1 + 3, padT + 3);
@@ -4533,7 +4021,7 @@
     stackCompounds.forEach((c) => {
       const curve = simCurves[c.i];
       if (!curve || !curve.length) return;
-      ctx.strokeStyle = CL_COLORS[c.c] || "#4f98a3";
+      ctx.strokeStyle = clusterColor(c.c) || "#4f98a3";
       ctx.lineWidth = 2.0;
       ctx.beginPath();
       curve.forEach((pt, idx) => {
@@ -4566,7 +4054,7 @@
         const stepIdx = Math.min(curve.length - 1, Math.max(0, Math.round((hoverT / horizon) * (curve.length - 1))));
         const pt = curve[stepIdx];
         const hy = toY(pt.c);
-        ctx.fillStyle = CL_COLORS[c.c] || "#4f98a3";
+        ctx.fillStyle = clusterColor(c.c) || "#4f98a3";
         ctx.beginPath();
         ctx.arc(hx, hy, 4, 0, 7);
         ctx.fill();
@@ -4574,7 +4062,7 @@
         ctx.lineWidth = 1.2;
         ctx.stroke();
 
-        tooltipLines.push(`<span style="color:${CL_COLORS[c.c]}">●</span> ${esc(c.n.slice(0, 16))}: <b>${Math.round(pt.c)}%</b>`);
+        tooltipLines.push(`<span style="color:var(--color-cluster-${c.c})">●</span> ${esc(c.n.slice(0, 16))}: <b>${Math.round(pt.c)}%</b>`);
       });
 
       if (tt) {
@@ -4620,6 +4108,7 @@
   }
 
   // ---------- Pairwise Interaction Matrix (N x N)
+  // ---------- Pairwise Interaction Matrix (N x N) & DDI Risk Engine (v3.23.0)
   function evaluatePairwiseInteraction(cA, cB) {
     if (cA.i === cB.i) {
       return {
@@ -4627,10 +4116,13 @@
         level: "diag",
         icon: "●",
         title: cA.n,
+        badge: "Substancja",
+        vector: "diag",
         desc: `Pojedyncza substancja: ${esc(cA.n)} (${esc(GR[cA.g].label)})`,
         sharedCyps: (cA.pk && cA.pk.cyp) || [],
         sharedHubs: (cA.l || []).filter((li) => CORE[li].kind === "hub").map((li) => CORE[li].name),
-        sharedTargets: (cA.tg || []).map((ti) => T[ti].n)
+        sharedTargets: (cA.tg || []).map((ti) => T[ti].n),
+        cA, cB
       };
     }
 
@@ -4646,28 +4138,203 @@
     const tgB = cB.tg || [];
     const sharedTargets = tgA.filter((ti) => tgB.includes(ti)).map((ti) => T[ti].n);
 
+    // 1. Check curated specific pair rules
+    const pairKey = `${cA.id}::${cB.id}`;
+    const specificRule = DDI_SPECIFIC_PAIRS.get(pairKey);
+    if (specificRule) {
+      const isCrit = specificRule.severity === "critical";
+      const badges = {
+        cyp: `⚡ ${specificRule.enzyme || 'CYP'}`,
+        qtc: "⚠️ QTc",
+        serotonin: "🌊 5-HT",
+        sedation: "🛑 OUN",
+        anticholinergic: "🛡️ ACB",
+        triple_whammy: "⚡ Triple Whammy",
+        bleeding: "🩸 Krwotok"
+      };
+      return {
+        isDiag: false,
+        level: isCrit ? "danger" : "warn",
+        icon: isCrit ? "🔴" : "🟡",
+        title: specificRule.title_pl,
+        vector: specificRule.vector,
+        badge: badges[specificRule.vector] || (isCrit ? "⚠️ Kolizja" : "⚡ Uwaga"),
+        description: specificRule.description_pl,
+        clinicalConsequence: specificRule.clinical_consequence,
+        monitoring: specificRule.monitoring_recommendation,
+        sharedCyps,
+        sharedHubs,
+        sharedTargets,
+        cA, cB
+      };
+    }
+
+    // 2. Check general CYP enzyme profiles (Inhibitor + Substrate collision)
+    const enzA = (DDI_RULES.enzyme_profiles && DDI_RULES.enzyme_profiles[cA.id]) || null;
+    const enzB = (DDI_RULES.enzyme_profiles && DDI_RULES.enzyme_profiles[cB.id]) || null;
+    let cypCollision = null;
+    if (enzA && enzB) {
+      (enzA.inhibits || []).forEach((inh) => {
+        if ((enzB.substrate_of || []).includes(inh.enzyme)) {
+          cypCollision = { inhibitor: cA, substrate: cB, enzyme: inh.enzyme, potency: inh.potency };
+        }
+      });
+      (enzB.inhibits || []).forEach((inh) => {
+        if ((enzA.substrate_of || []).includes(inh.enzyme)) {
+          cypCollision = { inhibitor: cB, substrate: cA, enzyme: inh.enzyme, potency: inh.potency };
+        }
+      });
+    }
+    if (cypCollision) {
+      const isStr = cypCollision.potency === "strong";
+      return {
+        isDiag: false,
+        level: isStr ? "danger" : "warn",
+        icon: isStr ? "🔴" : "🟡",
+        title: `Inhibicja ${cypCollision.enzyme} (${cypCollision.inhibitor.n} ➔ ${cypCollision.substrate.n})`,
+        vector: "cyp",
+        badge: `⚡ ${cypCollision.enzyme}`,
+        description: `${cypCollision.inhibitor.n} hamuje metabolizm ${cypCollision.substrate.n} przez ${cypCollision.enzyme}. Prowadzi to do podwyższenia stężenia i ryzyka toksyczności.`,
+        clinicalConsequence: `Wzrost AUC i stężenia osoczowego ${cypCollision.substrate.n}; ryzyko przedawkowania względnego.`,
+        monitoring: `Zalecane monitorowanie stężenia leku i ew. redukcja dawki substratu.`,
+        sharedCyps, sharedHubs, sharedTargets, cA, cB
+      };
+    }
+
+    // 3. Check Pharmacodynamic profiles
+    const pdA = (DDI_RULES.pd_profiles && DDI_RULES.pd_profiles[cA.id]) || {};
+    const pdB = (DDI_RULES.pd_profiles && DDI_RULES.pd_profiles[cB.id]) || {};
+
+    // QTc / hERG prolongation
+    if ((pdA.qtc_risk === "high" && pdB.qtc_risk === "high") ||
+        (pdA.qtc_risk === "high" && pdB.qtc_risk === "moderate") ||
+        (pdA.qtc_risk === "moderate" && pdB.qtc_risk === "high")) {
+      return {
+        isDiag: false,
+        level: "danger",
+        icon: "🔴",
+        title: "Wydłużenie Odstępu QTc (Kardiotoksyczność)",
+        vector: "qtc",
+        badge: "⚠️ QTc",
+        description: `Obie substancje (${cA.n} i ${cB.n}) blokują kanały potasowe hERG w miocytach serca.`,
+        clinicalConsequence: "Ryzyko groźnych dla życia komorowych zaburzeń rytmu (Torsades de Pointes).",
+        monitoring: "Wymagany wyjściowy i kontrolny zapis EKG (pomiar QTc); korekta elektrolitów K+, Mg2+.",
+        sharedCyps, sharedHubs, sharedTargets, cA, cB
+      };
+    }
+
+    // Serotonin toxicity
+    if (pdA.serotonergic_potency === "high" && pdB.serotonergic_potency === "high") {
+      return {
+        isDiag: false,
+        level: "danger",
+        icon: "🔴",
+        title: "Ryzyko Zespołu Serotoninowego (Krytyczna Synergia)",
+        vector: "serotonin",
+        badge: "🌊 5-HT",
+        description: `Jednoczesna silna stymulacja przewodnictwa serotoninergicznego przez ${cA.n} oraz ${cB.n}.`,
+        clinicalConsequence: "Zagrożenie hipertermią, miokloniami, sztywnością i niestabilnością autonomiczną.",
+        monitoring: "Edukacja pacjenta w zakresie wczesnych objawów; unikać jednoczesnego stosowania.",
+        sharedCyps, sharedHubs, sharedTargets, cA, cB
+      };
+    }
+
+    // CNS / Respiratory Depression
+    if (pdA.sedative_potency === "high" && pdB.sedative_potency === "high") {
+      return {
+        isDiag: false,
+        level: "danger",
+        icon: "🔴",
+        title: "Głęboka Depresja OUN & Ośrodka Oddechowego",
+        vector: "sedation",
+        badge: "🛑 OUN",
+        description: `Synergistyczne hamowanie pnia mózgu i kory mózgowej przez ${cA.n} i ${cB.n}.`,
+        clinicalConsequence: "Ryzyko bezdechu sennego, hipoksji, głębokiej sedacji i śpiączki.",
+        monitoring: "Ścisły nadzór oddechowy; w razie konieczności dostępność odtrutek (nalokson/flumazenil).",
+        sharedCyps, sharedHubs, sharedTargets, cA, cB
+      };
+    }
+
+    // Anticholinergic Cognitive Burden
+    const totalAcb = (pdA.acb_score || 0) + (pdB.acb_score || 0);
+    if (totalAcb >= 4) {
+      return {
+        isDiag: false,
+        level: "danger",
+        icon: "🔴",
+        title: `Ciężkie Obciążenie Antycholinergiczne (ACB: ${totalAcb})`,
+        vector: "anticholinergic",
+        badge: `🛡️ ACB ${totalAcb}`,
+        description: `Kumulatywna blokada receptorów muskarynowych przez ${cA.n} (ACB ${pdA.acb_score || 0}) oraz ${cB.n} (ACB ${pdB.acb_score || 0}).`,
+        clinicalConsequence: "Ryzyko majaczenia, zaburzeń poznawczych, tachykardii, ostrego zatrzymania moczu.",
+        monitoring: "Szczególna ostrożność u osób w podeszłym wieku; rozważyć leki alternatywne.",
+        sharedCyps, sharedHubs, sharedTargets, cA, cB
+      };
+    }
+
+    // Bleeding risk
+    if (pdA.bleeding_risk && pdB.bleeding_risk) {
+      return {
+        isDiag: false,
+        level: "danger",
+        icon: "🔴",
+        title: "Zwiększone Ryzyko Krwawień z Przewodu Pokarmowego",
+        vector: "bleeding",
+        badge: "🩸 Krwotok",
+        description: `Skojarzenie leków o działaniu przeciwpłytkowym, przeciwkrzepliwym lub uszkadzającym błonę śluzową.`,
+        clinicalConsequence: "Zwiększone ryzyko krwotoków, smolistych stolców i anemii pokrwotocznej.",
+        monitoring: "Zalecana gastroprotekcja (IPP) oraz monitorowanie morfologii krwi.",
+        sharedCyps, sharedHubs, sharedTargets, cA, cB
+      };
+    }
+
+    // Triple Whammy / Renal
+    if (pdA.nephrotoxic && pdB.nephrotoxic) {
+      return {
+        isDiag: false,
+        level: "warn",
+        icon: "🟡",
+        title: "Kumulatywna Nefrotoksyczność & Spadek Filtracji",
+        vector: "triple_whammy",
+        badge: "⚡ Nerki",
+        description: `Obie substancje (${cA.n} i ${cB.n}) obciążają układ hemostazy kłębuszkowej lub kanalikowej.`,
+        clinicalConsequence: "Ryzyko pogorszenia funkcji nerek, retencji płynów i hiperkaliemii.",
+        monitoring: "Kontrola eGFR, kreatyniny i elektrolitów.",
+        sharedCyps, sharedHubs, sharedTargets, cA, cB
+      };
+    }
+
+    // 4. Fallback: Hubs, CYPs, Targets
     const critHubKeywords = ["seroton", "oddech", "cardio", "krążen", "sympath", "ciśnien", "drgaw", "qt"];
     const hasCritHub = sharedHubs.some((h) => critHubKeywords.some((k) => h.toLowerCase().includes(k)));
 
     let level = "clear";
     let icon = "⚪";
     let title = "Brak znanych bezpośrednich kolizji";
+    let badge = "✓ Czysto";
+    let vector = "clear";
 
     if (hasCritHub || sharedCyps.length >= 2) {
       level = "danger";
       icon = "🔴";
+      vector = hasCritHub ? "hub" : "cyp";
+      badge = hasCritHub ? "⚠️ Hub" : "⚡ CYP";
       title = hasCritHub
         ? `Krytyczna kumulacja ryzyka (${sharedHubs.join(", ")})`
         : `Wielokrotne wąskie gardło CYP (${sharedCyps.join(", ")})`;
     } else if (sharedCyps.length === 1 || sharedHubs.length >= 1) {
       level = "warn";
       icon = "🟡";
+      vector = sharedCyps.length === 1 ? "cyp" : "hub";
+      badge = sharedCyps.length === 1 ? "⚡ CYP" : "⚠️ Hub";
       title = sharedCyps.length === 1
         ? `Wspólny metabolizm przez ${sharedCyps[0]}`
         : `Nakładanie hubu ryzyka: ${sharedHubs.join(", ")}`;
     } else if (sharedTargets.length > 0) {
       level = "synergy";
       icon = "🟢";
+      vector = "target";
+      badge = "◎ Cel";
       title = `Wspólny cel molekularny: ${sharedTargets[0]}${sharedTargets.length > 1 ? ` (+${sharedTargets.length - 1})` : ''}`;
     }
 
@@ -4676,9 +4343,15 @@
       level,
       icon,
       title,
+      badge,
+      vector,
+      description: title,
+      clinicalConsequence: level === "danger" ? "Ryzyko kumulacji obciążeń narządowych." : "",
+      monitoring: level === "danger" ? "Obserwacja stanu klinicznego pacjenta." : "",
       sharedCyps,
       sharedHubs,
-      sharedTargets
+      sharedTargets,
+      cA, cB
     };
   }
 
@@ -4718,7 +4391,7 @@
 
     const colHeaders = stackList.map((c) => {
       const shortName = c.n.length > 8 ? c.n.slice(0, 7) + "…" : c.n;
-      return `<th class="matrix-th" title="${esc(c.n)}"><span class="dot" style="background:${CL_COLORS[c.c]};display:inline-block;width:6px;height:6px;margin-right:2px"></span>${esc(shortName)}</th>`;
+      return `<th class="matrix-th" title="${esc(c.n)}"><span class="dot" style="background:var(--color-cluster-${c.c});display:inline-block;width:6px;height:6px;margin-right:2px"></span>${esc(shortName)}</th>`;
     }).join("");
 
     const rows = stackList.map((cA) => {
@@ -4729,7 +4402,7 @@
         if (evalRes.isDiag) {
           return `<td class="matrix-cell cell-diag" title="${esc(cA.n)}">●</td>`;
         }
-        return `<td class="matrix-cell cell-${evalRes.level} ${isSel ? 'selected' : ''}" data-matrix-pair="${cA.i}-${cB.i}" title="${esc(cA.n)} ↔ ${esc(cB.n)}: ${esc(evalRes.title)}">${evalRes.icon}</td>`;
+        return `<td class="matrix-cell cell-${evalRes.level} ${isSel ? 'selected' : ''}" role="button" tabindex="0" aria-label="${esc(cA.n)} i ${esc(cB.n)}: ${esc(evalRes.title)}" data-matrix-pair="${cA.i}-${cB.i}" title="${esc(cA.n)} ↔ ${esc(cB.n)}: ${esc(evalRes.title)}">${evalRes.icon}</td>`;
       }).join("");
 
       return `<tr><th class="matrix-th" style="text-align:right;padding-right:6px" title="${esc(cA.n)}">${esc(shortName)}</th>${cells}</tr>`;
@@ -4758,8 +4431,11 @@
       detailContent = `
         <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--color-border);padding-bottom:4px">
           <b>${esc(cA.n)} <span style="color:var(--color-text-muted)">↔</span> ${esc(cB.n)}</b>
-          <span class="tag ${pairRes.level === 'danger' ? 'warn' : pairRes.level === 'warn' ? 'warn' : pairRes.level === 'synergy' ? 'ok' : ''}">${pairRes.icon} ${esc(pairRes.title)}</span>
+          <span class="tag ${pairRes.level === 'danger' ? 'warn' : pairRes.level === 'warn' ? 'warn' : pairRes.level === 'synergy' ? 'ok' : ''}">${pairRes.icon} ${esc(pairRes.badge || pairRes.title)}</span>
         </div>
+        ${pairRes.description && pairRes.description !== pairRes.title ? `<div style="font-size:11px;color:var(--color-text);margin-top:4px">${esc(pairRes.description)}</div>` : ''}
+        ${pairRes.clinicalConsequence ? `<div style="font-size:11px;color:var(--color-error);margin-top:4px"><strong>Zagrożenie:</strong> ${esc(pairRes.clinicalConsequence)}</div>` : ''}
+        ${pairRes.monitoring ? `<div style="font-size:11px;color:var(--color-text-muted);background:var(--color-bg);padding:3px 6px;border-radius:4px;margin-top:4px"><strong>Zalecenie:</strong> ${esc(pairRes.monitoring)}</div>` : ''}
         ${cypsHtml}
         ${hubsHtml}
         ${targetsHtml}
@@ -4791,137 +4467,2314 @@
       </div>`;
   }
 
+  // ---------- Polypharmacy & DDI Risk Engine (v3.23.0)
+  function computePolypharmacyScore(stackList) {
+    if (!stackList || stackList.length < 2) {
+      return {
+        score: 0,
+        status: "safe",
+        statusText: "Bezpieczny Stack",
+        summary: "Brak wykrytych kolizji",
+        color: "#34c759",
+        vectors: { cyp: 0, qtc: 0, serotonin: 0, sedation: 0, anticholinergic: 0, renal_bleeding: 0 },
+        collisions: [],
+        totalAcb: 0
+      };
+    }
+
+    const collisions = [];
+    const n = stackList.length;
+    let maxCyp = 0, maxQtc = 0, maxSerotonin = 0, maxSedation = 0, totalAcb = 0, maxRenalBleed = 0;
+
+    for (let i = 0; i < n; i++) {
+      const cA = stackList[i];
+      const pdA = (DDI_RULES.pd_profiles && DDI_RULES.pd_profiles[cA.id]) || {};
+      totalAcb += (pdA.acb_score || 0);
+
+      for (let j = i + 1; j < n; j++) {
+        const cB = stackList[j];
+        const res = evaluatePairwiseInteraction(cA, cB);
+        if (res.level === "danger" || res.level === "warn") {
+          collisions.push(res);
+          if (res.vector === "cyp") maxCyp = Math.max(maxCyp, res.level === "danger" ? 100 : 60);
+          if (res.vector === "qtc") maxQtc = Math.max(maxQtc, res.level === "danger" ? 100 : 50);
+          if (res.vector === "serotonin") maxSerotonin = Math.max(maxSerotonin, res.level === "danger" ? 100 : 50);
+          if (res.vector === "sedation") maxSedation = Math.max(maxSedation, res.level === "danger" ? 100 : 50);
+          if (res.vector === "triple_whammy" || res.vector === "bleeding") maxRenalBleed = Math.max(maxRenalBleed, res.level === "danger" ? 100 : 50);
+        }
+      }
+    }
+
+    // Check Triple Whammy tri-therapy explicitly (NSAID + ACEI/ARB + Diuretic)
+    const hasNsaid = stackList.some((c) => c.id === "ibuprofen-compound" || (c.m && c.m.toLowerCase().includes("cox")));
+    const hasAcei = stackList.some((c) => c.id === "enalapril-compound" || (c.m && c.m.toLowerCase().includes("ace")));
+    const hasDiuretic = stackList.some((c) => c.id === "hydrochlorothiazide-compound" || c.id === "furosemide-compound" || (c.m && c.m.toLowerCase().includes("diuretic")));
+    if (hasNsaid && hasAcei && hasDiuretic) {
+      maxRenalBleed = 100;
+    }
+
+    // Check DILI & Teratogenicity risks from Toxicology Engine (v3.26.0)
+    let mostDiliCount = 0;
+    const teratogenCollisions = [];
+    stackList.forEach((c) => {
+      const tox = getCompoundToxicologyProfile(c);
+      if (tox) {
+        if (tox.dili && tox.dili.dilirank === "Most-DILI-concern") {
+          mostDiliCount++;
+        }
+        if (tox.pregnancy_lactation && (tox.pregnancy_lactation.fda_category === "X" || tox.pregnancy_lactation.black_box_teratogen)) {
+          teratogenCollisions.push(c);
+        }
+      }
+    });
+
+    if (mostDiliCount >= 2) {
+      collisions.push({
+        id: "dili_stack_overload",
+        level: "danger",
+        vector: "dili",
+        title_pl: `⚠️ Skrajne Obciążenie Hepatotoksyczne (Most-DILI × ${mostDiliCount})`,
+        description_pl: `Jednoczesne stosowanie ${mostDiliCount} leków o najwyższym stopniu ryzyka uszkodzenia wątroby (FDA Most-DILI-concern). Masywny wzrost ryzyka nekrozy i wejścia w strefę Hy's Law.`,
+        clinical_consequence: "Piorunująca martwica wątroby, gwałtowny wzrost ALT > 10x ULN i hiperbilirubinemia.",
+        monitoring: "Oznaczenie panelu wątrobowego (ALT, AST, ALP, Bilirubina całkowita) przed i w trakcie terapii."
+      });
+      maxCyp = Math.max(maxCyp, 90);
+    }
+
+    if (teratogenCollisions.length > 0) {
+      collisions.push({
+        id: "teratogen_stack_alert",
+        level: "danger",
+        vector: "teratogen",
+        title_pl: "🤰 Bezwzględne Zagrożenie Teratogenne (Kategoria X / Czarna Skrzynka)",
+        description_pl: `W stacku znajduje się lek o udokumentowanym, ciężkim działaniu teratogennym: ${teratogenCollisions.map((x) => x.n).join(", ")}. Bezwzględne przeciwwskazanie u kobiet w ciąży.`,
+        clinical_consequence: "Embriopatia, ciężkie wady wrodzone twarzoczaszki/OUN/serca lub obumarcie płodu.",
+        monitoring: "Weryfikacja testu ciążowego beta-hCG, wdrożenie skutecznej antykoncepcji."
+      });
+    }
+
+    const acbVector = totalAcb >= 6 ? 100 : totalAcb >= 4 ? 75 : totalAcb >= 2 ? 40 : 0;
+    const vectors = {
+      cyp: maxCyp,
+      qtc: maxQtc,
+      serotonin: maxSerotonin,
+      sedation: maxSedation,
+      anticholinergic: acbVector,
+      renal_bleeding: maxRenalBleed
+    };
+
+    // Weighted composite risk score
+    const rawScore = 0.20 * vectors.cyp +
+                     0.25 * vectors.qtc +
+                     0.25 * vectors.serotonin +
+                     0.15 * vectors.sedation +
+                     0.10 * vectors.anticholinergic +
+                     0.05 * vectors.renal_bleeding;
+
+    let score = Math.min(100, Math.round(rawScore));
+    if (collisions.some((c) => c.level === "danger") && score < 65) {
+      score = 65;
+    }
+
+    let status = "safe";
+    let statusText = "Bezpieczny Stack";
+    let color = "#34c759";
+    if (score >= 60) {
+      status = "critical";
+      statusText = "Krytyczne Ryzyko Polipragmazji";
+      color = "#ff3b30";
+    } else if (score >= 35) {
+      status = "warning";
+      statusText = "Istotne Ryzyko Interakcji";
+      color = "#ff9500";
+    } else if (score > 0) {
+      status = "caution";
+      statusText = "Umiarkowane Interakcje";
+      color = "#5ac8fa";
+    }
+
+    const critCount = collisions.filter((c) => c.level === "danger").length;
+    const warnCount = collisions.filter((c) => c.level === "warn").length;
+    const summary = collisions.length
+      ? `${critCount ? `${critCount} kryt.` : ''}${critCount && warnCount ? ' • ' : ''}${warnCount ? `${warnCount} istotn.` : ''} kolizji (${collisions.slice(0, 2).map((c) => c.badge).join(", ")})`
+      : "Brak wykrytych bezpośrednich kolizji";
+
+    return {
+      score,
+      status,
+      statusText,
+      summary,
+      color,
+      vectors,
+      collisions,
+      totalAcb
+    };
+  }
+
+  function updatePolypharmacyShieldUI() {
+    const shield = $("polypharmacyShield");
+    if (!shield) return;
+
+    if (state.stack.size < 2) {
+      shield.classList.remove("active");
+      return;
+    }
+
+    const stackList = [...state.stack].map((i) => C[i]);
+    const poly = computePolypharmacyScore(stackList);
+
+    shield.classList.add("active");
+    const gauge = $("shieldGauge");
+    const scoreEl = $("shieldScore");
+    const statusEl = $("shieldStatus");
+    const summaryEl = $("shieldSummary");
+
+    if (gauge) {
+      gauge.style.color = poly.color;
+      gauge.style.borderColor = poly.color;
+    }
+    if (scoreEl) {
+      scoreEl.textContent = poly.score;
+      scoreEl.style.color = poly.color;
+    }
+    if (statusEl) {
+      statusEl.textContent = poly.statusText;
+      statusEl.style.color = poly.color;
+    }
+    if (summaryEl) {
+      summaryEl.textContent = poly.summary;
+    }
+  }
+
+  function drawDdiCollisionEdges(ctx, stackList, k) {
+    if (!stackList || stackList.length < 2) return;
+    const n = stackList.length;
+
+    for (let i = 0; i < n; i++) {
+      const cA = stackList[i];
+      for (let j = i + 1; j < n; j++) {
+        const cB = stackList[j];
+        const res = evaluatePairwiseInteraction(cA, cB);
+        if (res.level !== "danger" && res.level !== "warn") continue;
+
+        const [x1, y1] = toScreen(cA.x, cA.y);
+        const [x2, y2] = toScreen(cB.x, cB.y);
+
+        const dx = x2 - x1, dy = y2 - y1;
+        const dist = Math.hypot(dx, dy);
+        if (dist < 1) continue;
+
+        // Curvature normal
+        const nx = -dy / dist, ny = dx / dist;
+        const curvature = Math.min(50, Math.max(25, dist * 0.2));
+        const cx = (x1 + x2) / 2 + nx * curvature;
+        const cy = (y1 + y2) / 2 + ny * curvature;
+
+        const isDanger = res.level === "danger";
+        const strokeCol = isDanger ? "#ff3b30" : "#ff9500";
+
+        ctx.save();
+        ctx.strokeStyle = strokeCol;
+        ctx.lineWidth = isDanger ? 3.2 : 2.2;
+
+        if (isDanger) {
+          ctx.shadowColor = strokeCol;
+          ctx.shadowBlur = 10;
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.quadraticCurveTo(cx, cy, x2, y2);
+        ctx.stroke();
+
+        ctx.shadowBlur = 0;
+
+        // Draw badge at mid-curve
+        const badgeText = res.badge || (isDanger ? "⚠️ DDI" : "⚡ DDI");
+        ctx.font = `700 ${Math.max(10, Math.min(13, 11 * Math.sqrt(k)))}px ${css("--font-display")}`;
+        const tm = ctx.measureText(badgeText);
+        const bw = tm.width + 12;
+        const bh = 18;
+
+        ctx.fillStyle = css("--color-surface") || "#1e1e1e";
+        ctx.strokeStyle = strokeCol;
+        ctx.lineWidth = 1.5;
+
+        // Rounded rect for badge
+        ctx.beginPath();
+        if (ctx.roundRect) {
+          ctx.roundRect(cx - bw / 2, cy - bh / 2, bw, bh, 4);
+        } else {
+          ctx.rect(cx - bw / 2, cy - bh / 2, bw, bh);
+        }
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = strokeCol;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(badgeText, cx, cy + 0.5);
+
+        ctx.restore();
+      }
+    }
+  }
+
+  function loadDdiPreset(presetKey) {
+    const preset = (DDI_RULES.case_presets || {})[presetKey];
+    if (!preset || !preset.compounds) return;
+
+    state.stack.clear();
+    preset.compounds.forEach((cid) => {
+      const idx = C.findIndex((c) => c.id === cid);
+      if (idx >= 0) state.stack.add(idx);
+    });
+
+    saveStack();
+    updateStackUI();
+    updatePolypharmacyShieldUI();
+    draw();
+
+    setTimeout(() => {
+      openDdiAuditInSplitPane();
+    }, 50);
+  }
+
+  function openDdiAuditInSplitPane() {
+    const stackList = [...state.stack].map((i) => C[i]);
+    if (stackList.length < 2) {
+      openSplitPane("🛡️", "Tarcza Polipragmazji", "Wymaga co najmniej 2 leków w stacku", `
+        <div style="text-align:center;padding:24px;color:var(--color-text-muted)">
+          <div style="font-size:32px;margin-bottom:8px">💊</div>
+          <b style="color:var(--color-text);font-size:14px">Dodaj leki do stacka</b>
+          <p style="font-size:12px;margin-top:6px">Dodaj co najmniej dwie substancje do analizy wielolekowej lub wybierz jedno z gotowych studiów przypadków klinicznych:</p>
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap">
+            <button class="btn btn-primary btn-sm" id="splitPresetTripleBtn">📚 Triple Whammy (Nerki)</button>
+            <button class="btn btn-danger btn-sm" id="splitPresetSerotoninBtn">🌊 Zespół Serotoninowy</button>
+            <button class="btn btn-sm" id="splitPresetQtBtn">⚠️ Koktajl QTc</button>
+          </div>
+        </div>
+      `);
+      const b1 = $("splitPresetTripleBtn");
+      if (b1) b1.onclick = () => loadDdiPreset("triple_whammy");
+      const b2 = $("splitPresetSerotoninBtn");
+      if (b2) b2.onclick = () => loadDdiPreset("serotonin_storm");
+      const b3 = $("splitPresetQtBtn");
+      if (b3) b3.onclick = () => loadDdiPreset("qt_cocktail");
+      return;
+    }
+
+    const poly = computePolypharmacyScore(stackList);
+
+    const vectorLabels = {
+      cyp: { name: "Metabolizm & Enzymy CYP450", icon: "⚡" },
+      qtc: { name: "Kardiotoksyczność (Odstęp QTc / hERG)", icon: "⚠️" },
+      serotonin: { name: "Obciążenie Serotoninergiczne", icon: "🌊" },
+      sedation: { name: "Depresja OUN & Ośrodka Oddechowego", icon: "🛑" },
+      anticholinergic: { name: `Obciążenie Antycholinergiczne (ACB: ${poly.totalAcb})`, icon: "🛡️" },
+      renal_bleeding: { name: "Nefrotoksyczność & Ryzyko Krwawień", icon: "🩸" }
+    };
+
+    const vectorBarsHtml = Object.entries(poly.vectors).map(([k, val]) => {
+      const vInfo = vectorLabels[k] || { name: k, icon: "📊" };
+      let barCol = "#34c759";
+      if (val >= 70) barCol = "#ff3b30";
+      else if (val >= 40) barCol = "#ff9500";
+      else if (val > 0) barCol = "#5ac8fa";
+
+      return `
+        <div style="margin-bottom:6px">
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px">
+            <span>${vInfo.icon} <strong>${esc(vInfo.name)}</strong></span>
+            <span style="font-weight:700;color:${barCol}">${val}%</span>
+          </div>
+          <div style="width:100%;height:6px;background:var(--color-border);border-radius:3px;overflow:hidden">
+            <div style="width:100%;height:100%;background:${barCol};border-radius:3px;transform:scaleX(${val / 100});transform-origin:left;transition:transform 0.3s ease"></div>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    const collisionsHtml = poly.collisions.length ? poly.collisions.map((col) => `
+      <div style="background:var(--color-surface);border-left:1px solid ${col.level === 'danger' ? '#ff3b30' : '#ff9500'};border-radius:0 6px 6px 0;padding:10px 12px;margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-size:14px">${col.icon}</span>
+            <strong style="font-size:12px;color:var(--color-text)">${esc(col.title)}</strong>
+          </div>
+          <span class="badge" style="background:${col.level === 'danger' ? '#ff3b3022' : '#ff950022'};color:${col.level === 'danger' ? '#ff3b30' : '#ff9500'};border:1px solid ${col.level === 'danger' ? '#ff3b30' : '#ff9500'};font-size:10px">
+            ${esc(col.badge)}
+          </span>
+        </div>
+        <div style="font-size:11px;color:var(--color-text);margin-bottom:6px;line-height:1.4">
+          ${esc(col.description || '')}
+        </div>
+        ${col.clinicalConsequence ? `
+          <div style="font-size:11px;color:var(--color-error);margin-bottom:4px">
+            <strong>Konsekwencja kliniczna:</strong> ${esc(col.clinicalConsequence)}
+          </div>
+        ` : ''}
+        ${col.monitoring ? `
+          <div style="font-size:11px;color:var(--color-text-muted);background:var(--color-bg);padding:4px 8px;border-radius:4px">
+            <strong>Rekomendowane monitorowanie:</strong> ${esc(col.monitoring)}
+          </div>
+        ` : ''}
+      </div>
+    `).join("") : `
+      <div style="padding:12px;background:var(--color-surface);border-radius:6px;font-size:11px;color:var(--color-text-muted);text-align:center">
+        ✓ W badanym stacku nie zidentyfikowano bezpośrednich krytycznych kolizji PK ani PD.
+      </div>
+    `;
+
+    const presetsList = Object.entries(DDI_RULES.case_presets || {}).map(([key, p]) => `
+      <button class="btn btn-sm" data-load-ddi-preset="${esc(key)}" style="margin:2px 4px 2px 0;font-size:11px" title="${esc(p.description)}">
+        📚 ${esc(p.title)}
+      </button>
+    `).join("");
+
+    const auditHtml = `
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:16px;background:var(--color-surface);padding:12px 16px;border-radius:8px;border:1px solid var(--color-border)">
+          <div style="width:52px;height:52px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:3px solid ${poly.color};flex-shrink:0">
+            <span style="font-size:18px;font-weight:800;color:${poly.color}">${poly.score}</span>
+            <span style="font-size:9px;color:var(--color-text-muted)">/100</span>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:${poly.color};text-transform:uppercase;letter-spacing:0.5px">
+              ${esc(poly.statusText)}
+            </div>
+            <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">
+              Analiza ${stackList.length} substancji w stacku (${stackList.map(c => c.n).join(", ")})
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:8px">
+            📊 6-Wektorowy Profil Bezpieczeństwa
+          </div>
+          ${vectorBarsHtml}
+        </div>
+
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:8px">
+            ⚠️ Zidentyfikowane Kolizje i Interakcje (${poly.collisions.length})
+          </div>
+          ${collisionsHtml}
+        </div>
+
+        <div style="padding-top:10px;border-top:1px solid var(--color-border)">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:6px">
+            📚 Kliniczne Studia Przypadków (Presety edukacyjne)
+          </div>
+          <div style="display:flex;flex-wrap:wrap">
+            ${presetsList}
+          </div>
+        </div>
+      </div>
+    `;
+
+    openSplitPane("🛡️", "Audyt Ryzyka Polipragmazji & DDI", `${poly.statusText} • Wynik: ${poly.score}/100`, auditHtml);
+
+    if (splitBody) {
+      splitBody.querySelectorAll("[data-load-ddi-preset]").forEach((btn) => {
+        btn.onclick = () => loadDdiPreset(btn.dataset.loadDdiPreset);
+      });
+    }
+  }
+
+  // ---------- Neuropharmacology & Receptor Affinity Engine (v3.24.0)
+  const CANONICAL_CNS_AXES = [
+    "D2", "D3", "DAT",
+    "5-HT1A", "5-HT2A", "5-HT2C", "SERT",
+    "alpha1A", "NET",
+    "H1", "M1",
+    "MOR", "KOR", "DOR",
+    "GABA-A"
+  ];
+
+  function renderReceptorRadarSvg(affA, affB = null, width = 360, height = 300) {
+    if (!affA && !affB) {
+      return '<div style="color:var(--color-text-muted);font-size:11px;text-align:center;padding:20px">Brak danych powinowactwa receptorowego.</div>';
+    }
+
+    const mapA = new Map();
+    if (affA && affA.profiles) {
+      affA.profiles.forEach((p) => mapA.set(p.target, p));
+    }
+    const mapB = new Map();
+    if (affB && affB.profiles) {
+      affB.profiles.forEach((p) => mapB.set(p.target, p));
+    }
+
+    // Determine active axes from canonical list
+    let axes = CANONICAL_CNS_AXES.filter((t) => mapA.has(t) || mapB.has(t));
+    [...mapA.keys(), ...mapB.keys()].forEach((t) => {
+      if (!axes.includes(t)) axes.push(t);
+    });
+
+    if (axes.length < 5) {
+      const fallback = ["D2", "5-HT1A", "5-HT2A", "alpha1A", "H1", "M1"];
+      fallback.forEach((t) => { if (!axes.includes(t)) axes.push(t); });
+    }
+
+    const N = axes.length;
+    const cx = width / 2;
+    const cy = (height / 2) + 6;
+    const maxR = Math.min(width, height) * 0.36;
+
+    const angleOf = (i) => -Math.PI / 2 + (2 * Math.PI * i) / N;
+
+    // Rings 6, 7, 8, 9, 10
+    const rings = [6, 7, 8, 9, 10];
+    const ringPolys = rings.map((lvl) => {
+      const scale = (lvl - 5.0) / 5.0;
+      const r = scale * maxR;
+      const pts = axes.map((_, i) => {
+        const a = angleOf(i);
+        return `${(cx + r * Math.cos(a)).toFixed(1)},${(cy + r * Math.sin(a)).toFixed(1)}`;
+      }).join(" ");
+      const isPotent = lvl === 8;
+      return `<polygon points="${pts}" fill="none" stroke="rgba(255,255,255,${isPotent ? '0.22' : '0.08'})" stroke-width="${isPotent ? '1.5' : '1'}" stroke-dasharray="${isPotent ? 'none' : '2,2'}" />`;
+    }).join("");
+
+    // Rays
+    const rays = axes.map((_, i) => {
+      const a = angleOf(i);
+      const x2 = (cx + maxR * Math.cos(a)).toFixed(1);
+      const y2 = (cy + maxR * Math.sin(a)).toFixed(1);
+      return `<line x1="${cx}" y1="${cy}" x2="${x2}" y2="${y2}" stroke="rgba(255,255,255,0.12)" stroke-width="1" />`;
+    }).join("");
+
+    // Axis labels
+    const axisLabels = axes.map((t, i) => {
+      const a = angleOf(i);
+      const labelR = maxR + 15;
+      const lx = cx + labelR * Math.cos(a);
+      const ly = cy + labelR * Math.sin(a) + 3;
+      const cos = Math.cos(a);
+      let anchor = "middle";
+      if (cos > 0.3) anchor = "start";
+      else if (cos < -0.3) anchor = "end";
+
+      const hasPotentA = mapA.has(t) && (mapA.get(t).pki >= 8.0);
+      const hasPotentB = mapB.has(t) && (mapB.get(t).pki >= 8.0);
+      let textCol = "#8e8e93";
+      if (hasPotentA) textCol = "#5ac8fa";
+      else if (hasPotentB) textCol = "#ffd60a";
+
+      return `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${anchor}" fill="${textCol}" font-size="10" font-weight="700" font-family="system-ui, -apple-system, sans-serif">${esc(t)}</text>`;
+    }).join("");
+
+    // Scale markers along first axis
+    const scaleMarkers = rings.map((lvl) => {
+      const scale = (lvl - 5.0) / 5.0;
+      const r = scale * maxR;
+      const sy = cy - r;
+      const label = lvl === 6 ? "6 (1μM)" : (lvl === 8 ? "8 (10nM)" : (lvl === 10 ? "10 (0.1nM)" : `${lvl}`));
+      return `<text x="${cx + 3}" y="${(sy - 2).toFixed(1)}" fill="#666" font-size="8" font-family="system-ui, -apple-system, sans-serif">${label}</text>`;
+    }).join("");
+
+    // Polygon A points
+    let polyAHtml = "";
+    if (affA) {
+      const ptsA = [];
+      const circlesA = [];
+      axes.forEach((t, i) => {
+        const a = angleOf(i);
+        const item = mapA.get(t);
+        const pki = item ? item.pki : 5.0;
+        const r = Math.max(0, Math.min(1, (pki - 5.0) / 5.0)) * maxR;
+        const px = cx + r * Math.cos(a);
+        const py = cy + r * Math.sin(a);
+        ptsA.push(`${px.toFixed(1)},${py.toFixed(1)}`);
+        const titleText = item ? `${t}: Ki = ${item.ki_nm} nM (pKi ${item.pki}) • ${item.action}` : `${t}: brak wiązania (>10 μM)`;
+        circlesA.push(`<circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="3" fill="#5ac8fa"><title>${esc(titleText)}</title></circle>`);
+      });
+      polyAHtml = `
+        <polygon points="${ptsA.join(' ')}" fill="rgba(90, 200, 250, 0.25)" stroke="#5ac8fa" stroke-width="2.5" />
+        ${circlesA.join("")}
+      `;
+    }
+
+    // Polygon B points (compare)
+    let polyBHtml = "";
+    if (affB) {
+      const ptsB = [];
+      const circlesB = [];
+      axes.forEach((t, i) => {
+        const a = angleOf(i);
+        const item = mapB.get(t);
+        const pki = item ? item.pki : 5.0;
+        const r = Math.max(0, Math.min(1, (pki - 5.0) / 5.0)) * maxR;
+        const px = cx + r * Math.cos(a);
+        const py = cy + r * Math.sin(a);
+        ptsB.push(`${px.toFixed(1)},${py.toFixed(1)}`);
+        const titleText = item ? `${t}: Ki = ${item.ki_nm} nM (pKi ${item.pki}) • ${item.action}` : `${t}: brak wiązania (>10 μM)`;
+        circlesB.push(`<circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="3" fill="#ffd60a"><title>${esc(titleText)}</title></circle>`);
+      });
+      polyBHtml = `
+        <polygon points="${ptsB.join(' ')}" fill="rgba(255, 214, 10, 0.25)" stroke="#ffd60a" stroke-width="2.5" />
+        ${circlesB.join("")}
+      `;
+    }
+
+    // Legend
+    let legendHtml = "";
+    if (affA || affB) {
+      legendHtml = `
+        <g transform="translate(10, 16)" font-size="10" font-family="system-ui, -apple-system, sans-serif">
+          ${affA ? `<rect x="0" y="0" width="10" height="10" rx="2" fill="#5ac8fa" /><text x="14" y="9" fill="#5ac8fa" font-weight="700">${esc(affA.compound_id.replace('-compound',''))}</text>` : ""}
+          ${affB ? `<rect x="${affA ? 110 : 0}" y="0" width="10" height="10" rx="2" fill="#ffd60a" /><text x="${affA ? 124 : 14}" y="9" fill="#ffd60a" font-weight="700">${esc(affB.compound_id.replace('-compound',''))}</text>` : ""}
+        </g>
+      `;
+    }
+
+    return `
+      <svg viewBox="0 0 ${width} ${height}" style="width:100%;max-width:${width}px;height:auto;display:block;margin:0 auto;overflow:visible">
+        ${legendHtml}
+        ${ringPolys}
+        ${rays}
+        ${scaleMarkers}
+        ${polyAHtml}
+        ${polyBHtml}
+        ${axisLabels}
+      </svg>
+    `;
+  }
+
+  function openReceptorRadarSplitPane(compoundIdA, compoundIdB = null) {
+    let affA = RECEPTOR_AFFINITIES[compoundIdA];
+    let compA = C.find((x) => x.id === compoundIdA);
+    if (!affA && !compA) {
+      const firstKey = Object.keys(RECEPTOR_AFFINITIES)[0];
+      if (firstKey) {
+        compoundIdA = firstKey;
+        affA = RECEPTOR_AFFINITIES[compoundIdA];
+        compA = C.find((x) => x.id === compoundIdA);
+      }
+    }
+
+    const nameA = compA ? compA.n : (compoundIdA || "Nieznany lek");
+    let affB = compoundIdB ? RECEPTOR_AFFINITIES[compoundIdB] : null;
+    let compB = compoundIdB ? C.find((x) => x.id === compoundIdB) : null;
+    const nameB = compB ? compB.n : (compoundIdB || "");
+
+    if (!affA) {
+      openSplitPane("🕸️", "Radar Receptorowy OUN", nameA, `
+        <div style="padding:20px;text-align:center;color:var(--color-text-muted)">
+          <div style="font-size:32px;margin-bottom:8px">🧬</div>
+          <b style="color:var(--color-text);font-size:14px">${esc(nameA)}</b>
+          <p style="font-size:12px;margin-top:6px">Ta substancja nie posiada jeszcze sprofilowanego panelu stałych dysocjacji Ki w kuratorowanym zbiorze OUN.</p>
+          <p style="font-size:11px;margin-top:4px">Wybierz jedną ze sprofilowanych substancji neuropsychiatrycznych:</p>
+          <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:12px">
+            ${Object.keys(RECEPTOR_AFFINITIES).slice(0, 8).map((cid) => {
+              const cObj = C.find((x) => x.id === cid);
+              return `<button class="btn btn-sm" data-switch-radar="${esc(cid)}">${esc(cObj ? cObj.n : cid)}</button>`;
+            }).join("")}
+          </div>
+        </div>
+      `);
+      if (splitBody) {
+        splitBody.querySelectorAll("[data-switch-radar]").forEach((b) => {
+          b.onclick = () => openReceptorRadarSplitPane(b.dataset.switchRadar);
+        });
+      }
+      return;
+    }
+
+    const availableForCompare = Object.keys(RECEPTOR_AFFINITIES)
+      .filter((id) => id !== compoundIdA)
+      .map((id) => {
+        const cObj = C.find((x) => x.id === id);
+        return { id, name: cObj ? cObj.n : id, cls: RECEPTOR_AFFINITIES[id].class || "" };
+      })
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+    let kineticsHtml = "";
+    if (affA.kinetic_class) {
+      let badgeColor = "#34c759";
+      let badgeTitle = "Fast-Off D2 (t½ < 10 s)";
+      let badgeDesc = "Szybka dysocjacja od receptora D2. Zachowane fizjologiczne wyrzuty endogennej dopaminy, znikome ryzyko objawów pozapiramidowych (EPS) i hiperprolaktynemii.";
+      if (affA.kinetic_class === "slow-off") {
+        badgeColor = "#ff3b30";
+        badgeTitle = "Slow-Off D2 (t½ > 70 s)";
+        badgeDesc = "Trwałe, uporczywe wiązanie z receptorem D2. Wysokie ryzyko objawów pozapiramidowych (EPS), akatyzji, dystonii i późnych dyskinez (TD).";
+      } else if (affA.kinetic_class === "intermediate-off") {
+        badgeColor = "#ff9500";
+        badgeTitle = "Intermediate-Off D2";
+        badgeDesc = "Pośredni profil kinetyki dysocjacji od receptora D2 z umiarkowanym profilem bezpieczeństwa pozapiramidowego.";
+      } else if (affA.kinetic_class === "partial-agonist") {
+        badgeColor = "#5ac8fa";
+        badgeTitle = "Częściowy agonista (Stabilizator receptorowy)";
+        badgeDesc = "Wiązanie o wysokim powinowactwie z umiarkowaną aktywnością wewnętrzną (intrinsic activity), zapobiega zarówno hipo- jak i hiperaktywacji szlaku.";
+      } else if (affA.kinetic_class === "psychedelic-5ht2a") {
+        badgeColor = "#af52de";
+        badgeTitle = "Agonista 5-HT2A (Psychodelik / Enaktogen)";
+        badgeDesc = "Aktywacja szlaku Gq/11 i beta-arestyny w neuronach piramidowych kory V warstwy, indukcja plastyczności synaptycznej.";
+      } else if (affA.kinetic_class === "gabaa-positive-allosteric") {
+        badgeColor = "#007aff";
+        badgeTitle = "Pozytywny modulator allosteryczny (PAM GABA-A)";
+        badgeDesc = "Zwiększa częstotliwość otwarcia kanału chlorkowego przy fizjologicznym stężeniu GABA, efekt anksjolityczno-sedatywny.";
+      } else if (affA.kinetic_class === "reuptake-inhibitor") {
+        badgeColor = "#34c759";
+        badgeTitle = "Inhibitor wychwytu zwrotnego monoamin";
+        badgeDesc = "Blokada transportera synaptycznego (SERT/NET/DAT), podwyższa stężenie monoamin w szczelinie synaptycznej.";
+      } else if (affA.kinetic_class === "full-agonist") {
+        badgeColor = "#ff2d55";
+        badgeTitle = "Pełny agonista opioidowy (MOR)";
+        badgeDesc = "Maksymalna aktywacja receptora mi-opioidowego, silna analgezja z ryzykiem depresji oddechowej i tolerancji.";
+      }
+
+      kineticsHtml = `
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-left:1px solid ${badgeColor};border-radius:6px;padding:8px 12px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <strong style="font-size:12px;color:${badgeColor}">⚡ Kinetyka: ${badgeTitle}</strong>
+            ${affA.generation ? `<span class="badge" style="font-size:9px">${esc(affA.generation)}</span>` : ""}
+          </div>
+          <div style="font-size:11px;color:var(--color-text-muted);margin-top:3px;line-height:1.35">
+            ${badgeDesc}
+          </div>
+        </div>
+      `;
+    }
+
+    let occupancyHtml = "";
+    if (typeof affA.d2_occupancy_therapeutic_pct === "number") {
+      const occ = affA.d2_occupancy_therapeutic_pct;
+      let occColor = "#34c759";
+      let occStatus = "W optymalnym oknie terapeutycznym D2 (60–80%)";
+      if (occ < 60) {
+        occColor = "#5ac8fa";
+        occStatus = "Subterapeutyczna occupacja D2 (<60% - profil klozapino-podobny lub sedacja H1)";
+      } else if (occ > 80) {
+        occColor = "#ff3b30";
+        occStatus = "Przekroczony próg EPS (>80% - wysokie ryzyko akatyzji i parkinsonizmu polekowego)";
+      }
+
+      occupancyHtml = `
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:8px 12px;margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;margin-bottom:4px">
+            <span>🎯 <strong>Szacowana occupacja receptora D2 w OUN:</strong></span>
+            <b style="color:${occColor};font-size:12px">${occ}%</b>
+          </div>
+          <div style="position:relative;width:100%;height:10px;background:var(--color-surface-offset);border-radius:5px;overflow:hidden;border:1px solid var(--color-border)">
+            <div style="position:absolute;left:0;width:60%;height:100%;background:rgba(90, 200, 250, 0.15)" title="Occupacja <60%"></div>
+            <div style="position:absolute;left:60%;width:20%;height:100%;background:rgba(52, 199, 89, 0.35);border-left:1px dashed #34c759;border-right:1px dashed #34c759" title="Okno terapeutyczne (60-80%)"></div>
+            <div style="position:absolute;left:80%;width:20%;height:100%;background:rgba(255, 59, 48, 0.25)" title="Ryzyko EPS (>80%)"></div>
+            <div style="position:absolute;left:${Math.min(99, Math.max(1, occ))}%;top:0;bottom:0;width:3px;background:${occColor};box-shadow:0 0 6px ${occColor};transform:translateX(-50%)"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--color-text-muted);margin-top:4px">
+            <span>0%</span>
+            <span style="color:#34c759;font-weight:600">60%–80% (Okno skuteczności)</span>
+            <span style="color:#ff3b30;font-weight:600">&gt;80% (Próg EPS)</span>
+            <span>100%</span>
+          </div>
+          <div style="font-size:10px;color:var(--color-text-muted);margin-top:4px">
+            Status: <span style="color:${occColor};font-weight:600">${occStatus}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    let meltzerHtml = "";
+    const mapA = new Map();
+    (affA.profiles || []).forEach((p) => mapA.set(p.target, p));
+    if (mapA.has("5-HT2A") && mapA.has("D2")) {
+      const ki5ht2a = Number(mapA.get("5-HT2A").ki_nm);
+      const kiD2 = Number(mapA.get("D2").ki_nm);
+      if (kiD2 > 0 && Number.isFinite(ki5ht2a) && ki5ht2a >= 0) {
+        const meltzerRatio = ki5ht2a / kiD2;
+        const isAtypical = meltzerRatio < 1.0;
+        meltzerHtml = `
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:8px 12px;margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px">
+            <span>🧠 <strong>Wskaźnik Atypowości Meltzera:</strong></span>
+            <span class="badge" style="background:${isAtypical ? '#34c75922' : '#ff950022'};color:${isAtypical ? '#34c759' : '#ff9500'};border:1px solid ${isAtypical ? '#34c759' : '#ff9500'};font-weight:700">
+              Ki(5-HT2A) / Ki(D2) = ${meltzerRatio.toFixed(3)}
+            </span>
+          </div>
+          <div style="font-size:10px;color:var(--color-text-muted);margin-top:4px;line-height:1.35">
+            ${isAtypical
+              ? '✓ Wskaźnik < 1.0 — preferencja wiązania do receptora 5-HT2A względem D2 (profil atypowy II generacji, niska tendencja do wywoływania objawów pozapiramidowych).'
+              : '⚠ Wskaźnik > 1.0 — dominacja blokady receptora dopaminowego D2 nad 5-HT2A (profil typowy I generacji, podwyższone ryzyko EPS).'}
+          </div>
+        </div>
+      `;
+      }
+    }
+
+    const radarSvg = renderReceptorRadarSvg(affA, affB, 360, 310);
+
+    const mapB = new Map();
+    if (affB && affB.profiles) {
+      affB.profiles.forEach((p) => mapB.set(p.target, p));
+    }
+    const allTargets = [...new Set([...mapA.keys(), ...mapB.keys()])].sort((a, b) => {
+      const pkiA1 = mapA.has(a) ? mapA.get(a).pki : 0;
+      const pkiA2 = mapA.has(b) ? mapA.get(b).pki : 0;
+      return pkiA2 - pkiA1;
+    });
+
+    const tableRows = allTargets.map((t) => {
+      const pA = mapA.get(t);
+      const pB = mapB.get(t);
+
+      let foldDiffHtml = "—";
+      if (pA && pB) {
+        if (pA.ki_nm < pB.ki_nm) {
+          const fold = (pB.ki_nm / pA.ki_nm).toFixed(1);
+          foldDiffHtml = `<span style="color:#5ac8fa;font-weight:600">A wiąże ${fold}× silniej</span>`;
+        } else if (pB.ki_nm < pA.ki_nm) {
+          const fold = (pA.ki_nm / pB.ki_nm).toFixed(1);
+          foldDiffHtml = `<span style="color:#ffd60a;font-weight:600">B wiąże ${fold}× silniej</span>`;
+        } else {
+          foldDiffHtml = `<span style="color:var(--color-text-muted)">Równe</span>`;
+        }
+      }
+
+      return `
+        <tr style="border-bottom:1px solid var(--color-border);font-size:11px">
+          <td style="padding:6px 8px;font-weight:700">${esc(t)}</td>
+          <td style="padding:6px 8px;color:var(--color-text-muted)">${esc(pA ? pA.action : (pB ? pB.action : '—'))}</td>
+          <td style="padding:6px 8px;font-weight:700;color:${pA && pA.pki >= 8 ? '#5ac8fa' : 'inherit'}">
+            ${pA ? `${pA.ki_nm} nM <span style="font-size:9px;color:var(--color-text-muted)">(pKi ${pA.pki})</span>` : '<span style="color:var(--color-text-muted)">&gt;10 μM</span>'}
+          </td>
+          ${affB ? `
+            <td style="padding:6px 8px;font-weight:700;color:${pB && pB.pki >= 8 ? '#ffd60a' : 'inherit'}">
+              ${pB ? `${pB.ki_nm} nM <span style="font-size:9px;color:var(--color-text-muted)">(pKi ${pB.pki})</span>` : '<span style="color:var(--color-text-muted)">&gt;10 μM</span>'}
+            </td>
+            <td style="padding:6px 8px;font-size:10px">${foldDiffHtml}</td>
+          ` : ''}
+        </tr>
+      `;
+    }).join("");
+
+    const contentHtml = `
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+          <div>
+            <div style="font-size:10px;text-transform:uppercase;color:var(--color-text-muted);font-weight:700">Badana substancja (A)</div>
+            <div style="font-size:14px;font-weight:800;color:#5ac8fa">${esc(nameA)}</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <label for="radarCompareSelect" style="font-size:11px;color:var(--color-text-muted);font-weight:600">Porównaj (B):</label>
+            <select id="radarCompareSelect" class="form-select" style="background:var(--color-bg);color:var(--color-text);border:1px solid var(--color-border);border-radius:4px;padding:4px 8px;font-size:11px;cursor:pointer">
+              <option value="">— Brak (pojedynczy lek) —</option>
+              ${availableForCompare.map((o) => `
+                <option value="${esc(o.id)}" ${compoundIdB === o.id ? "selected" : ""}>
+                  ${esc(o.name)} (${esc(o.cls)})
+                </option>
+              `).join("")}
+            </select>
+          </div>
+        </div>
+
+        ${kineticsHtml}
+        ${occupancyHtml}
+        ${meltzerHtml}
+
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:12px 8px;text-align:center">
+          <div style="font-size:11px;font-weight:700;color:var(--color-text-muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px">
+            🕸️ Wielokąt Powinowactwa Receptorowego OUN (Skala pKi 5.0 – 10.0+)
+          </div>
+          ${radarSvg}
+          <div style="font-size:10px;color:var(--color-text-muted);margin-top:6px">
+            Im dalej punkt od środka, tym wyższe powinowactwo ($pKi = 9 - \\log_{10}(K_i)$). Izolinia pKi=8 oznacza Ki=10 nM.
+          </div>
+        </div>
+
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px 12px;overflow-x:auto">
+          <div style="font-size:11px;font-weight:700;color:var(--color-text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">
+            📊 Tabela Stałych Dysocjacji (Ki) & Selektywności
+          </div>
+          <table style="width:100%;border-collapse:collapse;text-align:left">
+            <thead>
+              <tr style="border-bottom:1px solid var(--color-border);font-size:10px;color:var(--color-text-muted);text-transform:uppercase">
+                <th style="padding:4px 8px">Receptor</th>
+                <th style="padding:4px 8px">Działanie</th>
+                <th style="padding:4px 8px;color:#5ac8fa">Ki [A] (nM)</th>
+                ${affB ? `<th style="padding:4px 8px;color:#ffd60a">Ki [B] (nM)</th><th style="padding:4px 8px">Krotność selektywności</th>` : ""}
+              </tr>
+            </thead>
+            <tbody>
+              ${tableRows}
+            </tbody>
+          </table>
+        </div>
+
+        ${affA.notes_pl ? `
+          <div style="background:var(--color-surface-offset);border-left:1px solid #5ac8fa;border-radius:0 6px 6px 0;padding:8px 12px;font-size:11px;line-height:1.4">
+            <strong style="color:var(--color-text)">Komentarz neurofarmakologiczny [A]:</strong> ${esc(affA.notes_pl)}
+          </div>
+        ` : ""}
+        ${affB && affB.notes_pl ? `
+          <div style="background:var(--color-surface-offset);border-left:1px solid #ffd60a;border-radius:0 6px 6px 0;padding:8px 12px;font-size:11px;line-height:1.4">
+            <strong style="color:var(--color-text)">Komentarz neurofarmakologiczny [B]:</strong> ${esc(affB.notes_pl)}
+          </div>
+        ` : ""}
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;font-size:11px">
+          <div>
+            <div style="font-weight:700">🧊 Biomolecular Structure Viewer</div>
+            <div style="font-size:10px;color:var(--color-text-muted)">Zbadaj trójwymiarową architekturę kieszeni wiążących w sidecarze</div>
+          </div>
+          <a href="sidecar://biomolecular-structure-viewer" class="btn btn-sm" style="font-size:10px">Otwórz Viewer ↗</a>
+        </div>
+      </div>
+    `;
+
+    openSplitPane("🕸️", "Radar Receptorowy & Kinetyka OUN", `${nameA}${compB ? ` vs ${nameB}` : ""} • Profil Ki / pKi`, contentHtml);
+
+    if (splitBody) {
+      const selectCompare = splitBody.querySelector("#radarCompareSelect");
+      if (selectCompare) {
+        selectCompare.onchange = (e) => {
+          const newCompare = e.target.value || null;
+          openReceptorRadarSplitPane(compoundIdA, newCompare);
+        };
+      }
+    }
+
+    const targetHash = compoundIdB
+      ? `#/receptor-radar/${compoundIdA}?compare=${encodeURIComponent(compoundIdB)}`
+      : `#/receptor-radar/${compoundIdA}`;
+    if (location.hash !== targetHash) {
+      history.replaceState(null, "", targetHash);
+    }
+  }
+
+  // ---------- Pharmacokinetics 2-Compartment Simulation Engine (v3.25.0)
+  const PK_SIM_PRESETS = {
+    fentanyl_morphine: {
+      title: "Redystrybucja alfa: Fentanyl vs Morfina",
+      cidA: "fentanyl-compound",
+      cidB: "morphine-compound",
+      regimen: "single",
+      scale: "linear",
+      phenotype: "EM",
+      egfr: 100,
+      tau: 8,
+      note: "Fentanyl wykazuje błyskawiczną fazę dystrybucji (alfa, t½=20 min) do tkanki tłuszczowej, przez co stężenie we krwi i w OUN spada znacznie szybciej niż Morfiny po pojedynczej dawce, mimo dłuższego terminalnego okresu półtrwania eliminacji (beta)."
+    },
+    metoprolol_cyp2d6: {
+      title: "CYP2D6 Poor Metabolizer: Metoprolol",
+      cidA: "metoprolol-compound",
+      cidB: null,
+      regimen: "steady_state",
+      scale: "linear",
+      phenotype: "PM",
+      egfr: 100,
+      tau: 12,
+      note: "U pacjentów z fenotypem CYP2D6 PM (brak aktywnego enzymu) klirens metaboliczny spada o 70%, co powoduje ponad 3-krotny wzrost AUC (+250%) i ryzyko ciężkiej bradykardii przy standardowych dawkach."
+    },
+    digoxin_renal: {
+      title: "Niewydolność nerek: Digoksyna (eGFR 25)",
+      cidA: "digoxin-compound",
+      cidB: null,
+      regimen: "steady_state",
+      scale: "linear",
+      phenotype: "EM",
+      egfr: 25,
+      tau: 24,
+      note: "Digoksyna w 75% zależy od filtracji kłębuszkowej (fe=0.75). Spadek eGFR do 25 ml/min wydłuża t½ z 36h do ponad 80h i potraja stężenie stacjonarne, drastycznie przekraczając wąskie okno terapeutyczne (ryzyko arytmii komorowych)."
+    },
+    diazepam_midazolam: {
+      title: "Akumulacja Steady-State: Diazepam vs Midazolam",
+      cidA: "diazepam-compound",
+      cidB: "midazolam-compound",
+      regimen: "steady_state",
+      scale: "log",
+      phenotype: "EM",
+      egfr: 100,
+      tau: 12,
+      note: "Midazolam (krótki t½ ~2.5h) jest szybko eliminowany i nie kumuluje się między dawkami (Rac ~1.05). Diazepam (długi t½ ~40h) kumuluje się silnie (Rac > 4.5), dając wysokie stężenie minimalne i przedłużoną sedację."
+    }
+  };
+
+  let pkSimState = {
+    cidA: "fentanyl-compound",
+    cidB: null,
+    regimen: "single", // "single" | "steady_state"
+    scale: "linear",   // "linear" | "log"
+    phenotype: "EM",   // "EM" | "PM" | "IM" | "UM"
+    egfr: 100,         // 15 - 120
+    tau: 12,           // 6, 8, 12, 24
+    activePreset: null
+  };
+
+  function getCompoundCompartmentParams(c) {
+    if (!c) return null;
+    if (PK_COMPARTMENT_MODELS[c.id]) {
+      const cur = PK_COMPARTMENT_MODELS[c.id];
+      return { ...cur, name: c.n, is_estimated: false };
+    }
+
+    // Physicochemical QSAR Estimator for 2-compartment parameters
+    const k = c.pk || {};
+    let hl = (k.hl && k.hl[0]) ? parseFloat(k.hl[0]) : 8.0;
+    if (isNaN(hl) || hl <= 0) hl = 8.0;
+    const fb = (k.pb && k.pb[0]) ? parseFloat(k.pb[0]) : 50.0;
+    const alogp = (c.pr && c.pr[1] !== undefined) ? parseFloat(c.pr[1]) : 1.5;
+    const fe = (k.fe !== undefined) ? parseFloat(k.fe) : (k.ren === true ? 0.65 : 0.05);
+    const primaryCyp = (k.cyp && k.cyp[0]) || "CYP3A4";
+
+    const vc = Math.max(0.2, Math.min(2.5, 0.45 + 0.12 * Math.max(-1, alogp)));
+    const vp = Math.max(0.3, Math.min(15.0, vc * (1.2 + 0.85 * Math.max(0, alogp))));
+    const vss = vc + vp;
+    const k10 = (Math.LN2 / hl) * (1.0 + Math.max(0, Math.min(0.35, alogp * 0.06)));
+    const k12 = Math.max(0.15, Math.min(1.6, 0.35 * Math.max(0.5, alogp)));
+    const k21 = k12 * (vc / vp);
+    const ka = 1.6;
+
+    const sumK = k12 + k21 + k10;
+    const prodK = k21 * k10;
+    const disc = Math.max(0, sumK * sumK - 4 * prodK);
+    const sqrtDisc = Math.sqrt(disc);
+    const alpha = (sumK + sqrtDisc) / 2.0;
+    const beta = (sumK - sqrtDisc) / 2.0;
+    const tHalfAlpha = Math.round((Math.LN2 / alpha) * 1000) / 1000;
+    const tHalfBeta = Math.round((Math.LN2 / beta) * 100) / 100;
+    const cl = Math.round(k10 * vc * 1000) / 1000;
+
+    return {
+      compound_id: c.id,
+      name: c.n,
+      vc_l_kg: Math.round(vc * 100) / 100,
+      vp_l_kg: Math.round(vp * 100) / 100,
+      vss_l_kg: Math.round(vss * 100) / 100,
+      cl_l_h_kg: cl,
+      k12_h: Math.round(k12 * 1000) / 1000,
+      k21_h: Math.round(k21 * 1000) / 1000,
+      k10_h: Math.round(k10 * 1000) / 1000,
+      ka_h: ka,
+      alpha_h: Math.round(alpha * 10000) / 10000,
+      beta_h: Math.round(beta * 10000) / 10000,
+      t_half_alpha_h: tHalfAlpha,
+      t_half_beta_h: tHalfBeta,
+      primary_cyp: primaryCyp,
+      fm_cyp: 0.75,
+      fe: Math.round(fe * 100) / 100,
+      notes_pl: `Profil estymowany biofizycznie z t½=${hl}h, aLogP=${alogp.toFixed(2)}, wiązania z białkami ${fb}% i frakcji wydalania nerkowego fe=${fe}.`,
+      is_estimated: true
+    };
+  }
+
+  function compute2CompartmentSimulation(params, opts = {}) {
+    if (!params) return null;
+    const regimen = opts.regimen || "single";
+    const phenotype = opts.phenotype || "EM";
+    const egfr = typeof opts.egfr === "number" ? opts.egfr : 100;
+    const tau = opts.tau || 12;
+
+    const vc = params.vc_l_kg;
+    const vp = params.vp_l_kg;
+    const k12 = params.k12_h;
+    const k21 = params.k21_h;
+    const k10 = params.k10_h;
+    const ka = params.ka_h || 1.6;
+    const alpha = params.alpha_h;
+    const beta = params.beta_h;
+
+    const fe = params.fe !== undefined ? params.fe : 0.1;
+    const fm = params.fm_cyp !== undefined ? params.fm_cyp : 0.75;
+    const cypMultipliers = { EM: 1.0, PM: 0.28, IM: 0.65, UM: 2.1 };
+    const cypMult = cypMultipliers[phenotype] || 1.0;
+    const renalMult = Math.max(0.1, egfr / 100.0);
+
+    const clTot = params.cl_l_h_kg || (k10 * vc);
+    const clHepBase = clTot * (1.0 - fe);
+    const clRenBase = clTot * fe;
+    const clHepMod = clHepBase * ((1.0 - fm) + fm * cypMult);
+    const clRenMod = clRenBase * renalMult;
+    const clTotMod = clHepMod + clRenMod;
+    const k10Mod = Math.max(0.001, k10 * (clTotMod / clTot));
+
+    const sumKMod = k12 + k21 + k10Mod;
+    const prodKMod = k21 * k10Mod;
+    const discMod = Math.max(0, sumKMod * sumKMod - 4 * prodKMod);
+    const sqrtDiscMod = Math.sqrt(discMod);
+    const alphaMod = (sumKMod + sqrtDiscMod) / 2.0;
+    const betaMod = (sumKMod - sqrtDiscMod) / 2.0;
+
+    const effectiveHl = Math.max(params.t_half_beta_h, Math.LN2 / betaMod);
+    const nDoses = regimen === "steady_state" ? 5 : 1;
+    const horizonHours = opts.horizonHours || (regimen === "steady_state" ? tau * nDoses : Math.min(168, Math.max(12, Math.round(effectiveHl * 4.2))));
+
+    function getCoeffs(a, b, k10_val, k12_val, k21_val, ka_val, vc_val, vp_val) {
+      let safeKa = ka_val;
+      if (Math.abs(safeKa - a) < 0.001) safeKa += 0.005;
+      if (Math.abs(safeKa - b) < 0.001) safeKa += 0.005;
+      const A = (safeKa / vc_val) * (k21_val - a) / ((safeKa - a) * (b - a));
+      const B = (safeKa / vc_val) * (k21_val - b) / ((safeKa - b) * (a - b));
+      return { A, B, safeKa };
+    }
+
+    const baseCoeff = getCoeffs(alpha, beta, k10, k12, k21, ka, vc, vp);
+    const modCoeff = getCoeffs(alphaMod, betaMod, k10Mod, k12, k21, ka, vc, vp);
+
+    function calcC1Single(t, cf, a, b) {
+      if (t < 0) return 0.0;
+      return Math.max(0, cf.A * Math.exp(-a * t) + cf.B * Math.exp(-b * t) - (cf.A + cf.B) * Math.exp(-cf.safeKa * t));
+    }
+
+    function calcC2Single(t, a, b, ka_val, k12_val, vp_val) {
+      if (t < 0) return 0.0;
+      let safeKa = ka_val;
+      if (Math.abs(safeKa - a) < 0.001) safeKa += 0.005;
+      if (Math.abs(safeKa - b) < 0.001) safeKa += 0.005;
+      const t1 = Math.exp(-a * t) / ((b - a) * (safeKa - a));
+      const t2 = Math.exp(-b * t) / ((a - b) * (safeKa - b));
+      const t3 = Math.exp(-safeKa * t) / ((safeKa - a) * (safeKa - b));
+      return Math.max(0, (k12_val * safeKa / vp_val) * (t1 + t2 + t3));
+    }
+
+    const step = horizonHours / 120.0;
+    const timePoints = [];
+    let maxBaseC1 = 0.0001;
+    let tMaxBase = 0;
+
+    for (let t = 0; t <= horizonHours + 0.001; t += step) {
+      let c1Base = 0;
+      let c2Base = 0;
+      let c1Mod = 0;
+
+      if (regimen === "single") {
+        c1Base = calcC1Single(t, baseCoeff, alpha, beta);
+        c2Base = calcC2Single(t, alpha, beta, ka, k12, vp);
+        c1Mod = calcC1Single(t, modCoeff, alphaMod, betaMod);
+      } else {
+        const curDoseIdx = Math.floor(t / tau);
+        for (let i = 0; i <= curDoseIdx; i++) {
+          const dt = t - i * tau;
+          c1Base += calcC1Single(dt, baseCoeff, alpha, beta);
+          c2Base += calcC2Single(dt, alpha, beta, ka, k12, vp);
+          c1Mod += calcC1Single(dt, modCoeff, alphaMod, betaMod);
+        }
+      }
+
+      if (c1Base > maxBaseC1) {
+        maxBaseC1 = c1Base;
+        tMaxBase = t;
+      }
+      timePoints.push({ t, c1Base, c2Base, c1Mod });
+    }
+
+    const normPoints = timePoints.map((pt) => ({
+      t: pt.t,
+      c1Pct: Math.round((pt.c1Base / maxBaseC1) * 1000) / 10,
+      c2Pct: Math.round((pt.c2Base / maxBaseC1) * 1000) / 10,
+      c1ModPct: Math.round((pt.c1Mod / maxBaseC1) * 1000) / 10
+    }));
+
+    let aucBase = 0;
+    let aucMod = 0;
+    for (let i = 1; i < normPoints.length; i++) {
+      const dt = normPoints[i].t - normPoints[i - 1].t;
+      aucBase += 0.5 * (normPoints[i].c1Pct + normPoints[i - 1].c1Pct) * dt;
+      aucMod += 0.5 * (normPoints[i].c1ModPct + normPoints[i - 1].c1ModPct) * dt;
+    }
+
+    const deltaAucPct = aucBase > 0 ? Math.round(((aucMod / aucBase) - 1.0) * 100) : 0;
+    const rac = Math.round((1.0 / (1.0 - Math.exp(-beta * tau))) * 100) / 100;
+    const racMod = Math.round((1.0 / (1.0 - Math.exp(-betaMod * tau))) * 100) / 100;
+
+    const maxC1ModPct = Math.max(...normPoints.map(p => p.c1ModPct));
+    const maxC1BasePct = Math.max(...normPoints.map(p => p.c1Pct));
+
+    return {
+      params,
+      regimen,
+      phenotype,
+      egfr,
+      tau,
+      horizonHours,
+      points: normPoints,
+      tMaxHours: Math.round(tMaxBase * 10) / 10,
+      maxBasePct: Math.round(maxC1BasePct),
+      maxModPct: Math.round(maxC1ModPct),
+      aucBase: Math.round(aucBase),
+      aucMod: Math.round(aucMod),
+      deltaAucPct,
+      rac,
+      racMod,
+      alphaMod: Math.round(alphaMod * 10000) / 10000,
+      betaMod: Math.round(betaMod * 10000) / 10000,
+      tHalfAlphaMod: Math.round((Math.LN2 / alphaMod) * 1000) / 1000,
+      tHalfBetaMod: Math.round((Math.LN2 / betaMod) * 100) / 100,
+      hasModification: phenotype !== "EM" || egfr !== 100
+    };
+  }
+
+  let pkChartCounter = 0;
+
+  function renderPkCurveSvg(simA, simB = null, opts = {}) {
+    if (!simA || !simA.points || !simA.points.length) {
+      return '<div style="color:var(--color-text-muted);font-size:11px;text-align:center;padding:20px">Brak danych farmakokinetycznych do symulacji.</div>';
+    }
+
+    const width = opts.width || 540;
+    const height = opts.height || 260;
+    const isLog = opts.isLog || false;
+    const isMini = opts.isMini || false;
+
+    const padL = isMini ? 32 : 55;
+    const padR = isMini ? 12 : 25;
+    const padT = isMini ? 10 : 25;
+    const padB = isMini ? 22 : 36;
+    const plotW = width - padL - padR;
+    const plotH = height - padT - padB;
+
+    const tMax = simA.horizonHours;
+
+    let maxVal = Math.max(115, simA.maxBasePct, simA.hasModification ? simA.maxModPct : 100);
+    if (simB && simB.points) {
+      maxVal = Math.max(maxVal, simB.maxBasePct, simB.hasModification ? simB.maxModPct : 100);
+    }
+    maxVal = Math.min(600, Math.ceil(maxVal / 25) * 25);
+
+    const logMin = 1.0;
+    const logMax = Math.max(100, maxVal);
+
+    function getX(t) {
+      return padL + (t / tMax) * plotW;
+    }
+
+    function getY(val) {
+      if (isLog) {
+        const vSafe = Math.max(logMin, val);
+        const ratio = (Math.log10(vSafe) - Math.log10(logMin)) / (Math.log10(logMax) - Math.log10(logMin));
+        return padT + plotH - (Math.max(0, Math.min(1, ratio)) * plotH);
+      }
+      const ratio = val / maxVal;
+      return padT + plotH - (Math.max(0, Math.min(1.2, ratio)) * plotH);
+    }
+
+    const xTicksCount = isMini ? 4 : 8;
+    const xTicks = [];
+    for (let i = 0; i <= xTicksCount; i++) {
+      const t = Math.round((i / xTicksCount) * tMax);
+      const x = getX(t);
+      xTicks.push(`
+        <line x1="${x.toFixed(1)}" y1="${padT}" x2="${x.toFixed(1)}" y2="${padT + plotH}" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+        <text x="${x.toFixed(1)}" y="${padT + plotH + (isMini ? 12 : 16)}" text-anchor="middle" fill="#888" font-size="${isMini ? 8 : 10}" font-family="system-ui, -apple-system, sans-serif">${t}h</text>
+      `);
+    }
+
+    let dosingLines = "";
+    if (simA.regimen === "steady_state") {
+      const tau = simA.tau;
+      for (let dt = tau; dt < tMax; dt += tau) {
+        const x = getX(dt);
+        dosingLines += `
+          <line x1="${x.toFixed(1)}" y1="${padT}" x2="${x.toFixed(1)}" y2="${padT + plotH}" stroke="rgba(90, 200, 250, 0.25)" stroke-width="1" stroke-dasharray="3,3" />
+        `;
+      }
+    }
+
+    const yTicks = [];
+    if (isLog) {
+      const logLevels = [1, 2, 5, 10, 25, 50, 100, 200, 400].filter(v => v <= maxVal);
+      logLevels.forEach((lvl) => {
+        const y = getY(lvl);
+        yTicks.push(`
+          <line x1="${padL}" y1="${y.toFixed(1)}" x2="${padL + plotW}" y2="${y.toFixed(1)}" stroke="rgba(255,255,255,${lvl === 100 ? '0.18' : '0.06'})" stroke-width="${lvl === 100 ? '1.5' : '1'}" stroke-dasharray="${lvl === 100 ? 'none' : '2,2'}" />
+          <text x="${padL - (isMini ? 4 : 8)}" y="${(y + 3).toFixed(1)}" text-anchor="end" fill="${lvl === 100 ? '#5ac8fa' : '#888'}" font-size="${isMini ? 8 : 10}" font-family="system-ui, -apple-system, sans-serif">${lvl}%</text>
+        `);
+      });
+    } else {
+      const stepY = maxVal <= 150 ? 25 : (maxVal <= 300 ? 50 : 100);
+      for (let val = 0; val <= maxVal; val += stepY) {
+        const y = getY(val);
+        yTicks.push(`
+          <line x1="${padL}" y1="${y.toFixed(1)}" x2="${padL + plotW}" y2="${y.toFixed(1)}" stroke="rgba(255,255,255,${val === 100 ? '0.18' : '0.06'})" stroke-width="${val === 100 ? '1.5' : '1'}" stroke-dasharray="${val === 100 ? 'none' : '2,2'}" />
+          <text x="${padL - (isMini ? 4 : 8)}" y="${(y + 3).toFixed(1)}" text-anchor="end" fill="${val === 100 ? '#5ac8fa' : '#888'}" font-size="${isMini ? 8 : 10}" font-family="system-ui, -apple-system, sans-serif">${val}%</text>
+        `);
+      }
+    }
+
+    function makePath(pts, key) {
+      return pts.map((p, idx) => `${idx === 0 ? 'M' : 'L'} ${getX(p.t).toFixed(1)} ${getY(p[key]).toFixed(1)}`).join(' ');
+    }
+
+    const pathC1Base = makePath(simA.points, "c1Pct");
+    const pathC2Base = makePath(simA.points, "c2Pct");
+    const pathC1Mod = simA.hasModification ? makePath(simA.points, "c1ModPct") : "";
+    const areaC1Base = `${pathC1Base} L ${getX(tMax).toFixed(1)} ${padT + plotH} L ${padL} ${padT + plotH} Z`;
+
+    let pathB = "";
+    if (simB && simB.points) {
+      pathB = makePath(simB.points, simB.hasModification ? "c1ModPct" : "c1Pct");
+    }
+
+    pkChartCounter++;
+    const chartId = `pkChart_${pkChartCounter}`;
+
+    return `
+      <svg id="${chartId}" viewBox="0 0 ${width} ${height}" style="width:100%;max-width:${width}px;height:auto;display:block;margin:0 auto;overflow:visible;user-select:none">
+        <defs>
+          <linearGradient id="${chartId}_gradA" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#5ac8fa" stop-opacity="0.32" />
+            <stop offset="100%" stop-color="#5ac8fa" stop-opacity="0.02" />
+          </linearGradient>
+        </defs>
+
+        <!-- Grid -->
+        ${xTicks.join("")}
+        ${yTicks.join("")}
+        ${dosingLines}
+
+        <!-- Axes lines -->
+        <line x1="${padL}" y1="${padT + plotH}" x2="${padL + plotW}" y2="${padT + plotH}" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" />
+        <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${padT + plotH}" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" />
+
+        <!-- Area under curve (AUC) -->
+        <path d="${areaC1Base}" fill="url(#${chartId}_gradA)" />
+
+        <!-- C2 Peripheral Tissue curve -->
+        <path d="${pathC2Base}" fill="none" stroke="#ff9500" stroke-width="${isMini ? '1.2' : '1.8'}" stroke-dasharray="4,3" opacity="0.85" />
+
+        <!-- C1 Central Plasma curve -->
+        <path d="${pathC1Base}" fill="none" stroke="#5ac8fa" stroke-width="${isMini ? '1.8' : '2.5'}" />
+
+        <!-- Modified curve (CYP / eGFR) -->
+        ${simA.hasModification ? `
+          <path d="${pathC1Mod}" fill="none" stroke="${simA.deltaAucPct >= 0 ? '#ff3b30' : '#af52de'}" stroke-width="${isMini ? '2.0' : '2.8'}" stroke-dasharray="${simA.phenotype === 'UM' ? '3,3' : 'none'}" />
+        ` : ""}
+
+        <!-- Compared Drug B curve -->
+        ${pathB ? `
+          <path d="${pathB}" fill="none" stroke="#ffd60a" stroke-width="${isMini ? '1.8' : '2.5'}" />
+        ` : ""}
+
+        <!-- Interactive Crosshair Tracker elements -->
+        ${!isMini ? `
+          <line id="${chartId}_vLine" x1="${padL}" y1="${padT}" x2="${padL}" y2="${padT + plotH}" stroke="rgba(255,255,255,0.45)" stroke-width="1" stroke-dasharray="2,2" style="display:none;pointer-events:none" />
+          <circle id="${chartId}_dotC1" cx="0" cy="0" r="4" fill="#5ac8fa" stroke="#fff" stroke-width="1.5" style="display:none;pointer-events:none" />
+          <circle id="${chartId}_dotC2" cx="0" cy="0" r="3.5" fill="#ff9500" stroke="#fff" stroke-width="1" style="display:none;pointer-events:none" />
+          <g id="${chartId}_tooltip" style="display:none;pointer-events:none">
+            <rect id="${chartId}_tipBox" x="0" y="0" width="135" height="52" rx="4" fill="rgba(20,20,28,0.92)" stroke="var(--color-border)" stroke-width="1" />
+            <text id="${chartId}_tipTextT" x="8" y="16" fill="#fff" font-size="10" font-weight="700" font-family="system-ui, -apple-system, sans-serif">t: 0h</text>
+            <text id="${chartId}_tipTextC1" x="8" y="31" fill="#5ac8fa" font-size="10" font-family="system-ui, -apple-system, sans-serif">C1: 0%</text>
+            <text id="${chartId}_tipTextC2" x="8" y="45" fill="#ff9500" font-size="9" font-family="system-ui, -apple-system, sans-serif">C2 (tkanki): 0%</text>
+          </g>
+          <rect x="${padL}" y="${padT}" width="${plotW}" height="${plotH}" fill="transparent" style="cursor:crosshair" id="${chartId}_hitbox" />
+        ` : ""}
+      </svg>
+    `;
+  }
+
+  function wirePkChartCrosshair(chartId, simData, isLog) {
+    const svg = $(chartId);
+    if (!svg) return;
+    const hitbox = svg.querySelector(`#${chartId}_hitbox`);
+    const vLine = svg.querySelector(`#${chartId}_vLine`);
+    const dotC1 = svg.querySelector(`#${chartId}_dotC1`);
+    const dotC2 = svg.querySelector(`#${chartId}_dotC2`);
+    const tip = svg.querySelector(`#${chartId}_tooltip`);
+    const tipT = svg.querySelector(`#${chartId}_tipTextT`);
+    const tipC1 = svg.querySelector(`#${chartId}_tipTextC1`);
+    const tipC2 = svg.querySelector(`#${chartId}_tipTextC2`);
+    if (!hitbox || !vLine || !tip) return;
+
+    const padL = 55;
+    const padT = 25;
+    const plotW = 540 - 55 - 25;
+    const plotH = 260 - 25 - 36;
+    const tMax = simData.horizonHours;
+
+    let maxVal = Math.max(115, simData.maxBasePct, simData.hasModification ? simData.maxModPct : 100);
+    maxVal = Math.min(600, Math.ceil(maxVal / 25) * 25);
+    const logMin = 1.0;
+    const logMax = Math.max(100, maxVal);
+
+    function getY(val) {
+      if (isLog) {
+        const vSafe = Math.max(logMin, val);
+        const ratio = (Math.log10(vSafe) - Math.log10(logMin)) / (Math.log10(logMax) - Math.log10(logMin));
+        return padT + plotH - (Math.max(0, Math.min(1, ratio)) * plotH);
+      }
+      return padT + plotH - (Math.max(0, Math.min(1.2, val / maxVal)) * plotH);
+    }
+
+    hitbox.onmousemove = (e) => {
+      const rect = svg.getBoundingClientRect();
+      const scaleX = 540 / rect.width;
+      const mouseSvgX = (e.clientX - rect.left) * scaleX;
+      const tRatio = Math.max(0, Math.min(1, (mouseSvgX - padL) / plotW));
+      const curT = tRatio * tMax;
+
+      let closest = simData.points[0];
+      let minDiff = 999999;
+      simData.points.forEach((pt) => {
+        const diff = Math.abs(pt.t - curT);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closest = pt;
+        }
+      });
+
+      const ptX = padL + (closest.t / tMax) * plotW;
+      const ptYC1 = getY(closest.c1Pct);
+      const ptYC2 = getY(closest.c2Pct);
+
+      vLine.setAttribute("x1", ptX);
+      vLine.setAttribute("x2", ptX);
+      vLine.style.display = "block";
+
+      dotC1.setAttribute("cx", ptX);
+      dotC1.setAttribute("cy", ptYC1);
+      dotC1.style.display = "block";
+
+      dotC2.setAttribute("cx", ptX);
+      dotC2.setAttribute("cy", ptYC2);
+      dotC2.style.display = "block";
+
+      const tipX = ptX > 370 ? ptX - 142 : ptX + 8;
+      const tipY = Math.max(padT, Math.min(plotH, ptYC1 - 25));
+      tip.setAttribute("transform", `translate(${tipX}, ${tipY})`);
+      tipT.textContent = `t: ${closest.t.toFixed(1)}h`;
+      tipC1.textContent = `C1 (krew): ${closest.c1Pct.toFixed(1)}%`;
+      tipC2.textContent = `C2 (tkanki): ${closest.c2Pct.toFixed(1)}%`;
+      tip.style.display = "block";
+    };
+
+    hitbox.onmouseleave = () => {
+      vLine.style.display = "none";
+      dotC1.style.display = "none";
+      dotC2.style.display = "none";
+      tip.style.display = "none";
+    };
+  }
+
+  function openPkSimulatorSplitPane(compoundIdA, compoundIdB = null, opts = {}) {
+    if (compoundIdA) pkSimState.cidA = compoundIdA;
+    if (compoundIdB !== undefined) pkSimState.cidB = compoundIdB;
+    if (opts.regimen) pkSimState.regimen = opts.regimen;
+    if (opts.scale) pkSimState.scale = opts.scale;
+    if (opts.phenotype) pkSimState.phenotype = opts.phenotype;
+    if (opts.egfr !== undefined && opts.egfr !== null) pkSimState.egfr = opts.egfr;
+    if (opts.tau !== undefined && opts.tau !== null) pkSimState.tau = opts.tau;
+
+    let compA = C.find((x) => x.id === pkSimState.cidA);
+    if (!compA) {
+      compA = C.find((x) => x.pk && x.pk.hl) || C[0];
+      pkSimState.cidA = compA.id;
+    }
+    const paramsA = getCompoundCompartmentParams(compA);
+
+    let compB = pkSimState.cidB ? C.find((x) => x.id === pkSimState.cidB) : null;
+    const paramsB = compB ? getCompoundCompartmentParams(compB) : null;
+
+    const simA = compute2CompartmentSimulation(paramsA, {
+      regimen: pkSimState.regimen,
+      phenotype: pkSimState.phenotype,
+      egfr: pkSimState.egfr,
+      tau: pkSimState.tau
+    });
+
+    const simB = paramsB ? compute2CompartmentSimulation(paramsB, {
+      regimen: pkSimState.regimen,
+      phenotype: "EM",
+      egfr: 100,
+      tau: pkSimState.tau
+    }) : null;
+
+    const svgHtml = renderPkCurveSvg(simA, simB, { isLog: pkSimState.scale === "log" });
+
+    const availableForCompare = C
+      .filter((c) => c.pk && (c.pk.hl || PK_COMPARTMENT_MODELS[c.id]) && c.id !== compA.id)
+      .map((c) => ({ id: c.id, name: c.n, isCurated: !!PK_COMPARTMENT_MODELS[c.id] }))
+      .sort((a, b) => (b.isCurated - a.isCurated) || a.name.localeCompare(b.name));
+
+    const presetsHtml = Object.entries(PK_SIM_PRESETS).map(([key, p]) => `
+      <button class="btn btn-sm ${pkSimState.activePreset === key ? 'btn-primary' : ''}" data-load-pk-preset="${esc(key)}" style="margin:2px 4px 2px 0;font-size:11px" title="${esc(p.note)}">
+        📚 ${esc(p.title)}
+      </button>
+    `).join("");
+
+    const contentHtml = `
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+          <div>
+            <div style="font-size:10px;text-transform:uppercase;color:var(--color-text-muted);font-weight:700">Badana substancja (A)</div>
+            <div style="font-size:14px;font-weight:800;color:#5ac8fa">${esc(compA.n)}</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <label for="pkCompareSelect" style="font-size:11px;color:var(--color-text-muted);font-weight:600">Porównaj (B):</label>
+            <select id="pkCompareSelect" class="form-select" style="background:var(--color-bg);color:var(--color-text);border:1px solid var(--color-border);border-radius:4px;padding:4px 8px;font-size:11px;cursor:pointer">
+              <option value="">— Brak (pojedynczy lek) —</option>
+              ${availableForCompare.slice(0, 50).map((o) => `
+                <option value="${esc(o.id)}" ${pkSimState.cidB === o.id ? "selected" : ""}>
+                  ${o.isCurated ? "★ " : ""}${esc(o.name)}
+                </option>
+              `).join("")}
+            </select>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:6px 10px;display:flex;align-items:center;gap:6px">
+            <span style="font-size:11px;color:var(--color-text-muted);font-weight:600">Podanie:</span>
+            <button class="btn btn-sm ${pkSimState.regimen === 'single' ? 'btn-primary' : ''}" id="pkRegimenSingleBtn" style="font-size:11px">🔘 Pojedyncza dawka</button>
+            <button class="btn btn-sm ${pkSimState.regimen === 'steady_state' ? 'btn-primary' : ''}" id="pkRegimenSteadyBtn" style="font-size:11px">🔁 Steady-State (Wielokrotna)</button>
+          </div>
+          <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:6px 10px;display:flex;align-items:center;gap:6px">
+            <span style="font-size:11px;color:var(--color-text-muted);font-weight:600">Oś stężenia:</span>
+            <button class="btn btn-sm ${pkSimState.scale === 'linear' ? 'btn-primary' : ''}" id="pkScaleLinearBtn" style="font-size:11px">📈 Liniowa (% Cmax)</button>
+            <button class="btn btn-sm ${pkSimState.scale === 'log' ? 'btn-primary' : ''}" id="pkScaleLogBtn" style="font-size:11px">📉 Półlogarytmiczna (Semi-log)</button>
+          </div>
+        </div>
+
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px 12px">
+          <div style="font-size:11px;font-weight:700;color:var(--color-text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">
+            🧬 Zmienność Osobnicza: Farmakogenomika CYP & Wydolność Nerek
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:12px;align-items:center">
+            <div>
+              <div style="font-size:11px;margin-bottom:4px;display:flex;justify-content:space-between">
+                <span>Fenotyp enzymatyczny (Główny: <b>${esc(paramsA.primary_cyp || "CYP3A4")}</b>):</span>
+                <span class="badge" style="font-size:9px">${pkSimState.phenotype}</span>
+              </div>
+              <div style="display:flex;gap:4px">
+                <button class="btn btn-sm ${pkSimState.phenotype === 'EM' ? 'btn-primary' : ''}" data-pk-pheno="EM" style="flex:1;font-size:10px" title="Extensive Metabolizer (Typowy / Norma 1.0x)">EM (Norma)</button>
+                <button class="btn btn-sm ${pkSimState.phenotype === 'PM' ? 'btn-danger' : ''}" data-pk-pheno="PM" style="flex:1;font-size:10px" title="Poor Metabolizer (Słaby metabolizm 0.28x - akumulacja)">PM (Słaby)</button>
+                <button class="btn btn-sm ${pkSimState.phenotype === 'IM' ? 'btn-primary' : ''}" data-pk-pheno="IM" style="flex:1;font-size:10px" title="Intermediate Metabolizer (Pośredni 0.65x)">IM</button>
+                <button class="btn btn-sm ${pkSimState.phenotype === 'UM' ? 'btn-primary' : ''}" data-pk-pheno="UM" style="flex:1;font-size:10px" title="Ultra-Rapid Metabolizer (Szybki 2.1x - spadek AUC)">UM</button>
+              </div>
+            </div>
+
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px">
+                <span>Wydolność nerek (eGFR):</span>
+                <b style="color:${pkSimState.egfr < 60 ? '#ff3b30' : (pkSimState.egfr < 90 ? '#ff9500' : '#34c759')}">${pkSimState.egfr} ml/min</b>
+              </div>
+              <input type="range" id="pkEgfrRange" min="15" max="120" step="5" value="${pkSimState.egfr}" style="width:100%;cursor:pointer">
+              <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--color-text-muted);margin-top:2px">
+                <span>15 (PChN st. 4)</span>
+                <span>60 (Umiarkowana)</span>
+                <span>100 (Norma)</span>
+                <span>120</span>
+              </div>
+            </div>
+
+            ${pkSimState.regimen === 'steady_state' ? `
+              <div>
+                <div style="font-size:11px;margin-bottom:4px">Interwał dawkowania (&tau;): <b>co ${pkSimState.tau}h</b></div>
+                <div style="display:flex;gap:4px">
+                  <button class="btn btn-sm ${pkSimState.tau === 6 ? 'btn-primary' : ''}" data-pk-tau="6" style="flex:1;font-size:10px">co 6h</button>
+                  <button class="btn btn-sm ${pkSimState.tau === 8 ? 'btn-primary' : ''}" data-pk-tau="8" style="flex:1;font-size:10px">co 8h</button>
+                  <button class="btn btn-sm ${pkSimState.tau === 12 ? 'btn-primary' : ''}" data-pk-tau="12" style="flex:1;font-size:10px">co 12h</button>
+                  <button class="btn btn-sm ${pkSimState.tau === 24 ? 'btn-primary' : ''}" data-pk-tau="24" style="flex:1;font-size:10px">co 24h</button>
+                </div>
+              </div>
+            ` : ""}
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(110px, 1fr));gap:6px">
+          <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:6px 8px;text-align:center">
+            <div style="font-size:9px;color:var(--color-text-muted);text-transform:uppercase">Tmax (Wchłanianie)</div>
+            <div style="font-size:13px;font-weight:700;color:var(--color-text)">${simA.tMaxHours} h</div>
+          </div>
+          <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:6px 8px;text-align:center">
+            <div style="font-size:9px;color:var(--color-text-muted);text-transform:uppercase">t½,&alpha; (Dystrybucja)</div>
+            <div style="font-size:13px;font-weight:700;color:#ff9500">${paramsA.t_half_alpha_h} h</div>
+          </div>
+          <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:6px 8px;text-align:center">
+            <div style="font-size:9px;color:var(--color-text-muted);text-transform:uppercase">t½,&beta; (Eliminacja)</div>
+            <div style="font-size:13px;font-weight:700;color:#5ac8fa">${simA.hasModification ? `${simA.tHalfBetaMod} h` : `${paramsA.t_half_beta_h} h`}</div>
+          </div>
+          <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:6px 8px;text-align:center">
+            <div style="font-size:9px;color:var(--color-text-muted);text-transform:uppercase">&Delta; AUC (Ekspozycja)</div>
+            <div style="font-size:13px;font-weight:700;color:${simA.deltaAucPct > 50 ? '#ff3b30' : (simA.deltaAucPct < -30 ? '#af52de' : '#34c759')}">
+              ${simA.deltaAucPct >= 0 ? `+${simA.deltaAucPct}%` : `${simA.deltaAucPct}%`}
+            </div>
+          </div>
+          ${pkSimState.regimen === 'steady_state' ? `
+            <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:6px 8px;text-align:center">
+              <div style="font-size:9px;color:var(--color-text-muted);text-transform:uppercase">Wskaźnik Rac</div>
+              <div style="font-size:13px;font-weight:700;color:var(--color-text)">${simA.hasModification ? simA.racMod : simA.rac}×</div>
+            </div>
+          ` : ""}
+        </div>
+
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:12px 8px;position:relative">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-size:11px;font-weight:700;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.5px">
+              📈 Krzywa Dynamiki Stężeń C(t) (${pkSimState.regimen === 'steady_state' ? 'Stan Stacjonarny' : 'Pojedyncza dawka'})
+            </span>
+            <div style="display:flex;gap:12px;font-size:10px">
+              <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:3px;background:#5ac8fa;display:inline-block"></span> C1 Centralny (Krew)</span>
+              <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:2px;background:#ff9500;border-bottom:1px dashed #ff9500;display:inline-block"></span> C2 Obwodowy (Tkanki)</span>
+              ${simA.hasModification ? `<span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:3px;background:${simA.deltaAucPct >= 0 ? '#ff3b30' : '#af52de'};display:inline-block"></span> Zmodyfikowana</span>` : ''}
+              ${simB ? `<span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:3px;background:#ffd60a;display:inline-block"></span> Lek B (${esc(compB.n)})</span>` : ''}
+            </div>
+          </div>
+          ${svgHtml}
+          <div style="font-size:10px;color:var(--color-text-muted);margin-top:6px;text-align:center">
+            Przesuwaj kursor po wykresie, aby śledzić stężenie w czasie. Skala znormalizowana (100% = Cmax dawki referencyjnej EM).
+          </div>
+        </div>
+
+        <div style="padding-top:6px">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:6px">
+            📚 Kliniczne Studia Przypadków PK (Presety edukacyjne)
+          </div>
+          <div style="display:flex;flex-wrap:wrap">
+            ${presetsHtml}
+          </div>
+        </div>
+
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:8px 12px;overflow-x:auto">
+          <div style="font-size:11px;font-weight:700;color:var(--color-text-muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px">
+            🔬 Mikrostałe Modelu 2-Kompartmentowego
+          </div>
+          <table style="width:100%;border-collapse:collapse;text-align:left;font-size:11px">
+            <thead>
+              <tr style="border-bottom:1px solid var(--color-border);color:var(--color-text-muted);font-size:10px;text-transform:uppercase">
+                <th style="padding:4px 6px">Parametr</th>
+                <th style="padding:4px 6px">Opis farmakokinetyczny</th>
+                <th style="padding:4px 6px;color:#5ac8fa">${esc(compA.n)}</th>
+                ${compB ? `<th style="padding:4px 6px;color:#ffd60a">${esc(compB.n)}</th>` : ''}
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--color-border)">
+                <td style="padding:4px 6px;font-weight:700">Vc / Vp (L/kg)</td>
+                <td style="padding:4px 6px;color:var(--color-text-muted)">Objętość kompartmentu centralnego / obwodowego</td>
+                <td style="padding:4px 6px">${paramsA.vc_l_kg} / ${paramsA.vp_l_kg}</td>
+                ${compB ? `<td style="padding:4px 6px">${paramsB.vc_l_kg} / ${paramsB.vp_l_kg}</td>` : ''}
+              </tr>
+              <tr style="border-bottom:1px solid var(--color-border)">
+                <td style="padding:4px 6px;font-weight:700">k12 / k21 (h⁻¹)</td>
+                <td style="padding:4px 6px;color:var(--color-text-muted)">Stałe transferu międzykrwiowego i tkankowego</td>
+                <td style="padding:4px 6px">${paramsA.k12_h} / ${paramsA.k21_h}</td>
+                ${compB ? `<td style="padding:4px 6px">${paramsB.k12_h} / ${paramsB.k21_h}</td>` : ''}
+              </tr>
+              <tr style="border-bottom:1px solid var(--color-border)">
+                <td style="padding:4px 6px;font-weight:700">k10 / CL (h⁻¹, L/h/kg)</td>
+                <td style="padding:4px 6px;color:var(--color-text-muted)">Eliminacja całkowita z kompartmentu centralnego</td>
+                <td style="padding:4px 6px">${paramsA.k10_h} / ${paramsA.cl_l_h_kg}</td>
+                ${compB ? `<td style="padding:4px 6px">${paramsB.k10_h} / ${paramsB.cl_l_h_kg}</td>` : ''}
+              </tr>
+              <tr style="border-bottom:1px solid var(--color-border)">
+                <td style="padding:4px 6px;font-weight:700">fe / Główny CYP</td>
+                <td style="padding:4px 6px;color:var(--color-text-muted)">Frakcja nerkowa (fe) oraz szlak metaboliczny</td>
+                <td style="padding:4px 6px">${paramsA.fe} / ${esc(paramsA.primary_cyp || "—")}</td>
+                ${compB ? `<td style="padding:4px 6px">${paramsB.fe} / ${esc(paramsB.primary_cyp || "—")}</td>` : ''}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        ${paramsA.notes_pl ? `
+          <div style="background:var(--color-surface-offset);border-left:1px solid #5ac8fa;border-radius:0 6px 6px 0;padding:8px 12px;font-size:11px;line-height:1.4">
+            <strong style="color:var(--color-text)">Komentarz farmakokinetyczny [A]:</strong> ${esc(paramsA.notes_pl)}
+          </div>
+        ` : ""}
+        ${paramsB && paramsB.notes_pl ? `
+          <div style="background:var(--color-surface-offset);border-left:1px solid #ffd60a;border-radius:0 6px 6px 0;padding:8px 12px;font-size:11px;line-height:1.4">
+            <strong style="color:var(--color-text)">Komentarz farmakokinetyczny [B]:</strong> ${esc(paramsB.notes_pl)}
+          </div>
+        ` : ""}
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;font-size:11px">
+          <div>
+            <div style="font-weight:700">🧊 Biomolecular Structure Viewer</div>
+            <div style="font-size:10px;color:var(--color-text-muted)">Zbadaj architekturę 3D enzymów CYP oraz transporterów w Mol*</div>
+          </div>
+          <a href="sidecar://biomolecular-structure-viewer" class="btn btn-sm" style="font-size:10px">Otwórz Viewer ↗</a>
+        </div>
+      </div>
+    `;
+
+    openSplitPane("📈", "Symulator Farmakokinetyki 2-Kompartmentowej", `${compA.n}${compB ? ` vs ${compB.n}` : ""} • Dynamika C(t)`, contentHtml);
+
+    if (splitBody) {
+      const svgEl = splitBody.querySelector("svg");
+      if (svgEl && svgEl.id) {
+        wirePkChartCrosshair(svgEl.id, simA, pkSimState.scale === "log");
+      }
+
+      const compSelect = splitBody.querySelector("#pkCompareSelect");
+      if (compSelect) {
+        compSelect.onchange = (e) => {
+          openPkSimulatorSplitPane(pkSimState.cidA, e.target.value || null);
+        };
+      }
+
+      const regSingle = splitBody.querySelector("#pkRegimenSingleBtn");
+      if (regSingle) {
+        regSingle.onclick = () => {
+          pkSimState.regimen = "single";
+          pkSimState.activePreset = null;
+          openPkSimulatorSplitPane(pkSimState.cidA, pkSimState.cidB);
+        };
+      }
+      const regSteady = splitBody.querySelector("#pkRegimenSteadyBtn");
+      if (regSteady) {
+        regSteady.onclick = () => {
+          pkSimState.regimen = "steady_state";
+          pkSimState.activePreset = null;
+          openPkSimulatorSplitPane(pkSimState.cidA, pkSimState.cidB);
+        };
+      }
+
+      const scLinear = splitBody.querySelector("#pkScaleLinearBtn");
+      if (scLinear) {
+        scLinear.onclick = () => {
+          pkSimState.scale = "linear";
+          openPkSimulatorSplitPane(pkSimState.cidA, pkSimState.cidB);
+        };
+      }
+      const scLog = splitBody.querySelector("#pkScaleLogBtn");
+      if (scLog) {
+        scLog.onclick = () => {
+          pkSimState.scale = "log";
+          openPkSimulatorSplitPane(pkSimState.cidA, pkSimState.cidB);
+        };
+      }
+
+      splitBody.querySelectorAll("[data-pk-pheno]").forEach((btn) => {
+        btn.onclick = () => {
+          pkSimState.phenotype = btn.dataset.pkPheno;
+          pkSimState.activePreset = null;
+          openPkSimulatorSplitPane(pkSimState.cidA, pkSimState.cidB);
+        };
+      });
+
+      splitBody.querySelectorAll("[data-pk-tau]").forEach((btn) => {
+        btn.onclick = () => {
+          pkSimState.tau = parseInt(btn.dataset.pkTau, 10);
+          pkSimState.activePreset = null;
+          openPkSimulatorSplitPane(pkSimState.cidA, pkSimState.cidB);
+        };
+      });
+
+      const egfrRange = splitBody.querySelector("#pkEgfrRange");
+      if (egfrRange) {
+        egfrRange.oninput = (e) => {
+          pkSimState.egfr = parseInt(e.target.value, 10);
+          pkSimState.activePreset = null;
+          openPkSimulatorSplitPane(pkSimState.cidA, pkSimState.cidB);
+        };
+      }
+
+      splitBody.querySelectorAll("[data-load-pk-preset]").forEach((btn) => {
+        btn.onclick = () => {
+          const pKey = btn.dataset.loadPkPreset;
+          const preset = PK_SIM_PRESETS[pKey];
+          if (!preset) return;
+          pkSimState.cidA = preset.cidA;
+          pkSimState.cidB = preset.cidB;
+          pkSimState.regimen = preset.regimen;
+          pkSimState.scale = preset.scale;
+          pkSimState.phenotype = preset.phenotype;
+          pkSimState.egfr = preset.egfr;
+          pkSimState.tau = preset.tau;
+          pkSimState.activePreset = pKey;
+          openPkSimulatorSplitPane(pkSimState.cidA, pkSimState.cidB);
+        };
+      });
+    }
+
+    const targetHash = pkSimState.cidB
+      ? `#/pk-simulator/${pkSimState.cidA}?compare=${encodeURIComponent(pkSimState.cidB)}&regimen=${pkSimState.regimen}&scale=${pkSimState.scale}&phenotype=${pkSimState.phenotype}&egfr=${pkSimState.egfr}&tau=${pkSimState.tau}`
+      : `#/pk-simulator/${pkSimState.cidA}?regimen=${pkSimState.regimen}&scale=${pkSimState.scale}&phenotype=${pkSimState.phenotype}&egfr=${pkSimState.egfr}&tau=${pkSimState.tau}`;
+    if (location.hash !== targetHash) {
+      history.replaceState(null, "", targetHash);
+    }
+  }
+
+  // ---------- Molecular Toxicology & Safety Engine (v3.26.0)
+  const TOX_PRESETS = {
+    paracetamol_napqi: {
+      id: "paracetamol_napqi",
+      name: "Paracetamol & NAPQI (Hepatotoksyczność)",
+      cid: "acetaminophen-compound",
+      exposure: 2.2,
+      note: "Bioaktywacja do elektrofilowej chinonoiminy (NAPQI) wyczerpująca glutation; przy przedawkowaniu wejście w strefę Hy's Law (martwica wątroby)."
+    },
+    terfenadine_herg: {
+      id: "terfenadine_herg",
+      name: "Terfenadyna vs Feksofenadyna (hERG)",
+      cid: "terfenadine-compound",
+      exposure: 1.0,
+      note: "Załamanie marginesu Redferna (<1.0) wywołujące Torsades de Pointes vs bezpieczny metabolit kwasowy (Feksofenadyna, margines >50x)."
+    },
+    valproate_teratogen: {
+      id: "valproate_teratogen",
+      name: "Kwas Walproinowy (Mitochondria & Teratogeneza)",
+      cid: "valproate-compound",
+      exposure: 1.0,
+      note: "Hamowanie beta-oksydacji kwasów tłuszczowych oraz bezwzględna kategoria X (wady cewy nerwowej u 1-2% płodów, spina bifida)."
+    },
+    isotretinoin_ipledge: {
+      id: "isotretinoin_ipledge",
+      name: "Izotretynoina (Embriopatia Retinoidowa)",
+      cid: "isotretinoin-compound",
+      exposure: 1.0,
+      note: "Ekstremalny teratogen (Kategoria X, wady twarzoczaszki, mikrocja, wady serca i OUN). Bezwzględny program kontroli iPLEDGE."
+    },
+    verapamil_cipa: {
+      id: "verapamil_cipa",
+      name: "Werapamil (Kompensacja CiPA vs Haloperydol)",
+      cid: "verapamil-compound",
+      exposure: 1.0,
+      note: "Model CiPA: silna blokada hERG jest bezpiecznie kompensowana jednoczesną blokadą dokomorowych kanałów wapniowych Cav1.2 (brak TdP)."
+    },
+    augmentin_cholestasis: {
+      id: "augmentin_cholestasis",
+      name: "Augmentin (Kwas Klawulanowy & Cholestaza)",
+      cid: "clavulanate-compound",
+      exposure: 1.5,
+      note: "Najczęstsza przyczyna polekowej żółtaczki cholestatycznej (ALP > 4x ULN, uszkodzenie małych przewodzików żółciowych sprzężone z HLA)."
+    }
+  };
+
+  const toxState = {
+    cid: "acetaminophen-compound",
+    exposure: 1.0,
+    activePreset: "paracetamol_napqi"
+  };
+
+  function getCompoundToxicologyProfile(c) {
+    if (!c) return null;
+    const cur = TOXICOLOGY_PROFILES[c.id];
+    if (cur) {
+      return { ...cur, is_estimated: false };
+    }
+
+    const mw = (c.pr && c.pr[0]) || 300;
+    const logp = (c.pr && c.pr[1]) || 1.5;
+    const psa = (c.pr && c.pr[2]) || 60;
+    const pb = (c.pk && c.pk.pb) ? (Array.isArray(c.pk.pb) ? c.pk.pb[0] : c.pk.pb) : 70;
+
+    const ruleOfTwo = (logp >= 3.0 && mw >= 350);
+    const dilirank = ruleOfTwo ? "Less-DILI-concern" : "No-DILI-concern";
+    const diliPhenotype = logp >= 3.5 ? "mixed" : (ruleOfTwo ? "hepatocellular" : "none");
+    const baselineAlt = 1.0;
+    const toxicAlt = ruleOfTwo ? 3.5 : 1.2;
+    const baselineBili = 0.6;
+    const toxicBili = ruleOfTwo ? 1.4 : 0.8;
+
+    const estHerg = Math.max(0.5, Math.pow(10, 3.5 - 0.5 * Math.max(0, logp)));
+    const estCmax = 0.1;
+    const redfernMargin = +(estHerg / estCmax).toFixed(1);
+    const redfernClass = redfernMargin < 30 ? "Class 3 (Moderate TdP risk)" : "Class 5 (No TdP reported)";
+
+    const alerts = [];
+    const nameLower = (c.n || "").toLowerCase();
+    if (nameLower.includes("fen") || nameLower.includes("ac")) {
+      alerts.push({
+        id: "aryl_precursor",
+        name_pl: "Ugrupowanie arylowe (potencjalna bioaktywacja)",
+        smarts_pattern: "c1ccccc1",
+        hazard_type: "reactive_metabolite",
+        description_pl: "Potencjalne utlenianie mikrosomalne cytochromu P450 do reaktywnych tlenków arenowych."
+      });
+    }
+
+    const fdaCat = (c.bb || c.wd) ? "D" : "C";
+    const estRid = +(Math.max(0.2, (100 - pb) * 0.1 * (400 / mw))).toFixed(1);
+
+    return {
+      compound_id: c.id,
+      dili: {
+        dilirank,
+        phenotype: diliPhenotype,
+        mechanism_pl: "Estymacja QSAR: profil oparty na deskryptorach fizykochemicznych (Rule-of-Two: aLogP/MW).",
+        baseline_alt_fold: baselineAlt,
+        toxic_alt_fold: toxicAlt,
+        baseline_bili_fold: baselineBili,
+        toxic_bili_fold: toxicBili,
+        alp_elevation: diliPhenotype === "cholestatic" || diliPhenotype === "mixed",
+        hy_law_risk: ruleOfTwo ? "moderate" : "low"
+      },
+      cardiotox: {
+        herg_ic50_um: +estHerg.toFixed(2),
+        cmax_therapeutic_um: estCmax,
+        redfern_margin: redfernMargin,
+        redfern_class: redfernClass,
+        crediblemeds: "No known risk",
+        cipa_compensation: "none_needed",
+        mechanism_pl: "Estymacja fizykochemiczna: brak doniesień o istotnej blokadzie kanału hERG w dawkach terapeutycznych."
+      },
+      structural_alerts: alerts,
+      pregnancy_lactation: {
+        fda_category: fdaCat,
+        pllr_pregnancy_pl: "Brak specyficznego rekordu kuratorowanego; zalecana ostrożność kliniczna i ocena stosunku korzyści do ryzyka.",
+        pllr_lactation_pl: "Estymacja przenikania do mleka na podstawie masy cząsteczkowej i wiązania z białkami osocza.",
+        rid_pct: estRid,
+        rid_safe: estRid < 10,
+        teratogenic_risk: fdaCat === "D" ? "moderate" : "low",
+        black_box_teratogen: false
+      },
+      is_estimated: true
+    };
+  }
+
+  function renderEdishChartSvg(profile, exposureMultiplier = 1.0, isMini = false, width = 540, height = 300) {
+    if (!profile || !profile.dili) {
+      return `<div class="empty" style="padding:1rem">Brak danych hepatotoksyczności dla tej substancji.</div>`;
+    }
+    const dili = profile.dili;
+    const padL = isMini ? 35 : 55;
+    const padR = isMini ? 10 : 20;
+    const padT = isMini ? 16 : 25;
+    const padB = isMini ? 25 : 42;
+    const plotW = width - padL - padR;
+    const plotH = height - padT - padB;
+
+    // Log scales:
+    // X (ALT): 0.2 to 50 ULN
+    const minAlt = 0.2, maxAlt = 50.0;
+    const logMinX = Math.log10(minAlt), logSpanX = Math.log10(maxAlt) - logMinX;
+    const getX = (val) => padL + Math.max(0, Math.min(plotW, ((Math.log10(Math.max(minAlt, val)) - logMinX) / logSpanX) * plotW));
+
+    // Y (Bilirubin): 0.2 to 10 ULN
+    const minBili = 0.2, maxBili = 10.0;
+    const logMinY = Math.log10(minBili), logSpanY = Math.log10(maxBili) - logMinY;
+    const getY = (val) => padT + plotH - Math.max(0, Math.min(plotH, ((Math.log10(Math.max(minBili, val)) - logMinY) / logSpanY) * plotH));
+
+    const cutX = getX(3.0); // 3x ULN cutoff
+    const cutY = getY(2.0); // 2x ULN cutoff
+
+    // Calculate current exposed point
+    const exp = Math.max(0.5, Math.min(4.0, exposureMultiplier));
+    const factor = (exp - 0.5) / 1.5;
+    const curAlt = +(dili.baseline_alt_fold + (dili.toxic_alt_fold - dili.baseline_alt_fold) * factor).toFixed(2);
+    const curBili = +(dili.baseline_bili_fold + (dili.toxic_bili_fold - dili.baseline_bili_fold) * factor).toFixed(2);
+    const isHysLaw = curAlt >= 3.0 && curBili >= 2.0;
+
+    const ptX = getX(curAlt);
+    const ptY = getY(curBili);
+    const baseX = getX(dili.baseline_alt_fold);
+    const baseY = getY(dili.baseline_bili_fold);
+
+    const markerColor = isHysLaw ? "#ff3b30" : (curAlt >= 3.0 ? "#ff9500" : (curBili >= 2.0 ? "#af52de" : "#34c759"));
+
+    // Ticks
+    const xTicks = [0.5, 1, 3, 10, 30];
+    const yTicks = [0.5, 1, 2, 5, 10];
+
+    const xGrid = xTicks.map((v) => {
+      const x = getX(v);
+      const isCut = (v === 3);
+      return `
+        <line x1="${x}" y1="${padT}" x2="${x}" y2="${padT + plotH}" stroke="${isCut ? '#ff3b30' : 'var(--color-border)'}" stroke-width="${isCut ? 1.5 : 1}" stroke-dasharray="${isCut ? '4,3' : '2,2'}" opacity="${isCut ? 0.9 : 0.4}" />
+        <text x="${x}" y="${padT + plotH + (isMini ? 12 : 16)}" text-anchor="middle" font-size="${isMini ? '8' : '10'}" fill="${isCut ? '#ff3b30' : 'var(--color-text-muted)'}" font-weight="${isCut ? '700' : '400'}">${v}×</text>
+      `;
+    }).join("");
+
+    const yGrid = yTicks.map((v) => {
+      const y = getY(v);
+      const isCut = (v === 2);
+      return `
+        <line x1="${padL}" y1="${y}" x2="${padL + plotW}" y2="${y}" stroke="${isCut ? '#ff3b30' : 'var(--color-border)'}" stroke-width="${isCut ? 1.5 : 1}" stroke-dasharray="${isCut ? '4,3' : '2,2'}" opacity="${isCut ? 0.9 : 0.4}" />
+        <text x="${padL - 6}" y="${y + 3}" text-anchor="end" font-size="${isMini ? '8' : '10'}" fill="${isCut ? '#ff3b30' : 'var(--color-text-muted)'}" font-weight="${isCut ? '700' : '400'}">${v}×</text>
+      `;
+    }).join("");
+
+    return `
+      <svg viewBox="0 0 ${width} ${height}" class="pk-chart-svg" style="width:100%;max-width:${width}px;height:auto;display:block;margin:0 auto;background:var(--color-bg);border-radius:6px">
+        <!-- Quadrant backgrounds -->
+        <!-- Hy's Law: Top-Right -->
+        <rect x="${cutX}" y="${padT}" width="${padL + plotW - cutX}" height="${cutY - padT}" fill="#ff3b30" fill-opacity="${isHysLaw ? 0.22 : 0.10}" />
+        <!-- Hepatocellular: Bottom-Right -->
+        <rect x="${cutX}" y="${cutY}" width="${padL + plotW - cutX}" height="${padT + plotH - cutY}" fill="#ff9500" fill-opacity="0.08" />
+        <!-- Cholestatic: Top-Left -->
+        <rect x="${padL}" y="${padT}" width="${cutX - padL}" height="${cutY - padT}" fill="#af52de" fill-opacity="0.08" />
+        <!-- Normal: Bottom-Left -->
+        <rect x="${padL}" y="${cutY}" width="${cutX - padL}" height="${padT + plotH - cutY}" fill="#34c759" fill-opacity="0.05" />
+
+        ${xGrid}
+        ${yGrid}
+
+        <!-- Outer plot border -->
+        <rect x="${padL}" y="${padT}" width="${plotW}" height="${plotH}" fill="none" stroke="var(--color-border)" stroke-width="1.2" />
+
+        <!-- Quadrant labels -->
+        ${!isMini ? `
+          <text x="${padL + plotW - 8}" y="${padT + 14}" text-anchor="end" fill="#ff3b30" font-size="10" font-weight="700">⚠️ KWADRANT HY'S LAW</text>
+          <text x="${padL + plotW - 8}" y="${padT + 26}" text-anchor="end" fill="#ff3b30" font-size="8" opacity="0.8">ALT &ge; 3&times;, Bili &ge; 2&times; (Zagrożenie życia)</text>
+          <text x="${padL + plotW - 8}" y="${padT + plotH - 8}" text-anchor="end" fill="#ff9500" font-size="9" font-weight="600">Odczyn Hepatocytarny (ALT)</text>
+          <text x="${padL + 8}" y="${padT + 14}" text-anchor="start" fill="#af52de" font-size="9" font-weight="600">Cholestaza (Bilirubina/ALP)</text>
+          <text x="${padL + 8}" y="${padT + plotH - 8}" text-anchor="start" fill="#34c759" font-size="9" font-weight="600">Norma / Tolerancja</text>
+
+          <!-- Axis Titles -->
+          <text x="${padL + plotW / 2}" y="${height - 6}" text-anchor="middle" font-size="11" fill="var(--color-text)" font-weight="600">Szczytowy Poziom ALT (&times; ULN)</text>
+          <text transform="rotate(-90)" x="${-(padT + plotH / 2)}" y="16" text-anchor="middle" font-size="11" fill="var(--color-text)" font-weight="600">Szczytowa Bilirubina (&times; ULN)</text>
+        ` : `
+          <text x="${padL + plotW - 4}" y="${padT + 11}" text-anchor="end" fill="#ff3b30" font-size="8" font-weight="700">Hy's Law</text>
+        `}
+
+        <!-- Trajectory track from baseline to exposed -->
+        ${exp > 0.6 ? `
+          <line x1="${baseX}" y1="${baseY}" x2="${ptX}" y2="${ptY}" stroke="${markerColor}" stroke-width="2" stroke-dasharray="3,2" opacity="0.75" />
+          <circle cx="${baseX}" cy="${baseY}" r="${isMini ? 2.5 : 3.5}" fill="var(--color-text-muted)" opacity="0.6" />
+        ` : ""}
+
+        <!-- Glow ring if Hy's Law -->
+        ${isHysLaw ? `
+          <circle cx="${ptX}" cy="${ptY}" r="${isMini ? 8 : 13}" fill="none" stroke="#ff3b30" stroke-width="2" opacity="0.6">
+            <animate attributeName="r" values="${isMini ? '6;12;6' : '10;18;10'}" dur="1.8s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.8;0.1;0.8" dur="1.8s" repeatCount="indefinite" />
+          </circle>
+        ` : ""}
+
+        <!-- Current point marker -->
+        <circle cx="${ptX}" cy="${ptY}" r="${isMini ? 4 : 6}" fill="${markerColor}" stroke="#ffffff" stroke-width="1.8" />
+
+        ${!isMini ? `
+          <!-- Value badge at current point -->
+          <g transform="translate(${ptX > padL + plotW - 90 ? ptX - 85 : ptX + 8}, ${ptY < padT + 30 ? ptY + 18 : ptY - 8})">
+            <rect width="80" height="24" rx="4" fill="var(--color-surface)" stroke="${markerColor}" stroke-width="1.2" opacity="0.95" />
+            <text x="40" y="11" text-anchor="middle" font-size="8.5" fill="var(--color-text)" font-weight="700">ALT: ${curAlt}&times; ULN</text>
+            <text x="40" y="20" text-anchor="middle" font-size="8" fill="var(--color-text-muted)">Bili: ${curBili}&times; ULN</text>
+          </g>
+        ` : ""}
+      </svg>
+    `;
+  }
+
+  function renderRedfernMarginSvg(cardio, isMini = false, width = 500, height = 48) {
+    if (!cardio || cardio.redfern_margin === undefined) {
+      return `<div class="empty" style="padding:.5rem">Brak danych Redferna dla kanału hERG.</div>`;
+    }
+    const sm = cardio.redfern_margin;
+    // Log scale from 0.1x to 1000x (range 4.0 log units)
+    const logVal = Math.log10(Math.max(0.1, sm));
+    const pct = Math.max(0, Math.min(1, (logVal - (-1.0)) / 4.0)) * 100;
+    const isCav = cardio.cipa_compensation === "cav12_blockade";
+
+    const zone30Pct = ((Math.log10(30) - (-1.0)) / 4.0) * 100; // ~61.9%
+    const zone100Pct = ((Math.log10(100) - (-1.0)) / 4.0) * 100; // 75.0%
+
+    return `
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:8px 10px;margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <span style="font-size:11px;font-weight:700">🫀 Margines Bezpieczeństwa Redferna (hERG IC50 / Cmax)</span>
+          <span class="badge" style="font-size:9px;background:${sm < 30 && !isCav ? '#ff3b3022' : '#34c75922'};color:${sm < 30 && !isCav ? '#ff3b30' : '#34c759'}">
+            ${cardio.redfern_class || (sm < 30 ? 'Klasa 1/2' : 'Klasa 5')}
+          </span>
+        </div>
+        <div style="position:relative;height:18px;background:var(--color-bg);border-radius:9px;overflow:hidden;margin:6px 0;border:1px solid var(--color-border)">
+          <div style="position:absolute;left:0;top:0;bottom:0;width:${zone30Pct}%;background:#ff3b30;opacity:0.6" title="Strefa Czerwona: SM < 30x (Wysokie ryzyko TdP)"></div>
+          <div style="position:absolute;left:${zone30Pct}%;top:0;bottom:0;width:${zone100Pct - zone30Pct}%;background:#ff9500;opacity:0.6" title="Strefa Żółta: 30x <= SM < 100x (Monitoring QTc)"></div>
+          <div style="position:absolute;left:${zone100Pct}%;top:0;bottom:0;right:0;background:#34c759;opacity:0.6" title="Strefa Zielona: SM >= 100x (Bezpieczna repolaryzacja)"></div>
+          <!-- Marker -->
+          <div style="position:absolute;left:${pct}%;top:0;bottom:0;width:3px;background:#ffffff;box-shadow:0 0 6px rgba(0,0,0,0.8);transform:translateX(-50%)"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--color-text-muted)">
+          <span>0.1×</span>
+          <span>1×</span>
+          <span style="color:#ff3b30;font-weight:700">30× (Próg TdP)</span>
+          <span style="color:#ff9500">100×</span>
+          <span style="color:#34c759">1000×</span>
+        </div>
+        <div style="margin-top:6px;font-size:10.5px;color:var(--color-text)">
+          Margines: <b>${sm}×</b> (hERG IC50: ${cardio.herg_ic50_um} &mu;M vs Cmax: ${cardio.cmax_therapeutic_um} &mu;M).
+          CredibleMeds: <b style="color:${cardio.crediblemeds === 'Known risk' ? '#ff3b30' : (cardio.crediblemeds === 'Possible risk' ? '#ff9500' : 'var(--color-text)')}">${cardio.crediblemeds}</b>.
+          ${isCav ? `<div style="margin-top:3px;color:#34c759;font-weight:600">🛡️ Kompensacja CiPA: jednoczesna blokada Cav1.2 (skrócenie plateau) neutralizuje ryzyko arytmii komorowej!</div>` : ""}
+        </div>
+      </div>
+    `;
+  }
+
+  function openToxicologySplitPane(compoundId, opts = {}) {
+    if (compoundId) toxState.cid = compoundId;
+    if (opts.exposure !== undefined) toxState.exposure = opts.exposure;
+    if (opts.preset !== undefined) toxState.activePreset = opts.preset;
+
+    let comp = C.find((x) => x.id === toxState.cid);
+    if (!comp) {
+      comp = C.find((x) => x.id === "acetaminophen-compound") || C[0];
+      toxState.cid = comp.id;
+    }
+
+    const tox = getCompoundToxicologyProfile(comp);
+    const pili = tox.dili;
+    const cardio = tox.cardiotox;
+    const preg = tox.pregnancy_lactation;
+    const alerts = tox.structural_alerts || [];
+
+    const edishSvg = renderEdishChartSvg(tox, toxState.exposure, false, 540, 300);
+    const redfernHtml = renderRedfernMarginSvg(cardio, false, 540, 48);
+
+    const exp = toxState.exposure;
+    const factor = (exp - 0.5) / 1.5;
+    const curAlt = +(pili.baseline_alt_fold + (pili.toxic_alt_fold - pili.baseline_alt_fold) * factor).toFixed(1);
+    const curBili = +(pili.baseline_bili_fold + (pili.toxic_bili_fold - pili.baseline_bili_fold) * factor).toFixed(1);
+    const isHysLaw = curAlt >= 3.0 && curBili >= 2.0;
+
+    const presetsHtml = Object.entries(TOX_PRESETS).map(([k, p]) => `
+      <button class="btn btn-sm ${toxState.activePreset === k ? 'btn-primary' : ''}" data-load-tox-preset="${esc(k)}" style="margin:2px 4px 2px 0;font-size:11px" title="${esc(p.note)}">
+        ${esc(p.name)}
+      </button>
+    `).join("");
+
+    const availableCompounds = C
+      .filter((c) => TOXICOLOGY_PROFILES[c.id])
+      .map((c) => ({ id: c.id, name: c.n }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+    const alertsHtml = alerts.length ? alerts.map((a) => `
+      <div style="background:var(--color-bg);border:1px solid #ff950055;border-radius:6px;padding:8px 10px;margin-bottom:6px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px">
+          <b style="font-size:11px;color:#ff9500">⚠️ ${esc(a.name_pl)}</b>
+          <span class="badge" style="font-size:9px">${esc(a.hazard_type)}</span>
+        </div>
+        <div style="font-size:10px;color:var(--color-text-muted);font-family:monospace;margin-bottom:4px">SMARTS: ${esc(a.smarts_pattern)}</div>
+        <div style="font-size:10.5px;color:var(--color-text)">${esc(a.description_pl)}</div>
+      </div>
+    `).join("") : `<div class="empty" style="padding:.8rem">Brak wykrytych kanonicznych alertów toksykoforowych w strukturze.</div>`;
+
+    const pregCat = preg.fda_category || "C";
+    const pregColor = pregCat === "X" ? "#ff3b30" : (pregCat === "D" ? "#ff9500" : (pregCat === "C" ? "#ffd60a" : "#34c759"));
+
+    const html = `
+      <div class="split-pane-content" style="padding:14px 16px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <span style="font-size:18px;font-weight:700">☣️ Toksykologia Molekularna & Bezpieczeństwo</span>
+              <span class="badge" style="font-size:10px;background:${pili.dilirank === 'Most-DILI-concern' ? '#ff3b30' : (pili.dilirank === 'Less-DILI-concern' ? '#ff9500' : '#34c759')};color:#fff">
+                DILI: ${esc(pili.dilirank)}
+              </span>
+              <span class="badge" style="font-size:10px;background:${pregColor};color:${pregCat === 'C' ? '#000' : '#fff'}">
+                Ciąża: Kat. ${esc(pregCat)}
+              </span>
+              ${tox.is_estimated ? `<span class="badge" style="font-size:9px">⚙️ QSAR Estymator</span>` : `<span class="badge" style="font-size:9px">🔬 Baza Kuratorowana</span>`}
+            </div>
+            <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px">
+              Substancja: <b style="color:var(--color-text);font-size:13px">${esc(comp.n)}</b> · Analiza narządowa (Wątroba, Serce, Płód, Laktacja)
+            </div>
+          </div>
+          <button class="btn btn-sm" id="toxSplitClose" style="font-size:12px;padding:3px 10px">✕ Zamknij</button>
+        </div>
+
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:8px 10px">
+          <div style="font-size:11px;font-weight:700;margin-bottom:6px">📚 Scenariusze i Presety Kliniczne:</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px">
+            ${presetsHtml}
+          </div>
+          <div style="margin-top:8px;display:flex;align-items:center;gap:8px">
+            <span style="font-size:11px;color:var(--color-text-muted)">Wybierz inną substancję z bazy:</span>
+            <select id="toxCompoundSelect" style="font-size:11px;padding:3px 6px;background:var(--color-bg);color:var(--color-text);border:1px solid var(--color-border);border-radius:4px">
+              ${availableCompounds.map((ac) => `<option value="${esc(ac.id)}" ${ac.id === comp.id ? 'selected' : ''}>${esc(ac.name)}</option>`).join("")}
+            </select>
+          </div>
+        </div>
+
+        <!-- Section 1: DILI & eDISH -->
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-size:12px;font-weight:700">🔬 Wykres eDISH (Evaluation of Drug-Induced Serious Hepatotoxicity)</span>
+            <span style="font-size:11px;color:var(--color-text-muted)">Fenotyp: <b>${esc(pili.phenotype)}</b></span>
+          </div>
+
+          <div style="margin-bottom:10px;padding:8px 10px;border-radius:6px;background:${isHysLaw ? '#ff3b3022' : (curAlt >= 3.0 ? '#ff95001a' : '#34c75914')};border:1px solid ${isHysLaw ? '#ff3b30' : (curAlt >= 3.0 ? '#ff9500' : '#34c759')}">
+            <div style="font-size:11px;font-weight:700;color:${isHysLaw ? '#ff3b30' : (curAlt >= 3.0 ? '#ff9500' : '#34c759')}">
+              ${isHysLaw ? "⚠️ KRYTYCZNY ALARM: PRAWO HY'S LAW SPEŁNIONE (Zagrożenie Życia)" : (curAlt >= 3.0 ? "⚡ ODCZYN HEPATOCYTARNY: Wzrost transaminaz ALT bez hiperbilirubinemii" : "✅ ZAKRES BEZPIECZNY: Parametry czynności wątroby w normie")}
+            </div>
+            <div style="font-size:10.5px;color:var(--color-text);margin-top:2px">
+              Aktualna ekspozycja: ALT = <b>${curAlt}× ULN</b> (próg 3.0×) · Bilirubina = <b>${curBili}× ULN</b> (próg 2.0×).
+              ${isHysLaw ? "Jednoczesny wzrost ALT &ge; 3x i Bilirubiny &ge; 2x bez cholestazy oznacza &gt;10% ryzyko śmiertelnej niewydolności wątroby." : ""}
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <span style="font-size:11px;white-space:nowrap">Mnożnik ekspozycji / podatności osobniczej:</span>
+            <input type="range" id="toxExposureRange" min="0.5" max="4.0" step="0.1" value="${toxState.exposure}" style="flex:1;cursor:pointer">
+            <b style="font-size:12px;width:45px">${toxState.exposure.toFixed(1)}×</b>
+          </div>
+
+          ${edishSvg}
+
+          <div style="margin-top:8px;font-size:10.5px;color:var(--color-text-muted);line-height:1.4">
+            <b>Mechanizm molekularny:</b> ${esc(pili.mechanism_pl)}
+          </div>
+        </div>
+
+        <!-- Section 2: Cardiotoxicity hERG & CiPA -->
+        ${redfernHtml}
+
+        <!-- Section 3: Structural Alerts ToxAlerts -->
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:12px">
+          <div style="font-size:12px;font-weight:700;margin-bottom:6px">🧬 Alerty Strukturalne Toksykoforów (ToxAlerts)</div>
+          ${alertsHtml}
+        </div>
+
+        <!-- Section 4: Pregnancy & Lactation -->
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-size:12px;font-weight:700">🤰 Ciąża, Teratogenność & Laktacja (FDA PLLR / RID)</span>
+            <span class="badge" style="font-size:10px;background:${pregColor};color:${pregCat === 'C' ? '#000' : '#fff'}">Kategoria ${esc(pregCat)}</span>
+          </div>
+          ${preg.black_box_teratogen ? `
+            <div style="background:#ff3b3022;border:1px solid #ff3b30;border-radius:6px;padding:6px 10px;margin-bottom:8px;font-size:11px;color:#ff3b30;font-weight:700">
+              ⚠️ CZARNA SKRZYNKA: BEZWZGLĘDNY TERATOGEN (Ryzyko ciężkich wad rozwojowych lub poronienia)
+            </div>
+          ` : ""}
+          <div style="font-size:11px;color:var(--color-text);margin-bottom:6px">
+            <b>Ocena embriologiczna:</b> ${esc(preg.pllr_pregnancy_pl)}
+          </div>
+          <div style="font-size:11px;color:var(--color-text);margin-bottom:8px">
+            <b>Karmienie piersią:</b> ${esc(preg.pllr_lactation_pl)}
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:3px">
+              <span>Wskaźnik dawki u niemowlęcia (Relative Infant Dose — RID):</span>
+              <b style="color:${preg.rid_pct < 10 ? '#34c759' : '#ff3b30'}">${preg.rid_pct}% ${preg.rid_pct < 10 ? '(Zgodny z laktacją < 10%)' : '(Zwiększona penetracja > 10%)'}</b>
+            </div>
+            <div style="position:relative;height:8px;background:var(--color-bg);border-radius:4px;overflow:hidden;border:1px solid var(--color-border)">
+              <div style="position:absolute;left:0;top:0;bottom:0;width:${Math.min(100, preg.rid_pct * 5)}%;background:${preg.rid_pct < 10 ? '#34c759' : '#ff3b30'}"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Biomolecular viewer integration -->
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-size:11px;font-weight:700">🔬 Struktury 3D Kanałów & Receptorów</div>
+            <div style="font-size:10px;color:var(--color-text-muted)">Eksploruj architekturę pora kanału hERG (KCNH2) i kieszeni wiążących leków.</div>
+          </div>
+          <a href="sidecar://biomolecular-structure-viewer" class="btn btn-sm btn-primary" style="font-size:11px;text-decoration:none">
+            Otwórz Biomolecular Structure Viewer ↗
+          </a>
+        </div>
+      </div>
+    `;
+
+    openContextSplitPane(`☣️ Toksykologia & Bezpieczeństwo · ${comp.n}`, html);
+
+    const splitBody = $("contextSplitBody");
+    if (splitBody) {
+      const closeBtn = splitBody.querySelector("#toxSplitClose");
+      if (closeBtn) closeBtn.onclick = closeContextSplitPane;
+
+      splitBody.querySelectorAll("[data-load-tox-preset]").forEach((btn) => {
+        btn.onclick = () => {
+          const pKey = btn.dataset.loadToxPreset;
+          const preset = TOX_PRESETS[pKey];
+          if (!preset) return;
+          toxState.cid = preset.cid;
+          toxState.exposure = preset.exposure;
+          toxState.activePreset = pKey;
+          openToxicologySplitPane(toxState.cid);
+        };
+      });
+
+      const compSelect = splitBody.querySelector("#toxCompoundSelect");
+      if (compSelect) {
+        compSelect.onchange = (e) => {
+          toxState.cid = e.target.value;
+          toxState.activePreset = null;
+          openToxicologySplitPane(toxState.cid);
+        };
+      }
+
+      const expRange = splitBody.querySelector("#toxExposureRange");
+      if (expRange) {
+        expRange.oninput = (e) => {
+          toxState.exposure = parseFloat(e.target.value);
+          toxState.activePreset = null;
+          openToxicologySplitPane(toxState.cid);
+        };
+      }
+    }
+
+    const targetHash = `#/toxicology/${toxState.cid}?exposure=${toxState.exposure.toFixed(1)}${toxState.activePreset ? `&preset=${toxState.activePreset}` : ''}`;
+    if (location.hash !== targetHash) {
+      history.replaceState(null, "", targetHash);
+    }
+  }
+
+
   // ---------- Clinical Risk Engine & Multi-Axis Toxic Burden Heatmap
   let activeExpandedAdr = null;
 
-  const ADR_DEFINITIONS = [
-    {
-      key: "qtc",
-      name: "Arytmia & Wydłużenie QTc",
-      icon: "🫀",
-      axis: "cardio",
-      desc: "Blokada kanałów potasowych hERG i opóźnienie repolaryzacji komorowej sprzyjające tachyarytmiom komorowym (TdP).",
-      eval: (c) => {
-        const m = (c.m || "").toLowerCase();
-        const t = (c.t || []).join(" ").toLowerCase();
-        let s = 5;
-        if (c.l && c.l.includes(HUB_CARDIO)) s += 25;
-        if (m.includes("herg") || m.includes("potassium channel") || m.includes("antiarrhythmic")) s += 45;
-        if (t.includes("qt") || t.includes("arytm") || t.includes("torsade")) s += 30;
-        return Math.min(100, s);
-      }
+  const ADR_EVALUATORS = {
+    qtc: (c) => {
+      const m = (c.m || "").toLowerCase();
+      const t = (c.t || []).join(" ").toLowerCase();
+      let s = 5;
+      if (c.l && c.l.includes(HUB_CARDIO)) s += 25;
+      if (m.includes("herg") || m.includes("potassium channel") || m.includes("antiarrhythmic")) s += 45;
+      if (t.includes("qt") || t.includes("arytm") || t.includes("torsade")) s += 30;
+      return Math.min(100, s);
     },
-    {
-      key: "respiratory",
-      name: "Depresja OUN & Oddechowa",
-      icon: "🫁",
-      axis: "cns",
-      desc: "Hamowanie pnia mózgu i ośrodka oddechowego poprzez receptory mi-opioidowe oraz kompleksy GABA-A.",
-      eval: (c) => {
-        const m = (c.m || "").toLowerCase();
-        const t = (c.t || []).join(" ").toLowerCase();
-        let s = 5;
-        if (c.l && c.l.includes(HUB_RESPIRATORY)) s += 35;
-        if (m.includes("opioid") || m.includes("gaba-a") || m.includes("gabaa") || m.includes("sedat") || m.includes("hypnotic") || m.includes("anesthetic")) s += 40;
-        if (t.includes("oddech") || t.includes("senno") || t.includes("sedac")) s += 25;
-        return Math.min(100, s);
-      }
+    respiratory: (c) => {
+      const m = (c.m || "").toLowerCase();
+      const t = (c.t || []).join(" ").toLowerCase();
+      let s = 5;
+      if (c.l && c.l.includes(HUB_RESPIRATORY)) s += 35;
+      if (m.includes("opioid") || m.includes("gaba-a") || m.includes("gabaa") || m.includes("sedat") || m.includes("hypnotic") || m.includes("anesthetic")) s += 40;
+      if (t.includes("oddech") || t.includes("senno") || t.includes("sedac")) s += 25;
+      return Math.min(100, s);
     },
-    {
-      key: "serotonin",
-      name: "Zespół Serotoninowy",
-      icon: "⚡",
-      axis: "cns",
-      desc: "Nadmierna aktywacja ośrodkowych i obwodowych receptorów 5-HT (5-HT1A, 5-HT2A) prowadząca do hipertermii, klonusów i drgawek.",
-      eval: (c) => {
-        const m = (c.m || "").toLowerCase();
-        const t = (c.t || []).join(" ").toLowerCase();
-        let s = 5;
-        if (c.l && c.l.includes(HUB_SEROTONIN)) s += 35;
-        if (m.includes("serotonin") || m.includes("5-ht") || m.includes("sert") || m.includes("ssri") || m.includes("snri") || m.includes("mao")) s += 40;
-        if (t.includes("serotonin") || t.includes("hiperterm")) s += 25;
-        return Math.min(100, s);
-      }
+    serotonin: (c) => {
+      const m = (c.m || "").toLowerCase();
+      const t = (c.t || []).join(" ").toLowerCase();
+      let s = 5;
+      if (c.l && c.l.includes(HUB_SEROTONIN)) s += 35;
+      if (m.includes("serotonin") || m.includes("5-ht") || m.includes("sert") || m.includes("ssri") || m.includes("snri") || m.includes("mao")) s += 40;
+      if (t.includes("serotonin") || t.includes("hiperterm")) s += 25;
+      return Math.min(100, s);
     },
-    {
-      key: "cyp",
-      name: "Wąskie Gardło CYP (Wątroba)",
-      icon: "🧪",
-      axis: "hepatic",
-      desc: "Nasycenie szlaków cytochromu P450, konkurencja enzymatyczna i spowolnienie eliminacji leków we krwi.",
-      eval: (c) => {
-        const cyps = (c.pk && c.pk.cyp) || [];
-        if (!cyps.length) return 10;
-        let s = cyps.length * 15;
-        if (cyps.includes("CYP3A4")) s += 20;
-        if (cyps.includes("CYP2D6")) s += 15;
-        return Math.min(100, s);
-      }
+    cyp: (c) => {
+      const cyps = (c.pk && c.pk.cyp) || [];
+      if (!cyps.length) return 10;
+      let s = cyps.length * 15;
+      if (cyps.includes("CYP3A4")) s += 20;
+      if (cyps.includes("CYP2D6")) s += 15;
+      return Math.min(100, s);
     },
-    {
-      key: "anticholinergic",
-      name: "Obciążenie Antycholinergiczne",
-      icon: "👁️",
-      axis: "autonomic",
-      desc: "Ośrodkowa i obwodowa blokada muskarynowa wywołująca majaczenie, suchość błon, tachykardię i retencję moczu.",
-      eval: (c) => {
-        const m = (c.m || "").toLowerCase();
-        const t = (c.t || []).join(" ").toLowerCase();
-        let s = 5;
-        if (c.l && c.l.includes(HUB_CHOLINERGIC)) s += 30;
-        if (m.includes("muscarinic") || m.includes("anticholinergic") || m.includes("cholinolyt") || m.includes("atropin")) s += 45;
-        if (t.includes("antycholinerg") || t.includes("sucho")) s += 25;
-        return Math.min(100, s);
-      }
+    anticholinergic: (c) => {
+      const m = (c.m || "").toLowerCase();
+      const t = (c.t || []).join(" ").toLowerCase();
+      let s = 5;
+      if (c.l && c.l.includes(HUB_CHOLINERGIC)) s += 30;
+      if (m.includes("muscarinic") || m.includes("anticholinergic") || m.includes("cholinolyt") || m.includes("atropin")) s += 45;
+      if (t.includes("antycholinerg") || t.includes("sucho")) s += 25;
+      return Math.min(100, s);
     },
-    {
-      key: "hypertension",
-      name: "Przełom Adrenergiczny / Skoki RR",
-      icon: "📈",
-      axis: "cardio",
-      desc: "Stymulacja układu współczulnego, blokada NET/DAT lub aktywacja receptorów alfa/beta adrenergicznych.",
-      eval: (c) => {
-        const m = (c.m || "").toLowerCase();
-        const t = (c.t || []).join(" ").toLowerCase();
-        let s = 5;
-        if (m.includes("norepinephrine") || m.includes("adrenergic") || m.includes("sympath") || m.includes("stimulant") || m.includes("amphetamin")) s += 45;
-        if (t.includes("ciśnien") || t.includes("tachykard") || t.includes("nadciśnien")) s += 25;
-        return Math.min(100, s);
-      }
+    hypertension: (c) => {
+      const m = (c.m || "").toLowerCase();
+      const t = (c.t || []).join(" ").toLowerCase();
+      let s = 5;
+      if (m.includes("norepinephrine") || m.includes("adrenergic") || m.includes("sympath") || m.includes("stimulant") || m.includes("amphetamin")) s += 45;
+      if (t.includes("ciśnien") || t.includes("tachykard") || t.includes("nadciśnien")) s += 25;
+      return Math.min(100, s);
     },
-    {
-      key: "seizure",
-      name: "Ryzyko Drgawkowe (Prokonwulsyjne)",
-      icon: "🧠",
-      axis: "cns",
-      desc: "Obniżenie progu drgawkowego, blokada neuroprzekaźnictwa hamującego GABA lub nadmierna stymulacja glutaminergiczna.",
-      eval: (c) => {
-        const m = (c.m || "").toLowerCase();
-        const t = (c.t || []).join(" ").toLowerCase();
-        let s = 5;
-        if (m.includes("proconvulsant") || (m.includes("antagonist") && m.includes("gaba"))) s += 45;
-        if (t.includes("drgawk") || t.includes("padaczk")) s += 30;
-        if (m.includes("bupropion") || m.includes("tramadol") || m.includes("clozapin")) s += 35;
-        return Math.min(100, s);
-      }
+    seizure: (c) => {
+      const m = (c.m || "").toLowerCase();
+      const t = (c.t || []).join(" ").toLowerCase();
+      let s = 5;
+      if (m.includes("proconvulsant") || (m.includes("antagonist") && m.includes("gaba"))) s += 45;
+      if (t.includes("drgawk") || t.includes("padaczk")) s += 30;
+      if (m.includes("bupropion") || m.includes("tramadol") || m.includes("clozapin")) s += 35;
+      return Math.min(100, s);
     },
-    {
-      key: "bleeding",
-      name: "Zaburzenia Krzepnięcia & Krwawienia",
-      icon: "🩸",
-      axis: "hepatic",
-      desc: "Inhibicja COX-1/płytek krwi, deplecja płytkowej puli serotoniny przez SSRI lub bezpośrednia antykoagulacja.",
-      eval: (c) => {
-        const m = (c.m || "").toLowerCase();
-        const t = (c.t || []).join(" ").toLowerCase();
-        let s = 5;
-        if (m.includes("cyclooxygenase") || m.includes("cox") || m.includes("anticoagulant") || m.includes("platelet") || m.includes("thrombin") || m.includes("factor xa")) s += 50;
-        if (m.includes("ssri") || m.includes("snri")) s += 20;
-        if (t.includes("krwaw") || t.includes("wrzod") || t.includes("krzepliwo")) s += 30;
-        return Math.min(100, s);
-      }
+    bleeding: (c) => {
+      const m = (c.m || "").toLowerCase();
+      const t = (c.t || []).join(" ").toLowerCase();
+      let s = 5;
+      if (m.includes("cyclooxygenase") || m.includes("cox") || m.includes("anticoagulant") || m.includes("platelet") || m.includes("thrombin") || m.includes("factor xa")) s += 50;
+      if (m.includes("ssri") || m.includes("snri")) s += 20;
+      if (t.includes("krwaw") || t.includes("wrzod") || t.includes("krzepliwo")) s += 30;
+      return Math.min(100, s);
     }
-  ];
+  };
+
+  const ADR_DEFINITIONS = (G.adrDefinitions || [
+    { key: "qtc", name: "Arytmia & Wydłużenie QTc", icon: "🫀", axis: "cardio", desc: "Blokada kanałów potasowych hERG i opóźnienie repolaryzacji komorowej sprzyjające tachyarytmiom komorowym (TdP)." }
+  ]).map((def) => ({
+    ...def,
+    eval: def.eval || ADR_EVALUATORS[def.key] || (() => 0)
+  }));
 
   function detectPharmacodynamicPhenomena(stackIndices) {
     const list = (stackIndices || []).map((i) => C[i]).filter(Boolean);
@@ -5150,7 +7003,7 @@
                 <b style="color:${col}">${ax.val} %</b>
               </div>
               <div class="axis-bar-wrap">
-                <div class="axis-bar-fill" style="width:${ax.val}%;background:${col}"></div>
+                <div class="axis-bar-fill" style="transform:scaleX(${Math.max(0, Math.min(100, ax.val)) / 100});background:${col}"></div>
               </div>
             </div>
           `;
@@ -5256,6 +7109,7 @@
 
     if (state.stack.size === 0) {
       if (pill) { pill.className = "tag"; pill.textContent = "pusty"; }
+      updatePolypharmacyShieldUI();
       body.innerHTML = `
         <div style="text-align:center;padding:1.5rem 0.5rem;color:var(--color-text-muted)">
           <div style="font-size:2rem;margin-bottom:.5rem">🧪</div>
@@ -5298,7 +7152,7 @@
       const struct = getChemStructure(c);
       const thumbHtml = struct
         ? `<img class="chem-thumb" src="${struct.url}" alt="${esc(c.n)}" loading="lazy" data-zoom-chem="${c.i}" title="Powiększ wzór 2D">`
-        : `<span class="dot" style="background:${CL_COLORS[c.c]};width:10px;height:10px;flex-shrink:0"></span>`;
+        : `<span class="dot" style="background:var(--color-cluster-${c.c});width:10px;height:10px;flex-shrink:0"></span>`;
       return `
         <div class="stack-chip">
           <div style="display:flex;align-items:center;gap:8px;min-width:0;overflow:hidden">
@@ -5370,7 +7224,7 @@
         return `
           <div class="pk-row">
             <div style="display:flex;align-items:center;gap:6px;min-width:0;overflow:hidden">
-              <span class="dot" style="background:${CL_COLORS[c.c]};width:8px;height:8px"></span>
+              <span class="dot" style="background:var(--color-cluster-${c.c});width:8px;height:8px"></span>
               <span style="font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(c.n)}">${esc(c.n)}</span>
             </div>
             <div style="display:flex;align-items:center;gap:4px">
@@ -5436,6 +7290,7 @@
         <button class="preset-btn" data-preset="cyp">CYP3A4 ⚠️</button>
       </div>`;
     wireStackBody();
+    updatePolypharmacyShieldUI();
   }
 
   function wireStackBody() {
@@ -5468,12 +7323,26 @@
         state.selectedMatrixPair = [parts[0], parts[1]];
         updateStackUI();
       };
+      td.onkeydown = (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          td.click();
+        }
+      };
     });
     body.querySelectorAll("[data-adr-toggle]").forEach((td) => {
+      td.setAttribute("role", "button");
+      td.tabIndex = 0;
       td.onclick = () => {
         const k = td.dataset.adrToggle;
         activeExpandedAdr = activeExpandedAdr === k ? null : k;
         updateStackUI();
+      };
+      td.onkeydown = (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          td.click();
+        }
       };
     });
     body.querySelectorAll("[data-horizon]").forEach((b) => {
@@ -5816,6 +7685,10 @@
   const toScreen = (x, y) => [x * state.k + state.tx, y * state.k + state.ty];
   const toWorld = (sx, sy) => [(sx - state.tx) / state.k, (sy - state.ty) / state.k];
   function animateTo(x, y, k) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      state.k = clampK(k); state.tx = W / 2 - x * state.k; state.ty = H / 2 - y * state.k; draw();
+      return;
+    }
     const s0 = { ...state }, t0 = performance.now(), dur = 520;
     const tx1 = W / 2 - x * k, ty1 = H / 2 - y * k;
     const step = (t) => {
@@ -5826,6 +7699,121 @@
     requestAnimationFrame(step);
   }
   const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  function semanticEdgeColor(type) {
+    const token = {
+      PRODRUG_OF: "--color-success", CONTRAINDICATION: "--color-risk-critical",
+      CYP_INTERACTION: "--color-warning", TARGET_SYNERGY: "--color-accent2", TARGET_ANTAGONISM: "--color-primary"
+    }[type];
+    return (token && css(token)) || (TYPED_EDGE_CONFIG[type] && TYPED_EDGE_CONFIG[type].color) || css("--color-primary");
+  }
+
+  // ---------- Pathway Systems Solo Layout & MoA Vectors (v3.22.0)
+  function computePathwayRadialPositions(pw) {
+    if (pw._soloPositions) return pw._soloPositions;
+    const targets = [...pw.targetIndices];
+    const compounds = [...pw.compoundIndices].map((i) => C[i]);
+    const pos = { targets: new Map(), compounds: new Map() };
+
+    // Targets in central ring R = 130
+    const rt = 130;
+    targets.forEach((ti, idx) => {
+      const angle = (2 * Math.PI * idx) / Math.max(targets.length, 1) - Math.PI / 2;
+      pos.targets.set(ti, {
+        x: Math.round(rt * Math.cos(angle)),
+        y: Math.round(rt * Math.sin(angle)),
+        angle
+      });
+    });
+
+    // Classify compounds by MoA: agonist, antagonist, inhibitor
+    const agonists = [];
+    const antagonists = [];
+    const inhibitors = [];
+
+    compounds.forEach((c) => {
+      const text = ((c.m || "") + " " + (c.d || "")).toLowerCase();
+      if (text.includes("antagonist") || text.includes("blocker") || text.includes("inhibitor of") || text.includes("antagonista")) {
+        antagonists.push(c);
+      } else if (text.includes("reuptake") || text.includes("transporter") || text.includes("wychwyt") || text.includes("uptake")) {
+        inhibitors.push(c);
+      } else {
+        agonists.push(c);
+      }
+    });
+
+    function layoutSector(list, startAngle, endAngle, role) {
+      if (!list.length) return;
+      const span = endAngle - startAngle;
+      const radii = [270, 320, 370];
+      list.forEach((c, idx) => {
+        const frac = list.length === 1 ? 0.5 : idx / (list.length - 1);
+        const a = startAngle + span * frac;
+        const r = radii[idx % radii.length];
+        pos.compounds.set(c.i, {
+          x: Math.round(r * Math.cos(a)),
+          y: Math.round(r * Math.sin(a)),
+          role
+        });
+      });
+    }
+
+    // 3 Sectors:
+    layoutSector(agonists, -Math.PI / 3 + 0.1, Math.PI / 3 - 0.1, "agonist");
+    layoutSector(antagonists, Math.PI / 3 + 0.1, Math.PI - 0.1, "antagonist");
+    layoutSector(inhibitors, Math.PI + 0.1, (5 * Math.PI) / 3 - 0.1, "inhibitor");
+
+    pw._soloPositions = pos;
+    return pos;
+  }
+
+  function drawMoAVector(ctx, x1, y1, x2, y2, role) {
+    ctx.save();
+    let col = css("--color-success");
+    if (role === "antagonist") col = css("--color-error");
+    else if (role === "inhibitor") col = css("--color-accent2");
+
+    ctx.strokeStyle = col;
+    ctx.fillStyle = col;
+    ctx.lineWidth = 1.8;
+
+    if (role === "inhibitor") {
+      ctx.setLineDash([4, 3]);
+    }
+
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
+
+    ctx.setLineDash([]);
+
+    const dx = x2 - x1, dy = y2 - y1;
+    const angle = Math.atan2(dy, dx);
+    const arrowLen = 8;
+
+    if (role === "agonist") {
+      ctx.beginPath();
+      ctx.moveTo(x2, y2);
+      ctx.lineTo(x2 - arrowLen * Math.cos(angle - Math.PI / 6), y2 - arrowLen * Math.sin(angle - Math.PI / 6));
+      ctx.lineTo(x2 - arrowLen * Math.cos(angle + Math.PI / 6), y2 - arrowLen * Math.sin(angle + Math.PI / 6));
+      ctx.closePath();
+      ctx.fill();
+    } else if (role === "antagonist") {
+      const perp = angle + Math.PI / 2;
+      const barLen = 7;
+      ctx.lineWidth = 2.4;
+      ctx.beginPath();
+      ctx.moveTo(x2 + barLen * Math.cos(perp), y2 + barLen * Math.sin(perp));
+      ctx.lineTo(x2 - barLen * Math.cos(perp), y2 - barLen * Math.sin(perp));
+      ctx.stroke();
+    } else {
+      ctx.beginPath();
+      ctx.arc(x2, y2, 4, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+
+    ctx.restore();
+  }
 
   // ---------- drawing
   function draw() { cancelAnimationFrame(raf); raf = requestAnimationFrame(render); }
@@ -5838,12 +7826,90 @@
     const sel = state.sel, hubSel = sel && sel.type === "core" ? sel.i : state.hub;
     const focus = sel && sel.type === "target" ? new Set(byTarget[sel.i]) : null;
 
+    const activePw = state.pathway && state.pathway.id ? pathwayById.get(state.pathway.id) : null;
+
+    // Solo Pathway View: early return with deterministic radial layout
+    if (activePw && state.pathway.mode === "solo") {
+      const pos = computePathwayRadialPositions(activePw);
+
+      // Draw guide circles
+      const [cx0, cy0] = toScreen(0, 0);
+      ctx.strokeStyle = faint + "44";
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath(); ctx.arc(cx0, cy0, 130 * k, 0, 7); ctx.stroke();
+      ctx.beginPath(); ctx.arc(cx0, cy0, 320 * k, 0, 7); ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Sector labels
+      ctx.font = `700 ${Math.max(10, Math.min(14, 12 * Math.sqrt(k)))}px ${fDisp}`;
+      ctx.textAlign = "center";
+      const [agX, agY] = toScreen(420, 0);
+      halo("🟢 AGONIŚCI / AKTYWATORY", agX, agY, css("--color-success"), bg);
+      const [anX, anY] = toScreen(-240, 360);
+      halo("🔴 ANTAGONIŚCI / BLOKERY", anX, anY, css("--color-error"), bg);
+      const [inX, inY] = toScreen(-240, -360);
+      halo("🟣 INHIBITORY WYCHWYTU", inX, inY, css("--color-accent2"), bg);
+
+      // Draw MoA vectors from compounds to their targets
+      pos.compounds.forEach((cpos, ci) => {
+        const c = C[ci];
+        const [x1, y1] = toScreen(cpos.x, cpos.y);
+        (c.tg || []).forEach((ti) => {
+          if (pos.targets.has(ti)) {
+            const tpos = pos.targets.get(ti);
+            const [x2, y2] = toScreen(tpos.x, tpos.y);
+            drawMoAVector(ctx, x1, y1, x2, y2, cpos.role);
+          }
+        });
+      });
+
+      // Draw central target nodes
+      pos.targets.forEach((tpos, ti) => {
+        const t = T[ti];
+        const [tx, ty] = toScreen(tpos.x, tpos.y);
+        const tr = Math.max(12, 16 * Math.sqrt(k));
+        ctx.beginPath();
+        ctx.arc(tx, ty, tr, 0, 7);
+        ctx.fillStyle = activePw.color;
+        ctx.fill();
+        ctx.strokeStyle = text;
+        ctx.lineWidth = (sel && sel.type === "target" && sel.i === ti) ? 3 : 1.8;
+        ctx.stroke();
+
+        ctx.font = `700 11px ${fBody}`;
+        ctx.textAlign = "center";
+        halo(t.n.length > 20 ? t.n.slice(0, 19) + "…" : t.n, tx, ty + tr + 12, text, bg);
+      });
+
+      // Draw compound nodes
+      const baseR = Math.max(2.5, Math.min(6, 4.5 * Math.sqrt(k)));
+      pos.compounds.forEach((cpos, ci) => {
+        const c = C[ci];
+        const [cx, cy] = toScreen(cpos.x, cpos.y);
+        ctx.beginPath();
+        ctx.arc(cx, cy, baseR, 0, 7);
+        ctx.fillStyle = clusterColor(c.c);
+        ctx.fill();
+        if (sel && sel.type === "compound" && sel.i === ci) {
+          ctx.strokeStyle = text;
+          ctx.lineWidth = 2.5;
+          ctx.stroke();
+        }
+        ctx.font = `600 11px ${fBody}`;
+        ctx.textAlign = "left";
+        halo(c.n, cx + baseR + 5, cy, text, bg);
+      });
+
+      return;
+    }
+
     // group discs
     GR.forEach((g, gi) => {
       const [x, y] = toScreen(g.x, g.y), on = state.clusters.has(g.c);
       ctx.beginPath(); ctx.arc(x, y, Math.max(0.5, g.r * k), 0, 7);
-      ctx.fillStyle = CL_COLORS[g.c] + (on ? "12" : "05"); ctx.fill();
-      ctx.strokeStyle = CL_COLORS[g.c] + (sel && sel.type === "group" && sel.i === gi ? "cc" : on ? "40" : "15");
+      ctx.fillStyle = clusterColor(g.c) + (on ? "12" : "05"); ctx.fill();
+      ctx.strokeStyle = clusterColor(g.c) + (sel && sel.type === "group" && sel.i === gi ? "cc" : on ? "40" : "15");
       ctx.lineWidth = sel && sel.type === "group" && sel.i === gi ? 2 : 1; ctx.stroke();
     });
 
@@ -5900,7 +7966,7 @@
         const ca = C[a], cb = C[b];
         if (!visible(ca) || !visible(cb)) return;
         const [x1, y1] = toScreen(ca.x, ca.y), [x2, y2] = toScreen(cb.x, cb.y);
-        ctx.strokeStyle = level === "crit" ? "#dd4848" : level === "mod" ? "#bb653b" : "#a86fdf";
+        ctx.strokeStyle = css(level === "crit" ? "--color-risk-critical" : level === "mod" ? "--color-risk-moderate" : "--color-risk-low");
         ctx.lineWidth = level === "crit" ? 2.6 : 1.8;
         ctx.beginPath();
         const mx = (x1 + x2) / 2 + (y2 - y1) * 0.22, my = (y1 + y2) / 2 - (x2 - x1) * 0.22;
@@ -5967,32 +8033,63 @@
       const [x, y] = toScreen(c.x, c.y);
       if (x < -10 || y < -10 || x > W + 10 || y > H + 10) return;
       const on = visible(c), hl = hubSel !== null && hubSel !== undefined && c.l.includes(hubSel);
-      ctx.globalAlpha = on ? (focus ? (focus.has(c.i) ? 1 : 0.15) : hubSel !== null && hubSel !== undefined && !hl ? 0.18 : 1) : 0.07;
-      ctx.fillStyle = CL_COLORS[c.c];
+      let compAlpha = on ? (focus ? (focus.has(c.i) ? 1 : 0.15) : hubSel !== null && hubSel !== undefined && !hl ? 0.18 : 1) : 0.07;
+      if (activePw && state.pathway.mode === "spotlight") {
+        compAlpha = activePw.compoundIndices.has(c.i) ? 1.0 : 0.08;
+      }
+      ctx.globalAlpha = compAlpha;
+      ctx.fillStyle = clusterColor(c.c);
       ctx.beginPath(); ctx.arc(x, y, c.pk ? baseR : baseR * 0.7, 0, 7); ctx.fill();
       if (c.pk && c.pk.cyp && k > 0.9) { ctx.strokeStyle = warn; ctx.lineWidth = 1; ctx.stroke(); }
       if (((c.v && c.v.s === "discrepant") || (c.ve && c.ve.s === "discrepant")) && k > 1.4) { ctx.strokeStyle = err; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y, baseR + 2, 0, 7); ctx.stroke(); }
       if (state.stack.has(c.i)) {
-        ctx.strokeStyle = "#d19900";
+        ctx.strokeStyle = css("--color-stack");
         ctx.lineWidth = 2.2;
         ctx.beginPath();
         ctx.arc(x, y, baseR + 4.5, 0, 7);
         ctx.stroke();
       }
+      if (activePw && activePw.compoundIndices.has(c.i)) {
+        ctx.strokeStyle = activePw.color;
+        ctx.lineWidth = 2.0;
+        ctx.beginPath();
+        ctx.arc(x, y, baseR + 3.5, 0, 7);
+        ctx.stroke();
+      }
     });
     ctx.globalAlpha = 1;
 
-    // compound labels (level of detail)
+    if (activePw && state.pathway.mode === "spotlight") {
+      activePw.compoundIndices.forEach((ci) => {
+        const c = C[ci];
+        if (!visible(c)) return;
+        const [x1, y1] = toScreen(c.x, c.y);
+        const text = ((c.m || "") + " " + (c.d || "")).toLowerCase();
+        const role = (text.includes("antagonist") || text.includes("blocker") || text.includes("antagonista")) ? "antagonist" : (text.includes("reuptake") || text.includes("transporter") || text.includes("wychwyt")) ? "inhibitor" : "agonist";
+        (c.tg || []).forEach((ti) => {
+          if (activePw.targetIndices.has(ti)) {
+            const [tx, ty] = toScreen(GR[c.g].x, GR[c.g].y);
+            drawMoAVector(ctx, x1, y1, tx, ty, role);
+          }
+        });
+      });
+    }
+
+    // compound labels (level of detail with budget culling)
     ctx.textBaseline = "middle"; ctx.textAlign = "left";
     if (k >= 2.6) {
       ctx.font = `500 ${Math.min(13, 9 + k)}px ${fBody}`; ctx.fillStyle = muted;
-      C.forEach((c) => {
-        if (!visible(c)) return;
+      let drawnLabels = 0;
+      const MAX_LABELS = 120;
+      for (let i = 0; i < C.length && drawnLabels < MAX_LABELS; i++) {
+        const c = C[i];
+        if (!visible(c)) continue;
         const [x, y] = toScreen(c.x, c.y);
-        if (x < 0 || y < 0 || x > W || y > H) return;
+        if (x < 0 || y < 0 || x > W || y > H) continue;
         const lab = c.n.length > 22 ? c.n.slice(0, 21) + "…" : c.n;
         ctx.fillText(lab, x + baseR + 3, y);
-      });
+        drawnLabels++;
+      }
     } else if (state.stack.size > 0) {
       ctx.font = `600 12px ${fBody}`;
       state.stack.forEach((i) => {
@@ -6000,8 +8097,12 @@
         if (!visible(sc)) return;
         const [sx, sy] = toScreen(sc.x, sc.y);
         if (sx < 0 || sy < 0 || sx > W || sy > H) return;
-        halo(sc.n, sx + baseR + 6, sy, "#d19900", bg);
+        halo(sc.n, sx + baseR + 6, sy, css("--color-stack"), bg);
       });
+    }
+
+    if (state.stack.size >= 2) {
+      drawDdiCollisionEdges(ctx, [...state.stack].map((i) => C[i]), k);
     }
 
     // group + cluster labels
@@ -6019,7 +8120,7 @@
       const [x, y] = toScreen(Math.cos(cl.angle) * ext, Math.sin(cl.angle) * ext);
       ctx.font = `700 ${Math.max(12, Math.min(22, 26 * k))}px ${fDisp}`;
       ctx.globalAlpha = state.clusters.has(ci) ? 1 : 0.35;
-      halo(CL_PL[cl.name] || cl.name, x, y, CL_COLORS[ci], bg); ctx.globalAlpha = 1;
+      halo(CL_PL[cl.name] || cl.name, x, y, clusterColor(ci), bg); ctx.globalAlpha = 1;
     });
 
     // core nodes
@@ -6049,23 +8150,84 @@
     ctx.fillStyle = color; ctx.fillText(t, x, y);
   }
 
-  // ---------- hit testing
+  // ---------- hit testing (spatial grid lookup O(1))
   function hit(sx, sy) {
+    if (state.pathway && state.pathway.id && state.pathway.mode === "solo") {
+      const pw = pathwayById.get(state.pathway.id);
+      if (pw) {
+        const pos = computePathwayRadialPositions(pw);
+        for (const [ti, tpos] of pos.targets.entries()) {
+          const [tx, ty] = toScreen(tpos.x, tpos.y);
+          if (Math.hypot(tx - sx, ty - sy) < 22) return { type: "target", i: ti };
+        }
+        for (const [ci, cpos] of pos.compounds.entries()) {
+          const [cx, cy] = toScreen(cpos.x, cpos.y);
+          if (Math.hypot(cx - sx, cy - sy) < 16) return { type: "compound", i: ci };
+        }
+        return null;
+      }
+    }
+
     const [wx, wy] = toWorld(sx, sy), rr = Math.max(8, 7 / state.k);
     for (let i = 0; i < CORE.length; i++) {
       const [x, y] = toScreen(CORE[i].x, CORE[i].y);
       if (Math.hypot(x - sx, y - sy) < Math.max(10, 12 * Math.sqrt(state.k))) return { type: "core", i };
     }
+    const centerGx = Math.floor(wx / GRID_CELL);
+    const centerGy = Math.floor(wy / GRID_CELL);
     let best = null, bd = Infinity;
-    for (const c of C) {
-      if (!visible(c)) continue;
-      const d = Math.hypot(c.x - wx, c.y - wy);
-      if (d < bd) { bd = d; best = c; }
+    for (let dx = -1; dx <= 1; dx++) {
+      for (let dy = -1; dy <= 1; dy++) {
+        const cell = spatialGrid.get(`${centerGx + dx},${centerGy + dy}`);
+        if (!cell) continue;
+        for (let ci = 0; ci < cell.length; ci++) {
+          const c = cell[ci];
+          if (!visible(c)) continue;
+          const d = Math.hypot(c.x - wx, c.y - wy);
+          if (d < bd) { bd = d; best = c; }
+        }
+      }
     }
     if (best && bd * state.k < Math.max(7, 6 * Math.sqrt(state.k)) && bd < rr * 3) return { type: "compound", i: best.i };
     for (let i = 0; i < GR.length; i++) if (Math.hypot(GR[i].x - wx, GR[i].y - wy) < GR[i].r) return { type: "group", i };
     return null;
   }
+
+  let graphNavIndex = -1;
+  function graphKeyboardNodes() {
+    const pw = state.pathway && state.pathway.id ? pathwayById.get(state.pathway.id) : null;
+    if (pw && state.pathway.mode === "solo") {
+      return [
+        ...[...pw.targetIndices].map((i) => ({ type: "target", i })),
+        ...[...pw.compoundIndices].filter((i) => visible(C[i])).map((i) => ({ type: "compound", i }))
+      ];
+    }
+    return [
+      ...CORE.map((_, i) => ({ type: "core", i })),
+      ...GR.map((g, i) => ({ type: "group", i })).filter((node) => state.clusters.has(GR[node.i].c)),
+      ...C.filter(visible).map((c) => ({ type: "compound", i: c.i }))
+    ];
+  }
+  cv.addEventListener("keydown", (e) => {
+    const nodes = graphKeyboardNodes();
+    if (!nodes.length) return;
+    const currentIndex = state.sel ? nodes.findIndex((node) => node.type === state.sel.type && node.i === state.sel.i) : -1;
+    if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp", "Home", "End"].includes(e.key)) {
+      e.preventDefault();
+      if (e.key === "Home") graphNavIndex = 0;
+      else if (e.key === "End") graphNavIndex = nodes.length - 1;
+      else {
+        const navMatchesSelection = graphNavIndex >= 0 && state.sel && nodes[graphNavIndex] && nodes[graphNavIndex].type === state.sel.type && nodes[graphNavIndex].i === state.sel.i;
+        const base = navMatchesSelection ? graphNavIndex : currentIndex;
+        const step = (e.key === "ArrowRight" || e.key === "ArrowDown") ? 1 : -1;
+        graphNavIndex = (base + step + nodes.length) % nodes.length;
+      }
+      select(nodes[graphNavIndex], false);
+    } else if (e.key === "Enter" && state.sel) {
+      e.preventDefault();
+      select(state.sel, true);
+    }
+  });
 
   // ---------- pointer interaction (pan, wheel zoom, pinch)
   const ptrs = new Map(); let drag = null, moved = false, pinch0 = null;
@@ -6122,7 +8284,12 @@
   const rng = (a, u = "") => a ? `${a[0]}${a[1] ? "–" + a[1] : ""}${u ? " " + u : ""}` : null;
   function select(h, fly) {
     state.sel = h; const p = $("panel"), noHash = location.pathname + location.search;
-    if (!h) { p.innerHTML = '<p class="empty">Wybierz substancję, grupę albo hub, aby zobaczyć szczegóły.</p>'; history.replaceState(null, "", noHash); draw(); return; }
+    if (!h) { p.innerHTML = '<p class="empty">Wybierz substancję, grupę albo hub, aby zobaczyć szczegóły.</p>'; history.replaceState(null, "", noHash); if (typeof updateBreadcrumbs === "function") updateBreadcrumbs(null); $("graphStatus").textContent = "Nie zaznaczono węzła."; draw(); return; }
+    const graphStatus = $("graphStatus");
+    if (graphStatus) {
+      const name = h.type === "compound" ? C[h.i].n : h.type === "core" ? CORE[h.i].name : h.type === "target" ? T[h.i].n : GR[h.i].label;
+      graphStatus.textContent = `${name}. Szczegóły zostały otwarte w panelu.`;
+    }
     if (h.type === "compound") {
       const c = C[h.i]; p.innerHTML = compoundHtml(c); history.replaceState(null, "", "#" + c.id);
       if (fly) animateTo(c.x, c.y, Math.max(state.k, 3.2));
@@ -6153,13 +8320,14 @@
         <div class="title">${esc(g.label)}</div>
         <p class="muted">${g.n} substancji · ${m.filter((c) => c.pk).length} z danymi PK (${vis.length} widocznych przy obecnych filtrach)</p>${listHtml(vis)}`;
       history.replaceState(null, "", noHash);
+      if (fly) animateTo(g.x, g.y, Math.max(state.k, 1.4));
     }
-    wire(p); draw();
+    wire(p); draw(); if (typeof updateBreadcrumbs === "function") updateBreadcrumbs(h);
   }
   function listHtml(list) {
     const top = list.slice().sort((a, b) => (!!b.pk - !!a.pk) || a.n.localeCompare(b.n)).slice(0, 80);
     return `<div class="links" style="margin-top:.6rem;max-height:46vh;overflow:auto">${top.map((c) =>
-      `<button data-c="${c.i}"><span class="dot" style="background:${CL_COLORS[c.c]};width:8px;height:8px;margin-right:6px"></span>${esc(c.n)}</button>`).join("")}
+      `<button data-c="${c.i}"><span class="dot" style="background:var(--color-cluster-${c.c});width:8px;height:8px;margin-right:6px"></span>${esc(c.n)}</button>`).join("")}
       ${list.length > 80 ? `<span class="note">… oraz ${list.length - 80} kolejnych - zawęź filtrami lub wyszukiwarką.</span>` : ""}</div>`;
   }
   function compoundHtml(c) {
@@ -6236,8 +8404,8 @@
               const o = C[e.other];
               const pfx = e.dir === "out" ? "➔ " : e.dir === "in" ? "⬅ " : "↔ ";
               return `<button class="edge-pill" data-edge-goto="${esc(o.id)}" title="${esc(e.note || cfg.desc)}">
-                <span class="edge-color-dot ${cfg.directed ? 'directed' : ''}" style="background:${cfg.color}"></span>
-                <span class="edge-pill-tag" style="background:${cfg.color}22;color:${cfg.color}">${esc(cfg.shortLabel)}</span>
+                <span class="edge-color-dot ${cfg.directed ? 'directed' : ''}" style="background:${semanticEdgeColor(e.type)}"></span>
+                <span class="edge-pill-tag" style="background:${semanticEdgeColor(e.type)}22;color:${semanticEdgeColor(e.type)}">${esc(cfg.shortLabel)}</span>
                 <span>${pfx}<b>${esc(o.n)}</b></span>
               </button>`;
             }).join("")}
@@ -6268,12 +8436,121 @@
           ${c.cid ? `<tr><th>PubChem CID</th><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/${esc(c.cid)}" target="_blank" rel="noopener noreferrer">${esc(c.cid)} ↗</a></td></tr>` : ""}
         </table>` : "";
 
+      const rplHtml = c.rpl && c.rpl.length ? `
+        <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:11px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <b style="font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--color-primary)">🇵🇱 Leki zarejestrowane w Polsce (RPL CeZ) · ${c.rpl.length}</b>
+          </div>
+          <div style="display:grid;gap:4px">
+            ${c.rpl.map((p) => `
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 6px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:4px">
+                <div>
+                  <b style="color:var(--color-text)">${esc(p.trade_name)}</b>
+                  <span style="color:var(--color-text-muted);font-size:10px"> (${esc(p.strength || "")} ${esc(p.form || "")})</span>
+                  <div style="font-size:10px;color:var(--color-text-faint)">${esc(p.mah || "")} · Pozwolenie: ${esc(p.permit_no || "")}</div>
+                </div>
+                ${p.chpl_url ? `<a href="${esc(p.chpl_url)}" target="_blank" rel="noopener noreferrer" class="btn" style="font-size:10px;padding:2px 6px">ChPL / Ulotka ↗</a>` : ""}
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      ` : "";
+
+      const psyHtml = c.psy ? `
+        <div style="background:var(--color-surface-2);border:1px solid color-mix(in oklab, var(--color-warning) 30%, var(--color-border));border-left:1px solid var(--color-warning);border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:11px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <b style="font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--color-warning)">🧪 PsychonautWiki · Tier D (Harm Reduction)</b>
+            <a href="${esc(c.psy.url || '#')}" target="_blank" rel="noopener noreferrer" class="btn" style="font-size:10px;padding:1px 6px">Źródło ↗</a>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px">
+            ${c.psy.duration && c.psy.duration.onset ? `<div style="background:var(--color-surface);padding:3px 6px;border-radius:3px"><b>Początek:</b> ${esc(c.psy.duration.onset)}</div>` : ""}
+            ${c.psy.duration && c.psy.duration.peak ? `<div style="background:var(--color-surface);padding:3px 6px;border-radius:3px"><b>Szczyt:</b> ${esc(c.psy.duration.peak)}</div>` : ""}
+            ${c.psy.duration && c.psy.duration.total ? `<div style="background:var(--color-surface);padding:3px 6px;border-radius:3px"><b>Czas całkowity:</b> ${esc(c.psy.duration.total)}</div>` : ""}
+            ${c.psy.addiction_potential ? `<div style="background:var(--color-surface);padding:3px 6px;border-radius:3px"><b>Potencjał:</b> ${esc(c.psy.addiction_potential)}</div>` : ""}
+          </div>
+          ${c.psy.effects && c.psy.effects.length ? `
+            <div style="font-size:10px;color:var(--color-text-muted);margin-top:4px">
+              <b>Zgłaszane efekty:</b> ${esc(c.psy.effects.slice(0, 6).join(", "))}
+            </div>
+          ` : ""}
+          ${c.psy.tolerance ? `<div style="font-size:10px;color:var(--color-text-faint);margin-top:2px"><b>Tolerancja:</b> ${esc(c.psy.tolerance)}</div>` : ""}
+        </div>
+      ` : "";
+
+      const indHtml = c.ind && c.ind.length ? `
+        <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:11px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <b style="font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--color-primary)">🏷️ Wskazania Terapeutyczne (ICD-10 / ICD-11) · ${c.ind.length}</b>
+            <button class="btn-copy" id="overviewAllIndicationsBtn" style="font-size:10px;padding:1px 6px">Katalog ICD ↗</button>
+          </div>
+          <div style="display:grid;gap:4px">
+            ${c.ind.map((ind) => {
+              const statusPill = ind.status === "registered" ? '<span class="tag ok" style="font-size:9px;padding:0 4px">✓ ChPL</span>' : ind.status === "off-label" ? '<span class="tag" style="font-size:9px;padding:0 4px;color:var(--color-warning)">Off-label</span>' : '<span class="tag" style="font-size:9px;padding:0 4px">Badania</span>';
+              return `
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 6px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:4px;cursor:pointer" data-open-icd="${esc(ind.icd10)}">
+                  <div>
+                    <code style="font-weight:700;color:var(--color-primary)">[${esc(ind.icd10)}]</code>
+                    <b style="color:var(--color-text);margin-left:4px">${esc(ind.icd10_name_pl)}</b>
+                    <small style="color:var(--color-text-faint);margin-left:4px">(WHO: ${esc(ind.icd11 || "—")})</small>
+                  </div>
+                  ${statusPill}
+                </div>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      ` : "";
+
+      const ebmHtml = c.ebm && c.ebm.length ? `
+        <div style="background:var(--color-surface-2);border:1px solid color-mix(in oklab, var(--color-primary) 30%, var(--color-border));border-left:1px solid var(--color-primary);border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:11px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <b style="font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--color-primary)">🔬 Kluczowe Badania Kliniczne & EBM · ${c.ebm.length}</b>
+            <span class="tag ok" style="font-size:9px">Europe PMC / Cochrane</span>
+          </div>
+          <div style="display:grid;gap:6px">
+            ${c.ebm.map((s, sIdx) => {
+              const tierBadge = s.cochrane ? '<span class="tag ok" style="font-size:9px;padding:0 4px">Cochrane Review</span>'
+                : (s.type && s.type.includes("meta")) ? '<span class="tag ok" style="font-size:9px;padding:0 4px">Meta-Analiza</span>'
+                : '<span class="tag" style="font-size:9px;padding:0 4px">RCT Faza III</span>';
+              const oaBadge = s.oa && s.pdf ? `<a href="${esc(s.pdf)}" target="_blank" rel="noopener noreferrer" class="btn" style="font-size:9px;padding:1px 5px">Otwarty PDF ↗</a>` : '';
+              return `
+                <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:4px;padding:6px 8px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:3px">
+                    <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
+                      ${tierBadge}
+                      <b style="font-size:10px;color:var(--color-text-muted)">${esc(s.journal)} (${esc(s.year || "—")})</b>
+                    </div>
+                    ${s.cits ? `<small style="font-size:9px;color:var(--color-text-faint)">⭐️ ${esc(s.cits)} cytowań</small>` : ""}
+                  </div>
+                  <div style="font-size:11px;font-weight:600;line-height:1.35;color:var(--color-text);margin-bottom:4px">
+                    ${esc(s.title)}
+                  </div>
+                  ${s.concl ? `<div style="font-size:10px;color:var(--color-text-muted);background:var(--color-surface-2);padding:4px 6px;border-radius:3px;margin-bottom:4px"><b>Wniosek:</b> ${esc(s.concl)}</div>` : ""}
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px">
+                    <button class="btn-copy" data-open-ebm-idx="${sIdx}" style="font-size:10px;padding:2px 6px">📖 Czytaj streszczenie</button>
+                    <div style="display:flex;gap:4px">
+                      ${s.doi ? `<a href="https://doi.org/${esc(s.doi)}" target="_blank" rel="noopener noreferrer" class="btn" style="font-size:9px;padding:1px 5px">DOI ↗</a>` : ""}
+                      ${s.pmid ? `<a href="https://pubmed.ncbi.nlm.nih.gov/${esc(s.pmid)}/" target="_blank" rel="noopener noreferrer" class="btn" style="font-size:9px;padding:1px 5px">PubMed ↗</a>` : ""}
+                      ${oaBadge}
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      ` : "";
+
       tabContent = `
         <div class="tab-panel">
           ${c.d ? `<p class="muted" style="line-height:1.45">${esc(c.d)}${c.d.length >= 420 ? "…" : ""}</p>` : '<p class="empty">Brak opisu podsumowującego.</p>'}
           ${chemHtml}
           ${analogsTeaserHtml}
           ${typedEdgesHtml}
+          ${rplHtml}
+          ${psyHtml}
+          ${indHtml}
+          ${ebmHtml}
           ${propBoxes}
           ${atcHtml}
           ${idHtml}
@@ -6282,6 +8559,8 @@
             <a href="${obs}">Notatka w Obsidianie ↗</a>
             ${c.ch ? `<a href="https://www.ebi.ac.uk/chembl/compound_report_card/${esc(c.ch)}/" target="_blank" rel="noopener noreferrer">ChEMBL ${esc(c.ch)} ↗</a>` : ""}
             ${k && k.src ? `<a href="${esc(k.src)}" target="_blank" rel="noopener noreferrer">Wikipedia drug infobox ↗</a>` : ""}
+            <a href="https://www.mp.pl/pacjent/leki/szukaj.html?q=${encodeURIComponent(c.n.split(' ')[0])}" target="_blank" rel="noopener noreferrer">Medycyna Praktyczna (mp.pl) ↗</a>
+            ${c.ik ? `<a href="https://www.chemspider.com/Search.aspx?q=${encodeURIComponent(c.ik)}" target="_blank" rel="noopener noreferrer">ChemSpider ↗</a>` : ""}
           </div>
           ${c.a && c.a.length ? `<p class="note" style="margin-top:.4rem">Aliasy: ${esc(c.a.join(", "))}</p>` : ""}
           <p class="note">ID: <code>${esc(c.id)}</code></p>
@@ -6296,6 +8575,22 @@
         if (k.cyp) rows.push(["Substrat CYP", k.cyp.join(", "), "rola inhibitora/induktora nieoceniana"]);
         if (k.ex !== undefined) rows.push(["Wydalanie", k.ren === true ? "głównie z moczem" : k.ren === false ? "głównie pozanerkowo" : "—", (k.fe !== undefined ? `fe (niezmieniona) ${k.fe}; ` : "") + (k.ex || "")]);
       }
+
+      const compParams = getCompoundCompartmentParams(c);
+      const pkSimPreview = compParams ? `
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:8px 10px;margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-size:11px;font-weight:700">📈 Symulacja 2-Kompartmentowa C(t)</span>
+            <span class="badge" style="font-size:9px">${compParams.is_estimated ? '⚙️ QSAR Estymator' : '🔬 Model kliniczny'}</span>
+          </div>
+          <div style="text-align:center">
+            ${renderPkCurveSvg(compute2CompartmentSimulation(compParams, { horizonHours: Math.min(72, Math.max(12, Math.round(compParams.t_half_beta_h * 3.5))) }), null, { isMini: true, width: 280, height: 130 })}
+          </div>
+          <button class="btn btn-sm btn-primary" data-open-pk-simulator="${esc(c.id)}" style="width:100%;margin-top:6px;font-size:11px">
+            📈 Otwórz Pełny Symulator PK (CYP, eGFR, Steady-State) ↗
+          </button>
+        </div>
+      ` : "";
 
       const vf = v && v.f ? Object.entries(v.f) : [];
       const verHtml = v ? `
@@ -6325,7 +8620,7 @@
         </div>` : '<div class="ver-card" style="opacity:.75"><b>ChPL / SmPC (EMA)</b><span class="muted">Brak dokumentacji EPAR/ChPL w bazie EMA.</span></div>';
 
       const pkaHtml = (c.pka && c.pka.length) ? `
-        <div class="ver-card" style="border-left:3px solid var(--accent-gold);margin-top:.6rem">
+        <div class="ver-card" style="border-left:1px solid var(--accent-gold);margin-top:.6rem">
           <div style="display:flex;align-items:center;gap:.4rem">
             <b>💡 Wyjaśnienie rozbieżności PK (decyzja kuratorska)</b>
           </div>
@@ -6336,6 +8631,7 @@
 
       tabContent = `
         <div class="tab-panel">
+          ${pkSimPreview}
           <div class="label">Parametry PK (Wikipedia)</div>
           ${rows.length ? `
             <table class="pk">${rows.map(([a, b, t]) => `<tr><th>${a}</th><td>${esc(b) || ""}${t ? `<span class="raw">${esc(t)}</span>` : ""}</td></tr>`).join("")}</table>
@@ -6348,6 +8644,28 @@
         </div>`;
     } else if (curTab === "targets") {
       const nb = neighbours(c).slice(0, 16);
+      const aff = RECEPTOR_AFFINITIES[c.id];
+      const radarPreviewHtml = aff ? `
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:8px 10px;margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-size:11px;font-weight:700">🕸️ Profil OUN & Kinetyka Ki</span>
+            <span class="badge" style="font-size:9px">${aff.kinetic_class === 'fast-off' ? '🟢 Fast-Off' : (aff.kinetic_class === 'slow-off' ? '🔴 Slow-Off' : '⚡ ' + (aff.kinetic_class || 'Profil OUN'))}</span>
+          </div>
+          <div style="text-align:center">
+            ${renderReceptorRadarSvg(aff, null, 240, 200)}
+          </div>
+          <button class="btn btn-sm btn-primary" data-open-receptor-radar="${esc(c.id)}" style="width:100%;margin-top:6px;font-size:11px">
+            🕸️ Otwórz Pełny Radar Receptorowy & Porównaj ↗
+          </button>
+        </div>
+      ` : (c.tg && c.tg.length ? `
+        <div style="margin-bottom:8px">
+          <button class="btn btn-sm" data-open-receptor-radar="${esc(c.id)}" style="width:100%;font-size:11px">
+            🕸️ Eksploruj Radary Receptorowe OUN ↗
+          </button>
+        </div>
+      ` : "");
+
       const targetsList = (c.tg && c.tg.length) ? `
         <div class="label">Cele molekularne (${c.tg.length})</div>
         <div class="links">${c.tg.map((t) => {
@@ -6361,12 +8679,13 @@
       const neighboursList = nb.length ? `
         <div class="label" style="margin-top:.8rem">Wspólne cele molekularne (${neighbours(c).length} substancji)</div>
         <div class="links">${nb.map(({ i, n }) =>
-          `<button data-c="${i}"><span class="dot" style="background:${CL_COLORS[C[i].c]};width:8px;height:8px;margin-right:6px"></span>${esc(C[i].n)}${n > 1 ? ` <small style="color:var(--color-text-muted)">×${n} celów</small>` : ""}</button>`).join("")}</div>`
+          `<button data-c="${i}"><span class="dot" style="background:var(--color-cluster-${C[i].c});width:8px;height:8px;margin-right:6px"></span>${esc(C[i].n)}${n > 1 ? ` <small style="color:var(--color-text-muted)">×${n} celów</small>` : ""}</button>`).join("")}</div>`
         : '<p class="note" style="margin-top:.6rem">Brak innych substancji w katalogu o nakładających się celach.</p>';
 
       tabContent = `
         <div class="tab-panel">
-          ${c.m ? `<div class="card" style="padding:.6rem .8rem;background:var(--color-surface-offset)"><b style="font-size:var(--text-xs);color:var(--color-text-muted);display:block;margin-bottom:2px">MECHANIZM DZIAŁANIA (ChEMBL)</b><span style="font-size:var(--text-sm)">${esc(c.m)}</span></div>` : ""}
+          ${c.m ? `<div class="mechanism-note"><b style="font-size:var(--text-xs);color:var(--color-text-muted);display:block;margin-bottom:2px">MECHANIZM DZIAŁANIA (ChEMBL)</b><span style="font-size:var(--text-sm)">${esc(c.m)}</span></div>` : ""}
+          ${radarPreviewHtml}
           ${targetsList}
           ${neighboursList}
         </div>`;
@@ -6392,6 +8711,43 @@
           <span style="color:var(--color-text-muted)">Stosowanie w połączeniu z inhibitorami lub induktorami tego izoenzymu może drastycznie zmieniać stężenie leku we krwi.</span>
         </div>` : "";
 
+      const toxProfile = getCompoundToxicologyProfile(c);
+      const toxPreviewHtml = toxProfile ? `
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px;margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-size:11px;font-weight:700">☣️ Toksykologia Molekularna & Bezpieczeństwo</span>
+            <span class="badge" style="font-size:9px;background:${toxProfile.dili.dilirank === 'Most-DILI-concern' ? '#ff3b30' : (toxProfile.dili.dilirank === 'Less-DILI-concern' ? '#ff9500' : '#34c759')};color:#fff">
+              DILI: ${esc(toxProfile.dili.dilirank)}
+            </span>
+          </div>
+
+          <div style="text-align:center;margin:6px 0">
+            ${renderEdishChartSvg(toxProfile, 1.0, true, 280, 130)}
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0;font-size:10px">
+            <div style="background:var(--color-bg);padding:4px 6px;border-radius:4px;border:1px solid var(--color-border)">
+              <div style="color:var(--color-text-muted)">hERG Redfern:</div>
+              <b>${toxProfile.cardiotox.redfern_margin}×</b> (${esc(toxProfile.cardiotox.redfern_class.split(' ')[0])})
+            </div>
+            <div style="background:var(--color-bg);padding:4px 6px;border-radius:4px;border:1px solid var(--color-border)">
+              <div style="color:var(--color-text-muted)">Ciąża & RID:</div>
+              <b>Kat. ${esc(toxProfile.pregnancy_lactation.fda_category)}</b> (RID ${toxProfile.pregnancy_lactation.rid_pct}%)
+            </div>
+          </div>
+
+          ${toxProfile.pregnancy_lactation.black_box_teratogen ? `
+            <div style="background:#ff3b3022;border:1px solid #ff3b30;border-radius:4px;padding:4px 6px;margin-bottom:6px;font-size:10px;color:#ff3b30;font-weight:700">
+              ⚠️ Bezwzględny Teratogen (Kategoria X)
+            </div>
+          ` : ""}
+
+          <button class="btn btn-sm btn-primary" data-open-toxicology="${esc(c.id)}" style="width:100%;margin-top:4px;font-size:11px">
+            ☣️ Otwórz Pełny Panel Toksykologii & eDISH (Hy's Law) ↗
+          </button>
+        </div>
+      ` : "";
+
       const evidencePathHtml = `
         <div class="label" style="margin-top:.8rem">Ścieżka Rejestracyjna & Poziom Dowodów</div>
         <div class="ver-card">
@@ -6411,6 +8767,7 @@
       tabContent = `
         <div class="tab-panel">
           ${warnBoxes.join("")}
+          ${toxPreviewHtml}
           ${evidencePathHtml}
           ${tagsHtml}
           ${cypHtml}
@@ -6462,7 +8819,7 @@
         <button class="tab-btn ${curTab === 'overview' ? 'active' : ''}" data-tab="overview" role="tab" aria-selected="${curTab === 'overview'}">Przegląd</button>
         <button class="tab-btn ${curTab === 'pk' ? 'active' : ''} ${!hasPk ? 'dim' : ''}" data-tab="pk" role="tab" aria-selected="${curTab === 'pk'}">PK & Etykiety ${pkBadge}</button>
         <button class="tab-btn ${curTab === 'targets' ? 'active' : ''} ${!tgCount ? 'dim' : ''}" data-tab="targets" role="tab" aria-selected="${curTab === 'targets'}">Cele & MoA ${tgBadge}</button>
-        <button class="tab-btn ${curTab === 'safety' ? 'active' : ''} ${!safeCount ? 'dim' : ''}" data-tab="safety" role="tab" aria-selected="${curTab === 'safety'}">Ryzyka ${safeBadge}</button>
+        <button class="tab-btn ${curTab === 'safety' ? 'active' : ''} ${!safeCount ? 'dim' : ''}" data-tab="safety" role="tab" aria-selected="${curTab === 'safety'}">Ryzyka & Toks ${safeBadge}</button>
       </div>
       ${tabContent}`;
   }
@@ -6526,6 +8883,21 @@
         openStruct3DModal(+btn.dataset.open3d, state.sel ? state.sel.i : null);
       };
     });
+    p.querySelectorAll("[data-open-receptor-radar]").forEach((btn) => {
+      btn.onclick = () => {
+        openReceptorRadarSplitPane(btn.dataset.openReceptorRadar);
+      };
+    });
+    p.querySelectorAll("[data-open-pk-simulator]").forEach((btn) => {
+      btn.onclick = () => {
+        openPkSimulatorSplitPane(btn.dataset.openPkSimulator);
+      };
+    });
+    p.querySelectorAll("[data-open-toxicology]").forEach((btn) => {
+      btn.onclick = () => {
+        openToxicologySplitPane(btn.dataset.openToxicology);
+      };
+    });
     const cardAnalogsBtn = p.querySelector("#cardAnalogsBtn");
     if (cardAnalogsBtn && state.sel && state.sel.type === "compound") {
       cardAnalogsBtn.onclick = () => openAnalogsModal(state.sel.i);
@@ -6542,6 +8914,48 @@
     if (overviewAllAnalogsBtn && state.sel && state.sel.type === "compound") {
       overviewAllAnalogsBtn.onclick = () => openAnalogsModal(state.sel.i);
     }
+    const overviewAllIndicationsBtn = p.querySelector("#overviewAllIndicationsBtn");
+    if (overviewAllIndicationsBtn) {
+      overviewAllIndicationsBtn.onclick = () => openIndicationsModal();
+    }
+    p.querySelectorAll("[data-open-icd]").forEach((btn) => {
+      btn.onclick = () => {
+        openIndicationsModal(btn.dataset.openIcd);
+      };
+    });
+    p.querySelectorAll("[data-open-ebm-idx]").forEach((btn) => {
+      btn.onclick = () => {
+        if (!state.sel || state.sel.type !== "compound") return;
+        const comp = C[state.sel.i];
+        const study = (comp.ebm || [])[+btn.dataset.openEbmIdx];
+        if (!study) return;
+        const abstractHtml = `
+          <div style="display:grid;gap:10px">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
+              <span class="tag ok">${esc(study.tier || "Badanie kliniczne")}</span>
+              <span class="muted">${esc(study.journal)} (${esc(study.year || "—")}) ${study.cits ? `· ⭐️ ${study.cits} cytowań` : ""}</span>
+            </div>
+            <h3 style="margin:0;font-size:var(--text-base);line-height:1.4;color:var(--color-text)">${esc(study.title)}</h3>
+            ${study.concl ? `
+              <div style="background:var(--color-surface-2);border-left:1px solid var(--color-primary);padding:8px 12px;border-radius:4px">
+                <b style="font-size:11px;color:var(--color-primary);text-transform:uppercase;letter-spacing:.5px">Kluczowa Konkluzja Kliniczna:</b>
+                <p style="margin:4px 0 0 0;font-size:12px;line-height:1.5">${esc(study.concl)}</p>
+              </div>
+            ` : ""}
+            <div>
+              <b style="font-size:11px;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.5px">Streszczenie Badania (Abstract):</b>
+              <p style="margin:6px 0 0 0;font-size:12px;line-height:1.6;color:var(--color-text);text-align:justify">${esc(study.abstr || "Brak pełnego streszczenia w otwartym rekordzie Europe PMC.")}</p>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:6px;flex-wrap:wrap">
+              ${study.doi ? `<a href="https://doi.org/${esc(study.doi)}" target="_blank" rel="noopener noreferrer" class="btn">Oficjalny artykuł (DOI) ↗</a>` : ""}
+              ${study.pmid ? `<a href="https://pubmed.ncbi.nlm.nih.gov/${esc(study.pmid)}/" target="_blank" rel="noopener noreferrer" class="btn">PubMed (${esc(study.pmid)}) ↗</a>` : ""}
+              ${study.pdf ? `<a href="${esc(study.pdf)}" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Pobierz Otwarty PDF ↗</a>` : ""}
+            </div>
+          </div>
+        `;
+        openSplitPane("🔬", `EBM: ${comp.n}`, study.journal, abstractHtml);
+      };
+    });
     p.querySelectorAll("[data-open-analog]").forEach((btn) => {
       btn.onclick = () => select({ type: "compound", i: +btn.dataset.openAnalog }, true);
     });
@@ -6579,7 +8993,7 @@
   G.clusters.forEach((cl, ci) => {
     const n = C.filter((c) => c.c === ci).length, b = document.createElement("button");
     b.className = "cl"; b.setAttribute("aria-pressed", "true");
-    b.innerHTML = `<span class="dot" style="background:${CL_COLORS[ci]}"></span><span>${esc(CL_PL[cl.name])}</span><span>${n}</span>`;
+    b.innerHTML = `<span class="dot" style="background:var(--color-cluster-${ci})"></span><span>${esc(CL_PL[cl.name])}</span><span>${n}</span>`;
     b.onclick = (e) => {
       if (e.altKey || e.metaKey) { state.clusters = new Set([ci]); }
       else state.clusters.has(ci) ? state.clusters.delete(ci) : state.clusters.add(ci);
@@ -6668,13 +9082,43 @@
     const hits = C.filter((c) => visible(c) && c.hay.includes(s))
       .sort((a, b) => (b.n.toLowerCase().startsWith(s) - a.n.toLowerCase().startsWith(s)) || a.n.length - b.n.length).slice(0, 40);
     const th = s.length >= 3 ? T.map((t, i) => [t, i]).filter(([t]) => (t.n || "").toLowerCase().includes(s)).slice(0, 6) : [];
-    res.innerHTML = th.map(([t, i]) => `<button role="option" data-t="${i}"><span class="dot" style="background:var(--color-accent2)"></span>◎ ${esc(t.n)}<small>${byTarget[i].length} subst.</small></button>`).join("") + (hits.length ? hits.map((c) => `<button role="option" data-c="${c.i}"><span class="dot" style="background:${CL_COLORS[c.c]}"></span>${esc(c.n)}<small>${c.pk ? "PK" : ""}</small></button>`).join("")
+    res.innerHTML = th.map(([t, i]) => `<button role="option" data-t="${i}"><span class="dot" style="background:var(--color-accent2)"></span>◎ ${esc(t.n)}<small>${byTarget[i].length} subst.</small></button>`).join("") + (hits.length ? hits.map((c) => `<button role="option" data-c="${c.i}"><span class="dot" style="background:var(--color-cluster-${c.c})"></span>${esc(c.n)}<small>${c.pk ? "PK" : ""}</small></button>`).join("")
       : (th.length ? "" : '<div role="option" aria-disabled="true" class="empty" style="padding:.4rem">Brak wyników przy obecnych filtrach.</div>'));
     res.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => { openTargetModal(+b.dataset.t); res.innerHTML = ""; q.blur(); });
     res.querySelectorAll("[data-c]").forEach((b) => b.onclick = () => { select({ type: "compound", i: +b.dataset.c }, true); res.innerHTML = ""; q.blur(); });
   }
   q.addEventListener("input", search);
-  q.addEventListener("keydown", (e) => { if (e.key === "Enter") { const b = res.querySelector("[data-c], [data-t]"); if (b) b.click(); } });
+  q.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const b = res.querySelector("[data-c], [data-t]");
+      if (b) b.click();
+    } else if (e.key === "ArrowDown") {
+      const first = res.querySelector("button[role='option']");
+      if (first) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  res.addEventListener("keydown", (e) => {
+    const btns = Array.from(res.querySelectorAll("button[role='option']"));
+    const idx = btns.indexOf(document.activeElement);
+    if (idx >= 0) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        const next = btns[(idx + 1) % btns.length];
+        if (next) next.focus();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        if (idx === 0) {
+          q.focus();
+        } else {
+          btns[idx - 1].focus();
+        }
+      }
+    }
+  });
 
   // ---------- semantic edges toolbar & controls
   const edgesBtn = $("edgesBtn");
@@ -6829,7 +9273,18 @@
   }
 
   document.addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && (e.key === "k" || e.key === "K")) {
+      e.preventDefault();
+      if (cmdPaletteOpen) closeCmdPalette();
+      else openCmdPalette();
+      return;
+    }
+
     if (e.key === "Escape") {
+      if (cmdPaletteOpen) { closeCmdPalette(); return; }
+      if (activeModalCompound) { closeChemLightBox(); return; }
+      if (activeComparatorIndices) { closeComparator(); return; }
+      if (activeIndicationsModalOpen) { closeIndicationsModal(); return; }
       if (activeStruct3DModalOpen) { closeStruct3DModal(); return; }
       if (activeEvidenceModalOpen) { closeEvidenceModal(); return; }
       if (activeMetaboliteQuery != null) { closeMetaboliteModal(); return; }
@@ -6837,9 +9292,8 @@
       if (activeAnalogsQuery != null) { closeAnalogsModal(); return; }
       if (activeDossierMode) { closeDossierModal(); return; }
       if (activeModalTarget) { closeTargetModal(); return; }
-      if (activeComparatorIndices) { closeComparator(); return; }
-      if (activeModalCompound) { closeChemLightBox(); return; }
       if (state.stackDrawerOpen) { toggleStackDrawer(false); return; }
+      if (state.pathway && state.pathway.id) { resetPathwayIsolation(); return; }
       select(null);
       return;
     }
@@ -6848,19 +9302,25 @@
     if (e.key === "r" || e.key === "R") {
       e.preventDefault();
       if (activeEvidenceModalOpen) closeEvidenceModal();
-      else openEvidenceModal();
+      else setWorkspaceMode("evidence");
       return;
     }
     if (e.key === "v" || e.key === "V") {
       e.preventDefault();
       if (activeStruct3DModalOpen) closeStruct3DModal();
-      else openStruct3DModal();
+      else setWorkspaceMode("structure3d");
+      return;
+    }
+    if (e.key === "i" || e.key === "I") {
+      e.preventDefault();
+      if (activeIndicationsModalOpen) closeIndicationsModal();
+      else setWorkspaceMode("indications");
       return;
     }
     if (e.key === "3" && !e.ctrlKey && !e.metaKey && !e.altKey && (!state.sel || state.sel.type !== "compound")) {
       e.preventDefault();
       if (activeStruct3DModalOpen) closeStruct3DModal();
-      else openStruct3DModal();
+      else setWorkspaceMode("structure3d");
       return;
     }
     if (e.key === "e" || e.key === "E") {
@@ -6880,7 +9340,7 @@
       if (state.sel && state.sel.type === "compound") {
         e.preventDefault();
         if (activeMetaboliteQuery != null) closeMetaboliteModal();
-        else openMetaboliteModal(state.sel.i);
+        else setWorkspaceMode("metabolism");
         return;
       }
     }
@@ -6895,19 +9355,22 @@
       if (activeDossierMode) {
         closeDossierModal();
       } else {
-        if (state.sel && state.sel.type === "compound") {
-          openDossierModal("single", state.sel.i);
-        } else if (state.stack.size > 0) {
-          openDossierModal("stack", [...state.stack]);
-        } else {
-          openDossierModal("single", 0);
-        }
+        setWorkspaceMode("dossier");
       }
       return;
     }
     if (e.key === "s" || e.key === "S") {
       e.preventDefault();
       toggleStackDrawer();
+      return;
+    }
+    if (e.key === "w" || e.key === "W") {
+      e.preventDefault();
+      if (state.pathway && state.pathway.id) {
+        selectPathway(state.pathway.id, state.pathway.mode === "solo" ? "spotlight" : "solo");
+      } else if (PATHWAY_SYSTEMS.length) {
+        selectPathway(PATHWAY_SYSTEMS[0].id, "spotlight");
+      }
       return;
     }
     if (e.key === "/") { e.preventDefault(); q.focus(); return; }
@@ -6921,6 +9384,12 @@
           p.innerHTML = compoundHtml(C[state.sel.i]);
           wire(p);
         }
+      }
+    } else {
+      const modes = ["graph", "dossier", "stack", "evidence", "indications", "structure3d", "metabolism"];
+      if (e.key >= "1" && e.key <= "7") {
+        const nextMode = modes[+e.key - 1];
+        if (nextMode) setWorkspaceMode(nextMode);
       }
     }
   });
@@ -6970,27 +9439,751 @@
   $("theme").onclick = () => { const r = document.documentElement; r.dataset.theme = r.dataset.theme === "dark" ? "light" : "dark"; $("theme").setAttribute("aria-pressed", r.dataset.theme === "light"); draw(); };
   if (matchMedia("(prefers-color-scheme: light)").matches) { document.documentElement.dataset.theme = "light"; $("theme").setAttribute("aria-pressed", "true"); }
 
+  // ---------- Toast Notification System
+  function showToast(message, type = "info") {
+    const container = $("toastContainer");
+    if (!container) return;
+    const t = document.createElement("div");
+    t.className = `toast toast-${type}`;
+    t.setAttribute("role", "status");
+    let icon = "ℹ️";
+    if (type === "success") icon = "✓";
+    else if (type === "warning") icon = "⚠️";
+    else if (type === "error") icon = "✕";
+    t.innerHTML = `<span style="font-weight:700">${icon}</span> <span>${esc(message)}</span>`;
+    container.appendChild(t);
+    setTimeout(() => {
+      t.classList.add("out");
+      setTimeout(() => t.remove(), 250);
+    }, 2500);
+  }
+
+  // ---------- Relational Breadcrumbs Bar
+  function updateBreadcrumbs(h) {
+    const rootEl = $("bcRoot");
+    const clusterEl = $("bcCluster");
+    const compEl = $("bcCompound");
+    const shieldEl = $("bcShieldScore");
+    if (!rootEl || !clusterEl || !compEl) return;
+
+    if (!h) {
+      clusterEl.textContent = "Wszystkie klastry";
+      clusterEl.className = "bc-item";
+      clusterEl.onclick = null;
+      compEl.textContent = "Eksploracja grafu";
+      compEl.className = "bc-item bc-active";
+    } else if (h.type === "compound") {
+      const c = C[h.i];
+      const clName = c.cl != null ? CL_PL[G.clusters[c.cl].name] : "Inne";
+      clusterEl.textContent = clName;
+      clusterEl.className = "bc-item";
+      clusterEl.onclick = () => {
+        if (c.cl != null) {
+          state.clusters.clear();
+          state.clusters.add(c.cl);
+          updateClusterButtons();
+          search();
+          fit();
+        }
+      };
+      compEl.textContent = `💊 ${c.n}`;
+      compEl.className = "bc-item bc-active";
+    } else if (h.type === "target") {
+      const t = T[h.i];
+      clusterEl.textContent = "Cel molekularny";
+      clusterEl.className = "bc-item";
+      clusterEl.onclick = null;
+      compEl.textContent = `🎯 ${t.n}`;
+      compEl.className = "bc-item bc-active";
+    } else if (h.type === "core") {
+      const n = CORE[h.i];
+      clusterEl.textContent = KIND_PL[n.kind] || "Hub";
+      clusterEl.className = "bc-item";
+      clusterEl.onclick = null;
+      compEl.textContent = `🛡️ ${n.name}`;
+      compEl.className = "bc-item bc-active";
+    } else {
+      const g = GR[h.i];
+      clusterEl.textContent = CL_PL[G.clusters[g.c].name] || "Grupa";
+      clusterEl.className = "bc-item";
+      clusterEl.onclick = null;
+      compEl.textContent = g.label;
+      compEl.className = "bc-item bc-active";
+    }
+
+    if (shieldEl) {
+      const risk = calculatePolypharmacyRiskScore([...state.stack]);
+      shieldEl.textContent = `🛡️ ${risk.score}/100 ${risk.label}`;
+      shieldEl.style.color = risk.score > 50 ? "var(--color-error)" : (risk.score > 25 ? "var(--color-warning)" : "var(--color-success)");
+    }
+  }
+
+  // ---------- Command Palette & Quick Search (Cmd+K / Ctrl+K)
+  let cmdPaletteOpen = false;
+  let cmdSelectedIdx = 0;
+  let cmdCurrentResults = [];
+
+  function openCmdPalette() {
+    const modal = $("cmdPaletteBackdrop");
+    const input = $("cmdPaletteInput");
+    if (!modal || !input) return;
+    cmdPaletteOpen = true;
+    openDialog(modal);
+    input.value = "";
+    cmdSelectedIdx = 0;
+    renderCmdPaletteResults("");
+    input.focus();
+  }
+
+  function closeCmdPalette() {
+    const modal = $("cmdPaletteBackdrop");
+    if (modal) closeDialog(modal);
+    cmdPaletteOpen = false;
+  }
+
+  function renderCmdPaletteResults(q) {
+    const list = $("cmdPaletteList");
+    if (!list) return;
+    const query = (q || "").trim().toLowerCase();
+    cmdCurrentResults = [];
+
+    const actions = [
+      { type: "action", name: "Przełącz motyw (jasny / ciemny)", badge: "Motyw", run: () => $("theme").click() },
+      { type: "action", name: "Widok całości grafu (Reset kamery)", badge: "Nawigacja", run: () => $("reset").click() },
+      { type: "action", name: "Otwórz Biomolecular Structure Viewer (Mol*)", badge: "Sidecar 3D", run: () => window.open("sidecar://biomolecular-structure-viewer", "_blank") },
+      { type: "action", name: "Karta & Monografia Kliniczna (Dossier A4)", badge: "Widok", run: () => setWorkspaceMode("dossier") },
+      { type: "action", name: "Mój Stack & Audyt Polipragmazji DDI", badge: "Widok", run: () => setWorkspaceMode("stack") },
+      { type: "action", name: "Badania Kliniczne & EBM", badge: "Widok", run: () => setWorkspaceMode("evidence") },
+      { type: "action", name: "Wskazania Terapeutyczne & ICD-10/11", badge: "Widok", run: () => setWorkspaceMode("indications") },
+      { type: "action", name: "Wizualizator Kompleksów 3D", badge: "Widok", run: () => setWorkspaceMode("structure3d") },
+      { type: "action", name: "Kaskady Biotransformacji & Metabolity", badge: "Widok", run: () => setWorkspaceMode("metabolism") },
+      { type: "action", name: "Porównywarka Head-to-Head", badge: "Narzędzie", run: () => openComparator() }
+    ];
+
+    if (!query) {
+      cmdCurrentResults = actions.slice(0, 5);
+      const pop = [0, 1, 2, 3, 4].filter((i) => C[i]).map((i) => ({ type: "compound", c: C[i] }));
+      cmdCurrentResults.push(...pop);
+    } else {
+      actions.forEach((act) => {
+        if (act.name.toLowerCase().includes(query) || act.badge.toLowerCase().includes(query)) {
+          cmdCurrentResults.push(act);
+        }
+      });
+      let cMatches = 0;
+      for (let i = 0; i < C.length && cMatches < 15; i++) {
+        const c = C[i];
+        if (c.n.toLowerCase().includes(query) || (c.atc && c.atc.toLowerCase().includes(query)) || (c.g && c.g.toLowerCase().includes(query))) {
+          cmdCurrentResults.push({ type: "compound", c });
+          cMatches++;
+        }
+      }
+      let tMatches = 0;
+      for (let i = 0; i < T.length && tMatches < 6; i++) {
+        const t = T[i];
+        if (t.n.toLowerCase().includes(query) || t.id.toLowerCase().includes(query)) {
+          cmdCurrentResults.push({ type: "target", t, idx: i });
+          tMatches++;
+        }
+      }
+    }
+
+    if (cmdSelectedIdx >= cmdCurrentResults.length) cmdSelectedIdx = 0;
+
+    if (!cmdCurrentResults.length) {
+      list.innerHTML = `<div style="padding:16px;text-align:center;color:var(--color-text-muted);font-size:var(--text-xs)">Brak wyników dla „${esc(query)}”.</div>`;
+      return;
+    }
+
+    list.innerHTML = cmdCurrentResults.map((item, idx) => {
+      const isSel = idx === cmdSelectedIdx;
+      if (item.type === "action") {
+        return `<button class="cmd-palette-item ${isSel ? "selected" : ""}" data-cmd-idx="${idx}" role="option" aria-selected="${isSel}">
+          <span>⚡ ${esc(item.name)}</span>
+          <span class="cmd-palette-badge">${esc(item.badge)}</span>
+        </button>`;
+      } else if (item.type === "compound") {
+        const c = item.c;
+        const clName = c.cl != null ? CL_PL[G.clusters[c.cl].name] : "";
+        return `<button class="cmd-palette-item ${isSel ? "selected" : ""}" data-cmd-idx="${idx}" role="option" aria-selected="${isSel}">
+          <span>💊 <b>${esc(c.n)}</b> <small style="color:var(--color-text-muted);font-size:11px">${esc(c.g || "")}</small></span>
+          <span class="cmd-palette-badge">${esc(clName)}</span>
+        </button>`;
+      } else if (item.type === "target") {
+        const t = item.t;
+        return `<button class="cmd-palette-item ${isSel ? "selected" : ""}" data-cmd-idx="${idx}" role="option" aria-selected="${isSel}">
+          <span>🎯 <b>${esc(t.n)}</b> <small style="color:var(--color-text-muted);font-size:11px">${esc(t.ty || "")}</small></span>
+          <span class="cmd-palette-badge">ChEMBL</span>
+        </button>`;
+      }
+    }).join("");
+
+    list.querySelectorAll(".cmd-palette-item").forEach((btn) => {
+      btn.onclick = () => {
+        const idx = +btn.dataset.cmdIdx;
+        executeCmdPaletteItem(idx);
+      };
+    });
+  }
+
+  function executeCmdPaletteItem(idx) {
+    const item = cmdCurrentResults[idx];
+    if (!item) return;
+    closeCmdPalette();
+    if (item.type === "action") {
+      item.run();
+    } else if (item.type === "compound") {
+      select({ type: "compound", i: item.c.i }, true);
+    } else if (item.type === "target") {
+      openTargetModal(item.idx);
+    }
+  }
+
+  // ---------- Workspace Navigation & Modes
+  const modeGraphBtn = $("modeGraphBtn");
+  const modeDossierBtn = $("modeDossierBtn");
+  const modeStackBtn = $("modeStackBtn");
+  const modeEvidenceBtn = $("modeEvidenceBtn");
+  const modeIndicationsBtn = $("modeIndicationsBtn");
+  const modeStructure3DBtn = $("modeStructure3DBtn");
+  const modeMetabolismBtn = $("modeMetabolismBtn");
+  const cmdPaletteBtn = $("cmdPaletteBtn");
+  const globalThemeBtn = $("globalThemeBtn");
+
+  const ALL_MODE_BUTTONS = [
+    modeGraphBtn,
+    modeDossierBtn,
+    modeStackBtn,
+    modeEvidenceBtn,
+    modeIndicationsBtn,
+    modeStructure3DBtn,
+    modeMetabolismBtn
+  ].filter(Boolean);
+
+  let currentWorkspaceMode = "graph";
+
+  function setWorkspaceMode(mode, triggerAction = true) {
+    currentWorkspaceMode = mode;
+    ALL_MODE_BUTTONS.forEach((b) => {
+      const isAct = b.dataset.mode === mode;
+      b.classList.toggle("active", isAct);
+      b.setAttribute("aria-selected", isAct ? "true" : "false");
+      b.tabIndex = isAct ? 0 : -1;
+    });
+
+    if (!triggerAction) return;
+
+    if (mode === "graph") {
+      location.hash = "#/graph";
+      toggleStackDrawer(false);
+      closeEvidenceModal();
+      closeIndicationsModal();
+      closeStruct3DModal();
+      closeDossierModal();
+      closeMetaboliteModal();
+      closeComparator();
+      closeAnalogsModal();
+    } else if (mode === "dossier") {
+      location.hash = "#/dossier";
+      toggleStackDrawer(false);
+      closeEvidenceModal();
+      closeIndicationsModal();
+      closeStruct3DModal();
+      closeMetaboliteModal();
+      if (state.sel && state.sel.type === "compound") {
+        openDossierModal("single", state.sel.i);
+      } else if (state.stack.size > 0) {
+        openDossierModal("stack", [...state.stack]);
+      } else {
+        openDossierModal("single", 0);
+      }
+    } else if (mode === "stack") {
+      location.hash = "#/stack";
+      closeEvidenceModal();
+      closeIndicationsModal();
+      closeStruct3DModal();
+      closeDossierModal();
+      closeMetaboliteModal();
+      toggleStackDrawer(true);
+    } else if (mode === "evidence") {
+      location.hash = "#/evidence";
+      toggleStackDrawer(false);
+      closeIndicationsModal();
+      closeStruct3DModal();
+      closeDossierModal();
+      closeMetaboliteModal();
+      openEvidenceModal();
+    } else if (mode === "indications") {
+      location.hash = "#/indications";
+      toggleStackDrawer(false);
+      closeEvidenceModal();
+      closeStruct3DModal();
+      closeDossierModal();
+      closeMetaboliteModal();
+      openIndicationsModal();
+    } else if (mode === "structure3d") {
+      location.hash = "#/3d";
+      toggleStackDrawer(false);
+      closeEvidenceModal();
+      closeIndicationsModal();
+      closeDossierModal();
+      closeMetaboliteModal();
+      openStruct3DModal();
+    } else if (mode === "metabolism") {
+      location.hash = "#/metabolism";
+      toggleStackDrawer(false);
+      closeEvidenceModal();
+      closeIndicationsModal();
+      closeStruct3DModal();
+      closeDossierModal();
+      const targetC = (state.sel && state.sel.type === "compound") ? state.sel.i : (state.stack.size > 0 ? [...state.stack][0] : 0);
+      openMetaboliteModal(targetC);
+    }
+  }
+
+  function syncWorkspaceModeToOpenModals() {
+    if (activeEvidenceModalOpen) setWorkspaceMode("evidence", false);
+    else if (activeIndicationsModalOpen) setWorkspaceMode("indications", false);
+    else if (activeStruct3DModalOpen) setWorkspaceMode("structure3d", false);
+    else if (activeDossierMode) setWorkspaceMode("dossier", false);
+    else if (activeMetaboliteQuery != null) setWorkspaceMode("metabolism", false);
+    else if (state.stackDrawerOpen) setWorkspaceMode("stack", false);
+    else setWorkspaceMode("graph", false);
+  }
+
+  ALL_MODE_BUTTONS.forEach((b, i) => {
+    b.onclick = () => setWorkspaceMode(b.dataset.mode);
+    b.addEventListener("keydown", (e) => {
+      let targetIdx = null;
+      if (e.key === "ArrowRight") targetIdx = (i + 1) % ALL_MODE_BUTTONS.length;
+      else if (e.key === "ArrowLeft") targetIdx = (i - 1 + ALL_MODE_BUTTONS.length) % ALL_MODE_BUTTONS.length;
+      if (targetIdx !== null) {
+        e.preventDefault();
+        ALL_MODE_BUTTONS[targetIdx].focus();
+        setWorkspaceMode(ALL_MODE_BUTTONS[targetIdx].dataset.mode);
+      }
+    });
+  });
+
+  if (globalThemeBtn) globalThemeBtn.onclick = () => $("theme").click();
+
+  if (cmdPaletteBtn) cmdPaletteBtn.onclick = openCmdPalette;
+  const cmdPaletteModalEl = $("cmdPaletteBackdrop");
+  if (cmdPaletteModalEl) {
+    cmdPaletteModalEl.onclick = (e) => {
+      if (e.target === cmdPaletteModalEl) closeCmdPalette();
+    };
+  }
+  const cmdPaletteInputEl = $("cmdPaletteInput");
+  if (cmdPaletteInputEl) {
+    cmdPaletteInputEl.addEventListener("input", (e) => {
+      cmdSelectedIdx = 0;
+      renderCmdPaletteResults(e.target.value);
+    });
+    cmdPaletteInputEl.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        if (cmdCurrentResults.length) {
+          cmdSelectedIdx = (cmdSelectedIdx + 1) % cmdCurrentResults.length;
+          renderCmdPaletteResults(cmdPaletteInputEl.value);
+          const sel = $("cmdPaletteList").querySelector(".selected");
+          if (sel) sel.scrollIntoView({ block: "nearest" });
+        }
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        if (cmdCurrentResults.length) {
+          cmdSelectedIdx = (cmdSelectedIdx - 1 + cmdCurrentResults.length) % cmdCurrentResults.length;
+          renderCmdPaletteResults(cmdPaletteInputEl.value);
+          const sel = $("cmdPaletteList").querySelector(".selected");
+          if (sel) sel.scrollIntoView({ block: "nearest" });
+        }
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        executeCmdPaletteItem(cmdSelectedIdx);
+      }
+    });
+  }
+
+  const bcRootEl = $("bcRoot");
+  if (bcRootEl) bcRootEl.onclick = () => { select(null); search(); fit(); };
+  const bcShieldMiniEl = $("bcShieldMini");
+  if (bcShieldMiniEl) bcShieldMiniEl.onclick = openDdiAuditInSplitPane;
+
+  // ---------- Context Split Pane
+  const splitPane = $("contextSplitPane");
+  const splitBody = $("splitPaneBody");
+  const splitTitle = $("splitPaneTitle");
+  const splitSub = $("splitPaneSubtitle");
+  const splitIcon = $("splitPaneIcon");
+  const splitClose = $("splitPaneCloseBtn");
+  const splitMax = $("splitPaneMaximizeBtn");
+
+  function openSplitPane(icon, title, subtitle, contentHtml) {
+    if (!splitPane) return;
+    if (splitIcon) splitIcon.textContent = icon || "🔬";
+    if (splitTitle) splitTitle.textContent = title || "Analiza kontekstowa";
+    if (splitSub) splitSub.textContent = subtitle || "";
+    if (splitBody) splitBody.innerHTML = contentHtml || "";
+    splitPane.style.display = "flex";
+  }
+
+  function closeSplitPane() {
+    if (splitPane) splitPane.style.display = "none";
+  }
+
+  if (splitClose) splitClose.onclick = closeSplitPane;
+  if (splitMax) splitMax.onclick = () => splitPane.classList.toggle("maximized");
+
+  // ---------- Pathway Systems Dock & Subgraph Navigation (v3.22.0)
+  function selectPathway(pwId, mode = "spotlight", updateHash = true) {
+    const pw = pathwayById.get(pwId);
+    if (!pw) return;
+
+    state.pathway.id = pwId;
+    state.pathway.mode = (mode === "solo") ? "solo" : "spotlight";
+
+    // Update chips in dock
+    const chipsCont = $("pathwayChipsContainer");
+    if (chipsCont) {
+      chipsCont.querySelectorAll(".pathway-chip").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.pwId === pwId);
+      });
+    }
+
+    // Update mode buttons
+    const spotBtn = $("pathwayModeSpotlight");
+    const soloBtn = $("pathwayModeSolo");
+    const resetBtn = $("pathwayResetBtn");
+    if (spotBtn) spotBtn.classList.toggle("active", state.pathway.mode === "spotlight");
+    if (soloBtn) soloBtn.classList.toggle("active", state.pathway.mode === "solo");
+    if (resetBtn) resetBtn.style.display = "inline-flex";
+
+    // Focus camera
+    if (state.pathway.mode === "solo") {
+      animateTo(0, 0, 1.15);
+    } else {
+      let sx = 0, sy = 0, count = 0;
+      pw.targetIndices.forEach((ti) => { const t = T[ti]; if (t) { sx += t.x; sy += t.y; count++; } });
+      pw.compoundIndices.forEach((ci) => { const c = C[ci]; if (c) { sx += c.x; sy += c.y; count++; } });
+      if (count > 0) {
+        animateTo(sx / count, sy / count, 1.2);
+      }
+    }
+
+    // Build rich Context Split-Pane Monograph
+    const subtypesHtml = (pw.subtypes || []).map((s) => `
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:8px 10px;margin-bottom:6px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
+          <strong style="color:var(--color-primary);font-size:12px">${esc(s.name)}</strong>
+          <span class="badge" style="background:var(--color-bg);font-size:10px;border:1px solid var(--color-border)">${esc(s.g_protein || s.coupling || "Białko G")}</span>
+        </div>
+        <div style="font-size:11px;color:var(--color-text-muted)">${esc(s.role || "")}</div>
+      </div>
+    `).join("");
+
+    const targetsHtml = [...pw.targetIndices].map((ti) => {
+      const t = T[ti];
+      return `<button class="btn btn-sm" data-pw-target="${ti}" style="margin:2px 4px 2px 0;font-size:11px;padding:3px 8px" title="Kliknij, aby otworzyć kartę celu">${esc(t.n)} <span style="opacity:0.6;font-size:9px">(${byTarget[ti] ? byTarget[ti].length : 0})</span></button>`;
+    }).join("");
+
+    const compounds = [...pw.compoundIndices].map((ci) => C[ci]);
+    const agonists = [];
+    const antagonists = [];
+    const inhibitors = [];
+    compounds.forEach((c) => {
+      const text = ((c.m || "") + " " + (c.d || "")).toLowerCase();
+      if (text.includes("antagonist") || text.includes("blocker") || text.includes("inhibitor of") || text.includes("antagonista")) {
+        antagonists.push(c);
+      } else if (text.includes("reuptake") || text.includes("transporter") || text.includes("wychwyt") || text.includes("uptake")) {
+        inhibitors.push(c);
+      } else {
+        agonists.push(c);
+      }
+    });
+
+    const renderCompoundPills = (list, badgeColor) => list.map((c) => `
+      <button class="btn btn-sm" data-pw-compound="${c.i}" style="margin:2px 4px 2px 0;font-size:11px;padding:3px 8px;border-left:1px solid ${badgeColor}" title="${esc(c.m || c.d || '')}">
+        ${esc(c.n)}
+      </button>
+    `).join("");
+
+    const monographHtml = `
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div>
+          <div style="font-size:12px;line-height:1.5;color:var(--color-text);margin-bottom:8px">
+            ${esc(pw.description || "")}
+          </div>
+          ${pw.transduction ? `
+            <div style="background:var(--color-surface);border-left:1px solid ${pw.color || 'var(--color-primary)'};padding:6px 10px;border-radius:0 6px 6px 0;font-size:11px;color:var(--color-text-muted);margin-bottom:10px">
+              <strong>Kaskady transdukcji:</strong> ${esc(pw.transduction)}
+            </div>
+          ` : ""}
+        </div>
+
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:6px">
+            🎯 Podtypy receptorowe i białka sprzęgające (${(pw.subtypes || []).length})
+          </div>
+          ${subtypesHtml || '<div style="font-size:11px;color:var(--color-text-muted)">Brak szczegółowej ontologii podtypów.</div>'}
+        </div>
+
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:6px">
+            🔬 Cele w grafie (${pw.targetIndices.size})
+          </div>
+          <div style="display:flex;flex-wrap:wrap">
+            ${targetsHtml || '<span style="font-size:11px;color:var(--color-text-muted)">Brak bezpośrednich celów w grafie</span>'}
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:6px">
+            💊 Powiązane substancje wg profilu MoA (${compounds.length})
+          </div>
+
+          ${agonists.length ? `
+            <div style="margin-bottom:6px">
+              <span style="font-size:10px;font-weight:700;color:#34c759;text-transform:uppercase">🟢 Agoniści / Aktywatory (${agonists.length})</span>
+              <div style="display:flex;flex-wrap:wrap;margin-top:2px">${renderCompoundPills(agonists, '#34c759')}</div>
+            </div>
+          ` : ""}
+
+          ${antagonists.length ? `
+            <div style="margin-bottom:6px">
+              <span style="font-size:10px;font-weight:700;color:#ff3b30;text-transform:uppercase">🔴 Antagoniści / Blokery (${antagonists.length})</span>
+              <div style="display:flex;flex-wrap:wrap;margin-top:2px">${renderCompoundPills(antagonists, '#ff3b30')}</div>
+            </div>
+          ` : ""}
+
+          ${inhibitors.length ? `
+            <div style="margin-bottom:6px">
+              <span style="font-size:10px;font-weight:700;color:#af52de;text-transform:uppercase">🟣 Inhibitory wychwytu / Transportery (${inhibitors.length})</span>
+              <div style="display:flex;flex-wrap:wrap;margin-top:2px">${renderCompoundPills(inhibitors, '#af52de')}</div>
+            </div>
+          ` : ""}
+        </div>
+
+        <div style="display:flex;gap:8px;padding-top:8px;border-top:1px solid var(--color-border)">
+          <button class="btn btn-sm ${state.pathway.mode === 'spotlight' ? 'btn-primary' : ''}" id="splitToggleSpotlightBtn">💡 Tryb Spotlight</button>
+          <button class="btn btn-sm ${state.pathway.mode === 'solo' ? 'btn-primary' : ''}" id="splitToggleSoloBtn">🎯 Tryb Solo</button>
+          <button class="btn btn-sm" id="splitExitPathwayBtn">✕ Wyłącz szlak</button>
+        </div>
+      </div>
+    `;
+
+    openSplitPane(pw.icon || "🧬", pw.name, `Szlak fizjologiczny • ${pw.targetIndices.size} celów • ${compounds.length} leków`, monographHtml);
+
+    // Wire actions inside split pane
+    if (splitBody) {
+      splitBody.querySelectorAll("[data-pw-target]").forEach((btn) => {
+        btn.onclick = () => openTargetModal(+btn.dataset.pwTarget);
+      });
+      splitBody.querySelectorAll("[data-pw-compound]").forEach((btn) => {
+        btn.onclick = () => select({ type: "compound", i: +btn.dataset.pwCompound }, true);
+      });
+      const sSpot = splitBody.querySelector("#splitToggleSpotlightBtn");
+      if (sSpot) sSpot.onclick = () => selectPathway(pwId, "spotlight");
+      const sSolo = splitBody.querySelector("#splitToggleSoloBtn");
+      if (sSolo) sSolo.onclick = () => selectPathway(pwId, "solo");
+      const sExit = splitBody.querySelector("#splitExitPathwayBtn");
+      if (sExit) sExit.onclick = () => resetPathwayIsolation();
+    }
+
+    if (updateHash) {
+      location.hash = `#/pathway/${pwId}?mode=${state.pathway.mode}`;
+    }
+
+    draw();
+  }
+
+  function resetPathwayIsolation() {
+    state.pathway.id = null;
+
+    const chipsCont = $("pathwayChipsContainer");
+    if (chipsCont) {
+      chipsCont.querySelectorAll(".pathway-chip").forEach((btn) => btn.classList.remove("active"));
+    }
+    const resetBtn = $("pathwayResetBtn");
+    if (resetBtn) resetBtn.style.display = "none";
+
+    closeSplitPane();
+
+    if (location.hash.startsWith("#/pathway/") || location.hash.startsWith("#pathway/")) {
+      location.hash = "#/graph";
+    }
+
+    draw();
+  }
+
+  function wirePathwayDock() {
+    const dock = $("pathwayDock");
+    if (!dock) return;
+    const chipsCont = $("pathwayChipsContainer");
+    const spotBtn = $("pathwayModeSpotlight");
+    const soloBtn = $("pathwayModeSolo");
+    const resetBtn = $("pathwayResetBtn");
+
+    if (chipsCont) {
+      chipsCont.innerHTML = PATHWAY_SYSTEMS.map((pw) => `
+        <button class="pathway-chip" data-pw-id="${esc(pw.id)}" title="${esc(pw.name)} (${pw.compoundIndices.size} leków, ${pw.targetIndices.size} celów)">
+          <span style="font-size:13px">${pw.icon || "🧬"}</span>
+          <span>${esc(pw.name.replace("Układ ", "").replace(" (NMDA / AMPA)", "").replace(" (Opioidy)", ""))}</span>
+          <span class="pathway-chip-count">${pw.compoundIndices.size}</span>
+        </button>
+      `).join("");
+
+      chipsCont.querySelectorAll(".pathway-chip").forEach((btn) => {
+        btn.onclick = () => {
+          const pwId = btn.dataset.pwId;
+          if (state.pathway && state.pathway.id === pwId) {
+            resetPathwayIsolation();
+          } else {
+            selectPathway(pwId, state.pathway.mode || "spotlight");
+          }
+        };
+      });
+    }
+
+    if (spotBtn) {
+      spotBtn.onclick = () => {
+        if (state.pathway && state.pathway.id) {
+          selectPathway(state.pathway.id, "spotlight");
+        } else {
+          state.pathway.mode = "spotlight";
+          spotBtn.classList.add("active");
+          if (soloBtn) soloBtn.classList.remove("active");
+        }
+      };
+    }
+
+    if (soloBtn) {
+      soloBtn.onclick = () => {
+        if (state.pathway && state.pathway.id) {
+          selectPathway(state.pathway.id, "solo");
+        } else {
+          state.pathway.mode = "solo";
+          soloBtn.classList.add("active");
+          if (spotBtn) spotBtn.classList.remove("active");
+        }
+      };
+    }
+
+    if (resetBtn) {
+      resetBtn.onclick = () => resetPathwayIsolation();
+    }
+  }
+
+  // ---------- Hash Router with Deep-Linking
+  function handleHashRouting() {
+    const raw = decodeURIComponent(location.hash.slice(1));
+    if (!raw) return;
+    if (raw === "/graph" || raw === "graph") {
+      setWorkspaceMode("graph");
+    } else if (raw === "/dossier" || raw === "dossier") {
+      setWorkspaceMode("dossier");
+    } else if (raw === "/stack" || raw === "stack") {
+      setWorkspaceMode("stack");
+    } else if (raw === "/evidence" || raw === "evidence") {
+      setWorkspaceMode("evidence");
+    } else if (raw === "/indications" || raw === "indications") {
+      setWorkspaceMode("indications");
+    } else if (raw === "/3d" || raw === "3d" || raw === "/structure3d" || raw === "structure3d") {
+      setWorkspaceMode("structure3d");
+    } else if (raw === "/metabolism" || raw === "metabolism" || raw === "/metabolite") {
+      setWorkspaceMode("metabolism");
+    } else if (raw.startsWith("/ddi") || raw.startsWith("ddi")) {
+      const presetMatch = raw.match(/preset=([a-z_]+)/);
+      if (presetMatch) {
+        loadDdiPreset(presetMatch[1]);
+      } else {
+        openDdiAuditInSplitPane();
+      }
+    } else if (raw.startsWith("/pathway/") || raw.startsWith("pathway/")) {
+      const pathPart = raw.replace(/^\/?pathway\//, "");
+      const [pwId, query] = pathPart.split("?");
+      let mode = "spotlight";
+      if (query && query.includes("mode=solo")) mode = "solo";
+      selectPathway(pwId, mode, false);
+    } else if (raw.startsWith("/receptor-radar/") || raw.startsWith("receptor-radar/")) {
+      const pathPart = raw.replace(/^\/?receptor-radar\//, "");
+      const [cid, query] = pathPart.split("?");
+      let compareCid = null;
+      if (query) {
+        const compMatch = query.match(/compare=([^&]+)/);
+        if (compMatch) compareCid = decodeURIComponent(compMatch[1]);
+      }
+      openReceptorRadarSplitPane(cid, compareCid);
+    } else if (raw.startsWith("/toxicology/") || raw.startsWith("toxicology/")) {
+      const pathPart = raw.replace(/^\/?toxicology\//, "");
+      const [cid, query] = pathPart.split("?");
+      const opts = {};
+      if (query) {
+        const expMatch = query.match(/exposure=([0-9.]+)/);
+        if (expMatch) opts.exposure = +expMatch[1];
+        const presMatch = query.match(/preset=([a-z_]+)/);
+        if (presMatch) opts.preset = presMatch[1];
+      }
+      openToxicologySplitPane(cid, opts);
+    } else if (raw.startsWith("/pk-simulator/") || raw.startsWith("pk-simulator/")) {
+      const pathPart = raw.replace(/^\/?pk-simulator\//, "");
+      const [cid, query] = pathPart.split("?");
+      let compareCid = null;
+      const opts = {};
+      if (query) {
+        const compMatch = query.match(/compare=([^&]+)/);
+        if (compMatch) compareCid = decodeURIComponent(compMatch[1]);
+        const regMatch = query.match(/regimen=([^&]+)/);
+        if (regMatch) opts.regimen = decodeURIComponent(regMatch[1]);
+        const scaleMatch = query.match(/scale=([^&]+)/);
+        if (scaleMatch) opts.scale = decodeURIComponent(scaleMatch[1]);
+        const phenoMatch = query.match(/phenotype=([^&]+)/);
+        if (phenoMatch) opts.phenotype = decodeURIComponent(phenoMatch[1]);
+        const egfrMatch = query.match(/egfr=([0-9.]+)/);
+        if (egfrMatch) opts.egfr = +egfrMatch[1];
+        const tauMatch = query.match(/tau=([0-9.]+)/);
+        if (tauMatch) opts.tau = +tauMatch[1];
+      }
+      openPkSimulatorSplitPane(cid, compareCid, opts);
+    } else if (raw.startsWith("/indications/") || raw.startsWith("indications/")) {
+      const code = raw.replace(/^\/?indications\//, "").split("?")[0];
+      openIndicationsModal(code);
+    } else if (raw.startsWith("/compound/") || raw.startsWith("compound/")) {
+      const cid = raw.replace(/^\/?compound\//, "").split("?")[0];
+      const c = C.find((x) => x.id === cid);
+      if (c) select({ type: "compound", i: c.i }, true);
+    } else if (raw.startsWith("stack=")) {
+      const ids = raw.slice(6).split(",").filter(Boolean);
+      if (ids.length) {
+        state.stack.clear();
+        ids.forEach((id) => {
+          const idx = C.findIndex((c) => c.id === id);
+          if (idx >= 0) state.stack.add(idx);
+        });
+        saveStack();
+        setWorkspaceMode("stack");
+      }
+    } else if (raw.startsWith("target=")) {
+      const ti = T.findIndex((t) => t.id === raw.slice(7));
+      if (ti >= 0) setTimeout(() => openTargetModal(ti), 50);
+    } else {
+      const c = C.find((x) => x.id === raw);
+      if (c) setTimeout(() => select({ type: "compound", i: c.i }, true), 50);
+    }
+  }
+
+  window.addEventListener("hashchange", handleHashRouting);
+
+  const shieldAuditBtn = $("shieldAuditBtn");
+  if (shieldAuditBtn) shieldAuditBtn.onclick = openDdiAuditInSplitPane;
+  const shieldPresetsBtn = $("shieldPresetsBtn");
+  if (shieldPresetsBtn) shieldPresetsBtn.onclick = openDdiAuditInSplitPane;
+
   new ResizeObserver(resize).observe(cv);
   loadSavedStack();
+  wirePathwayDock();
+  updatePolypharmacyShieldUI();
   resize(); fit(); stats();
-  const fromHash = decodeURIComponent(location.hash.slice(1));
-  if (fromHash.startsWith("stack=")) {
-    const ids = fromHash.slice(6).split(",").filter(Boolean);
-    if (ids.length) {
-      state.stack.clear();
-      ids.forEach((id) => {
-        const idx = C.findIndex((c) => c.id === id);
-        if (idx >= 0) state.stack.add(idx);
-      });
-      saveStack();
-      toggleStackDrawer(true);
-    }
-  } else if (fromHash.startsWith("target=")) {
-    const ti = T.findIndex((t) => t.id === fromHash.slice(7));
-    if (ti >= 0) setTimeout(() => openTargetModal(ti), 50);
-  } else if (fromHash) {
-    const c = C.find((x) => x.id === fromHash);
-    if (c) setTimeout(() => select({ type: "compound", i: c.i }, true), 50);
-  }
+  handleHashRouting();
   updateStackUI();
+  if (typeof updateBreadcrumbs === "function") updateBreadcrumbs(state.sel);
 })();

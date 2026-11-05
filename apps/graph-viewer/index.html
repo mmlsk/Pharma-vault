@@ -113,7 +113,7 @@
     .links button { text-align: left; background: none; border: 0; cursor: pointer; color: var(--color-primary); font-size: var(--text-sm); padding: 0; }
     .links button:hover { text-decoration: underline; }
     .note { font-size: var(--text-xs); color: var(--color-text-faint); }
-    .warnbox { border-left: 3px solid var(--color-warning); padding: .5rem .75rem; background: color-mix(in oklab, var(--color-warning) 8%, transparent); border-radius: 0 var(--radius-md) var(--radius-md) 0; font-size: var(--text-xs); color: var(--color-text-muted); }
+    .warnbox { border: 1px solid color-mix(in oklab, var(--color-warning) 45%, var(--color-border)); padding: .65rem .75rem; background: color-mix(in oklab, var(--color-warning) 8%, transparent); border-radius: var(--radius-md); font-size: var(--text-xs); color: var(--color-text-muted); }
     .empty { color: var(--color-text-muted); font-size: var(--text-sm); }
     .drawer { position: absolute; top: 0; right: 0; bottom: 0; width: 400px; max-width: 95vw; background: var(--color-surface); border-left: 1px solid var(--color-border); box-shadow: var(--shadow-md); z-index: 50; display: none; flex-direction: column; overflow: hidden; }
     .drawer.open { display: flex; }
@@ -123,7 +123,7 @@
     .stack-chip { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .4rem .6rem; border-radius: var(--radius-md); background: var(--color-surface-offset); border: 1px solid var(--color-border); font-size: var(--text-xs); }
     .stack-chip button.del { background: none; border: 0; color: var(--color-text-muted); cursor: pointer; padding: 2px 6px; font-weight: bold; border-radius: 4px; font-size: 13px; }
     .stack-chip button.del:hover { color: var(--color-error); background: color-mix(in oklab, var(--color-error) 15%, transparent); }
-    .alert-box { padding: .65rem .8rem; border-radius: var(--radius-md); font-size: var(--text-xs); line-height: 1.45; display: grid; gap: 4px; border-left: 4px solid; }
+    .alert-box { padding: .65rem .8rem; border-radius: var(--radius-md); font-size: var(--text-xs); line-height: 1.45; display: grid; gap: 4px; border: 1px solid; }
     .alert-crit { border-color: var(--color-error); background: color-mix(in oklab, var(--color-error) 12%, transparent); }
     .alert-mod { border-color: var(--color-warning); background: color-mix(in oklab, var(--color-warning) 12%, transparent); }
     .alert-info { border-color: var(--color-primary); background: color-mix(in oklab, var(--color-primary) 10%, transparent); }
@@ -161,8 +161,8 @@
     .comp-table th, .comp-table td { padding: 8px 12px; border: 1px solid var(--color-border); vertical-align: top; text-align: left; }
     .comp-table th.section-th { background: var(--color-surface-offset); font-weight: 700; color: var(--color-primary); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
     .comp-col-th { background: var(--color-surface-2); text-align: center; }
-    .comp-diff-same { background: color-mix(in oklab, var(--color-success) 12%, transparent); border-left: 3px solid var(--color-success); }
-    .comp-diff-warn { background: color-mix(in oklab, var(--color-warning) 12%, transparent); border-left: 3px solid var(--color-warning); }
+    .comp-diff-same { background: color-mix(in oklab, var(--color-success) 12%, transparent); border-left: 1px solid var(--color-success); }
+    .comp-diff-warn { background: color-mix(in oklab, var(--color-warning) 12%, transparent); border-left: 1px solid var(--color-warning); }
     .comp-tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 10px; margin: 2px; font-weight: 600; }
     .filter-accordion { border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); margin: var(--space-2) 0; overflow: hidden; }
     .filter-summary { cursor: pointer; padding: var(--space-2) var(--space-3); font-size: var(--text-xs); font-weight: 600; display: flex; align-items: center; justify-content: space-between; user-select: none; background: var(--color-surface-2); list-style: none; }
@@ -175,7 +175,7 @@
     .matrix-th { font-size: 10px; font-weight: 600; padding: 4px; text-align: center; max-width: 65px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-text-muted); }
     .matrix-cell { width: 34px; height: 34px; text-align: center; vertical-align: middle; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 700; border: 1px solid transparent; transition: transform .12s, border-color .12s; user-select: none; }
     .matrix-cell:hover { transform: scale(1.12); z-index: 2; border-color: var(--color-primary); }
-    .matrix-cell.selected { border-color: var(--color-primary); box-shadow: 0 0 0 2px var(--color-primary); transform: scale(1.08); }
+    .matrix-cell.selected { border-color: var(--color-primary); box-shadow: none; transform: scale(1.08); }
     .matrix-cell.cell-diag { background: var(--color-surface-offset); color: var(--color-text-muted); cursor: default; }
     .matrix-cell.cell-danger { background: color-mix(in oklab, var(--color-error) 24%, transparent); color: var(--color-error); }
     .matrix-cell.cell-warn { background: color-mix(in oklab, var(--color-warning) 24%, transparent); color: var(--color-warning); }
@@ -187,7 +187,7 @@
     .axis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: .4rem; }
     .axis-card { background: var(--color-surface-2); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 8px; font-size: 11px; display: flex; flex-direction: column; gap: 4px; }
     .axis-bar-wrap { width: 100%; height: 6px; background: var(--color-surface-offset); border-radius: 3px; overflow: hidden; margin-top: 2px; }
-    .axis-bar-fill { height: 100%; border-radius: 3px; transition: width .3s; }
+    .axis-bar-fill { width: 100%; height: 100%; border-radius: 3px; transform-origin: left center; transition: transform .3s; }
     .phenomena-box { margin-top: .4rem; display: flex; flex-direction: column; gap: 4px; }
     .phenomena-item { background: var(--color-surface-2); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 6px 8px; font-size: 11px; display: flex; flex-direction: column; gap: 2px; }
     .adr-heatmap-wrap { width: 100%; overflow-x: auto; margin-top: .4rem; }
@@ -246,7 +246,7 @@
     .meta-phase-head { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--color-text-muted); padding-bottom: 6px; border-bottom: 2px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; }
     .meta-node-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px; display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: all .15s; position: relative; }
     .meta-node-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-    .meta-node-card.selected { border-color: var(--color-primary); background: color-mix(in oklab, var(--color-primary) 8%, var(--color-surface)); box-shadow: 0 0 0 2px var(--color-primary); }
+    .meta-node-card.selected { border-color: var(--color-primary); background: color-mix(in oklab, var(--color-primary) 8%, var(--color-surface)); box-shadow: none; }
     .meta-connector { display: flex; align-items: center; gap: 4px; font-size: 10px; color: var(--color-text-muted); margin: -4px 0 2px 0; }
     .meta-enzyme-pill { font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 6px; background: color-mix(in oklab, var(--color-warning) 20%, transparent); color: var(--color-warning); border: 1px solid var(--color-warning); display: inline-flex; align-items: center; gap: 4px; }
     .meta-activity-badge { font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 10px; display: inline-flex; align-items: center; gap: 3px; }
@@ -258,8 +258,8 @@
     .meta-diff-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 4px; }
     .meta-diff-table th, .meta-diff-table td { padding: 4px 6px; border: 1px solid var(--color-border); text-align: left; }
     .meta-diff-table th { background: var(--color-surface); color: var(--color-text-muted); width: 38%; }
-    .dossier-modal { background: #525659; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 920px; max-width: 98vw; max-height: 94vh; display: flex; flex-direction: column; overflow: hidden; position: relative; }
-    .dossier-toolbar { padding: var(--space-2) var(--space-4); background: #323639; color: #fff; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; }
+    .dossier-modal { background: #525659; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 920px; max-width: 98vw; max-height: 94vh; display: flex; flex-direction: column; overflow: hidden; position: relative; padding: 8px; }
+    .dossier-toolbar { padding: 12px 16px 14px; background: #323639; color: #fff; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; }
     .dossier-body { flex: 1; overflow-y: auto; padding: 1.5rem; display: flex; justify-content: center; background: #525659; }
     .dossier-sheet { background: #ffffff; color: #1a1a1a; width: 100%; max-width: 794px; min-height: 1123px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.5; box-sizing: border-box; }
     .dossier-sheet h1, .dossier-sheet h2, .dossier-sheet h3 { margin: 0; font-family: var(--font-display, inherit); color: #111; }
@@ -279,7 +279,7 @@
     @media (max-width: 800px) { .evidence-funnel { grid-template-columns: repeat(2, 1fr); } }
     .evidence-funnel-card { background: var(--color-surface-2); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px; cursor: pointer; transition: all .15s; display: flex; flex-direction: column; gap: 4px; position: relative; }
     .evidence-funnel-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-    .evidence-funnel-card.active { border-color: var(--color-primary); background: color-mix(in oklab, var(--color-primary) 10%, var(--color-surface-2)); box-shadow: 0 0 0 2px var(--color-primary); }
+    .evidence-funnel-card.active { border-color: var(--color-primary); background: color-mix(in oklab, var(--color-primary) 10%, var(--color-surface-2)); box-shadow: none; }
     .evidence-funnel-card .badge { align-self: flex-start; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
     .evidence-timeline-bar { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; flex-wrap: wrap; }
     .evidence-timeline-pill { font-size: 11px; padding: 3px 8px; border-radius: 6px; background: var(--color-surface-2); border: 1px solid var(--color-border); cursor: pointer; color: var(--color-text-muted); transition: all .12s; }
@@ -291,7 +291,7 @@
     .phase-4 { background: color-mix(in oklab, var(--color-success) 18%, transparent); color: var(--color-success); border: 1px solid var(--color-success); }
     .phase-3 { background: color-mix(in oklab, #0284c7 18%, transparent); color: #0284c7; border: 1px solid #0284c7; }
     .phase-2 { background: color-mix(in oklab, #f59e0b 18%, transparent); color: #f59e0b; border: 1px solid #f59e0b; }
-    .phase-1 { background: color-mix(in oklab, #8b5cf6 18%, transparent); color: #8b5cf6; border: 1px solid #8b5cf6; }
+    .phase-1 { background: color-mix(in oklab, var(--color-text-muted) 18%, transparent); color: var(--color-text-muted); border: 1px solid var(--color-text-muted); }
     .phase-0 { background: var(--color-surface-offset); color: var(--color-text-muted); border: 1px solid var(--color-border); }
     .struct-modal { background: var(--color-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 1220px; max-width: 96vw; max-height: 92vh; display: flex; flex-direction: column; overflow: hidden; color: var(--color-text); border: 1px solid var(--color-border); }
     .struct-head { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); background: var(--color-surface-2); display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
@@ -310,8 +310,25 @@
     .struct-pocket-pill:hover, .struct-pocket-pill.active { border-color: var(--color-primary); background: color-mix(in oklab, var(--color-primary) 12%, var(--color-surface)); }
     .struct-pill-tag { font-size: 9px; font-weight: 800; padding: 1px 4px; border-radius: 4px; background: color-mix(in oklab, var(--color-warning) 20%, transparent); color: var(--color-warning); }
     .dossier-table th { background: #f8f9fa; font-weight: 600; color: #333; }
-    .dossier-warn { border-left: 3px solid #d32f2f; background: #fff5f5; padding: 8px 12px; margin: 6px 0; border-radius: 2px; }
-    .dossier-callout { border-left: 3px solid #1976d2; background: #f0f7ff; padding: 8px 12px; margin: 6px 0; border-radius: 2px; }
+    .dossier-warn { border: 1px solid #d32f2f; background: #fff5f5; padding: 8px 12px; margin: 6px 0; border-radius: 2px; }
+    .dossier-callout { border: 1px solid #1976d2; background: #f0f7ff; padding: 8px 12px; margin: 6px 0; border-radius: 2px; }
+
+    /* Workspace Navigation & Context Split Pane */
+    .workspace-wrapper { display: flex; flex-direction: column; height: 100dvh; overflow: hidden; }
+    .workspace-nav { display: flex; align-items: center; justify-content: space-between; padding: 0 var(--space-4); height: 44px; background: var(--color-surface); border-bottom: 1px solid var(--color-border); z-index: 50; flex: none; }
+    .workspace-brand { display: flex; align-items: center; gap: 8px; }
+    .workspace-modes { display: flex; gap: 4px; height: 100%; align-items: center; }
+    .mode-tab { padding: 6px 14px; border-radius: var(--radius-md); border: 1px solid transparent; background: none; font-size: var(--text-xs); font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; color: var(--color-text-muted); transition: all .15s; }
+    .mode-tab:hover { background: var(--color-surface-offset); color: var(--color-text); }
+    .mode-tab.active { background: var(--color-surface-2); color: var(--color-primary); font-weight: 600; border-color: var(--color-border); box-shadow: var(--shadow-sm); }
+    .workspace-actions { display: flex; align-items: center; gap: 6px; }
+    .btn-sm { font-size: 11px; padding: 3px 8px; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-surface-2); cursor: pointer; text-decoration: none; }
+    .btn-sm:hover { border-color: var(--color-primary); color: var(--color-primary); }
+    .context-split-pane { position: absolute; left: 0; right: 0; bottom: 0; height: 380px; max-height: 80vh; background: var(--color-surface); border-top: 2px solid var(--color-primary); box-shadow: var(--shadow-md); z-index: 40; display: flex; flex-direction: column; transition: none; }
+    .context-split-pane.maximized { height: 75vh; }
+    .split-pane-head { display: flex; align-items: center; justify-content: space-between; padding: 8px 14px; border-bottom: 1px solid var(--color-border); background: var(--color-surface-2); flex: none; }
+    .split-pane-body { flex: 1; overflow-y: auto; padding: 12px 16px; }
+
     @media print {
       body * { visibility: hidden; }
       #dossierModal, #dossierModal * { visibility: visible; }
@@ -321,16 +338,535 @@
       .dossier-sheet { box-shadow: none; max-width: 100%; width: 100%; padding: 0; margin: 0; }
       @page { size: A4; margin: 15mm; }
     }
+    .pathway-dock {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: color-mix(in oklab, var(--color-surface) 92%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+      padding: 6px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-width: 90%;
+      z-index: 15;
+      transition: all 0.2s ease;
+    }
+    .pathway-dock-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .pathway-mode-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--color-surface-2);
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+    }
+    .pathway-mode-btn {
+      font-size: 10px;
+      padding: 2px 7px;
+      border: 0;
+      border-radius: 4px;
+      background: transparent;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.15s ease;
+    }
+    .pathway-mode-btn:hover {
+      color: var(--color-text);
+    }
+    .pathway-mode-btn.active {
+      background: var(--color-primary);
+      color: #fff;
+    }
+    .pathway-chips-container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      overflow-x: auto;
+      max-width: 780px;
+      scrollbar-width: none;
+      padding: 2px 0;
+    }
+    .pathway-chips-container::-webkit-scrollbar {
+      display: none;
+    }
+    .pathway-chip {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-2);
+      color: var(--color-text);
+      cursor: pointer;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+    }
+    .pathway-chip:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-1px);
+    }
+    .pathway-chip.active {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+      box-shadow: none;
+    }
+    .polypharmacy-shield {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: color-mix(in oklab, var(--color-surface) 94%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 8px 14px;
+      display: none;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+      z-index: 15;
+      transition: all 0.2s ease;
+      font-size: 12px;
+    }
+    .polypharmacy-shield.active {
+      display: flex;
+    }
+    .shield-gauge {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      line-height: 1;
+      border: 2px solid currentColor;
+      flex-shrink: 0;
+    }
+    .shield-score { font-size: 13px; }
+    .shield-max { font-size: 8px; opacity: 0.7; }
+    .shield-details { display: flex; flex-direction: column; gap: 2px; }
+    .shield-status { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .shield-summary { font-size: 11px; color: var(--color-text-muted); max-width: 240px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     @media (max-width: 1100px) {
       body { overflow: auto; height: auto; }
       .app { grid-template-columns: 1fr; height: auto; }
       .side, .detail { border: 0; }
       .stage { height: 70vh; order: -1; }
     }
+
+    /* Pharma-vault research workspace: the teal marks the active relationship or control. */
+    :root, [data-theme="light"] {
+      --color-bg: #f3f6f5;
+      --color-surface: #fbfcfc;
+      --color-surface-2: #ffffff;
+      --color-surface-offset: #e9efee;
+      --color-border: #d6dfde;
+      --color-text: #172322;
+      --color-text-muted: #4a5c59;
+      --color-text-faint: #4e605d;
+      --color-primary: #087b78;
+      --color-cluster-0: #087b78; --color-cluster-1: #467b27; --color-cluster-2: #9a4f2a;
+      --color-cluster-3: #8152ad; --color-cluster-4: #b04452; --color-cluster-5: #866000;
+      --color-cluster-6: #3f71a6; --color-cluster-7: #66717f; --color-cluster-8: #a33a69;
+      --color-risk-critical: #b42318; --color-risk-moderate: #964219; --color-risk-low: #6f5b98;
+      --color-stack: #866000; --color-chart-gridline: rgb(82 99 97 / .24); --color-chart-label: #526361;
+      --radius-md: 6px;
+      --radius-lg: 8px;
+      --radius-xl: 8px;
+    }
+    [data-theme="dark"] {
+      --color-bg: #111617;
+      --color-surface: #151b1c;
+      --color-surface-2: #1a2122;
+      --color-surface-offset: #202929;
+      --color-border: #303b3b;
+      --color-text: #e7eeec;
+      --color-text-muted: #a8b7b4;
+      --color-text-faint: #9cb0ac;
+      --color-primary: #70b8b1;
+      --color-warning: #d3a15d;
+      --color-error: #e07c88;
+      --color-success: #78b895;
+      --color-accent2: #8ab2c1;
+      --color-cluster-0: #70b8b1; --color-cluster-1: #91c979; --color-cluster-2: #d18a62;
+      --color-cluster-3: #bb92df; --color-cluster-4: #e38a97; --color-cluster-5: #e0bd68;
+      --color-cluster-6: #7fb0e4; --color-cluster-7: #a7afb9; --color-cluster-8: #dc7fa8;
+      --color-risk-critical: #ff7d75; --color-risk-moderate: #d3a15d; --color-risk-low: #bb92df;
+      --color-stack: #dfbf65; --color-chart-gridline: rgb(168 183 180 / .24); --color-chart-label: #a8b7b4;
+    }
+    body { background: var(--color-bg); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      .axis-bar-fill { transition: none; }
+      .struct-spinner { animation: none; }
+    }
+
+    /* Z-Index Hierarchy & Lightbox Stacking */
+    .lightbox-backdrop { z-index: 100; }
+    #chemLightBox { z-index: 150; }
+    #cmdPaletteBackdrop { z-index: 200; }
+
+    /* Relational Breadcrumbs Bar */
+    .rel-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 20px;
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      font-size: 11px;
+      color: var(--color-text-muted);
+      overflow-x: auto;
+      scrollbar-width: none;
+      flex: none;
+    }
+    .rel-breadcrumbs::-webkit-scrollbar { display: none; }
+    .bc-item {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: background .12s, color .12s;
+      white-space: nowrap;
+    }
+    .bc-item:hover {
+      background: var(--color-surface-offset);
+      color: var(--color-primary);
+    }
+    .bc-item.bc-active {
+      color: var(--color-text);
+      font-weight: 600;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+    }
+    .bc-sep {
+      color: var(--color-text-faint);
+      opacity: 0.6;
+      font-size: 10px;
+      user-select: none;
+    }
+    .bc-shield-mini {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      background: var(--color-surface-offset);
+      border: 1px solid var(--color-border);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform .12s, border-color .12s;
+    }
+    .bc-shield-mini:hover {
+      transform: translateY(-1px);
+      border-color: var(--color-primary);
+    }
+
+    /* Toast Notification System */
+    .toast-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 300;
+      pointer-events: none;
+    }
+    .toast {
+      pointer-events: auto;
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      background: var(--color-surface-2);
+      color: var(--color-text);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: toastIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      max-width: 380px;
+    }
+    .toast.toast-success { border-left: 3px solid var(--color-success); }
+    .toast.toast-warning { border-left: 3px solid var(--color-warning); }
+    .toast.toast-error { border-left: 3px solid var(--color-error); }
+    .toast.toast-info { border-left: 3px solid var(--color-primary); }
+    .toast.out {
+      animation: toastOut 0.2s ease forwards;
+    }
+    @keyframes toastIn { from { opacity: 0; transform: translateY(12px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes toastOut { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(8px) scale(0.96); } }
+
+    /* Command Palette (Cmd+K / Ctrl+K) */
+    .cmd-palette-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 12vh;
+    }
+    .cmd-palette-backdrop.open { display: flex; }
+    .cmd-palette-modal {
+      width: 600px;
+      max-width: 94vw;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      animation: cmdIn 0.15s ease-out;
+    }
+    @keyframes cmdIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
+    .cmd-palette-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-surface-2);
+    }
+    .cmd-palette-input-wrap svg {
+      color: var(--color-primary);
+      flex: none;
+    }
+    .cmd-palette-input {
+      flex: 1;
+      border: 0;
+      background: transparent;
+      color: var(--color-text);
+      font-size: var(--text-base);
+      outline: none;
+    }
+    .cmd-palette-list {
+      max-height: 380px;
+      overflow-y: auto;
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .cmd-palette-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      background: transparent;
+      border: 0;
+      text-align: left;
+      width: 100%;
+      transition: background .1s ease;
+    }
+    .cmd-palette-item:hover, .cmd-palette-item.selected {
+      background: var(--color-surface-offset);
+      color: var(--color-primary);
+    }
+    .cmd-palette-badge {
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .cmd-palette-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px;
+      background: var(--color-surface-2);
+      border-top: 1px solid var(--color-border);
+      font-size: 11px;
+      color: var(--color-text-muted);
+    }
+    .cmd-palette-kbd {
+      padding: 1px 5px;
+      border-radius: 4px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      font-size: 10px;
+      font-family: inherit;
+    }
+    .workspace-nav {
+      height: 52px;
+      padding-inline: 20px;
+      background: var(--color-bg);
+      border-color: var(--color-border);
+    }
+    .workspace-brand b { font: 600 15px/1 var(--font-body) !important; letter-spacing: -.3px !important; }
+    .workspace-brand .vault-logo { color: var(--color-primary); font-size: 18px !important; }
+    .vault-version { font-size: 11px !important; border: 0 !important; background: transparent !important; }
+    .workspace-modes { gap: 16px; }
+    .mode-tab {
+      position: relative;
+      height: 100%;
+      padding: 6px 2px;
+      border-radius: 0;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .mode-tab.active {
+      color: var(--color-text);
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+    }
+    .mode-tab.active::after {
+      content: "";
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--color-primary);
+    }
+    .mode-tab > span:first-child { filter: grayscale(1); opacity: .75; }
+    .app { grid-template-columns: 310px minmax(0, 1fr) 360px; }
+    .app { height: calc(100dvh - 52px); }
+    .side, .detail { background: var(--color-surface); padding: 20px; gap: 18px; }
+    .side { border-right-color: var(--color-border); }
+    .detail { border-left-color: var(--color-border); }
+    .brand { padding-bottom: 4px; }
+    .brand svg { width: 34px; height: 34px; }
+    .brand h1 { font: 600 19px/1.1 var(--font-body); letter-spacing: -.45px; }
+    .brand p { font-size: 12px; margin-top: 3px; }
+    .label { text-transform: none; letter-spacing: 0; font-size: 13px; margin-bottom: 7px; }
+    .search { min-height: 42px; border-radius: 6px; background: var(--color-bg); }
+    .toggle { min-height: 30px; }
+    .stats { gap: 0 16px; border-top: 1px solid var(--color-border); padding-top: 12px; }
+    .stat { border: 0; border-radius: 0; padding: 7px 8px; background: transparent; }
+    .stat b { font-size: 18px; font-weight: 550; }
+    .stat span { font-size: 12px; }
+    .stage { background: var(--color-bg); }
+    .btn, .btn-sm { border-radius: 6px; box-shadow: none; }
+    .btn { min-height: 36px; background: var(--color-surface); }
+    .toolbar { gap: 6px; }
+    .hint { backdrop-filter: none; background: var(--color-surface); border-radius: 6px; }
+    .card { border-radius: 7px; padding: 16px; }
+    .title { font: 600 20px/1.2 var(--font-body); letter-spacing: -.25px; }
+    .mechanism-note { margin-top: 12px; padding: 10px 0; border-top: 1px solid var(--color-border); }
+    .tag { border-radius: 4px; }
+    .pathway-dock, .polypharmacy-shield { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--color-surface); border-radius: 7px; box-shadow: none; }
+    .pathway-mode-btn.active, .pathway-chip.active { background: var(--color-surface-offset); color: var(--color-text); border-color: var(--color-primary); box-shadow: none; }
+    .pathway-mode-btn.active { border-bottom: 1px solid var(--color-primary); }
+    .pathway-chip.active { border-radius: 5px; }
+    .matrix-cell.selected, .meta-node-card.selected, .evidence-funnel-card.active { box-shadow: none; }
+    :where(button, a, input, select, summary) { transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
+    @media (max-width: 1100px) {
+      .workspace-wrapper { height: auto; min-height: 100dvh; overflow: visible; }
+      .workspace-nav { position: sticky; top: 0; }
+      .app { grid-template-columns: minmax(0, 1fr); height: auto; min-height: 0; }
+      .stage { height: min(62vh, 620px); min-height: 390px; order: -1; }
+      .side, .detail { overflow: visible; padding: 20px clamp(16px, 4vw, 32px); }
+      .detail { border-top: 1px solid var(--color-border); }
+      .toolbar { max-width: calc(100% - 24px); overflow-x: auto; scrollbar-width: none; }
+      .toolbar::-webkit-scrollbar { display: none; }
+    }
+    @media (max-width: 720px) {
+      .workspace-nav { height: auto; min-height: 50px; padding: 7px 14px 0; flex-wrap: wrap; }
+      .workspace-brand { gap: 6px; }
+      .workspace-brand .vault-version { display: none; }
+      .workspace-actions { margin-left: auto; }
+      .workspace-modes { order: 3; width: 100%; height: 42px; gap: 20px; overflow-x: auto; scrollbar-width: none; }
+      .workspace-modes::-webkit-scrollbar { display: none; }
+      .mode-tab { min-height: 42px; font-size: 12px; }
+      .stage { height: 54vh; min-height: 340px; max-height: 500px; }
+      .toolbar { top: 10px; right: 10px; gap: 5px; }
+      .toolbar .btn { min-height: 34px; padding: 5px 9px; font-size: 11px; }
+      .toolbar #evidenceBtn, .toolbar #struct3DBtn { display: none; }
+      .hint { max-width: calc(100% - 24px); left: 12px; bottom: 12px; }
+      .side, .detail { padding: 18px 16px; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .pathway-dock { max-width: calc(100% - 24px); bottom: 10px; }
+      .pathway-chips-container { max-width: calc(100vw - 52px); }
+    }
   </style>
 </head>
 <body>
-<div class="app">
+<div class="workspace-wrapper">
+  <header class="workspace-nav" role="navigation" aria-label="Główne tryby widoku">
+    <div class="workspace-brand">
+      <span class="vault-logo" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="3" r="1.5" fill="currentColor"/><circle cx="4.2" cy="16.5" r="1.5" fill="currentColor"/><circle cx="19.8" cy="16.5" r="1.5" fill="currentColor"/></svg></span>
+      <b style="font-family:var(--font-display);font-size:14px;letter-spacing:-.2px">Pharma-vault</b>
+      <span class="vault-version" style="font-size:10px;padding:1px 6px;border-radius:999px;background:var(--color-surface-offset);border:1px solid var(--color-border);color:var(--color-text-muted)">v3.23</span>
+    </div>
+    <div class="workspace-modes" role="tablist" aria-label="Główne tryby widoku">
+      <button class="mode-tab active" id="modeGraphBtn" role="tab" aria-selected="true" data-mode="graph" aria-controls="cv">
+        🗺️ Eksplorator Grafu
+      </button>
+      <button class="mode-tab" id="modeDossierBtn" role="tab" aria-selected="false" data-mode="dossier" aria-controls="dossierModal">
+        📋 Karta & Dossier
+      </button>
+      <button class="mode-tab" id="modeStackBtn" role="tab" aria-selected="false" data-mode="stack" aria-controls="stackDrawer">
+        🧪 Mój Stack & DDI <span id="modeStackBadge" class="tab-badge" style="background:var(--color-primary);color:#fff;display:none">0</span>
+      </button>
+      <button class="mode-tab" id="modeEvidenceBtn" role="tab" aria-selected="false" data-mode="evidence" aria-controls="evidenceModal">
+        📊 Badania & EBM
+      </button>
+      <button class="mode-tab" id="modeIndicationsBtn" role="tab" aria-selected="false" data-mode="indications" aria-controls="indicationsModal">
+        🏷️ Wskazania & ICD
+      </button>
+      <button class="mode-tab" id="modeStructure3DBtn" role="tab" aria-selected="false" data-mode="structure3d" aria-controls="struct3DModal">
+        🧊 Kompleksy 3D
+      </button>
+      <button class="mode-tab" id="modeMetabolismBtn" role="tab" aria-selected="false" data-mode="metabolism" aria-controls="metaboliteModal">
+        🌿 Biotransformacja
+      </button>
+    </div>
+    <div class="workspace-actions">
+      <button class="btn-sm" id="cmdPaletteBtn" title="Szukaj w całej bazie (Cmd+K / Ctrl+K)" aria-label="Otwórz paletę komend i szukajkę">🔍 <kbd style="font-size:10px;opacity:0.8">⌘K</kbd></button>
+      <button class="btn-sm" id="globalThemeBtn" title="Przełącz motyw jasny/ciemny">🌗</button>
+      <a href="sidecar://biomolecular-structure-viewer" class="btn-sm" title="Otwórz Biomolecular Structure Viewer (Mol*) w sidecarze">🧊 Mol* ↗</a>
+    </div>
+  </header>
+  <nav class="rel-breadcrumbs" id="relBreadcrumbs" aria-label="Ścieżka relacji">
+    <span class="bc-item bc-root" id="bcRoot" title="Powrót do widoku całej bazy">🏠 Baza wiedzy</span>
+    <span class="bc-sep">›</span>
+    <span class="bc-item" id="bcCluster" title="Filtruj wg klastra">—</span>
+    <span class="bc-sep">›</span>
+    <span class="bc-item bc-active" id="bcCompound" title="Aktywna substancja">—</span>
+    <div class="bc-shield-mini" id="bcShieldMini" title="Tarcza Polipragmazji: kliknij, aby przejść do analizy DDI">
+      <span id="bcShieldScore">🛡️ 0/100 Bezpieczny</span>
+    </div>
+  </nav>
+  <div class="app">
   <aside class="side" aria-label="Filtry">
     <div class="brand">
       <svg width="38" height="38" viewBox="0 0 38 38" fill="none" aria-label="Pharma-vault">
@@ -460,7 +996,9 @@
   </aside>
 
   <main class="stage">
-    <canvas id="cv" aria-label="Graf substancji"></canvas>
+    <canvas id="cv" role="region" tabindex="0" aria-label="Interaktywny graf substancji" aria-describedby="graphHelp"></canvas>
+    <p id="graphHelp" class="sr-only">Użyj strzałek, aby przechodzić między widocznymi węzłami. Enter otwiera szczegóły i centruje zaznaczony węzeł. Wybór aktualizuje panel szczegółów.</p>
+    <p id="graphStatus" class="sr-only" aria-live="polite" aria-atomic="true"></p>
     <div class="toolbar">
       <button class="btn btn-gold" id="stackBtn" aria-label="Mój Stack" aria-expanded="false">🧪 Mój Stack <span id="stackCountBadge" class="tab-badge" style="background:var(--color-primary);color:#fff">0</span></button>
       <button class="btn" id="edgesBtn" aria-label="Krawędzie semantyczne" aria-expanded="false" title="Filtry krawędzi semantycznych (E)">🕸️ Krawędzie</button>
@@ -514,6 +1052,54 @@
     </div>
     <div class="hint">Przeciągnij, aby przesunąć · kółko/gest, aby przybliżyć · kliknij kropkę, klaster lub hub. Etykiety substancji pojawiają się po przybliżeniu.</div>
     <div class="tip" id="tip"></div>
+    <!-- Pływająca Tarcza Polipragmazji & DDI Risk Engine -->
+    <div id="polypharmacyShield" class="polypharmacy-shield" role="status" aria-label="Tarcza Polipragmazji">
+      <div class="shield-gauge" id="shieldGauge">
+        <span class="shield-score" id="shieldScore">0</span>
+        <span class="shield-max">/100</span>
+      </div>
+      <div class="shield-details">
+        <b class="shield-status" id="shieldStatus">Bezpieczny Stack</b>
+        <span class="shield-summary" id="shieldSummary">Brak wykrytych kolizji</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <button class="btn btn-sm btn-primary" id="shieldAuditBtn" title="Otwórz pełny audyt kliniczny w Context Split-Pane">🔍 Audyt DDI</button>
+        <button class="btn btn-sm" id="shieldPresetsBtn" title="Wybierz kliniczne studium przypadku (Preset)">📚 Presety</button>
+      </div>
+    </div>
+
+    <div id="contextSplitPane" class="context-split-pane" style="display:none" role="region" aria-label="Kontekstowy panel analityczny">
+      <div class="split-pane-head">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span id="splitPaneIcon">🔬</span>
+          <b id="splitPaneTitle" style="font-size:var(--text-sm)">Szczegółowa analiza</b>
+          <span id="splitPaneSubtitle" style="font-size:11px;color:var(--color-text-muted)"></span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <button class="btn btn-sm" id="splitPaneMaximizeBtn" title="Powiększ/Zmniejsz panel">⛶</button>
+          <button class="card-close" id="splitPaneCloseBtn" title="Zamknij panel (Esc)">✕</button>
+        </div>
+      </div>
+      <div class="split-pane-body" id="splitPaneBody"></div>
+    </div>
+
+    <!-- Pływający Dok Szlaków Farmakologicznych & Podgrafów -->
+    <div id="pathwayDock" class="pathway-dock" role="toolbar" aria-label="Narzędzia Szlaków Biochemicznych">
+      <div class="pathway-dock-header">
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:13px">🧬</span>
+          <b style="font-size:11px;letter-spacing:0.5px;text-transform:uppercase;color:var(--color-text)">Szlaki:</b>
+        </div>
+        <div class="pathway-mode-toggle">
+          <button id="pathwayModeSpotlight" class="pathway-mode-btn active" title="Wygaszenie reszty grafu (Spotlight)">💡 Spotlight</button>
+          <button id="pathwayModeSolo" class="pathway-mode-btn" title="Izolowany podgraf radialno-sektorowy (Solo)">🎯 Solo</button>
+          <button id="pathwayResetBtn" class="pathway-mode-btn" style="display:none" title="Wyłącz izolację szlaku (Esc)">✕ Wyłącz</button>
+        </div>
+      </div>
+      <div class="pathway-chips-container" id="pathwayChipsContainer">
+        <!-- Renderowane przez app.js -->
+      </div>
+    </div>
   </main>
 
   <aside class="detail" aria-label="Szczegóły wyboru">
@@ -527,9 +1113,7 @@
       <b id="chemModalTitle" style="font-size:var(--text-base);font-family:var(--font-display)">Struktura 2D</b>
       <button class="card-close" id="chemModalClose" title="Zamknij (Esc)" aria-label="Zamknij podgląd">✕</button>
     </div>
-    <div class="chem-big-img" id="chemModalImgWrap">
-      <img id="chemModalImg" src="" alt="Struktura cząsteczki">
-    </div>
+    <div class="chem-big-img" id="chemModalImgWrap"></div>
     <div id="chemModalDetails" style="font-size:var(--text-xs);color:#444;display:grid;gap:4px">
       <!-- Wypełniane przez app.js -->
     </div>
@@ -639,7 +1223,7 @@
     <div class="dossier-toolbar">
       <div style="display:flex;align-items:center;gap:.6rem">
         <b style="font-size:var(--text-sm)">📄 Monografia Kliniczna (Dossier)</b>
-        <span id="dossierSubtitle" style="font-size:11px;color:#bbb">Podgląd arkusza A4</span>
+        <span id="dossierSubtitle" style="font-size:11px;color:#d0d0d0">Podgląd arkusza A4</span>
       </div>
       <div style="display:flex;align-items:center;gap:6px">
         <button class="btn btn-gold" id="dossierPrintBtn" style="font-size:11px;padding:4px 10px">🖨️ Drukuj / PDF (Ctrl+P)</button>
@@ -673,7 +1257,7 @@
       <!-- Funnel Phases -->
       <div style="display:flex;flex-direction:column;gap:6px">
         <div style="display:flex;justify-content:space-between;align-items:center">
-          <small class="muted" style="font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Ścieżka Rozwoju Klinicznego (Funnel)</small>
+          <small class="muted" style="font-weight:700">Ścieżka Rozwoju Klinicznego (Funnel)</small>
           <small id="evidenceFilterHint" class="muted">Kliknij fazę, aby przefiltrować</small>
         </div>
         <div class="evidence-funnel" id="evidenceFunnel"></div>
@@ -687,6 +1271,7 @@
           <button class="evidence-timeline-pill" id="evFilterDiscBtn">⚠️ Niespójności FDA/EMA</button>
           <button class="evidence-timeline-pill" id="evFilterBlackBoxBtn">⬛ Black Box</button>
           <button class="evidence-timeline-pill" id="evFilterWithdrawnBtn">🚫 Wycofane</button>
+          <button class="evidence-timeline-pill" id="evFilterEbmBtn">🔬 Badania EBM / Cochrane</button>
         </div>
         <div style="display:flex;gap:6px;align-items:center">
           <input type="text" id="evidenceSearchInput" placeholder="Szukaj w kohorcie..." style="font-size:11px;padding:4px 8px;border-radius:6px;border:1px solid var(--color-border);background:var(--color-surface);color:var(--color-text);min-width:180px" />
@@ -695,7 +1280,7 @@
       </div>
       <!-- Approval Timeline -->
       <div style="display:flex;flex-direction:column;gap:6px">
-        <small class="muted" style="font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Dekada Pierwszej Rejestracji (First Approval Timeline)</small>
+        <small class="muted" style="font-weight:700">Dekada Pierwszej Rejestracji (First Approval Timeline)</small>
         <div class="evidence-timeline-bar" id="evidenceTimelineBar"></div>
       </div>
       <!-- Cohort Results -->
@@ -708,6 +1293,23 @@
           <!-- Renderowane przez app.js -->
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<div id="indicationsModal" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Hierarchia Wskazań Klinicznych ICD-10 i ICD-11">
+  <div class="evidence-modal" style="max-width:960px">
+    <div class="evidence-head">
+      <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap">
+        <b style="font-size:var(--text-base);font-family:var(--font-display)">🏷️ Wskazania Kliniczne & Hierarchia ICD (ICD-10 CeZ / ICD-11 WHO)</b>
+        <span class="tag ok" style="font-size:11px">Polska wersja kliniczna</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <input type="text" id="indicationsSearchInput" placeholder="Szukaj choroby, kodu ICD lub leku..." style="font-size:11px;padding:4px 10px;border-radius:6px;border:1px solid var(--color-border);background:var(--color-surface);color:var(--color-text);min-width:240px" />
+        <button class="card-close" id="indicationsModalClose" title="Zamknij (Esc)" aria-label="Zamknij eksplorator wskazań">✕</button>
+      </div>
+    </div>
+    <div class="evidence-body" id="indicationsTreeContainer" style="display:grid;gap:12px">
+      <!-- Generowane przez app.js -->
     </div>
   </div>
 </div>
@@ -751,6 +1353,24 @@
     </div>
   </div>
 </div>
+</div>
+<div id="toastContainer" class="toast-container" role="status" aria-live="polite"></div>
+
+<div id="cmdPaletteBackdrop" class="cmd-palette-backdrop" role="dialog" aria-modal="true" aria-label="Szybkie wyszukiwanie i paleta komend">
+  <div class="cmd-palette-modal">
+    <div class="cmd-palette-input-wrap">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="cmdPaletteInput" class="cmd-palette-input" placeholder="Wpisz nazwę leku, receptora (np. 5-HT2A), kod ICD lub komendę..." autocomplete="off" />
+      <kbd class="cmd-palette-kbd">Esc</kbd>
+    </div>
+    <div id="cmdPaletteList" class="cmd-palette-list" role="listbox" aria-label="Wyniki szybkiego wyszukiwania"></div>
+    <div class="cmd-palette-foot">
+      <span>Nawigacja: <kbd class="cmd-palette-kbd">↑</kbd> <kbd class="cmd-palette-kbd">↓</kbd> · Wybór: <kbd class="cmd-palette-kbd">Enter</kbd></span>
+      <span>2537 substancji · 546 celów</span>
+    </div>
+  </div>
+</div>
+
 <script src="graph-data.js"></script>
 <script src="app.js"></script>
 </body>

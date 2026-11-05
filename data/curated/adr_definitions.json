@@ -1,0 +1,58 @@
+[
+  {
+    "key": "qtc",
+    "name": "Arytmia & Wydłużenie QTc",
+    "icon": "🫀",
+    "axis": "cardio",
+    "desc": "Blokada kanałów potasowych hERG i opóźnienie repolaryzacji komorowej sprzyjające tachyarytmiom komorowym (TdP)."
+  },
+  {
+    "key": "respiratory",
+    "name": "Depresja OUN & Oddechowa",
+    "icon": "🫁",
+    "axis": "cns",
+    "desc": "Hamowanie pnia mózgu i ośrodka oddechowego poprzez receptory mi-opioidowe oraz kompleksy GABA-A."
+  },
+  {
+    "key": "serotonin",
+    "name": "Zespół Serotoninowy",
+    "icon": "⚡",
+    "axis": "cns",
+    "desc": "Nadmierna aktywacja ośrodkowych i obwodowych receptorów 5-HT (5-HT1A, 5-HT2A) prowadząca do hipertermii, klonusów i drgawek."
+  },
+  {
+    "key": "cyp",
+    "name": "Wąskie Gardło CYP (Wątroba)",
+    "icon": "🧪",
+    "axis": "hepatic",
+    "desc": "Nasycenie szlaków cytochromu P450, konkurencja enzymatyczna i spowolnienie eliminacji leków we krwi."
+  },
+  {
+    "key": "anticholinergic",
+    "name": "Obciążenie Antycholinergiczne",
+    "icon": "👁️",
+    "axis": "autonomic",
+    "desc": "Ośrodkowa i obwodowa blokada muskarynowa wywołująca majaczenie, suchość błon, tachykardię i retencję moczu."
+  },
+  {
+    "key": "hypertension",
+    "name": "Przełom Adrenergiczny / Skoki RR",
+    "icon": "📈",
+    "axis": "cardio",
+    "desc": "Stymulacja układu współczulnego, blokada NET/DAT lub aktywacja receptorów alfa/beta adrenergicznych."
+  },
+  {
+    "key": "seizure",
+    "name": "Ryzyko Drgawkowe (Prokonwulsyjne)",
+    "icon": "🧠",
+    "axis": "cns",
+    "desc": "Obniżenie progu drgawkowego, blokada neuroprzekaźnictwa hamującego GABA lub nadmierna stymulacja glutaminergiczna."
+  },
+  {
+    "key": "bleeding",
+    "name": "Zaburzenia Krzepnięcia & Krwawienia",
+    "icon": "🩸",
+    "axis": "hepatic",
+    "desc": "Inhibicja COX-1/płytek krwi, deplecja płytkowej puli serotoniny przez SSRI lub bezpośrednia antykoagulacja."
+  }
+]

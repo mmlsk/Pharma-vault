@@ -1,0 +1,167 @@
+[
+  {
+    "id": "serotonergic",
+    "name": "Układ Serotoninergiczny",
+    "icon": "🌊",
+    "color": "#a86fdf",
+    "description": "Modulacja nastroju, lęku, neuroplastyczności, motoryki żołądkowo-jelitowej i percepcji zmysłowej.",
+    "transduction": "5-HT1 (Gi/o, ↓cAMP), 5-HT2 (Gq/11, ↑IP3/DAG), 5-HT4/6/7 (Gs, ↑cAMP), 5-HT3 (kanał jonowy Cys-loop)",
+    "target_ids": ["CHEMBL224", "CHEMBL228", "CHEMBL2095200", "CHEMBL2096662", "CHEMBL2096904", "CHEMBL214"],
+    "subtypes": [
+      { "name": "5-HT1A", "role": "Autoreceptor somatodendrytyczny & postsynaptyczny, anksjolityk", "g_protein": "Gi" },
+      { "name": "5-HT2A", "role": "Kora czołowa, neuroplastyczność, percepcja psychodeliczna", "g_protein": "Gq" },
+      { "name": "5-HT2C", "role": "Kontrola łaknienia, dopaminergiczne hamowanie w VTA", "g_protein": "Gq" },
+      { "name": "SERT", "role": "Transporter zwrotny serotoniny (SLC6A4)", "g_protein": "Transporter" }
+    ]
+  },
+  {
+    "id": "dopaminergic",
+    "name": "Układ Dopaminergiczny",
+    "icon": "⚡",
+    "color": "#d19900",
+    "description": "Szlaki nagrody, motywacji, napędu psychomotorycznego, funkcji wykonawczych i kontroli ruchowej (nigrostriatalny, mezolimbiczny, mezokortykalny).",
+    "transduction": "D1-like (D1, D5: Gs, ↑cAMP), D2-like (D2, D3, D4: Gi, ↓cAMP, aktywacja kanałów GIRK)",
+    "target_ids": ["CHEMBL217", "CHEMBL234", "CHEMBL238", "CHEMBL2331075", "CHEMBL2111341", "CHEMBL2096905", "CHEMBL2095169"],
+    "subtypes": [
+      { "name": "D1", "role": "Pobudzający, kora przedczołowa, pamięć robocza", "g_protein": "Gs" },
+      { "name": "D2", "role": "Główny cel neuroleptyków i agonistów przeciwparkinsonowskich", "g_protein": "Gi" },
+      { "name": "D3", "role": "Układ mezolimbiczny, modulacja afektu i napędu", "g_protein": "Gi" },
+      { "name": "DAT", "role": "Transporter zwrotny dopaminy (SLC6A3)", "g_protein": "Transporter" }
+    ]
+  },
+  {
+    "id": "gabaergic",
+    "name": "Układ GABAergiczny",
+    "icon": "🛡️",
+    "color": "#4f98a3",
+    "description": "Główny układ hamujący OUN; kontrola sedacji, anksjolizy, napięcia mięśniowego i progu drgawkowego.",
+    "transduction": "GABA-A (jonotropowy kanał Cl-), GABA-B (metabotropowy Gi/o, hamowanie kanałów Ca2+, aktywacja K+)",
+    "target_ids": ["CHEMBL2364025", "CHEMBL2111392", "CHEMBL2093872", "CHEMBL2109244", "CHEMBL2111463"],
+    "subtypes": [
+      { "name": "GABA-A α1", "role": "Komponent nasenny / sedatywny (z-drugi, BZD)", "g_protein": "Jonotropowy Cl-" },
+      { "name": "GABA-A α2/α3", "role": "Działanie przeciwlękowe i miorelaksacyjne", "g_protein": "Jonotropowy Cl-" },
+      { "name": "GABA-B", "role": "Pre- i postsynaptyczne hamowanie (baklofen)", "g_protein": "Gi" }
+    ]
+  },
+  {
+    "id": "glutamatergic",
+    "name": "Układ Glutaminergiczny (NMDA / AMPA)",
+    "icon": "🧠",
+    "color": "#dd6974",
+    "description": "Główny układ pobudzający OUN; plastyczność synaptyczna, uczenie się (LTP) oraz ekscytotoksyczność.",
+    "transduction": "NMDA (kanał Ca2+/Na+), AMPA/Kainate (kanał Na+), mGluR1-8 (Gq, Gi, Gs)",
+    "target_ids": ["CHEMBL2094124", "CHEMBL1907603", "CHEMBL2096670", "CHEMBL2109241"],
+    "subtypes": [
+      { "name": "NMDAR (GluN1/2A/2B)", "role": "Długotrwałe wzmocnienie synaptyczne, cel ketaminy/memantyny", "g_protein": "Kanał Ca2+" },
+      { "name": "AMPAR", "role": "Szybka transmisja pobudzająca, allosteryczne ampakiny", "g_protein": "Kanał Na+" }
+    ]
+  },
+  {
+    "id": "cholinergic",
+    "name": "Układ Cholinergiczny (ACh)",
+    "icon": "🌿",
+    "color": "#6daa45",
+    "description": "Pamięć, uwaga, transmisja nerwowo-mięśniowa i układ przywspółczulny.",
+    "transduction": "Muskarynowe M1/M3/M5 (Gq), M2/M4 (Gi), Nikotynowe nAChR (kanał Na+/Ca2+)",
+    "target_ids": ["CHEMBL2362988", "CHEMBL216", "CHEMBL211", "CHEMBL245", "CHEMBL1821", "CHEMBL2492", "CHEMBL1907589", "CHEMBL2109237", "CHEMBL3038461"],
+    "subtypes": [
+      { "name": "AChE", "role": "Acetylocholinoesteraza (donepezil, rywastygmina)", "g_protein": "Enzym" },
+      { "name": "M1", "role": "Kora i hipokamp, modulacja funkcji poznawczych", "g_protein": "Gq" },
+      { "name": "M2", "role": "Autoreceptory i układ przewodzący serca", "g_protein": "Gi" },
+      { "name": "α7 nAChR", "role": "Presynaptyczna modulacja uwalniania neuroprzekaźników", "g_protein": "Kanał Ca2+" }
+    ]
+  },
+  {
+    "id": "opioid",
+    "name": "Układ Opioidowy",
+    "icon": "🛑",
+    "color": "#bb653b",
+    "description": "Antynocycepcja, analgezja, modulacja emocjonalna, ośrodek oddechowy i motoryka przewodu pokarmowego.",
+    "transduction": "Receptory μ (MOR), δ (DOR), κ (KOR) - sprzężone z Gi/o (hamowanie cyklazy adenylanowej i kanałów Ca2+)",
+    "target_ids": ["CHEMBL233", "CHEMBL237", "CHEMBL2095181"],
+    "subtypes": [
+      { "name": "MOR (μ)", "role": "Silna analgezja, sedacja, ryzyko depresji oddechowej i uzależnienia", "g_protein": "Gi" },
+      { "name": "KOR (κ)", "role": "Dysforia, modulacja percepcji, efekt halucynogenny (salwinoryna)", "g_protein": "Gi" }
+    ]
+  },
+  {
+    "id": "adrenergic",
+    "name": "Układ Noradrenergiczny & Adrenergiczny",
+    "icon": "💓",
+    "color": "#dd6974",
+    "description": "Reakcja na stres (fight-or-flight), uwaga, czuwanie, regulacja ciśnienia tętniczego i oporu naczyniowego.",
+    "transduction": "α1 (Gq, skurcz mięśni gładkich), α2 (Gi, presynaptyczne hamowanie), β1/β2 (Gs, stymulacja serca / rozkurcz oskrzeli)",
+    "target_ids": ["CHEMBL229", "CHEMBL213", "CHEMBL210", "CHEMBL222", "CHEMBL2331074", "CHEMBL2094251", "CHEMBL2095158", "CHEMBL2094118"],
+    "subtypes": [
+      { "name": "α2A", "role": "Presynaptyczny autoreceptor, ośrodkowy spadek ciśnienia (klonidyna)", "g_protein": "Gi" },
+      { "name": "β1", "role": "Węzeł zatokowy i mięsień sercowy (inotropowo/chronotropowo +)", "g_protein": "Gs" },
+      { "name": "β2", "role": "Mięśniówka oskrzeli i naczyń obwodowych (spazmoliza)", "g_protein": "Gs" },
+      { "name": "NET", "role": "Transporter zwrotny noradrenaliny (SLC6A2)", "g_protein": "Transporter" }
+    ]
+  },
+  {
+    "id": "adenosinergic",
+    "name": "Układ Adenozynowy",
+    "icon": "☕",
+    "color": "#bb653b",
+    "description": "Homeostaza energetyczna komórek, regulacja snu i czuwania, presja senna, rozszerzenie naczyń wieńcowych.",
+    "transduction": "A1/A3 (Gi, hamowanie pobudliwości), A2A/A2B (Gs, ↑cAMP, aktywacja naczyniowa)",
+    "target_ids": ["CHEMBL251", "CHEMBL2094257", "CHEMBL2111329"],
+    "subtypes": [
+      { "name": "A1", "role": "Presynaptyczne hamowanie glutaminianu, sen powolnofalowy", "g_protein": "Gi" },
+      { "name": "A2A", "role": "Prążkowie, interakcja z D2, cel antagonizmu kofeiny", "g_protein": "Gs" }
+    ]
+  },
+  {
+    "id": "histaminergic",
+    "name": "Układ Histaminergiczny",
+    "icon": "🔔",
+    "color": "#dd6974",
+    "description": "Regulacja czuwania (jądro guzowo-suteczkowe TMN), kwasota żołądkowa, reakcje zapalne i świąd.",
+    "transduction": "H1 (Gq, czuwanie, skurcz oskrzeli), H2 (Gs, sekrecja żołądkowa), H3 (Gi, autoreceptor OUN)",
+    "target_ids": ["CHEMBL231", "CHEMBL1941", "CHEMBL264"],
+    "subtypes": [
+      { "name": "H1", "role": "OUN - podtrzymanie czuwania; blokada wywołuje silną sedację", "g_protein": "Gq" },
+      { "name": "H2", "role": "Komórki okładzinowe żołądka (antagoniści hamują wydzielanie HCl)", "g_protein": "Gs" },
+      { "name": "H3", "role": "Presynaptyczna kontrola uwalniania histaminy i monoamin", "g_protein": "Gi" }
+    ]
+  },
+  {
+    "id": "incretin",
+    "name": "Układ Inkretynowy & Metaboliczny",
+    "icon": "🥞",
+    "color": "#5591c7",
+    "description": "Glukozometabolizm, stymulacja wydzielania insuliny zależna od glukozy, opóźnienie opróżniania żołądka i kontrola sytości w podwzgórzu.",
+    "transduction": "GLP-1R, GIPR, GCGR - receptory GPCR klasy B sprzężone z Gs (↑cAMP / PKA)",
+    "target_ids": ["CHEMBL1784", "CHEMBL1985", "CHEMBL5844"],
+    "subtypes": [
+      { "name": "GLP-1R", "role": "Ośrodek sytości, kardioprotekcja (semaglutyd, liraglutyd)", "g_protein": "Gs" },
+      { "name": "GCGR", "role": "Glukoneogeneza i glikogenoliza w wątrobie", "g_protein": "Gs" }
+    ]
+  },
+  {
+    "id": "endocannabinoid",
+    "name": "Układ Endokannabinoidowy (ECS)",
+    "icon": "🌱",
+    "color": "#6daa45",
+    "description": "Retrogradna synaptyczna kontrola uwalniania neuroprzekaźników, modulacja apetytu, nocycepcji i odporności.",
+    "transduction": "CB1, CB2 sprzężone z Gi/o; enzymy degradujące FAAH i MAGL",
+    "target_ids": ["CHEMBL218"],
+    "subtypes": [
+      { "name": "CB1", "role": "OUN, presynaptyczna modulacja glutaminianu/GABA, psychoaktywność (THC)", "g_protein": "Gi" }
+    ]
+  },
+  {
+    "id": "orexinergic_melatonergic",
+    "name": "Układ Rytmu Dobowego & Czuwania (Orexin / Melatonin)",
+    "icon": "🌙",
+    "color": "#5591c7",
+    "description": "Regulacja cyklu sen-czuwanie, stabilizacja fazy REM, chronobiologia i bramkowanie snu.",
+    "transduction": "OX1R (Gq), OX2R (Gq/Gi, podtrzymanie czuwania), MT1/MT2 (Gi, inicjacja snu)",
+    "target_ids": ["CHEMBL3307226", "CHEMBL4792", "CHEMBL5113", "CHEMBL2094268"],
+    "subtypes": [
+      { "name": "OX1R/OX2R", "role": "Orexyny/hipokretyny, cel DORA (suworeksant)", "g_protein": "Gq/Gi" },
+      { "name": "MT1/MT2", "role": "Jądro nadskrzyżowaniowe SCN, melatonina i ramelteon", "g_protein": "Gi" }
+    ]
+  }
+]

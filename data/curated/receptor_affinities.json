@@ -1,0 +1,359 @@
+{
+  "haloperidol-compound": {
+    "compound_id": "haloperidol-compound",
+    "class": "antipsychotic",
+    "generation": "first-generation (typical)",
+    "kinetic_class": "slow-off",
+    "d2_occupancy_therapeutic_pct": 75,
+    "primary_targets": ["D2", "D3", "alpha1A"],
+    "profiles": [
+      { "target": "D2", "chembl_id": "CHEMBL217", "ki_nm": 0.7, "pki": 9.15, "action": "antagonist" },
+      { "target": "D3", "chembl_id": "CHEMBL234", "ki_nm": 2.1, "pki": 8.68, "action": "antagonist" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 45.0, "pki": 7.35, "action": "antagonist" },
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 1920.0, "pki": 5.72, "action": "antagonist" },
+      { "target": "alpha1A", "chembl_id": "CHEMBL229", "ki_nm": 6.0, "pki": 8.22, "action": "antagonist" },
+      { "target": "H1", "chembl_id": "CHEMBL231", "ki_nm": 440.0, "pki": 6.36, "action": "antagonist" },
+      { "target": "M1", "chembl_id": "CHEMBL216", "ki_nm": 1500.0, "pki": 5.82, "action": "antagonist" }
+    ],
+    "notes_pl": "Klasyczny neuroleptyk I generacji o kinetyce slow-off D2. Próg objawów pozapiramidowych (EPS) przekraczany przy occupacji D2 >78%."
+  },
+  "clozapine-compound": {
+    "compound_id": "clozapine-compound",
+    "class": "antipsychotic",
+    "generation": "second-generation (atypical)",
+    "kinetic_class": "fast-off",
+    "d2_occupancy_therapeutic_pct": 45,
+    "primary_targets": ["5-HT2A", "H1", "alpha1A", "M1"],
+    "profiles": [
+      { "target": "D2", "chembl_id": "CHEMBL217", "ki_nm": 125.0, "pki": 6.90, "action": "antagonist" },
+      { "target": "D3", "chembl_id": "CHEMBL234", "ki_nm": 475.0, "pki": 6.32, "action": "antagonist" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 4.0, "pki": 8.40, "action": "antagonist" },
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 120.0, "pki": 6.92, "action": "partial-agonist" },
+      { "target": "alpha1A", "chembl_id": "CHEMBL229", "ki_nm": 1.6, "pki": 8.80, "action": "antagonist" },
+      { "target": "H1", "chembl_id": "CHEMBL231", "ki_nm": 1.1, "pki": 8.96, "action": "antagonist" },
+      { "target": "M1", "chembl_id": "CHEMBL216", "ki_nm": 6.2, "pki": 8.21, "action": "antagonist" }
+    ],
+    "notes_pl": "Prototypowy atypowy neuroleptyk. Bardzo szybka dysocjacja z D2 (fast-off, t1/2 <10 s), znikome ryzyko EPS, silna sedacja i przyrost masy ciała (H1, M1, 5-HT2C)."
+  },
+  "olanzapine-compound": {
+    "compound_id": "olanzapine-compound",
+    "class": "antipsychotic",
+    "generation": "second-generation (atypical)",
+    "kinetic_class": "intermediate-off",
+    "d2_occupancy_therapeutic_pct": 68,
+    "primary_targets": ["5-HT2A", "H1", "M1", "D2"],
+    "profiles": [
+      { "target": "D2", "chembl_id": "CHEMBL217", "ki_nm": 11.0, "pki": 7.96, "action": "antagonist" },
+      { "target": "D3", "chembl_id": "CHEMBL234", "ki_nm": 27.0, "pki": 7.57, "action": "antagonist" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 1.8, "pki": 8.74, "action": "antagonist" },
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 2100.0, "pki": 5.68, "action": "antagonist" },
+      { "target": "alpha1A", "chembl_id": "CHEMBL229", "ki_nm": 19.0, "pki": 7.72, "action": "antagonist" },
+      { "target": "H1", "chembl_id": "CHEMBL231", "ki_nm": 2.0, "pki": 8.70, "action": "antagonist" },
+      { "target": "M1", "chembl_id": "CHEMBL216", "ki_nm": 2.5, "pki": 8.60, "action": "antagonist" }
+    ],
+    "notes_pl": "Silny antagonista 5-HT2A i D2 oraz receptorów histaminowych i muskarynowych. Wysokie ryzyko zespołu metabolicznego."
+  },
+  "risperidone-compound": {
+    "compound_id": "risperidone-compound",
+    "class": "antipsychotic",
+    "generation": "second-generation (atypical)",
+    "kinetic_class": "slow-off",
+    "d2_occupancy_therapeutic_pct": 72,
+    "primary_targets": ["5-HT2A", "alpha1A", "D2"],
+    "profiles": [
+      { "target": "D2", "chembl_id": "CHEMBL217", "ki_nm": 3.2, "pki": 8.49, "action": "antagonist" },
+      { "target": "D3", "chembl_id": "CHEMBL234", "ki_nm": 7.5, "pki": 8.12, "action": "antagonist" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 0.5, "pki": 9.30, "action": "antagonist" },
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 210.0, "pki": 6.68, "action": "antagonist" },
+      { "target": "alpha1A", "chembl_id": "CHEMBL229", "ki_nm": 2.7, "pki": 8.57, "action": "antagonist" },
+      { "target": "H1", "chembl_id": "CHEMBL231", "ki_nm": 20.0, "pki": 7.70, "action": "antagonist" },
+      { "target": "M1", "chembl_id": "CHEMBL216", "ki_nm": 10000.0, "pki": 5.00, "action": "antagonist" }
+    ],
+    "notes_pl": "Wysokie powinowactwo do 5-HT2A i D2. Wolniejsza dysocjacja D2 niż w klozapinie, ryzyko hiperprolaktynemii i EPS przy wyższych dawkach."
+  },
+  "quetiapine-compound": {
+    "compound_id": "quetiapine-compound",
+    "class": "antipsychotic",
+    "generation": "second-generation (atypical)",
+    "kinetic_class": "fast-off",
+    "d2_occupancy_therapeutic_pct": 40,
+    "primary_targets": ["H1", "alpha1A", "5-HT2A"],
+    "profiles": [
+      { "target": "D2", "chembl_id": "CHEMBL217", "ki_nm": 300.0, "pki": 6.52, "action": "antagonist" },
+      { "target": "D3", "chembl_id": "CHEMBL234", "ki_nm": 340.0, "pki": 6.47, "action": "antagonist" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 100.0, "pki": 7.00, "action": "antagonist" },
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 720.0, "pki": 6.14, "action": "partial-agonist" },
+      { "target": "alpha1A", "chembl_id": "CHEMBL229", "ki_nm": 22.0, "pki": 7.66, "action": "antagonist" },
+      { "target": "H1", "chembl_id": "CHEMBL231", "ki_nm": 11.0, "pki": 7.96, "action": "antagonist" },
+      { "target": "M1", "chembl_id": "CHEMBL216", "ki_nm": 120.0, "pki": 6.92, "action": "antagonist" }
+    ],
+    "notes_pl": "Wybitnie szybka dysocjacja z D2 (fast-off, t1/2 ~3 s). W niższych dawkach dominuje sedacja H1."
+  },
+  "aripiprazole-compound": {
+    "compound_id": "aripiprazole-compound",
+    "class": "antipsychotic",
+    "generation": "third-generation (partial-agonist)",
+    "kinetic_class": "partial-agonist",
+    "d2_occupancy_therapeutic_pct": 85,
+    "primary_targets": ["D2", "D3", "5-HT1A", "5-HT2A"],
+    "profiles": [
+      { "target": "D2", "chembl_id": "CHEMBL217", "ki_nm": 0.7, "pki": 9.15, "action": "partial-agonist" },
+      { "target": "D3", "chembl_id": "CHEMBL234", "ki_nm": 0.8, "pki": 9.10, "action": "partial-agonist" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 8.7, "pki": 8.06, "action": "antagonist" },
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 5.6, "pki": 8.25, "action": "partial-agonist" },
+      { "target": "alpha1A", "chembl_id": "CHEMBL229", "ki_nm": 57.0, "pki": 7.24, "action": "antagonist" },
+      { "target": "H1", "chembl_id": "CHEMBL231", "ki_nm": 61.0, "pki": 7.21, "action": "antagonist" },
+      { "target": "M1", "chembl_id": "CHEMBL216", "ki_nm": 10000.0, "pki": 5.00, "action": "antagonist" }
+    ],
+    "notes_pl": "Częściowy agonista D2/D3 i 5-HT1A (III generacja). Wysoka occupacja D2 (>80%) bez wywoływania EPS dzięki aktywności wewnętrznej (~30%)."
+  },
+  "sertraline-compound": {
+    "compound_id": "sertraline-compound",
+    "class": "antidepressant",
+    "generation": "SSRI",
+    "primary_targets": ["SERT", "DAT"],
+    "profiles": [
+      { "target": "SERT", "chembl_id": "CHEMBL228", "ki_nm": 0.3, "pki": 9.52, "action": "inhibitor" },
+      { "target": "DAT", "chembl_id": "CHEMBL238", "ki_nm": 25.0, "pki": 7.60, "action": "inhibitor" },
+      { "target": "NET", "chembl_id": "CHEMBL222", "ki_nm": 420.0, "pki": 6.38, "action": "inhibitor" },
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 2200.0, "pki": 5.66, "action": "antagonist" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 2200.0, "pki": 5.66, "action": "antagonist" },
+      { "target": "H1", "chembl_id": "CHEMBL231", "ki_nm": 2200.0, "pki": 5.66, "action": "antagonist" }
+    ],
+    "notes_pl": "Silny SSRI z unikalnym umiarkowanym powinowactwem do transportera dopaminy (DAT), co sprzyja aktywizacji napędu."
+  },
+  "fluoxetine-compound": {
+    "compound_id": "fluoxetine-compound",
+    "class": "antidepressant",
+    "generation": "SSRI",
+    "primary_targets": ["SERT", "5-HT2C"],
+    "profiles": [
+      { "target": "SERT", "chembl_id": "CHEMBL228", "ki_nm": 1.0, "pki": 9.00, "action": "inhibitor" },
+      { "target": "5-HT2C", "chembl_id": "CHEMBL2095200", "ki_nm": 54.0, "pki": 7.27, "action": "antagonist" },
+      { "target": "NET", "chembl_id": "CHEMBL222", "ki_nm": 660.0, "pki": 6.18, "action": "inhibitor" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 200.0, "pki": 6.70, "action": "antagonist" },
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 8000.0, "pki": 5.10, "action": "antagonist" },
+      { "target": "H1", "chembl_id": "CHEMBL231", "ki_nm": 6250.0, "pki": 5.20, "action": "antagonist" }
+    ],
+    "notes_pl": "SSRI o działaniu odhamowującym dzięki blokadzie receptorów 5-HT2C (odhamowanie uwalniania DA i NA w korze przedczołowej)."
+  },
+  "paroxetine-compound": {
+    "compound_id": "paroxetine-compound",
+    "class": "antidepressant",
+    "generation": "SSRI",
+    "primary_targets": ["SERT", "NET", "M1"],
+    "profiles": [
+      { "target": "SERT", "chembl_id": "CHEMBL228", "ki_nm": 0.1, "pki": 10.00, "action": "inhibitor" },
+      { "target": "NET", "chembl_id": "CHEMBL222", "ki_nm": 40.0, "pki": 7.40, "action": "inhibitor" },
+      { "target": "M1", "chembl_id": "CHEMBL216", "ki_nm": 72.0, "pki": 7.14, "action": "antagonist" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 1300.0, "pki": 5.89, "action": "antagonist" },
+      { "target": "H1", "chembl_id": "CHEMBL231", "ki_nm": 13000.0, "pki": 4.89, "action": "antagonist" }
+    ],
+    "notes_pl": "Najsilniejszy inhibitor SERT wśród klasycznych SSRI z komponentem cholinolitycznym (M1)."
+  },
+  "venlafaxine-compound": {
+    "compound_id": "venlafaxine-compound",
+    "class": "antidepressant",
+    "generation": "SNRI",
+    "primary_targets": ["SERT", "NET"],
+    "profiles": [
+      { "target": "SERT", "chembl_id": "CHEMBL228", "ki_nm": 8.0, "pki": 8.10, "action": "inhibitor" },
+      { "target": "NET", "chembl_id": "CHEMBL222", "ki_nm": 210.0, "pki": 6.68, "action": "inhibitor" },
+      { "target": "DAT", "chembl_id": "CHEMBL238", "ki_nm": 2800.0, "pki": 5.55, "action": "inhibitor" }
+    ],
+    "notes_pl": "Inhibitor zwrotnego wychwytu 5-HT i NA (SNRI); wychwyt NA blokowany głównie przy wyższych dawkach."
+  },
+  "duloxetine-compound": {
+    "compound_id": "duloxetine-compound",
+    "class": "antidepressant",
+    "generation": "SNRI",
+    "primary_targets": ["SERT", "NET"],
+    "profiles": [
+      { "target": "SERT", "chembl_id": "CHEMBL228", "ki_nm": 0.8, "pki": 9.10, "action": "inhibitor" },
+      { "target": "NET", "chembl_id": "CHEMBL222", "ki_nm": 7.5, "pki": 8.12, "action": "inhibitor" },
+      { "target": "DAT", "chembl_id": "CHEMBL238", "ki_nm": 240.0, "pki": 6.62, "action": "inhibitor" }
+    ],
+    "notes_pl": "Zbalansowany SNRI o równomiernym silnym powinowactwie do SERT i NET; skuteczny w bólu neuropatycznym."
+  },
+  "amitriptyline-compound": {
+    "compound_id": "amitriptyline-compound",
+    "class": "antidepressant",
+    "generation": "TCA (TLPD)",
+    "primary_targets": ["H1", "SERT", "M1", "NET", "alpha1A"],
+    "profiles": [
+      { "target": "H1", "chembl_id": "CHEMBL231", "ki_nm": 1.1, "pki": 8.96, "action": "antagonist" },
+      { "target": "SERT", "chembl_id": "CHEMBL228", "ki_nm": 4.3, "pki": 8.37, "action": "inhibitor" },
+      { "target": "M1", "chembl_id": "CHEMBL216", "ki_nm": 18.0, "pki": 7.74, "action": "antagonist" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 20.0, "pki": 7.70, "action": "antagonist" },
+      { "target": "alpha1A", "chembl_id": "CHEMBL229", "ki_nm": 27.0, "pki": 7.57, "action": "antagonist" },
+      { "target": "NET", "chembl_id": "CHEMBL222", "ki_nm": 35.0, "pki": 7.46, "action": "inhibitor" }
+    ],
+    "notes_pl": "Trójpierścieniowy lek przeciwdepresyjny (TLPD); silne działanie uspokajające (H1), cholinolityczne (M1) i kardiotoksyczne."
+  },
+  "bupropion-compound": {
+    "compound_id": "bupropion-compound",
+    "class": "antidepressant",
+    "generation": "NDRI",
+    "primary_targets": ["NET", "DAT"],
+    "profiles": [
+      { "target": "NET", "chembl_id": "CHEMBL222", "ki_nm": 280.0, "pki": 6.55, "action": "inhibitor" },
+      { "target": "DAT", "chembl_id": "CHEMBL238", "ki_nm": 520.0, "pki": 6.28, "action": "inhibitor" },
+      { "target": "SERT", "chembl_id": "CHEMBL228", "ki_nm": 9100.0, "pki": 5.04, "action": "inhibitor" }
+    ],
+    "notes_pl": "Inhibitor wychwytu dopaminy i noradrenaliny (NDRI); brak komponentu serotoninergicznego i brak dysfunkcji seksualnych."
+  },
+  "mirtazapine-compound": {
+    "compound_id": "mirtazapine-compound",
+    "class": "antidepressant",
+    "generation": "NaSSA",
+    "primary_targets": ["H1", "5-HT2A", "5-HT2C"],
+    "profiles": [
+      { "target": "H1", "chembl_id": "CHEMBL231", "ki_nm": 0.14, "pki": 9.85, "action": "antagonist" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 6.3, "pki": 8.20, "action": "antagonist" },
+      { "target": "5-HT2C", "chembl_id": "CHEMBL2095200", "ki_nm": 8.9, "pki": 8.05, "action": "antagonist" }
+    ],
+    "notes_pl": "NaSSA; blokada autoreceptorów alfa-2 odhamowuje uwalnianie NA i 5-HT; potężna sedacja przez H1."
+  },
+  "vortioxetine-compound": {
+    "compound_id": "vortioxetine-compound",
+    "class": "antidepressant",
+    "generation": "multimodal",
+    "primary_targets": ["SERT", "5-HT3", "5-HT1A"],
+    "profiles": [
+      { "target": "SERT", "chembl_id": "CHEMBL228", "ki_nm": 1.6, "pki": 8.80, "action": "inhibitor" },
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 15.0, "pki": 7.82, "action": "agonist" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 120.0, "pki": 6.92, "action": "antagonist" }
+    ],
+    "notes_pl": "Wielomodalny lek przeciwdepresyjny; modulacja transporterów i heteroreceptorów sprzyja funkcjom poznawczym."
+  },
+  "lysergide-compound": {
+    "compound_id": "lysergide-compound",
+    "class": "psychedelic",
+    "generation": "ergoline",
+    "primary_targets": ["5-HT2A", "5-HT1A", "5-HT2C", "D2"],
+    "profiles": [
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 2.9, "pki": 8.54, "action": "agonist" },
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 3.4, "pki": 8.47, "action": "agonist" },
+      { "target": "5-HT2C", "chembl_id": "CHEMBL2095200", "ki_nm": 23.0, "pki": 7.64, "action": "agonist" },
+      { "target": "D2", "chembl_id": "CHEMBL217", "ki_nm": 60.0, "pki": 7.22, "action": "partial-agonist" }
+    ],
+    "notes_pl": "Niezwykle silny psychodelik ergolinowy; zjawisko uwięzienia cząsteczki w kieszeni 5-HT2A (lid effect) wydłuża czas trwania działania."
+  },
+  "psilocin-compound": {
+    "compound_id": "psilocin-compound",
+    "class": "psychedelic",
+    "generation": "tryptamine",
+    "primary_targets": ["5-HT2A", "5-HT2C", "5-HT1A"],
+    "profiles": [
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 6.0, "pki": 8.22, "action": "agonist" },
+      { "target": "5-HT2C", "chembl_id": "CHEMBL2095200", "ki_nm": 10.0, "pki": 8.00, "action": "agonist" },
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 130.0, "pki": 6.89, "action": "agonist" },
+      { "target": "SERT", "chembl_id": "CHEMBL228", "ki_nm": 3800.0, "pki": 5.42, "action": "inhibitor" }
+    ],
+    "notes_pl": "Aktywny metabolit psylocybiny; wysokie powinowactwo do 5-HT2A i 5-HT2C, niska aktywność dopaminergiczna."
+  },
+  "mdma-compound": {
+    "compound_id": "mdma-compound",
+    "class": "entactogen",
+    "generation": "phenethylamine",
+    "primary_targets": ["SERT", "DAT", "NET", "5-HT2A"],
+    "profiles": [
+      { "target": "SERT", "chembl_id": "CHEMBL228", "ki_nm": 72.0, "pki": 7.14, "action": "releaser" },
+      { "target": "DAT", "chembl_id": "CHEMBL238", "ki_nm": 270.0, "pki": 6.57, "action": "releaser" },
+      { "target": "NET", "chembl_id": "CHEMBL222", "ki_nm": 500.0, "pki": 6.30, "action": "releaser" },
+      { "target": "5-HT2A", "chembl_id": "CHEMBL224", "ki_nm": 700.0, "pki": 6.15, "action": "agonist" }
+    ],
+    "notes_pl": "Substancja empatogenna; gwałtowny wyrzut monoamin (głównie 5-HT przez odwrócenie transportera SERT via VMAT2)."
+  },
+  "diazepam-compound": {
+    "compound_id": "diazepam-compound",
+    "class": "sedative",
+    "generation": "benzodiazepine",
+    "primary_targets": ["GABA-A"],
+    "profiles": [
+      { "target": "GABA-A", "chembl_id": "CHEMBL2364025", "ki_nm": 12.0, "pki": 7.92, "action": "positive-modulator" },
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 10000.0, "pki": 5.00, "action": "antagonist" }
+    ],
+    "notes_pl": "Klasyczna benzodiazepina o nieselektywnym powinowactwie do podjednostek alfa-1, alfa-2, alfa-3 i alfa-5 GABA-A."
+  },
+  "alprazolam-compound": {
+    "compound_id": "alprazolam-compound",
+    "class": "sedative",
+    "generation": "triazolobenzodiazepine",
+    "primary_targets": ["GABA-A"],
+    "profiles": [
+      { "target": "GABA-A", "chembl_id": "CHEMBL2364025", "ki_nm": 5.0, "pki": 8.30, "action": "positive-modulator" }
+    ],
+    "notes_pl": "Wysokopotentna triazolobenzodiazepina; silne działanie anksjolityczne i przeciwpaniczne."
+  },
+  "zolpidem-compound": {
+    "compound_id": "zolpidem-compound",
+    "class": "hypnotic",
+    "generation": "z-drug",
+    "primary_targets": ["GABA-A"],
+    "profiles": [
+      { "target": "GABA-A", "chembl_id": "CHEMBL2364025", "ki_nm": 19.0, "pki": 7.72, "action": "selective-alpha1-modulator" }
+    ],
+    "notes_pl": "Lek nasenny z grupy Z; wysoka selektywność wobec podjednostki alfa-1 GABA-A (działanie hipnotyczne bez silnej miorelaksacji)."
+  },
+  "buspirone-compound": {
+    "compound_id": "buspirone-compound",
+    "class": "anxiolytic",
+    "generation": "azapirone",
+    "primary_targets": ["5-HT1A", "D2", "alpha1A"],
+    "profiles": [
+      { "target": "5-HT1A", "chembl_id": "CHEMBL214", "ki_nm": 20.0, "pki": 7.70, "action": "partial-agonist" },
+      { "target": "D2", "chembl_id": "CHEMBL217", "ki_nm": 320.0, "pki": 6.49, "action": "antagonist" },
+      { "target": "alpha1A", "chembl_id": "CHEMBL229", "ki_nm": 1400.0, "pki": 5.85, "action": "antagonist" }
+    ],
+    "notes_pl": "Niebenzodiazepinowy lek przeciwlękowy; częściowy agonista receptora 5-HT1A; brak potencjału uzależniającego i sedacji."
+  },
+  "morphine-compound": {
+    "compound_id": "morphine-compound",
+    "class": "opioid",
+    "generation": "natural-phenanthrene",
+    "primary_targets": ["MOR", "KOR", "DOR"],
+    "profiles": [
+      { "target": "MOR", "chembl_id": "CHEMBL233", "ki_nm": 1.8, "pki": 8.74, "action": "agonist" },
+      { "target": "KOR", "chembl_id": "CHEMBL237", "ki_nm": 90.0, "pki": 7.05, "action": "agonist" },
+      { "target": "DOR", "chembl_id": "CHEMBL2095181", "ki_nm": 110.0, "pki": 6.96, "action": "agonist" }
+    ],
+    "notes_pl": "Wzorcowy naturalny agonista receptora mi-opioidowego (MOR); silne działanie przeciwbólowe i sedatywne."
+  },
+  "fentanyl-compound": {
+    "compound_id": "fentanyl-compound",
+    "class": "opioid",
+    "generation": "synthetic-phenylpiperidine",
+    "primary_targets": ["MOR", "KOR", "DOR"],
+    "profiles": [
+      { "target": "MOR", "chembl_id": "CHEMBL233", "ki_nm": 0.4, "pki": 9.40, "action": "agonist" },
+      { "target": "KOR", "chembl_id": "CHEMBL237", "ki_nm": 40.0, "pki": 7.40, "action": "agonist" },
+      { "target": "DOR", "chembl_id": "CHEMBL2095181", "ki_nm": 150.0, "pki": 6.82, "action": "agonist" }
+    ],
+    "notes_pl": "Syntetyczny opioid o sub-nanomolarnym powinowactwie do MOR (~100x silniejszy niż morfina); szybki początek działania i wysoka lipofilność."
+  },
+  "buprenorphine-compound": {
+    "compound_id": "buprenorphine-compound",
+    "class": "opioid",
+    "generation": "semi-synthetic-thebaine",
+    "primary_targets": ["MOR", "KOR", "DOR"],
+    "profiles": [
+      { "target": "MOR", "chembl_id": "CHEMBL233", "ki_nm": 0.2, "pki": 9.70, "action": "partial-agonist" },
+      { "target": "KOR", "chembl_id": "CHEMBL237", "ki_nm": 1.5, "pki": 8.82, "action": "antagonist" },
+      { "target": "DOR", "chembl_id": "CHEMBL2095181", "ki_nm": 8.4, "pki": 8.08, "action": "antagonist" }
+    ],
+    "notes_pl": "Częściowy agonista MOR o potężnym powinowactwie i bardzo powolnej dysocjacji (wypiera inne opioidy, efekt pułapowy depresji oddechowej)."
+  },
+  "naloxone-compound": {
+    "compound_id": "naloxone-compound",
+    "class": "opioid-antagonist",
+    "generation": "pure-antagonist",
+    "primary_targets": ["MOR", "KOR", "DOR"],
+    "profiles": [
+      { "target": "MOR", "chembl_id": "CHEMBL233", "ki_nm": 1.0, "pki": 9.00, "action": "antagonist" },
+      { "target": "KOR", "chembl_id": "CHEMBL237", "ki_nm": 10.0, "pki": 8.00, "action": "antagonist" },
+      { "target": "DOR", "chembl_id": "CHEMBL2095181", "ki_nm": 25.0, "pki": 7.60, "action": "antagonist" }
+    ],
+    "notes_pl": "Czysty antagonista receptorów opioidowych; lek ratunkowy znoszący depresję oddechową w ostrych przedawkowaniach opioidów."
+  }
+}
