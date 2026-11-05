@@ -77,6 +77,42 @@
     }
   });
 
+  // Food-Drug & Nutraceutical Interaction Engine (v3.30.0)
+  const FOOD_INTERACTIONS = G.foodDrugInteractions || {};
+  const FOOD_CATALOG = FOOD_INTERACTIONS.food_catalog || {};
+  const FOOD_RULES = FOOD_INTERACTIONS.interaction_rules || [];
+
+  function getFoodInteractionsForCompound(compound) {
+    if (!compound || !FOOD_RULES || !FOOD_RULES.length) return [];
+    const cid = compound.id;
+    const cAtcList = (compound.atc || []).map((x) => Array.isArray(x) ? x[0] : x);
+
+    const matches = [];
+    FOOD_RULES.forEach((rule) => {
+      const sel = rule.compound_selector || {};
+      let isMatch = false;
+
+      if (sel.exact_compounds && sel.exact_compounds.includes(cid)) {
+        isMatch = true;
+      }
+
+      if (!isMatch && sel.atc_prefixes && cAtcList.length > 0) {
+        for (const pfx of sel.atc_prefixes) {
+          if (cAtcList.some((code) => typeof code === "string" && code.startsWith(pfx))) {
+            isMatch = true;
+            break;
+          }
+        }
+      }
+
+      if (isMatch) {
+        matches.push(rule);
+      }
+    });
+
+    return matches;
+  }
+
   // Neuropharmacology & Receptor Affinity Engine (v3.24.0)
   const RECEPTOR_AFFINITIES = G.receptorAffinities || {};
   // Pharmacokinetics 2-Compartment Simulation Engine (v3.25.0)
@@ -147,6 +183,7 @@
     rel: true, hlBin: null, tab: "overview",
     stack: new Set(), stackOnly: false, stackDrawerOpen: false,
     stackTab: "pk", selectedMatrixPair: null,
+    patientDiet: new Set(),
     adv: {
       cyp: "",
       ro5: "",
@@ -4467,16 +4504,17 @@
       </div>`;
   }
 
-  // ---------- Polypharmacy & DDI Risk Engine (v3.23.0)
+  // ---------- Polypharmacy & DDI Risk Engine (v3.23.0 - v3.30.0)
   function computePolypharmacyScore(stackList) {
-    if (!stackList || stackList.length < 2) {
+    const activeDiet = state.patientDiet || new Set();
+    if (!stackList || stackList.length === 0 || (stackList.length === 1 && activeDiet.size === 0)) {
       return {
         score: 0,
         status: "safe",
         statusText: "Bezpieczny Stack",
-        summary: "Brak wykrytych kolizji",
+        summary: stackList && stackList.length === 1 ? "Dodaj leki lub zaznacz dietę" : "Brak wykrytych kolizji",
         color: "#34c759",
-        vectors: { cyp: 0, qtc: 0, serotonin: 0, sedation: 0, anticholinergic: 0, renal_bleeding: 0 },
+        vectors: { cyp: 0, qtc: 0, serotonin: 0, sedation: 0, anticholinergic: 0, renal_bleeding: 0, food: 0 },
         collisions: [],
         totalAcb: 0
       };
@@ -4484,7 +4522,7 @@
 
     const collisions = [];
     const n = stackList.length;
-    let maxCyp = 0, maxQtc = 0, maxSerotonin = 0, maxSedation = 0, totalAcb = 0, maxRenalBleed = 0;
+    let maxCyp = 0, maxQtc = 0, maxSerotonin = 0, maxSedation = 0, totalAcb = 0, maxRenalBleed = 0, maxFood = 0;
 
     for (let i = 0; i < n; i++) {
       const cA = stackList[i];
@@ -4676,6 +4714,39 @@
       }
     });
 
+    // Food-Drug & Nutraceutical Interactions (v3.30.0)
+    if (activeDiet.size > 0 && FOOD_RULES && FOOD_RULES.length > 0) {
+      stackList.forEach((c) => {
+        const cRules = getFoodInteractionsForCompound(c);
+        cRules.forEach((rule) => {
+          if (activeDiet.has(rule.food_id)) {
+            const foodMeta = FOOD_CATALOG[rule.food_id] || {};
+            const isContra = rule.severity === "contraindicated";
+            const isSevere = rule.severity === "severe";
+            const colLevel = (isContra || isSevere) ? "danger" : "warn";
+            const colWeight = isContra ? 100 : (isSevere ? 80 : 50);
+            maxFood = Math.max(maxFood, colWeight);
+
+            collisions.push({
+              id: `${rule.id}_${c.id}`,
+              level: colLevel,
+              vector: "food",
+              badge: isContra ? "PRZECIWWSKAZANIE DIETETYCZNE" : (isSevere ? "CIĘŻKA INTERAKCJA DIETETYCZNA" : "OSTROŻNOŚĆ DIETETYCZNA"),
+              icon: foodMeta.icon || "🍽️",
+              title: `${foodMeta.icon || "🍽️"} ${c.n} + ${foodMeta.name_pl || rule.food_id}: ${rule.title_pl}`,
+              description: rule.mechanism_pl,
+              clinicalConsequence: rule.clinical_consequence,
+              monitoring: rule.management,
+              target_gene: rule.target_gene,
+              pdb_id: rule.pdb_id,
+              compound_id: c.id,
+              isFoodInteraction: true
+            });
+          }
+        });
+      });
+    }
+
     const acbVector = totalAcb >= 6 ? 100 : totalAcb >= 4 ? 75 : totalAcb >= 2 ? 40 : 0;
     const vectors = {
       cyp: maxCyp,
@@ -4683,16 +4754,18 @@
       serotonin: maxSerotonin,
       sedation: maxSedation,
       anticholinergic: acbVector,
-      renal_bleeding: maxRenalBleed
+      renal_bleeding: maxRenalBleed,
+      food: maxFood
     };
 
     // Weighted composite risk score
-    const rawScore = 0.20 * vectors.cyp +
-                     0.25 * vectors.qtc +
-                     0.25 * vectors.serotonin +
-                     0.15 * vectors.sedation +
+    const rawScore = 0.18 * vectors.cyp +
+                     0.22 * vectors.qtc +
+                     0.22 * vectors.serotonin +
+                     0.13 * vectors.sedation +
                      0.10 * vectors.anticholinergic +
-                     0.05 * vectors.renal_bleeding;
+                     0.05 * vectors.renal_bleeding +
+                     0.10 * vectors.food;
 
     let score = Math.min(100, Math.round(rawScore));
     if (collisions.some((c) => c.level === "danger") && score < 65) {
@@ -4738,7 +4811,8 @@
     const shield = $("polypharmacyShield");
     if (!shield) return;
 
-    if (state.stack.size < 2) {
+    const hasDiet = state.patientDiet && state.patientDiet.size > 0;
+    if (state.stack.size === 0 || (state.stack.size < 2 && !hasDiet)) {
       shield.classList.remove("active");
       return;
     }
@@ -4865,13 +4939,34 @@
 
   function openDdiAuditInSplitPane() {
     const stackList = [...state.stack].map((i) => C[i]);
-    if (stackList.length < 2) {
-      openSplitPane("🛡️", "Tarcza Polipragmazji", "Wymaga co najmniej 2 leków w stacku", `
-        <div style="text-align:center;padding:24px;color:var(--color-text-muted)">
+    const activeDiet = state.patientDiet || new Set();
+    if (stackList.length === 0 || (stackList.length < 2 && activeDiet.size === 0)) {
+      const dietPillsHtml = Object.entries(FOOD_CATALOG).map(([fid, f]) => {
+        const isSelected = activeDiet.has(fid);
+        const bg = isSelected ? "var(--color-primary)" : "var(--color-surface)";
+        const col = isSelected ? "#fff" : "var(--color-text)";
+        const bdr = isSelected ? "var(--color-primary)" : "var(--color-border)";
+        return `
+          <button class="btn btn-sm" data-toggle-diet="${esc(fid)}" style="background:${bg};color:${col};border:1px solid ${bdr};font-size:11px;padding:3px 8px;border-radius:14px;cursor:pointer;display:inline-flex;align-items:center;gap:4px">
+            <span>${f.icon || '🍽️'}</span>
+            <span>${esc(f.name_pl || fid)}</span>
+          </button>
+        `;
+      }).join("");
+
+      openSplitPane("🛡️", "Tarcza Polipragmazji & Diety", "Wymaga co najmniej 2 leków lub leku i aktywnej diety", `
+        <div style="text-align:center;padding:20px;color:var(--color-text-muted)">
           <div style="font-size:32px;margin-bottom:8px">💊</div>
-          <b style="color:var(--color-text);font-size:14px">Dodaj leki do stacka</b>
-          <p style="font-size:12px;margin-top:6px">Dodaj co najmniej dwie substancje do analizy wielolekowej lub wybierz jedno z gotowych studiów przypadków klinicznych:</p>
-          <div style="display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap">
+          <b style="color:var(--color-text);font-size:14px">${stackList.length === 1 ? `W stacku: ${esc(stackList[0].n)}` : "Dodaj leki do stacka"}</b>
+          <p style="font-size:12px;margin-top:6px">Dodaj co najmniej dwie substancje do analizy wielolekowej lub zaznacz dietę/suplementy pacjenta poniżej, aby zbadać interakcje żywieniowe:</p>
+          <div style="margin:14px 0;padding:12px;background:var(--color-surface);border-radius:8px;border:1px solid var(--color-border);text-align:left">
+            <div style="font-size:11px;font-weight:700;margin-bottom:8px;color:var(--color-text)">🍽️ Wybierz dietę / nutraceutyki pacjenta:</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              ${dietPillsHtml}
+            </div>
+          </div>
+          <p style="font-size:11px;color:var(--color-text-muted)">Lub wczytaj gotowy preset kliniczny:</p>
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:8px;flex-wrap:wrap">
             <button class="btn btn-primary btn-sm" id="splitPresetTripleBtn">📚 Triple Whammy (Nerki)</button>
             <button class="btn btn-danger btn-sm" id="splitPresetSerotoninBtn">🌊 Zespół Serotoninowy</button>
             <button class="btn btn-sm" id="splitPresetQtBtn">⚠️ Koktajl QTc</button>
@@ -4884,6 +4979,18 @@
       if (b2) b2.onclick = () => loadDdiPreset("serotonin_storm");
       const b3 = $("splitPresetQtBtn");
       if (b3) b3.onclick = () => loadDdiPreset("qt_cocktail");
+
+      if (splitBody) {
+        splitBody.querySelectorAll("[data-toggle-diet]").forEach((btn) => {
+          btn.onclick = () => {
+            const fid = btn.getAttribute("data-toggle-diet");
+            if (state.patientDiet.has(fid)) state.patientDiet.delete(fid);
+            else state.patientDiet.add(fid);
+            updatePolypharmacyShieldUI();
+            openDdiAuditInSplitPane();
+          };
+        });
+      }
       return;
     }
 
@@ -4895,7 +5002,8 @@
       serotonin: { name: "Obciążenie Serotoninergiczne", icon: "🌊" },
       sedation: { name: "Depresja OUN & Ośrodka Oddechowego", icon: "🛑" },
       anticholinergic: { name: `Obciążenie Antycholinergiczne (ACB: ${poly.totalAcb})`, icon: "🛡️" },
-      renal_bleeding: { name: "Nefrotoksyczność & Ryzyko Krwawień", icon: "🩸" }
+      renal_bleeding: { name: "Nefrotoksyczność & Ryzyko Krwawień", icon: "🩸" },
+      food: { name: "Interakcje z Żywnością & Ziołami", icon: "🥦" }
     };
 
     const vectorBarsHtml = Object.entries(poly.vectors).map(([k, val]) => {
@@ -4942,6 +5050,16 @@
             <strong>Rekomendowane monitorowanie:</strong> ${esc(col.monitoring)}
           </div>
         ` : ''}
+        ${col.pdb_id ? `
+          <div style="margin-top:6px;display:flex;gap:8px;align-items:center">
+            <button class="btn btn-sm btn-primary" data-fdi-pdb="${esc(col.pdb_id)}" data-fdi-cid="${esc(col.compound_id || '')}" style="font-size:10px;padding:2px 8px">
+              🧬 Zobacz cel 3D: ${esc(col.target_gene || col.pdb_id)}
+            </button>
+            <a href="sidecar://biomolecular-structure-viewer?pdb=${esc(col.pdb_id)}" style="font-size:10px;color:var(--color-primary);text-decoration:none">
+              Biomolecular Viewer ↗
+            </a>
+          </div>
+        ` : ''}
       </div>
     `).join("") : `
       <div style="padding:12px;background:var(--color-surface);border-radius:6px;font-size:11px;color:var(--color-text-muted);text-align:center">
@@ -4954,6 +5072,36 @@
         📚 ${esc(p.title)}
       </button>
     `).join("");
+
+    const dietPillsActiveHtml = Object.entries(FOOD_CATALOG).map(([fid, f]) => {
+      const isSelected = activeDiet.has(fid);
+      const bg = isSelected ? "var(--color-primary)" : "var(--color-surface)";
+      const col = isSelected ? "#fff" : "var(--color-text)";
+      const bdr = isSelected ? "var(--color-primary)" : "var(--color-border)";
+      return `
+        <button class="btn btn-sm" data-toggle-diet="${esc(fid)}" style="background:${bg};color:${col};border:1px solid ${bdr};font-size:11px;padding:3px 8px;border-radius:14px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;transition:all .15s ease" title="${esc(f.description_pl || '')}">
+          <span>${f.icon || '🍽️'}</span>
+          <span>${esc(f.name_pl || fid)}</span>
+        </button>
+      `;
+    }).join("");
+
+    const dietPanelHtml = `
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:8px;padding:10px 12px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <strong style="font-size:11px;display:flex;align-items:center;gap:5px;color:var(--color-text)">
+            <span>🍽️</span> Dieta & Suplementy Pacjenta (${activeDiet.size} aktywnych)
+          </strong>
+          ${activeDiet.size > 0 ? `<button class="btn btn-sm btn-ghost" id="clearPatientDietBtn" style="font-size:10px;padding:1px 6px">Wyczyść dietę</button>` : ''}
+        </div>
+        <p style="font-size:10px;color:var(--color-text-muted);margin-bottom:6px">
+          Wybierz składniki diety lub nutraceutyki spożywane przez pacjenta, aby wykryć interakcje z lekami w stacku:
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:5px">
+          ${dietPillsActiveHtml}
+        </div>
+      </div>
+    `;
 
     const auditHtml = `
       <div style="display:flex;flex-direction:column;gap:14px">
@@ -4972,9 +5120,11 @@
           </div>
         </div>
 
+        ${dietPanelHtml}
+
         <div>
           <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:8px">
-            📊 6-Wektorowy Profil Bezpieczeństwa
+            📊 7-Wektorowy Profil Bezpieczeństwa
           </div>
           ${vectorBarsHtml}
         </div>
@@ -5002,6 +5152,122 @@
     if (splitBody) {
       splitBody.querySelectorAll("[data-load-ddi-preset]").forEach((btn) => {
         btn.onclick = () => loadDdiPreset(btn.dataset.loadDdiPreset);
+      });
+      splitBody.querySelectorAll("[data-toggle-diet]").forEach((btn) => {
+        btn.onclick = () => {
+          const fid = btn.getAttribute("data-toggle-diet");
+          if (state.patientDiet.has(fid)) state.patientDiet.delete(fid);
+          else state.patientDiet.add(fid);
+          updatePolypharmacyShieldUI();
+          openDdiAuditInSplitPane();
+        };
+      });
+      const clearDietBtn = splitBody.querySelector("#clearPatientDietBtn");
+      if (clearDietBtn) {
+        clearDietBtn.onclick = () => {
+          state.patientDiet.clear();
+          updatePolypharmacyShieldUI();
+          openDdiAuditInSplitPane();
+        };
+      }
+      splitBody.querySelectorAll("[data-fdi-pdb]").forEach((btn) => {
+        btn.onclick = () => {
+          const pdb = btn.getAttribute("data-fdi-pdb");
+          const cid = btn.getAttribute("data-fdi-cid");
+          openStruct3DModal(pdb, cid);
+        };
+      });
+    }
+  }
+
+  // ---------- Food-Drug & Nutraceutical Interaction Inspector (v3.30.0)
+  function openFoodInteractionsSplitPane(c) {
+    if (!c) return;
+    const rules = getFoodInteractionsForCompound(c);
+    const fHtml = rules.length ? rules.map((r) => {
+      const fMeta = FOOD_CATALOG[r.food_id] || {};
+      const isContra = r.severity === "contraindicated";
+      const isSevere = r.severity === "severe";
+      const borderCol = isContra ? "#ff3b30" : (isSevere ? "#ff9500" : "#5ac8fa");
+      const badgeText = isContra ? "BEZWZGLĘDNIE PRZECIWWSKAZANE" : (isSevere ? "CIĘŻKA INTERAKCJA" : "ZALECANA OSTROŻNOŚĆ");
+
+      return `
+        <div style="background:var(--color-surface);border-left:4px solid ${borderCol};border:1px solid var(--color-border);border-left-width:4px;border-radius:6px;padding:12px;margin-bottom:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:20px">${fMeta.icon || "🍽️"}</span>
+              <div>
+                <strong style="font-size:13px;color:var(--color-text)">${esc(fMeta.name_pl || r.food_id)}</strong>
+                <div style="font-size:11px;color:var(--color-text-muted)">${esc(r.title_pl)}</div>
+              </div>
+            </div>
+            <span class="badge" style="background:${borderCol}22;color:${borderCol};border:1px solid ${borderCol};font-size:10px">
+              ${badgeText}
+            </span>
+          </div>
+
+          <div style="font-size:11px;color:var(--color-text);margin-bottom:8px;line-height:1.4">
+            <b>Mechanizm:</b> ${esc(r.mechanism_pl)}
+          </div>
+
+          <div style="font-size:11px;color:var(--color-error);margin-bottom:8px;background:var(--color-bg);padding:6px 8px;border-radius:4px">
+            <strong>⚠️ Skutek kliniczny:</strong> ${esc(r.clinical_consequence)}
+          </div>
+
+          <div style="font-size:11px;color:var(--color-text);background:var(--color-surface-2);border-left:3px solid #34c759;padding:6px 8px;border-radius:4px;margin-bottom:8px">
+            <strong>🛡️ Postępowanie & Rekomendacja:</strong> ${esc(r.management)}
+          </div>
+
+          ${r.pdb_id ? `
+            <div style="display:flex;gap:8px;align-items:center;margin-top:6px">
+              <button class="btn btn-sm btn-primary" data-fdi-pdb="${esc(r.pdb_id)}" data-fdi-cid="${esc(c.id)}" style="font-size:11px">
+                🧬 Zobacz Cel 3D: ${esc(r.target_gene || r.pdb_id)} (${esc(r.pdb_id)})
+              </button>
+              <a href="sidecar://biomolecular-structure-viewer?pdb=${esc(r.pdb_id)}" style="font-size:11px;color:var(--color-primary);text-decoration:none">
+                Biomolecular Viewer ↗
+              </a>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }).join("") : `
+      <div style="text-align:center;padding:32px 16px;color:var(--color-text-muted)">
+        <div style="font-size:32px;margin-bottom:8px">🍽️</div>
+        <b style="color:var(--color-text)">Brak specyficznych interakcji z pożywieniem</b>
+        <p style="font-size:11px;margin-top:4px">Dla substancji ${esc(c.n)} nie zidentyfikowano specyficznych przeciwwskazań dietetycznych ani interakcji z furanokumarynami, tyraminą czy kationami.</p>
+      </div>
+    `;
+
+    openSplitPane("🍽️", `Interakcje Żywnościowe: ${c.n}`, "Analiza farmakokinetyki jelitowej, cytochromów P450 i transporterów", `
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px 12px;font-size:11px;display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <strong>Lek:</strong> ${esc(c.n)} · <code>${esc(c.id)}</code>
+            ${c.m ? `<div style="color:var(--color-text-muted);margin-top:2px">${esc(c.m)}</div>` : ''}
+          </div>
+          <button class="btn btn-sm" id="splitAddToDietStackBtn">
+            ${state.stack.has(c.i) ? "✓ W stacku" : "➕ Dodaj do stacka"}
+          </button>
+        </div>
+        ${fHtml}
+      </div>
+    `);
+
+    const addBtn = $("splitAddToDietStackBtn");
+    if (addBtn && !state.stack.has(c.i)) {
+      addBtn.onclick = () => {
+        toggleInStack(c.i);
+        addBtn.textContent = "✓ W stacku";
+      };
+    }
+
+    if (splitBody) {
+      splitBody.querySelectorAll("[data-fdi-pdb]").forEach((btn) => {
+        btn.onclick = () => {
+          const pdb = btn.getAttribute("data-fdi-pdb");
+          const cid = btn.getAttribute("data-fdi-cid");
+          openStruct3DModal(pdb, cid);
+        };
       });
     }
   }
@@ -9758,6 +10024,37 @@
         <div class="label" style="margin-top:.8rem">Klasyfikacja ATC</div>
         <div class="links">${c.atc.map(([code, desc]) => `<span style="font-size:var(--text-xs);color:var(--color-text)"><code style="font-weight:600;color:var(--color-primary)">${esc(code)}</code> · ${esc(desc)}</span>`).join("")}</div>` : "";
 
+      const fRules = getFoodInteractionsForCompound(c);
+      const foodInteractionsTeaserHtml = fRules.length ? `
+        <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-left:3px solid #ff9500;border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:11px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <b style="font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--color-warning);display:flex;align-items:center;gap:4px">
+              <span>🍽️</span> Interakcje z Żywnością & Ziołami (${fRules.length})
+            </b>
+            <button class="btn-copy" id="openFoodInteractionsDockBtn" style="font-size:10px;padding:1px 6px">Szczegóły ↗</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            ${fRules.slice(0, 3).map((r) => {
+              const fMeta = FOOD_CATALOG[r.food_id] || {};
+              const badgeCol = r.severity === 'contraindicated' ? '#ff3b30' : (r.severity === 'severe' ? '#ff9500' : '#5ac8fa');
+              return `
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;background:var(--color-bg);padding:4px 6px;border-radius:4px">
+                  <div style="display:flex;align-items:center;gap:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
+                    <span>${fMeta.icon || '🍽️'}</span>
+                    <span style="font-weight:600;color:var(--color-text)">${esc(fMeta.name_pl || r.food_id)}</span>
+                    <span style="color:var(--color-text-muted);font-size:10px">· ${esc(r.title_pl)}</span>
+                  </div>
+                  <span class="badge" style="background:${badgeCol}22;color:${badgeCol};border:1px solid ${badgeCol};font-size:9px;white-space:nowrap">
+                    ${r.severity === 'contraindicated' ? 'PRZECIWWSKAZANIE' : (r.severity === 'severe' ? 'CIĘŻKA' : 'OSTROŻNOŚĆ')}
+                  </span>
+                </div>
+              `;
+            }).join('')}
+            ${fRules.length > 3 ? `<span class="note">… oraz ${fRules.length - 3} kolejnych interakcji z pożywieniem.</span>` : ''}
+          </div>
+        </div>
+      ` : "";
+
       const idHtml = (c.ids || c.ic || c.ch || c.fa || c.ik || c.cid) ? `
         <div class="label" style="margin-top:.8rem">Tożsamość i źródła</div>
         <table class="pk">
@@ -9885,6 +10182,7 @@
           ${ebmHtml}
           ${propBoxes}
           ${atcHtml}
+          ${foodInteractionsTeaserHtml}
           ${idHtml}
           <div class="label" style="margin-top:.8rem">Otwórz i zbadaj</div>
           <div class="links">
@@ -10276,6 +10574,10 @@
     const overviewAllAnalogsBtn = p.querySelector("#overviewAllAnalogsBtn");
     if (overviewAllAnalogsBtn && state.sel && state.sel.type === "compound") {
       overviewAllAnalogsBtn.onclick = () => openAnalogsModal(state.sel.i);
+    }
+    const openFoodInteractionsDockBtn = p.querySelector("#openFoodInteractionsDockBtn");
+    if (openFoodInteractionsDockBtn && state.sel && state.sel.type === "compound") {
+      openFoodInteractionsDockBtn.onclick = () => openFoodInteractionsSplitPane(C[state.sel.i]);
     }
     const overviewAllIndicationsBtn = p.querySelector("#overviewAllIndicationsBtn");
     if (overviewAllIndicationsBtn) {
@@ -10929,6 +11231,7 @@
       { type: "action", name: "Kaskady Biotransformacji & Metabolity", badge: "Widok", run: () => setWorkspaceMode("metabolism") },
       { type: "action", name: "Transportery Błonowe & Bariera Krew-Mózg (BBB)", badge: "Widok", run: () => setWorkspaceMode("transporters") },
       { type: "action", name: "9: Przestrzeń Chemiczna & Chemogenomika (2533 cząsteczki)", badge: "Widok", run: () => setWorkspaceMode("chemspace") },
+      { type: "action", name: "Interakcje Lek-Żywność & Nutraceutyki (FDI)", badge: "Dieta", run: () => openDdiAuditInSplitPane() },
       { type: "action", name: "Toksykologia Molekularna & eDISH (Hy's Law)", badge: "Narzędzie", run: () => openToxicologySplitPane() },
       { type: "action", name: "Porównywarka Head-to-Head", badge: "Narzędzie", run: () => openComparator() }
     ];
@@ -11507,6 +11810,17 @@
       } else {
         openDdiAuditInSplitPane();
       }
+    } else if (raw.startsWith("/food/") || raw.startsWith("food/") || raw.startsWith("/fdi/") || raw.startsWith("fdi/")) {
+      const pathPart = raw.replace(/^\/?(food|fdi)\//, "");
+      const [cid] = pathPart.split("?");
+      const targetC = C.find((c) => c.id === cid);
+      if (targetC) {
+        openFoodInteractionsSplitPane(targetC);
+      } else {
+        openDdiAuditInSplitPane();
+      }
+    } else if (raw === "/food" || raw === "food" || raw === "/fdi" || raw === "fdi") {
+      openDdiAuditInSplitPane();
     } else if (raw.startsWith("/pathway/") || raw.startsWith("pathway/")) {
       const pathPart = raw.replace(/^\/?pathway\//, "");
       const [pwId, query] = pathPart.split("?");

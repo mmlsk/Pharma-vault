@@ -1,0 +1,626 @@
+#!/usr/bin/env python3
+"""
+build_food_drug_interactions.py
+Generates Pharma-vault/data/curated/food_drug_interactions.json
+Mechanistic Food-Drug & Nutraceutical Interaction dataset for Pharma-vault v3.30.0.
+"""
+
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+CURATED = ROOT / "data" / "curated"
+
+food_catalog = {
+    "grapefruit": {
+        "id": "grapefruit",
+        "name_en": "Grapefruit & Bitter Citrus",
+        "name_pl": "Sok grejpfrutowy & Gorzkie cytrusy",
+        "icon": "🍊",
+        "category": "fruit_juice",
+        "bioactives": ["Bergamottin", "6',7'-Dihydroxybergamottin"],
+        "primary_targets": ["CYP3A4", "ABCB1"],
+        "pdb_targets": ["1TQN", "6QEX"],
+        "description_pl": "Furanokumaryny powodują samobójczą (nieodwracalną) inhibicję jelitowego enzymu CYP3A4 oraz transportera P-gp w enterocytach, drastycznie zmniejszając efekt pierwszego przejścia i podnosząc biodostępność leków."
+    },
+    "st_johns_wort": {
+        "id": "st_johns_wort",
+        "name_en": "St. John's Wort (Hypericum perforatum)",
+        "name_pl": "Ziele dziurawca (Hypericum perforatum)",
+        "icon": "🌿",
+        "category": "herbal_supplement",
+        "bioactives": ["Hyperforin", "Hypericin"],
+        "primary_targets": ["NR1I2", "CYP3A4", "ABCB1", "CYP2C9"],
+        "pdb_targets": ["6QEX", "1TQN"],
+        "description_pl": "Hiperforyna jest silnym ligandem receptora PXR, indukując transkrypcyjnie CYP3A4, CYP2C9 oraz transporter ABCB1 (P-gp), co prowadzi do gwałtownego załamania stężeń leków we krwi (nawet o 50-80%)."
+    },
+    "tyramine_aged_cheese": {
+        "id": "tyramine_aged_cheese",
+        "name_en": "Tyramine-Rich Aged & Fermented Foods",
+        "name_pl": "Sery dojrzewające & Produkty fermentowane (Tyramina)",
+        "icon": "🧀",
+        "category": "fermented_dairy_meat",
+        "bioactives": ["Tyramine", "Histamine"],
+        "primary_targets": ["MAOA", "MAOB", "SLC6A2"],
+        "pdb_targets": ["2Z5X", "2V5Z"],
+        "description_pl": "Pokarmy bogate w tyraminę w połączeniu z inhibitorami monoaminooksydazy (MAOI) wywołują 'efekt sera' – niekontrolowany wyrzut noradrenaliny z zakończeń współczulnych i przełom nadciśnieniowy."
+    },
+    "dairy_cations": {
+        "id": "dairy_cations",
+        "name_en": "Dairy Products & Polyvalent Cations",
+        "name_pl": "Nabiał & Kationy wielowartościowe (Ca²⁺, Mg²⁺, Fe²⁺/³⁺, Al³⁺)",
+        "icon": "🥛",
+        "category": "dairy_minerals",
+        "bioactives": ["Calcium", "Magnesium", "Iron", "Aluminum", "Zinc"],
+        "primary_targets": ["Luminal Chelation"],
+        "pdb_targets": [],
+        "description_pl": "Kationy 2- i 3-wartościowe tworzą w świetle przewodu pokarmowego nierozpuszczalne i nieprzyswajalne chelaty z lekami o ugrupowaniu 4-chinolonu lub beta-dwuketonu, redukując wchłanianie o 50-90%."
+    },
+    "alcohol_ethanol": {
+        "id": "alcohol_ethanol",
+        "name_en": "Ethanol / Alcoholic Beverages",
+        "name_pl": "Alkohol etylowy (ostry vs przewlekły)",
+        "icon": "🍷",
+        "category": "beverages",
+        "bioactives": ["Ethanol", "Acetaldehyde"],
+        "primary_targets": ["CYP2E1", "ALDH", "GABRA1"],
+        "pdb_targets": ["3E4E", "6HUO"],
+        "description_pl": "Ostra konsumpcja hamuje enzymy mikrosomalne i nasila depresję OUN; przewlekłe spożycie indukuje CYP2E1 (toksyczność paracetamolu) oraz upośledza glukoneogenezę wątrobową."
+    },
+    "leafy_greens_vitk": {
+        "id": "leafy_greens_vitk",
+        "name_en": "Leafy Green Vegetables (Vitamin K1)",
+        "name_pl": "Zielone warzywa liściaste (Witamina K1 / Filochinon)",
+        "icon": "🥬",
+        "category": "vegetables",
+        "bioactives": ["Phylloquinone (Vitamin K1)"],
+        "primary_targets": ["VKORC1"],
+        "pdb_targets": ["6WVH"],
+        "description_pl": "Filochinon bezpośrednio znosi blok enzymu VKORC1 wywołany przez antagonistów witaminy K (warfaryna, acenokumarol), prowadząc do spadku wskaźnika INR i powikłań zakrzepowo-zatorowych."
+    },
+    "high_fat_meal": {
+        "id": "high_fat_meal",
+        "name_en": "High-Fat & High-Calorie Meals",
+        "name_pl": "Posiłki bogatotłuszczowe & bogatokaloryczne",
+        "icon": "🥑",
+        "category": "macronutrients",
+        "bioactives": ["Dietary Triglycerides", "Bile Salts"],
+        "primary_targets": ["Gastrointestinal Motility", "Micellar Solubilization"],
+        "pdb_targets": [],
+        "description_pl": "Lipidy stymulują wydzielanie żółci, tworzenie miceli mieszanych i opóźniają opróżnianie żołądka, co potrafi wielokrotnie podnieść AUC leków lipofilnych lub zablokować wchłanianie leków hydrofilnych."
+    },
+    "potassium_substitutes": {
+        "id": "potassium_substitutes",
+        "name_en": "Potassium-Rich Foods & Salt Substitutes",
+        "name_pl": "Substytuty soli (K-salt) & Pokarmy bogatopotasowe",
+        "icon": "🍌",
+        "category": "dietary_minerals",
+        "bioactives": ["Potassium ion (K+)"],
+        "primary_targets": ["AGTR1", "Renal ENaC"],
+        "pdb_targets": ["4YAY"],
+        "description_pl": "Nadmierna podaż potasu w diecie w połączeniu z lekami blokującymi oś RAA lub wydalanie nerkowe wywołuje zagrażającą życiu hiperkaliemię z ryzykiem zatrzymania akcji serca."
+    },
+    "caffeine_xanthines": {
+        "id": "caffeine_xanthines",
+        "name_en": "Caffeine, Coffee & Energy Drinks",
+        "name_pl": "Kofeina, kawa, herbata & napoje energetyzujące",
+        "icon": "☕",
+        "category": "xanthines",
+        "bioactives": ["Caffeine (1,3,7-trimethylxanthine)", "Theophylline"],
+        "primary_targets": ["CYP1A2", "ADORA2A"],
+        "pdb_targets": ["5G53"],
+        "description_pl": "Metabolizowana przez CYP1A2. Leki hamujące CYP1A2 powodują toksyczną kumulację kofeiny (drżenia, tachykardia, bezsenność); kofeina wykazuje też synergizm ze stymulantami OUN."
+    },
+    "ginkgo_antiplatelet": {
+        "id": "ginkgo_antiplatelet",
+        "name_en": "Ginkgo Biloba, Garlic & Antiplatelet Herbs",
+        "name_pl": "Miłorząb japoński (Ginkgo), Czosnek, Imbir & Żeń-szeń",
+        "icon": "🍃",
+        "category": "herbal_extracts",
+        "bioactives": ["Ginkgolides", "Allicin", "Gingerols"],
+        "primary_targets": ["PTGIR", "PAFR", "Platelet Aggregation"],
+        "pdb_targets": [],
+        "description_pl": "Ginkgolidy są antagonistami receptora PAF, a allicyna hamuje syntezę tromboksanu. W połączeniu z lekami przeciwkrzepliwymi lub przeciwpłytkowymi drastycznie rośnie ryzyko krwotoków."
+    },
+    "licorice_mr": {
+        "id": "licorice_mr",
+        "name_en": "Natural Licorice (Glycyrrhizin)",
+        "name_pl": "Lukrecja naturalna (Kwas glicyryzynowy)",
+        "icon": "🪵",
+        "category": "confectionery_herbs",
+        "bioactives": ["Glycyrrhizin", "Glycyrrhetinic acid"],
+        "primary_targets": ["HSD11B2", "NR3C2"],
+        "pdb_targets": ["2Q3I"],
+        "description_pl": "Hamuje dehydrogenazę 11-beta-HSD2 w nerkach, pozwalając kortyzolowi aktywować receptory mineralokortykoidowe (pseudohiperaldosteronizm): wywołuje hipokaliemię, obrzęki i skoki ciśnienia tętniczego."
+    },
+    "cbd_cannabinoids": {
+        "id": "cbd_cannabinoids",
+        "name_en": "Cannabidiol (CBD) & Hemp Extracts",
+        "name_pl": "Kannabidiol (CBD) & Ekstrakty konopne",
+        "icon": "💧",
+        "category": "cannabinoids",
+        "bioactives": ["Cannabidiol", "Cannabigerol"],
+        "primary_targets": ["CYP3A4", "CYP2C19", "ABCB1", "CNR1", "CNR2"],
+        "pdb_targets": ["1TQN", "6QEX"],
+        "description_pl": "Inhibitor izoenzymów CYP3A4 i CYP2C19 oraz P-glikoproteiny. Podnosi stężenia leków przeciwpadaczkowych i immunosupresyjnych, wykazując też addytywną hepatotoksyczność z walproinianem."
+    }
+}
+
+interaction_rules = [
+    # 1. Grapefruit (CYP3A4 / ABCB1)
+    {
+        "id": "fdi_grapefruit_simvastatin",
+        "food_id": "grapefruit",
+        "vector": "grapefruit_cyp3a4",
+        "severity": "contraindicated",
+        "compound_selector": {
+            "exact_compounds": ["simvastatin-compound", "lovastatin-compound", "atorvastatin-compound"],
+            "atc_prefixes": ["C10AA"],
+            "cyp_match": {"enzyme": "CYP3A4", "high_first_pass": True}
+        },
+        "title_pl": "Masywny wzrost stężenia statyny i ryzyko rabdomiolizy",
+        "mechanism_pl": "Furanokumaryny nieodwracalnie blokują jelitowy CYP3A4, zwiększając ekspozycję ogólnoustrojową na symwastatynę nawet 3–10-krotnie.",
+        "clinical_consequence": "Miopatia, rozpad mięśni poprzecznie prążkowanych (rabdomioliza), ostra martwica cewek nerkowych i mioglobinuria.",
+        "management": "Całkowicie wykluczyć sok grejpfrutowy i grejpfruty z diety w trakcie leczenia. Rozważyć zamianę na statynę niezależną od CYP3A4 (rozuwastatyna, prawastatyna).",
+        "evidence_level": "established",
+        "target_gene": "CYP3A4",
+        "pdb_id": "1TQN"
+    },
+    {
+        "id": "fdi_grapefruit_ccb",
+        "food_id": "grapefruit",
+        "vector": "grapefruit_cyp3a4",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["felodipine-compound", "nifedipine-compound", "amlodipine-compound", "clevidipine-compound"],
+            "atc_prefixes": ["C08CA"]
+        },
+        "title_pl": "Gwałtowna hipotensja i tachykardia odruchowa (Blokery Kanału Wapniowego)",
+        "mechanism_pl": "Inhibicja first-pass metabolismu pochodnych dihydropirydyny powoduje gwałtowny 2-4-krotny wzrost Cmax i AUC leku.",
+        "clinical_consequence": "Ciężkie niedociśnienie tętnicze, omdlenia, tachykardia odruchowa, obrzęki obwodowe i nasilenie niedokrwienia wieńcowego.",
+        "management": "Unikać spożywania grejpfrutów i soku grejpfrutowego. W razie konieczności monitorować ciśnienie tętnicze lub dobrać lek alternatywny.",
+        "evidence_level": "established",
+        "target_gene": "CYP3A4",
+        "pdb_id": "1TQN"
+    },
+    {
+        "id": "fdi_grapefruit_calcineurin",
+        "food_id": "grapefruit",
+        "vector": "grapefruit_cyp3a4",
+        "severity": "contraindicated",
+        "compound_selector": {
+            "exact_compounds": ["cyclosporine-compound", "tacrolimus-compound"]
+        },
+        "title_pl": "Ostra nefrotoksyczność i neurotoksyczność leków immunosupresyjnych",
+        "mechanism_pl": "Podwójna blokada jelitowego CYP3A4 i P-glikoproteiny winduje stężenia cyklosporyny i takrolimusu daleko powyżej okna terapeutycznego.",
+        "clinical_consequence": "Ostre uszkodzenie nerek, hiperkaliemia, skurcz naczyń nerkowych, drżenia, encefalopatia i nadciśnienie.",
+        "management": "Bezwzględny zakaz spożywania przetworów grejpfrutowych, pomelo i sewilskich pomarańczy u pacjentów po przeszczepieniu narządów.",
+        "evidence_level": "established",
+        "target_gene": "CYP3A4",
+        "pdb_id": "1TQN"
+    },
+    {
+        "id": "fdi_grapefruit_pde5",
+        "food_id": "grapefruit",
+        "vector": "grapefruit_cyp3a4",
+        "severity": "moderate",
+        "compound_selector": {
+            "exact_compounds": ["sildenafil-compound", "tadalafil-compound", "vardenafil-compound"]
+        },
+        "title_pl": "Nasilenie działań niepożądanych inhibitorów PDE5",
+        "mechanism_pl": "Zahamowanie rozkładu jelitowego inhibitorów fosfodiestrazy-5 przez furanokumaryny podnosi AUC o 40-80%.",
+        "clinical_consequence": "Zaczerwienienie twarzy, bóle głowy, zawroty głowy, hipotonia ortostatyczna, ryzyko priapizmu.",
+        "management": "Nie popijać sildenafilu ani tadalafilu sokiem grejpfrutowym. Zachować ostrożność.",
+        "evidence_level": "established",
+        "target_gene": "CYP3A4",
+        "pdb_id": "1TQN"
+    },
+
+    # 2. St. John's Wort (PXR / CYP3A4 / ABCB1 Induction)
+    {
+        "id": "fdi_st_johns_wort_doac",
+        "food_id": "st_johns_wort",
+        "vector": "st_johns_wort_pxr",
+        "severity": "contraindicated",
+        "compound_selector": {
+            "exact_compounds": ["apixaban-compound", "rivaroxaban-compound", "dabigatran-etexilate-compound", "edoxaban-compound"],
+            "atc_prefixes": ["B01AF", "B01AE"]
+        },
+        "title_pl": "Załamanie stężeń DOAC i utrata ochrony przeciwkrzepliwej",
+        "mechanism_pl": "Masywna transkrypcyjna indukcja jelitowego P-gp i wątrobowego CYP3A4 przez hiperforynę redukuje AUC bezpośrednich antykoagulantów o 50–70%.",
+        "clinical_consequence": "Utrata skuteczności przeciwzakrzepowej, udar niedokrwienny mózgu, zatorowość płucna, zakrzepica żył głębokich.",
+        "management": "Bezwzględne przeciwwskazanie. Pacjenci leczeni DOAC nie mogą przyjmować preparatów ziela dziurawca.",
+        "evidence_level": "established",
+        "target_gene": "ABCB1",
+        "pdb_id": "6QEX"
+    },
+    {
+        "id": "fdi_st_johns_wort_immunosuppressants",
+        "food_id": "st_johns_wort",
+        "vector": "st_johns_wort_pxr",
+        "severity": "contraindicated",
+        "compound_selector": {
+            "exact_compounds": ["cyclosporine-compound", "tacrolimus-compound"]
+        },
+        "title_pl": "Odrzucenie przeszczepu narządowego wskutek indukcji klirensu",
+        "mechanism_pl": "Gwałtowna nadekspresja P-gp i CYP3A4 powoduje spadek stężenia takrolimusu/cyklosporyny poniżej progu immunosupresji.",
+        "clinical_consequence": "Ostre komórkowe lub humoralne odrzucenie przeszczepionej nerki, wątroby lub serca; utrata graftu.",
+        "management": "Bezwzględnie przeciwwskazane połączenie. Wymaga natychmiastowego odstawienia dziurawca i kontroli stężenia leku we krwi.",
+        "evidence_level": "established",
+        "target_gene": "ABCB1",
+        "pdb_id": "6QEX"
+    },
+    {
+        "id": "fdi_st_johns_wort_digoxin",
+        "food_id": "st_johns_wort",
+        "vector": "st_johns_wort_pxr",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["digoxin-compound"]
+        },
+        "title_pl": "Spadek stężenia digoksyny i zaostrzenie niewydolności krążenia",
+        "mechanism_pl": "Hiperforyna indukuje jelitową P-glikoproteinę (ABCB1), redukując wchłanianie i zwiększając nerkowe wydalanie digoksyny (spadek AUC o ~30-50%).",
+        "clinical_consequence": "Utrata kontroli rytmu komór w migotaniu przedsionków, dekompensacja skurczowej niewydolności serca.",
+        "management": "Unikać ziela dziurawca. W razie odstawienia dziurawca u pacjenta na digoksynie grozi nagły wzrost stężenia leku do wartości toksycznych!",
+        "evidence_level": "established",
+        "target_gene": "ABCB1",
+        "pdb_id": "6QEX"
+    },
+
+    # 3. Tyramine & MAOIs (Cheese Reaction)
+    {
+        "id": "fdi_tyramine_maoi",
+        "food_id": "tyramine_aged_cheese",
+        "vector": "tyramine_maoi",
+        "severity": "contraindicated",
+        "compound_selector": {
+            "exact_compounds": ["phenelzine-compound", "tranylcypromine-compound", "isocarboxazid-compound"],
+            "atc_prefixes": ["N06AF"]
+        },
+        "title_pl": "Zagrażający życiu przełom nadciśnieniowy (Zespół Tyraminowy)",
+        "mechanism_pl": "Nieodwracalna blokada MAO-A w ścianie jelita uniemożliwia rozkład tyraminy. Tyramina wnika do neuronów noradrenergicznych i uwalnia lawinowo noradrenalinę.",
+        "clinical_consequence": "Gwałtowny skok ciśnienia tętniczego (>220/120 mmHg), krwawienie śródczaszkowe, udar krwotoczny, zawał serca, zgon.",
+        "management": "Ścisła dieta ubogotyraminowa: bezwzględny zakaz serów dojrzewających, salami, wędlin dojrzewających, piwa z beczki, win, sosu sojowego. Dieta wymagana jeszcze przez 14 dni po odstawieniu MAOI!",
+        "evidence_level": "established",
+        "target_gene": "MAOA",
+        "pdb_id": "2Z5X"
+    },
+    {
+        "id": "fdi_tyramine_linezolid",
+        "food_id": "tyramine_aged_cheese",
+        "vector": "tyramine_maoi",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["linezolid-compound"]
+        },
+        "title_pl": "Przełom nadciśnieniowy przy antybiotykoterapii linezolidem",
+        "mechanism_pl": "Linezolid (oksazolidynon) wykazuje słabe, odwracalne hamowanie MAO-A. Przy spożyciu dużej ilości tyraminy może dojść do skoku ciśnienia.",
+        "clinical_consequence": "Znaczący wzrost ciśnienia skurczowego, ból głowy typu potylicznego, kołatanie serca.",
+        "management": "Ograniczyć spożywanie produktów o wysokiej zawartości tyraminy w trakcie kuracji linezolidem.",
+        "evidence_level": "established",
+        "target_gene": "MAOA",
+        "pdb_id": "2Z5X"
+    },
+
+    # 4. Dairy & Multivalent Cation Chelation
+    {
+        "id": "fdi_dairy_fluoroquinolones",
+        "food_id": "dairy_cations",
+        "vector": "cation_chelation",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["ciprofloxacin-compound", "levofloxacin-compound", "moxifloxacin-compound", "delafloxacin-compound", "gemifloxacin-compound"],
+            "atc_prefixes": ["J01MA"]
+        },
+        "title_pl": "Chelatacja luminalna i załamanie wchłaniania fluorochinolonów",
+        "mechanism_pl": "Kationy Ca²⁺, Mg²⁺, Fe²⁺/³⁺, Al³⁺ tworzą obojętne, nierozpuszczalne kompleksy chelatowe z ugrupowaniem 4-chinolonu i 3-karboksylowym.",
+        "clinical_consequence": "Spadek AUC i Cmax o 50–85%, stężenia antybiotyku w surowicy spadają poniżej stężenia MIC patogenu, niepowodzenie eradykacji zakażenia.",
+        "management": "Zachować odstęp czasowy: antybiotyk przyjmować co najmniej 2 godziny przed lub 4–6 godzin po spożyciu mleka, jogurtu, sera lub suplementów minerałów.",
+        "evidence_level": "established",
+        "target_gene": None,
+        "pdb_id": None
+    },
+    {
+        "id": "fdi_dairy_tetracyclines",
+        "food_id": "dairy_cations",
+        "vector": "cation_chelation",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["doxycycline-compound", "tetracycline-compound", "minocycline-compound", "omadacycline-compound"],
+            "atc_prefixes": ["J01AA"]
+        },
+        "title_pl": "Blokada wchłaniania tetracyklin przez jony wapnia i magnezu",
+        "mechanism_pl": "Rdzeń beta-dwuketonowy tetracyklin tworzy silne chelaty z kationami dwu- i trójwartościowymi obecnymi w nabiale i lekach zobojętniających.",
+        "clinical_consequence": "Spadek biodostępności tetracykliny o 70-90% (doksycykliny o ~20-30%), ryzyko nieskuteczności leczenia boreliozy/trądziku/zakażeń atypowych.",
+        "management": "Nie popijać leku mlekiem ani produktami mlecznymi. Zachować minimum 2-3 godziny odstępu od nabiału i preparatów żelaza/wapnia.",
+        "evidence_level": "established",
+        "target_gene": None,
+        "pdb_id": None
+    },
+    {
+        "id": "fdi_dairy_bisphosphonates",
+        "food_id": "dairy_cations",
+        "vector": "cation_chelation",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["alendronate-compound", "clodronate-compound", "etidronate-compound", "risedronate-compound", "ibandronate-compound"],
+            "atc_prefixes": ["M05BA"]
+        },
+        "title_pl": "Całkowite zablokowanie wchłaniania bisfosfonianów doustnych",
+        "mechanism_pl": "Bisfosfoniany mają wyjściową biodostępność rzędu zaledwie 0.6-1.5%. Obecność jakichkolwiek jonów Ca²⁺ w żołądku redukuje wchłanianie praktycznie do zera.",
+        "clinical_consequence": "Całkowity brak efektu terapeutycznego w leczeniu osteoporozy, progresja utraty gęstości mineralnej kości (BMD) i ryzyko złamań.",
+        "management": "Lek przyjmować rano na czczo, wyłącznie z pełną szklanką zwykłej wody kranowej (nie mineralnej!). Nic nie jeść ani nie pić przez co najmniej 30-60 minut.",
+        "evidence_level": "established",
+        "target_gene": None,
+        "pdb_id": None
+    },
+    {
+        "id": "fdi_dairy_levothyroxine",
+        "food_id": "dairy_cations",
+        "vector": "cation_chelation",
+        "severity": "moderate",
+        "compound_selector": {
+            "exact_compounds": ["levothyroxine-compound"]
+        },
+        "title_pl": "Zaburzenia wchłaniania lewotyroksyny i destabilizacja TSH",
+        "mechanism_pl": "Wapń i żelazo wiążą lewotyroksynę w nierozpuszczalny kompleks, obniżając jej wchłanianie w jelicie cienkim.",
+        "clinical_consequence": "Wzrost stężenia TSH, objawy niedoczynności tarczycy mimo regularnego przyjmowania hormonu.",
+        "management": "Przyjmować lewotyroksynę na czczo 30-60 minut przed śniadaniem. Preparaty wapnia i żelaza przyjmować z minimum 4-godzinnym odstępem.",
+        "evidence_level": "established",
+        "target_gene": None,
+        "pdb_id": None
+    },
+
+    # 5. Alcohol / Ethanol
+    {
+        "id": "fdi_alcohol_sedatives",
+        "food_id": "alcohol_ethanol",
+        "vector": "ethanol_synergy",
+        "severity": "contraindicated",
+        "compound_selector": {
+            "exact_compounds": ["diazepam-compound", "alprazolam-compound", "clonazepam-compound", "zolpidem-compound", "morphine-compound", "clobazam-compound"],
+            "atc_prefixes": ["N05BA", "N05CD", "N02A"]
+        },
+        "title_pl": "Śmiertelna synergistyczna depresja OUN i ośrodka oddechowego",
+        "mechanism_pl": "Jednoczesna allosteryczna modulacja receptorów GABA-A oraz supresja neuronów pnia mózgu wywołuje głęboką sedację i niewydolność oddechową.",
+        "clinical_consequence": "Śpiączka, bezdech senny, asfiksja, aspiracja treści żołądkowej, nagły zgon z powodu zatrzymania oddychania.",
+        "management": "Bezwzględny zakaz spożywania jakichkolwiek napojów alkoholowych podczas leczenia benzodiazepinami, Z-drugs lub opioidami.",
+        "evidence_level": "established",
+        "target_gene": "GABRA1",
+        "pdb_id": "6HUO"
+    },
+    {
+        "id": "fdi_alcohol_disulfiram_like",
+        "food_id": "alcohol_ethanol",
+        "vector": "ethanol_synergy",
+        "severity": "contraindicated",
+        "compound_selector": {
+            "exact_compounds": ["metronidazole-compound", "disulfiram-compound", "tinidazole-compound"]
+        },
+        "title_pl": "Reakcja disulfiramowa (kumulacja aldehydu octowego)",
+        "mechanism_pl": "Blokada dehydrogenazy aldehydowej (ALDH) uniemożliwia metabolizm aldehydu octowego do kwasu octowego.",
+        "clinical_consequence": "Gwałtowne uderzenia gorąca, pulsujący ból głowy, duszność, nudności, zapaść krążeniowa, tachykardia i lęk przed śmiercią.",
+        "management": "Całkowity zakaz spożywania alkoholu w trakcie kuracji oraz przez co najmniej 48–72 godziny po jej zakończeniu.",
+        "evidence_level": "established",
+        "target_gene": "CYP2E1",
+        "pdb_id": "3E4E"
+    },
+    {
+        "id": "fdi_alcohol_apap",
+        "food_id": "alcohol_ethanol",
+        "vector": "ethanol_synergy",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["acetaminophen-compound"]
+        },
+        "title_pl": "Piorunująca hepatotoksyczność paracetamolu (Indukcja CYP2E1 + Niedobór GSH)",
+        "mechanism_pl": "Przewlekłe spożywanie alkoholu silnie indukuje izoenzym CYP2E1, jednocześnie wyczerpując wątrobowe zasoby glutationu (GSH).",
+        "clinical_consequence": "Nawet terapeutyczne lub nieznacznie podwyższone dawki paracetamolu ulegają nadmiernemu utlenieniu do toksycznego NAPQI, wywołując martwicę hepatocytów.",
+        "management": "Unikać łączenia paracetamolu z alkoholem. U osób regularnie pijących alkohol stosować leki alternatywne lub ściśle kontrolować dawkę.",
+        "evidence_level": "established",
+        "target_gene": "CYP2E1",
+        "pdb_id": "3E4E"
+    },
+    {
+        "id": "fdi_alcohol_hypoglycemics",
+        "food_id": "alcohol_ethanol",
+        "vector": "ethanol_synergy",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["glimepiride-compound", "gliclazide-compound"]
+        },
+        "title_pl": "Ciężka, przedłużona hipoglikemia nocna",
+        "mechanism_pl": "Etanol hamuje glukoneogenezę w wątrobie (przesunięcie równowagi NADH/NAD+ blokuje konwersję mleczanu i glicerolu do glukozy) przy działającym leku wydzielającym insulinę.",
+        "clinical_consequence": "Głęboka hipoglikemia, drgawki, utrata przytomności, brak wczesnych objawów ostrzegawczych (maskowanie przez alkohol).",
+        "management": "Nie spożywać alkoholu na czczo; zawsze łączyć z posiłkiem węglowodanowym. Monitorować glikemię przed snem.",
+        "evidence_level": "established",
+        "target_gene": None,
+        "pdb_id": None
+    },
+
+    # 6. Vitamin K & VKAs
+    {
+        "id": "fdi_vitk_warfarin",
+        "food_id": "leafy_greens_vitk",
+        "vector": "vitamin_k_vka",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["warfarin-compound", "acenocoumarol-compound"],
+            "atc_prefixes": ["B01AA"]
+        },
+        "title_pl": "Antagonizm z witaminą K i załamanie wskaźnika INR",
+        "mechanism_pl": "Filochinon z zielonych warzyw omija zablokowany enzym VKORC1, dostarczając zredukowaną witaminę K do gamma-karboksylacji czynników II, VII, IX, X.",
+        "clinical_consequence": "Gwałtowny spadek wartości INR poniżej zakresu terapeutycznego (2.0–3.0), drastyczny wzrost ryzyka udaru mózgu i zakrzepicy.",
+        "management": "Zaleca się stałą, zrównoważoną podaż zielonych warzyw w diecie (bez nagłych skoków i drastycznego unikania) z regularną kontrolą INR. (DOAC nie wchodzą w tę interakcję!).",
+        "evidence_level": "established",
+        "target_gene": "VKORC1",
+        "pdb_id": "6WVH"
+    },
+
+    # 7. Dietary Potassium & Potassium Sparing / RAAS
+    {
+        "id": "fdi_potassium_spironolactone",
+        "food_id": "potassium_substitutes",
+        "vector": "dietary_potassium",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["spironolactone-compound", "eplerenone-compound", "finerenone-compound", "canrenone-compound"],
+            "atc_prefixes": ["C03DA"]
+        },
+        "title_pl": "Zagrażająca życiu hiperkaliemia (Antagoniści Aldosteronu)",
+        "mechanism_pl": "Zablokowanie receptora mineralokortykoidowego (MR) w cewkach zbiorczych uniemożliwia wydalanie jonów K+, co przy podaży potasu w diecie prowadzi do kumulacji.",
+        "clinical_consequence": "Stężenie potasu we krwi >6.0 mmol/L, zaburzenia przewodnictwa komorowego, fala sinusoidalna w EKG, migotanie komór, asystolia.",
+        "management": "Bezwzględny zakaz stosowania zamienników soli kuchennej na bazie chlorku potasu (K-salt) oraz suplementów potasu bez ścisłego monitorowania laboratoryjnego.",
+        "evidence_level": "established",
+        "target_gene": "NR3C2",
+        "pdb_id": "2Q3I"
+    },
+    {
+        "id": "fdi_potassium_raas",
+        "food_id": "potassium_substitutes",
+        "vector": "dietary_potassium",
+        "severity": "moderate",
+        "compound_selector": {
+            "exact_compounds": ["ramipril-compound", "enalapril-compound", "captopril-compound", "losartan-compound", "candesartan-compound", "trimethoprim-compound"],
+            "atc_prefixes": ["C09AA", "C09CA"]
+        },
+        "title_pl": "Retencja potasu przy lekach z grupy ACEI / ARB / Trimetoprim",
+        "mechanism_pl": "Inhibitory ACE i sartany hamują wydzielanie aldosteronu; trimetoprim blokuje nerkowy kanał sodowy ENaC analogicznie do amiloridu.",
+        "clinical_consequence": "Podwyższone stężenie potasu (K+ > 5.5 mmol/L), szczególnie u pacjentów z cukrzycą lub przewlekłą chorobą nerek (PChN).",
+        "management": "Ograniczyć stosowanie soli potasowych i nadmiernych ilości suszonych owoców/bananów; okresowo kontrolować jonogram i kreatyninę.",
+        "evidence_level": "established",
+        "target_gene": "AGTR1",
+        "pdb_id": "4YAY"
+    },
+
+    # 8. Caffeine & CYP1A2 Inhibitors
+    {
+        "id": "fdi_caffeine_ciprofloxacin",
+        "food_id": "caffeine_xanthines",
+        "vector": "caffeine_cyp1a2",
+        "severity": "moderate",
+        "compound_selector": {
+            "exact_compounds": ["ciprofloxacin-compound", "fluvoxamine-compound"]
+        },
+        "title_pl": "Toksyczna kumulacja kofeiny wskutek silnej inhibicji CYP1A2",
+        "mechanism_pl": "Cyprofloksacyna i fluwoksamina są silnymi inhibitorami CYP1A2, redukując klirens kofeiny o 60-80% i wydłużając jej okres półtrwania.",
+        "clinical_consequence": "Drżenia mięśniowe, tachykardia, kołatanie serca, silny lęk, ataki paniki, pobudzenie psychoruchowe i bezsenność.",
+        "management": "Znacząco ograniczyć lub wyeliminować spożycie kawy, herbaty, napojów energetyzujących i coli w trakcie antybiotykoterapii cyprofloksacyną.",
+        "evidence_level": "established",
+        "target_gene": "ADORA2A",
+        "pdb_id": "5G53"
+    },
+
+    # 9. High-Fat Meals
+    {
+        "id": "fdi_high_fat_abiraterone",
+        "food_id": "high_fat_meal",
+        "vector": "high_fat_meal",
+        "severity": "moderate",
+        "compound_selector": {
+            "exact_compounds": ["abiraterone-compound"]
+        },
+        "title_pl": "Aż 10-krotny wzrost ekspozycji na octan abirateronu z tłuszczem",
+        "mechanism_pl": "Abirateron jest skrajnie lipofilny (logP > 5). Posiłek wysokotłuszczowy stymuluje wydzielanie miceli żółciowych, zwiększając AUC nawet 10-krotnie.",
+        "clinical_consequence": "Nieprzewidywalne stężenia leku onkologicznego, wzrost ryzyka hepatotoksyczności i hipokaliemii.",
+        "management": "Przyjmować abirateron w sposób ustandaryzowany: ściśle na czczo (minimum 2 godziny po posiłku i 1 godzinę przed kolejnym posiłkiem).",
+        "evidence_level": "established",
+        "target_gene": None,
+        "pdb_id": None
+    },
+    {
+        "id": "fdi_high_fat_ziprasidone",
+        "food_id": "high_fat_meal",
+        "vector": "high_fat_meal",
+        "severity": "moderate",
+        "compound_selector": {
+            "exact_compounds": ["ziprasidone-compound", "lurasidone-compound"]
+        },
+        "title_pl": "Spadek wchłaniania neuroleptyku o 50% na czczo",
+        "mechanism_pl": "Zyprazydon i lurasydon wymagają obecności lipidów i posiłku o kaloryczności min. 500 kcal do prawidłowej solubilizacji i wchłonięcia.",
+        "clinical_consequence": "Przyjęcie leku bez posiłku obniża stężenie o połowę, co grozi zaostrzeniem objawów psychotycznych i nawrotem schizofrenii/ChAD.",
+        "management": "Zawsze przyjmować zyprazydon i lurasydon w trakcie pełnego posiłku (minimum 500 kcal z zawartością tłuszczu).",
+        "evidence_level": "established",
+        "target_gene": None,
+        "pdb_id": None
+    },
+
+    # 10. Ginkgo Biloba & Antiplatelet Herbs
+    {
+        "id": "fdi_ginkgo_antiplatelets",
+        "food_id": "ginkgo_antiplatelet",
+        "vector": "ginkgo_antiplatelet",
+        "severity": "moderate",
+        "compound_selector": {
+            "exact_compounds": ["aspirin-compound", "clopidogrel-compound", "warfarin-compound", "apixaban-compound", "rivaroxaban-compound"]
+        },
+        "title_pl": "Addytywne ryzyko krwawień przy suplementacji miłorzębu / czosnku",
+        "mechanism_pl": "Ginkgolid B jest selektywnym antagonistą receptora PAF; allicyna hamuje aktywację płytek. W połączeniu z lekami przeciwkrzepliwymi hamują hemostazę na wielu poziomach.",
+        "clinical_consequence": "Krwawienia samoistne, krwiaki podtwardówkowe, krwotoki z nosa, wydłużony czas krwawienia po zabiegach.",
+        "management": "Odstawić preparaty Ginkgo biloba i wysokie dawki czosnku/imbiru na co najmniej 7-14 dni przed planowanymi zabiegami chirurgicznymi i stomatologicznymi.",
+        "evidence_level": "probable",
+        "target_gene": None,
+        "pdb_id": None
+    },
+
+    # 11. Licorice & Mineralocorticoid Excess
+    {
+        "id": "fdi_licorice_digoxin_diuretics",
+        "food_id": "licorice_mr",
+        "vector": "licorice_mr",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["digoxin-compound", "furosemide-compound", "hydrochlorothiazide-compound"]
+        },
+        "title_pl": "Indukcja hipokaliemii i złośliwych arytmii digoksynowych",
+        "mechanism_pl": "Kwas glicyryzynowy blokuje 11-beta-HSD2, co powoduje ucieczkę potasu przez nerki. Hipokaliemia uwrażliwia miocyty serca na toksyczność digoksyny.",
+        "clinical_consequence": "Zaburzenia rytmu serca: częstoskurcz komorowy, blok przedsionkowo-komorowy, migotanie komór.",
+        "management": "Unikać spożywania naturalnej lukrecji (słodycze, herbatki ziołowe) w trakcie leczenia digoksyną i diuretykami pętlowymi/tiazydowymi.",
+        "evidence_level": "established",
+        "target_gene": "NR3C2",
+        "pdb_id": "2Q3I"
+    },
+
+    # 12. CBD / Cannabinoids & CYP / Transporters
+    {
+        "id": "fdi_cbd_clobazam",
+        "food_id": "cbd_cannabinoids",
+        "vector": "cbd_cannabinoids",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["clobazam-compound"]
+        },
+        "title_pl": "Drastyczna kumulacja aktywnego metabolitu klobazamu (N-desmetyloklobazam)",
+        "mechanism_pl": "CBD silnie hamuje izoenzym CYP2C19 odpowiedzialny za inaktywację N-desmetyloklobazamu, podnosząc jego stężenie 3–5-krotnie.",
+        "clinical_consequence": "Głęboka sedacja, senność, ataksja, nasilenie napadów drgawkowych, depresja oddechowa.",
+        "management": "Ścisły monitoring neurologiczny; w przypadku włączenia CBD często konieczna jest redukcja dawki klobazamu o 50%.",
+        "evidence_level": "established",
+        "target_gene": "CYP3A4",
+        "pdb_id": "1TQN"
+    },
+    {
+        "id": "fdi_cbd_valproate",
+        "food_id": "cbd_cannabinoids",
+        "vector": "cbd_cannabinoids",
+        "severity": "severe",
+        "compound_selector": {
+            "exact_compounds": ["valproate-compound"]
+        },
+        "title_pl": "Addytywne ryzyko uszkodzenia wątroby (Wzrost ALT/AST)",
+        "mechanism_pl": "Skojarzenie kannabidiolu z kwasem walproinowym wywołuje synergistyczny stres metaboliczny w hepatocytach.",
+        "clinical_consequence": "Wzrost transaminaz wątrobowych (ALT/AST > 3x ULN), ryzyko ostrego uszkodzenia wątroby (DILI).",
+        "management": "Regularna kontrola enzymów wątrobowych przed rozpoczęciem terapii oraz co 1, 3 i 6 miesięcy w trakcie leczenia skojarzonego.",
+        "evidence_level": "established",
+        "target_gene": None,
+        "pdb_id": None
+    }
+]
+
+out_data = {
+    "food_catalog": food_catalog,
+    "interaction_rules": interaction_rules
+}
+
+out_path = CURATED / "food_drug_interactions.json"
+out_path.write_text(json.dumps(out_data, indent=2, ensure_ascii=False), encoding="utf-8")
+print(f"Generated {out_path}! Food items: {len(food_catalog)}, Rules: {len(interaction_rules)}")

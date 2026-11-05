@@ -1661,6 +1661,154 @@ def test_chemogenomics_and_chemical_space_engine(sqlite_con):
         assert inner == outer, f"Root {filename} is out of sync with apps/graph-viewer/{filename}"
 
 
+def test_food_drug_interaction_engine(sqlite_con):
+    """v3.30.0: Validates Food-Drug & Nutraceutical Interaction Engine (FDI/NDI),
+
+    curated rules, 3D target catalog expansions, SQLite table #27, and UI integration.
+    """
+    import json
+
+    # 1. Curated Food & Herb Dataset Validation
+    fdi_path = ROOT / "data/curated/food_drug_interactions.json"
+    assert fdi_path.exists(), "food_drug_interactions.json must exist in data/curated"
+
+    fdi_data = json.loads(fdi_path.read_text(encoding="utf-8"))
+    assert "food_catalog" in fdi_data and "interaction_rules" in fdi_data
+
+    catalog = fdi_data["food_catalog"]
+    assert len(catalog) == 12, f"Expected 12 food/herb categories, found {len(catalog)}"
+
+    expected_foods = [
+        "grapefruit", "st_johns_wort", "tyramine_aged_cheese", "dairy_cations",
+        "alcohol_ethanol", "leafy_greens_vitk", "high_fat_meal", "potassium_substitutes",
+        "caffeine_xanthines", "ginkgo_antiplatelet", "licorice_mr", "cbd_cannabinoids"
+    ]
+    for fid in expected_foods:
+        assert fid in catalog, f"Missing {fid} in food_catalog"
+        assert catalog[fid]["name_pl"]
+        assert catalog[fid]["icon"]
+        assert len(catalog[fid]["bioactives"]) > 0
+
+    rules = fdi_data["interaction_rules"]
+    assert len(rules) >= 25, f"Expected >= 25 interaction rules, found {len(rules)}"
+    for r in rules:
+        assert r["id"] and r["food_id"] and r["vector"] and r["severity"]
+        assert r["severity"] in ("contraindicated", "severe", "moderate", "minor")
+        assert r["compound_selector"]
+        assert r["title_pl"] and r["mechanism_pl"] and r["clinical_consequence"] and r["management"]
+        assert r["evidence_level"] in ("established", "probable", "theoretical")
+
+    # 2. Expanded 3D Target Catalog (CYP3A4, CYP2E1, VKORC1, ADORA2A, NR3C2)
+    t3d_path = ROOT / "data/curated/target_3d_catalog.json"
+    t3d_data = json.loads(t3d_path.read_text(encoding="utf-8"))
+    assert len(t3d_data) >= 41, f"Expected >= 41 targets in target_3d_catalog, found {len(t3d_data)}"
+
+    assert "CYP3A4" in t3d_data and t3d_data["CYP3A4"]["pdb"] == "1TQN"
+    assert "CYP2E1" in t3d_data and t3d_data["CYP2E1"]["pdb"] == "3E4E"
+    assert "VKORC1" in t3d_data and t3d_data["VKORC1"]["pdb"] == "6WVH"
+    assert "ADORA2A" in t3d_data and t3d_data["ADORA2A"]["pdb"] == "5G53"
+    assert "NR3C2" in t3d_data and t3d_data["NR3C2"]["pdb"] == "2Q3I"
+
+    # 3. SQLite Table #27 Schema & Indices
+    fdi_count = sqlite_con.execute("SELECT COUNT(*) FROM food_drug_interactions").fetchone()[0]
+    assert fdi_count >= 70, f"Expected >= 70 rows in food_drug_interactions, got {fdi_count}"
+
+    indices = {r[1] for r in sqlite_con.execute("PRAGMA index_list('food_drug_interactions')").fetchall()}
+    assert "idx_fdi_compound" in indices
+    assert "idx_fdi_food" in indices
+    assert "idx_fdi_severity" in indices
+
+    # 4. Sentinel Food-Drug Interaction Checks
+    # Grapefruit + Simvastatin
+    simva_row = sqlite_con.execute(
+        "SELECT severity, vector, target_gene, pdb_id FROM food_drug_interactions WHERE compound_id = 'simvastatin-compound' AND food_id = 'grapefruit'"
+    ).fetchone()
+    assert simva_row is not None
+    assert simva_row[0] == "contraindicated"
+    assert simva_row[1] == "grapefruit_cyp3a4"
+    assert simva_row[2] == "CYP3A4" and simva_row[3] == "1TQN"
+
+    # Dairy + Ciprofloxacin
+    cipro_row = sqlite_con.execute(
+        "SELECT severity, vector FROM food_drug_interactions WHERE compound_id = 'ciprofloxacin-compound' AND food_id = 'dairy_cations'"
+    ).fetchone()
+    assert cipro_row is not None
+    assert cipro_row[0] == "severe"
+    assert cipro_row[1] == "cation_chelation"
+
+    # Tyramine + Phenelzine
+    phen_row = sqlite_con.execute(
+        "SELECT severity, vector, target_gene, pdb_id FROM food_drug_interactions WHERE compound_id = 'phenelzine-compound' AND food_id = 'tyramine_aged_cheese'"
+    ).fetchone()
+    assert phen_row is not None
+    assert phen_row[0] == "contraindicated"
+    assert phen_row[1] == "tyramine_maoi"
+    assert phen_row[2] == "MAOA" and phen_row[3] == "2Z5X"
+
+    # Vitamin K + Warfarin
+    warf_row = sqlite_con.execute(
+        "SELECT severity, vector, target_gene, pdb_id FROM food_drug_interactions WHERE compound_id = 'warfarin-compound' AND food_id = 'leafy_greens_vitk'"
+    ).fetchone()
+    assert warf_row is not None
+    assert warf_row[0] == "severe"
+    assert warf_row[1] == "vitamin_k_vka"
+    assert warf_row[2] == "VKORC1" and warf_row[3] == "6WVH"
+
+    # Potassium + Spironolactone
+    spiro_row = sqlite_con.execute(
+        "SELECT severity, vector, target_gene, pdb_id FROM food_drug_interactions WHERE compound_id = 'spironolactone-compound' AND food_id = 'potassium_substitutes'"
+    ).fetchone()
+    assert spiro_row is not None
+    assert spiro_row[0] == "severe"
+    assert spiro_row[1] == "dietary_potassium"
+    assert spiro_row[2] == "NR3C2" and spiro_row[3] == "2Q3I"
+
+    # Alcohol + Metronidazole
+    metro_row = sqlite_con.execute(
+        "SELECT severity, vector, target_gene, pdb_id FROM food_drug_interactions WHERE compound_id = 'metronidazole-compound' AND food_id = 'alcohol_ethanol'"
+    ).fetchone()
+    assert metro_row is not None
+    assert metro_row[0] == "contraindicated"
+    assert metro_row[1] == "ethanol_synergy"
+    assert metro_row[2] == "CYP2E1" and metro_row[3] == "3E4E"
+
+    # St. John's Wort + Cyclosporine
+    cyclo_row = sqlite_con.execute(
+        "SELECT severity, vector, target_gene, pdb_id FROM food_drug_interactions WHERE compound_id = 'cyclosporine-compound' AND food_id = 'st_johns_wort'"
+    ).fetchone()
+    assert cyclo_row is not None
+    assert cyclo_row[0] == "contraindicated"
+    assert cyclo_row[1] == "st_johns_wort_pxr"
+    assert cyclo_row[2] == "ABCB1" and cyclo_row[3] == "6QEX"
+
+    # 5. graph-data.js export validation
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    assert '"foodDrugInteractions"' in graph_js
+    assert '"grapefruit"' in graph_js
+    assert '"st_johns_wort"' in graph_js
+
+    # 6. app.js logic & UI integration
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    assert "FOOD_INTERACTIONS" in app_src
+    assert "FOOD_CATALOG" in app_src
+    assert "FOOD_RULES" in app_src
+    assert "getFoodInteractionsForCompound" in app_src
+    assert "openFoodInteractionsSplitPane" in app_src
+    assert "openFoodInteractionsDockBtn" in app_src
+    assert "patientDiet" in app_src
+    assert "data-toggle-diet" in app_src
+    assert "clearPatientDietBtn" in app_src
+    assert "Interakcje z Żywnością & Ziołami" in app_src
+    assert "/food" in app_src or "/fdi" in app_src
+
+    # 7. Dual-file synchronization verification
+    for filename in ("app.js", "index.html", "graph-data.js"):
+        inner = (ROOT / f"apps/graph-viewer/{filename}").read_text(encoding="utf-8")
+        outer = (ROOT.parent / filename).read_text(encoding="utf-8")
+        assert inner == outer, f"Root {filename} is out of sync with apps/graph-viewer/{filename}"
+
+
+
 
 
 

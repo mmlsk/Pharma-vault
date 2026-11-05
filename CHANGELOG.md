@@ -1,5 +1,48 @@
 # Changelog
 
+## [3.30.0] — 2026-11-05 — Interakcje Lek-Żywność & Nutraceutyki (Food-Drug Interaction Engine - FDI / NDI): 12 Wektorów Żywieniowo-Ziołowych, Tabela SQLite #27, Rozszerzenie Tarczy Polipragmazji o Profil Diety, Dok Żywnościowy oraz Nowe Cele 3D (CYP3A4, CYP2E1, VKORC1, ADORA2A, NR3C2)
+
+### Dodano
+- **Mechanistyczny Silnik Interakcji Lek-Żywność & Zioła (Food-Drug Interaction Engine)**:
+  - Opracowano kuratorowaną bazę wiedzy [`data/curated/food_drug_interactions.json`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/data/curated/food_drug_interactions.json) zawierającą 12 profili żywności i ziół (`food_catalog`) oraz 27 mechanistycznych reguł (`interaction_rules`) z precyzyjnym dopasowaniem substancji (kody ATC, exact IDs, profile CYP i transporterów).
+  - Skutecznie wymodelowano 12 wektorów żywieniowo-nutraceutycznych:
+    1. `grapefruit_cyp3a4`: Sok grejpfrutowy i gorzkie cytrusy (bergamotyna $\to$ samobójcza inhibicja jelitowego CYP3A4 i P-gp $\to$ 3–10x wzrost AUC statyn, CCB, cyklosporyny, PDE5i).
+    2. `st_johns_wort_pxr`: Ziele dziurawca (*Hypericum perforatum*, hiperforyna $\to$ aktywacja receptora PXR $\to$ transkrypcyjna nadekspresja P-gp i CYP3A4 $\to$ załamanie stężeń DOAC, cyklosporyny, digoksyny).
+    3. `tyramine_maoi`: Sery dojrzewające i produkty fermentowane (tyramina $\to$ blokada MAO-A $\to$ przełom nadciśnieniowy, tzw. „efekt sera” przy iMAO i linezolidzie).
+    4. `cation_chelation`: Nabiał i kationy wielowartościowe ($Ca^{2+}, Mg^{2+}, Fe^{2+/3+}, Al^{3+}$ $\to$ nierozpuszczalne chelaty luminalne z fluorochinolonami, tetracyklinami, bisfosfonianami i lewotyroksyną).
+    5. `ethanol_synergy`: Alkohol etylowy (synergistyczna depresja OUN z benzodiazepinami/opioidami; reakcja disulfiramowa z metronidazolem; indukcja CYP2E1 i wyczerpanie GSH z paracetamolem; hipoglikemia nocna z pochodnymi sulfonylomocznika).
+    6. `vitamin_k_vka`: Zielone warzywa liściaste (filochinon / witamina K1 $\to$ ominięcie bloku VKORC1 $\to$ spadek INR u pacjentów leczonych warfaryną i acenokumarolem).
+    7. `high_fat_meal`: Posiłki bogatotłuszczowe (micelizacja żółciowa $\to$ wielokrotny wzrost AUC leków lipofilnych jak abirateron, zyprazydon, lurasydon).
+    8. `dietary_potassium`: Substytuty soli kuchennej (K-salt) i suszone owoce (retencja jonów $K^+$ $\to$ zagrażająca życiu hiperkaliemia przy spironolaktonie, eplerenonie, ACEI, sartanach i trimetoprimie).
+    9. `caffeine_cyp1a2`: Kofeina, kawa i napoje energetyzujące (blokada enzymatyczna CYP1A2 przez cyprofloksacynę i fluwoksaminę $\to$ toksyczna kumulacja kofeiny).
+    10. `ginkgo_antiplatelet`: Miłorząb japoński, czosnek, imbir, żeń-szeń (ginkgolid B i allicyna $\to$ synergizm przeciwpłytkowy i ryzyko krwotoków przy antykoagulantach i ASA).
+    11. `licorice_mr`: Lukrecja naturalna (kwas glicyryzynowy $\to$ blokada $11\beta\text{-HSD2}$ w nerkach $\to$ pseudohiperaldosteronizm, hipokaliemia i arytmie digoksynowe).
+    12. `cbd_cannabinoids`: Kannabidiol (CBD $\to$ inhibicja CYP3A4/CYP2C19 $\to$ kumulacja N-desmetyloklobazamu oraz addytywna hepatotoksyczność z walproinianem).
+  - Skrypt generatora [`scripts/build_food_drug_interactions.py`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/scripts/build_food_drug_interactions.py).
+- **Rozszerzenie Katalogu Celów Trójwymiarowych (3D Target Catalog) do 41 Struktur**:
+  - Wzbogacono [`data/curated/target_3d_catalog.json`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/data/curated/target_3d_catalog.json) o 5 kluczowych celów enzymatycznych i receptorowych:
+    - `CYP3A4`: Cytochrome P450 3A4 (PDB: `1TQN`, krystalografia RTG 2.05 Å).
+    - `CYP2E1`: Cytochrome P450 2E1 (PDB: `3E4E`, krystalografia RTG 2.60 Å).
+    - `VKORC1`: Vitamin K epoxide reductase complex subunit 1 (PDB: `6WVH`, Cryo-EM 3.4 Å).
+    - `ADORA2A`: Adenosine A2a receptor (PDB: `5G53`, krystalografia RTG 1.80 Å).
+    - `NR3C2`: Mineralocorticoid receptor (PDB: `2Q3I`, krystalografia RTG 1.95 Å).
+- **Baza Danych SQLite: 27. Tabela Relacyjna (`food_drug_interactions`)**:
+  - Zaktualizowano [`scripts/export_sqlite.py`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/scripts/export_sqlite.py) o tabelę `food_drug_interactions` (77 wierszy relacyjnych) z dedykowanymi indeksami `idx_fdi_compound`, `idx_fdi_food` oraz `idx_fdi_severity`.
+- **Aktualizacja Generatora Danych Grafu (`build_graph_data.py`)**:
+  - Zintegrowano słownik `foodDrugInteractions` bezpośrednio w `graph-data.js` (2801 KB).
+- **Frontend UI & Tarcza Polipragmazji (`app.js`, `index.html`)**:
+  - Rozbudowano silnik `computePolypharmacyScore`: dodano 7. wektor `food` („Interakcje z Żywnością & Ziołami” 🥦) z wagami istotności klinicznej (Contraindicated: 100, Severe: 80, Moderate: 50).
+  - Wzbogacono okno audytu wielolekowego (`openDdiAuditInSplitPane`):
+    - Dodano interaktywny pasek wyboru diety i nutraceutyków pacjenta z 12 klikalnymi badge'ami oraz przyciskiem czyszczenia.
+    - Zintegrowano karty kolizji dietetycznych z wyróżnionymi polami mechanizmu, konsekwencji klinicznej, postępowania oraz przyciskami podglądu celu enzymatycznego w 3D z linkami do [Biomolecular Structure Viewer](sidecar://biomolecular-structure-viewer).
+  - W karcie substancji w doku bocznym (`compoundHtml`) dodano wyróżnioną sekcję `🍽️ Interakcje z Żywnością & Ziołami` z przyciskiem `Szczegóły ↗`.
+  - Dodano dedykowany dok kontekstowy `openFoodInteractionsSplitPane(c)` z wyczerpującym zestawieniem interakcji dla wybranego leku.
+  - Zaimplementowano obsługę trasowania hash: `#/food`, `#/food/<cid>`, `#/fdi`, `#/fdi/<cid>`.
+  - Dodano skrót w palecie poleceń Cmd+K: „Interakcje Lek-Żywność & Nutraceutyki (FDI)”.
+- **Weryfikacja & Niezmienniki**:
+  - Dodano test integracyjny `test_food_drug_interaction_engine` w [`tests/test_pipeline.py`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/tests/test_pipeline.py) weryfikujący poprawność schematów, bazę SQLite, obecność 12 kategorii, testy par wzorcowych oraz spójność bajtową plików frontendowych.
+  - Pełny zestaw testów repozytorium: **67/67 passed (100% green w 1.75s)**.
+
 ## [3.29.0] — 2026-11-05 — Chemogenomika & Rzutowanie Przestrzeni Chemicznej: Mapa 2D 2533 Leków, Podobieństwo Tanimoto, Rusztowania Bemis-Murcko (36 Rodzin), Predykcja Celów Off-Target (hERG/5-HT2B) oraz 9. Workspace Mode
 
 ### Dodano

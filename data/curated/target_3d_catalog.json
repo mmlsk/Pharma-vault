@@ -1352,5 +1352,160 @@
         "role": "Dolny pierścień filtra selektywności potasowej"
       }
     ]
+  },
+  "CYP3A4": {
+    "id": "CYP3A4",
+    "name": "Cytochrome P450 3A4",
+    "gene": "CYP3A4",
+    "pdb": "1TQN",
+    "res": "Krystalografia RTG 2.05 Å",
+    "uniprot": "P08684",
+    "ligand": "Metyrapon / Protoporfiryna IX",
+    "affinity": "Główny enzym metabolizujący >50% leków",
+    "class": "Monooksygenaza hemowa Cytochromu P450",
+    "arch": "enzyme",
+    "pocket": [
+      {
+        "r": "HEM",
+        "pos": 0,
+        "role": "Grupa hemowa z atomem Fe wiążącym tlen cząsteczkowy"
+      },
+      {
+        "r": "Arg105",
+        "pos": 105,
+        "role": "Stabilizacja pierścienia porfirynowego i koordynacja substratu"
+      },
+      {
+        "r": "Phe215",
+        "pos": 215,
+        "role": "Aromatyczna klatka kieszeni wiążącej substraty lipofilne"
+      },
+      {
+        "r": "Ser119",
+        "pos": 119,
+        "role": "Wiązanie wodorowe z grupami tlenowymi ligandów"
+      },
+      {
+        "r": "Thr309",
+        "pos": 309,
+        "role": "Kluczowa reszta transferu protonu w cyklu katalitycznym"
+      }
+    ]
+  },
+  "CYP2E1": {
+    "id": "CYP2E1",
+    "name": "Cytochrome P450 2E1",
+    "gene": "CYP2E1",
+    "pdb": "3E4E",
+    "res": "Krystalografia RTG 2.60 Å",
+    "uniprot": "P05181",
+    "ligand": "Omega-imidazol-dodekanol",
+    "affinity": "Indukowany przez etanol, aktywator paracetamolu do NAPQI",
+    "class": "Monooksygenaza mikrosomalna",
+    "arch": "enzyme",
+    "pocket": [
+      {
+        "r": "HEM",
+        "pos": 0,
+        "role": "Centrum żelazoporfirynowe generujące reaktywne formy tlenu"
+      },
+      {
+        "r": "Thr303",
+        "pos": 303,
+        "role": "Puszka katalityczna utleniania małych cząsteczek organicznych"
+      },
+      {
+        "r": "Phe298",
+        "pos": 298,
+        "role": "Ograniczenie przestrzenne małej, hydrofobowej kieszeni CYP2E1"
+      }
+    ]
+  },
+  "VKORC1": {
+    "id": "VKORC1",
+    "name": "Vitamin K epoxide reductase complex subunit 1",
+    "gene": "VKORC1",
+    "pdb": "6WVH",
+    "res": "Krio-EM 3.4 Å",
+    "uniprot": "Q9BQB4",
+    "ligand": "Warfaryna / Witamina K1",
+    "affinity": "Kd = ~1 uM (Warfaryna)",
+    "class": "Transbłonowa oksydoreduktaza siateczki śródplazmatycznej",
+    "arch": "transporter",
+    "pocket": [
+      {
+        "r": "Cys132",
+        "pos": 132,
+        "role": "Kluczowa reszta redoks katalitycznego mostka dwusiarczkowego"
+      },
+      {
+        "r": "Cys135",
+        "pos": 135,
+        "role": "Koordynacja pętli redukcji epoksydu witaminy K"
+      },
+      {
+        "r": "Tyr139",
+        "pos": 139,
+        "role": "Miejsce mutacji oporności na warfarynę (Tyr139Phe/Cys)"
+      }
+    ]
+  },
+  "ADORA2A": {
+    "id": "ADORA2A",
+    "name": "Adenosine A2a receptor",
+    "gene": "ADORA2A",
+    "pdb": "5G53",
+    "res": "Krystalografia RTG 1.80 Å",
+    "uniprot": "P29274",
+    "ligand": "Kofeina / ZM241385",
+    "affinity": "Ki = 12 uM (Kofeina)",
+    "class": "GPCR sprzężony z białkiem Gs",
+    "arch": "gpcr",
+    "pocket": [
+      {
+        "r": "Asn253",
+        "pos": 253,
+        "role": "Kluczowe wiązanie wodorowe z azotem N7 pierścienia ksantyny"
+      },
+      {
+        "r": "Glu169",
+        "pos": 169,
+        "role": "Oddziaływanie polarne w pętli zewnątrzkomórkowej ECL2"
+      },
+      {
+        "r": "Phe168",
+        "pos": 168,
+        "role": "Oddziaływanie pi-pi stacking z purynowym szkieletem ksantyn"
+      }
+    ]
+  },
+  "NR3C2": {
+    "id": "NR3C2",
+    "name": "Mineralocorticoid receptor",
+    "gene": "NR3C2",
+    "pdb": "2Q3I",
+    "res": "Krystalografia RTG 1.95 Å",
+    "uniprot": "P08235",
+    "ligand": "Aldosteron / Kwas glicyryzynowy",
+    "affinity": "Kd = 0.5 nM (Aldosteron / Kortyzol)",
+    "class": "Jądrowy receptor steroidowy",
+    "arch": "receptor",
+    "pocket": [
+      {
+        "r": "Gln776",
+        "pos": 776,
+        "role": "Kluczowe wiązanie wodorowe z grupą 3-ketonową steroidu"
+      },
+      {
+        "r": "Thr945",
+        "pos": 945,
+        "role": "Różnicowanie powinowactwa do mineralo- vs glikokortykoidów"
+      },
+      {
+        "r": "Leu938",
+        "pos": 938,
+        "role": "Hydrofobowa kieszeń wiążąca pierścienie steroidowe"
+      }
+    ]
   }
 }
