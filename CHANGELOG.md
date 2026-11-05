@@ -1,5 +1,42 @@
 # Changelog
 
+## [3.28.0] — 2026-11-05 — Bariera Krew-Mózg (BBB) & Transportery Błonowe PBPK: Model Clarka (logBB), Pfizer CNS MPO, Kinetyka Efluksu P-gp (Kp,uu), Panel ABC/SLC oraz 8. Workspace Mode
+
+### Dodano
+- **Baza Modeli Transporterów Błonowych & Estymator QSAR BBB / PBPK**:
+  - Utworzono zbiór kuratorowany [`data/curated/transporter_profiles.json`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/data/curated/transporter_profiles.json) obejmujący 38 leków o kluczowym znaczeniu farmakokinetycznym i klinicznym (P-gp, BCRP, LAT1, OATP1B1/3, OAT1/3, OCT1/2, BSEP, PEPT1).
+  - Wzbogacono bazę SQLite [`pharma-vault.db`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/data/processed/pharma-vault.db) o nową relacyjną tabelę `transporter_profiles` z indeksami `idx_transporter_logbb`, `idx_transporter_cns_mpo`, `idx_transporter_pgp` oraz `idx_transporter_oatp`.
+  - Wzbogacono katalog struktur 3D [`data/curated/target_3d_catalog.json`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/data/curated/target_3d_catalog.json) o 4 struktury Cryo-EM transporterów: P-gp / ABCB1 (`6QEX`), BCRP / ABCG2 (`6FFC`), OATP1B1 / SLCO1B1 (`8H48`) oraz LAT1 / SLC7A5 (`6IRT`).
+  - Dołączono profile transporterowe do artefaktu grafu w [`scripts/build_graph_data.py`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/scripts/build_graph_data.py) jako `window.PV_GRAPH.transporterProfiles`.
+  - Zaimplementowano uniwersalny estymator biofizyczny `getCompoundTransporterProfile(compound)` łączący równanie Clarka ($\log BB = 0.152 \log P - 0.0148 \text{TPSA} + 0.139$) oraz algorytm wieloparametrowy **Pfizer CNS MPO** (0.0–6.0 pkt) dla wszystkich 2533 cząsteczek.
+- **Interaktywny Przekrój Kapilary Mózgowej BBB & Symulator Efluksu P-gp**:
+  - Generator wektorowy SVG `renderBbbCrossSectionSvg(profile, inhibitorRatio)`: warstwy światła naczynia z wolnym stężeniem $C_{u,\text{plasma}}$, śródbłonka z białkami połączeń ścisłych (Claudin-5), wypustek astrocytów oraz tkanki mózgowej z odczytem stężenia $C_{u,\text{brain}}$.
+  - Dynamiczny symulator trans-endotelialny wolnej frakcji mózgowej $K_{p,uu,\text{brain}}$ ze suwakiem stężenia inhibitora P-gp ($0\times$ do $10\times [I]/K_i$).
+  - Wizualne odtworzenie **Paradoksu Loperamidu**: skok stężenia $K_{p,uu}$ z $0.04$ do $>0.50$ przy inhibicji P-gp przez werapamil lub chinidynę z alarmem ośrodkowej depresji oddechowej.
+- **Radar Pfizer CNS MPO & Macierz ADME Narządów**:
+  - Sześciokątny wykres radarowy `renderCnsMpoRadarSvg(phys, score)` dla parametrów: MW, CLogP, CLogD, TPSA, HBD oraz pKa z progiem CNS+ ($\ge 4.0$).
+  - Wizualna macierz narządowa `renderTransporterAdmeMatrixSvg(profile)` obejmująca bariery: Mózg (BBB), Wątroba (Hepato), Nerki (Cewki) i Jelita (Wchłanianie).
+- **8. Tryb Roboczy w Pasku Nawigacji (`transporters`)**:
+  - Dodano nową dedykowaną kartę `[🧬 Transportery & BBB]` w głównym nagłówku (`#modeTransportersBtn`), obsługę skrótu klawiszowego `8` oraz akcję w palecie Cmd+K.
+  - Pełna obsługa trasowania URL hash: `#/transporters` oraz `#/transporters/<compoundId>?inhibitor=<val>&preset=<key>`.
+- **Integracja z Tarczą Polipragmazji (`#polypharmacyShield`)**:
+  - 4 nowe wektory kolizji transporterowych w `computePolypharmacyScore`:
+    1. `transporter_pgp_efflux_overload`: substrat P-gp o wąskim indeksie (Loperamid, Digoksyna, Dabigatran) + inhibitor P-gp (Werapamil, Amiodaron, Ketokonazol).
+    2. `transporter_oatp_statin_myopathy`: statyna + silny inhibitor OATP1B1 (Cyklosporyna, Gemfibrozil) $\to$ krytyczny alert rabdomiolizy.
+    3. `transporter_oat_renal_toxicity`: Metotreksat / NLPZ + inhibitor OAT1/3 (Probenecyd, Ibuprofen) $\to$ mielotoksyczność i nefrotoksyczność.
+    4. `transporter_oct_metformin_lactate`: Metformina + inhibitor OCT2 (Cymetydyna) $\to$ kwasica mleczanowa.
+- **6 Nowych Presetów Klinicznych PBPK**:
+  1. *Paradoks Loperamidu (+ Werapamil)* (P-gp BBB efflux collapse).
+  2. *Simwastatyna + Gemfibrozil (OATP1B1)* (Blokada wychwytu wątrobowego & rabdomioliza).
+  3. *Metotreksat + Probenecyd (OAT1/3)* (Zahamowanie nerkowej sekrecji cewkowej).
+  4. *Metformina + Cymetydyna (OCT2)* (Zahamowanie klirensu nerkowego & ryzyko kwasicy).
+  5. *Lewodopa (Influks LAT1)* (Aktywny transport aminokwasowy przez BBB).
+  6. *Feksofenadyna + Ketokonazol* (Przełamanie braku sedacji leku II gen.).
+- **Sidecar 3D Link**:
+  - Zintegrowano bezpośrednie linki do badania struktur 3D transporterów w [Biomolecular Structure Viewer](sidecar://biomolecular-structure-viewer).
+- **Testy Automatyczne**:
+  - Dodano test `test_transporters_and_bbb_pbpk_engine` w [`tests/test_pipeline.py`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/tests/test_pipeline.py). Wszystkie **65 testów** przechodzą pomyślnie (100% green).
+
 ## [3.27.0] — 2026-11-05 — Silnik Toksykologii Molekularnej & Bezpieczeństwa: Hepatotoksyczność (DILIrank/eDISH), Kardiotoksyczność hERG & Margines Redferna, Kompensacja CiPA, Alerty Toksykoforów oraz Ryzyko Teratogenne/Ciąża (PLLR/RID)
 
 ### Dodano

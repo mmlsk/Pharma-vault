@@ -1469,6 +1469,112 @@ def test_molecular_toxicology_and_safety_engine(sqlite_con):
         assert root_app_path.read_text(encoding="utf-8") == app_src, "Root app.js is out of sync with apps/graph-viewer/app.js"
 
 
+def test_transporters_and_bbb_pbpk_engine(sqlite_con):
+    # 1. Curated dataset validation
+    trans_p = ROOT / "data/curated/transporter_profiles.json"
+    assert trans_p.exists(), "data/curated/transporter_profiles.json missing"
+    trans_data = json.loads(trans_p.read_text(encoding="utf-8"))
+    assert len(trans_data) >= 35, f"Expected >= 35 transporter profiles, got {len(trans_data)}"
+    assert "loperamide-compound" in trans_data
+    assert "verapamil-compound" in trans_data
+    assert "simvastatin-compound" in trans_data
+    assert "methotrexate-compound" in trans_data
+    assert "metformin-compound" in trans_data
+    assert "levodopa-compound" in trans_data
+
+    # 2. SQLite schema & database validation
+    trans_count = sqlite_con.execute("SELECT COUNT(*) FROM transporter_profiles").fetchone()[0]
+    assert trans_count >= 35, f"Expected >= 35 in sqlite transporter_profiles, got {trans_count}"
+
+    lop_row = sqlite_con.execute(
+        "SELECT logbb_clark, cns_mpo, kp_uu_baseline, cns_penetration_class, pgp_role FROM transporter_profiles WHERE compound_id = 'loperamide-compound'"
+    ).fetchone()
+    assert lop_row is not None
+    assert lop_row[0] > 0  # Clark logBB positive due to lipophilicity
+    assert lop_row[2] < 0.10  # Kp,uu restricted < 10%
+    assert lop_row[3] == "restricted_by_efflux"
+    assert lop_row[4] == "substrate"
+
+    sim_row = sqlite_con.execute(
+        "SELECT oatp1b1_role FROM transporter_profiles WHERE compound_id = 'simvastatin-compound'"
+    ).fetchone()
+    assert sim_row is not None
+    assert sim_row[0] == "substrate"
+
+    mtx_row = sqlite_con.execute(
+        "SELECT oat1_3_role, bcrp_role FROM transporter_profiles WHERE compound_id = 'methotrexate-compound'"
+    ).fetchone()
+    assert mtx_row is not None
+    assert mtx_row[0] == "substrate"
+
+    met_row = sqlite_con.execute(
+        "SELECT oct2_role, logbb_clark FROM transporter_profiles WHERE compound_id = 'metformin-compound'"
+    ).fetchone()
+    assert met_row is not None
+    assert met_row[0] == "substrate"
+    assert met_row[1] < -1.0  # Clark logBB strongly negative
+
+    ldopa_row = sqlite_con.execute(
+        "SELECT lat1_role, kp_uu_baseline, cns_penetration_class FROM transporter_profiles WHERE compound_id = 'levodopa-compound'"
+    ).fetchone()
+    assert ldopa_row is not None
+    assert ldopa_row[0] == "substrate"
+    assert ldopa_row[1] > 1.0  # Carrier-mediated concentration in brain
+    assert ldopa_row[2] == "carrier_mediated_high"
+
+    indices = {r[1] for r in sqlite_con.execute("PRAGMA index_list('transporter_profiles')").fetchall()}
+    assert "idx_transporter_logbb" in indices
+    assert "idx_transporter_cns_mpo" in indices
+    assert "idx_transporter_pgp" in indices
+    assert "idx_transporter_oatp" in indices
+
+    # 3. 3D Transporter Structures in target_3d_catalog
+    t3d_rows = {r[0]: r[1] for r in sqlite_con.execute("SELECT target_id, gene FROM target_3d_catalog").fetchall()}
+    assert "CHEMBL4302" in t3d_rows and t3d_rows["CHEMBL4302"] == "ABCB1"
+    assert "CHEMBL5075" in t3d_rows and t3d_rows["CHEMBL5075"] == "ABCG2"
+    assert "CHEMBL1741217" in t3d_rows and t3d_rows["CHEMBL1741217"] == "SLCO1B1"
+    assert "CHEMBL4794" in t3d_rows and t3d_rows["CHEMBL4794"] == "SLC7A5"
+
+    # 4. graph-data.js export validation
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    assert '"transporterProfiles"' in graph_js, "transporterProfiles missing in graph-data.js"
+    assert '"loperamide-compound"' in graph_js
+    assert '"verapamil-compound"' in graph_js
+    assert '"simvastatin-compound"' in graph_js
+
+    # 5. app.js logic, UI simulator, and Polypharmacy Shield integration
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    assert "TRANSPORTER_PROFILES" in app_src
+    assert "TRANSPORTER_PRESETS" in app_src
+    assert "loperamide_verapamil" in app_src
+    assert "statin_gemfibrozil" in app_src
+    assert "methotrexate_probenecid" in app_src
+    assert "metformin_cimetidine" in app_src
+    assert "levodopa_lat1" in app_src
+    assert "fexofenadine_ketoconazole" in app_src
+    assert "calculateClarkLogBB" in app_src
+    assert "calculateCnsMpo" in app_src
+    assert "simulatePgpEfflux" in app_src
+    assert "getCompoundTransporterProfile" in app_src
+    assert "renderBbbCrossSectionSvg" in app_src
+    assert "renderCnsMpoRadarSvg" in app_src
+    assert "renderTransporterAdmeMatrixSvg" in app_src
+    assert "openTransporterDock" in app_src
+    assert "data-open-transporters" in app_src
+    assert "/transporters/" in app_src
+    assert "modeTransportersBtn" in app_src
+    assert "transporter_pgp_efflux_overload" in app_src
+    assert "transporter_oatp_statin_myopathy" in app_src
+    assert "transporter_oat_renal_toxicity" in app_src
+    assert "transporter_oct_metformin_lactate" in app_src
+
+    # Ensure root app.js stays in sync with apps/graph-viewer/app.js
+    root_app_path = ROOT.parent / "app.js"
+    if root_app_path.exists():
+        assert root_app_path.read_text(encoding="utf-8") == app_src, "Root app.js is out of sync with apps/graph-viewer/app.js"
+
+
+
 
 
 

@@ -1193,5 +1193,106 @@
         "role": "Wiązanie wodorowe koordynujące z jonami sodu"
       }
     ]
+  },
+  "CHEMBL4302": {
+    "id": "CHEMBL4302",
+    "name": "P-glycoprotein 1 (MDR1 / ABCB1)",
+    "gene": "ABCB1",
+    "pdb": "6QEX",
+    "res": "Cryo-EM 3.5 Å",
+    "uniprot": "P08183",
+    "ligand": "Paclitaxel / Zosuquidar",
+    "affinity": "Km = 8.5 µM (Pompa efluksowa BBB)",
+    "class": "Transporter kasetowy ABC (ABCB)",
+    "arch": "transporter",
+    "pocket": [
+      {
+        "r": "Phe343",
+        "pos": 343,
+        "role": "Aromatyczny stacking z pierścieniami hydrofobowych leków w kieszeni wewnętrznej"
+      },
+      {
+        "r": "Gln725",
+        "pos": 725,
+        "role": "Wiązanie wodorowe stabilizujące substraty w centralnej komorze efluksowej"
+      },
+      {
+        "r": "Phe983",
+        "pos": 983,
+        "role": "Kluczowa reszta hydrofobowa w helisie TM12 determinująca efluks werapamilu i taksolu"
+      }
+    ]
+  },
+  "CHEMBL5075": {
+    "id": "CHEMBL5075",
+    "name": "Breast cancer resistance protein (BCRP / ABCG2)",
+    "gene": "ABCG2",
+    "pdb": "6FFC",
+    "res": "Cryo-EM 3.1 Å",
+    "uniprot": "Q9UNQ0",
+    "ligand": "MZ6 / Rosuvastatin",
+    "affinity": "Km = 7.0 µM (Efluks w BBB i kanalikach)",
+    "class": "Transporter kasetowy ABC (ABCG)",
+    "arch": "transporter",
+    "pocket": [
+      {
+        "r": "Phe439",
+        "pos": 439,
+        "role": "Aromatyczna klatka kieszeni wiążącej substraty i inhibitory (MZ6)"
+      },
+      {
+        "r": "Asn436",
+        "pos": 436,
+        "role": "Oddziaływanie polarne z hydrofilnymi grupami sulfonamidowymi rosuwastatyny"
+      }
+    ]
+  },
+  "CHEMBL1741217": {
+    "id": "CHEMBL1741217",
+    "name": "Organic anion transporter 1B1 (OATP1B1 / SLCO1B1)",
+    "gene": "SLCO1B1",
+    "pdb": "8H48",
+    "res": "Cryo-EM 2.8 Å",
+    "uniprot": "Q9Y6L6",
+    "ligand": "Simvastatin acid / Cyclosporine",
+    "affinity": "Km = 1.2 µM (Wychwyt wątrobowy statyn)",
+    "class": "Transporter anionów organicznych (SLC21/SLCO)",
+    "arch": "transporter",
+    "pocket": [
+      {
+        "r": "Arg580",
+        "pos": 580,
+        "role": "Mostek solny z grupą karboksylową łańcucha heptanowego kwasów statyn"
+      },
+      {
+        "r": "Phe390",
+        "pos": 390,
+        "role": "Hydrofobowa ścianka helisy TM7 klatki wiążącej cyklosporynę i gemfibrozil"
+      }
+    ]
+  },
+  "CHEMBL4794": {
+    "id": "CHEMBL4794",
+    "name": "Large neutral amino acids transporter 1 (LAT1 / SLC7A5)",
+    "gene": "SLC7A5",
+    "pdb": "6IRT",
+    "res": "Cryo-EM 3.2 Å",
+    "uniprot": "Q01650",
+    "ligand": "L-DOPA / Gabapentin / BCH",
+    "affinity": "Km = 50 µM (Aktywny influks BBB)",
+    "class": "Nośnik aminokwasów (SLC7)",
+    "arch": "transporter",
+    "pocket": [
+      {
+        "r": "Ile205",
+        "pos": 205,
+        "role": "Hydrofobowa kieszeń wiążąca pierścień katecholowy L-DOPA"
+      },
+      {
+        "r": "Gly255",
+        "pos": 255,
+        "role": "Zasuwa helikalna koordynująca szkielet aminokwasowy gabapentyny"
+      }
+    ]
   }
 }

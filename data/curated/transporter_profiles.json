@@ -1,0 +1,1932 @@
+{
+  "loperamide-compound": {
+    "compound_id": "loperamide-compound",
+    "physicochem": {
+      "mw": 477.05,
+      "logp": 5.09,
+      "tpsa": 43.78,
+      "hbd": 1,
+      "pka_base": 8.6,
+      "clogd": 3.8
+    },
+    "cns_metrics": {
+      "logbb_clark": 0.26,
+      "cns_mpo_score": 3.85,
+      "kp_uu_baseline": 0.04,
+      "cns_penetration_class": "restricted_by_efflux",
+      "summary_pl": "Wysoka lipofilność sprzyja biernej dyfuzji, lecz potężny efluks P-gp (efflux ratio >15) ogranicza wolne stężenie w OUN do <4%."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "substrate",
+        "km_um": 8.5,
+        "efflux_ratio": 18.2
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "verapamil-compound",
+        "transporter": "P-gp (ABCB1)",
+        "mechanism_pl": "Zablokowanie pompy P-gp (werapamil/chinidyna) podnosi Kp,uu z 0.04 do 0.52, powodując przenikanie opioidu do OUN i groźną depresję oddechową.",
+        "severity": "contraindicated"
+      }
+    ]
+  },
+  "verapamil-compound": {
+    "compound_id": "verapamil-compound",
+    "physicochem": {
+      "mw": 454.61,
+      "logp": 5.09,
+      "tpsa": 63.95,
+      "hbd": 0,
+      "pka_base": 8.9,
+      "clogd": 2.7
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.03,
+      "cns_mpo_score": 3.95,
+      "kp_uu_baseline": 0.42,
+      "cns_penetration_class": "moderate",
+      "summary_pl": "Wnika umiarkowanie do mózgu; działa jako silny bloker i substrat P-gp oraz inhibitor OCT1 i OATP1B1."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "inhibitor",
+        "ic50_um": 2.1,
+        "efflux_ratio": 3.5
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "inhibitor",
+        "ic50_um": 12.0
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "inhibitor",
+        "ic50_um": 9.8
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "digoxin-compound",
+        "transporter": "P-gp (ABCB1)",
+        "mechanism_pl": "Hamowanie nerkowego i jelitowego efluksu digoksyny przez werapamil podwaja jej stężenie w surowicy, grożąc śmiertelną arytmią.",
+        "severity": "critical"
+      }
+    ]
+  },
+  "digoxin-compound": {
+    "compound_id": "digoxin-compound",
+    "physicochem": {
+      "mw": 780.95,
+      "logp": 2.22,
+      "tpsa": 203.06,
+      "hbd": 6,
+      "pka_base": 0.0,
+      "clogd": 1.9
+    },
+    "cns_metrics": {
+      "logbb_clark": -2.53,
+      "cns_mpo_score": 1.2,
+      "kp_uu_baseline": 0.12,
+      "cns_penetration_class": "low",
+      "summary_pl": "Ogromna masa molowa i TPSA wykluczają bierną dyfuzję; nerkowa sekrecja cewkowa zależy krytycznie od P-glikoproteiny."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "substrate",
+        "km_um": 150.0,
+        "efflux_ratio": 8.0
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "amiodarone-compound",
+        "transporter": "P-gp (ABCB1)",
+        "mechanism_pl": "Amiodaron silnie hamuje klirens P-gp digoksyny; wymaga redukcji dawki digoksyny o 50%.",
+        "severity": "critical"
+      }
+    ]
+  },
+  "cyclosporine-compound": {
+    "compound_id": "cyclosporine-compound",
+    "physicochem": {
+      "mw": 1202.63,
+      "logp": 3.0,
+      "tpsa": 279.0,
+      "hbd": 5,
+      "pka_base": 0.0,
+      "clogd": 2.9
+    },
+    "cns_metrics": {
+      "logbb_clark": -3.5,
+      "cns_mpo_score": 0.8,
+      "kp_uu_baseline": 0.02,
+      "cns_penetration_class": "low",
+      "summary_pl": "Cykliczny peptyd o zerowej penetracji OUN, stanowiący najsilniejszy kliniczny inhibitor OATP1B1, OATP1B3, BSEP i P-gp."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "inhibitor",
+        "ic50_um": 0.8
+      },
+      "bcrp": {
+        "role": "inhibitor",
+        "ic50_um": 1.5
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "inhibitor",
+        "ic50_um": 0.05
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "inhibitor",
+        "ic50_um": 0.6
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "simvastatin-compound",
+        "transporter": "OATP1B1 / BSEP",
+        "mechanism_pl": "Zablokowanie wychwytu wątrobowego OATP1B1 zwiększa ekspozycję osoczową statyn 5-10x, wyzwalając masywną rabdomiolizę.",
+        "severity": "contraindicated"
+      }
+    ]
+  },
+  "fexofenadine-compound": {
+    "compound_id": "fexofenadine-compound",
+    "physicochem": {
+      "mw": 501.67,
+      "logp": 5.51,
+      "tpsa": 81.0,
+      "hbd": 2,
+      "pka_base": 9.2,
+      "clogd": 2.1
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.22,
+      "cns_mpo_score": 3.2,
+      "kp_uu_baseline": 0.02,
+      "cns_penetration_class": "restricted_by_efflux",
+      "summary_pl": "Prototypowy niesedatywny lek przeciwhistaminowy II generacji — brak sedacji wynika wprost z natychmiastowego wyrzucania z BBB przez P-gp i OATP2B1."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "substrate",
+        "km_um": 24.0,
+        "efflux_ratio": 12.5
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "substrate"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "ketoconazole-compound",
+        "transporter": "P-gp (ABCB1)",
+        "mechanism_pl": "Inhibitor P-gp zwiększa wchłanianie i penetrację mózgową feksofenadyny, wywołując senność.",
+        "severity": "moderate"
+      }
+    ]
+  },
+  "simvastatin-compound": {
+    "compound_id": "simvastatin-compound",
+    "physicochem": {
+      "mw": 418.57,
+      "logp": 4.59,
+      "tpsa": 72.83,
+      "hbd": 1,
+      "pka_base": 0.0,
+      "clogd": 4.1
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.24,
+      "cns_mpo_score": 4.1,
+      "kp_uu_baseline": 0.35,
+      "cns_penetration_class": "moderate",
+      "summary_pl": "Lipofilny prolek laktonowy wnika do OUN łatwiej niż statyny hydrofilne; aktywny hydroksykwas jest wychwytywany przez OATP1B1."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "substrate"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "substrate",
+        "km_um": 4.2
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "gemfibrozil-compound",
+        "transporter": "OATP1B1 (SLCO1B1)",
+        "mechanism_pl": "Zahamowanie OATP1B1 i CYP2C8 potraja stężenie simwastatyny, drastycznie podnosząc ryzyko uszkodzenia mięśni (rabdomioliza).",
+        "severity": "contraindicated"
+      }
+    ]
+  },
+  "rosuvastatin-compound": {
+    "compound_id": "rosuvastatin-compound",
+    "physicochem": {
+      "mw": 481.55,
+      "logp": 2.4,
+      "tpsa": 140.92,
+      "hbd": 2,
+      "pka_base": 0.0,
+      "clogd": -0.3
+    },
+    "cns_metrics": {
+      "logbb_clark": -1.58,
+      "cns_mpo_score": 3.1,
+      "kp_uu_baseline": 0.01,
+      "cns_penetration_class": "low",
+      "summary_pl": "Hydrofilna statyna o znikomej penetracji OUN; jej dystrybucja zależy całkowicie od wątrobowych transporterów OATP1B1, OATP1B3 i BCRP."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "substrate",
+        "km_um": 7.0
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "substrate",
+        "km_um": 1.2
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "cyclosporine-compound",
+        "transporter": "OATP1B1 / BCRP",
+        "mechanism_pl": "Cyklosporyna blokuje OATP1B1 i BCRP, podnosząc AUC rosuwastatyny aż 7-krotnie.",
+        "severity": "contraindicated"
+      }
+    ]
+  },
+  "atorvastatin-compound": {
+    "compound_id": "atorvastatin-compound",
+    "physicochem": {
+      "mw": 558.65,
+      "logp": 6.31,
+      "tpsa": 111.79,
+      "hbd": 3,
+      "pka_base": 0.0,
+      "clogd": 1.6
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.56,
+      "cns_mpo_score": 3.0,
+      "kp_uu_baseline": 0.08,
+      "cns_penetration_class": "low",
+      "summary_pl": "Substrat OATP1B1, P-gp i BCRP; silna zależność od transportu wątrobowego."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "substrate"
+      },
+      "bcrp": {
+        "role": "substrate"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "substrate",
+        "km_um": 2.5
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "clarithromycin-compound",
+        "transporter": "OATP1B1 / P-gp / CYP3A4",
+        "mechanism_pl": "Podwójna blokada transportu OATP1B1 i metabolizmu CYP3A4 prowadzi do gwałtownego wzrostu stężeń atorwastatyny.",
+        "severity": "critical"
+      }
+    ]
+  },
+  "gemfibrozil-compound": {
+    "compound_id": "gemfibrozil-compound",
+    "physicochem": {
+      "mw": 250.34,
+      "logp": 3.57,
+      "tpsa": 46.53,
+      "hbd": 1,
+      "pka_base": 0.0,
+      "clogd": 1.2
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.01,
+      "cns_mpo_score": 4.6,
+      "kp_uu_baseline": 0.15,
+      "cns_penetration_class": "moderate",
+      "summary_pl": "Fibrat będący silnym inhibitorem transporterów OATP1B1 oraz enzymu CYP2C8 (glukuronid gemfibrozilu)."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "inhibitor",
+        "ic50_um": 5.0
+      },
+      "oat1_3": {
+        "role": "inhibitor"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "simvastatin-compound",
+        "transporter": "OATP1B1",
+        "mechanism_pl": "Bezwzględne przeciwwskazanie łączenia z simwastatyną ze względu na blokadę OATP1B1 i wywoływanie rabdomiolizy.",
+        "severity": "contraindicated"
+      }
+    ]
+  },
+  "methotrexate-compound": {
+    "compound_id": "methotrexate-compound",
+    "physicochem": {
+      "mw": 454.45,
+      "logp": 0.27,
+      "tpsa": 210.54,
+      "hbd": 5,
+      "pka_base": 0.0,
+      "clogd": -2.4
+    },
+    "cns_metrics": {
+      "logbb_clark": -2.94,
+      "cns_mpo_score": 1.5,
+      "kp_uu_baseline": 0.01,
+      "cns_penetration_class": "low",
+      "summary_pl": "Znikome przenikanie przez BBB (wymaga podania dokanałowego w neuro-onkologii); sekrecja nerkowa sterowana przez OAT1, OAT3 i BCRP."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "substrate"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "substrate"
+      },
+      "oat1_3": {
+        "role": "substrate",
+        "km_um": 12.0
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "probenecid-compound",
+        "transporter": "OAT1 / OAT3",
+        "mechanism_pl": "Blokada sekrecji cewkowej przez OAT1/3 opóźnia eliminację metotreksatu, wywołując ciężką supresję szpiku i nefrotoksyczność.",
+        "severity": "contraindicated"
+      },
+      {
+        "interacting_drug": "ibuprofen-compound",
+        "transporter": "OAT1 / OAT3",
+        "mechanism_pl": "NLPZ hamują nerkowy wychwyt cewkowy OAT1/3, zwiększając toksyczność metotreksatu.",
+        "severity": "critical"
+      }
+    ]
+  },
+  "probenecid-compound": {
+    "compound_id": "probenecid-compound",
+    "physicochem": {
+      "mw": 285.37,
+      "logp": 2.2,
+      "tpsa": 74.68,
+      "hbd": 1,
+      "pka_base": 0.0,
+      "clogd": 0.4
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.63,
+      "cns_mpo_score": 4.2,
+      "kp_uu_baseline": 0.18,
+      "cns_penetration_class": "moderate",
+      "summary_pl": "Wzorcowy inhibitor transporterów anionów organicznych OAT1, OAT3 oraz OATP1B1, spowalniający nerkowe wydalanie leków."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "inhibitor"
+      },
+      "oat1_3": {
+        "role": "inhibitor",
+        "ic50_um": 4.0
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "amoxicillin-compound",
+        "transporter": "OAT1 / OAT3",
+        "mechanism_pl": "Hamuje wydalanie nerkowe amoksycyliny, przedłużając jej wysokie stężenie terapeutyczne we krwi (zamierzone DDI).",
+        "severity": "beneficial_or_monitored"
+      }
+    ]
+  },
+  "furosemide-compound": {
+    "compound_id": "furosemide-compound",
+    "physicochem": {
+      "mw": 330.75,
+      "logp": 1.89,
+      "tpsa": 122.63,
+      "hbd": 3,
+      "pka_base": 0.0,
+      "clogd": -0.8
+    },
+    "cns_metrics": {
+      "logbb_clark": -1.39,
+      "cns_mpo_score": 3.4,
+      "kp_uu_baseline": 0.02,
+      "cns_penetration_class": "low",
+      "summary_pl": "Działa w świetle pętli Henlego, dokąd trafia wyłącznie dzięki aktywnej sekrecji przez OAT1 i OAT3 w kanalikach proksymalnych."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "substrate",
+        "km_um": 18.0
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "probenecid-compound",
+        "transporter": "OAT1 / OAT3",
+        "mechanism_pl": "Zablokowanie dostępu furosemidu do światła nefronu osłabia efekt diuretyczny.",
+        "severity": "moderate"
+      }
+    ]
+  },
+  "ibuprofen-compound": {
+    "compound_id": "ibuprofen-compound",
+    "physicochem": {
+      "mw": 206.28,
+      "logp": 3.07,
+      "tpsa": 37.3,
+      "hbd": 1,
+      "pka_base": 0.0,
+      "clogd": 1.2
+    },
+    "cns_metrics": {
+      "logbb_clark": 0.05,
+      "cns_mpo_score": 4.9,
+      "kp_uu_baseline": 0.28,
+      "cns_penetration_class": "moderate",
+      "summary_pl": "Dobra bierna penetracja tkankowa; w nerkach jest substratem i inhibitorem transporterów OAT1 i OAT3."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "inhibitor",
+        "ic50_um": 9.5
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "methotrexate-compound",
+        "transporter": "OAT1 / OAT3",
+        "mechanism_pl": "Konkurencja o OAT1/3 zmniejsza klirens nerkowy metotreksatu o 30-50%, prowadząc do ostrej toksyczności.",
+        "severity": "critical"
+      }
+    ]
+  },
+  "metformin-compound": {
+    "compound_id": "metformin-compound",
+    "physicochem": {
+      "mw": 129.17,
+      "logp": -1.03,
+      "tpsa": 88.99,
+      "hbd": 4,
+      "pka_base": 12.4,
+      "clogd": -3.5
+    },
+    "cns_metrics": {
+      "logbb_clark": -1.33,
+      "cns_mpo_score": 2.8,
+      "kp_uu_baseline": 0.02,
+      "cns_penetration_class": "low",
+      "summary_pl": "Cząsteczka całkowicie zjonizowana w pH fizjologicznym; brak biernej dyfuzji. Wchłanianie i działanie zależy w 100% od OCT1 (wątroba) oraz OCT2 i MATE1/2-K (nerki)."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "substrate",
+        "km_um": 800.0
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "cimetidine-compound",
+        "transporter": "OCT2 (SLC22A2) / MATE1",
+        "mechanism_pl": "Cymetydyna hamuje nerkowy efluks metforminy przez OCT2/MATE1, zwiększając jej AUC o 50% i ryzyko kwasicy mleczanowej.",
+        "severity": "critical"
+      }
+    ]
+  },
+  "cimetidine-compound": {
+    "compound_id": "cimetidine-compound",
+    "physicochem": {
+      "mw": 252.35,
+      "logp": 0.6,
+      "tpsa": 88.89,
+      "hbd": 3,
+      "pka_base": 6.8,
+      "clogd": 0.4
+    },
+    "cns_metrics": {
+      "logbb_clark": -1.09,
+      "cns_mpo_score": 4.1,
+      "kp_uu_baseline": 0.14,
+      "cns_penetration_class": "low",
+      "summary_pl": "Antagonista H2 będący klasycznym inhibitorem cewkowego transportera kationów OCT2 oraz enzymów CYP."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "inhibitor",
+        "ic50_um": 55.0
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "metformin-compound",
+        "transporter": "OCT2",
+        "mechanism_pl": "Zmniejsza klirens nerkowy metforminy; podwyższa stężenie kreatyniny w surowicy bez spadku rzeczywistego GFR.",
+        "severity": "critical"
+      }
+    ]
+  },
+  "levodopa-compound": {
+    "compound_id": "levodopa-compound",
+    "physicochem": {
+      "mw": 197.19,
+      "logp": 0.05,
+      "tpsa": 103.78,
+      "hbd": 4,
+      "pka_base": 9.2,
+      "clogd": -2.1
+    },
+    "cns_metrics": {
+      "logbb_clark": -1.39,
+      "cns_mpo_score": 2.9,
+      "kp_uu_baseline": 1.45,
+      "cns_penetration_class": "carrier_mediated_high",
+      "summary_pl": "Klasyczny przykład transportu aktywnego przez BBB: jako aminokwas nie penetruje biernie, lecz wykorzystuje nośnik LAT1 (SLC7A5) osiągając Kp,uu > 1.0."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "substrate",
+        "km_um": 50.0
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "pregabalin-compound",
+        "transporter": "LAT1 (SLC7A5)",
+        "mechanism_pl": "Posiłek bogatobiałkowy lub inne ligandy LAT1 konkurują o nośnik w barierze krew-mózg, wygaszając efekt przeciwparkinsonowski.",
+        "severity": "moderate"
+      }
+    ]
+  },
+  "gabapentin-compound": {
+    "compound_id": "gabapentin-compound",
+    "physicochem": {
+      "mw": 171.24,
+      "logp": 1.37,
+      "tpsa": 63.32,
+      "hbd": 2,
+      "pka_base": 10.7,
+      "clogd": -1.1
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.59,
+      "cns_mpo_score": 3.7,
+      "kp_uu_baseline": 0.85,
+      "cns_penetration_class": "carrier_mediated_high",
+      "summary_pl": "Strukturalny analog GABA przenikający jelito i barierę krew-mózg za pośrednictwem nośnika aminokwasów LAT1; nasycalna kinetyka wchłaniania."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "substrate",
+        "km_um": 120.0
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "substrate"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "baclofen-compound": {
+    "compound_id": "baclofen-compound",
+    "physicochem": {
+      "mw": 213.66,
+      "logp": 1.86,
+      "tpsa": 63.32,
+      "hbd": 2,
+      "pka_base": 9.6,
+      "clogd": -0.8
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.51,
+      "cns_mpo_score": 3.9,
+      "kp_uu_baseline": 0.65,
+      "cns_penetration_class": "carrier_mediated_high",
+      "summary_pl": "Agonista receptora GABAB; penetracja do płynu mózgowo-rdzeniowego ułatwiona przez transport LAT1."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "substrate",
+        "km_um": 95.0
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "pregabalin-compound": {
+    "compound_id": "pregabalin-compound",
+    "physicochem": {
+      "mw": 159.23,
+      "logp": 1.08,
+      "tpsa": 63.32,
+      "hbd": 2,
+      "pka_base": 10.6,
+      "clogd": -1.3
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.63,
+      "cns_mpo_score": 3.8,
+      "kp_uu_baseline": 0.9,
+      "cns_penetration_class": "carrier_mediated_high",
+      "summary_pl": "Przenika BBB przez transporter LAT1; liniowa farmakokinetyka w przeciwieństwie do gabapentyny."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "substrate",
+        "km_um": 70.0
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "morphine-compound": {
+    "compound_id": "morphine-compound",
+    "physicochem": {
+      "mw": 285.34,
+      "logp": 1.2,
+      "tpsa": 52.93,
+      "hbd": 2,
+      "pka_base": 8.0,
+      "clogd": 0.1
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.46,
+      "cns_mpo_score": 4.6,
+      "kp_uu_baseline": 0.28,
+      "cns_penetration_class": "moderate",
+      "summary_pl": "Umiarkowane przenikanie do mózgu; jest słabym substratem P-gp i OCT1, co ogranicza szybkość narastania sedacji w porównaniu do fentanylu."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "substrate",
+        "efflux_ratio": 2.8
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "substrate"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "fentanyl-compound": {
+    "compound_id": "fentanyl-compound",
+    "physicochem": {
+      "mw": 336.48,
+      "logp": 4.14,
+      "tpsa": 23.55,
+      "hbd": 0,
+      "pka_base": 8.4,
+      "clogd": 2.9
+    },
+    "cns_metrics": {
+      "logbb_clark": 0.42,
+      "cns_mpo_score": 5.1,
+      "kp_uu_baseline": 0.95,
+      "cns_penetration_class": "high",
+      "summary_pl": "Wzorzec szybkiej dyfuzji trans-endotelialnej (wysoki logP, znikoma TPSA); nie podlega efluksowi P-gp, dając natychmiastowy efekt narkotyczny."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "diazepam-compound": {
+    "compound_id": "diazepam-compound",
+    "physicochem": {
+      "mw": 284.75,
+      "logp": 3.15,
+      "tpsa": 32.67,
+      "hbd": 0,
+      "pka_base": 3.4,
+      "clogd": 2.8
+    },
+    "cns_metrics": {
+      "logbb_clark": 0.13,
+      "cns_mpo_score": 5.3,
+      "kp_uu_baseline": 0.98,
+      "cns_penetration_class": "high",
+      "summary_pl": "Wzorcowa cząsteczka CNS MPO (5.3/6.0); błyskawiczne przenikanie bierne przez BBB bez oporu transporterów."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "clonazepam-compound": {
+    "compound_id": "clonazepam-compound",
+    "physicochem": {
+      "mw": 315.72,
+      "logp": 3.04,
+      "tpsa": 84.6,
+      "hbd": 1,
+      "pka_base": 1.5,
+      "clogd": 2.4
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.65,
+      "cns_mpo_score": 4.8,
+      "kp_uu_baseline": 0.88,
+      "cns_penetration_class": "high",
+      "summary_pl": "Wysoka przepuszczalność śródbłonka OUN; stabilne stężenie w tkance mózgowej bez efluksu."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "amiodarone-compound": {
+    "compound_id": "amiodarone-compound",
+    "physicochem": {
+      "mw": 645.32,
+      "logp": 6.94,
+      "tpsa": 42.68,
+      "hbd": 0,
+      "pka_base": 8.7,
+      "clogd": 4.5
+    },
+    "cns_metrics": {
+      "logbb_clark": 0.56,
+      "cns_mpo_score": 3.2,
+      "kp_uu_baseline": 0.45,
+      "cns_penetration_class": "moderate",
+      "summary_pl": "Wybitnie lipofilny lek antyarytmiczny o ogromnej akumulacji tkankowej; silny inhibitor pomp efluksowych P-gp."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "inhibitor",
+        "ic50_um": 1.8
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "inhibitor"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "digoxin-compound",
+        "transporter": "P-gp (ABCB1)",
+        "mechanism_pl": "Zahamowanie P-gp podwaja ekspozycję digoksyny; wymaga redukcji dawki digoksyny o 50%.",
+        "severity": "critical"
+      }
+    ]
+  },
+  "quinidine-compound": {
+    "compound_id": "quinidine-compound",
+    "physicochem": {
+      "mw": 324.42,
+      "logp": 2.88,
+      "tpsa": 45.59,
+      "hbd": 1,
+      "pka_base": 8.6,
+      "clogd": 1.8
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.1,
+      "cns_mpo_score": 4.5,
+      "kp_uu_baseline": 0.55,
+      "cns_penetration_class": "moderate",
+      "summary_pl": "Historyczny, prototypowy selektywny inhibitor P-glikoproteiny wykorzystany w badaniach klinicznych dowodzących paradoksu loperamidu."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "inhibitor",
+        "ic50_um": 1.2
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "inhibitor",
+        "ic50_um": 15.0
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "loperamide-compound",
+        "transporter": "P-gp (ABCB1)",
+        "mechanism_pl": "Przełamuje barierę efluksu loperamidu w BBB, wyzwalając ośrodkową depresję oddechową.",
+        "severity": "contraindicated"
+      }
+    ]
+  },
+  "clarithromycin-compound": {
+    "compound_id": "clarithromycin-compound",
+    "physicochem": {
+      "mw": 747.96,
+      "logp": 2.44,
+      "tpsa": 182.91,
+      "hbd": 4,
+      "pka_base": 8.8,
+      "clogd": 1.5
+    },
+    "cns_metrics": {
+      "logbb_clark": -2.2,
+      "cns_mpo_score": 1.4,
+      "kp_uu_baseline": 0.05,
+      "cns_penetration_class": "low",
+      "summary_pl": "Makrolid o znikomej penetracji OUN, stanowiący jeden z najsilniejszych klinicznych inhibitorów P-gp i OATP1B1."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "inhibitor",
+        "ic50_um": 2.5
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "inhibitor",
+        "ic50_um": 6.0
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "atorvastatin-compound",
+        "transporter": "OATP1B1 / P-gp",
+        "mechanism_pl": "Hamowanie wychwytu wątrobowego i jelitowego efluksu statyny potraja ryzyko miopatii.",
+        "severity": "critical"
+      }
+    ]
+  },
+  "rifampicin-compound": {
+    "compound_id": "rifampicin-compound",
+    "physicochem": {
+      "mw": 822.95,
+      "logp": 4.34,
+      "tpsa": 220.15,
+      "hbd": 6,
+      "pka_base": 7.9,
+      "clogd": 2.1
+    },
+    "cns_metrics": {
+      "logbb_clark": -2.46,
+      "cns_mpo_score": 1.2,
+      "kp_uu_baseline": 0.15,
+      "cns_penetration_class": "low",
+      "summary_pl": "Główny induktor transkrypcyjny P-gp (ABCB1) poprzez receptor PXR; doraźnie działa jako silny inhibitor OATP1B1/1B3."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "inducer"
+      },
+      "bcrp": {
+        "role": "inducer"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "inhibitor",
+        "ic50_um": 1.5
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "dabigatran-compound",
+        "transporter": "P-gp (ABCB1)",
+        "mechanism_pl": "Indukcja jelitowego P-gp przez ryfampicynę obniża stężenie dabigatranu o 65%, niwecząc ochronę przeciwzakrzepową.",
+        "severity": "contraindicated"
+      }
+    ]
+  },
+  "bosentan-compound": {
+    "compound_id": "bosentan-compound",
+    "physicochem": {
+      "mw": 551.63,
+      "logp": 4.2,
+      "tpsa": 145.65,
+      "hbd": 2,
+      "pka_base": 5.0,
+      "clogd": 1.5
+    },
+    "cns_metrics": {
+      "logbb_clark": -1.38,
+      "cns_mpo_score": 2.5,
+      "kp_uu_baseline": 0.05,
+      "cns_penetration_class": "low",
+      "summary_pl": "Antagonista endoteliny; substrat OATP1B1 oraz silny inhibitor pompy efluksu soli żółciowych BSEP (ABCB11), co wywołuje cholestazę i hepatotoksyczność."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "substrate",
+        "km_um": 3.0
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "inhibitor",
+        "ic50_um": 12.0
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "cyclosporine-compound",
+        "transporter": "OATP1B1 / BSEP",
+        "mechanism_pl": "Połączenie cyklosporyny i bosentanu drastycznie nasila cholestatyczne uszkodzenie wątroby; bezwzględnie przeciwwskazane.",
+        "severity": "contraindicated"
+      }
+    ]
+  },
+  "amoxicillin-compound": {
+    "compound_id": "amoxicillin-compound",
+    "physicochem": {
+      "mw": 365.41,
+      "logp": 0.02,
+      "tpsa": 132.96,
+      "hbd": 4,
+      "pka_base": 7.4,
+      "clogd": -2.2
+    },
+    "cns_metrics": {
+      "logbb_clark": -1.83,
+      "cns_mpo_score": 2.7,
+      "kp_uu_baseline": 0.03,
+      "cns_penetration_class": "low",
+      "summary_pl": "Penicylina hydrofilna wchłaniana aktywnie w jelicie cienkim przez peptydowy transporter PEPT1 (SLC15A1); wydalana przez OAT1/3 w nerkach."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "substrate",
+        "km_um": 450.0
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "substrate",
+        "km_um": 320.0
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "probenecid-compound",
+        "transporter": "OAT1 / OAT3",
+        "mechanism_pl": "Probenecyd blokuje wydalanie nerkowe amoksycyliny, podnosząc jej AUC o 60%.",
+        "severity": "beneficial_or_monitored"
+      }
+    ]
+  },
+  "valacyclovir-compound": {
+    "compound_id": "valacyclovir-compound",
+    "physicochem": {
+      "mw": 324.34,
+      "logp": -0.8,
+      "tpsa": 151.14,
+      "hbd": 4,
+      "pka_base": 7.5,
+      "clogd": -2.5
+    },
+    "cns_metrics": {
+      "logbb_clark": -2.22,
+      "cns_mpo_score": 2.4,
+      "kp_uu_baseline": 0.02,
+      "cns_penetration_class": "low",
+      "summary_pl": "Prolek acyklowiru zaprojektowany jako substrat jelitowego transportera peptydowego PEPT1 (SLC15A1), co zwiększa biodostępność z 15% do 55%."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "substrate",
+        "km_um": 140.0
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "dabigatran-compound": {
+    "compound_id": "dabigatran-compound",
+    "physicochem": {
+      "mw": 471.52,
+      "logp": 2.99,
+      "tpsa": 150.22,
+      "hbd": 4,
+      "pka_base": 4.0,
+      "clogd": -0.5
+    },
+    "cns_metrics": {
+      "logbb_clark": -1.63,
+      "cns_mpo_score": 2.9,
+      "kp_uu_baseline": 0.01,
+      "cns_penetration_class": "low",
+      "summary_pl": "Eteksylan dabigatranu jest substratem jelitowego P-gp; inhibitory P-gp drastycznie podnoszą ryzyko krwawień."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "substrate",
+        "efflux_ratio": 9.2
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "verapamil-compound",
+        "transporter": "P-gp (ABCB1)",
+        "mechanism_pl": "Werapamil zwiększa AUC dabigatranu o 50-60%; wymaga zachowania 2-godzinnego odstępu lub redukcji dawki.",
+        "severity": "critical"
+      }
+    ]
+  },
+  "doxorubicin-compound": {
+    "compound_id": "doxorubicin-compound",
+    "physicochem": {
+      "mw": 543.53,
+      "logp": 0.0,
+      "tpsa": 206.07,
+      "hbd": 6,
+      "pka_base": 8.2,
+      "clogd": -0.5
+    },
+    "cns_metrics": {
+      "logbb_clark": -2.91,
+      "cns_mpo_score": 1.2,
+      "kp_uu_baseline": 0.01,
+      "cns_penetration_class": "low",
+      "summary_pl": "Antracyklina onkologiczna; klasyczny model wielolekooporności (MDR) komórek nowotworowych poprzez nadekspresję pomp P-gp i BCRP."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "substrate",
+        "efflux_ratio": 15.0
+      },
+      "bcrp": {
+        "role": "substrate"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "imatinib-compound": {
+    "compound_id": "imatinib-compound",
+    "physicochem": {
+      "mw": 493.62,
+      "logp": 4.59,
+      "tpsa": 86.28,
+      "hbd": 2,
+      "pka_base": 7.8,
+      "clogd": 3.1
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.44,
+      "cns_mpo_score": 3.7,
+      "kp_uu_baseline": 0.1,
+      "cns_penetration_class": "restricted_by_efflux",
+      "summary_pl": "Inhibitor kinazy BCR-ABL; ograniczona penetracja do OUN wynika z synergistycznego efluksu przez P-gp oraz BCRP w naczyniach mózgowych."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "substrate"
+      },
+      "bcrp": {
+        "role": "substrate"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "carbamazepine-compound": {
+    "compound_id": "carbamazepine-compound",
+    "physicochem": {
+      "mw": 236.27,
+      "logp": 3.39,
+      "tpsa": 46.33,
+      "hbd": 1,
+      "pka_base": 0.0,
+      "clogd": 2.4
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.03,
+      "cns_mpo_score": 5.1,
+      "kp_uu_baseline": 0.82,
+      "cns_penetration_class": "high",
+      "summary_pl": "Lek przeciwpadaczkowy o znakomitej penetracji OUN; przewlekłe stosowanie indukuje ekspresję P-gp w naczyniach mózgowych."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "inducer"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "phenytoin-compound": {
+    "compound_id": "phenytoin-compound",
+    "physicochem": {
+      "mw": 252.27,
+      "logp": 1.77,
+      "tpsa": 58.2,
+      "hbd": 2,
+      "pka_base": 0.0,
+      "clogd": 1.9
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.45,
+      "cns_mpo_score": 4.8,
+      "kp_uu_baseline": 0.7,
+      "cns_penetration_class": "moderate",
+      "summary_pl": "Dobra penetracja OUN, lecz nadekspresja P-gp w ognisku padaczkowym może powodować lokalną lekooporność."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "inducer"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "atenolol-compound": {
+    "compound_id": "atenolol-compound",
+    "physicochem": {
+      "mw": 266.34,
+      "logp": 0.45,
+      "tpsa": 84.58,
+      "hbd": 3,
+      "pka_base": 9.6,
+      "clogd": -1.8
+    },
+    "cns_metrics": {
+      "logbb_clark": -1.04,
+      "cns_mpo_score": 3.6,
+      "kp_uu_baseline": 0.03,
+      "cns_penetration_class": "low",
+      "summary_pl": "Hydrofilny beta-adrenolityk o znikomej penetracji OUN, dzięki czemu rzadko wywołuje koszmary senne i depresję (w przeciwieństwie do lipofilnego propranololu)."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "substrate"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  },
+  "ketoconazole-compound": {
+    "compound_id": "ketoconazole-compound",
+    "physicochem": {
+      "mw": 531.44,
+      "logp": 4.21,
+      "tpsa": 69.06,
+      "hbd": 0,
+      "pka_base": 6.5,
+      "clogd": 3.4
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.24,
+      "cns_mpo_score": 3.5,
+      "kp_uu_baseline": 0.15,
+      "cns_penetration_class": "restricted_by_efflux",
+      "summary_pl": "Silny inhibitor P-gp, BCRP oraz CYP3A4; substrat pomp efluksowych w BBB."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "inhibitor",
+        "ic50_um": 2.8
+      },
+      "bcrp": {
+        "role": "inhibitor",
+        "ic50_um": 5.4
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "none"
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": [
+      {
+        "interacting_drug": "fexofenadine-compound",
+        "transporter": "P-gp (ABCB1)",
+        "mechanism_pl": "Zwiększa stężenie osoczowe i penetrację OUN feksofenadyny.",
+        "severity": "moderate"
+      }
+    ]
+  },
+  "losartan-compound": {
+    "compound_id": "losartan-compound",
+    "physicochem": {
+      "mw": 422.92,
+      "logp": 4.27,
+      "tpsa": 92.51,
+      "hbd": 1,
+      "pka_base": 4.5,
+      "clogd": 1.2
+    },
+    "cns_metrics": {
+      "logbb_clark": -0.58,
+      "cns_mpo_score": 4.1,
+      "kp_uu_baseline": 0.08,
+      "cns_penetration_class": "low",
+      "summary_pl": "Sartany podlegają wychwytowi wątrobowemu przez OATP1B1/OATP1B3 oraz wydalaniu żółciowemu."
+    },
+    "transporters": {
+      "pgp": {
+        "role": "none"
+      },
+      "bcrp": {
+        "role": "none"
+      },
+      "lat1": {
+        "role": "none"
+      },
+      "oatp1b1": {
+        "role": "substrate",
+        "km_um": 6.2
+      },
+      "oat1_3": {
+        "role": "none"
+      },
+      "oct2": {
+        "role": "none"
+      },
+      "bsep": {
+        "role": "none"
+      },
+      "pept1": {
+        "role": "none"
+      }
+    },
+    "clinical_scenarios": []
+  }
+}

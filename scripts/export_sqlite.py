@@ -63,6 +63,7 @@ def main() -> None:
     CREATE TABLE receptor_affinities (compound_id TEXT REFERENCES substances, target_name TEXT NOT NULL, chembl_target_id TEXT, ki_nm REAL NOT NULL, pki REAL NOT NULL, action TEXT NOT NULL, kinetic_class TEXT, PRIMARY KEY (compound_id, target_name));
     CREATE TABLE pk_compartment_models (compound_id TEXT PRIMARY KEY REFERENCES substances, vc_l_kg REAL NOT NULL, vp_l_kg REAL NOT NULL, vss_l_kg REAL NOT NULL, cl_l_h_kg REAL NOT NULL, k12_h REAL NOT NULL, k21_h REAL NOT NULL, k10_h REAL NOT NULL, ka_h REAL NOT NULL, alpha_h REAL NOT NULL, beta_h REAL NOT NULL, t_half_alpha_h REAL NOT NULL, t_half_beta_h REAL NOT NULL, primary_cyp TEXT, fm_cyp REAL, fe REAL, notes_pl TEXT);
     CREATE TABLE toxicology_profiles (compound_id TEXT PRIMARY KEY REFERENCES substances, dilirank TEXT NOT NULL, dili_phenotype TEXT NOT NULL, dili_mechanism_pl TEXT, hy_law_risk TEXT, herg_ic50_um REAL, cmax_um REAL, redfern_margin REAL, redfern_class TEXT, crediblemeds TEXT, cipa_compensation TEXT, structural_alerts_json TEXT, fda_category TEXT, teratogenic_risk TEXT, rid_pct REAL, black_box_teratogen BOOLEAN, pregnancy_summary_pl TEXT, lactation_summary_pl TEXT);
+    CREATE TABLE transporter_profiles (compound_id TEXT PRIMARY KEY REFERENCES substances, logbb_clark REAL, tpsa REAL, cns_mpo REAL, kp_uu_baseline REAL, cns_penetration_class TEXT, pgp_role TEXT, bcrp_role TEXT, lat1_role TEXT, oatp1b1_role TEXT, oat1_3_role TEXT, oct2_role TEXT, bsep_role TEXT, pept1_role TEXT, transporters_json TEXT, clinical_summary_pl TEXT);
     CREATE INDEX idx_compound_targets_target ON compound_targets(target_id);
     CREATE INDEX idx_compound_targets_compound ON compound_targets(compound_id);
     CREATE INDEX idx_atc_compound ON atc(compound_id);
@@ -85,6 +86,10 @@ def main() -> None:
     CREATE INDEX idx_tox_dilirank ON toxicology_profiles(dilirank);
     CREATE INDEX idx_tox_redfern ON toxicology_profiles(redfern_class);
     CREATE INDEX idx_tox_pregnancy ON toxicology_profiles(fda_category);
+    CREATE INDEX idx_transporter_logbb ON transporter_profiles(logbb_clark);
+    CREATE INDEX idx_transporter_cns_mpo ON transporter_profiles(cns_mpo);
+    CREATE INDEX idx_transporter_pgp ON transporter_profiles(pgp_role);
+    CREATE INDEX idx_transporter_oatp ON transporter_profiles(oatp1b1_role);
     """)
     for r in load("substances.json"):
         cur.execute("INSERT INTO substances VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", (
@@ -263,13 +268,39 @@ def main() -> None:
                 preg.get("pllr_lactation_pl", "")
             ))
 
+    trans_p = CURATED / "transporter_profiles.json"
+    if trans_p.exists():
+        trans_data = json.loads(trans_p.read_text(encoding="utf-8"))
+        for cid, prof in trans_data.items():
+            phys = prof.get("physicochem", {})
+            cns = prof.get("cns_metrics", {})
+            t_map = prof.get("transporters", {})
+            cur.execute("INSERT OR REPLACE INTO transporter_profiles VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (
+                cid,
+                cns.get("logbb_clark"),
+                phys.get("tpsa"),
+                cns.get("cns_mpo_score"),
+                cns.get("kp_uu_baseline"),
+                cns.get("cns_penetration_class", "unknown"),
+                t_map.get("pgp", {}).get("role", "none"),
+                t_map.get("bcrp", {}).get("role", "none"),
+                t_map.get("lat1", {}).get("role", "none"),
+                t_map.get("oatp1b1", {}).get("role", "none"),
+                t_map.get("oat1_3", {}).get("role", "none"),
+                t_map.get("oct2", {}).get("role", "none"),
+                t_map.get("bsep", {}).get("role", "none"),
+                t_map.get("pept1", {}).get("role", "none"),
+                json.dumps(t_map, ensure_ascii=False),
+                cns.get("summary_pl", "")
+            ))
+
     con.commit()
     tables = (
         "substances", "pk", "chembl", "atc", "targets", "compound_targets",
         "pk_verification", "pk_verification_ema", "identity_review", "pk_annotations",
         "curated_typed_edges", "metabolite_cascades", "target_3d_catalog", "adr_definitions",
         "rpl_products", "psychonaut_profiles", "compound_indications", "clinical_evidence", "ddi_rules", "receptor_affinities",
-        "pk_compartment_models", "toxicology_profiles"
+        "pk_compartment_models", "toxicology_profiles", "transporter_profiles"
     )
     n = {t: cur.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0] for t in tables}
     con.close()

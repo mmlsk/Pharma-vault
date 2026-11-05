@@ -4553,6 +4553,99 @@
       });
     }
 
+    // Transporter-mediated DDI vectors (v3.28.0)
+    const pgpSubstrates = [];
+    const pgpInhibitors = [];
+    const oatpStatins = [];
+    const oatpInhibitors = [];
+    const oatSubstrates = [];
+    const oatInhibitors = [];
+    const octSubstrates = [];
+    const octInhibitors = [];
+
+    stackList.forEach((c) => {
+      const tp = getCompoundTransporterProfile(c);
+      if (tp && tp.transporters) {
+        const t = tp.transporters;
+        if (t.pgp && t.pgp.role === "substrate" && (c.id === "loperamide-compound" || c.id === "digoxin-compound" || c.id === "dabigatran-compound" || c.id === "fexofenadine-compound")) {
+          pgpSubstrates.push(c);
+        }
+        if (t.pgp && t.pgp.role === "inhibitor") {
+          pgpInhibitors.push(c);
+        }
+        if (t.oatp1b1 && t.oatp1b1.role === "substrate" && (c.id.includes("statin") || c.n.toLowerCase().includes("statin"))) {
+          oatpStatins.push(c);
+        }
+        if (t.oatp1b1 && t.oatp1b1.role === "inhibitor") {
+          oatpInhibitors.push(c);
+        }
+        if (t.oat1_3 && t.oat1_3.role === "substrate" && (c.id === "methotrexate-compound" || c.id === "furosemide-compound" || c.id === "amoxicillin-compound")) {
+          oatSubstrates.push(c);
+        }
+        if (t.oat1_3 && t.oat1_3.role === "inhibitor") {
+          oatInhibitors.push(c);
+        }
+        if (t.oct2 && t.oct2.role === "substrate" && c.id === "metformin-compound") {
+          octSubstrates.push(c);
+        }
+        if (t.oct2 && t.oct2.role === "inhibitor") {
+          octInhibitors.push(c);
+        }
+      }
+    });
+
+    if (pgpSubstrates.length > 0 && pgpInhibitors.length > 0) {
+      collisions.push({
+        id: "transporter_pgp_efflux_overload",
+        level: "danger",
+        vector: "pgp_efflux",
+        title_pl: `⚡ Przełamanie Efluksu P-gp (${pgpSubstrates.map(x=>x.n).join(", ")} + ${pgpInhibitors.map(x=>x.n).join(", ")})`,
+        description_pl: `Zablokowanie pompy efluksowej P-gp (ABCB1) w barierze krew-mózg lub jelicie drastycznie zwiększa biodostępność i penetrację OUN wrażliwego substratu.`,
+        clinical_consequence: "Ośrodkowa depresja oddechowa (paradoks loperamidu) lub zagrażająca życiu toksyczność digoksyny/dabigatranu.",
+        monitoring: "Ścisłe monitorowanie stężenia leku, EKG, redukcja dawki substratu o 50% lub unikanie skojarzenia."
+      });
+      maxCyp = Math.max(maxCyp, 85);
+    }
+
+    if (oatpStatins.length > 0 && oatpInhibitors.length > 0) {
+      collisions.push({
+        id: "transporter_oatp_statin_myopathy",
+        level: "danger",
+        vector: "oatp_statin",
+        title_pl: `🛑 Blokada Wychwytu Wątrobowego OATP1B1 (${oatpStatins.map(x=>x.n).join(", ")} + ${oatpInhibitors.map(x=>x.n).join(", ")})`,
+        description_pl: `Inhibitor OATP1B1 (cyklosporyna, gemfibrozil) blokuje dokomórkowy transport statyn do hepatocytów, powodując 5-10× wzrost stężenia osoczowego.`,
+        clinical_consequence: "Ostra miopatia, mioglobinuria i śmiertelna rabdomioliza z uszkodzeniem nerek.",
+        monitoring: "Oznaczenie kinazy fosfokreatynowej (CPK), unikanie skojarzenia lub zmiana statyny."
+      });
+      maxCyp = Math.max(maxCyp, 90);
+    }
+
+    if (oatSubstrates.length > 0 && oatInhibitors.length > 0) {
+      collisions.push({
+        id: "transporter_oat_renal_toxicity",
+        level: "danger",
+        vector: "oat_renal",
+        title_pl: `⚠️ Zablokowanie Sekrecji Nerkowej OAT1/OAT3 (${oatSubstrates.map(x=>x.n).join(", ")} + ${oatInhibitors.map(x=>x.n).join(", ")})`,
+        description_pl: `Inhibicja cewkowych transporterów anionów OAT1/3 (NLPZ, probenecyd) zatrzymuje nerkowe wydalanie leku.`,
+        clinical_consequence: "Ciężka mielosupresja i nefrotoksyczność metotreksatu lub retencja kwasowa.",
+        monitoring: "Monitorowanie morfologii krwi, klirensu kreatyniny i stężenia metotreksatu."
+      });
+      maxCyp = Math.max(maxCyp, 80);
+    }
+
+    if (octSubstrates.length > 0 && octInhibitors.length > 0) {
+      collisions.push({
+        id: "transporter_oct_metformin_lactate",
+        level: "warning",
+        vector: "oct_metformin",
+        title_pl: `⚠️ Zahamowanie Nerkowego Efluksu OCT2/MATE1 (${octSubstrates.map(x=>x.n).join(", ")} + ${octInhibitors.map(x=>x.n).join(", ")})`,
+        description_pl: `Inhibitor OCT2 (cymetydyna, dolutegrawir) obniża nerkowy klirens metforminy o 30-50%.`,
+        clinical_consequence: "Wzrost ryzyka kwasicy mleczanowej oraz fałszywy pozorny wzrost kreatyniny.",
+        monitoring: "Kontrola gazometrii, mleczanów i czynności nerek; redukcja dawki metforminy."
+      });
+      maxCyp = Math.max(maxCyp, 70);
+    }
+
     const acbVector = totalAcb >= 6 ? 100 : totalAcb >= 4 ? 75 : totalAcb >= 2 ? 40 : 0;
     const vectors = {
       cyp: maxCyp,
@@ -6692,6 +6785,623 @@
     }
   }
 
+  // ---------- Transporters & Blood-Brain Barrier (BBB) PBPK Engine (v3.28.0)
+  const TRANSPORTER_PROFILES = (window.PV_GRAPH && window.PV_GRAPH.transporterProfiles) || {};
+
+  const transState = {
+    cid: "loperamide-compound",
+    inhibitorRatio: 0.0,
+    activePreset: null
+  };
+
+  let activeTransporterDockOpen = false;
+
+  const TRANSPORTER_PRESETS = {
+    loperamide_verapamil: {
+      name: "Paradoks Loperamidu (+ Werapamil)",
+      cid: "loperamide-compound",
+      inhibitorRatio: 8.0,
+      note: "Zablokowanie pompy efluksowej P-gp podnosi Kp,uu z 0.04 do 0.52, wyzwalając ośrodkową depresję oddechową."
+    },
+    statin_gemfibrozil: {
+      name: "Simwastatyna + Gemfibrozil (OATP1B1)",
+      cid: "simvastatin-compound",
+      inhibitorRatio: 5.0,
+      note: "Blokada sinusoidalnego wychwytu OATP1B1 przez gemfibrozil potraja AUC statyny, wywołując ostrą rabdomiolizę."
+    },
+    methotrexate_probenecid: {
+      name: "Metotreksat + Probenecyd (OAT1/3)",
+      cid: "methotrexate-compound",
+      inhibitorRatio: 6.0,
+      note: "Zablokowanie nerkowej sekrecji cewkowej OAT1/OAT3 opóźnia eliminację metotreksatu, wywołując ostrą mielotoksyczność."
+    },
+    metformin_cimetidine: {
+      name: "Metformina + Cymetydyna (OCT2)",
+      cid: "metformin-compound",
+      inhibitorRatio: 4.0,
+      note: "Zahamowanie cewkowego efluksu OCT2/MATE1 zmniejsza klirens nerkowy metforminy, podnosząc ryzyko kwasicy mleczanowej."
+    },
+    levodopa_lat1: {
+      name: "Lewodopa (Influks LAT1)",
+      cid: "levodopa-compound",
+      inhibitorRatio: 0.0,
+      note: "Hydrofilny aminokwas przenika BBB z wykorzystaniem nośnika LAT1 (SLC7A5), osiągając Kp,uu > 1.0."
+    },
+    fexofenadine_ketoconazole: {
+      name: "Feksofenadyna + Ketokonazol",
+      cid: "fexofenadine-compound",
+      inhibitorRatio: 5.0,
+      note: "Zahamowanie jelitowego i mózgowego efluksu P-gp zwiększa wchłanianie i penetrację OUN leku przeciwhistaminowego II gen."
+    }
+  };
+
+  function calculateClarkLogBB(logp, tpsa) {
+    if (logp == null || tpsa == null) return -0.5;
+    return +(0.152 * logp - 0.0148 * tpsa + 0.139).toFixed(2);
+  }
+
+  function calculateCnsMpo(mw, logp, tpsa, hbd, pka, clogd) {
+    mw = mw || 350;
+    logp = logp != null ? logp : 2.5;
+    tpsa = tpsa != null ? tpsa : 60;
+    hbd = hbd != null ? hbd : 1;
+    pka = pka != null ? pka : 7.0;
+    clogd = clogd != null ? clogd : (logp - 0.5);
+
+    const t_mw = mw <= 360 ? 1 : (mw >= 500 ? 0 : 1 - (mw - 360) / 140);
+    const t_logp = logp <= 3 ? 1 : (logp >= 5 ? 0 : 1 - (logp - 3) / 2);
+    const t_clogd = clogd <= 2 ? 1 : (clogd >= 4 ? 0 : 1 - (clogd - 2) / 2);
+    const t_tpsa = (tpsa >= 40 && tpsa <= 90) ? 1 : (tpsa < 20 || tpsa > 120 ? 0 : (tpsa < 40 ? (tpsa - 20) / 20 : 1 - (tpsa - 90) / 30));
+    const t_hbd = hbd <= 0.5 ? 1 : (hbd >= 3.5 ? 0 : 1 - (hbd - 0.5) / 3);
+    const t_pka = pka <= 8 ? 1 : (pka >= 10 ? 0 : 1 - (pka - 8) / 2);
+
+    const sum = t_mw + t_logp + t_clogd + t_tpsa + t_hbd + t_pka;
+    return {
+      score: +sum.toFixed(2),
+      components: {
+        mw: +t_mw.toFixed(2),
+        logp: +t_logp.toFixed(2),
+        clogd: +t_clogd.toFixed(2),
+        tpsa: +t_tpsa.toFixed(2),
+        hbd: +t_hbd.toFixed(2),
+        pka: +t_pka.toFixed(2)
+      }
+    };
+  }
+
+  function simulatePgpEfflux(baselineKpUu, inhibitorRatio) {
+    baselineKpUu = baselineKpUu || 0.05;
+    inhibitorRatio = Math.max(0, inhibitorRatio || 0);
+    const ratioEffluxToPass = (1.0 - baselineKpUu) / Math.max(0.001, baselineKpUu);
+    const inhibitedEfflux = ratioEffluxToPass / (1.0 + inhibitorRatio);
+    const kpUu = 1.0 / (1.0 + inhibitedEfflux);
+    return +Math.min(1.0, Math.max(0.01, kpUu)).toFixed(2);
+  }
+
+  function getCompoundTransporterProfile(compound) {
+    if (!compound) return null;
+    const cid = compound.id || compound;
+    if (TRANSPORTER_PROFILES[cid]) {
+      return TRANSPORTER_PROFILES[cid];
+    }
+    const logp = compound.p != null ? compound.p : 2.0;
+    const tpsa = compound.psa != null ? compound.psa : 65.0;
+    const mw = compound.mw || 320.0;
+    const clarkLogBb = calculateClarkLogBB(logp, tpsa);
+    const cnsMpo = calculateCnsMpo(mw, logp, tpsa, 1, 7.0, logp - 0.5);
+    const isPgpSubstrate = mw > 400 && (logp > 3.0 || tpsa > 70);
+    const baselineKpUu = isPgpSubstrate ? 0.08 : (clarkLogBb > 0.3 ? 0.85 : (clarkLogBb > -1.0 ? 0.40 : 0.05));
+
+    return {
+      compound_id: cid,
+      physicochem: { mw, logp, tpsa, hbd: 1, pka_base: 7.0, clogd: logp - 0.5 },
+      cns_metrics: {
+        logbb_clark: clarkLogBb,
+        cns_mpo_score: cnsMpo.score,
+        kp_uu_baseline: baselineKpUu,
+        cns_penetration_class: clarkLogBb > 0.3 ? "high" : (clarkLogBb < -1.0 ? "low" : (isPgpSubstrate ? "restricted_by_efflux" : "moderate")),
+        summary_pl: `Wskaźnik Clarka logBB: ${clarkLogBb}. Pfizer CNS MPO: ${cnsMpo.score}/6.0. Estymacja QSAR na podstawie parametrów fizykochemicznych.`
+      },
+      transporters: {
+        pgp: { role: isPgpSubstrate ? "substrate" : "none" },
+        bcrp: { role: "none" },
+        lat1: { role: "none" },
+        oatp1b1: { role: "none" },
+        oat1_3: { role: "none" },
+        oct2: { role: "none" },
+        bsep: { role: "none" },
+        pept1: { role: "none" }
+      },
+      clinical_scenarios: [],
+      is_estimated: true
+    };
+  }
+
+  function renderBbbCrossSectionSvg(profile, inhibitorRatio = 0.0, isMini = false, width = 560, height = 270) {
+    if (!profile) return `<div class="empty" style="padding:1rem">Brak profilu transporterów.</div>`;
+    const cns = profile.cns_metrics || {};
+    const tMap = profile.transporters || {};
+    const pgpRole = (tMap.pgp && tMap.pgp.role) || "none";
+    const lat1Role = (tMap.lat1 && tMap.lat1.role) || "none";
+    const baselineKp = cns.kp_uu_baseline != null ? cns.kp_uu_baseline : 0.1;
+    const currentKp = simulatePgpEfflux(baselineKp, inhibitorRatio);
+    const isPgpSub = pgpRole === "substrate";
+    const isInhibited = inhibitorRatio > 0.2;
+    const isOverload = currentKp >= 0.3 && isPgpSub;
+
+    const lumenH = 75;
+    const endoY = 75;
+    const endoH = 105;
+    const brainY = 180;
+    const brainH = height - brainY;
+
+    const plasmaParticles = [
+      { x: 50, y: 30 }, { x: 120, y: 50 }, { x: 190, y: 25 }, { x: 270, y: 55 },
+      { x: 340, y: 35 }, { x: 420, y: 48 }, { x: 490, y: 28 }
+    ];
+
+    const brainCount = Math.min(12, Math.max(1, Math.round(currentKp * 14)));
+    const brainParticles = [];
+    for (let i = 0; i < brainCount; i++) {
+      brainParticles.push({
+        x: 60 + (i * 38) % (width - 100),
+        y: brainY + 22 + ((i * 17) % (brainH - 35))
+      });
+    }
+
+    const pgpPumpX1 = 160;
+    const pgpPumpX2 = 360;
+    const lat1X = 260;
+    const passiveX = 460;
+
+    return `
+      <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" style="background:var(--color-bg);border-radius:6px;border:1px solid var(--color-border);font-family:system-ui,-apple-system,sans-serif;user-select:none;display:block">
+        <defs>
+          <linearGradient id="lumenGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#800020" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#800020" stop-opacity="0.15"/>
+          </linearGradient>
+          <linearGradient id="endoGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.75"/>
+            <stop offset="100%" stop-color="#1e3a5f" stop-opacity="0.90"/>
+          </linearGradient>
+          <linearGradient id="brainGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="${isOverload ? '#ff3b3022' : '#0a192f'}" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="${isOverload ? '#ff3b3044' : '#050c18'}" stop-opacity="0.95"/>
+          </linearGradient>
+          <marker id="arrowUp" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 10 L 5 0 L 10 10 z" fill="#af52de"/>
+          </marker>
+          <marker id="arrowDown" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 0 L 5 10 z" fill="#34c759"/>
+          </marker>
+          <marker id="arrowOrange" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 0 L 5 10 z" fill="#ff9500"/>
+          </marker>
+        </defs>
+
+        <!-- Luminal (Blood) Layer -->
+        <rect x="0" y="0" width="${width}" height="${lumenH}" fill="url(#lumenGrad)"/>
+        <text x="12" y="20" fill="#ff453a" font-size="11" font-weight="700">🩸 ŚWIATŁO KAPILARY (KREW / LUMEN)</text>
+        <text x="12" y="36" fill="var(--color-text-muted)" font-size="9.5">Wolne stężenie osoczowe Cu,plasma · pH 7.40</text>
+        ${inhibitorRatio > 0 ? `
+          <rect x="${width - 190}" y="8" width="180" height="24" rx="4" fill="#ff950022" stroke="#ff9500" stroke-width="1"/>
+          <text x="${width - 180}" y="24" fill="#ff9500" font-size="10" font-weight="700">🛑 Inhibitor P-gp: ${inhibitorRatio.toFixed(1)}× Ki</text>
+        ` : ""}
+
+        <!-- Blood Particles -->
+        ${plasmaParticles.map(p => `
+          <circle cx="${p.x}" cy="${p.y}" r="4" fill="#5ac8fa" opacity="0.85"/>
+          <circle cx="${p.x}" cy="${p.y}" r="7" fill="#5ac8fa" opacity="0.2"/>
+        `).join("")}
+
+        <!-- Endothelial Layer (BBB Barrier) -->
+        <rect x="0" y="${endoY}" width="${width}" height="${endoH}" fill="url(#endoGrad)"/>
+        <line x1="0" y1="${endoY}" x2="${width}" y2="${endoY}" stroke="#5ac8fa" stroke-dasharray="3 3" opacity="0.6"/>
+        <line x1="0" y1="${endoY + endoH}" x2="${width}" y2="${endoY + endoH}" stroke="#34c759" stroke-dasharray="3 3" opacity="0.6"/>
+
+        <!-- Tight Junctions (Claudin-5 / Occludin) -->
+        <g stroke="#ffcc00" stroke-width="2.5" opacity="0.9">
+          <line x1="80" y1="${endoY}" x2="80" y2="${endoY + endoH}"/>
+          <line x1="80" y1="${endoY + 30}" x2="85" y2="${endoY + 35}"/>
+          <line x1="80" y1="${endoY + 60}" x2="75" y2="${endoY + 65}"/>
+          <line x1="80" y1="${endoY + 85}" x2="85" y2="${endoY + 90}"/>
+
+          <line x1="430" y1="${endoY}" x2="430" y2="${endoY + endoH}"/>
+          <line x1="430" y1="${endoY + 30}" x2="435" y2="${endoY + 35}"/>
+          <line x1="430" y1="${endoY + 60}" x2="425" y2="${endoY + 65}"/>
+          <line x1="430" y1="${endoY + 85}" x2="435" y2="${endoY + 90}"/>
+        </g>
+        <text x="86" y="${endoY + 18}" fill="#ffd60a" font-size="9" font-weight="600">Claudin-5</text>
+
+        <!-- P-gp Efflux Pumps (ABCB1) -->
+        <g transform="translate(${pgpPumpX1}, ${endoY + 15})">
+          <rect x="-16" y="0" width="32" height="70" rx="6" fill="${isInhibited ? '#5856d644' : '#af52de'}" stroke="${isInhibited ? '#ff3b30' : '#d18aff'}" stroke-width="2"/>
+          <text x="0" y="24" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">P-gp</text>
+          <text x="0" y="36" fill="#fff" font-size="7.5" text-anchor="middle">ABCB1</text>
+          ${isPgpSub ? `
+            <line x1="0" y1="60" x2="0" y2="-12" stroke="#af52de" stroke-width="2.5" marker-end="url(#arrowUp)"/>
+          ` : ""}
+          ${isInhibited ? `
+            <circle cx="0" cy="48" r="11" fill="#ff3b30" opacity="0.85"/>
+            <text x="0" y="52" fill="#fff" font-size="11" font-weight="900" text-anchor="middle">✕</text>
+            <text x="0" y="86" fill="#ff453a" font-size="8" font-weight="700" text-anchor="middle">BLOKADA</text>
+          ` : `
+            <text x="0" y="86" fill="#d18aff" font-size="8" font-weight="600" text-anchor="middle">Efluks</text>
+          `}
+        </g>
+
+        <!-- BCRP Pump (ABCG2) -->
+        <g transform="translate(${pgpPumpX2}, ${endoY + 15})">
+          <rect x="-16" y="0" width="32" height="70" rx="6" fill="${isInhibited ? '#5856d644' : '#af52de'}" stroke="${isInhibited ? '#ff3b30' : '#d18aff'}" stroke-width="2"/>
+          <text x="0" y="24" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">BCRP</text>
+          <text x="0" y="36" fill="#fff" font-size="7.5" text-anchor="middle">ABCG2</text>
+          ${isInhibited ? `
+            <circle cx="0" cy="48" r="11" fill="#ff3b30" opacity="0.85"/>
+            <text x="0" y="52" fill="#fff" font-size="11" font-weight="900" text-anchor="middle">✕</text>
+          ` : ""}
+        </g>
+
+        <!-- LAT1 Influx Carrier -->
+        <g transform="translate(${lat1X}, ${endoY + 15})">
+          <rect x="-16" y="0" width="32" height="70" rx="6" fill="${lat1Role === 'substrate' ? '#34c759' : '#1c4a2a'}" stroke="#30d158" stroke-width="2"/>
+          <text x="0" y="24" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">LAT1</text>
+          <text x="0" y="36" fill="#fff" font-size="7.5" text-anchor="middle">SLC7A5</text>
+          ${lat1Role === 'substrate' ? `
+            <line x1="0" y1="5" x2="0" y2="80" stroke="#34c759" stroke-width="2.5" marker-end="url(#arrowDown)"/>
+            <text x="0" y="92" fill="#30d158" font-size="8" font-weight="700" text-anchor="middle">Influks</text>
+          ` : `
+            <text x="0" y="92" fill="var(--color-text-muted)" font-size="8" text-anchor="middle">Brak</text>
+          `}
+        </g>
+
+        <!-- Passive Transcellular Route -->
+        <g transform="translate(${passiveX}, ${endoY + 18})">
+          <line x1="0" y1="0" x2="0" y2="70" stroke="#ff9500" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrowOrange)"/>
+          <text x="0" y="36" fill="#ff9500" font-size="8.5" font-weight="600" text-anchor="start" dx="8">Bierna dyfuzja</text>
+        </g>
+
+        <!-- Brain Parenchyma (Abluminal) -->
+        <rect x="0" y="${brainY}" width="${width}" height="${brainH}" fill="url(#brainGrad)"/>
+
+        <!-- Astrocyte End-feet Pads -->
+        <g fill="#30d158" opacity="0.35">
+          <path d="M 10 ${brainY} Q 30 ${brainY+16} 50 ${brainY} Z"/>
+          <path d="M 60 ${brainY} Q 95 ${brainY+20} 130 ${brainY} Z"/>
+          <path d="M 140 ${brainY} Q 185 ${brainY+18} 230 ${brainY} Z"/>
+          <path d="M 240 ${brainY} Q 285 ${brainY+20} 330 ${brainY} Z"/>
+          <path d="M 340 ${brainY} Q 385 ${brainY+16} 430 ${brainY} Z"/>
+          <path d="M 440 ${brainY} Q 495 ${brainY+22} 550 ${brainY} Z"/>
+        </g>
+        <text x="12" y="${brainY + 18}" fill="#30d158" font-size="10" font-weight="700">🧠 PARENCHYMA MÓZGU (TKANKA OUN)</text>
+        <text x="12" y="${brainY + 32}" fill="var(--color-text-muted)" font-size="8.5">Stopki astrocytarne (Glia limitans) · Cu,brain</text>
+
+        <!-- Brain Drug Particles -->
+        ${brainParticles.map(p => `
+          <circle cx="${p.x}" cy="${p.y}" r="${isOverload ? 5 : 3.5}" fill="${isOverload ? '#ff3b30' : '#5ac8fa'}" opacity="0.9"/>
+          <circle cx="${p.x}" cy="${p.y}" r="${isOverload ? 9 : 6}" fill="${isOverload ? '#ff3b30' : '#5ac8fa'}" opacity="0.25"/>
+        `).join("")}
+
+        <!-- Kp,uu Gauge Overlay in Brain -->
+        <g transform="translate(${width - 225}, ${brainY + 12})">
+          <rect x="0" y="0" width="215" height="60" rx="6" fill="var(--color-surface)" stroke="${isOverload ? '#ff3b30' : (currentKp > 0.3 ? '#34c759' : '#ffd60a')}" stroke-width="1.5"/>
+          <text x="10" y="16" fill="var(--color-text-muted)" font-size="9">Wolna Frakcja Mózgowa (Kp,uu):</text>
+          <text x="10" y="38" fill="${isOverload ? '#ff3b30' : (currentKp > 0.3 ? '#34c759' : '#ffd60a')}" font-size="18" font-weight="800">
+            ${currentKp.toFixed(2)}
+            <tspan font-size="10" font-weight="600" fill="var(--color-text)"> (${(currentKp * 100).toFixed(0)}% Cu,pl)</tspan>
+          </text>
+          <text x="10" y="52" fill="${isOverload ? '#ff3b30' : 'var(--color-text-muted)'}" font-size="8" font-weight="${isOverload ? '700' : '500'}">
+            ${isOverload ? "⚠️ Przełamanie efluksu (Toksyczność OUN)" : (currentKp > 0.3 ? "✅ Dobra penetracja terapeutyczna" : "🛡️ Skuteczna ochrona barierowa")}
+          </text>
+        </g>
+      </svg>
+    `;
+  }
+
+  function renderCnsMpoRadarSvg(phys, cnsMpoScore, isMini = false, width = 270, height = 210) {
+    phys = phys || {};
+    const cns = calculateCnsMpo(phys.mw, phys.logp, phys.tpsa, phys.hbd, phys.pka_base, phys.clogd);
+    const comps = cns.components;
+    const cx = width / 2;
+    const cy = height / 2 + 8;
+    const r = Math.min(cx, cy) - 32;
+
+    const axes = [
+      { key: "mw", label: "MW", val: comps.mw },
+      { key: "logp", label: "LogP", val: comps.logp },
+      { key: "clogd", label: "LogD", val: comps.clogd },
+      { key: "tpsa", label: "TPSA", val: comps.tpsa },
+      { key: "hbd", label: "HBD", val: comps.hbd },
+      { key: "pka", label: "pKa", val: comps.pka }
+    ];
+
+    const count = axes.length;
+    const angleStep = (Math.PI * 2) / count;
+
+    const rings = [0.25, 0.5, 0.75, 1.0];
+    const ringPolygons = rings.map(scale => {
+      const pts = axes.map((_, i) => {
+        const a = i * angleStep - Math.PI / 2;
+        return `${(cx + r * scale * Math.cos(a)).toFixed(1)},${(cy + r * scale * Math.sin(a)).toFixed(1)}`;
+      }).join(" ");
+      return `<polygon points="${pts}" fill="none" stroke="var(--color-border)" stroke-width="0.8" opacity="0.6"/>`;
+    }).join("");
+
+    const spokes = axes.map((ax, i) => {
+      const a = i * angleStep - Math.PI / 2;
+      const x2 = cx + r * Math.cos(a);
+      const y2 = cy + r * Math.sin(a);
+      const lx = cx + (r + 14) * Math.cos(a);
+      const ly = cy + (r + 14) * Math.sin(a);
+      return `
+        <line x1="${cx}" y1="${cy}" x2="${x2}" y2="${y2}" stroke="var(--color-border)" stroke-width="0.8"/>
+        <text x="${lx}" y="${ly}" fill="var(--color-text)" font-size="8" font-weight="700" text-anchor="middle" dominant-baseline="central">${ax.label}</text>
+      `;
+    }).join("");
+
+    const dataPoints = axes.map((ax, i) => {
+      const a = i * angleStep - Math.PI / 2;
+      const dist = r * Math.max(0.05, ax.val);
+      return `${(cx + dist * Math.cos(a)).toFixed(1)},${(cy + dist * Math.sin(a)).toFixed(1)}`;
+    }).join(" ");
+
+    const score = cns.score;
+    const scoreColor = score >= 5.0 ? "#34c759" : (score >= 4.0 ? "#ffd60a" : "#ff3b30");
+
+    return `
+      <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" style="background:var(--color-bg);border-radius:6px;border:1px solid var(--color-border);font-family:system-ui,-apple-system,sans-serif">
+        <text x="10" y="16" fill="var(--color-text-muted)" font-size="9" font-weight="700">PFIZER CNS MPO</text>
+        <text x="${width - 10}" y="16" fill="${scoreColor}" font-size="10.5" font-weight="800" text-anchor="end">Score: ${score} / 6.0</text>
+        ${ringPolygons}
+        ${spokes}
+        <polygon points="${dataPoints}" fill="#5ac8fa" fill-opacity="0.35" stroke="#5ac8fa" stroke-width="2"/>
+        ${axes.map((ax, i) => {
+          const a = i * angleStep - Math.PI / 2;
+          const dist = r * Math.max(0.05, ax.val);
+          const px = cx + dist * Math.cos(a);
+          const py = cy + dist * Math.sin(a);
+          return `<circle cx="${px}" cy="${py}" r="3" fill="#5ac8fa"/>`;
+        }).join("")}
+      </svg>
+    `;
+  }
+
+  function renderTransporterAdmeMatrixSvg(profile, isMini = false, width = 560, height = 110) {
+    if (!profile) return "";
+    const t = profile.transporters || {};
+
+    function badge(role, name) {
+      const isSub = role === "substrate";
+      const isInh = role === "inhibitor";
+      const isInd = role === "inducer";
+      const bg = isSub ? "#af52de" : (isInh ? "#ff3b30" : (isInd ? "#5ac8fa" : "var(--color-border)"));
+      const label = isSub ? "Substrat" : (isInh ? "Inhibitor" : (isInd ? "Induktor" : "-"));
+      return `
+        <div style="background:${bg}22;border:1px solid ${bg};border-radius:4px;padding:2px 5px;display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;font-size:9px">
+          <b style="color:var(--color-text)">${esc(name)}</b>
+          <span style="color:${bg};font-weight:700">${label}</span>
+        </div>
+      `;
+    }
+
+    return `
+      <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:6px;font-size:10px">
+        <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:6px">
+          <div style="font-weight:700;margin-bottom:4px;color:#af52de;font-size:9.5px">🧠 Mózg (BBB)</div>
+          ${badge(t.pgp && t.pgp.role, "P-gp (ABCB1)")}
+          ${badge(t.bcrp && t.bcrp.role, "BCRP (ABCG2)")}
+          ${badge(t.lat1 && t.lat1.role, "LAT1 (SLC7A5)")}
+        </div>
+        <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:6px">
+          <div style="font-weight:700;margin-bottom:4px;color:#ff9500;font-size:9.5px">🫀 Wątroba (Hepato)</div>
+          ${badge(t.oatp1b1 && t.oatp1b1.role, "OATP1B1 (SLC21)")}
+          ${badge(t.bsep && t.bsep.role, "BSEP (ABCB11)")}
+          ${badge(t.pgp && t.pgp.role, "P-gp kanalikowy")}
+        </div>
+        <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:6px">
+          <div style="font-weight:700;margin-bottom:4px;color:#34c759;font-size:9.5px">🫘 Nerki (Cewki)</div>
+          ${badge(t.oat1_3 && t.oat1_3.role, "OAT1 / OAT3")}
+          ${badge(t.oct2 && t.oct2.role, "OCT2 (SLC22A2)")}
+          ${badge(t.pgp && t.pgp.role, "MDR1 (Mocz)")}
+        </div>
+        <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:6px">
+          <div style="font-weight:700;margin-bottom:4px;color:#5ac8fa;font-size:9.5px">🥖 Jelita (Wchłanianie)</div>
+          ${badge(t.pept1 && t.pept1.role, "PEPT1 (SLC15A1)")}
+          ${badge(t.pgp && t.pgp.role, "P-gp enterocyt")}
+          ${badge(t.bcrp && t.bcrp.role, "BCRP jelitowy")}
+        </div>
+      </div>
+    `;
+  }
+
+  function openTransporterDock(compoundId, opts = {}) {
+    activeTransporterDockOpen = true;
+    if (compoundId) transState.cid = compoundId;
+    if (opts.inhibitorRatio !== undefined) transState.inhibitorRatio = opts.inhibitorRatio;
+    if (opts.preset !== undefined) transState.activePreset = opts.preset;
+
+    let comp = C.find((x) => x.id === transState.cid);
+    if (!comp) {
+      comp = C.find((x) => x.id === "loperamide-compound") || C[0];
+      transState.cid = comp.id;
+    }
+
+    const prof = getCompoundTransporterProfile(comp);
+    const cns = prof.cns_metrics || {};
+    const phys = prof.physicochem || {};
+    const currentKp = simulatePgpEfflux(cns.kp_uu_baseline, transState.inhibitorRatio);
+
+    const bbbSvg = renderBbbCrossSectionSvg(prof, transState.inhibitorRatio, false, 560, 270);
+    const radarSvg = renderCnsMpoRadarSvg(phys, cns.cns_mpo_score, false, 250, 210);
+    const matrixHtml = renderTransporterAdmeMatrixSvg(prof, false, 560, 110);
+
+    const presetsHtml = Object.entries(TRANSPORTER_PRESETS).map(([k, p]) => `
+      <button class="btn btn-sm ${transState.activePreset === k ? 'btn-primary' : ''}" data-load-trans-preset="${esc(k)}" style="margin:2px 4px 2px 0;font-size:11px" title="${esc(p.note)}">
+        ${esc(p.name)}
+      </button>
+    `).join("");
+
+    const availableCompounds = C
+      .filter((c) => TRANSPORTER_PROFILES[c.id])
+      .map((c) => ({ id: c.id, name: c.n }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+    const scenarios = prof.clinical_scenarios || [];
+    const scenariosHtml = scenarios.length ? scenarios.map((s) => `
+      <div style="background:var(--color-bg);border:1px solid #ff3b3055;border-radius:6px;padding:8px 10px;margin-bottom:6px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px">
+          <b style="font-size:11px;color:#ff3b30">⚡ ${esc(s.transporter)} · Interakcja z ${esc(s.interacting_drug)}</b>
+          <span class="badge" style="font-size:9px;background:#ff3b3022;color:#ff3b30">${esc(s.severity)}</span>
+        </div>
+        <div style="font-size:10.5px;color:var(--color-text);line-height:1.4">${esc(s.mechanism_pl)}</div>
+      </div>
+    `).join("") : `<div class="empty" style="padding:.6rem">Brak specyficznych skojarzeń krytycznych w bazie transporterowej dla tej cząsteczki.</div>`;
+
+    const logBb = cns.logbb_clark != null ? cns.logbb_clark : -0.5;
+    const logBbBadgeColor = logBb > 0.3 ? "#34c759" : (logBb < -1.0 ? "#ff3b30" : "#ffd60a");
+
+    const html = `
+      <div class="split-pane-content" style="padding:14px 16px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <span style="font-size:18px;font-weight:700">🧬 Transportery Błonowe & Bariera Krew-Mózg (BBB)</span>
+              <span class="badge" style="font-size:10px;background:${logBbBadgeColor};color:${logBb < -1.0 || logBb > 0.3 ? '#fff' : '#000'}">
+                Clark logBB: ${logBb}
+              </span>
+              <span class="badge" style="font-size:10px;background:#5ac8fa;color:#000">
+                CNS MPO: ${cns.cns_mpo_score || '-'} / 6.0
+              </span>
+              <span class="badge" style="font-size:10px;background:#af52de;color:#fff">
+                Kp,uu: ${currentKp}
+              </span>
+              ${prof.is_estimated ? `<span class="badge" style="font-size:9px">⚙️ QSAR Estymator</span>` : `<span class="badge" style="font-size:9px">🔬 Baza Kuratorowana</span>`}
+            </div>
+            <div style="font-size:12px;color:var(--color-text-muted);margin-top:4px">
+              Substancja: <b style="color:var(--color-text);font-size:13px">${esc(comp.n)}</b> · Fizjologiczny Model PBPK dla nadrodzin ABC i SLC
+            </div>
+          </div>
+          <button class="btn btn-sm" id="transDockClose" style="font-size:12px;padding:3px 10px">✕ Zamknij</button>
+        </div>
+
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:8px 10px">
+          <div style="font-size:11px;font-weight:700;margin-bottom:6px">📚 Scenariusze i Presety Kliniczne:</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px">
+            ${presetsHtml}
+          </div>
+          <div style="margin-top:8px;display:flex;align-items:center;gap:8px">
+            <span style="font-size:11px;color:var(--color-text-muted)">Wybierz inną substancję z bazy transporterów:</span>
+            <select id="transCompoundSelect" style="font-size:11px;padding:3px 6px;background:var(--color-bg);color:var(--color-text);border:1px solid var(--color-border);border-radius:4px">
+              ${availableCompounds.map((ac) => `<option value="${esc(ac.id)}" ${ac.id === comp.id ? 'selected' : ''}>${esc(ac.name)}</option>`).join("")}
+            </select>
+          </div>
+        </div>
+
+        <!-- Section 1: BBB Capillary & P-gp Efflux Simulator -->
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-size:12px;font-weight:700">🔬 Przekrój Kapilary Mózgowej BBB & Symulator Efluksu P-gp</span>
+            <span style="font-size:11px;color:var(--color-text-muted)">Penetracja OUN: <b>${esc(cns.cns_penetration_class || 'unknown')}</b></span>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <span style="font-size:11px;white-space:nowrap">Inhibicja pompy P-gp ([I] / Ki inhibitora):</span>
+            <input type="range" id="transInhibitorRange" min="0" max="10" step="0.5" value="${transState.inhibitorRatio}" style="flex:1;cursor:pointer">
+            <b style="font-size:12px;width:45px">${transState.inhibitorRatio.toFixed(1)}×</b>
+          </div>
+
+          ${bbbSvg}
+
+          <div style="margin-top:8px;font-size:10.5px;color:var(--color-text-muted);line-height:1.4">
+            <b>Podsumowanie fizjologiczne:</b> ${esc(cns.summary_pl || "")}
+          </div>
+        </div>
+
+        <!-- Section 2: CNS MPO Radar & Organ ADME Matrix -->
+        <div style="display:grid;grid-template-columns:270px 1fr;gap:10px">
+          <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px">
+            <div style="font-size:11px;font-weight:700;margin-bottom:6px">🎯 Profil CNS MPO (Pfizer)</div>
+            ${radarSvg}
+            <div style="font-size:9.5px;color:var(--color-text-muted);margin-top:6px;line-height:1.3">
+              Maks. 6 pkt. Progi: MW &le;360, CLogP &le;3, CLogD &le;2, TPSA 40-90, HBD &le;0.5, pKa &le;8.
+            </div>
+          </div>
+
+          <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px;display:flex;flex-direction:column;gap:10px">
+            <div>
+              <div style="font-size:11px;font-weight:700;margin-bottom:6px">🧬 Macierz Transporterów Narządowych (PBPK)</div>
+              ${matrixHtml}
+            </div>
+
+            <div>
+              <div style="font-size:11px;font-weight:700;margin-bottom:6px">⚠️ Scenariusze Kliniczne & DDI Transporterów:</div>
+              ${scenariosHtml}
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: 3D Sidecar Link -->
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px">
+          <div>
+            <div style="font-size:11px;font-weight:700">🧊 Struktury 3D Transporterów Błonowych (P-gp, BCRP, OATP1B1, LAT1)</div>
+            <div style="font-size:10px;color:var(--color-text-muted)">Zbadaj architekturę pora pompy P-gp (PDB: 6QEX) oraz kieszeni OATP1B1 (8H48) i LAT1 (6IRT) w Mol*.</div>
+          </div>
+          <a href="sidecar://biomolecular-structure-viewer" class="btn btn-sm btn-primary" style="font-size:11px;text-decoration:none">
+            Otwórz Biomolecular Structure Viewer ↗
+          </a>
+        </div>
+      </div>
+    `;
+
+    openSplitPane("🧬", "Transportery Błonowe & Bariera Krew-Mózg (BBB)", `${comp.n} • Model PBPK & Efluks ABC/SLC`, html);
+
+    const splitBody = $("splitPaneBody");
+    if (splitBody) {
+      const closeBtn = splitBody.querySelector("#transDockClose");
+      if (closeBtn) {
+        closeBtn.onclick = () => {
+          activeTransporterDockOpen = false;
+          closeSplitPane();
+        };
+      }
+
+      splitBody.querySelectorAll("[data-load-trans-preset]").forEach((btn) => {
+        btn.onclick = () => {
+          const pKey = btn.dataset.loadTransPreset;
+          const preset = TRANSPORTER_PRESETS[pKey];
+          if (!preset) return;
+          transState.cid = preset.cid;
+          transState.inhibitorRatio = preset.inhibitorRatio;
+          transState.activePreset = pKey;
+          openTransporterDock(transState.cid);
+        };
+      });
+
+      const compSelect = splitBody.querySelector("#transCompoundSelect");
+      if (compSelect) {
+        compSelect.onchange = (e) => {
+          transState.cid = e.target.value;
+          transState.activePreset = null;
+          openTransporterDock(transState.cid);
+        };
+      }
+
+      const inhRange = splitBody.querySelector("#transInhibitorRange");
+      if (inhRange) {
+        inhRange.oninput = (e) => {
+          transState.inhibitorRatio = parseFloat(e.target.value);
+          transState.activePreset = null;
+          openTransporterDock(transState.cid);
+        };
+      }
+    }
+
+    const targetHash = `#/transporters/${transState.cid}?inhibitor=${transState.inhibitorRatio.toFixed(1)}${transState.activePreset ? `&preset=${transState.activePreset}` : ''}`;
+    if (location.hash !== targetHash) {
+      history.replaceState(null, "", targetHash);
+    }
+  }
+
 
   // ---------- Clinical Risk Engine & Multi-Axis Toxic Burden Heatmap
   let activeExpandedAdr = null;
@@ -8748,6 +9458,31 @@
         </div>
       ` : "";
 
+      const transProf = getCompoundTransporterProfile(c);
+      const transCardHtml = transProf ? `
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px;margin-bottom:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-size:11px;font-weight:700">🧬 Transportery Błonowe & BBB</span>
+            <span class="badge" style="font-size:9px;background:#af52de;color:#fff">
+              Clark logBB: ${transProf.cns_metrics.logbb_clark}
+            </span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0;font-size:10px">
+            <div style="background:var(--color-bg);padding:4px 6px;border-radius:4px;border:1px solid var(--color-border)">
+              <div style="color:var(--color-text-muted)">Pfizer CNS MPO:</div>
+              <b>${transProf.cns_metrics.cns_mpo_score} / 6.0</b>
+            </div>
+            <div style="background:var(--color-bg);padding:4px 6px;border-radius:4px;border:1px solid var(--color-border)">
+              <div style="color:var(--color-text-muted)">Wolna frakcja Kp,uu:</div>
+              <b>${transProf.cns_metrics.kp_uu_baseline}</b> (${(transProf.cns_metrics.kp_uu_baseline * 100).toFixed(0)}%)
+            </div>
+          </div>
+          <button class="btn btn-sm btn-primary" data-open-transporters="${esc(c.id)}" style="width:100%;margin-top:4px;font-size:11px">
+            🧬 Otwórz Przekrój BBB & Efluks P-gp ↗
+          </button>
+        </div>
+      ` : "";
+
       const evidencePathHtml = `
         <div class="label" style="margin-top:.8rem">Ścieżka Rejestracyjna & Poziom Dowodów</div>
         <div class="ver-card">
@@ -8768,6 +9503,7 @@
         <div class="tab-panel">
           ${warnBoxes.join("")}
           ${toxPreviewHtml}
+          ${transCardHtml}
           ${evidencePathHtml}
           ${tagsHtml}
           ${cypHtml}
@@ -8896,6 +9632,11 @@
     p.querySelectorAll("[data-open-toxicology]").forEach((btn) => {
       btn.onclick = () => {
         openToxicologySplitPane(btn.dataset.openToxicology);
+      };
+    });
+    p.querySelectorAll("[data-open-transporters]").forEach((btn) => {
+      btn.onclick = () => {
+        openTransporterDock(btn.dataset.openTransporters);
       };
     });
     const cardAnalogsBtn = p.querySelector("#cardAnalogsBtn");
@@ -9386,8 +10127,8 @@
         }
       }
     } else {
-      const modes = ["graph", "dossier", "stack", "evidence", "indications", "structure3d", "metabolism"];
-      if (e.key >= "1" && e.key <= "7") {
+      const modes = ["graph", "dossier", "stack", "evidence", "indications", "structure3d", "metabolism", "transporters"];
+      if (e.key >= "1" && e.key <= "8") {
         const nextMode = modes[+e.key - 1];
         if (nextMode) setWorkspaceMode(nextMode);
       }
@@ -9557,6 +10298,8 @@
       { type: "action", name: "Wskazania Terapeutyczne & ICD-10/11", badge: "Widok", run: () => setWorkspaceMode("indications") },
       { type: "action", name: "Wizualizator Kompleksów 3D", badge: "Widok", run: () => setWorkspaceMode("structure3d") },
       { type: "action", name: "Kaskady Biotransformacji & Metabolity", badge: "Widok", run: () => setWorkspaceMode("metabolism") },
+      { type: "action", name: "Transportery Błonowe & Bariera Krew-Mózg (BBB)", badge: "Widok", run: () => setWorkspaceMode("transporters") },
+      { type: "action", name: "Toksykologia Molekularna & eDISH (Hy's Law)", badge: "Narzędzie", run: () => openToxicologySplitPane() },
       { type: "action", name: "Porównywarka Head-to-Head", badge: "Narzędzie", run: () => openComparator() }
     ];
 
@@ -9647,6 +10390,7 @@
   const modeIndicationsBtn = $("modeIndicationsBtn");
   const modeStructure3DBtn = $("modeStructure3DBtn");
   const modeMetabolismBtn = $("modeMetabolismBtn");
+  const modeTransportersBtn = $("modeTransportersBtn");
   const cmdPaletteBtn = $("cmdPaletteBtn");
   const globalThemeBtn = $("globalThemeBtn");
 
@@ -9657,7 +10401,8 @@
     modeEvidenceBtn,
     modeIndicationsBtn,
     modeStructure3DBtn,
-    modeMetabolismBtn
+    modeMetabolismBtn,
+    modeTransportersBtn
   ].filter(Boolean);
 
   let currentWorkspaceMode = "graph";
@@ -9738,6 +10483,16 @@
       closeDossierModal();
       const targetC = (state.sel && state.sel.type === "compound") ? state.sel.i : (state.stack.size > 0 ? [...state.stack][0] : 0);
       openMetaboliteModal(targetC);
+    } else if (mode === "transporters") {
+      location.hash = "#/transporters";
+      toggleStackDrawer(false);
+      closeEvidenceModal();
+      closeIndicationsModal();
+      closeStruct3DModal();
+      closeDossierModal();
+      closeMetaboliteModal();
+      const targetCid = (state.sel && state.sel.type === "compound") ? C[state.sel.i].id : (state.stack.size > 0 ? C[[...state.stack][0]].id : "loperamide-compound");
+      openTransporterDock(targetCid);
     }
   }
 
@@ -9747,6 +10502,7 @@
     else if (activeStruct3DModalOpen) setWorkspaceMode("structure3d", false);
     else if (activeDossierMode) setWorkspaceMode("dossier", false);
     else if (activeMetaboliteQuery != null) setWorkspaceMode("metabolism", false);
+    else if (activeTransporterDockOpen) setWorkspaceMode("transporters", false);
     else if (state.stackDrawerOpen) setWorkspaceMode("stack", false);
     else setWorkspaceMode("graph", false);
   }
@@ -10091,6 +10847,8 @@
       setWorkspaceMode("structure3d");
     } else if (raw === "/metabolism" || raw === "metabolism" || raw === "/metabolite") {
       setWorkspaceMode("metabolism");
+    } else if (raw === "/transporters" || raw === "transporters") {
+      setWorkspaceMode("transporters");
     } else if (raw.startsWith("/ddi") || raw.startsWith("ddi")) {
       const presetMatch = raw.match(/preset=([a-z_]+)/);
       if (presetMatch) {
@@ -10124,6 +10882,17 @@
         if (presMatch) opts.preset = presMatch[1];
       }
       openToxicologySplitPane(cid, opts);
+    } else if (raw.startsWith("/transporters/") || raw.startsWith("transporters/")) {
+      const pathPart = raw.replace(/^\/?transporters\//, "");
+      const [cid, query] = pathPart.split("?");
+      const opts = {};
+      if (query) {
+        const inhMatch = query.match(/inhibitor=([0-9.]+)/);
+        if (inhMatch) opts.inhibitorRatio = +inhMatch[1];
+        const presMatch = query.match(/preset=([a-z_]+)/);
+        if (presMatch) opts.preset = presMatch[1];
+      }
+      openTransporterDock(cid, opts);
     } else if (raw.startsWith("/pk-simulator/") || raw.startsWith("pk-simulator/")) {
       const pathPart = raw.replace(/^\/?pk-simulator\//, "");
       const [cid, query] = pathPart.split("?");
