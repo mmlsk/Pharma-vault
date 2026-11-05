@@ -1,5 +1,37 @@
 # Changelog
 
+## [3.29.0] — 2026-11-05 — Chemogenomika & Rzutowanie Przestrzeni Chemicznej: Mapa 2D 2533 Leków, Podobieństwo Tanimoto, Rusztowania Bemis-Murcko (36 Rodzin), Predykcja Celów Off-Target (hERG/5-HT2B) oraz 9. Workspace Mode
+
+### Dodano
+- **Deterministyczna Przestrzeń Chemiczna 2D (Chemical Space 2D) dla 2533 Leków**:
+  - Utworzono generator [`scripts/build_chemical_space.py`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/scripts/build_chemical_space.py) realizujący deterministyczną redukcję wymiarowości (standaryzowane PCA + force-directed układ oddziaływań chemicznych t-SNE ze stałym ziarnem `seed=42`) do znormalizowanych współrzędnych 2D $(x, y) \in [-750, 750]$.
+  - Wzbogacono zbiór danych o zmapowane strukturalne InChIKey (2247 dopasowań z `structures.jsonl`), wektory składu atomowego ze wzorów cząsteczkowych, deskryptory Ro5/Veber (MW, aLogP, PSA, HBA, HBD, RTB, pierścienie aromatyczne) oraz kody taksonomiczne ATC.
+  - Wygenerowano bazę [`data/processed/chemical_space_2d.json`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/data/processed/chemical_space_2d.json) (2533 rekordy, 2.6 MB).
+  - Utworzono 24. tabelę relacyjną w bazie SQLite [`pharma-vault.db`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/data/processed/pharma-vault.db): `chemical_space` z dedykowanymi indeksami `idx_chemspace_coords` oraz `idx_chemspace_scaffold`.
+  - Wyeksportowano kompaktowe wektory chemogenomiczne `cs` oraz katalog rusztowań `scaffoldDefinitions` do [`apps/graph-viewer/graph-data.js`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/apps/graph-viewer/graph-data.js).
+- **Taksonomia Rusztowań Molekularnych Bemis-Murcko (36 Rodzin)**:
+  - Opracowano kuratorowany katalog [`data/curated/scaffold_definitions.json`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/data/curated/scaffold_definitions.json) definiujący 36 kanonicznych rusztowań farmakologicznych (m.in. 1,4-benzodiazepiny, fenotiazyny, steroidy, statyny, tryptaminy, fenyloetyloaminy, 1,4-dihydropirydyny, beta-laktamy, fluorochinolony, opioidy/morfinany, profeny).
+  - Precyzyjny klasyfikator przypisujący każdą substancję do rodziny rusztowań na bazie kluczy ATC, farmakoforu i szkieletu atomowego.
+- **Hybrydowy Wskaźnik Podobieństwa Tanimoto & Wyszukiwarka Bioizosterów**:
+  - Obliczanie podobieństwa strukturalnego $T(A, B) \in [0.0, 1.0]$ łączącego skład atomowy (35%), odległość fizykochemiczną (30%), dopasowanie rdzenia InChIKey (15%), wspólne cele biologiczne (10%) i klasę ATC (10%).
+  - Indeksowanie top 5 analogów dla każdego leku z oznaczeniem wspólnego rusztowania (np. Diazepam $\to$ Clobazam 81.8%, Clotiazepam 75.7%, Temazepam 73.7%).
+- **Predykcja Celów Off-Target (Target Neighborhood Transfer)**:
+  - Algorytm wnioskowania o ukrytych interakcjach leków na podstawie fenotypu biologicznego najbliższych sąsiadów w przestrzeni chemicznej.
+  - Wykrywanie ukrytych celów safety-critical: kanał potasowy hERG / $KCNH2$ (PDB: `5VA1` $\to$ ryzyko wydłużenia QTc i TdP), receptor serotoninowy $5\text{-HT}_{2B}$ / $HTR2B$ (PDB: `4IB4` $\to$ ryzyko wad zastawkowych serca), receptory dopaminowe DRD2 (`6CM4`) oraz GABA-A (`6HUO`).
+  - Rozszerzono katalog [`data/curated/target_3d_catalog.json`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/data/curated/target_3d_catalog.json) o strukturę Cryo-EM kanału hERG (`5VA1`) oraz X-ray receptora 5-HT2B (`4IB4`) dla interaktywnej inspekcji w [Biomolecular Structure Viewer](sidecar://biomolecular-structure-viewer).
+- **Nowy 9. Workspace Mode (`chemspace`) w Interfejsie UI**:
+  - Dodano kartę `[⚛️ Przestrzeń Chemiczna]` (`#modeChemspaceBtn`) w głównym pasku narzędzi, skrót klawiszowy `9` oraz akcję w palecie Cmd+K.
+  - Szybki renderer Canvas 2D scatter plot dla 2533 punktów z obsługą zoomu kółkiem myszy, przesuwania (pan), podświetlaniem chmury podobieństwa ($T \ge 70\%$) i dynamicznymi liniami do analogów.
+  - 3 tryby barwienia punktów: rusztowania Bemis-Murcko, klastry terapeutyczne, alerty off-target hERG/5-HT2B.
+  - Interaktywna legenda z możliwością natychmiastowego filtrowania mapy do wybranego rusztowania.
+  - Dok analityczny `openChemSpaceDock`: karta szkieletu Bemis-Murcko, radar bioizosteryczny (5 osi SVG: Tanimoto, MW, LogP, PSA, cele), tabela top analogów oraz panel predykcji celów off-target z bezpośrednimi linkami do struktur 3D w sidecarze.
+  - Rozszerzenie Tarczy Polipragmazji (`computePolypharmacyScore`) o wektor `chemspace_shared_offtarget_overload` flagujący kumulatywną blokadę kanału hERG lub receptora 5-HT2B przez wiele leków w zestawie pacjenta.
+  - Obsługa trasowania hash: `#/chemspace` oraz `#/chemspace/<cid>`.
+- **Weryfikacja & Niezmienniki**:
+  - Dodano kompleksowy test automatyczny `test_chemogenomics_and_chemical_space_engine` w [`tests/test_pipeline.py`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/Pharma-vault/tests/test_pipeline.py).
+  - Pełny zestaw testów: **66/66 testów zaliczonych (100% green w 1.49s)**.
+  - Wszystkie pliki root ([`app.js`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/app.js), [`index.html`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/index.html), [`graph-data.js`](file:///Users/m4t3/projects/Pharma-vault%20%E2%80%94%20graf%20substancji/graph-data.js)) są zsynchronizowane bajt-w-bajt.
+
 ## [3.28.0] — 2026-11-05 — Bariera Krew-Mózg (BBB) & Transportery Błonowe PBPK: Model Clarka (logBB), Pfizer CNS MPO, Kinetyka Efluksu P-gp (Kp,uu), Panel ABC/SLC oraz 8. Workspace Mode
 
 ### Dodano

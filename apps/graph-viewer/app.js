@@ -4646,6 +4646,36 @@
       maxCyp = Math.max(maxCyp, 70);
     }
 
+    // Chemogenomics Shared Off-Target Overload (v3.29.0)
+    const offtargetHits = {};
+    stackList.forEach((c) => {
+      const otList = (c.cs && c.cs.ot) ? c.cs.ot : [];
+      otList.forEach(([gene, score, flag]) => {
+        if (score >= 30) {
+          if (!offtargetHits[gene]) offtargetHits[gene] = [];
+          offtargetHits[gene].push({ c, score, flag });
+        }
+      });
+    });
+
+    Object.entries(offtargetHits).forEach(([gene, hits]) => {
+      if (hits.length >= 2) {
+        const flag = hits[0].flag;
+        const isHerg = gene === "KCNH2" || flag === "cardiotoxicity_qt";
+        const is5ht2b = gene === "HTR2B" || flag === "valvulopathy_fibrosis";
+        collisions.push({
+          id: `chemspace_shared_offtarget_${gene.toLowerCase()}`,
+          level: isHerg ? "danger" : "warning",
+          vector: isHerg ? "herg_offtarget" : "chemspace_offtarget",
+          title_pl: `⚛️ Kumulatywne Ryzyko Off-Target: ${gene} (${hits.map(h => h.c.n).join(" + ")})`,
+          description_pl: `Predykcja chemogenomiczna wykazała zbieżne, wysokie prawdopodobieństwo interakcji off-target z celem ${gene} (score ≥30%) dla ${hits.length} cząsteczek w zestawie.`,
+          clinical_consequence: isHerg ? "Wielokierunkowa blokada kanału potasowego hERG, gwałtowny wzrost ryzyka wydłużenia QTc i torsade de pointes (TdP)." : (is5ht2b ? "Sumaryczna stymulacja receptora 5-HT2B sprzyjająca mitogenezie fibroblastów i wadom zastawkowym serca." : "Niepożądana addytywna polifarmakologia na wspólnym receptorze poza zamierzonym celem."),
+          monitoring: isHerg ? "Weryfikacja EKG (QTc) przed i po włączeniu leków, unikanie jednoczesnego stosowania." : "Okresowa kontrola echokardiograficzna lub monitorowanie objawów niepożądanych."
+        });
+        if (isHerg) maxQtc = Math.max(maxQtc, 80);
+      }
+    });
+
     const acbVector = totalAcb >= 6 ? 100 : totalAcb >= 4 ? 75 : totalAcb >= 2 ? 40 : 0;
     const vectors = {
       cyp: maxCyp,
@@ -7402,6 +7432,598 @@
     }
   }
 
+  function closeTransporterDock() {
+    activeTransporterDockOpen = false;
+    closeSplitPane();
+  }
+
+  // ---------- Chemogenomics & Chemical Space Engine (v3.29.0)
+  const SCAFFOLD_DEFINITIONS = window.PV_GRAPH.scaffoldDefinitions || [];
+  const SCAFFOLD_MAP = Object.fromEntries(SCAFFOLD_DEFINITIONS.map((s) => [s.id, s]));
+
+  let activeChemspaceModalOpen = false;
+  let chemspaceState = {
+    cid: "diazepam-compound",
+    colorMode: "scaffold", // scaffold | cluster | safety
+    filterText: "",
+    zoom: 1.0,
+    panX: 0,
+    panY: 0,
+    isDragging: false,
+    startX: 0,
+    startY: 0,
+    hoveredCompound: null,
+    activeScaffoldFilter: null
+  };
+  let chemspaceEventsWired = false;
+
+  function renderBioisostereRadarSvg(c1, c2, width = 260, height = 180) {
+    if (!c1 || !c2) return `<div class="empty">Brak danych do porównania bioizosterycznego</div>`;
+    const cx = width / 2;
+    const cy = height / 2;
+    const radius = Math.min(cx, cy) - 24;
+
+    const axes = [
+      { label: "Tanimoto", key: "tanimoto" },
+      { label: "Masa MW", key: "mw" },
+      { label: "Lipofilność LogP", key: "logp" },
+      { label: "Polarność PSA", key: "psa" },
+      { label: "Wspólne Cele", key: "targets" }
+    ];
+
+    // Obliczamy wartości dla 5 osi (0.0 - 1.0)
+    let sTanimoto = 0.5;
+    if (c1.cs && c1.cs.an) {
+      const match = c1.cs.an.find(([id]) => id === c2.id);
+      if (match) sTanimoto = match[1] / 100.0;
+    }
+    const pr1 = c1.pr || [300, 2, 50];
+    const pr2 = c2.pr || [300, 2, 50];
+    const dMw = Math.abs((pr1[0] || 300) - (pr2[0] || 300));
+    const sMw = Math.max(0, 1.0 - dMw / 150.0);
+    const dLogP = Math.abs((pr1[1] || 2) - (pr2[1] || 2));
+    const sLogP = Math.max(0, 1.0 - dLogP / 2.0);
+    const dPsa = Math.abs((pr1[2] || 50) - (pr2[2] || 50));
+    const sPsa = Math.max(0, 1.0 - dPsa / 40.0);
+    const tg1 = new Set(c1.tg || []);
+    const tg2 = new Set(c2.tg || []);
+    const interTg = [...tg1].filter(x => tg2.has(x)).length;
+    const unionTg = new Set([...tg1, ...tg2]).size;
+    const sTg = unionTg > 0 ? interTg / unionTg : (c1.m && c2.m && c1.m === c2.m ? 0.8 : 0.2);
+
+    const values = [sTanimoto, sMw, sLogP, sPsa, sTg];
+    const n = axes.length;
+
+    // Współrzędne wielokąta
+    const polyPoints = values.map((v, i) => {
+      const angle = -Math.PI / 2 + (2 * Math.PI * i) / n;
+      const r = Math.max(0.1, Math.min(1.0, v)) * radius;
+      return `${(cx + r * Math.cos(angle)).toFixed(1)},${(cy + r * Math.sin(angle)).toFixed(1)}`;
+    }).join(" ");
+
+    // Koncentryczne siatki
+    const gridCircles = [0.25, 0.5, 0.75, 1.0].map((level) => {
+      const r = level * radius;
+      const pts = Array.from({ length: n }).map((_, i) => {
+        const angle = -Math.PI / 2 + (2 * Math.PI * i) / n;
+        return `${(cx + r * Math.cos(angle)).toFixed(1)},${(cy + r * Math.sin(angle)).toFixed(1)}`;
+      }).join(" ");
+      return `<polygon points="${pts}" fill="none" stroke="var(--color-border)" stroke-width="${level === 1.0 ? 1.2 : 0.7}" stroke-dasharray="${level < 1.0 ? '3 3' : 'none'}"/>`;
+    }).join("");
+
+    // Osi promieniowe i etykiety
+    const axisLines = axes.map((ax, i) => {
+      const angle = -Math.PI / 2 + (2 * Math.PI * i) / n;
+      const x2 = cx + radius * Math.cos(angle);
+      const y2 = cy + radius * Math.sin(angle);
+      const lx = cx + (radius + 14) * Math.cos(angle);
+      const ly = cy + (radius + 14) * Math.sin(angle);
+      const anchor = Math.abs(Math.cos(angle)) < 0.2 ? "middle" : (Math.cos(angle) > 0 ? "start" : "end");
+      return `
+        <line x1="${cx}" y1="${cy}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="var(--color-border)" stroke-width="0.8"/>
+        <text x="${lx.toFixed(1)}" y="${(ly + 3).toFixed(1)}" fill="var(--color-text-muted)" font-size="8.5" font-weight="600" text-anchor="${anchor}">${ax.label}</text>
+      `;
+    }).join("");
+
+    return `
+      <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" style="overflow:visible">
+        ${gridCircles}
+        ${axisLines}
+        <polygon points="${polyPoints}" fill="rgba(56, 189, 248, 0.35)" stroke="#38bdf8" stroke-width="2"/>
+        ${values.map((v, i) => {
+          const angle = -Math.PI / 2 + (2 * Math.PI * i) / n;
+          const r = Math.max(0.1, Math.min(1.0, v)) * radius;
+          return `<circle cx="${(cx + r * Math.cos(angle)).toFixed(1)}" cy="${(cy + r * Math.sin(angle)).toFixed(1)}" r="3" fill="#38bdf8"/>`;
+        }).join("")}
+      </svg>
+    `;
+  }
+
+  function renderChemspaceCanvas() {
+    const canvas = $("chemspaceCanvas");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const container = $("chemspaceViewportContainer");
+    if (container) {
+      const rect = container.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      if (canvas.width !== Math.floor(rect.width * dpr) || canvas.height !== Math.floor(rect.height * dpr)) {
+        canvas.width = Math.floor(rect.width * dpr);
+        canvas.height = Math.floor(rect.height * dpr);
+        canvas.style.width = `${rect.width}px`;
+        canvas.style.height = `${rect.height}px`;
+      }
+    }
+
+    const dpr = window.devicePixelRatio || 1;
+    const w = canvas.width / dpr;
+    const h = canvas.height / dpr;
+
+    ctx.save();
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, w, h);
+
+    // Tło
+    ctx.fillStyle = "#070a13";
+    ctx.fillRect(0, 0, w, h);
+
+    const midX = w / 2 + chemspaceState.panX;
+    const midY = h / 2 + chemspaceState.panY;
+    const zoom = chemspaceState.zoom;
+
+    // Siatka i koncentryczne okręgi
+    ctx.save();
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.04)";
+    ctx.lineWidth = 1;
+    [150, 300, 450, 600].forEach((r) => {
+      ctx.beginPath();
+      ctx.arc(midX, midY, r * zoom, 0, 2 * Math.PI);
+      ctx.stroke();
+    });
+    ctx.restore();
+
+    const selCompound = C.find((x) => x.id === chemspaceState.cid);
+
+    // Linie połączeń z top analogami
+    if (selCompound && selCompound.cs && selCompound.cs.an) {
+      const qx = midX + selCompound.cs.x * zoom;
+      const qy = midY + selCompound.cs.y * zoom;
+
+      // Okrąg chmury podobieństwa
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(qx, qy, 65 * zoom, 0, 2 * Math.PI);
+      ctx.fillStyle = "rgba(56, 189, 248, 0.06)";
+      ctx.fill();
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.35)";
+      ctx.setLineDash([4, 4]);
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+      ctx.restore();
+
+      selCompound.cs.an.forEach(([anId, score]) => {
+        const cand = C.find((x) => x.id === anId);
+        if (cand && cand.cs) {
+          const ax = midX + cand.cs.x * zoom;
+          const ay = midY + cand.cs.y * zoom;
+          ctx.save();
+          ctx.beginPath();
+          ctx.moveTo(qx, qy);
+          ctx.lineTo(ax, ay);
+          ctx.strokeStyle = `rgba(56, 189, 248, ${Math.max(0.2, (score / 100) * 0.7)})`;
+          ctx.lineWidth = Math.max(0.8, (score / 100) * 2.5);
+          ctx.setLineDash([3, 3]);
+          ctx.stroke();
+          ctx.restore();
+        }
+      });
+    }
+
+    const filter = (chemspaceState.filterText || "").trim().toLowerCase();
+    const scaffFilter = chemspaceState.activeScaffoldFilter;
+
+    // Rysowanie wszystkich 2533 punktów
+    for (let i = 0; i < C.length; i++) {
+      const c = C[i];
+      const cs = c.cs;
+      const x = cs ? cs.x : (c.x || 0);
+      const y = cs ? cs.y : (c.y || 0);
+      const px = midX + x * zoom;
+      const py = midY + y * zoom;
+
+      // Sprawdzenie czy w granicach ekranu
+      if (px < -20 || px > w + 20 || py < -20 || py > h + 20) continue;
+
+      let color = "#94a3b8";
+      if (chemspaceState.colorMode === "scaffold") {
+        const sDef = cs ? SCAFFOLD_MAP[cs.s] : null;
+        color = sDef ? sDef.color_hex : "#94a3b8";
+      } else if (chemspaceState.colorMode === "cluster") {
+        color = CL_COLORS[c.cl] || "#94a3b8";
+      } else if (chemspaceState.colorMode === "safety") {
+        const otList = cs && cs.ot ? cs.ot : [];
+        if (otList.some(([g, sc, fl]) => fl === "cardiotoxicity_qt")) color = "#ef4444";
+        else if (otList.some(([g, sc, fl]) => fl === "valvulopathy_fibrosis")) color = "#f59e0b";
+        else if (otList.length > 0) color = "#06b6d4";
+        else color = "#334155";
+      }
+
+      let alpha = 0.85;
+      if (filter) {
+        const match = c.n.toLowerCase().includes(filter) || c.id.toLowerCase().includes(filter) || (cs && cs.s.toLowerCase().includes(filter));
+        alpha = match ? 1.0 : 0.12;
+      } else if (scaffFilter) {
+        alpha = (cs && cs.s === scaffFilter) ? 1.0 : 0.12;
+      }
+
+      const isSel = c.id === chemspaceState.cid;
+      const isHov = chemspaceState.hoveredCompound && chemspaceState.hoveredCompound.id === c.id;
+
+      let radius = isSel ? 6.5 : (isHov ? 5.5 : 3.2);
+
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(px, py, radius, 0, 2 * Math.PI);
+      ctx.fill();
+
+      if (isSel) {
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Pulsing glow
+        ctx.beginPath();
+        ctx.arc(px, py, radius + 4, 0, 2 * Math.PI);
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.8)";
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      } else if (isHov) {
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    ctx.restore();
+  }
+
+  function renderChemspaceLegend() {
+    const el = $("chemspaceLegend");
+    if (!el) return;
+    if (chemspaceState.colorMode === "scaffold") {
+      el.innerHTML = SCAFFOLD_DEFINITIONS.slice(0, 16).map((s) => `
+        <button class="tag ${chemspaceState.activeScaffoldFilter === s.id ? 'active' : ''}" data-filter-scaff="${esc(s.id)}" style="background:none;border:1px solid ${s.color_hex};color:var(--color-text);cursor:pointer;font-size:9.5px;padding:1px 6px">
+          <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${s.color_hex};margin-right:4px"></span>
+          ${esc(s.name.split(" ")[0])}
+        </button>
+      `).join("") + (chemspaceState.activeScaffoldFilter ? `<button class="tag" id="chemspaceClearFilter" style="cursor:pointer;font-size:9.5px;color:#ff3b30">✕ Wyczyść filtr</button>` : '');
+      el.querySelectorAll("[data-filter-scaff]").forEach((btn) => {
+        btn.onclick = () => {
+          const sid = btn.dataset.filterScaff;
+          chemspaceState.activeScaffoldFilter = chemspaceState.activeScaffoldFilter === sid ? null : sid;
+          renderChemspaceLegend();
+          renderChemspaceCanvas();
+        };
+      });
+      const clr = el.querySelector("#chemspaceClearFilter");
+      if (clr) clr.onclick = () => {
+        chemspaceState.activeScaffoldFilter = null;
+        renderChemspaceLegend();
+        renderChemspaceCanvas();
+      };
+    } else if (chemspaceState.colorMode === "cluster") {
+      el.innerHTML = G.clusters.map((cl, i) => `
+        <span style="font-size:9.5px;color:var(--color-text-muted);display:flex;align-items:center;gap:4px">
+          <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${CL_COLORS[i]}"></span>
+          ${esc(CL_PL[cl.name] || cl.name)}
+        </span>
+      `).join("");
+    } else {
+      el.innerHTML = `
+        <span style="font-size:9.5px;display:flex;align-items:center;gap:4px;color:#ef4444">
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444"></span> hERG (QTc TdP)
+        </span>
+        <span style="font-size:9.5px;display:flex;align-items:center;gap:4px;color:#f59e0b">
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b"></span> 5-HT2B (Zastawki)
+        </span>
+        <span style="font-size:9.5px;display:flex;align-items:center;gap:4px;color:#06b6d4">
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#06b6d4"></span> Inne Cele Off-Target
+        </span>
+        <span style="font-size:9.5px;display:flex;align-items:center;gap:4px;color:#64748b">
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#334155"></span> Brak Alerty Bezpieczeństwa
+        </span>
+      `;
+    }
+  }
+
+  function openChemSpaceDock(compoundId) {
+    const dock = $("chemspaceDock");
+    if (!dock) return;
+    chemspaceState.cid = compoundId || chemspaceState.cid || "diazepam-compound";
+    const comp = C.find((x) => x.id === chemspaceState.cid) || C[0];
+    const cs = comp.cs || {};
+    const scaffDef = SCAFFOLD_MAP[cs.s] || { name: "Pozostałe szkielety", family: "Inne", substructure_description: "Brak specyficznego rusztowania" };
+
+    const topAnalogId = cs.an && cs.an.length ? cs.an[0][0] : null;
+    const topAnalogComp = topAnalogId ? C.find(x => x.id === topAnalogId) : null;
+    const radarHtml = topAnalogComp ? renderBioisostereRadarSvg(comp, topAnalogComp, 260, 160) : "";
+
+    const analogsListHtml = (cs.an || []).map(([anId, score]) => {
+      const cand = C.find((x) => x.id === anId);
+      if (!cand) return "";
+      const isSameScaff = cand.cs && cand.cs.s === cs.s;
+      return `
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 8px;background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px">
+          <div>
+            <div style="font-weight:700;font-size:11px;color:var(--color-text)">${esc(cand.n)}</div>
+            <div style="font-size:9.5px;color:var(--color-text-muted)">
+              ${isSameScaff ? '<span class="badge" style="font-size:8.5px;background:#3b82f622;color:#3b82f6">To samo rusztowanie</span>' : '<span style="font-size:8.5px">Inne rusztowanie</span>'}
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <b style="font-size:11.5px;color:#38bdf8">${score.toFixed(1)}%</b>
+            <button class="btn btn-sm" data-select-chemspace-analog="${esc(cand.id)}" style="font-size:10px;padding:2px 6px">Wybierz</button>
+          </div>
+        </div>
+      `;
+    }).join("") || `<div class="empty">Brak analogów w bazie</div>`;
+
+    const offtargetsHtml = (cs.ot || []).map(([gene, score, flag, pdb]) => {
+      const isHerg = gene === "KCNH2" || flag === "cardiotoxicity_qt";
+      const is5ht2b = gene === "HTR2B" || flag === "valvulopathy_fibrosis";
+      const badgeCol = isHerg ? "#ef4444" : (is5ht2b ? "#f59e0b" : "#06b6d4");
+      const flagText = isHerg ? "⚠️ Kardiotoksyczność (hERG / QTc)" : (is5ht2b ? "⚠️ Wadotwórczość Zastawek (5-HT2B)" : "Interakcja Off-Target");
+      return `
+        <div style="background:var(--color-bg);border:1px solid ${badgeCol}55;border-radius:6px;padding:8px 10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
+            <b style="font-size:11px;color:${badgeCol}">${esc(gene)} · ${flagText}</b>
+            <span class="badge" style="font-size:9.5px;background:${badgeCol}22;color:${badgeCol}">${score.toFixed(0)}% ufności</span>
+          </div>
+          <div style="font-size:10px;color:var(--color-text-muted);margin-bottom:4px">
+            Przeniesienie adnotacji fenotypowej na podstawie podobieństwa sąsiadów w przestrzeni chemicznej.
+          </div>
+          ${pdb ? `
+            <a href="sidecar://biomolecular-structure-viewer" class="btn btn-sm" style="display:inline-flex;align-items:center;gap:4px;font-size:9.5px;padding:2px 8px;text-decoration:none;background:var(--color-surface);border:1px solid var(--color-border);color:var(--color-text)">
+              🧊 Zbadaj kieszeń 3D PDB: <b>${esc(pdb)}</b> ↗
+            </a>
+          ` : ''}
+        </div>
+      `;
+    }).join("") || `<div class="empty" style="font-size:10px;padding:6px">Brak wykrytych krytycznych celów off-target o wysokim prawdopodobieństwie.</div>`;
+
+    dock.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div>
+          <div style="font-size:15px;font-weight:700;color:var(--color-text)">${esc(comp.n)}</div>
+          <div style="font-size:10px;color:var(--color-text-muted)">${esc(comp.id)} · Grupa: ${esc(comp.g || "Inne")}</div>
+        </div>
+        <button class="btn btn-sm btn-primary" id="chemspaceOpenDossierBtn" style="font-size:10px;padding:3px 8px">Monografia ↗</button>
+      </div>
+
+      <!-- Rusztowanie Bemis-Murcko -->
+      <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:8px;padding:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <span style="font-size:10px;text-transform:uppercase;color:var(--color-text-muted);font-weight:700">Rusztowanie Bemis-Murcko</span>
+          <span class="badge" style="background:${scaffDef.color_hex || '#94a3b8'}22;color:${scaffDef.color_hex || '#94a3b8'};font-size:9px">${esc(scaffDef.family || "Inne")}</span>
+        </div>
+        <div style="font-size:12.5px;font-weight:700;color:var(--color-text);margin-bottom:3px">${esc(scaffDef.name || "Szkielet alifatyczny")}</div>
+        <div style="font-size:10px;color:var(--color-text-muted);line-height:1.4">${esc(scaffDef.substructure_description || "")}</div>
+        ${scaffDef.pdb_target_id ? `
+          <div style="margin-top:6px">
+            <a href="sidecar://biomolecular-structure-viewer" style="font-size:9.5px;color:#38bdf8;text-decoration:none">
+              🔬 Kompleks PDB farmakoforu: <b>${esc(scaffDef.pdb_target_id)}</b> ↗
+            </a>
+          </div>
+        ` : ''}
+      </div>
+
+      <!-- Radar Bioizosteryczny -->
+      ${topAnalogComp ? `
+        <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:8px;padding:10px;display:flex;flex-direction:column;align-items:center">
+          <div style="width:100%;display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-size:10px;text-transform:uppercase;color:var(--color-text-muted);font-weight:700">Radar Bioizosterii (vs ${esc(topAnalogComp.n)})</span>
+            <span style="font-size:10px;color:#38bdf8;font-weight:700">${cs.an[0][1].toFixed(1)}%</span>
+          </div>
+          ${radarHtml}
+        </div>
+      ` : ''}
+
+      <!-- Analogi Tanimoto -->
+      <div>
+        <div style="font-size:11px;font-weight:700;margin-bottom:6px;color:var(--color-text)">Top Analogi Chemiczne (Tanimoto):</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          ${analogsListHtml}
+        </div>
+      </div>
+
+      <!-- Predykcja Celów Off-Target -->
+      <div>
+        <div style="font-size:11px;font-weight:700;margin-bottom:6px;color:var(--color-text)">Predykcja Celów Off-Target (Target Neighborhood):</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          ${offtargetsHtml}
+        </div>
+      </div>
+    `;
+
+    const dosBtn = dock.querySelector("#chemspaceOpenDossierBtn");
+    if (dosBtn) dosBtn.onclick = () => {
+      closeChemspaceModal();
+      select({ type: "compound", i: comp.i }, true);
+      setWorkspaceMode("dossier");
+    };
+
+    dock.querySelectorAll("[data-select-chemspace-analog]").forEach((btn) => {
+      btn.onclick = () => {
+        const aId = btn.dataset.selectChemspaceAnalog;
+        chemspaceState.cid = aId;
+        openChemSpaceDock(aId);
+        renderChemspaceCanvas();
+      };
+    });
+  }
+
+  function wireChemspaceEvents() {
+    if (chemspaceEventsWired) return;
+    chemspaceEventsWired = true;
+
+    const canvas = $("chemspaceCanvas");
+    const container = $("chemspaceViewportContainer");
+    const tooltip = $("chemspaceTooltip");
+    const colorSelect = $("chemspaceColorSelect");
+    const searchInput = $("chemspaceSearchInput");
+    const resetZoomBtn = $("chemspaceResetZoomBtn");
+    const closeBtn = $("chemspaceModalClose");
+
+    if (closeBtn) closeBtn.onclick = closeChemspaceModal;
+
+    if (colorSelect) {
+      colorSelect.onchange = (e) => {
+        chemspaceState.colorMode = e.target.value;
+        renderChemspaceLegend();
+        renderChemspaceCanvas();
+      };
+    }
+
+    if (searchInput) {
+      searchInput.oninput = (e) => {
+        chemspaceState.filterText = e.target.value;
+        renderChemspaceCanvas();
+      };
+    }
+
+    if (resetZoomBtn) {
+      resetZoomBtn.onclick = () => {
+        chemspaceState.zoom = 1.0;
+        chemspaceState.panX = 0;
+        chemspaceState.panY = 0;
+        chemspaceState.filterText = "";
+        chemspaceState.activeScaffoldFilter = null;
+        if (searchInput) searchInput.value = "";
+        renderChemspaceLegend();
+        renderChemspaceCanvas();
+      };
+    }
+
+    if (container && canvas) {
+      container.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        const factor = e.deltaY < 0 ? 1.15 : 0.85;
+        const newZoom = Math.max(0.3, Math.min(6.0, chemspaceState.zoom * factor));
+        chemspaceState.zoom = newZoom;
+        renderChemspaceCanvas();
+      }, { passive: false });
+
+      container.addEventListener("mousedown", (e) => {
+        if (e.button !== 0) return;
+        chemspaceState.isDragging = true;
+        chemspaceState.startX = e.clientX - chemspaceState.panX;
+        chemspaceState.startY = e.clientY - chemspaceState.panY;
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!activeChemspaceModalOpen) return;
+        if (chemspaceState.isDragging) {
+          chemspaceState.panX = e.clientX - chemspaceState.startX;
+          chemspaceState.panY = e.clientY - chemspaceState.startY;
+          renderChemspaceCanvas();
+          return;
+        }
+
+        // Hover detection
+        const rect = canvas.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+        if (mx < 0 || mx > rect.width || my < 0 || my > rect.height) {
+          if (tooltip) tooltip.style.display = "none";
+          chemspaceState.hoveredCompound = null;
+          return;
+        }
+
+        const midX = rect.width / 2 + chemspaceState.panX;
+        const midY = rect.height / 2 + chemspaceState.panY;
+        const zoom = chemspaceState.zoom;
+
+        const worldX = (mx - midX) / zoom;
+        const worldY = (my - midY) / zoom;
+
+        let closest = null;
+        let minDist = 12 / zoom;
+
+        for (let i = 0; i < C.length; i++) {
+          const c = C[i];
+          const cs = c.cs;
+          const cx = cs ? cs.x : (c.x || 0);
+          const cy = cs ? cs.y : (c.y || 0);
+          const dx = cx - worldX;
+          const dy = cy - worldY;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < minDist) {
+            minDist = dist;
+            closest = c;
+          }
+        }
+
+        if (closest) {
+          chemspaceState.hoveredCompound = closest;
+          if (tooltip) {
+            const cs = closest.cs || {};
+            const sDef = SCAFFOLD_MAP[cs.s] || {};
+            tooltip.style.display = "block";
+            tooltip.style.left = `${Math.min(rect.width - 200, mx + 12)}px`;
+            tooltip.style.top = `${Math.min(rect.height - 80, my + 12)}px`;
+            tooltip.innerHTML = `
+              <div style="font-weight:700;color:#fff">${esc(closest.n)}</div>
+              <div style="color:#94a3b8;font-size:9.5px">${esc(sDef.name || "Inne")}</div>
+              <div style="color:#38bdf8;font-size:9px;margin-top:2px">Kliknij, aby otworzyć profil</div>
+            `;
+          }
+        } else {
+          chemspaceState.hoveredCompound = null;
+          if (tooltip) tooltip.style.display = "none";
+        }
+        renderChemspaceCanvas();
+      });
+
+      window.addEventListener("mouseup", () => {
+        chemspaceState.isDragging = false;
+      });
+
+      container.addEventListener("click", (e) => {
+        if (chemspaceState.hoveredCompound) {
+          chemspaceState.cid = chemspaceState.hoveredCompound.id;
+          openChemSpaceDock(chemspaceState.cid);
+          renderChemspaceCanvas();
+        }
+      });
+    }
+  }
+
+  function openChemspaceView(compoundId) {
+    activeChemspaceModalOpen = true;
+    const modal = $("chemspaceModal");
+    if (!modal) return;
+    openDialog(modal);
+    wireChemspaceEvents();
+    if (compoundId) chemspaceState.cid = compoundId;
+    renderChemspaceLegend();
+    openChemSpaceDock(chemspaceState.cid);
+    setTimeout(() => {
+      renderChemspaceCanvas();
+    }, 40);
+  }
+
+  function closeChemspaceModal() {
+    activeChemspaceModalOpen = false;
+    const modal = $("chemspaceModal");
+    if (modal) closeDialog(modal);
+    setWorkspaceMode("graph");
+  }
+
 
   // ---------- Clinical Risk Engine & Multi-Axis Toxic Burden Heatmap
   let activeExpandedAdr = null;
@@ -10023,6 +10645,7 @@
 
     if (e.key === "Escape") {
       if (cmdPaletteOpen) { closeCmdPalette(); return; }
+      if (activeChemspaceModalOpen) { closeChemspaceModal(); return; }
       if (activeModalCompound) { closeChemLightBox(); return; }
       if (activeComparatorIndices) { closeComparator(); return; }
       if (activeIndicationsModalOpen) { closeIndicationsModal(); return; }
@@ -10115,6 +10738,12 @@
       return;
     }
     if (e.key === "/") { e.preventDefault(); q.focus(); return; }
+    if (e.key === "9" && !e.ctrlKey && !e.metaKey && !e.altKey && (!state.sel || state.sel.type !== "compound")) {
+      e.preventDefault();
+      if (activeChemspaceModalOpen) closeChemspaceModal();
+      else setWorkspaceMode("chemspace");
+      return;
+    }
     if (state.sel && state.sel.type === "compound") {
       const tabs = ["overview", "pk", "targets", "safety"];
       if (e.key >= "1" && e.key <= "4") {
@@ -10127,8 +10756,8 @@
         }
       }
     } else {
-      const modes = ["graph", "dossier", "stack", "evidence", "indications", "structure3d", "metabolism", "transporters"];
-      if (e.key >= "1" && e.key <= "8") {
+      const modes = ["graph", "dossier", "stack", "evidence", "indications", "structure3d", "metabolism", "transporters", "chemspace"];
+      if (e.key >= "1" && e.key <= "9") {
         const nextMode = modes[+e.key - 1];
         if (nextMode) setWorkspaceMode(nextMode);
       }
@@ -10299,6 +10928,7 @@
       { type: "action", name: "Wizualizator Kompleksów 3D", badge: "Widok", run: () => setWorkspaceMode("structure3d") },
       { type: "action", name: "Kaskady Biotransformacji & Metabolity", badge: "Widok", run: () => setWorkspaceMode("metabolism") },
       { type: "action", name: "Transportery Błonowe & Bariera Krew-Mózg (BBB)", badge: "Widok", run: () => setWorkspaceMode("transporters") },
+      { type: "action", name: "9: Przestrzeń Chemiczna & Chemogenomika (2533 cząsteczki)", badge: "Widok", run: () => setWorkspaceMode("chemspace") },
       { type: "action", name: "Toksykologia Molekularna & eDISH (Hy's Law)", badge: "Narzędzie", run: () => openToxicologySplitPane() },
       { type: "action", name: "Porównywarka Head-to-Head", badge: "Narzędzie", run: () => openComparator() }
     ];
@@ -10391,6 +11021,7 @@
   const modeStructure3DBtn = $("modeStructure3DBtn");
   const modeMetabolismBtn = $("modeMetabolismBtn");
   const modeTransportersBtn = $("modeTransportersBtn");
+  const modeChemspaceBtn = $("modeChemspaceBtn");
   const cmdPaletteBtn = $("cmdPaletteBtn");
   const globalThemeBtn = $("globalThemeBtn");
 
@@ -10402,7 +11033,8 @@
     modeIndicationsBtn,
     modeStructure3DBtn,
     modeMetabolismBtn,
-    modeTransportersBtn
+    modeTransportersBtn,
+    modeChemspaceBtn
   ].filter(Boolean);
 
   let currentWorkspaceMode = "graph";
@@ -10493,6 +11125,17 @@
       closeMetaboliteModal();
       const targetCid = (state.sel && state.sel.type === "compound") ? C[state.sel.i].id : (state.stack.size > 0 ? C[[...state.stack][0]].id : "loperamide-compound");
       openTransporterDock(targetCid);
+    } else if (mode === "chemspace") {
+      location.hash = "#/chemspace";
+      toggleStackDrawer(false);
+      closeEvidenceModal();
+      closeIndicationsModal();
+      closeStruct3DModal();
+      closeDossierModal();
+      closeMetaboliteModal();
+      if (typeof closeTransporterDock === "function") closeTransporterDock();
+      const targetCid = (state.sel && state.sel.type === "compound") ? C[state.sel.i].id : (state.stack.size > 0 ? C[[...state.stack][0]].id : "diazepam-compound");
+      openChemspaceView(targetCid);
     }
   }
 
@@ -10503,6 +11146,7 @@
     else if (activeDossierMode) setWorkspaceMode("dossier", false);
     else if (activeMetaboliteQuery != null) setWorkspaceMode("metabolism", false);
     else if (activeTransporterDockOpen) setWorkspaceMode("transporters", false);
+    else if (activeChemspaceModalOpen) setWorkspaceMode("chemspace", false);
     else if (state.stackDrawerOpen) setWorkspaceMode("stack", false);
     else setWorkspaceMode("graph", false);
   }
@@ -10849,6 +11493,13 @@
       setWorkspaceMode("metabolism");
     } else if (raw === "/transporters" || raw === "transporters") {
       setWorkspaceMode("transporters");
+    } else if (raw === "/chemspace" || raw === "chemspace") {
+      setWorkspaceMode("chemspace");
+    } else if (raw.startsWith("/chemspace/") || raw.startsWith("chemspace/")) {
+      const pathPart = raw.replace(/^\/?chemspace\//, "");
+      const [cid] = pathPart.split("?");
+      setWorkspaceMode("chemspace");
+      if (cid) openChemSpaceDock(cid);
     } else if (raw.startsWith("/ddi") || raw.startsWith("ddi")) {
       const presetMatch = raw.match(/preset=([a-z_]+)/);
       if (presetMatch) {

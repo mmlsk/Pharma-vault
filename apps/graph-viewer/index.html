@@ -294,6 +294,15 @@
     .phase-1 { background: color-mix(in oklab, var(--color-text-muted) 18%, transparent); color: var(--color-text-muted); border: 1px solid var(--color-text-muted); }
     .phase-0 { background: var(--color-surface-offset); color: var(--color-text-muted); border: 1px solid var(--color-border); }
     .struct-modal { background: var(--color-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 1220px; max-width: 96vw; max-height: 92vh; display: flex; flex-direction: column; overflow: hidden; color: var(--color-text); border: 1px solid var(--color-border); }
+    .chemspace-modal { background: var(--color-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 1260px; max-width: 97vw; height: 92vh; max-height: 94vh; display: flex; flex-direction: column; overflow: hidden; color: var(--color-text); border: 1px solid var(--color-border); }
+    .chemspace-head { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); background: var(--color-surface-2); display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+    .chemspace-body { flex: 1; display: grid; grid-template-columns: 1fr 390px; min-height: 0; overflow: hidden; position: relative; }
+    @media (max-width: 1024px) { .chemspace-body { grid-template-columns: 1fr; grid-template-rows: 1fr auto; overflow-y: auto; } }
+    .chemspace-viewport-container { position: relative; width: 100%; height: 100%; background: #070a13; overflow: hidden; cursor: grab; }
+    .chemspace-viewport-container:active { cursor: grabbing; }
+    .chemspace-dock { background: var(--color-surface); border-left: 1px solid var(--color-border); overflow-y: auto; padding: 14px 16px; display: flex; flex-direction: column; gap: 12px; }
+    .chemspace-tooltip { background: rgba(15, 23, 42, 0.95); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; padding: 6px 10px; font-size: 11px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); pointer-events: none; max-width: 260px; z-index: 100; }
+    .chemspace-legend { position: absolute; bottom: 10px; left: 10px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(6px); border: 1px solid var(--color-border); border-radius: 6px; padding: 6px 10px; font-size: 10px; display: flex; flex-wrap: wrap; gap: 8px; max-width: 520px; max-height: 72px; overflow-y: auto; pointer-events: auto; }
     .struct-head { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); background: var(--color-surface-2); display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
     .struct-body { flex: 1; overflow-y: auto; display: grid; grid-template-columns: 1fr 340px; min-height: 520px; align-items: stretch; }
     @media (max-width: 960px) { .struct-body { grid-template-columns: 1fr; } }
@@ -852,6 +861,9 @@
       <button class="mode-tab" id="modeTransportersBtn" role="tab" aria-selected="false" data-mode="transporters" aria-controls="contextSplitPane">
         🧬 Transportery & BBB
       </button>
+      <button class="mode-tab" id="modeChemspaceBtn" role="tab" aria-selected="false" data-mode="chemspace" aria-controls="chemspaceModal" title="Tryb Przestrzeni Chemicznej & Chemogenomiki (Skrót: 9)">
+        ⚛️ Przestrzeń Chemiczna
+      </button>
     </div>
     <div class="workspace-actions">
       <button class="btn-sm" id="cmdPaletteBtn" title="Szukaj w całej bazie (Cmd+K / Ctrl+K)" aria-label="Otwórz paletę komend i szukajkę">🔍 <kbd style="font-size:10px;opacity:0.8">⌘K</kbd></button>
@@ -1356,6 +1368,37 @@
     </div>
   </div>
 </div>
+</div>
+<div id="chemspaceModal" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Przestrzeń Chemiczna & Chemogenomika">
+  <div class="chemspace-modal">
+    <div class="chemspace-head">
+      <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap">
+        <b style="font-size:var(--text-base);font-family:var(--font-display)">⚛️ Przestrzeń Chemiczna & Chemogenomika (2533 cząsteczki)</b>
+        <span id="chemspaceSubtitle" class="tag" style="font-size:11px">Rzutowanie 2D · Podobieństwo Tanimoto · Rusztowania Bemis-Murcko</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <label for="chemspaceColorSelect" style="font-size:11px;color:var(--color-text-muted)">Kolor:</label>
+        <select id="chemspaceColorSelect" style="font-size:11px;padding:3px 8px;border-radius:6px;border:1px solid var(--color-border);background:var(--color-surface);color:var(--color-text)">
+          <option value="scaffold">Rusztowania Bemis-Murcko (36 rodzin)</option>
+          <option value="cluster">Klastry Farmakologiczne (9 grup)</option>
+          <option value="safety">Alerty Bezpieczeństwa (hERG / 5-HT2B / D2)</option>
+        </select>
+        <input type="text" id="chemspaceSearchInput" placeholder="Szukaj leku lub rusztowania..." style="font-size:11px;padding:3px 8px;border-radius:6px;border:1px solid var(--color-border);background:var(--color-surface);color:var(--color-text);width:190px" />
+        <button class="btn btn-sm" id="chemspaceResetZoomBtn" style="font-size:11px;padding:3px 8px" title="Wyśrodkuj widok mapy">↺ Reset Zoom</button>
+        <button class="card-close" id="chemspaceModalClose" title="Zamknij (Esc)" aria-label="Zamknij przestrzeń chemiczną">✕</button>
+      </div>
+    </div>
+    <div class="chemspace-body">
+      <div class="chemspace-viewport-container" id="chemspaceViewportContainer">
+        <canvas id="chemspaceCanvas"></canvas>
+        <div id="chemspaceTooltip" class="chemspace-tooltip" style="display:none"></div>
+        <div class="chemspace-legend" id="chemspaceLegend"></div>
+      </div>
+      <div class="chemspace-dock" id="chemspaceDock">
+        <!-- Generowane dynamicznie przez openChemSpaceDock -->
+      </div>
+    </div>
+  </div>
 </div>
 <div id="toastContainer" class="toast-container" role="status" aria-live="polite"></div>
 

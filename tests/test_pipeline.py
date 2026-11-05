@@ -1574,6 +1574,93 @@ def test_transporters_and_bbb_pbpk_engine(sqlite_con):
         assert root_app_path.read_text(encoding="utf-8") == app_src, "Root app.js is out of sync with apps/graph-viewer/app.js"
 
 
+def test_chemogenomics_and_chemical_space_engine(sqlite_con):
+    # 1. Curated dataset validation
+    scaff_p = ROOT / "data/curated/scaffold_definitions.json"
+    assert scaff_p.exists(), "data/curated/scaffold_definitions.json missing"
+    scaff_data = json.loads(scaff_p.read_text(encoding="utf-8"))
+    assert len(scaff_data) == 36, f"Expected 36 scaffold definitions, got {len(scaff_data)}"
+    scaff_ids = {s["id"] for s in scaff_data}
+    assert "scaff_benzodiazepine" in scaff_ids
+    assert "scaff_statin_heptanoic" in scaff_ids
+    assert "scaff_phenothiazine" in scaff_ids
+    assert "scaff_tryptamine" in scaff_ids
+    assert "scaff_beta_lactam" in scaff_ids
+    assert "scaff_fluoroquinolone" in scaff_ids
+
+    # 2. Processed 2D chemical space dataset validation
+    cs_p = ROOT / "data/processed/chemical_space_2d.json"
+    assert cs_p.exists(), "data/processed/chemical_space_2d.json missing"
+    cs_data = json.loads(cs_p.read_text(encoding="utf-8"))
+    assert len(cs_data) == 2533, f"Expected 2533 chemical space records, got {len(cs_data)}"
+
+    # Check specific drug classifications and coordinates
+    diaz = cs_data.get("diazepam-compound")
+    assert diaz is not None
+    assert diaz["scaffold_id"] == "scaff_benzodiazepine"
+    assert -800 <= diaz["x"] <= 800 and -800 <= diaz["y"] <= 800
+    assert len(diaz["top_analogs"]) > 0
+    assert any(a["tanimoto"] >= 70.0 for a in diaz["top_analogs"])
+
+    atorva = cs_data.get("atorvastatin-compound")
+    assert atorva is not None
+    assert atorva["scaffold_id"] == "scaff_statin_heptanoic"
+    assert -800 <= atorva["x"] <= 800 and -800 <= atorva["y"] <= 800
+
+    propran = cs_data.get("propranolol-compound")
+    assert propran is not None
+    assert propran["scaffold_id"] == "scaff_aryloxypropanolamine"
+
+    cipro = cs_data.get("ciprofloxacin-compound")
+    assert cipro is not None
+    assert cipro["scaffold_id"] == "scaff_fluoroquinolone"
+
+    # 3. SQLite schema & database validation
+    cs_count = sqlite_con.execute("SELECT COUNT(*) FROM chemical_space").fetchone()[0]
+    assert cs_count == 2533, f"Expected 2533 in sqlite chemical_space, got {cs_count}"
+
+    diaz_row = sqlite_con.execute(
+        "SELECT x_coord, y_coord, scaffold_id, scaffold_name FROM chemical_space WHERE compound_id = 'diazepam-compound'"
+    ).fetchone()
+    assert diaz_row is not None
+    assert diaz_row[2] == "scaff_benzodiazepine"
+
+    indices = {r[1] for r in sqlite_con.execute("PRAGMA index_list('chemical_space')").fetchall()}
+    assert "idx_chemspace_coords" in indices
+    assert "idx_chemspace_scaffold" in indices
+
+    # 4. 3D Safety Target Structures (hERG and 5-HT2B)
+    t3d_rows = {r[0]: (r[1], r[2]) for r in sqlite_con.execute("SELECT target_id, gene, pdb FROM target_3d_catalog").fetchall()}
+    assert "KCNH2" in t3d_rows and t3d_rows["KCNH2"][0] == "KCNH2" and t3d_rows["KCNH2"][1] == "5VA1"
+    assert "CHEMBL1833" in t3d_rows and t3d_rows["CHEMBL1833"][0] == "HTR2B" and t3d_rows["CHEMBL1833"][1] == "4IB4"
+
+    # 5. graph-data.js export validation
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    assert '"scaffoldDefinitions"' in graph_js
+    assert '"with_chemical_space":2533' in graph_js
+    assert '"cs":{' in graph_js
+
+    # 6. app.js logic & UI integration
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    assert "SCAFFOLD_DEFINITIONS" in app_src
+    assert "SCAFFOLD_MAP" in app_src
+    assert "modeChemspaceBtn" in app_src
+    assert "renderBioisostereRadarSvg" in app_src
+    assert "renderChemspaceCanvas" in app_src
+    assert "renderChemspaceLegend" in app_src
+    assert "openChemSpaceDock" in app_src
+    assert "openChemspaceView" in app_src
+    assert "closeChemspaceModal" in app_src
+    assert "chemspace_shared_offtarget_" in app_src
+    assert "#/chemspace" in app_src
+
+    # 7. Dual-file synchronization verification
+    for filename in ("app.js", "index.html", "graph-data.js"):
+        inner = (ROOT / f"apps/graph-viewer/{filename}").read_text(encoding="utf-8")
+        outer = (ROOT.parent / filename).read_text(encoding="utf-8")
+        assert inner == outer, f"Root {filename} is out of sync with apps/graph-viewer/{filename}"
+
+
 
 
 

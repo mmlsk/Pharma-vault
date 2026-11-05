@@ -1294,5 +1294,63 @@
         "role": "Zasuwa helikalna koordynująca szkielet aminokwasowy gabapentyny"
       }
     ]
+  },
+  "CHEMBL1833": {
+    "id": "CHEMBL1833",
+    "name": "5-hydroxytryptamine receptor 2B (5-HT2B)",
+    "gene": "HTR2B",
+    "pdb": "4IB4",
+    "res": "X-ray 2.7 Å",
+    "uniprot": "P41595",
+    "ligand": "Ergotamine / Cabergoline / Fenfluramine",
+    "affinity": "Ki = 1.2 nM (Agonizm indukujący fibroblasty)",
+    "class": "GPCR (Receptor Serotoninowy 2B)",
+    "arch": "gpcr",
+    "pocket": [
+      {
+        "r": "Asp135",
+        "pos": 135,
+        "role": "Mostek solny z azotem ergoliny / amfetamin"
+      },
+      {
+        "r": "Leu209",
+        "pos": 209,
+        "role": "Specyficzna pętla ECL2 determinująca selektywność 5-HT2B nad 5-HT2A"
+      },
+      {
+        "r": "Phe341",
+        "pos": 341,
+        "role": "Aromatyczny przełącznik aktywacji sprzężonej z białkiem Gq"
+      }
+    ]
+  },
+  "KCNH2": {
+    "id": "KCNH2",
+    "name": "Voltage-gated potassium channel KCNH2 (hERG)",
+    "gene": "KCNH2",
+    "pdb": "5VA1",
+    "res": "Cryo-EM 3.7 Å",
+    "uniprot": "Q12809",
+    "ligand": "Astemizole / Dofetilide / Cisapride",
+    "affinity": "IC50 < 100 nM (Zablokowanie kanału hERG)",
+    "class": "Kanał jonowy potasowy (Safety Target)",
+    "arch": "ion_channel",
+    "pocket": [
+      {
+        "r": "Tyr652",
+        "pos": 652,
+        "role": "Aromatyczny stacking pi-pi z zasadowymi lekami lipofilnymi"
+      },
+      {
+        "r": "Phe656",
+        "pos": 656,
+        "role": "Hydrofobowa klatka przedsionka kanału hERG, kluczowa dla wiązania blokerów"
+      },
+      {
+        "r": "Thr623",
+        "pos": 623,
+        "role": "Dolny pierścień filtra selektywności potasowej"
+      }
+    ]
   }
 }
