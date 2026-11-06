@@ -641,8 +641,8 @@
       const pr = c.pr || [];
       const tgNames = (c.tg || []).slice(0, 4).map((ti) =>T[ti]?.n).filter(Boolean);
       qCol.innerHTML = `
-        <div style="font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--color-text-muted);font-weight:700">Cząsteczka bazowa</div>
-        <div style="text-align:center;padding:6px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:4px">
+        <div style="font-size:13px;text-transform:uppercase;letter-spacing:0.02em;color:var(--color-text-muted);font-weight:700">Cząsteczka bazowa</div>
+        <div style="text-align:center;padding:6px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px">
           ${struct ? `<img src="${struct.url}" alt="${esc(c.n)}" style="max-width:140px;max-height:140px;object-fit:contain" loading="lazy" data-zoom-chem="${c.i}">`: `
             <div style="height:100px;display:flex;align-items:center;justify-content:center;color:var(--color-text-muted)">Brak 2D</div>
           `}
@@ -1558,7 +1558,7 @@
 
     sideEl.innerHTML = `
       <div style="border-bottom:1px solid var(--color-border);padding-bottom:8px">
-        <div style="font-size:13px;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted)">Wybrany węzeł biotransformacji</div>
+        <div style="font-size:13px;text-transform:uppercase;letter-spacing:0.02em;color:var(--color-text-muted)">Wybrany węzeł biotransformacji</div>
         <b style="font-size:14px;display:block;margin:2px 0 6px 0">${esc(selNode.name)}</b>
         ${getActivityBadge(selNode.activity)}
       </div>
@@ -1994,18 +1994,15 @@
               <b style="font-size:var(--text-sm);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${esc(c.n)}">${esc(c.n)}</b>
               <small class="muted" style="font-size:13px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(g.label || "")}</small>
             </div>
-            ${struct ? `
-              <div style="width:48px;height:48px;flex-shrink:0;background:var(--color-surface);border:1px solid var(--color-border);border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden" data-zoom-chem="${c.i}" title="Powiększ strukturę 2D">
-                <img src="${struct.url}" alt="${esc(c.n)}" style="max-width:44px;max-height:44px;object-fit:contain" loading="lazy">
-              </div>`: ""}
+            ${struct ? `<button class="btn" data-zoom-chem="${c.i}" style="font-size:13px;padding:3px 6px;flex-shrink:0" title="Powiększ strukturę 2D">2D</button>`: ""}
           </div>
           ${regBadges.length ? `<div style="display:flex;flex-wrap:wrap;gap:4px">${regBadges.join("")}</div>`: ""}
           <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:auto;padding-top:6px;border-top:1px solid var(--color-border)">
             <button class="btn" data-ev-goto="${c.i}" style="font-size:13px;padding:3px 6px" title="Zaznacz substancję na grafie">Graf</button>
             <button class="btn ${inStack ? 'btn-gold' : ''}" data-ev-stack="${c.i}" style="font-size:13px;padding:3px 6px">${inStack ? 'OK Stack' : '+ Stack'}</button>
-            <button class="btn" data-ev-compare="${c.i}" style="font-size:13px;padding:3px 6px" title="Porównaj"></button>
-            <button class="btn" data-ev-meta="${c.i}" style="font-size:13px;padding:3px 6px" title="Kaskada metabolitów"></button>
-            <button class="btn" data-ev-dossier="${c.i}" style="font-size:13px;padding:3px 6px" title="Kliniczna monografia (Dossier)"></button>
+            <button class="btn" data-ev-compare="${c.i}" style="font-size:13px;padding:3px 6px" title="Porównaj">Porównaj</button>
+            <button class="btn" data-ev-meta="${c.i}" style="font-size:13px;padding:3px 6px" title="Kaskada metabolitów">CYP</button>
+            <button class="btn" data-ev-dossier="${c.i}" style="font-size:13px;padding:3px 6px" title="Kliniczna monografia (Dossier)">Dossier</button>
           </div>
         </div>
       `;
@@ -2332,7 +2329,7 @@
       html += `
         <div class="indications-chapter" style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);overflow:hidden">
           <div style="padding:8px 12px;background:var(--color-surface-2);border-bottom:1px solid var(--color-border);display:flex;justify-content:space-between;align-items:center">
-            <b style="font-size:13px;color:var(--color-text);text-transform:uppercase;letter-spacing:.5px">${esc(chapterName)}</b>
+            <b style="font-size:13px;color:var(--color-text);text-transform:uppercase;letter-spacing:.02em">${esc(chapterName)}</b>
             <span class="tag" style="font-size:13px">${diseases.length} wskazań</span>
           </div>
           <div style="padding:10px;display:grid;gap:8px">
@@ -2346,7 +2343,7 @@
                       <b style="font-size:13px;color:var(--color-text);margin-left:6px">${esc(d.icd10_name_pl)}</b>
                       <span style="font-size:13px;color:var(--color-text-muted);margin-left:6px">· WHO ICD-11: <code>${esc(d.icd11_code || "–")}</code></span>
                     </div>
-                    <button class="btn" data-ind-filter="${esc(d.icd10_code)}" style="font-size:13px;padding:2px 8px;background:var(--color-primary);color:#fff" title="Wyróżnij substancje dla tego wskazania na grafie 2D">Filtruj graf (${d.compounds.length})</button>
+                    <button class="btn" data-ind-filter="${esc(d.icd10_code)}" style="font-size:13px;padding:2px 8px;background:var(--color-surface-2);color:var(--color-primary);border:1px solid var(--color-border)" title="Wyróżnij substancje dla tego wskazania na grafie 2D">Filtruj graf (${d.compounds.length})</button>
                   </div>
                   <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px">
                     ${(d.compounds || []).map((c) =>{
@@ -3145,27 +3142,27 @@
     return `
       <div class="dossier-head-brand">
         <div>
-          <div style="font-size:13px;text-transform:uppercase;letter-spacing:1px;color:#777">Pharma-vault Clinical Intelligence · Monografia Kliniczna</div>
-          <h1 style="font-size:24px;font-weight:800;color:#111;margin-top:2px">${esc(c.n)}</h1>
-          <div style="font-size:13px;color:#555;margin-top:2px">${esc(cl)} · ${esc(g.label)}</div>
+          <div style="font-size:13px;text-transform:uppercase;letter-spacing:0.02em;color:#444">Pharma-vault Clinical Intelligence · Monografia Kliniczna</div>
+          <h2 style="font-size:22px;font-weight:700;color:#111;margin-top:2px">${esc(c.n)}</h2>
+          <div style="font-size:13px;color:#444;margin-top:2px">${esc(cl)} · ${esc(g.label)}</div>
         </div>
         <div style="text-align:right">
           <div style="font-size:13px;font-weight:700;color:#111">ARCHIWUM MONOGRAFII</div>
-          <div style="font-size:13px;color:#666">ID: ${esc(c.id)} · Data: ${dateStr}</div>
+          <div style="font-size:13px;color:#444">ID: ${esc(c.id)} · Data: ${dateStr}</div>
           <div style="font-size:13px;color:#0d47a1;font-weight:600">Status: Walidacja laboratoryjna</div>
         </div>
       </div>
 
       <div class="dossier-section" style="display:grid;grid-template-columns:220px 1fr;gap:20px;align-items:start">
-        <div style="border:1px solid #e0e0e0;border-radius:4px;padding:12px;text-align:center;background:#fafafa">
-          ${struct ? `<img src="${struct.url}" alt="${esc(c.n)}" style="max-width:190px;max-height:190px;object-fit:contain;mix-blend-mode:multiply">`: `
-            <div style="height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#888;font-size:13px">
+        <div class="dossier-struct-box" style="border:1px solid #eceef2;border-radius:6px;padding:12px;text-align:center;background:#fafafa">
+          ${struct ? `<img src="${struct.url}" alt="${esc(c.n)}" style="max-width:190px;max-height:190px;object-fit:contain;mix-blend-mode:multiply" onerror="this.style.display='none'">`: `
+            <div style="height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#444;font-size:13px">
               <span style="font-size:32px"></span>
               <span style="margin-top:6px">${esc(c.mt || "Struktura niedostępna")}</span>
             </div>
           `}
           <div style="margin-top:8px;font-size:13px;font-weight:700;color:#333">${esc(c.mf || "–")}</div>
-          <div style="font-size:13px;color:#666">${pr[0] != null ? pr[0] + " g/mol" : ""}</div>
+          <div style="font-size:13px;color:#444">${pr[0] != null ? pr[0] + " g/mol" : ""}</div>
         </div>
         <div>
           <div class="dossier-sec-title">Właściwości fizykochemiczne & Identyfikatory</div>
@@ -3176,7 +3173,7 @@
               <tr><th>Lipofilowość (ALogP)</th><td>${pr[1] != null ? pr[1] : "–"}</td></tr>
               <tr><th>Powierzchnia polarna (PSA)</th><td>${pr[2] != null ? pr[2] + " Å²" : "–"}</td></tr>
               <tr><th>Reguła 5 Lipińskiego (Ro5)</th><td>${pr[3] != null ? (pr[3] === 0 ? "OK 0 naruszeń (spełniona)" : `<span style="color:#d32f2f">${pr[3]} naruszeń</span>`) : "–"}</td></tr>
-              <tr><th>InChIKey</th><td><code style="font-size:13px">${esc(c.ik || "–")}</code></td></tr>
+              <tr><th>InChIKey</th><td><span style="font-size:13px;font-variant-numeric:tabular-nums">${esc(c.ik || "–")}</span></td></tr>
               <tr><th>ChEMBL ID / PubChem CID</th><td>${esc(c.id)}${c.cid ? `/ CID: ${c.cid}`: ""}</td></tr>
             </tbody>
           </table>
@@ -3215,7 +3212,7 @@
 
       <div class="dossier-section">
         <div class="dossier-sec-title">Mechanizm Działania (Mechanism of Action)</div>
-        <div style="font-size:13px;line-height:1.6;color:#222;background:#fbfbfb;border:1px solid #e0e0e0;border-radius:4px;padding:10px 12px">
+        <div style="font-size:13px;line-height:1.6;color:#222;background:#fbfbfb;border:1px solid #eceef2;border-radius:6px;padding:10px 12px">
           ${c.m ? esc(c.m.replace(/\|/g, " · ")) : "Brak formalnego opisu mechanizmu działania w bazie."}
         </div>
       </div>
@@ -3249,8 +3246,8 @@
               ${targets.slice(0, 12).map(({ t, act }) =>{
                 const actBadge = act === "agonist" ? '<span style="color:#2e7d32">Agonista / Aktywator</span>'
                   : act === "antagonist" ? '<span style="color:#c62828">Antagonista / Bloker</span>'
-                  : act === "inhibitor" ? '<span style="color:#f57f17">Inhibitor</span>'
-                  : '<span style="color:#666">Ligand</span>';
+                  : act === "inhibitor" ? '<span style="color:#9a3412">Inhibitor</span>'
+                  : '<span style="color:#444">Ligand</span>';
                 return `
                   <tr>
                     <td><b>${esc(t ? t.n : "Nieznany cel")}</b></td>
@@ -3261,8 +3258,8 @@
               }).join("")}
             </tbody>
           </table>
-          ${targets.length >12 ? `<div style="font-size:13px;color:#777;margin-top:4px;font-style:italic">… oraz ${targets.length - 12} dalszych celów molekularnych.</div>`: ""}
-        `: '<div style="font-size:13px;color:#777;padding:6px 0">Brak powiązanych celów molekularnych w grafie.</div>'}
+          ${targets.length >12 ? `<div style="font-size:13px;color:#444;margin-top:4px;font-style:italic">… oraz ${targets.length - 12} dalszych celów molekularnych.</div>`: ""}
+        `: '<div style="font-size:13px;color:#444;padding:6px 0">Brak powiązanych celów molekularnych w grafie.</div>'}
       </div>
 
       ${(c.bb || c.wd || (c.t && c.t.length)) ? `
@@ -3272,13 +3269,13 @@
           ${c.wd ? `<div class="dossier-warn"><b>Związek wycofany z rynku (Withdrawn):</b>Wycofany ze względów bezpieczeństwa lub toksyczności.</div>`: ""}
           ${c.t && c.t.length ? `
             <div style="margin-top:6px;font-size:13px">
-              <b>Kluczowe ryzyka i przeciwwskazania:</b>${c.t.map((t) =>`<span style="background:#fff3e0;color:#e65100;padding:2px 6px;border-radius:3px;margin:0 4px 4px 0;display:inline-block">${esc(t)}</span>`).join("")}
+              <b>Kluczowe ryzyka i przeciwwskazania:</b>${c.t.map((t) =>`<span style="background:#fff3e0;color:#9a3412;padding:2px 6px;border-radius:6px;margin:0 4px 4px 0;display:inline-block">${esc(t)}</span>`).join("")}
             </div>
           `: ""}
         </div>
       `: ""}
 
-      <div style="margin-top:30px;padding-top:12px;border-top:1px solid #ccc;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#888">
+      <div style="margin-top:30px;padding-top:12px;border-top:1px solid #eceef2;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#444">
         <div>Pharma-vault Clinical Intelligence Engine v3.13.0 · Wygenerowano: ${dateStr}</div>
         <div>Dokument informacyjno-badawczy · Nie stanowi porady lekarskiej</div>
       </div>
@@ -3298,13 +3295,13 @@
     return `
       <div class="dossier-head-brand">
         <div>
-          <div style="font-size:13px;text-transform:uppercase;letter-spacing:1px;color:#777">Pharma-vault Clinical Intelligence · Raport Polipragmazji</div>
-          <h1 style="font-size:24px;font-weight:800;color:#111;margin-top:2px">Dossier Terapii Złożonej (Stack ${list.length} leków)</h1>
-          <div style="font-size:13px;color:#555;margin-top:2px">Analiza interakcji farmakodynamicznych, farmakokinetycznych (CYP) i bezpieczeństwa</div>
+          <div style="font-size:13px;text-transform:uppercase;letter-spacing:0.02em;color:#444">Pharma-vault Clinical Intelligence · Raport Polipragmazji</div>
+          <h2 style="font-size:22px;font-weight:700;color:#111;margin-top:2px">Dossier Terapii Złożonej (Stack ${list.length} leków)</h2>
+          <div style="font-size:13px;color:#444;margin-top:2px">Analiza interakcji farmakodynamicznych, farmakokinetycznych (CYP) i bezpieczeństwa</div>
         </div>
         <div style="text-align:right">
           <div style="font-size:13px;font-weight:700;color:#111">ARCHIWUM POLIPRAGMAZJI</div>
-          <div style="font-size:13px;color:#666">Złożoność: ${list.length} substancji · Data: ${dateStr}</div>
+          <div style="font-size:13px;color:#444">Złożoność: ${list.length} substancji · Data: ${dateStr}</div>
           <div style="font-size:13px;font-weight:700;color:${risk.color}">
             Indeks Toksyczności: ${risk.totalScore}/100 (${risk.label})
           </div>
@@ -3343,12 +3340,12 @@
 
       <div class="dossier-section">
         <div class="dossier-sec-title">2. Indeks Toksyczności & Obciążenie Narządowe (Stack Risk Score: ${risk.totalScore}/100)</div>
-        <div style="display:flex;align-items:center;justify-content:space-between;background:#f9f9f9;border:1px solid #e0e0e0;border-radius:4px;padding:8px 12px;margin-bottom:8px">
+        <div style="display:flex;align-items:center;justify-content:space-between;background:#f9f9f9;border:1px solid #eceef2;border-radius:6px;padding:8px 12px;margin-bottom:8px">
           <div>
             <b>Ocena ogólna:</b><span style="color:${risk.color};font-weight:700">${esc(risk.label)}</span>
-            <div style="font-size:13px;color:#666">Wieloosiowy wskaźnik kumulacji ryzyka z karą za obciążenie wielonarządowe</div>
+            <div style="font-size:13px;color:#444">Wieloosiowy wskaźnik kumulacji ryzyka z karą za obciążenie wielonarządowe</div>
           </div>
-          <div style="font-size:18px;font-weight:800;color:${risk.color};padding:4px 10px;border:1px solid ${risk.color};border-radius:4px;background:#fff">
+          <div style="font-size:18px;font-weight:800;color:${risk.color};padding:4px 10px;border:1px solid ${risk.color};border-radius:6px;background:#fff">
             ${risk.totalScore} / 100
           </div>
         </div>
@@ -3450,7 +3447,7 @@
         </ul>
       </div>
 
-      <div style="margin-top:30px;padding-top:12px;border-top:1px solid #ccc;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#888">
+      <div style="margin-top:30px;padding-top:12px;border-top:1px solid #eceef2;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#444">
         <div>Pharma-vault Clinical Intelligence Engine v3.13.0 · Wygenerowano: ${dateStr}</div>
         <div>Dokument informacyjno-badawczy · Nie stanowi porady lekarskiej</div>
       </div>
@@ -5114,7 +5111,7 @@
             <span style="font-size:13px;color:var(--color-text-muted)">/100</span>
           </div>
           <div>
-            <div style="font-size:13px;font-weight:700;color:${poly.color};text-transform:uppercase;letter-spacing:0.5px">
+            <div style="font-size:13px;font-weight:700;color:${poly.color};text-transform:uppercase;letter-spacing:0.02em">
               ${esc(poly.statusText)}
             </div>
             <div style="font-size:13px;color:var(--color-text-muted);margin-top:2px">
@@ -5126,21 +5123,21 @@
         ${dietPanelHtml}
 
         <div>
-          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:8px">
+          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:8px">
              7-Wektorowy Profil Bezpieczeństwa
           </div>
           ${vectorBarsHtml}
         </div>
 
         <div>
-          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:8px">
+          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:8px">
              Zidentyfikowane Kolizje i Interakcje (${poly.collisions.length})
           </div>
           ${collisionsHtml}
         </div>
 
         <div style="padding-top:10px;border-top:1px solid var(--color-border)">
-          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:6px">
+          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:6px">
              Kliniczne Studia Przypadków (Presety edukacyjne)
           </div>
           <div style="display:flex;flex-wrap:wrap">
@@ -5355,7 +5352,7 @@
       if (hasPotentA) textCol = "#5ac8fa";
       else if (hasPotentB) textCol = "#ffd60a";
 
-      return `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${anchor}" fill="${textCol}" font-size="10" font-weight="700" font-family="system-ui, -apple-system, sans-serif">${esc(t)}</text>`;
+      return `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${anchor}" fill="${textCol}" font-size="11" font-weight="700" font-family="system-ui, -apple-system, sans-serif">${esc(t)}</text>`;
     }).join("");
 
     // Scale markers along first axis
@@ -5364,7 +5361,7 @@
       const r = scale * maxR;
       const sy = cy - r;
       const label = lvl === 6 ? "6 (1μM)" : (lvl === 8 ? "8 (10nM)" : (lvl === 10 ? "10 (0.1nM)" : `${lvl}`));
-      return `<text x="${cx + 3}" y="${(sy - 2).toFixed(1)}" fill="#666" font-size="8" font-family="system-ui, -apple-system, sans-serif">${label}</text>`;
+      return `<text x="${cx + 3}" y="${(sy - 2).toFixed(1)}" fill="#8e8e93" font-size="11" font-family="system-ui, -apple-system, sans-serif">${label}</text>`;
     }).join("");
 
     // Polygon A points
@@ -5415,7 +5412,7 @@
     let legendHtml = "";
     if (affA || affB) {
       legendHtml = `
-        <g transform="translate(10, 16)" font-size="10" font-family="system-ui, -apple-system, sans-serif">
+        <g transform="translate(10, 16)" font-size="11" font-family="system-ui, -apple-system, sans-serif">
           ${affA ? `<rect x="0" y="0" width="10" height="10" rx="2" fill="#5ac8fa" /><text x="14" y="9" fill="#5ac8fa" font-weight="700">${esc(affA.compound_id.replace('-compound',''))}</text>`: ""}
           ${affB ? `<rect x="${affA ? 110 : 0}" y="0" width="10" height="10" rx="2" fill="#ffd60a" /><text x="${affA ? 124 : 14}" y="9" fill="#ffd60a" font-weight="700">${esc(affB.compound_id.replace('-compound',''))}</text>`: ""}
         </g>
@@ -5501,7 +5498,7 @@
         badgeTitle = "Częściowy agonista (Stabilizator receptorowy)";
         badgeDesc = "Wiązanie o wysokim powinowactwie z umiarkowaną aktywnością wewnętrzną (intrinsic activity), zapobiega zarówno hipo- jak i hiperaktywacji szlaku.";
       } else if (affA.kinetic_class === "psychedelic-5ht2a") {
-        badgeColor = "#af52de";
+        badgeColor = "#52a2a8";
         badgeTitle = "Agonista 5-HT2A (Psychodelik / Enaktogen)";
         badgeDesc = "Aktywacja szlaku Gq/11 i beta-arestyny w neuronach piramidowych kory V warstwy, indukcja plastyczności synaptycznej.";
       } else if (affA.kinetic_class === "gabaa-positive-allosteric") {
@@ -5667,7 +5664,7 @@
         ${meltzerHtml}
 
         <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:12px 8px;text-align:center">
-          <div style="font-size:13px;font-weight:700;color:var(--color-text-muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px">
+          <div style="font-size:13px;font-weight:700;color:var(--color-text-muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.02em">
              Wielokąt Powinowactwa Receptorowego OUN (Skala pKi 5.0 – 10.0+)
           </div>
           ${radarSvg}
@@ -5677,7 +5674,7 @@
         </div>
 
         <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px 12px;overflow-x:auto">
-          <div style="font-size:13px;font-weight:700;color:var(--color-text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">
+          <div style="font-size:13px;font-weight:700;color:var(--color-text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.02em">
              Tabela Stałych Dysocjacji (Ki) & Selektywności
           </div>
           <table style="width:100%;border-collapse:collapse;text-align:left">
@@ -6049,7 +6046,7 @@
       const x = getX(t);
       xTicks.push(`
         <line x1="${x.toFixed(1)}" y1="${padT}" x2="${x.toFixed(1)}" y2="${padT + plotH}" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
-        <text x="${x.toFixed(1)}" y="${padT + plotH + (isMini ? 12 : 16)}" text-anchor="middle" fill="#888" font-size="${isMini ? 8 : 10}" font-family="system-ui, -apple-system, sans-serif">${t}h</text>
+        <text x="${x.toFixed(1)}" y="${padT + plotH + (isMini ? 12 : 16)}" text-anchor="middle" fill="#94969c" font-size="11" font-family="system-ui, -apple-system, sans-serif">${t}h</text>
       `);
     }
 
@@ -6071,7 +6068,7 @@
         const y = getY(lvl);
         yTicks.push(`
           <line x1="${padL}" y1="${y.toFixed(1)}" x2="${padL + plotW}" y2="${y.toFixed(1)}" stroke="rgba(255,255,255,${lvl === 100 ? '0.18' : '0.06'})" stroke-width="${lvl === 100 ? '1.5' : '1'}" stroke-dasharray="${lvl === 100 ? 'none' : '2,2'}" />
-          <text x="${padL - (isMini ? 4 : 8)}" y="${(y + 3).toFixed(1)}" text-anchor="end" fill="${lvl === 100 ? '#5ac8fa' : '#888'}" font-size="${isMini ? 8 : 10}" font-family="system-ui, -apple-system, sans-serif">${lvl}%</text>
+          <text x="${padL - (isMini ? 4 : 8)}" y="${(y + 3).toFixed(1)}" text-anchor="end" fill="${lvl === 100 ? '#5ac8fa' : '#94969c'}" font-size="11" font-family="system-ui, -apple-system, sans-serif">${lvl}%</text>
         `);
       });
     } else {
@@ -6080,7 +6077,7 @@
         const y = getY(val);
         yTicks.push(`
           <line x1="${padL}" y1="${y.toFixed(1)}" x2="${padL + plotW}" y2="${y.toFixed(1)}" stroke="rgba(255,255,255,${val === 100 ? '0.18' : '0.06'})" stroke-width="${val === 100 ? '1.5' : '1'}" stroke-dasharray="${val === 100 ? 'none' : '2,2'}" />
-          <text x="${padL - (isMini ? 4 : 8)}" y="${(y + 3).toFixed(1)}" text-anchor="end" fill="${val === 100 ? '#5ac8fa' : '#888'}" font-size="${isMini ? 8 : 10}" font-family="system-ui, -apple-system, sans-serif">${val}%</text>
+          <text x="${padL - (isMini ? 4 : 8)}" y="${(y + 3).toFixed(1)}" text-anchor="end" fill="${val === 100 ? '#5ac8fa' : '#94969c'}" font-size="11" font-family="system-ui, -apple-system, sans-serif">${val}%</text>
         `);
       }
     }
@@ -6131,7 +6128,7 @@
 
         <!-- Modified curve (CYP / eGFR) -->
         ${simA.hasModification ? `
-          <path d="${pathC1Mod}" fill="none" stroke="${simA.deltaAucPct >= 0 ? '#ff3b30' : '#af52de'}" stroke-width="${isMini ? '2.0' : '2.8'}" stroke-dasharray="${simA.phenotype === 'UM' ? '3,3' : 'none'}" />
+          <path d="${pathC1Mod}" fill="none" stroke="${simA.deltaAucPct >= 0 ? '#ff3b30' : '#52a2a8'}" stroke-width="${isMini ? '2.0' : '2.8'}" stroke-dasharray="${simA.phenotype === 'UM' ? '3,3' : 'none'}" />
         `: ""}
 
         <!-- Compared Drug B curve -->
@@ -6146,9 +6143,9 @@
           <circle id="${chartId}_dotC2" cx="0" cy="0" r="3.5" fill="#ff9500" stroke="#fff" stroke-width="1" style="display:none;pointer-events:none" />
           <g id="${chartId}_tooltip" style="display:none;pointer-events:none">
             <rect id="${chartId}_tipBox" x="0" y="0" width="135" height="52" rx="4" fill="rgba(20,20,28,0.92)" stroke="var(--color-border)" stroke-width="1" />
-            <text id="${chartId}_tipTextT" x="8" y="16" fill="#fff" font-size="10" font-weight="700" font-family="system-ui, -apple-system, sans-serif">t: 0h</text>
-            <text id="${chartId}_tipTextC1" x="8" y="31" fill="#5ac8fa" font-size="10" font-family="system-ui, -apple-system, sans-serif">C1: 0%</text>
-            <text id="${chartId}_tipTextC2" x="8" y="45" fill="#ff9500" font-size="9" font-family="system-ui, -apple-system, sans-serif">C2 (tkanki): 0%</text>
+            <text id="${chartId}_tipTextT" x="8" y="16" fill="#fff" font-size="11" font-weight="700" font-family="system-ui, -apple-system, sans-serif">t: 0h</text>
+            <text id="${chartId}_tipTextC1" x="8" y="31" fill="#5ac8fa" font-size="11" font-family="system-ui, -apple-system, sans-serif">C1: 0%</text>
+            <text id="${chartId}_tipTextC2" x="8" y="45" fill="#ff9500" font-size="11" font-family="system-ui, -apple-system, sans-serif">C2 (tkanki): 0%</text>
           </g>
           <rect x="${padL}" y="${padT}" width="${plotW}" height="${plotH}" fill="transparent" style="cursor:crosshair" id="${chartId}_hitbox" />
         `: ""}
@@ -6319,7 +6316,7 @@
         </div>
 
         <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px 12px">
-          <div style="font-size:13px;font-weight:700;color:var(--color-text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">
+          <div style="font-size:13px;font-weight:700;color:var(--color-text-muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.02em">
              Zmienność Osobnicza: Farmakogenomika CYP & Wydolność Nerek
           </div>
           <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:12px;align-items:center">
@@ -6379,7 +6376,7 @@
           </div>
           <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:6px 8px;text-align:center">
             <div style="font-size:13px;color:var(--color-text-muted);text-transform:uppercase">&Delta; AUC (Ekspozycja)</div>
-            <div style="font-size:13px;font-weight:700;color:${simA.deltaAucPct >50 ? '#ff3b30' : (simA.deltaAucPct < -30 ? '#af52de' : '#34c759')}">
+            <div style="font-size:13px;font-weight:700;color:${simA.deltaAucPct >50 ? '#ff3b30' : (simA.deltaAucPct < -30 ? '#52a2a8' : '#34c759')}">
               ${simA.deltaAucPct >= 0 ? `+${simA.deltaAucPct}%`: `${simA.deltaAucPct}%`}
             </div>
           </div>
@@ -6393,13 +6390,13 @@
 
         <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:12px 8px;position:relative">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-            <span style="font-size:13px;font-weight:700;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.5px">
+            <span style="font-size:13px;font-weight:700;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.02em">
                Krzywa Dynamiki Stężeń C(t) (${pkSimState.regimen === 'steady_state' ? 'Stan Stacjonarny' : 'Pojedyncza dawka'})
             </span>
             <div style="display:flex;gap:12px;font-size:13px">
               <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:3px;background:#5ac8fa;display:inline-block"></span>C1 Centralny (Krew)</span>
               <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:2px;background:#ff9500;border-bottom:1px dashed #ff9500;display:inline-block"></span>C2 Obwodowy (Tkanki)</span>
-              ${simA.hasModification ? `<span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:3px;background:${simA.deltaAucPct >= 0 ? '#ff3b30' : '#af52de'};display:inline-block"></span>Zmodyfikowana</span>`: ''}
+              ${simA.hasModification ? `<span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:3px;background:${simA.deltaAucPct >= 0 ? '#ff3b30' : '#52a2a8'};display:inline-block"></span>Zmodyfikowana</span>`: ''}
               ${simB ? `<span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:3px;background:#ffd60a;display:inline-block"></span>Lek B (${esc(compB.n)})</span>`: ''}
             </div>
           </div>
@@ -6410,7 +6407,7 @@
         </div>
 
         <div style="padding-top:6px">
-          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:6px">
+          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:6px">
              Kliniczne Studia Przypadków PK (Presety edukacyjne)
           </div>
           <div style="display:flex;flex-wrap:wrap">
@@ -6419,7 +6416,7 @@
         </div>
 
         <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:8px 12px;overflow-x:auto">
-          <div style="font-size:13px;font-weight:700;color:var(--color-text-muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px">
+          <div style="font-size:13px;font-weight:700;color:var(--color-text-muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.02em">
              Mikrostałe Modelu 2-Kompartmentowego
           </div>
           <table style="width:100%;border-collapse:collapse;text-align:left;font-size:13px">
@@ -6745,7 +6742,7 @@
     const baseX = getX(dili.baseline_alt_fold);
     const baseY = getY(dili.baseline_bili_fold);
 
-    const markerColor = isHysLaw ? "#ff3b30" : (curAlt >= 3.0 ? "#ff9500" : (curBili >= 2.0 ? "#af52de" : "#34c759"));
+    const markerColor = isHysLaw ? "#ff3b30" : (curAlt >= 3.0 ? "#ff9500" : (curBili >= 2.0 ? "#52a2a8" : "#34c759"));
 
     // Ticks
     const xTicks = [0.5, 1, 3, 10, 30];
@@ -6756,7 +6753,7 @@
       const isCut = (v === 3);
       return `
         <line x1="${x}" y1="${padT}" x2="${x}" y2="${padT + plotH}" stroke="${isCut ? '#ff3b30' : 'var(--color-border)'}" stroke-width="${isCut ? 1.5 : 1}" stroke-dasharray="${isCut ? '4,3' : '2,2'}" opacity="${isCut ? 0.9 : 0.4}" />
-        <text x="${x}" y="${padT + plotH + (isMini ? 12 : 16)}" text-anchor="middle" font-size="${isMini ? '8' : '10'}" fill="${isCut ? '#ff3b30' : 'var(--color-text-muted)'}" font-weight="${isCut ? '700' : '400'}">${v}×</text>
+        <text x="${x}" y="${padT + plotH + (isMini ? 12 : 16)}" text-anchor="middle" font-size="11" fill="${isCut ? '#ff3b30' : 'var(--color-text-muted)'}" font-weight="${isCut ? '700' : '400'}">${v}×</text>
       `;
     }).join("");
 
@@ -6765,7 +6762,7 @@
       const isCut = (v === 2);
       return `
         <line x1="${padL}" y1="${y}" x2="${padL + plotW}" y2="${y}" stroke="${isCut ? '#ff3b30' : 'var(--color-border)'}" stroke-width="${isCut ? 1.5 : 1}" stroke-dasharray="${isCut ? '4,3' : '2,2'}" opacity="${isCut ? 0.9 : 0.4}" />
-        <text x="${padL - 6}" y="${y + 3}" text-anchor="end" font-size="${isMini ? '8' : '10'}" fill="${isCut ? '#ff3b30' : 'var(--color-text-muted)'}" font-weight="${isCut ? '700' : '400'}">${v}×</text>
+        <text x="${padL - 6}" y="${y + 3}" text-anchor="end" font-size="11" fill="${isCut ? '#ff3b30' : 'var(--color-text-muted)'}" font-weight="${isCut ? '700' : '400'}">${v}×</text>
       `;
     }).join("");
 
@@ -6777,7 +6774,7 @@
         <!-- Hepatocellular: Bottom-Right -->
         <rect x="${cutX}" y="${cutY}" width="${padL + plotW - cutX}" height="${padT + plotH - cutY}" fill="#ff9500" fill-opacity="0.08" />
         <!-- Cholestatic: Top-Left -->
-        <rect x="${padL}" y="${padT}" width="${cutX - padL}" height="${cutY - padT}" fill="#af52de" fill-opacity="0.08" />
+        <rect x="${padL}" y="${padT}" width="${cutX - padL}" height="${cutY - padT}" fill="#52a2a8" fill-opacity="0.08" />
         <!-- Normal: Bottom-Left -->
         <rect x="${padL}" y="${cutY}" width="${cutX - padL}" height="${padT + plotH - cutY}" fill="#34c759" fill-opacity="0.05" />
 
@@ -6789,17 +6786,17 @@
 
         <!-- Quadrant labels -->
         ${!isMini ? `
-          <text x="${padL + plotW - 8}" y="${padT + 14}" text-anchor="end" fill="#ff3b30" font-size="10" font-weight="700">KWADRANT HY'S LAW</text>
-          <text x="${padL + plotW - 8}" y="${padT + 26}" text-anchor="end" fill="#ff3b30" font-size="8" opacity="0.8">ALT &ge; 3&times;, Bili &ge; 2&times; (Zagrożenie życia)</text>
-          <text x="${padL + plotW - 8}" y="${padT + plotH - 8}" text-anchor="end" fill="#ff9500" font-size="9" font-weight="600">Odczyn Hepatocytarny (ALT)</text>
-          <text x="${padL + 8}" y="${padT + 14}" text-anchor="start" fill="#af52de" font-size="9" font-weight="600">Cholestaza (Bilirubina/ALP)</text>
-          <text x="${padL + 8}" y="${padT + plotH - 8}" text-anchor="start" fill="#34c759" font-size="9" font-weight="600">Norma / Tolerancja</text>
+          <text x="${padL + plotW - 8}" y="${padT + 14}" text-anchor="end" fill="#ff3b30" font-size="11" font-weight="700">KWADRANT HY'S LAW</text>
+          <text x="${padL + plotW - 8}" y="${padT + 26}" text-anchor="end" fill="#ff3b30" font-size="11" opacity="0.8">ALT &ge; 3&times;, Bili &ge; 2&times; (Zagrożenie życia)</text>
+          <text x="${padL + plotW - 8}" y="${padT + plotH - 8}" text-anchor="end" fill="#ff9500" font-size="11" font-weight="600">Odczyn Hepatocytarny (ALT)</text>
+          <text x="${padL + 8}" y="${padT + 14}" text-anchor="start" fill="#52a2a8" font-size="11" font-weight="600">Cholestaza (Bilirubina/ALP)</text>
+          <text x="${padL + 8}" y="${padT + plotH - 8}" text-anchor="start" fill="#34c759" font-size="11" font-weight="600">Norma / Tolerancja</text>
 
           <!-- Axis Titles -->
           <text x="${padL + plotW / 2}" y="${height - 6}" text-anchor="middle" font-size="11" fill="var(--color-text)" font-weight="600">Szczytowy Poziom ALT (&times; ULN)</text>
           <text transform="rotate(-90)" x="${-(padT + plotH / 2)}" y="16" text-anchor="middle" font-size="11" fill="var(--color-text)" font-weight="600">Szczytowa Bilirubina (&times; ULN)</text>
         `: `
-          <text x="${padL + plotW - 4}" y="${padT + 11}" text-anchor="end" fill="#ff3b30" font-size="8" font-weight="700">Hy's Law</text>
+          <text x="${padL + plotW - 4}" y="${padT + 12}" text-anchor="end" fill="#ff3b30" font-size="11" font-weight="700">Hy's Law</text>
         `}
 
         <!-- Trajectory track from baseline to exposed -->
@@ -6822,9 +6819,9 @@
         ${!isMini ? `
           <!-- Value badge at current point -->
           <g transform="translate(${ptX >padL + plotW - 90 ? ptX - 85 : ptX + 8}, ${ptY < padT + 30 ? ptY + 18 : ptY - 8})">
-            <rect width="80" height="24" rx="4" fill="var(--color-surface)" stroke="${markerColor}" stroke-width="1.2" opacity="0.95" />
-            <text x="40" y="11" text-anchor="middle" font-size="8.5" fill="var(--color-text)" font-weight="700">ALT: ${curAlt}&times; ULN</text>
-            <text x="40" y="20" text-anchor="middle" font-size="8" fill="var(--color-text-muted)">Bili: ${curBili}&times; ULN</text>
+            <rect width="84" height="26" rx="4" fill="var(--color-surface)" stroke="${markerColor}" stroke-width="1.2" opacity="0.95" />
+            <text x="42" y="11" text-anchor="middle" font-size="11" fill="var(--color-text)" font-weight="700">ALT: ${curAlt}&times; ULN</text>
+            <text x="42" y="22" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">Bili: ${curBili}&times; ULN</text>
           </g>
         `: ""}
       </svg>
@@ -6913,9 +6910,9 @@
       .sort((a, b) =>a.name.localeCompare(b.name));
 
     const alertsHtml = alerts.length ? alerts.map((a) =>`
-      <div style="background:var(--color-bg);border:1px solid #ff950055;border-radius:6px;padding:8px 10px;margin-bottom:6px">
+      <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:8px 10px;margin-bottom:6px">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px">
-          <b style="font-size:13px;color:#ff9500">${esc(a.name_pl)}</b>
+          <b style="font-size:13px;color:var(--color-warning)">${esc(a.name_pl)}</b>
           <span class="badge" style="font-size:13px">${esc(a.hazard_type)}</span>
         </div>
         <div style="font-size:13px;color:var(--color-text-muted);font-variant-numeric: tabular-nums;margin-bottom:4px">SMARTS: ${esc(a.smarts_pattern)}</div>
@@ -6924,7 +6921,7 @@
     `).join("") : `<div class="empty" style="padding:.8rem">Brak wykrytych kanonicznych alertów toksykoforowych w strukturze.</div>`;
 
     const pregCat = preg.fda_category || "C";
-    const pregColor = pregCat === "X" ? "#ff3b30" : (pregCat === "D" ? "#ff9500" : (pregCat === "C" ? "#ffd60a" : "#34c759"));
+    const pregColor = pregCat === "X" ? "var(--color-error)" : (pregCat === "D" ? "var(--color-warning)" : (pregCat === "C" ? "var(--color-warning)" : "var(--color-success)"));
 
     const html = `
       <div class="split-pane-content" style="padding:14px 16px;display:flex;flex-direction:column;gap:14px">
@@ -6932,10 +6929,10 @@
           <div>
             <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
               <span style="font-size:18px;font-weight:700">Toksykologia Molekularna & Bezpieczeństwo</span>
-              <span class="badge" style="font-size:13px;background:${pili.dilirank === 'Most-DILI-concern' ? '#ff3b30' : (pili.dilirank === 'Less-DILI-concern' ? '#ff9500' : '#34c759')};color:#fff">
+              <span class="badge" style="font-size:13px;background:var(--color-surface-2);color:${pili.dilirank === 'Most-DILI-concern' ? 'var(--color-error)' : (pili.dilirank === 'Less-DILI-concern' ? 'var(--color-warning)' : 'var(--color-success)')};border:1px solid var(--color-border)">
                 DILI: ${esc(pili.dilirank)}
               </span>
-              <span class="badge" style="font-size:13px;background:${pregColor};color:${pregCat === 'C' ? '#000' : '#fff'}">
+              <span class="badge" style="font-size:13px;background:var(--color-surface-2);color:${pregColor};border:1px solid var(--color-border)">
                 Ciąża: Kat. ${esc(pregCat)}
               </span>
               ${tox.is_estimated ? `<span class="badge" style="font-size:13px">QSAR Estymator</span>`: `<span class="badge" style="font-size:13px">Baza Kuratorowana</span>`}
@@ -6967,8 +6964,8 @@
             <span style="font-size:13px;color:var(--color-text-muted)">Fenotyp: <b>${esc(pili.phenotype)}</b></span>
           </div>
 
-          <div style="margin-bottom:10px;padding:8px 10px;border-radius:6px;background:${isHysLaw ? '#ff3b3022' : (curAlt >= 3.0 ? '#ff95001a' : '#34c75914')};border:1px solid ${isHysLaw ? '#ff3b30' : (curAlt >= 3.0 ? '#ff9500' : '#34c759')}">
-            <div style="font-size:13px;font-weight:700;color:${isHysLaw ? '#ff3b30' : (curAlt >= 3.0 ? '#ff9500' : '#34c759')}">
+          <div style="margin-bottom:10px;padding:8px 10px;border-radius:6px;background:var(--color-surface-2);border:1px solid var(--color-border)">
+            <div style="font-size:13px;font-weight:700;color:${isHysLaw ? 'var(--color-error)' : (curAlt >= 3.0 ? 'var(--color-warning)' : 'var(--color-success)')}">
               ${isHysLaw ? " KRYTYCZNY ALARM: PRAWO HY'S LAW SPEŁNIONE (Zagrożenie Życia)" : (curAlt >= 3.0 ? " ODCZYN HEPATOCYTARNY: Wzrost transaminaz ALT bez hiperbilirubinemii" : " ZAKRES BEZPIECZNY: Parametry czynności wątroby w normie")}
             </div>
             <div style="font-size:13px;color:var(--color-text);margin-top:2px">
@@ -7003,10 +7000,10 @@
         <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:12px">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
             <span style="font-size:13px;font-weight:700">Ciąża, Teratogenność & Laktacja (FDA PLLR / RID)</span>
-            <span class="badge" style="font-size:13px;background:${pregColor};color:${pregCat === 'C' ? '#000' : '#fff'}">Kategoria ${esc(pregCat)}</span>
+            <span class="badge" style="font-size:13px;background:var(--color-surface-2);color:${pregColor};border:1px solid var(--color-border)">Kategoria ${esc(pregCat)}</span>
           </div>
           ${preg.black_box_teratogen ? `
-            <div style="background:#ff3b3022;border:1px solid #ff3b30;border-radius:6px;padding:6px 10px;margin-bottom:8px;font-size:13px;color:#ff3b30;font-weight:700">
+            <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:6px;padding:6px 10px;margin-bottom:8px;font-size:13px;color:var(--color-error);font-weight:700">
                CZARNA SKRZYNKA: BEZWZGLĘDNY TERATOGEN (Ryzyko ciężkich wad rozwojowych lub poronienia)
             </div>
           `: ""}
@@ -7257,50 +7254,50 @@
       <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" style="background:var(--color-bg);border-radius:6px;border:1px solid var(--color-border);font-family:system-ui,-apple-system,sans-serif;user-select:none;display:block">
         <defs>
           <linearGradient id="lumenGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#800020" stop-opacity="0.35"/>
-            <stop offset="100%" stop-color="#800020" stop-opacity="0.15"/>
+            <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#1e3a5f" stop-opacity="0.15"/>
           </linearGradient>
           <linearGradient id="endoGrad" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.75"/>
             <stop offset="100%" stop-color="#1e3a5f" stop-opacity="0.90"/>
           </linearGradient>
           <linearGradient id="brainGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="${isOverload ? '#ff3b3022' : '#0a192f'}" stop-opacity="0.8"/>
-            <stop offset="100%" stop-color="${isOverload ? '#ff3b3044' : '#050c18'}" stop-opacity="0.95"/>
+            <stop offset="0%" stop-color="#0a192f" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#050c18" stop-opacity="0.95"/>
           </linearGradient>
           <marker id="arrowUp" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 10 L 5 0 L 10 10 z" fill="#af52de"/>
+            <path d="M 0 10 L 5 0 L 10 10 z" fill="#5899e2"/>
           </marker>
           <marker id="arrowDown" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 0 L 10 0 L 5 10 z" fill="#34c759"/>
+            <path d="M 0 0 L 10 0 L 5 10 z" fill="#44a282"/>
           </marker>
           <marker id="arrowOrange" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M 0 0 L 10 0 L 5 10 z" fill="#ff9500"/>
+            <path d="M 0 0 L 10 0 L 5 10 z" fill="#d9a441"/>
           </marker>
         </defs>
 
         <!-- Luminal (Blood) Layer -->
         <rect x="0" y="0" width="${width}" height="${lumenH}" fill="url(#lumenGrad)"/>
-        <text x="12" y="20" fill="#ff453a" font-size="11" font-weight="700">ŚWIATŁO KAPILARY (KREW / LUMEN)</text>
-        <text x="12" y="36" fill="var(--color-text-muted)" font-size="9.5">Wolne stężenie osoczowe Cu,plasma · pH 7.40</text>
+        <text x="12" y="20" fill="#5899e2" font-size="11" font-weight="700">ŚWIATŁO KAPILARY (KREW / LUMEN)</text>
+        <text x="12" y="36" fill="var(--color-text-muted)" font-size="11">Wolne stężenie osoczowe Cu,plasma · pH 7.40</text>
         ${inhibitorRatio >0 ? `
-          <rect x="${width - 190}" y="8" width="180" height="24" rx="4" fill="#ff950022" stroke="#ff9500" stroke-width="1"/>
-          <text x="${width - 180}" y="24" fill="#ff9500" font-size="10" font-weight="700">Inhibitor P-gp: ${inhibitorRatio.toFixed(1)}× Ki</text>
+          <rect x="${width - 190}" y="8" width="180" height="24" rx="4" fill="var(--color-surface-2)" stroke="var(--color-border)" stroke-width="1"/>
+          <text x="${width - 180}" y="24" fill="#d9a441" font-size="11" font-weight="700">Inhibitor P-gp: ${inhibitorRatio.toFixed(1)}× Ki</text>
         `: ""}
 
         <!-- Blood Particles -->
         ${plasmaParticles.map(p =>`
-          <circle cx="${p.x}" cy="${p.y}" r="4" fill="#5ac8fa" opacity="0.85"/>
-          <circle cx="${p.x}" cy="${p.y}" r="7" fill="#5ac8fa" opacity="0.2"/>
+          <circle cx="${p.x}" cy="${p.y}" r="4" fill="#5899e2" opacity="0.85"/>
+          <circle cx="${p.x}" cy="${p.y}" r="7" fill="#5899e2" opacity="0.2"/>
         `).join("")}
 
         <!-- Endothelial Layer (BBB Barrier) -->
         <rect x="0" y="${endoY}" width="${width}" height="${endoH}" fill="url(#endoGrad)"/>
-        <line x1="0" y1="${endoY}" x2="${width}" y2="${endoY}" stroke="#5ac8fa" stroke-dasharray="3 3" opacity="0.6"/>
-        <line x1="0" y1="${endoY + endoH}" x2="${width}" y2="${endoY + endoH}" stroke="#34c759" stroke-dasharray="3 3" opacity="0.6"/>
+        <line x1="0" y1="${endoY}" x2="${width}" y2="${endoY}" stroke="#5899e2" stroke-dasharray="3 3" opacity="0.6"/>
+        <line x1="0" y1="${endoY + endoH}" x2="${width}" y2="${endoY + endoH}" stroke="#44a282" stroke-dasharray="3 3" opacity="0.6"/>
 
         <!-- Tight Junctions (Claudin-5 / Occludin) -->
-        <g stroke="#ffcc00" stroke-width="2.5" opacity="0.9">
+        <g stroke="#d9a441" stroke-width="2.5" opacity="0.9">
           <line x1="80" y1="${endoY}" x2="80" y2="${endoY + endoH}"/>
           <line x1="80" y1="${endoY + 30}" x2="85" y2="${endoY + 35}"/>
           <line x1="80" y1="${endoY + 60}" x2="75" y2="${endoY + 65}"/>
@@ -7311,60 +7308,60 @@
           <line x1="430" y1="${endoY + 60}" x2="425" y2="${endoY + 65}"/>
           <line x1="430" y1="${endoY + 85}" x2="435" y2="${endoY + 90}"/>
         </g>
-        <text x="86" y="${endoY + 18}" fill="#ffd60a" font-size="9" font-weight="600">Claudin-5</text>
+        <text x="86" y="${endoY + 18}" fill="#d9a441" font-size="11" font-weight="600">Claudin-5</text>
 
         <!-- P-gp Efflux Pumps (ABCB1) -->
         <g transform="translate(${pgpPumpX1}, ${endoY + 15})">
-          <rect x="-16" y="0" width="32" height="70" rx="6" fill="${isInhibited ? '#5856d644' : '#af52de'}" stroke="${isInhibited ? '#ff3b30' : '#d18aff'}" stroke-width="2"/>
-          <text x="0" y="24" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">P-gp</text>
-          <text x="0" y="36" fill="#fff" font-size="7.5" text-anchor="middle">ABCB1</text>
+          <rect x="-18" y="0" width="36" height="70" rx="6" fill="#1e3a5f" stroke="#5899e2" stroke-width="2"/>
+          <text x="0" y="24" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">P-gp</text>
+          <text x="0" y="38" fill="#fff" font-size="11" text-anchor="middle">ABCB1</text>
           ${isPgpSub ? `
-            <line x1="0" y1="60" x2="0" y2="-12" stroke="#af52de" stroke-width="2.5" marker-end="url(#arrowUp)"/>
+            <line x1="0" y1="60" x2="0" y2="-12" stroke="#5899e2" stroke-width="2.5" marker-end="url(#arrowUp)"/>
           `: ""}
           ${isInhibited ? `
-            <circle cx="0" cy="48" r="11" fill="#ff3b30" opacity="0.85"/>
-            <text x="0" y="52" fill="#fff" font-size="11" font-weight="900" text-anchor="middle">×</text>
-            <text x="0" y="86" fill="#ff453a" font-size="8" font-weight="700" text-anchor="middle">BLOKADA</text>
+            <circle cx="0" cy="50" r="10" fill="#d9a441" opacity="0.85"/>
+            <text x="0" y="54" fill="#131217" font-size="11" font-weight="900" text-anchor="middle">×</text>
+            <text x="0" y="86" fill="#d9a441" font-size="11" font-weight="700" text-anchor="middle">BLOKADA</text>
           `: `
-            <text x="0" y="86" fill="#d18aff" font-size="8" font-weight="600" text-anchor="middle">Efluks</text>
+            <text x="0" y="86" fill="#5899e2" font-size="11" font-weight="600" text-anchor="middle">Efluks</text>
           `}
         </g>
 
         <!-- BCRP Pump (ABCG2) -->
         <g transform="translate(${pgpPumpX2}, ${endoY + 15})">
-          <rect x="-16" y="0" width="32" height="70" rx="6" fill="${isInhibited ? '#5856d644' : '#af52de'}" stroke="${isInhibited ? '#ff3b30' : '#d18aff'}" stroke-width="2"/>
-          <text x="0" y="24" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">BCRP</text>
-          <text x="0" y="36" fill="#fff" font-size="7.5" text-anchor="middle">ABCG2</text>
+          <rect x="-18" y="0" width="36" height="70" rx="6" fill="#1e3a5f" stroke="#5899e2" stroke-width="2"/>
+          <text x="0" y="24" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">BCRP</text>
+          <text x="0" y="38" fill="#fff" font-size="11" text-anchor="middle">ABCG2</text>
           ${isInhibited ? `
-            <circle cx="0" cy="48" r="11" fill="#ff3b30" opacity="0.85"/>
-            <text x="0" y="52" fill="#fff" font-size="11" font-weight="900" text-anchor="middle">×</text>
+            <circle cx="0" cy="50" r="10" fill="#d9a441" opacity="0.85"/>
+            <text x="0" y="54" fill="#131217" font-size="11" font-weight="900" text-anchor="middle">×</text>
           `: ""}
         </g>
 
         <!-- LAT1 Influx Carrier -->
         <g transform="translate(${lat1X}, ${endoY + 15})">
-          <rect x="-16" y="0" width="32" height="70" rx="6" fill="${lat1Role === 'substrate' ? '#34c759' : '#1c4a2a'}" stroke="#30d158" stroke-width="2"/>
-          <text x="0" y="24" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">LAT1</text>
-          <text x="0" y="36" fill="#fff" font-size="7.5" text-anchor="middle">SLC7A5</text>
+          <rect x="-18" y="0" width="36" height="70" rx="6" fill="#1b6b50" stroke="#44a282" stroke-width="2"/>
+          <text x="0" y="24" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">LAT1</text>
+          <text x="0" y="38" fill="#fff" font-size="11" text-anchor="middle">SLC7A5</text>
           ${lat1Role === 'substrate' ? `
-            <line x1="0" y1="5" x2="0" y2="80" stroke="#34c759" stroke-width="2.5" marker-end="url(#arrowDown)"/>
-            <text x="0" y="92" fill="#30d158" font-size="8" font-weight="700" text-anchor="middle">Influks</text>
+            <line x1="0" y1="5" x2="0" y2="80" stroke="#44a282" stroke-width="2.5" marker-end="url(#arrowDown)"/>
+            <text x="0" y="92" fill="#44a282" font-size="11" font-weight="700" text-anchor="middle">Influks</text>
           `: `
-            <text x="0" y="92" fill="var(--color-text-muted)" font-size="8" text-anchor="middle">Brak</text>
+            <text x="0" y="92" fill="var(--color-text-muted)" font-size="11" text-anchor="middle">Brak</text>
           `}
         </g>
 
         <!-- Passive Transcellular Route -->
         <g transform="translate(${passiveX}, ${endoY + 18})">
-          <line x1="0" y1="0" x2="0" y2="70" stroke="#ff9500" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrowOrange)"/>
-          <text x="0" y="36" fill="#ff9500" font-size="8.5" font-weight="600" text-anchor="start" dx="8">Bierna dyfuzja</text>
+          <line x1="0" y1="0" x2="0" y2="70" stroke="#d9a441" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrowOrange)"/>
+          <text x="0" y="36" fill="#d9a441" font-size="11" font-weight="600" text-anchor="start" dx="8">Bierna dyfuzja</text>
         </g>
 
         <!-- Brain Parenchyma (Abluminal) -->
         <rect x="0" y="${brainY}" width="${width}" height="${brainH}" fill="url(#brainGrad)"/>
 
         <!-- Astrocyte End-feet Pads -->
-        <g fill="#30d158" opacity="0.35">
+        <g fill="#44a282" opacity="0.35">
           <path d="M 10 ${brainY} Q 30 ${brainY+16} 50 ${brainY} Z"/>
           <path d="M 60 ${brainY} Q 95 ${brainY+20} 130 ${brainY} Z"/>
           <path d="M 140 ${brainY} Q 185 ${brainY+18} 230 ${brainY} Z"/>
@@ -7372,25 +7369,25 @@
           <path d="M 340 ${brainY} Q 385 ${brainY+16} 430 ${brainY} Z"/>
           <path d="M 440 ${brainY} Q 495 ${brainY+22} 550 ${brainY} Z"/>
         </g>
-        <text x="12" y="${brainY + 18}" fill="#30d158" font-size="10" font-weight="700">PARENCHYMA MÓZGU (TKANKA OUN)</text>
-        <text x="12" y="${brainY + 32}" fill="var(--color-text-muted)" font-size="8.5">Stopki astrocytarne (Glia limitans) · Cu,brain</text>
+        <text x="12" y="${brainY + 18}" fill="#44a282" font-size="11" font-weight="700">PARENCHYMA MÓZGU (TKANKA OUN)</text>
+        <text x="12" y="${brainY + 34}" fill="var(--color-text-muted)" font-size="11">Stopki astrocytarne (Glia limitans) · Cu,brain</text>
 
         <!-- Brain Drug Particles -->
         ${brainParticles.map(p =>`
-          <circle cx="${p.x}" cy="${p.y}" r="${isOverload ? 5 : 3.5}" fill="${isOverload ? '#ff3b30' : '#5ac8fa'}" opacity="0.9"/>
-          <circle cx="${p.x}" cy="${p.y}" r="${isOverload ? 9 : 6}" fill="${isOverload ? '#ff3b30' : '#5ac8fa'}" opacity="0.25"/>
+          <circle cx="${p.x}" cy="${p.y}" r="${isOverload ? 5 : 3.5}" fill="${isOverload ? '#d9a441' : '#5899e2'}" opacity="0.9"/>
+          <circle cx="${p.x}" cy="${p.y}" r="${isOverload ? 9 : 6}" fill="${isOverload ? '#d9a441' : '#5899e2'}" opacity="0.25"/>
         `).join("")}
 
         <!-- Kp,uu Gauge Overlay in Brain -->
         <g transform="translate(${width - 225}, ${brainY + 12})">
-          <rect x="0" y="0" width="215" height="60" rx="6" fill="var(--color-surface)" stroke="${isOverload ? '#ff3b30' : (currentKp >0.3 ? '#34c759' : '#ffd60a')}" stroke-width="1.5"/>
-          <text x="10" y="16" fill="var(--color-text-muted)" font-size="9">Wolna Frakcja Mózgowa (Kp,uu):</text>
-          <text x="10" y="38" fill="${isOverload ? '#ff3b30' : (currentKp >0.3 ? '#34c759' : '#ffd60a')}" font-size="18" font-weight="800">
+          <rect x="0" y="0" width="215" height="60" rx="6" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1"/>
+          <text x="10" y="16" fill="var(--color-text-muted)" font-size="11">Wolna Frakcja Mózgowa (Kp,uu):</text>
+          <text x="10" y="38" fill="${isOverload ? '#d9a441' : (currentKp >0.3 ? '#44a282' : '#5899e2')}" font-size="18" font-weight="800">
             ${currentKp.toFixed(2)}
-            <tspan font-size="10" font-weight="600" fill="var(--color-text)">(${(currentKp * 100).toFixed(0)}% Cu,pl)</tspan>
+            <tspan font-size="11" font-weight="600" fill="var(--color-text)">(${(currentKp * 100).toFixed(0)}% Cu,pl)</tspan>
           </text>
-          <text x="10" y="52" fill="${isOverload ? '#ff3b30' : 'var(--color-text-muted)'}" font-size="8" font-weight="${isOverload ? '700' : '500'}">
-            ${isOverload ? " Przełamanie efluksu (Toksyczność OUN)" : (currentKp >0.3 ? " Dobra penetracja terapeutyczna" : " Skuteczna ochrona barierowa")}
+          <text x="10" y="53" fill="${isOverload ? '#d9a441' : 'var(--color-text-muted)'}" font-size="11" font-weight="${isOverload ? '700' : '500'}">
+            ${isOverload ? "Przełamanie efluksu (Toksyczność OUN)" : (currentKp >0.3 ? "Dobra penetracja terapeutyczna" : "Skuteczna ochrona barierowa")}
           </text>
         </g>
       </svg>
@@ -7434,7 +7431,7 @@
       const ly = cy + (r + 14) * Math.sin(a);
       return `
         <line x1="${cx}" y1="${cy}" x2="${x2}" y2="${y2}" stroke="var(--color-border)" stroke-width="0.8"/>
-        <text x="${lx}" y="${ly}" fill="var(--color-text)" font-size="8" font-weight="700" text-anchor="middle" dominant-baseline="central">${ax.label}</text>
+        <text x="${lx}" y="${ly}" fill="var(--color-text)" font-size="11" font-weight="700" text-anchor="middle" dominant-baseline="central">${ax.label}</text>
       `;
     }).join("");
 
@@ -7445,21 +7442,21 @@
     }).join("");
 
     const score = cns.score;
-    const scoreColor = score >= 5.0 ? "#34c759" : (score >= 4.0 ? "#ffd60a" : "#ff3b30");
+    const scoreColor = score >= 5.0 ? "#44a282" : (score >= 4.0 ? "#d9a441" : "#e5566f");
 
     return `
       <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" style="background:var(--color-bg);border-radius:6px;border:1px solid var(--color-border);font-family:system-ui,-apple-system,sans-serif">
-        <text x="10" y="16" fill="var(--color-text-muted)" font-size="9" font-weight="700">PFIZER CNS MPO</text>
-        <text x="${width - 10}" y="16" fill="${scoreColor}" font-size="10.5" font-weight="800" text-anchor="end">Score: ${score} / 6.0</text>
+        <text x="10" y="16" fill="var(--color-text-muted)" font-size="11" font-weight="700">PFIZER CNS MPO</text>
+        <text x="${width - 10}" y="16" fill="${scoreColor}" font-size="11" font-weight="800" text-anchor="end">Score: ${score} / 6.0</text>
         ${ringPolygons}
         ${spokes}
-        <polygon points="${dataPoints}" fill="#5ac8fa" fill-opacity="0.35" stroke="#5ac8fa" stroke-width="2"/>
+        <polygon points="${dataPoints}" fill="#5899e2" fill-opacity="0.35" stroke="#5899e2" stroke-width="2"/>
         ${axes.map((ax, i) =>{
           const a = i * angleStep - Math.PI / 2;
           const dist = r * Math.max(0.05, ax.val);
           const px = cx + dist * Math.cos(a);
           const py = cy + dist * Math.sin(a);
-          return `<circle cx="${px}" cy="${py}" r="3" fill="#5ac8fa"/>`;
+          return `<circle cx="${px}" cy="${py}" r="3" fill="#5899e2"/>`;
         }).join("")}
       </svg>
     `;
@@ -7473,10 +7470,10 @@
       const isSub = role === "substrate";
       const isInh = role === "inhibitor";
       const isInd = role === "inducer";
-      const bg = isSub ? "#af52de" : (isInh ? "#ff3b30" : (isInd ? "#5ac8fa" : "var(--color-border)"));
+      const bg = isSub ? "#5899e2" : (isInh ? "#e5566f" : (isInd ? "#52a2a8" : "var(--color-text-muted)"));
       const label = isSub ? "Substrat" : (isInh ? "Inhibitor" : (isInd ? "Induktor" : "-"));
       return `
-        <div style="background:${bg}22;border:1px solid ${bg};border-radius:4px;padding:2px 5px;display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;font-size:13px">
+        <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:6px;padding:3px 6px;display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;font-size:13px">
           <b style="color:var(--color-text)">${esc(name)}</b>
           <span style="color:${bg};font-weight:700">${label}</span>
         </div>
@@ -7486,25 +7483,25 @@
     return `
       <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:6px;font-size:13px">
         <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:6px">
-          <div style="font-weight:700;margin-bottom:4px;color:#af52de;font-size:9.5px">Mózg (BBB)</div>
+          <div style="font-weight:700;margin-bottom:4px;color:#5899e2;font-size:12px">Mózg (BBB)</div>
           ${badge(t.pgp && t.pgp.role, "P-gp (ABCB1)")}
           ${badge(t.bcrp && t.bcrp.role, "BCRP (ABCG2)")}
           ${badge(t.lat1 && t.lat1.role, "LAT1 (SLC7A5)")}
         </div>
         <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:6px">
-          <div style="font-weight:700;margin-bottom:4px;color:#ff9500;font-size:9.5px">Wątroba (Hepato)</div>
+          <div style="font-weight:700;margin-bottom:4px;color:#d9a441;font-size:12px">Wątroba (Hepato)</div>
           ${badge(t.oatp1b1 && t.oatp1b1.role, "OATP1B1 (SLC21)")}
           ${badge(t.bsep && t.bsep.role, "BSEP (ABCB11)")}
           ${badge(t.pgp && t.pgp.role, "P-gp kanalikowy")}
         </div>
         <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:6px">
-          <div style="font-weight:700;margin-bottom:4px;color:#34c759;font-size:9.5px">Nerki (Cewki)</div>
+          <div style="font-weight:700;margin-bottom:4px;color:#44a282;font-size:12px">Nerki (Cewki)</div>
           ${badge(t.oat1_3 && t.oat1_3.role, "OAT1 / OAT3")}
           ${badge(t.oct2 && t.oct2.role, "OCT2 (SLC22A2)")}
           ${badge(t.pgp && t.pgp.role, "MDR1 (Mocz)")}
         </div>
         <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:6px">
-          <div style="font-weight:700;margin-bottom:4px;color:#5ac8fa;font-size:9.5px">Jelita (Wchłanianie)</div>
+          <div style="font-weight:700;margin-bottom:4px;color:#52a2a8;font-size:12px">Jelita (Wchłanianie)</div>
           ${badge(t.pept1 && t.pept1.role, "PEPT1 (SLC15A1)")}
           ${badge(t.pgp && t.pgp.role, "P-gp enterocyt")}
           ${badge(t.bcrp && t.bcrp.role, "BCRP jelitowy")}
@@ -7547,17 +7544,17 @@
 
     const scenarios = prof.clinical_scenarios || [];
     const scenariosHtml = scenarios.length ? scenarios.map((s) =>`
-      <div style="background:var(--color-bg);border:1px solid #ff3b3055;border-radius:6px;padding:8px 10px;margin-bottom:6px">
+      <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:8px 10px;margin-bottom:6px">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px">
-          <b style="font-size:13px;color:#ff3b30">${esc(s.transporter)} · Interakcja z ${esc(s.interacting_drug)}</b>
-          <span class="badge" style="font-size:13px;background:#ff3b3022;color:#ff3b30">${esc(s.severity)}</span>
+          <b style="font-size:13px;color:var(--color-error)">${esc(s.transporter)} · Interakcja z ${esc(s.interacting_drug)}</b>
+          <span class="badge" style="font-size:13px;background:var(--color-surface-2);color:var(--color-error)">${esc(s.severity)}</span>
         </div>
         <div style="font-size:13px;color:var(--color-text);line-height:1.4">${esc(s.mechanism_pl)}</div>
       </div>
     `).join("") : `<div class="empty" style="padding:.6rem">Brak specyficznych skojarzeń krytycznych w bazie transporterowej dla tej cząsteczki.</div>`;
 
     const logBb = cns.logbb_clark != null ? cns.logbb_clark : -0.5;
-    const logBbBadgeColor = logBb >0.3 ? "#34c759" : (logBb < -1.0 ? "#ff3b30" : "#ffd60a");
+    const logBbBadgeColor = logBb >0.3 ? "var(--color-success)" : (logBb < -1.0 ? "var(--color-error)" : "var(--color-warning)");
 
     const html = `
       <div class="split-pane-content" style="padding:14px 16px;display:flex;flex-direction:column;gap:14px">
@@ -7565,13 +7562,13 @@
           <div>
             <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
               <span style="font-size:18px;font-weight:700">Transportery Błonowe & Bariera Krew-Mózg (BBB)</span>
-              <span class="badge" style="font-size:13px;background:${logBbBadgeColor};color:${logBb < -1.0 || logBb >0.3 ? '#fff' : '#000'}">
+              <span class="badge" style="font-size:13px;background:var(--color-surface-2);color:${logBbBadgeColor};border:1px solid var(--color-border)">
                 Clark logBB: ${logBb}
               </span>
-              <span class="badge" style="font-size:13px;background:#5ac8fa;color:#000">
+              <span class="badge" style="font-size:13px;background:var(--color-surface-2);color:var(--color-primary);border:1px solid var(--color-border)">
                 CNS MPO: ${cns.cns_mpo_score || '-'} / 6.0
               </span>
-              <span class="badge" style="font-size:13px;background:#af52de;color:#fff">
+              <span class="badge" style="font-size:13px;background:var(--color-surface-2);color:#52a2a8;border:1px solid var(--color-border)">
                 Kp,uu: ${currentKp}
               </span>
               ${prof.is_estimated ? `<span class="badge" style="font-size:13px">QSAR Estymator</span>`: `<span class="badge" style="font-size:13px">Baza Kuratorowana</span>`}
@@ -7621,7 +7618,7 @@
           <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px">
             <div style="font-size:13px;font-weight:700;margin-bottom:6px">Profil CNS MPO (Pfizer)</div>
             ${radarSvg}
-            <div style="font-size:9.5px;color:var(--color-text-muted);margin-top:6px;line-height:1.3">
+            <div style="font-size:12px;color:var(--color-text-muted);margin-top:6px;line-height:1.3">
               Maks. 6 pkt. Progi: MW &le;360, CLogP &le;3, CLogD &le;2, TPSA 40-90, HBD &le;0.5, pKa &le;8.
             </div>
           </div>
@@ -7790,7 +7787,7 @@
       const anchor = Math.abs(Math.cos(angle)) < 0.2 ? "middle" : (Math.cos(angle) >0 ? "start" : "end");
       return `
         <line x1="${cx}" y1="${cy}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="var(--color-border)" stroke-width="0.8"/>
-        <text x="${lx.toFixed(1)}" y="${(ly + 3).toFixed(1)}" fill="var(--color-text-muted)" font-size="8.5" font-weight="600" text-anchor="${anchor}">${ax.label}</text>
+        <text x="${lx.toFixed(1)}" y="${(ly + 3).toFixed(1)}" fill="var(--color-text-muted)" font-size="11" font-weight="600" text-anchor="${anchor}">${ax.label}</text>
       `;
     }).join("");
 
@@ -7966,11 +7963,11 @@
     if (!el) return;
     if (chemspaceState.colorMode === "scaffold") {
       el.innerHTML = SCAFFOLD_DEFINITIONS.slice(0, 16).map((s) =>`
-        <button class="tag ${chemspaceState.activeScaffoldFilter === s.id ? 'active' : ''}" data-filter-scaff="${esc(s.id)}" style="background:none;border:1px solid ${s.color_hex};color:var(--color-text);cursor:pointer;font-size:9.5px;padding:1px 6px">
+        <button class="tag ${chemspaceState.activeScaffoldFilter === s.id ? 'active' : ''}" data-filter-scaff="${esc(s.id)}" style="background:none;border:1px solid ${s.color_hex};color:var(--color-text);cursor:pointer;font-size:12px;padding:1px 6px">
           <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${s.color_hex};margin-right:4px"></span>
           ${esc(s.name.split("")[0])}
         </button>
-      `).join("") + (chemspaceState.activeScaffoldFilter ? `<button class="tag" id="chemspaceClearFilter" style="cursor:pointer;font-size:9.5px;color:#ff3b30">× Wyczyść filtr</button>`: '');
+      `).join("") + (chemspaceState.activeScaffoldFilter ? `<button class="tag" id="chemspaceClearFilter" style="cursor:pointer;font-size:12px;color:#ff3b30">× Wyczyść filtr</button>`: '');
       el.querySelectorAll("[data-filter-scaff]").forEach((btn) =>{
         btn.onclick = () =>{
           const sid = btn.dataset.filterScaff;
@@ -7987,23 +7984,23 @@
       };
     } else if (chemspaceState.colorMode === "cluster") {
       el.innerHTML = G.clusters.map((cl, i) =>`
-        <span style="font-size:9.5px;color:var(--color-text-muted);display:flex;align-items:center;gap:4px">
+        <span style="font-size:12px;color:var(--color-text-muted);display:flex;align-items:center;gap:4px">
           <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${CL_COLORS[i]}"></span>
           ${esc(CL_PL[cl.name] || cl.name)}
         </span>
       `).join("");
     } else {
       el.innerHTML = `
-        <span style="font-size:9.5px;display:flex;align-items:center;gap:4px;color:#e5566f">
+        <span style="font-size:12px;display:flex;align-items:center;gap:4px;color:#e5566f">
           <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#e5566f"></span>hERG (QTc TdP)
         </span>
-        <span style="font-size:9.5px;display:flex;align-items:center;gap:4px;color:#d9a441">
+        <span style="font-size:12px;display:flex;align-items:center;gap:4px;color:#d9a441">
           <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#d9a441"></span>5-HT2B (Zastawki)
         </span>
-        <span style="font-size:9.5px;display:flex;align-items:center;gap:4px;color:#5899e2">
+        <span style="font-size:12px;display:flex;align-items:center;gap:4px;color:#5899e2">
           <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#5899e2"></span>Inne Cele Off-Target
         </span>
-        <span style="font-size:9.5px;display:flex;align-items:center;gap:4px;color:#64748b">
+        <span style="font-size:12px;display:flex;align-items:center;gap:4px;color:#94969c">
           <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#334155"></span>Brak Alerty Bezpieczeństwa
         </span>
       `;
@@ -8030,12 +8027,12 @@
         <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 8px;background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px">
           <div>
             <div style="font-weight:700;font-size:13px;color:var(--color-text)">${esc(cand.n)}</div>
-            <div style="font-size:9.5px;color:var(--color-text-muted)">
-              ${isSameScaff ? '<span class="badge" style="font-size:8.5px;background:#5899e222;color:#5899e2">To samo rusztowanie</span>' : '<span style="font-size:8.5px">Inne rusztowanie</span>'}
+            <div style="font-size:12px;color:var(--color-text-muted)">
+              ${isSameScaff ? '<span class="badge" style="font-size:12px;background:#5899e222;color:#5899e2">To samo rusztowanie</span>' : '<span style="font-size:12px">Inne rusztowanie</span>'}
             </div>
           </div>
           <div style="display:flex;align-items:center;gap:6px">
-            <b style="font-size:11.5px;color:#38bdf8">${score.toFixed(1)}%</b>
+            <b style="font-size:12px;color:#38bdf8">${score.toFixed(1)}%</b>
             <button class="btn btn-sm" data-select-chemspace-analog="${esc(cand.id)}" style="font-size:13px;padding:2px 6px">Wybierz</button>
           </div>
         </div>
@@ -8048,16 +8045,16 @@
       const badgeCol = isHerg ? "#e5566f" : (is5ht2b ? "#d9a441" : "#5899e2");
       const flagText = isHerg ? " Kardiotoksyczność (hERG / QTc)" : (is5ht2b ? " Wadotwórczość Zastawek (5-HT2B)" : "Interakcja Off-Target");
       return `
-        <div style="background:var(--color-bg);border:1px solid ${badgeCol}55;border-radius:6px;padding:8px 10px">
+        <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:8px 10px">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
             <b style="font-size:13px;color:${badgeCol}">${esc(gene)} · ${flagText}</b>
-            <span class="badge" style="font-size:9.5px;background:${badgeCol}22;color:${badgeCol}">${score.toFixed(0)}% ufności</span>
+            <span class="badge" style="font-size:12px;background:var(--color-surface-2);color:${badgeCol}">${score.toFixed(0)}% ufności</span>
           </div>
           <div style="font-size:13px;color:var(--color-text-muted);margin-bottom:4px">
             Przeniesienie adnotacji fenotypowej na podstawie podobieństwa sąsiadów w przestrzeni chemicznej.
           </div>
           ${pdb ? `
-            <a href="sidecar://biomolecular-structure-viewer" class="btn btn-sm" style="display:inline-flex;align-items:center;gap:4px;font-size:9.5px;padding:2px 8px;text-decoration:none;background:var(--color-surface);border:1px solid var(--color-border);color:var(--color-text)">
+            <a href="sidecar://biomolecular-structure-viewer" class="btn btn-sm" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:2px 8px;text-decoration:none;background:var(--color-surface);border:1px solid var(--color-border);color:var(--color-text)">
                Zbadaj kieszeń 3D PDB: <b>${esc(pdb)}</b>↗
             </a>
           `: ''}
@@ -8075,16 +8072,16 @@
       </div>
 
       <!-- Rusztowanie Bemis-Murcko -->
-      <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:8px;padding:10px">
+      <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:10px">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
           <span style="font-size:13px;text-transform:uppercase;color:var(--color-text-muted);font-weight:700">Rusztowanie Bemis-Murcko</span>
-          <span class="badge" style="background:${scaffDef.color_hex || '#94a3b8'}22;color:${scaffDef.color_hex || '#94a3b8'};font-size:13px">${esc(scaffDef.family || "Inne")}</span>
+          <span class="badge" style="background:var(--color-surface-2);color:var(--color-text);border:1px solid var(--color-border);font-size:13px">${esc(scaffDef.family || "Inne")}</span>
         </div>
-        <div style="font-size:12.5px;font-weight:700;color:var(--color-text);margin-bottom:3px">${esc(scaffDef.name || "Szkielet alifatyczny")}</div>
+        <div style="font-size:13px;font-weight:700;color:var(--color-text);margin-bottom:3px">${esc(scaffDef.name || "Szkielet alifatyczny")}</div>
         <div style="font-size:13px;color:var(--color-text-muted);line-height:1.4">${esc(scaffDef.substructure_description || "")}</div>
         ${scaffDef.pdb_target_id ? `
           <div style="margin-top:6px">
-            <a href="sidecar://biomolecular-structure-viewer" style="font-size:9.5px;color:#38bdf8;text-decoration:none">
+            <a href="sidecar://biomolecular-structure-viewer" style="font-size:12px;color:#38bdf8;text-decoration:none">
                Kompleks PDB farmakoforu: <b>${esc(scaffDef.pdb_target_id)}</b>↗
             </a>
           </div>
@@ -8093,7 +8090,7 @@
 
       <!-- Radar Bioizosteryczny -->
       ${topAnalogComp ? `
-        <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:8px;padding:10px;display:flex;flex-direction:column;align-items:center">
+        <div style="background:var(--color-bg);border:1px solid var(--color-border);border-radius:6px;padding:10px;display:flex;flex-direction:column;align-items:center">
           <div style="width:100%;display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
             <span style="font-size:13px;text-transform:uppercase;color:var(--color-text-muted);font-weight:700">Radar Bioizosterii (vs ${esc(topAnalogComp.n)})</span>
             <span style="font-size:13px;color:#38bdf8;font-weight:700">${cs.an[0][1].toFixed(1)}%</span>
@@ -8247,7 +8244,7 @@
             tooltip.style.top = `${Math.min(rect.height - 80, my + 12)}px`;
             tooltip.innerHTML = `
               <div style="font-weight:700;color:#fff">${esc(closest.n)}</div>
-              <div style="color:#94a3b8;font-size:9.5px">${esc(sDef.name || "Inne")}</div>
+              <div style="color:#94a3b8;font-size:12px">${esc(sDef.name || "Inne")}</div>
               <div style="color:#38bdf8;font-size:13px;margin-top:2px">Kliknij, aby otworzyć profil</div>
             `;
           }
@@ -8566,7 +8563,7 @@
     const gaugeHtml = `
       <div class="risk-gauge-box">
         <div style="flex:1">
-          <div style="font-size:13px;text-transform:uppercase;letter-spacing:.8px;color:var(--color-text-muted);font-weight:700">Kliniczny Indeks Polipragmazji</div>
+          <div style="font-size:13px;text-transform:uppercase;letter-spacing:.02em;color:var(--color-text-muted);font-weight:700">Kliniczny Indeks Polipragmazji</div>
           <div style="font-size:15px;font-weight:800;color:var(--color-text);margin-top:2px">Stack Risk Score: ${totalScore} / 100</div>
           <div style="font-size:13px;font-weight:700;color:${color};margin-top:2px">${esc(label)}</div>
           <div style="font-size:13px;color:var(--color-text-muted);margin-top:4px;line-height:1.4">
@@ -10026,7 +10023,7 @@
         chemHtml = `
           <div class="chem-card">
             <div class="chem-card-preview" data-zoom-chem="${c.i}" title="Kliknij, aby powiększyć wzór strukturalny 2D">
-              <img src="${struct.url}" alt="Wzór 2D ${esc(c.n)}" loading="lazy">
+              <img src="${struct.url}" alt="Wzór 2D ${esc(c.n)}" loading="lazy" onerror="this.closest('.chem-card').style.display='none'">
             </div>
             <div class="chem-meta">
               <span><b>${esc(c.mf || (c.pr && c.pr[0] ? c.pr[0] + " g/mol" : "Struktura 2D"))}</b>${c.pr && c.pr[0] && c.mf ? `· ${c.pr[0]} g/mol`: ""}</span>
@@ -10048,7 +10045,7 @@
       const analogsTeaserHtml = top3Analogs.length ? `
         <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:6px 8px;margin-top:.4rem;font-size:13px">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--color-text-muted)">Analogi strukturalne</b>
+            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.02em;color:var(--color-text-muted)">Analogi strukturalne</b>
             <button class="btn-copy" id="overviewAllAnalogsBtn" style="font-size:13px;padding:1px 6px">Więcej (10) ↗</button>
           </div>
           <div style="display:flex;gap:4px;flex-wrap:wrap">
@@ -10061,7 +10058,7 @@
       const typedEdgesHtml = cEdges.length ? `
         <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:13px">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--color-text-muted)">Relacje semantyczne (${cEdges.length})</b>
+            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.02em;color:var(--color-text-muted)">Relacje semantyczne (${cEdges.length})</b>
             <button class="btn-copy" id="overviewOpenEdgesBtn" style="font-size:13px;padding:1px 6px">Filtry ↗</button>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:5px">
@@ -10094,9 +10091,9 @@
 
       const fRules = getFoodInteractionsForCompound(c);
       const foodInteractionsTeaserHtml = fRules.length ? `
-        <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-left:3px solid #ff9500;border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:13px">
+        <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-left:1px solid #ff9500;border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:13px">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--color-warning);display:flex;align-items:center;gap:4px">
+            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.02em;color:var(--color-warning);display:flex;align-items:center;gap:4px">
               <span></span>Interakcje z Żywnością & Ziołami (${fRules.length})
             </b>
             <button class="btn-copy" id="openFoodInteractionsDockBtn" style="font-size:13px;padding:1px 6px">Szczegóły ↗</button>
@@ -10106,7 +10103,7 @@
               const fMeta = FOOD_CATALOG[r.food_id] || {};
               const badgeCol = r.severity === 'contraindicated' ? '#ff3b30' : (r.severity === 'severe' ? '#ff9500' : '#5ac8fa');
               return `
-                <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;background:var(--color-bg);padding:4px 6px;border-radius:4px">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;background:var(--color-bg);padding:4px 6px;border-radius:6px">
                   <div style="display:flex;align-items:center;gap:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
                     <span>${"" || ''}</span>
                     <span style="font-weight:600;color:var(--color-text)">${esc(fMeta.name_pl || r.food_id)}</span>
@@ -10136,11 +10133,11 @@
       const rplHtml = c.rpl && c.rpl.length ? `
         <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:13px">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--color-primary)">Leki zarejestrowane w Polsce (RPL CeZ) · ${c.rpl.length}</b>
+            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.02em;color:var(--color-primary)">Leki zarejestrowane w Polsce (RPL CeZ) · ${c.rpl.length}</b>
           </div>
           <div style="display:grid;gap:4px">
             ${c.rpl.map((p) =>`
-              <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 6px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:4px">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 6px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px">
                 <div>
                   <b style="color:var(--color-text)">${esc(p.trade_name)}</b>
                   <span style="color:var(--color-text-muted);font-size:13px">(${esc(p.strength || "")} ${esc(p.form || "")})</span>
@@ -10156,14 +10153,14 @@
       const psyHtml = c.psy ? `
         <div style="background:var(--color-surface-2);border:1px solid color-mix(in oklab, var(--color-warning) 30%, var(--color-border));border-left:1px solid var(--color-warning);border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:13px">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--color-warning)">PsychonautWiki · Tier D (Harm Reduction)</b>
+            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.02em;color:var(--color-warning)">PsychonautWiki · Tier D (Harm Reduction)</b>
             <a href="${esc(c.psy.url || '#')}" target="_blank" rel="noopener noreferrer" class="btn" style="font-size:13px;padding:1px 6px">Źródło ↗</a>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px">
-            ${c.psy.duration && c.psy.duration.onset ? `<div style="background:var(--color-surface);padding:3px 6px;border-radius:3px"><b>Początek:</b>${esc(c.psy.duration.onset)}</div>`: ""}
-            ${c.psy.duration && c.psy.duration.peak ? `<div style="background:var(--color-surface);padding:3px 6px;border-radius:3px"><b>Szczyt:</b>${esc(c.psy.duration.peak)}</div>`: ""}
-            ${c.psy.duration && c.psy.duration.total ? `<div style="background:var(--color-surface);padding:3px 6px;border-radius:3px"><b>Czas całkowity:</b>${esc(c.psy.duration.total)}</div>`: ""}
-            ${c.psy.addiction_potential ? `<div style="background:var(--color-surface);padding:3px 6px;border-radius:3px"><b>Potencjał:</b>${esc(c.psy.addiction_potential)}</div>`: ""}
+            ${c.psy.duration && c.psy.duration.onset ? `<div style="background:var(--color-surface);padding:3px 6px;border-radius:6px"><b>Początek:</b>${esc(c.psy.duration.onset)}</div>`: ""}
+            ${c.psy.duration && c.psy.duration.peak ? `<div style="background:var(--color-surface);padding:3px 6px;border-radius:6px"><b>Szczyt:</b>${esc(c.psy.duration.peak)}</div>`: ""}
+            ${c.psy.duration && c.psy.duration.total ? `<div style="background:var(--color-surface);padding:3px 6px;border-radius:6px"><b>Czas całkowity:</b>${esc(c.psy.duration.total)}</div>`: ""}
+            ${c.psy.addiction_potential ? `<div style="background:var(--color-surface);padding:3px 6px;border-radius:6px"><b>Potencjał:</b>${esc(c.psy.addiction_potential)}</div>`: ""}
           </div>
           ${c.psy.effects && c.psy.effects.length ? `
             <div style="font-size:13px;color:var(--color-text-muted);margin-top:4px">
@@ -10177,14 +10174,14 @@
       const indHtml = c.ind && c.ind.length ? `
         <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:13px">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--color-primary)">Wskazania Terapeutyczne (ICD-10 / ICD-11) · ${c.ind.length}</b>
+            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.02em;color:var(--color-primary)">Wskazania Terapeutyczne (ICD-10 / ICD-11) · ${c.ind.length}</b>
             <button class="btn-copy" id="overviewAllIndicationsBtn" style="font-size:13px;padding:1px 6px">Katalog ICD ↗</button>
           </div>
           <div style="display:grid;gap:4px">
             ${c.ind.map((ind) =>{
               const statusPill = ind.status === "registered" ? '<span class="tag ok" style="font-size:13px;padding:0 4px">OK ChPL</span>' : ind.status === "off-label" ? '<span class="tag" style="font-size:13px;padding:0 4px;color:var(--color-warning)">Off-label</span>' : '<span class="tag" style="font-size:13px;padding:0 4px">Badania</span>';
               return `
-                <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 6px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:4px;cursor:pointer" data-open-icd="${esc(ind.icd10)}">
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 6px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;cursor:pointer" data-open-icd="${esc(ind.icd10)}">
                   <div>
                     <code style="font-weight:700;color:var(--color-primary)">[${esc(ind.icd10)}]</code>
                     <b style="color:var(--color-text);margin-left:4px">${esc(ind.icd10_name_pl)}</b>
@@ -10201,7 +10198,7 @@
       const ebmHtml = c.ebm && c.ebm.length ? `
         <div style="background:var(--color-surface-2);border:1px solid color-mix(in oklab, var(--color-primary) 30%, var(--color-border));border-left:1px solid var(--color-primary);border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:13px">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--color-primary)">Kluczowe Badania Kliniczne & EBM · ${c.ebm.length}</b>
+            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.02em;color:var(--color-primary)">Kluczowe Badania Kliniczne & EBM · ${c.ebm.length}</b>
             <span class="tag ok" style="font-size:13px">Europe PMC / Cochrane</span>
           </div>
           <div style="display:grid;gap:6px">
@@ -10211,7 +10208,7 @@
                 : '<span class="tag" style="font-size:13px;padding:0 4px">RCT Faza III</span>';
               const oaBadge = s.oa && s.pdf ? `<a href="${esc(s.pdf)}" target="_blank" rel="noopener noreferrer" class="btn" style="font-size:13px;padding:1px 5px">Otwarty PDF ↗</a>`: '';
               return `
-                <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:4px;padding:6px 8px">
+                <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:6px 8px">
                   <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:3px">
                     <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
                       ${tierBadge}
@@ -10222,7 +10219,7 @@
                   <div style="font-size:13px;font-weight:600;line-height:1.35;color:var(--color-text);margin-bottom:4px">
                     ${esc(s.title)}
                   </div>
-                  ${s.concl ? `<div style="font-size:13px;color:var(--color-text-muted);background:var(--color-surface-2);padding:4px 6px;border-radius:3px;margin-bottom:4px"><b>Wniosek:</b>${esc(s.concl)}</div>`: ""}
+                  ${s.concl ? `<div style="font-size:13px;color:var(--color-text-muted);background:var(--color-surface-2);padding:4px 6px;border-radius:6px;margin-bottom:4px"><b>Wniosek:</b>${esc(s.concl)}</div>`: ""}
                   <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2px">
                     <button class="btn-copy" data-open-ebm-idx="${sIdx}" style="font-size:13px;padding:2px 6px">Czytaj streszczenie</button>
                     <div style="display:flex;gap:4px">
@@ -10414,7 +10411,7 @@
         <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px;margin-bottom:10px">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
             <span style="font-size:13px;font-weight:700">Toksykologia Molekularna & Bezpieczeństwo</span>
-            <span class="badge" style="font-size:13px;background:${toxProfile.dili.dilirank === 'Most-DILI-concern' ? '#ff3b30' : (toxProfile.dili.dilirank === 'Less-DILI-concern' ? '#ff9500' : '#34c759')};color:#fff">
+            <span class="badge" style="font-size:13px;background:var(--color-surface-2);color:${toxProfile.dili.dilirank === 'Most-DILI-concern' ? 'var(--color-error)' : (toxProfile.dili.dilirank === 'Less-DILI-concern' ? 'var(--color-warning)' : 'var(--color-success)')};border:1px solid var(--color-border)">
               DILI: ${esc(toxProfile.dili.dilirank)}
             </span>
           </div>
@@ -10424,18 +10421,18 @@
           </div>
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0;font-size:13px">
-            <div style="background:var(--color-bg);padding:4px 6px;border-radius:4px;border:1px solid var(--color-border)">
+            <div style="background:var(--color-bg);padding:4px 6px;border-radius:6px;border:1px solid var(--color-border)">
               <div style="color:var(--color-text-muted)">hERG Redfern:</div>
               <b>${toxProfile.cardiotox.redfern_margin}×</b>(${esc(toxProfile.cardiotox.redfern_class.split(' ')[0])})
             </div>
-            <div style="background:var(--color-bg);padding:4px 6px;border-radius:4px;border:1px solid var(--color-border)">
+            <div style="background:var(--color-bg);padding:4px 6px;border-radius:6px;border:1px solid var(--color-border)">
               <div style="color:var(--color-text-muted)">Ciąża & RID:</div>
               <b>Kat. ${esc(toxProfile.pregnancy_lactation.fda_category)}</b>(RID ${toxProfile.pregnancy_lactation.rid_pct}%)
             </div>
           </div>
 
           ${toxProfile.pregnancy_lactation.black_box_teratogen ? `
-            <div style="background:#ff3b3022;border:1px solid #ff3b30;border-radius:4px;padding:4px 6px;margin-bottom:6px;font-size:13px;color:#ff3b30;font-weight:700">
+            <div style="background:#ff3b3022;border:1px solid #ff3b30;border-radius:6px;padding:4px 6px;margin-bottom:6px;font-size:13px;color:var(--color-error);font-weight:700">
                Bezwzględny Teratogen (Kategoria X)
             </div>
           `: ""}
@@ -10451,16 +10448,16 @@
         <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:10px;margin-bottom:10px">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
             <span style="font-size:13px;font-weight:700">Transportery Błonowe & BBB</span>
-            <span class="badge" style="font-size:13px;background:#af52de;color:#fff">
+            <span class="badge" style="font-size:13px;background:var(--color-surface-2);color:var(--color-primary);border:1px solid var(--color-border)">
               Clark logBB: ${transProf.cns_metrics.logbb_clark}
             </span>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0;font-size:13px">
-            <div style="background:var(--color-bg);padding:4px 6px;border-radius:4px;border:1px solid var(--color-border)">
+            <div style="background:var(--color-bg);padding:4px 6px;border-radius:6px;border:1px solid var(--color-border)">
               <div style="color:var(--color-text-muted)">Pfizer CNS MPO:</div>
               <b>${transProf.cns_metrics.cns_mpo_score} / 6.0</b>
             </div>
-            <div style="background:var(--color-bg);padding:4px 6px;border-radius:4px;border:1px solid var(--color-border)">
+            <div style="background:var(--color-bg);padding:4px 6px;border-radius:6px;border:1px solid var(--color-border)">
               <div style="color:var(--color-text-muted)">Wolna frakcja Kp,uu:</div>
               <b>${transProf.cns_metrics.kp_uu_baseline}</b>(${(transProf.cns_metrics.kp_uu_baseline * 100).toFixed(0)}%)
             </div>
@@ -10671,13 +10668,13 @@
             </div>
             <h3 style="margin:0;font-size:var(--text-base);line-height:1.4;color:var(--color-text)">${esc(study.title)}</h3>
             ${study.concl ? `
-              <div style="background:var(--color-surface-2);border-left:1px solid var(--color-primary);padding:8px 12px;border-radius:4px">
-                <b style="font-size:13px;color:var(--color-primary);text-transform:uppercase;letter-spacing:.5px">Kluczowa Konkluzja Kliniczna:</b>
+              <div style="background:var(--color-surface-2);border-left:1px solid var(--color-primary);padding:8px 12px;border-radius:6px">
+                <b style="font-size:13px;color:var(--color-primary);text-transform:uppercase;letter-spacing:.02em">Kluczowa Konkluzja Kliniczna:</b>
                 <p style="margin:4px 0 0 0;font-size:13px;line-height:1.5">${esc(study.concl)}</p>
               </div>
             `: ""}
             <div>
-              <b style="font-size:13px;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.5px">Streszczenie Badania (Abstract):</b>
+              <b style="font-size:13px;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.02em">Streszczenie Badania (Abstract):</b>
               <p style="margin:6px 0 0 0;font-size:13px;line-height:1.6;color:var(--color-text);text-align:justify">${esc(study.abstr || "Brak pełnego streszczenia w otwartym rekordzie Europe PMC.")}</p>
             </div>
             <div style="display:flex;gap:8px;margin-top:6px;flex-wrap:wrap">
@@ -11693,14 +11690,14 @@
         </div>
 
         <div>
-          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:6px">
+          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:6px">
              Podtypy receptorowe i białka sprzęgające (${(pw.subtypes || []).length})
           </div>
           ${subtypesHtml || '<div style="font-size:13px;color:var(--color-text-muted)">Brak szczegółowej ontologii podtypów.</div>'}
         </div>
 
         <div>
-          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:6px">
+          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:6px">
              Cele w grafie (${pw.targetIndices.size})
           </div>
           <div style="display:flex;flex-wrap:wrap">
@@ -11709,7 +11706,7 @@
         </div>
 
         <div>
-          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-text-muted);margin-bottom:6px">
+          <div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;color:var(--color-text-muted);margin-bottom:6px">
              Powiązane substancje wg profilu MoA (${compounds.length})
           </div>
 
@@ -11729,8 +11726,8 @@
 
           ${inhibitors.length ? `
             <div style="margin-bottom:6px">
-              <span style="font-size:13px;font-weight:700;color:#af52de;text-transform:uppercase">Inhibitory wychwytu / Transportery (${inhibitors.length})</span>
-              <div style="display:flex;flex-wrap:wrap;margin-top:2px">${renderCompoundPills(inhibitors, '#af52de')}</div>
+              <span style="font-size:13px;font-weight:700;color:#52a2a8;text-transform:uppercase">Inhibitory wychwytu / Transportery (${inhibitors.length})</span>
+              <div style="display:flex;flex-wrap:wrap;margin-top:2px">${renderCompoundPills(inhibitors, '#52a2a8')}</div>
             </div>
           `: ""}
         </div>
