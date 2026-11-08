@@ -1449,7 +1449,7 @@
       const isSel = (node.id === activeMetaboliteSelectedNode);
       const isCatalog = !!node.compound;
       return `
-        <div class="meta-node-card ${isSel ? 'selected' : ''}" data-meta-node="${esc(node.id)}">
+        <div class="meta-node-card ${isSel ? 'selected' : ''}" role="button" tabindex="0" data-meta-node="${esc(node.id)}">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px">
             <b style="font-size:13px;color:var(--color-text)">${esc(node.name)}</b>
             ${getActivityBadge(node.activity)}
@@ -1869,7 +1869,7 @@
       const active = evidenceFilterState.phase === s.phase;
       const pct = ((s.count / stats.total) * 100).toFixed(1);
       return `
-        <div class="evidence-funnel-card ${active ? 'active' : ''}" data-ev-phase="${s.phase}">
+        <div class="evidence-funnel-card ${active ? 'active' : ''}" role="button" tabindex="0" data-ev-phase="${s.phase}">
           <div style="display:flex;justify-content:space-between;align-items:center">
             <span class="badge ${s.cls}">${s.badge}</span>
             <small style="font-size:13px;color:var(--color-text-muted)">${pct}%</small>
@@ -7907,7 +7907,7 @@
         const sDef = cs ? SCAFFOLD_MAP[cs.s] : null;
         color = sDef ? sDef.color_hex : "#94a3b8";
       } else if (chemspaceState.colorMode === "cluster") {
-        color = CL_COLORS[c.cl] || "#94a3b8";
+        color = CL_COLORS[c.c] || "#94a3b8";
       } else if (chemspaceState.colorMode === "safety") {
         const otList = cs && cs.ot ? cs.ot : [];
         if (otList.some(([g, sc, fl]) =>fl === "cardiotoxicity_qt")) color = "#e5566f";
@@ -8287,7 +8287,7 @@
     activeChemspaceModalOpen = false;
     const modal = $("chemspaceModal");
     if (modal) closeDialog(modal);
-    setWorkspaceMode("graph");
+    if (typeof syncWorkspaceModeToOpenModals === "function") syncWorkspaceModeToOpenModals();
   }
 
 
@@ -9925,10 +9925,22 @@
       <div class="ref-section">
         <div class="label" style="margin-top:0">Indeks kliniczny · przegląd bazy</div>
         <div class="stat-grid">
-          <div class="stat"><b>${fmtInt(ph4Count)}</b><small>Faza IV (w obrocie)</small></div>
-          <div class="stat"><b>${fmtInt(ph13Count)}</b><small>Fazy I–III (kliniczne)</small></div>
-          <div class="stat"><b>${fmtInt(T.length)}</b><small>Cele białkowe ChEMBL</small></div>
-          <div class="stat"><b>${fmtInt(PATHWAY_SYSTEMS.length)}</b><small>Szlaki fizjologiczne</small></div>
+          <div class="stat" role="button" tabindex="0" data-open-evidence="phase:4" title="Filtruj leki Fazy IV w eksploratorze badań"><b>${fmtInt(ph4Count)}</b><small>Faza IV (w obrocie)</small></div>
+          <div class="stat" role="button" tabindex="0" data-open-evidence="phase:3" title="Filtruj kandydatów klinicznych Faz I–III"><b>${fmtInt(ph13Count)}</b><small>Fazy I–III (kliniczne)</small></div>
+          <div class="stat" role="button" tabindex="0" data-launch-tool="targets" title="Otwórz najczęstszy cel białkowy ChEMBL"><b>${fmtInt(T.length)}</b><small>Cele białkowe ChEMBL</small></div>
+          <div class="stat" role="button" tabindex="0" data-launch-tool="pathway" title="Aktywuj podgląd szlaków fizjologicznych"><b>${fmtInt(PATHWAY_SYSTEMS.length)}</b><small>Szlaki fizjologiczne</small></div>
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="label">Narzędzia analityczne i symulatory</div>
+        <div class="ref-list">
+          <button class="ref-row" data-launch-tool="pk"><span>Symulator PK 2-kompartmentowy C(t)</span><span class="ref-count">CYP · eGFR ↗</span></button>
+          <button class="ref-row" data-launch-tool="radar"><span>Radar powinowactwa receptorowego OUN</span><span class="ref-count">Ki / pKi ↗</span></button>
+          <button class="ref-row" data-launch-tool="tox"><span>Toksykologia molekularna &amp; eDISH</span><span class="ref-count">DILI · hERG ↗</span></button>
+          <button class="ref-row" data-launch-tool="transporters"><span>Transportery błonowe &amp; przekrój BBB</span><span class="ref-count">P-gp · MPO ↗</span></button>
+          <button class="ref-row" data-launch-tool="ddi"><span>Audyt polipragmazji DDI &amp; żywność</span><span class="ref-count">Presety ↗</span></button>
+          <button class="ref-row" data-launch-tool="comparator"><span>Porównywarka leków Head-to-Head</span><span class="ref-count">Tabela ↗</span></button>
+          <button class="ref-row" data-launch-tool="analogs"><span>Eksplorator analogów &amp; bioizosterów</span><span class="ref-count">Top 10 ↗</span></button>
         </div>
       </div>
       <div class="ref-section">
@@ -10011,7 +10023,7 @@
     const warnCount = (c.bb ? 1 : 0) + (c.wd ? 1 : 0) + (c.ic === "conflict" ? 1 : 0);
     const safeCount = warnCount + (c.t ? c.t.length : 0);
     let safeBadge = `<span class="tab-badge">${safeCount || "–"}</span>`;
-    if (warnCount >0) safeBadge = '<span class="tab-badge" style="color:var(--color-warning)"></span>';
+    if (warnCount >0) safeBadge = `<span class="tab-badge" style="color:var(--color-warning)">! ${safeCount}</span>`;
 
     const obs = "obsidian://open?vault=vault&file=" + encodeURIComponent(c.f);
 
@@ -10022,7 +10034,7 @@
       if (struct) {
         chemHtml = `
           <div class="chem-card">
-            <div class="chem-card-preview" data-zoom-chem="${c.i}" title="Kliknij, aby powiększyć wzór strukturalny 2D">
+            <div class="chem-card-preview" role="button" tabindex="0" aria-label="Powiększ wzór strukturalny 2D ${esc(c.n)}" data-zoom-chem="${c.i}" title="Kliknij, aby powiększyć wzór strukturalny 2D">
               <img src="${struct.url}" alt="Wzór 2D ${esc(c.n)}" loading="lazy" onerror="this.closest('.chem-card').style.display='none'">
             </div>
             <div class="chem-meta">
@@ -10181,7 +10193,7 @@
             ${c.ind.map((ind) =>{
               const statusPill = ind.status === "registered" ? '<span class="tag ok" style="font-size:13px;padding:0 4px">OK ChPL</span>' : ind.status === "off-label" ? '<span class="tag" style="font-size:13px;padding:0 4px;color:var(--color-warning)">Off-label</span>' : '<span class="tag" style="font-size:13px;padding:0 4px">Badania</span>';
               return `
-                <div style="display:flex;justify-content:space-between;align-items:center;padding:3px 6px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;cursor:pointer" data-open-icd="${esc(ind.icd10)}">
+                <div role="button" tabindex="0" style="display:flex;justify-content:space-between;align-items:center;padding:3px 6px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;cursor:pointer" data-open-icd="${esc(ind.icd10)}">
                   <div>
                     <code style="font-weight:700;color:var(--color-primary)">[${esc(ind.icd10)}]</code>
                     <b style="color:var(--color-text);margin-left:4px">${esc(ind.icd10_name_pl)}</b>
@@ -10498,24 +10510,27 @@
 
     const inStack = state.stack.has(c.i);
     const stackBtnHtml = `
-      <div style="display:flex;gap:4px;margin:0.5rem 0;flex-wrap:wrap">
-        <button id="cardStackToggle" class="btn ${inStack ? 'btn-gold' : ''}" style="flex:1;padding:6px 8px;font-size:var(--text-xs);display:flex;align-items:center;justify-content:center;gap:4px">
+      <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:4px;margin:0.5rem 0">
+        <button id="cardStackToggle" class="btn ${inStack ? 'btn-gold' : ''}" style="grid-column:1 / -1;padding:6px 8px;font-size:var(--text-xs);display:flex;align-items:center;justify-content:center;gap:4px">
           <span>${inStack ? "OK W Twoim stacku" : "+ Dodaj do stacka"}</span>
         </button>
-        <button id="cardCompareBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Porównaj ze stackiem lub najbliższym analogiem">
-           Porównaj
+        <button id="cardCompareBtn" class="btn" style="padding:5px 6px;font-size:var(--text-xs)" title="Porównaj ze stackiem lub najbliższym analogiem">
+          Porównaj
         </button>
-        <button id="cardAnalogsBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Znajdź analogi chemiczne i bioizostery">
-           Analogi
+        <button id="cardAnalogsBtn" class="btn" style="padding:5px 6px;font-size:var(--text-xs)" title="Znajdź analogi chemiczne i bioizostery">
+          Analogi
         </button>
-        <button id="cardMetaboliteBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Kaskada biotransformacji i metabolity (M)">
-           Metabolity
+        <button id="cardMetaboliteBtn" class="btn" style="padding:5px 6px;font-size:var(--text-xs)" title="Kaskada biotransformacji i metabolity (M)">
+          Metabolity
         </button>
-        <button id="cardDossierBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Kliniczna monografia substancji (A4 / PDF / Markdown)">
-           Monografia
+        <button id="cardDossierBtn" class="btn" style="padding:5px 6px;font-size:var(--text-xs)" title="Kliniczna monografia substancji (A4 / PDF / Markdown)">
+          Monografia
         </button>
-        <button id="cardEvidenceBtn" class="btn" style="padding:6px 8px;font-size:var(--text-xs)" title="Poziom dowodów klinicznych & ścieżka regulacyjna (R)">
-           Dowody
+        <button id="cardEvidenceBtn" class="btn" style="padding:5px 6px;font-size:var(--text-xs)" title="Poziom dowodów klinicznych & ścieżka regulacyjna (R)">
+          Dowody
+        </button>
+        <button class="btn" data-open-chemspace="${esc(c.id)}" style="padding:5px 6px;font-size:var(--text-xs)" title="Otwórz w Przestrzeni Chemicznej & Chemogenomice (9)">
+          ChemSpace
         </button>
       </div>`;
 
@@ -10623,6 +10638,26 @@
     p.querySelectorAll("[data-open-transporters]").forEach((btn) =>{
       btn.onclick = () =>{
         openTransporterDock(btn.dataset.openTransporters);
+      };
+    });
+    p.querySelectorAll("[data-open-chemspace]").forEach((btn) =>{
+      btn.onclick = () =>{
+        openChemspaceView(btn.dataset.openChemspace);
+      };
+    });
+    p.querySelectorAll("[data-launch-tool]").forEach((btn) =>{
+      btn.onclick = () =>{
+        const tool = btn.dataset.launchTool;
+        const cid = (state.sel && state.sel.type === "compound") ? C[state.sel.i].id : (state.stack.size >0 ? C[[...state.stack][0]].id : null);
+        if (tool === "pk") openPkSimulatorSplitPane(cid || "modafinil-compound");
+        else if (tool === "radar") openReceptorRadarSplitPane(cid || "clozapine-compound");
+        else if (tool === "tox") openToxicologySplitPane(cid || "valproic-acid-compound");
+        else if (tool === "transporters") openTransporterDock(cid || "loperamide-compound");
+        else if (tool === "ddi") openDdiAuditInSplitPane();
+        else if (tool === "comparator") openComparator();
+        else if (tool === "analogs") openAnalogsModal((state.sel && state.sel.type === "compound") ? state.sel.i : 0);
+        else if (tool === "targets") openTargetModal(0);
+        else if (tool === "pathway" && PATHWAY_SYSTEMS.length) selectPathway(PATHWAY_SYSTEMS[0].id, "spotlight");
       };
     });
     const cardAnalogsBtn = p.querySelector("#cardAnalogsBtn");
@@ -11146,24 +11181,54 @@
       draw();
     };
   }
-  const sFdaEl = $("sFda");
-  if (sFdaEl && sFdaEl.parentElement) {
-    sFdaEl.parentElement.style.cursor = "pointer";
-    sFdaEl.parentElement.title = "Otwórz badania kliniczne i etykiety FDA (R)";
-    sFdaEl.parentElement.onclick = () =>openEvidenceModal("fda:consistent");
-  }
-  const sEmaEl = $("sEma");
-  if (sEmaEl && sEmaEl.parentElement) {
-    sEmaEl.parentElement.style.cursor = "pointer";
-    sEmaEl.parentElement.title = "Otwórz badania kliniczne i etykiety EMA (R)";
-    sEmaEl.parentElement.onclick = () =>openEvidenceModal("ema:consistent");
-  }
-  const sIdEl = $("sId");
-  if (sIdEl && sIdEl.parentElement) {
-    sIdEl.parentElement.style.cursor = "pointer";
-    sIdEl.parentElement.title = "Otwórz eksplorator badań klinicznych (R)";
-    sIdEl.parentElement.onclick = () =>openEvidenceModal();
-  }
+  const wireStatBox = (id, title, onClick) =>{
+    const el = $(id);
+    if (el && el.parentElement) {
+      const box = el.parentElement;
+      box.setAttribute("role", "button");
+      box.setAttribute("tabindex", "0");
+      box.title = title;
+      box.onclick = onClick;
+    }
+  };
+  wireStatBox("sAll", "Wyczyść wszystkie filtry i pokaż całą bazę", () =>{
+    state.clusters = new Set(G.clusters.map((_, i) =>i));
+    state.hub = null; state.pkOnly = false; state.cypOnly = false; state.ver = ""; state.hlBin = null; state.stackOnly = false; state.evidenceCohort = null;
+    state.adv = { cyp: "", ro5: "", prop: "", phase: "" };
+    if ($("hub")) $("hub").value = "";
+    if ($("pkOnly")) $("pkOnly").checked = false;
+    if ($("cypOnly")) $("cypOnly").checked = false;
+    if ($("ver")) $("ver").value = "";
+    if (advCyp) advCyp.value = "";
+    if (advRo5) advRo5.value = "";
+    if (advProp) advProp.value = "";
+    if (advPhase) advPhase.value = "";
+    updateAdvFilterUI();
+    updateEvidenceCohortIndicator();
+    clBox.querySelectorAll(".cl").forEach((x) =>{ x.classList.remove("off"); x.setAttribute("aria-pressed", "true"); });
+    stats(); search(); fit();
+  });
+  wireStatBox("sVis", "Wyśrodkuj widok na widocznych substancjach", () =>fit());
+  wireStatBox("sPk", "Przełącz filtr: tylko substancje z danymi PK", () =>{
+    const cb = $("pkOnly");
+    if (cb) { cb.checked = !cb.checked; cb.dispatchEvent(new Event("change")); }
+  });
+  wireStatBox("sHl", "Filtruj wg rozkładu okresu półtrwania (t½)", () =>{
+    const firstBar = document.querySelector("#hist .bar");
+    if (firstBar) firstBar.focus();
+  });
+  wireStatBox("sTg", "Przełącz filtr: substancje z celem molekularnym ChEMBL", () =>{
+    const verSel = $("ver");
+    if (verSel) { verSel.value = verSel.value === "chembl" ? "" : "chembl"; verSel.dispatchEvent(new Event("change")); }
+  });
+  wireStatBox("sFda", "Otwórz badania kliniczne i etykiety FDA (R)", () =>openEvidenceModal("fda:consistent"));
+  wireStatBox("sEma", "Otwórz badania kliniczne i etykiety EMA (R)", () =>openEvidenceModal("ema:consistent"));
+  wireStatBox("sId", "Otwórz eksplorator badań klinicznych (R)", () =>openEvidenceModal());
+
+  const stageAuditBtn = $("stageAuditBtn");
+  if (stageAuditBtn) stageAuditBtn.onclick = openDdiAuditInSplitPane;
+  const stageCompareBtn = $("stageCompareBtn");
+  if (stageCompareBtn) stageCompareBtn.onclick = () =>openComparator();
 
   $("reset").onclick = () =>{
     if (state.evidenceCohort) {
@@ -11212,13 +11277,13 @@
       compEl.className = "bc-item bc-active";
     } else if (h.type === "compound") {
       const c = C[h.i];
-      const clName = c.cl != null ? CL_PL[G.clusters[c.cl].name] : "Inne";
+      const clName = c.c != null ? CL_PL[G.clusters[c.c].name] : "Inne";
       clusterEl.textContent = clName;
       clusterEl.className = "bc-item";
       clusterEl.onclick = () =>{
-        if (c.cl != null) {
+        if (c.c != null) {
           state.clusters.clear();
-          state.clusters.add(c.cl);
+          state.clusters.add(c.c);
           updateClusterButtons();
           search();
           fit();
@@ -11286,9 +11351,6 @@
     cmdCurrentResults = [];
 
     const actions = [
-      { type: "action", name: "Przełącz motyw (jasny / ciemny)", badge: "Motyw", run: () =>$("theme").click() },
-      { type: "action", name: "Widok całości grafu (Reset kamery)", badge: "Nawigacja", run: () =>$("reset").click() },
-      { type: "action", name: "Otwórz Biomolecular Structure Viewer (Mol*)", badge: "Sidecar 3D", run: () =>window.open("sidecar://biomolecular-structure-viewer", "_blank") },
       { type: "action", name: "Karta & Monografia Kliniczna (Dossier A4)", badge: "Widok", run: () =>setWorkspaceMode("dossier") },
       { type: "action", name: "Mój Stack & Audyt Polipragmazji DDI", badge: "Widok", run: () =>setWorkspaceMode("stack") },
       { type: "action", name: "Badania Kliniczne & EBM", badge: "Widok", run: () =>setWorkspaceMode("evidence") },
@@ -11297,13 +11359,20 @@
       { type: "action", name: "Kaskady Biotransformacji & Metabolity", badge: "Widok", run: () =>setWorkspaceMode("metabolism") },
       { type: "action", name: "Transportery Błonowe & Bariera Krew-Mózg (BBB)", badge: "Widok", run: () =>setWorkspaceMode("transporters") },
       { type: "action", name: "9: Przestrzeń Chemiczna & Chemogenomika (2533 cząsteczki)", badge: "Widok", run: () =>setWorkspaceMode("chemspace") },
-      { type: "action", name: "Interakcje Lek-Żywność & Nutraceutyki (FDI)", badge: "Dieta", run: () =>openDdiAuditInSplitPane() },
+      { type: "action", name: "Symulator PK 2-Kompartmentowy C(t) (CYP & eGFR)", badge: "Symulator", run: () =>openPkSimulatorSplitPane("modafinil-compound") },
+      { type: "action", name: "Radar Powinowactwa Receptorowego OUN (Ki / pKi)", badge: "Narzędzie", run: () =>openReceptorRadarSplitPane("clozapine-compound") },
       { type: "action", name: "Toksykologia Molekularna & eDISH (Hy's Law)", badge: "Narzędzie", run: () =>openToxicologySplitPane() },
-      { type: "action", name: "Porównywarka Head-to-Head", badge: "Narzędzie", run: () =>openComparator() }
+      { type: "action", name: "Interakcje Lek-Żywność & Nutraceutyki (FDI)", badge: "Dieta", run: () =>openDdiAuditInSplitPane() },
+      { type: "action", name: "Porównywarka Leków Head-to-Head", badge: "Narzędzie", run: () =>openComparator() },
+      { type: "action", name: "Eksplorator Analogów Chemicznych & Bioizosterów", badge: "Narzędzie", run: () =>openAnalogsModal((state.sel && state.sel.type === "compound") ? state.sel.i : 0) },
+      { type: "action", name: "Filtry Krawędzi Semantycznych Grafu", badge: "Graf", run: () =>toggleEdgesPopover(true) },
+      { type: "action", name: "Otwórz Biomolecular Structure Viewer (Mol*)", badge: "Sidecar 3D", run: () =>window.open("sidecar://biomolecular-structure-viewer", "_blank") },
+      { type: "action", name: "Widok całości grafu (Reset kamery)", badge: "Nawigacja", run: () =>$("reset").click() },
+      { type: "action", name: "Przełącz motyw (jasny / ciemny)", badge: "Motyw", run: () =>$("theme").click() }
     ];
 
     if (!query) {
-      cmdCurrentResults = actions.slice(0, 5);
+      cmdCurrentResults = [...actions];
       const pop = [0, 1, 2, 3, 4].filter((i) =>C[i]).map((i) =>({ type: "compound", c: C[i] }));
       cmdCurrentResults.push(...pop);
     } else {
@@ -11315,7 +11384,8 @@
       let cMatches = 0;
       for (let i = 0; i < C.length && cMatches < 15; i++) {
         const c = C[i];
-        if (c.n.toLowerCase().includes(query) || (c.atc && c.atc.toLowerCase().includes(query)) || (c.g && c.g.toLowerCase().includes(query))) {
+        const grpLabel = (GR[c.g] && GR[c.g].label) ? GR[c.g].label.toLowerCase() : "";
+        if (c.hay.includes(query) || grpLabel.includes(query)) {
           cmdCurrentResults.push({ type: "compound", c });
           cMatches++;
         }
@@ -11346,9 +11416,10 @@
         </button>`;
       } else if (item.type === "compound") {
         const c = item.c;
-        const clName = c.cl != null ? CL_PL[G.clusters[c.cl].name] : "";
+        const clName = c.c != null ? CL_PL[G.clusters[c.c].name] : "";
+        const gLabel = GR[c.g] ? GR[c.g].label : "";
         return `<button class="cmd-palette-item ${isSel ? "selected" : ""}" data-cmd-idx="${idx}" role="option" aria-selected="${isSel}">
-          <span><b>${esc(c.n)}</b><small style="color:var(--color-text-muted);font-size:13px">${esc(c.g || "")}</small></span>
+          <span><b>${esc(c.n)}</b> <small style="color:var(--color-text-muted);font-size:13px">${esc(gLabel)}</small></span>
           <span class="cmd-palette-badge">${esc(clName)}</span>
         </button>`;
       } else if (item.type === "target") {
@@ -11407,6 +11478,29 @@
   ].filter(Boolean);
 
   let currentWorkspaceMode = "graph";
+  let isClosingOverlays = false;
+
+  function closeAllWorkspaceOverlays() {
+    isClosingOverlays = true;
+    try {
+      toggleStackDrawer(false);
+      closeEvidenceModal();
+      closeIndicationsModal();
+      closeStruct3DModal();
+      closeDossierModal();
+      closeMetaboliteModal();
+      closeChemspaceModal();
+      closeComparator();
+      closeAnalogsModal();
+      closeTargetModal();
+      closeChemLightBox();
+      toggleEdgesPopover(false);
+      if (typeof closeTransporterDock === "function") closeTransporterDock();
+      else closeSplitPane();
+    } finally {
+      isClosingOverlays = false;
+    }
+  }
 
   function setWorkspaceMode(mode, triggerAction = true) {
     currentWorkspaceMode = mode;
@@ -11419,23 +11513,12 @@
 
     if (!triggerAction) return;
 
+    closeAllWorkspaceOverlays();
+
     if (mode === "graph") {
       location.hash = "#/graph";
-      toggleStackDrawer(false);
-      closeEvidenceModal();
-      closeIndicationsModal();
-      closeStruct3DModal();
-      closeDossierModal();
-      closeMetaboliteModal();
-      closeComparator();
-      closeAnalogsModal();
     } else if (mode === "dossier") {
       location.hash = "#/dossier";
-      toggleStackDrawer(false);
-      closeEvidenceModal();
-      closeIndicationsModal();
-      closeStruct3DModal();
-      closeMetaboliteModal();
       if (state.sel && state.sel.type === "compound") {
         openDossierModal("single", state.sel.i);
       } else if (state.stack.size >0) {
@@ -11445,70 +11528,33 @@
       }
     } else if (mode === "stack") {
       location.hash = "#/stack";
-      closeEvidenceModal();
-      closeIndicationsModal();
-      closeStruct3DModal();
-      closeDossierModal();
-      closeMetaboliteModal();
       toggleStackDrawer(true);
     } else if (mode === "evidence") {
       location.hash = "#/evidence";
-      toggleStackDrawer(false);
-      closeIndicationsModal();
-      closeStruct3DModal();
-      closeDossierModal();
-      closeMetaboliteModal();
       openEvidenceModal();
     } else if (mode === "indications") {
       location.hash = "#/indications";
-      toggleStackDrawer(false);
-      closeEvidenceModal();
-      closeStruct3DModal();
-      closeDossierModal();
-      closeMetaboliteModal();
       openIndicationsModal();
     } else if (mode === "structure3d") {
       location.hash = "#/3d";
-      toggleStackDrawer(false);
-      closeEvidenceModal();
-      closeIndicationsModal();
-      closeDossierModal();
-      closeMetaboliteModal();
       openStruct3DModal();
     } else if (mode === "metabolism") {
       location.hash = "#/metabolism";
-      toggleStackDrawer(false);
-      closeEvidenceModal();
-      closeIndicationsModal();
-      closeStruct3DModal();
-      closeDossierModal();
       const targetC = (state.sel && state.sel.type === "compound") ? state.sel.i : (state.stack.size >0 ? [...state.stack][0] : 0);
       openMetaboliteModal(targetC);
     } else if (mode === "transporters") {
       location.hash = "#/transporters";
-      toggleStackDrawer(false);
-      closeEvidenceModal();
-      closeIndicationsModal();
-      closeStruct3DModal();
-      closeDossierModal();
-      closeMetaboliteModal();
       const targetCid = (state.sel && state.sel.type === "compound") ? C[state.sel.i].id : (state.stack.size >0 ? C[[...state.stack][0]].id : "loperamide-compound");
       openTransporterDock(targetCid);
     } else if (mode === "chemspace") {
       location.hash = "#/chemspace";
-      toggleStackDrawer(false);
-      closeEvidenceModal();
-      closeIndicationsModal();
-      closeStruct3DModal();
-      closeDossierModal();
-      closeMetaboliteModal();
-      if (typeof closeTransporterDock === "function") closeTransporterDock();
       const targetCid = (state.sel && state.sel.type === "compound") ? C[state.sel.i].id : (state.stack.size >0 ? C[[...state.stack][0]].id : "diazepam-compound");
       openChemspaceView(targetCid);
     }
   }
 
   function syncWorkspaceModeToOpenModals() {
+    if (isClosingOverlays) return;
     if (activeEvidenceModalOpen) setWorkspaceMode("evidence", false);
     else if (activeIndicationsModalOpen) setWorkspaceMode("indications", false);
     else if (activeStruct3DModalOpen) setWorkspaceMode("structure3d", false);
@@ -11575,8 +11621,17 @@
 
   const bcRootEl = $("bcRoot");
   if (bcRootEl) bcRootEl.onclick = () =>{ select(null); search(); fit(); };
+  const bcCompoundEl = $("bcCompound");
+  if (bcCompoundEl) bcCompoundEl.onclick = () =>{ if (state.sel) select(state.sel, true); };
   const bcShieldMiniEl = $("bcShieldMini");
   if (bcShieldMiniEl) bcShieldMiniEl.onclick = openDdiAuditInSplitPane;
+
+  document.addEventListener("keydown", (e) =>{
+    if ((e.key === "Enter" || e.key === " ") && e.target && e.target.getAttribute && e.target.getAttribute("role") === "button" && e.target.tagName !== "BUTTON") {
+      e.preventDefault();
+      e.target.click();
+    }
+  });
 
   // ---------- Context Split Pane
   const splitPane = $("contextSplitPane");
