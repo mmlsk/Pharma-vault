@@ -1,0 +1,73 @@
+<!-- pv-note-meta: {
+  "id": "case-cardiorenal-statin-macrolide-rhabdomyolysis",
+  "title": "Przypadek #4: Rabdomioliza i AKI po potrójnej blokadzie CYP3A4 / OATP1B1 (Symwastatyna + Klarytromycyna + Werapamil)",
+  "subtitle": "Ponad 10-krotny wzrost AUC kwasu symwastatyny wskutek zahamowania metabolizmu pierwszego przejścia i wychwytu wątrobowego",
+  "category": "case_study",
+  "provenance": "repo-curated",
+  "updated": "2026-11-10",
+  "cluster": "Cardiovascular and Lipid Agents",
+  "tags": ["rabdomioliza", "CYP3A4", "OATP1B1", "statyny", "makrolidy", "nefrologia", "FDI"],
+  "compounds": ["simvastatin-compound", "clarithromycin-compound", "verapamil-compound", "rosuvastatin-compound"],
+  "targets": ["CHEMBL402", "CHEMBL340"],
+  "icd": ["M62.8", "N17.9"],
+  "patient": {
+    "age_sex": "68M",
+    "egfr": 38,
+    "cyp_phenotype": "CYP3A4 / OATP1B1 zablokowane (inhibicja mechanizmowa)",
+    "diet": ["grapefruit"],
+    "diagnosis": "Rabdomioliza polekowa (M62.8) + ostre uszkodzenie nerek AKI (N17.9)"
+  }
+} -->
+<article class="pv-clinical-note">
+  <div class="pv-case-banner pv-banner-critical">
+    <div>
+      <strong>INTERAKCJA PRZECIWWSKAZANA (Bezwzględna kolizja PK + FDI):</strong> Łączenie lipofilnego proleku laktonowego Simvastatin (biodostępność bazowa F &lt; 5%) z nieodwracalnym inhibitorem CYP3A4 Clarithromycin, inhibitorem CYP3A4/P-gp Verapamil oraz furanokumarynami soku grejpfrutowego prowadzi do dramatycznej kumulacji miotoksycznej.
+    </div>
+  </div>
+
+  <h3>1. Wywiad kliniczny i parametry laboratoryjne</h3>
+  <p>68-letni pacjent z przewlekłą chorobą wieńcową, nadciśnieniem tętniczym i PChN G3b (wyjściowe eGFR 48 mL/min, aktualnie spadek do 38 mL/min) przyjmujący przewlekle Simvastatin (40 mg/d) oraz Verapamil (120 mg/d), otrzymał przed 6 dniami Clarithromycin (500 mg 2×/d) z powodu pozaszpitalnego zapalenia płuc. Codziennie rano popijał leki szklanką soku grejpfrutowego.</p>
+  <ul>
+    <li><strong>Objawy przy przyjęciu:</strong> Uogólniony ból i osłabienie mięśni obręczy biodrowej i barkowej, brunatne zabarwienie moczu (mioglobinuria), skąpomocz.</li>
+    <li><strong>Wyniki badań:</strong> CK = <strong>24 800 U/L</strong> (norma &lt;190 U/L), kreatynina = 2,6 mg/dL, potas K⁺ = 5,8 mmol/L, AST = 410 U/L, ALT = 185 U/L.</li>
+  </ul>
+
+  <h3>2. Analiza wektorów kolizji farmakokinetycznej</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Wektor kolizji</th>
+        <th>Cząsteczka / Czynnik</th>
+        <th>Mechanizm molekularny</th>
+        <th>Mnożnik ekspozycji (AUC)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Inhibicja jelitowego CYP3A4 (FDI)</strong></td>
+        <td>Sok grejpfrutowy (bergamotyna)</td>
+        <td>Nieodwracalna inaktywacja enterocytarnego <code>CHEMBL340</code> (CYP3A4); wzrost biodostępności symwastatyny z 5% do &gt;35%.</td>
+        <td><strong>3,6× – 7,0× AUC</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Inhibicja wątrobowego CYP3A4 i OATP1B1</strong></td>
+        <td>Clarithromycin</td>
+        <td>Tworzenie kompleksu nitrozoalkanowego z hemem CYP3A4 oraz kompetycyjne hamowanie transportera wątrobowego OATP1B1 (SLCO1B1).</td>
+        <td><strong>10× – 12× AUC</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Blokada P-gp i CYP3A4</strong></td>
+        <td>Verapamil</td>
+        <td>Umiarkowana inhibicja CYP3A4 i glikoproteiny P (ABCB1); wg FDA limit dawki symwastatyny z werapamilem wynosi maks. 10 mg/d.</td>
+        <td><strong>2,5× – 4,0× AUC</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>3. Protokół terapeutyczny i prewencja nawrotu</h3>
+  <ol>
+    <li><strong>Natychmiastowe wstrzymanie</strong> podawania Simvastatin i Clarithromycin; agresywna płynoterapia dożylna (0,9% NaCl z kontrolą diurezy &gt;200 mL/h) w celu prewencji nefropatii wałeczkowej mioglobinowej.</li>
+    <li><strong>Zamiana antybiotyku:</strong> W razie konieczności makrolidu u pacjenta na statynie — azytromycyna (brak istotnej inhibicji CYP3A4) lub doksycyklina.</li>
+    <li><strong>Bezpieczna reintrodukcja hipolipemizująca po wygojeniu:</strong> Konwersja na hydrofilną Rosuvastatin (rosuwastatyna w dawce dostosowanej do eGFR: 5–10 mg/d) lub prawastatynę, które nie są metabolizowane przez CYP3A4.</li>
+  </ol>
+</article>

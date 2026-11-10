@@ -1,0 +1,382 @@
+[
+  {
+    "id": "case-serotonin-cyp2d6-cascade",
+    "title": "Przypadek #1: Zespół serotoninowy i fenokonwersja CYP2D6 (Fluoksetyna + Tramadol + Moklobemid)",
+    "subtitle": "Kaskada farmakokinetyczno-farmakodynamiczna: blokada O-demetylacji tramadolu do M1 i toksyczność monoaminergiczna",
+    "category": "case_study",
+    "provenance": "repo-curated",
+    "source_file": "data/curated/notes/case-01-serotonin-cyp2d6-cascade.html",
+    "updated": "2026-11-10",
+    "cluster": "General Pharmacology",
+    "tags": [
+      "zespół-serotoninowy",
+      "CYP2D6",
+      "fenokonwersja",
+      "polipragmazja",
+      "analgezja",
+      "IMAO"
+    ],
+    "compounds": [
+      "fluoxetine-compound",
+      "tramadol-compound",
+      "moclobemide-compound",
+      "cyproheptadine-compound"
+    ],
+    "targets": [
+      "CHEMBL228",
+      "CHEMBL2095205",
+      "CHEMBL2096662",
+      "CHEMBL233"
+    ],
+    "icd": [
+      "F32.2",
+      "T43.2"
+    ],
+    "patient": {
+      "age_sex": "54K",
+      "egfr": 82,
+      "cyp_phenotype": "CYP2D6 PM (fenokonwersja przez norfluoksetynę)",
+      "diet": [],
+      "diagnosis": "Depresja lekooporna (F32.2) + przewlekły zespół bólowy kręgosłupa L-S"
+    },
+    "html": "<article class=\"pv-clinical-note\">\n  <div class=\"pv-case-banner pv-banner-critical\">\n    <div>\n      <strong>ALERT KLINICZNY (Kryteria Huntera — DODATNIE):</strong> Złożona interakcja PK/PD pomiędzy długo działającym metabolitem SSRI (norfluoksetyna, t½ = 4–16 dni), prolekiem opioidowo-monoaminergicznym (tramadol) oraz odwracalnym inhibitorem MAO-A (moklobemid).\n    </div>\n  </div>\n\n  <h3>1. Prezentacja kliniczna i oś czasu (Timeline)</h3>\n  <p>Pacjentka 54-letnia z rozpoznaniem ciężkiego epizodu depresji lekoopornej (ICD-10: <code>F32.2</code>) oraz przewlekłej radikulopatii L5/S1 została przyjęta na SOR z powodu gorączki (39,2°C), zlewnych potów, pobudzenia psychoruchowego, drżenia mięśniowego oraz spontanicznego klonusu stóp i gałek ocznych.</p>\n  <ul>\n    <li><strong>Dzień −14 do −4:</strong> Odstawienie fluoksetyny (Fluoxetine, 40 mg/d) po 6 miesiącach terapii z uwagi na brak remisji.</li>\n    <li><strong>Dzień −3:</strong> Z powodu zaostrzenia bólu korzeniowego w POZ włączono Tramadol (150 mg/d). Pacjentka zgłaszała całkowity brak efektu przeciwbólowego („lek nie działa na ból”), przez co samodzielnie zwiększyła dawkę do 300 mg/d.</li>\n    <li><strong>Dzień 0 (rano):</strong> Po 4-dniowym (zbyt krótkim!) okresie wash-out po fluoksetynie rozpoczęto terapię Moklobemidem (Moclobemide, 300 mg/d). W ciągu 6 godzin rozwinął się pełnoobjawowy zespół serotoninowy.</li>\n  </ul>\n\n  <h3>2. Mechanizm dwustopniowej pułapki farmakologicznej</h3>\n  <table>\n    <thead>\n      <tr>\n        <th>Etap kaskady</th>\n        <th>Zaangażowane cząsteczki i cele</th>\n        <th>Skutek molekularny i kliniczny</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>I. Fenokonwersja CYP2D6 (Pułapka proleku)</strong></td>\n        <td>Fluoxetine / norfluoksetyna → silna inhibicja <code>CYP2D6</code>; substrat: Tramadol</td>\n        <td>Zahamowanie konwersji tramadolu do aktywnego metabolitu <strong>(+)-O-demetylotramadolu (M1)</strong>, który odpowiada za agonizm wobec receptora μ-opioidowego (<code>CHEMBL233</code>). Utrata analgezji opioidowej skłania pacjenta do eskalacji dawki macierzystego tramadolu.</td>\n      </tr>\n      <tr>\n        <td><strong>II. Kumulacja enancjomeru (+)-tramadolu</strong></td>\n        <td>Macierzysty (+)-Tramadol + Fluoxetine na transporterze SERT (<code>CHEMBL228</code>)</td>\n        <td>Niezmetabolizowany tramadol kumuluje się i działa wyłącznie jako inhibitor wychwytu zwrotnego serotoniny (SERT) oraz noradrenaliny (NET), obniżając próg drgawkowy.</td>\n      </tr>\n      <tr>\n        <td><strong>III. Blokada degradacji MAO-A bez wash-outu</strong></td>\n        <td>Moclobemide (inhibicja <code>CHEMBL2095205</code>) + rezydualna norfluoksetyna (t½ do 16 dni)</td>\n        <td>Jednoczesna blokada transportera SERT i oksydazy monoaminowej MAO-A wywołuje wykładniczy wzrost 5-HT w szczelinie synaptycznej i nadmierną stymulację receptorów 5-HT2A (<code>CHEMBL2096662</code>).</td>\n      </tr>\n    </tbody>\n  </table>\n\n  <h3>3. Postępowanie ratunkowe i wnioski kliniczne</h3>\n  <ol>\n    <li><strong>Natychmiastowe odstawienie</strong> wszystkich leków serotoninergicznych (tramadolu i moklobemidu).</li>\n    <li><strong>Antagonizm receptorowy 5-HT2A:</strong> Podanie Cyproheptadine (12 mg p.o./przez zgłębnik, następnie 2 mg co 2 h do stabilizacji autonomicznej) jako swoistego antagonisty receptorów 5-HT2A (<code>CHEMBL2096662</code>).</li>\n    <li><strong>Kontrola sztywności mięśniowej i hipertermii:</strong> Benzodiazepiny dożylnie (diazepam/lorazepam) w celu redukcji klonusu i generowania ciepła mięśniowego; nawodnienie krystaloidami.</li>\n    <li><strong>Reguła wash-outu:</strong> Po odstawieniu fluoksetyny obowiązuje <strong>minimum 5 tygodni</strong> przerwy przed włączeniem jakiegokolwiek IMAO (ze względu na okres półtrwania norfluoksetyny wynoszący 4–16 dni).</li>\n  </ol>\n</article>"
+  },
+  {
+    "id": "case-parkinson-anticholinergic-delirium",
+    "title": "Przypadek #2: Majaczenie antycholinergiczne i dekompensacja poznawcza w chorobie Parkinsona (ACB ≥ 7)",
+    "subtitle": "Kumulacja ładunku antycholinergicznego na receptorach M1 (CHRM1) przy jednoczesnym leczeniu uroginekologicznym i neurologicznym",
+    "category": "case_study",
+    "provenance": "repo-curated",
+    "source_file": "data/curated/notes/case-02-parkinson-anticholinergic-delirium.html",
+    "updated": "2026-11-10",
+    "cluster": "General Pharmacology",
+    "tags": [
+      "choroba-Parkinsona",
+      "antycholinergiki",
+      "majaczenie",
+      "M1",
+      "dopamina",
+      "geriatria"
+    ],
+    "compounds": [
+      "levodopa-compound",
+      "oxybutynin-compound",
+      "amitriptyline-compound",
+      "quetiapine-compound",
+      "rivastigmine-compound"
+    ],
+    "targets": [
+      "CHEMBL216",
+      "CHEMBL217",
+      "CHEMBL245"
+    ],
+    "icd": [
+      "G20",
+      "F05"
+    ],
+    "patient": {
+      "age_sex": "74M",
+      "egfr": 54,
+      "cyp_phenotype": "CYP2D6 NM / CYP3A4 prawidłowy",
+      "diet": [],
+      "diagnosis": "Choroba Parkinsona (G20) + pęcherz nadreaktywny (OAB) + majaczenie (F05)"
+    },
+    "html": "<article class=\"pv-clinical-note\">\n  <div class=\"pv-case-banner pv-banner-warning\">\n    <div>\n      <strong>OSTRZEŻENIE NEUROGERIATRYCZNE (Skala ACB = 8 pkt):</strong> Lipofilna oksybutynina i amitryptylina swobodnie przekraczają barierę krew-mózg (BBB, niskie powinowactwo do P-gp) i blokują postsynaptyczne receptory muskarynowe M1 (<code>CHEMBL216</code>) w hipokampie oraz korze przedczołowej.\n    </div>\n  </div>\n\n  <h3>1. Obraz kliniczny</h3>\n  <p>74-letni pacjent z 6-letnim wywiadem choroby Parkinsona (ICD-10: <code>G20</code>), dotychczas dobrze funkcjonujący poznawczo na monoterapii preparatem Levodopa/benserazyd, trafił na oddział neurologii z powodu ostrych omamów wzrokowych (widzenie postaci w mieszkaniu), dezorientacji allopsychicznej w godzinach wieczornych (ICD-10: <code>F05</code>), zaparć oraz zatrzymania moczu.</p>\n  <ul>\n    <li><strong>2 tygodnie wcześniej (urologia):</strong> Włączono Oxybutynin (oksybutynina, 5 mg 3×/d) z powodu parć naglących (OAB).</li>\n    <li><strong>7 dni wcześniej (poradnia leczenia bólu):</strong> Dołączono Amitriptyline (amitryptylina, 25 mg na noc) z powodu parestezji kończyn dolnych i bezsenności.</li>\n  </ul>\n\n  <h3>2. Bilans cholinergiczno-dopaminergiczny i przenikanie przez BBB</h3>\n  <table>\n    <thead>\n      <tr>\n        <th>Substancja</th>\n        <th>Punkty ACB</th>\n        <th>Mechanizm receptorowy OUN</th>\n        <th>Alternatywa bezpieczna dla OUN</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Oxybutynin</strong> (Oksybutynina)</td>\n        <td><strong>3 pkt</strong></td>\n        <td>Silny, nieselektywny antagonista M1/M3 (<code>CHEMBL216</code>, <code>CHEMBL245</code>); wysoka lipofilność (LogP ≈ 4,0) i N-deetylacja (CYP3A4) do aktywnego metabolitu przenikającego przez BBB.</td>\n        <td>Trospium (czwartorzędowa amina nieprzenikająca przez BBB, substrat P-gp) lub solifenacyna/mirabegron.</td>\n      </tr>\n      <tr>\n        <td><strong>Amitriptyline</strong> (Amitryptylina)</td>\n        <td><strong>3 pkt</strong></td>\n        <td>Silny antagonizm M1 (Ki ≈ 18 nM), H1 oraz α1; powoduje sedację, hipotonię ortostatyczną i zaburzenia pamięci.</td>\n        <td>Pregabalina lub duloksetyna w bólu neuropatycznym (brak blokady M1).</td>\n      </tr>\n      <tr>\n        <td><strong>Levodopa</strong> (Lewodopa)</td>\n        <td><strong>1 pkt</strong></td>\n        <td>Zwiększa przekaźnictwo dopaminergiczne D2/D3 (<code>CHEMBL217</code>) w prążkowiu i układzie mezolimbicznym; przy jednoczesnym deficycie acetylocholiny wywołuje psychozę parkinsonowską.</td>\n        <td>Utrzymanie minimalnej skutecznej dawki lewodopy po odstawieniu antycholinergików.</td>\n      </tr>\n    </tbody>\n  </table>\n\n  <h3>3. Rekomendowana depolifarmakoterapia (Deprescribing)</h3>\n  <ol>\n    <li><strong>Odstawienie oksybutyniny i amitryptyliny:</strong> Redukcja ładunku antycholinergicznego o 6 punktów ACB stanowi leczenie przyczynowe majaczenia.</li>\n    <li><strong>Korekta zaburzeń poznawczych (PDD):</strong> W razie utrzymywania się deficytu cholinergicznego rozważenie inhibitora AChE/BuChE — Rivastigmine (rywastygmina, system transdermalny), która nie nasila drżenia parkinsonowskiego i nie ulega metabolizmowi CYP450.</li>\n    <li><strong>Kontrola psychozy w chorobie Parkinsona:</strong> Bezwzględny zakaz podawania klasycznych neuroleptyków (np. haloperidolu) oraz risperidonu/olanzapiny! W razie konieczności doraźnej kontroli omamów dopuszczalna jest niska dawka Quetiapine (kwetiapina) lub klozapina/pimawanseryna.</li>\n  </ol>\n</article>"
+  },
+  {
+    "id": "case-epilepsy-valproate-lamotrigine-sjs",
+    "title": "Przypadek #3: Inhibicja glukuronidacji UGT1A4 i zespół Stevensa-Johnsona (Walproinian + Lamotrygina)",
+    "subtitle": "Podwojenie okresu półtrwania lamotryginy (t½ z 29 h do >60 h) wskutek kompetycyjnej blokady N2-glukuronidacji przez kwas walproinowy",
+    "category": "case_study",
+    "provenance": "repo-curated",
+    "source_file": "data/curated/notes/case-03-epilepsy-valproate-lamotrigine-sjs.html",
+    "updated": "2026-11-10",
+    "cluster": "General Pharmacology",
+    "tags": [
+      "padaczka",
+      "UGT1A4",
+      "SJS-TEN",
+      "lamotrygina",
+      "walproinian",
+      "neurologia"
+    ],
+    "compounds": [
+      "valproate-compound",
+      "lamotrigine-compound",
+      "carbamazepine-compound",
+      "levetiracetam-compound"
+    ],
+    "targets": [
+      "CHEMBL2331043",
+      "CHEMBL1998"
+    ],
+    "icd": [
+      "G40.2",
+      "L51.1"
+    ],
+    "patient": {
+      "age_sex": "29K",
+      "egfr": 95,
+      "cyp_phenotype": "UGT1A4 zahamowana przez walproinian",
+      "diet": [],
+      "diagnosis": "Padaczka ogniskowa z wtórnym uogólnieniem (G40.2) + reakcja pęcherzowa SJS (L51.1)"
+    },
+    "html": "<article class=\"pv-clinical-note\">\n  <div class=\"pv-case-banner pv-banner-critical\">\n    <div>\n      <strong>BLACK BOX WARNING (FDA / ChPL):</strong> Kwas walproinowy (Sodium Valproate) silnie hamuje glukuronylotransferazę UGT1A4/2B7, zmniejszając klirens Lamotrigine o ~50% i wydłużając jej t½ z ~29 h do ponad 60 h. Zastosowanie standardowego (niezredukowanego) schematu titracji lamotryginy radykalnie zwiększa ryzyko zespołu Stevensa-Johnsona (SJS/TEN).\n    </div>\n  </div>\n\n  <h3>1. Opis przypadku</h3>\n  <p>29-letnia pacjentka z padaczką skroniową (ICD-10: <code>G40.2</code>), leczona dotychczas przewlekle preparatem Sodium Valproate (1000 mg/d), zgłosiła się w 16. dniu od dołączenia Lamotrigine (włączonej błędnie w standardowej dawce 50 mg/d zamiast 25 mg co drugi dzień) z gorączką 38,6°C, bolesnymi nadżerkami błony śluzowej jamy ustnej, zapaleniem spojówek oraz plamisto-grudkową osutką z dodatnim objawem Nikolskiego na tułowiu (ICD-10: <code>L51.1</code>).</p>\n\n  <h3>2. Trójkąt interakcji leków przeciwpadaczkowych (ASM)</h3>\n  <table>\n    <thead>\n      <tr>\n        <th>Kombinacja terapeutyczna</th>\n        <th>Szlak enzymatyczny</th>\n        <th>Zmiana t½ Lamotryginy</th>\n        <th>Wymagana modyfikacja titracji (wg ChPL)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Monoterapia Lamotrigine</strong></td>\n        <td>UGT1A4 (N2-glukuronidacja) na poziomie bazowym</td>\n        <td><strong>~24–35 h</strong></td>\n        <td>Tydzień 1–2: 25 mg/d → Tydzień 3–4: 50 mg/d.</td>\n      </tr>\n      <tr>\n        <td><strong>Lamotrigine + Sodium Valproate</strong> (Inhibitor UGT)</td>\n        <td>Kompetycyjna blokada UGT1A4; przekierowanie do szlaku oksydacyjnego CYP (reaktywny arenooksyd)</td>\n        <td><strong>~60–70 h</strong> (dwukrotny wzrost AUC)</td>\n        <td>Tydzień 1–2: <strong>12,5 mg/d (25 mg co 2. dzień)</strong> → Tydzień 3–4: 25 mg/d (50% dawki standardowej!).</td>\n      </tr>\n      <tr>\n        <td><strong>Lamotrigine + Carbamazepine</strong> (Induktor UGT/CYP)</td>\n        <td>Silna indukcja UGT1A4 oraz CYP3A4 przez karbamazepinę</td>\n        <td><strong>~12–15 h</strong> (spadek stężenia o 40–50%)</td>\n        <td>Tydzień 1–2: 50 mg/d → Tydzień 3–4: 100 mg/d w 2 dawkach podzielonych.</td>\n      </tr>\n    </tbody>\n  </table>\n\n  <h3>3. Decyzje terapeutyczne</h3>\n  <ol>\n    <li><strong>Bezwzględne i trwałe odstawienie lamotryginy:</strong> Nawet wczesna osutka z objawami ogólnymi i śluzówkowymi u pacjenta na kombinacji walproinian + lamotrygina wymaga natychmiastowego przerwania ekspozycji bez ponownej próby prowokacji (re-challenge przeciwwskazany).</li>\n    <li><strong>Alternatywa wolna od interakcji UGT/CYP (i bezpieczna teratogennie u kobiet w wieku rozrodczym):</strong> Konwersja politerapii na Levetiracetam (modulator białka pęcherzykowego SV2A — <code>CHEMBL1998</code>), który nie podlega metabolizmowi wątrobowemu CYP/UGT i nie wchodzi w interakcje farmakokinetyczne.</li>\n  </ol>\n</article>"
+  },
+  {
+    "id": "case-cardiorenal-statin-macrolide-rhabdomyolysis",
+    "title": "Przypadek #4: Rabdomioliza i AKI po potrójnej blokadzie CYP3A4 / OATP1B1 (Symwastatyna + Klarytromycyna + Werapamil)",
+    "subtitle": "Ponad 10-krotny wzrost AUC kwasu symwastatyny wskutek zahamowania metabolizmu pierwszego przejścia i wychwytu wątrobowego",
+    "category": "case_study",
+    "provenance": "repo-curated",
+    "source_file": "data/curated/notes/case-04-cardiorenal-statin-macrolide-rhabdomyolysis.html",
+    "updated": "2026-11-10",
+    "cluster": "Cardiovascular and Lipid Agents",
+    "tags": [
+      "rabdomioliza",
+      "CYP3A4",
+      "OATP1B1",
+      "statyny",
+      "makrolidy",
+      "nefrologia",
+      "FDI"
+    ],
+    "compounds": [
+      "simvastatin-compound",
+      "clarithromycin-compound",
+      "verapamil-compound",
+      "rosuvastatin-compound"
+    ],
+    "targets": [
+      "CHEMBL402",
+      "CHEMBL340"
+    ],
+    "icd": [
+      "M62.8",
+      "N17.9"
+    ],
+    "patient": {
+      "age_sex": "68M",
+      "egfr": 38,
+      "cyp_phenotype": "CYP3A4 / OATP1B1 zablokowane (inhibicja mechanizmowa)",
+      "diet": [
+        "grapefruit"
+      ],
+      "diagnosis": "Rabdomioliza polekowa (M62.8) + ostre uszkodzenie nerek AKI (N17.9)"
+    },
+    "html": "<article class=\"pv-clinical-note\">\n  <div class=\"pv-case-banner pv-banner-critical\">\n    <div>\n      <strong>INTERAKCJA PRZECIWWSKAZANA (Bezwzględna kolizja PK + FDI):</strong> Łączenie lipofilnego proleku laktonowego Simvastatin (biodostępność bazowa F &lt; 5%) z nieodwracalnym inhibitorem CYP3A4 Clarithromycin, inhibitorem CYP3A4/P-gp Verapamil oraz furanokumarynami soku grejpfrutowego prowadzi do dramatycznej kumulacji miotoksycznej.\n    </div>\n  </div>\n\n  <h3>1. Wywiad kliniczny i parametry laboratoryjne</h3>\n  <p>68-letni pacjent z przewlekłą chorobą wieńcową, nadciśnieniem tętniczym i PChN G3b (wyjściowe eGFR 48 mL/min, aktualnie spadek do 38 mL/min) przyjmujący przewlekle Simvastatin (40 mg/d) oraz Verapamil (120 mg/d), otrzymał przed 6 dniami Clarithromycin (500 mg 2×/d) z powodu pozaszpitalnego zapalenia płuc. Codziennie rano popijał leki szklanką soku grejpfrutowego.</p>\n  <ul>\n    <li><strong>Objawy przy przyjęciu:</strong> Uogólniony ból i osłabienie mięśni obręczy biodrowej i barkowej, brunatne zabarwienie moczu (mioglobinuria), skąpomocz.</li>\n    <li><strong>Wyniki badań:</strong> CK = <strong>24 800 U/L</strong> (norma &lt;190 U/L), kreatynina = 2,6 mg/dL, potas K⁺ = 5,8 mmol/L, AST = 410 U/L, ALT = 185 U/L.</li>\n  </ul>\n\n  <h3>2. Analiza wektorów kolizji farmakokinetycznej</h3>\n  <table>\n    <thead>\n      <tr>\n        <th>Wektor kolizji</th>\n        <th>Cząsteczka / Czynnik</th>\n        <th>Mechanizm molekularny</th>\n        <th>Mnożnik ekspozycji (AUC)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Inhibicja jelitowego CYP3A4 (FDI)</strong></td>\n        <td>Sok grejpfrutowy (bergamotyna)</td>\n        <td>Nieodwracalna inaktywacja enterocytarnego <code>CHEMBL340</code> (CYP3A4); wzrost biodostępności symwastatyny z 5% do &gt;35%.</td>\n        <td><strong>3,6× – 7,0× AUC</strong></td>\n      </tr>\n      <tr>\n        <td><strong>Inhibicja wątrobowego CYP3A4 i OATP1B1</strong></td>\n        <td>Clarithromycin</td>\n        <td>Tworzenie kompleksu nitrozoalkanowego z hemem CYP3A4 oraz kompetycyjne hamowanie transportera wątrobowego OATP1B1 (SLCO1B1).</td>\n        <td><strong>10× – 12× AUC</strong></td>\n      </tr>\n      <tr>\n        <td><strong>Blokada P-gp i CYP3A4</strong></td>\n        <td>Verapamil</td>\n        <td>Umiarkowana inhibicja CYP3A4 i glikoproteiny P (ABCB1); wg FDA limit dawki symwastatyny z werapamilem wynosi maks. 10 mg/d.</td>\n        <td><strong>2,5× – 4,0× AUC</strong></td>\n      </tr>\n    </tbody>\n  </table>\n\n  <h3>3. Protokół terapeutyczny i prewencja nawrotu</h3>\n  <ol>\n    <li><strong>Natychmiastowe wstrzymanie</strong> podawania Simvastatin i Clarithromycin; agresywna płynoterapia dożylna (0,9% NaCl z kontrolą diurezy &gt;200 mL/h) w celu prewencji nefropatii wałeczkowej mioglobinowej.</li>\n    <li><strong>Zamiana antybiotyku:</strong> W razie konieczności makrolidu u pacjenta na statynie — azytromycyna (brak istotnej inhibicji CYP3A4) lub doksycyklina.</li>\n    <li><strong>Bezpieczna reintrodukcja hipolipemizująca po wygojeniu:</strong> Konwersja na hydrofilną Rosuvastatin (rosuwastatyna w dawce dostosowanej do eGFR: 5–10 mg/d) lub prawastatynę, które nie są metabolizowane przez CYP3A4.</li>\n  </ol>\n</article>"
+  },
+  {
+    "id": "neuro-bbb-efflux-selectivity",
+    "title": "Neurofarmakologia #1: Bariera Krew-Mózg (BBB), pompa P-gp (ABCB1) i selektywność ośrodkowa vs obwodowa",
+    "subtitle": "Dlaczego loperamid, domperydon i feksofenadyna nie działają na OUN w dawkach terapeutycznych — analiza Kp,uu,brain i CNS MPO",
+    "category": "mechanism",
+    "provenance": "repo-curated",
+    "source_file": "data/curated/notes/neuro-01-bbb-efflux-neurotransmission.html",
+    "updated": "2026-11-10",
+    "cluster": "General Pharmacology",
+    "tags": [
+      "BBB",
+      "P-gp",
+      "ABCB1",
+      "CNS-MPO",
+      "loperamid",
+      "neurofarmakologia",
+      "transportery"
+    ],
+    "compounds": [
+      "loperamide-compound",
+      "domperidone-compound",
+      "fexofenadine-compound",
+      "cetirizine-compound",
+      "modafinil-compound"
+    ],
+    "targets": [
+      "CHEMBL233",
+      "CHEMBL217",
+      "CHEMBL238"
+    ],
+    "icd": [
+      "G47.4"
+    ],
+    "patient": null,
+    "html": "<article class=\"pv-clinical-note\">\n  <div class=\"pv-case-banner pv-banner-info\">\n    <div>\n      <strong>ZASADA NEUROFARMAKINETYCZNA:</strong> Wysoka lipofilność (LogP) NIE gwarantuje działania ośrodkowego. Kluczowym determinantem stężenia wolnej frakcji w płynie śródmiąższowym mózgu (<code>Kp,uu,brain</code>) jest stosunek biernej dyfuzji przez śródbłonek naczyń mózgowych do aktywnego wyrzutu (efflux) przez <strong>glikoproteinę P (P-gp / ABCB1)</strong> oraz <strong>BCRP (ABCG2)</strong>.\n    </div>\n  </div>\n\n  <h3>1. Klasyczne pary selektywności obwodowej vs ośrodkowej</h3>\n  <table>\n    <thead>\n      <tr>\n        <th>Para farmakologiczna</th>\n        <th>Cel molekularny</th>\n        <th>Substrat P-gp (Obwodowy, Kp,uu &lt; 0,1)</th>\n        <th>Penetrator OUN (Ośrodkowy, Kp,uu ≥ 0,5)</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Agoniści μ-opioidowi</strong></td>\n        <td>MOR (<code>CHEMBL233</code>)</td>\n        <td><strong>Loperamide</strong> — silny agonista μ-opioidowy (Ki ≈ 3 nM), ale avidny substrat P-gp w śródbłonku BBB (Kp,uu ≈ 0,02). Działa wyłącznie na sploty Auerbacha w jelicie, chyba że P-gp zostanie zablokowana (np. przez chinidynę lub werapamil).</td>\n        <td>Fentanyl / Morfina — wysoka lub umiarkowana penetracja przez BBB → analgezja nadrdzeniowa i ryzyko depresji oddechowej w pniu mózgu.</td>\n      </tr>\n      <tr>\n        <td><strong>Antagoniści dopaminowi D2</strong></td>\n        <td>Receptor D2 (<code>CHEMBL217</code>)</td>\n        <td><strong>Domperidone</strong> — blokuje receptory D2 wyłącznie w strefie chemoreceptorowej (CTZ / pole najdalsze poza BBB) oraz w górnym odcinku przewodu pokarmowego; nie wywołuje parkinsonizmu polekowego.</td>\n        <td>Metoklopramid / Haloperidol — przekraczają BBB, blokują D2 w prążkowiu → ryzyko ostrej dystonii, akatyzji i dyskinez późnych.</td>\n      </tr>\n      <tr>\n        <td><strong>Antagoniści histaminowi H1</strong></td>\n        <td>Receptor H1 (HRH1)</td>\n        <td><strong>Fexofenadine</strong> i <strong>Cetirizine</strong> — jon obojnaczy (zwitterion, tPSA &gt; 50 Å²) oraz aktywny wyrzut przez P-gp ograniczają okupację H1 w korze mózgowej do &lt;5% (brak sedacji).</td>\n        <td>Hydroksyzyna / Difenhydramina — brak wyrzutu P-gp, wysoka lipofilność → &gt;60% okupacji H1 w OUN, sedacja i zaburzenia architektury snu.</td>\n      </tr>\n    </tbody>\n  </table>\n\n  <h3>2. Parametry fizykochemiczne sprzyjające penetracji OUN (Wskaźnik CNS MPO ≥ 4,0)</h3>\n  <ul>\n    <li><strong>Topologiczna powierzchnia polarna (tPSA):</strong> optymalnie <strong>40–75 Å²</strong> (powyżej 90 Å² bierna dyfuzja gwałtownie spada).</li>\n    <li><strong>Masa cząsteczkowa (MW):</strong> ≤ 360–400 Da.</li>\n    <li><strong>Liczba donorów wiązań wodorowych (HBD):</strong> ≤ 1–2 (każda grupa –OH / –NH₂ drastycznie zwiększa powinowactwo do pompy P-gp).</li>\n    <li><strong>Przykład optymalizacji OUN:</strong> Modafinil (tPSA = 79,1 Å², MW = 273 Da, umiarkowany LogP) osiąga celowaną penetrację do struktur podwzgórza i układu dopaminergicznego (<code>CHEMBL238</code>) przy minimalnej kardiotoksyczności obwodowej.</li>\n  </ul>\n</article>"
+  },
+  {
+    "id": "neuro-dopamine-serotonin-occupancy",
+    "title": "Neurofarmakologia #2: Okupacja receptorowa D2/D3 vs 5-HT2A (PET) i okno terapeutyczne neuroleptyków",
+    "subtitle": "Próg przeciwpsychotyczny (60–65% D2), próg hiperprolaktynemii (72% D2) i próg objawów pozapiramidowych EPS (>78–80% D2)",
+    "category": "mechanism",
+    "provenance": "repo-curated",
+    "source_file": "data/curated/notes/neuro-02-dopamine-serotonin-receptor-occupancy.html",
+    "updated": "2026-11-10",
+    "cluster": "General Pharmacology",
+    "tags": [
+      "D2",
+      "D3",
+      "5-HT2A",
+      "PET",
+      "neuroleptyki",
+      "EPS",
+      "klozapina",
+      "arypiprazol"
+    ],
+    "compounds": [
+      "clozapine-compound",
+      "aripiprazole-compound",
+      "amisulpride-compound",
+      "risperidone-compound",
+      "haloperidol-compound"
+    ],
+    "targets": [
+      "CHEMBL217",
+      "CHEMBL234",
+      "CHEMBL2096662"
+    ],
+    "icd": [
+      "F20.0"
+    ],
+    "patient": null,
+    "html": "<article class=\"pv-clinical-note\">\n  <div class=\"pv-case-banner pv-banner-info\">\n    <div>\n      <strong>PARADYGMAT NEUROOBRAZOWANIA PET (Kapur &amp; Seeman):</strong> Kliniczna odpowiedź przeciwpsychotyczna oraz ryzyko polekowych zaburzeń ruchowych (EPS) zależą od stopnia obsadzenia (occupancy) striatalnych receptorów dopaminowych <code>D2</code> (<code>CHEMBL217</code>) oraz kinetyki dysocjacji liganda (<em>fast-off D2 hypothesis</em>).\n    </div>\n  </div>\n\n  <h3>1. Progi okupacji striatalnego receptora D2 w badaniach PET</h3>\n  <ul>\n    <li><strong>&lt; 60% okupacji D2:</strong> Zwykle niewystarczający efekt przeciwpsychotyczny dla klasycznych antagonistów (wyjątek: Clozapine i kwetiapina, działające przy 20–45% okupacji D2 dzięki szybkiej dysocjacji i komponentowi 5-HT2A/M1/M4).</li>\n    <li><strong>60% – 72% okupacji D2:</strong> Optymalne okno terapeutyczne dla antagonizmu D2 (np. Risperidone w dawce 2–4 mg/d).</li>\n    <li><strong>&gt; 72% okupacji D2 w przysadce (szlak guzkowo-lejkowy):</strong> Odblokowanie komórek laktotropowych → hiperprolaktynemia (szczególnie Amisulpride i Risperidone z uwagi na ograniczoną penetrację BBB i wysokie stężenie w przysadce).</li>\n    <li><strong>&gt; 78% – 80% okupacji D2 w prążkowiu grzbietowym:</strong> Gwałtowny wzrost ryzyka objawów pozapiramidowych (akatyzja, parkinsonizm, ostra dystonia) — typowe dla Haloperidol w dawkach &gt; 3–5 mg/d.</li>\n  </ul>\n\n  <h3>2. Porównanie profili farmakodynamicznych 5 archetypów</h3>\n  <table>\n    <thead>\n      <tr>\n        <th>Substancja</th>\n        <th>Dominujący mechanizm D2/D3 vs 5-HT2A</th>\n        <th>Typowa okupacja D2 w PET</th>\n        <th>Charakterystyka kliniczna</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td><strong>Haloperidol</strong></td>\n        <td>Czysty, silny antagonista D2 (<code>CHEMBL217</code>, Ki ≈ 1,4 nM) o powolnej dysocjacji (<em>tight binding</em>).</td>\n        <td>75% – 92%</td>\n        <td>Silne działanie przeciwWytwórcze; bardzo wąskie okno między dawką skuteczną a progiem EPS i wtórną anhedonią.</td>\n      </tr>\n      <tr>\n        <td><strong>Risperidone</strong></td>\n        <td>Antagonista 5-HT2A &gt;&gt; D2 (<code>CHEMBL2096662</code> Ki ≈ 0,2 nM vs D2 Ki ≈ 3 nM).</td>\n        <td>65% – 82%</td>\n        <td>W niskich dawkach antagonizm 5-HT2A zwiększa uwalnianie dopaminy w prążkowiu; powyżej 6 mg/d zachowuje się jak klasyczny neuroleptyk.</td>\n      </tr>\n      <tr>\n        <td><strong>Clozapine</strong></td>\n        <td>Multireceptorowy antagonista (5-HT2A, D4, α1, H1, M1) z szybką dysocjacją z D2 (Ki ≈ 125 nM).</td>\n        <td>20% – 50%</td>\n        <td>Złoty standard w schizofrenii lekoopornej (ICD-10: <code>F20.0</code>) i psychozie w chorobie Parkinsona; brak EPS, wymaga monitorowania ANC i zapalenia mięśnia sercowego.</td>\n      </tr>\n      <tr>\n        <td><strong>Aripiprazole</strong></td>\n        <td>Częściowy agonista D2/D3 (<code>CHEMBL217</code>, <code>CHEMBL234</code>, Ki ≈ 0,34 nM, aktywność wewnętrzna ~25%).</td>\n        <td><strong>85% – 95%</strong> (bez EPS!)</td>\n        <td>Dzięki aktywności wewnętrznej (~25%) nawet przy 90% obsadzeniu receptorów zachowuje toniczną transmisję dopaminową i obniża prolaktynę.</td>\n      </tr>\n      <tr>\n        <td><strong>Amisulpride</strong></td>\n        <td>Selektywny antagonista D2/D3 (brak powinowactwa do 5-HT, H1, M1).</td>\n        <td>Dawkozależna (40–80%)</td>\n        <td>W niskich dawkach (50–100 mg/d) preferencyjnie blokuje presynaptyczne autoreceptory D2/D3; w dawkach 400–800 mg/d blokuje receptory postsynaptyczne.</td>\n      </tr>\n    </tbody>\n  </table>\n</article>"
+  },
+  {
+    "id": "ebm-biohacking-bible-critical-review",
+    "title": "Przegląd EBM #1: Krytyczna analiza neurofarmakologiczna „Biohacking Bible”",
+    "subtitle": "Metodologia oceny bezpieczeństwa: IMAO, tianeptyna, fenotypy dopaminergiczne, peptydy badawcze i 5-punktowy filtr kliniczny",
+    "category": "ebm_review",
+    "provenance": "repo-resources",
+    "source_file": "Resources/notes/01-przeglad-krytyczny.md",
+    "updated": "2026-11-10",
+    "cluster": "Nootropics",
+    "tags": [
+      "EBM",
+      "neurofarmakologia",
+      "IMAO",
+      "tianeptyna",
+      "nootropiki",
+      "bezpieczeństwo"
+    ],
+    "compounds": [
+      "phenelzine-compound",
+      "tranylcypromine-compound",
+      "tianeptine-compound",
+      "lamotrigine-compound",
+      "amisulpride-compound",
+      "modafinil-compound",
+      "metformin-compound"
+    ],
+    "targets": [
+      "CHEMBL2095205",
+      "CHEMBL233",
+      "CHEMBL217",
+      "CHEMBL340"
+    ],
+    "icd": [
+      "F32.9",
+      "F90.0"
+    ],
+    "patient": null,
+    "html": "<article class=\"pv-clinical-note\">\n<p>Kontynuując: ten PDF to obszerna, społecznościowo redagowana kompilacja o lekach psychotropowych, nootropikach, substancjach eksperymentalnych i peptydach, skoncentrowana na anhedonii, depresji, ADHD, PSSD i DPDR. Ma charakter <strong>nieformalnego poradnika biohackingowego</strong>, a nie wytycznych klinicznych — zawiera wiele twierdzeń mechanistycznych, anegdot i zaleceń dawkowania, których nie należy traktować jako podstawy do samoleczenia.</p>\n<h3>Mapa zawartości</h3>\n<table><thead><tr><th>Blok</th><th>Przykładowe tematy</th><th>Charakter materiału</th></tr></thead><tbody>\n<tr><td>Leki przeciwdepresyjne</td><td>SSRI, SNRI, TLPD, IMAO, lamotrygina, amisulpryd, tianeptyna</td><td>Mieszanka faktów farmakologicznych, opinii autora i ryzykownych rekomendacji</td></tr>\n<tr><td>Stymulanty i układ dopaminowy</td><td>Dekstroamfetamina, metylofenidat, modafinil, bromantan, amantadyna</td><td>Częściowo zgodne z farmakologią, ale wyciąga zbyt dalekie wnioski kliniczne</td></tr>\n<tr><td>Nootropiki i suplementy</td><td>ALCAR, agmatyna, NAC, bacopa, rhodiola, huperzyna A, PEA, kofeina</td><td>Zróżnicowana jakość dowodów; potencjalne interakcje i ryzyko działań niepożądanych</td></tr>\n<tr><td>Substancje eksperymentalne</td><td>9-Me-BC, nor-BNI, BPN14770, NSI-189, URB597, ezogabina/XEN-1101</td><td>Zwykle dane przedkliniczne lub bardzo ograniczone dane kliniczne</td></tr>\n<tr><td>Peptydy</td><td>Semax, Selank, BPC-157, Cerebrolysin, PE-22-28, MIF-1, kisspeptyna</td><td>Niejednorodna jakość, często brak solidnych badań ludzi lub brak dopuszczenia</td></tr>\n<tr><td>PSSD/DPDR/anhedonia</td><td>Hipotezy serotoninowo-dopaminowe, neurosteroidy, KOR, glutaminian</td><td>Obszar silnie spekulacyjny, wymagający ostrożności diagnostycznej</td></tr>\n</tbody></table>\n<p>Materiał został zaktualizowany 26 sierpnia 2025 r. i deklaruje, że jest osobistym zbiorem notatek, a nie poradą medyczną.</p>\n<h3>Najważniejszy problem metodologiczny</h3>\n<p>Autor przyjmuje uproszczony model, w którym wiele objawów psychiatrycznych wynika z „hipodopaminergii” lub zbyt silnej neurotransmisji serotoninergicznej. Taki model może być użyteczny jako punkt wyjścia do rozumienia niektórych mechanizmów, ale nie stanowi uniwersalnego wyjaśnienia depresji, ADHD, zaburzeń lękowych, PSSD czy derealizacji.</p>\n<p>W psychiatrii objawy takie jak anhedonia, zaburzenia koncentracji, lęk i dysfunkcje seksualne są heterogenne. Mogą mieć komponent dopaminergiczny, ale obejmują też układ glutaminianergiczny, GABA-ergiczny, zapalny, osi HPA, sen, zaburzenia somatyczne, traumę, używanie substancji, działania niepożądane leków oraz czynniki psychospołeczne. Nie można na podstawie fenotypu objawów wiarygodnie rozpoznać „niedoboru dopaminy” ani dobrać leczenia receptorowego.</p>\n<h3>⚠️ Twierdzenia wymagające szczególnej ostrożności</h3>\n<h4>IMAO</h4>\n<p>PDF relatywizuje ograniczenia dotyczące jedzenia i interakcji, sugeruje bezpieczne łączenie IMAO oraz wymienia kombinacje lekowe. To szczególnie niebezpieczny obszar. Nieodwracalne IMAO, takie jak fenelzyna i tranylcypromina, mogą powodować ciężkie interakcje, w tym przełom nadciśnieniowy lub toksyczność serotoninową, zależnie od kombinacji. Wymagają prowadzenia przez doświadczonego psychiatrę, przeglądu wszystkich leków i suplementów oraz przestrzegania zasad wash-out.</p>\n<p>Nie należy samodzielnie:</p>\n<ul>\n<li>łączyć IMAO z SSRI, SNRI, klomipraminą, lekami serotoninergicznymi, MDMA czy innymi substancjami uwalniającymi serotoninę;</li>\n<li>wprowadzać IMAO po samodzielnie ustalonym okresie odstawienia poprzedniego leku;</li>\n<li>stosować „stacków” IMAO z preparatami ziołowymi, stymulantami lub research chemicals.</li>\n</ul>\n<h4>Tianeptyna i opioidy</h4>\n<p>Opis tianeptyny jako zasadniczo niewywołującej tolerancji lub zespołu odstawiennego jest zbyt uspokajający. Tianeptyna działa jako agonista receptora μ-opioidowego, a przypadki nadużywania, uzależnienia, zespołu odstawiennego i ciężkiej toksyczności przy dawkach ponadterapeutycznych są dobrze rozpoznanym problemem klinicznym. W materiale sam autor zaznacza, że dawki powyżej 50 mg mogą przechodzić w obszar nadużywania, lecz to nie neutralizuje ryzyka.</p>\n<h4>Substancje niezatwierdzone i badawcze</h4>\n<p>W dokumencie znajdują się konkretne schematy dawek oraz drogi podania dla m.in. donosowego deferoksaminy, 9-Me-BC, nor-BNI, NSI-189, URB597, BPC-157, PE-22-28 i innych peptydów. To substancje o ograniczonej jakości danych, niekiedy głównie przedklinicznych, bez ustalonego bezpieczeństwa długoterminowego u ludzi.</p>\n<p>Szczególnie ryzykowne są:</p>\n<ul>\n<li>podawanie donosowe lub iniekcyjne produktów pozyskanych poza kontrolowanym systemem farmaceutycznym;</li>\n<li>próby łączenia wielu substancji działających na monoaminy;</li>\n<li>traktowanie relacji z Discorda lub Reddita jako danych o skuteczności;</li>\n<li>ekstrapolowanie wyników z hodowli komórkowych i modeli gryzoni na leczenie człowieka.</li>\n</ul>\n<h4>Genetyka „methylation”</h4>\n<p>PDF sugeruje, że warianty w genach takich jak <strong>MTHFR, COMT, MAOA, VDR czy MTRR</strong> mogą bezpośrednio ukierunkowywać suplementację i przewidywać reakcje na leki/PSSD. Takie interpretacje testów konsumenckich są zwykle zbyt daleko idące. Powszechne polimorfizmy nie są samodzielnie wystarczającą podstawą do diagnozowania „niedo-” lub „nadmetylacji” ani do dobierania psychofarmakoterapii.</p>\n<h3>Elementy relatywnie użyteczne</h3>\n<p>Nie wszystko w materiale jest bezwartościowe. Jako student medycyny możesz potraktować go jako źródło <strong>hipotez i nazw substancji do weryfikacji</strong>, a nie jako syntezę dowodów.</p>\n<p>Przydatne elementy obejmują:</p>\n<ul>\n<li>podstawowe opisy mechanizmów: np. hamowanie wychwytu zwrotnego monoamin, blokada receptorów D₂/D₃, hamowanie MAO czy modulacja kanałów sodowych i wapniowych;</li>\n<li>zwrócenie uwagi na interakcje farmakokinetyczne dziurawca zwyczajnego — szczególnie indukcję CYP3A4 oraz P-gp;</li>\n<li>podkreślenie znaczenia monitorowania stanu ogólnego przed psychofarmakoterapią, np. niedoboru B₁₂ przy przewlekłym stosowaniu metforminy;</li>\n<li>zaznaczenie, że lamotrygina wymaga powolnej titracji z uwagi na ryzyko ciężkiej reakcji skórnej;</li>\n<li>rozróżnienie między niskimi a przeciwpsychotycznymi dawkami amisulprydu jako zagadnienie farmakodynamiczne, choć decyzje kliniczne muszą uwzględniać m.in. prolaktynę, QTc, objawy pozapiramidowe i profil chorego.</li>\n</ul>\n<h3>Praktyczny filtr krytyczny 🧪</h3>\n<p>Przed uznaniem dowolnej rekomendacji z tego PDF za wiarygodną, zastosuj pięć pytań:</p>\n<ol>\n<li><strong>Czy istnieją randomizowane badania u ludzi?</strong></li>\n</ol>\n<p>Dane z komórek, gryzoni i mechanistyczne rozumowanie nie dowodzą skuteczności klinicznej.</p>\n<ol>\n<li><strong>Czy efekt dotyczy dokładnie tego wskazania?</strong></li>\n</ol>\n<p>Korzyść w modelu depresji u myszy nie dowodzi działania w anhedonii, ADHD, PSSD czy DPDR u człowieka.</p>\n<ol>\n<li><strong>Czy dawka, droga podania i produkt są regulowane?</strong></li>\n</ol>\n<p>„Research chemicals”, preparaty donosowe i peptydy z niezweryfikowanych źródeł mają poważny problem czystości, biodostępności i toksykologii.</p>\n<ol>\n<li><strong>Czy uwzględniono interakcje?</strong></li>\n</ol>\n<p>Dotyczy to zwłaszcza IMAO, serotonergików, stymulantów, opioidów, dziurawca, leków przeciwpadaczkowych i leków wpływających na QT.</p>\n<ol>\n<li><strong>Czy korzyść przewyższa ryzyko w realnym pacjencie?</strong></li>\n</ol>\n<p>Należy uwzględnić rozpoznanie, choroby somatyczne, farmakoterapię, używanie substancji, sen, ryzyko samobójcze i możliwość monitorowania.</p>\n<h3>Wniosek</h3>\n<p>Najlepiej czytać tę publikację jak <strong>niezweryfikowany katalog hipotez neurofarmakologicznych</strong>. Może pomóc znaleźć interesujące mechanizmy i literaturę pierwotną, lecz jest zbyt nierówna, aby pełnić rolę przewodnika terapeutycznego — a część jej zaleceń o polifarmakoterapii, IMAO, opioidach, substancjach badawczych i drogach iniekcyjnych/donosowych może realnie stwarzać zagrożenie.</p>\n<p>Jeśli chcesz, w kolejnym kroku mogę przygotować:</p>\n<ul>\n<li><strong>audyt merytoryczny rozdział po rozdziale</strong> z oceną „zgodne / częściowo zgodne / wątpliwe / niebezpieczne”;</li>\n<li>tabelę wszystkich substancji z PDF z oceną poziomu dowodów;</li>\n<li>medycznie bezpieczne notatki Markdown do Obsidiana;</li>\n<li>analizę wyłącznie sekcji: <strong>antydepresanty</strong>, <strong>IMAO</strong>, <strong>PSSD</strong>, <strong>ADHD/stymulanty</strong>, <strong>peptydy</strong> albo <strong>nootropiki</strong>.</li>\n</ul>\n<p>Źródło analizy: PDF „Biohacking Bible – A Neuropharmacology Encyclopedia (14)”. Materiał edukacyjny, nie stanowi porady medycznej ani zaleceń dawkowania.</p>\n</article>"
+  },
+  {
+    "id": "ebm-substance-selection-matrix",
+    "title": "Przegląd EBM #2: Matryca selekcyjna leków psychotropowych, nootropików i peptydów",
+    "subtitle": "Porównanie twierdzeń popularnonaukowych z poziomem dowodów klinicznych (SSRI, Fluwoksamina, TLPD, IMAO, Stymulanty, NAC, Dziurawiec)",
+    "category": "ebm_review",
+    "provenance": "repo-resources",
+    "source_file": "Resources/notes/02-tabela-selekcyjna.md",
+    "updated": "2026-11-10",
+    "cluster": "General Pharmacology",
+    "tags": [
+      "matryca-EBM",
+      "psychofarmakologia",
+      "SSRI",
+      "SNRI",
+      "stymulanty",
+      "dziurawiec"
+    ],
+    "compounds": [
+      "fluvoxamine-compound",
+      "clomipramine-compound",
+      "amitriptyline-compound",
+      "phenelzine-compound",
+      "methylphenidate-compound",
+      "bupropion-compound",
+      "ketamine-compound",
+      "acetylcysteine-compound"
+    ],
+    "targets": [
+      "CHEMBL228",
+      "CHEMBL222",
+      "CHEMBL238",
+      "CHEMBL340"
+    ],
+    "icd": [
+      "F32.9",
+      "F42.9",
+      "F90.0"
+    ],
+    "patient": null,
+    "html": "<article class=\"pv-clinical-note\">\n<p>Poniżej znajduje się praktyczna tabela oceny substancji wymienianych w PDF. To <strong>nie jest tabela dawkowania ani rekomendacji leczenia</strong>: materiał zawiera wiele ryzykownych wskazań i eksperymentalnych schematów, których nie należy wdrażać samodzielnie.</p>\n<h3>Legenda oceny</h3>\n<table><thead><tr><th>Symbol</th><th>Znaczenie</th></tr></thead><tbody>\n<tr><td>🟢</td><td>Uznana terapia w określonych wskazaniach; wymaga kwalifikacji klinicznej</td></tr>\n<tr><td>🟡</td><td>Pewne dane lub logiczne zastosowanie, ale nie dla „biohackingu” / nie dla większości wskazań z PDF</td></tr>\n<tr><td>🟠</td><td>Ograniczone, niespójne lub głównie przedkliniczne dane</td></tr>\n<tr><td>🔴</td><td>Wysokie ryzyko, istotna toksyczność, uzależnienie, interakcje lub brak podstaw do samoleczenia</td></tr>\n<tr><td>⚫</td><td>Substancja badawcza / brak wiarygodnie ustalonego bezpieczeństwa klinicznego</td></tr>\n</tbody></table>\n<h3>Leki psychotropowe</h3>\n<table><thead><tr><th>Grupa / substancja</th><th>Co sugeruje PDF</th><th>Ocena dowodów dla typowych wskazań</th><th>Najważniejsze ryzyka i korekta</th></tr></thead><tbody>\n<tr><td>SSRI</td><td>Raczej „ostatnia deska ratunku”; podkreślone ryzyko PSSD</td><td>🟢 w depresji, OCD i wielu zaburzeniach lękowych</td><td>Są lekami o ustalonej skuteczności dla określonych rozpoznań. Dysfunkcje seksualne są częste podczas terapii; trwałe objawy po odstawieniu są zgłaszane, ale etiologia i czynniki ryzyka pozostają niepewne. Nie należy przedstawiać SSRI jako ogólnie „szkodliwych”.</td></tr>\n<tr><td>Fluwoksamina</td><td>Wyróżniona z powodu agonizmu σ₁ i efektu procognitive</td><td>🟢 w OCD; 🟢/🟡 w depresji i lęku — zależnie od kraju/wskazania</td><td>Liczne interakcje, m.in. przez CYP1A2 i CYP2C19; nie jest lekiem „nootropowym”. PDF opisuje eskalację dawek OCD, lecz takie decyzje należą wyłącznie do psychiatry.</td></tr>\n<tr><td>SNRI</td><td>Preferowane w depresji z zaburzeniami koncentracji/ADHD</td><td>🟢 w depresji i zaburzeniach lękowych</td><td>Klasa nie jest leczeniem pierwszego wyboru dla ADHD. Ryzyka obejmują nudności, bezsenność, wzrost RR, objawy odstawienne oraz dysfunkcje seksualne.</td></tr>\n<tr><td>TLPD / TCA</td><td>Autor hierarchizuje skuteczność, szczególnie klomipraminy i amitryptyliny</td><td>🟢 w wybranych wskazaniach</td><td>Istotne ryzyko antycholinergiczne, hipotensja ortostatyczna, sedacja i kardiotoksyczność przy przedawkowaniu; zależnie od leku także wydłużenie QT. Klomipramina jest uznaną opcją w OCD, ale wymaga nadzoru.</td></tr>\n<tr><td>Klomipramina</td><td>„Złoty standard” OCD</td><td>🟢</td><td>Może być bardzo skuteczna, ale ma obciążający profil działań niepożądanych i nie wolno jej łączyć z IMAO.</td></tr>\n<tr><td>Amitryptylina</td><td>Wysoko oceniana w depresji/lęku</td><td>🟢 w określonych wskazaniach, zwłaszcza bólu neuropatycznego i profilaktyce migreny</td><td>Nie jest neutralna metabolicznie ani kardiologicznie; przy samobójczym ryzyku przedawkowania jej toksyczność ma szczególne znaczenie.</td></tr>\n<tr><td>Nortryptylina / dezypramina</td><td>Opcje dla depresji z letargiem i ADHD</td><td>🟡</td><td>Mogą być stosowane w wybranych przypadkach; wymagają monitorowania tolerancji, EKG w odpowiednim kontekście i oceny interakcji.</td></tr>\n<tr><td>IMAO — fenelzyna, tranylcypromina</td><td>Bardzo pozytywna ocena, sugestie łączenia preparatów</td><td>🟢 w depresji lekoopornej i wybranych fenotypach</td><td><strong>Najwyższe ryzyko interakcyjne w tabeli.</strong> Wymagają doświadczonego lekarza, rygoru interakcji i planu wash-out. Twierdzenie, że łączenie IMAO „jest całkowicie bezpieczne”, jest nieakceptowalne klinicznie.</td></tr>\n<tr><td>Moklobemid</td><td>PDF sugeruje znacznie wyższe dawki niż standardowe</td><td>🟢 w depresji w krajach, gdzie dostępny</td><td>RIMA ma inny profil niż nieodwracalne IMAO, ale nadal stwarza ryzyko interakcji. Nie należy eskalować ponad zarejestrowane schematy z poradnika internetowego.</td></tr>\n<tr><td>Selegilina / rasagilina</td><td>Przedstawione jako neuroprotekcyjne IMAO-B</td><td>🟢 w chorobie Parkinsona</td><td>Potencjalne interakcje i zależność selektywności od dawki; nie są rutynowymi lekami przeciwdepresyjnymi do samodzielnego stosowania.</td></tr>\n<tr><td>Lamotrygina</td><td>Opisana jako potencjalnie pomocna w anhedonii/DPDR</td><td>🟢 w chorobie afektywnej dwubiegunowej; 🟡 jako augmentacja w wybranych przypadkach</td><td>Ryzyko ciężkich reakcji skórnych, w tym SJS/TEN. Konieczna powolna titracja; każda nowa wysypka wymaga pilnej oceny klinicznej.</td></tr>\n<tr><td>Amisulpryd w małej dawce</td><td>Przypisane działanie prodopaminergiczne i antyanhedoniczne</td><td>🟡</td><td>Farmakodynamika dawek jest bardziej złożona niż narracja PDF. Możliwe: hiperprolaktynemia, wydłużenie QT, objawy pozapiramidowe. „Korygowanie” prolaktyny kolejnymi lekami bez nadzoru jest ryzykowne.</td></tr>\n<tr><td>Dekstroamfetamina</td><td>Skuteczna, ale rzekomo neurotoksyczna również terapeutycznie</td><td>🟢 w ADHD — w odpowiednio dobranych przypadkach</td><td>Ryzyko bezsenności, lęku, utraty masy ciała, nadciśnienia, nadużywania i psychozy u osób predysponowanych. Stwierdzenia o neurotoksyczności przy dawkach terapeutycznych nie są prostym wnioskiem klinicznym.</td></tr>\n<tr><td>Metylofenidat</td><td>Wyróżniany jako „najlepszy NDRI”</td><td>🟢 w ADHD</td><td>Wymaga diagnostyki ADHD, kontroli RR/HR, oceny ryzyka używania substancji oraz monitorowania efektu. Nie łączyć samodzielnie z IMAO.</td></tr>\n<tr><td>Modafinil / armodafinil</td><td>NDRI do poprawy energii i koncentracji</td><td>🟢 w określonych zaburzeniach snu</td><td>Nie jest standardowym leczeniem anhedonii ani „niskiej dopaminy”. Możliwe: bezsenność, lęk, interakcje hormonalne; rzadko ciężkie reakcje skórne.</td></tr>\n<tr><td>Guanfacyna</td><td>„Nietypowy stymulant” dla ADHD i RSD</td><td>🟢 w ADHD, zależnie od preparatu i kraju</td><td>To nie stymulant, lecz agonista α₂A. Ryzyka: senność, hipotensja, bradykardia; nie odstawiać nagle.</td></tr>\n<tr><td>Bupropion</td><td>PDF odradza go z powodu anhedonii/ototoksyczności</td><td>🟢 w depresji i rzucaniu palenia; 🟡 w ADHD</td><td>Użyteczny lek o konkretnych przeciwwskazaniach, m.in. napady drgawkowe, zaburzenia odżywiania. Ogólne dyskwalifikowanie go nie jest uzasadnione.</td></tr>\n<tr><td>Metformina</td><td>Sugerowana jako przeciwdepresyjna/neuroprotekcyjna</td><td>🟢 w cukrzycy typu 2 i wybranych stanach metabolicznych; 🟠 w depresji</td><td>Nie stosować dla nastroju bez wskazania metabolicznego. Przy dłuższej terapii należy kontrolować witaminę B₁₂; ryzyko kwasicy mleczanowej rośnie w określonych stanach klinicznych.</td></tr>\n<tr><td>Tianeptyna</td><td>Przedstawiana jako względnie bezpieczny agonista μ-opioidowy</td><td>🟡 tam, gdzie zarejestrowana w depresji</td><td>🔴 Istotne ryzyko nadużywania, uzależnienia i ciężkiego odstawienia, zwłaszcza przy większych dawkach. Brak tolerancji/uzależnienia nie jest bezpiecznym założeniem.</td></tr>\n<tr><td>Buprenorfina „VLD”</td><td>Potencjalna opcja dla depresji lekoopornej</td><td>🟡/🟠 jako leczenie depresji; 🟢 w OUD i bólu w konkretnych wskazaniach</td><td>Lek opioidowy: ryzyko zależności, interakcji sedatywnych i trudności w odstawianiu. Nie jest nootropikiem ani terapią pierwszego wyboru depresji.</td></tr>\n<tr><td>Ketamina / esketamina</td><td>W PDF pojawia się także samodzielne stosowanie i drogi pozamedyczne</td><td>🟢 w wybranych protokołach TRD</td><td>Musi być prowadzona w certyfikowanym/ośrodku klinicznym. Ryzyka obejmują dysocjację, wzrost RR, nadużywanie i zapalenie pęcherza przy przewlekłym używaniu. Porada „DIY” jest niebezpieczna.</td></tr>\n<tr><td>Zuranolon</td><td>Wskazywany w depresji, anhedonii i lęku</td><td>🟢 w depresji poporodowej w niektórych jurysdykcjach</td><td>Sedacja, zaburzenia zdolności do prowadzenia pojazdów, depresyjne działanie na OUN; ograniczony zakres zarejestrowanych wskazań.</td></tr>\n</tbody></table>\n<p>Źródłowy PDF omawia te klasy leków głównie w ramach fenotypu „hipodopaminergicznego”; nie jest to wystarczająca rama do doboru klinicznego terapii.</p>\n<h3>Nootropiki i suplementy</h3>\n<table><thead><tr><th>Substancja</th><th>Główna teza PDF</th><th>Ocena</th><th>Najważniejsza interpretacja kliniczna</th></tr></thead><tbody>\n<tr><td>N-acetylocysteina (NAC)</td><td>Antyoksydant, modulator glutaminianu, pomocny w licznych zaburzeniach</td><td>🟡</td><td>Ma sens w określonych wskazaniach medycznych; dane psychiatryczne są mieszane i zależne od rozpoznania. Może wywoływać dolegliwości żołądkowo-jelitowe i wchodzić w interakcje. Nie ma podstaw do tezy, że rutynowo jest „toksyczna po alkoholu”.</td></tr>\n<tr><td>Dziurawiec zwyczajny</td><td>Alternatywa dla SSRI; różne ekstrakty</td><td>🟡/🟢 w łagodnej–umiarkowanej depresji, zależnie od preparatu</td><td><strong>Duże ryzyko interakcji.</strong> Indukuje CYP3A4 i P-gp, może obniżać skuteczność m.in. antykoncepcji hormonalnej, leków immunosupresyjnych i części leków przeciwkrzepliwych. Nie łączyć z lekami serotoninergicznymi bez konsultacji.</td></tr>\n<tr><td>Kanna / mesembryna</td><td>„Lepsza od leków przeciwdepresyjnych”</td><td>🟠</td><td>Brak podstaw do stawiania jej ponad zatwierdzoną farmakoterapią. Możliwa aktywność serotoninergiczna; ryzyko interakcji z SSRI/SNRI/IMAO pozostaje istotne.</td></tr>\n<tr><td>Rhodiola</td><td>Odwracalny IMAO, możliwa kombinacja z szafranem</td><td>🟠</td><td>Dane kliniczne ograniczone. „Naturalne” nie znaczy wolne od interakcji z lekami serotoninergicznymi lub stymulantami.</td></tr>\n<tr><td>Bacopa monnieri</td><td>Wzmacnia GABA i acetylocholinę</td><td>🟠</td><td>Ograniczone dane dotyczące funkcji poznawczych; może powodować objawy GI i sedację. Nie stanowi terapii ADHD, depresji ani PSSD.</td></tr>\n<tr><td>Mucuna pruriens</td><td>„Bezpieczniejsza i lepsza” od lewodopy</td><td>🔴</td><td>Zawiera L-DOPA, a skład preparatów może być zmienny. Może wywoływać nudności, dyskinezy, objawy psychiatryczne i interakcje. Nie jest substytutem leczenia Parkinsona.</td></tr>\n<tr><td>Agmatyna</td><td>NMDA/imidazolina/GABA/dopamina; szeroki zakres dawek</td><td>🟠</td><td>Dane kliniczne nie uzasadniają leczenia depresji lub ADHD. Droga donosowa, promowana w PDF, nie ma ustalonego profilu bezpieczeństwa.</td></tr>\n<tr><td>ALCAR</td><td>Prokognitywny, prodopaminergiczny, przeciwdepresyjny</td><td>🟡</td><td>Są ograniczone sygnały dla objawów depresyjnych w określonych populacjach, lecz nie jest standardowym leczeniem. U części osób może zwiększać pobudzenie lub bezsenność.</td></tr>\n<tr><td>Huperzyna A</td><td>Inhibitor AChE dla pamięci</td><td>🟠</td><td>Mechanizm jest wiarygodny, ale suplementacja może dawać nudności, bradykardię, skurcze, bezsenność i objawy nadmiernej cholinergii. Ostrożnie z innymi lekami cholinergicznymi.</td></tr>\n<tr><td>PEA</td><td>Działanie przeciwbólowe i neuroimmunologiczne</td><td>🟡</td><td>Najbardziej rozsądnie traktować ją jako potencjalny dodatek w wybranych przewlekłych zespołach bólowych, nie jako terapię depresji/PSSD.</td></tr>\n<tr><td>Beta-kariofilen</td><td>CB₂/PPAR, przeciwzapalny i „prodopaminergiczny”</td><td>🟠</td><td>Dane kliniczne w psychiatrii są niewystarczające. Nie należy ekstrapolować mechanizmów receptorowych na skuteczność terapeutyczną.</td></tr>\n<tr><td>Kofeina</td><td>Antagonista adenozyny; autor przypisuje liczne efekty hormonalne</td><td>🟢 jako substancja poprawiająca czujność</td><td>Zbyt duża dawka może nasilać lęk, bezsenność, kołatanie serca i refluks. Nie jest leczeniem depresji ani ADHD.</td></tr>\n<tr><td>Melatonina</td><td>Neuroprotekcja, wsparcie dopaminergiczne</td><td>🟢 w określonych zaburzeniach rytmu dobowego i bezsenności</td><td>Największa wartość kliniczna dotyczy regulacji rytmu snu, nie „ochrony przed stymulantami”.</td></tr>\n<tr><td>Lion’s mane</td><td>NGF/BDNF i neurogeneza</td><td>🟠</td><td>Dowody u ludzi są wstępne. Twierdzenia o inhibicji 5α-reduktazy czy wpływie na PSSD są niewystarczająco potwierdzone.</td></tr>\n<tr><td>D-ryboza / inozyna</td><td>ATP i szerokie efekty neuroprotekcyjne</td><td>🟠</td><td>Brak podstaw do rutynowego stosowania w psychiatrii. Inozyna może zwiększać stężenie kwasu moczowego i ryzyko dny.</td></tr>\n<tr><td>L-karnityna L-tartrat</td><td>Testosteron, PSSD, spalanie tłuszczu</td><td>🟠</td><td>Nie należy oczekiwać potwierdzonego działania w PSSD. Korzyści zależą od konkretnej postaci, populacji i wskazania.</td></tr>\n<tr><td>Czarnuszka siewna</td><td>Antyoksydant/HDAC/„słaby IMAO”</td><td>🟠</td><td>Nie ma podstaw do traktowania jako stabilizatora nastroju. Interakcje i standaryzacja preparatów są problemem.</td></tr>\n<tr><td>Kurkumina</td><td>Przeciwzapalna, możliwe działanie wspomagające</td><td>🟡</td><td>Możliwa jako dodatek żywieniowy, ale biodostępność jest ograniczona; piperyna może istotnie modyfikować farmakokinetykę leków.</td></tr>\n</tbody></table>\n<p>PDF przypisuje wielu suplementom precyzyjne działania receptorowe oraz długotrwałe zmiany ekspresji genów. W praktyce przejście od mechanizmu in vitro do mierzalnej korzyści klinicznej jest zwykle niepewne.</p>\n<h3>Substancje eksperymentalne</h3>\n<table><thead><tr><th>Substancja</th><th>Status danych</th><th>Dlaczego wymaga szczególnej ostrożności</th><th>Ocena</th></tr></thead><tbody>\n<tr><td>9-methyl-β-carboline (9-Me-BC)</td><td>Przede wszystkim przedkliniczne i anegdotyczne</td><td>Jednoczesna aktywność związana z MAO, niepewna toksykologia, możliwa fotowrażliwość i brak danych długoterminowych u ludzi</td><td>⚫</td></tr>\n<tr><td>Nor-BNI</td><td>Narzędzie badawcze KOR, głównie badania zwierzęce</td><td>Długotrwała modulacja KOR, niejasna translacja na człowieka, potencjalne konsekwencje sercowo-naczyniowe i immunologiczne</td><td>⚫</td></tr>\n<tr><td>BPN14770 / zatolmilast</td><td>Rozwój kliniczny w określonych obszarach</td><td>Selektywny modulator PDE4D nie jest zatwierdzonym nootropikiem; brak podstaw do rekreacyjnego lub samodzielnego używania</td><td>⚫</td></tr>\n<tr><td>NSI-189</td><td>Badania kliniczne ograniczone / niejednoznaczne</td><td>Nieudowodniona skuteczność, brak długoterminowego profilu bezpieczeństwa, ryzyko produktów z niekontrolowanego źródła</td><td>⚫</td></tr>\n<tr><td>URB597</td><td>Głównie badania przedkliniczne</td><td>Inhibitor FAAH bez ustalonego bezpieczeństwa i użyteczności terapeutycznej u ludzi</td><td>⚫</td></tr>\n<tr><td>10-MeO-harmalan</td><td>Dane wstępne</td><td>Aktywność wieloreceptorowa, potencjalne interakcje serotoninergiczne i z IMAO</td><td>⚫</td></tr>\n<tr><td>Tisolagilina / KDS-2010</td><td>Lek w rozwoju</td><td>Nie jest zatwierdzonym środkiem na depresję lub „biohacking dopaminy”</td><td>⚫</td></tr>\n<tr><td>Ezogabina / retigabina</td><td>Wycofana w wielu miejscach; pochodne badane klinicznie</td><td>Historycznie: retencja moczu, zmiany barwnikowe skóry/siatkówki i inne działania niepożądane; nie stosować poza wyspecjalizowaną opieką</td><td>🔴</td></tr>\n<tr><td>XEN1101 / BHV-7000</td><td>Rozwój kliniczny, m.in. neurologia</td><td>Nie należy przenosić sygnałów z epileptologii i modeli stresowych na samoleczenie depresji</td><td>⚫</td></tr>\n<tr><td>Donosowa deferoksamina</td><td>Dane eksperymentalne</td><td>Lek chelatujący żelazo — ryzyko niedokrwistości, zaburzeń gospodarki żelazowej i infekcji; droga donosowa nie jest standardowym leczeniem anhedonii</td><td>🔴</td></tr>\n<tr><td>MIF-1</td><td>Ograniczone dane kliniczne i eksperymentalne</td><td>Brak zatwierdzonego schematu psychiatrycznego; PDF podaje iniekcyjne/donosowe użycie bez solidnej podstawy</td><td>⚫</td></tr>\n<tr><td>PE-22-28 / spadin</td><td>Prekliniczne</td><td>Brak potwierdzonej skuteczności i bezpieczeństwa u ludzi, potencjalne nieznane skutki modulacji TREK-1</td><td>⚫</td></tr>\n<tr><td>BPC-157</td><td>Przede wszystkim badania przedkliniczne</td><td>Brak wysokiej jakości potwierdzenia korzyści u ludzi, ryzyko preparatów iniekcyjnych z niezweryfikowanych źródeł</td><td>⚫</td></tr>\n<tr><td>Semax / NA-Semax amidate</td><td>Ograniczone dane, częściowo regionalne zastosowania</td><td>Brak robustnych badań w depresji/ADHD; bezpieczeństwo długofalowe i jakość produktów są problemem</td><td>🟠</td></tr>\n<tr><td>Selank</td><td>Ograniczone dane</td><td>Podobnie: brak mocnych badań replikowanych według standardów międzynarodowych</td><td>🟠</td></tr>\n<tr><td>Cerebrolysin</td><td>Dostępny regionalnie, kontrowersyjne dane</td><td>Nie jest standardem w leczeniu depresji, autyzmu ani „neuroregeneracji”; wymaga oceny wskazań i ryzyka reakcji na preparat biologiczny</td><td>🟠</td></tr>\n<tr><td>DNSP-11</td><td>Wczesne badania</td><td>Brak podstaw do użycia poza badaniami klinicznymi</td><td>⚫</td></tr>\n<tr><td>Kisspeptyna</td><td>Badania kliniczne głównie endokrynologiczne</td><td>Ciekawe sygnały neurobehawioralne nie stanowią wskazania do leczenia PSSD lub zaburzeń nastroju</td><td>⚫</td></tr>\n<tr><td>Donosowa insulina</td><td>Badania kliniczne w wybranych domenach</td><td>Nie jest powszechnie zatwierdzona do poprawy pamięci; bezpieczeństwo zależy od populacji i protokołu</td><td>⚫</td></tr>\n</tbody></table>\n<h3>Największe czerwone flagi 🚩</h3>\n<table><thead><tr><th>Sytuacja z PDF</th><th>Dlaczego nie jest bezpieczna</th></tr></thead><tbody>\n<tr><td>Łączenie IMAO z innymi IMAO, stymulantami, substancjami serotoninergicznymi, ziołami lub research chemicals</td><td>Ryzyko przełomu nadciśnieniowego, toksyczności serotoninowej, arytmii, ciężkiego pobudzenia lub nieprzewidywalnych interakcji.</td></tr>\n<tr><td>Wykorzystywanie leków opioidowych dla anhedonii</td><td>Ryzyko uzależnienia, tolerancji, odstawienia i pogorszenia funkcjonowania mimo początkowej poprawy nastroju.</td></tr>\n<tr><td>Donosowe i iniekcyjne peptydy/research chemicals</td><td>Problemy czystości, dawki, jałowości, kontaminacji, immunogenności i braku nadzoru nad działaniami niepożądanymi.</td></tr>\n<tr><td>Dobieranie leków przez SNP-y z panelu konsumenckiego</td><td>Powszechne warianty genetyczne rzadko dostarczają wystarczająco silnej informacji do prowadzenia terapii psychiatrycznej.</td></tr>\n<tr><td>Traktowanie anhedonii jako prostego „niedoboru dopaminy”</td><td>Pomija diagnostykę różnicową: depresję, CHAD, ADHD, zaburzenia snu, używanie substancji, niedoczynność tarczycy, niedokrwistość, niedobory B₁₂/folianów, skutki leków, PTSD i wiele innych przyczyn.</td></tr>\n</tbody></table>\n<h3>Najbezpieczniejsza interpretacja</h3>\n<p>Jeżeli celem jest poprawa anhedonii, koncentracji, libido lub objawów lękowo-depresyjnych, najbardziej racjonalny pierwszy krok to diagnostyka problemu, a nie budowanie stosu substancji. W praktyce obejmuje to: pełny wywiad psychiatryczny i lekowy, sen i używanie substancji, ocenę ryzyka samobójczego oraz badania dobierane do objawów — często m.in. morfologię, TSH, B₁₂/foliany, ferrytynę i parametry metaboliczne.</p>\n<p>Pełny dokument obejmuje także liczne psychedeliki, dysocjanty i kannabinoidy; celowo nie zamieniłem tej tabeli w katalog substancji i dawek. PDF sam zawiera ich bardzo szerokie listy oraz porady dotyczące stosowania poza opieką medyczną, co zwiększa ryzyko szkody.</p>\n<p>Źródło analizy: PDF „Biohacking Bible – A Neuropharmacology Encyclopedia (14)”. Materiał edukacyjny, nie stanowi porady medycznej ani zaleceń dawkowania.</p>\n</article>"
+  },
+  {
+    "id": "vault-hub-stacking-interaction-risks",
+    "title": "Synteza Vault #1: Polipragmazja, kaskady CYP450 i nakładanie mechanizmów receptorowych",
+    "subtitle": "Kanoniczna notatka z Pharma-vault/vault/06 Safety Hubs: wąskie gardła metaboliczne i addycja farmakodynamiczna",
+    "category": "mechanism",
+    "provenance": "repo-vault",
+    "source_file": "vault/06 Safety Hubs/Stacking and Interaction Risks.md",
+    "updated": "2026-11-10",
+    "cluster": "General Pharmacology",
+    "tags": [
+      "polipragmazja",
+      "DDI",
+      "CYP450",
+      "safety-hub",
+      "vault"
+    ],
+    "compounds": [
+      "modafinil-compound",
+      "fluoxetine-compound",
+      "carbamazepine-compound",
+      "simvastatin-compound"
+    ],
+    "targets": [
+      "CHEMBL340",
+      "CHEMBL228"
+    ],
+    "icd": [],
+    "patient": null,
+    "html": "<article class=\"pv-clinical-note\">\n<p>&gt; [!warning] Educational content — not medical advice, no dosing guidance.</p>\n<p>The umbrella hub. It is framed around <strong>overlap</strong>, not around &quot;building the perfect stack&quot;. Before combining any two agents, screen these five dimensions:</p>\n<table><thead><tr><th>Dimension</th><th>Question</th><th>Typical failure</th></tr></thead><tbody>\n<tr><td>Duplicated mechanism</td><td>Do both act on the same receptor, transporter or axis?</td><td><strong>Stack Redundancy</strong> — more side-effects, no more benefit</td></tr>\n<tr><td>Overlapping adverse-effect domain</td><td>Do both raise the same risk (BP, QT, sedation, serotonin, seizure threshold)?</td><td>Additive toxicity even without a PK interaction</td></tr>\n<tr><td>Pharmacokinetic interaction</td><td>Does one inhibit/induce the other&#x27;s clearance (CYP, P-gp, renal)?</td><td>Exposure changes several-fold — see <strong>CYP450 Metabolism</strong></td></tr>\n<tr><td>Contraindication</td><td>Is there a labelled absolute contraindication?</td><td>e.g. nitrate + PDE5 inhibitor, MAOI + serotonergic/sympathomimetic agent</td></tr>\n<tr><td>Monitoring burden</td><td>Does the combination require labs, ECG or BP follow-up?</td><td>Silent harm (lipids, haematocrit, LFTs, electrolytes)</td></tr>\n</tbody></table>\n<h3>Focused hubs</h3>\n<ul>\n<li><strong>Cholinergic Load</strong></li>\n<li><strong>Stimulant and Cardiovascular Load</strong></li>\n<li><strong>Hormonal Axis Suppression</strong></li>\n<li><strong>Serotonin Toxicity</strong></li>\n<li><strong>Respiratory Depression and Fatal Overdose</strong></li>\n<li><strong>Experimental and Evidence-Limited Compounds</strong></li>\n</ul>\n<p>See also <strong>Interaction Overlap</strong>.</p>\n<h3>Compounds routed here</h3>\n<p>```dataview</p>\n<p>LIST FROM &quot;04 Compound Notes&quot; AND <strong>Stacking and Interaction Risks</strong></p>\n<p>SORT file.name ASC</p>\n<p>LIMIT 300</p>\n<p>```</p>\n</article>"
+  },
+  {
+    "id": "vault-pathway-pharmacokinetics-summary",
+    "title": "Synteza Vault #2: Kompendium parametrów farmakokinetycznych (t½, biodostępność, wiązanie z białkami, klirens)",
+    "subtitle": "Kanoniczna notatka z Pharma-vault/vault/03 Pathways: interpretacja kliniczna okresu półtrwania i dróg eliminacji",
+    "category": "mechanism",
+    "provenance": "repo-vault",
+    "source_file": "vault/03 Pathways/Pharmacokinetics Summary.md",
+    "updated": "2026-11-10",
+    "cluster": "General Pharmacology",
+    "tags": [
+      "farmakokinetyka",
+      "ADME",
+      "t1/2",
+      "biodostępność",
+      "klirens",
+      "vault"
+    ],
+    "compounds": [
+      "modafinil-compound",
+      "diazepam-compound",
+      "levetiracetam-compound",
+      "metformin-compound"
+    ],
+    "targets": [
+      "CHEMBL340"
+    ],
+    "icd": [],
+    "patient": null,
+    "html": "<article class=\"pv-clinical-note\">\n<p>Conventions for the v2 PK fields (validated by <code>schemas/compound-frontmatter.v2.schema.json</code>).</p>\n<table><thead><tr><th>Field</th><th>Structure</th><th>Convention</th></tr></thead><tbody>\n<tr><td><code>half-life</code></td><td><code>value</code>, <code>unit</code> (min/h/d/wk), <code>notes</code></td><td>Terminal elimination t½ of the parent drug in adults; note active metabolites separately</td></tr>\n<tr><td><code>active-metabolites</code></td><td>list</td><td>Named metabolites contributing to effect (e.g. desmethyl-, hydroxy-)</td></tr>\n<tr><td><code>protein-binding</code></td><td><code>value</code> 0–100, <code>unit: percent</code></td><td>High binding (&gt; 90 %) → displacement interactions rarely matter clinically, but affects dialysis</td></tr>\n<tr><td><code>renal-clearance</code></td><td><code>primary-route</code> bool, <code>fraction-excreted-unchanged</code> 0–1</td><td>fe &gt; 0.5 → dose adjustment likely in CKD</td></tr>\n<tr><td><code>hepatic-clearance</code></td><td><code>primary-route</code> bool, <code>extraction-ratio</code> 0–1</td><td>E &gt; 0.7 flow-limited (high first-pass); E &lt; 0.3 capacity-limited (sensitive to enzyme inhibition/induction)</td></tr>\n<tr><td><code>cyp-interactions</code></td><td><code>substrates</code>, <code>inhibitors</code>, <code>inducers</code> (CYP names), <code>transporters</code></td><td>Record the enzyme <strong>role</strong> of this compound, e.g. <code>inhibitors: [CYP3A4]</code> if it inhibits 3A4</td></tr>\n</tbody></table>\n<p>Key relations: t½ ≈ 0.693·Vd/CL; steady state after ~4–5 half-lives; clearance = renal + hepatic + other.</p>\n<p>Sources to prefer: SmPC/FDA label, DrugBank, ChEMBL, primary PK studies.</p>\n<h3>Provenance levels (<code>source-status</code>)</h3>\n<table><thead><tr><th>Value</th><th>Meaning</th></tr></thead><tbody>\n<tr><td><code>source-summary-only</code></td><td>Only the catalogue description; no PK fields</td></tr>\n<tr><td><code>auto-extracted</code></td><td>PK parsed from a revision-pinned Wikipedia infobox (<code>pk-source</code>)</td></tr>\n<tr><td><code>partially-verified</code></td><td>Auto-extracted <strong>and</strong> consistent with at least one regulatory text in an automated cross-check - US label (<code>pk-verification</code>) or EU SmPC/ChPL (<code>pk-verification-ema</code>) - with <strong>no</strong> regulator discrepant. Still not a human review</td></tr>\n<tr><td><code>verified</code></td><td>Human-reviewed against SmPC/label/primary literature (set by hand; then <code>review-status</code> ≠ <code>stub</code>)</td></tr>\n</tbody></table>\n<h3>Auto-extracted PK (all)</h3>\n<p>```dataview</p>\n<p>TABLE WITHOUT ID file.link AS Compound, cluster AS Cluster, half-life.value AS &quot;t½&quot;, half-life.unit AS Unit,</p>\n<p>protein-binding.value AS &quot;PB %&quot;, bioavailability.value AS &quot;F %&quot;, pk-verification.status AS &quot;FDA check&quot;, pk-verification-ema.status AS &quot;ChPL check&quot;</p>\n<p>FROM #pk-auto</p>\n<p>SORT file.name ASC</p>\n<p>```</p>\n<h3>Cross-checked against the FDA label</h3>\n<p>```dataview</p>\n<p>TABLE WITHOUT ID file.link AS Compound, half-life.value AS &quot;t½&quot;, half-life.unit AS Unit, pk-verification.fields AS Fields</p>\n<p>FROM #pk-fda-consistent</p>\n<p>SORT file.name ASC</p>\n<p>```</p>\n<h3>Consistent with both FDA label and EU SmPC (ChPL)</h3>\n<p>```dataview</p>\n<p>TABLE WITHOUT ID file.link AS Compound, half-life.value AS &quot;t½&quot;, half-life.unit AS Unit, pk-verification-ema.product AS &quot;EU product&quot;, pk-verification-ema.chpl-url AS ChPL</p>\n<p>FROM #pk-2-regulators</p>\n<p>SORT file.name ASC</p>\n<p>```</p>\n<h3>Regulators disagree (FDA vs EU)</h3>\n<p>One regulatory text matches, the other does not - usually a different reference product (depot, liposomal, transdermal) or population.</p>\n<p>```dataview</p>\n<p>TABLE WITHOUT ID file.link AS Compound, pk-verification.fields AS FDA, pk-verification-ema.fields AS EU, pk-verification-ema.product AS &quot;EU product&quot;</p>\n<p>FROM #pk-sources-disagree</p>\n<p>SORT file.name ASC</p>\n<p>```</p>\n<p>Related: <strong>CYP450 Metabolism</strong> · <strong>Clearance Dashboard</strong> · <strong>Review Queue</strong></p>\n</article>"
+  }
+]

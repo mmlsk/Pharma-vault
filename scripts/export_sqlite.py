@@ -66,6 +66,7 @@ def main() -> None:
     CREATE TABLE transporter_profiles (compound_id TEXT PRIMARY KEY REFERENCES substances, logbb_clark REAL, tpsa REAL, cns_mpo REAL, kp_uu_baseline REAL, cns_penetration_class TEXT, pgp_role TEXT, bcrp_role TEXT, lat1_role TEXT, oatp1b1_role TEXT, oat1_3_role TEXT, oct2_role TEXT, bsep_role TEXT, pept1_role TEXT, transporters_json TEXT, clinical_summary_pl TEXT);
     CREATE TABLE chemical_space (compound_id TEXT PRIMARY KEY REFERENCES substances, x_coord REAL NOT NULL, y_coord REAL NOT NULL, scaffold_id TEXT NOT NULL, scaffold_name TEXT NOT NULL, scaffold_family TEXT NOT NULL, top_analogs_json TEXT, predicted_offtargets_json TEXT);
     CREATE TABLE food_drug_interactions (id TEXT PRIMARY KEY, food_id TEXT NOT NULL, food_name_pl TEXT NOT NULL, compound_id TEXT, atc_pattern TEXT, vector TEXT NOT NULL, severity TEXT NOT NULL, title_pl TEXT NOT NULL, mechanism_pl TEXT NOT NULL, clinical_consequence TEXT NOT NULL, management TEXT NOT NULL, evidence_level TEXT NOT NULL, target_gene TEXT, pdb_id TEXT);
+    CREATE TABLE clinical_notes (id TEXT PRIMARY KEY, title TEXT NOT NULL, subtitle TEXT, category TEXT NOT NULL, provenance TEXT NOT NULL, source_file TEXT, updated TEXT, cluster TEXT, tags_json TEXT, compounds_json TEXT, targets_json TEXT, icd_json TEXT, patient_json TEXT, html TEXT NOT NULL);
     CREATE INDEX idx_compound_targets_target ON compound_targets(target_id);
     CREATE INDEX idx_compound_targets_compound ON compound_targets(compound_id);
     CREATE INDEX idx_atc_compound ON atc(compound_id);
@@ -97,6 +98,8 @@ def main() -> None:
     CREATE INDEX idx_fdi_compound ON food_drug_interactions(compound_id);
     CREATE INDEX idx_fdi_food ON food_drug_interactions(food_id);
     CREATE INDEX idx_fdi_severity ON food_drug_interactions(severity);
+    CREATE INDEX idx_notes_category ON clinical_notes(category);
+    CREATE INDEX idx_notes_provenance ON clinical_notes(provenance);
     """)
     for r in load("substances.json"):
         cur.execute("INSERT INTO substances VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", (
@@ -339,13 +342,35 @@ def main() -> None:
                     rule["evidence_level"], rule.get("target_gene"), rule.get("pdb_id")
                 ))
 
+    notes_p = PROCESSED / "clinical_notes.json"
+    if notes_p.exists():
+        notes_data = json.loads(notes_p.read_text(encoding="utf-8"))
+        for n in notes_data:
+            cur.execute("INSERT OR REPLACE INTO clinical_notes VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", (
+                n["id"],
+                n["title"],
+                n.get("subtitle", ""),
+                n.get("category", "html_note"),
+                n.get("provenance", "repo-curated"),
+                n.get("source_file", ""),
+                n.get("updated", ""),
+                n.get("cluster", "General Pharmacology"),
+                json.dumps(n.get("tags", []), ensure_ascii=False),
+                json.dumps(n.get("compounds", []), ensure_ascii=False),
+                json.dumps(n.get("targets", []), ensure_ascii=False),
+                json.dumps(n.get("icd", []), ensure_ascii=False),
+                json.dumps(n.get("patient"), ensure_ascii=False) if n.get("patient") else None,
+                n.get("html", "")
+            ))
+
     con.commit()
     tables = (
         "substances", "pk", "chembl", "atc", "targets", "compound_targets",
         "pk_verification", "pk_verification_ema", "identity_review", "pk_annotations",
         "curated_typed_edges", "metabolite_cascades", "target_3d_catalog", "adr_definitions",
         "rpl_products", "psychonaut_profiles", "compound_indications", "clinical_evidence", "ddi_rules", "receptor_affinities",
-        "pk_compartment_models", "toxicology_profiles", "transporter_profiles", "chemical_space", "food_drug_interactions"
+        "pk_compartment_models", "toxicology_profiles", "transporter_profiles", "chemical_space", "food_drug_interactions",
+        "clinical_notes"
     )
     n = {t: cur.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0] for t in tables}
     con.close()

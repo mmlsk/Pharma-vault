@@ -1,0 +1,71 @@
+<!-- pv-note-meta: {
+  "id": "case-serotonin-cyp2d6-cascade",
+  "title": "Przypadek #1: Zespół serotoninowy i fenokonwersja CYP2D6 (Fluoksetyna + Tramadol + Moklobemid)",
+  "subtitle": "Kaskada farmakokinetyczno-farmakodynamiczna: blokada O-demetylacji tramadolu do M1 i toksyczność monoaminergiczna",
+  "category": "case_study",
+  "provenance": "repo-curated",
+  "updated": "2026-11-10",
+  "cluster": "General Pharmacology",
+  "tags": ["zespół-serotoninowy", "CYP2D6", "fenokonwersja", "polipragmazja", "analgezja", "IMAO"],
+  "compounds": ["fluoxetine-compound", "tramadol-compound", "moclobemide-compound", "cyproheptadine-compound"],
+  "targets": ["CHEMBL228", "CHEMBL2095205", "CHEMBL2096662", "CHEMBL233"],
+  "icd": ["F32.2", "T43.2"],
+  "patient": {
+    "age_sex": "54K",
+    "egfr": 82,
+    "cyp_phenotype": "CYP2D6 PM (fenokonwersja przez norfluoksetynę)",
+    "diet": [],
+    "diagnosis": "Depresja lekooporna (F32.2) + przewlekły zespół bólowy kręgosłupa L-S"
+  }
+} -->
+<article class="pv-clinical-note">
+  <div class="pv-case-banner pv-banner-critical">
+    <div>
+      <strong>ALERT KLINICZNY (Kryteria Huntera — DODATNIE):</strong> Złożona interakcja PK/PD pomiędzy długo działającym metabolitem SSRI (norfluoksetyna, t½ = 4–16 dni), prolekiem opioidowo-monoaminergicznym (tramadol) oraz odwracalnym inhibitorem MAO-A (moklobemid).
+    </div>
+  </div>
+
+  <h3>1. Prezentacja kliniczna i oś czasu (Timeline)</h3>
+  <p>Pacjentka 54-letnia z rozpoznaniem ciężkiego epizodu depresji lekoopornej (ICD-10: <code>F32.2</code>) oraz przewlekłej radikulopatii L5/S1 została przyjęta na SOR z powodu gorączki (39,2°C), zlewnych potów, pobudzenia psychoruchowego, drżenia mięśniowego oraz spontanicznego klonusu stóp i gałek ocznych.</p>
+  <ul>
+    <li><strong>Dzień −14 do −4:</strong> Odstawienie fluoksetyny (Fluoxetine, 40 mg/d) po 6 miesiącach terapii z uwagi na brak remisji.</li>
+    <li><strong>Dzień −3:</strong> Z powodu zaostrzenia bólu korzeniowego w POZ włączono Tramadol (150 mg/d). Pacjentka zgłaszała całkowity brak efektu przeciwbólowego („lek nie działa na ból”), przez co samodzielnie zwiększyła dawkę do 300 mg/d.</li>
+    <li><strong>Dzień 0 (rano):</strong> Po 4-dniowym (zbyt krótkim!) okresie wash-out po fluoksetynie rozpoczęto terapię Moklobemidem (Moclobemide, 300 mg/d). W ciągu 6 godzin rozwinął się pełnoobjawowy zespół serotoninowy.</li>
+  </ul>
+
+  <h3>2. Mechanizm dwustopniowej pułapki farmakologicznej</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Etap kaskady</th>
+        <th>Zaangażowane cząsteczki i cele</th>
+        <th>Skutek molekularny i kliniczny</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>I. Fenokonwersja CYP2D6 (Pułapka proleku)</strong></td>
+        <td>Fluoxetine / norfluoksetyna → silna inhibicja <code>CYP2D6</code>; substrat: Tramadol</td>
+        <td>Zahamowanie konwersji tramadolu do aktywnego metabolitu <strong>(+)-O-demetylotramadolu (M1)</strong>, który odpowiada za agonizm wobec receptora μ-opioidowego (<code>CHEMBL233</code>). Utrata analgezji opioidowej skłania pacjenta do eskalacji dawki macierzystego tramadolu.</td>
+      </tr>
+      <tr>
+        <td><strong>II. Kumulacja enancjomeru (+)-tramadolu</strong></td>
+        <td>Macierzysty (+)-Tramadol + Fluoxetine na transporterze SERT (<code>CHEMBL228</code>)</td>
+        <td>Niezmetabolizowany tramadol kumuluje się i działa wyłącznie jako inhibitor wychwytu zwrotnego serotoniny (SERT) oraz noradrenaliny (NET), obniżając próg drgawkowy.</td>
+      </tr>
+      <tr>
+        <td><strong>III. Blokada degradacji MAO-A bez wash-outu</strong></td>
+        <td>Moclobemide (inhibicja <code>CHEMBL2095205</code>) + rezydualna norfluoksetyna (t½ do 16 dni)</td>
+        <td>Jednoczesna blokada transportera SERT i oksydazy monoaminowej MAO-A wywołuje wykładniczy wzrost 5-HT w szczelinie synaptycznej i nadmierną stymulację receptorów 5-HT2A (<code>CHEMBL2096662</code>).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>3. Postępowanie ratunkowe i wnioski kliniczne</h3>
+  <ol>
+    <li><strong>Natychmiastowe odstawienie</strong> wszystkich leków serotoninergicznych (tramadolu i moklobemidu).</li>
+    <li><strong>Antagonizm receptorowy 5-HT2A:</strong> Podanie Cyproheptadine (12 mg p.o./przez zgłębnik, następnie 2 mg co 2 h do stabilizacji autonomicznej) jako swoistego antagonisty receptorów 5-HT2A (<code>CHEMBL2096662</code>).</li>
+    <li><strong>Kontrola sztywności mięśniowej i hipertermii:</strong> Benzodiazepiny dożylnie (diazepam/lorazepam) w celu redukcji klonusu i generowania ciepła mięśniowego; nawodnienie krystaloidami.</li>
+    <li><strong>Reguła wash-outu:</strong> Po odstawieniu fluoksetyny obowiązuje <strong>minimum 5 tygodni</strong> przerwy przed włączeniem jakiegokolwiek IMAO (ze względu na okres półtrwania norfluoksetyny wynoszący 4–16 dni).</li>
+  </ol>
+</article>

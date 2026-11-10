@@ -1,0 +1,72 @@
+<!-- pv-note-meta: {
+  "id": "neuro-dopamine-serotonin-occupancy",
+  "title": "Neurofarmakologia #2: Okupacja receptorowa D2/D3 vs 5-HT2A (PET) i okno terapeutyczne neuroleptyków",
+  "subtitle": "Próg przeciwpsychotyczny (60–65% D2), próg hiperprolaktynemii (72% D2) i próg objawów pozapiramidowych EPS (>78–80% D2)",
+  "category": "mechanism",
+  "provenance": "repo-curated",
+  "updated": "2026-11-10",
+  "cluster": "General Pharmacology",
+  "tags": ["D2", "D3", "5-HT2A", "PET", "neuroleptyki", "EPS", "klozapina", "arypiprazol"],
+  "compounds": ["clozapine-compound", "aripiprazole-compound", "amisulpride-compound", "risperidone-compound", "haloperidol-compound"],
+  "targets": ["CHEMBL217", "CHEMBL234", "CHEMBL2096662"],
+  "icd": ["F20.0"]
+} -->
+<article class="pv-clinical-note">
+  <div class="pv-case-banner pv-banner-info">
+    <div>
+      <strong>PARADYGMAT NEUROOBRAZOWANIA PET (Kapur &amp; Seeman):</strong> Kliniczna odpowiedź przeciwpsychotyczna oraz ryzyko polekowych zaburzeń ruchowych (EPS) zależą od stopnia obsadzenia (occupancy) striatalnych receptorów dopaminowych <code>D2</code> (<code>CHEMBL217</code>) oraz kinetyki dysocjacji liganda (<em>fast-off D2 hypothesis</em>).
+    </div>
+  </div>
+
+  <h3>1. Progi okupacji striatalnego receptora D2 w badaniach PET</h3>
+  <ul>
+    <li><strong>&lt; 60% okupacji D2:</strong> Zwykle niewystarczający efekt przeciwpsychotyczny dla klasycznych antagonistów (wyjątek: Clozapine i kwetiapina, działające przy 20–45% okupacji D2 dzięki szybkiej dysocjacji i komponentowi 5-HT2A/M1/M4).</li>
+    <li><strong>60% – 72% okupacji D2:</strong> Optymalne okno terapeutyczne dla antagonizmu D2 (np. Risperidone w dawce 2–4 mg/d).</li>
+    <li><strong>&gt; 72% okupacji D2 w przysadce (szlak guzkowo-lejkowy):</strong> Odblokowanie komórek laktotropowych → hiperprolaktynemia (szczególnie Amisulpride i Risperidone z uwagi na ograniczoną penetrację BBB i wysokie stężenie w przysadce).</li>
+    <li><strong>&gt; 78% – 80% okupacji D2 w prążkowiu grzbietowym:</strong> Gwałtowny wzrost ryzyka objawów pozapiramidowych (akatyzja, parkinsonizm, ostra dystonia) — typowe dla Haloperidol w dawkach &gt; 3–5 mg/d.</li>
+  </ul>
+
+  <h3>2. Porównanie profili farmakodynamicznych 5 archetypów</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Substancja</th>
+        <th>Dominujący mechanizm D2/D3 vs 5-HT2A</th>
+        <th>Typowa okupacja D2 w PET</th>
+        <th>Charakterystyka kliniczna</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Haloperidol</strong></td>
+        <td>Czysty, silny antagonista D2 (<code>CHEMBL217</code>, Ki ≈ 1,4 nM) o powolnej dysocjacji (<em>tight binding</em>).</td>
+        <td>75% – 92%</td>
+        <td>Silne działanie przeciwWytwórcze; bardzo wąskie okno między dawką skuteczną a progiem EPS i wtórną anhedonią.</td>
+      </tr>
+      <tr>
+        <td><strong>Risperidone</strong></td>
+        <td>Antagonista 5-HT2A &gt;&gt; D2 (<code>CHEMBL2096662</code> Ki ≈ 0,2 nM vs D2 Ki ≈ 3 nM).</td>
+        <td>65% – 82%</td>
+        <td>W niskich dawkach antagonizm 5-HT2A zwiększa uwalnianie dopaminy w prążkowiu; powyżej 6 mg/d zachowuje się jak klasyczny neuroleptyk.</td>
+      </tr>
+      <tr>
+        <td><strong>Clozapine</strong></td>
+        <td>Multireceptorowy antagonista (5-HT2A, D4, α1, H1, M1) z szybką dysocjacją z D2 (Ki ≈ 125 nM).</td>
+        <td>20% – 50%</td>
+        <td>Złoty standard w schizofrenii lekoopornej (ICD-10: <code>F20.0</code>) i psychozie w chorobie Parkinsona; brak EPS, wymaga monitorowania ANC i zapalenia mięśnia sercowego.</td>
+      </tr>
+      <tr>
+        <td><strong>Aripiprazole</strong></td>
+        <td>Częściowy agonista D2/D3 (<code>CHEMBL217</code>, <code>CHEMBL234</code>, Ki ≈ 0,34 nM, aktywność wewnętrzna ~25%).</td>
+        <td><strong>85% – 95%</strong> (bez EPS!)</td>
+        <td>Dzięki aktywności wewnętrznej (~25%) nawet przy 90% obsadzeniu receptorów zachowuje toniczną transmisję dopaminową i obniża prolaktynę.</td>
+      </tr>
+      <tr>
+        <td><strong>Amisulpride</strong></td>
+        <td>Selektywny antagonista D2/D3 (brak powinowactwa do 5-HT, H1, M1).</td>
+        <td>Dawkozależna (40–80%)</td>
+        <td>W niskich dawkach (50–100 mg/d) preferencyjnie blokuje presynaptyczne autoreceptory D2/D3; w dawkach 400–800 mg/d blokuje receptory postsynaptyczne.</td>
+      </tr>
+    </tbody>
+  </table>
+</article>

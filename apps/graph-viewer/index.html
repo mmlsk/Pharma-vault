@@ -803,6 +803,266 @@
       .pathway-dock { padding: 8px 20px; }
       .lightbox-backdrop { padding-top: 112px; }
     }
+
+    /* Hybrid Clinical Notes & Cases Modal */
+    .notes-modal {
+      width: min(1440px, 97vw);
+      height: min(88dvh, 920px);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .notes-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 18px;
+      background: var(--color-surface-2);
+      border-bottom: 1px solid var(--color-border);
+      flex-wrap: wrap;
+    }
+    .notes-body {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr) 310px;
+      background: var(--color-bg);
+    }
+    .notes-sidebar {
+      background: var(--color-surface);
+      border-right: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .notes-sidebar-top {
+      padding: 12px;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .notes-cat-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .notes-cat-pill {
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-2);
+      color: var(--color-text-muted);
+      cursor: pointer;
+    }
+    .notes-cat-pill.active {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+    .notes-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .note-list-item {
+      width: 100%;
+      text-align: left;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-2);
+      color: var(--color-text);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .note-list-item:hover {
+      border-color: var(--color-primary);
+    }
+    .note-list-item.active {
+      background: var(--color-surface-offset);
+      border-color: var(--color-primary);
+      border-left: 3px solid var(--color-primary);
+    }
+    .notes-main {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      background: var(--color-surface);
+      overflow-y: auto;
+    }
+    .notes-article-head {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-surface-2);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .notes-patient-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 6px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-primary);
+      font-size: 13px;
+    }
+    .notes-reader {
+      padding: 20px 26px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--color-text);
+    }
+    .notes-reader h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 18px 0 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text);
+    }
+    .notes-reader h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin: 14px 0 6px;
+      color: var(--color-primary);
+    }
+    .notes-reader p { margin: 8px 0; }
+    .notes-reader ul, .notes-reader ol { margin: 8px 0; padding-left: 22px; }
+    .notes-reader li { margin: 4px 0; }
+    .notes-reader table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 13px;
+    }
+    .notes-reader th, .notes-reader td {
+      border: 1px solid var(--color-border);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .notes-reader th {
+      background: var(--color-surface-2);
+      font-weight: 700;
+    }
+    .pv-case-banner {
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+      margin-bottom: 14px;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .pv-banner-critical {
+      background: color-mix(in oklab, var(--color-error) 12%, var(--color-surface));
+      border-left: 3px solid var(--color-error);
+    }
+    .pv-banner-warning {
+      background: color-mix(in oklab, var(--color-warning) 14%, var(--color-surface));
+      border-left: 3px solid var(--color-warning);
+    }
+    .pv-banner-info {
+      background: color-mix(in oklab, var(--color-primary) 12%, var(--color-surface));
+      border-left: 3px solid var(--color-primary);
+    }
+    .pv-entity-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 0 5px;
+      margin: 0 1px;
+      border-radius: 4px;
+      border: 1px solid color-mix(in oklab, var(--color-primary) 40%, var(--color-border));
+      background: var(--color-surface-offset);
+      color: var(--color-primary);
+      font: inherit;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      vertical-align: baseline;
+    }
+    .pv-entity-link:hover {
+      background: var(--color-primary);
+      color: #fff;
+    }
+    .notes-editor-wrap {
+      padding: 16px 24px;
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      background: var(--color-surface);
+    }
+    .notes-editor-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .notes-editor-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 12px;
+    }
+    .notes-editor-field label {
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+    .notes-editor-field input, .notes-editor-field select, .notes-editor- textarea {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+      background: var(--color-bg);
+      color: var(--color-text);
+      font: inherit;
+      font-size: 13px;
+    }
+    .notes-code-textarea {
+      width: 100%;
+      min-height: 300px;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12.5px;
+      line-height: 1.5;
+      resize: vertical;
+    }
+    .notes-entities-dock {
+      background: var(--color-surface);
+      border-left: 1px solid var(--color-border);
+      padding: 14px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    @media (max-width: 1100px) {
+      .notes-body { grid-template-columns: 260px minmax(0, 1fr); }
+      .notes-entities-dock { display: none; }
+    }
+    @media (max-width: 760px) {
+      .notes-body { grid-template-columns: minmax(0, 1fr); }
+      .notes-sidebar { max-height: 220px; border-right: 0; border-bottom: 1px solid var(--color-border); }
+    }
   </style>
 </head>
 <body>
@@ -811,7 +1071,7 @@
     <div class="workspace-brand">
       <span class="vault-logo" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="3" r="1.5" fill="currentColor"/><circle cx="4.2" cy="16.5" r="1.5" fill="currentColor"/><circle cx="19.8" cy="16.5" r="1.5" fill="currentColor"/></svg></span>
       <h1>Pharma-vault</h1>
-      <span class="vault-version">v3.23</span>
+      <span class="vault-version">v3.24</span>
     </div>
     <div class="workspace-modes" role="tablist" aria-label="Główne tryby widoku">
       <button class="mode-tab active" id="modeGraphBtn" role="tab" aria-selected="true" data-mode="graph" aria-controls="cv">
@@ -840,6 +1100,9 @@
       </button>
       <button class="mode-tab" id="modeChemspaceBtn" role="tab" aria-selected="false" data-mode="chemspace" aria-controls="chemspaceModal" title="Tryb Przestrzeni Chemicznej & Chemogenomiki (Skrót: 9)">
         Chemogenomika
+      </button>
+      <button class="mode-tab" id="modeNotesBtn" role="tab" aria-selected="false" data-mode="notes" aria-controls="notesModal" title="Hybrydowe Notatki HTML & Przypadki Kliniczne (Skrót: N lub 0)">
+        Notatki &amp; Przypadki <span id="modeNotesBadge" class="tab-badge" style="background:var(--color-surface-offset);color:var(--color-primary)">10</span>
       </button>
     </div>
     <div class="workspace-actions">
@@ -1377,6 +1640,116 @@
       <div class="chemspace-dock" id="chemspaceDock">
         <!-- Generowane dynamicznie przez openChemSpaceDock -->
       </div>
+    </div>
+  </div>
+</div>
+<div id="notesModal" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Notatki Kliniczne i Przypadki (Med-Pharm Vault)">
+  <div class="notes-modal">
+    <div class="notes-head">
+      <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap">
+        <b style="font-size:var(--text-base);font-family:var(--font-display)">Notatki Kliniczne &amp; Przypadki (Med-Pharm Vault)</b>
+        <span id="notesCountSubtitle" class="tag" style="font-size:11px">Kanoniczne z repo + lokalne w przeglądarce</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+        <button class="btn btn-sm btn-gold" id="notesNewBtn" style="font-size:11px;padding:4px 10px" title="Utwórz nową notatkę lub przypadek kliniczny w przeglądarce">+ Nowa notatka / przypadek</button>
+        <button class="btn btn-sm" id="notesPasteBtn" style="font-size:11px;padding:4px 10px" title="Wklej pełny dokument HTML lub Markdown ze schowka">Wklej ze schowka</button>
+        <button class="btn btn-sm" id="notesImportBtn" style="font-size:11px;padding:4px 10px" title="Importuj pliki .html, .md lub .json z dysku">Importuj (.html / .json)</button>
+        <input type="file" id="notesFileInput" accept=".html,.htm,.md,.json" multiple style="display:none" />
+        <button class="btn btn-sm" id="notesExportAllJsonBtn" style="font-size:11px;padding:4px 10px" title="Eksportuj wszystkie lokalne notatki i nadpisania do pliku .json">Eksport bazy (.json)</button>
+        <button class="card-close" id="notesModalClose" title="Zamknij (Esc)" aria-label="Zamknij notatki kliniczne">&times;</button>
+      </div>
+    </div>
+    <div class="notes-body" id="notesDropZone">
+      <aside class="notes-sidebar" aria-label="Nawigator notatek i przypadków">
+        <div class="notes-sidebar-top">
+          <input type="search" id="notesSearchInput" class="search" placeholder="Szukaj w notatkach, lekach, ICD..." style="min-height:32px;font-size:12px;padding:4px 8px" autocomplete="off" />
+          <div class="notes-cat-bar" id="notesCategoryBar">
+            <button class="notes-cat-pill active" data-note-cat="all">Wszystkie</button>
+            <button class="notes-cat-pill" data-note-cat="case_study">Przypadki</button>
+            <button class="notes-cat-pill" data-note-cat="mechanism">Mechanizmy</button>
+            <button class="notes-cat-pill" data-note-cat="ebm_review">EBM</button>
+            <button class="notes-cat-pill" data-note-cat="local">Moje / HTML</button>
+          </div>
+        </div>
+        <div class="notes-list" id="notesListContainer" role="listbox" aria-label="Lista notatek i przypadków klinicznych">
+          <!-- Renderowane przez app.js -->
+        </div>
+      </aside>
+      <section class="notes-main" aria-label="Treść i edytor notatki">
+        <div class="notes-article-head" id="notesActiveHeader">
+          <!-- Renderowane przez app.js -->
+        </div>
+        <div class="notes-editor-wrap" id="notesEditorWrap">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+            <b style="font-size:13px">Edytor Notatki / Przypadku Klinicznego (Zapis w localStorage + eksport do repozytorium)</b>
+            <div style="display:flex;gap:6px;align-items:center">
+              <select id="notesTemplateSelect" style="font-size:11px;padding:3px 8px;border-radius:6px;border:1px solid var(--color-border);background:var(--color-bg);color:var(--color-text)">
+                <option value="">Wstaw szablon HTML...</option>
+                <option value="case_study">Szablon: Przypadek kliniczny (Case Study)</option>
+                <option value="mechanism">Szablon: Mechanizm neurofarmakologiczny</option>
+                <option value="ebm_review">Szablon: Przegląd krytyczny / EBM</option>
+              </select>
+              <button class="btn btn-sm btn-gold" id="noteSaveBtn" style="font-size:11px;padding:4px 10px">Zapisz zmiany</button>
+              <button class="btn btn-sm" id="noteCancelEditBtn" style="font-size:11px;padding:4px 10px">Anuluj</button>
+            </div>
+          </div>
+          <div class="notes-editor-grid">
+            <div class="notes-editor-field">
+              <label for="noteEditTitle">Tytuł notatki / przypadku</label>
+              <input type="text" id="noteEditTitle" placeholder="np. Przypadek: Polipragmazja OUN..." />
+            </div>
+            <div class="notes-editor-field">
+              <label for="noteEditSubtitle">Podtytuł kliniczny / mechanistyczny</label>
+              <input type="text" id="noteEditSubtitle" placeholder="Krótkie podsumowanie mechanizmu lub problemu..." />
+            </div>
+            <div class="notes-editor-field">
+              <label for="noteEditCategory">Kategoria</label>
+              <select id="noteEditCategory">
+                <option value="case_study">Przypadek kliniczny (Case Study)</option>
+                <option value="mechanism">Neurofarmakologia &amp; Mechanizm</option>
+                <option value="ebm_review">Przegląd krytyczny &amp; EBM</option>
+                <option value="html_note">Wolna notatka / Artefakt HTML</option>
+              </select>
+            </div>
+            <div class="notes-editor-field">
+              <label for="noteEditTags">Tagi (oddzielone przecinkami)</label>
+              <input type="text" id="noteEditTags" placeholder="np. CYP2D6, padaczka, BBB, polipragmazja" />
+            </div>
+            <div class="notes-editor-field">
+              <label for="noteEditCompounds">Przypięte substancje (ID lub nazwy, po przecinku)</label>
+              <input type="text" id="noteEditCompounds" placeholder="np. fluoxetine-compound, tramadol-compound" />
+            </div>
+            <div class="notes-editor-field">
+              <label for="noteEditTargets">Cele ChEMBL i kody ICD (po przecinku)</label>
+              <input type="text" id="noteEditTargets" placeholder="np. CHEMBL228, CHEMBL340, F32.2, G40.2" />
+            </div>
+            <div class="notes-editor-field">
+              <label for="noteEditPatientMeta">Parametry pacjenta (Wiek/Płeć · eGFR · Fenotyp CYP)</label>
+              <input type="text" id="noteEditPatientMeta" placeholder="np. 64M | eGFR: 45 | CYP2D6 PM | Rozpoznanie" />
+            </div>
+            <div class="notes-editor-field">
+              <label for="noteEditCluster">Główny klaster farmakologiczny</label>
+              <select id="noteEditCluster">
+                <option value="General Pharmacology">General Pharmacology (Farmakologia ogólna)</option>
+                <option value="Nootropics">Nootropics (Nootropiki i OUN)</option>
+                <option value="Cardiovascular and Lipid Agents">Cardiovascular and Lipid Agents</option>
+                <option value="Metabolic and Incretin Agents">Metabolic and Incretin Agents</option>
+                <option value="Longevity and Experimental Compounds">Longevity and Experimental Compounds</option>
+              </select>
+            </div>
+          </div>
+          <div class="notes-editor-field">
+            <label for="noteEditHtmlTextarea">Kod treści (obsługuje pełne dokumenty HTML z &lt;style&gt;, fragmenty HTML lub Markdown)</label>
+            <textarea id="noteEditHtmlTextarea" class="notes-code-textarea" placeholder="Wklej kod HTML, raport analityczny lub wpisz treść..."></textarea>
+          </div>
+        </div>
+        <div class="notes-reader" id="notesReaderWrap">
+          <!-- Renderowane przez app.js -->
+        </div>
+      </section>
+      <aside class="notes-entities-dock" id="notesEntitiesDock" aria-label="Powiązane substancje, receptory i akcje kliniczne">
+        <!-- Renderowane przez app.js -->
+      </aside>
     </div>
   </div>
 </div>

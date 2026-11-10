@@ -1808,6 +1808,58 @@ def test_food_drug_interaction_engine(sqlite_con):
         assert inner == outer, f"Root {filename} is out of sync with apps/graph-viewer/{filename}"
 
 
+def test_hybrid_clinical_notes_engine(sqlite_con):
+    """Validates Hybrid Clinical Notes & Cases Engine: curated HTML notes, Resources/Vault ingestion,
+    SQLite clinical_notes table, graph-data.js bundle, and UI/localStorage integration.
+    """
+    notes_dir = ROOT / "data/curated/notes"
+    assert notes_dir.exists(), "data/curated/notes directory must exist"
+    html_files = sorted(notes_dir.glob("*.html"))
+    assert len(html_files) >= 6, f"Expected >= 6 curated HTML notes, found {len(html_files)}"
+
+    processed_notes_path = ROOT / "data/processed/clinical_notes.json"
+    assert processed_notes_path.exists(), "data/processed/clinical_notes.json must exist"
+    notes_data = json.loads(processed_notes_path.read_text(encoding="utf-8"))
+    assert len(notes_data) >= 10, f"Expected >= 10 compiled clinical notes, got {len(notes_data)}"
+
+    categories = {n["category"] for n in notes_data}
+    assert {"case_study", "mechanism", "ebm_review"}.issubset(categories)
+
+    provenances = {n["provenance"] for n in notes_data}
+    assert {"repo-curated", "repo-resources", "repo-vault"}.issubset(provenances)
+
+    # SQLite validation
+    count = sqlite_con.execute("SELECT COUNT(*) FROM clinical_notes").fetchone()[0]
+    assert count == len(notes_data)
+
+    case_row = sqlite_con.execute(
+        "SELECT title, category, provenance, patient_json FROM clinical_notes WHERE id = 'case-serotonin-cyp2d6-cascade'"
+    ).fetchone()
+    assert case_row is not None
+    assert case_row[1] == "case_study"
+    assert case_row[2] == "repo-curated"
+    assert "eGFR" in case_row[3] or "egfr" in case_row[3]
+
+    # graph-data.js validation
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    assert '"clinicalNotes"' in graph_js
+    assert '"case-serotonin-cyp2d6-cascade"' in graph_js
+    assert '"ebm-biohacking-bible-critical-review"' in graph_js
+
+    # app.js & index.html validation
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    assert "modeNotesBtn" in html_src
+    assert "notesModal" in html_src
+    assert "CANONICAL_NOTES" in app_src
+    assert "pv_clinical_notes_v1" in app_src
+    assert "openNotesModal" in app_src
+    assert "exportSingleNoteAsHtml" in app_src
+    assert "importRawNoteContent" in app_src
+    assert "#/notes" in app_src
+
+
+
 
 
 

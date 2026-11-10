@@ -8291,6 +8291,1140 @@
   }
 
 
+  // ---------- Hybrid Clinical Notes & Cases Engine (v3.24.0)
+  const CANONICAL_NOTES = G.clinicalNotes || [];
+  const NOTES_STORAGE_KEY = "pv_clinical_notes_v1";
+  let activeNotesModalOpen = false;
+  let notesEventsWired = false;
+  let notesState = {
+    selectedId: CANONICAL_NOTES.length ? CANONICAL_NOTES[0].id : null,
+    categoryFilter: "all",
+    searchQuery: "",
+    isEditing: false,
+    editingNew: false
+  };
+
+  const NOTE_CATEGORY_META = {
+    case_study: { label: "Przypadek kliniczny", badgeBg: "rgba(229,86,111,0.14)", badgeCol: "var(--color-error)" },
+    mechanism: { label: "Neurofarmakologia & Mechanizm", badgeBg: "rgba(88,153,226,0.14)", badgeCol: "var(--color-primary)" },
+    ebm_review: { label: "Przegląd krytyczny & EBM", badgeBg: "rgba(68,162,130,0.14)", badgeCol: "var(--color-success)" },
+    html_note: { label: "Notatka / Artefakt HTML", badgeBg: "rgba(217,164,65,0.14)", badgeCol: "var(--color-warning)" }
+  };
+
+  const NOTE_PROVENANCE_META = {
+    "repo-curated": { label: "KANONICZNA (Repo HTML)", col: "var(--color-primary)" },
+    "repo-resources": { label: "KANONICZNA (Resources)", col: "var(--color-success)" },
+    "repo-vault": { label: "KANONICZNA (Obsidian Vault)", col: "var(--color-primary)" },
+    "local-override": { label: "ZMODYFIKOWANA LOKALNIE", col: "var(--color-warning)" },
+    "local-browser": { label: "LOKALNA (Przeglądarka)", col: "var(--color-warning)" }
+  };
+
+  const NOTE_HTML_TEMPLATES = {
+    case_study: `<article class="pv-clinical-note">
+  <div class="pv-case-banner pv-banner-critical">
+    <div><strong>ALERT KLINICZNY:</strong> Podsumowanie kluczowej interakcji farmakokinetycznej / farmakodynamicznej w prezentowanym przypadku.</div>
+  </div>
+  <h3>1. Prezentacja kliniczna i oś czasu (Timeline)</h3>
+  <p>Opis pacjenta, wywiad chorobowy (kody ICD-10: <code>F32.2</code>) oraz chronologia włączania leków.</p>
+  <ul>
+    <li><strong>Dzień −7:</strong> Włączenie leku A...</li>
+    <li><strong>Dzień 0:</strong> Dołączenie leku B i wystąpienie objawów...</li>
+  </ul>
+  <h3>2. Analiza mechanizmu molekularnego i PK/PD</h3>
+  <table>
+    <thead>
+      <tr><th>Zaangażowany lek</th><th>Szlak CYP / Transporter / Receptor</th><th>Skutek kliniczny</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Nazwa leku (np. Fluoxetine)</td><td>Inhibicja CYP2D6 / SERT (<code>CHEMBL228</code>)</td><td>Wzrost AUC / blokada wychwytu zwrotnego</td></tr>
+    </tbody>
+  </table>
+  <h3>3. Postępowanie terapeutyczne i wnioski</h3>
+  <ol>
+    <li>Natychmiastowa korekta schematu leczenia...</li>
+    <li>Bezpieczna alternatywa farmakologiczna...</li>
+  </ol>
+</article>`,
+    mechanism: `<article class="pv-clinical-note">
+  <div class="pv-case-banner pv-banner-info">
+    <div><strong>TEZA NEUROFARMAKOLOGICZNA:</strong> Główne prawo farmakodynamiczne lub kinetyczne omawiane w notatce.</div>
+  </div>
+  <h3>1. Architektura receptorowa i transdukcja sygnału</h3>
+  <p>Analiza powinowactwa (Ki / pKi), selektywności podtypów receptorowych oraz przenikania przez barierę krew-mózg (BBB, <code>Kp,uu,brain</code>).</p>
+  <h3>2. Porównanie przedstawicieli klasy</h3>
+  <table>
+    <thead>
+      <tr><th>Substancja</th><th>Cel molekularny (ChEMBL)</th><th>Implikacja kliniczna</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Clozapine</td><td><code>CHEMBL217</code> / <code>CHEMBL2096662</code></td><td>Szybka dysocjacja z D2, brak EPS</td></tr>
+    </tbody>
+  </table>
+</article>`,
+    ebm_review: `<article class="pv-clinical-note">
+  <div class="pv-case-banner pv-banner-warning">
+    <div><strong>OCENA KRYTYCZNA EBM:</strong> Weryfikacja dowodów klinicznych (RCT / Meta-analizy vs hipotezy przedkliniczne).</div>
+  </div>
+  <h3>1. Zestawienie twierdzeń i jakości dowodów</h3>
+  <p>Synteza literatury i ocena stosunku korzyści do ryzyka.</p>
+  <h3>2. Najważniejsze ryzyka i interakcje</h3>
+  <ul>
+    <li>Ryzyko polipragmazji i wąskich gardeł metabolicznych CYP450.</li>
+  </ul>
+</article>`
+  };
+
+  function loadLocalNotesStore() {
+    try {
+      const raw = localStorage.getItem(NOTES_STORAGE_KEY);
+      if (!raw) return { custom: [], overrides: {} };
+      const parsed = JSON.parse(raw);
+      return {
+        custom: Array.isArray(parsed.custom) ? parsed.custom : [],
+        overrides: (parsed.overrides && typeof parsed.overrides === "object") ? parsed.overrides : {}
+      };
+    } catch (e) {
+      return { custom: [], overrides: {} };
+    }
+  }
+
+  function saveLocalNotesStore(store) {
+    try {
+      localStorage.setItem(NOTES_STORAGE_KEY, JSON.stringify(store));
+    } catch (e) {
+      showToast("Błąd zapisu w localStorage (przekroczony limit pamięci)", "error");
+    }
+    updateNotesBadgeCount();
+  }
+
+  function getAllClinicalNotes() {
+    const store = loadLocalNotesStore();
+    const merged = [];
+    CANONICAL_NOTES.forEach((cn) =>{
+      if (store.overrides && store.overrides[cn.id]) {
+        merged.push({
+          ...cn,
+          ...store.overrides[cn.id],
+          id: cn.id,
+          provenance: "local-override",
+          hasCanonicalOriginal: true,
+          canonicalProvenance: cn.provenance
+        });
+      } else {
+        merged.push({ ...cn, hasCanonicalOriginal: true });
+      }
+    });
+    (store.custom || []).forEach((ln) =>{
+      merged.push({
+        ...ln,
+        provenance: ln.provenance || "local-browser",
+        hasCanonicalOriginal: false
+      });
+    });
+    return merged;
+  }
+
+  function updateNotesBadgeCount() {
+    const badge = $("modeNotesBadge");
+    if (badge) {
+      const all = getAllClinicalNotes();
+      badge.textContent = String(all.length);
+    }
+  }
+
+  // Fast dictionary for compound & target name auto-linking
+  const compoundLookupMap = new Map();
+  C.forEach((c) =>{
+    const baseName = c.n.split("(")[0].trim().toLowerCase();
+    if (baseName.length >= 4) compoundLookupMap.set(baseName, c);
+    compoundLookupMap.set(c.id.toLowerCase(), c);
+    compoundLookupMap.set(c.id.replace(/-compound$/, "").toLowerCase(), c);
+    (c.a || []).forEach((al) =>{
+      const cleanAl = al.trim().toLowerCase();
+      if (cleanAl.length >= 4 && !compoundLookupMap.has(cleanAl)) compoundLookupMap.set(cleanAl, c);
+    });
+  });
+
+  // Polish clinical stem aliases -> canonical compound_id
+  const PL_STEM_TO_CID = {
+    "fluoksetyn": "fluoxetine-compound",
+    "tramadol": "tramadol-compound",
+    "moklobemid": "moclobemide-compound",
+    "cyproheptadyn": "cyproheptadine-compound",
+    "lewodop": "levodopa-compound",
+    "oksybutynin": "oxybutynin-compound",
+    "amitryptylin": "amitriptyline-compound",
+    "kwetiapin": "quetiapine-compound",
+    "rywastygmin": "rivastigmine-compound",
+    "walproinian": "valproate-compound",
+    "walproinow": "valproate-compound",
+    "lamotrygin": "lamotrigine-compound",
+    "karbamazepin": "carbamazepine-compound",
+    "lewetiracetam": "levetiracetam-compound",
+    "symwastatyn": "simvastatin-compound",
+    "klarytromycyn": "clarithromycin-compound",
+    "werapamil": "verapamil-compound",
+    "rosuwastatyn": "rosuvastatin-compound",
+    "loperamid": "loperamide-compound",
+    "domperydon": "domperidone-compound",
+    "feksofenadyn": "fexofenadine-compound",
+    "cetiryzyn": "cetirizine-compound",
+    "cetyryzyn": "cetirizine-compound",
+    "modafinil": "modafinil-compound",
+    "klozapin": "clozapine-compound",
+    "arypiprazol": "aripiprazole-compound",
+    "amisulpryd": "amisulpride-compound",
+    "risperidon": "risperidone-compound",
+    "rysperydon": "risperidone-compound",
+    "haloperidol": "haloperidol-compound",
+    "fenelzyn": "phenelzine-compound",
+    "tranylcypromin": "tranylcypromine-compound",
+    "tianeptyn": "tianeptine-compound",
+    "metformin": "metformin-compound",
+    "fluwoksamin": "fluvoxamine-compound",
+    "klomipramin": "clomipramine-compound",
+    "metylofenidat": "methylphenidate-compound",
+    "bupropion": "bupropion-compound",
+    "ketamin": "ketamine-compound",
+    "acetylocystein": "acetylcysteine-compound",
+    "diazepam": "diazepam-compound"
+  };
+
+  function resolveCompoundToken(token) {
+    if (!token) return null;
+    const t = token.trim().toLowerCase();
+    if (compoundLookupMap.has(t)) return compoundLookupMap.get(t);
+    for (const [stem, cid] of Object.entries(PL_STEM_TO_CID)) {
+      if (t.startsWith(stem)) return compoundLookupMap.get(cid) || null;
+    }
+    return null;
+  }
+
+  function extractEntitiesFromNote(note) {
+    if (!note) return { compounds: [], targets: [], icd: [] };
+    const compSet = new Set();
+    const targetSet = new Set();
+    const icdSet = new Set();
+
+    (note.compounds || []).forEach((cid) =>{
+      const c = resolveCompoundToken(cid);
+      if (c) compSet.add(c.i);
+    });
+    (note.targets || []).forEach((tid) =>{
+      const ti = targetIdxById.get(tid.trim().toUpperCase());
+      if (ti !== undefined) targetSet.add(ti);
+    });
+    (note.icd || []).forEach((code) =>{
+      if (code && code.trim()) icdSet.add(code.trim().toUpperCase());
+    });
+
+    const plainText = (note.title + " " + (note.subtitle || "") + " " + (note.html || "").replace(/<[^>]+>/g, " "));
+    const chemblMatches = plainText.match(/CHEMBL\d+/gi) || [];
+    chemblMatches.forEach((m) =>{
+      const ti = targetIdxById.get(m.toUpperCase());
+      if (ti !== undefined) targetSet.add(ti);
+    });
+
+    const icdMatches = plainText.match(/\b[FGLMNIT]\d{2}(?:\.\d+)?\b/g) || [];
+    icdMatches.forEach((m) =>icdSet.add(m));
+
+    const lowerText = plainText.toLowerCase();
+    for (const [stem, cid] of Object.entries(PL_STEM_TO_CID)) {
+      if (lowerText.includes(stem)) {
+        const c = compoundLookupMap.get(cid);
+        if (c) compSet.add(c.i);
+      }
+    }
+
+    return {
+      compounds: [...compSet].map((i) =>C[i]).filter(Boolean),
+      targets: [...targetSet].map((i) =>({ ...T[i], idx: i })).filter(Boolean),
+      icd: [...icdSet]
+    };
+  }
+
+  function getNotesForCompound(c) {
+    if (!c) return [];
+    const all = getAllClinicalNotes();
+    return all.filter((n) =>{
+      if ((n.compounds || []).includes(c.id)) return true;
+      const ents = extractEntitiesFromNote(n);
+      return ents.compounds.some((x) =>x.i === c.i);
+    });
+  }
+
+  function prepareNoteHtmlForRender(rawHtml, entities) {
+    if (!rawHtml) return "<p class='muted'>Brak treści notatki.</p>";
+    let htmlStr = rawHtml.trim();
+
+    // If user pasted Markdown without HTML tags, convert basic Markdown to HTML
+    if (!/<[a-z][\s\S]*>/i.test(htmlStr)) {
+      htmlStr = htmlStr
+        .split(/\n\n+/)
+        .map((blk) =>{
+          const t = blk.trim();
+          if (t.startsWith("### ")) return `<h4>${esc(t.slice(4))}</h4>`;
+          if (t.startsWith("## ") || t.startsWith("# ")) return `<h3>${esc(t.replace(/^#+\s*/, ""))}</h3>`;
+          return `<p>${esc(t).replace(/\n/g, "<br>")}</p>`;
+        })
+        .join("\n");
+    }
+
+    // Parse with DOMParser to safely strip <script> and turn entity mentions into interactive pills
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlStr, "text/html");
+    doc.querySelectorAll("script, iframe, object, embed").forEach((el) =>el.remove());
+
+    // Preserve any custom <style> blocks inside the note by scoping them to #notesReaderWrap
+    let scopedStyles = "";
+    doc.querySelectorAll("style").forEach((st) =>{
+      const cssText = st.textContent || "";
+      scopedStyles += `<style>${cssText.replace(/(^|\})\s*body\b/g, "$1 .notes-reader")}</style>`;
+      st.remove();
+    });
+
+    // Build regex of compound names & ChEMBL IDs to highlight in text nodes
+    const tokenTerms = [];
+    (entities.compounds || []).forEach((c) =>{
+      const en = c.n.split("(")[0].trim();
+      if (en.length >= 4) tokenTerms.push({ term: en, type: "compound", val: String(c.i), label: en });
+    });
+    (entities.targets || []).forEach((t) =>{
+      tokenTerms.push({ term: t.id, type: "target", val: String(t.idx), label: t.id });
+    });
+
+    if (tokenTerms.length) {
+      tokenTerms.sort((a, b) =>b.term.length - a.term.length);
+      const escapedTerms = tokenTerms.map((x) =>x.term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+      const rx = new RegExp(`\\b(${escapedTerms.join("|")})\\b`, "gi");
+
+      const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let cur;
+      while ((cur = walker.nextNode())) {
+        const parentTag = cur.parentElement ? cur.parentElement.tagName : "";
+        if (!["BUTTON", "A", "STYLE", "SCRIPT", "TEXTAREA"].includes(parentTag) && rx.test(cur.nodeValue)) {
+          textNodes.push(cur);
+        }
+        rx.lastIndex = 0;
+      }
+
+      textNodes.forEach((node) =>{
+        const text = node.nodeValue;
+        rx.lastIndex = 0;
+        let lastIdx = 0;
+        let match;
+        const frag = doc.createDocumentFragment();
+        while ((match = rx.exec(text)) !== null) {
+          if (match.index > lastIdx) {
+            frag.appendChild(doc.createTextNode(text.slice(lastIdx, match.index)));
+          }
+          const matchedText = match[0];
+          const found = tokenTerms.find((x) =>x.term.toLowerCase() === matchedText.toLowerCase());
+          if (found) {
+            const btn = doc.createElement("button");
+            btn.type = "button";
+            btn.className = "pv-entity-link";
+            btn.setAttribute("data-note-entity-type", found.type);
+            btn.setAttribute("data-note-entity-val", found.val);
+            btn.textContent = matchedText;
+            frag.appendChild(btn);
+          } else {
+            frag.appendChild(doc.createTextNode(matchedText));
+          }
+          lastIdx = rx.lastIndex;
+        }
+        if (lastIdx < text.length) {
+          frag.appendChild(doc.createTextNode(text.slice(lastIdx)));
+        }
+        if (node.parentNode) node.parentNode.replaceChild(frag, node);
+      });
+    }
+
+    return scopedStyles + doc.body.innerHTML;
+  }
+
+  function renderNotesWorkspace() {
+    const allNotes = getAllClinicalNotes();
+    updateNotesBadgeCount();
+
+    const subtitleEl = $("notesCountSubtitle");
+    if (subtitleEl) {
+      const canonCount = CANONICAL_NOTES.length;
+      const localCount = allNotes.length - canonCount;
+      subtitleEl.textContent = `${allNotes.length} dokumentów (${canonCount} kanonicznych z repo · ${localCount} lokalnych w przeglądarce)`;
+    }
+
+    const q = (notesState.searchQuery || "").trim().toLowerCase();
+    const cat = notesState.categoryFilter || "all";
+
+    const filtered = allNotes.filter((n) =>{
+      if (cat === "local") {
+        if (n.provenance !== "local-browser" && n.provenance !== "local-override" && n.category !== "html_note") return false;
+      } else if (cat !== "all" && n.category !== cat) {
+        return false;
+      }
+      if (!q) return true;
+      const hay = [
+        n.title, n.subtitle, n.category, n.cluster,
+        ...(n.tags || []), ...(n.compounds || []), ...(n.targets || []), ...(n.icd || []),
+        (n.html || "").replace(/<[^>]+>/g, " ")
+      ].join(" ").toLowerCase();
+      return hay.includes(q);
+    });
+
+    if (!notesState.selectedId || !allNotes.some((n) =>n.id === notesState.selectedId)) {
+      notesState.selectedId = filtered.length ? filtered[0].id : (allNotes[0] ? allNotes[0].id : null);
+    }
+
+    const listEl = $("notesListContainer");
+    if (listEl) {
+      if (!filtered.length) {
+        listEl.innerHTML = `<div style="padding:16px;text-align:center;color:var(--color-text-muted);font-size:12px">Brak notatek spełniających kryteria filtra.</div>`;
+      } else {
+        listEl.innerHTML = filtered.map((n) =>{
+          const isAct = n.id === notesState.selectedId;
+          const catMeta = NOTE_CATEGORY_META[n.category] || NOTE_CATEGORY_META.html_note;
+          const provMeta = NOTE_PROVENANCE_META[n.provenance] || NOTE_PROVENANCE_META["local-browser"];
+          const ents = extractEntitiesFromNote(n);
+          const patientPill = n.patient && n.patient.age_sex
+            ? `<span class="tag" style="font-size:10px;padding:1px 5px">${esc(n.patient.age_sex)}${n.patient.egfr ? ` · eGFR ${esc(n.patient.egfr)}` : ""}</span>`
+            : "";
+          return `
+            <button type="button" class="note-list-item ${isAct ? "active" : ""}" data-select-note-id="${esc(n.id)}" role="option" aria-selected="${isAct}">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:4px;width:100%">
+                <span style="font-size:10px;font-weight:700;padding:1px 6px;border-radius:4px;background:${catMeta.badgeBg};color:${catMeta.badgeCol}">${esc(catMeta.label)}</span>
+                <span style="font-size:10px;font-weight:700;color:${provMeta.col}">${n.provenance === "local-browser" ? "LOKALNA" : (n.provenance === "local-override" ? "NADPISANA" : "REPO")}</span>
+              </div>
+              <div style="font-size:13px;font-weight:700;line-height:1.3;color:var(--color-text);margin-top:2px">${esc(n.title)}</div>
+              ${n.subtitle ? `<div style="font-size:11.5px;color:var(--color-text-muted);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${esc(n.subtitle)}</div>` : ""}
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:4px;font-size:11px;color:var(--color-text-muted)">
+                <span>${ents.compounds.length} leków · ${ents.targets.length} celów</span>
+                ${patientPill}
+              </div>
+            </button>
+          `;
+        }).join("");
+
+        listEl.querySelectorAll("[data-select-note-id]").forEach((btn) =>{
+          btn.onclick = () =>{
+            notesState.selectedId = btn.dataset.selectNoteId;
+            notesState.isEditing = false;
+            notesState.editingNew = false;
+            renderNotesWorkspace();
+          };
+        });
+      }
+    }
+
+    const activeNote = allNotes.find((n) =>n.id === notesState.selectedId) || null;
+    renderActiveNotePane(activeNote);
+  }
+
+  function renderActiveNotePane(note) {
+    const headEl = $("notesActiveHeader");
+    const readerEl = $("notesReaderWrap");
+    const editorEl = $("notesEditorWrap");
+    const dockEl = $("notesEntitiesDock");
+    if (!headEl || !readerEl || !editorEl || !dockEl) return;
+
+    if (notesState.isEditing) {
+      editorEl.style.display = "flex";
+    } else {
+      editorEl.style.display = "none";
+    }
+
+    if (!note && !notesState.editingNew) {
+      headEl.innerHTML = `<div style="font-size:13px;color:var(--color-text-muted)">Wybierz notatkę z listy po lewej stronie lub utwórz nową.</div>`;
+      readerEl.innerHTML = "";
+      dockEl.innerHTML = "";
+      return;
+    }
+
+    if (notesState.editingNew) {
+      headEl.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <b style="font-size:15px;color:var(--color-primary)">Tworzenie nowej notatki / przypadku klinicznego</b>
+          <span class="tag" style="font-size:11px">Zapis w przeglądarce (localStorage) + eksport .html</span>
+        </div>
+      `;
+      readerEl.innerHTML = `<p class="muted">Wypełnij pola powyżej i kliknij <b>Zapisz zmiany</b>, aby wyrenderować notatkę i powiązać encje z grafem.</p>`;
+      dockEl.innerHTML = `<div style="font-size:12px;color:var(--color-text-muted)">Po zapisaniu notatki tutaj pojawią się automatycznie wykryte leki, cele ChEMBL, kody ICD oraz kalkulator ryzyka DDI.</div>`;
+      return;
+    }
+
+    const catMeta = NOTE_CATEGORY_META[note.category] || NOTE_CATEGORY_META.html_note;
+    const provMeta = NOTE_PROVENANCE_META[note.provenance] || NOTE_PROVENANCE_META["local-browser"];
+    const entities = extractEntitiesFromNote(note);
+
+    const patientStripHtml = note.patient ? `
+      <div class="notes-patient-strip">
+        <div style="display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center">
+          <span><b>Pacjent:</b> ${esc(note.patient.age_sex || "–")}</span>
+          ${note.patient.egfr != null ? `<span><b>eGFR:</b> <code>${esc(note.patient.egfr)} mL/min</code></span>` : ""}
+          ${note.patient.cyp_phenotype ? `<span><b>Profil enzymatyczny:</b> ${esc(note.patient.cyp_phenotype)}</span>` : ""}
+          ${note.patient.diagnosis ? `<span><b>Rozpoznanie:</b> ${esc(note.patient.diagnosis)}</span>` : ""}
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          ${entities.compounds.length ? `<button class="btn btn-sm btn-gold" id="noteHeaderLoadStackBtn" style="font-size:11px;padding:3px 9px" title="Załaduj wszystkie leki z tego przypadku do Stacka i otwórz Audyt DDI">Załaduj do Stacka &amp; DDI (${entities.compounds.length})</button>` : ""}
+          ${entities.compounds.length ? `<button class="btn btn-sm" id="noteHeaderOpenPkBtn" style="font-size:11px;padding:3px 9px" title="Otwórz Symulator PK C(t) z parametrami eGFR tego przypadku">Symulator PK C(t)</button>` : ""}
+        </div>
+      </div>
+    ` : "";
+
+    headEl.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+          <span style="font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;background:${catMeta.badgeBg};color:${catMeta.badgeCol}">${esc(catMeta.label)}</span>
+          <span class="tag" style="font-size:11px;color:${provMeta.col};border-color:${provMeta.col}">${esc(provMeta.label)}</span>
+          ${note.source_file ? `<code style="font-size:11px;color:var(--color-text-muted)">${esc(note.source_file)}</code>` : ""}
+          <span style="font-size:11px;color:var(--color-text-muted)">· Akt.: ${esc(note.updated || "2026-11-10")}</span>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <button class="btn btn-sm" id="noteEditToggleBtn" style="font-size:11px;padding:3px 9px">${notesState.isEditing ? "Zamknij edytor" : "Edytuj HTML / Metadane"}</button>
+          <button class="btn btn-sm" id="noteExportHtmlFileBtn" style="font-size:11px;padding:3px 9px" title="Pobierz samowystarczalny plik .html z metadanymi gotowy do zapisu w Pharma-vault/data/curated/notes/">Eksportuj .html (do repo)</button>
+          <button class="btn btn-sm" id="noteCopyRawHtmlBtn" style="font-size:11px;padding:3px 9px">Kopiuj HTML</button>
+          ${note.provenance === "local-override" ? `<button class="btn btn-sm" id="noteRevertCanonicalBtn" style="font-size:11px;padding:3px 9px;color:var(--color-warning)">Przywróć oryginał z repo</button>` : ""}
+          ${note.provenance === "local-browser" ? `<button class="btn btn-sm" id="noteDeleteCustomBtn" style="font-size:11px;padding:3px 9px;color:var(--color-error)">Usuń lokalną</button>` : ""}
+        </div>
+      </div>
+      <div>
+        <h2 style="font-size:18px;font-weight:700;margin:0;color:var(--color-text);line-height:1.25">${esc(note.title)}</h2>
+        ${note.subtitle ? `<p style="font-size:13px;color:var(--color-text-muted);margin:4px 0 0">${esc(note.subtitle)}</p>` : ""}
+      </div>
+      ${(note.tags && note.tags.length) ? `
+        <div style="display:flex;gap:4px;flex-wrap:wrap">
+          ${note.tags.map((t) =>`<span class="tag" style="font-size:11px">#${esc(t)}</span>`).join("")}
+        </div>
+      ` : ""}
+      ${patientStripHtml}
+    `;
+
+    // Render enriched HTML body
+    readerEl.innerHTML = prepareNoteHtmlForRender(note.html, entities);
+
+    // Wire interactive entity buttons inside readerEl
+    readerEl.querySelectorAll("[data-note-entity-type]").forEach((btn) =>{
+      btn.onclick = () =>{
+        const tp = btn.dataset.noteEntityType;
+        const val = btn.dataset.noteEntityVal;
+        if (tp === "compound") {
+          closeNotesModal();
+          select({ type: "compound", i: +val }, true);
+        } else if (tp === "target") {
+          closeNotesModal();
+          openTargetModal(+val);
+        }
+      };
+    });
+
+    // Render Right-Hand Pharmacology Entities Dock
+    const polyRisk = entities.compounds.length >= 2 ? computePolypharmacyScore(entities.compounds) : null;
+    const riskBoxHtml = polyRisk ? `
+      <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-left:3px solid ${polyRisk.score > 50 ? 'var(--color-error)' : (polyRisk.score > 25 ? 'var(--color-warning)' : 'var(--color-success)')};border-radius:6px;padding:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <b style="font-size:12px;text-transform:uppercase">Ryzyko Polipragmazji DDI</b>
+          <span style="font-weight:800;font-size:13px;color:${polyRisk.score > 50 ? 'var(--color-error)' : (polyRisk.score > 25 ? 'var(--color-warning)' : 'var(--color-success)')}">${polyRisk.score}/100</span>
+        </div>
+        <div style="font-size:12px;color:var(--color-text-muted);margin-bottom:8px">${esc(polyRisk.statusText)} · ${polyRisk.alerts.length} interakcji</div>
+        <button class="btn btn-sm btn-gold" id="dockLoadNoteStackBtn" style="width:100%;font-size:11.5px;padding:5px 8px">
+          Załaduj ${entities.compounds.length} leków do Stacka &amp; Audytu DDI ↗
+        </button>
+      </div>
+    ` : (entities.compounds.length === 1 ? `
+      <button class="btn btn-sm btn-gold" id="dockLoadNoteStackBtn" style="width:100%;font-size:11.5px;padding:5px 8px">
+        Dodaj ${esc(entities.compounds[0].n)} do Stacka
+      </button>
+    ` : "");
+
+    const compoundsDockHtml = entities.compounds.length ? entities.compounds.map((c) =>{
+      const hlStr = c.pk && c.pk.hl ? rng([c.pk.hl[0], c.pk.hl[1]], c.pk.hl[2]) : "brak t½";
+      return `
+        <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:6px;padding:8px 10px;display:flex;flex-direction:column;gap:5px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:4px">
+            <span style="display:flex;align-items:center;gap:5px;font-weight:700;font-size:12.5px;color:var(--color-text)">
+              <span class="dot" style="width:8px;height:8px;background:var(--color-cluster-${c.c})"></span>
+              ${esc(c.n)}
+            </span>
+            <small style="font-size:11px;color:var(--color-text-muted)">t½: ${esc(hlStr)}</small>
+          </div>
+          ${c.m ? `<div style="font-size:11px;color:var(--color-text-muted);line-height:1.3">${esc(c.m.slice(0, 95))}${c.m.length > 95 ? "…" : ""}</div>` : ""}
+          <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:2px">
+            <button class="btn btn-sm" data-note-goto-comp="${c.i}" style="font-size:11px;padding:2px 6px">W grafie ↗</button>
+            <button class="btn btn-sm" data-note-dossier-comp="${c.i}" style="font-size:11px;padding:2px 6px">Dossier</button>
+            <button class="btn btn-sm" data-note-pksim-comp="${esc(c.id)}" style="font-size:11px;padding:2px 6px">PK C(t)</button>
+          </div>
+        </div>
+      `;
+    }).join("") : `<div style="font-size:12px;color:var(--color-text-muted)">Brak powiązanych substancji.</div>`;
+
+    const targetsDockHtml = entities.targets.length ? `
+      <div style="display:flex;flex-wrap:wrap;gap:5px">
+        ${entities.targets.map((t) =>`
+          <button class="btn btn-sm" data-note-goto-target="${t.idx}" style="font-size:11px;padding:3px 7px;text-align:left" title="${esc(t.n)}">
+            <b>${esc(t.id)}</b> · ${esc(t.n.slice(0, 26))}${t.n.length > 26 ? "…" : ""}
+          </button>
+        `).join("")}
+      </div>
+    ` : `<div style="font-size:12px;color:var(--color-text-muted)">Brak powiązanych celów ChEMBL.</div>`;
+
+    const icdDockHtml = entities.icd.length ? `
+      <div style="display:flex;flex-wrap:wrap;gap:5px">
+        ${entities.icd.map((code) =>`
+          <button class="btn btn-sm" data-note-goto-icd="${esc(code)}" style="font-size:11px;padding:3px 7px">
+            <code style="font-weight:700;color:var(--color-primary)">${esc(code)}</code> · Wskazania ICD ↗
+          </button>
+        `).join("")}
+      </div>
+    ` : `<div style="font-size:12px;color:var(--color-text-muted)">Brak kodów ICD-10/11.</div>`;
+
+    dockEl.innerHTML = `
+      <div>
+        <div class="label" style="margin-bottom:6px">Powiązana Farmakologia</div>
+        ${riskBoxHtml}
+      </div>
+      <div>
+        <div class="label" style="margin-bottom:6px">Substancje w notatce (${entities.compounds.length})</div>
+        <div style="display:flex;flex-direction:column;gap:6px">${compoundsDockHtml}</div>
+      </div>
+      <div>
+        <div class="label" style="margin-bottom:6px">Cele molekularne ChEMBL (${entities.targets.length})</div>
+        ${targetsDockHtml}
+      </div>
+      <div>
+        <div class="label" style="margin-bottom:6px">Kody kliniczne ICD-10 (${entities.icd.length})</div>
+        ${icdDockHtml}
+      </div>
+    `;
+
+    // Wire Header & Dock buttons
+    const loadNoteToStack = () =>{
+      if (!entities.compounds.length) return;
+      state.stack.clear();
+      entities.compounds.forEach((c) =>state.stack.add(c.i));
+      if (note.patient && Array.isArray(note.patient.diet) && state.patientDiet) {
+        state.patientDiet.clear();
+        note.patient.diet.forEach((d) =>state.patientDiet.add(d));
+      }
+      saveStack();
+      updateStackUI();
+      closeNotesModal();
+      openDdiAuditInSplitPane();
+      showToast(`Załadowano ${entities.compounds.length} leków z „${note.title.slice(0, 36)}…” do Stacka & DDI`, "success");
+    };
+
+    const hStackBtn = $("noteHeaderLoadStackBtn");
+    if (hStackBtn) hStackBtn.onclick = loadNoteToStack;
+    const dStackBtn = $("dockLoadNoteStackBtn");
+    if (dStackBtn) dStackBtn.onclick = loadNoteToStack;
+
+    const hPkBtn = $("noteHeaderOpenPkBtn");
+    if (hPkBtn && entities.compounds.length) {
+      hPkBtn.onclick = () =>{
+        const primaryCid = entities.compounds[0].id;
+        const compareCid = entities.compounds[1] ? entities.compounds[1].id : null;
+        const egfr = (note.patient && note.patient.egfr) ? +note.patient.egfr : 90;
+        closeNotesModal();
+        openPkSimulatorSplitPane(primaryCid, compareCid, { egfr });
+      };
+    }
+
+    const editToggleBtn = $("noteEditToggleBtn");
+    if (editToggleBtn) {
+      editToggleBtn.onclick = () =>{
+        notesState.isEditing = !notesState.isEditing;
+        notesState.editingNew = false;
+        if (notesState.isEditing) populateNoteEditorForm(note);
+        renderActiveNotePane(note);
+      };
+    }
+
+    const exportHtmlBtn = $("noteExportHtmlFileBtn");
+    if (exportHtmlBtn) exportHtmlBtn.onclick = () =>exportSingleNoteAsHtml(note);
+
+    const copyHtmlBtn = $("noteCopyRawHtmlBtn");
+    if (copyHtmlBtn) {
+      copyHtmlBtn.onclick = () =>{
+        const standalone = buildStandaloneNoteHtml(note);
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(standalone).then(() =>showToast("Skopiowano kod HTML z metadanymi do schowka", "success"));
+        }
+      };
+    }
+
+    const revertBtn = $("noteRevertCanonicalBtn");
+    if (revertBtn) {
+      revertBtn.onclick = () =>{
+        const store = loadLocalNotesStore();
+        delete store.overrides[note.id];
+        saveLocalNotesStore(store);
+        notesState.isEditing = false;
+        renderNotesWorkspace();
+        showToast("Przywrócono kanoniczną wersję notatki z repozytorium", "info");
+      };
+    }
+
+    const delBtn = $("noteDeleteCustomBtn");
+    if (delBtn) {
+      delBtn.onclick = () =>{
+        const store = loadLocalNotesStore();
+        store.custom = (store.custom || []).filter((x) =>x.id !== note.id);
+        saveLocalNotesStore(store);
+        notesState.selectedId = null;
+        notesState.isEditing = false;
+        renderNotesWorkspace();
+        showToast("Usunięto lokalną notatkę z przeglądarki", "info");
+      };
+    }
+
+    dockEl.querySelectorAll("[data-note-goto-comp]").forEach((btn) =>{
+      btn.onclick = () =>{
+        closeNotesModal();
+        select({ type: "compound", i: +btn.dataset.noteGotoComp }, true);
+      };
+    });
+    dockEl.querySelectorAll("[data-note-dossier-comp]").forEach((btn) =>{
+      btn.onclick = () =>{
+        closeNotesModal();
+        openDossierModal("single", +btn.dataset.noteDossierComp);
+      };
+    });
+    dockEl.querySelectorAll("[data-note-pksim-comp]").forEach((btn) =>{
+      btn.onclick = () =>{
+        const egfr = (note.patient && note.patient.egfr) ? +note.patient.egfr : 90;
+        closeNotesModal();
+        openPkSimulatorSplitPane(btn.dataset.notePksimComp, null, { egfr });
+      };
+    });
+    dockEl.querySelectorAll("[data-note-goto-target]").forEach((btn) =>{
+      btn.onclick = () =>{
+        closeNotesModal();
+        openTargetModal(+btn.dataset.noteGotoTarget);
+      };
+    });
+    dockEl.querySelectorAll("[data-note-goto-icd]").forEach((btn) =>{
+      btn.onclick = () =>{
+        closeNotesModal();
+        openIndicationsModal(btn.dataset.noteGotoIcd);
+      };
+    });
+  }
+
+  function populateNoteEditorForm(note) {
+    const tEl = $("noteEditTitle");
+    const sEl = $("noteEditSubtitle");
+    const cEl = $("noteEditCategory");
+    const tagsEl = $("noteEditTags");
+    const compsEl = $("noteEditCompounds");
+    const tgsEl = $("noteEditTargets");
+    const patEl = $("noteEditPatientMeta");
+    const clEl = $("noteEditCluster");
+    const htmlEl = $("noteEditHtmlTextarea");
+    if (!tEl || !htmlEl) return;
+
+    if (!note) {
+      tEl.value = "";
+      if (sEl) sEl.value = "";
+      if (cEl) cEl.value = "case_study";
+      if (tagsEl) tagsEl.value = "";
+      if (compsEl) {
+        const pre = (state.sel && state.sel.type === "compound") ? C[state.sel.i].id : ([...state.stack].map((i) =>C[i].id).join(", "));
+        compsEl.value = pre || "";
+      }
+      if (tgsEl) tgsEl.value = "";
+      if (patEl) patEl.value = "58M | eGFR: 75 | CYP2D6 NM | Polipragmazja OUN";
+      if (clEl) clEl.value = "General Pharmacology";
+      htmlEl.value = NOTE_HTML_TEMPLATES.case_study;
+      return;
+    }
+
+    tEl.value = note.title || "";
+    if (sEl) sEl.value = note.subtitle || "";
+    if (cEl) cEl.value = note.category || "html_note";
+    if (tagsEl) tagsEl.value = (note.tags || []).join(", ");
+    if (compsEl) compsEl.value = (note.compounds || []).join(", ");
+    if (tgsEl) tgsEl.value = [...(note.targets || []), ...(note.icd || [])].join(", ");
+    if (patEl) {
+      if (note.patient) {
+        patEl.value = `${note.patient.age_sex || ""} | eGFR: ${note.patient.egfr != null ? note.patient.egfr : ""} | ${note.patient.cyp_phenotype || ""} | ${note.patient.diagnosis || ""}`;
+      } else {
+        patEl.value = "";
+      }
+    }
+    if (clEl) clEl.value = note.cluster || "General Pharmacology";
+    htmlEl.value = note.html || "";
+  }
+
+  function parsePatientString(raw) {
+    const s = (raw || "").trim();
+    if (!s) return null;
+    const parts = s.split("|").map((x) =>x.trim());
+    const egfrMatch = s.match(/egfr\s*:?\s*(\d+)/i);
+    return {
+      age_sex: parts[0] || "Pacjent",
+      egfr: egfrMatch ? +egfrMatch[1] : null,
+      cyp_phenotype: parts[2] || "",
+      diet: [],
+      diagnosis: parts[3] || parts[1] || ""
+    };
+  }
+
+  function saveActiveNoteFromEditor() {
+    const title = ($("noteEditTitle") && $("noteEditTitle").value.trim()) || "Nowa notatka kliniczna";
+    const subtitle = ($("noteEditSubtitle") && $("noteEditSubtitle").value.trim()) || "";
+    const category = ($("noteEditCategory") && $("noteEditCategory").value) || "html_note";
+    const cluster = ($("noteEditCluster") && $("noteEditCluster").value) || "General Pharmacology";
+    const tags = (($("noteEditTags") && $("noteEditTags").value) || "").split(",").map((x) =>x.trim()).filter(Boolean);
+    const rawComps = (($("noteEditCompounds") && $("noteEditCompounds").value) || "").split(",").map((x) =>x.trim()).filter(Boolean);
+    const compounds = rawComps.map((tok) =>{
+      const c = resolveCompoundToken(tok);
+      return c ? c.id : tok;
+    });
+    const rawTgs = (($("noteEditTargets") && $("noteEditTargets").value) || "").split(",").map((x) =>x.trim()).filter(Boolean);
+    const targets = [];
+    const icd = [];
+    rawTgs.forEach((tok) =>{
+      if (/^CHEMBL\d+$/i.test(tok)) targets.push(tok.toUpperCase());
+      else icd.push(tok.toUpperCase());
+    });
+    const patient = category === "case_study" ? parsePatientString($("noteEditPatientMeta") ? $("noteEditPatientMeta").value : "") : null;
+    const htmlBody = ($("noteEditHtmlTextarea") && $("noteEditHtmlTextarea").value.trim()) || "<p>Pusta notatka.</p>";
+    const today = new Date().toISOString().slice(0, 10);
+
+    const store = loadLocalNotesStore();
+    if (notesState.editingNew || !notesState.selectedId) {
+      const slug = "local-" + title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 36) + "-" + Date.now().toString(36).slice(-4);
+      const newNote = {
+        id: slug,
+        title,
+        subtitle,
+        category,
+        provenance: "local-browser",
+        updated: today,
+        cluster,
+        tags,
+        compounds,
+        targets,
+        icd,
+        patient,
+        html: htmlBody
+      };
+      store.custom.unshift(newNote);
+      saveLocalNotesStore(store);
+      notesState.selectedId = slug;
+      notesState.isEditing = false;
+      notesState.editingNew = false;
+      renderNotesWorkspace();
+      showToast("Zapisano nową notatkę w przeglądarce (localStorage)", "success");
+    } else {
+      const isCanonical = CANONICAL_NOTES.some((cn) =>cn.id === notesState.selectedId);
+      const updatedFields = {
+        title,
+        subtitle,
+        category,
+        updated: today,
+        cluster,
+        tags,
+        compounds,
+        targets,
+        icd,
+        patient,
+        html: htmlBody
+      };
+      if (isCanonical) {
+        store.overrides[notesState.selectedId] = updatedFields;
+      } else {
+        const idx = store.custom.findIndex((x) =>x.id === notesState.selectedId);
+        if (idx >= 0) {
+          store.custom[idx] = { ...store.custom[idx], ...updatedFields };
+        }
+      }
+      saveLocalNotesStore(store);
+      notesState.isEditing = false;
+      notesState.editingNew = false;
+      renderNotesWorkspace();
+      showToast(isCanonical ? "Zapisano lokalne nadpisanie notatki kanonicznej" : "Zaktualizowano notatkę lokalną", "success");
+    }
+  }
+
+  function buildStandaloneNoteHtml(note) {
+    const meta = {
+      id: note.id,
+      title: note.title,
+      subtitle: note.subtitle || "",
+      category: note.category || "html_note",
+      provenance: "repo-curated",
+      updated: note.updated || new Date().toISOString().slice(0, 10),
+      cluster: note.cluster || "General Pharmacology",
+      tags: note.tags || [],
+      compounds: note.compounds || [],
+      targets: note.targets || [],
+      icd: note.icd || [],
+      patient: note.patient || null
+    };
+    return `<!-- pv-note-meta: ${JSON.stringify(meta, null, 2)} -->\n${note.html || ""}\n`;
+  }
+
+  function exportSingleNoteAsHtml(note) {
+    if (!note) return;
+    const content = buildStandaloneNoteHtml(note);
+    const blob = new Blob([content], { type: "text/html;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${note.id}.html`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    showToast(`Pobrano ${note.id}.html (gotowy do Pharma-vault/data/curated/notes/)`, "success");
+  }
+
+  function exportAllCustomNotesJson() {
+    const store = loadLocalNotesStore();
+    const payload = {
+      schema: "pharma-vault-notes-v1",
+      exported_at: new Date().toISOString(),
+      custom: store.custom || [],
+      overrides: store.overrides || {}
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `pharma-vault-notes-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    showToast("Wyeksportowano archiwum notatek (.json)", "success");
+  }
+
+  function importRawNoteContent(rawText, filenameHint = "wklejona-notatka.html") {
+    if (!rawText || !rawText.trim()) return;
+    const trimmed = rawText.trim();
+
+    // Check if JSON backup or single note JSON
+    if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
+      try {
+        const parsed = JSON.parse(trimmed);
+        const store = loadLocalNotesStore();
+        if (parsed.schema === "pharma-vault-notes-v1") {
+          const addedCustom = Array.isArray(parsed.custom) ? parsed.custom : [];
+          addedCustom.forEach((n) =>{
+            if (n && n.id) {
+              store.custom = store.custom.filter((x) =>x.id !== n.id);
+              store.custom.unshift(n);
+            }
+          });
+          if (parsed.overrides && typeof parsed.overrides === "object") {
+            Object.assign(store.overrides, parsed.overrides);
+          }
+          saveLocalNotesStore(store);
+          renderNotesWorkspace();
+          showToast(`Zaimportowano pakiet JSON (${addedCustom.length} notatek)`, "success");
+          return;
+        }
+      } catch (e) {
+        // Not valid JSON, continue as HTML/MD
+      }
+    }
+
+    // Check for <!-- pv-note-meta: {...} -->
+    const metaMatch = trimmed.match(/<!--\s*pv-note-meta:\s*(\{[\s\S]*?\})\s*-->/);
+    let meta = {};
+    let body = trimmed;
+    if (metaMatch) {
+      try { meta = JSON.parse(metaMatch[1]); } catch (e) {}
+      body = trimmed.replace(metaMatch[0], "").trim();
+    } else {
+      const titleMatch = trimmed.match(/<title[^>]*>([^<]+)<\/title>/i) || trimmed.match(/<h[123][^>]*>([^<]+)<\/h[123]>/i) || trimmed.match(/^#\s+(.+)$/m);
+      if (titleMatch) meta.title = titleMatch[1].trim();
+    }
+
+    const baseStem = filenameHint.replace(/\.(html?|md|json)$/i, "").replace(/[-_]+/g, " ");
+    const id = meta.id || ("local-" + baseStem.toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 32) + "-" + Date.now().toString(36).slice(-4));
+    const newNote = {
+      id,
+      title: meta.title || baseStem || "Wklejona notatka HTML",
+      subtitle: meta.subtitle || "Zaimportowano do przeglądarki (localStorage)",
+      category: meta.category || "html_note",
+      provenance: "local-browser",
+      updated: new Date().toISOString().slice(0, 10),
+      cluster: meta.cluster || "General Pharmacology",
+      tags: meta.tags || ["import-html"],
+      compounds: meta.compounds || [],
+      targets: meta.targets || [],
+      icd: meta.icd || [],
+      patient: meta.patient || null,
+      html: body
+    };
+
+    const store = loadLocalNotesStore();
+    store.custom = (store.custom || []).filter((x) =>x.id !== id);
+    store.custom.unshift(newNote);
+    saveLocalNotesStore(store);
+    notesState.selectedId = id;
+    notesState.isEditing = false;
+    notesState.editingNew = false;
+    renderNotesWorkspace();
+    showToast(`Dodano notatkę „${newNote.title}”`, "success");
+  }
+
+  function wireNotesEvents() {
+    if (notesEventsWired) return;
+    notesEventsWired = true;
+
+    const closeBtn = $("notesModalClose");
+    if (closeBtn) closeBtn.onclick = closeNotesModal;
+
+    const modalBackdrop = $("notesModal");
+    if (modalBackdrop) {
+      modalBackdrop.addEventListener("click", (e) =>{
+        if (e.target === modalBackdrop) closeNotesModal();
+      });
+    }
+
+    const searchInput = $("notesSearchInput");
+    if (searchInput) {
+      searchInput.oninput = (e) =>{
+        notesState.searchQuery = e.target.value;
+        renderNotesWorkspace();
+      };
+    }
+
+    const catBar = $("notesCategoryBar");
+    if (catBar) {
+      catBar.querySelectorAll("[data-note-cat]").forEach((btn) =>{
+        btn.onclick = () =>{
+          notesState.categoryFilter = btn.dataset.noteCat;
+          catBar.querySelectorAll("[data-note-cat]").forEach((b) =>b.classList.toggle("active", b === btn));
+          renderNotesWorkspace();
+        };
+      });
+    }
+
+    const newBtn = $("notesNewBtn");
+    if (newBtn) {
+      newBtn.onclick = () =>{
+        notesState.isEditing = true;
+        notesState.editingNew = true;
+        populateNoteEditorForm(null);
+        renderActiveNotePane(null);
+      };
+    }
+
+    const tplSelect = $("notesTemplateSelect");
+    if (tplSelect) {
+      tplSelect.onchange = (e) =>{
+        const key = e.target.value;
+        if (key && NOTE_HTML_TEMPLATES[key] && $("noteEditHtmlTextarea")) {
+          $("noteEditHtmlTextarea").value = NOTE_HTML_TEMPLATES[key];
+          if ($("noteEditCategory")) $("noteEditCategory").value = key;
+        }
+        e.target.value = "";
+      };
+    }
+
+    const saveBtn = $("noteSaveBtn");
+    if (saveBtn) saveBtn.onclick = saveActiveNoteFromEditor;
+
+    const cancelBtn = $("noteCancelEditBtn");
+    if (cancelBtn) {
+      cancelBtn.onclick = () =>{
+        notesState.isEditing = false;
+        notesState.editingNew = false;
+        renderNotesWorkspace();
+      };
+    }
+
+    const pasteBtn = $("notesPasteBtn");
+    if (pasteBtn) {
+      pasteBtn.onclick = async () =>{
+        if (navigator.clipboard && navigator.clipboard.readText) {
+          try {
+            const clip = await navigator.clipboard.readText();
+            if (clip && clip.trim()) {
+              importRawNoteContent(clip, "schowek-html.html");
+              return;
+            }
+          } catch (e) {}
+        }
+        notesState.isEditing = true;
+        notesState.editingNew = true;
+        populateNoteEditorForm(null);
+        renderActiveNotePane(null);
+        if ($("noteEditHtmlTextarea")) $("noteEditHtmlTextarea").focus();
+        showToast("Wklej kod HTML/MD bezpośrednio do pola edytora i kliknij Zapisz", "info");
+      };
+    }
+
+    const importBtn = $("notesImportBtn");
+    const fileInput = $("notesFileInput");
+    if (importBtn && fileInput) {
+      importBtn.onclick = () =>fileInput.click();
+      fileInput.onchange = (e) =>{
+        const files = Array.from(e.target.files || []);
+        files.forEach((f) =>{
+          const reader = new FileReader();
+          reader.onload = () =>importRawNoteContent(String(reader.result || ""), f.name);
+          reader.readAsText(f);
+        });
+        fileInput.value = "";
+      };
+    }
+
+    const exportAllBtn = $("notesExportAllJsonBtn");
+    if (exportAllBtn) exportAllBtn.onclick = exportAllCustomNotesJson;
+
+    const dropZone = $("notesDropZone");
+    if (dropZone) {
+      dropZone.addEventListener("dragover", (e) =>{ e.preventDefault(); });
+      dropZone.addEventListener("drop", (e) =>{
+        e.preventDefault();
+        const files = Array.from((e.dataTransfer && e.dataTransfer.files) || []);
+        files.forEach((f) =>{
+          if (/\.(html?|md|json)$/i.test(f.name)) {
+            const reader = new FileReader();
+            reader.onload = () =>importRawNoteContent(String(reader.result || ""), f.name);
+            reader.readAsText(f);
+          }
+        });
+      });
+    }
+  }
+
+  function openNotesModal(noteId, startNewForCompound = null) {
+    activeNotesModalOpen = true;
+    const modal = $("notesModal");
+    if (!modal) return;
+    openDialog(modal);
+    wireNotesEvents();
+    if (startNewForCompound) {
+      notesState.isEditing = true;
+      notesState.editingNew = true;
+      populateNoteEditorForm(null);
+      if ($("noteEditCompounds")) $("noteEditCompounds").value = startNewForCompound.id;
+      if ($("noteEditTitle")) $("noteEditTitle").value = `Notatka kliniczna: ${startNewForCompound.n}`;
+      renderNotesWorkspace();
+      return;
+    }
+    if (noteId) {
+      notesState.selectedId = noteId;
+      notesState.isEditing = false;
+      notesState.editingNew = false;
+    }
+    renderNotesWorkspace();
+  }
+
+  function closeNotesModal() {
+    activeNotesModalOpen = false;
+    const modal = $("notesModal");
+    if (modal) closeDialog(modal);
+    if (typeof syncWorkspaceModeToOpenModals === "function") syncWorkspaceModeToOpenModals();
+  }
+
+
   // ---------- Clinical Risk Engine & Multi-Axis Toxic Burden Heatmap
   let activeExpandedAdr = null;
 
@@ -10247,10 +11381,34 @@
         </div>
       `: "";
 
+      const linkedNotes = getNotesForCompound(c);
+      const clinicalNotesTeaserHtml = `
+        <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-left:2px solid var(--color-primary);border-radius:var(--radius-sm);padding:8px 10px;margin-top:.5rem;font-size:13px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <b style="font-size:13px;text-transform:uppercase;letter-spacing:.02em;color:var(--color-primary)">Notatki &amp; Przypadki Kliniczne (${linkedNotes.length})</b>
+            <button class="btn-copy" data-create-note-for="${c.i}" style="font-size:12px;padding:1px 6px">+ Nowa notatka</button>
+          </div>
+          ${linkedNotes.length ? `
+            <div style="display:grid;gap:4px">
+              ${linkedNotes.slice(0, 4).map((n) =>{
+                const catMeta = NOTE_CATEGORY_META[n.category] || NOTE_CATEGORY_META.html_note;
+                return `
+                  <button type="button" data-open-clinical-note="${esc(n.id)}" style="display:flex;justify-content:space-between;align-items:center;gap:6px;padding:5px 8px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;cursor:pointer;text-align:left;width:100%">
+                    <span style="font-weight:600;color:var(--color-text);font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(n.title)}</span>
+                    <span style="font-size:10px;font-weight:700;padding:1px 5px;border-radius:4px;background:${catMeta.badgeBg};color:${catMeta.badgeCol};white-space:nowrap">${esc(catMeta.label)}</span>
+                  </button>
+                `;
+              }).join("")}
+            </div>
+          ` : `<div style="font-size:12px;color:var(--color-text-muted)">Brak przypisanych notatek HTML lub przypadków dla tej substancji.</div>`}
+        </div>
+      `;
+
       tabContent = `
         <div class="tab-panel">
           ${c.d ? `<p class="muted" style="line-height:1.45">${esc(c.d)}${c.d.length >= 420 ? "…" : ""}</p>`: '<p class="empty">Brak opisu podsumowującego.</p>'}
           ${chemHtml}
+          ${clinicalNotesTeaserHtml}
           ${analogsTeaserHtml}
           ${typedEdgesHtml}
           ${rplHtml}
@@ -10643,6 +11801,20 @@
     p.querySelectorAll("[data-open-chemspace]").forEach((btn) =>{
       btn.onclick = () =>{
         openChemspaceView(btn.dataset.openChemspace);
+      };
+    });
+    p.querySelectorAll("[data-open-clinical-note]").forEach((btn) =>{
+      btn.onclick = () =>{
+        setWorkspaceMode("notes", false);
+        location.hash = `#/notes/${btn.dataset.openClinicalNote}`;
+        openNotesModal(btn.dataset.openClinicalNote);
+      };
+    });
+    p.querySelectorAll("[data-create-note-for]").forEach((btn) =>{
+      btn.onclick = () =>{
+        const comp = C[+btn.dataset.createNoteFor];
+        setWorkspaceMode("notes", false);
+        openNotesModal(null, comp);
       };
     });
     p.querySelectorAll("[data-launch-tool]").forEach((btn) =>{
@@ -11048,6 +12220,7 @@
 
     if (e.key === "Escape") {
       if (cmdPaletteOpen) { closeCmdPalette(); return; }
+      if (activeNotesModalOpen) { closeNotesModal(); return; }
       if (activeChemspaceModalOpen) { closeChemspaceModal(); return; }
       if (activeModalCompound) { closeChemLightBox(); return; }
       if (activeComparatorIndices) { closeComparator(); return; }
@@ -11141,6 +12314,12 @@
       return;
     }
     if (e.key === "/") { e.preventDefault(); q.focus(); return; }
+    if ((e.key === "n" || e.key === "N" || e.key === "0") && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      e.preventDefault();
+      if (activeNotesModalOpen) closeNotesModal();
+      else setWorkspaceMode("notes");
+      return;
+    }
     if (e.key === "9" && !e.ctrlKey && !e.metaKey && !e.altKey && (!state.sel || state.sel.type !== "compound")) {
       e.preventDefault();
       if (activeChemspaceModalOpen) closeChemspaceModal();
@@ -11359,6 +12538,8 @@
       { type: "action", name: "Kaskady Biotransformacji & Metabolity", badge: "Widok", run: () =>setWorkspaceMode("metabolism") },
       { type: "action", name: "Transportery Błonowe & Bariera Krew-Mózg (BBB)", badge: "Widok", run: () =>setWorkspaceMode("transporters") },
       { type: "action", name: "9: Przestrzeń Chemiczna & Chemogenomika (2533 cząsteczki)", badge: "Widok", run: () =>setWorkspaceMode("chemspace") },
+      { type: "action", name: "Notatki Kliniczne & Przypadki (Med-Pharm Vault)", badge: "Widok (N)", run: () =>setWorkspaceMode("notes") },
+      { type: "action", name: "Utwórz nową notatkę HTML lub Przypadek Kliniczny", badge: "Notatki", run: () =>openNotesModal(null, (state.sel && state.sel.type === "compound") ? C[state.sel.i] : null) },
       { type: "action", name: "Symulator PK 2-Kompartmentowy C(t) (CYP & eGFR)", badge: "Symulator", run: () =>openPkSimulatorSplitPane("modafinil-compound") },
       { type: "action", name: "Radar Powinowactwa Receptorowego OUN (Ki / pKi)", badge: "Narzędzie", run: () =>openReceptorRadarSplitPane("clozapine-compound") },
       { type: "action", name: "Toksykologia Molekularna & eDISH (Hy's Law)", badge: "Narzędzie", run: () =>openToxicologySplitPane() },
@@ -11398,6 +12579,16 @@
           tMatches++;
         }
       }
+      const allNotes = getAllClinicalNotes();
+      let nMatches = 0;
+      for (let i = 0; i < allNotes.length && nMatches < 6; i++) {
+        const n = allNotes[i];
+        const nhay = (n.title + " " + (n.subtitle || "") + " " + (n.tags || []).join(" ")).toLowerCase();
+        if (nhay.includes(query)) {
+          cmdCurrentResults.push({ type: "note", note: n });
+          nMatches++;
+        }
+      }
     }
 
     if (cmdSelectedIdx >= cmdCurrentResults.length) cmdSelectedIdx = 0;
@@ -11428,6 +12619,13 @@
           <span><b>${esc(t.n)}</b><small style="color:var(--color-text-muted);font-size:13px">${esc(t.ty || "")}</small></span>
           <span class="cmd-palette-badge">ChEMBL</span>
         </button>`;
+      } else if (item.type === "note") {
+        const n = item.note;
+        const catMeta = NOTE_CATEGORY_META[n.category] || NOTE_CATEGORY_META.html_note;
+        return `<button class="cmd-palette-item ${isSel ? "selected" : ""}" data-cmd-idx="${idx}" role="option" aria-selected="${isSel}">
+          <span><b>${esc(n.title)}</b></span>
+          <span class="cmd-palette-badge">${esc(catMeta.label)}</span>
+        </button>`;
       }
     }).join("");
 
@@ -11449,6 +12647,10 @@
       select({ type: "compound", i: item.c.i }, true);
     } else if (item.type === "target") {
       openTargetModal(item.idx);
+    } else if (item.type === "note") {
+      setWorkspaceMode("notes", false);
+      location.hash = `#/notes/${item.note.id}`;
+      openNotesModal(item.note.id);
     }
   }
 
@@ -11462,6 +12664,7 @@
   const modeMetabolismBtn = $("modeMetabolismBtn");
   const modeTransportersBtn = $("modeTransportersBtn");
   const modeChemspaceBtn = $("modeChemspaceBtn");
+  const modeNotesBtn = $("modeNotesBtn");
   const cmdPaletteBtn = $("cmdPaletteBtn");
   const globalThemeBtn = $("globalThemeBtn");
 
@@ -11474,7 +12677,8 @@
     modeStructure3DBtn,
     modeMetabolismBtn,
     modeTransportersBtn,
-    modeChemspaceBtn
+    modeChemspaceBtn,
+    modeNotesBtn
   ].filter(Boolean);
 
   let currentWorkspaceMode = "graph";
@@ -11490,6 +12694,7 @@
       closeDossierModal();
       closeMetaboliteModal();
       closeChemspaceModal();
+      closeNotesModal();
       closeComparator();
       closeAnalogsModal();
       closeTargetModal();
@@ -11550,6 +12755,9 @@
       location.hash = "#/chemspace";
       const targetCid = (state.sel && state.sel.type === "compound") ? C[state.sel.i].id : (state.stack.size >0 ? C[[...state.stack][0]].id : "diazepam-compound");
       openChemspaceView(targetCid);
+    } else if (mode === "notes") {
+      location.hash = "#/notes";
+      openNotesModal();
     }
   }
 
@@ -11562,6 +12770,7 @@
     else if (activeMetaboliteQuery != null) setWorkspaceMode("metabolism", false);
     else if (activeTransporterDockOpen) setWorkspaceMode("transporters", false);
     else if (activeChemspaceModalOpen) setWorkspaceMode("chemspace", false);
+    else if (activeNotesModalOpen) setWorkspaceMode("notes", false);
     else if (state.stackDrawerOpen) setWorkspaceMode("stack", false);
     else setWorkspaceMode("graph", false);
   }
@@ -11919,6 +13128,12 @@
       setWorkspaceMode("transporters");
     } else if (raw === "/chemspace" || raw === "chemspace") {
       setWorkspaceMode("chemspace");
+    } else if (raw === "/notes" || raw === "notes") {
+      setWorkspaceMode("notes");
+    } else if (raw.startsWith("/notes/") || raw.startsWith("notes/")) {
+      const nid = raw.replace(/^\/?notes\//, "").split("?")[0];
+      setWorkspaceMode("notes", false);
+      openNotesModal(nid);
     } else if (raw.startsWith("/chemspace/") || raw.startsWith("chemspace/")) {
       const pathPart = raw.replace(/^\/?chemspace\//, "");
       const [cid] = pathPart.split("?");
@@ -12035,6 +13250,7 @@
 
   new ResizeObserver(resize).observe(cv);
   loadSavedStack();
+  updateNotesBadgeCount();
   wirePathwayDock();
   updatePolypharmacyShieldUI();
   resize(); fit(); stats();

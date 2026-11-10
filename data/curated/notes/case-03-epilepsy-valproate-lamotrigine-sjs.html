@@ -1,0 +1,68 @@
+<!-- pv-note-meta: {
+  "id": "case-epilepsy-valproate-lamotrigine-sjs",
+  "title": "Przypadek #3: Inhibicja glukuronidacji UGT1A4 i zespół Stevensa-Johnsona (Walproinian + Lamotrygina)",
+  "subtitle": "Podwojenie okresu półtrwania lamotryginy (t½ z 29 h do >60 h) wskutek kompetycyjnej blokady N2-glukuronidacji przez kwas walproinowy",
+  "category": "case_study",
+  "provenance": "repo-curated",
+  "updated": "2026-11-10",
+  "cluster": "General Pharmacology",
+  "tags": ["padaczka", "UGT1A4", "SJS-TEN", "lamotrygina", "walproinian", "neurologia"],
+  "compounds": ["valproate-compound", "lamotrigine-compound", "carbamazepine-compound", "levetiracetam-compound"],
+  "targets": ["CHEMBL2331043", "CHEMBL1998"],
+  "icd": ["G40.2", "L51.1"],
+  "patient": {
+    "age_sex": "29K",
+    "egfr": 95,
+    "cyp_phenotype": "UGT1A4 zahamowana przez walproinian",
+    "diet": [],
+    "diagnosis": "Padaczka ogniskowa z wtórnym uogólnieniem (G40.2) + reakcja pęcherzowa SJS (L51.1)"
+  }
+} -->
+<article class="pv-clinical-note">
+  <div class="pv-case-banner pv-banner-critical">
+    <div>
+      <strong>BLACK BOX WARNING (FDA / ChPL):</strong> Kwas walproinowy (Sodium Valproate) silnie hamuje glukuronylotransferazę UGT1A4/2B7, zmniejszając klirens Lamotrigine o ~50% i wydłużając jej t½ z ~29 h do ponad 60 h. Zastosowanie standardowego (niezredukowanego) schematu titracji lamotryginy radykalnie zwiększa ryzyko zespołu Stevensa-Johnsona (SJS/TEN).
+    </div>
+  </div>
+
+  <h3>1. Opis przypadku</h3>
+  <p>29-letnia pacjentka z padaczką skroniową (ICD-10: <code>G40.2</code>), leczona dotychczas przewlekle preparatem Sodium Valproate (1000 mg/d), zgłosiła się w 16. dniu od dołączenia Lamotrigine (włączonej błędnie w standardowej dawce 50 mg/d zamiast 25 mg co drugi dzień) z gorączką 38,6°C, bolesnymi nadżerkami błony śluzowej jamy ustnej, zapaleniem spojówek oraz plamisto-grudkową osutką z dodatnim objawem Nikolskiego na tułowiu (ICD-10: <code>L51.1</code>).</p>
+
+  <h3>2. Trójkąt interakcji leków przeciwpadaczkowych (ASM)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Kombinacja terapeutyczna</th>
+        <th>Szlak enzymatyczny</th>
+        <th>Zmiana t½ Lamotryginy</th>
+        <th>Wymagana modyfikacja titracji (wg ChPL)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Monoterapia Lamotrigine</strong></td>
+        <td>UGT1A4 (N2-glukuronidacja) na poziomie bazowym</td>
+        <td><strong>~24–35 h</strong></td>
+        <td>Tydzień 1–2: 25 mg/d → Tydzień 3–4: 50 mg/d.</td>
+      </tr>
+      <tr>
+        <td><strong>Lamotrigine + Sodium Valproate</strong> (Inhibitor UGT)</td>
+        <td>Kompetycyjna blokada UGT1A4; przekierowanie do szlaku oksydacyjnego CYP (reaktywny arenooksyd)</td>
+        <td><strong>~60–70 h</strong> (dwukrotny wzrost AUC)</td>
+        <td>Tydzień 1–2: <strong>12,5 mg/d (25 mg co 2. dzień)</strong> → Tydzień 3–4: 25 mg/d (50% dawki standardowej!).</td>
+      </tr>
+      <tr>
+        <td><strong>Lamotrigine + Carbamazepine</strong> (Induktor UGT/CYP)</td>
+        <td>Silna indukcja UGT1A4 oraz CYP3A4 przez karbamazepinę</td>
+        <td><strong>~12–15 h</strong> (spadek stężenia o 40–50%)</td>
+        <td>Tydzień 1–2: 50 mg/d → Tydzień 3–4: 100 mg/d w 2 dawkach podzielonych.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>3. Decyzje terapeutyczne</h3>
+  <ol>
+    <li><strong>Bezwzględne i trwałe odstawienie lamotryginy:</strong> Nawet wczesna osutka z objawami ogólnymi i śluzówkowymi u pacjenta na kombinacji walproinian + lamotrygina wymaga natychmiastowego przerwania ekspozycji bez ponownej próby prowokacji (re-challenge przeciwwskazany).</li>
+    <li><strong>Alternatywa wolna od interakcji UGT/CYP (i bezpieczna teratogennie u kobiet w wieku rozrodczym):</strong> Konwersja politerapii na Levetiracetam (modulator białka pęcherzykowego SV2A — <code>CHEMBL1998</code>), który nie podlega metabolizmowi wątrobowemu CYP/UGT i nie wchodzi w interakcje farmakokinetyczne.</li>
+  </ol>
+</article>

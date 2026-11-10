@@ -1,0 +1,60 @@
+<!-- pv-note-meta: {
+  "id": "neuro-bbb-efflux-selectivity",
+  "title": "Neurofarmakologia #1: Bariera Krew-Mózg (BBB), pompa P-gp (ABCB1) i selektywność ośrodkowa vs obwodowa",
+  "subtitle": "Dlaczego loperamid, domperydon i feksofenadyna nie działają na OUN w dawkach terapeutycznych — analiza Kp,uu,brain i CNS MPO",
+  "category": "mechanism",
+  "provenance": "repo-curated",
+  "updated": "2026-11-10",
+  "cluster": "General Pharmacology",
+  "tags": ["BBB", "P-gp", "ABCB1", "CNS-MPO", "loperamid", "neurofarmakologia", "transportery"],
+  "compounds": ["loperamide-compound", "domperidone-compound", "fexofenadine-compound", "cetirizine-compound", "modafinil-compound"],
+  "targets": ["CHEMBL233", "CHEMBL217", "CHEMBL238"],
+  "icd": ["G47.4"]
+} -->
+<article class="pv-clinical-note">
+  <div class="pv-case-banner pv-banner-info">
+    <div>
+      <strong>ZASADA NEUROFARMAKINETYCZNA:</strong> Wysoka lipofilność (LogP) NIE gwarantuje działania ośrodkowego. Kluczowym determinantem stężenia wolnej frakcji w płynie śródmiąższowym mózgu (<code>Kp,uu,brain</code>) jest stosunek biernej dyfuzji przez śródbłonek naczyń mózgowych do aktywnego wyrzutu (efflux) przez <strong>glikoproteinę P (P-gp / ABCB1)</strong> oraz <strong>BCRP (ABCG2)</strong>.
+    </div>
+  </div>
+
+  <h3>1. Klasyczne pary selektywności obwodowej vs ośrodkowej</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Para farmakologiczna</th>
+        <th>Cel molekularny</th>
+        <th>Substrat P-gp (Obwodowy, Kp,uu &lt; 0,1)</th>
+        <th>Penetrator OUN (Ośrodkowy, Kp,uu ≥ 0,5)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Agoniści μ-opioidowi</strong></td>
+        <td>MOR (<code>CHEMBL233</code>)</td>
+        <td><strong>Loperamide</strong> — silny agonista μ-opioidowy (Ki ≈ 3 nM), ale avidny substrat P-gp w śródbłonku BBB (Kp,uu ≈ 0,02). Działa wyłącznie na sploty Auerbacha w jelicie, chyba że P-gp zostanie zablokowana (np. przez chinidynę lub werapamil).</td>
+        <td>Fentanyl / Morfina — wysoka lub umiarkowana penetracja przez BBB → analgezja nadrdzeniowa i ryzyko depresji oddechowej w pniu mózgu.</td>
+      </tr>
+      <tr>
+        <td><strong>Antagoniści dopaminowi D2</strong></td>
+        <td>Receptor D2 (<code>CHEMBL217</code>)</td>
+        <td><strong>Domperidone</strong> — blokuje receptory D2 wyłącznie w strefie chemoreceptorowej (CTZ / pole najdalsze poza BBB) oraz w górnym odcinku przewodu pokarmowego; nie wywołuje parkinsonizmu polekowego.</td>
+        <td>Metoklopramid / Haloperidol — przekraczają BBB, blokują D2 w prążkowiu → ryzyko ostrej dystonii, akatyzji i dyskinez późnych.</td>
+      </tr>
+      <tr>
+        <td><strong>Antagoniści histaminowi H1</strong></td>
+        <td>Receptor H1 (HRH1)</td>
+        <td><strong>Fexofenadine</strong> i <strong>Cetirizine</strong> — jon obojnaczy (zwitterion, tPSA &gt; 50 Å²) oraz aktywny wyrzut przez P-gp ograniczają okupację H1 w korze mózgowej do &lt;5% (brak sedacji).</td>
+        <td>Hydroksyzyna / Difenhydramina — brak wyrzutu P-gp, wysoka lipofilność → &gt;60% okupacji H1 w OUN, sedacja i zaburzenia architektury snu.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>2. Parametry fizykochemiczne sprzyjające penetracji OUN (Wskaźnik CNS MPO ≥ 4,0)</h3>
+  <ul>
+    <li><strong>Topologiczna powierzchnia polarna (tPSA):</strong> optymalnie <strong>40–75 Å²</strong> (powyżej 90 Å² bierna dyfuzja gwałtownie spada).</li>
+    <li><strong>Masa cząsteczkowa (MW):</strong> ≤ 360–400 Da.</li>
+    <li><strong>Liczba donorów wiązań wodorowych (HBD):</strong> ≤ 1–2 (każda grupa –OH / –NH₂ drastycznie zwiększa powinowactwo do pompy P-gp).</li>
+    <li><strong>Przykład optymalizacji OUN:</strong> Modafinil (tPSA = 79,1 Å², MW = 273 Da, umiarkowany LogP) osiąga celowaną penetrację do struktur podwzgórza i układu dopaminergicznego (<code>CHEMBL238</code>) przy minimalnej kardiotoksyczności obwodowej.</li>
+  </ul>
+</article>
