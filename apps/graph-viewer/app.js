@@ -11068,6 +11068,7 @@
       <div class="ref-section">
         <div class="label">Narzędzia analityczne i symulatory</div>
         <div class="ref-list">
+          <button class="ref-row" data-launch-tool="clinical-suite"><span>Kalkulatory Kliniczne (CPIC PGx · Tapering PET · Nerki/Wątroba)</span><span class="ref-count">3 silniki ↗</span></button>
           <button class="ref-row" data-launch-tool="pk"><span>Symulator PK 2-kompartmentowy C(t)</span><span class="ref-count">CYP · eGFR ↗</span></button>
           <button class="ref-row" data-launch-tool="radar"><span>Radar powinowactwa receptorowego OUN</span><span class="ref-count">Ki / pKi ↗</span></button>
           <button class="ref-row" data-launch-tool="tox"><span>Toksykologia molekularna &amp; eDISH</span><span class="ref-count">DILI · hERG ↗</span></button>
@@ -11690,6 +11691,9 @@
         <button class="btn" data-open-chemspace="${esc(c.id)}" style="padding:5px 6px;font-size:var(--text-xs)" title="Otwórz w Przestrzeni Chemicznej & Chemogenomice (9)">
           ChemSpace
         </button>
+        <button class="btn btn-gold" data-open-clinical-suite="${esc(c.id)}" style="grid-column:1 / -1;padding:5px 8px;font-size:var(--text-xs)" title="Otwórz Kalkulatory Kliniczne dla tej substancji: CPIC PGx & Fenokonwersja, Konwersja dawek & Tapering PET, Nerki/Wątroba/Dializa (Skrót: K)">
+          Kalkulatory Kliniczne (CPIC PGx · Tapering PET · Nerki/Wątroba) ↗
+        </button>
       </div>`;
 
     return `
@@ -11803,6 +11807,12 @@
         openChemspaceView(btn.dataset.openChemspace);
       };
     });
+    p.querySelectorAll("[data-open-clinical-suite]").forEach((btn) =>{
+      btn.onclick = () =>{
+        setWorkspaceMode("clinical-suite", false);
+        openClinicalSuiteModal(null, btn.dataset.openClinicalSuite);
+      };
+    });
     p.querySelectorAll("[data-open-clinical-note]").forEach((btn) =>{
       btn.onclick = () =>{
         setWorkspaceMode("notes", false);
@@ -11821,7 +11831,11 @@
       btn.onclick = () =>{
         const tool = btn.dataset.launchTool;
         const cid = (state.sel && state.sel.type === "compound") ? C[state.sel.i].id : (state.stack.size >0 ? C[[...state.stack][0]].id : null);
-        if (tool === "pk") openPkSimulatorSplitPane(cid || "modafinil-compound");
+        if (tool === "clinical-suite") {
+          setWorkspaceMode("clinical-suite", false);
+          openClinicalSuiteModal("pgx", cid || "codeine-compound");
+        }
+        else if (tool === "pk") openPkSimulatorSplitPane(cid || "modafinil-compound");
         else if (tool === "radar") openReceptorRadarSplitPane(cid || "clozapine-compound");
         else if (tool === "tox") openToxicologySplitPane(cid || "valproic-acid-compound");
         else if (tool === "transporters") openTransporterDock(cid || "loperamide-compound");
@@ -12210,6 +12224,780 @@
     };
   }
 
+  // ---------- Clinical Calculators Suite (CPIC PGx & Phenoconversion · Dose Conversions & PET Hyperbolic Tapering · Renal/Hepatic/Dialysis)
+  const PGX_DATA = G.pharmacogenomicsCpic || { genes: {}, phenoconversion_inhibitors: {}, cpic_guidelines: [] };
+  const CONV_DATA = G.doseConversionsTapering || { classes: {}, antidepressant_switching_rules: [], pet_hyperbolic_models: [] };
+  const ORGAN_DATA = G.organImpairmentDialysis || { profiles: [] };
+  const ORGAN_BY_CID = new Map((ORGAN_DATA.profiles || []).map((p) => [p.compound_id, p]));
+  const PGX_STORAGE_KEY = "pv_patient_pgx_v1";
+
+  let activeClinicalSuiteOpen = false;
+  let csActiveTab = "pgx";
+  let csActiveCompoundId = "codeine-compound";
+
+  function loadPatientPgxProfile() {
+    const defaults = {};
+    Object.keys(PGX_DATA.genes || {}).forEach((g) => {
+      defaults[g] = "NM";
+    });
+    try {
+      const saved = JSON.parse(localStorage.getItem(PGX_STORAGE_KEY) || "{}");
+      return { ...defaults, ...saved };
+    } catch (_) {
+      return defaults;
+    }
+  }
+
+  let patientPgxProfile = loadPatientPgxProfile();
+
+  function savePatientPgxProfile() {
+    try {
+      localStorage.setItem(PGX_STORAGE_KEY, JSON.stringify(patientPgxProfile));
+    } catch (_) {}
+  }
+
+  function computePhenoconversionForGene(geneKey) {
+    const gMeta = (PGX_DATA.genes || {})[geneKey];
+    const basePheno = patientPgxProfile[geneKey] || "NM";
+    if (!gMeta || !gMeta.supports_phenoconversion) {
+      return { geneticPheno: basePheno, functionalPheno: basePheno, converted: false, inhibitors: [], factor: 1.0 };
+    }
+    const inhMap = (PGX_DATA.phenoconversion_inhibitors || {})[geneKey] || { strong: [], moderate: [] };
+    const stackIds = new Set([...state.stack].map((i) => C[i]?.id).filter(Boolean));
+    const strongHits = (inhMap.strong || []).filter((cid) => stackIds.has(cid));
+    const modHits = (inhMap.moderate || []).filter((cid) => stackIds.has(cid));
+
+    if (basePheno === "PM") {
+      return { geneticPheno: "PM", functionalPheno: "PM", converted: false, inhibitors: [...strongHits, ...modHits], factor: 1.0 };
+    }
+    if (strongHits.length > 0) {
+      const functional = basePheno === "UM" ? "IM" : "PM";
+      return {
+        geneticPheno: basePheno,
+        functionalPheno: functional,
+        converted: functional !== basePheno,
+        inhibitors: strongHits.map((id) => ({ id, potency: "strong", name: C[compById.get(id)]?.n || id })),
+        factor: 0.0
+      };
+    }
+    if (modHits.length > 0) {
+      const functional = basePheno === "UM" ? "NM" : (basePheno === "NM" ? "IM" : "PM");
+      return {
+        geneticPheno: basePheno,
+        functionalPheno: functional,
+        converted: functional !== basePheno,
+        inhibitors: modHits.map((id) => ({ id, potency: "moderate", name: C[compById.get(id)]?.n || id })),
+        factor: 0.5
+      };
+    }
+    return { geneticPheno: basePheno, functionalPheno: basePheno, converted: false, inhibitors: [], factor: 1.0 };
+  }
+
+  function renderClinicalSuitePgxPane() {
+    const geneSelCont = $("csPgxGeneSelectors");
+    const bannerCont = $("csPgxPhenoconversionBanner");
+    const activeDrugCont = $("csPgxActiveDrugCard");
+    const tableWrap = $("csPgxTableWrap");
+    if (!geneSelCont || !bannerCont || !activeDrugCont || !tableWrap) return;
+
+    const genes = Object.values(PGX_DATA.genes || {});
+    geneSelCont.innerHTML = genes.map((g) => {
+      const phenoRes = computePhenoconversionForGene(g.gene);
+      return `
+        <div class="cs-gene-row">
+          <div>
+            <b style="color:var(--color-primary)">${esc(g.gene)}</b>
+            <div style="font-size:10.5px;color:var(--color-text-muted)">${esc(g.chromosome || "")}${phenoRes.converted ? ` · <span style="color:var(--color-error);font-weight:700">→ ${esc(phenoRes.functionalPheno)}</span>` : ""}</div>
+          </div>
+          <select class="cs-select" data-pgx-gene="${esc(g.gene)}">
+            ${(g.phenotypes || []).map((p) => `<option value="${esc(p.id)}" ${patientPgxProfile[g.gene] === p.id ? "selected" : ""}>${esc(p.id)} — ${esc(p.label_pl)}</option>`).join("")}
+          </select>
+        </div>
+      `;
+    }).join("");
+
+    geneSelCont.querySelectorAll("[data-pgx-gene]").forEach((sel) => {
+      sel.onchange = () => {
+        patientPgxProfile[sel.dataset.pgxGene] = sel.value;
+        savePatientPgxProfile();
+        renderClinicalSuitePgxPane();
+      };
+    });
+
+    const conversions = genes.map((g) => ({ gene: g.gene, ...computePhenoconversionForGene(g.gene) })).filter((x) => x.converted);
+    if (conversions.length) {
+      bannerCont.innerHTML = `
+        <div class="pv-banner pv-banner-critical" style="margin:0">
+          <b>Wykryto Fenokonwersję Farmakokinetyczną w Twoim Stacku (${conversions.length} izoenzymy)!</b>
+          <div style="margin-top:4px;font-size:12.5px">
+            ${conversions.map((c) => `• <b>${esc(c.gene)}</b>: genotyp <code>${esc(c.geneticPheno)}</code> ulega funkcjonalnej konwersji do <b><code>${esc(c.functionalPheno)}</code></b> przez obecny w Stacku inhibitor: <b>${c.inhibitors.map((i) => `${esc(i.name)} (${i.potency === "strong" ? "silny AS×0.0" : "umiarkowany AS×0.5"})`).join(", ")}</b>.`).join("<br>")}
+          </div>
+        </div>
+      `;
+    } else {
+      bannerCont.innerHTML = `
+        <div class="pv-banner pv-banner-info" style="margin:0">
+          <b>Status Fenokonwersji Stacka: Brak aktywnej blokady CYP2D6 / CYP2C19 / CYP2C9 / OATP1B1</b>
+          <div style="font-size:12px;margin-top:3px">Fenotyp funkcjonalny pacjenta odpowiada bezpośrednio profilowi genetycznemu. Dodaj np. fluoksetynę, paroksetynę, bupropion, flukonazol lub amiodaron do Stacka, aby zasymulować fenokonwersję.</div>
+        </div>
+      `;
+    }
+
+    const guidelines = (PGX_DATA.cpic_guidelines || []).filter((g) => g.compound_id === csActiveCompoundId);
+    const compObj = C[compById.get(csActiveCompoundId)];
+    if (guidelines.length) {
+      activeDrugCont.innerHTML = guidelines.map((g) => {
+        const pheno = computePhenoconversionForGene(g.gene);
+        const rec = (g.recommendations || {})[pheno.functionalPheno] || (g.recommendations || {}).NM || {};
+        const sevColor = rec.severity === "contraindicated" ? "var(--color-error)" : (rec.severity === "moderate" ? "var(--color-warning)" : "var(--color-success)");
+        const roleLabel = g.drug_role === "prodrug" ? "PROLEK (Wymaga bioaktywacji — w PM utrata skuteczności, w UM toksyczność!)"
+          : g.drug_role === "active_drug" ? "LEK AKTYWNY (W PM kumulacja i zatrucie, w UM ryzyko subterapeutyczne)"
+          : "ALLELE NADWRAŻLIWOŚCI IMMUNOLOGICZNEJ HLA (Ryzyko SJS/TEN/DRESS/Agranulocytozy)";
+        const pkPheno = pheno.functionalPheno === "NM" ? "EM" : (["PM", "IM", "UM"].includes(pheno.functionalPheno) ? pheno.functionalPheno : "EM");
+        return `
+          <div style="border-left:4px solid ${sevColor};padding-left:12px;display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
+              <b style="font-size:14px">${esc(compObj ? compObj.n : g.compound_id)} × <span style="color:var(--color-primary)">${esc(g.gene)}</span> (CPIC Poziom ${esc(g.cpic_level)})</b>
+              <span class="tag" style="border-color:${sevColor};color:${sevColor};font-weight:700">Fenotyp funkcjonalny: ${esc(pheno.functionalPheno)}${pheno.converted ? ` (z ${esc(pheno.geneticPheno)})` : ""}</span>
+            </div>
+            <div style="font-size:12px;color:var(--color-text-muted)"><b>Mechanizm:</b> ${esc(roleLabel)} · <b>Szlak:</b> ${esc(g.active_metabolite || "–")}</div>
+            <div style="font-size:13px;background:var(--color-surface-offset);padding:8px 10px;border-radius:6px">
+              <b>Zalecenie CPIC / DPWG:</b> ${esc(rec.action_pl || "Standardowe dawkowanie.")}
+              ${rec.alternative_pl && rec.alternative_pl !== "–" ? `<div style="margin-top:4px;font-size:12px;color:var(--color-primary)"><b>Alternatywa kliniczna:</b> ${esc(rec.alternative_pl)}</div>` : ""}
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:2px">
+              <button class="btn btn-sm btn-gold" data-pgx-launch-pksim="${esc(g.compound_id)}" data-pgx-pheno="${esc(pkPheno)}">Eksportuj fenotyp (${esc(pkPheno)}) do Symulatora PK 2-Kompartmentowego ↗</button>
+              <button class="btn btn-sm" data-pgx-select-graph="${esc(g.compound_id)}">Pokaż w grafie</button>
+            </div>
+          </div>
+        `;
+      }).join("<hr style='border:0;border-top:1px solid var(--color-border);margin:8px 0'>");
+    } else {
+      const cypList = (compObj && compObj.pk && compObj.pk.cyp) ? compObj.pk.cyp : [];
+      activeDrugCont.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+          <div>
+            <b style="font-size:13.5px">${esc(compObj ? compObj.n : csActiveCompoundId)} — Analiza szlaków CYP450</b>
+            <div style="font-size:12px;color:var(--color-text-muted);margin-top:2px">
+              ${cypList.length ? `Substrat izoenzymów: <b>${esc(cypList.join(", "))}</b>. Brak dedykowanej wytycznej CPIC Level A — użyj tabeli poniżej lub przetestuj wpływ fenotypu w Symulatorze PK.` : "Brak bezpośredniej wytycznej CPIC Level A dla tej substancji. Wybierz lek z tabeli CPIC poniżej."}
+            </div>
+          </div>
+          <button class="btn btn-sm btn-gold" data-pgx-launch-pksim="${esc(csActiveCompoundId)}" data-pgx-pheno="${esc(computePhenoconversionForGene("CYP2D6").functionalPheno === "NM" ? "EM" : computePhenoconversionForGene("CYP2D6").functionalPheno)}">Symulator PK ↗</button>
+        </div>
+      `;
+    }
+
+    tableWrap.innerHTML = `
+      <table class="cs-table">
+        <thead>
+          <tr>
+            <th>Lek</th>
+            <th>Gen</th>
+            <th>Typ (Prolek vs Aktywny)</th>
+            <th>Twój Fenotyp Funkcjonalny</th>
+            <th>Zalecenie Kliniczne CPIC Level A</th>
+            <th>Alternatywa</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${(PGX_DATA.cpic_guidelines || []).map((g) => {
+            const c = C[compById.get(g.compound_id)];
+            const pheno = computePhenoconversionForGene(g.gene);
+            const rec = (g.recommendations || {})[pheno.functionalPheno] || (g.recommendations || {}).NM || {};
+            const sevColor = rec.severity === "contraindicated" ? "var(--color-error)" : (rec.severity === "moderate" ? "var(--color-warning)" : "var(--color-success)");
+            return `
+              <tr style="${g.compound_id === csActiveCompoundId ? "background:var(--color-surface-offset)" : ""}">
+                <td><button class="pv-entity-link" data-cs-pick-cid="${esc(g.compound_id)}">${esc(c ? c.n : g.compound_id)}</button></td>
+                <td><b>${esc(g.gene)}</b></td>
+                <td><span class="tag" style="font-size:11px">${esc(g.drug_role)}</span></td>
+                <td><b style="color:${sevColor}">${esc(pheno.functionalPheno)}</b>${pheno.converted ? ` <small>(z ${esc(pheno.geneticPheno)})</small>` : ""}</td>
+                <td>${esc(rec.action_pl || "–")}</td>
+                <td><small>${esc(rec.alternative_pl || "–")}</small></td>
+              </tr>
+            `;
+          }).join("")}
+        </tbody>
+      </table>
+    `;
+
+    activeDrugCont.querySelectorAll("[data-pgx-launch-pksim]").forEach((btn) => {
+      btn.onclick = () => {
+        const cid = btn.dataset.pgxLaunchPksim;
+        const ph = btn.dataset.pgxPheno || "EM";
+        closeClinicalSuiteModal();
+        openPkSimulatorSplitPane(cid, null, { phenotype: ph });
+      };
+    });
+    activeDrugCont.querySelectorAll("[data-pgx-select-graph]").forEach((btn) => {
+      btn.onclick = () => {
+        const idx = compById.get(btn.dataset.pgxSelectGraph);
+        if (idx !== undefined) {
+          closeClinicalSuiteModal();
+          select({ type: "compound", i: idx }, true);
+        }
+      };
+    });
+    tableWrap.querySelectorAll("[data-cs-pick-cid]").forEach((btn) => {
+      btn.onclick = () => {
+        csActiveCompoundId = btn.dataset.csPickCid;
+        const gSel = $("csGlobalCompoundSelect");
+        if (gSel) gSel.value = csActiveCompoundId;
+        renderClinicalSuitePgxPane();
+      };
+    });
+  }
+
+  function findSwitchingProtocol(fromSub, toSub) {
+    const rules = CONV_DATA.antidepressant_switching_rules || [];
+    for (const r of rules) {
+      const matchFrom = r.from_sub_class === fromSub
+        || (r.from_sub_class === "ANY_SEROTONERGIC" && ["SSRI", "SSRI_LONG", "SSRI_SHORT", "SNRI", "TCA", "TCA_SEROTONERGIC"].includes(fromSub))
+        || (r.from_sub_class === "SSRI_SNRI" && ["SSRI", "SSRI_SHORT", "SNRI"].includes(fromSub));
+      const matchTo = r.to_sub_class === toSub
+        || (r.to_sub_class === "ANY_SEROTONERGIC" && ["SSRI", "SSRI_LONG", "SSRI_SHORT", "SNRI", "TCA", "TCA_SEROTONERGIC"].includes(toSub))
+        || (r.to_sub_class === "SSRI_SNRI" && ["SSRI", "SSRI_LONG", "SSRI_SHORT", "SNRI"].includes(toSub))
+        || (r.to_sub_class === "TCA" && ["TCA", "TCA_SEROTONERGIC"].includes(toSub));
+      if (matchFrom && matchTo) return r;
+    }
+    return rules[rules.length - 1] || null;
+  }
+
+  function renderPetHyperbolicWidget() {
+    const modelSel = $("csPetModelSelect");
+    const startInput = $("csPetStartDose");
+    const stepInput = $("csPetStepOcc");
+    const svgCont = $("csPetSvgContainer");
+    const schedWrap = $("csPetScheduleTableWrap");
+    if (!modelSel || !startInput || !stepInput || !svgCont || !schedWrap) return;
+
+    const models = CONV_DATA.pet_hyperbolic_models || [];
+    if (!models.length) return;
+    if (!modelSel.options.length) {
+      modelSel.innerHTML = models.map((m) => `<option value="${esc(m.compound_id)}">${esc(m.name)} (${esc(m.target.split("(")[0].trim())})</option>`).join("");
+    }
+    const matchingModel = models.find((m) => m.compound_id === csActiveCompoundId);
+    if (matchingModel && modelSel.dataset.lastSyncedCid !== csActiveCompoundId) {
+      modelSel.value = matchingModel.compound_id;
+      startInput.value = matchingModel.usual_dose_mg;
+      modelSel.dataset.lastSyncedCid = csActiveCompoundId;
+    }
+
+    const model = models.find((m) => m.compound_id === modelSel.value) || models[0];
+    const startDose = Math.max(0.5, parseFloat(startInput.value) || model.usual_dose_mg);
+    const stepOcc = Math.max(2.5, Math.min(25, parseFloat(stepInput.value) || 10));
+
+    const occAt = (d) => (model.e_max * d) / (d + model.ed50_mg);
+    const doseForOcc = (occ) => {
+      if (occ <= 0) return 0;
+      if (occ >= model.e_max * 0.99) return startDose;
+      return (occ * model.ed50_mg) / (model.e_max - occ);
+    };
+
+    const startOcc = occAt(startDose);
+    const steps = [];
+    let curOcc = startOcc;
+    let stepNum = 0;
+    while (curOcc > 0.5 && stepNum < 20) {
+      const d = stepNum === 0 ? startDose : doseForOcc(curOcc);
+      const roundedD = Math.max(0, Math.round(d / (model.min_step_mg || 0.1)) * (model.min_step_mg || 0.1));
+      steps.push({
+        step: stepNum + 1,
+        week: stepNum * 2,
+        doseMg: +d.toFixed(2),
+        practicalDoseMg: +roundedD.toFixed(2),
+        occPct: +occAt(d).toFixed(1)
+      });
+      curOcc -= stepOcc;
+      stepNum++;
+    }
+    steps.push({ step: steps.length + 1, week: steps.length * 2, doseMg: 0, practicalDoseMg: 0, occPct: 0.0 });
+
+    // SVG plot of Michaelis-Menten curve Occ(D) vs D
+    const W = 680, H = 220, padL = 48, padR = 20, padT = 18, padB = 34;
+    const plotW = W - padL - padR, plotH = H - padT - padB;
+    const maxD = Math.max(startDose * 1.15, model.usual_dose_mg * 1.2);
+    const xOf = (d) => padL + (d / maxD) * plotW;
+    const yOf = (occ) => padT + plotH - (occ / 100) * plotH;
+
+    const curvePts = [];
+    for (let i = 0; i <= 80; i++) {
+      const d = (i / 80) * maxD;
+      curvePts.push(`${i === 0 ? "M" : "L"}${xOf(d).toFixed(1)},${yOf(occAt(d)).toFixed(1)}`);
+    }
+
+    const stepCircles = steps.map((s) => `
+      <circle cx="${xOf(s.doseMg).toFixed(1)}" cy="${yOf(s.occPct).toFixed(1)}" r="4.2" fill="var(--color-primary)" stroke="#fff" stroke-width="1.3">
+        <title>Krok ${s.step} (Tydz. ${s.week}): ${s.doseMg} mg → ${s.occPct}% zajętości</title>
+      </circle>
+    `).join("");
+
+    svgCont.innerHTML = `
+      <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;background:var(--color-surface-offset);border-radius:6px;border:1px solid var(--color-border)">
+        <line x1="${padL}" y1="${yOf(50).toFixed(1)}" x2="${W - padR}" y2="${yOf(50).toFixed(1)}" stroke="var(--color-border)" stroke-dasharray="4 3" />
+        <line x1="${xOf(model.ed50_mg).toFixed(1)}" y1="${padT}" x2="${xOf(model.ed50_mg).toFixed(1)}" y2="${H - padB}" stroke="var(--color-warning)" stroke-dasharray="3 3" />
+        <text x="${(xOf(model.ed50_mg) + 4).toFixed(1)}" y="${padT + 12}" fill="var(--color-warning)" font-size="10.5" font-weight="700">ED50 = ${model.ed50_mg} mg (${(model.e_max / 2).toFixed(1)}% Occ)</text>
+        <path d="${curvePts.join(" ")}" fill="none" stroke="var(--color-primary)" stroke-width="2.4" />
+        ${stepCircles}
+        <line x1="${padL}" y1="${H - padB}" x2="${W - padR}" y2="${H - padB}" stroke="var(--color-text-muted)" />
+        <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${H - padB}" stroke="var(--color-text-muted)" />
+        <text x="${W / 2}" y="${H - 6}" text-anchor="middle" fill="var(--color-text-muted)" font-size="11">Dawka dobowa D (mg) — równe odstępy na osi pionowej (ΔOcc) wymagają coraz mniejszych dawek na osi poziomej!</text>
+        <text x="14" y="${H / 2}" transform="rotate(-90 14 ${H / 2})" text-anchor="middle" fill="var(--color-text-muted)" font-size="11">Zajętość PET (%)</text>
+      </svg>
+      <div style="font-size:12px;color:var(--color-text-muted);margin-top:6px">
+        <b>${esc(model.name)} (${esc(model.target)}):</b> Emax = <b>${model.e_max}%</b>, ED50 = <b>${model.ed50_mg} mg</b>. ${esc(model.clinical_note)}
+      </div>
+    `;
+
+    schedWrap.innerHTML = `
+      <table class="cs-table" style="margin-top:6px">
+        <thead>
+          <tr>
+            <th>Etap</th>
+            <th>Tydzień</th>
+            <th>Dawka teoretyczna (mg/d)</th>
+            <th>Dawka praktyczna (krok ${model.min_step_mg} mg)</th>
+            <th>Zajętość receptora PET (%)</th>
+            <th>Spadek ΔOcc</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${steps.map((s, idx) => {
+            const prevOcc = idx > 0 ? steps[idx - 1].occPct : s.occPct;
+            const dOcc = idx === 0 ? " Punkt wyjścia" : `-${(prevOcc - s.occPct).toFixed(1)}%`;
+            return `
+              <tr>
+                <td><b>Krok ${s.step}</b></td>
+                <td>Tydz. ${s.week}</td>
+                <td>${s.doseMg} mg</td>
+                <td><b style="color:var(--color-primary)">${s.practicalDoseMg} mg</b></td>
+                <td><b>${s.occPct}%</b></td>
+                <td>${dOcc}</td>
+              </tr>
+            `;
+          }).join("")}
+        </tbody>
+      </table>
+    `;
+  }
+
+  function renderClinicalSuiteTaperPane() {
+    const classSel = $("csConvClassSelect");
+    const fromSel = $("csConvFromSelect");
+    const fromDoseInput = $("csConvFromDose");
+    const toSel = $("csConvToSelect");
+    const opioidWrap = $("csOpioidReductionWrap");
+    const opioidSlider = $("csOpioidCrossTolSlider");
+    const opioidVal = $("csOpioidCrossTolVal");
+    const resultBox = $("csConvResultBox");
+    const classTableWrap = $("csConvClassTableWrap");
+    if (!classSel || !fromSel || !toSel || !resultBox || !classTableWrap) return;
+
+    const classes = CONV_DATA.classes || {};
+    const classKeys = Object.keys(classes);
+    if (!classSel.options.length) {
+      classSel.innerHTML = classKeys.map((k) => `<option value="${esc(k)}">${esc(classes[k].label)}</option>`).join("");
+    }
+
+    // Auto-select class if csActiveCompoundId belongs to one
+    if (classSel.dataset.lastSyncedCid !== csActiveCompoundId) {
+      for (const k of classKeys) {
+        const found = (classes[k].compounds || []).find((c) => c.compound_id === csActiveCompoundId);
+        if (found) {
+          classSel.value = k;
+          delete classSel.dataset.populatedClass;
+          break;
+        }
+      }
+      classSel.dataset.lastSyncedCid = csActiveCompoundId;
+    }
+
+    const activeClassKey = classSel.value || classKeys[0];
+    const activeClass = classes[activeClassKey];
+    if (!activeClass) return;
+
+    const comps = activeClass.compounds || [];
+    if (classSel.dataset.populatedClass !== activeClassKey) {
+      fromSel.innerHTML = comps.map((c) => `<option value="${esc(c.compound_id)}">${esc(c.name)} (równoważnik: ${c.equiv_to_ref_mg} mg)</option>`).join("");
+      toSel.innerHTML = comps.map((c) => `<option value="${esc(c.compound_id)}">${esc(c.name)} (równoważnik: ${c.equiv_to_ref_mg} mg)</option>`).join("");
+      const matchFrom = comps.find((c) => c.compound_id === csActiveCompoundId);
+      if (matchFrom) fromSel.value = matchFrom.compound_id;
+      if (comps.length > 1) {
+        toSel.value = comps.find((c) => c.compound_id !== fromSel.value)?.compound_id || comps[0].compound_id;
+      }
+      fromDoseInput.value = (comps.find((c) => c.compound_id === fromSel.value) || comps[0]).equiv_to_ref_mg;
+      classSel.dataset.populatedClass = activeClassKey;
+    }
+
+    opioidWrap.style.display = activeClassKey === "opioids" ? "flex" : "none";
+    const crossTolReduction = activeClassKey === "opioids" ? (parseFloat(opioidSlider.value) || 35) : 0;
+    if (opioidVal) opioidVal.textContent = `${crossTolReduction}%`;
+
+    const fromDrug = comps.find((c) => c.compound_id === fromSel.value) || comps[0];
+    const toDrug = comps.find((c) => c.compound_id === toSel.value) || comps[0];
+    const doseFrom = Math.max(0.05, parseFloat(fromDoseInput.value) || fromDrug.equiv_to_ref_mg);
+
+    const refUnits = doseFrom / fromDrug.equiv_to_ref_mg;
+    const refEquivalentMg = +(refUnits * activeClass.reference_dose_mg).toFixed(2);
+    const rawTargetMg = +(refUnits * toDrug.equiv_to_ref_mg).toFixed(2);
+    const adjustedTargetMg = activeClassKey === "opioids" && fromDrug.compound_id !== toDrug.compound_id
+      ? +(rawTargetMg * (1 - crossTolReduction / 100)).toFixed(2)
+      : rawTargetMg;
+
+    let protocolBanner = "";
+    if (activeClassKey === "antidepressants") {
+      const rule = findSwitchingProtocol(fromDrug.sub_class || "SSRI", toDrug.sub_class || "SSRI");
+      if (rule) {
+        const cls = rule.severity === "CONTRAINDICATED_OVERLAP" ? "pv-banner-critical" : (rule.severity === "HIGH_CAUTION" ? "pv-banner-warning" : "pv-banner-info");
+        protocolBanner = `
+          <div class="pv-banner ${cls}" style="margin-top:8px">
+            <b>Strategia zamiany: ${esc(rule.strategy)}</b>
+            <div style="margin-top:3px;font-size:12px">${esc(rule.protocol)}</div>
+          </div>
+        `;
+      }
+    } else if (activeClassKey === "opioids") {
+      protocolBanner = `
+        <div class="pv-banner pv-banner-warning" style="margin-top:8px">
+          <b>Dobowy równoważnik morfiny p.o. (MME): ${refEquivalentMg} MME/d ${refEquivalentMg >= 90 ? "— WYSOKIE RYZYKO PRZEDAWKOWANIA (≥90 MME/d)!" : (refEquivalentMg >= 50 ? "— Podwyższone ryzyko (≥50 MME/d)" : "")}</b>
+          <div style="margin-top:3px;font-size:12px">
+            Dawka po redukcji o ${crossTolReduction}% na niepełną tolerancję krzyżową: <b style="color:var(--color-primary);font-size:14px">${adjustedTargetMg} mg/d</b> (surowy przelicznik: ${rawTargetMg} mg/d).
+            <br><b>Bezpieczeństwo nerkowe (${esc(toDrug.name)}):</b> ${esc(toDrug.renal_safety || "–")}
+          </div>
+        </div>
+      `;
+    } else if (activeClassKey === "corticosteroids") {
+      const hpaSuppressed = refEquivalentMg >= 5.0;
+      protocolBanner = `
+        <div class="pv-banner ${hpaSuppressed ? "pv-banner-warning" : "pv-banner-info"}" style="margin-top:8px">
+          <b>Profil receptorowy GR / MR (${esc(toDrug.name)}):</b> Siła przeciwzapalna (GR) = <b>${toDrug.anti_inflammatory_potency}×</b>, mineralokortykoidowa (MR — retencja Na+/H2O) = <b>${toDrug.mineralocorticoid_potency}×</b>, biologiczny t½ = <b>${esc(toDrug.bio_half_life_h)}</b>.
+          <div style="margin-top:3px;font-size:12px">${hpaSuppressed ? "⚠️ Dawka równoważna ≥5 mg prednizonu/d stosowana >3 tygodnie powoduje supresję osi HPA (ryzyko przełomu nadnerczowego przy nagłym odstawieniu)!" : "Dawka poniżej typowego progu supresji osi HPA."}</div>
+        </div>
+      `;
+    } else if (activeClassKey === "antipsychotics") {
+      protocolBanner = `
+        <div class="pv-banner pv-banner-info" style="margin-top:8px">
+          <b>Ryzyko z odbicia przy zamianie (${esc(fromDrug.name)} → ${esc(toDrug.name)}):</b>
+          <div style="margin-top:3px;font-size:12px">• <b>Odstawiany (${esc(fromDrug.name)}):</b> ${esc(fromDrug.rebound_risk)}<br>• <b>Włączany (${esc(toDrug.name)}):</b> ${esc(toDrug.d2_profile)} — ${esc(toDrug.rebound_risk)}</div>
+        </div>
+      `;
+    } else if (activeClassKey === "benzodiazepines") {
+      protocolBanner = `
+        <div class="pv-banner pv-banner-info" style="margin-top:8px">
+          <b>Protokół Ashtona (${esc(fromDrug.name)} → ${esc(toDrug.name)}):</b> Równoważnik <b>${refEquivalentMg} mg Diazepamu/d</b>.
+          <div style="margin-top:3px;font-size:12px">• <b>t½ (${esc(fromDrug.name)}):</b> ${esc(fromDrug.half_life_h)} h (${esc(fromDrug.active_metabolite)})${toDrug.lot_safe_hepatic ? "<br>• ✅ <b>Reguła LOT:</b> Lek docelowy ulega bezpośredniej glukuronidacji (bezpieczny w niewydolności wątroby)." : ""}</div>
+        </div>
+      `;
+    }
+
+    resultBox.innerHTML = `
+      <div style="background:var(--color-surface-offset);padding:10px 12px;border-radius:6px;border:1px solid var(--color-border)">
+        <div style="font-size:12px;color:var(--color-text-muted)">Dawka równoważna (${esc(fromDrug.name)} ${doseFrom} mg → ${esc(toDrug.name)}):</div>
+        <div style="font-size:18px;font-weight:800;color:var(--color-primary);margin-top:2px">
+          ${adjustedTargetMg} mg/d ${activeClassKey === "opioids" && adjustedTargetMg !== rawTargetMg ? `<small style="font-size:12px;color:var(--color-text-muted)">(przed redukcją krzyżową: ${rawTargetMg} mg/d)</small>` : ""}
+        </div>
+        <div style="font-size:11.5px;color:var(--color-text-muted);margin-top:2px">${esc(activeClass.clinical_note)}</div>
+      </div>
+      ${protocolBanner}
+    `;
+
+    classTableWrap.innerHTML = `
+      <table class="cs-table">
+        <thead>
+          <tr>
+            <th>Substancja</th>
+            <th>Równoważnik dla ${activeClass.reference_dose_mg} mg leku ref.</th>
+            <th>Przelicznik dla Twojej dawki (${doseFrom} mg ${esc(fromDrug.name)})</th>
+            <th>Parametry kliniczne / t½ / Uwagi</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${comps.map((c) => {
+            const eq = +(refUnits * c.equiv_to_ref_mg).toFixed(2);
+            return `
+              <tr style="${c.compound_id === toDrug.compound_id ? "background:var(--color-surface-offset)" : ""}">
+                <td><button class="pv-entity-link" data-cs-conv-pick="${esc(c.compound_id)}">${esc(c.name)}</button></td>
+                <td><b>${c.equiv_to_ref_mg} mg</b></td>
+                <td><b style="color:var(--color-primary)">${eq} mg/d</b></td>
+                <td><small>${esc(c.notes || c.rebound_risk || c.renal_safety || "")}</small></td>
+              </tr>
+            `;
+          }).join("")}
+        </tbody>
+      </table>
+    `;
+
+    classTableWrap.querySelectorAll("[data-cs-conv-pick]").forEach((btn) => {
+      btn.onclick = () => {
+        toSel.value = btn.dataset.csConvPick;
+        renderClinicalSuiteTaperPane();
+      };
+    });
+
+    renderPetHyperbolicWidget();
+  }
+
+  function getOrganProfileOrFallback(cid) {
+    const cur = ORGAN_BY_CID.get(cid);
+    if (cur) return { ...cur, is_curated: true };
+    const c = C[compById.get(cid)];
+    if (!c) return null;
+    const pk = c.pk || {};
+    const fe = pk.fe != null ? +pk.fe : (pk.ren ? 0.65 : 0.18);
+    const pb = pk.pb && pk.pb[0] != null ? +pk.pb[0] : 75;
+    const ba = pk.ba && pk.ba[0] != null ? +pk.ba[0] : 60;
+    const mw = c.pr && c.pr[0] != null ? +c.pr[0] : 320;
+    const compModel = (G.pkCompartmentModels || {})[cid];
+    const vd = compModel ? +compModel.vss_l_kg : (c.pr && c.pr[1] > 3 ? 2.4 : 0.9);
+    const dialyzable = mw < 500 && pb < 80 && vd < 1.0;
+    const ehRatio = ba < 35 ? 0.72 : (ba > 75 ? 0.15 : 0.42);
+    const ehClass = ehRatio >= 0.65 ? "high_eh" : (pb >= 85 ? "low_eh_high_binding" : "low_eh_low_binding");
+    return {
+      compound_id: cid,
+      name: c.n,
+      fe_unchanged: +fe.toFixed(2),
+      toxic_renal_metabolites: fe >= 0.5 ? "Dominujące wydalanie nerkowe — ryzyko kumulacji przy eGFR <45 ml/min." : "Brak skatalogowanych nefro-/neurotoksycznych metabolitów nerkowych w bazie referencyjnej.",
+      egfr_60_30: fe >= 0.5 ? "Redukcja dawki o 25–50% lub wydłużenie odstępu." : "Zwykle 100% dawki.",
+      egfr_30_15: fe >= 0.5 ? "Redukcja dawki o 50–75%." : "Ostrożnie — monitoruj odpowiedź kliniczną.",
+      egfr_under_15: fe >= 0.5 ? "Wymagana redukcja o ≥75% i korekta okołodializacyjna." : "100% lub ostrożna redukcja o 25%.",
+      ihd_removed_pct: dialyzable ? "30–50% (estymacja: MW <500 Da, niskie PB i Vd)" : "<10% (NIE ulega dializie — wysokie wiązanie z białkami lub duża objętość dystrybucji Vd)",
+      post_hd_supplement: dialyzable ? "Rozważ dawkę uzupełniającą po hemodializie." : "NIE wymaga dawki po HD.",
+      crrt_sieving: +((1 - pb / 100) * 0.9).toFixed(2),
+      tox_dialysis_utility: dialyzable ? "UMIARKOWANA (korzystne parametry fizykochemiczne do eliminacji pozaustrojowej)." : "NISKA (wysoka sekwestracja tkankowa lub wiązanie z białkami osocza).",
+      eh_class: ehClass,
+      eh_ratio: ehRatio,
+      child_pugh_a: ehClass === "high_eh" ? "Redukcja dawki p.o. o 25%." : "100% dawki.",
+      child_pugh_b: ehClass === "high_eh" ? "Wysoki współczynnik ekstrakcji wątrobowej (EH) — zredukuj dawkę doustną o 50% (przeciek wrotno-układowy)." : "Redukcja dawki o 25–50%.",
+      child_pugh_c: "Ostrożnie — redukcja dawki o ≥50% lub wybór leku o bezpośredniej glukuronidacji (LOT) / wydalaniu nerkowym.",
+      is_curated: false
+    };
+  }
+
+  function renderClinicalSuiteOrganPane() {
+    const egfrSlider = $("csOrganEgfrSlider");
+    const egfrVal = $("csOrganEgfrVal");
+    const cpSel = $("csOrganChildPughSelect");
+    const albSlider = $("csOrganAlbuminSlider");
+    const albVal = $("csOrganAlbuminVal");
+    const phenInput = $("csOrganPhenytoinInput");
+    const quickSum = $("csOrganQuickSummary");
+    const detailCard = $("csOrganDetailCard");
+    const catalogWrap = $("csOrganCatalogTableWrap");
+    if (!egfrSlider || !cpSel || !albSlider || !quickSum || !detailCard || !catalogWrap) return;
+
+    const egfr = parseFloat(egfrSlider.value) || 45;
+    const cpClass = cpSel.value || "B";
+    const alb = parseFloat(albSlider.value) || 2.8;
+    const measuredConc = parseFloat(phenInput?.value) || 12.0;
+
+    if (egfrVal) egfrVal.textContent = `${egfr} mL/min/1.73m²`;
+    if (albVal) albVal.textContent = `${alb.toFixed(1)} g/dL`;
+
+    const prof = getOrganProfileOrFallback(csActiveCompoundId);
+    if (!prof) return;
+
+    // Giusti-Hayton equation: Q = 1 - fe * (1 - eGFR / 100)
+    const gfrRatio = Math.min(1.0, egfr / 100);
+    const giustiQ = Math.max(0.08, 1 - prof.fe_unchanged * (1 - gfrRatio));
+    const doseFactorPct = Math.round(giustiQ * 100);
+    const intervalMultiplier = +(1 / giustiQ).toFixed(2);
+
+    // Winter-Tozer Phenytoin / acidic high-binding correction: C_corr = C_measured / (k * Alb + 0.1), k = 0.2 (or 0.1 if eGFR < 15)
+    const wtK = egfr < 15 ? 0.1 : 0.2;
+    const wtCorrected = +(measuredConc / (wtK * alb + 0.1)).toFixed(1);
+    const fuShiftFactor = +(4.4 / alb).toFixed(2);
+
+    const ehLabels = {
+      high_eh: "Wysoki współczynnik ekstrakcji wątrobowej (EH > 0.7 — Flow-Limited: przeciek wrotno-układowy zwiększa biodostępność p.o. 2–5×!)",
+      low_eh_high_binding: "Niska ekstrakcja wątrobowa, WYSOKIE wiązanie z białkami (EH < 0.3, PB > 85% — wrażliwy na hipoalbuminemię i mocznicę!)",
+      low_eh_low_binding: "Niska ekstrakcja wątrobowa, niskie wiązanie z białkami (Capacity-Limited, zależny od aktywności CYP)",
+      ugt_lot_preserved: "Reguła LOT (Bezpośrednia glukuronidacja UGT II fazy — klirens oszczędzony w marskości wątroby!)",
+      renal_only: "Eliminacja wyłącznie nerkowa (Brak metabolizmu wątrobowego)"
+    };
+
+    quickSum.innerHTML = `
+      <div style="background:var(--color-surface-offset);padding:10px 12px;border-radius:6px;border:1px solid var(--color-border);display:grid;gap:6px;font-size:12.5px">
+        <div><b>Współczynnik Giusti-Haytona Q (${esc(prof.name)}):</b> <span style="color:var(--color-primary);font-weight:800;font-size:15px">${doseFactorPct}% dawki</span> (lub wydłużenie odstępu <b>${intervalMultiplier}×</b>)</div>
+        <div><b>Korekta Wintera-Tozera (dla Alb = ${alb.toFixed(1)} g/dL${egfr < 15 ? " + mocznica k=0.1" : ""}):</b> Stężenie skorygowane = <b style="color:${wtCorrected > 20 ? "var(--color-error)" : "var(--color-primary)"}">${wtCorrected} mg/L</b> <small>(wzrost frakcji wolnej fu ~${fuShiftFactor}×)</small></div>
+      </div>
+    `;
+
+    const egfrRec = egfr < 15 ? prof.egfr_under_15 : (egfr < 30 ? prof.egfr_30_15 : prof.egfr_60_30);
+    const cpRec = cpClass === "C" ? prof.child_pugh_c : (cpClass === "B" ? prof.child_pugh_b : (cpClass === "A" ? prof.child_pugh_a : "100% dawki (prawidłowa funkcja wątroby)."));
+
+    detailCard.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <b style="font-size:14px">${esc(prof.name)} — Profil Nerkowy, Wątrobowy i Dializacyjny ${prof.is_curated ? '<span class="tag ok" style="font-size:11px">Kuratorowany EXTRIP / ChPL</span>' : '<span class="tag" style="font-size:11px">Model Fizykochemiczny ADME</span>'}</b>
+        <button class="btn btn-sm btn-gold" id="csOrganLaunchPkBtn">Eksportuj eGFR (${egfr} ml/min) do Symulatora PK ↗</button>
+      </div>
+      <div class="pv-banner ${prof.toxic_renal_metabolites.includes("KRYTYCZNY") ? "pv-banner-critical" : "pv-banner-warning"}" style="margin:4px 0">
+        <b>1. Nefrofarmakologia (fe = ${(prof.fe_unchanged * 100).toFixed(0)}%, eGFR = ${egfr} ml/min):</b> ${esc(egfrRec)}
+        <div style="margin-top:3px;font-size:12px"><b>Metabolity nerkowe:</b> ${esc(prof.toxic_renal_metabolites)}</div>
+      </div>
+      <div class="pv-banner pv-banner-info" style="margin:4px 0">
+        <b>2. Dializowalność (IHD / CRRT — współczynnik przesiewania S ≈ ${prof.crrt_sieving}):</b> Usunięcie podczas 4h HD: <b>${esc(prof.ihd_removed_pct)}</b> · Dawka po HD: <b>${esc(prof.post_hd_supplement)}</b>
+        <div style="margin-top:3px;font-size:12px"><b>Przydatność w ostrym zatruciu (EXTRIP):</b> ${esc(prof.tox_dialysis_utility)}</div>
+      </div>
+      <div class="pv-banner ${cpClass === "C" ? "pv-banner-critical" : "pv-banner-warning"}" style="margin:4px 0">
+        <b>3. Hepatofarmakologia (Child-Pugh ${esc(cpClass)}, EH ≈ ${prof.eh_ratio}):</b> ${esc(cpRec)}
+        <div style="margin-top:3px;font-size:12px"><b>Klasa ekstrakcji wątrobowej:</b> ${esc(ehLabels[prof.eh_class] || prof.eh_class)}</div>
+      </div>
+    `;
+
+    const pkBtn = $("csOrganLaunchPkBtn");
+    if (pkBtn) {
+      pkBtn.onclick = () => {
+        closeClinicalSuiteModal();
+        openPkSimulatorSplitPane(csActiveCompoundId, null, { egfr: Math.max(15, Math.min(120, Math.round(egfr / 5) * 5)) });
+      };
+    }
+
+    catalogWrap.innerHTML = `
+      <table class="cs-table">
+        <thead>
+          <tr>
+            <th>Lek</th>
+            <th>fe (Nerkowe)</th>
+            <th>Zalecenie dla eGFR ${egfr} ml/min</th>
+            <th>Usunięcie w HD / Suplementacja</th>
+            <th>Klasa Wątrobowa (Child-Pugh ${esc(cpClass)})</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${(ORGAN_DATA.profiles || []).map((p) => {
+            const r = egfr < 15 ? p.egfr_under_15 : (egfr < 30 ? p.egfr_30_15 : p.egfr_60_30);
+            const h = cpClass === "C" ? p.child_pugh_c : (cpClass === "B" ? p.child_pugh_b : (cpClass === "A" ? p.child_pugh_a : "100% dawki"));
+            return `
+              <tr style="${p.compound_id === csActiveCompoundId ? "background:var(--color-surface-offset)" : ""}">
+                <td><button class="pv-entity-link" data-cs-organ-pick="${esc(p.compound_id)}">${esc(p.name)}</button></td>
+                <td><b>${(p.fe_unchanged * 100).toFixed(0)}%</b></td>
+                <td><small>${esc(r)}</small></td>
+                <td><b>${esc(p.ihd_removed_pct)}</b><br><small>${esc(p.post_hd_supplement)}</small></td>
+                <td><small>${esc(h)}</small></td>
+              </tr>
+            `;
+          }).join("")}
+        </tbody>
+      </table>
+    `;
+
+    catalogWrap.querySelectorAll("[data-cs-organ-pick]").forEach((btn) => {
+      btn.onclick = () => {
+        csActiveCompoundId = btn.dataset.csOrganPick;
+        const gSel = $("csGlobalCompoundSelect");
+        if (gSel) gSel.value = csActiveCompoundId;
+        renderClinicalSuiteOrganPane();
+      };
+    });
+  }
+
+  function populateCsGlobalCompoundSelect() {
+    const gSel = $("csGlobalCompoundSelect");
+    if (!gSel || gSel.options.length > 0) return;
+    const priorityIds = new Set([
+      ...(PGX_DATA.cpic_guidelines || []).map((g) => g.compound_id),
+      ...(ORGAN_DATA.profiles || []).map((p) => p.compound_id),
+      ...(CONV_DATA.pet_hyperbolic_models || []).map((m) => m.compound_id)
+    ]);
+    const sorted = [...C].sort((a, b) => (priorityIds.has(b.id) - priorityIds.has(a.id)) || a.n.localeCompare(b.n));
+    gSel.innerHTML = sorted.map((c) => `<option value="${esc(c.id)}">${priorityIds.has(c.id) ? "★ " : ""}${esc(c.n)}</option>`).join("");
+  }
+
+  function switchClinicalSuiteTab(tab) {
+    if (["pgx", "taper", "organ"].includes(tab)) csActiveTab = tab;
+    ["pgx", "taper", "organ"].forEach((t) => {
+      const btn = $(`csTab${t.charAt(0).toUpperCase() + t.slice(1)}Btn`);
+      const pane = $(`csPane${t.charAt(0).toUpperCase() + t.slice(1)}`);
+      if (btn) {
+        btn.classList.toggle("active", t === csActiveTab);
+        btn.setAttribute("aria-selected", t === csActiveTab ? "true" : "false");
+      }
+      if (pane) pane.classList.toggle("active", t === csActiveTab);
+    });
+    if (csActiveTab === "pgx") renderClinicalSuitePgxPane();
+    else if (csActiveTab === "taper") renderClinicalSuiteTaperPane();
+    else if (csActiveTab === "organ") renderClinicalSuiteOrganPane();
+  }
+
+  function openClinicalSuiteModal(tab = null, compoundId = null) {
+    const modal = $("clinicalSuiteModal");
+    if (!modal) return;
+    populateCsGlobalCompoundSelect();
+    if (compoundId && compById.has(compoundId)) {
+      csActiveCompoundId = compoundId;
+    } else if (state.sel && state.sel.type === "compound") {
+      csActiveCompoundId = C[state.sel.i].id;
+    }
+    const gSel = $("csGlobalCompoundSelect");
+    if (gSel) gSel.value = csActiveCompoundId;
+    activeClinicalSuiteOpen = true;
+    openDialog(modal);
+    switchClinicalSuiteTab(tab || csActiveTab);
+  }
+
+  function closeClinicalSuiteModal() {
+    const modal = $("clinicalSuiteModal");
+    if (modal) closeDialog(modal);
+    activeClinicalSuiteOpen = false;
+    syncWorkspaceModeToOpenModals();
+  }
+
+  const csModalEl = $("clinicalSuiteModal");
+  if (csModalEl) {
+    csModalEl.onclick = (e) => {
+      if (e.target === csModalEl) closeClinicalSuiteModal();
+    };
+  }
+  const csCloseBtn = $("clinicalSuiteModalClose");
+  if (csCloseBtn) csCloseBtn.onclick = closeClinicalSuiteModal;
+  ["pgx", "taper", "organ"].forEach((t) => {
+    const btn = $(`csTab${t.charAt(0).toUpperCase() + t.slice(1)}Btn`);
+    if (btn) btn.onclick = () => switchClinicalSuiteTab(t);
+  });
+  const csGlobalSel = $("csGlobalCompoundSelect");
+  if (csGlobalSel) {
+    csGlobalSel.onchange = () => {
+      csActiveCompoundId = csGlobalSel.value;
+      switchClinicalSuiteTab(csActiveTab);
+    };
+  }
+  const csPgxResetBtn = $("csPgxResetBtn");
+  if (csPgxResetBtn) {
+    csPgxResetBtn.onclick = () => {
+      Object.keys(PGX_DATA.genes || {}).forEach((g) => { patientPgxProfile[g] = "NM"; });
+      savePatientPgxProfile();
+      renderClinicalSuitePgxPane();
+      showToast("Zresetowano profil farmakogenetyczny do Wild-Type (NM).", "info");
+    };
+  }
+  ["csConvClassSelect", "csConvFromSelect", "csConvFromDose", "csConvToSelect", "csOpioidCrossTolSlider"].forEach((id) => {
+    const el = $(id);
+    if (el) el.oninput = () => renderClinicalSuiteTaperPane();
+  });
+  ["csPetModelSelect", "csPetStartDose", "csPetStepOcc"].forEach((id) => {
+    const el = $(id);
+    if (el) el.oninput = () => renderPetHyperbolicWidget();
+  });
+  ["csOrganEgfrSlider", "csOrganChildPughSelect", "csOrganAlbuminSlider", "csOrganPhenytoinInput"].forEach((id) => {
+    const el = $(id);
+    if (el) el.oninput = () => renderClinicalSuiteOrganPane();
+  });
+  const csCopyReportBtn = $("csCopyReportBtn");
+  if (csCopyReportBtn) {
+    csCopyReportBtn.onclick = () => {
+      const compObj = C[compById.get(csActiveCompoundId)];
+      const prof = getOrganProfileOrFallback(csActiveCompoundId);
+      const md = [
+        `# Raport Kalkulatorów Klinicznych Pharma-vault: ${compObj ? compObj.n : csActiveCompoundId}`,
+        `- **Profil CPIC / Fenokonwersja CYP2D6 / CYP2C19:** ${computePhenoconversionForGene("CYP2D6").functionalPheno} / ${computePhenoconversionForGene("CYP2C19").functionalPheno}`,
+        prof ? `- **Nefrofarmakologia (fe=${(prof.fe_unchanged * 100).toFixed(0)}%):** ${prof.egfr_60_30}` : "",
+        prof ? `- **Dializowalność (IHD):** ${prof.ihd_removed_pct} (${prof.post_hd_supplement})` : "",
+        prof ? `- **Hepatofarmakologia (Child-Pugh B):** ${prof.child_pugh_b}` : ""
+      ].filter(Boolean).join("\n");
+      navigator.clipboard?.writeText(md);
+      showToast("Skopiowano raport kliniczny Markdown do schowka.", "success");
+    };
+  }
+
   document.addEventListener("keydown", (e) =>{
     if ((e.metaKey || e.ctrlKey) && (e.key === "k" || e.key === "K")) {
       e.preventDefault();
@@ -12220,6 +13008,7 @@
 
     if (e.key === "Escape") {
       if (cmdPaletteOpen) { closeCmdPalette(); return; }
+      if (activeClinicalSuiteOpen) { closeClinicalSuiteModal(); return; }
       if (activeNotesModalOpen) { closeNotesModal(); return; }
       if (activeChemspaceModalOpen) { closeChemspaceModal(); return; }
       if (activeModalCompound) { closeChemLightBox(); return; }
@@ -12318,6 +13107,12 @@
       e.preventDefault();
       if (activeNotesModalOpen) closeNotesModal();
       else setWorkspaceMode("notes");
+      return;
+    }
+    if ((e.key === "k" || e.key === "K") && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      e.preventDefault();
+      if (activeClinicalSuiteOpen) closeClinicalSuiteModal();
+      else setWorkspaceMode("clinical-suite");
       return;
     }
     if (e.key === "9" && !e.ctrlKey && !e.metaKey && !e.altKey && (!state.sel || state.sel.type !== "compound")) {
@@ -12539,6 +13334,9 @@
       { type: "action", name: "Transportery Błonowe & Bariera Krew-Mózg (BBB)", badge: "Widok", run: () =>setWorkspaceMode("transporters") },
       { type: "action", name: "9: Przestrzeń Chemiczna & Chemogenomika (2533 cząsteczki)", badge: "Widok", run: () =>setWorkspaceMode("chemspace") },
       { type: "action", name: "Notatki Kliniczne & Przypadki (Med-Pharm Vault)", badge: "Widok (N)", run: () =>setWorkspaceMode("notes") },
+      { type: "action", name: "Kalkulatory Kliniczne: CPIC PGx & Fenokonwersja", badge: "Kalkulator (K)", run: () =>{ setWorkspaceMode("clinical-suite", false); openClinicalSuiteModal("pgx"); } },
+      { type: "action", name: "Kalkulatory Kliniczne: Konwersje Równoważników & Tapering Hiperboliczny PET", badge: "Kalkulator (K)", run: () =>{ setWorkspaceMode("clinical-suite", false); openClinicalSuiteModal("taper"); } },
+      { type: "action", name: "Kalkulatory Kliniczne: Nefro-/Hepatofarmakologia & Dializowalność (HD/CRRT)", badge: "Kalkulator (K)", run: () =>{ setWorkspaceMode("clinical-suite", false); openClinicalSuiteModal("organ"); } },
       { type: "action", name: "Utwórz nową notatkę HTML lub Przypadek Kliniczny", badge: "Notatki", run: () =>openNotesModal(null, (state.sel && state.sel.type === "compound") ? C[state.sel.i] : null) },
       { type: "action", name: "Symulator PK 2-Kompartmentowy C(t) (CYP & eGFR)", badge: "Symulator", run: () =>openPkSimulatorSplitPane("modafinil-compound") },
       { type: "action", name: "Radar Powinowactwa Receptorowego OUN (Ki / pKi)", badge: "Narzędzie", run: () =>openReceptorRadarSplitPane("clozapine-compound") },
@@ -12665,6 +13463,7 @@
   const modeTransportersBtn = $("modeTransportersBtn");
   const modeChemspaceBtn = $("modeChemspaceBtn");
   const modeNotesBtn = $("modeNotesBtn");
+  const modeClinicalSuiteBtn = $("modeClinicalSuiteBtn");
   const cmdPaletteBtn = $("cmdPaletteBtn");
   const globalThemeBtn = $("globalThemeBtn");
 
@@ -12678,7 +13477,8 @@
     modeMetabolismBtn,
     modeTransportersBtn,
     modeChemspaceBtn,
-    modeNotesBtn
+    modeNotesBtn,
+    modeClinicalSuiteBtn
   ].filter(Boolean);
 
   let currentWorkspaceMode = "graph";
@@ -12695,6 +13495,7 @@
       closeMetaboliteModal();
       closeChemspaceModal();
       closeNotesModal();
+      closeClinicalSuiteModal();
       closeComparator();
       closeAnalogsModal();
       closeTargetModal();
@@ -12758,6 +13559,10 @@
     } else if (mode === "notes") {
       location.hash = "#/notes";
       openNotesModal();
+    } else if (mode === "clinical-suite") {
+      location.hash = "#/clinical-suite";
+      const targetCid = (state.sel && state.sel.type === "compound") ? C[state.sel.i].id : (state.stack.size >0 ? C[[...state.stack][0]].id : "codeine-compound");
+      openClinicalSuiteModal(null, targetCid);
     }
   }
 
@@ -12771,6 +13576,7 @@
     else if (activeTransporterDockOpen) setWorkspaceMode("transporters", false);
     else if (activeChemspaceModalOpen) setWorkspaceMode("chemspace", false);
     else if (activeNotesModalOpen) setWorkspaceMode("notes", false);
+    else if (activeClinicalSuiteOpen) setWorkspaceMode("clinical-suite", false);
     else if (state.stackDrawerOpen) setWorkspaceMode("stack", false);
     else setWorkspaceMode("graph", false);
   }
@@ -13130,6 +13936,22 @@
       setWorkspaceMode("chemspace");
     } else if (raw === "/notes" || raw === "notes") {
       setWorkspaceMode("notes");
+    } else if (raw === "/clinical-suite" || raw === "clinical-suite") {
+      setWorkspaceMode("clinical-suite");
+    } else if (raw === "/pgx" || raw === "pgx") {
+      setWorkspaceMode("clinical-suite", false);
+      openClinicalSuiteModal("pgx");
+    } else if (raw === "/taper" || raw === "taper") {
+      setWorkspaceMode("clinical-suite", false);
+      openClinicalSuiteModal("taper");
+    } else if (raw === "/organ" || raw === "organ") {
+      setWorkspaceMode("clinical-suite", false);
+      openClinicalSuiteModal("organ");
+    } else if (raw.startsWith("/clinical-suite/") || raw.startsWith("clinical-suite/")) {
+      const rest = raw.replace(/^\/?clinical-suite\//, "").split("?")[0];
+      setWorkspaceMode("clinical-suite", false);
+      if (["pgx", "taper", "organ"].includes(rest)) openClinicalSuiteModal(rest);
+      else openClinicalSuiteModal(null, rest);
     } else if (raw.startsWith("/notes/") || raw.startsWith("notes/")) {
       const nid = raw.replace(/^\/?notes\//, "").split("?")[0];
       setWorkspaceMode("notes", false);

@@ -1859,6 +1859,67 @@ def test_hybrid_clinical_notes_engine(sqlite_con):
     assert "#/notes" in app_src
 
 
+def test_clinical_calculators_suite(sqlite_con):
+    """Validates the unified Kalkulatory Kliniczne suite: CPIC PGx, PET Hyperbolic Tapering, and Organ Impairment/Dialysis."""
+    # 1. Curated source files existence and structure
+    pgx_file = ROOT / "data/curated/pharmacogenomics_cpic.json"
+    taper_file = ROOT / "data/curated/dose_conversions_tapering.json"
+    organ_file = ROOT / "data/curated/organ_impairment_dialysis.json"
+
+    assert pgx_file.exists() and taper_file.exists() and organ_file.exists()
+
+    pgx_data = json.loads(pgx_file.read_text(encoding="utf-8"))
+    taper_data = json.loads(taper_file.read_text(encoding="utf-8"))
+    organ_data = json.loads(organ_file.read_text(encoding="utf-8"))
+
+    assert len(pgx_data["genes"]) == 10
+    assert len(pgx_data["cpic_guidelines"]) >= 24
+    assert len(taper_data["classes"]) == 5
+    assert len(taper_data["pet_hyperbolic_models"]) >= 10
+    assert len(organ_data["profiles"]) >= 18
+
+    # 2. SQLite tables verification
+    cpic_count = sqlite_con.execute("SELECT COUNT(*) FROM pharmacogenomics_cpic").fetchone()[0]
+    conv_count = sqlite_con.execute("SELECT COUNT(*) FROM dose_conversions").fetchone()[0]
+    organ_count = sqlite_con.execute("SELECT COUNT(*) FROM organ_impairment").fetchone()[0]
+
+    assert cpic_count >= 24
+    assert conv_count >= 50
+    assert organ_count >= 18
+
+    # Check specific critical entries in SQLite
+    codeine_row = sqlite_con.execute("SELECT gene, drug_type, recommendations_json FROM pharmacogenomics_cpic WHERE compound_id = 'codeine-compound'").fetchone()
+    assert codeine_row is not None and codeine_row[0] == "CYP2D6" and codeine_row[1] == "prodrug"
+
+    diaz_conv = sqlite_con.execute("SELECT equiv_to_ref_mg FROM dose_conversions WHERE class_key = 'benzodiazepines' AND compound_id = 'alprazolam-compound'").fetchone()
+    assert diaz_conv is not None and diaz_conv[0] == 0.5
+
+    lithium_row = sqlite_con.execute("SELECT fe_unchanged, eh_class, tox_dialysis_utility FROM organ_impairment WHERE compound_id = 'lithium-compound'").fetchone()
+    assert lithium_row is not None and lithium_row[0] >= 0.90 and "EXTRIP" in lithium_row[2]
+
+    # 3. graph-data.js integration
+    graph_js = (ROOT / "apps/graph-viewer/graph-data.js").read_text(encoding="utf-8")
+    assert '"pharmacogenomicsCpic"' in graph_js
+    assert '"doseConversionsTapering"' in graph_js
+    assert '"organImpairmentDialysis"' in graph_js
+
+    # 4. UI integration & shortcut validation
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+
+    assert 'id="modeClinicalSuiteBtn"' in html_src
+    assert 'id="clinicalSuiteModal"' in html_src
+    assert 'id="csPanePgx"' in html_src and 'id="csPaneTaper"' in html_src and 'id="csPaneOrgan"' in html_src
+
+    assert "openClinicalSuiteModal" in app_src
+    assert "computePhenoconversionForGene" in app_src
+    assert "renderPetHyperbolicWidget" in app_src
+    assert "renderClinicalSuiteOrganPane" in app_src
+    assert "data-open-clinical-suite" in app_src
+    assert "#/clinical-suite" in app_src
+
+
+
 
 
 

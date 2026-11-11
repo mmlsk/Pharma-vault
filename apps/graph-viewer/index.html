@@ -1063,6 +1063,116 @@
       .notes-body { grid-template-columns: minmax(0, 1fr); }
       .notes-sidebar { max-height: 220px; border-right: 0; border-bottom: 1px solid var(--color-border); }
     }
+    /* Clinical Calculators Suite (#clinicalSuiteModal) */
+    .clinical-suite-modal {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      width: min(1440px, 97vw);
+      height: min(910px, 93vh);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+    .cs-subtabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      padding: 10px 18px;
+      background: var(--color-surface-offset);
+      border-bottom: 1px solid var(--color-border);
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cs-subtab-btn {
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .cs-subtab-btn.active {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+    .cs-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px 22px;
+      background: var(--color-bg);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .cs-pane {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .cs-pane.active {
+      display: flex;
+    }
+    .cs-grid-2 {
+      display: grid;
+      grid-template-columns: 380px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+    .cs-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cs-gene-row {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      padding: 4px 0;
+      border-bottom: 1px dashed var(--color-border);
+    }
+    .cs-gene-row:last-child { border-bottom: 0; }
+    .cs-select, .cs-input {
+      padding: 5px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-size: 12px;
+      width: 100%;
+    }
+    .cs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+    .cs-table th, .cs-table td {
+      padding: 7px 10px;
+      border: 1px solid var(--color-border);
+      text-align: left;
+      vertical-align: top;
+    }
+    .cs-table th {
+      background: var(--color-surface-offset);
+      font-weight: 700;
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    @media (max-width: 980px) {
+      .cs-grid-2 { grid-template-columns: minmax(0, 1fr); }
+    }
   </style>
 </head>
 <body>
@@ -1071,7 +1181,7 @@
     <div class="workspace-brand">
       <span class="vault-logo" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="3" r="1.5" fill="currentColor"/><circle cx="4.2" cy="16.5" r="1.5" fill="currentColor"/><circle cx="19.8" cy="16.5" r="1.5" fill="currentColor"/></svg></span>
       <h1>Pharma-vault</h1>
-      <span class="vault-version">v3.24</span>
+      <span class="vault-version">v3.25</span>
     </div>
     <div class="workspace-modes" role="tablist" aria-label="Główne tryby widoku">
       <button class="mode-tab active" id="modeGraphBtn" role="tab" aria-selected="true" data-mode="graph" aria-controls="cv">
@@ -1103,6 +1213,9 @@
       </button>
       <button class="mode-tab" id="modeNotesBtn" role="tab" aria-selected="false" data-mode="notes" aria-controls="notesModal" title="Hybrydowe Notatki HTML & Przypadki Kliniczne (Skrót: N lub 0)">
         Notatki &amp; Przypadki <span id="modeNotesBadge" class="tab-badge" style="background:var(--color-surface-offset);color:var(--color-primary)">10</span>
+      </button>
+      <button class="mode-tab" id="modeClinicalSuiteBtn" role="tab" aria-selected="false" data-mode="clinical-suite" aria-controls="clinicalSuiteModal" title="Kalkulatory Kliniczne: CPIC PGx & Fenokonwersja, Konwersje & Tapering Hiperboliczny PET, Nerki/Wątroba/Dializa (Skrót: K)">
+        Kalkulatory Kliniczne
       </button>
     </div>
     <div class="workspace-actions">
@@ -1750,6 +1863,141 @@
       <aside class="notes-entities-dock" id="notesEntitiesDock" aria-label="Powiązane substancje, receptory i akcje kliniczne">
         <!-- Renderowane przez app.js -->
       </aside>
+    </div>
+  </div>
+</div>
+<div id="clinicalSuiteModal" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Kalkulatory Kliniczne: CPIC PGx, Konwersje & Odstawianie Hiperboliczne PET, Nerki/Wątroba/Dializa">
+  <div class="clinical-suite-modal">
+    <div class="notes-head">
+      <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap">
+        <b style="font-size:var(--text-base);font-family:var(--font-display)">Kalkulatory Kliniczne (CPIC PGx · Konwersje &amp; Tapering PET · Nerki / Wątroba / Dializa)</b>
+        <span id="csActiveSubstanceBadge" class="tag ok" style="font-size:11px">Zintegrowany ze Stackiem DDI i symulatorem PK</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <button class="btn btn-sm" id="csCopyReportBtn" style="font-size:11px;padding:4px 10px" title="Kopiuj podsumowanie kliniczne do schowka">Kopiuj raport MD</button>
+        <button class="card-close" id="clinicalSuiteModalClose" title="Zamknij (Esc)" aria-label="Zamknij kalkulatory kliniczne">&times;</button>
+      </div>
+    </div>
+    <div class="cs-subtabs" role="tablist" aria-label="Moduły kalkulatorów klinicznych">
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <button class="cs-subtab-btn active" data-cs-tab="pgx" id="csTabPgxBtn" role="tab" aria-selected="true">1. Farmakogenomika CPIC &amp; Fenokonwersja</button>
+        <button class="cs-subtab-btn" data-cs-tab="taper" id="csTabTaperBtn" role="tab" aria-selected="false">2. Konwersje Równoważników &amp; Odstawianie Hiperboliczne (PET)</button>
+        <button class="cs-subtab-btn" data-cs-tab="organ" id="csTabOrganBtn" role="tab" aria-selected="false">3. Nefro- i Hepatofarmakologia &amp; Dializowalność (HD / CRRT)</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <label for="csGlobalCompoundSelect" style="font-size:11.5px;font-weight:600;color:var(--color-text-muted)">Badany lek:</label>
+        <select id="csGlobalCompoundSelect" class="cs-select" style="width:240px"></select>
+      </div>
+    </div>
+    <div class="cs-body">
+      <!-- PANE 1: PGx & Phenoconversion -->
+      <div class="cs-pane active" id="csPanePgx" role="tabpanel">
+        <div class="cs-grid-2">
+          <div class="cs-card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <b style="font-size:13px">Profil Farmakogenetyczny Pacjenta (10 genów)</b>
+              <button class="btn btn-sm" id="csPgxResetBtn" style="font-size:11px;padding:2px 8px">Reset (Wild-type)</button>
+            </div>
+            <small class="muted" style="font-size:11.5px">Zapisywany w przeglądarce i automatycznie korygowany o inhibitory enzymatyczne obecne w Twoim Stacku (Fenokonwersja).</small>
+            <div id="csPgxGeneSelectors"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div class="cs-card" id="csPgxPhenoconversionBanner"></div>
+            <div class="cs-card" id="csPgxActiveDrugCard"></div>
+            <div class="cs-card">
+              <b style="font-size:13px">Wszystkie Wytyczne CPIC / DPWG Level A w Bazie (25 par lek–gen)</b>
+              <div style="overflow-x:auto" id="csPgxTableWrap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PANE 2: Equipotent Dose Conversions & Hyperbolic PET Tapering -->
+      <div class="cs-pane" id="csPaneTaper" role="tabpanel">
+        <div class="cs-grid-2">
+          <div class="cs-card">
+            <b style="font-size:13px">A. Kalkulator Równoważników Dawek &amp; Cross-Taperingu (5 klas)</b>
+            <div class="notes-editor-field">
+              <label for="csConvClassSelect">Klasa terapeutyczna</label>
+              <select id="csConvClassSelect" class="cs-select"></select>
+            </div>
+            <div class="notes-editor-field">
+              <label for="csConvFromSelect">Lek wyjściowy (odstawiany / przeliczany)</label>
+              <select id="csConvFromSelect" class="cs-select"></select>
+            </div>
+            <div class="notes-editor-field">
+              <label for="csConvFromDose">Dawka dobowa leku wyjściowego (mg/d)</label>
+              <input type="number" id="csConvFromDose" class="cs-input" value="20" min="0.1" step="0.5" />
+            </div>
+            <div class="notes-editor-field">
+              <label for="csConvToSelect">Lek docelowy (włączany)</label>
+              <select id="csConvToSelect" class="cs-select"></select>
+            </div>
+            <div class="notes-editor-field" id="csOpioidReductionWrap" style="display:none">
+              <label for="csOpioidCrossTolSlider">Redukcja na niepełną tolerancję krzyżową opioidów: <strong id="csOpioidCrossTolVal">35%</strong></label>
+              <input type="range" id="csOpioidCrossTolSlider" min="0" max="60" step="5" value="35" />
+            </div>
+            <div id="csConvResultBox"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div class="cs-card">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+                <div>
+                  <b style="font-size:13px">B. Odstawianie Hiperboliczne wg Zajętości Receptorowej PET (Maudsley / Horowitz-Taylor)</b>
+                  <div style="font-size:11.5px;color:var(--color-text-muted)">Prawo działania mas Michaelisa-Menten: <code>Occ(D) = Emax · D / (D + ED50)</code> — równe kroki ΔOcc co 2 tygodnie</div>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                  <select id="csPetModelSelect" class="cs-select" style="width:190px"></select>
+                  <label style="font-size:11.5px;display:flex;align-items:center;gap:4px">Start (mg): <input type="number" id="csPetStartDose" class="cs-input" style="width:72px" value="20" min="0.5" step="0.5" /></label>
+                  <label style="font-size:11.5px;display:flex;align-items:center;gap:4px">Krok ΔOcc (%): <input type="number" id="csPetStepOcc" class="cs-input" style="width:62px" value="10" min="5" max="20" step="2.5" /></label>
+                </div>
+              </div>
+              <div id="csPetSvgContainer" style="width:100%;overflow-x:auto"></div>
+              <div id="csPetScheduleTableWrap" style="overflow-x:auto"></div>
+            </div>
+            <div class="cs-card">
+              <b style="font-size:13px">Pełna Tabela Równoważników w Wybranej Klasie</b>
+              <div id="csConvClassTableWrap" style="overflow-x:auto"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PANE 3: Renal, Hepatic & Dialyzability -->
+      <div class="cs-pane" id="csPaneOrgan" role="tabpanel">
+        <div class="cs-grid-2">
+          <div class="cs-card">
+            <b style="font-size:13px">Parametry Nerkowe, Wątrobowe i Dializacyjne Pacjenta</b>
+            <div class="notes-editor-field">
+              <label for="csOrganEgfrSlider">Przesączanie kłębuszkowe eGFR / CrCl: <strong id="csOrganEgfrVal">45 mL/min/1.73m²</strong></label>
+              <input type="range" id="csOrganEgfrSlider" min="5" max="120" step="1" value="45" />
+            </div>
+            <div class="notes-editor-field">
+              <label for="csOrganChildPughSelect">Wydolność wątroby (Skala Childa-Pugha)</label>
+              <select id="csOrganChildPughSelect" class="cs-select">
+                <option value="normal">Prawidłowa funkcja wątroby (Brak marskości)</option>
+                <option value="A">Child-Pugh A (5–6 pkt — wyrównana marskość, przepływ wrotny ~75%)</option>
+                <option value="B" selected>Child-Pugh B (7–9 pkt — umiarkowana dekompensacja / przeciek wrotno-układowy)</option>
+                <option value="C">Child-Pugh C (10–15 pkt — ciężka niewydolność / wodobrzusze / encefalopatia)</option>
+              </select>
+            </div>
+            <div class="notes-editor-field">
+              <label for="csOrganAlbuminSlider">Stężenie albumin w surowicy (do korekty Wintera-Tozera / fu): <strong id="csOrganAlbuminVal">2.8 g/dL</strong></label>
+              <input type="range" id="csOrganAlbuminSlider" min="1.2" max="4.8" step="0.1" value="2.8" />
+            </div>
+            <div class="notes-editor-field">
+              <label for="csOrganPhenytoinInput">Zmierzone całkowite stężenie fenytoiny / walproinianu (mg/L — opcjonalnie)</label>
+              <input type="number" id="csOrganPhenytoinInput" class="cs-input" value="12.0" min="1" max="100" step="0.5" />
+            </div>
+            <div id="csOrganQuickSummary"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div class="cs-card" id="csOrganDetailCard"></div>
+            <div class="cs-card">
+              <b style="font-size:13px">Referencyjna Matryca Nefro-/Hepatofarmakologii i Dializowalności (18 leków wysokiego ryzyka)</b>
+              <div id="csOrganCatalogTableWrap" style="overflow-x:auto"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

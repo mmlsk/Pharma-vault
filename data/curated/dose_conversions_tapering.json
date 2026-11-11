@@ -1,0 +1,287 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "sources": [
+      "Ashton Manual (Benzodiazepine Equivalence & Withdrawal Protocol)",
+      "Hayasaka Y et al. J Affect Disord 2015 (Fluoxetine 40 mg Antidepressant Dose Equivalents)",
+      "Leucht S et al. Schizophr Bull 2016 (Olanzapine 10 mg / Chlorpromazine 100 mg Antipsychotic Equivalents)",
+      "CDC 2022 Opioid Prescribing Guideline & MME Conversion Factors",
+      "Maudsley Deprescribing Guidelines (Horowitz & Taylor 2024 — PET Hyperbolic Receptor Occupancy Tapering)"
+    ],
+    "description": "Curated equipotent dose conversion matrices, cross-tapering / wash-out switching protocols, and Michaelis-Menten PET receptor occupancy hyperbolic tapering models."
+  },
+  "classes": {
+    "benzodiazepines": {
+      "label": "Benzodiazepiny i leki Z (Protokół Ashtona — równoważnik 10 mg Diazepamu)",
+      "reference_compound_id": "diazepam-compound",
+      "reference_dose_mg": 10.0,
+      "clinical_note": "Przy odstawianiu krótkodziałających BZD (alprazolam, lorazepam) zaleca się stopniową substytucję długodziałającym diazepamem (t½ do 200h z desmetylodiazepamem) i redukcję o 5–10% co 1–2 tygodnie.",
+      "compounds": [
+        { "compound_id": "diazepam-compound", "name": "Diazepam", "equiv_to_ref_mg": 10.0, "half_life_h": "20–100 (aktywny metabolit do 200h)", "active_metabolite": "Nordiazepam, temazepam, oksazepam", "lot_safe_hepatic": false, "notes": "Złoty standard substytucji w protokole Ashtona (długi t½ wygładza stężenia między dawkami)." },
+        { "compound_id": "alprazolam-compound", "name": "Alprazolam", "equiv_to_ref_mg": 0.5, "half_life_h": "6–12", "active_metabolite": "Brak istotnych klinicznie", "lot_safe_hepatic": false, "notes": "Wysoki potencjał uzależniający i ciężki lęk z odbicia między dawkami; zalecana konwersja na diazepam." },
+        { "compound_id": "clonazepam-compound", "name": "Klonazepam", "equiv_to_ref_mg": 0.5, "half_life_h": "18–50", "active_metabolite": "Brak aktywnych", "lot_safe_hepatic": false, "notes": "Długi czas półtrwania i wysoka siła wiązania z GABA-A; redukcja bezpośrednio lub po częściowej zamianie na diazepam." },
+        { "compound_id": "lorazepam-compound", "name": "Lorazepam (LOT)", "equiv_to_ref_mg": 1.0, "half_life_h": "10–20", "active_metabolite": "Brak (bezpośrednia glukuronidacja UGT)", "lot_safe_hepatic": true, "notes": "Reguła LOT — bezpieczniejszy w marskości wątroby (brak metabolizmu przez CYP450)." },
+        { "compound_id": "oxazepam-compound", "name": "Oksazepam (LOT)", "equiv_to_ref_mg": 20.0, "half_life_h": "4–15", "active_metabolite": "Brak (bezpośrednia glukuronidacja UGT)", "lot_safe_hepatic": true, "notes": "Reguła LOT — lek z wyboru u pacjentów z niewydolnością wątroby i w podeszłym wieku." },
+        { "compound_id": "temazepam-compound", "name": "Temazepam (LOT)", "equiv_to_ref_mg": 20.0, "half_life_h": "8–22", "active_metabolite": "Brak istotnych (glukuronidacja UGT)", "lot_safe_hepatic": true, "notes": "Reguła LOT — profil nasenny, zachowany klirens w niewydolności wątroby." },
+        { "compound_id": "chlordiazepoxide-compound", "name": "Chlordiazepoksyd", "equiv_to_ref_mg": 25.0, "half_life_h": "5–30 (metabolity do 200h)", "active_metabolite": "Demoksepam, nordiazepam", "lot_safe_hepatic": false, "notes": "Standard w leczeniu alkoholowego zespołu abstynencyjnego (AWS); kumulacja w marskości." },
+        { "compound_id": "midazolam-compound", "name": "Midazolam", "equiv_to_ref_mg": 7.5, "half_life_h": "1.5–3", "active_metabolite": "1-hydroksymidazolam (kumulacja w AKI)", "lot_safe_hepatic": false, "notes": "Wrażliwy substrat CYP3A4; glukuronid 1-OH-midazolamu kumuluje się w niewydolności nerek." },
+        { "compound_id": "triazolam-compound", "name": "Triazolam", "equiv_to_ref_mg": 0.5, "half_life_h": "1.5–5.5", "active_metabolite": "Brak istotnych", "lot_safe_hepatic": false, "notes": "Ultrakrótki czas działania; wysokie ryzyko bezsenności z odbicia i amnezji następczej." },
+        { "compound_id": "zolpidem-compound", "name": "Zolpidem (Z-drug)", "equiv_to_ref_mg": 20.0, "half_life_h": "2–3", "active_metabolite": "Brak", "lot_safe_hepatic": false, "notes": "Selektywny agonista podjednostki α1 GABA-A; 20 mg zolpidemu odpowiada ~10 mg diazepamu." },
+        { "compound_id": "zopiclone-compound", "name": "Zopiklon (Z-drug)", "equiv_to_ref_mg": 15.0, "half_life_h": "5–6", "active_metabolite": "N-desmetylozopiklon", "lot_safe_hepatic": false, "notes": "15 mg zopiklonu odpowiada ~10 mg diazepamu wg tabeli Ashtona." },
+        { "compound_id": "zaleplon-compound", "name": "Zaleplon (Z-drug)", "equiv_to_ref_mg": 20.0, "half_life_h": "1", "active_metabolite": "Brak", "lot_safe_hepatic": false, "notes": "Ultrakrótki t½ (~1h), metabolizm głównie przez oksydazę aldehydową." }
+      ]
+    },
+    "antidepressants": {
+      "label": "Antydepresanty (Hayasaka 2015 — równoważnik 20 mg Fluoksetyny + macierz Cross-Taper)",
+      "reference_compound_id": "fluoxetine-compound",
+      "reference_dose_mg": 20.0,
+      "clinical_note": "Przy zamianie SSRI/SNRI obowiązuje ocena ryzyka zespołu serotoninowego, hamowania CYP2D6 (fluoksetyna/paroksetyna) oraz okresu wymywania (wash-out) dla IMAO.",
+      "compounds": [
+        { "compound_id": "fluoxetine-compound", "name": "Fluoksetyna", "equiv_to_ref_mg": 20.0, "sub_class": "SSRI_LONG", "half_life_h": "96–144 (norfluoksetyna 7–15 dni)", "cyp_inhibition": "Silny inhibitor CYP2D6 i umiarkowany CYP2C19", "notes": "Samowygaszający się profil odstawienny dzięki t½ norfluoksetyny, ale wymaga 5 tygodni wash-out przed IMAO." },
+        { "compound_id": "sertraline-compound", "name": "Sertralina", "equiv_to_ref_mg": 49.3, "half_life_h": "26", "sub_class": "SSRI", "cyp_inhibition": "Słaby/umiarkowany inhibitor CYP2D6 w wysokich dawkach", "notes": "Praktyczny równoważnik kliniczny: 50 mg sertraliny ≈ 20 mg fluoksetyny." },
+        { "compound_id": "escitalopram-compound", "name": "Escitalopram", "equiv_to_ref_mg": 9.0, "half_life_h": "27–32", "sub_class": "SSRI", "cyp_inhibition": "Minimalny wpływ na CYP450", "notes": "Najbardziej selektywny SSRI; uwaga na zależne od dawki wydłużenie QTc (CYP2C19 PM max 10 mg)." },
+        { "compound_id": "citalopram-compound", "name": "Citalopram", "equiv_to_ref_mg": 20.0, "half_life_h": "35", "sub_class": "SSRI", "cyp_inhibition": "Minimalny wpływ na CYP450", "notes": "Mieszanina racemiczna; limit 20 mg/d u metabolizerów wolnych CYP2C19 oraz >65 r.ż. (ryzyko QTc)." },
+        { "compound_id": "paroxetine-compound", "name": "Paroksetyna", "equiv_to_ref_mg": 17.0, "half_life_h": "21 (nieliniowa autoinhibicja CYP2D6)", "sub_class": "SSRI_SHORT", "cyp_inhibition": "Najsilniejszy inhibitor CYP2D6 (autoinhibicja)", "notes": "Najwyższe ryzyko ciężkiego zespołu odstawiennego (krótki t½ + działanie antycholinergiczne M1); wymaga powolnego taperingu hiperbolicznego." },
+        { "compound_id": "fluvoxamine-compound", "name": "Fluwoksamina", "equiv_to_ref_mg": 71.6, "half_life_h": "15–16", "sub_class": "SSRI_SHORT", "cyp_inhibition": "Silny inhibitor CYP1A2 i CYP2C19", "notes": "Uwaga na wielokrotny wzrost stężeń klozapiny, olanzapiny, teofiliny, melatoniny i kofeiny (CYP1A2)." },
+        { "compound_id": "venlafaxine-compound", "name": "Wenlafaksyna", "equiv_to_ref_mg": 74.7, "half_life_h": "5 (ODV 11h)", "sub_class": "SNRI", "cyp_inhibition": "Słaby inhibitor CYP450 (substrat CYP2D6 → ODV)", "notes": "Bardzo krótki czas półtrwania — wysokie ryzyko objawów odstawiennych („brain zaps”) nawet przy pominięciu jednej dawki." },
+        { "compound_id": "duloxetine-compound", "name": "Duloksetyna", "equiv_to_ref_mg": 30.0, "half_life_h": "12", "sub_class": "SNRI", "cyp_inhibition": "Umiarkowany inhibitor CYP2D6 (substrat CYP1A2/2D6)", "notes": "Przeciwwskazana przy eGFR <30 ml/min oraz w niewydolności wątroby." },
+        { "compound_id": "mirtazapine-compound", "name": "Mirtazapina", "equiv_to_ref_mg": 25.5, "half_life_h": "20–40", "sub_class": "NaSSA", "cyp_inhibition": "Brak istotnej inhibicji CYP", "notes": "Odwrotna zależność sedacji od dawki (w niskich dawkach 7.5–15 mg dominuje blokada H1, powyżej 30 mg transmisja noradrenergiczna α2)." },
+        { "compound_id": "bupropion-compound", "name": "Bupropion", "equiv_to_ref_mg": 174.0, "half_life_h": "21 (hydroksybupropion 20h)", "sub_class": "NDRI", "cyp_inhibition": "Silny inhibitor CYP2D6 (przez metabolitery hydroksy/treohydrobupropion)", "notes": "Brak działania serotoninergicznego — nie chroni przed zespołem odstawiennym po SSRI/SNRI!" },
+        { "compound_id": "trazodone-compound", "name": "Trazodon", "equiv_to_ref_mg": 200.7, "half_life_h": "7–10", "sub_class": "SARI", "cyp_inhibition": "Substrat CYP3A4 (aktywny metabolit mCPP przez CYP2D6)", "notes": "W dawkach 25–100 mg nasenny (blokada 5-HT2A/H1/α1); działanie przeciwdepresyjne dopiero ≥150–300 mg." },
+        { "compound_id": "amitriptyline-compound", "name": "Amitryptylina", "equiv_to_ref_mg": 61.2, "half_life_h": "10–28", "sub_class": "TCA", "cyp_inhibition": "Substrat CYP2C19 (→ nortryptylina) i CYP2D6", "notes": "Wąski indeks terapeutyczny, kardiotoksyczność (blokada Na+ przy fenokonwersji CYP2D6 przez fluoksetynę/paroksetynę)." },
+        { "compound_id": "clomipramine-compound", "name": "Klomipramina", "equiv_to_ref_mg": 58.1, "half_life_h": "19–37", "sub_class": "TCA_SEROTONERGIC", "cyp_inhibition": "Substrat CYP2C19 i CYP2D6", "notes": "Silny inhibitor SERT wśród TLPD — wysokie ryzyko zespołu serotoninowego przy nakładaniu z SSRI/SNRI/IMAO." },
+        { "compound_id": "nortriptyline-compound", "name": "Nortryptylina", "equiv_to_ref_mg": 50.5, "half_life_h": "18–44", "sub_class": "TCA", "cyp_inhibition": "Wrażliwy substrat CYP2D6", "notes": "Okno terapeutyczne 50–150 ng/ml; inhibitory CYP2D6 (fluoksetyna, paroksetyna, bupropion) mogą podnieść stężenie 3–5-krotnie." },
+        { "compound_id": "phenelzine-compound", "name": "Fenelzyna (IMAO)", "equiv_to_ref_mg": 30.0, "half_life_h": "11.6 (nieodwracalna inaktywacja MAO: 14 dni)", "sub_class": "MAOI", "cyp_inhibition": "Nieodwracalny inhibitor MAO-A/B", "notes": "BEZWZGLĘDNY zakaz nakładania z SSRI/SNRI/klomipraminą (śmiertelny zespół serotoninowy). Wymagany wash-out!" },
+        { "compound_id": "tranylcypromine-compound", "name": "Tranylcypromina (IMAO)", "equiv_to_ref_mg": 20.0, "half_life_h": "2.5 (regeneracja MAO: 14 dni)", "sub_class": "MAOI", "cyp_inhibition": "Nieodwracalny inhibitor MAO-A/B + inhibitor CYP2A6", "notes": "BEZWZGLĘDNY zakaz nakładania z SSRI/SNRI/TLPD. Wymagany 14-dniowy wash-out (5 tygodni po fluoksetynie)." },
+        { "compound_id": "moclobemide-compound", "name": "Moklobemid (RIMA)", "equiv_to_ref_mg": 300.0, "half_life_h": "1–2 (odwracalny inhibitor MAO-A: 24h)", "sub_class": "RIMA", "cyp_inhibition": "Inhibitor CYP2C19 i CYP2D6", "notes": "Odwracalny inhibitor MAO-A; po odstawieniu moklobemidu wymagane minimum 24–48h przerwy przed włączeniem SSRI/SNRI." }
+      ]
+    },
+    "antipsychotics": {
+      "label": "Neuroleptyki / Leki Przeciwpsychotyczne (Leucht 2016 — równoważnik 10 mg Olanzapiny / 100 mg Chlorpromazyny)",
+      "reference_compound_id": "olanzapine-compound",
+      "reference_dose_mg": 10.0,
+      "clinical_note": "Zasada Plateau Cross-Taper: przy zamianie ze silnie antycholinergicznego/histaminergicznego leku (klozapina, olanzapina, kwetiapina) na częściowego agonistę D2 (arypiprazol) lub silnego antagonistę D2 (rysperydon, haloperydol) zbyt szybkie odstawienie wywołuje cholinergiczny zespół z odbicia, bezsenność H1 i psychozę z nadwrażliwości D2.",
+      "compounds": [
+        { "compound_id": "olanzapine-compound", "name": "Olanzapina", "equiv_to_ref_mg": 10.0, "cpz_100_equiv_mg": 3.3, "d2_profile": "Antagonista 5-HT2A/D2", "rebound_risk": "Wysokie ryzyko odbicia cholinergicznego (M1) i histaminergicznego (H1 — bezsenność); odstawiać powoli (2–4 tyg.)." },
+        { "compound_id": "risperidone-compound", "name": "Rysperydon", "equiv_to_ref_mg": 3.8, "cpz_100_equiv_mg": 1.3, "d2_profile": "Silny antagonista D2/5-HT2A", "rebound_risk": "Wysokie ryzyko dyskinez z odstawienia i psychozy z nadwrażliwości D2 (substrat CYP2D6 → 9-OH-rysperydon)." },
+        { "compound_id": "quetiapine-compound", "name": "Kwetiapina", "equiv_to_ref_mg": 323.0, "cpz_100_equiv_mg": 107.7, "d2_profile": "Słaby antagonista D2 (szybka dysocjacja ‘hit-and-run’)", "rebound_risk": "Silna bezsenność z odbicia (H1) i nudności antycholinergiczne; substrat CYP3A4." },
+        { "compound_id": "aripiprazole-compound", "name": "Arypiprazol", "equiv_to_ref_mg": 14.1, "cpz_100_equiv_mg": 4.7, "d2_profile": "Częściowy agonista D2/D3 (bardzo wysokie powinowactwo, t½ 75–146h)", "rebound_risk": "UWAGA: Wypiera pełnych antagonistów z receptora D2! Przy zamianie na arypiprazol najpierw zbuduj stężenie arypiprazolu, a poprzedni neuroleptyk redukuj z opóźnieniem (plateau cross-taper)." },
+        { "compound_id": "haloperidol-compound", "name": "Haloperydol", "equiv_to_ref_mg": 4.7, "cpz_100_equiv_mg": 1.6, "d2_profile": "Klasyczny silny antagonista D2", "rebound_risk": "Wysokie ryzyko EPS i psychozy z nadwrażliwości D2 po nagłym odstawieniu; substrat CYP2D6/3A4." },
+        { "compound_id": "clozapine-compound", "name": "Klozapina", "equiv_to_ref_mg": 304.0, "cpz_100_equiv_mg": 101.3, "d2_profile": "Słaby antagonista D2, silny antagonista M1/H1/α1/5-HT2A", "rebound_risk": "KRYTYCZNE ryzyko ciężkiej psychozy z odbicia i przełomu cholinergicznego (majaczenie, poty, biegunka) przy nagłym odstawieniu (poza agranulocytozą)." },
+        { "compound_id": "chlorpromazine-compound", "name": "Chlorpromazyna", "equiv_to_ref_mg": 300.0, "cpz_100_equiv_mg": 100.0, "d2_profile": "Klasyczny fenotiazynowy antagonista D2/M1/H1/α1", "rebound_risk": "Silne odbicie cholinergiczne i ortostatyczne; 100 mg CPZ ≈ 3.3 mg olanzapiny." },
+        { "compound_id": "ziprasidone-compound", "name": "Zyprasydon", "equiv_to_ref_mg": 131.0, "cpz_100_equiv_mg": 43.7, "d2_profile": "Antagonista D2/5-HT2A (wymaga posiłku ≥500 kcal do wchłaniania)", "rebound_risk": "Ryzyko bezsenności i wydłużenia QTc; bez posiłku biodostępność spada o 50%." },
+        { "compound_id": "lurasidone-compound", "name": "Lurazydon", "equiv_to_ref_mg": 73.5, "cpz_100_equiv_mg": 24.5, "d2_profile": "Antagonista D2/5-HT2A/5-HT7 (wymaga posiłku ≥350 kcal)", "rebound_risk": "Minimalne odbicie cholinergiczne/histaminowe; wrażliwy substrat CYP3A4." }
+      ]
+    },
+    "opioids": {
+      "label": "Opioidy (MME — doustny równoważnik 30 mg Morfiny p.o. + redukcja niepełnej tolerancji krzyżowej)",
+      "reference_compound_id": "morphine-compound",
+      "reference_dose_mg": 30.0,
+      "clinical_note": "Zasada Rotacji Opioidów: Ze względu na niepełną tolerancję krzyżową receptorów μ-opioidowych, po wyliczeniu dawki równoważnej (MME) dawkę nowego opioidu NALEŻY ZREDUKOWAĆ o 25–50% (z wyjątkiem fentanylu przezskórnego wg tabeli producenta). Metadon wykazuje nieliniową akumulację i blokadę NMDA/hERG!",
+      "compounds": [
+        { "compound_id": "morphine-compound", "name": "Morfina (p.o.)", "equiv_to_ref_mg": 30.0, "mme_factor": 1.0, "renal_safety": "UNIKAĆ w eGFR <30 (kumulacja aktywnego M6G → depresja oddechowa oraz neurotoksycznego M3G).", "notes": "10 mg morfiny i.v./s.c. odpowiada 30 mg morfiny p.o. (biodostępność doustna ~33%)." },
+        { "compound_id": "oxycodone-compound", "name": "Oksykodon (p.o.)", "equiv_to_ref_mg": 20.0, "mme_factor": 1.5, "renal_safety": "Ostrożnie (redukcja dawki o 50% przy eGFR <30; metabolizm CYP3A4 → noroksykodon, CYP2D6 → oksymorfon).", "notes": "Współczynnik MME = 1.5 (20 mg oksykodonu p.o. = 30 mg morfiny p.o.)." },
+        { "compound_id": "hydromorphone-compound", "name": "Hydromorfon (p.o.)", "equiv_to_ref_mg": 7.5, "mme_factor": 4.0, "renal_safety": "Preferowany względem morfiny w PChN, ale przy eGFR <30 kumuluje się neurotoksyczny H3G (redukcja dawki).", "notes": "Współczynnik MME = 4.0–5.0 (7.5 mg hydromorfonu p.o. ≈ 30 mg morfiny p.o.)." },
+        { "compound_id": "tapentadol-compound", "name": "Tapentadol (p.o.)", "equiv_to_ref_mg": 75.0, "mme_factor": 0.4, "renal_safety": "Nie wymaga korekty w łagodnej/umiarkowanej PChN (bezpośrednia glukuronidacja UGT, brak aktywnych metabolitów); unikać przy eGFR <30.", "notes": "Podwójny mechanizm (agonista MOR + inhibitor wychwytu zwrotnego noradrenaliny NET); nie zależy od bioaktywacji przez CYP2D6 (współczynnik MME = 0.4)." },
+        { "compound_id": "codeine-compound", "name": "Kodeina (p.o.)", "equiv_to_ref_mg": 200.0, "mme_factor": 0.15, "renal_safety": "PRZECIWWSKAZANA w eGFR <30 (kumulacja glukuronidów morfiny) oraz u CYP2D6 UM/PM.", "notes": "Prolek zależny od CYP2D6; efekt pułapowy powyżej ~240 mg/d." },
+        { "compound_id": "tramadol-compound", "name": "Tramadol (p.o.)", "equiv_to_ref_mg": 150.0, "mme_factor": 0.2, "renal_safety": "W eGFR <30 wydłużyć odstęp do 12h i max 200 mg/d (kumulacja O-desmetylotramadolu + ryzyko drgawek).", "notes": "Prolek (CYP2D6 → M1) + inhibitor wychwytu 5-HT/NE (ryzyko zespołu serotoninowego i obniżenia progu drgawkowego)." },
+        { "compound_id": "buprenorphine-compound", "name": "Buprenorfina (podjęzykowa / TTS)", "equiv_to_ref_mg": 1.0, "mme_factor": 30.0, "renal_safety": "BEZPIECZNA w niewydolności nerek i na hemodializie (wydalanie żółciowe, brak kumulacji aktywnych metabolitów).", "notes": "Częściowy agonista receptora μ o bardzo wysokim powinowactwie (może wywołać zespół odstawienny po podaniu na pełny agonista opioidowy!)." },
+        { "compound_id": "fentanyl-compound", "name": "Fentanyl (równoważnik dobowy p.o.-ekwiwalentny ~0.3 mg / TTS ~12.5 mcg/h)", "equiv_to_ref_mg": 0.3, "mme_factor": 100.0, "renal_safety": "Lek z wyboru w ciężkiej niewydolności nerek i dializoterapii (brak aktywnych metabolitów nerkowych).", "notes": "Plaster TTS 12 mcg/h ≈ 30–45 mg morfiny p.o./dobę; plaster 25 mcg/h ≈ 60–90 mg morfiny p.o./dobę." },
+        { "compound_id": "methadone-compound", "name": "Metadon (p.o. — konwersja NIELINIOWA!)", "equiv_to_ref_mg": 7.5, "mme_factor": 4.0, "renal_safety": "Bezpieczny nerkowo (wydalanie kałowe), ale wysokie ryzyko kumulacji (t½ 15–120h) i Torsades de Pointes (hERG).", "notes": "UWAGA: Współczynnik konwersji rośnie nieliniowo wraz z dawką morfiny (4:1 przy <90 MME, 8:1 przy 90–300 MME, 12:1–20:1 przy >300 MME)!" },
+        { "compound_id": "meperidine-compound", "name": "Petydyna / Meperydyna (p.o.)", "equiv_to_ref_mg": 300.0, "mme_factor": 0.1, "renal_safety": "BEZWZGLĘDNIE PRZECIWWSKAZANA w PChN (kumulacja neurotoksycznej normeperydyny → mioklonie i stan padaczkowy!).", "notes": "Przeciwwskazana również z IMAO (śmiertelna hipertermia serotoninowa)." }
+      ]
+    },
+    "corticosteroids": {
+      "label": "Glikokortykosteroidy Systemowe (Równoważnik przeciwzapalny 5 mg Prednizonu + profil GR/MR i oś HPA)",
+      "reference_compound_id": "prednisone-compound",
+      "reference_dose_mg": 5.0,
+      "clinical_note": "Stosowanie dawki równoważnej ≥5–7.5 mg prednizonu/d przez >3 tygodnie hamuje oś podwzgórze–przysadka–nadnercza (HPA) i wymaga stopniowej redukcji (ryzyko przełomu nadnerczowego).",
+      "compounds": [
+        { "compound_id": "prednisone-compound", "name": "Prednizon", "equiv_to_ref_mg": 5.0, "anti_inflammatory_potency": 4.0, "mineralocorticoid_potency": 0.8, "bio_half_life_h": "12–36 (pośredni)", "notes": "Prolek wymagający konwersji wątrobowej (11β-HSD1) do aktywnego prednizolonu." },
+        { "compound_id": "prednisolone-compound", "name": "Prednizolon", "equiv_to_ref_mg": 5.0, "anti_inflammatory_potency": 4.0, "mineralocorticoid_potency": 0.8, "bio_half_life_h": "12–36 (pośredni)", "notes": "Aktywna postać prednizonu — preferowany w ciężkiej niewydolności wątroby." },
+        { "compound_id": "methylprednisolone-compound", "name": "Metyloprednizolon", "equiv_to_ref_mg": 4.0, "anti_inflammatory_potency": 5.0, "mineralocorticoid_potency": 0.5, "bio_half_life_h": "12–36 (pośredni)", "notes": "Mniejsza retencja sodu i wody (niższa aktywność mineralokortykoidowa MR) niż prednizon." },
+        { "compound_id": "dexamethasone-compound", "name": "Deksametazon", "equiv_to_ref_mg": 0.75, "anti_inflammatory_potency": 25.0, "mineralocorticoid_potency": 0.0, "bio_half_life_h": "36–72 (długodziałający)", "notes": "Zerowa aktywność mineralokortykoidowa (brak obrzęków z MR); najsilniej hamuje oś HPA (długi biologiczny t½)." },
+        { "compound_id": "betamethasone-compound", "name": "Betametazon", "equiv_to_ref_mg": 0.6, "anti_inflammatory_potency": 25.0, "mineralocorticoid_potency": 0.0, "bio_half_life_h": "36–72 (długodziałający)", "notes": "Epimer deksametazonu o zerowej aktywności MR; przechodzi przez łożysko (stymulacja surfaktantu płodu)." },
+        { "compound_id": "hydrocortisone-compound", "name": "Hydrokortyzon (Kortyzol)", "equiv_to_ref_mg": 20.0, "anti_inflammatory_potency": 1.0, "mineralocorticoid_potency": 1.0, "bio_half_life_h": "8–12 (krótkodziałający)", "notes": "Fizjologiczny wzorzec (GR=1, MR=1); lek z wyboru w substytucji kory nadnerczy i przełomie nadnerczowym." },
+        { "compound_id": "cortisone-acetate-compound", "name": "Octan kortyzonu", "equiv_to_ref_mg": 25.0, "anti_inflammatory_potency": 0.8, "mineralocorticoid_potency": 0.8, "bio_half_life_h": "8–12 (krótkodziałający)", "notes": "Prolek przekształcany w wątrobie przez 11β-HSD1 do hydrokortyzonu." }
+      ]
+    }
+  },
+  "antidepressant_switching_rules": [
+    {
+      "from_sub_class": "SSRI_LONG",
+      "to_sub_class": "MAOI",
+      "strategy": "BEZWZGLĘDNY WASH-OUT (5 tygodni)",
+      "severity": "CONTRAINDICATED_OVERLAP",
+      "protocol": "Odstaw całkowicie fluoksetynę i odczekaj MINIMUM 5 tygodni (35 dni) ze względu na t½ norfluoksetyny (7–15 dni) przed podaniem pierwszej dawki IMAO (fenelzyny/tranylcyprominy). Zakaz cross-taperingu (śmiertelny zespół serotoninowy)."
+    },
+    {
+      "from_sub_class": "SSRI_LONG",
+      "to_sub_class": "RIMA",
+      "strategy": "BEZWZGLĘDNY WASH-OUT (5 tygodni)",
+      "severity": "CONTRAINDICATED_OVERLAP",
+      "protocol": "Odstaw całkowicie fluoksetynę i odczekaj 5 tygodni przed włączeniem moklobemidu."
+    },
+    {
+      "from_sub_class": "ANY_SEROTONERGIC",
+      "to_sub_class": "MAOI",
+      "strategy": "BEZWZGLĘDNY WASH-OUT (14 dni)",
+      "severity": "CONTRAINDICATED_OVERLAP",
+      "protocol": "Stopniowo odstaw SSRI/SNRI/TLPD do zera, a następnie zachowaj MINIMUM 14 dni całkowitego okresu wymywania (wash-out) przed włączeniem nieodwracalnego IMAO."
+    },
+    {
+      "from_sub_class": "MAOI",
+      "to_sub_class": "ANY_SEROTONERGIC",
+      "strategy": "BEZWZGLĘDNY WASH-OUT (14 dni na resyntezę MAO)",
+      "severity": "CONTRAINDICATED_OVERLAP",
+      "protocol": "Po odstawieniu nieodwracalnego IMAO (fenelzyna, tranylcypromina) organizm potrzebuje 14 dni na biosyntezę nowego enzymu MAO. Zakaz włączania SSRI/SNRI/TLPD przed upływem 14 dni!"
+    },
+    {
+      "from_sub_class": "RIMA",
+      "to_sub_class": "ANY_SEROTONERGIC",
+      "strategy": "KRÓTKI WASH-OUT (24–48 godzin)",
+      "severity": "HIGH_CAUTION",
+      "protocol": "Moklobemid jest odwracalnym inhibitorem MAO-A (RIMA). Odstaw moklobemid i odczekaj minimum 24–48 godzin przed włączeniem nowego leku w najniższej dawce początkowej."
+    },
+    {
+      "from_sub_class": "SSRI_LONG",
+      "to_sub_class": "SSRI_SNRI",
+      "strategy": "STOP & START z opóźnieniem 4–7 dni (bez nakładania)",
+      "severity": "MODERATE_CAUTION",
+      "protocol": "Fluoksetyna i norfluoksetyna same zapewniają długi „bufor” stężenia i silnie hamują CYP2D6 przez kolejne tygodnie. Odstaw fluoksetynę (lub zredukuj do 20 mg), odczekaj 4–7 dni i włącz nowy SSRI/SNRI od niskiej dawki (50% docelowej)."
+    },
+    {
+      "from_sub_class": "SSRI_SHORT",
+      "to_sub_class": "TCA",
+      "strategy": "OSTROŻNY CROSS-TAPER z korektą fenokonwersji CYP2D6",
+      "severity": "HIGH_CAUTION",
+      "protocol": "Paroksetyna, fluoksetyna i bupropion są silnymi inhibitorami CYP2D6 i podnoszą stężenie TLPD (amitryptyliny, nortryptyliny, klomipraminy) 3–5-krotnie! Zaczynaj TLPD od bardzo niskiej dawki (10–25 mg) i monitoruj EKG (QRS/QTc)."
+    },
+    {
+      "from_sub_class": "SSRI_SNRI",
+      "to_sub_class": "NDRI",
+      "strategy": "POWOLNY TAPER SSRI/SNRI + nakładanie Bupropionu",
+      "severity": "MODERATE_CAUTION",
+      "protocol": "Bupropion (NDRI) nie działa na transporter serotoniny (SERT), więc NIE zapobiega zespołowi odstawiennemu po SSRI/SNRI! Ponadto bupropion silnie hamuje CYP2D6. Włącz bupropion 150 mg, jednocześnie powoli redukując poprzedni SSRI/SNRI przez 2–4 tygodnie."
+    },
+    {
+      "from_sub_class": "SSRI_SNRI",
+      "to_sub_class": "SSRI_SNRI",
+      "strategy": "STANDARDOWY CROSS-TAPER (2–4 tygodnie) lub bezpośrednia zamiana",
+      "severity": "STANDARD",
+      "protocol": "Redukuj dawkę dotychczasowego leku o 25–50% co tydzień, jednocześnie włączając nowy lek od 25–50% dawki terapeutycznej (lub bezpośrednia zamiana w obrębie dobrze tolerowanych SSRI w dawkach równoważnych)."
+    }
+  ],
+  "pet_hyperbolic_models": [
+    {
+      "compound_id": "escitalopram-compound",
+      "name": "Escitalopram",
+      "target": "SERT (Transporter Serotoniny — prążkowie PET [11C]DASB)",
+      "e_max": 86.0,
+      "ed50_mg": 2.1,
+      "usual_dose_mg": 10.0,
+      "min_step_mg": 0.5,
+      "clinical_note": "Przy 10 mg zajętość SERT wynosi ~71%, a przy 2.1 mg nadal aż 43%! Zjazd z 5 mg do 0 mg wymaga kroków ułamkowych (2.5 → 1.25 → 0.5 mg)."
+    },
+    {
+      "compound_id": "citalopram-compound",
+      "name": "Citalopram",
+      "target": "SERT (Transporter Serotoniny — PET [11C]DASB)",
+      "e_max": 85.0,
+      "ed50_mg": 3.4,
+      "usual_dose_mg": 20.0,
+      "min_step_mg": 1.0,
+      "clinical_note": "ED50 wynosi zaledwie 3.4 mg (42.5% blokady SERT). Liniowa redukcja o 5 mg powoduje gwałtowny krach zajętości poniżej 5 mg."
+    },
+    {
+      "compound_id": "sertraline-compound",
+      "name": "Sertralina",
+      "target": "SERT (Transporter Serotoniny — PET [11C]DASB)",
+      "e_max": 89.0,
+      "ed50_mg": 9.1,
+      "usual_dose_mg": 50.0,
+      "min_step_mg": 2.5,
+      "clinical_note": "Dawka 9.1 mg daje już połowę maksymalnej blokady SERT (~44.5%). Poniżej 25 mg konieczne dzielenie dawki / roztwór doustny."
+    },
+    {
+      "compound_id": "paroxetine-compound",
+      "name": "Paroksetyna",
+      "target": "SERT (Transporter Serotoniny — PET + autoinhibicja CYP2D6)",
+      "e_max": 90.0,
+      "ed50_mg": 5.0,
+      "usual_dose_mg": 20.0,
+      "min_step_mg": 0.5,
+      "clinical_note": "Podwójna nieliniowość: krzywa hiperboliczna SERT (ED50=5 mg) + zanik autoinhibicji CYP2D6 przy niskich dawkach przyspiesza eliminację leku!"
+    },
+    {
+      "compound_id": "fluoxetine-compound",
+      "name": "Fluoksetyna",
+      "target": "SERT (Transporter Serotoniny — PET [11C]DASB)",
+      "e_max": 86.0,
+      "ed50_mg": 2.7,
+      "usual_dose_mg": 20.0,
+      "min_step_mg": 1.0,
+      "clinical_note": "Bardzo niskie ED50 (2.7 mg), jednak długi t½ norfluoksetyny (7–15 dni) działa jak naturalny wewnętrzny bufor farmakokinetyczny."
+    },
+    {
+      "compound_id": "venlafaxine-compound",
+      "name": "Wenlafaksyna",
+      "target": "SERT (Transporter Serotoniny — PET [11C]DASB)",
+      "e_max": 88.0,
+      "ed50_mg": 5.8,
+      "usual_dose_mg": 75.0,
+      "min_step_mg": 2.5,
+      "clinical_note": "Krótki t½ (5h) i niskie ED50 (5.8 mg) — odstawianie od 37.5 mg do 0 mg wymaga odliczania mikrogranulek z kapsułki XR (np. co 10% zajętości SERT)."
+    },
+    {
+      "compound_id": "duloxetine-compound",
+      "name": "Duloksetyna",
+      "target": "SERT (Transporter Serotoniny — PET [11C]DASB)",
+      "e_max": 86.0,
+      "ed50_mg": 7.9,
+      "usual_dose_mg": 60.0,
+      "min_step_mg": 2.0,
+      "clinical_note": "Najmniejsza kapsułka komercyjna (20–30 mg) nadal blokuje >65% transporterów SERT!"
+    },
+    {
+      "compound_id": "risperidone-compound",
+      "name": "Rysperydon",
+      "target": "Receptor Dopaminowy D2 (Prążkowie — PET [11C]Raclopride)",
+      "e_max": 92.0,
+      "ed50_mg": 1.2,
+      "usual_dose_mg": 4.0,
+      "min_step_mg": 0.125,
+      "clinical_note": "Próg przeciwpsychotyczny wynosi ~65% D2, a próg EPS ~78% D2. Redukcja poniżej 1 mg wymaga ułamków miligrama, aby uniknąć psychozy z nadwrażliwości D2."
+    },
+    {
+      "compound_id": "olanzapine-compound",
+      "name": "Olanzapina",
+      "target": "Receptor Dopaminowy D2 (Prążkowie — PET [11C]Raclopride)",
+      "e_max": 90.0,
+      "ed50_mg": 4.5,
+      "usual_dose_mg": 10.0,
+      "min_step_mg": 0.625,
+      "clinical_note": "ED50 dla D2 wynosi ~4.5 mg. Przy schodzeniu poniżej 5 mg dominuje gwałtowny spadek blokady D2 oraz H1/M1 (bezsenność z odbicia)."
+    },
+    {
+      "compound_id": "haloperidol-compound",
+      "name": "Haloperydol",
+      "target": "Receptor Dopaminowy D2 (Prążkowie — PET [11C]Raclopride)",
+      "e_max": 94.0,
+      "ed50_mg": 0.7,
+      "usual_dose_mg": 5.0,
+      "min_step_mg": 0.1,
+      "clinical_note": "Już 0.7 mg haloperydolu zajmuje ~47% receptorów D2! Odstawianie z 2 mg do 0 mg bez kroków płynnych wywołuje dyskinezy z odstawienia."
+    },
+    {
+      "compound_id": "diazepam-compound",
+      "name": "Diazepam",
+      "target": "Miejsce allosteryczne BZD na GABA-A (Protokół hiperboliczny Ashtona)",
+      "e_max": 92.0,
+      "ed50_mg": 4.0,
+      "usual_dose_mg": 15.0,
+      "min_step_mg": 0.5,
+      "clinical_note": "W końcowej fazie odstawiania (<5 mg diazepamu) redukcje o 0.5–1 mg co 2 tygodnie utrzymują równy spadek modulacji GABA-A bez napadów drgawkowych."
+    }
+  ]
+}
