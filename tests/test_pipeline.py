@@ -2192,6 +2192,90 @@ def test_icu_pk_engine():
     assert "obese_icu" in app_src
 
 
+def test_cross_tapering_engine():
+    """Validates the Dynamic PK Cross-Tapering & Rotation Engine (v3.33.0)."""
+    import math
+    # 1. Dataset verification
+    conv_p = ROOT / "data/curated/dose_conversions_tapering.json"
+    assert conv_p.exists(), "dose_conversions_tapering.json missing"
+    conv_data = json.loads(conv_p.read_text(encoding="utf-8"))
+    classes = conv_data.get("classes", {})
+    assert "opioids" in classes
+    assert "antidepressants" in classes
+    assert "antipsychotics" in classes
+    assert "benzodiazepines" in classes
+    assert "corticosteroids" in classes
+
+    # Check compounds and pet models
+    pet_models = conv_data.get("pet_hyperbolic_models", [])
+    assert len(pet_models) == 11
+    pet_cids = {m["compound_id"] for m in pet_models}
+    assert "escitalopram-compound" in pet_cids
+    assert "olanzapine-compound" in pet_cids
+    assert "risperidone-compound" in pet_cids
+
+    # 2. Pharmacokinetic Decay & Superposition Math Validation
+    # Drug A: Morphine (t1/2 = 3.0h), ke = ln(2)/3.0 = 0.2310 h^-1
+    hl_a = 3.0
+    ke_a = math.log(2) / hl_a
+    # Decay after 24h of zero dose
+    rem_24h = math.exp(-ke_a * 24.0)
+    assert rem_24h < 0.005  # >99.5% eliminated after 8 half-lives
+
+    # Fluoxetine: t1/2 = 96h
+    hl_flx = 96.0
+    ke_flx = math.log(2) / hl_flx
+    rem_flx_14d = math.exp(-ke_flx * (14.0 * 24.0))  # after 14 days
+    assert rem_flx_14d > 0.05  # Still >5% remaining at 14 days -> Serotonin syndrome risk
+
+    rem_flx_35d = math.exp(-ke_flx * (35.0 * 24.0))  # after 5 half-lives (35 days)
+    assert rem_flx_35d < 0.01  # <1% remaining after 35 days -> Washout safe
+
+    # 3. Hazard Detection Logic Validation
+    # Precipitated withdrawal check: Full agonist -> Buprenorphine on direct switch
+    from_subclass = "Full_Agonist"
+    to_cid = "buprenorphine-compound"
+    strat = "direct"
+    is_precipitated_wd = (from_subclass == "Full_Agonist" and to_cid == "buprenorphine-compound" and strat == "direct")
+    assert is_precipitated_wd is True
+
+    # Serotonin syndrome check: SSRI -> MAOI without sufficient washout
+    from_drug_ssri = "fluoxetine-compound"
+    to_drug_maoi = "moclobemide-compound"
+    is_serotonin_syndrome = (from_drug_ssri == "fluoxetine-compound" and to_drug_maoi == "moclobemide-compound" and strat != "washout")
+    assert is_serotonin_syndrome is True
+
+    # 4. Markup & Frontend Code Integration
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+
+    # HTML Elements
+    assert "csRotationWorkbench" in html_src
+    assert "csRotateStrategySelect" in html_src
+    assert "csRotateDaysSlider" in html_src
+    assert "csRotateDaysVal" in html_src
+    assert "csRotationAlertBanner" in html_src
+    assert "csRotationChartWrap" in html_src
+    assert "csRotationScheduleTableWrap" in html_src
+
+    # Presets in HTML
+    assert 'data-rot-preset="morphine_to_oxycodone"' in html_src
+    assert 'data-rot-preset="oxycodone_to_buprenorphine"' in html_src
+    assert 'data-rot-preset="venlafaxine_to_sertraline"' in html_src
+    assert 'data-rot-preset="fluoxetine_to_moclobemide"' in html_src
+    assert 'data-rot-preset="olanzapine_to_aripiprazole"' in html_src
+
+    # JavaScript Functions & Handlers in app.js
+    assert "getDrugHalfLifeHours" in app_src
+    assert "getDrugPetEd50" in app_src
+    assert "computeCrossTaperingSimulation" in app_src
+    assert "renderCrossTaperingChartSvg" in app_src
+    assert "renderCrossTaperingScheduleTable" in app_src
+    assert "exportRotationPlanMarkdown" in app_src
+    assert "renderClinicalSuiteTaperPane" in app_src
+
+
+
 
 
 

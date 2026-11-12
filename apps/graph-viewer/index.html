@@ -1939,6 +1939,45 @@
               <input type="range" id="csOpioidCrossTolSlider" min="0" max="60" step="5" value="35" />
             </div>
             <div id="csConvResultBox"></div>
+
+            <!-- Dynamic Cross-Tapering & Rotation Workbench (v3.33.0) -->
+            <div id="csRotationWorkbench" style="margin-top:12px;padding-top:12px;border-top:1px solid var(--color-border)">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <b style="font-size:13px;color:var(--color-primary)">Dynamiczny Symulator Rotacji PK &amp; Cross-Taperingu</b>
+                <span id="csRotationStatusBadge" class="tag ok" style="font-size:10.5px">Ekspozycja Stabilna</span>
+              </div>
+              <div style="font-size:11.5px;color:var(--color-text-muted);margin-top:2px">Modeluje nakładanie stężeń w czasie, spadek leku A wg t½, narastanie leku B oraz wskaźnik kumulacji vs zespołu odstawiennego.</div>
+
+              <div class="notes-editor-field" style="margin-top:8px">
+                <label for="csRotateStrategySelect" style="font-weight:700">Strategia Rotacji &amp; Zamiany Leków</label>
+                <select id="csRotateStrategySelect" class="cs-select">
+                  <option value="cross_taper" selected>1. Stopniowy Cross-Tapering (Przejście nakładające się)</option>
+                  <option value="direct">2. Bezpośrednia Zamiana (Direct Switch — kolejnego dnia 100% leku B)</option>
+                  <option value="washout">3. Okres Wypłukiwania (Washout Period — przerwa przed lekiem B)</option>
+                  <option value="bernese">4. Mikro-indukcja Bernese (Dedykowana dla Buprenorfiny)</option>
+                </select>
+              </div>
+
+              <div class="notes-editor-field">
+                <label for="csRotateDaysSlider">Czas trwania rotacji: <strong id="csRotateDaysVal">14 dni</strong></label>
+                <input type="range" id="csRotateDaysSlider" min="3" max="28" step="1" value="14" />
+              </div>
+
+              <div style="margin-top:8px">
+                <b style="font-size:11.5px;color:var(--color-text-muted)">Gotowe Scenariusze Rotacji (Presets):</b>
+                <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:4px">
+                  <button class="btn btn-sm btn-gold" data-rot-preset="morphine_to_oxycodone" style="font-size:11px;padding:3px 7px">Morfina → Oksykodon (Rotacja 35%)</button>
+                  <button class="btn btn-sm" data-rot-preset="oxycodone_to_buprenorphine" style="font-size:11px;padding:3px 7px">Oksykodon → Buprenorfina (Bernese)</button>
+                  <button class="btn btn-sm" data-rot-preset="venlafaxine_to_sertraline" style="font-size:11px;padding:3px 7px">Wenlafaksyna → Sertralina</button>
+                  <button class="btn btn-sm btn-gold" data-rot-preset="fluoxetine_to_moclobemide" style="font-size:11px;padding:3px 7px">Fluoksetyna → Moklobemid (Washout 5 tyg.)</button>
+                  <button class="btn btn-sm" data-rot-preset="olanzapine_to_aripiprazole" style="font-size:11px;padding:3px 7px">Olanzapina → Arypiprazol (D2)</button>
+                </div>
+              </div>
+
+              <div id="csRotationAlertBanner" style="margin-top:8px"></div>
+              <div id="csRotationChartWrap" style="margin-top:10px;width:100%"></div>
+              <div id="csRotationScheduleTableWrap" style="margin-top:10px;overflow-x:auto"></div>
+            </div>
           </div>
           <div style="display:flex;flex-direction:column;gap:14px">
             <div class="cs-card">

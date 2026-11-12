@@ -13350,6 +13350,418 @@
     `;
   }
 
+  // ---------- Dynamic Cross-Tapering & Rotation Engine (v3.33.0)
+  function getDrugHalfLifeHours(cid, fallback = 12) {
+    const comp = C[compById.get(cid)];
+    if (comp && comp.pk && typeof comp.pk.hl === "number" && comp.pk.hl > 0) {
+      return comp.pk.hl;
+    }
+    const knownHl = {
+      "morphine-compound": 3.0,
+      "oxycodone-compound": 4.5,
+      "fentanyl-compound": 7.0,
+      "buprenorphine-compound": 32.0,
+      "methadone-compound": 35.0,
+      "hydromorphone-compound": 2.5,
+      "tramadol-compound": 6.0,
+      "tapentadol-compound": 4.0,
+      "codeine-compound": 3.0,
+      "fluoxetine-compound": 96.0,
+      "sertraline-compound": 26.0,
+      "paroxetine-compound": 21.0,
+      "citalopram-compound": 35.0,
+      "escitalopram-compound": 30.0,
+      "venlafaxine-compound": 11.0,
+      "duloxetine-compound": 12.0,
+      "mirtazapine-compound": 30.0,
+      "bupropion-compound": 21.0,
+      "moclobemide-compound": 2.0,
+      "olanzapine-compound": 33.0,
+      "risperidone-compound": 20.0,
+      "quetiapine-compound": 7.0,
+      "aripiprazole-compound": 75.0,
+      "haloperidol-compound": 24.0,
+      "clozapine-compound": 12.0,
+      "diazepam-compound": 48.0,
+      "alprazolam-compound": 12.0,
+      "lorazepam-compound": 14.0,
+      "clonazepam-compound": 34.0
+    };
+    return knownHl[cid] || fallback;
+  }
+
+  function getDrugPetEd50(cid) {
+    const models = CONV_DATA.pet_hyperbolic_models || [];
+    const m = models.find((x) => x.compound_id === cid);
+    if (m) return { ed50: m.ed50_mg, emax: m.e_max || 85, target: m.target };
+    return null;
+  }
+
+  function computeCrossTaperingSimulation(fromDrug, toDrug, doseFrom, doseTo, strategy, totalDays, crossTolReduction = 0) {
+    const hlA = getDrugHalfLifeHours(fromDrug.compound_id, 12);
+    const hlB = getDrugHalfLifeHours(toDrug.compound_id, 24);
+
+    // Rate constants (days^-1)
+    const hlADays = hlA / 24.0;
+    const hlBDays = hlB / 24.0;
+    const keA = Math.LN2 / Math.max(0.08, hlADays);
+    const keB = Math.LN2 / Math.max(0.08, hlBDays);
+    const decayA = Math.exp(-keA * 1.0);
+    const decayB = Math.exp(-keB * 1.0);
+
+    const petA = getDrugPetEd50(fromDrug.compound_id);
+    const petB = getDrugPetEd50(toDrug.compound_id);
+
+    const isBuprenorphineFromFull = (fromDrug.compound_id !== "buprenorphine-compound") && (toDrug.compound_id === "buprenorphine-compound");
+    const isSerotoninMaoiConflict = ((fromDrug.sub_class && fromDrug.sub_class.includes("SSRI") || fromDrug.sub_class === "SNRI") && (toDrug.sub_class === "MAOI" || toDrug.sub_class === "RIMA"))
+      || ((fromDrug.sub_class === "MAOI" || fromDrug.sub_class === "RIMA") && (toDrug.sub_class && toDrug.sub_class.includes("SSRI") || toDrug.sub_class === "SNRI"));
+    const isD2PartialAgonist = (fromDrug.compound_id === "olanzapine-compound" || fromDrug.compound_id === "haloperidol-compound" || fromDrug.compound_id === "risperidone-compound") && (toDrug.compound_id === "aripiprazole-compound");
+    const isCholinergicRebound = (fromDrug.compound_id === "clozapine-compound" || fromDrug.compound_id === "olanzapine-compound") && (toDrug.compound_id !== "clozapine-compound" && toDrug.compound_id !== "olanzapine-compound");
+
+    const daysCount = strategy === "bernese" ? 8 : (strategy === "washout" ? Math.max(totalDays, fromDrug.compound_id === "fluoxetine-compound" ? 35 : 14) : totalDays);
+    const horizon = daysCount + 4;
+
+    const days = [];
+    let prevExpA = 100.0;
+    let prevExpB = 0.0;
+
+    for (let d = 0; d <= horizon; d++) {
+      let targetDoseA = 0;
+      let targetDoseB = 0;
+
+      if (strategy === "cross_taper") {
+        if (d === 0) {
+          targetDoseA = doseFrom;
+          targetDoseB = 0;
+        } else if (d <= daysCount) {
+          const fracA = Math.max(0, 1.0 - (d / daysCount));
+          const fracB = Math.min(1.0, d / daysCount);
+          targetDoseA = +(doseFrom * fracA).toFixed(2);
+          targetDoseB = +(doseTo * fracB).toFixed(2);
+        } else {
+          targetDoseA = 0;
+          targetDoseB = doseTo;
+        }
+      } else if (strategy === "direct") {
+        if (d === 0) {
+          targetDoseA = doseFrom;
+          targetDoseB = 0;
+        } else {
+          targetDoseA = 0;
+          targetDoseB = doseTo;
+        }
+      } else if (strategy === "washout") {
+        const washoutDays = fromDrug.compound_id === "fluoxetine-compound" ? 35 : 14;
+        if (d === 0) {
+          targetDoseA = doseFrom;
+          targetDoseB = 0;
+        } else if (d <= washoutDays) {
+          targetDoseA = 0;
+          targetDoseB = 0;
+        } else {
+          targetDoseA = 0;
+          targetDoseB = doseTo;
+        }
+      } else if (strategy === "bernese") {
+        // Micro-induction Bernese protocol
+        if (d === 0) {
+          targetDoseA = doseFrom;
+          targetDoseB = 0;
+        } else if (d === 1) {
+          targetDoseA = doseFrom;
+          targetDoseB = 0.2;
+        } else if (d === 2) {
+          targetDoseA = doseFrom;
+          targetDoseB = 0.4;
+        } else if (d === 3) {
+          targetDoseA = doseFrom;
+          targetDoseB = 0.8;
+        } else if (d === 4) {
+          targetDoseA = doseFrom;
+          targetDoseB = 2.0;
+        } else if (d === 5) {
+          targetDoseA = doseFrom;
+          targetDoseB = 4.0;
+        } else if (d === 6) {
+          targetDoseA = doseFrom;
+          targetDoseB = 8.0;
+        } else {
+          targetDoseA = 0;
+          targetDoseB = Math.max(12.0, doseTo);
+        }
+      }
+
+      // Calculate plasma exposure kinetics
+      let expA, expB;
+      if (d === 0) {
+        expA = 100.0;
+        expB = 0.0;
+      } else {
+        const inFracA = doseFrom > 0 ? (targetDoseA / doseFrom) : 0;
+        const inFracB = doseTo > 0 ? (targetDoseB / doseTo) : 0;
+        expA = +(prevExpA * decayA + inFracA * 100 * (1 - decayA)).toFixed(1);
+        expB = +(prevExpB * decayB + inFracB * 100 * (1 - decayB)).toFixed(1);
+      }
+      prevExpA = expA;
+      prevExpB = expB;
+
+      const expNet = +(expA + expB).toFixed(1);
+
+      // Receptor Occupancy Calculation
+      let occNet = 0;
+      let occA = 0, occB = 0;
+      if (petA) {
+        const effDoseA = targetDoseA * (expA / 100.0);
+        occA = (petA.emax * effDoseA) / (effDoseA + petA.ed50);
+      } else {
+        occA = Math.min(85, expA * 0.75);
+      }
+      if (petB) {
+        const effDoseB = targetDoseB * (expB / 100.0);
+        occB = (petB.emax * effDoseB) / (effDoseB + petB.ed50);
+      } else {
+        occB = Math.min(85, expB * 0.75);
+      }
+      occNet = Math.min(100, Math.round(occA + occB));
+
+      let status = "Stabilny";
+      let statusColor = "var(--color-success)";
+      if (expNet > 130) {
+        status = "Ryzyko kumulacji / przedawkowania";
+        statusColor = "var(--color-error)";
+      } else if (expNet < 70) {
+        status = "Ryzyko zespołu odstawiennego";
+        statusColor = "var(--color-warning)";
+      }
+
+      days.push({
+        day: d,
+        doseA: targetDoseA,
+        doseB: targetDoseB,
+        expA,
+        expB,
+        expNet,
+        occNet,
+        status,
+        statusColor
+      });
+    }
+
+    // Identify hazard alerts
+    const alerts = [];
+    if (isBuprenorphineFromFull && strategy === "direct") {
+      alerts.push({
+        level: "critical",
+        title: "⚠️ KRYTYCZNE ZAGROŻENIE: Sprowokowany Zespół Odstawienny (Precipitated Withdrawal)!",
+        desc: "Buprenorfina ma ekstremalnie silne powinowactwo do receptora μ (Ki = 0.2 nM), lecz jest częściowym agonistą. Podanie buprenorfiny bezpośrednio po pełnym agoniście gwałtownie usuwa cząsteczki opioidu z receptorów, wywołując piorunujący zespół odstawienny. Zastosuj protokół Mikro-indukcji Bernese lub odczekaj do nasilonych objawów odstawienia (COWS > 12)!"
+      });
+    }
+    if (isSerotoninMaoiConflict && strategy !== "washout") {
+      alerts.push({
+        level: "critical",
+        title: "⚠️ ŚMIERTELNE ZAGROŻENIE: Ryzyko Zespołu Serotoninowego (Przeciwwskazanie Bezwzględne)!",
+        desc: "Jednoczesne nakładanie leków serotoninergicznych (SSRI/SNRI) z inhibitorami MAO (moklobemid, selegilina) grozi zagrażającą życiu hipertermią, drgawkami i zapaścią krążeniową. Bezwzględnie wymagany okres wypłukiwania (washout): 14 dni, a w przypadku fluoksetyny aż 35 dni (5 tygodni z uwagi na t½ norfluoksetyny)!"
+      });
+    }
+    if (isD2PartialAgonist) {
+      alerts.push({
+        level: "warning",
+        title: "⚠️ Ostrzeżenie D2: Ryzyko Aktywacji i Akatyzji (Arypiprazol)",
+        desc: "Arypiprazol działa jako funkcjonalny antagonista wobec receptorów D2 przeregulowanych po silnych neuroleptykach (olanzapina, haloperydol). Zbyt szybka rotacja wyzwala akatyzję i niepokój psychoruchowy. Zalecany powolny cross-tapering przez co najmniej 14–21 dni."
+      });
+    }
+    if (isCholinergicRebound) {
+      alerts.push({
+        level: "warning",
+        title: "⚠️ Ostrzeżenie: Ryzyko Zespołu Odbicia Cholinergicznego",
+        desc: "Nagłe odstawienie leku silnie cholinolitycznego (klozapina, olanzapina) wywołuje biegunkę, zlewne poty, ślinotok, lęk i bezsenność. Wymaga powolnego taperingu dawki leku wyjściowego."
+      });
+    }
+
+    const underdoseDays = days.filter((x) => x.day > 0 && x.day <= daysCount && x.expNet < 70).map((x) => x.day);
+    if (underdoseDays.length > 0 && strategy !== "washout") {
+      alerts.push({
+        level: "warning",
+        title: "⚠️ Ryzyko Okna Subterapeutycznego / Bólu Przebijającego",
+        desc: `W dniach ${underdoseDays.slice(0, 4).join(", ")} sumaryczna ekspozycja spada poniżej 70% normy. Rozważ wolniejsze tempo redukcji leku wyjściowego lub doraźne leki ratunkowe.`
+      });
+    }
+
+    const cumulationDays = days.filter((x) => x.day > 0 && x.day <= daysCount && x.expNet > 130).map((x) => x.day);
+    if (cumulationDays.length > 0) {
+      alerts.push({
+        level: "warning",
+        title: "⚠️ Ryzyko Kumulacji i Nadmiernej Sedacji w Okresie Przejściowym",
+        desc: `W dniach ${cumulationDays.slice(0, 4).join(", ")} sumaryczna ekspozycja przekracza 130% normy. Ściśle monitoruj parametry sedacji, ciśnienia i częstości oddechów.`
+      });
+    }
+
+    const hasCriticalHazard = alerts.some((a) => a.level === "critical");
+    const hasWarningHazard = alerts.some((a) => a.level === "warning");
+
+    return {
+      fromDrug,
+      toDrug,
+      doseFrom,
+      doseTo,
+      strategy,
+      totalDays: daysCount,
+      hlA,
+      hlB,
+      days,
+      alerts,
+      hasCriticalHazard,
+      hasWarningHazard,
+      isBuprenorphineFromFull,
+      isSerotoninMaoiConflict
+    };
+  }
+
+  function renderCrossTaperingChartSvg(simData) {
+    const width = 520;
+    const height = 220;
+    const padL = 45;
+    const padR = 20;
+    const padT = 20;
+    const padB = 30;
+    const plotW = width - padL - padR;
+    const plotH = height - padT - padB;
+
+    const nDays = simData.days.length - 1;
+    const maxExp = Math.min(220, Math.max(160, ...simData.days.map((d) => d.expNet)));
+
+    const getX = (d) => padL + (d / nDays) * plotW;
+    const getY = (val) => padT + plotH - (Math.max(0, Math.min(maxExp, val)) / maxExp) * plotH;
+
+    const y130 = getY(130);
+    const y120 = getY(120);
+    const y80 = getY(80);
+    const y70 = getY(70);
+
+    const pathA = simData.days.map((d, i) => `${i === 0 ? 'M' : 'L'} ${getX(d.day).toFixed(1)} ${getY(d.expA).toFixed(1)}`).join(' ');
+    const pathB = simData.days.map((d, i) => `${i === 0 ? 'M' : 'L'} ${getX(d.day).toFixed(1)} ${getY(d.expB).toFixed(1)}`).join(' ');
+    const pathNet = simData.days.map((d, i) => `${i === 0 ? 'M' : 'L'} ${getX(d.day).toFixed(1)} ${getY(d.expNet).toFixed(1)}`).join(' ');
+    const pathOcc = simData.days.map((d, i) => `${i === 0 ? 'M' : 'L'} ${getX(d.day).toFixed(1)} ${getY(d.occNet).toFixed(1)}`).join(' ');
+
+    const stepTicks = Math.max(1, Math.round(nDays / 7));
+    const xTicks = [];
+    for (let d = 0; d <= nDays; d += stepTicks) {
+      const x = getX(d);
+      xTicks.push(`
+        <line x1="${x.toFixed(1)}" y1="${padT}" x2="${x.toFixed(1)}" y2="${padT + plotH}" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+        <text x="${x.toFixed(1)}" y="${padT + plotH + 16}" text-anchor="middle" fill="#94969c" font-size="10.5" font-family="system-ui, sans-serif">D${d}</text>
+      `);
+    }
+
+    return `
+      <svg viewBox="0 0 ${width} ${height}" style="width:100%;max-width:${width}px;height:auto;display:block;margin:0 auto;overflow:visible">
+        <!-- Safe Transition Band (80-120%) -->
+        <rect x="${padL}" y="${y120.toFixed(1)}" width="${plotW}" height="${Math.max(0, y80 - y120).toFixed(1)}" fill="rgba(52, 199, 89, 0.12)" stroke="rgba(52, 199, 89, 0.35)" stroke-dasharray="3,3" />
+        <text x="${padL + 6}" y="${(y120 + 13).toFixed(1)}" fill="#34c759" font-size="9.5" font-weight="700" font-family="system-ui, sans-serif">Bezpieczne Okno Przejściowe (80–120%)</text>
+
+        <!-- Cumulative Risk Zone (>130%) -->
+        <rect x="${padL}" y="${padT}" width="${plotW}" height="${Math.max(0, y130 - padT).toFixed(1)}" fill="rgba(255, 69, 58, 0.08)" />
+        <text x="${padL + plotW - 6}" y="${(y130 - 4).toFixed(1)}" text-anchor="end" fill="#ff453a" font-size="9" font-family="system-ui, sans-serif">⚠️ Strefa Kumulacji (&gt;130%)</text>
+
+        <!-- Withdrawal Risk Zone (<70%) -->
+        <rect x="${padL}" y="${y70.toFixed(1)}" width="${plotW}" height="${Math.max(0, padT + plotH - y70).toFixed(1)}" fill="rgba(255, 149, 0, 0.08)" />
+        <text x="${padL + plotW - 6}" y="${(y70 + 12).toFixed(1)}" text-anchor="end" fill="#ff9500" font-size="9" font-family="system-ui, sans-serif">⚠️ Strefa Odstawienia (&lt;70%)</text>
+
+        <!-- Grid Lines -->
+        ${xTicks.join("")}
+        <line x1="${padL}" y1="${getY(100).toFixed(1)}" x2="${padL + plotW}" y2="${getY(100).toFixed(1)}" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" stroke-dasharray="2,2" />
+        <text x="${padL - 6}" y="${(getY(100) + 3).toFixed(1)}" text-anchor="end" fill="#5ac8fa" font-size="10" font-family="system-ui, sans-serif">100%</text>
+        <text x="${padL - 6}" y="${(getY(50) + 3).toFixed(1)}" text-anchor="end" fill="#94969c" font-size="10" font-family="system-ui, sans-serif">50%</text>
+
+        <!-- Axes -->
+        <line x1="${padL}" y1="${padT + plotH}" x2="${padL + plotW}" y2="${padT + plotH}" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" />
+        <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${padT + plotH}" stroke="rgba(255,255,255,0.25)" stroke-width="1.2" />
+
+        <!-- Curves -->
+        <!-- Drug A (Blue) -->
+        <path d="${pathA}" fill="none" stroke="#5ac8fa" stroke-width="1.8" stroke-dasharray="4,3" opacity="0.85" />
+        <!-- Drug B (Gold) -->
+        <path d="${pathB}" fill="none" stroke="#ffd60a" stroke-width="1.8" stroke-dasharray="4,3" opacity="0.85" />
+        <!-- Net Plasma Exposure (Purple) -->
+        <path d="${pathNet}" fill="none" stroke="#af52de" stroke-width="2.6" />
+        <!-- Receptor Occupancy (Teal Dashed) -->
+        <path d="${pathOcc}" fill="none" stroke="#52a2a8" stroke-width="1.6" stroke-dasharray="2,2" opacity="0.9" />
+
+        <!-- Legend -->
+        <g transform="translate(${padL}, ${padT - 6})">
+          <line x1="0" y1="0" x2="16" y2="0" stroke="#5ac8fa" stroke-width="2" stroke-dasharray="3,2" />
+          <text x="20" y="3" fill="#5ac8fa" font-size="9.5" font-family="system-ui, sans-serif">Lek A (${esc(simData.fromDrug.name.split(' ')[0])})</text>
+          <line x1="110" y1="0" x2="126" y2="0" stroke="#ffd60a" stroke-width="2" stroke-dasharray="3,2" />
+          <text x="130" y="3" fill="#ffd60a" font-size="9.5" font-family="system-ui, sans-serif">Lek B (${esc(simData.toDrug.name.split(' ')[0])})</text>
+          <line x1="220" y1="0" x2="238" y2="0" stroke="#af52de" stroke-width="3" />
+          <text x="242" y="3" fill="#af52de" font-size="9.5" font-weight="700" font-family="system-ui, sans-serif">Ekspozycja Netto E_net</text>
+          <line x1="365" y1="0" x2="381" y2="0" stroke="#52a2a8" stroke-width="2" stroke-dasharray="2,2" />
+          <text x="385" y="3" fill="#52a2a8" font-size="9.5" font-family="system-ui, sans-serif">Zajętość Receptora</text>
+        </g>
+      </svg>
+    `;
+  }
+
+  function renderCrossTaperingScheduleTable(simData) {
+    const tableRows = simData.days.map((d) => {
+      const expCol = d.expNet > 130 ? 'var(--color-error)' : (d.expNet < 70 ? 'var(--color-warning)' : 'var(--color-success)');
+      return `
+        <tr>
+          <td><b>Dzień ${d.day}</b></td>
+          <td><b style="color:#5ac8fa">${d.doseA} mg</b></td>
+          <td><b style="color:#ffd60a">${d.doseB} mg</b></td>
+          <td><b style="color:${expCol}">${d.expNet}%</b></td>
+          <td><b>${d.occNet}%</b></td>
+          <td><span class="tag" style="border-color:${d.statusColor};color:${d.statusColor};font-size:10.5px">${esc(d.status)}</span></td>
+        </tr>
+      `;
+    }).join("");
+
+    return `
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <b style="font-size:12.5px">Harmonogram Rotacji Dzień po Dniu (${simData.totalDays} dni przejścia):</b>
+        <button class="btn btn-sm btn-gold" id="csCopyRotationPlanBtn" style="font-size:11px;padding:3px 8px">Kopiuj Plan Rotacji (MD) ↗</button>
+      </div>
+      <table class="cs-table">
+        <thead>
+          <tr>
+            <th>Dzień</th>
+            <th>${esc(simData.fromDrug.name)} (Lek A)</th>
+            <th>${esc(simData.toDrug.name)} (Lek B)</th>
+            <th>Ekspozycja Netto E_net</th>
+            <th>Wysycenie Receptora</th>
+            <th>Status Kliniczny</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${tableRows}
+        </tbody>
+      </table>
+    `;
+  }
+
+  function exportRotationPlanMarkdown(simData) {
+    const lines = [
+      `# Protokół Rotacji & Cross-Taperingu Leków — Pharma-vault`,
+      `- **Data generowania:** ${new Date().toLocaleDateString('pl-PL')}`,
+      `- **Lek wycofywany (A):** ${simData.fromDrug.name} (dawka wyjściowa: ${simData.doseFrom} mg/d, t½ ≈ ${simData.hlA}h)`,
+      `- **Lek wprowadzany (B):** ${simData.toDrug.name} (dawka docelowa: ${simData.doseTo} mg/d, t½ ≈ ${simData.hlB}h)`,
+      `- **Strategia zamiany:** ${simData.strategy === 'bernese' ? 'Mikro-indukcja Bernese (Buprenorfina)' : (simData.strategy === 'washout' ? 'Okres Wypłukiwania (Washout)' : (simData.strategy === 'direct' ? 'Bezpośrednia Zamiana (Direct Switch)' : 'Stopniowy Cross-Tapering'))}`,
+      `- **Czas trwania okresu przejściowego:** ${simData.totalDays} dni`,
+      ``,
+      `## Ostrzeżenia i Alerty Kliniczne:`,
+      ...(simData.alerts.length ? simData.alerts.map(a => `• **${a.title}:** ${a.desc}`) : ['• Brak zidentyfikowanych krytycznych zagrożeń farmakokinetycznych.']),
+      ``,
+      `## Harmonogram Dawkowania Dzień po Dniu:`,
+      `| Dzień | ${simData.fromDrug.name} (mg) | ${simData.toDrug.name} (mg) | Szacowana Ekspozycja E_net (%) | Zajętość Receptora (%) | Zalecenia Kliniczne |`,
+      `|:---|:---|:---|:---|:---|:---|`,
+      ...simData.days.map(d => `| Dzień ${d.day} | ${d.doseA} mg | ${d.doseB} mg | ${d.expNet}% | ${d.occNet}% | ${d.status} |`),
+      ``,
+      `*Wygenerowano automatycznie przez Silnik Farmakokinetyki Pharma-vault v3.33.0.*`
+    ];
+    return lines.join("\n");
+  }
+
   function renderClinicalSuiteTaperPane() {
     const classSel = $("csConvClassSelect");
     const fromSel = $("csConvFromSelect");
@@ -13499,6 +13911,138 @@
     classTableWrap.querySelectorAll("[data-cs-conv-pick]").forEach((btn) => {
       btn.onclick = () => {
         toSel.value = btn.dataset.csConvPick;
+        renderClinicalSuiteTaperPane();
+      };
+    });
+
+    // Render Dynamic Cross-Tapering & Rotation Simulation (v3.33.0)
+    const stratSel = $("csRotateStrategySelect");
+    const daysSlider = $("csRotateDaysSlider");
+    const daysValEl = $("csRotateDaysVal");
+    const statusBadge = $("csRotationStatusBadge");
+    const alertCont = $("csRotationAlertBanner");
+    const chartCont = $("csRotationChartWrap");
+    const schedCont = $("csRotationScheduleTableWrap");
+
+    if (stratSel && daysSlider) {
+      let currentStrategy = stratSel.value || "cross_taper";
+      if (toDrug.compound_id === "buprenorphine-compound" && fromDrug.compound_id !== "buprenorphine-compound" && !stratSel.dataset.userChanged) {
+        currentStrategy = "bernese";
+        stratSel.value = "bernese";
+      }
+      const rotDays = parseInt(daysSlider.value, 10) || 14;
+      if (daysValEl) daysValEl.textContent = `${rotDays} dni`;
+
+      const simData = computeCrossTaperingSimulation(fromDrug, toDrug, doseFrom, adjustedTargetMg, currentStrategy, rotDays, crossTolReduction);
+
+      if (statusBadge) {
+        if (simData.hasCriticalHazard) {
+          statusBadge.textContent = "Krytyczne Zagrożenie!";
+          statusBadge.className = "tag err";
+          statusBadge.style.color = "var(--color-error)";
+        } else if (simData.hasWarningHazard) {
+          statusBadge.textContent = "Wymagana Ostrożność";
+          statusBadge.className = "tag warn";
+        } else {
+          statusBadge.textContent = "Ekspozycja Stabilna (80–120%)";
+          statusBadge.className = "tag ok";
+        }
+      }
+
+      if (alertCont) {
+        if (simData.alerts.length) {
+          alertCont.innerHTML = simData.alerts.map((a) => `
+            <div class="pv-banner ${a.level === 'critical' ? 'pv-banner-critical' : 'pv-banner-warning'}" style="margin:4px 0">
+              <b>${esc(a.title)}</b>
+              <div style="font-size:12px;margin-top:2px">${esc(a.desc)}</div>
+            </div>
+          `).join("");
+        } else {
+          alertCont.innerHTML = "";
+        }
+      }
+
+      if (chartCont) {
+        chartCont.innerHTML = renderCrossTaperingChartSvg(simData);
+      }
+
+      if (schedCont) {
+        schedCont.innerHTML = renderCrossTaperingScheduleTable(simData);
+
+        const copyBtn = $("csCopyRotationPlanBtn");
+        if (copyBtn) {
+          copyBtn.onclick = () => {
+            const md = exportRotationPlanMarkdown(simData);
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(md).then(() => {
+                showToast("Skopiowano protokół rotacji leków (MD) do schowka!", "success");
+              }).catch(() => {
+                showToast("Skopiowano protokół rotacji.", "info");
+              });
+            } else {
+              showToast("Skopiowano protokół rotacji.", "info");
+            }
+          };
+        }
+      }
+    }
+
+    // Wire Presets
+    document.querySelectorAll("[data-rot-preset]").forEach((btn) => {
+      btn.onclick = () => {
+        const pKey = btn.dataset.rotPreset;
+        const cSel = $("csConvClassSelect");
+        const sSel = $("csRotateStrategySelect");
+        const dSlider = $("csRotateDaysSlider");
+        const opSlider = $("csOpioidCrossTolSlider");
+
+        if (pKey === "morphine_to_oxycodone") {
+          cSel.value = "opioids";
+          delete cSel.dataset.populatedClass;
+          renderClinicalSuiteTaperPane();
+          $("csConvFromSelect").value = "morphine-compound";
+          $("csConvFromDose").value = "120";
+          $("csConvToSelect").value = "oxycodone-compound";
+          if (opSlider) opSlider.value = "35";
+          if (sSel) { sSel.value = "cross_taper"; sSel.dataset.userChanged = "true"; }
+          if (dSlider) dSlider.value = "7";
+        } else if (pKey === "oxycodone_to_buprenorphine") {
+          cSel.value = "opioids";
+          delete cSel.dataset.populatedClass;
+          renderClinicalSuiteTaperPane();
+          $("csConvFromSelect").value = "oxycodone-compound";
+          $("csConvFromDose").value = "80";
+          $("csConvToSelect").value = "buprenorphine-compound";
+          if (sSel) { sSel.value = "bernese"; sSel.dataset.userChanged = "true"; }
+          if (dSlider) dSlider.value = "7";
+        } else if (pKey === "venlafaxine_to_sertraline") {
+          cSel.value = "antidepressants";
+          delete cSel.dataset.populatedClass;
+          renderClinicalSuiteTaperPane();
+          $("csConvFromSelect").value = "venlafaxine-compound";
+          $("csConvFromDose").value = "150";
+          $("csConvToSelect").value = "sertraline-compound";
+          if (sSel) { sSel.value = "cross_taper"; sSel.dataset.userChanged = "true"; }
+          if (dSlider) dSlider.value = "14";
+        } else if (pKey === "fluoxetine_to_moclobemide") {
+          cSel.value = "antidepressants";
+          delete cSel.dataset.populatedClass;
+          renderClinicalSuiteTaperPane();
+          $("csConvFromSelect").value = "fluoxetine-compound";
+          $("csConvFromDose").value = "40";
+          $("csConvToSelect").value = "moclobemide-compound";
+          if (sSel) { sSel.value = "washout"; sSel.dataset.userChanged = "true"; }
+          if (dSlider) dSlider.value = "28";
+        } else if (pKey === "olanzapine_to_aripiprazole") {
+          cSel.value = "antipsychotics";
+          delete cSel.dataset.populatedClass;
+          renderClinicalSuiteTaperPane();
+          $("csConvFromSelect").value = "olanzapine-compound";
+          $("csConvFromDose").value = "15";
+          $("csConvToSelect").value = "aripiprazole-compound";
+          if (sSel) { sSel.value = "cross_taper"; sSel.dataset.userChanged = "true"; }
+          if (dSlider) dSlider.value = "21";
+        }
         renderClinicalSuiteTaperPane();
       };
     });
@@ -14339,9 +14883,20 @@
       showToast("Zresetowano profil farmakogenetyczny do Wild-Type (NM).", "info");
     };
   }
-  ["csConvClassSelect", "csConvFromSelect", "csConvFromDose", "csConvToSelect", "csOpioidCrossTolSlider"].forEach((id) => {
+  ["csConvClassSelect", "csConvFromSelect", "csConvFromDose", "csConvToSelect", "csOpioidCrossTolSlider", "csRotateStrategySelect", "csRotateDaysSlider"].forEach((id) => {
     const el = $(id);
-    if (el) el.oninput = () => renderClinicalSuiteTaperPane();
+    if (el) {
+      el.oninput = () => {
+        if (id === "csRotateStrategySelect") el.dataset.userChanged = "true";
+        renderClinicalSuiteTaperPane();
+      };
+      if (el.tagName === "SELECT") {
+        el.onchange = () => {
+          if (id === "csRotateStrategySelect") el.dataset.userChanged = "true";
+          renderClinicalSuiteTaperPane();
+        };
+      }
+    }
   });
   ["csPetModelSelect", "csPetStartDose", "csPetStepOcc"].forEach((id) => {
     const el = $(id);
