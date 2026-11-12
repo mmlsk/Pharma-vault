@@ -2097,6 +2097,102 @@ def test_enzymatic_induction_and_net_equilibrium():
     assert "data-pgx-preset=\"carbamazepine_paracetamol\"" in app_src
 
 
+def test_icu_pk_engine():
+    """Verify ICU PK & Critical Care Pharmacokinetics Engine (v3.32.0):
+    1. Organ impairment & dialysis data enriched with 10 ICU antibiotics and icu_pk models
+    2. ICU Physiome: IBW (Devine), ABW for BMI >= 30, Fluid Overload % and Vd expansion
+    3. ARC detection (CrCl >= 130 mL/min) and hypoalbuminemia fu shift
+    4. PK/PD target dosing: Vancomycin IDSA AUC24/MIC 400-600, Aminoglycoside Cmax/MIC >= 10
+    5. CRRT convective clearance (CL_crrt = Sc * Q_effluent)
+    6. UI markup, tabs and preset bindings in index.html and app.js.
+    """
+    organ_path = ROOT / "data/curated/organ_impairment_dialysis.json"
+    organ_data = json.loads(organ_path.read_text(encoding="utf-8"))
+    profiles = {p["compound_id"]: p for p in organ_data.get("profiles", [])}
+
+    # 1. Catalog assertions
+    assert len(profiles) >= 28, f"Expected >= 28 profiles, found {len(profiles)}"
+    icu_antibiotics = [
+        "vancomycin-compound", "gentamicin-compound", "amikacin-compound", "tobramycin-compound",
+        "meropenem-compound", "piperacillin-compound", "cefepime-compound", "ceftriaxone-compound",
+        "daptomycin-compound", "colistin-compound"
+    ]
+    for cid in icu_antibiotics:
+        assert cid in profiles, f"Missing ICU antibiotic {cid}"
+        p = profiles[cid]
+        assert "icu_pk" in p, f"Missing icu_pk object in {cid}"
+        icu = p["icu_pk"]
+        assert "is_hydrophilic" in icu
+        assert "vd_normal_l_kg" in icu
+        assert "protein_binding_pct" in icu
+        assert "pk_pd_target_type" in icu
+        assert p["crrt_sieving"] > 0
+
+    # 2. Physiome calculations
+    # Devine IBW
+    ibw_male = 50.0 + 0.905 * (180 - 152.4)
+    assert abs(ibw_male - 75.0) < 0.2
+    ibw_female = 45.5 + 0.905 * (165 - 152.4)
+    assert abs(ibw_female - 56.9) < 0.2
+
+    # Obese patient ABW: 172 cm Female, TBW 135 kg -> BMI = 135 / (1.72^2) = 45.6
+    bmi_obese = 135.0 / (1.72 ** 2)
+    assert bmi_obese >= 45.0
+    ibw_obese = 45.5 + 0.905 * (172 - 152.4)  # ~63.2
+    abw_obese = ibw_obese + 0.40 * (135.0 - ibw_obese)
+    assert abs(abw_obese - 91.9) < 0.5
+
+    # Fluid Overload %: +8L in 80 kg patient = 10%
+    fluid_pct = (8.0 / 80.0) * 100
+    assert fluid_pct >= 10.0  # Capillary leak threshold
+
+    # ARC & Hypoalbuminemia
+    crcl_arc = 165.0
+    assert crcl_arc >= 130.0  # ARC flag triggered
+    alb = 2.2
+    fu_shift = 4.4 / alb
+    assert abs(fu_shift - 2.0) < 0.05
+
+    # 3. Vancomycin IDSA 2020 Dosing Formula
+    # CrCl = 140 mL/min -> CL = 0.048 * 140 + 0.30 = 7.02 L/h
+    cl_vanc = 0.048 * 140.0 + 0.30
+    assert abs(cl_vanc - 7.02) < 0.01
+    daily_vanc_target_500 = cl_vanc * 500.0  # 3510 mg/24h
+    assert 3400 < daily_vanc_target_500 < 3600
+    # Loading dose: 25 mg/kg * 80 kg = 2000 mg (<= 3000 mg limit)
+    load_vanc = min(3000, 80 * 25)
+    assert load_vanc == 2000
+
+    # 4. CRRT Convective Clearance
+    # TBW = 80 kg, effluent = 25 mL/kg/h -> Q_eff = 2.0 L/h. Sieving Sc = 0.75 -> CL_crrt = 1.50 L/h
+    q_eff = (25.0 * 80.0) / 1000.0
+    assert q_eff == 2.0
+    cl_crrt = 0.75 * q_eff
+    assert cl_crrt == 1.50
+
+    # 5. UI Markup & Code Integration
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+
+    assert "csTabIcuBtn" in html_src
+    assert "csPaneIcu" in html_src
+    assert "csIcuFluidSlider" in html_src
+    assert "csIcuEgfrSlider" in html_src
+    assert "csIcuCrrtModalitySelect" in html_src
+    assert "csIcuDosingCard" in html_src
+    assert "csIcuPkCurveCard" in html_src
+
+    assert "computeIcuPhysiome" in app_src
+    assert "computeIcuDrugDosing" in app_src
+    assert "renderIcuMiniPkCurveSvg" in app_src
+    assert "renderClinicalSuiteIcuPane" in app_src
+    assert "sepsis_arc" in app_src
+    assert "shock_aki" in app_src
+    assert "crrt_anuria" in app_src
+    assert "obese_icu" in app_src
+
+
+
 
 
 

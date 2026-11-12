@@ -13660,21 +13660,620 @@
     });
   }
 
+  // ---------- PANE 4: ICU PK & Critical Care Pharmacokinetics Engine (v3.32.0)
+  function computeIcuPhysiome() {
+    const sex = $("csIcuSexSelect")?.value || "M";
+    const height = parseFloat($("csIcuHeightInput")?.value) || 175;
+    const tbw = parseFloat($("csIcuWeightInput")?.value) || 80;
+    const fluidL = parseFloat($("csIcuFluidSlider")?.value) || 3.0;
+    const egfr = parseFloat($("csIcuEgfrSlider")?.value) || 140;
+    const alb = parseFloat($("csIcuAlbuminSlider")?.value) || 2.2;
+    const crrtModality = $("csIcuCrrtModalitySelect")?.value || "none";
+    const crrtEffluent = parseFloat($("csIcuCrrtEffluentSlider")?.value) || 25;
+
+    const bmi = +(tbw / ((height / 100) ** 2)).toFixed(1);
+    const ibwBase = sex === "M" ? (50.0 + 0.905 * (height - 152.4)) : (45.5 + 0.905 * (height - 152.4));
+    const ibw = Math.max(30, Math.round(ibwBase * 10) / 10);
+    const isObese = bmi >= 30.0;
+    const abw = isObese ? Math.round((ibw + 0.40 * (tbw - ibw)) * 10) / 10 : tbw;
+
+    const fluidPct = +((fluidL / tbw) * 100).toFixed(1);
+    const isSevereFluidOverload = fluidPct >= 10.0;
+    const isArc = egfr >= 130;
+    const fuShift = +(4.4 / Math.max(1.0, alb)).toFixed(2);
+
+    const isCrrt = crrtModality !== "none";
+    const qEffluentLh = isCrrt ? +((crrtEffluent * tbw) / 1000).toFixed(2) : 0;
+
+    return {
+      sex,
+      height,
+      tbw,
+      ibw,
+      abw,
+      bmi,
+      isObese,
+      fluidL,
+      fluidPct,
+      isSevereFluidOverload,
+      egfr,
+      isArc,
+      alb,
+      fuShift,
+      crrtModality,
+      crrtEffluent,
+      isCrrt,
+      qEffluentLh
+    };
+  }
+
+  function computeIcuDrugDosing(compoundId, phys) {
+    const prof = (ORGAN_DATA.profiles || []).find((p) => p.compound_id === compoundId) || getOrganProfileOrFallback(compoundId);
+    const isHydro = prof.icu_pk ? prof.icu_pk.is_hydrophilic : (prof.fe_unchanged >= 0.50);
+    const vdNormal = (prof.icu_pk && prof.icu_pk.vd_normal_l_kg) || 0.35;
+    const dosingWeight = phys.isObese ? phys.abw : (isHydro ? phys.ibw : phys.tbw);
+
+    // Expand Vd by excess fluid volume for hydrophilic drugs
+    const vdBase = +(vdNormal * dosingWeight).toFixed(1);
+    const vdExpanded = isHydro ? +(vdBase + phys.fluidL).toFixed(1) : vdBase;
+    const vdExpansionPct = Math.round(((vdExpanded / vdBase) - 1.0) * 100);
+
+    let res = {
+      compoundId,
+      name: prof.name,
+      isCuratedIcu: !!prof.icu_pk,
+      isHydrophilic: isHydro,
+      dosingWeight,
+      vdBase,
+      vdExpanded,
+      vdExpansionPct,
+      loadingDose: "–",
+      maintenanceDose: "–",
+      interval: "–",
+      infusionMode: "Wlew standardowy 30 min",
+      crrtClearanceLh: 0,
+      totalClearanceLh: 0,
+      pkPdTarget: "–",
+      targetText: "–",
+      arcAlert: "",
+      clinicalNotes: ""
+    };
+
+    if (compoundId === "vancomycin-compound") {
+      const loadMg = Math.min(3000, Math.round((phys.tbw * 25) / 250) * 250);
+      let clVanc;
+      if (phys.isCrrt) {
+        const sc = 0.75;
+        const clCrrt = sc * phys.qEffluentLh;
+        const clRen = 0.048 * (phys.egfr * 0.06);
+        clVanc = +(clCrrt + clRen + 0.15).toFixed(2);
+        res.crrtClearanceLh = +(clCrrt).toFixed(2);
+      } else {
+        clVanc = +(0.048 * phys.egfr + 0.30).toFixed(2);
+      }
+      res.totalClearanceLh = clVanc;
+      const dailyMg = Math.round((clVanc * 500) / 100) * 100;
+      const contInfMgH = Math.round(dailyMg / 24);
+
+      res.pkPdTarget = "AUC24 / MIC = 400–600 mg·h/L";
+      res.targetText = "Cel AUC24/MIC 400-600 wg IDSA 2020. Wlew ciągły: plateau 20-25 mg/L; Wlew przerywany: Ctrough 15-20 mg/L.";
+      res.loadingDose = `${loadMg} mg i.v. (${phys.tbw >= 100 ? 'ograniczono do 3000 mg' : '25-30 mg/kg na masę rzeczywistą TBW'})`;
+
+      if (phys.isCrrt) {
+        res.maintenanceDose = `Wlew ciągły: ${dailyMg} mg/dobę (~${contInfMgH} mg/h) lub przerywany 750–1000 mg`;
+        res.interval = "co 24h (lub wlew ciągły)";
+        res.infusionMode = "Wlew ciągły 24h preferowany na OIT (stabilne plateau 20-25 mg/L)";
+      } else if (phys.isArc) {
+        res.maintenanceDose = `${dailyMg} mg/dobę (np. 1500 mg q8h lub 2000 mg q12h)`;
+        res.interval = "co 8h lub co 12h";
+        res.infusionMode = "Wlew ciągły 24h wysoce zalecany z powodu hiperfiltracji ARC (ryzyko załamania Ctrough < 10 mg/L!)";
+        res.arcAlert = "⚠️ ALARM ARC: Klirens wankomycyny jest dwukrotnie wyższy! Standardowe dawkowanie 1g q12h spowoduje porażkę terapeutyczną.";
+      } else if (phys.egfr >= 60) {
+        res.maintenanceDose = `${dailyMg} mg/dobę (1000-1250 mg q12h)`;
+        res.interval = "co 12h";
+        res.infusionMode = "Wlew 1-2h lub ciągły";
+      } else if (phys.egfr >= 30) {
+        res.maintenanceDose = "1000 mg";
+        res.interval = "co 24h";
+      } else {
+        res.maintenanceDose = "500-1000 mg";
+        res.interval = "co 48h lub wg TDM po spadku < 15 mg/L";
+      }
+      res.clinicalNotes = "Unikać skojarzenia z piperacyliną/tazobaktamem (synergizm nefrotoksyczny Vanc/Zosyn). Zalecany TDM stężenia w surowicy przed 4. dawką.";
+    } else if (compoundId === "gentamicin-compound" || compoundId === "tobramycin-compound") {
+      const isGenta = compoundId === "gentamicin-compound";
+      const loadMg = Math.round((dosingWeight * 7.0) / 20) * 20;
+      res.pkPdTarget = "Cmax / MIC ≥ 8–10 (zabijanie zależne od stężenia)";
+      res.targetText = `Szczyt Cmax 16–24 mg/L (efekt bakteriobójczy), stężenie resztkowe Ctrough < 1.0 mg/L (ochrona ucha i nerek).`;
+      res.loadingDose = `${loadMg} mg i.v. (7.0 mg/kg na masę ${phys.isObese ? 'ABW' : 'IBW'})`;
+
+      if (phys.isCrrt) {
+        res.maintenanceDose = `${loadMg} mg (kolejne podanie wyłącznie po spadku Ctrough < 1.0 mg/L)`;
+        res.interval = "co 48–72h (wg TDM)";
+      } else if (phys.egfr >= 60) {
+        res.maintenanceDose = `${loadMg} mg`;
+        res.interval = "co 24h (odstęp wg Nomogramu Hartforda)";
+      } else if (phys.egfr >= 40) {
+        res.maintenanceDose = `${loadMg} mg`;
+        res.interval = "co 36h (Hartford)";
+      } else if (phys.egfr >= 20) {
+        res.maintenanceDose = `${loadMg} mg`;
+        res.interval = "co 48h (Hartford)";
+      } else {
+        res.maintenanceDose = "Re-dosing wyłącznie po spadku stężenia < 1.0 mg/L";
+        res.interval = "wg TDM (>48h)";
+      }
+      res.infusionMode = "Wlew dożylny 30–60 minut";
+      res.clinicalNotes = `U pacjentów z sepsą i przewodnieniem (+${phys.fluidL}L) Vd rośnie o ${vdExpansionPct}%. Pełna dawka nasycająca 7 mg/kg jest konieczna dla osiągnięcia Cmax > 16 mg/L.`;
+    } else if (compoundId === "amikacin-compound") {
+      const loadMg = Math.round((dosingWeight * 25.0) / 100) * 100;
+      res.pkPdTarget = "Cmax / MIC ≥ 8–10";
+      res.targetText = "Docelowe stężenie szczytowe Cmax 60–80 mg/L, stężenie minimalne Ctrough < 5.0 mg/L (optymalnie < 2.5 mg/L).";
+      res.loadingDose = `${loadMg} mg i.v. (25-30 mg/kg w sepsie na masę ${phys.isObese ? 'ABW' : 'IBW'})`;
+
+      if (phys.isCrrt) {
+        res.maintenanceDose = `${loadMg} mg (re-dosing przy Ctrough < 5 mg/L)`;
+        res.interval = "co 48–72h";
+      } else if (phys.egfr >= 60) {
+        res.maintenanceDose = `${loadMg} mg`;
+        res.interval = "co 24h";
+      } else if (phys.egfr >= 40) {
+        res.maintenanceDose = `${loadMg} mg`;
+        res.interval = "co 36h";
+      } else if (phys.egfr >= 20) {
+        res.maintenanceDose = `${loadMg} mg`;
+        res.interval = "co 48h";
+      } else {
+        res.maintenanceDose = "Re-dosing tylko po spadku < 5 mg/L";
+        res.interval = "wg TDM";
+      }
+      res.infusionMode = "Wlew dożylny 30–60 min";
+      res.clinicalNotes = "Wstrząs septyczny i 'trzecia przestrzeń' rozcieńczają amikacynę — dawka 25 mg/kg zapobiega subterapii bakteriemii pałeczkami G(-).";
+    } else if (compoundId === "meropenem-compound") {
+      res.pkPdTarget = "%T > MIC = 100% (czas powyżej MIC)";
+      res.targetText = "U pacjentów krytycznie chorych celem jest 100% T > 4×MIC (utrzymanie stężenia wolnego leku stale powyżej MIC patogenu).";
+      res.loadingDose = "2000 mg i.v. w bolusie (lub wlew 30 min)";
+
+      if (phys.isArc) {
+        res.maintenanceDose = "2000 mg we wlewie przedłużonym 3–4h (lub wlew ciągły 4000–6000 mg/24h)";
+        res.interval = "co 8h";
+        res.infusionMode = "WLEW PRZEDŁUŻONY 3-4h (lub ciągły) — bezwzględnie wymagany przy ARC!";
+        res.arcAlert = "⚠️ ALARM ARC: Przy CrCl >= 130 mL/min bolus 1g q8h daje stężenie terapeutyczne przez zaledwie 35% doby! Konieczny wlew przedłużony 2g q8h.";
+      } else if (phys.isCrrt) {
+        res.maintenanceDose = "1000 mg we wlewie przedłużonym 3h";
+        res.interval = "co 8h lub co 12h (w zależności od efluentu >25 mL/kg/h)";
+        res.infusionMode = "Wlew przedłużony 3h";
+      } else if (phys.egfr >= 50) {
+        res.maintenanceDose = "1000 mg we wlewie 3h";
+        res.interval = "co 8h";
+        res.infusionMode = "Wlew przedłużony 3h";
+      } else if (phys.egfr >= 25) {
+        res.maintenanceDose = "1000 mg";
+        res.interval = "co 12h";
+        res.infusionMode = "Wlew przedłużony 3h";
+      } else {
+        res.maintenanceDose = "500 mg";
+        res.interval = "co 12h–24h";
+      }
+      res.clinicalNotes = "Meropenem jest wysoce hydrofilny i usuwany w CRRT (S=0.95). Poddawkowanie w CRRT jest częstszą przyczyną zgonu niż przedawkowanie!";
+    } else if (compoundId === "piperacillin-compound") {
+      res.pkPdTarget = "%T > MIC = 100%";
+      res.targetText = "Cel: stężenie wolnej piperacyliny stale powyżej MIC (16 mg/L dla Pseudomonas aeruginosa).";
+      res.loadingDose = "4.5 g (4500 mg) we wlewie 30 min";
+
+      if (phys.isArc) {
+        res.maintenanceDose = "4.5 g we wlewie 4h (lub wlew ciągły 16–18 g/24h)";
+        res.interval = "co 6h";
+        res.infusionMode = "WLEW PRZEDŁUŻONY 4h lub wlew ciągły 24h";
+        res.arcAlert = "⚠️ ALARM ARC: Klirens piperacyliny rośnie >2×. Standardowe bolusy prowadzą do niepowodzenia eradykacji Pseudomonas.";
+      } else if (phys.isCrrt) {
+        res.maintenanceDose = "4.5 g we wlewie 4h (lub 3.375 g q6h)";
+        res.interval = "co 8h";
+        res.infusionMode = "Wlew przedłużony 4h";
+      } else if (phys.egfr >= 50) {
+        res.maintenanceDose = "4.5 g we wlewie 4h";
+        res.interval = "co 8h";
+        res.infusionMode = "Wlew przedłużony 4h";
+      } else if (phys.egfr >= 20) {
+        res.maintenanceDose = "3.375 g";
+        res.interval = "co 8h";
+      } else {
+        res.maintenanceDose = "2.25 g";
+        res.interval = "co 8h–12h";
+      }
+      res.clinicalNotes = "Wlew przedłużony 4-godzinny zmniejsza śmiertelność w sepsie o 30% w porównaniu z bolusami 30-minutowymi.";
+    } else if (compoundId === "cefepime-compound") {
+      res.pkPdTarget = "%T > MIC = 100%";
+      res.targetText = "Cel: 100% T > MIC (optymalnie 100% T > 4×MIC).";
+      res.loadingDose = "2000 mg i.v. w bolusie";
+
+      if (phys.isArc) {
+        res.maintenanceDose = "2000 mg we wlewie przedłużonym 3–4h";
+        res.interval = "co 8h";
+        res.infusionMode = "Wlew przedłużony 3-4h";
+        res.arcAlert = "⚠️ ALARM ARC: Wymagana dawka 2g q8h we wlewie przedłużonym dla pokrycia szczepów wielolekoopornych.";
+      } else if (phys.isCrrt) {
+        res.maintenanceDose = "2000 mg we wlewie 3h (lub 1000 mg q8h)";
+        res.interval = "co 12h";
+      } else if (phys.egfr >= 50) {
+        res.maintenanceDose = "2000 mg";
+        res.interval = "co 8h–12h";
+      } else if (phys.egfr >= 30) {
+        res.maintenanceDose = "2000 mg";
+        res.interval = "co 24h";
+      } else {
+        res.maintenanceDose = "1000 mg";
+        res.interval = "co 24h";
+      }
+      res.clinicalNotes = "Ostrzeżenie przed encefalopatią cefepimową: kumulacja przy niewydolności nerek bez redukcji dawki wywołuje drgawki i śpiączkę.";
+    } else if (compoundId === "ceftriaxone-compound") {
+      res.pkPdTarget = "%T > MIC = 100%";
+      res.targetText = "Lek silnie wiązany z albuminą (95%). W sepsie i hipoalbuminemii frakcja wolna fu rośnie drastycznie.";
+      res.loadingDose = "2000 mg i.v.";
+
+      if (phys.alb < 2.5 || phys.isArc) {
+        res.maintenanceDose = "2000 mg";
+        res.interval = "co 12h (zamiast standardowego q24h!)";
+        res.infusionMode = "Wlew i.v. 30 min";
+        res.arcAlert = "⚠️ HIPOALBUMINEMIA & ARC: Spadek albuminy do " + phys.alb + " g/dL zwiększa frakcję wolną " + phys.fuShift + "×, co dramatycznie przyspiesza eliminację. Konieczne podawanie 2g co 12h.";
+      } else {
+        res.maintenanceDose = "2000 mg";
+        res.interval = "co 24h";
+      }
+      res.clinicalNotes = "Nie wymaga redukcji dawki w niewydolności nerek ze względu na podwójną eliminację nerkowo-żółciową.";
+    } else if (compoundId === "daptomycin-compound") {
+      const dMgKg = phys.egfr >= 30 ? 8.0 : 8.0;
+      const loadMg = Math.round((phys.tbw * dMgKg) / 50) * 50;
+      res.pkPdTarget = "AUC / MIC oraz Cmax / MIC";
+      res.targetText = "W sepsie i bakteriemii MRSA zalecane wysokie dawki 8–10 mg/kg/dobę.";
+      res.loadingDose = `${loadMg} mg i.v. (${dMgKg} mg/kg na TBW)`;
+      res.maintenanceDose = `${loadMg} mg`;
+      res.interval = (phys.egfr < 30 || phys.isCrrt) ? "co 48h (lub co 24h przy CRRT o wysokim efluencie)" : "co 24h";
+      res.infusionMode = "Wlew dożylny 30 minut";
+      res.clinicalNotes = "Ścisła kontrola kinazy fosfokreatynowej (CPK) co 3–4 dni z uwagi na ryzyko miopatii.";
+    } else if (compoundId === "colistin-compound") {
+      res.pkPdTarget = "AUC / MIC = 50–60 mg·h/L";
+      res.targetText = "Wąski indeks terapeutyczny kolistyny pomiędzy skutecznością a ostrą martwicą cewek (ATN).";
+      res.loadingDose = "9 000 000 j.m. (9 mln IU) CMS";
+      if (phys.isArc) {
+        res.maintenanceDose = "12 mln j.m./dobę (np. 4 mln j.m. q8h)";
+        res.interval = "co 8h";
+        res.arcAlert = "⚠️ ALARM ARC: Szybka eliminacja nerkowa CMS zmniejsza stężenie aktywnej kolistyny; wymagane 12 mln IU/dobę.";
+      } else if (phys.isCrrt) {
+        res.maintenanceDose = "6.5 – 9 mln j.m./dobę w 2 dawkach";
+        res.interval = "co 12h";
+      } else if (phys.egfr >= 50) {
+        res.maintenanceDose = "9 mln j.m./dobę (4.5 mln j.m. q12h)";
+        res.interval = "co 12h";
+      } else if (phys.egfr >= 30) {
+        res.maintenanceDose = "5.5 – 7.5 mln j.m./dobę";
+        res.interval = "co 12h";
+      } else {
+        res.maintenanceDose = "3 – 4.5 mln j.m./dobę";
+        res.interval = "co 12h–24h";
+      }
+      res.clinicalNotes = "CMS jest prolekiem wydalanym przez nerki. Wolna kolistyna odpowiada za efekt przeciwbakteryjny i neuro/nefrotoksyczność.";
+    } else {
+      // General Fallback
+      res.pkPdTarget = `fe = ${(prof.fe_unchanged * 100).toFixed(0)}%, Vd = ${vdNormal} L/kg`;
+      res.targetText = prof.toxic_renal_metabolites || "Brak dedykowanego modelu OIT dla tej substancji.";
+      res.loadingDose = "Standardowa dawka nasycająca wg ChPL / wytycznych";
+      res.maintenanceDose = phys.egfr < 30 ? (prof.egfr_30_15 || "Zredukować dawkę") : "100% dawki";
+      res.interval = "wg ChPL";
+      res.clinicalNotes = isHydro ? `Lek hydrofilny: przewodnienie zwiększa Vd o ${vdExpansionPct}%.` : "Lek lipofilny: mała wrażliwość Vd na bilans płynów.";
+    }
+
+    return res;
+  }
+
+  function renderIcuMiniPkCurveSvg(dosing, phys) {
+    const width = 480;
+    const height = 180;
+    const padL = 40;
+    const padR = 20;
+    const padT = 15;
+    const padB = 25;
+    const plotW = width - padL - padR;
+    const plotH = height - padT - padB;
+
+    let targetBandTop = 0.35;
+    let targetBandBottom = 0.65;
+    let curveColor = "#5ac8fa";
+    let targetLabel = "Strefa Docelowa (Target Window)";
+
+    if (dosing.compoundId === "vancomycin-compound") {
+      targetBandTop = 0.30;
+      targetBandBottom = 0.60;
+      targetLabel = "Cel AUC24 400-600 / Ctrough 15-20";
+    } else if (dosing.compoundId === "gentamicin-compound" || dosing.compoundId === "amikacin-compound") {
+      targetBandTop = 0.20;
+      targetBandBottom = 0.45;
+      targetLabel = "Cel Cmax / MIC ≥ 10";
+    } else {
+      targetBandTop = 0.35;
+      targetBandBottom = 0.70;
+      targetLabel = "Cel 100% T > MIC";
+    }
+
+    const yBandTop = padT + targetBandTop * plotH;
+    const yBandBottom = padT + targetBandBottom * plotH;
+    const bandH = yBandBottom - yBandTop;
+
+    // Simulate steady-state 24h curve points
+    const pts = [];
+    const nPoints = 30;
+    for (let i = 0; i <= nPoints; i++) {
+      const frac = i / nPoints;
+      const x = padL + frac * plotW;
+      // Dosing waveform
+      let yVal;
+      if (phys.isArc && (dosing.compoundId === "meropenem-compound" || dosing.compoundId === "vancomycin-compound")) {
+        // Fast clearance trough collapse
+        yVal = padT + (0.25 + 0.65 * Math.sin(frac * Math.PI * 2 + 1.2) ** 2) * plotH;
+      } else {
+        yVal = padT + (targetBandTop + 0.15 + 0.35 * Math.sin(frac * Math.PI * 2 + 1.0) ** 2) * plotH;
+      }
+      pts.push(`${i === 0 ? 'M' : 'L'} ${x.toFixed(1)} ${yVal.toFixed(1)}`);
+    }
+
+    return `
+      <svg viewBox="0 0 ${width} ${height}" style="width:100%;max-width:${width}px;height:auto;display:block;margin:0 auto">
+        <!-- Target Band -->
+        <rect x="${padL}" y="${yBandTop.toFixed(1)}" width="${plotW}" height="${bandH.toFixed(1)}" fill="rgba(52, 199, 89, 0.15)" stroke="rgba(52, 199, 89, 0.4)" stroke-dasharray="3,3" />
+        <text x="${padL + 6}" y="${(yBandTop + 12).toFixed(1)}" fill="#34c759" font-size="10" font-weight="700" font-family="system-ui, sans-serif">🎯 ${targetLabel}</text>
+
+        <!-- Subtherapeutic threshold -->
+        <line x1="${padL}" y1="${(padT + plotH * 0.82).toFixed(1)}" x2="${padL + plotW}" y2="${(padT + plotH * 0.82).toFixed(1)}" stroke="#ff453a" stroke-width="1" stroke-dasharray="2,2" opacity="0.7" />
+        <text x="${padL + plotW - 4}" y="${(padT + plotH * 0.82 - 3).toFixed(1)}" text-anchor="end" fill="#ff453a" font-size="9" font-family="system-ui, sans-serif">Próg subterapeutyczny (brak eradykacji)</text>
+
+        <!-- Time Ticks -->
+        <line x1="${padL}" y1="${padT + plotH}" x2="${padL + plotW}" y2="${padT + plotH}" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+        <text x="${padL}" y="${padT + plotH + 16}" fill="#94969c" font-size="10" font-family="system-ui, sans-serif">0h</text>
+        <text x="${padL + plotW * 0.5}" y="${padT + plotH + 16}" text-anchor="middle" fill="#94969c" font-size="10" font-family="system-ui, sans-serif">12h</text>
+        <text x="${padL + plotW}" y="${padT + plotH + 16}" text-anchor="end" fill="#94969c" font-size="10" font-family="system-ui, sans-serif">24h</text>
+
+        <!-- Concentration Curve -->
+        <path d="${pts.join(' ')}" fill="none" stroke="${curveColor}" stroke-width="2.2" />
+      </svg>
+    `;
+  }
+
+  function renderClinicalSuiteIcuPane() {
+    const phys = computeIcuPhysiome();
+    const dosing = computeIcuDrugDosing(csActiveCompoundId, phys);
+
+    // Update dynamic text badges
+    const arcBadge = $("csIcuArcBadge");
+    if (arcBadge) {
+      if (phys.isArc) {
+        arcBadge.textContent = "ARC: Hiperfiltracja (CrCl ≥ 130)";
+        arcBadge.className = "tag err";
+        arcBadge.style.color = "var(--color-error)";
+      } else if (phys.egfr < 30) {
+        arcBadge.textContent = "Niewydolność nerek (CrCl < 30)";
+        arcBadge.className = "tag warn";
+      } else {
+        arcBadge.textContent = "ARC: Prawidłowy";
+        arcBadge.className = "tag ok";
+      }
+    }
+
+    const crrtBadge = $("csIcuCrrtStatusBadge");
+    if (crrtBadge) {
+      if (phys.isCrrt) {
+        crrtBadge.textContent = `${phys.crrtModality.toUpperCase()} (${phys.crrtEffluent} mL/kg/h = ${phys.qEffluentLh} L/h)`;
+        crrtBadge.className = "tag ok";
+      } else {
+        crrtBadge.textContent = "Brak CRRT (nerki własne)";
+        crrtBadge.className = "tag";
+      }
+    }
+
+    const fluidValEl = $("csIcuFluidVal");
+    if (fluidValEl) fluidValEl.textContent = `+${phys.fluidL.toFixed(1)} L (Fluid Overload ${phys.fluidPct}%)`;
+
+    const egfrValEl = $("csIcuEgfrVal");
+    if (egfrValEl) egfrValEl.textContent = `${phys.egfr} mL/min${phys.isArc ? " (ARC Hiperfiltracja!)" : ""}`;
+
+    const albValEl = $("csIcuAlbuminVal");
+    if (albValEl) albValEl.textContent = `${phys.alb.toFixed(1)} g/dL (fu shift ~${phys.fuShift}×)`;
+
+    const effValEl = $("csIcuCrrtEffluentVal");
+    if (effValEl) effValEl.textContent = `${phys.crrtEffluent} mL/kg/h (~${phys.qEffluentLh} L/h)`;
+
+    // Habitus Badges
+    const habitusCont = $("csIcuHabitusBadges");
+    if (habitusCont) {
+      const bmiClass = phys.bmi >= 30 ? "tag err" : (phys.bmi >= 25 ? "tag warn" : "tag ok");
+      const foClass = phys.isSevereFluidOverload ? "tag err" : (phys.fluidPct >= 5 ? "tag warn" : "tag ok");
+      habitusCont.innerHTML = `
+        <span class="${bmiClass}" style="font-size:11px">BMI: ${phys.bmi} kg/m² ${phys.isObese ? '(Otyłość — dawkowanie wg ABW)' : ''}</span>
+        <span class="tag" style="font-size:11px">IBW (Devine): <b>${phys.ibw} kg</b></span>
+        ${phys.isObese ? `<span class="tag ok" style="font-size:11px">ABW (Skorygowana): <b>${phys.abw} kg</b></span>` : ''}
+        <span class="${foClass}" style="font-size:11px">Przewodnienie: <b>${phys.fluidPct}% TBW</b> ${phys.isSevereFluidOverload ? '⚠️ Capillary Leak!' : ''}</span>
+        <span class="tag" style="font-size:11px">Rozszerzenie Vd: <b>+${dosing.vdExpansionPct}%</b> (${dosing.vdBase}L → ${dosing.vdExpanded}L)</span>
+      `;
+    }
+
+    // Dosing Card
+    const dosingCont = $("csIcuDosingCard");
+    if (dosingCont) {
+      dosingCont.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+          <div>
+            <b style="font-size:14px">${esc(dosing.name)} — Zalecenia Dawkowania OIT &amp; TDM</b>
+            <div style="font-size:11.5px;color:var(--color-text-muted);margin-top:2px">
+              ${dosing.isCuratedIcu ? '<span class="tag ok" style="font-size:10.5px">Dedykowany Protokół OIT</span>' : '<span class="tag" style="font-size:10.5px">Estymacja ADME</span>'}
+              Waga do dawkowania: <b>${dosing.dosingWeight} kg</b> (${phys.isObese ? 'ABW' : (dosing.isHydrophilic ? 'IBW' : 'TBW')})
+            </div>
+          </div>
+          <button class="btn btn-sm btn-gold" id="csIcuLaunchPkSimBtn">Symulator PK ↗</button>
+        </div>
+
+        ${dosing.arcAlert ? `
+          <div class="pv-banner pv-banner-critical" style="margin:8px 0 6px 0">
+            <b>${esc(dosing.arcAlert)}</b>
+          </div>
+        ` : ''}
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
+          <div style="background:var(--color-surface-offset);padding:10px;border-radius:6px;border:1px solid var(--color-border)">
+            <div style="font-size:11px;text-transform:uppercase;color:var(--color-text-muted);font-weight:700">1. Dawka Nasycająca (Loading Dose)</div>
+            <div style="font-size:15px;font-weight:800;color:var(--color-primary);margin:4px 0">${esc(dosing.loadingDose)}</div>
+            <div style="font-size:11.5px;color:var(--color-text-muted)">Skorygowana o powiększoną objętość dystrybucji Vd (+${dosing.vdExpansionPct}% przez obrzęki/sepsę).</div>
+          </div>
+          <div style="background:var(--color-surface-offset);padding:10px;border-radius:6px;border:1px solid var(--color-border)">
+            <div style="font-size:11px;text-transform:uppercase;color:var(--color-text-muted);font-weight:700">2. Dawka Podtrzymująca &amp; Odstęp</div>
+            <div style="font-size:15px;font-weight:800;color:#34c759;margin:4px 0">${esc(dosing.maintenanceDose)}</div>
+            <div style="font-size:11.5px;color:var(--color-text-muted)">Odstęp: <b>${esc(dosing.interval)}</b> · ${esc(dosing.infusionMode)}</div>
+          </div>
+        </div>
+
+        <div style="background:var(--color-surface-offset);padding:8px 12px;border-radius:6px;border:1px solid var(--color-border);margin-top:8px;font-size:12px">
+          <b>Cel farmakokinetyczny (PK/PD Target):</b> <span style="color:var(--color-primary);font-weight:700">${esc(dosing.pkPdTarget)}</span><br>
+          <span style="color:var(--color-text-muted)">${esc(dosing.targetText)}</span>
+          ${dosing.clinicalNotes ? `<div style="margin-top:4px;color:var(--color-text)"><b>Komentarz kliniczny OIT:</b> ${esc(dosing.clinicalNotes)}</div>` : ''}
+        </div>
+      `;
+
+      const simBtn = $("csIcuLaunchPkSimBtn");
+      if (simBtn) {
+        simBtn.onclick = () => {
+          closeClinicalSuiteModal();
+          openPkSimulatorSplitPane(csActiveCompoundId, null, { egfr: phys.egfr, clMultiplier: phys.isArc ? 1.6 : (phys.egfr < 30 ? 0.35 : 1.0) });
+        };
+      }
+    }
+
+    // Mini PK Curve Card
+    const curveCont = $("csIcuPkCurveCard");
+    if (curveCont) {
+      curveCont.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <b style="font-size:13px">Krzywa Stężeń &amp; Okno Terapeutyczne OIT (24-godzinny profil stężeń)</b>
+          <span class="tag" style="font-size:11px">${phys.isArc ? 'Warunki ARC' : (phys.isCrrt ? 'Warunki CRRT' : 'Profil standardowy')}</span>
+        </div>
+        <div style="margin-top:6px">
+          ${renderIcuMiniPkCurveSvg(dosing, phys)}
+        </div>
+      `;
+    }
+
+    // Catalog Table of 10 ICU Antibiotics
+    const catCont = $("csIcuCatalogTableWrap");
+    if (catCont) {
+      const icuProfiles = (ORGAN_DATA.profiles || []).filter((p) => !!p.icu_pk);
+      catCont.innerHTML = `
+        <table class="cs-table">
+          <thead>
+            <tr>
+              <th>Antybiotyk OIT</th>
+              <th>Typ PK/PD</th>
+              <th>Vd (normalne)</th>
+              <th>Wiązanie z białkami</th>
+              <th>Ryzyko w ARC (CrCl ≥130)</th>
+              <th>Klirens w CRRT (Sc)</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${icuProfiles.map((p) => {
+              const icu = p.icu_pk || {};
+              const isSelected = p.compound_id === csActiveCompoundId;
+              return `
+                <tr style="${isSelected ? 'background:var(--color-surface-offset)' : ''}">
+                  <td><button class="pv-entity-link" data-cs-icu-pick="${esc(p.compound_id)}"><b>${esc(p.name)}</b></button></td>
+                  <td><span class="tag" style="font-size:10.5px">${esc(icu.pk_pd_target_type || '–')}</span></td>
+                  <td><b>${icu.vd_normal_l_kg || 0.3} L/kg</b></td>
+                  <td>${icu.protein_binding_pct || 0}%</td>
+                  <td style="max-width:220px;font-size:11px"><small>${esc(icu.arc_risk || '–')}</small></td>
+                  <td><b>Sc ≈ ${p.crrt_sieving || 0.8}</b></td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      `;
+
+      catCont.querySelectorAll("[data-cs-icu-pick]").forEach((btn) => {
+        btn.onclick = () => {
+          csActiveCompoundId = btn.dataset.csIcuPick;
+          const gSel = $("csGlobalCompoundSelect");
+          if (gSel) gSel.value = csActiveCompoundId;
+          renderClinicalSuiteIcuPane();
+        };
+      });
+    }
+
+    // Wire ICU Preset Buttons
+    document.querySelectorAll("[data-icu-preset]").forEach((btn) => {
+      btn.onclick = () => {
+        const pKey = btn.dataset.icuPreset;
+        if (pKey === "sepsis_arc") {
+          $("csIcuSexSelect").value = "M";
+          $("csIcuHeightInput").value = "180";
+          $("csIcuWeightInput").value = "75";
+          $("csIcuFluidSlider").value = "4.0";
+          $("csIcuEgfrSlider").value = "165";
+          $("csIcuAlbuminSlider").value = "2.5";
+          $("csIcuCrrtModalitySelect").value = "none";
+          $("csIcuCrrtEffluentSlider").value = "25";
+          csActiveCompoundId = "meropenem-compound";
+        } else if (pKey === "shock_aki") {
+          $("csIcuSexSelect").value = "M";
+          $("csIcuHeightInput").value = "170";
+          $("csIcuWeightInput").value = "80";
+          $("csIcuFluidSlider").value = "8.0";
+          $("csIcuEgfrSlider").value = "25";
+          $("csIcuAlbuminSlider").value = "1.8";
+          $("csIcuCrrtModalitySelect").value = "none";
+          $("csIcuCrrtEffluentSlider").value = "25";
+          csActiveCompoundId = "vancomycin-compound";
+        } else if (pKey === "crrt_anuria") {
+          $("csIcuSexSelect").value = "M";
+          $("csIcuHeightInput").value = "175";
+          $("csIcuWeightInput").value = "70";
+          $("csIcuFluidSlider").value = "5.0";
+          $("csIcuEgfrSlider").value = "10";
+          $("csIcuAlbuminSlider").value = "2.0";
+          $("csIcuCrrtModalitySelect").value = "cvvhdf";
+          $("csIcuCrrtEffluentSlider").value = "25";
+          csActiveCompoundId = "meropenem-compound";
+        } else if (pKey === "obese_icu") {
+          $("csIcuSexSelect").value = "F";
+          $("csIcuHeightInput").value = "172";
+          $("csIcuWeightInput").value = "135";
+          $("csIcuFluidSlider").value = "6.0";
+          $("csIcuEgfrSlider").value = "110";
+          $("csIcuAlbuminSlider").value = "2.8";
+          $("csIcuCrrtModalitySelect").value = "none";
+          $("csIcuCrrtEffluentSlider").value = "25";
+          csActiveCompoundId = "vancomycin-compound";
+        }
+        const gSel = $("csGlobalCompoundSelect");
+        if (gSel) gSel.value = csActiveCompoundId;
+        renderClinicalSuiteIcuPane();
+      };
+    });
+  }
+
   function populateCsGlobalCompoundSelect() {
     const gSel = $("csGlobalCompoundSelect");
     if (!gSel || gSel.options.length > 0) return;
     const priorityIds = new Set([
       ...(PGX_DATA.cpic_guidelines || []).map((g) => g.compound_id),
       ...(ORGAN_DATA.profiles || []).map((p) => p.compound_id),
-      ...(CONV_DATA.pet_hyperbolic_models || []).map((m) => m.compound_id)
+      ...(CONV_DATA.pet_hyperbolic_models || []).map((m) => m.compound_id),
+      "vancomycin-compound", "gentamicin-compound", "amikacin-compound", "tobramycin-compound",
+      "meropenem-compound", "piperacillin-compound", "cefepime-compound", "ceftriaxone-compound",
+      "daptomycin-compound", "colistin-compound"
     ]);
     const sorted = [...C].sort((a, b) => (priorityIds.has(b.id) - priorityIds.has(a.id)) || a.n.localeCompare(b.n));
     gSel.innerHTML = sorted.map((c) => `<option value="${esc(c.id)}">${priorityIds.has(c.id) ? "★ " : ""}${esc(c.n)}</option>`).join("");
   }
 
   function switchClinicalSuiteTab(tab) {
-    if (["pgx", "taper", "organ"].includes(tab)) csActiveTab = tab;
-    ["pgx", "taper", "organ"].forEach((t) => {
+    if (["pgx", "taper", "organ", "icu"].includes(tab)) csActiveTab = tab;
+    ["pgx", "taper", "organ", "icu"].forEach((t) => {
       const btn = $(`csTab${t.charAt(0).toUpperCase() + t.slice(1)}Btn`);
       const pane = $(`csPane${t.charAt(0).toUpperCase() + t.slice(1)}`);
       if (btn) {
@@ -13686,6 +14285,7 @@
     if (csActiveTab === "pgx") renderClinicalSuitePgxPane();
     else if (csActiveTab === "taper") renderClinicalSuiteTaperPane();
     else if (csActiveTab === "organ") renderClinicalSuiteOrganPane();
+    else if (csActiveTab === "icu") renderClinicalSuiteIcuPane();
   }
 
   function openClinicalSuiteModal(tab = null, compoundId = null) {
@@ -13719,7 +14319,7 @@
   }
   const csCloseBtn = $("clinicalSuiteModalClose");
   if (csCloseBtn) csCloseBtn.onclick = closeClinicalSuiteModal;
-  ["pgx", "taper", "organ"].forEach((t) => {
+  ["pgx", "taper", "organ", "icu"].forEach((t) => {
     const btn = $(`csTab${t.charAt(0).toUpperCase() + t.slice(1)}Btn`);
     if (btn) btn.onclick = () => switchClinicalSuiteTab(t);
   });
@@ -13750,6 +14350,11 @@
   ["csOrganEgfrSlider", "csOrganChildPughSelect", "csOrganAlbuminSlider", "csOrganPhenytoinInput"].forEach((id) => {
     const el = $(id);
     if (el) el.oninput = () => renderClinicalSuiteOrganPane();
+  });
+  ["csIcuSexSelect", "csIcuHeightInput", "csIcuWeightInput", "csIcuFluidSlider", "csIcuEgfrSlider", "csIcuAlbuminSlider", "csIcuCrrtModalitySelect", "csIcuCrrtEffluentSlider"].forEach((id) => {
+    const el = $(id);
+    if (el) el.oninput = () => renderClinicalSuiteIcuPane();
+    if (el && el.tagName === "SELECT") el.onchange = () => renderClinicalSuiteIcuPane();
   });
   const csCopyReportBtn = $("csCopyReportBtn");
   if (csCopyReportBtn) {
