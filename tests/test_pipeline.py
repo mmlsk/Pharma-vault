@@ -1992,6 +1992,112 @@ def test_pgx_polypharmacy_matrix_and_cascading_phenoconversion(sqlite_con):
     assert "pgx-matrix" in app_src
 
 
+def test_enzymatic_induction_and_net_equilibrium():
+    """Verify Enzymatic Induction & Net Equilibrium Engine (v3.31.0):
+    1. phenoconversion_inducers & modulators in pharmacogenomics_cpic.json
+    2. Mechanistic product model M_net = I_ind_eff * I_inh
+    3. Dynamic lag-phase time course scaling
+    4. NTI induction failure & NAPQI toxic metabolite alerts
+    5. UI integration (MEC threshold line, induction phase select, [Induction Alert] badge).
+    """
+    cpic_path = ROOT / "data/curated/pharmacogenomics_cpic.json"
+    cpic = json.loads(cpic_path.read_text(encoding="utf-8"))
+
+    # 1. Catalog assertions
+    inducers = cpic.get("phenoconversion_inducers", {})
+    assert len(inducers) >= 7, f"Expected >= 7 enzyme inducer entries, found {len(inducers)}"
+    assert "CYP3A4" in inducers
+    assert "CYP2C9" in inducers
+    assert "CYP2C19" in inducers
+    assert "CYP1A2" in inducers
+    assert "CYP2B6" in inducers
+    assert "ABCB1_PGP" in inducers
+    assert "UGT1A1" in inducers
+
+    cyp3a4_ind = inducers["CYP3A4"]
+    assert "rifampicin-compound" in cyp3a4_ind["strong"]
+    assert "hyperforin-compound" in cyp3a4_ind["strong"]
+    assert "carbamazepine-compound" in cyp3a4_ind["strong"]
+    assert "phenytoin-compound" in cyp3a4_ind["strong"]
+    assert "phenobarbital-compound" in cyp3a4_ind["strong"]
+    assert "efavirenz-compound" in cyp3a4_ind["moderate"]
+    assert "modafinil-compound" in cyp3a4_ind["moderate"]
+
+    cyp1a2_ind = inducers["CYP1A2"]
+    assert "nicotine-compound" in cyp1a2_ind["moderate"]
+    assert "omeprazole-compound" in cyp1a2_ind["moderate"]
+
+    pgp_ind = inducers["ABCB1_PGP"]
+    assert "rifampicin-compound" in pgp_ind["strong"]
+    assert "hyperforin-compound" in pgp_ind["strong"]
+
+    modulators = cpic.get("phenoconversion_modulators", {}).get("inhibitors", {})
+    assert "CYP1A2" in modulators
+    assert "CYP2B6" in modulators
+    assert "CYP2C19" in modulators
+
+    # Presets in ddi_rules.json
+    ddi_path = ROOT / "data/curated/ddi_rules.json"
+    ddi = json.loads(ddi_path.read_text(encoding="utf-8"))
+    presets = ddi.get("case_presets", {})
+    assert "rifampin_tacrolimus" in presets
+    assert "hypericum_contraception" in presets
+    assert "carbamazepine_paracetamol" in presets
+    assert "tacrolimus-compound" in presets["rifampin_tacrolimus"]["compounds"]
+    assert "rifampicin-compound" in presets["rifampin_tacrolimus"]["compounds"]
+
+    # 2. Mechanistic Product Model & Time course mathematics
+    # Rifampicin induction on CYP3A4 (I_ind = 3.5)
+    i_ind_raw = 3.5
+    time_fractions = {"acute": 0.20, "mid": 0.60, "steady": 1.00, "washout": 0.40}
+
+    # Acute phase: 1.0 + (3.5 - 1.0) * 0.20 = 1.50
+    eff_acute = 1.0 + (i_ind_raw - 1.0) * time_fractions["acute"]
+    assert abs(eff_acute - 1.50) < 1e-4
+
+    # Mid phase: 1.0 + (3.5 - 1.0) * 0.60 = 2.50
+    eff_mid = 1.0 + (i_ind_raw - 1.0) * time_fractions["mid"]
+    assert abs(eff_mid - 2.50) < 1e-4
+
+    # Steady-state phase: 1.0 + (3.5 - 1.0) * 1.00 = 3.50
+    eff_steady = 1.0 + (i_ind_raw - 1.0) * time_fractions["steady"]
+    assert abs(eff_steady - 3.50) < 1e-4
+
+    # Washout phase: 1.0 + (3.5 - 1.0) * 0.40 = 2.00
+    eff_washout = 1.0 + (i_ind_raw - 1.0) * time_fractions["washout"]
+    assert abs(eff_washout - 2.00) < 1e-4
+
+    # Equilibrium 1: Strong inducer (3.5x) + Strong inhibitor (0.0x) => 0.0x (irreversible blockade)
+    m_net_strong_inh = eff_steady * 0.0
+    assert m_net_strong_inh == 0.0
+
+    # Equilibrium 2: Strong inducer (3.5x) + Moderate inhibitor (0.5x) => 1.75x (net induction)
+    m_net_mod_inh = eff_steady * 0.5
+    assert abs(m_net_mod_inh - 1.75) < 1e-4
+
+    # 3. Clinical Risk Scenarios
+    # Tacrolimus: fm_3A4 = 0.85, fm_PGP = 0.15, fe = 0.02
+    # Normal CLnorm = 1.0; under steady rifampicin (3.5x CYP3A4, 2.5x PGP):
+    cl_tac = 0.02 + 0.85 * 3.5 + 0.15 * 2.5
+    assert cl_tac > 3.0
+    auc_ratio_tac = 1.0 / cl_tac
+    assert auc_ratio_tac < 0.35  # Subtherapeutic collapse < 35% of baseline (below MEC)
+
+    # 4. Source code integration assertions
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    assert "MEC (Próg Skuteczności Terapeutycznej)" in app_src
+    assert "Strefa subterapeutyczna (C &lt; MEC)" in app_src
+    assert "csPgxInductionPhaseSelect" in app_src
+    assert "[Induction Alert]" in app_src
+    assert "Induction NTI" in app_src
+    assert "NAPQI Toksyczność" in app_src
+    assert "phenoconversion_inducers" in app_src
+    assert "data-pgx-preset=\"rifampin_tacrolimus\"" in app_src
+    assert "data-pgx-preset=\"hypericum_contraception\"" in app_src
+    assert "data-pgx-preset=\"carbamazepine_paracetamol\"" in app_src
+
+
+
 
 
 

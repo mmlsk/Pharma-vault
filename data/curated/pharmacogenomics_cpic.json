@@ -1844,5 +1844,276 @@
         }
       }
     }
-  ]
+  ],
+  "phenoconversion_inducers": {
+    "CYP3A4": {
+      "strong": [
+        "rifampicin-compound",
+        "hyperforin-compound",
+        "carbamazepine-compound",
+        "phenytoin-compound",
+        "phenobarbital-compound",
+        "primidone-compound"
+      ],
+      "moderate": [
+        "efavirenz-compound",
+        "modafinil-compound",
+        "bosentan-compound"
+      ],
+      "weak": [
+        "dexamethasone-compound",
+        "prednisone-compound"
+      ]
+    },
+    "CYP2C9": {
+      "strong": [
+        "rifampicin-compound"
+      ],
+      "moderate": [
+        "carbamazepine-compound",
+        "phenytoin-compound",
+        "hyperforin-compound",
+        "phenobarbital-compound"
+      ],
+      "weak": []
+    },
+    "CYP2C19": {
+      "strong": [
+        "rifampicin-compound"
+      ],
+      "moderate": [
+        "carbamazepine-compound",
+        "hyperforin-compound",
+        "efavirenz-compound"
+      ],
+      "weak": []
+    },
+    "CYP1A2": {
+      "strong": [],
+      "moderate": [
+        "omeprazole-compound",
+        "carbamazepine-compound",
+        "phenobarbital-compound",
+        "nicotine-compound"
+      ],
+      "weak": []
+    },
+    "CYP2B6": {
+      "strong": [
+        "rifampicin-compound",
+        "phenobarbital-compound"
+      ],
+      "moderate": [
+        "efavirenz-compound",
+        "carbamazepine-compound"
+      ],
+      "weak": []
+    },
+    "SLCO1B1": {
+      "strong": [],
+      "moderate": [
+        "rifampicin-compound"
+      ],
+      "weak": []
+    },
+    "ABCB1_PGP": {
+      "strong": [
+        "rifampicin-compound",
+        "hyperforin-compound"
+      ],
+      "moderate": [
+        "carbamazepine-compound",
+        "phenytoin-compound"
+      ],
+      "weak": []
+    },
+    "UGT1A1": {
+      "strong": [
+        "rifampicin-compound"
+      ],
+      "moderate": [
+        "carbamazepine-compound",
+        "phenobarbital-compound"
+      ],
+      "weak": []
+    }
+  },
+  "phenoconversion_modulators": {
+    "inhibitors": {
+      "CYP1A2": {
+        "strong": [
+          "fluvoxamine-compound",
+          "ciprofloxacin-compound"
+        ],
+        "moderate": [
+          "amiodarone-compound"
+        ]
+      },
+      "CYP2B6": {
+        "strong": [
+          "ticlopidine-compound",
+          "clopidogrel-compound"
+        ],
+        "moderate": [
+          "voriconazole-compound"
+        ]
+      },
+      "CYP2C19": {
+        "strong": [
+          "fluvoxamine-compound",
+          "fluoxetine-compound",
+          "fluconazole-compound",
+          "omeprazole-compound",
+          "esomeprazole-compound",
+          "ticlopidine-compound"
+        ],
+        "moderate": [
+          "voriconazole-compound",
+          "amiodarone-compound"
+        ]
+      },
+      "CYP2C9": {
+        "strong": [
+          "fluconazole-compound",
+          "amiodarone-compound"
+        ],
+        "moderate": [
+          "valproate-compound",
+          "fluvoxamine-compound",
+          "voriconazole-compound"
+        ]
+      },
+      "CYP2D6": {
+        "strong": [
+          "fluoxetine-compound",
+          "paroxetine-compound",
+          "bupropion-compound",
+          "quinidine-compound",
+          "terbinafine-compound"
+        ],
+        "moderate": [
+          "duloxetine-compound",
+          "sertraline-compound",
+          "amiodarone-compound"
+        ]
+      },
+      "CYP3A4": {
+        "strong": [
+          "ketoconazole-compound",
+          "itraconazole-compound",
+          "clarithromycin-compound"
+        ],
+        "moderate": [
+          "erythromycin-compound",
+          "diltiazem-compound",
+          "verapamil-compound",
+          "fluconazole-compound"
+        ]
+      },
+      "SLCO1B1": {
+        "strong": [
+          "cyclosporine-compound",
+          "clarithromycin-compound",
+          "gemfibrozil-compound"
+        ],
+        "moderate": [
+          "verapamil-compound",
+          "amiodarone-compound"
+        ]
+      }
+    },
+    "inducers": {
+      "CYP3A4": {
+        "strong": [
+          "rifampicin-compound",
+          "hyperforin-compound",
+          "carbamazepine-compound",
+          "phenytoin-compound",
+          "phenobarbital-compound",
+          "primidone-compound"
+        ],
+        "moderate": [
+          "efavirenz-compound",
+          "modafinil-compound",
+          "bosentan-compound"
+        ],
+        "weak": [
+          "dexamethasone-compound",
+          "prednisone-compound"
+        ]
+      },
+      "CYP2C9": {
+        "strong": [
+          "rifampicin-compound"
+        ],
+        "moderate": [
+          "carbamazepine-compound",
+          "phenytoin-compound",
+          "hyperforin-compound",
+          "phenobarbital-compound"
+        ],
+        "weak": []
+      },
+      "CYP2C19": {
+        "strong": [
+          "rifampicin-compound"
+        ],
+        "moderate": [
+          "carbamazepine-compound",
+          "hyperforin-compound",
+          "efavirenz-compound"
+        ],
+        "weak": []
+      },
+      "CYP1A2": {
+        "strong": [],
+        "moderate": [
+          "omeprazole-compound",
+          "carbamazepine-compound",
+          "phenobarbital-compound",
+          "nicotine-compound"
+        ],
+        "weak": []
+      },
+      "CYP2B6": {
+        "strong": [
+          "rifampicin-compound",
+          "phenobarbital-compound"
+        ],
+        "moderate": [
+          "efavirenz-compound",
+          "carbamazepine-compound"
+        ],
+        "weak": []
+      },
+      "SLCO1B1": {
+        "strong": [],
+        "moderate": [
+          "rifampicin-compound"
+        ],
+        "weak": []
+      },
+      "ABCB1_PGP": {
+        "strong": [
+          "rifampicin-compound",
+          "hyperforin-compound"
+        ],
+        "moderate": [
+          "carbamazepine-compound",
+          "phenytoin-compound"
+        ],
+        "weak": []
+      },
+      "UGT1A1": {
+        "strong": [
+          "rifampicin-compound"
+        ],
+        "moderate": [
+          "carbamazepine-compound",
+          "phenobarbital-compound"
+        ],
+        "weak": []
+      }
+    }
+  }
 }

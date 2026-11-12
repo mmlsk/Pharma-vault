@@ -4529,44 +4529,81 @@
     } catch (_) {}
   }
 
-  function computePhenoconversionForGene(geneKey, stackIndices = null) {
+  function computePhenoconversionForGene(geneKey, stackIndices = null, timePhase = null) {
     const gMeta = (PGX_DATA.genes || {})[geneKey];
     const basePheno = patientPgxProfile[geneKey] || "NM";
     const phenoObj = (gMeta && gMeta.phenotypes) ? gMeta.phenotypes.find((p) => p.id === basePheno) : null;
     const baseAs = phenoObj ? (phenoObj.activity_score !== undefined ? phenoObj.activity_score : 2.0) : (basePheno === "PM" ? 0.0 : (basePheno === "IM" ? 0.75 : (basePheno === "UM" ? 2.5 : 2.0)));
 
     if (!gMeta || !gMeta.supports_phenoconversion) {
-      return { geneticPheno: basePheno, functionalPheno: basePheno, converted: false, inhibitors: [], factor: 1.0, baseAs, effAs: baseAs, multiplier: 1.0 };
+      return { geneticPheno: basePheno, functionalPheno: basePheno, converted: false, inhibitors: [], inducers: [], factor: 1.0, baseAs, effAs: baseAs, multiplier: 1.0, indFactor: 1.0, inhFactor: 1.0, isInduced: false, isInhibited: false, timePhase: "steady", fTime: 1.0 };
     }
 
-    const inhMap = (PGX_DATA.phenoconversion_inhibitors || {})[geneKey] || { strong: [], moderate: [] };
     const indices = stackIndices !== null ? stackIndices : [...state.stack];
     const stackIds = new Set(indices.map((i) => C[i]?.id).filter(Boolean));
-    const strongHits = (inhMap.strong || []).filter((cid) => stackIds.has(cid));
-    const modHits = (inhMap.moderate || []).filter((cid) => stackIds.has(cid));
-    const weakHits = (inhMap.weak || []).filter((cid) => stackIds.has(cid));
+    const curPhase = timePhase || state.inductionPhase || "steady";
+    const fTime = curPhase === "acute" ? 0.20 : (curPhase === "mid" ? 0.60 : (curPhase === "washout" ? 0.40 : 1.00));
+
+    // 1. Inhibitors
+    const inhMap = (PGX_DATA.phenoconversion_inhibitors || (PGX_DATA.phenoconversion_modulators && PGX_DATA.phenoconversion_modulators.inhibitors) || {})[geneKey] || { strong: [], moderate: [] };
+    const strongInhHits = (inhMap.strong || []).filter((cid) => stackIds.has(cid));
+    const modInhHits = (inhMap.moderate || []).filter((cid) => stackIds.has(cid));
+    const weakInhHits = (inhMap.weak || []).filter((cid) => stackIds.has(cid));
 
     const inhibitors = [
-      ...strongHits.map((id) => ({ id, potency: "strong", name: C[compById.get(id)]?.n || id, mult: 0.0 })),
-      ...modHits.map((id) => ({ id, potency: "moderate", name: C[compById.get(id)]?.n || id, mult: 0.5 })),
-      ...weakHits.map((id) => ({ id, potency: "weak", name: C[compById.get(id)]?.n || id, mult: 0.8 }))
+      ...strongInhHits.map((id) => ({ id, potency: "strong", name: C[compById.get(id)]?.n || id, mult: 0.0 })),
+      ...modInhHits.map((id) => ({ id, potency: "moderate", name: C[compById.get(id)]?.n || id, mult: 0.5 })),
+      ...weakInhHits.map((id) => ({ id, potency: "weak", name: C[compById.get(id)]?.n || id, mult: 0.8 }))
     ];
 
-    if (basePheno === "PM") {
-      return { geneticPheno: "PM", functionalPheno: "PM", converted: false, inhibitors, factor: 1.0, baseAs: 0.0, effAs: 0.0, multiplier: 1.0 };
-    }
-
-    // Cascading multiplication of residual activity
-    let multiplier = 1.0;
-    if (strongHits.length > 0) {
-      multiplier = 0.0;
+    let inhFactor = 1.0;
+    if (strongInhHits.length > 0) {
+      inhFactor = 0.0;
     } else {
       inhibitors.forEach((inh) => {
-        multiplier *= inh.mult;
+        inhFactor *= inh.mult;
       });
     }
-    multiplier = Math.max(0.0, Math.min(1.0, multiplier));
-    const effAs = +(baseAs * multiplier).toFixed(3);
+    inhFactor = Math.max(0.0, Math.min(1.0, inhFactor));
+
+    // 2. Inducers
+    const indMap = (PGX_DATA.phenoconversion_inducers || (PGX_DATA.phenoconversion_modulators && PGX_DATA.phenoconversion_modulators.inducers) || {})[geneKey] || { strong: [], moderate: [], weak: [] };
+    let strongIndHits = (indMap.strong || []).filter((cid) => stackIds.has(cid));
+    const modIndHits = (indMap.moderate || []).filter((cid) => stackIds.has(cid));
+    const weakIndHits = (indMap.weak || []).filter((cid) => stackIds.has(cid));
+
+    // St. John's Wort dietary trigger
+    if ((geneKey === "CYP3A4" || geneKey === "CYP2C19" || geneKey === "CYP2C9" || geneKey === "ABCB1_PGP") && state.patientDiet && state.patientDiet.has("st_johns_wort")) {
+      if (!strongIndHits.includes("hyperforin-compound") && !strongIndHits.includes("st_johns_wort_diet")) {
+        strongIndHits.push("st_johns_wort_diet");
+      }
+    }
+
+    const inducers = [
+      ...strongIndHits.map((id) => ({ id, potency: "strong", name: id === "st_johns_wort_diet" ? "Dziurawiec (Dieta/Zioła)" : (C[compById.get(id)]?.n || id), synMult: (id === "rifampicin-compound" ? 3.5 : 3.0) })),
+      ...modIndHits.map((id) => ({ id, potency: "moderate", name: C[compById.get(id)]?.n || id, synMult: 2.0 })),
+      ...weakIndHits.map((id) => ({ id, potency: "weak", name: C[compById.get(id)]?.n || id, synMult: 1.4 }))
+    ];
+
+    let maxIndFactor = 1.0;
+    if (inducers.length > 0) {
+      const sortedInd = [...inducers].sort((a, b) => b.synMult - a.synMult);
+      maxIndFactor = sortedInd[0].synMult;
+      for (let i = 1; i < sortedInd.length; i++) {
+        maxIndFactor = Math.min(4.0, maxIndFactor + 0.3 * (sortedInd[i].synMult - 1.0));
+      }
+    }
+    const effIndFactor = +(1.0 + (maxIndFactor - 1.0) * fTime).toFixed(3);
+
+    // 3. Mechanistic Net Multiplier: Indukcja x Inhibicja
+    let netMultiplier;
+    if (basePheno === "PM") {
+      netMultiplier = 0.0;
+    } else {
+      netMultiplier = +(effIndFactor * inhFactor).toFixed(3);
+    }
+
+    const effAs = +(baseAs * (basePheno === "PM" ? 0.0 : netMultiplier)).toFixed(3);
 
     let functionalPheno = basePheno;
     if (effAs <= 0.1) {
@@ -4585,15 +4622,23 @@
       functionalPheno,
       converted,
       inhibitors,
-      factor: multiplier,
+      inducers,
+      factor: netMultiplier,
+      multiplier: netMultiplier,
+      indFactor: effIndFactor,
+      inhFactor,
       baseAs,
       effAs,
-      multiplier
+      isInduced: effIndFactor > 1.05,
+      isInhibited: inhFactor < 0.95,
+      timePhase: curPhase,
+      fTime
     };
   }
 
-  function computePgxStackMatrix(stackIndices = null, egfrValue = null) {
+  function computePgxStackMatrix(stackIndices = null, egfrValue = null, timePhase = null) {
     const indices = stackIndices !== null ? stackIndices : [...state.stack];
+    const curPhase = timePhase || state.inductionPhase || "steady";
     let egfr = egfrValue;
     if (egfr === null || egfr === undefined) {
       const organSlider = $("csOrganEgfrSlider");
@@ -4606,8 +4651,14 @@
     const genes = ["CYP1A2", "CYP2B6", "CYP2C19", "CYP2C9", "CYP2D6", "CYP3A4", "SLCO1B1"];
     const geneState = {};
     genes.forEach((g) => {
-      geneState[g] = computePhenoconversionForGene(g, indices);
+      geneState[g] = computePhenoconversionForGene(g, indices, curPhase);
     });
+
+    const NTI_COMPOUNDS = new Set([
+      "tacrolimus-compound", "cyclosporine-compound", "apixaban-compound", "rivaroxaban-compound",
+      "warfarin-compound", "estradiol-compound", "clonazepam-compound", "phenytoin-compound",
+      "propafenone-compound", "digoxin-compound"
+    ]);
 
     const rows = [];
     indices.forEach((idx) => {
@@ -4658,7 +4709,7 @@
         if (k === "renal" || k === "other" || k === "biliary" || k === "glucuronidation" || k === "sulfation" || k.startsWith("HLA_")) return;
         if (typeof fraction !== "number" || fraction <= 0) return;
         accountedFm += fraction;
-        const gInfo = geneState[k] || computePhenoconversionForGene(k, indices);
+        const gInfo = geneState[k] || computePhenoconversionForGene(k, indices, curPhase);
         const asEff = gInfo.effAs;
         const clPart = fraction * (asEff / 2.0);
         totalClNorm += clPart;
@@ -4668,7 +4719,9 @@
           effAs: asEff,
           functionalPheno: gInfo.functionalPheno,
           converted: gInfo.converted,
-          clContr: clPart
+          clContr: clPart,
+          isInduced: gInfo.isInduced,
+          isInhibited: gInfo.isInhibited
         });
       });
 
@@ -4678,7 +4731,7 @@
         pathwayDetails.push({ name: "Inne / Pozawątrobowe", fraction: otherFraction, effAs: 2.0, clContr: otherFraction });
       }
 
-      totalClNorm = Math.max(0.05, Math.min(3.0, +totalClNorm.toFixed(3)));
+      totalClNorm = Math.max(0.05, Math.min(3.5, +totalClNorm.toFixed(3)));
       const aucRatio = +(1.0 / totalClNorm).toFixed(2);
 
       const sortedMetab = pathwayDetails.filter((p) => p.name !== "Inne / Pozawątrobowe").sort((a, b) => b.fraction - a.fraction);
@@ -4707,6 +4760,8 @@
       let riskTitle = "Prawidłowa eliminacja";
       let riskDesc = "Ekspozycja i klirens w granicach normy fizjologicznej.";
 
+      const isAutoInducer = (c.id === "carbamazepine-compound");
+
       if (isProdrug) {
         const actGene = primaryGene || (p1 ? p1.name : "CYP2D6");
         const actEffAs = geneState[actGene] ? geneState[actGene].effAs : 2.0;
@@ -4718,11 +4773,29 @@
           riskDesc = `Prolek nie może ulec bioaktywacji przez zablokowany ${actGene} (AS=${actEffAs}). Brak efektu terapeutycznego.`;
         } else if (actEffAs >= 2.3) {
           riskType = "prodrug_toxicity";
-          riskBadge = "Toksyczność Metabolitu";
+          riskBadge = "Eksplozja Aktywacji (UM)";
           riskColor = "var(--color-error)";
-          riskTitle = "Gwałtowna bioaktywacja (UM)!";
-          riskDesc = `Ultraszybki metabolizm generuje toksyczne stężenia aktywnego metabolitu w krótkim czasie.`;
+          riskTitle = "Gwałtowna bioaktywacja (UM/Indukcja)!";
+          riskDesc = `Zindukowany lub ultraszybki metabolizm generuje gwałtowny pik metabolitu czynnego.`;
         }
+      } else if (c.id === "acetaminophen-compound" && ((geneState["CYP3A4"] && geneState["CYP3A4"].isInduced) || (geneState["CYP1A2"] && geneState["CYP1A2"].isInduced))) {
+        riskType = "toxic_metabolite_explosion";
+        riskBadge = "Eksplozja Toksycznego NAPQI";
+        riskColor = "var(--color-error)";
+        riskTitle = "Ciężka hepatotoksyczność (NAPQI)!";
+        riskDesc = "Zindukowane izoenzymy CYP drastycznie przyspieszają powstawanie hepatotoksycznego NAPQI — ryzyko ostrej martwicy wątroby nawet przy dawkach <4g/d!";
+      } else if (NTI_COMPOUNDS.has(c.id) && totalClNorm >= 1.30) {
+        riskType = "nti_induction_failure";
+        riskBadge = "Krytyczne Załamanie AUC (NTI)";
+        riskColor = "var(--color-error)";
+        riskTitle = "Zagrożenie przełomu leczenia (NTI)!";
+        riskDesc = `Silna indukcja przyspiesza klirens (CLnorm=${totalClNorm.toFixed(2)}, AUC spada do ${Math.round(aucRatio*100)}%). Ryzyko: odrzucenie przeszczepu, zakrzepica, przełamanie antykoncepcji lub napad drgawkowy!`;
+      } else if (isAutoInducer && (geneState["CYP3A4"] && geneState["CYP3A4"].isInduced)) {
+        riskType = "auto_induction";
+        riskBadge = "Auto-indukcja CYP3A4";
+        riskColor = "var(--color-warning)";
+        riskTitle = "Auto-indukcja klirensu własnego";
+        riskDesc = "Karbamazepina indukuje własny metabolizm CYP3A4 (t½ skraca się z 36h do 12–15h po 2–3 tyg.). Wymaga monitorowania stężenia TDM.";
       } else {
         if (isBottleneckCollapse || totalClNorm <= 0.35) {
           riskType = "accumulation_toxicity";
@@ -4736,12 +4809,12 @@
           riskColor = "var(--color-warning)";
           riskTitle = "Zmniejszony klirens leku";
           riskDesc = `Klirens ${Math.round(totalClNorm*100)}%, ekspozycja AUC wzrasta ~${aucRatio}×. Zalecana ostrożność i kontrola dawkowania.`;
-        } else if (totalClNorm >= 1.40) {
+        } else if (totalClNorm >= 1.35) {
           riskType = "rapid_clearance";
-          riskBadge = "Szybki Klirens (UM)";
+          riskBadge = "Indukcja Klirensu (CL↑)";
           riskColor = "var(--color-warning)";
-          riskTitle = "Ryzyko stężenia subterapeutycznego";
-          riskDesc = `Przyspieszony klirens (CL=${totalClNorm}×, AUC spada do ${aucRatio}×) grozi brakiem skuteczności standardowej dawki.`;
+          riskTitle = "Przyspieszona eliminacja (Indukcja)";
+          riskDesc = `Klirens wzrasta do ${totalClNorm.toFixed(2)}×, AUC spada do ${Math.round(aucRatio*100)}%. Ryzyko obniżenia stężenia poniżej MEC.`;
         }
       }
 
@@ -4751,6 +4824,7 @@
         guideline: g,
         drugRole,
         isProdrug,
+        isAutoInducer,
         activeMetabolite,
         cpicLevel,
         primaryGene,
@@ -4772,10 +4846,14 @@
 
     return {
       egfr,
+      timePhase: curPhase,
       geneState,
       rows,
       hasBottleneck: rows.some((r) => r.isBottleneckCollapse),
-      hasProdrugFailure: rows.some((r) => r.riskType === "prodrug_failure")
+      hasProdrugFailure: rows.some((r) => r.riskType === "prodrug_failure"),
+      hasNtiInductionFailure: rows.some((r) => r.riskType === "nti_induction_failure"),
+      hasToxicMetaboliteExplosion: rows.some((r) => r.riskType === "toxic_metabolite_explosion"),
+      hasInductionAlert: rows.some((r) => r.riskType === "nti_induction_failure" || r.riskType === "toxic_metabolite_explosion" || r.riskType === "rapid_clearance")
     };
   }
 
@@ -5022,10 +5100,11 @@
       });
     }
 
-    // PGx Polypharmacy Matrix & Cascading Phenoconversion Bottlenecks
+    // PGx Polypharmacy Matrix & Cascading Phenoconversion Bottlenecks (v3.31.0 Induction & Net Equilibrium)
     const stackIndices = stackList.map((c) => compById.get(c.id)).filter((i) => i !== undefined);
     const pgxMatrix = computePgxStackMatrix(stackIndices);
     let hasPgxAlert = false;
+    let hasInductionAlert = false;
     pgxMatrix.rows.forEach((r) => {
       if (r.isBottleneckCollapse) {
         hasPgxAlert = true;
@@ -5053,6 +5132,35 @@
           clinical_consequence: "Brak stężenia metabolitu aktywnego — ryzyko niepowodzenia klinicznego (np. zakrzepica w stencie dla klopidogrelu, brak analgezji dla kodeiny).",
           monitoring: "Zamiana na lek aktywny bezpośrednio (prasugrel/tikagrelor zamiast klopidogrelu, buprenorfina/morfina zamiast kodeiny)."
         });
+      } else if (r.riskType === "nti_induction_failure") {
+        hasInductionAlert = true;
+        maxCyp = Math.max(maxCyp, 95);
+        collisions.push({
+          id: `pgx_nti_induction_${r.compound.id}`,
+          level: "danger",
+          vector: "cyp",
+          badge: "Induction NTI",
+          title_pl: `Krytyczne Załamanie AUC (Lek NTI): ${r.compound.n}`,
+          description_pl: `Masywna indukcja enzymów/transporterów zlikwidowała stężenie terapeutyczne leku o wąskim indeksie (CLnorm = ${r.clNorm.toFixed(2)}, AUC spada do ${(r.aucRatio * 100).toFixed(0)}%). Ryzyko odrzucenia przeszczepu, udaru niedokrwiennego, napadu drgawkowego lub nieplanowanej ciąży.`,
+          clinical_consequence: "Stężenie leku spada poniżej MEC (Minimal Effective Concentration). Zapaść kliniczna i utrata kontroli choroby.",
+          monitoring: "Częste oznaczanie stężenia we krwi (TDM), znaczne zwiększenie dawki (często 2-3×) lub natychmiastowe odstawienie induktora."
+        });
+      } else if (r.riskType === "toxic_metabolite_explosion") {
+        hasInductionAlert = true;
+        maxCyp = Math.max(maxCyp, 95);
+        collisions.push({
+          id: `pgx_toxic_napqi_${r.compound.id}`,
+          level: "danger",
+          vector: "cyp",
+          badge: "NAPQI Toksyczność",
+          title_pl: `Eksplozja Toksycznego Metabolitu (NAPQI): ${r.compound.n}`,
+          description_pl: `Indukcja szlaku bioaktywacji (CYP2E1/3A4/1A2) przekierowuje metabolizm paracetamolu na szlak hepatotoksycznego NAPQI. Przy wyczerpaniu rezerw glutationu grozi to ostrą martwicą hepatocytów nawet przy dawkach terapeutycznych.`,
+          clinical_consequence: "Ciężkie polekowe uszkodzenie wątroby (DILI), ostra niewydolność wątroby, konieczność podania N-acetylocysteiny.",
+          monitoring: "Ścisłe ograniczenie dawki paracetamolu (< 2 g/dobę), kontrola enzymów wątrobowych (ALT/AST), edukacja pacjenta."
+        });
+      } else if (r.riskType === "rapid_clearance") {
+        hasInductionAlert = true;
+        maxCyp = Math.max(maxCyp, 70);
       } else if (r.clNorm <= 0.40) {
         maxCyp = Math.max(maxCyp, 75);
       }
@@ -5102,6 +5210,9 @@
 
     if (hasPgxAlert) {
       statusText = `${statusText} [PGx Alert]`;
+    }
+    if (hasInductionAlert) {
+      statusText = `${statusText} [Induction Alert]`;
     }
 
     const critCount = collisions.filter((c) =>c.level === "danger").length;
@@ -6307,11 +6418,12 @@
       deltaAucPct,
       rac,
       racMod,
+      clMultiplier: typeof opts.clMultiplier === "number" ? opts.clMultiplier : null,
       alphaMod: Math.round(alphaMod * 10000) / 10000,
       betaMod: Math.round(betaMod * 10000) / 10000,
       tHalfAlphaMod: Math.round((Math.LN2 / alphaMod) * 1000) / 1000,
       tHalfBetaMod: Math.round((Math.LN2 / betaMod) * 100) / 100,
-      hasModification: phenotype !== "EM" || egfr !== 100
+      hasModification: phenotype !== "EM" || egfr !== 100 || (typeof opts.clMultiplier === "number" && Math.abs(opts.clMultiplier - 1.0) > 0.01)
     };
   }
 
@@ -6439,6 +6551,14 @@
 
         <!-- Area under curve (AUC) -->
         <path d="${areaC1Base}" fill="url(#${chartId}_gradA)" />
+
+        <!-- Subtherapeutic Zone & MEC Line (v3.31.0 Enzymatic Induction Engine) -->
+        ${(simA.hasModification && (simA.deltaAucPct <= -25 || (simA.clMultiplier && simA.clMultiplier >= 1.30) || simA.phenotype === 'UM' || opts.showMec)) ? `
+          <rect x="${padL}" y="${getY(30).toFixed(1)}" width="${plotW}" height="${Math.max(0, padT + plotH - getY(30)).toFixed(1)}" fill="rgba(255, 69, 58, 0.08)" />
+          <line x1="${padL}" y1="${getY(30).toFixed(1)}" x2="${padL + plotW}" y2="${getY(30).toFixed(1)}" stroke="#ff453a" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.85" />
+          <text x="${padL + plotW - 4}" y="${(getY(30) - 4).toFixed(1)}" text-anchor="end" fill="#ff453a" font-size="10" font-weight="600" font-family="system-ui, -apple-system, sans-serif">MEC (Próg Skuteczności Terapeutycznej)</text>
+          <text x="${padL + 6}" y="${(getY(30) + 12).toFixed(1)}" text-anchor="start" fill="#ff453a" font-size="9" opacity="0.85" font-family="system-ui, -apple-system, sans-serif">⚠️ Strefa subterapeutyczna (C &lt; MEC)</text>
+        ` : ""}
 
         <!-- C2 Peripheral Tissue curve -->
         <path d="${pathC2Base}" fill="none" stroke="#ff9500" stroke-width="${isMini ? '1.2' : '1.8'}" stroke-dasharray="4,3" opacity="0.85" />
@@ -12677,21 +12797,30 @@
       };
     });
 
-    const conversions = genes.map((g) => ({ gene: g.gene, ...computePhenoconversionForGene(g.gene) })).filter((x) => x.converted);
+    const conversions = genes.map((g) => ({ gene: g.gene, ...computePhenoconversionForGene(g.gene) })).filter((x) => x.converted || x.isInhibited || x.isInduced);
     if (conversions.length) {
       bannerCont.innerHTML = `
         <div class="pv-banner pv-banner-critical" style="margin:0">
-          <b>Wykryto Fenokonwersję Farmakokinetyczną w Twoim Stacku (${conversions.length} izoenzymy)!</b>
+          <b>Wykryto Modulację Enzymatyczną i Fenokonwersję w Twoim Stacku (${conversions.length} izoenzymy/transportery)!</b>
           <div style="margin-top:4px;font-size:12.5px">
-            ${conversions.map((c) => `• <b>${esc(c.gene)}</b>: genotyp <code>${esc(c.geneticPheno)}</code> ulega funkcjonalnej konwersji do <b><code>${esc(c.functionalPheno)}</code></b> przez obecny w Stacku inhibitor: <b>${c.inhibitors.map((i) => `${esc(i.name)} (${i.potency === "strong" ? "silny AS×0.0" : "umiarkowany AS×0.5"})`).join(", ")}</b>.`).join("<br>")}
+            ${conversions.map((c) => {
+              const details = [];
+              if (c.inhibitors && c.inhibitors.length) {
+                details.push(`Inhibicja: <b>${c.inhibitors.map((i) => `${esc(i.name)} (${i.potency === "strong" ? "silny AS×0.0" : "umiarkowany AS×0.5"})`).join(", ")}</b>`);
+              }
+              if (c.inducers && c.inducers.length) {
+                details.push(`Indukcja: <b>${c.inducers.map((i) => `${esc(i.name)} (+${(i.factor - 1).toFixed(1)}× ${i.mechanism || ""})`).join(", ")}</b>`);
+              }
+              return `• <b>${esc(c.gene)}</b>: genotyp <code>${esc(c.geneticPheno)}</code> ulega modulacji do <b><code>${esc(c.functionalPheno)}</code></b> (Mnet = ${c.multiplier.toFixed(2)}×) przez: ${details.join(" · ")}.`;
+            }).join("<br>")}
           </div>
         </div>
       `;
     } else {
       bannerCont.innerHTML = `
         <div class="pv-banner pv-banner-info" style="margin:0">
-          <b>Status Fenokonwersji Stacka: Brak aktywnej blokady CYP2D6 / CYP2C19 / CYP2C9 / OATP1B1</b>
-          <div style="font-size:12px;margin-top:3px">Fenotyp funkcjonalny pacjenta odpowiada bezpośrednio profilowi genetycznemu. Dodaj np. fluoksetynę, paroksetynę, bupropion, flukonazol lub amiodaron do Stacka, aby zasymulować fenokonwersję.</div>
+          <b>Status Modulacji Enzymatycznej Stacka: Brak aktywnej inhibicji lub indukcji CYP/P-gp/OATP1B1</b>
+          <div style="font-size:12px;margin-top:3px">Fenotyp funkcjonalny pacjenta odpowiada bezpośrednio profilowi genetycznemu. Dodaj np. rifampicynę, dziurawiec, karbamazepinę (induktory) lub fluoksetynę, flukonazol, ketokonazol (inhibitory) do Stacka, aby zasymulować wypadkowy stan równowagi.</div>
         </div>
       `;
     }
@@ -12743,8 +12872,9 @@
     // Render Multi-drug Stack Matrix
     if (matrixCardCont) {
       const currentEgfr = state.patientEgfr !== undefined ? state.patientEgfr : (parseFloat($("csOrganEgfrSlider")?.value) || 100);
+      const currentPhase = state.inductionPhase || "steady";
       const stackIndices = [...state.stack];
-      const matrixData = computePgxStackMatrix(stackIndices, currentEgfr);
+      const matrixData = computePgxStackMatrix(stackIndices, currentEgfr, currentPhase);
 
       let contentHtml = "";
       if (stackIndices.length === 0) {
@@ -12753,32 +12883,76 @@
             <div>
               <b style="font-size:13.5px">Wielolekowa Matryca PGx &amp; Kaskadowa Fenokonwersja Stacka (N×M Pathways Matrix)</b>
               <div style="font-size:12px;color:var(--color-text-muted);margin-top:2px">
-                Twój Stack jest pusty. Dodaj substancje do Stacka lub załaduj kliniczny zestaw demonstracyjny, aby obliczyć wypadkowy klirens (CLnorm), przesunięcie AUC i wykryć załamania wąskich gardeł metabolicznych.
+                Twój Stack jest pusty. Dodaj substancje do Stacka lub załaduj kliniczny zestaw demonstracyjny, aby obliczyć wypadkowy klirens (CLnorm), przesunięcie AUC i symulować wypadkową inhibicję vs indukcję.
               </div>
             </div>
           </div>
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
-            <button class="btn btn-sm btn-gold" data-pgx-preset="cardio">Załaduj Zestaw Kardiologiczny (Metoprolol + Amiodaron + Klopidogrel)</button>
-            <button class="btn btn-sm" data-pgx-preset="psych">Załaduj Zestaw Psychiatryczny (Escitalopram + Bupropion + Arypiprazol)</button>
-            <button class="btn btn-sm" data-pgx-preset="pain">Załaduj Zestaw Przeciwbólowy (Tramadol + Paroksetyna + Ibuprofen)</button>
+            <button class="btn btn-sm btn-gold" data-pgx-preset="cardio">Kardiologiczny (Metoprolol + Amiodaron + Klopidogrel)</button>
+            <button class="btn btn-sm" data-pgx-preset="psych">Psychiatryczny (Escitalopram + Bupropion + Arypiprazol)</button>
+            <button class="btn btn-sm" data-pgx-preset="pain">Przeciwbólowy (Tramadol + Paroksetyna + Ibuprofen)</button>
+            <button class="btn btn-sm btn-gold" data-pgx-preset="rifampin_tacrolimus">Indukcja NTI (Rifampicyna + Takrolimus)</button>
+            <button class="btn btn-sm" data-pgx-preset="hypericum_contraception">Indukcja Antykoncepcji (Dziurawiec + Estradiol)</button>
+            <button class="btn btn-sm" data-pgx-preset="carbamazepine_paracetamol">Indukcja NAPQI (Karbamazepina + Paracetamol)</button>
           </div>
         `;
       } else {
         const genePills = Object.entries(matrixData.geneState).map(([gName, gVal]) => {
-          const isReduced = gVal.multiplier < 1.0;
-          const bgCol = gVal.multiplier === 0.0 ? "var(--color-error)" : (isReduced ? "var(--color-warning)" : "var(--color-surface-offset)");
-          const textCol = isReduced ? "#fff" : "var(--color-text)";
+          const isInduced = gVal.multiplier > 1.05;
+          const isInhibited = gVal.multiplier < 0.95;
+          let bgCol = "var(--color-surface-offset)";
+          let textCol = "var(--color-text)";
+          if (gVal.multiplier === 0.0) {
+            bgCol = "var(--color-error)";
+            textCol = "#fff";
+          } else if (isInhibited) {
+            bgCol = "rgba(255, 69, 58, 0.25)";
+            textCol = "var(--color-error)";
+          } else if (isInduced) {
+            bgCol = "rgba(52, 199, 89, 0.25)";
+            textCol = "#30d158";
+          }
+          const parts = [];
+          if (gVal.inducers.length) parts.push(`Indukcja: ${gVal.inducers.map(x => `${x.name} (+${(x.factor - 1).toFixed(1)}×)`).join(", ")}`);
+          if (gVal.inhibitors.length) parts.push(`Inhibicja: ${gVal.inhibitors.map(x => `${x.name} (${x.potency})`).join(", ")}`);
+          const title = parts.length ? parts.join(" | ") : "Brak modulatora";
+          const dirLabel = isInduced ? ` [↑ ${(gVal.multiplier * 100).toFixed(0)}%]` : (isInhibited ? ` [↓ ${(gVal.multiplier * 100).toFixed(0)}%]` : "");
+
           return `
-            <span class="tag" style="background:${bgCol};color:${textCol};font-size:11px" title="${gVal.inhibitors.length ? `Inhibitory: ${gVal.inhibitors.map(x=>`${x.name} (${x.potency})`).join(', ')}` : 'Brak inhibitora'}">
-              ${gName}: <b>AS ${gVal.effAs}</b> (${gVal.functionalPheno})${gVal.converted ? ` [↓ ${(gVal.multiplier*100).toFixed(0)}%]` : ''}
+            <span class="tag" style="background:${bgCol};color:${textCol};font-size:11px" title="${esc(title)}">
+              ${gName}: <b>AS ${gVal.effAs}</b> (${gVal.functionalPheno})${dirLabel}
             </span>
           `;
         }).join(" ");
 
-        let bottleneckBanner = "";
+        const alertBanners = [];
+        if (matrixData.hasNtiInductionFailure) {
+          const ntiDrugs = matrixData.rows.filter(r => r.riskType === "nti_induction_failure");
+          alertBanners.push(`
+            <div class="pv-banner pv-banner-critical" style="margin:0 0 10px 0">
+              <b>⚠️ KRYTYCZNY ALARM INDUKCJI: Załamanie Stężenia Leku NTI (Wąski Indeks Terapeutyczny)!</b>
+              <div style="font-size:12px;margin-top:3px">
+                Dla leków: <b>${ntiDrugs.map(r => `${r.compound.n} (${r.riskDesc}, AUC ↓ ${(r.aucRatio * 100).toFixed(0)}%)`).join(", ")}</b>.
+                Silna indukcja CYP3A4 / P-gp obniża stężenie osoczowe poniżej MEC (Minimal Effective Concentration). Grozi odrzuceniem przeszczepu, udarem niedokrwiennym lub przerwaniem antykoncepcji!
+              </div>
+            </div>
+          `);
+        }
+        if (matrixData.hasToxicMetaboliteExplosion) {
+          const toxDrugs = matrixData.rows.filter(r => r.riskType === "toxic_metabolite_explosion");
+          alertBanners.push(`
+            <div class="pv-banner pv-banner-critical" style="margin:0 0 10px 0">
+              <b>⚠️ ALARM TOKSYCZNOŚCI: Eksplozja Hepatotoksycznego NAPQI!</b>
+              <div style="font-size:12px;margin-top:3px">
+                Dla leków: <b>${toxDrugs.map(r => `${r.compound.n} (${r.riskDesc})`).join(", ")}</b>.
+                Indukcja szlaków bioaktywacji (CYP2E1/3A4/1A2) przekierowuje metabolizm na szlak toksyczny. Wyczerpanie rezerw glutationu grozi ostrą martwicą wątroby!
+              </div>
+            </div>
+          `);
+        }
         if (matrixData.hasBottleneck) {
           const collDrugs = matrixData.rows.filter(r => r.isBottleneckCollapse);
-          bottleneckBanner = `
+          alertBanners.push(`
             <div class="pv-banner pv-banner-critical" style="margin:0 0 10px 0">
               <b>⚠️ ALARM KLINICZNY: Wykryto Załamanie Wąskiego Gardła Metabolicznego (Bottleneck Collapse)!</b>
               <div style="font-size:12px;margin-top:3px">
@@ -12786,10 +12960,10 @@
                 Główny i rezerwowy szlak eliminacji zostały jednocześnie zablokowane przez kombinację fenotypu genetycznego i inhibitorów w Stacku!
               </div>
             </div>
-          `;
+          `);
         } else if (matrixData.hasProdrugFailure) {
           const failDrugs = matrixData.rows.filter(r => r.riskType === "prodrug_failure");
-          bottleneckBanner = `
+          alertBanners.push(`
             <div class="pv-banner pv-banner-critical" style="margin:0 0 10px 0">
               <b>⚠️ OSTRZEŻENIE: Utrata Skuteczności Terapeutycznej Proleku!</b>
               <div style="font-size:12px;margin-top:3px">
@@ -12797,7 +12971,7 @@
                 Zablokowanie enzymu aktywującego uniemożliwia wytworzenie metabolitu czynnego.
               </div>
             </div>
-          `;
+          `);
         }
 
         const tableRows = matrixData.rows.map((r) => {
@@ -12815,7 +12989,7 @@
           const clColor = r.clNorm <= 0.35 ? "var(--color-error)" : (r.clNorm <= 0.7 ? "var(--color-warning)" : "var(--color-success)");
 
           return `
-            <tr style="${r.isBottleneckCollapse || r.riskType === 'prodrug_failure' ? 'background:rgba(255, 59, 48, 0.08)' : ''}">
+            <tr style="${r.isBottleneckCollapse || r.riskType === 'prodrug_failure' || r.riskType === 'nti_induction_failure' || r.riskType === 'toxic_metabolite_explosion' ? 'background:rgba(255, 59, 48, 0.08)' : ''}">
               <td>
                 <button class="pv-entity-link" data-cs-pick-cid="${esc(r.compound.id)}"><b>${esc(r.compound.n)}</b></button>
               </td>
@@ -12845,21 +13019,32 @@
         contentHtml = `
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
             <div>
-              <b style="font-size:13.5px">Wielolekowa Matryca PGx &amp; Kaskadowa Fenokonwersja Stacka (${matrixData.rows.length} substancji)</b>
+              <b style="font-size:13.5px">Wielolekowa Matryca PGx &amp; Kaskadowa Równowaga Inhibicja/Indukcja (${matrixData.rows.length} substancji)</b>
               <div style="font-size:11.5px;color:var(--color-text-muted);margin-top:2px">
-                Wspólna analiza frakcji metabolicznych (fm), klirensu nerkowego (fe) oraz kaskadowego mnożenia resztkowej aktywności izoenzymów.
+                Wspólna analiza frakcji eliminacji (fm, fe) oraz iloczynu współczynników indukcji ($I_{\\text{ind}}$) i inhibicji ($I_{\\text{inh}}$).
               </div>
             </div>
-            <div style="display:flex;align-items:center;gap:10px;background:var(--color-surface-offset);padding:4px 10px;border-radius:6px;border:1px solid var(--color-border)">
-              <label for="csPgxMatrixEgfrSlider" style="font-size:11.5px;font-weight:600">eGFR (nerki): <strong id="csPgxMatrixEgfrVal">${currentEgfr} mL/min</strong></label>
-              <input type="range" id="csPgxMatrixEgfrSlider" min="10" max="130" step="5" value="${currentEgfr}" style="width:110px" />
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <div style="display:flex;align-items:center;gap:6px;background:var(--color-surface-offset);padding:4px 8px;border-radius:6px;border:1px solid var(--color-border)">
+                <label for="csPgxInductionPhaseSelect" style="font-size:11px;font-weight:600">Czas indukcji:</label>
+                <select id="csPgxInductionPhaseSelect" class="cs-select" style="font-size:11px;padding:2px 4px">
+                  <option value="acute" ${currentPhase === "acute" ? "selected" : ""}>Faza ostra (dni 1–3, 20%)</option>
+                  <option value="mid" ${currentPhase === "mid" ? "selected" : ""}>Faza narastania (dzień 7, 60%)</option>
+                  <option value="steady" ${currentPhase === "steady" ? "selected" : ""}>Stan stacjonarny (dni 14+, 100%)</option>
+                  <option value="washout" ${currentPhase === "washout" ? "selected" : ""}>Wypłukiwanie / odstawienie (40%)</option>
+                </select>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;background:var(--color-surface-offset);padding:4px 10px;border-radius:6px;border:1px solid var(--color-border)">
+                <label for="csPgxMatrixEgfrSlider" style="font-size:11.5px;font-weight:600">eGFR (nerki): <strong id="csPgxMatrixEgfrVal">${currentEgfr} mL/min</strong></label>
+                <input type="range" id="csPgxMatrixEgfrSlider" min="10" max="130" step="5" value="${currentEgfr}" style="width:100px" />
+              </div>
             </div>
           </div>
           <div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center;padding:6px 0">
             <span style="font-size:11px;color:var(--color-text-muted);font-weight:600">Stan enzymów w Stacku:</span>
             ${genePills}
           </div>
-          ${bottleneckBanner}
+          ${alertBanners.join("")}
           <div style="overflow-x:auto">
             <table class="cs-table">
               <thead>
@@ -12878,10 +13063,27 @@
               </tbody>
             </table>
           </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;padding-top:6px;border-top:1px dashed var(--color-border)">
+            <span style="font-size:11px;color:var(--color-text-muted);align-self:center;font-weight:600">Szybkie zestawy:</span>
+            <button class="btn btn-sm" data-pgx-preset="rifampin_tacrolimus">Rifampicyna + Takrolimus</button>
+            <button class="btn btn-sm" data-pgx-preset="hypericum_contraception">Dziurawiec + Estradiol</button>
+            <button class="btn btn-sm" data-pgx-preset="carbamazepine_paracetamol">Karbamazepina + Paracetamol</button>
+            <button class="btn btn-sm" data-pgx-preset="cardio">Kardio</button>
+            <button class="btn btn-sm" data-pgx-preset="psych">Psych</button>
+            <button class="btn btn-sm" data-pgx-preset="pain">Przeciwbólowy</button>
+          </div>
         `;
       }
 
       matrixCardCont.innerHTML = contentHtml;
+
+      const indPhaseSel = $("csPgxInductionPhaseSelect");
+      if (indPhaseSel) {
+        indPhaseSel.onchange = () => {
+          state.inductionPhase = indPhaseSel.value;
+          renderClinicalSuitePgxPane();
+        };
+      }
 
       const egfrSlider = $("csPgxMatrixEgfrSlider");
       if (egfrSlider) {
@@ -12912,6 +13114,21 @@
             });
           } else if (preset === "pain") {
             ["tramadol-compound", "paroxetine-compound", "ibuprofen-compound"].forEach(id => {
+              const idx = compById.get(id);
+              if (idx !== undefined) state.stack.add(idx);
+            });
+          } else if (preset === "rifampin_tacrolimus") {
+            ["rifampicin-compound", "tacrolimus-compound"].forEach(id => {
+              const idx = compById.get(id);
+              if (idx !== undefined) state.stack.add(idx);
+            });
+          } else if (preset === "hypericum_contraception") {
+            ["hyperforin-compound", "estradiol-compound"].forEach(id => {
+              const idx = compById.get(id);
+              if (idx !== undefined) state.stack.add(idx);
+            });
+          } else if (preset === "carbamazepine_paracetamol") {
+            ["carbamazepine-compound", "acetaminophen-compound"].forEach(id => {
               const idx = compById.get(id);
               if (idx !== undefined) state.stack.add(idx);
             });

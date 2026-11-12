@@ -1,94 +1,205 @@
 {
   "enzyme_profiles": {
     "fluoxetine-compound": {
-      "inhibits": [{ "enzyme": "CYP2D6", "potency": "strong" }, { "enzyme": "CYP2C19", "potency": "moderate" }],
+      "inhibits": [
+        {
+          "enzyme": "CYP2D6",
+          "potency": "strong"
+        },
+        {
+          "enzyme": "CYP2C19",
+          "potency": "moderate"
+        }
+      ],
       "induces": [],
-      "substrate_of": ["CYP2D6", "CYP2C9", "CYP3A4"]
+      "substrate_of": [
+        "CYP2D6",
+        "CYP2C9",
+        "CYP3A4"
+      ]
     },
     "paroxetine-compound": {
-      "inhibits": [{ "enzyme": "CYP2D6", "potency": "strong" }],
+      "inhibits": [
+        {
+          "enzyme": "CYP2D6",
+          "potency": "strong"
+        }
+      ],
       "induces": [],
-      "substrate_of": ["CYP2D6"]
+      "substrate_of": [
+        "CYP2D6"
+      ]
     },
     "sertraline-compound": {
-      "inhibits": [{ "enzyme": "CYP2D6", "potency": "weak" }],
+      "inhibits": [
+        {
+          "enzyme": "CYP2D6",
+          "potency": "weak"
+        }
+      ],
       "induces": [],
-      "substrate_of": ["CYP2B6", "CYP2C19", "CYP3A4"]
+      "substrate_of": [
+        "CYP2B6",
+        "CYP2C19",
+        "CYP3A4"
+      ]
     },
     "citalopram-compound": {
       "inhibits": [],
       "induces": [],
-      "substrate_of": ["CYP2C19", "CYP3A4", "CYP2D6"]
+      "substrate_of": [
+        "CYP2C19",
+        "CYP3A4",
+        "CYP2D6"
+      ]
     },
     "escitalopram-compound": {
       "inhibits": [],
       "induces": [],
-      "substrate_of": ["CYP2C19", "CYP3A4"]
+      "substrate_of": [
+        "CYP2C19",
+        "CYP3A4"
+      ]
     },
     "venlafaxine-compound": {
       "inhibits": [],
       "induces": [],
-      "substrate_of": ["CYP2D6", "CYP3A4"]
+      "substrate_of": [
+        "CYP2D6",
+        "CYP3A4"
+      ]
     },
     "duloxetine-compound": {
-      "inhibits": [{ "enzyme": "CYP2D6", "potency": "moderate" }],
+      "inhibits": [
+        {
+          "enzyme": "CYP2D6",
+          "potency": "moderate"
+        }
+      ],
       "induces": [],
-      "substrate_of": ["CYP1A2", "CYP2D6"]
+      "substrate_of": [
+        "CYP1A2",
+        "CYP2D6"
+      ]
     },
     "dextromethorphan-compound": {
       "inhibits": [],
       "induces": [],
-      "substrate_of": ["CYP2D6", "CYP3A4"]
+      "substrate_of": [
+        "CYP2D6",
+        "CYP3A4"
+      ]
     },
     "tramadol-compound": {
       "inhibits": [],
       "induces": [],
-      "substrate_of": ["CYP2D6", "CYP3A4"]
+      "substrate_of": [
+        "CYP2D6",
+        "CYP3A4"
+      ]
     },
     "codeine-compound": {
       "inhibits": [],
       "induces": [],
-      "substrate_of": ["CYP2D6", "CYP3A4"]
+      "substrate_of": [
+        "CYP2D6",
+        "CYP3A4"
+      ]
     },
     "haloperidol-compound": {
       "inhibits": [],
       "induces": [],
-      "substrate_of": ["CYP3A4", "CYP2D6"]
+      "substrate_of": [
+        "CYP3A4",
+        "CYP2D6"
+      ]
     },
     "amiodarone-compound": {
-      "inhibits": [{ "enzyme": "CYP2C9", "potency": "moderate" }, { "enzyme": "CYP2D6", "potency": "moderate" }, { "enzyme": "CYP3A4", "potency": "moderate" }],
+      "inhibits": [
+        {
+          "enzyme": "CYP2C9",
+          "potency": "moderate"
+        },
+        {
+          "enzyme": "CYP2D6",
+          "potency": "moderate"
+        },
+        {
+          "enzyme": "CYP3A4",
+          "potency": "moderate"
+        }
+      ],
       "induces": [],
-      "substrate_of": ["CYP3A4", "CYP2C8"]
+      "substrate_of": [
+        "CYP3A4",
+        "CYP2C8"
+      ]
     },
     "ketoconazole-compound": {
-      "inhibits": [{ "enzyme": "CYP3A4", "potency": "strong" }, { "enzyme": "CYP2C9", "potency": "moderate" }],
+      "inhibits": [
+        {
+          "enzyme": "CYP3A4",
+          "potency": "strong"
+        },
+        {
+          "enzyme": "CYP2C9",
+          "potency": "moderate"
+        }
+      ],
       "induces": [],
-      "substrate_of": ["CYP3A4"]
+      "substrate_of": [
+        "CYP3A4"
+      ]
     },
     "omeprazole-compound": {
-      "inhibits": [{ "enzyme": "CYP2C19", "potency": "strong" }],
-      "induces": [{ "enzyme": "CYP1A2", "potency": "moderate" }],
-      "substrate_of": ["CYP2C19", "CYP3A4"]
+      "inhibits": [
+        {
+          "enzyme": "CYP2C19",
+          "potency": "strong"
+        }
+      ],
+      "induces": [
+        {
+          "enzyme": "CYP1A2",
+          "potency": "moderate"
+        }
+      ],
+      "substrate_of": [
+        "CYP2C19",
+        "CYP3A4"
+      ]
     },
     "diazepam-compound": {
       "inhibits": [],
       "induces": [],
-      "substrate_of": ["CYP2C19", "CYP3A4"]
+      "substrate_of": [
+        "CYP2C19",
+        "CYP3A4"
+      ]
     },
     "alprazolam-compound": {
       "inhibits": [],
       "induces": [],
-      "substrate_of": ["CYP3A4"]
+      "substrate_of": [
+        "CYP3A4"
+      ]
     },
     "warfarin-compound": {
       "inhibits": [],
       "induces": [],
-      "substrate_of": ["CYP2C9", "CYP3A4", "CYP1A2"]
+      "substrate_of": [
+        "CYP2C9",
+        "CYP3A4",
+        "CYP1A2"
+      ]
     },
     "amitriptyline-compound": {
       "inhibits": [],
       "induces": [],
-      "substrate_of": ["CYP2D6", "CYP2C19"]
+      "substrate_of": [
+        "CYP2D6",
+        "CYP2C19"
+      ]
     }
   },
   "pd_profiles": {
@@ -392,27 +503,75 @@
     "triple_whammy": {
       "title": "Triple Whammy (Niewydolność Nerek)",
       "description": "Zabójcze dla nerek połączenie NLPZ + inhibitora ACE + diuretyku pętlowego/tiazydowego.",
-      "compounds": ["ibuprofen-compound", "enalapril-compound", "hydrochlorothiazide-compound"]
+      "compounds": [
+        "ibuprofen-compound",
+        "enalapril-compound",
+        "hydrochlorothiazide-compound"
+      ]
     },
     "serotonin_storm": {
       "title": "Zagrożenie Zespołem Serotoninowym",
       "description": "Skojarzenie SSRI z lekiem opioidowym o działaniu serotoninergicznym i inhibitorem MAO.",
-      "compounds": ["sertraline-compound", "tramadol-compound", "moclobemide-compound"]
+      "compounds": [
+        "sertraline-compound",
+        "tramadol-compound",
+        "moclobemide-compound"
+      ]
     },
     "qt_cocktail": {
       "title": "Koktajl Wydłużający Odstęp QTc",
       "description": "Jednoczesna kumulacja 3 leków blokujących kanał hERG: przeciwdepresyjnego, przeciwhistaminowego i neuroleptyku.",
-      "compounds": ["escitalopram-compound", "hydroxyzine-compound", "haloperidol-compound"]
+      "compounds": [
+        "escitalopram-compound",
+        "hydroxyzine-compound",
+        "haloperidol-compound"
+      ]
     },
     "sedative_overload": {
       "title": "Głęboka Depresja OUN & Ośrodka Oddechowego",
       "description": "Czarna ramka FDA: niebezpieczna synergia benzodiazepiny, agonisty GABA-A (z-drug) oraz silnego opioidu.",
-      "compounds": ["diazepam-compound", "morphine-compound", "zolpidem-compound"]
+      "compounds": [
+        "diazepam-compound",
+        "morphine-compound",
+        "zolpidem-compound"
+      ]
     },
     "geriatric_polypharmacy": {
       "title": "Polipragmazja Geriatryczna & Antycholinergiczna",
       "description": "Klasyczny zestaw wielolekowy u seniora: ryzyko majaczenia (ACB 6), upadków, zaburzeń enzymatycznych CYP.",
-      "compounds": ["amitriptyline-compound", "diphenhydramine-compound", "omeprazole-compound", "diazepam-compound"]
+      "compounds": [
+        "amitriptyline-compound",
+        "diphenhydramine-compound",
+        "omeprazole-compound",
+        "diazepam-compound"
+      ]
+    },
+    "rifampin_tacrolimus": {
+      "title": "Indukcja PXR: Ryfampicyna + Takrolimus / NOAC",
+      "description": "Ekstremalne przyspieszenie klirensu (CYP3A4/P-gp 3x w górę) powoduje załamanie stężeń leków krytycznych i odrzucenie przeszczepu lub udar zakrzepowy.",
+      "compounds": [
+        "rifampicin-compound",
+        "tacrolimus-compound",
+        "apixaban-compound"
+      ]
+    },
+    "hypericum_contraception": {
+      "title": "Dziurawiec (PXR) + Antykoncepcja / Klonazepam",
+      "description": "Hiperforyna indukuje CYP3A4 i P-gp, obniżając stężenie estradiolu poniżej progu antyowulacyjnego (przełamanie antykoncepcji) oraz przyspieszając eliminację klonazepamu.",
+      "compounds": [
+        "hyperforin-compound",
+        "estradiol-compound",
+        "clonazepam-compound"
+      ]
+    },
+    "carbamazepine_paracetamol": {
+      "title": "Karbamazepina + Paracetamol (Toksyczność NAPQI)",
+      "description": "Auto-indukcja klirensu karbamazepiny oraz nasilenie tworzenia reaktywnego, hepatotoksycznego metabolitu NAPQI z paracetamolu.",
+      "compounds": [
+        "carbamazepine-compound",
+        "acetaminophen-compound",
+        "digoxin-compound"
+      ]
     }
   }
 }
