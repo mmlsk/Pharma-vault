@@ -4504,6 +4504,38 @@
       </div>`;
   }
 
+  // ---------- Polish Sprint Helpers: Safe Numerical Clamping & Chart Tooltips (v3.35.0)
+  function clampNumber(val, min, max, fallback) {
+    const n = parseFloat(val);
+    if (!Number.isFinite(n) || Number.isNaN(n)) return fallback;
+    return Math.max(min, Math.min(max, n));
+  }
+
+  function showChartTooltip(e, html) {
+    let tt = $("csChartTooltip");
+    if (!tt) {
+      tt = document.createElement("div");
+      tt.id = "csChartTooltip";
+      tt.className = "cs-chart-tooltip";
+      tt.setAttribute("role", "tooltip");
+      document.body.appendChild(tt);
+    }
+    tt.innerHTML = html;
+    const pad = 12;
+    let x = e.clientX + pad;
+    let y = e.clientY - pad;
+    if (x + 220 > window.innerWidth) x = e.clientX - 230;
+    if (y + 100 > window.innerHeight) y = e.clientY - 90;
+    tt.style.left = `${Math.max(10, x)}px`;
+    tt.style.top = `${Math.max(10, y)}px`;
+    tt.style.opacity = "1";
+  }
+
+  function hideChartTooltip() {
+    const tt = $("csChartTooltip");
+    if (tt) tt.style.opacity = "0";
+  }
+
   // ---------- CPIC Pharmacogenomics & Cascading Phenoconversion Engine
   const PGX_DATA = G.pharmacogenomicsCpic || { genes: {}, phenoconversion_inhibitors: {}, cpic_guidelines: [] };
   const PGX_STORAGE_KEY = "pv_patient_pgx_v1";
@@ -13698,6 +13730,10 @@
           <line x1="365" y1="0" x2="381" y2="0" stroke="#52a2a8" stroke-width="2" stroke-dasharray="2,2" />
           <text x="385" y="3" fill="#52a2a8" font-size="9.5" font-family="system-ui, sans-serif">Zajętość Receptora</text>
         </g>
+
+        <!-- Interactive Crosshair & Overlay -->
+        <line id="csRotCrosshair" x1="${padL}" y1="${padT}" x2="${padL}" y2="${(padT + plotH).toFixed(1)}" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="3,2" style="display:none;pointer-events:none" />
+        <rect id="csRotOverlay" x="${padL}" y="${padT}" width="${plotW}" height="${plotH}" fill="transparent" style="cursor:crosshair" />
       </svg>
     `;
   }
@@ -13964,6 +14000,34 @@
 
       if (chartCont) {
         chartCont.innerHTML = renderCrossTaperingChartSvg(simData);
+
+        const rotOverlay = $("csRotOverlay");
+        const rotCrosshair = $("csRotCrosshair");
+        if (rotOverlay && rotCrosshair) {
+          rotOverlay.onmousemove = (e) => {
+            const rect = rotOverlay.getBoundingClientRect();
+            const relX = Math.max(0, Math.min(rect.width, e.clientX - rect.left));
+            const frac = relX / rect.width;
+            const nDays = simData.days.length - 1;
+            const dayIdx = Math.max(0, Math.min(nDays, Math.round(frac * nDays)));
+            const d = simData.days[dayIdx] || simData.days[0];
+            const xSvg = 45 + (dayIdx / nDays) * (520 - 45 - 20);
+            rotCrosshair.setAttribute("x1", xSvg.toFixed(1));
+            rotCrosshair.setAttribute("x2", xSvg.toFixed(1));
+            rotCrosshair.style.display = "block";
+            showChartTooltip(e, `
+              <div style="font-weight:700;margin-bottom:3px;color:var(--color-primary)">Dzień ${d.day} / ${nDays} (${simData.strategy})</div>
+              <div>• <b>${esc(simData.fromDrug.name)}:</b> ${d.doseA} mg/d</div>
+              <div>• <b>${esc(simData.toDrug.name)}:</b> ${d.doseB} mg/d</div>
+              <div>• Ekspozycja netto: <b style="color:${d.expNet > 130 ? 'var(--color-error)' : (d.expNet < 70 ? 'var(--color-warning)' : 'var(--color-success)')}">${d.expNet}%</b></div>
+              <div>• Zajętość receptora: <b>${d.occNet}%</b></div>
+            `);
+          };
+          rotOverlay.onmouseleave = () => {
+            rotCrosshair.style.display = "none";
+            hideChartTooltip();
+          };
+        }
       }
 
       if (schedCont) {
@@ -14207,13 +14271,13 @@
   // ---------- PANE 4: ICU PK & Critical Care Pharmacokinetics Engine (v3.32.0)
   function computeIcuPhysiome() {
     const sex = $("csIcuSexSelect")?.value || "M";
-    const height = parseFloat($("csIcuHeightInput")?.value) || 175;
-    const tbw = parseFloat($("csIcuWeightInput")?.value) || 80;
-    const fluidL = parseFloat($("csIcuFluidSlider")?.value) || 3.0;
-    const egfr = parseFloat($("csIcuEgfrSlider")?.value) || 140;
-    const alb = parseFloat($("csIcuAlbuminSlider")?.value) || 2.2;
+    const height = clampNumber($("csIcuHeightInput")?.value, 100, 240, 175);
+    const tbw = clampNumber($("csIcuWeightInput")?.value, 25, 350, 80);
+    const fluidL = clampNumber($("csIcuFluidSlider")?.value, 0, 30, 3.0);
+    const egfr = clampNumber($("csIcuEgfrSlider")?.value, 1, 250, 140);
+    const alb = clampNumber($("csIcuAlbuminSlider")?.value, 0.5, 6.0, 2.2);
     const crrtModality = $("csIcuCrrtModalitySelect")?.value || "none";
-    const crrtEffluent = parseFloat($("csIcuCrrtEffluentSlider")?.value) || 25;
+    const crrtEffluent = clampNumber($("csIcuCrrtEffluentSlider")?.value, 5, 80, 25);
 
     const bmi = +(tbw / ((height / 100) ** 2)).toFixed(1);
     const ibwBase = sex === "M" ? (50.0 + 0.905 * (height - 152.4)) : (45.5 + 0.905 * (height - 152.4));
@@ -14578,6 +14642,10 @@
 
         <!-- Concentration Curve -->
         <path d="${pts.join(' ')}" fill="none" stroke="${curveColor}" stroke-width="2.2" />
+
+        <!-- Interactive Crosshair & Overlay -->
+        <line id="csIcuCrosshair" x1="${padL}" y1="${padT}" x2="${padL}" y2="${(padT + plotH).toFixed(1)}" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="3,2" style="display:none;pointer-events:none" />
+        <rect id="csIcuOverlay" x="${padL}" y="${padT}" width="${plotW}" height="${plotH}" fill="transparent" style="cursor:crosshair" />
       </svg>
     `;
   }
@@ -14701,6 +14769,30 @@
           ${renderIcuMiniPkCurveSvg(dosing, phys)}
         </div>
       `;
+
+      const icuOverlay = $("csIcuOverlay");
+      const icuCrosshair = $("csIcuCrosshair");
+      if (icuOverlay && icuCrosshair) {
+        icuOverlay.onmousemove = (e) => {
+          const rect = icuOverlay.getBoundingClientRect();
+          const relX = Math.max(0, Math.min(rect.width, e.clientX - rect.left));
+          const hour = Math.round((relX / rect.width) * 24);
+          const xSvg = 40 + (relX / rect.width) * (480 - 40 - 20);
+          icuCrosshair.setAttribute("x1", xSvg.toFixed(1));
+          icuCrosshair.setAttribute("x2", xSvg.toFixed(1));
+          icuCrosshair.style.display = "block";
+          showChartTooltip(e, `
+            <div style="font-weight:700;margin-bottom:2px;color:var(--color-primary)">${esc(dosing.name)}: Czas ${hour}h / 24h</div>
+            <div>• Dawkowanie: <b>${esc(dosing.regimen)}</b></div>
+            <div>• Cel TDM: <b>${esc(dosing.targetTdm)}</b></div>
+            <div>• Próg sub-terapeutyczny: <b style="color:var(--color-error)">&lt; MIC</b></div>
+          `);
+        };
+        icuOverlay.onmouseleave = () => {
+          icuCrosshair.style.display = "none";
+          hideChartTooltip();
+        };
+      }
     }
 
     // Catalog Table of 10 ICU Antibiotics
@@ -14803,10 +14895,10 @@
   // ---------- PANE 5: Onco-Pharm Precision Oncology & Chemotherapy Toxicities (v3.34.0)
   function computeOncoBiometrics() {
     const sex = $("csOncoSexSelect")?.value || "M";
-    const age = parseFloat($("csOncoAgeInput")?.value) || 62;
-    const height = parseFloat($("csOncoHeightInput")?.value) || 175;
-    const weight = parseFloat($("csOncoWeightInput")?.value) || 70;
-    const scr = parseFloat($("csOncoScrInput")?.value) || 0.90;
+    const age = clampNumber($("csOncoAgeInput")?.value, 18, 115, 62);
+    const height = clampNumber($("csOncoHeightInput")?.value, 100, 240, 175);
+    const weight = clampNumber($("csOncoWeightInput")?.value, 25, 300, 70);
+    const scr = clampNumber($("csOncoScrInput")?.value, 0.2, 20.0, 0.90);
     const aki = $("csOncoAkiCheck")?.checked || false;
 
     // Mosteller BSA formula: sqrt((H * W) / 3600)
@@ -14836,14 +14928,16 @@
   }
 
   function computeCalvertCarboplatin(targetAuc, crcl) {
+    const safeAuc = clampNumber(targetAuc, 1.0, 10.0, 5.0);
+    const safeCrcl = clampNumber(crcl, 5.0, 300.0, 80.0);
     const fdaCap = 125.0;
-    const isCapped = crcl > fdaCap;
-    const effectiveGfr = Math.min(crcl, fdaCap);
-    const doseMg = Math.round(targetAuc * (effectiveGfr + 25));
-    const uncappedDoseMg = Math.round(targetAuc * (crcl + 25));
-    const maxCapDoseMg = Math.round(targetAuc * (fdaCap + 25)); // AUC * 150 mg
+    const isCapped = safeCrcl > fdaCap;
+    const effectiveGfr = Math.min(safeCrcl, fdaCap);
+    const doseMg = Math.round(safeAuc * (effectiveGfr + 25));
+    const uncappedDoseMg = Math.round(safeAuc * (safeCrcl + 25));
+    const maxCapDoseMg = Math.round(safeAuc * (fdaCap + 25)); // AUC * 150 mg
 
-    return { targetAuc, crcl, effectiveGfr, isCapped, doseMg, uncappedDoseMg, maxCapDoseMg };
+    return { targetAuc: safeAuc, crcl: safeCrcl, effectiveGfr, isCapped, doseMg, uncappedDoseMg, maxCapDoseMg };
   }
 
   function getDpydRecommendation(asScore, bsa, drugKey) {
@@ -15104,6 +15198,10 @@
         <!-- Axis Labels -->
         <text x="${padL + plotW / 2}" y="${botY + 30}" text-anchor="middle" fill="var(--color-text-muted)" font-size="10">Czas po rozpoczęciu wlewu HD-MTX (godziny)</text>
         <text transform="rotate(-90)" x="${-(padT + plotH / 2)}" y="16" text-anchor="middle" fill="var(--color-text-muted)" font-size="10">Stężenie MTX w surowicy (μmol/L, skala log)</text>
+
+        <!-- Interactive Crosshair & Overlay -->
+        <line id="csMtxCrosshair" x1="${padL}" y1="${padT}" x2="${padL}" y2="${botY}" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-dasharray="3,2" style="display:none;pointer-events:none" />
+        <rect id="csMtxOverlay" x="${padL}" y="${padT}" width="${plotW}" height="${plotH}" fill="transparent" style="cursor:crosshair" />
       </svg>
     `;
   }
@@ -15268,6 +15366,32 @@
     const mtxChartWrap = $("csOncoMtxChartWrap");
     if (mtxChartWrap) {
       mtxChartWrap.innerHTML = renderHdrMtxNomogramSvg(mtxTime, mtxConc, mtxEval.zone);
+
+      const mtxOverlay = $("csMtxOverlay");
+      const mtxCrosshair = $("csMtxCrosshair");
+      if (mtxOverlay && mtxCrosshair) {
+        mtxOverlay.onmousemove = (e) => {
+          const rect = mtxOverlay.getBoundingClientRect();
+          const relX = Math.max(0, Math.min(rect.width, e.clientX - rect.left));
+          const fracX = relX / rect.width;
+          const hour = Math.round(20 + fracX * 60);
+          const xSvg = 55 + fracX * (520 - 55 - 25);
+          mtxCrosshair.setAttribute("x1", xSvg.toFixed(1));
+          mtxCrosshair.setAttribute("x2", xSvg.toFixed(1));
+          mtxCrosshair.style.display = "block";
+          showChartTooltip(e, `
+            <div style="font-weight:700;margin-bottom:2px;color:var(--color-primary)">Nomogram HD-MTX (Stoller/Bleyer)</div>
+            <div>• Czas: <b>${hour}h</b> od rozpoczęcia wlewu</div>
+            <div>• Reżim leukoworyny: <b>${mtxEval.doseMgM2} mg/m² co ${mtxEval.intervalH}h</b> (${mtxEval.singleDoseMg} mg)</div>
+            <div>• Strefa kliniczna: <b style="color:${mtxEval.zone === 'critical' ? 'var(--color-error)' : (mtxEval.zone === 'delayed' ? 'var(--color-warning)' : 'var(--color-success)')}">${mtxEval.zone.toUpperCase()}</b></div>
+            ${mtxEval.triggerVoraxaze ? '<div style="color:var(--color-error);font-weight:700">🚨 Alert Glukarpidazy (Voraxaze®)</div>' : ''}
+          `);
+        };
+        mtxOverlay.onmouseleave = () => {
+          mtxCrosshair.style.display = "none";
+          hideChartTooltip();
+        };
+      }
     }
 
     const leucCard = $("csOncoLeucovorinCard");
@@ -15391,6 +15515,7 @@
       if (btn) {
         btn.classList.toggle("active", t === csActiveTab);
         btn.setAttribute("aria-selected", t === csActiveTab ? "true" : "false");
+        btn.setAttribute("tabindex", t === csActiveTab ? "0" : "-1");
       }
       if (pane) pane.classList.toggle("active", t === csActiveTab);
     });
@@ -15401,9 +15526,12 @@
     else if (csActiveTab === "onco") renderClinicalSuiteOncoPane();
   }
 
+  let csLastTriggerElement = null;
+
   function openClinicalSuiteModal(tab = null, compoundId = null) {
     const modal = $("clinicalSuiteModal");
     if (!modal) return;
+    csLastTriggerElement = document.activeElement;
     populateCsGlobalCompoundSelect();
     if (compoundId && compById.has(compoundId)) {
       csActiveCompoundId = compoundId;
@@ -15422,6 +15550,10 @@
     if (modal) closeDialog(modal);
     activeClinicalSuiteOpen = false;
     syncWorkspaceModeToOpenModals();
+    hideChartTooltip();
+    if (csLastTriggerElement && typeof csLastTriggerElement.focus === "function") {
+      csLastTriggerElement.focus();
+    }
   }
 
   const csModalEl = $("clinicalSuiteModal");
@@ -15436,6 +15568,37 @@
     const btn = $(`csTab${t.charAt(0).toUpperCase() + t.slice(1)}Btn`);
     if (btn) btn.onclick = () => switchClinicalSuiteTab(t);
   });
+
+  const csSubtabsContainer = document.querySelector(".cs-subtabs");
+  if (csSubtabsContainer) {
+    csSubtabsContainer.addEventListener("keydown", (e) => {
+      const tabs = ["pgx", "taper", "organ", "icu", "onco"];
+      const curIdx = tabs.indexOf(csActiveTab);
+      if (curIdx === -1) return;
+      let nextIdx = -1;
+
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        nextIdx = (curIdx + 1) % tabs.length;
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        nextIdx = (curIdx - 1 + tabs.length) % tabs.length;
+      } else if (e.key === "Home") {
+        e.preventDefault();
+        nextIdx = 0;
+      } else if (e.key === "End") {
+        e.preventDefault();
+        nextIdx = tabs.length - 1;
+      }
+
+      if (nextIdx !== -1) {
+        const nextTab = tabs[nextIdx];
+        switchClinicalSuiteTab(nextTab);
+        const nextBtn = $(`csTab${nextTab.charAt(0).toUpperCase() + nextTab.slice(1)}Btn`);
+        if (nextBtn) nextBtn.focus();
+      }
+    });
+  }
   const csGlobalSel = $("csGlobalCompoundSelect");
   if (csGlobalSel) {
     csGlobalSel.onchange = () => {
@@ -15747,7 +15910,7 @@
   $("theme").onclick = () =>{ const r = document.documentElement; r.dataset.theme = r.dataset.theme === "dark" ? "light" : "dark"; $("theme").setAttribute("aria-pressed", r.dataset.theme === "light"); draw(); };
   if (matchMedia("(prefers-color-scheme: light)").matches) { document.documentElement.dataset.theme = "light"; $("theme").setAttribute("aria-pressed", "true"); }
 
-  // ---------- Toast Notification System
+  // ---------- Modernized Toast Notification System (v3.35.0)
   function showToast(message, type = "info") {
     const container = $("toastContainer");
     if (!container) return;
@@ -15755,15 +15918,15 @@
     t.className = `toast toast-${type}`;
     t.setAttribute("role", "status");
     let icon = "ℹ";
-    if (type === "success") icon = "OK";
-    else if (type === "warning") icon = "";
-    else if (type === "error") icon = "×";
-    t.innerHTML = `<span style="font-weight:700">${icon}</span><span>${esc(message)}</span>`;
+    if (type === "success") icon = "✓";
+    else if (type === "warning") icon = "⚠️";
+    else if (type === "error") icon = "✕";
+    t.innerHTML = `<span class="toast-icon">${icon}</span><span>${esc(message)}</span>`;
     container.appendChild(t);
-    setTimeout(() =>{
+    setTimeout(() => {
       t.classList.add("out");
-      setTimeout(() =>t.remove(), 250);
-    }, 2500);
+      setTimeout(() => t.remove(), 250);
+    }, 3200);
   }
 
   // ---------- Relational Breadcrumbs Bar

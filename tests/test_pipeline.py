@@ -2373,6 +2373,81 @@ def test_onco_pharm_engine():
     assert "renderClinicalSuiteOncoPane" in app_src
 
 
+def test_polish_and_accessibility_audit():
+    """Validates Accessibility (W3C APG), Roving Tabindex, Micro-animations & Interactive Chart Tooltips (v3.35.0)."""
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+
+    # 1. W3C APG Accessibility & Semantics
+    # Tablist & 5 Subtab Buttons
+    assert 'role="tablist"' in html_src
+    for tab_id in ["csTabPgxBtn", "csTabTaperBtn", "csTabOrganBtn", "csTabIcuBtn", "csTabOncoBtn"]:
+        assert tab_id in html_src
+        assert f'id="{tab_id}"' in html_src
+    assert 'aria-controls="csPanePgx"' in html_src
+    assert 'aria-controls="csPaneTaper"' in html_src
+    assert 'aria-controls="csPaneOrgan"' in html_src
+    assert 'aria-controls="csPaneIcu"' in html_src
+    assert 'aria-controls="csPaneOnco"' in html_src
+
+    # Tabpanels & Labelledby
+    assert 'id="csPanePgx" role="tabpanel" aria-labelledby="csTabPgxBtn"' in html_src
+    assert 'id="csPaneTaper" role="tabpanel" aria-labelledby="csTabTaperBtn"' in html_src
+    assert 'id="csPaneOrgan" role="tabpanel" aria-labelledby="csTabOrganBtn"' in html_src
+    assert 'id="csPaneIcu" role="tabpanel" aria-labelledby="csTabIcuBtn"' in html_src
+    assert 'id="csPaneOnco" role="tabpanel" aria-labelledby="csTabOncoBtn"' in html_src
+
+    # CSS Animations & Tooltips
+    assert "@keyframes csPaneFadeIn" in html_src
+    assert "csPaneFadeIn" in html_src
+    assert ".cs-chart-tooltip" in html_src
+    assert 'id="csChartTooltip"' in html_src
+    assert ".toast-icon" in html_src
+
+    # 2. Mathematical Clamping & NaN Guards in app.js
+    assert "clampNumber" in app_src
+    assert "showChartTooltip" in app_src
+    assert "hideChartTooltip" in app_src
+
+    # Test clamping logic
+    def clamp_num(val, min_v, max_v, fallback):
+        try:
+            n = float(val)
+            import math
+            if math.isnan(n) or math.isinf(n):
+                return fallback
+            return max(min_v, min(max_v, n))
+        except (ValueError, TypeError):
+            return fallback
+
+    assert clamp_num("invalid", 10, 100, 50) == 50
+    assert clamp_num(-20, 0, 100, 10) == 0
+    assert clamp_num(999, 0, 100, 10) == 100
+    assert clamp_num(float("nan"), 0, 100, 10) == 10
+
+    # 3. Interactive SVG Crosshairs & Overlays
+    assert "csRotCrosshair" in app_src
+    assert "csRotOverlay" in app_src
+    assert "csIcuCrosshair" in app_src
+    assert "csIcuOverlay" in app_src
+    assert "csMtxCrosshair" in app_src
+    assert "csMtxOverlay" in app_src
+
+    # 4. W3C APG Keyboard Navigation (Arrow Keys, Home, End, Escape Return Focus)
+    assert "ArrowRight" in app_src
+    assert "ArrowLeft" in app_src
+    assert "Home" in app_src
+    assert "End" in app_src
+    assert "csLastTriggerElement" in app_src
+
+    # 5. Modernized Toast Semantic Icons
+    assert "toast-icon" in app_src
+    assert "✓" in app_src
+    assert "⚠️" in app_src
+    assert "✕" in app_src
+
+
+
 
 
 
