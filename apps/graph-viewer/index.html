@@ -1884,6 +1884,7 @@
         <button class="cs-subtab-btn" data-cs-tab="taper" id="csTabTaperBtn" role="tab" aria-selected="false">2. Konwersje Równoważników &amp; Odstawianie Hiperboliczne (PET)</button>
         <button class="cs-subtab-btn" data-cs-tab="organ" id="csTabOrganBtn" role="tab" aria-selected="false">3. Nefro- i Hepatofarmakologia &amp; Dializowalność (HD / CRRT)</button>
         <button class="cs-subtab-btn" data-cs-tab="icu" id="csTabIcuBtn" role="tab" aria-selected="false">4. Farmakokinetyka OIT / ICU PK (Sepsa, ARC, Vd, TDM, CRRT)</button>
+        <button class="cs-subtab-btn" data-cs-tab="onco" id="csTabOncoBtn" role="tab" aria-selected="false">5. Onkologia Precyzyjna &amp; Toksyczność Chemoterapii (Onco-Pharm)</button>
       </div>
       <div style="display:flex;align-items:center;gap:8px">
         <label for="csGlobalCompoundSelect" style="font-size:11.5px;font-weight:600;color:var(--color-text-muted)">Badany lek:</label>
@@ -2128,6 +2129,228 @@
             <div class="cs-card">
               <b style="font-size:13px">Matryca Antybiotykoterapii OIT (10 leków krytycznych)</b>
               <div id="csIcuCatalogTableWrap" style="overflow-x:auto"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PANE 5: Onco-Pharm Precision Oncology & Chemotherapy Toxicities (v3.34.0) -->
+      <div class="cs-pane" id="csPaneOnco" role="tabpanel">
+        <!-- Presets Bar -->
+        <div style="background:var(--color-surface-offset);padding:10px 14px;border-radius:8px;border:1px solid var(--color-border);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-size:12px;font-weight:700;color:var(--color-primary)">Presety Kliniczne Onco:</span>
+            <span style="font-size:11px;color:var(--color-text-muted)">1-klikowe scenariusze toksyczności i farmakogenomiki</span>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <button class="pv-badge" data-onco-preset="carboplatin_elderly_cachexia" style="cursor:pointer">Karboplatyna: Kacheksja (Próg Cr=0.7)</button>
+            <button class="pv-badge" data-onco-preset="dpyd_deficiency_5fu" style="cursor:pointer">DPYD AS=1.0 (5-FU Redukcja 50%)</button>
+            <button class="pv-badge" data-onco-preset="gilbert_irinotecan" style="cursor:pointer">Zespół Gilberta (UGT1A1*28/*28)</button>
+            <button class="pv-badge" data-onco-preset="hd_mtx_delayed_clearance" style="cursor:pointer">HD-MTX 48h AKI (Voraxaze® Alert)</button>
+          </div>
+        </div>
+
+        <!-- Biometrics & Renal Bar -->
+        <div style="background:var(--color-surface-offset);padding:12px 14px;border-radius:8px;border:1px solid var(--color-border);margin-bottom:14px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+            <b style="font-size:13px">Biometria Pacjenta &amp; Estymacja Czynności Nerek (NCCN / Mosteller / Cockcroft-Gault)</b>
+            <div style="display:flex;align-items:center;gap:12px;font-size:12px">
+              <span>BSA (Mosteller): <b id="csOncoBsaVal" style="color:var(--color-primary);font-size:14px">1.82 m²</b></span>
+              <span>Masa należna (IBW): <b id="csOncoIbwVal">70.0 kg</b></span>
+              <span>CrCl (skorygowany): <b id="csOncoCrclVal" style="color:var(--color-success)">85 mL/min</b></span>
+              <span id="csOncoWeightAdjBadge" class="tag info" style="display:none">Masa skorygowana AdjBW</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));gap:10px">
+            <div>
+              <label for="csOncoSexSelect" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Płeć:</label>
+              <select id="csOncoSexSelect" class="cs-select" style="width:100%;font-size:12px">
+                <option value="M">Mężczyzna</option>
+                <option value="F">Kobieta</option>
+              </select>
+            </div>
+            <div>
+              <label for="csOncoAgeInput" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Wiek (lata):</label>
+              <input type="number" id="csOncoAgeInput" class="cs-input" value="62" min="18" max="105" style="width:100%;font-size:12px" />
+            </div>
+            <div>
+              <label for="csOncoHeightInput" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Wzrost (cm):</label>
+              <input type="number" id="csOncoHeightInput" class="cs-input" value="175" min="120" max="220" style="width:100%;font-size:12px" />
+            </div>
+            <div>
+              <label for="csOncoWeightInput" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Masa ciała (kg):</label>
+              <input type="number" id="csOncoWeightInput" class="cs-input" value="70" min="30" max="250" style="width:100%;font-size:12px" />
+            </div>
+            <div>
+              <label for="csOncoScrInput" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Kreatynina (mg/dL):</label>
+              <input type="number" id="csOncoScrInput" class="cs-input" value="0.90" step="0.05" min="0.2" max="12.0" style="width:100%;font-size:12px" />
+            </div>
+            <div style="display:flex;align-items:flex-end">
+              <label style="display:flex;align-items:center;gap:6px;font-size:11.5px;cursor:pointer;margin-bottom:4px">
+                <input type="checkbox" id="csOncoAkiCheck" />
+                <span style="font-weight:600;color:var(--color-error)">AKI (Cr &ge;2x / spadek filtracji)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-grid-2">
+          <!-- Left Column: Calvert, DPYD, UGT1A1, Thiopurines -->
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <!-- Card 1: Carboplatin Calvert Formula -->
+            <div class="cs-card" id="csOncoCalvertCard">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <b style="font-size:13px">1. Karboplatyna — Formuła Calverta (FDA / NCCN GFR Cap)</b>
+                <span class="tag info" style="font-size:10.5px">Dose = AUC &times; (GFR + 25)</span>
+              </div>
+              <div style="margin-top:10px;display:flex;flex-direction:column;gap:10px">
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:11.5px">
+                    <span>Docelowe AUC (mg&middot;min/mL):</span>
+                    <b id="csOncoCalvertAucVal" style="color:var(--color-primary)">AUC 5.0</b>
+                  </div>
+                  <input type="range" id="csOncoCalvertAucSlider" class="cs-slider" min="2.0" max="8.0" step="0.5" value="5.0" style="width:100%;margin-top:4px" />
+                </div>
+                <div>
+                  <label for="csOncoCalvertIndication" style="font-size:11.5px;font-weight:600;color:var(--color-text-muted)">Typowy schemat kliniczny:</label>
+                  <select id="csOncoCalvertIndication" class="cs-select" style="width:100%;font-size:12px;margin-top:2px">
+                    <option value="5.0">AUC 5: Terapia skojarzona standardowa (np. Paklitaksel + Karboplatyna)</option>
+                    <option value="4.0">AUC 4: Pacjenci obciążeni / wcześniejsza chemioterapia lub radioterapia</option>
+                    <option value="6.0">AUC 6: Monoterapia lub schematy o pełnej intensywności (np. rak jajnika)</option>
+                    <option value="7.0">AUC 7: Maksymalna dawka w monoterapii u pacjentów nieleczonych</option>
+                  </select>
+                </div>
+                <div id="csOncoCalvertResultBox" style="margin-top:4px"></div>
+              </div>
+            </div>
+
+            <!-- Card 2: DPYD & Fluoropyrimidines -->
+            <div class="cs-card" id="csOncoDpydCard">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <b style="font-size:13px">2. DPYD — 5-Fluorouracyl &amp; Kapecytabina (CPIC / DPWG)</b>
+                <span id="csOncoDpydStatusBadge" class="tag ok" style="font-size:10.5px">NM (100% dawki)</span>
+              </div>
+              <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                  <div>
+                    <label for="csOncoDpydSelect" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">DPYD Activity Score (AS):</label>
+                    <select id="csOncoDpydSelect" class="cs-select" style="width:100%;font-size:12px">
+                      <option value="2.0">AS = 2.0 (Normal Metabolizer - NM)</option>
+                      <option value="1.5">AS = 1.5 (Intermediate - redukcja 25-50%)</option>
+                      <option value="1.0">AS = 1.0 (Intermediate - np. *2A/WT - redukcja 50%)</option>
+                      <option value="0.5">AS = 0.5 (Intermediate/Poor - redukcja 75%)</option>
+                      <option value="0.0">AS = 0.0 (Poor Metabolizer - PRZECIWWSKAZANIE)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="csOncoDpydDrugSelect" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Schemat leczenia:</label>
+                    <select id="csOncoDpydDrugSelect" class="cs-select" style="width:100%;font-size:12px">
+                      <option value="5fu_infusion_2400">5-FU wlew ciągły (2400 mg/m² /46h)</option>
+                      <option value="5fu_bolus_400">5-FU bolus (400 mg/m² d1)</option>
+                      <option value="capecitabine_1250">Kapecytabina (1250 mg/m² p.o. 2x/d)</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="csOncoDpydResultBox"></div>
+              </div>
+            </div>
+
+            <!-- Card 3: UGT1A1 & Irinotecan -->
+            <div class="cs-card" id="csOncoUgt1a1Card">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <b style="font-size:13px">3. UGT1A1 — Irynotekan &amp; Zespół Gilberta (Toksyczność SN-38)</b>
+                <span id="csOncoUgt1a1StatusBadge" class="tag ok" style="font-size:10.5px">Ekspresja prawidłowa</span>
+              </div>
+              <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                  <div>
+                    <label for="csOncoUgt1a1Select" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Genotyp UGT1A1 (promotor TA):</label>
+                    <select id="csOncoUgt1a1Select" class="cs-select" style="width:100%;font-size:12px">
+                      <option value="*1/*1">*1/*1 (Dziki - 6/6 powtórzeń TA)</option>
+                      <option value="*1/*28">*1/*28 (Heterozygota - 6/7 powtórzeń TA)</option>
+                      <option value="*28/*28">*28/*28 (Zespół Gilberta - 7/7 TA)</option>
+                      <option value="*6/*6">*6/*6 (Wariant azjatycki - Gly71Arg)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="csOncoUgt1a1Regimen" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Poziom dawkowania irynotekanu:</label>
+                    <select id="csOncoUgt1a1Regimen" class="cs-select" style="width:100%;font-size:12px">
+                      <option value="standard">Standardowy (&le;180 mg/m², np. FOLFIRI)</option>
+                      <option value="high">Wysoka dawka (&gt;240 mg/m², np. monoterapia 350 mg/m²)</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="csOncoUgt1a1ResultBox"></div>
+              </div>
+            </div>
+
+            <!-- Card 4: TPMT & NUDT15 Thiopurines -->
+            <div class="cs-card" id="csOncoThiopurineCard">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <b style="font-size:13px">4. TPMT &amp; NUDT15 — Tiopuryny (6-MP, Azatiopryna)</b>
+                <span id="csOncoThiopurineBadge" class="tag ok" style="font-size:10.5px">NM (100% dawki)</span>
+              </div>
+              <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                  <div>
+                    <label for="csOncoThiopurineSelect" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Fenotyp dwugenowy CPIC:</label>
+                    <select id="csOncoThiopurineSelect" class="cs-select" style="width:100%;font-size:12px">
+                      <option value="NM_NM">TPMT NM + NUDT15 NM (Standard)</option>
+                      <option value="IM_NM">TPMT IM + NUDT15 NM (Redukcja 30-50%)</option>
+                      <option value="NM_IM">TPMT NM + NUDT15 IM (Redukcja 30-50%)</option>
+                      <option value="IM_IM">TPMT IM + NUDT15 IM (Redukcja 70-80%)</option>
+                      <option value="PM_ANY">TPMT PM (Redukcja o 90% lub unikać)</option>
+                      <option value="ANY_PM">NUDT15 PM (Redukcja o 90% lub unikać)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="csOncoThiopurineDrug" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Lek tiopurynowy:</label>
+                    <select id="csOncoThiopurineDrug" class="cs-select" style="width:100%;font-size:12px">
+                      <option value="6mp">6-Merkaptopuryna (std: 75 mg/m²/d)</option>
+                      <option value="aza">Azatiopryna (std: 2.0 mg/kg/d)</option>
+                      <option value="6tg">Tioguanina (std: 40 mg/m²/d)</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="csOncoThiopurineResultBox"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: HD-MTX Nomogram & Leucovorin Rescue -->
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div class="cs-card" id="csOncoMtxNomogramCard">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <b style="font-size:13px">5. Nomogram HD-MTX (Bleyer / Stoller) &amp; Ratowanie Leukoworyną</b>
+                <span id="csOncoMtxStatusBadge" class="tag ok" style="font-size:10.5px">Prawidłowa eliminacja</span>
+              </div>
+              <div style="font-size:11.5px;color:var(--color-text-muted);margin-top:2px">
+                Monitorowanie stężenia metotreksatu (&mu;mol/L) i dobór dawki kwasu folinowego (Leucovorin)
+              </div>
+
+              <!-- Measurement Controls -->
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;background:var(--color-surface-offset);padding:8px 12px;border-radius:6px;border:1px solid var(--color-border)">
+                <div>
+                  <label for="csOncoMtxTimeSelect" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Czas od rozpoczęcia infuzji MTX:</label>
+                  <select id="csOncoMtxTimeSelect" class="cs-select" style="width:100%;font-size:12px;margin-top:2px">
+                    <option value="24">24 godziny (koniec wlewu)</option>
+                    <option value="36">36 godzin</option>
+                    <option value="42">42 godziny</option>
+                    <option value="48" selected>48 godzin (kluczowy punkt decyzyjny)</option>
+                    <option value="72">72 godziny (docelowo &lt;0.1 &mu;mol/L)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="csOncoMtxConcInput" style="font-size:11px;font-weight:600;color:var(--color-text-muted)">Stężenie MTX w surowicy (&mu;mol/L):</label>
+                  <input type="number" id="csOncoMtxConcInput" class="cs-input" value="0.65" step="0.05" min="0.01" max="100.0" style="width:100%;font-size:12px;margin-top:2px" />
+                </div>
+              </div>
+
+              <!-- Semi-Log Nomogram SVG Chart -->
+              <div id="csOncoMtxChartWrap" style="margin-top:12px;border:1px solid var(--color-border);border-radius:6px;background:var(--color-surface);overflow:hidden"></div>
+
+              <!-- Rescue Dosing & Voraxaze Alert -->
+              <div id="csOncoLeucovorinCard" style="margin-top:12px"></div>
+              <div id="csOncoMtxAlertBanner" style="margin-top:8px"></div>
             </div>
           </div>
         </div>

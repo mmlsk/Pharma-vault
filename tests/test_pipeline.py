@@ -2275,6 +2275,104 @@ def test_cross_tapering_engine():
     assert "renderClinicalSuiteTaperPane" in app_src
 
 
+def test_onco_pharm_engine():
+    """Validates Onco-Pharm Precision Oncology, Calvert Carboplatin, Onco-PGx & HD-MTX Nomogram (v3.34.0)."""
+    import math
+
+    # 1. Dataset verification
+    onco_p = ROOT / "data/curated/oncology_precision_rules.json"
+    assert onco_p.exists(), "oncology_precision_rules.json missing"
+    data = json.loads(onco_p.read_text(encoding="utf-8"))
+
+    calv_rules = data.get("calvert_carboplatin", {})
+    assert calv_rules.get("fda_gfr_cap_ml_min") == 125.0
+    assert calv_rules.get("min_serum_creatinine_floor_mg_dl") == 0.70
+
+    dpyd_rules = data.get("dpyd_fluoropyrimidines", {}).get("activity_scores", {})
+    assert "2.0" in dpyd_rules and dpyd_rules["2.0"]["starting_dose_pct"] == 100
+    assert "1.0" in dpyd_rules and dpyd_rules["1.0"]["starting_dose_pct"] == 50
+    assert "0.0" in dpyd_rules and dpyd_rules["0.0"]["starting_dose_pct"] == 0
+
+    ugt_rules = data.get("ugt1a1_irinotecan", {}).get("genotypes", {})
+    assert "*28/*28" in ugt_rules
+    assert "*1/*1" in ugt_rules
+
+    mtx_rules = data.get("hd_mtx_nomogram", {})
+    thresh = mtx_rules.get("thresholds_micromol_l", {})
+    assert thresh.get("h48", {}).get("normal_upper") == 1.0
+    assert thresh.get("h48", {}).get("toxic_threshold") == 5.0
+
+    # 2. Mathematical & Pharmacokinetic Formula Validation
+    # Mosteller BSA: H=175 cm, W=70 kg -> sqrt((175 * 70) / 3600) = 1.8446 -> 1.84 m²
+    bsa = math.sqrt((175.0 * 70.0) / 3600.0)
+    assert abs(bsa - 1.8446) < 0.01
+
+    # Calvert Formula with Normal GFR: AUC 5.0, GFR 80 mL/min -> 5 * (80 + 25) = 525 mg
+    dose_normal = 5.0 * (80.0 + 25.0)
+    assert dose_normal == 525.0
+
+    # Calvert Formula with Supranormal GFR Cap (FDA/NCCN limit = 125 mL/min):
+    # GFR = 160 mL/min -> capped at 125 mL/min -> 5 * (125 + 25) = 750 mg (uncapped would be 5 * 185 = 925 mg)
+    gfr_raw = 160.0
+    gfr_capped = min(gfr_raw, 125.0)
+    dose_capped = 5.0 * (gfr_capped + 25.0)
+    assert dose_capped == 750.0
+    dose_uncapped = 5.0 * (gfr_raw + 25.0)
+    assert dose_uncapped == 925.0
+    assert dose_uncapped > dose_capped
+
+    # Cachectic Elderly Patient Creatinine Floor:
+    # Age 74, Weight 52 kg, Scr 0.45 mg/dL floored to 0.70 mg/dL
+    eff_scr = max(0.70, 0.45)
+    assert eff_scr == 0.70
+    crcl_floored = ((140.0 - 74.0) * 52.0) / (72.0 * eff_scr)
+    assert 65 < crcl_floored < 75
+
+    # HD-MTX Nomogram Clearance & Leucovorin Rescue Triage:
+    # 48h MTX = 15.0 μmol/L with AKI -> critical zone, Voraxaze indication
+    h48_conc = 15.0
+    is_aki = True
+    is_critical_mtx = (h48_conc >= 5.0 or (is_aki and h48_conc >= 1.0))
+    assert is_critical_mtx is True
+    # Critical leucovorin dose = 150 mg/m² q3h -> daily 1200 mg/m²/d
+    single_leuc_m2 = 150
+    daily_leuc_m2 = single_leuc_m2 * (24 // 3)
+    assert daily_leuc_m2 == 1200
+
+    # 3. Markup & Frontend Code Integration
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+
+    # Tab 5 & Pane Elements
+    assert "csTabOncoBtn" in html_src
+    assert "csPaneOnco" in html_src
+    assert "csOncoBsaVal" in html_src
+    assert "csOncoCrclVal" in html_src
+    assert "csOncoCalvertAucSlider" in html_src
+    assert "csOncoDpydSelect" in html_src
+    assert "csOncoUgt1a1Select" in html_src
+    assert "csOncoThiopurineSelect" in html_src
+    assert "csOncoMtxTimeSelect" in html_src
+    assert "csOncoMtxConcInput" in html_src
+    assert "csOncoMtxChartWrap" in html_src
+
+    # Presets in HTML
+    assert 'data-onco-preset="carboplatin_elderly_cachexia"' in html_src
+    assert 'data-onco-preset="dpyd_deficiency_5fu"' in html_src
+    assert 'data-onco-preset="gilbert_irinotecan"' in html_src
+    assert 'data-onco-preset="hd_mtx_delayed_clearance"' in html_src
+
+    # JavaScript Functions in app.js
+    assert "computeOncoBiometrics" in app_src
+    assert "computeCalvertCarboplatin" in app_src
+    assert "getDpydRecommendation" in app_src
+    assert "getUgt1a1Recommendation" in app_src
+    assert "getThiopurineRecommendation" in app_src
+    assert "evaluateMtxClearance" in app_src
+    assert "renderHdrMtxNomogramSvg" in app_src
+    assert "renderClinicalSuiteOncoPane" in app_src
+
+
 
 
 

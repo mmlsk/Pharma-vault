@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "updated": "2026-11-12",
+    "description": "Oncology Precision Pharmacokinetics, Pharmacogenomics & Toxicities (Onco-Pharm Engine)",
+    "references": [
+      "Calvert AH et al. Carboplatin dosage: prospective evaluation of a simple formula based on renal function. J Clin Oncol. 1989",
+      "NCCN Clinical Practice Guidelines in Oncology: Prevention and Management of Chemotherapy-Induced Toxicities",
+      "Amstutz U et al. CPIC Guideline for Dihydropyrimidine Dehydrogenase Genotype and Fluoropyrimidine Dosing: 2020 Update",
+      "Relling MV et al. CPIC Guideline for Thiopurine Methyltransferase and NUDT15 Genotypes and Thiopurine Dosing: 2018 Update",
+      "Bleyer WA. The clinical pharmacology of methotrexate: new applications of an old drug. Cancer. 1978",
+      "FDA Prescribing Information: Voraxaze (glucarpidase) for toxic methotrexate levels with impaired renal function"
+    ]
+  },
+  "calvert_carboplatin": {
+    "formula": "Dose_mg = Target_AUC * (GFR_mL_min + 25)",
+    "fda_gfr_cap_ml_min": 125.0,
+    "min_serum_creatinine_floor_mg_dl": 0.7,
+    "typical_auc_targets": [4.0, 5.0, 6.0, 7.0],
+    "auc_descriptions": {
+      "4.0": "Terapia skojarzona u pacjentów obciążonych lub z wcześniejszą radioterapią / intensywną chemioterapią",
+      "5.0": "Standardowe schematy wielolekowe (np. Paklitaksel + Karboplatyna w raku płuca, jajnika)",
+      "6.0": "Monoterapia w zaawansowanym raku jajnika lub standardowe schematy o pełnej intensywności",
+      "7.0": "Maksymalna dawka w monoterapii u pacjentów wcześniej nieleczonych z prawidłową rezerwą szpiku"
+    }
+  },
+  "dpyd_fluoropyrimidines": {
+    "gene": "DPYD",
+    "drugs": ["5-Fluorouracil (5-FU)", "Kapecytabina (Capecitabine)", "Tegafur"],
+    "activity_scores": {
+      "2.0": {
+        "phenotype": "Normal Metabolizer (NM)",
+        "starting_dose_pct": 100,
+        "recommendation": "Zastosuj 100% standardowej dawki wyjściowej. Rutynowe monitorowanie tolerancji.",
+        "risk_level": "standard"
+      },
+      "1.5": {
+        "phenotype": "Intermediate Metabolizer (IM - umiarkowany)",
+        "starting_dose_pct": 50,
+        "recommendation": "Zredukuj dawkę początkową o 25–50%. Zwiększaj dawkę w kolejnych cyklach wyłącznie przy braku toksyczności (stopień 0–1).",
+        "risk_level": "moderate"
+      },
+      "1.0": {
+        "phenotype": "Intermediate Metabolizer (IM - istotny, np. *2A heterozygota)",
+        "starting_dose_pct": 50,
+        "recommendation": "OBOWIĄZKOWA redukcja dawki początkowej o 50%. TDM stężenia 5-FU w osoczu wysoce zalecany (docelowe AUC 20–30 mg·h/L).",
+        "risk_level": "high"
+      },
+      "0.5": {
+        "phenotype": "Intermediate/Poor Metabolizer (IM/PM)",
+        "starting_dose_pct": 25,
+        "recommendation": "Redukcja dawki początkowej o 75% lub wybór schematu alternatywnego bez fluoropirymidyn.",
+        "risk_level": "critical"
+      },
+      "0.0": {
+        "phenotype": "Poor Metabolizer (PM - całkowity brak aktywności DPD)",
+        "starting_dose_pct": 0,
+        "recommendation": "BEZWZGLĘDNE PRZECIWWSKAZANIE. Unikaj 5-FU i kapecytabiny. Śmiertelne ryzyko mielotoksyczności, ciężkiego zapalenia błon śluzowych i encefalopatii.",
+        "risk_level": "fatal_risk"
+      }
+    }
+  },
+  "ugt1a1_irinotecan": {
+    "gene": "UGT1A1",
+    "drug": "Irinotecan (SN-38)",
+    "genotypes": {
+      "*1/*1": {
+        "label": "*1/*1 (Dziki / Wild-type - 6/6 powtórzeń TA)",
+        "phenotype": "Normal Metabolizer (NM)",
+        "standard_dose_rec": "100% dawki standardowej (np. 180 mg/m² w FOLFIRI lub 300–350 mg/m² w monoterapii).",
+        "high_dose_rec": "Standardowe dawkowanie o pełnej intensywności."
+      },
+      "*1/*28": {
+        "label": "*1/*28 (Heterozygota - 6/7 powtórzeń TA)",
+        "phenotype": "Intermediate Metabolizer (IM)",
+        "standard_dose_rec": "100% dawki w schematach standardowych (≤180 mg/m²).",
+        "high_dose_rec": "Ostrożność przy dawkach wysokich (>240 mg/m²). Rozważ redukcję o 15–20%."
+      },
+      "*28/*28": {
+        "label": "*28/*28 (Homozygota Zespołu Gilberta - 7/7 powtórzeń TA)",
+        "phenotype": "Poor Metabolizer (PM)",
+        "standard_dose_rec": "Dawka ≤180 mg/m² może być rozpoczęta standardowo z czujnym monitorowaniem neutropenii 4. st. i późnej biegunki.",
+        "high_dose_rec": "OBOWIĄZKOWA redukcja dawki początkowej o 25–30% przy dawkach >180 mg/m² (lub w monoterapii 300–350 mg/m²).",
+        "toxicity_alert": "Wysokie ryzyko kumulacji SN-38: neutropenia stopnia 4. i opóźniona biegunka sekrecyjna oporna na loperamid."
+      },
+      "*6/*6": {
+        "label": "*6/*6 (Wariant azjatycki Gly71Arg)",
+        "phenotype": "Poor Metabolizer (PM)",
+        "standard_dose_rec": "Zalecana redukcja dawki o 20–30% w schematach wielolekowych.",
+        "high_dose_rec": "Redukcja dawki o 30% przy dawkach wysokich.",
+        "toxicity_alert": "Znacząco obniżona glukuronidacja SN-38 i wysokie ryzyko mielotoksyczności."
+      }
+    }
+  },
+  "tpmt_nudt15_thiopurines": {
+    "drugs": ["6-Merkaptopuryna (6-MP)", "Azatiopryna (AZA)", "Tioguanina (6-TG)"],
+    "phenotype_matrix": {
+      "NM_NM": {
+        "tpmt": "NM",
+        "nudt15": "NM",
+        "starting_dose_pct": 100,
+        "recommendation": "Dawka wyjściowa 100% (np. 6-MP 75 mg/m²/d lub AZA 2.0–2.5 mg/kg/d).",
+        "risk_level": "standard"
+      },
+      "IM_NM": {
+        "tpmt": "IM",
+        "nudt15": "NM",
+        "starting_dose_pct": 50,
+        "recommendation": "Rozpocznij od 30–50% dawki standardowej. Miareczkuj dawkę w oparciu o morfologię krwi co 1–2 tygodnie.",
+        "risk_level": "moderate"
+      },
+      "NM_IM": {
+        "tpmt": "NM",
+        "nudt15": "IM",
+        "starting_dose_pct": 50,
+        "recommendation": "Rozpocznij od 30–50% dawki standardowej (częstsze w populacji azjatyckiej). Monitoruj leukopenię.",
+        "risk_level": "moderate"
+      },
+      "IM_IM": {
+        "tpmt": "IM",
+        "nudt15": "IM",
+        "starting_dose_pct": 25,
+        "recommendation": "Rozpocznij od 20–30% dawki standardowej pod kontrolą stężenia 6-TGN i CBC.",
+        "risk_level": "high"
+      },
+      "PM_ANY": {
+        "tpmt": "PM",
+        "nudt15": "Dowolny",
+        "starting_dose_pct": 10,
+        "recommendation": "Zredukuj dawkę o 90% (stosuj 10% dawki podawanej co 2–3 dni zamiast codziennie) lub całkowicie unikaj leku. Zagrożenie śmiertelną pancytopenią.",
+        "risk_level": "critical"
+      },
+      "ANY_PM": {
+        "tpmt": "Dowolny",
+        "nudt15": "PM",
+        "starting_dose_pct": 10,
+        "recommendation": "Zredukuj dawkę o 90% (stosuj 10% dawki standardowej) lub zamień lek. Ekstremalnie wczesna mielosupresja i łysienie.",
+        "risk_level": "critical"
+      }
+    }
+  },
+  "hd_mtx_nomogram": {
+    "drug": "Metotreksat w wysokich dawkach (HD-MTX, ≥1 g/m²)",
+    "thresholds_micromol_l": {
+      "h24": { "normal_upper": 5.0, "toxic_threshold": 50.0 },
+      "h36": { "normal_upper": 3.0, "toxic_threshold": 30.0 },
+      "h42": { "normal_upper": 1.5, "toxic_threshold": 10.0 },
+      "h48": { "normal_upper": 1.0, "toxic_threshold": 5.0 },
+      "h72": { "normal_upper": 0.1, "toxic_threshold": 0.5 }
+    },
+    "leucovorin_dosing": {
+      "standard": {
+        "dose_mg_m2": 15,
+        "interval_hours": 6,
+        "route": "p.o. lub i.v.",
+        "indication": "Prawidłowa eliminacja MTX (stężenie w strefie zielonej)"
+      },
+      "delayed_moderate": {
+        "dose_mg_m2": 50,
+        "interval_hours": 6,
+        "route": "i.v.",
+        "indication": "Opóźniony spadek MTX (np. 48h stężenie 1.0–5.0 μmol/L lub 72h stężenie 0.1–0.4 μmol/L)"
+      },
+      "critical_escalation": {
+        "dose_mg_m2": 150,
+        "interval_hours": 3,
+        "route": "i.v. (ciągły wlew lub co 3h)",
+        "indication": "Krytyczne stężenie toksyczne (48h ≥ 5.0 μmol/L lub 24h ≥ 50 μmol/L) lub ostre uszkodzenie nerek (AKI)"
+      }
+    },
+    "supportive_care": {
+      "urinary_ph_target": "≥ 7.0 (alkalizacja wlewem 1.4% lub 8.4% NaHCO3; zapobiega krystalizacji kwasu metotreksatowego w cewkach nerkowych)",
+      "hyperhydration_rate": "2.5 – 3.0 L/m²/dobę (diureza > 100 mL/m²/h)",
+      "glucarpidase_voraxaze_indication": "Wskazanie pilne: stężenie MTX > 1.0 μmol/L w 48h lub > 5.0 μmol/L z jednoczesnym ≥2-krotnym wzrostem stężenia kreatyniny (lub ciężką oligurią). Dawka: 50 jednostek/kg i.v. Nie podawać leukoworyny w oknie ±2 godziny od infuzji glukarpidazy!"
+    }
+  }
+}

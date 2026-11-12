@@ -14800,6 +14800,572 @@
     });
   }
 
+  // ---------- PANE 5: Onco-Pharm Precision Oncology & Chemotherapy Toxicities (v3.34.0)
+  function computeOncoBiometrics() {
+    const sex = $("csOncoSexSelect")?.value || "M";
+    const age = parseFloat($("csOncoAgeInput")?.value) || 62;
+    const height = parseFloat($("csOncoHeightInput")?.value) || 175;
+    const weight = parseFloat($("csOncoWeightInput")?.value) || 70;
+    const scr = parseFloat($("csOncoScrInput")?.value) || 0.90;
+    const aki = $("csOncoAkiCheck")?.checked || false;
+
+    // Mosteller BSA formula: sqrt((H * W) / 3600)
+    const bsa = +(Math.sqrt((height * weight) / 3600)).toFixed(2);
+
+    // Devine Ideal Body Weight (IBW)
+    const ibwBase = sex === "M" ? (50.0 + 0.905 * (height - 152.4)) : (45.5 + 0.905 * (height - 152.4));
+    const ibw = Math.max(30, Math.round(ibwBase * 10) / 10);
+    const bmi = +(weight / ((height / 100) ** 2)).toFixed(1);
+
+    // Weight selection for Cockcroft-Gault: AdjBW if BMI >= 25 or TBW > 1.2 * IBW
+    const isOverweight = bmi >= 25.0 || weight > (1.2 * ibw);
+    const adjWeight = isOverweight ? Math.round((ibw + 0.40 * (weight - ibw)) * 10) / 10 : weight;
+
+    // Minimum Serum Creatinine floor (0.70 mg/dL) for cachectic/elderly cancer patients
+    const effScr = Math.max(0.70, scr);
+    const isScrFloored = scr < 0.70;
+
+    // Cockcroft-Gault CrCl
+    const crclRaw = (((140 - age) * adjWeight) / (72 * effScr)) * (sex === "F" ? 0.85 : 1.0);
+    const crcl = Math.max(5, Math.round(crclRaw * 10) / 10);
+
+    return {
+      sex, age, height, weight, scr, effScr, isScrFloored, aki,
+      bsa, ibw, bmi, isOverweight, adjWeight, crcl
+    };
+  }
+
+  function computeCalvertCarboplatin(targetAuc, crcl) {
+    const fdaCap = 125.0;
+    const isCapped = crcl > fdaCap;
+    const effectiveGfr = Math.min(crcl, fdaCap);
+    const doseMg = Math.round(targetAuc * (effectiveGfr + 25));
+    const uncappedDoseMg = Math.round(targetAuc * (crcl + 25));
+    const maxCapDoseMg = Math.round(targetAuc * (fdaCap + 25)); // AUC * 150 mg
+
+    return { targetAuc, crcl, effectiveGfr, isCapped, doseMg, uncappedDoseMg, maxCapDoseMg };
+  }
+
+  function getDpydRecommendation(asScore, bsa, drugKey) {
+    const rules = {
+      "2.0": { label: "Normal Metabolizer (NM)", dosePct: 100, severity: "ok", note: "Standardowa dawka wyjściowa (100%). Rutynowa kontrola." },
+      "1.5": { label: "Intermediate Metabolizer (IM - umiarkowany)", dosePct: 50, severity: "warn", note: "Zredukuj dawkę początkową o 50%. Eskalacja w kolejnych cyklach tylko przy braku toksyczności st. ≥2." },
+      "1.0": { label: "Intermediate Metabolizer (IM - wysokie ryzyko, np. *2A)", dosePct: 50, severity: "warn", note: "OBOWIĄZKOWA redukcja dawki początkowej o 50%. Monitorowanie TDM (docelowe AUC 5-FU: 20–30 mg·h/L)." },
+      "0.5": { label: "Intermediate/Poor Metabolizer", dosePct: 25, severity: "err", note: "Zredukuj dawkę o 75% lub wybierz schemat alternatywny bez fluoropirymidyn." },
+      "0.0": { label: "Poor Metabolizer (PM - całkowity niedobór DPD)", dosePct: 0, severity: "err", note: "BEZWZGLĘDNE PRZECIWWSKAZANIE (100% unikać). Śmiertelne ryzyko mielotoksyczności i encefalopatii." }
+    };
+    const r = rules[asScore] || rules["2.0"];
+    let stdDose = 0;
+    let unit = "mg";
+    if (drugKey === "5fu_infusion_2400") {
+      stdDose = Math.round(2400 * bsa);
+      unit = "mg / wlew 46h";
+    } else if (drugKey === "5fu_bolus_400") {
+      stdDose = Math.round(400 * bsa);
+      unit = "mg bolus d1";
+    } else {
+      stdDose = Math.round(1250 * bsa);
+      unit = "mg p.o. 2x/d";
+    }
+    const adjustedDose = Math.round((stdDose * r.dosePct) / 100);
+    return { ...r, stdDose, adjustedDose, unit };
+  }
+
+  function getUgt1a1Recommendation(genotype, isHighDose, bsa) {
+    if (genotype === "*28/*28") {
+      if (isHighDose) {
+        return {
+          status: "Krytyczne Ryzyko Toksyczności (Zespół Gilberta)",
+          severity: "err",
+          dosePct: 70,
+          stdDose: Math.round(350 * bsa),
+          adjDose: Math.round(350 * bsa * 0.70),
+          rec: "OBOWIĄZKOWA redukcja dawki początkowej o 30% przy dawkach wysokich (>240 mg/m²). Wysokie ryzyko kumulacji SN-38, zapaści szpiku i ciężkiej, opóźnionej biegunki sekrecyjnej."
+        };
+      }
+      return {
+        status: "Zespół Gilberta (Homozygota 7/7 TA)",
+        severity: "warn",
+        dosePct: 100,
+        stdDose: Math.round(180 * bsa),
+        adjDose: Math.round(180 * bsa),
+        rec: "Dawka standardowa (≤180 mg/m², np. FOLFIRI) może być podana w 100%, lecz wymaga czujnego monitorowania neutropenii 4. st. i profilaktyki loperamidem."
+      };
+    } else if (genotype === "*1/*28") {
+      return {
+        status: "Heterozygota (*1/*28)",
+        severity: "ok",
+        dosePct: 100,
+        stdDose: Math.round((isHighDose ? 350 : 180) * bsa),
+        adjDose: Math.round((isHighDose ? 350 : 180) * bsa),
+        rec: "100% dawki w schematach standardowych. Przy dawkach >240 mg/m² zalecana ostrożność kliniczna."
+      };
+    } else if (genotype === "*6/*6") {
+      return {
+        status: "Wariant Azjatycki (*6/*6)",
+        severity: "err",
+        dosePct: 75,
+        stdDose: Math.round((isHighDose ? 350 : 180) * bsa),
+        adjDose: Math.round((isHighDose ? 350 : 180) * bsa * 0.75),
+        rec: "Zalecana redukcja dawki o 25% ze względu na upośledzony klirens SN-38."
+      };
+    }
+    return {
+      status: "Ekspresja prawidłowa (*1/*1)",
+      severity: "ok",
+      dosePct: 100,
+      stdDose: Math.round((isHighDose ? 350 : 180) * bsa),
+      adjDose: Math.round((isHighDose ? 350 : 180) * bsa),
+      rec: "Standardowe dawkowanie o pełnej intensywności."
+    };
+  }
+
+  function getThiopurineRecommendation(phenoKey, drugKey, bsa, weight) {
+    const isPm = phenoKey.includes("PM");
+    const isIm = phenoKey.includes("IM");
+    let dosePct = 100;
+    let severity = "ok";
+    let note = "Standardowa dawka wyjściowa (100%).";
+
+    if (isPm) {
+      dosePct = 10;
+      severity = "err";
+      note = "Zredukuj dawkę o 90% (podawaj 10% dawki standardowej co 2–3 dni) lub całkowicie unikaj leku. Zagrożenie śmiertelną mielosupresją.";
+    } else if (phenoKey === "IM_IM") {
+      dosePct = 25;
+      severity = "err";
+      note = "Rozpocznij od 20–30% dawki standardowej. Cotygodniowa kontrola morfologii.";
+    } else if (isIm) {
+      dosePct = 50;
+      severity = "warn";
+      note = "Zredukuj dawkę początkową o 50%. Miareczkuj dawkę w oparciu o morfologię krwi i stężenie 6-TGN.";
+    }
+
+    let stdMg = 0;
+    let unit = "mg/d";
+    if (drugKey === "6mp") {
+      stdMg = Math.round(75 * bsa);
+    } else if (drugKey === "aza") {
+      stdMg = Math.round(2.0 * weight);
+    } else {
+      stdMg = Math.round(40 * bsa);
+    }
+    const adjMg = Math.round((stdMg * dosePct) / 100);
+
+    return { dosePct, severity, note, stdMg, adjMg, unit };
+  }
+
+  function evaluateMtxClearance(hours, mtxConc, aki, bsa) {
+    const thresh = {
+      24: { normal: 5.0, toxic: 50.0 },
+      36: { normal: 3.0, toxic: 30.0 },
+      42: { normal: 1.5, toxic: 10.0 },
+      48: { normal: 1.0, toxic: 5.0 },
+      72: { normal: 0.1, toxic: 0.5 }
+    };
+    const t = thresh[hours] || thresh[48];
+    let zone = "normal";
+    if (mtxConc >= t.toxic || (hours === 48 && mtxConc >= 5.0) || (aki && mtxConc >= t.normal)) {
+      zone = "critical";
+    } else if (mtxConc > t.normal) {
+      zone = "delayed";
+    }
+
+    let doseMgM2 = 15;
+    let intervalH = 6;
+    let route = "p.o. lub i.v.";
+    let plan = "";
+
+    if (zone === "critical") {
+      doseMgM2 = 150;
+      intervalH = 3;
+      route = "i.v. (ciągły wlew lub co 3h)";
+      plan = "Eskalacja Leukoworyny do 150 mg/m² i.v. co 3 godziny! Natychmiastowa intensywna alkalizacja moczu (cel pH ≥ 7.0) i hiperhydratacja 3.0 L/m²/d.";
+    } else if (zone === "delayed") {
+      doseMgM2 = 50;
+      intervalH = 6;
+      route = "i.v.";
+      plan = "Zwiększ dawkę Leukoworyny do 50 mg/m² i.v. co 6 godzin do czasu spadku stężenia MTX < 0.1 μmol/L.";
+    } else {
+      doseMgM2 = 15;
+      intervalH = 6;
+      route = "p.o. lub i.v.";
+      plan = "Standardowe ratowanie Leukoworyną: 15 mg/m² co 6 godzin (łącznie 8–10 dawek) do czasu stężenia MTX < 0.05 μmol/L.";
+    }
+
+    const singleDoseMg = Math.round(doseMgM2 * bsa);
+    const dailyDosesCount = Math.round(24 / intervalH);
+    const totalDailyMg = singleDoseMg * dailyDosesCount;
+
+    // Glucarpidase / Voraxaze Alert criteria
+    const triggerVoraxaze = (hours === 48 && mtxConc >= 1.0 && aki) || (mtxConc >= t.toxic);
+
+    return {
+      hours, mtxConc, zone, doseMgM2, intervalH, route, singleDoseMg, totalDailyMg, plan, triggerVoraxaze
+    };
+  }
+
+  function renderHdrMtxNomogramSvg(timeHours, mtxConc, zone) {
+    const W = 520, H = 280;
+    const padL = 55, padR = 25, padT = 25, padB = 35;
+    const plotW = W - padL - padR;
+    const plotH = H - padT - padB;
+
+    // Time axis: 20 to 80 hours
+    const mapX = (t) => padL + ((t - 20) / 60) * plotW;
+    // Log concentration axis: 0.01 to 100 μmol/L (range -2 to +2, span 4)
+    const mapY = (c) => {
+      const clamped = Math.max(0.01, Math.min(100, c));
+      const logVal = Math.log10(clamped);
+      return padT + (1 - (logVal - (-2)) / 4) * plotH;
+    };
+
+    // Reference curves: Normal (Green threshold) & Toxic (Red threshold)
+    const ptsNorm = [
+      { t: 20, c: 8.0 }, { t: 24, c: 5.0 }, { t: 36, c: 3.0 },
+      { t: 42, c: 1.5 }, { t: 48, c: 1.0 }, { t: 72, c: 0.1 }, { t: 80, c: 0.05 }
+    ];
+    const ptsTox = [
+      { t: 20, c: 70.0 }, { t: 24, c: 50.0 }, { t: 36, c: 30.0 },
+      { t: 42, c: 10.0 }, { t: 48, c: 5.0 }, { t: 72, c: 0.5 }, { t: 80, c: 0.2 }
+    ];
+
+    const pathNorm = ptsNorm.map((p, i) => `${i === 0 ? "M" : "L"} ${mapX(p.t).toFixed(1)} ${mapY(p.c).toFixed(1)}`).join(" ");
+    const pathTox = ptsTox.map((p, i) => `${i === 0 ? "M" : "L"} ${mapX(p.t).toFixed(1)} ${mapY(p.c).toFixed(1)}`).join(" ");
+
+    // Polygons for zones
+    const botY = padT + plotH;
+    const topY = padT;
+    const rightX = padL + plotW;
+    const leftX = padL;
+
+    // Green zone: below normal curve down to bottom
+    const polyGreen = `${pathNorm} L ${rightX} ${botY} L ${leftX} ${botY} Z`;
+
+    // Red zone: above toxic curve up to top
+    const polyRed = `${pathTox} L ${rightX} ${topY} L ${leftX} ${topY} Z`;
+
+    // Orange zone: between normal and toxic
+    const toxReverse = [...ptsTox].reverse().map((p) => `L ${mapX(p.t).toFixed(1)} ${mapY(p.c).toFixed(1)}`).join(" ");
+    const polyOrange = `${pathNorm} ${toxReverse} Z`;
+
+    // Patient measurement point
+    const ptX = mapX(timeHours);
+    const ptY = mapY(mtxConc);
+    const ptColor = zone === "critical" ? "var(--color-error)" : (zone === "delayed" ? "var(--color-warning)" : "var(--color-success)");
+
+    return `
+      <svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" style="font-family:sans-serif;font-size:11px">
+        <!-- Background Zones -->
+        <rect x="${padL}" y="${padT}" width="${plotW}" height="${plotH}" fill="rgba(245, 158, 11, 0.12)" />
+        <path d="${polyGreen}" fill="rgba(16, 185, 129, 0.18)" />
+        <path d="${polyRed}" fill="rgba(239, 68, 68, 0.22)" />
+        <path d="${polyOrange}" fill="rgba(245, 158, 11, 0.15)" />
+
+        <!-- Grid Lines Horiz (log conc) -->
+        ${[0.01, 0.1, 1.0, 10.0, 100.0].map((c) => {
+          const y = mapY(c).toFixed(1);
+          return `
+            <line x1="${padL}" y1="${y}" x2="${rightX}" y2="${y}" stroke="var(--color-border)" stroke-dasharray="2,2" opacity="0.6" />
+            <text x="${padL - 6}" y="${+y + 3.5}" text-anchor="end" fill="var(--color-text-muted)" font-size="9.5">${c}</text>
+          `;
+        }).join("")}
+
+        <!-- Grid Lines Vert (time hours) -->
+        ${[24, 36, 42, 48, 72].map((t) => {
+          const x = mapX(t).toFixed(1);
+          return `
+            <line x1="${x}" y1="${padT}" x2="${x}" y2="${botY}" stroke="var(--color-border)" stroke-dasharray="2,2" opacity="0.6" />
+            <text x="${x}" y="${botY + 16}" text-anchor="middle" fill="var(--color-text-muted)" font-size="10">${t}h</text>
+          `;
+        }).join("")}
+
+        <!-- Threshold Curves -->
+        <path d="${pathNorm}" fill="none" stroke="var(--color-success)" stroke-width="2" />
+        <path d="${pathTox}" fill="none" stroke="var(--color-error)" stroke-width="2" stroke-dasharray="4,3" />
+
+        <!-- Zone Labels -->
+        <text x="${padL + 12}" y="${botY - 12}" fill="var(--color-success)" font-weight="700" font-size="10.5">Strefa Prawidłowej Eliminacji</text>
+        <text x="${mapX(48) + 8}" y="${mapY(2.2)}" fill="var(--color-warning)" font-weight="700" font-size="10.5">Opóźniona Eliminacja</text>
+        <text x="${padL + 12}" y="${padT + 18}" fill="var(--color-error)" font-weight="700" font-size="10.5">KRYTYCZNA TOKSYCZNOŚĆ (Voraxaze®)</text>
+
+        <!-- Patient Point -->
+        <circle cx="${ptX}" cy="${ptY}" r="9" fill="${ptColor}" opacity="0.3">
+          <animate attributeName="r" values="7;13;7" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="${ptX}" cy="${ptY}" r="5.5" fill="${ptColor}" stroke="#fff" stroke-width="2" />
+
+        <!-- Callout Box -->
+        <rect x="${Math.min(rightX - 110, ptX + 8)}" y="${Math.max(padT + 4, ptY - 26)}" width="105" height="22" rx="4" fill="var(--color-surface)" stroke="${ptColor}" stroke-width="1.5" />
+        <text x="${Math.min(rightX - 110, ptX + 8) + 6}" y="${Math.max(padT + 4, ptY - 26) + 15}" fill="var(--color-text)" font-weight="800" font-size="10.5">
+          ${timeHours}h: ${mtxConc} μmol/L
+        </text>
+
+        <!-- Axis Labels -->
+        <text x="${padL + plotW / 2}" y="${botY + 30}" text-anchor="middle" fill="var(--color-text-muted)" font-size="10">Czas po rozpoczęciu wlewu HD-MTX (godziny)</text>
+        <text transform="rotate(-90)" x="${-(padT + plotH / 2)}" y="16" text-anchor="middle" fill="var(--color-text-muted)" font-size="10">Stężenie MTX w surowicy (μmol/L, skala log)</text>
+      </svg>
+    `;
+  }
+
+  function renderClinicalSuiteOncoPane() {
+    const bio = computeOncoBiometrics();
+
+    // 1. Update Biometrics Bar
+    const bsaEl = $("csOncoBsaVal");
+    const ibwEl = $("csOncoIbwVal");
+    const crclEl = $("csOncoCrclVal");
+    const weightAdjBadge = $("csOncoWeightAdjBadge");
+
+    if (bsaEl) bsaEl.textContent = `${bio.bsa} m²`;
+    if (ibwEl) ibwEl.textContent = `${bio.ibw} kg (BMI: ${bio.bmi})`;
+    if (crclEl) {
+      crclEl.textContent = `${bio.crcl} mL/min`;
+      crclEl.style.color = bio.crcl >= 60 ? "var(--color-success)" : (bio.crcl >= 30 ? "var(--color-warning)" : "var(--color-error)");
+    }
+    if (weightAdjBadge) {
+      weightAdjBadge.style.display = bio.isOverweight ? "inline-block" : "none";
+      if (bio.isOverweight) weightAdjBadge.textContent = `Masa skorygowana AdjBW: ${bio.adjWeight} kg`;
+    }
+
+    // 2. Card 1: Carboplatin Calvert Formula
+    const aucSlider = $("csOncoCalvertAucSlider");
+    const aucValEl = $("csOncoCalvertAucVal");
+    const targetAuc = parseFloat(aucSlider?.value) || 5.0;
+    if (aucValEl) aucValEl.textContent = `AUC ${targetAuc.toFixed(1)}`;
+
+    const calvert = computeCalvertCarboplatin(targetAuc, bio.crcl);
+    const calvertBox = $("csOncoCalvertResultBox");
+    if (calvertBox) {
+      calvertBox.innerHTML = `
+        <div style="background:var(--color-surface-offset);padding:10px 12px;border-radius:6px;border:1px solid var(--color-border)">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:12px;color:var(--color-text-muted)">Wyliczona dawka karboplatyny:</span>
+            <span class="tag ${calvert.isCapped ? 'warn' : 'ok'}">${calvert.isCapped ? 'Limit FDA 125 mL/min' : 'GFR w granicach normy'}</span>
+          </div>
+          <div style="font-size:22px;font-weight:800;color:var(--color-primary);margin-top:2px">
+            ${calvert.doseMg} mg
+            ${calvert.isCapped ? `<small style="font-size:12px;color:var(--color-text-muted);font-weight:400">(surowa bez limitu: ${calvert.uncappedDoseMg} mg)</small>` : ''}
+          </div>
+          <div style="font-size:11.5px;color:var(--color-text-muted);margin-top:4px">
+            GFR użyte do wzoru: <b>${calvert.effectiveGfr} mL/min</b> ${calvert.isCapped ? `<b style="color:var(--color-warning)">(obcięte ze ${bio.crcl} mL/min)</b>` : ''} + 25 = <b>${calvert.effectiveGfr + 25}</b>.
+            ${bio.isScrFloored ? `<br><b style="color:var(--color-info)">ℹ️ Zastosowano minimalny próg kreatyniny 0.70 mg/dL</b> dla pacjenta kachektycznego (pomiar: ${bio.scr} mg/dL).` : ''}
+          </div>
+        </div>
+        ${calvert.isCapped ? `
+          <div class="pv-banner pv-banner-warning" style="margin-top:6px">
+            <b>Zastosowano limit bezpieczeństwa FDA / NCCN (GFR Cap = 125 mL/min):</b>
+            <div style="font-size:11.5px;margin-top:2px">Maksymalna dopuszczalna dawka wynosi AUC &times; 150 = <b>${calvert.maxCapDoseMg} mg</b>. Zapobiega to ciężkiej małopłytkowości i neutropenii u pacjentów z ponadprzeciętnym klirensem.</div>
+          </div>
+        ` : ''}
+      `;
+    }
+
+    // 3. Card 2: DPYD & Fluoropyrimidines
+    const dpydSel = $("csOncoDpydSelect");
+    const dpydDrugSel = $("csOncoDpydDrugSelect");
+    const dpydScore = dpydSel?.value || "2.0";
+    const dpydDrug = dpydDrugSel?.value || "5fu_infusion_2400";
+    const dpydRes = getDpydRecommendation(dpydScore, bio.bsa, dpydDrug);
+
+    const dpydBadge = $("csOncoDpydStatusBadge");
+    if (dpydBadge) {
+      dpydBadge.textContent = `${dpydRes.label} (${dpydRes.dosePct}%)`;
+      dpydBadge.className = `tag ${dpydRes.severity}`;
+    }
+
+    const dpydBox = $("csOncoDpydResultBox");
+    if (dpydBox) {
+      dpydBox.innerHTML = `
+        <div style="background:var(--color-surface-offset);padding:10px 12px;border-radius:6px;border:1px solid var(--color-border)">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:12px;color:var(--color-text-muted)">Dawka dla powierzchni ciała (${bio.bsa} m²):</span>
+            <b style="color:${dpydRes.dosePct === 0 ? 'var(--color-error)' : 'var(--color-primary)'};font-size:16px">
+              ${dpydRes.dosePct === 0 ? 'PRZECIWWSKAZANE (0 mg)' : `${dpydRes.adjustedDose} ${dpydRes.unit}`}
+            </b>
+          </div>
+          ${dpydRes.dosePct > 0 && dpydRes.dosePct < 100 ? `
+            <div style="font-size:11.5px;color:var(--color-text-muted);margin-top:2px">
+              Standardowa dawka 100%: ${dpydRes.stdDose} ${dpydRes.unit} &rarr; po redukcji o ${100 - dpydRes.dosePct}%: <b>${dpydRes.adjustedDose} ${dpydRes.unit}</b>
+            </div>
+          ` : ''}
+          <div style="font-size:11.5px;color:var(--color-text-muted);margin-top:4px">${esc(dpydRes.note)}</div>
+        </div>
+        ${dpydRes.dosePct === 0 ? `
+          <div class="pv-banner pv-banner-critical" style="margin-top:6px">
+            <b>ZAGROŻENIE ŻYCIA: Całkowity brak aktywności dehydrogenazy dihydropirymidynowej (DPYD AS = 0.0)</b>
+            <div style="font-size:11.5px;margin-top:2px">Podanie 5-FU lub kapecytabiny wiąże się z niemal 100% śmiertelnością wskutek zapaści szpiku, martwicy enterocytów i neurotoksyczności. Wybierz schemat alternatywny!</div>
+          </div>
+        ` : ''}
+      `;
+    }
+
+    // 4. Card 3: UGT1A1 & Irinotecan
+    const ugtSel = $("csOncoUgt1a1Select");
+    const ugtRegimenSel = $("csOncoUgt1a1Regimen");
+    const ugtGeno = ugtSel?.value || "*1/*1";
+    const isHighDose = ugtRegimenSel?.value === "high";
+    const ugtRes = getUgt1a1Recommendation(ugtGeno, isHighDose, bio.bsa);
+
+    const ugtBadge = $("csOncoUgt1a1StatusBadge");
+    if (ugtBadge) {
+      ugtBadge.textContent = ugtRes.status;
+      ugtBadge.className = `tag ${ugtRes.severity}`;
+    }
+
+    const ugtBox = $("csOncoUgt1a1ResultBox");
+    if (ugtBox) {
+      ugtBox.innerHTML = `
+        <div style="background:var(--color-surface-offset);padding:10px 12px;border-radius:6px;border:1px solid var(--color-border)">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:12px;color:var(--color-text-muted)">Rekomendacja dawkowania (BSA: ${bio.bsa} m²):</span>
+            <b style="color:var(--color-primary);font-size:15px">${ugtRes.adjDose} mg ${ugtRes.dosePct < 100 ? `(-${100 - ugtRes.dosePct}%)` : ''}</b>
+          </div>
+          <div style="font-size:11.5px;color:var(--color-text-muted);margin-top:4px">${esc(ugtRes.rec)}</div>
+        </div>
+      `;
+    }
+
+    // 5. Card 4: TPMT & NUDT15 Thiopurines
+    const thioSel = $("csOncoThiopurineSelect");
+    const thioDrugSel = $("csOncoThiopurineDrug");
+    const thioPheno = thioSel?.value || "NM_NM";
+    const thioDrug = thioDrugSel?.value || "6mp";
+    const thioRes = getThiopurineRecommendation(thioPheno, thioDrug, bio.bsa, bio.weight);
+
+    const thioBadge = $("csOncoThiopurineBadge");
+    if (thioBadge) {
+      thioBadge.textContent = `${thioPheno} (${thioRes.dosePct}%)`;
+      thioBadge.className = `tag ${thioRes.severity}`;
+    }
+
+    const thioBox = $("csOncoThiopurineResultBox");
+    if (thioBox) {
+      thioBox.innerHTML = `
+        <div style="background:var(--color-surface-offset);padding:10px 12px;border-radius:6px;border:1px solid var(--color-border)">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:12px;color:var(--color-text-muted)">Dawka początkowa:</span>
+            <b style="color:${thioRes.dosePct <= 10 ? 'var(--color-error)' : 'var(--color-primary)'};font-size:15px">
+              ${thioRes.adjMg} ${thioRes.unit} (${thioRes.dosePct}%)
+            </b>
+          </div>
+          <div style="font-size:11.5px;color:var(--color-text-muted);margin-top:4px">${esc(thioRes.note)}</div>
+        </div>
+      `;
+    }
+
+    // 6. Card 5: HD-MTX Nomogram & Leucovorin Rescue
+    const mtxTime = parseInt($("csOncoMtxTimeSelect")?.value, 10) || 48;
+    const mtxConc = parseFloat($("csOncoMtxConcInput")?.value) || 0.65;
+    const mtxEval = evaluateMtxClearance(mtxTime, mtxConc, bio.aki, bio.bsa);
+
+    const mtxBadge = $("csOncoMtxStatusBadge");
+    if (mtxBadge) {
+      mtxBadge.textContent = mtxEval.zone === "critical" ? "KRYTYCZNA TOKSYCZNOŚĆ" : (mtxEval.zone === "delayed" ? "Opóźniona eliminacja" : "Prawidłowa eliminacja");
+      mtxBadge.className = `tag ${mtxEval.zone === 'critical' ? 'err' : (mtxEval.zone === 'delayed' ? 'warn' : 'ok')}`;
+    }
+
+    const mtxChartWrap = $("csOncoMtxChartWrap");
+    if (mtxChartWrap) {
+      mtxChartWrap.innerHTML = renderHdrMtxNomogramSvg(mtxTime, mtxConc, mtxEval.zone);
+    }
+
+    const leucCard = $("csOncoLeucovorinCard");
+    if (leucCard) {
+      leucCard.innerHTML = `
+        <div style="background:var(--color-surface-offset);padding:10px 12px;border-radius:6px;border:1px solid var(--color-border)">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:12px;color:var(--color-text-muted)">Protokół Ratunkowy Leukoworyny (Kwas Folinowy):</span>
+            <span class="tag ${mtxEval.zone === 'critical' ? 'err' : (mtxEval.zone === 'delayed' ? 'warn' : 'ok')}">
+              ${mtxEval.doseMgM2} mg/m² co ${mtxEval.intervalH}h (${mtxEval.route})
+            </span>
+          </div>
+          <div style="font-size:18px;font-weight:800;color:var(--color-primary);margin-top:2px">
+            ${mtxEval.singleDoseMg} mg / dawkę <small style="font-size:12px;color:var(--color-text-muted);font-weight:400">(dobowo: ${mtxEval.totalDailyMg} mg/d)</small>
+          </div>
+          <div style="font-size:11.5px;color:var(--color-text-muted);margin-top:3px">${esc(mtxEval.plan)}</div>
+        </div>
+      `;
+    }
+
+    const mtxAlertWrap = $("csOncoMtxAlertBanner");
+    if (mtxAlertWrap) {
+      const alerts = [];
+      if (mtxEval.triggerVoraxaze) {
+        alerts.push(`
+          <div class="pv-banner pv-banner-critical" style="margin-top:6px">
+            <b>🚨 Wskazanie do natychmiastowego podania Glukarpidazy (Voraxaze®):</b>
+            <div style="font-size:11.5px;margin-top:2px">
+              Stężenie MTX w 48h wynosi ${mtxConc} μmol/L ${bio.aki ? 'przy współistniejącym ostrym uszkodzeniu nerek (AKI)' : 'w strefie krytycznej toksyczności'}.
+              <br>• Dawka: <b>50 jednostek/kg i.v.</b> (hydroliza MTX do nieaktywnego DAMPA w 15 min).
+              <br>• ⚠️ <b>UWAGA:</b> Nie podawać leukoworyny w oknie &plusmn;2 godziny od infuzji glukarpidazy (współzawodnictwo o enzym)!
+            </div>
+          </div>
+        `);
+      }
+      alerts.push(`
+        <div class="pv-banner pv-banner-info" style="margin-top:6px">
+          <b>Wspomagająca alkalizacja moczu &amp; hiperhydratacja:</b>
+          <div style="font-size:11.5px;margin-top:2px">
+            • Cel: <b>pH moczu &ge; 7.0</b> (wlew 1.4% lub 8.4% NaHCO3; zapobiega krystalizacji w cewkach nerkowych).
+            <br>• Intensywność nawadniania: <b>2.5–3.0 L/m²/dobę</b> przy diurezie &gt; 100 mL/m²/h.
+          </div>
+        </div>
+      `);
+      mtxAlertWrap.innerHTML = alerts.join("");
+    }
+
+    // 7. Wire Onco Presets
+    document.querySelectorAll("[data-onco-preset]").forEach((btn) => {
+      btn.onclick = () => {
+        const pKey = btn.dataset.oncoPreset;
+        if (pKey === "carboplatin_elderly_cachexia") {
+          $("csOncoSexSelect").value = "M";
+          $("csOncoAgeInput").value = "74";
+          $("csOncoHeightInput").value = "168";
+          $("csOncoWeightInput").value = "52";
+          $("csOncoScrInput").value = "0.45"; // below 0.70 -> triggers floor
+          $("csOncoAkiCheck").checked = false;
+          $("csOncoCalvertAucSlider").value = "5.0";
+          csActiveCompoundId = "carboplatin-compound";
+        } else if (pKey === "dpyd_deficiency_5fu") {
+          $("csOncoSexSelect").value = "F";
+          $("csOncoAgeInput").value = "58";
+          $("csOncoHeightInput").value = "164";
+          $("csOncoWeightInput").value = "63";
+          $("csOncoScrInput").value = "0.80";
+          $("csOncoAkiCheck").checked = false;
+          $("csOncoDpydSelect").value = "1.0"; // 50% dose
+          $("csOncoDpydDrugSelect").value = "5fu_infusion_2400";
+          csActiveCompoundId = "fluorouracil-compound";
+        } else if (pKey === "gilbert_irinotecan") {
+          $("csOncoSexSelect").value = "M";
+          $("csOncoAgeInput").value = "50";
+          $("csOncoHeightInput").value = "182";
+          $("csOncoWeightInput").value = "78";
+          $("csOncoScrInput").value = "0.95";
+          $("csOncoAkiCheck").checked = false;
+          $("csOncoUgt1a1Select").value = "*28/*28";
+          $("csOncoUgt1a1Regimen").value = "high"; // High dose -> 30% reduction
+          csActiveCompoundId = "irinotecan-compound";
+        } else if (pKey === "hd_mtx_delayed_clearance") {
+          $("csOncoSexSelect").value = "M";
+          $("csOncoAgeInput").value = "35";
+          $("csOncoHeightInput").value = "178";
+          $("csOncoWeightInput").value = "75";
+          $("csOncoScrInput").value = "2.10";
+          $("csOncoAkiCheck").checked = true; // AKI
+          $("csOncoMtxTimeSelect").value = "48";
+          $("csOncoMtxConcInput").value = "15.0"; // Highly toxic -> triggers Voraxaze
+          csActiveCompoundId = "methotrexate-compound";
+        }
+        const gSel = $("csGlobalCompoundSelect");
+        if (gSel) gSel.value = csActiveCompoundId;
+        renderClinicalSuiteOncoPane();
+      };
+    });
+  }
+
   function populateCsGlobalCompoundSelect() {
     const gSel = $("csGlobalCompoundSelect");
     if (!gSel || gSel.options.length > 0) return;
@@ -14809,15 +15375,17 @@
       ...(CONV_DATA.pet_hyperbolic_models || []).map((m) => m.compound_id),
       "vancomycin-compound", "gentamicin-compound", "amikacin-compound", "tobramycin-compound",
       "meropenem-compound", "piperacillin-compound", "cefepime-compound", "ceftriaxone-compound",
-      "daptomycin-compound", "colistin-compound"
+      "daptomycin-compound", "colistin-compound",
+      "carboplatin-compound", "cisplatin-compound", "fluorouracil-compound", "capecitabine-compound",
+      "irinotecan-compound", "methotrexate-compound", "mercaptopurine-compound", "azathioprine-compound"
     ]);
     const sorted = [...C].sort((a, b) => (priorityIds.has(b.id) - priorityIds.has(a.id)) || a.n.localeCompare(b.n));
     gSel.innerHTML = sorted.map((c) => `<option value="${esc(c.id)}">${priorityIds.has(c.id) ? "★ " : ""}${esc(c.n)}</option>`).join("");
   }
 
   function switchClinicalSuiteTab(tab) {
-    if (["pgx", "taper", "organ", "icu"].includes(tab)) csActiveTab = tab;
-    ["pgx", "taper", "organ", "icu"].forEach((t) => {
+    if (["pgx", "taper", "organ", "icu", "onco"].includes(tab)) csActiveTab = tab;
+    ["pgx", "taper", "organ", "icu", "onco"].forEach((t) => {
       const btn = $(`csTab${t.charAt(0).toUpperCase() + t.slice(1)}Btn`);
       const pane = $(`csPane${t.charAt(0).toUpperCase() + t.slice(1)}`);
       if (btn) {
@@ -14830,6 +15398,7 @@
     else if (csActiveTab === "taper") renderClinicalSuiteTaperPane();
     else if (csActiveTab === "organ") renderClinicalSuiteOrganPane();
     else if (csActiveTab === "icu") renderClinicalSuiteIcuPane();
+    else if (csActiveTab === "onco") renderClinicalSuiteOncoPane();
   }
 
   function openClinicalSuiteModal(tab = null, compoundId = null) {
@@ -14863,7 +15432,7 @@
   }
   const csCloseBtn = $("clinicalSuiteModalClose");
   if (csCloseBtn) csCloseBtn.onclick = closeClinicalSuiteModal;
-  ["pgx", "taper", "organ", "icu"].forEach((t) => {
+  ["pgx", "taper", "organ", "icu", "onco"].forEach((t) => {
     const btn = $(`csTab${t.charAt(0).toUpperCase() + t.slice(1)}Btn`);
     if (btn) btn.onclick = () => switchClinicalSuiteTab(t);
   });
@@ -14911,14 +15480,46 @@
     if (el) el.oninput = () => renderClinicalSuiteIcuPane();
     if (el && el.tagName === "SELECT") el.onchange = () => renderClinicalSuiteIcuPane();
   });
+  [
+    "csOncoSexSelect", "csOncoAgeInput", "csOncoHeightInput", "csOncoWeightInput", "csOncoScrInput", "csOncoAkiCheck",
+    "csOncoCalvertAucSlider", "csOncoCalvertIndication",
+    "csOncoDpydSelect", "csOncoDpydDrugSelect",
+    "csOncoUgt1a1Select", "csOncoUgt1a1Regimen",
+    "csOncoThiopurineSelect", "csOncoThiopurineDrug",
+    "csOncoMtxTimeSelect", "csOncoMtxConcInput"
+  ].forEach((id) => {
+    const el = $(id);
+    if (el) {
+      el.oninput = () => {
+        if (id === "csOncoCalvertIndication") {
+          const aucS = $("csOncoCalvertAucSlider");
+          if (aucS) aucS.value = el.value;
+        }
+        renderClinicalSuiteOncoPane();
+      };
+      if (el.tagName === "SELECT" || el.type === "checkbox") {
+        el.onchange = () => {
+          if (id === "csOncoCalvertIndication") {
+            const aucS = $("csOncoCalvertAucSlider");
+            if (aucS) aucS.value = el.value;
+          }
+          renderClinicalSuiteOncoPane();
+        };
+      }
+    }
+  });
   const csCopyReportBtn = $("csCopyReportBtn");
   if (csCopyReportBtn) {
     csCopyReportBtn.onclick = () => {
       const compObj = C[compById.get(csActiveCompoundId)];
       const prof = getOrganProfileOrFallback(csActiveCompoundId);
+      const oncoBio = computeOncoBiometrics();
+      const oncoCalvert = computeCalvertCarboplatin(5.0, oncoBio.crcl);
       const md = [
         `# Raport Kalkulatorów Klinicznych Pharma-vault: ${compObj ? compObj.n : csActiveCompoundId}`,
         `- **Profil CPIC / Fenokonwersja CYP2D6 / CYP2C19:** ${computePhenoconversionForGene("CYP2D6").functionalPheno} / ${computePhenoconversionForGene("CYP2C19").functionalPheno}`,
+        `- **Biometria Onkologiczna (BSA):** ${oncoBio.bsa} m² (Masa należna IBW: ${oncoBio.ibw} kg, CrCl skorygowany: ${oncoBio.crcl} mL/min)`,
+        `- **Formuła Calverta (Karboplatyna AUC 5):** ${oncoCalvert.doseMg} mg ${oncoCalvert.isCapped ? "(zastosowano limit FDA GFR Cap 125 mL/min)" : ""}`,
         prof ? `- **Nefrofarmakologia (fe=${(prof.fe_unchanged * 100).toFixed(0)}%):** ${prof.egfr_60_30}` : "",
         prof ? `- **Dializowalność (IHD):** ${prof.ihd_removed_pct} (${prof.post_hd_supplement})` : "",
         prof ? `- **Hepatofarmakologia (Child-Pugh B):** ${prof.child_pugh_b}` : ""
