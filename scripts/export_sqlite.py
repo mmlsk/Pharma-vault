@@ -67,7 +67,7 @@ def main() -> None:
     CREATE TABLE chemical_space (compound_id TEXT PRIMARY KEY REFERENCES substances, x_coord REAL NOT NULL, y_coord REAL NOT NULL, scaffold_id TEXT NOT NULL, scaffold_name TEXT NOT NULL, scaffold_family TEXT NOT NULL, top_analogs_json TEXT, predicted_offtargets_json TEXT);
     CREATE TABLE food_drug_interactions (id TEXT PRIMARY KEY, food_id TEXT NOT NULL, food_name_pl TEXT NOT NULL, compound_id TEXT, atc_pattern TEXT, vector TEXT NOT NULL, severity TEXT NOT NULL, title_pl TEXT NOT NULL, mechanism_pl TEXT NOT NULL, clinical_consequence TEXT NOT NULL, management TEXT NOT NULL, evidence_level TEXT NOT NULL, target_gene TEXT, pdb_id TEXT);
     CREATE TABLE clinical_notes (id TEXT PRIMARY KEY, title TEXT NOT NULL, subtitle TEXT, category TEXT NOT NULL, provenance TEXT NOT NULL, source_file TEXT, updated TEXT, cluster TEXT, tags_json TEXT, compounds_json TEXT, targets_json TEXT, icd_json TEXT, patient_json TEXT, html TEXT NOT NULL);
-    CREATE TABLE pharmacogenomics_cpic (compound_id TEXT REFERENCES substances, gene TEXT NOT NULL, drug_type TEXT NOT NULL, cpic_level TEXT NOT NULL, fm_gene REAL, mechanism_pl TEXT NOT NULL, recommendations_json TEXT NOT NULL, PRIMARY KEY (compound_id, gene));
+    CREATE TABLE pharmacogenomics_cpic (compound_id TEXT REFERENCES substances, gene TEXT NOT NULL, drug_type TEXT NOT NULL, cpic_level TEXT NOT NULL, fm_gene REAL, mechanism_pl TEXT NOT NULL, recommendations_json TEXT NOT NULL, fraction_metabolism_json TEXT, PRIMARY KEY (compound_id, gene));
     CREATE TABLE dose_conversions (class_key TEXT NOT NULL, compound_id TEXT REFERENCES substances, name TEXT NOT NULL, equiv_to_ref_mg REAL NOT NULL, ref_compound_id TEXT NOT NULL, ref_dose_mg REAL NOT NULL, details_json TEXT NOT NULL, PRIMARY KEY (class_key, compound_id));
     CREATE TABLE organ_impairment (compound_id TEXT PRIMARY KEY REFERENCES substances, name TEXT NOT NULL, fe_unchanged REAL NOT NULL, toxic_renal_metabolites TEXT, egfr_60_30 TEXT, egfr_30_15 TEXT, egfr_under_15 TEXT, ihd_removed_pct TEXT, post_hd_supplement TEXT, crrt_sieving REAL, tox_dialysis_utility TEXT, eh_class TEXT NOT NULL, eh_ratio REAL, child_pugh_a TEXT, child_pugh_b TEXT, child_pugh_c TEXT);
     CREATE INDEX idx_compound_targets_target ON compound_targets(target_id);
@@ -370,14 +370,15 @@ def main() -> None:
     if pgx_p.exists():
         pgx_data = json.loads(pgx_p.read_text(encoding="utf-8"))
         for g in pgx_data.get("cpic_guidelines", []):
-            cur.execute("INSERT OR REPLACE INTO pharmacogenomics_cpic VALUES (?,?,?,?,?,?,?)", (
+            cur.execute("INSERT OR REPLACE INTO pharmacogenomics_cpic VALUES (?,?,?,?,?,?,?,?)", (
                 g["compound_id"],
                 g["gene"],
                 g["drug_role"],
                 g.get("cpic_level", "A"),
                 g.get("fm_gene", 0.5),
                 g.get("active_metabolite", ""),
-                json.dumps(g.get("recommendations", {}), ensure_ascii=False)
+                json.dumps(g.get("recommendations", {}), ensure_ascii=False),
+                json.dumps(g.get("fraction_metabolism", {}), ensure_ascii=False)
             ))
 
     conv_p = CURATED / "dose_conversions_tapering.json"

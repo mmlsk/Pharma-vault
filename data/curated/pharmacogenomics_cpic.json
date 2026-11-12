@@ -6,10 +6,30 @@
       "chromosome": "22q13.2",
       "supports_phenoconversion": true,
       "phenotypes": [
-        { "id": "UM", "label_pl": "Ultraszybki metabolizer (UM, *1/*1xN, AS > 2.25)", "activity_score": 2.5, "cl_multiplier": 1.65 },
-        { "id": "NM", "label_pl": "Prawidłowy metabolizer (NM, *1/*1, *1/*2, AS 1.25–2.25)", "activity_score": 2.0, "cl_multiplier": 1.0 },
-        { "id": "IM", "label_pl": "Pośredni metabolizer (IM, *1/*4, *41/*41, AS 0.25–1.0)", "activity_score": 0.75, "cl_multiplier": 0.55 },
-        { "id": "PM", "label_pl": "Wolny metabolizer (PM, *4/*4, *4/*5, AS = 0.0)", "activity_score": 0.0, "cl_multiplier": 0.22 }
+        {
+          "id": "UM",
+          "label_pl": "Ultraszybki metabolizer (UM, *1/*1xN, AS > 2.25)",
+          "activity_score": 2.5,
+          "cl_multiplier": 1.65
+        },
+        {
+          "id": "NM",
+          "label_pl": "Prawidłowy metabolizer (NM, *1/*1, *1/*2, AS 1.25–2.25)",
+          "activity_score": 2.0,
+          "cl_multiplier": 1.0
+        },
+        {
+          "id": "IM",
+          "label_pl": "Pośredni metabolizer (IM, *1/*4, *41/*41, AS 0.25–1.0)",
+          "activity_score": 0.75,
+          "cl_multiplier": 0.55
+        },
+        {
+          "id": "PM",
+          "label_pl": "Wolny metabolizer (PM, *4/*4, *4/*5, AS = 0.0)",
+          "activity_score": 0.0,
+          "cl_multiplier": 0.22
+        }
       ]
     },
     "CYP2C19": {
@@ -18,10 +38,30 @@
       "chromosome": "10q23.33",
       "supports_phenoconversion": true,
       "phenotypes": [
-        { "id": "UM", "label_pl": "Ultraszybki / Szybki metabolizer (UM/RM, *17/*17, *1/*17)", "activity_score": 2.5, "cl_multiplier": 1.45 },
-        { "id": "NM", "label_pl": "Prawidłowy metabolizer (NM, *1/*1)", "activity_score": 2.0, "cl_multiplier": 1.0 },
-        { "id": "IM", "label_pl": "Pośredni metabolizer (IM, *1/*2, *1/*3, *2/*17)", "activity_score": 1.0, "cl_multiplier": 0.6 },
-        { "id": "PM", "label_pl": "Wolny metabolizer (PM, *2/*2, *2/*3, AS = 0.0)", "activity_score": 0.0, "cl_multiplier": 0.25 }
+        {
+          "id": "UM",
+          "label_pl": "Ultraszybki / Szybki metabolizer (UM/RM, *17/*17, *1/*17)",
+          "activity_score": 2.5,
+          "cl_multiplier": 1.45
+        },
+        {
+          "id": "NM",
+          "label_pl": "Prawidłowy metabolizer (NM, *1/*1)",
+          "activity_score": 2.0,
+          "cl_multiplier": 1.0
+        },
+        {
+          "id": "IM",
+          "label_pl": "Pośredni metabolizer (IM, *1/*2, *1/*3, *2/*17)",
+          "activity_score": 1.0,
+          "cl_multiplier": 0.6
+        },
+        {
+          "id": "PM",
+          "label_pl": "Wolny metabolizer (PM, *2/*2, *2/*3, AS = 0.0)",
+          "activity_score": 0.0,
+          "cl_multiplier": 0.25
+        }
       ]
     },
     "CYP2C9": {
@@ -30,9 +70,24 @@
       "chromosome": "10q23.33",
       "supports_phenoconversion": true,
       "phenotypes": [
-        { "id": "NM", "label_pl": "Prawidłowy metabolizer (NM, *1/*1, AS = 2.0)", "activity_score": 2.0, "cl_multiplier": 1.0 },
-        { "id": "IM", "label_pl": "Pośredni metabolizer (IM, *1/*2, *1/*3, AS 1.0–1.5)", "activity_score": 1.0, "cl_multiplier": 0.6 },
-        { "id": "PM", "label_pl": "Wolny metabolizer (PM, *2/*3, *3/*3, AS 0.0–0.5)", "activity_score": 0.0, "cl_multiplier": 0.25 }
+        {
+          "id": "NM",
+          "label_pl": "Prawidłowy metabolizer (NM, *1/*1, AS = 2.0)",
+          "activity_score": 2.0,
+          "cl_multiplier": 1.0
+        },
+        {
+          "id": "IM",
+          "label_pl": "Pośredni metabolizer (IM, *1/*2, *1/*3, AS 1.0–1.5)",
+          "activity_score": 1.0,
+          "cl_multiplier": 0.6
+        },
+        {
+          "id": "PM",
+          "label_pl": "Wolny metabolizer (PM, *2/*3, *3/*3, AS 0.0–0.5)",
+          "activity_score": 0.0,
+          "cl_multiplier": 0.25
+        }
       ]
     },
     "CYP3A5": {
@@ -41,9 +96,24 @@
       "chromosome": "7q22.1",
       "supports_phenoconversion": false,
       "phenotypes": [
-        { "id": "NM", "label_pl": "Non-expressor (*3/*3 — standardowy klirens europejski)", "activity_score": 0.0, "cl_multiplier": 1.0 },
-        { "id": "IM", "label_pl": "Intermediate expressor (*1/*3 — przyspieszony klirens)", "activity_score": 1.0, "cl_multiplier": 1.45 },
-        { "id": "UM", "label_pl": "Extensive expressor (*1/*1 — wymaga 1.5–2x wyższej dawki takrolimusu)", "activity_score": 2.0, "cl_multiplier": 1.8 }
+        {
+          "id": "NM",
+          "label_pl": "Non-expressor (*3/*3 — standardowy klirens europejski)",
+          "activity_score": 0.0,
+          "cl_multiplier": 1.0
+        },
+        {
+          "id": "IM",
+          "label_pl": "Intermediate expressor (*1/*3 — przyspieszony klirens)",
+          "activity_score": 1.0,
+          "cl_multiplier": 1.45
+        },
+        {
+          "id": "UM",
+          "label_pl": "Extensive expressor (*1/*1 — wymaga 1.5–2x wyższej dawki takrolimusu)",
+          "activity_score": 2.0,
+          "cl_multiplier": 1.8
+        }
       ]
     },
     "SLCO1B1": {
@@ -52,9 +122,24 @@
       "chromosome": "12p12.1",
       "supports_phenoconversion": true,
       "phenotypes": [
-        { "id": "NM", "label_pl": "Prawidłowa funkcja (T/T, *1/*1)", "activity_score": 2.0, "cl_multiplier": 1.0 },
-        { "id": "IM", "label_pl": "Obniżona funkcja (T/C, *1/*5 — podwyższone ryzyko miopatii)", "activity_score": 1.0, "cl_multiplier": 0.55 },
-        { "id": "PM", "label_pl": "Słaba funkcja (C/C, *5/*5 — 3x wzrost AUC kwasu symwastatyny)", "activity_score": 0.0, "cl_multiplier": 0.32 }
+        {
+          "id": "NM",
+          "label_pl": "Prawidłowa funkcja (T/T, *1/*1)",
+          "activity_score": 2.0,
+          "cl_multiplier": 1.0
+        },
+        {
+          "id": "IM",
+          "label_pl": "Obniżona funkcja (T/C, *1/*5 — podwyższone ryzyko miopatii)",
+          "activity_score": 1.0,
+          "cl_multiplier": 0.55
+        },
+        {
+          "id": "PM",
+          "label_pl": "Słaba funkcja (C/C, *5/*5 — 3x wzrost AUC kwasu symwastatyny)",
+          "activity_score": 0.0,
+          "cl_multiplier": 0.32
+        }
       ]
     },
     "VKORC1": {
@@ -63,9 +148,24 @@
       "chromosome": "16p11.2",
       "supports_phenoconversion": false,
       "phenotypes": [
-        { "id": "NM", "label_pl": "Prawidłowa ekspresja (G/G — standardowe zapotrzebowanie na VKA)", "activity_score": 2.0, "cl_multiplier": 1.0 },
-        { "id": "IM", "label_pl": "Pośrednia wrażliwość (G/A — redukcja dawki warfaryny o 20–30%)", "activity_score": 1.0, "cl_multiplier": 0.75 },
-        { "id": "PM", "label_pl": "Wysoka wrażliwość (A/A — redukcja dawki warfaryny o 40–60%)", "activity_score": 0.0, "cl_multiplier": 0.5 }
+        {
+          "id": "NM",
+          "label_pl": "Prawidłowa ekspresja (G/G — standardowe zapotrzebowanie na VKA)",
+          "activity_score": 2.0,
+          "cl_multiplier": 1.0
+        },
+        {
+          "id": "IM",
+          "label_pl": "Pośrednia wrażliwość (G/A — redukcja dawki warfaryny o 20–30%)",
+          "activity_score": 1.0,
+          "cl_multiplier": 0.75
+        },
+        {
+          "id": "PM",
+          "label_pl": "Wysoka wrażliwość (A/A — redukcja dawki warfaryny o 40–60%)",
+          "activity_score": 0.0,
+          "cl_multiplier": 0.5
+        }
       ]
     },
     "UGT1A1": {
@@ -74,9 +174,24 @@
       "chromosome": "2q37.1",
       "supports_phenoconversion": false,
       "phenotypes": [
-        { "id": "NM", "label_pl": "Prawidłowa glukuronidacja (*1/*1)", "activity_score": 2.0, "cl_multiplier": 1.0 },
-        { "id": "IM", "label_pl": "Heterozygota (*1/*28)", "activity_score": 1.0, "cl_multiplier": 0.75 },
-        { "id": "PM", "label_pl": "Zespół Gilberta / Wolna glukuronidacja (*28/*28, *6/*6)", "activity_score": 0.0, "cl_multiplier": 0.45 }
+        {
+          "id": "NM",
+          "label_pl": "Prawidłowa glukuronidacja (*1/*1)",
+          "activity_score": 2.0,
+          "cl_multiplier": 1.0
+        },
+        {
+          "id": "IM",
+          "label_pl": "Heterozygota (*1/*28)",
+          "activity_score": 1.0,
+          "cl_multiplier": 0.75
+        },
+        {
+          "id": "PM",
+          "label_pl": "Zespół Gilberta / Wolna glukuronidacja (*28/*28, *6/*6)",
+          "activity_score": 0.0,
+          "cl_multiplier": 0.45
+        }
       ]
     },
     "DPYD": {
@@ -85,9 +200,24 @@
       "chromosome": "1p21.3",
       "supports_phenoconversion": false,
       "phenotypes": [
-        { "id": "NM", "label_pl": "Prawidłowy metabolizer (AS = 2.0)", "activity_score": 2.0, "cl_multiplier": 1.0 },
-        { "id": "IM", "label_pl": "Częściowy deficyt DPD (AS 1.0–1.5 — redukcja dawki o 50%)", "activity_score": 1.0, "cl_multiplier": 0.5 },
-        { "id": "PM", "label_pl": "Całkowity deficyt DPD (*2A/*2A, AS = 0.0 — śmiertelna toksyczność fluoropirymidyn)", "activity_score": 0.0, "cl_multiplier": 0.1 }
+        {
+          "id": "NM",
+          "label_pl": "Prawidłowy metabolizer (AS = 2.0)",
+          "activity_score": 2.0,
+          "cl_multiplier": 1.0
+        },
+        {
+          "id": "IM",
+          "label_pl": "Częściowy deficyt DPD (AS 1.0–1.5 — redukcja dawki o 50%)",
+          "activity_score": 1.0,
+          "cl_multiplier": 0.5
+        },
+        {
+          "id": "PM",
+          "label_pl": "Całkowity deficyt DPD (*2A/*2A, AS = 0.0 — śmiertelna toksyczność fluoropirymidyn)",
+          "activity_score": 0.0,
+          "cl_multiplier": 0.1
+        }
       ]
     },
     "TPMT_NUDT15": {
@@ -96,9 +226,24 @@
       "chromosome": "6p22.3 / 13q14.2",
       "supports_phenoconversion": false,
       "phenotypes": [
-        { "id": "NM", "label_pl": "Prawidłowa aktywność TPMT/NUDT15 (*1/*1)", "activity_score": 2.0, "cl_multiplier": 1.0 },
-        { "id": "IM", "label_pl": "Pośrednia aktywność (*1/*3A — redukcja dawki tiopuryn do 30–80%)", "activity_score": 1.0, "cl_multiplier": 0.5 },
-        { "id": "PM", "label_pl": "Brak aktywności (*3A/*3A — ryzyko pancytopenii, redukcja 10-krotna lub zamiana)", "activity_score": 0.0, "cl_multiplier": 0.12 }
+        {
+          "id": "NM",
+          "label_pl": "Prawidłowa aktywność TPMT/NUDT15 (*1/*1)",
+          "activity_score": 2.0,
+          "cl_multiplier": 1.0
+        },
+        {
+          "id": "IM",
+          "label_pl": "Pośrednia aktywność (*1/*3A — redukcja dawki tiopuryn do 30–80%)",
+          "activity_score": 1.0,
+          "cl_multiplier": 0.5
+        },
+        {
+          "id": "PM",
+          "label_pl": "Brak aktywności (*3A/*3A — ryzyko pancytopenii, redukcja 10-krotna lub zamiana)",
+          "activity_score": 0.0,
+          "cl_multiplier": 0.12
+        }
       ]
     },
     "HLA_PANEL": {
@@ -107,29 +252,114 @@
       "chromosome": "6p21.3",
       "supports_phenoconversion": false,
       "phenotypes": [
-        { "id": "NEG", "label_pl": "Ujemny dla alleli wysokiego ryzyka (HLA-B*15:02, A*31:01, B*57:01, B*58:01)", "activity_score": 2.0, "cl_multiplier": 1.0 },
-        { "id": "HLA_B1502_A3101", "label_pl": "Dodatni HLA-B*15:02 lub HLA-A*31:01 (Ryzyko SJS/TEN po karbamazepinie/fenytoinie)", "activity_score": 0.0, "cl_multiplier": 1.0 },
-        { "id": "HLA_B5701", "label_pl": "Dodatni HLA-B*57:01 (Bezwzględne przeciwwskazanie do abakawiru)", "activity_score": 0.0, "cl_multiplier": 1.0 },
-        { "id": "HLA_B5801", "label_pl": "Dodatni HLA-B*58:01 (Przeciwwskazanie do allopurynolu — SJS/TEN)", "activity_score": 0.0, "cl_multiplier": 1.0 }
+        {
+          "id": "NEG",
+          "label_pl": "Ujemny dla alleli wysokiego ryzyka (HLA-B*15:02, A*31:01, B*57:01, B*58:01)",
+          "activity_score": 2.0,
+          "cl_multiplier": 1.0
+        },
+        {
+          "id": "HLA_B1502_A3101",
+          "label_pl": "Dodatni HLA-B*15:02 lub HLA-A*31:01 (Ryzyko SJS/TEN po karbamazepinie/fenytoinie)",
+          "activity_score": 0.0,
+          "cl_multiplier": 1.0
+        },
+        {
+          "id": "HLA_B5701",
+          "label_pl": "Dodatni HLA-B*57:01 (Bezwzględne przeciwwskazanie do abakawiru)",
+          "activity_score": 0.0,
+          "cl_multiplier": 1.0
+        },
+        {
+          "id": "HLA_B5801",
+          "label_pl": "Dodatni HLA-B*58:01 (Przeciwwskazanie do allopurynolu — SJS/TEN)",
+          "activity_score": 0.0,
+          "cl_multiplier": 1.0
+        }
       ]
     }
   },
   "phenoconversion_inhibitors": {
-    "CYP2D6": {
-      "strong": ["fluoxetine-compound", "paroxetine-compound", "bupropion-compound", "quinidine-compound", "terbinafine-compound"],
-      "moderate": ["duloxetine-compound", "sertraline-compound", "amiodarone-compound"]
+    "CYP1A2": {
+      "strong": [
+        "fluvoxamine-compound",
+        "ciprofloxacin-compound"
+      ],
+      "moderate": [
+        "amiodarone-compound"
+      ]
+    },
+    "CYP2B6": {
+      "strong": [
+        "ticlopidine-compound",
+        "clopidogrel-compound"
+      ],
+      "moderate": [
+        "voriconazole-compound"
+      ]
     },
     "CYP2C19": {
-      "strong": ["fluvoxamine-compound", "fluoxetine-compound", "fluconazole-compound", "omeprazole-compound", "esomeprazole-compound"],
-      "moderate": ["voriconazole-compound"]
+      "strong": [
+        "fluvoxamine-compound",
+        "fluoxetine-compound",
+        "fluconazole-compound",
+        "omeprazole-compound",
+        "esomeprazole-compound",
+        "ticlopidine-compound"
+      ],
+      "moderate": [
+        "voriconazole-compound",
+        "amiodarone-compound"
+      ]
     },
     "CYP2C9": {
-      "strong": ["fluconazole-compound", "amiodarone-compound"],
-      "moderate": ["valproate-compound", "fluvoxamine-compound"]
+      "strong": [
+        "fluconazole-compound",
+        "amiodarone-compound"
+      ],
+      "moderate": [
+        "valproate-compound",
+        "fluvoxamine-compound",
+        "voriconazole-compound"
+      ]
+    },
+    "CYP2D6": {
+      "strong": [
+        "fluoxetine-compound",
+        "paroxetine-compound",
+        "bupropion-compound",
+        "quinidine-compound",
+        "terbinafine-compound"
+      ],
+      "moderate": [
+        "duloxetine-compound",
+        "sertraline-compound",
+        "amiodarone-compound"
+      ]
+    },
+    "CYP3A4": {
+      "strong": [
+        "ketoconazole-compound",
+        "itraconazole-compound",
+        "clarithromycin-compound"
+      ],
+      "moderate": [
+        "erythromycin-compound",
+        "diltiazem-compound",
+        "verapamil-compound",
+        "fluconazole-compound"
+      ]
     },
     "SLCO1B1": {
-      "strong": ["clarithromycin-compound"],
-      "moderate": ["verapamil-compound", "amiodarone-compound"]
+      "strong": [
+        "cyclosporine-compound",
+        "clarithromycin-compound",
+        "gemfibrozil-compound"
+      ],
+      "moderate": [
+        "verapamil-compound",
+        "amiodarone-compound"
+      ]
     }
   },
   "cpic_guidelines": [
@@ -141,10 +371,32 @@
       "active_metabolite": "Morfina (O-demetylacja przez CYP2D6)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "contraindicated", "action_pl": "UNIKAĆ kodeiny — gwałtowna biokonwersja do morfiny grozi śmiertelną depresją oddechową.", "alternative_pl": "NLPZ lub nie-CYP2D6 opioid (morfina w miareczkowanej dawce, buprenorfina)" },
-        "NM": { "severity": "normal", "action_pl": "Standardowe dawkowanie wg wieku i masy ciała.", "alternative_pl": "–" },
-        "IM": { "severity": "moderate", "action_pl": "Obniżona konwersja do morfiny — monitorować skuteczność przeciwbólową.", "alternative_pl": "W razie braku efektu zamiana na lek niezależny od CYP2D6" },
-        "PM": { "severity": "contraindicated", "action_pl": "UNIKAĆ kodeiny — całkowity brak bioaktywacji do morfiny (utrata efektu analgetycznego).", "alternative_pl": "Morfina, oksykodon (ostrożnie), tapentadol, buprenorfina" }
+        "UM": {
+          "severity": "contraindicated",
+          "action_pl": "UNIKAĆ kodeiny — gwałtowna biokonwersja do morfiny grozi śmiertelną depresją oddechową.",
+          "alternative_pl": "NLPZ lub nie-CYP2D6 opioid (morfina w miareczkowanej dawce, buprenorfina)"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie wg wieku i masy ciała.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Obniżona konwersja do morfiny — monitorować skuteczność przeciwbólową.",
+          "alternative_pl": "W razie braku efektu zamiana na lek niezależny od CYP2D6"
+        },
+        "PM": {
+          "severity": "contraindicated",
+          "action_pl": "UNIKAĆ kodeiny — całkowity brak bioaktywacji do morfiny (utrata efektu analgetycznego).",
+          "alternative_pl": "Morfina, oksykodon (ostrożnie), tapentadol, buprenorfina"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2D6": 0.1,
+        "CYP3A4": 0.1,
+        "UGT2B7": 0.7,
+        "renal": 0.1
       }
     },
     {
@@ -155,10 +407,32 @@
       "active_metabolite": "(+)-O-demetylotramadol (M1 — agonista MOR)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "contraindicated", "action_pl": "UNIKAĆ tramadolu — nadmierna produkcja metabolitu M1 grozi depresją oddechową.", "alternative_pl": "Nie-CYP2D6 analgetyk" },
-        "NM": { "severity": "normal", "action_pl": "Dawkowanie standardowe.", "alternative_pl": "–" },
-        "IM": { "severity": "moderate", "action_pl": "Osłabiony komponent μ-opioidowy (M1); przy eskalacji dawki rośnie ryzyko serotoninowe i drgawkowe.", "alternative_pl": "Tapentadol lub buprenorfina" },
-        "PM": { "severity": "severe", "action_pl": "UNIKAĆ tramadolu — brak tworzenia metabolitu M1 (brak analgezji opioidowej) przy kumulacji macierzystego SERT/NET inhibitora.", "alternative_pl": "Tapentadol, morfina lub NLPZ" }
+        "UM": {
+          "severity": "contraindicated",
+          "action_pl": "UNIKAĆ tramadolu — nadmierna produkcja metabolitu M1 grozi depresją oddechową.",
+          "alternative_pl": "Nie-CYP2D6 analgetyk"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Osłabiony komponent μ-opioidowy (M1); przy eskalacji dawki rośnie ryzyko serotoninowe i drgawkowe.",
+          "alternative_pl": "Tapentadol lub buprenorfina"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "UNIKAĆ tramadolu — brak tworzenia metabolitu M1 (brak analgezji opioidowej) przy kumulacji macierzystego SERT/NET inhibitora.",
+          "alternative_pl": "Tapentadol, morfina lub NLPZ"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2D6": 0.45,
+        "CYP3A4": 0.25,
+        "CYP2B6": 0.1,
+        "renal": 0.2
       }
     },
     {
@@ -169,10 +443,32 @@
       "active_metabolite": "Aktywny metabolit tiolowy (2-stopniowa oksydacja CYP2C19)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "normal", "action_pl": "Prawidłowa lub zwiększona inhibicja płytek (P2Y12); dawka standardowa 75 mg/d.", "alternative_pl": "–" },
-        "NM": { "severity": "normal", "action_pl": "Dawka standardowa (75 mg/d).", "alternative_pl": "–" },
-        "IM": { "severity": "severe", "action_pl": "UNIKAĆ klopidogrelu w ACS/PCI — wysoka reaktywność płytek na leczeniu (ryzyko zakrzepicy w stencie).", "alternative_pl": "Prasugrel lub Tikagrelor (niezależne od CYP2C19)" },
-        "PM": { "severity": "contraindicated", "action_pl": "PRZECIWWSKAZANY w ACS/PCI i udarze — brak bioaktywacji proleku, wysokie ryzyko incydentu zakrzepowego.", "alternative_pl": "Prasugrel lub Tikagrelor" }
+        "UM": {
+          "severity": "normal",
+          "action_pl": "Prawidłowa lub zwiększona inhibicja płytek (P2Y12); dawka standardowa 75 mg/d.",
+          "alternative_pl": "–"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawka standardowa (75 mg/d).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "severe",
+          "action_pl": "UNIKAĆ klopidogrelu w ACS/PCI — wysoka reaktywność płytek na leczeniu (ryzyko zakrzepicy w stencie).",
+          "alternative_pl": "Prasugrel lub Tikagrelor (niezależne od CYP2C19)"
+        },
+        "PM": {
+          "severity": "contraindicated",
+          "action_pl": "PRZECIWWSKAZANY w ACS/PCI i udarze — brak bioaktywacji proleku, wysokie ryzyko incydentu zakrzepowego.",
+          "alternative_pl": "Prasugrel lub Tikagrelor"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2C19": 0.5,
+        "CYP1A2": 0.15,
+        "CYP2B6": 0.15,
+        "CES1": 0.85
       }
     },
     {
@@ -183,10 +479,32 @@
       "active_metabolite": "Endoksyfen (4-hydroksy-N-desmetylotamoksyfen — 100x silniejszy antagonista ER)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "normal", "action_pl": "Standardowa dawka 20 mg/d.", "alternative_pl": "–" },
-        "NM": { "severity": "normal", "action_pl": "Standardowa dawka 20 mg/d; bezwzględnie unikać silnych inhibitorów CYP2D6 (paroksetyny, fluoksetyny).", "alternative_pl": "Do leczenia uderzeń gorąca: wenlafaksyna lub citalopram/escitalopram" },
-        "IM": { "severity": "moderate", "action_pl": "Obniżone stężenie endoksyfenu — rozważyć inhibitor aromatazy (po menopauzie) lub zwiększenie dawki do 40 mg/d.", "alternative_pl": "Anastrozol, letrozol, eksemestan" },
-        "PM": { "severity": "severe", "action_pl": "Stężenie endoksyfenu krytycznie niskie (wyższe ryzyko wznowy raka piersi) — zalecana zamiana na inhibitor aromatazy.", "alternative_pl": "Inhibitor aromatazy (letrozol / anastrozol)" }
+        "UM": {
+          "severity": "normal",
+          "action_pl": "Standardowa dawka 20 mg/d.",
+          "alternative_pl": "–"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowa dawka 20 mg/d; bezwzględnie unikać silnych inhibitorów CYP2D6 (paroksetyny, fluoksetyny).",
+          "alternative_pl": "Do leczenia uderzeń gorąca: wenlafaksyna lub citalopram/escitalopram"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Obniżone stężenie endoksyfenu — rozważyć inhibitor aromatazy (po menopauzie) lub zwiększenie dawki do 40 mg/d.",
+          "alternative_pl": "Anastrozol, letrozol, eksemestan"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Stężenie endoksyfenu krytycznie niskie (wyższe ryzyko wznowy raka piersi) — zalecana zamiana na inhibitor aromatazy.",
+          "alternative_pl": "Inhibitor aromatazy (letrozol / anastrozol)"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2D6": 0.6,
+        "CYP3A4": 0.25,
+        "CYP2C9": 0.1,
+        "renal": 0.05
       }
     },
     {
@@ -197,10 +515,31 @@
       "active_metabolite": "Hydroksylacja pierścienia aromatycznego przez CYP2D6 (inaktywacja)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "severe", "action_pl": "UNIKAĆ TLPD — subterapeutyczne stężenia osoczowe i nadmiar kardiotoksycznych hydroksymetabolitów.", "alternative_pl": "Lek niebędący substratem CYP2D6 (np. bupropion, mirtazapina)" },
-        "NM": { "severity": "normal", "action_pl": "Standardowa dawka początkowa.", "alternative_pl": "–" },
-        "IM": { "severity": "moderate", "action_pl": "Zredukować dawkę początkową o 25% i monitorować EKG/TDM.", "alternative_pl": "–" },
-        "PM": { "severity": "contraindicated", "action_pl": "UNIKAĆ TLPD w dawkach przeciwdepresyjnych (lub zredukować dawkę o 50% pod kontrolą TDM i QTc).", "alternative_pl": "Citalopram, sertralina lub pregabalina (w bólu neuropatycznym)" }
+        "UM": {
+          "severity": "severe",
+          "action_pl": "UNIKAĆ TLPD — subterapeutyczne stężenia osoczowe i nadmiar kardiotoksycznych hydroksymetabolitów.",
+          "alternative_pl": "Lek niebędący substratem CYP2D6 (np. bupropion, mirtazapina)"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowa dawka początkowa.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Zredukować dawkę początkową o 25% i monitorować EKG/TDM.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "contraindicated",
+          "action_pl": "UNIKAĆ TLPD w dawkach przeciwdepresyjnych (lub zredukować dawkę o 50% pod kontrolą TDM i QTc).",
+          "alternative_pl": "Citalopram, sertralina lub pregabalina (w bólu neuropatycznym)"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2D6": 0.5,
+        "CYP2C19": 0.4,
+        "renal": 0.1
       }
     },
     {
@@ -211,10 +550,31 @@
       "active_metabolite": "10-hydroksynortryptylina (inaktywacja przez CYP2D6)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "severe", "action_pl": "UNIKAĆ — ultraszybki klirens uniemożliwia osiągnięcie okna terapeutycznego.", "alternative_pl": "Lek spoza ścieżki CYP2D6" },
-        "NM": { "severity": "normal", "action_pl": "Standardowa dawka początkowa.", "alternative_pl": "–" },
-        "IM": { "severity": "moderate", "action_pl": "Redukcja dawki o 25%.", "alternative_pl": "–" },
-        "PM": { "severity": "contraindicated", "action_pl": "UNIKAĆ lub redukcja dawki o 50% z monitorowaniem stężenia (TDM) — ryzyko bloku przewodzenia i antycholinergizmu.", "alternative_pl": "Bupropion, mirtazapina" }
+        "UM": {
+          "severity": "severe",
+          "action_pl": "UNIKAĆ — ultraszybki klirens uniemożliwia osiągnięcie okna terapeutycznego.",
+          "alternative_pl": "Lek spoza ścieżki CYP2D6"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowa dawka początkowa.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Redukcja dawki o 25%.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "contraindicated",
+          "action_pl": "UNIKAĆ lub redukcja dawki o 50% z monitorowaniem stężenia (TDM) — ryzyko bloku przewodzenia i antycholinergizmu.",
+          "alternative_pl": "Bupropion, mirtazapina"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2D6": 0.8,
+        "CYP3A4": 0.1,
+        "renal": 0.1
       }
     },
     {
@@ -225,10 +585,31 @@
       "active_metabolite": "Substrat i autoinhibitor mechanizmowy CYP2D6",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "severe", "action_pl": "UNIKAĆ paroksetyny — bardzo niskie stężenia osoczowe i ryzyko braku odpowiedzi.", "alternative_pl": "Citalopram, sertralina" },
-        "NM": { "severity": "normal", "action_pl": "Dawka standardowa (uwaga: paroksetyna wywołuje autofenokonwersję CYP2D6 do PM!).", "alternative_pl": "–" },
-        "IM": { "severity": "normal", "action_pl": "Dawka standardowa.", "alternative_pl": "–" },
-        "PM": { "severity": "moderate", "action_pl": "Rozważyć redukcję dawki początkowej i maksymalnej o 50% lub wybór innego SSRI.", "alternative_pl": "Sertralina, citalopram" }
+        "UM": {
+          "severity": "severe",
+          "action_pl": "UNIKAĆ paroksetyny — bardzo niskie stężenia osoczowe i ryzyko braku odpowiedzi.",
+          "alternative_pl": "Citalopram, sertralina"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawka standardowa (uwaga: paroksetyna wywołuje autofenokonwersję CYP2D6 do PM!).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Dawka standardowa.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "moderate",
+          "action_pl": "Rozważyć redukcję dawki początkowej i maksymalnej o 50% lub wybór innego SSRI.",
+          "alternative_pl": "Sertralina, citalopram"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2D6": 0.85,
+        "CYP3A4": 0.1,
+        "renal": 0.05
       }
     },
     {
@@ -239,10 +620,32 @@
       "active_metabolite": "O-desmetylowenlafaksyna (ODV — aktywny SNRI); w PM kumulacja macierzystej wenlafaksyny",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "normal", "action_pl": "Przewaga metabolitu ODV; dawkowanie standardowe.", "alternative_pl": "–" },
-        "NM": { "severity": "normal", "action_pl": "Dawkowanie standardowe.", "alternative_pl": "–" },
-        "IM": { "severity": "normal", "action_pl": "Dawkowanie standardowe z kontrolą RR.", "alternative_pl": "–" },
-        "PM": { "severity": "severe", "action_pl": "Wysoki stosunek Wenlafaksyna/ODV — wzrost ryzyka kardiotoksyczności, tachykardii i nudności; DPWG zaleca zamianę lub redukcję dawki.", "alternative_pl": "Deswenlafaksyna lub milnacipran / sertralina" }
+        "UM": {
+          "severity": "normal",
+          "action_pl": "Przewaga metabolitu ODV; dawkowanie standardowe.",
+          "alternative_pl": "–"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe z kontrolą RR.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Wysoki stosunek Wenlafaksyna/ODV — wzrost ryzyka kardiotoksyczności, tachykardii i nudności; DPWG zaleca zamianę lub redukcję dawki.",
+          "alternative_pl": "Deswenlafaksyna lub milnacipran / sertralina"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2D6": 0.75,
+        "CYP3A4": 0.15,
+        "CYP2C19": 0.05,
+        "renal": 0.05
       }
     },
     {
@@ -253,10 +656,31 @@
       "active_metabolite": "9-hydroksyrisperidon (paliperidon — frakcja czynna)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "moderate", "action_pl": "Szybki metabolizm — monitorować odpowiedź kliniczną lub zastosować paliperidon.", "alternative_pl": "Paliperidon, olanzapina" },
-        "NM": { "severity": "normal", "action_pl": "Dawkowanie standardowe.", "alternative_pl": "–" },
-        "IM": { "severity": "normal", "action_pl": "Ostrożna titracja.", "alternative_pl": "–" },
-        "PM": { "severity": "severe", "action_pl": "Redukcja dawki risperidonu o 33–50% (wg DPWG) — wyższe ryzyko EPS, akatyzji i hiperprolaktynemii.", "alternative_pl": "Paliperidon, kwetiapina, olanzapina" }
+        "UM": {
+          "severity": "moderate",
+          "action_pl": "Szybki metabolizm — monitorować odpowiedź kliniczną lub zastosować paliperidon.",
+          "alternative_pl": "Paliperidon, olanzapina"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Ostrożna titracja.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Redukcja dawki risperidonu o 33–50% (wg DPWG) — wyższe ryzyko EPS, akatyzji i hiperprolaktynemii.",
+          "alternative_pl": "Paliperidon, kwetiapina, olanzapina"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2D6": 0.75,
+        "CYP3A4": 0.15,
+        "renal": 0.1
       }
     },
     {
@@ -267,10 +691,31 @@
       "active_metabolite": "Dehydroarypiprazol (CYP2D6 i CYP3A4)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "normal", "action_pl": "Dawkowanie standardowe.", "alternative_pl": "–" },
-        "NM": { "severity": "normal", "action_pl": "Dawkowanie standardowe (maks. 30 mg/d).", "alternative_pl": "–" },
-        "IM": { "severity": "normal", "action_pl": "Dawkowanie standardowe; uwaga przy jednoczesnych inhibitorach CYP3A4.", "alternative_pl": "–" },
-        "PM": { "severity": "severe", "action_pl": "Zredukować dawkę początkową i maksymalną o 50% (wg FDA/EMA i DPWG maks. 10 mg/d); o kolejne 50% przy inhibitorze CYP3A4!", "alternative_pl": "Lurazydon, kwetiapina" }
+        "UM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe.",
+          "alternative_pl": "–"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe (maks. 30 mg/d).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe; uwaga przy jednoczesnych inhibitorach CYP3A4.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Zredukować dawkę początkową i maksymalną o 50% (wg FDA/EMA i DPWG maks. 10 mg/d); o kolejne 50% przy inhibitorze CYP3A4!",
+          "alternative_pl": "Lurazydon, kwetiapina"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2D6": 0.6,
+        "CYP3A4": 0.35,
+        "renal": 0.05
       }
     },
     {
@@ -281,10 +726,31 @@
       "active_metabolite": "4-hydroksyatomoksetyna (t½ wzrasta z 5 h w NM do 21 h w PM!)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "moderate", "action_pl": "Niskie stężenia szczytowe — często niewystarczający efekt przy dawce standardowej.", "alternative_pl": "Metylofenidat lub guanfacyna" },
-        "NM": { "severity": "normal", "action_pl": "Dawkowanie standardowe.", "alternative_pl": "–" },
-        "IM": { "severity": "moderate", "action_pl": "Rozpocząć od 0.5 mg/kg/d i zwiększać wolniej.", "alternative_pl": "–" },
-        "PM": { "severity": "severe", "action_pl": "10-krotny wzrost AUC i 4-krotne wydłużenie t½ (do 21 h)! Zaczynać od niskiej dawki i nie przekraczać 50% dawki docelowej bez kontroli HR/RR.", "alternative_pl": "Metylofenidat, guanfacyna" }
+        "UM": {
+          "severity": "moderate",
+          "action_pl": "Niskie stężenia szczytowe — często niewystarczający efekt przy dawce standardowej.",
+          "alternative_pl": "Metylofenidat lub guanfacyna"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Rozpocząć od 0.5 mg/kg/d i zwiększać wolniej.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "10-krotny wzrost AUC i 4-krotne wydłużenie t½ (do 21 h)! Zaczynać od niskiej dawki i nie przekraczać 50% dawki docelowej bez kontroli HR/RR.",
+          "alternative_pl": "Metylofenidat, guanfacyna"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2D6": 0.8,
+        "CYP3A4": 0.1,
+        "renal": 0.1
       }
     },
     {
@@ -295,10 +761,31 @@
       "active_metabolite": "Alfa-hydroksymetoprolol (70–80% klirensu przez CYP2D6)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "moderate", "action_pl": "Szybka eliminacja — w razie braku kontroli HR zamienić na bisoprolol lub atenolol.", "alternative_pl": "Bisoprolol, karwedilol" },
-        "NM": { "severity": "normal", "action_pl": "Dawkowanie standardowe.", "alternative_pl": "–" },
-        "IM": { "severity": "moderate", "action_pl": "Redukcja dawki o 50% lub wolniejsza titracja.", "alternative_pl": "Bisoprolol" },
-        "PM": { "severity": "severe", "action_pl": "4–5x wyższe stężenie osoczowe i utrata kardioselektywności β1! Zredukować dawkę o 75% (do 25% normy) lub zamienić beta-bloker.", "alternative_pl": "Bisoprolol, nebiwolol, atenolol" }
+        "UM": {
+          "severity": "moderate",
+          "action_pl": "Szybka eliminacja — w razie braku kontroli HR zamienić na bisoprolol lub atenolol.",
+          "alternative_pl": "Bisoprolol, karwedilol"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Redukcja dawki o 50% lub wolniejsza titracja.",
+          "alternative_pl": "Bisoprolol"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "4–5x wyższe stężenie osoczowe i utrata kardioselektywności β1! Zredukować dawkę o 75% (do 25% normy) lub zamienić beta-bloker.",
+          "alternative_pl": "Bisoprolol, nebiwolol, atenolol"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2D6": 0.8,
+        "CYP3A4": 0.1,
+        "renal": 0.1
       }
     },
     {
@@ -309,10 +796,32 @@
       "active_metabolite": "N-demetylacja do desmetylocitalopramu przez CYP2C19",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "severe", "action_pl": "UNIKAĆ citalopramu — niskie stężenia i ryzyko braku remisji.", "alternative_pl": "Fluoksetyna, bupropion, mirtazapina" },
-        "NM": { "severity": "normal", "action_pl": "Dawka standardowa (maks. 40 mg/d).", "alternative_pl": "–" },
-        "IM": { "severity": "normal", "action_pl": "Dawka standardowa.", "alternative_pl": "–" },
-        "PM": { "severity": "severe", "action_pl": "REDUKCJA DAWKI O 50% (maks. 20 mg/d wg FDA/CPIC) — wysokie ryzyko wydłużenia QTc i Torsades de Pointes!", "alternative_pl": "Sertralina, fluoksetyna" }
+        "UM": {
+          "severity": "severe",
+          "action_pl": "UNIKAĆ citalopramu — niskie stężenia i ryzyko braku remisji.",
+          "alternative_pl": "Fluoksetyna, bupropion, mirtazapina"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawka standardowa (maks. 40 mg/d).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Dawka standardowa.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "REDUKCJA DAWKI O 50% (maks. 20 mg/d wg FDA/CPIC) — wysokie ryzyko wydłużenia QTc i Torsades de Pointes!",
+          "alternative_pl": "Sertralina, fluoksetyna"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2C19": 0.6,
+        "CYP3A4": 0.25,
+        "CYP2D6": 0.15,
+        "renal": 0.12
       }
     },
     {
@@ -323,10 +832,32 @@
       "active_metabolite": "S-desmetylocitalopram (główny szlak CYP2C19)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "severe", "action_pl": "Rozważyć alternatywny SSRI niezależny od CYP2C19 z uwagi na ryzyko nieskuteczności.", "alternative_pl": "Fluoksetyna, mirtazapina" },
-        "NM": { "severity": "normal", "action_pl": "Dawka standardowa (10–20 mg/d).", "alternative_pl": "–" },
-        "IM": { "severity": "normal", "action_pl": "Dawka standardowa.", "alternative_pl": "–" },
-        "PM": { "severity": "severe", "action_pl": "REDUKCJA DAWKI O 50% (maks. 10 mg/d wg CPIC) — dwukrotny wzrost ekspozycji i ryzyko wydłużenia QTc.", "alternative_pl": "Fluoksetyna, bupropion" }
+        "UM": {
+          "severity": "severe",
+          "action_pl": "Rozważyć alternatywny SSRI niezależny od CYP2C19 z uwagi na ryzyko nieskuteczności.",
+          "alternative_pl": "Fluoksetyna, mirtazapina"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawka standardowa (10–20 mg/d).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Dawka standardowa.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "REDUKCJA DAWKI O 50% (maks. 10 mg/d wg CPIC) — dwukrotny wzrost ekspozycji i ryzyko wydłużenia QTc.",
+          "alternative_pl": "Fluoksetyna, bupropion"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2C19": 0.65,
+        "CYP3A4": 0.2,
+        "CYP2D6": 0.15,
+        "renal": 0.1
       }
     },
     {
@@ -337,10 +868,32 @@
       "active_metabolite": "N-desmetylosertralina (CYP2C19 i CYP2B6)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "normal", "action_pl": "Dawka standardowa.", "alternative_pl": "–" },
-        "NM": { "severity": "normal", "action_pl": "Dawka standardowa.", "alternative_pl": "–" },
-        "IM": { "severity": "normal", "action_pl": "Dawka standardowa.", "alternative_pl": "–" },
-        "PM": { "severity": "moderate", "action_pl": "Redukcja dawki początkowej o 50% (25 mg/d) i limit dawki maksymalnej do 75 mg/d wg CPIC/DPWG.", "alternative_pl": "–" }
+        "UM": {
+          "severity": "normal",
+          "action_pl": "Dawka standardowa.",
+          "alternative_pl": "–"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawka standardowa.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Dawka standardowa.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "moderate",
+          "action_pl": "Redukcja dawki początkowej o 50% (25 mg/d) i limit dawki maksymalnej do 75 mg/d wg CPIC/DPWG.",
+          "alternative_pl": "–"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2C19": 0.45,
+        "CYP2B6": 0.25,
+        "CYP2D6": 0.15,
+        "renal": 0.15
       }
     },
     {
@@ -351,10 +904,30 @@
       "active_metabolite": "N-tlenek worikonazolu (nieliniowa kinetyka CYP2C19)",
       "cpic_level": "A",
       "recommendations": {
-        "UM": { "severity": "severe", "action_pl": "UNIKAĆ worikonazolu — subterapeutyczne stężenia i ryzyko zgonu w inwazyjnej aspergilozie.", "alternative_pl": "Izawukonazol, pozakonazol lub amfoterycyna B liposomalna" },
-        "NM": { "severity": "normal", "action_pl": "Dawkowanie standardowe pod kontrolą TDM.", "alternative_pl": "–" },
-        "IM": { "severity": "normal", "action_pl": "Dawkowanie standardowe z TDM.", "alternative_pl": "–" },
-        "PM": { "severity": "severe", "action_pl": "4-krotny wzrost AUC -> hepatotoksyczność, omamy wzrokowe i wydłużenie QTc! Wybrać inny lek przeciwgrzybiczy lub zredukować dawkę o 50% z pilnym TDM.", "alternative_pl": "Izawukonazol, pozakonazol" }
+        "UM": {
+          "severity": "severe",
+          "action_pl": "UNIKAĆ worikonazolu — subterapeutyczne stężenia i ryzyko zgonu w inwazyjnej aspergilozie.",
+          "alternative_pl": "Izawukonazol, pozakonazol lub amfoterycyna B liposomalna"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe pod kontrolą TDM.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe z TDM.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "4-krotny wzrost AUC -> hepatotoksyczność, omamy wzrokowe i wydłużenie QTc! Wybrać inny lek przeciwgrzybiczy lub zredukować dawkę o 50% z pilnym TDM.",
+          "alternative_pl": "Izawukonazol, pozakonazol"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2C19": 0.6,
+        "other": 0.4
       }
     },
     {
@@ -365,9 +938,27 @@
       "active_metabolite": "7-hydroksylacja silniejszego enancjomeru (S)-warfaryny przez CYP2C9",
       "cpic_level": "A",
       "recommendations": {
-        "NM": { "severity": "normal", "action_pl": "Dawkowanie wg algorytmu klinicznego i VKORC1.", "alternative_pl": "–" },
-        "IM": { "severity": "moderate", "action_pl": "Redukcja dawki podtrzymującej o 20–40%; wolniejsze osiąganie stanu stacjonarnego INR.", "alternative_pl": "DOAC (apiksaban, rywaroksaban, dabigatran)" },
-        "PM": { "severity": "contraindicated", "action_pl": "Redukcja dawki warfaryny o 50–80% (zapotrzebowanie często <1.5 mg/d) lub zamiana na DOAC — skrajnie wysokie ryzyko krwawień śródczaszkowych i GI!", "alternative_pl": "Apiksaban, dabigatran" }
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie wg algorytmu klinicznego i VKORC1.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Redukcja dawki podtrzymującej o 20–40%; wolniejsze osiąganie stanu stacjonarnego INR.",
+          "alternative_pl": "DOAC (apiksaban, rywaroksaban, dabigatran)"
+        },
+        "PM": {
+          "severity": "contraindicated",
+          "action_pl": "Redukcja dawki warfaryny o 50–80% (zapotrzebowanie często <1.5 mg/d) lub zamiana na DOAC — skrajnie wysokie ryzyko krwawień śródczaszkowych i GI!",
+          "alternative_pl": "Apiksaban, dabigatran"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2C9": 0.8,
+        "CYP1A2": 0.1,
+        "CYP3A4": 0.1,
+        "renal": 0.02
       }
     },
     {
@@ -378,9 +969,25 @@
       "active_metabolite": "p-HPPH (kinetyka saturacyjna Michaelisa-Menten zależna od CYP2C9)",
       "cpic_level": "A",
       "recommendations": {
-        "NM": { "severity": "normal", "action_pl": "Standardowa dawka podtrzymująca (o ile HLA-B*15:02 ujemny).", "alternative_pl": "–" },
-        "IM": { "severity": "moderate", "action_pl": "Redukcja dawki podtrzymującej o 25% z kontrolą stężenia wolnej fenytoiny.", "alternative_pl": "Lewetiracetam" },
-        "PM": { "severity": "severe", "action_pl": "Redukcja dawki podtrzymującej o 50% — gwałtowna saturacja enzymu wywołuje oczopląs, ataksję, dyzartrię i śpiączkę!", "alternative_pl": "Lewetiracetam, kwas walproinowy" }
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowa dawka podtrzymująca (o ile HLA-B*15:02 ujemny).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Redukcja dawki podtrzymującej o 25% z kontrolą stężenia wolnej fenytoiny.",
+          "alternative_pl": "Lewetiracetam"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Redukcja dawki podtrzymującej o 50% — gwałtowna saturacja enzymu wywołuje oczopląs, ataksję, dyzartrię i śpiączkę!",
+          "alternative_pl": "Lewetiracetam, kwas walproinowy"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP2C9": 0.6,
+        "other": 0.4
       }
     },
     {
@@ -391,9 +998,26 @@
       "active_metabolite": "Wychwyt wątrobowy kwasu symwastatyny przez transporter OATP1B1",
       "cpic_level": "A",
       "recommendations": {
-        "NM": { "severity": "normal", "action_pl": "Dawka standardowa (maks. 40 mg/d).", "alternative_pl": "–" },
-        "IM": { "severity": "severe", "action_pl": "UNIKAĆ dawek ≥ 40 mg/d; ograniczyć symwastatynę do maks. 20 mg/d lub zamienić na rosuwastatynę/prawastatynę.", "alternative_pl": "Rosuwastatyna, prawastatyna" },
-        "PM": { "severity": "contraindicated", "action_pl": "UNIKAĆ symwastatyny — ponad 3-krotny wzrost stężenia układowego i bardzo wysokie ryzyko miopatii oraz rabdomiolizy!", "alternative_pl": "Rosuwastatyna (≤20 mg) lub prawastatyna" }
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawka standardowa (maks. 40 mg/d).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "severe",
+          "action_pl": "UNIKAĆ dawek ≥ 40 mg/d; ograniczyć symwastatynę do maks. 20 mg/d lub zamienić na rosuwastatynę/prawastatynę.",
+          "alternative_pl": "Rosuwastatyna, prawastatyna"
+        },
+        "PM": {
+          "severity": "contraindicated",
+          "action_pl": "UNIKAĆ symwastatyny — ponad 3-krotny wzrost stężenia układowego i bardzo wysokie ryzyko miopatii oraz rabdomiolizy!",
+          "alternative_pl": "Rosuwastatyna (≤20 mg) lub prawastatyna"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP3A4": 0.8,
+        "SLCO1B1": 0.7,
+        "renal": 0.13
       }
     },
     {
@@ -404,10 +1028,30 @@
       "active_metabolite": "Prezentacja leku przez cząsteczki MHC klasy I dla limfocytów T CD8+",
       "cpic_level": "A",
       "recommendations": {
-        "NEG": { "severity": "normal", "action_pl": "Standardowe ryzyko populacyjne.", "alternative_pl": "–" },
-        "HLA_B1502_A3101": { "severity": "contraindicated", "action_pl": "BEZWZGLĘDNIE PRZECIWWSKAZANA u osób naiwnych na karbamazepinę — wysokie ryzyko zespołu Stevensa-Johnsona (SJS/TEN) oraz DRESS!", "alternative_pl": "Lewetiracetam, kwas walproinowy (unikać również okskarbazepiny i fenytoiny!)" },
-        "HLA_B5701": { "severity": "normal", "action_pl": "Brak interakcji z allelem B*57:01.", "alternative_pl": "–" },
-        "HLA_B5801": { "severity": "normal", "action_pl": "Brak interakcji z allelem B*58:01.", "alternative_pl": "–" }
+        "NEG": {
+          "severity": "normal",
+          "action_pl": "Standardowe ryzyko populacyjne.",
+          "alternative_pl": "–"
+        },
+        "HLA_B1502_A3101": {
+          "severity": "contraindicated",
+          "action_pl": "BEZWZGLĘDNIE PRZECIWWSKAZANA u osób naiwnych na karbamazepinę — wysokie ryzyko zespołu Stevensa-Johnsona (SJS/TEN) oraz DRESS!",
+          "alternative_pl": "Lewetiracetam, kwas walproinowy (unikać również okskarbazepiny i fenytoiny!)"
+        },
+        "HLA_B5701": {
+          "severity": "normal",
+          "action_pl": "Brak interakcji z allelem B*57:01.",
+          "alternative_pl": "–"
+        },
+        "HLA_B5801": {
+          "severity": "normal",
+          "action_pl": "Brak interakcji z allelem B*58:01.",
+          "alternative_pl": "–"
+        }
+      },
+      "fraction_metabolism": {
+        "HLA_PANEL": 0.6,
+        "other": 0.4
       }
     },
     {
@@ -418,10 +1062,30 @@
       "active_metabolite": "Niekowalencyjne wiązanie w kieszeni F cząsteczki HLA-B*57:01",
       "cpic_level": "A",
       "recommendations": {
-        "NEG": { "severity": "normal", "action_pl": "Abakawir dopuszczony do stosowania.", "alternative_pl": "–" },
-        "HLA_B1502_A3101": { "severity": "normal", "action_pl": "Brak interakcji z B*15:02.", "alternative_pl": "–" },
-        "HLA_B5701": { "severity": "contraindicated", "action_pl": "BEZWZGLĘDNIE PRZECIWWSKAZANY (Black Box FDA/EMA) — ~50% ryzyko ciężkiego, potencjalnie śmiertelnego zespołu nadwrażliwości (HSS)!", "alternative_pl": "Tenofowir (TAF / TDF)" },
-        "HLA_B5801": { "severity": "normal", "action_pl": "Brak interakcji z B*58:01.", "alternative_pl": "–" }
+        "NEG": {
+          "severity": "normal",
+          "action_pl": "Abakawir dopuszczony do stosowania.",
+          "alternative_pl": "–"
+        },
+        "HLA_B1502_A3101": {
+          "severity": "normal",
+          "action_pl": "Brak interakcji z B*15:02.",
+          "alternative_pl": "–"
+        },
+        "HLA_B5701": {
+          "severity": "contraindicated",
+          "action_pl": "BEZWZGLĘDNIE PRZECIWWSKAZANY (Black Box FDA/EMA) — ~50% ryzyko ciężkiego, potencjalnie śmiertelnego zespołu nadwrażliwości (HSS)!",
+          "alternative_pl": "Tenofowir (TAF / TDF)"
+        },
+        "HLA_B5801": {
+          "severity": "normal",
+          "action_pl": "Brak interakcji z B*58:01.",
+          "alternative_pl": "–"
+        }
+      },
+      "fraction_metabolism": {
+        "HLA_B5701": 1.0,
+        "ADH_UGT": 0.9
       }
     },
     {
@@ -432,10 +1096,30 @@
       "active_metabolite": "Oksypurynol prezentowany przez HLA-B*58:01",
       "cpic_level": "A",
       "recommendations": {
-        "NEG": { "severity": "normal", "action_pl": "Standardowa titracja dostosowana do eGFR.", "alternative_pl": "–" },
-        "HLA_B1502_A3101": { "severity": "normal", "action_pl": "Brak interakcji z B*15:02.", "alternative_pl": "–" },
-        "HLA_B5701": { "severity": "normal", "action_pl": "Brak interakcji z B*57:01.", "alternative_pl": "–" },
-        "HLA_B5801": { "severity": "contraindicated", "action_pl": "PRZECIWWSKAZANY — wielokrotnie zwiększone ryzyko allopurynolowego SJS/TEN i DRESS (szczególnie przy współistniejącym PChN).", "alternative_pl": "Febuksostat" }
+        "NEG": {
+          "severity": "normal",
+          "action_pl": "Standardowa titracja dostosowana do eGFR.",
+          "alternative_pl": "–"
+        },
+        "HLA_B1502_A3101": {
+          "severity": "normal",
+          "action_pl": "Brak interakcji z B*15:02.",
+          "alternative_pl": "–"
+        },
+        "HLA_B5701": {
+          "severity": "normal",
+          "action_pl": "Brak interakcji z B*57:01.",
+          "alternative_pl": "–"
+        },
+        "HLA_B5801": {
+          "severity": "contraindicated",
+          "action_pl": "PRZECIWWSKAZANY — wielokrotnie zwiększone ryzyko allopurynolowego SJS/TEN i DRESS (szczególnie przy współistniejącym PChN).",
+          "alternative_pl": "Febuksostat"
+        }
+      },
+      "fraction_metabolism": {
+        "HLA_B5801": 1.0,
+        "renal": 0.8
       }
     },
     {
@@ -446,9 +1130,26 @@
       "active_metabolite": "Nukleotydy 6-tioguaninowe (6-TGN — mielosupresja)",
       "cpic_level": "A",
       "recommendations": {
-        "NM": { "severity": "normal", "action_pl": "Dawka standardowa (2–3 mg/kg/d).", "alternative_pl": "–" },
-        "IM": { "severity": "severe", "action_pl": "Redukcja dawki początkowej do 30–80% normy i ścisła kontrola morfologii.", "alternative_pl": "Mykofenolan mofetylu" },
-        "PM": { "severity": "contraindicated", "action_pl": "UNIKAĆ azatiopryny w chorobach nienowotworowych (lub redukcja 10-krotna podawana 3x/tydzień) — zagrażająca życiu pancytopenia!", "alternative_pl": "Mykofenolan mofetylu, metotreksat" }
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawka standardowa (2–3 mg/kg/d).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "severe",
+          "action_pl": "Redukcja dawki początkowej do 30–80% normy i ścisła kontrola morfologii.",
+          "alternative_pl": "Mykofenolan mofetylu"
+        },
+        "PM": {
+          "severity": "contraindicated",
+          "action_pl": "UNIKAĆ azatiopryny w chorobach nienowotworowych (lub redukcja 10-krotna podawana 3x/tydzień) — zagrażająca życiu pancytopenia!",
+          "alternative_pl": "Mykofenolan mofetylu, metotreksat"
+        }
+      },
+      "fraction_metabolism": {
+        "TPMT": 0.45,
+        "XO": 0.45,
+        "renal": 0.1
       }
     },
     {
@@ -459,9 +1160,25 @@
       "active_metabolite": "80% dawki 5-FU jest inaktywowane w wątrobie przez DPD",
       "cpic_level": "A",
       "recommendations": {
-        "NM": { "severity": "normal", "action_pl": "Dawkowanie wg protokołu onkologicznego.", "alternative_pl": "–" },
-        "IM": { "severity": "severe", "action_pl": "Zredukować dawkę początkową o 50% i miareczkować wg tolerancji/TDM.", "alternative_pl": "–" },
-        "PM": { "severity": "contraindicated", "action_pl": "PRZECIWWSKAZANY (komunikat bezpieczeństwa EMA/URPL) — ryzyko śmiertelnego zapalenia błon śluzowych, neutropenii i neurotoksyczności!", "alternative_pl": "Schemat niezawierający fluoropirymidyn" }
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie wg protokołu onkologicznego.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "severe",
+          "action_pl": "Zredukować dawkę początkową o 50% i miareczkować wg tolerancji/TDM.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "contraindicated",
+          "action_pl": "PRZECIWWSKAZANY (komunikat bezpieczeństwa EMA/URPL) — ryzyko śmiertelnego zapalenia błon śluzowych, neutropenii i neurotoksyczności!",
+          "alternative_pl": "Schemat niezawierający fluoropirymidyn"
+        }
+      },
+      "fraction_metabolism": {
+        "DPYD": 0.85,
+        "renal": 0.15
       }
     },
     {
@@ -472,9 +1189,659 @@
       "active_metabolite": "Demetylacja i hydroksylacja przez CYP3A5/CYP3A4",
       "cpic_level": "A",
       "recommendations": {
-        "NM": { "severity": "normal", "action_pl": "Non-expressor (*3/*3): standardowa dawka początkowa (0.15–0.2 mg/kg/d).", "alternative_pl": "–" },
-        "IM": { "severity": "moderate", "action_pl": "Expressor (*1/*3): zwiększyć dawkę początkową 1.5–2-krotnie (maks. 0.3 mg/kg/d) pod ścisłą kontrolą C0 TDM, aby uniknąć ostrego odrzucania przeszczepu.", "alternative_pl": "–" },
-        "UM": { "severity": "severe", "action_pl": "Extensive expressor (*1/*1): zwiększyć dawkę początkową 1.5–2-krotnie z pilnym TDM w 1.–3. dobie.", "alternative_pl": "–" }
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Non-expressor (*3/*3): standardowa dawka początkowa (0.15–0.2 mg/kg/d).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Expressor (*1/*3): zwiększyć dawkę początkową 1.5–2-krotnie (maks. 0.3 mg/kg/d) pod ścisłą kontrolą C0 TDM, aby uniknąć ostrego odrzucania przeszczepu.",
+          "alternative_pl": "–"
+        },
+        "UM": {
+          "severity": "severe",
+          "action_pl": "Extensive expressor (*1/*1): zwiększyć dawkę początkową 1.5–2-krotnie z pilnym TDM w 1.–3. dobie.",
+          "alternative_pl": "–"
+        }
+      },
+      "fraction_metabolism": {
+        "CYP3A5": 0.5,
+        "CYP3A4": 0.45,
+        "renal": 0.05
+      }
+    },
+    {
+      "id": "cpic_carvedilol_cyp2d6",
+      "compound_id": "carvedilol-compound",
+      "gene": "CYP2D6",
+      "drug_role": "active_drug",
+      "active_metabolite": "Hydroksylacja pierścienia i glukuronidacja",
+      "cpic_level": "B",
+      "fraction_metabolism": {
+        "CYP2D6": 0.6,
+        "CYP2C9": 0.2,
+        "glucuronidation": 0.2
+      },
+      "recommendations": {
+        "UM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie z monitorowaniem tętna.",
+          "alternative_pl": "–"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Umiarkowany wzrost stężenia (S)(-)-enancjomeru.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "moderate",
+          "action_pl": "2–3-krotny wzrost stężenia (S)(-)-karwedilolu; monitoruj ciśnienie tętnicze i bradykardię.",
+          "alternative_pl": "Bisoprolol"
+        }
+      }
+    },
+    {
+      "id": "cpic_nebivolol_cyp2d6",
+      "compound_id": "nebivolol-compound",
+      "gene": "CYP2D6",
+      "drug_role": "active_drug",
+      "active_metabolite": "4-hydroksynebiwolol (aktywny beta-bloker)",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2D6": 0.85,
+        "glucuronidation": 0.15
+      },
+      "recommendations": {
+        "UM": {
+          "severity": "normal",
+          "action_pl": "Krótki t½ (10h), standardowe dawkowanie.",
+          "alternative_pl": "–"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie (t½ 10–12h).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Wydłużony t½, monitorowanie bradykardii.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Okres półtrwania wydłuża się z 10h do >32h! 5–8-krotny wzrost AUC; rozpoczynaj od najniższej dawki (1.25–2.5 mg/d).",
+          "alternative_pl": "Bisoprolol"
+        }
+      }
+    },
+    {
+      "id": "cpic_propafenone_cyp2d6",
+      "compound_id": "propafenone-compound",
+      "gene": "CYP2D6",
+      "drug_role": "active_drug",
+      "active_metabolite": "5-hydroksypropafenon (klasa IC) vs macierzysty (blokada beta)",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2D6": 0.75,
+        "CYP3A4": 0.15,
+        "CYP1A2": 0.1
+      },
+      "recommendations": {
+        "UM": {
+          "severity": "moderate",
+          "action_pl": "Szybka eliminacja, ryzyko braku skuteczności przeciwarytmicznej.",
+          "alternative_pl": "Flekainid, amiodaron"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowe miareczkowanie pod kontrolą EKG (QRS).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Monitoruj szerokość zespołów QRS i odstęp PR.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Wielokrotny wzrost stężenia leku macierzystego wywołuje silną blokadę beta-adrenergiczną (bradykardia, skurcz oskrzeli) oraz ryzyko proarytmii; redukcja dawki o 50% i EKG.",
+          "alternative_pl": "Sotalol, amiodaron"
+        }
+      }
+    },
+    {
+      "id": "cpic_omeprazole_cyp2c19",
+      "compound_id": "omeprazole-compound",
+      "gene": "CYP2C19",
+      "drug_role": "active_drug",
+      "active_metabolite": "Hydroksyomeprazol (inaktywacja przez CYP2C19)",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2C19": 0.8,
+        "CYP3A4": 0.2
+      },
+      "recommendations": {
+        "UM": {
+          "severity": "severe",
+          "action_pl": "Gwałtowna inaktywacja omeprazolu — brak supresji kwasu solnego i wysokie ryzyko niepowodzenia eradykacji H. pylori / leczenia GERD! Zwiększ dawkę o 100% (2x/d) lub zamień na rabeprazol.",
+          "alternative_pl": "Rabeprazol (metabolizm nieenzymatyczny)"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie (20–40 mg/d).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie (korzystny wyższy wskaźnik eradykacji).",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "moderate",
+          "action_pl": "3–5-krotny wzrost AUC; wysoka skuteczność w eradykacji H. pylori, ale w przewlekłej terapii (>6 mies.) rozważ redukcję dawki o 50% (ryzyko hipomagnezemii, osteoporozy).",
+          "alternative_pl": "–"
+        }
+      }
+    },
+    {
+      "id": "cpic_pantoprazole_cyp2c19",
+      "compound_id": "pantoprazole-compound",
+      "gene": "CYP2C19",
+      "drug_role": "active_drug",
+      "active_metabolite": "Inaktywacja przez CYP2C19 i sulfotransferazę",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2C19": 0.75,
+        "sulfation": 0.25
+      },
+      "recommendations": {
+        "UM": {
+          "severity": "severe",
+          "action_pl": "Niewystarczająca supresja kwasu; podwój dawkę standardową (np. 40 mg 2x/d) w eradykacji H. pylori lub wybierz rabeprazol.",
+          "alternative_pl": "Rabeprazol"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "moderate",
+          "action_pl": "Wzrost AUC o 300–400%; przy długotrwałym leczeniu rozważ dawkę 20 mg/d.",
+          "alternative_pl": "–"
+        }
+      }
+    },
+    {
+      "id": "cpic_lansoprazole_cyp2c19",
+      "compound_id": "lansoprazole-compound",
+      "gene": "CYP2C19",
+      "drug_role": "active_drug",
+      "active_metabolite": "Hydroksylacja przez CYP2C19",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2C19": 0.7,
+        "CYP3A4": 0.3
+      },
+      "recommendations": {
+        "UM": {
+          "severity": "severe",
+          "action_pl": "Zwiększ dawkę o 100% lub zamień na rabeprazol.",
+          "alternative_pl": "Rabeprazol"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "moderate",
+          "action_pl": "Podwyższona ekspozycja; w długiej terapii redukcja dawki.",
+          "alternative_pl": "–"
+        }
+      }
+    },
+    {
+      "id": "cpic_celecoxib_cyp2c9",
+      "compound_id": "celecoxib-compound",
+      "gene": "CYP2C9",
+      "drug_role": "active_drug",
+      "active_metabolite": "Hydroksycelekoksyb (inaktywacja przez CYP2C9)",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2C9": 0.75,
+        "CYP3A4": 0.2,
+        "renal": 0.05
+      },
+      "recommendations": {
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe (100–200 mg/d).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Rozpocznij od najniższej dawki i ostrożnie miareczkuj.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Klirens celekoksybu spada o >70%, a ekspozycja rośnie 3-krotnie — wysokie ryzyko krwawień z przewodu pokarmowego i powikłań sercowo-naczyniowych! Zredukuj dawkę o 50–75% lub wybierz nie-CYP2C9 NLPZ.",
+          "alternative_pl": "Paracetamol, tramadol, naproksen"
+        }
+      }
+    },
+    {
+      "id": "cpic_ibuprofen_cyp2c9",
+      "compound_id": "ibuprofen-compound",
+      "gene": "CYP2C9",
+      "drug_role": "active_drug",
+      "active_metabolite": "2-hydroksyibuprofen i karboksyibuprofen",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2C9": 0.85,
+        "CYP2C8": 0.1,
+        "renal": 0.05
+      },
+      "recommendations": {
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie doraźne lub przewlekłe.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie krótkotrwale.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Gwałtowny spadek klirensu i wydłużony t½; wysokie ryzyko owrzodzeń żołądka, krwawień i AKI. Unikaj przewlekłego stosowania lub zredukuj dawkę o 50%.",
+          "alternative_pl": "Paracetamol"
+        }
+      }
+    },
+    {
+      "id": "cpic_meloxicam_cyp2c9",
+      "compound_id": "meloxicam-compound",
+      "gene": "CYP2C9",
+      "drug_role": "active_drug",
+      "active_metabolite": "5-karboksymeloksykam (inaktywacja przez CYP2C9)",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2C9": 0.8,
+        "CYP3A4": 0.2
+      },
+      "recommendations": {
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowa dawka 7.5–15 mg/d.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Stosuj najniższą skuteczną dawkę (7.5 mg/d).",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Wzrost ekspozycji i wydłużenie t½ z 20h do >50h! Zredukuj dawkę o 50% (maks. 7.5 mg co 2 dni) lub zamień na lek alternatywny.",
+          "alternative_pl": "Paracetamol, NLPZ krótkodziałający"
+        }
+      }
+    },
+    {
+      "id": "cpic_flurbiprofen_cyp2c9",
+      "compound_id": "flurbiprofen-compound",
+      "gene": "CYP2C9",
+      "drug_role": "active_drug",
+      "active_metabolite": "4-hydroksyflurbiprofen",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2C9": 0.75,
+        "glucuronidation": 0.25
+      },
+      "recommendations": {
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Ostrożne dawkowanie.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Znacząco obniżony klirens — redukcja dawki o 50% lub unikanie terapii przewlekłej.",
+          "alternative_pl": "Paracetamol"
+        }
+      }
+    },
+    {
+      "id": "cpic_efavirenz_cyp2b6",
+      "compound_id": "efavirenz-compound",
+      "gene": "CYP2B6",
+      "drug_role": "active_drug",
+      "active_metabolite": "8-hydroksyefawirenz (inaktywacja przez CYP2B6)",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2B6": 0.85,
+        "CYP2A6": 0.1,
+        "CYP3A4": 0.05
+      },
+      "recommendations": {
+        "UM": {
+          "severity": "moderate",
+          "action_pl": "Szybki metabolizm; monitoruj miano wirusa HIV pod kątem supresji.",
+          "alternative_pl": "–"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowa dawka 600 mg 1x/d na noc.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Podwyższone stężenia; w razie objawów OUN rozważ redukcję do 400 mg/d.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Zmniejsz dawkę do 400 mg lub 200 mg/d (polimorfizm CYP2B6 *6/*6) — standardowa dawka 600 mg wywołuje ciężkie zaburzenia OUN (koszmary senne, psychozy, myśli samobójcze) i wydłużenie QTc!",
+          "alternative_pl": "Dolutegrawir, biktegrawir"
+        }
+      }
+    },
+    {
+      "id": "cpic_clozapine_cyp1a2",
+      "compound_id": "clozapine-compound",
+      "gene": "CYP1A2",
+      "drug_role": "active_drug",
+      "active_metabolite": "N-desmetyloklozapina (norclozapina)",
+      "cpic_level": "B",
+      "fraction_metabolism": {
+        "CYP1A2": 0.65,
+        "CYP3A4": 0.2,
+        "CYP2C19": 0.1,
+        "CYP2D6": 0.05
+      },
+      "recommendations": {
+        "UM": {
+          "severity": "moderate",
+          "action_pl": "Palenie tytoniu (indukcja CYP1A2) lub genetyczny UM wymaga wyższych dawek klozapiny; po zaprzestaniu palenia stężenie rośnie 2-krotnie!",
+          "alternative_pl": "–"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowe miareczkowanie pod ścisłą kontrolą TDM (350–600 ng/mL) i morfologii.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Ostrożne dawkowanie, monitoruj TDM.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Wolny metabolizm lub jednoczesne inhibitory CYP1A2 (np. fluwoksamina, cyprofloksacyna) podnoszą stężenie 3–5-krotnie — zagrażające życiu drgawki, miokarditis i zapaść! Redukcja dawki o 60–75%.",
+          "alternative_pl": "Olanzapina (ostrożnie), arypiprazol"
+        }
+      }
+    },
+    {
+      "id": "cpic_ondansetron_cyp2d6",
+      "compound_id": "ondansetron-compound",
+      "gene": "CYP2D6",
+      "drug_role": "active_drug",
+      "active_metabolite": "Hydroksylacja przez CYP2D6, CYP3A4, CYP1A2",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2D6": 0.5,
+        "CYP3A4": 0.3,
+        "CYP1A2": 0.2
+      },
+      "recommendations": {
+        "UM": {
+          "severity": "severe",
+          "action_pl": "UNIKAĆ ondansetronu — ultraszybki klirens powoduje nieskuteczność przeciwwymiotną po chemioterapii/operacji! Wybierz granisetron (niezależny od CYP2D6).",
+          "alternative_pl": "Granisetron, aprepitant"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie (8–16 mg/d).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "moderate",
+          "action_pl": "Nieco wyższa ekspozycja, dobra skuteczność; ostrożnie przy współistniejącym wydłużeniu QTc.",
+          "alternative_pl": "–"
+        }
+      }
+    },
+    {
+      "id": "cpic_capecitabine_dpyd",
+      "compound_id": "capecitabine-compound",
+      "gene": "DPYD",
+      "drug_role": "active_drug",
+      "active_metabolite": "Prolek 5-FU (ulegający degradacji przez DPD)",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "DPYD": 0.8,
+        "renal": 0.2
+      },
+      "recommendations": {
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe wg powierzchni ciała.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "severe",
+          "action_pl": "Zredukować dawkę początkową o 50% i monitorować toksyczność.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "contraindicated",
+          "action_pl": "BEZWZGLĘDNIE PRZECIWWSKAZANA — ryzyko zgonu w wyniku aplazji szpiku, martwiczego zapalenia jelit i neurotoksyczności!",
+          "alternative_pl": "Chemioterapia bez fluoropirymidyn"
+        }
+      }
+    },
+    {
+      "id": "cpic_eliglustat_cyp2d6",
+      "compound_id": "eliglustat-compound",
+      "gene": "CYP2D6",
+      "drug_role": "active_drug",
+      "active_metabolite": "Inaktywacja głównie przez CYP2D6",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2D6": 0.85,
+        "CYP3A4": 0.15
+      },
+      "recommendations": {
+        "UM": {
+          "severity": "contraindicated",
+          "action_pl": "PRZECIWWSKAZANY — nie osiąga stężenia terapeutycznego w chorobie Gauchera typu 1.",
+          "alternative_pl": "Imigluceraza, welagluceraza alfa"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowa dawka 84 mg 2x/d.",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "normal",
+          "action_pl": "Standardowa dawka 84 mg 2x/d.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Zredukuj dawkę do 84 mg 1x/d; bezwzględny zakaz jednoczesnego stosowania inhibitorów CYP3A4 (ryzyko nagłego zgonu sercowego z powodu wydłużenia PR/QTc/QRS).",
+          "alternative_pl": "Imigluceraza"
+        }
+      }
+    },
+    {
+      "id": "cpic_thioridazine_cyp2d6",
+      "compound_id": "thioridazine-compound",
+      "gene": "CYP2D6",
+      "drug_role": "active_drug",
+      "active_metabolite": "Mezoridazyna i sulfotlenek tiorydazyny",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2D6": 0.8,
+        "CYP1A2": 0.15,
+        "renal": 0.05
+      },
+      "recommendations": {
+        "UM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie z kontrolą EKG.",
+          "alternative_pl": "–"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe pod ścisłą kontrolą EKG (QTc).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Ostrożnie — ryzyko wydłużenia QTc i TdP.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "contraindicated",
+          "action_pl": "BEZWZGLĘDNIE PRZECIWWSKAZANA (Black Box FDA/EMA) u metabolizerów wolnych CYP2D6 oraz z inhibitorami CYP2D6 (fluoksetyna, paroksetyna) — skrajne ryzyko Torsades de Pointes i zgonu!",
+          "alternative_pl": "Arypiprazol, olanzapina"
+        }
+      }
+    },
+    {
+      "id": "cpic_pimozide_cyp2d6",
+      "compound_id": "pimozide-compound",
+      "gene": "CYP2D6",
+      "drug_role": "active_drug",
+      "active_metabolite": "Inaktywacja przez CYP2D6 i CYP3A4",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2D6": 0.65,
+        "CYP3A4": 0.3,
+        "CYP1A2": 0.05
+      },
+      "recommendations": {
+        "UM": {
+          "severity": "normal",
+          "action_pl": "Dawkowanie standardowe.",
+          "alternative_pl": "–"
+        },
+        "NM": {
+          "severity": "normal",
+          "action_pl": "Standardowe dawkowanie (maks. 10 mg/d).",
+          "alternative_pl": "–"
+        },
+        "IM": {
+          "severity": "moderate",
+          "action_pl": "Maksymalna dawka 4 mg/d.",
+          "alternative_pl": "–"
+        },
+        "PM": {
+          "severity": "severe",
+          "action_pl": "Maksymalna dawka 4 mg/d (FDA: nie przekraczać 4 mg/d u CYP2D6 PM); zakaz jednoczesnego podawania z inhibitorami CYP2D6 lub CYP3A4 (ryzyko nagłego zatrzymania krążenia w mechanizmie TdP).",
+          "alternative_pl": "Arypiprazol"
+        }
+      }
+    },
+    {
+      "id": "cpic_oxcarbazepine_hla",
+      "compound_id": "oxcarbazepine-compound",
+      "gene": "HLA_PANEL",
+      "drug_role": "hypersensitivity_hla",
+      "active_metabolite": "MHD (10-monohydroksypochodna) prezentowana przez HLA-B*15:02",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "cytosolic_reduction": 0.7,
+        "glucuronidation": 0.25,
+        "HLA_B1502": 1.0
+      },
+      "recommendations": {
+        "NEG": {
+          "severity": "normal",
+          "action_pl": "Okskarbazepina dopuszczona do stosowania.",
+          "alternative_pl": "–"
+        },
+        "HLA_B1502_A3101": {
+          "severity": "contraindicated",
+          "action_pl": "PRZECIWWSKAZANA u nosicieli HLA-B*15:02 ze względu na reakcję krzyżową z karbamazepiną i wysokie ryzyko śmiertelnego SJS/TEN.",
+          "alternative_pl": "Lewetyracetam, lamotrygina (ostrożnie), walproinian"
+        },
+        "HLA_B5701": {
+          "severity": "normal",
+          "action_pl": "Brak powiązania.",
+          "alternative_pl": "–"
+        },
+        "HLA_B5801": {
+          "severity": "normal",
+          "action_pl": "Brak powiązania.",
+          "alternative_pl": "–"
+        }
+      }
+    },
+    {
+      "id": "cpic_phenytoin_hla",
+      "compound_id": "phenytoin-compound",
+      "gene": "HLA_PANEL",
+      "drug_role": "hypersensitivity_hla",
+      "active_metabolite": "Prezentacja antygenowa fenytoiny przez HLA-B*15:02",
+      "cpic_level": "A",
+      "fraction_metabolism": {
+        "CYP2C9": 0.85,
+        "CYP2C19": 0.1,
+        "HLA_B1502": 1.0
+      },
+      "recommendations": {
+        "NEG": {
+          "severity": "normal",
+          "action_pl": "Fenytoina dopuszczona pod kontrolą stężeń i albumin (Winter-Tozer).",
+          "alternative_pl": "–"
+        },
+        "HLA_B1502_A3101": {
+          "severity": "contraindicated",
+          "action_pl": "UNIKAĆ fenytoiny u nosicieli HLA-B*15:02 — reakcja krzyżowa i ryzyko SJS/TEN.",
+          "alternative_pl": "Lewetyracetam, walproinian"
+        },
+        "HLA_B5701": {
+          "severity": "normal",
+          "action_pl": "Brak powiązania.",
+          "alternative_pl": "–"
+        },
+        "HLA_B5801": {
+          "severity": "normal",
+          "action_pl": "Brak powiązania.",
+          "alternative_pl": "–"
+        }
       }
     }
   ]

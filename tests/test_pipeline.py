@@ -1919,6 +1919,80 @@ def test_clinical_calculators_suite(sqlite_con):
     assert "#/clinical-suite" in app_src
 
 
+def test_pgx_polypharmacy_matrix_and_cascading_phenoconversion(sqlite_con):
+    """Validates the PGx Polypharmacy Matrix, cascading phenoconversion residual activity and fractional clearance calculations."""
+    # 1. SQLite Table schema and content validation
+    cursor = sqlite_con.cursor()
+    rows = cursor.execute("SELECT compound_id, gene, drug_type, cpic_level, fm_gene, fraction_metabolism_json FROM pharmacogenomics_cpic").fetchall()
+    assert len(rows) >= 44, f"Expected at least 44 CPIC guidelines, found {len(rows)}"
+
+    guideline_map = {}
+    for cid, gene, dtype, lvl, fm, fm_json in rows:
+        parsed_fm = json.loads(fm_json)
+        assert isinstance(parsed_fm, dict)
+        guideline_map[(cid, gene)] = {
+            "drug_type": dtype,
+            "level": lvl,
+            "fm": fm,
+            "fraction_metabolism": parsed_fm
+        }
+
+    # Verify key cardiological, psychiatric and prodrug compounds
+    assert ("metoprolol-compound", "CYP2D6") in guideline_map
+    meto = guideline_map[("metoprolol-compound", "CYP2D6")]
+    assert meto["drug_type"] == "active_drug"
+    assert meto["fraction_metabolism"].get("CYP2D6") == 0.80
+    assert meto["fraction_metabolism"].get("renal") == 0.10
+
+    assert ("clopidogrel-compound", "CYP2C19") in guideline_map
+    clopi = guideline_map[("clopidogrel-compound", "CYP2C19")]
+    assert clopi["drug_type"] == "prodrug"
+
+    assert ("codeine-compound", "CYP2D6") in guideline_map
+    assert guideline_map[("codeine-compound", "CYP2D6")]["drug_type"] == "prodrug"
+
+    assert ("omeprazole-compound", "CYP2C19") in guideline_map
+    assert ("carbamazepine-compound", "HLA_PANEL") in guideline_map
+
+    # 2. Formula verification: Fractional Clearance & Cascading Residual Multiplication
+    # Case A: Metoprolol with strong CYP2D6 inhibitor (multiplier = 0.0)
+    fe_meto = 0.10
+    fm_2d6 = 0.80
+    fm_3a4 = 0.10
+    egfr = 100.0
+    # Normal WT: AS_2D6 = 2.0, AS_3A4 = 2.0
+    cl_norm_wt = fe_meto * min(1.0, egfr / 100.0) + fm_2d6 * (2.0 / 2.0) + fm_3a4 * (2.0 / 2.0)
+    assert abs(cl_norm_wt - 1.00) < 1e-4
+
+    # Strong inhibitor: AS_2D6 = 0.0
+    cl_norm_inhibited = fe_meto * min(1.0, egfr / 100.0) + fm_2d6 * (0.0 / 2.0) + fm_3a4 * (2.0 / 2.0)
+    assert abs(cl_norm_inhibited - 0.20) < 1e-4
+    delta_auc = 1.0 / cl_norm_inhibited
+    assert abs(delta_auc - 5.0) < 1e-4  # 5x AUC increase
+
+    # Case B: Cascading dual moderate inhibitors (e.g. duloxetine + sertraline on CYP2D6)
+    # 0.5 * 0.5 = 0.25 residual activity multiplier => AS_eff = 2.0 * 0.25 = 0.50
+    as_eff_dual = 2.0 * 0.5 * 0.5
+    assert abs(as_eff_dual - 0.50) < 1e-4
+    cl_norm_dual = fe_meto * min(1.0, egfr / 100.0) + fm_2d6 * (as_eff_dual / 2.0) + fm_3a4 * (2.0 / 2.0)
+    assert abs(cl_norm_dual - 0.40) < 1e-4
+    assert abs((1.0 / cl_norm_dual) - 2.5) < 1e-4
+
+    # 3. Source code integration assertions
+    app_src = (ROOT / "apps/graph-viewer/app.js").read_text(encoding="utf-8")
+    html_src = (ROOT / "apps/graph-viewer/index.html").read_text(encoding="utf-8")
+
+    assert "computePgxStackMatrix" in app_src
+    assert "buildStackPgxHtml" in app_src
+    assert 'data-stack-tab="pgx"' in app_src
+    assert "csPgxStackMatrixCard" in html_src
+    assert "data-pgx-matrix-sim" in app_src
+    assert "data-pgx-drawer-sim" in app_src
+    assert "[PGx Alert]" in app_src
+    assert "pgx-matrix" in app_src
+
+
+
 
 
 
